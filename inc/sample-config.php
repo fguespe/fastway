@@ -359,7 +359,11 @@
 
         )
     ) );
-    $static_block_args="";
+    
+    
+
+    $static_block_args = get_blocks();
+
     Redux::setSection( $opt_name, array(
     'title'         => 'Footer',
     'id'            => 'footer',
@@ -380,7 +384,7 @@
             'id'       => 'footer-stblock',
             'type'     => 'select',
             'title'    => 'Static block',
-            'options'  => $static_block_args,
+            'options'  => $static_block_args
         ),
       
     )
@@ -750,8 +754,8 @@ Redux::setSection( $opt_name, array(
             //print_r($css); // Compiler selector CSS values  compiler => array( CSS SELECTORS )
         }
     }
-
-    /**
+    
+        /**
      * Custom function for the callback validation referenced above
      * */
     if ( ! function_exists( 'redux_validate_callback_function' ) ) {
