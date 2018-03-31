@@ -12,8 +12,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 global $redux_demo;
 ?>
 
-<?php get_sidebar( 'footerfull' ); ?>
-
 <div class="wrapper" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">

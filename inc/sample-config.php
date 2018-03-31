@@ -327,7 +327,7 @@
         )
     ) );
     $theme_headers = array();
-    for( $i=1; $i<=5; $i++ ) {
+    for( $i=1; $i<=11; $i++ ) {
         if( file_exists( $THEME_DIR . "images/theme-option-header{$i}.jpg" ) ) {
             $theme_headers[$i] = array(
                 'alt' => $i,
