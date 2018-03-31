@@ -24,10 +24,9 @@ global $redux_demo;
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="">
 						<?php echo do_shortcode('[static_block_content id="'.$redux_demo['footer-stblock'].'"]'); 
 						?>
-					</div>
+				
 
 				</footer><!-- #colophon -->
 

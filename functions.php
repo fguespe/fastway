@@ -20,7 +20,7 @@ require get_template_directory() . '/inc/theme-settings.php';
 /**
  * Theme setup and custom theme supports.
  */
-require get_template_directory() . '/inc/setup.php';
+//require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/functions.php';
 
 /**
@@ -36,7 +36,7 @@ require get_template_directory() . '/inc/enqueue.php';
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+//require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom template tags for this theme.
@@ -46,18 +46,23 @@ require get_template_directory() . '/inc/pagination.php';
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+//require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 
 /**
  * Static Block.
  */
 require get_template_directory() . '/inc/static-block/static-block.php';
+
+/**
+ * Load WooCommerce functions.
+ */
+require get_template_directory() . '/inc/woocommerce.php';
 
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
@@ -69,24 +74,20 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-co
 /**
  * Custom Comments file.
  */
-require get_template_directory() . '/inc/custom-comments.php';
+//require get_template_directory() . '/inc/custom-comments.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Load custom WordPress nav walker.
  */
-require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
+//require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
-/**
- * Load WooCommerce functions.
- */
-require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * Load Editor functions.
  */
-require get_template_directory() . '/inc/editor.php';
+//require get_template_directory() . '/inc/editor.php';
