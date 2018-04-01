@@ -29,11 +29,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 			<main class="site-main" id="main">
 
 			<?php 
-				$template_name = '\archive-product.php'; 
+				$template_name = '/archive-product.php'; 
 				$args = array(); 
 				$template_path = ''; 
-				$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '\woocommerce';
-
+				$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '/woocommerce';
 					if ( is_singular( 'product' ) ) {
 
 						woocommerce_content();

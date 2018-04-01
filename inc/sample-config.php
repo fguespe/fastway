@@ -335,6 +335,15 @@
             );
         }
     }
+    $loop_templates = array();
+    for( $i=1; $i<=3; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/woo_product{$i}.jpg" ) ) {
+            $loop_templates[$i] = array(
+                'alt' => $i,
+                'img' => $THEME_IMG_URI . "woo_product{$i}.jpg"
+            );
+        }
+    }
 
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'redux-framework-demo' ),
@@ -629,23 +638,18 @@ Redux::setSection( $opt_name, array(
         ),
 
         array(
-            'id'       => 'shop-product-style',
+            'id'       => 'shop-loop-product-style',
             'type'     => 'image_select',
             'title'    => esc_html__( 'Catalog item style', 'theshopier' ),
             'full_width'    => true,
-            'options'  => array(
-                '1' => array( 'title' => 'Default', 'alt' => 'Default', 'img' => $THEME_IMG_URI . "woo_product1.jpg" ),
-                '2' => array( 'title' => 'Outline button', 'alt' => 'Outline button', 'img' => $THEME_IMG_URI . "woo_product2.jpg" ),
-                '3' => array( 'title' => 'Square style', 'alt' => 'Style 3', 'img' => $THEME_IMG_URI . "woo_product3.jpg" ),
-                '4' => array( 'title' => 'Border style 1', 'alt' => 'Style 4', 'img' => $THEME_IMG_URI . "woo_product4.jpg" ),
-                '5' => array( 'title' => 'Border style 2', 'alt' => 'Style 5', 'img' => $THEME_IMG_URI . "woo_product5.jpg" ),
-            ),
+            'options'  => $loop_templates,
             'default'  => '1'
         ),
 
 
     ),
 ) );
+
 
 Redux::setSection( $opt_name, array(
     'title'      => esc_html__( 'Product page', 'theshopier' ),

@@ -51,7 +51,7 @@ require get_template_directory() . '/inc/pagination.php';
 /**
  * Customizer additions.
  */
-//require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php';
 
 
 /**
@@ -84,7 +84,7 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-co
 /**
  * Load custom WordPress nav walker.
  */
-//require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
+require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
 
 /**
