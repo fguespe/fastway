@@ -311,16 +311,24 @@
             'subtitle' => 'Main layout: wide or boxed',
             'desc'     => '',
             'options'  => array(
-                'wide' => array(
-                    'alt' => 'wide',
-                    'img' => $THEME_IMG_URI . 'layout-full.png'
+                'full' => array(
+                    'alt' => 'full_width',
+                    'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                 ),
-                'boxed' => array(
-                    'alt' => 'boxed',
-                    'img' => $THEME_IMG_URI . 'layout-boxed.png'
-                )
+                'left' => array(
+                    'alt' => 'left_sidebar',
+                    'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                ),
+                'right' => array(
+                    'alt' => 'right_sidebar',
+                    'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                ),
+                'both' => array(
+                    'alt' => 'all_sidebar',
+                    'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                ),
             ),
-            'default'  => 'wide'
+            'default'  => '1-0'
         ),
             
             
@@ -513,29 +521,7 @@
         
     ),
 ) );
-    Redux::setSection( $opt_name, array(
-        'icon'            => 'el el-list-alt',
-        'title'           => __( 'Customizer Only', 'redux-framework-demo' ),
-        'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'redux-framework-demo' ),
-        'customizer_only' => true,
-        'fields'          => array(
-            array(
-                'id'              => 'opt-customizer-only',
-                'type'            => 'select',
-                'title'           => __( 'Customizer Only Option', 'redux-framework-demo' ),
-                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'redux-framework-demo' ),
-                'desc'            => __( 'The field desc is NOT visible in customizer.', 'redux-framework-demo' ),
-                'customizer_only' => true,
-                //Must provide key => value pairs for select options
-                'options'         => array(
-                    '1' => 'Opt 1',
-                    '2' => 'Opt 2',
-                    '3' => 'Opt 3'
-                ),
-                'default'         => '2'
-            ),
-        )
-    ) );
+    
 
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
         $section = array(
@@ -576,24 +562,24 @@ Redux::setSection( $opt_name, array(
             'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'theshopier' ),
             'desc'     => '',
             'options'  => array(
-                '0-0' => array(
+                'full' => array(
                     'alt' => 'full_width',
                     'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                 ),
-                '1-0' => array(
+                'left' => array(
                     'alt' => 'left_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                 ),
-                '0-1' => array(
+                'right' => array(
                     'alt' => 'right_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                 ),
-                '1-1' => array(
+                'both' => array(
                     'alt' => 'all_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 ),
             ),
-            'default'  => '1-0'
+            'default'  => 'full'
         ),
         array(
             'id'       => 'shop-left-sidebar',

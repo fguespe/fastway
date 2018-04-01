@@ -9,8 +9,13 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 	return;
 }
 
+global $redux_demo;
+
 // when both sidebars turned on reduce col size to 3 from 4.
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+$sidebar_pos = $redux_demo['layout-main'];
+
+
+
 ?>
 
 <?php if ( 'both' === $sidebar_pos ) : ?>

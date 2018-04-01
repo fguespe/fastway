@@ -15,7 +15,7 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 /**
  * Initialize theme default settings
  */
-require get_template_directory() . '/inc/theme-settings.php';
+//require get_template_directory() . '/inc/theme-settings.php';
 
 /**
  * Theme setup and custom theme supports.
@@ -41,7 +41,7 @@ require get_template_directory() . '/inc/enqueue.php';
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/pagination.php';
+//require get_template_directory() . '/inc/pagination.php';
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -51,7 +51,7 @@ require get_template_directory() . '/inc/pagination.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 
 /**

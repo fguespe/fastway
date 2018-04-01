@@ -6,7 +6,14 @@
  */
 ?>
 
-<?php $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' ); ?>
+<?php 
+global $redux_demo;
+
+// when both sidebars turned on reduce col size to 3 from 4.
+$sidebar_pos = $redux_demo['layout-main'];
+$shop_pos = $redux_demo['shop-layout'];
+echo $shop_pos;
+?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 

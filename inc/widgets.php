@@ -50,8 +50,27 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 	 */
 	function understrap_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Top Header', 'understrap' ),
+			'name'          => __( 'Main Right Sidebar', 'understrap' ),
+			'id'            => 'right-sidebar',
+			'description'   => 'Right sidebar widget area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Main Left Sidebar', 'understrap' ),
 			'id'            => 'left-sidebar',
+			'description'   => 'Left sidebar widget area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Top Header', 'understrap' ),
+			'id'            => 'top-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
