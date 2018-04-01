@@ -13,7 +13,12 @@ global $redux_demo;
 
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = $redux_demo['layout-main'];
-
+if(is_shop())$sidebar_pos = $redux_demo['shop-layout'];
+$sidebarname='left-sidebar';
+if(is_shop()){
+	$sidebar_pos = $redux_demo['shop-layout'];
+	$sidebarname='s-'.$sidebarname;
+}
 
 
 ?>
@@ -23,6 +28,6 @@ $sidebar_pos = $redux_demo['layout-main'];
 	<?php else : ?>
 <div class="col-md-4 widget-area" id="left-sidebar" role="complementary">
 	<?php endif; ?>
-<?php dynamic_sidebar( 'left-sidebar' ); ?>
+<?php dynamic_sidebar( $sidebarname ); ?>
 
 </div><!-- #secondary -->

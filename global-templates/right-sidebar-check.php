@@ -11,8 +11,8 @@ global $redux_demo;
 
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = $redux_demo['layout-main'];
-$shop_pos = $redux_demo['shop-layout'];
-echo $shop_pos;
+if(is_shop())$sidebar_pos = $redux_demo['shop-layout'];
+
 ?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
