@@ -1,4 +1,9 @@
-<?php
+<style type="text/css">
+    .add-to-cart-container{
+        display: none;
+    }
+</style><div class='d-none d-md-block'>
+    <?php
     /**
      * woocommerce_before_shop_loop_item hook.
      *

@@ -2,7 +2,7 @@
     .add-to-cart-container{
         display: none;
     }
-</style><div class='hideondesktop'>
+</style><div class='d-md-none'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.

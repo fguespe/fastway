@@ -20,49 +20,28 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 /**
  * Theme setup and custom theme supports.
  */
-//require get_template_directory() . '/inc/setup.php';
+#require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/functions.php';
-
-/**
- * Register widget area.
- */
 require get_template_directory() . '/inc/widgets.php';
-
-/**
- * Enqueue scripts and styles.
- */
 require get_template_directory() . '/inc/enqueue.php';
-
-/**
- * Custom template tags for this theme.
- */
-//require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom template tags for this theme.
- */
-//require get_template_directory() . '/inc/pagination.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-//require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
-
-
-/**
- * Static Block.
- */
 require get_template_directory() . '/inc/static-block/static-block.php';
 
 /**
  * Load WooCommerce functions.
  */
 require get_template_directory() . '/inc/woocommerce.php';
+
+
+
+
+load_theme_textdomain( 'understrap', get_template_directory() . '/languages' );
+register_nav_menus( array(
+	'primary' => __( 'Primary Menu', 'understrap' ),
+	'vertical' => __( 'Vertical Menu', 'understrap' ),
+	'mobile' => __( 'Mobile Menu', 'understrap' ),
+) );
+
+
 
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {

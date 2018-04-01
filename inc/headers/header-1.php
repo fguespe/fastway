@@ -16,11 +16,18 @@ $classes=$container." ".$sticky;
 ?>
 <div class="<?php echo esc_attr( $classes ); ?> navbar flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow d-none d-md-flex ">
       <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-      </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+      <nav class="navbar navbar-expand-md">
+      	<?php wp_nav_menu(
+		array(
+					'theme_location'  => 'primary',
+					'container_class' => 'navbar-collapse',
+					'container_id'    => '',
+					'menu_class'      => 'navbar-nav',
+					'fallback_cb'     => '',
+					'menu_id'         => 'main-menu',
+					'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+				)
+		); 
+		?>
+	</nav>
 </div>

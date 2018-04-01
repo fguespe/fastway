@@ -4,9 +4,8 @@
 /*CUADRADITO*/ 
     font-size: 14px;
     border: 1px solid #ccc;
- 
     text-align: left;
-padding-bottom:40px;
+    padding-bottom:40px;
     background: white !important;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50) !important;
     transition: box-shadow .1s;
@@ -25,23 +24,23 @@ padding-bottom:40px;
 
 
 .precio{
-float:left;
-width:50% !important;
+    float:left; 
+    width:50% !important;
 }
 .boton_comprar{
-float:right;
-width:50% !important;
+    float:right;
+    width:50% !important;
 }
 .metas{
-display:block !important;
+    display:block !important;
 }
 .catalogo-loop .boton_comprar{
 /*BOTON COMPRAR*/
     text-align: left;
-   margin: 0 auto;
+    margin: 0 auto;
     margin-top: 5px;
     border-radius: 20px !important;
-text-align:right !important;
+    text-align:right !important;
 }
 
 .catalogo-loop .boton_comprar a{
@@ -123,7 +122,7 @@ background-color: #4377B1;
 global $product;
 
 ?>
-<div class="catalogo-loop">
+<div class="catalogo-loop d-none d-md-block">
         <a href="<?php echo get_the_permalink();?>">
         <div class="thumbnail">
             <?php echo woocommerce_get_product_thumbnail(); ?>
