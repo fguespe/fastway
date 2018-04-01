@@ -1,4 +1,13 @@
-
+@media (max-width: 768px) {
+	.hideonmobile{
+		display:none;
+	}
+}
+@media only screen and (min-width: 769px) {
+	.hideondesktop{
+		display:none !important;
+	}
+}
 
 /* Small devices (landscape phones, 576px and up)*/
 

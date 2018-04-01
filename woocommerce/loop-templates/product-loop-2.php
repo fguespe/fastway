@@ -135,7 +135,7 @@
 <?php
 global $product;
 ?>
-<div class="nscproduct">
+<div class="nscproduct hideonmobile">
         <a href="<?php echo get_the_permalink();?>">
         <div class="nscproduct_thumbnail">
             <?php

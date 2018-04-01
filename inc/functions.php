@@ -5,6 +5,7 @@ add_action( 'fastway_header_init', 'fastway_header_body', 20 );
 add_action( 'fastway_header_init_mobile', 'fastway_header_tablet', 20 );
 
 
+
 if( !function_exists('fastway_header_body') ){
     function fastway_header_body( $style = 1 ){
         global $THEME_DIR;
@@ -22,8 +23,6 @@ if( !function_exists('fastway_header_tablet') ) {
 }
 
 add_action( 'fastway_product_loop_init', 'fastway_product_loop', 20 );
-
-//add_action( 'theshopier_header_init', 'theshopier_header_tablet', 20 );
 if( !function_exists('fastway_product_loop') ){
     function fastway_product_loop( $style = 1 ){
         global $THEME_DIR;
@@ -31,6 +30,17 @@ if( !function_exists('fastway_product_loop') ){
         get_template_part('woocommerce/loop-templates/product-loop', $style);
     }
 }
+add_action( 'fastway_product_loop_init_mobile', 'fastway_product_loop_mobile', 20 );
+if( !function_exists('fastway_product_loop_mobile') ){
+    function fastway_product_loop_mobile( $style = 1 ){
+        global $THEME_DIR;
+        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'woocommerce/loop-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
+        get_template_part('woocommerce/loop-templates/product-loop-mobile', $style);
+    }
+}
+
+
+
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 function new_loop_shop_per_page( $cols ) {

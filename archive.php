@@ -11,7 +11,8 @@ get_header();
 ?>
 
 <?php
-$container   = get_theme_mod( 'understrap_container_type' );
+global $redux_demo;
+$container   = $redux_demo['container-main'];
 ?>
 
 <div class="wrapper" id="archive-wrapper">

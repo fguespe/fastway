@@ -305,10 +305,28 @@
                 //)
             ),
             array(
-            'id'       => 'layout-main',
+            'id'       => 'container-main',
             'type'     => 'image_select',
             'title'    => 'Main Layout',
             'subtitle' => 'Main layout: wide or boxed',
+            'desc'     => '',
+            'options'  => array(
+                'container-fluid' => array(
+                    'alt' => 'wide',
+                    'img' => $THEME_IMG_URI . 'layout-full.png'
+                ),
+                'container' => array(
+                    'alt' => 'boxed',
+                    'img' => $THEME_IMG_URI . 'layout-boxed.png'
+                )
+            ),
+            'default'  => 'wide'
+            ),
+            array(
+            'id'       => 'layout-main',
+            'type'     => 'image_select',
+            'title'    => 'Sidebars Layout',
+            'subtitle' => '',
             'desc'     => '',
             'options'  => array(
                 'full' => array(
@@ -328,7 +346,9 @@
                     'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 ),
             ),
-            'default'  => '1-0'
+            'default'  => '1-0',
+             
+
         ),
             
             
@@ -361,19 +381,21 @@
             );
         }
     }
+    $loop_templates_mobile = array();
+    for( $i=1; $i<=3; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/woo_product_mobile{$i}.jpg" ) ) {
+            $loop_templates_mobile[$i] = array(
+                'alt' => $i,
+                'img' => $THEME_IMG_URI . "woo_product_mobile{$i}.jpg"
+            );
+        }
+    }
 
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'redux-framework-demo' ),
         'id'               => 'header',
         'customizer_width' => '450px',
         'fields'           => array(
-            array(
-            'id'       => 'header-style',
-            'type'     => 'image_select',
-            'title'    => 'Header style',
-            'options'  => $theme_headers,
-            'default'  => '1',
-            ),
             array(
             'id'       => 'sticky-menu',
             'type'     => 'switch',
@@ -382,6 +404,24 @@
             'on'       => 'Enabled',
             'off'      => 'Disabled',
             ),
+            array(
+            'id'       => 'header-width',
+            'type'     => 'button_set',
+            'title'    => 'Footer width',
+            'options'  => array(
+                'container'                 => 'Container',
+                'container-fluid'  => 'Big Container'
+            ),
+            'default'  => 'container'
+            ),
+            array(
+            'id'       => 'header-style',
+            'type'     => 'image_select',
+            'title'    => 'Header style',
+            'options'  => $theme_headers,
+            'default'  => '1',
+            ),
+            
 
         )
     ) );
@@ -399,6 +439,14 @@
             'options'  => $theme_headers_mobile,
             'default'  => '1',
             ),
+             array(
+            'id'       => 'shop-loop-mobile-product-style',
+            'type'     => 'image_select',
+            'title'    => esc_html__( 'Catalog Mobile Item style', 'theshopier' ),
+            'full_width'    => true,
+            'options'  => $loop_templates_mobile,
+            'default'  => '1'
+        ),
 
         )
     ) );
@@ -419,7 +467,7 @@
             'title'    => 'Footer width',
             'options'  => array(
                 'container'                 => 'Container',
-                'container container-1790'  => 'Big Container'
+                'container-fluid'  => 'Big Container'
             ),
             'default'  => 'container'
         ),

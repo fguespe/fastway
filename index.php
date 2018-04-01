@@ -13,7 +13,8 @@
 
 get_header();
 
-$container   = get_theme_mod( 'understrap_container_type' );
+global $redux_demo;
+$container   = $redux_demo['container-main'];
 ?>
 
 

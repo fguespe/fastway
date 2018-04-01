@@ -21,7 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // load container setting
-$container = get_theme_mod( 'understrap_container_type' );
+global $redux_demo;
+$container   = $redux_demo['container-main'];
 
 // if we use container-fluid add some margin
 if ( 'container-fluid' === $container ) {

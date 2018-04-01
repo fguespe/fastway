@@ -7,7 +7,7 @@
  * @package understrap
  */
 global $redux_demo;
-$container = get_theme_mod( 'understrap_container_type' );
+$container   = $redux_demo['container-main'];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

@@ -8,8 +8,9 @@
  */
 
 $the_theme = wp_get_theme();
-$container = get_theme_mod( 'understrap_container_type' );
 global $redux_demo;
+$container   = $redux_demo['footer-width'];
+
 ?>
 <div class="wrapper" id="wrapper-footer">
 
