@@ -123,3 +123,4 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 } // endif function_exists( 'understrap_widgets_init' ).
 add_action( 'widgets_init', 'understrap_widgets_init' );
 
+

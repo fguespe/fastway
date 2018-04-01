@@ -28,3 +28,4 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
+<?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>

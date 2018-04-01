@@ -57,6 +57,8 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 	</div><!-- .row -->
+	<!-- .footer block -->
+	<?php if(is_product() && is_numeric($redux_demo['product-page-footer-block']))echo do_shortcode('[static_block_content id="'.$redux_demo['product-page-footer-block'].'"]'); ?>
 
 </div><!-- Container end -->
 

@@ -343,6 +343,15 @@
             );
         }
     }
+    $theme_headers_mobile = array();
+    for( $i=1; $i<=2; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/theme-option-header{$i}.jpg" ) ) {
+            $theme_headers_mobile[$i] = array(
+                'alt' => $i,
+                'img' => $THEME_IMG_URI . "theme-option-header{$i}.jpg"
+            );
+        }
+    }
     $loop_templates = array();
     for( $i=1; $i<=3; $i++ ) {
         if( file_exists( $THEME_DIR . "images/woo_product{$i}.jpg" ) ) {
@@ -372,6 +381,23 @@
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
+            ),
+
+        )
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Mobile', 'redux-framework-demo' ),
+        'id'               => 'mobile',
+        'icon'          => 'el el-phone',
+        'customizer_width' => '450px',
+        'fields'           => array(
+            array(
+            'id'       => 'header-mobile-style',
+            'type'     => 'image_select',
+            'title'    => 'Mobile Header Style',
+            'options'  => $theme_headers_mobile,
+            'default'  => '1',
             ),
 
         )
@@ -651,24 +677,24 @@ Redux::setSection( $opt_name, array(
             'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'theshopier' ),
             'desc'     => '',
             'options'  => array(
-                '0-0' => array(
+                'full' => array(
                     'alt' => 'full_width',
                     'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                 ),
-                '1-0' => array(
+                'left' => array(
                     'alt' => 'left_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                 ),
-                '0-1' => array(
+                'right' => array(
                     'alt' => 'right_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                 ),
-                '1-1' => array(
+                'both' => array(
                     'alt' => 'all_sidebar',
                     'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 ),
             ),
-            'default'  => '0-1'
+            'default'  => 'full'
         ),
         array(
             'id'       => 'product-page-left-sidebar',

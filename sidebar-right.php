@@ -13,10 +13,14 @@ global $redux_demo;
 
 $sidebar_pos = $redux_demo['layout-main'];
 $sidebarname='right-sidebar';
-if(is_shop()){
+if(is_shop() || is_product_category()){
 	$sidebar_pos = $redux_demo['shop-layout'];
 	$sidebarname='s-'.$sidebarname;
+}else if(is_product()){
+	$sidebar_pos = $redux_demo['product-page-layout'];
+	$sidebarname='sp-'.$sidebarname;
 }
+
 
 ?>
 

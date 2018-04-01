@@ -2,8 +2,9 @@
 
 
 add_action( 'fastway_header_init', 'fastway_header_body', 20 );
+add_action( 'fastway_header_init_mobile', 'fastway_header_tablet', 20 );
 
-//add_action( 'theshopier_header_init', 'theshopier_header_tablet', 20 );
+
 if( !function_exists('fastway_header_body') ){
     function fastway_header_body( $style = 1 ){
         global $THEME_DIR;
@@ -11,6 +12,15 @@ if( !function_exists('fastway_header_body') ){
         get_template_part('inc/headers/header', $style);
     }
 }
+
+if( !function_exists('fastway_header_tablet') ) {
+    function fastway_header_tablet( $style = 1 ){
+        global $THEME_DIR;
+        if( file_exists($THEME_DIR . 'inc/headers/header-tablet-'.$style.'.php') )
+            get_template_part('inc/headers/header-tablet', $style);
+    }
+}
+
 add_action( 'fastway_product_loop_init', 'fastway_product_loop', 20 );
 
 //add_action( 'theshopier_header_init', 'theshopier_header_tablet', 20 );

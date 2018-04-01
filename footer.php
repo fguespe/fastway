@@ -11,7 +11,6 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 global $redux_demo;
 ?>
-
 <div class="wrapper" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
