@@ -35,7 +35,7 @@
 		display: none;
 	}
 	.header-desktop{
-		display: flex !important;
+		display: block ;
 	}
 }
 
@@ -45,6 +45,6 @@
 		display: none;
 	}
 	.header-desktop{
-		display: flex !important;
+		display: block ;
 	}
 }

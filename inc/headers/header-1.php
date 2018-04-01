@@ -8,9 +8,8 @@
 
 
 global $redux_demo;
-$container   = $redux_demo['header-width'];
 ?>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow header-desktop <?php echo esc_attr( $container ); ?>">
+<div class="navbar flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow <?php echo esc_attr( $container ); ?> d-none d-md-flex sticky-top">
       <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="#">Features</a>

@@ -1,6 +1,45 @@
 <?php
 
 
+
+
+
+
+if( !function_exists('theshopier_getLogo') ) {
+    function theshopier_getLogo( $type="" ){
+        global $theshopier_datas;
+        switch( $type ) {
+            case 'sticky':
+                break;
+            default:
+                $title = !empty($theshopier_datas['logo-text'])? esc_attr($theshopier_datas['logo-text']): get_bloginfo('name');
+                $logo_arg = array(
+                    'title' => esc_attr($title),
+                    'alt'   => esc_attr($title)
+                );
+
+                if( isset( $theshopier_datas['nth-logo'] ) && strlen(trim($theshopier_datas['nth-logo']['url'])) > 0 ){
+                    $logo_arg['src'] = esc_url( $theshopier_datas['nth-logo']['url'] );
+                    $logo_arg['width'] = absint($theshopier_datas['nth-logo']['width']);
+                    $logo_arg['height'] = absint($theshopier_datas['nth-logo']['height']);
+                } else {
+                    $logo_arg['src'] = esc_url( THEME_IMG_URI . "logo.png" );
+                    $logo_arg['width'] = 530;
+                    $logo_arg['height'] = 104;
+                }
+
+                echo '<div class="logo">';
+                echo '<a href="'.esc_attr(home_url()).'">';
+                theshopier_getImage($logo_arg);
+                echo '</a>';
+                echo '</div>';
+        }
+    }
+}
+
+
+
+
 add_action( 'fastway_header_init', 'fastway_header_body', 20 );
 add_action( 'fastway_header_init_mobile', 'fastway_header_tablet', 20 );
 

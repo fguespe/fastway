@@ -27,6 +27,7 @@ global $redux_demo;
   .offcanvas-collapse.open {
     -webkit-transform: translateX(-1rem);
     transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+    position: sticky;
   }
 }
 </style>
@@ -39,13 +40,13 @@ global $redux_demo;
 })
 
 </script>
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark header-tablet">
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark header-tablet d-md-none">
       <a class="navbar-brand" href="#">Offcanvas navbar</a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <div class="navbar-collapse offcanvas-collapse " id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>

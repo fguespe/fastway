@@ -9,7 +9,7 @@
 
 global $redux_demo;
 ?>
-<nav class="navbar navbar-dark bg-dark header-tablet">
+<nav class="navbar navbar-dark bg-dark d-md-none">
       <a class="navbar-brand" href="#">Never expand</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
