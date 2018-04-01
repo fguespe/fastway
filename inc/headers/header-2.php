@@ -10,8 +10,11 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $logo = $redux_demo['general-logo'];
+$sticky="";
+if($redux_demo['sticky-menu'])$sticky="sticky-top";
+$classes=$container." ".$sticky;
 ?>
-<div class="<?php echo esc_attr( $container ); ?> d-none d-md-block">
+<div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
 <header class="blog-header py-3 ">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
@@ -46,6 +49,9 @@ $logo = $redux_demo['general-logo'];
 </div>
 </div>
 <style type="text/css">
+header{
+  background: white;
+}
   
 .blog-header {
   line-height: 1;
