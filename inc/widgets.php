@@ -70,7 +70,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Top Header', 'understrap' ),
-			'id'            => 'top-sidebar',
+			'id'            => 'header-top-widget-area',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',

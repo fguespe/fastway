@@ -4,13 +4,26 @@
  *
  * @package understrap
  */
+if ( !function_exists( 'write_log' ) ){
+function write_log ( $log )  {
+    if ( true === WP_DEBUG ) {
+        $logg="GUESPES: ";
+        if ( is_array( $log ) || is_object( $log ) ) {
+            error_log( $logg.print_r( $log, true ) );
+        } else {
+            error_log( $logg.$log );
+        }
+    }
+}   
+}
+
 $THEME_DIR= get_template_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
 $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
 
-
+	
 
 /**
  * Initialize theme default settings
@@ -24,7 +37,7 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 require get_template_directory() . '/inc/functions.php';
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/enqueue.php';
-require get_template_directory() . '/inc/static-block/static-block.php';
+require get_template_directory() . '/inc/class-staticblocks.php';
 
 /**
  * Load WooCommerce functions.
@@ -64,6 +77,8 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-co
  * Load custom WordPress nav walker.
  */
 require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
+
+
 
 
 /**

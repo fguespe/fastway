@@ -10,34 +10,12 @@
 $the_theme = wp_get_theme();
 global $redux_demo;
 $container   = $redux_demo['footer-width'];
-
 ?>
-<div class="wrapper" id="wrapper-footer">
-
+<footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
-
-		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-						<?php echo do_shortcode('[static_block_content id="'.$redux_demo['footer-stblock'].'"]'); 
-						?>
-				
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
-</div><!-- wrapper end -->
-
-</div><!-- #page we need this extra closing tag here -->
-
+		<?php do_action( 'theshopier_footer_init' ); ?>
+	</div>
+</footer>
 <?php wp_footer(); ?>
 
 </body>

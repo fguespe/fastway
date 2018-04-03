@@ -405,11 +405,19 @@
             'off'      => 'Disabled',
             ),
             array(
+            'id'       => 'top-header',
+            'type'     => 'switch',
+            'title'    => 'Top Header',
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            ),
+            array(
             'id'       => 'header-width',
             'type'     => 'button_set',
-            'title'    => 'Footer width',
+            'title'    => 'Header width',
             'options'  => array(
-                'container'                 => 'Container',
+                'container' => 'Container',
                 'container-fluid'  => 'Big Container'
             ),
             'default'  => 'container'
@@ -453,7 +461,7 @@
     
     
 
-    $static_block_args = get_blocks();
+    $static_block_args = theshopier_get_stblock();
 
     Redux::setSection( $opt_name, array(
     'title'         => 'Footer',
@@ -466,7 +474,7 @@
             'type'     => 'button_set',
             'title'    => 'Footer width',
             'options'  => array(
-                'container'                 => 'Container',
+                'container' => 'Container',
                 'container-fluid'  => 'Big Container'
             ),
             'default'  => 'container'
@@ -493,14 +501,14 @@
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Top Header', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
-                'default'  => '#000000',
+                'default'  => '#ffffff',
             ),
         array(
                 'id'       => 'opt-color-middheader',
                 'type'     => 'color',
                 'title'    => __( 'Middle Header', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
-                'default'  => '#dd9933',
+                'default'  => '#ffffff',
                 'validate' => 'color',
         ),
         array(
@@ -509,7 +517,7 @@
                 'type'     => 'color',
                 'title'    => __( 'Bottom Header', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
-                'default'  => '#dd9933',
+                'default'  => '#ffffff',
                 'validate' => 'color',
         ),
         array(
@@ -517,7 +525,15 @@
                 'type'     => 'color',
                 'title'    => __( 'Body', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
-                'default'  => '#dd9933',
+                'default'  => '#ffffff',
+                'validate' => 'color',
+        ),
+        array(
+                'id'       => 'opt-color-footer',
+                'type'     => 'color',
+                'title'    => __( 'Footer', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
+                'default'  => '#ffffff',
                 'validate' => 'color',
         ),
       

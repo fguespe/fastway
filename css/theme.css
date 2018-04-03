@@ -1,0 +1,42 @@
+/*FIX VISUAl*/
+.vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill>.vc_column_container>.vc_column-inner{
+padding-top:0px !important;
+}
+
+body .wpb_row, body .wpb_content_element{
+    margin-bottom:0px !important;
+}
+
+/*FOOTER BrizioLabz*/
+#footer_firma{
+	padding-top:5px ;
+	padding-bottom:5px;
+	padding-right:15px;
+	padding-left:15px;
+	background: #F9FAFA ;
+}
+#footer_firma{
+	border-top:1px solid lightgrey;
+}
+#footer_firma .izquierda{
+	display:inline-block ;
+	float:left;
+}
+#footer_firma .derecha{
+	float:right;
+	text-align:right;
+}
+
+#footer_firma .copyright{
+line-height:30px;
+}
+@media (max-width: 700px) {
+	#footer_firma .copyright{
+		display: none ;
+	}
+}
+#footer_firma .logofirma{
+	height:30px;
+}
+/*FIN*/
+
