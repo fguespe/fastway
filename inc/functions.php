@@ -26,7 +26,7 @@ if( !function_exists('fastway_getLogo') ) {
                     $logo_arg['width'] = absint($redux_demo['general-logo']['width']);
                     $logo_arg['height'] = absint($redux_demo['general-logo']['height']);
                 } else {
-                    $logo_arg['src'] = esc_url( THEME_IMG_URI . "logo.png" );
+                    $logo_arg['src'] = esc_url( $THEME_IMG_URI . "logo.png" );
                     $logo_arg['width'] = 530;
                     $logo_arg['height'] = 104;
                 }
@@ -131,7 +131,7 @@ function fastway_get_stblock( $cats = array('all') ){
     $meta_query = array();
     
     $args = array(
-        'post_type'         => 'fw_stblock',
+        'post_type'         => 'nth_stblock',
         'post_status'       => 'publish',
         'posts_per_page'    => -1,
         'orderby'           => 'title',

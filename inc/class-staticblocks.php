@@ -5,14 +5,14 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 	class Nexthemes_StaticBlock{
 
 		private $labels = array();
-		private static $post_type = 'fw_stblock';
+		private static $post_type = 'nth_stblock';
 		private $customCss;
 
 		public function __construct(){
 			$this->setLabel();
 			add_action('init', array($this,'register_postType') );
-			add_filter( 'manage_fw_stblock_posts_columns', array( $this, 'tableHeader' ) );
-			add_action( 'manage_fw_stblock_posts_custom_column', array( $this,'tableContent' ), 10, 2 );
+			add_filter( 'manage_nth_stblock_posts_columns', array( $this, 'tableHeader' ) );
+			add_action( 'manage_nth_stblock_posts_custom_column', array( $this,'tableContent' ), 10, 2 );
 		}
 
 		public function setLabel(){
@@ -47,7 +47,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 				'has_archive' => 'staticblocks',
 				'hierarchical' => false,
 				'menu_icon'			 => "dashicons-editor-quote",
-				'supports' => array( 'title', 'editor', 'page-attributes' )
+				'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
 			);
 			register_post_type( self::$post_type, $args );
 		}
@@ -59,7 +59,13 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 				'posts_per_page' => 50,
 				'orderby'	=> 'title',
 				'order'		=> 'ASC',
-
+				/*'meta_query' => array(
+					array(
+						'key'	=> 'theshopier_nth_stblock_options',
+						'value'	=> $cats,
+						'compare' => "IN"
+					),
+				),*/
 			);
 
 			$blocks = get_posts( $args );
@@ -92,12 +98,12 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 		public static function getSticBlockContent( $id = false, $return = false ){
 			if(!$id) return;
 			$output = false;
-			$output = wp_cache_get( $id, 'fw_get_staticBlock' );
+			$output = wp_cache_get( $id, 'nth_get_staticBlock' );
 
 			if( !$output ) {
 				if(is_numeric($id))
-					$blocks = get_posts( array( 'include' => $id,'post_type' => 'fw_stblock', 'posts_per_page' => 1) );
-				else $blocks = get_posts( array( 'name' => $id,'post_type' => 'fw_stblock', 'posts_per_page' => 1) );
+					$blocks = get_posts( array( 'include' => $id,'post_type' => 'nth_stblock', 'posts_per_page' => 1) );
+				else $blocks = get_posts( array( 'name' => $id,'post_type' => 'nth_stblock', 'posts_per_page' => 1) );
 				$output = '';
 				$customCss = '';
 				ob_start();
@@ -117,7 +123,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 				$output = ob_get_clean();
 				wp_reset_postdata();
-				wp_cache_add( $id, $output, 'fw_get_staticBlock' );
+				wp_cache_add( $id, $output, 'nth_get_staticBlock' );
 			}
 
 			if( $return ) return $output; else echo $output;
@@ -133,7 +139,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 		public function tableContent( $column_name, $post_id ){
 			if( strcmp( trim( $column_name ), 'position' ) == 0 ) {
-				$data = get_post_meta($post_id, 'fastway',true);
+				$data = get_post_meta($post_id, 'theshopier_nth_stblock_options',true);
 				if( isset( $data ) && strlen( $data ) > 0 ) {
 					switch( $data ) {
 						case 'menu':
@@ -145,7 +151,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 						default:
 							$text = __( "Standard", 'nexthemes-plugin' );
 					}
-					printf( '<span class="fw-label %1$s">%2$s</span>', esc_attr($data), $text );
+					printf( '<span class="nth-label %1$s">%2$s</span>', esc_attr($data), $text );
 				}
 			}
 		}

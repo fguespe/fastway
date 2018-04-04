@@ -25,9 +25,14 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 
 
 require get_template_directory() . '/inc/functions.php';
-require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
+
+//WIDGETS
+require get_template_directory() . '/inc/widgets/widgets.php';
+require get_template_directory() . '/inc/widgets/class.abstract-widgets.php';
+require get_template_directory() . '/inc/widgets/class.staticblock.php';
+
 require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
