@@ -63,7 +63,7 @@ do_action( 'theshopier_breadcrumb', $datas );
 
 	</div><!-- .row -->
 	<!-- .footer block -->
-	<?php if(is_product() && is_numeric($redux_demo['product-page-footer-block']))echo do_shortcode('[static_block_content id="'.$redux_demo['product-page-footer-block'].'"]'); ?>
+	<?php do_action( 'fastway_singleblock_init' ); ?>
 
 </div><!-- Container end -->
 

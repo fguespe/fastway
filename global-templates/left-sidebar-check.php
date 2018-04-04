@@ -27,7 +27,7 @@ else if(is_product())$sidebar_pos = $redux_demo['product-page-layout'];
 	if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {
 		$html = '<div class="';
 		if ( is_active_sidebar( 'right-sidebar' ) || is_active_sidebar( 'left-sidebar' ) ) {
-			$html .= 'col-md-8 content-area" id="primary">';
+			$html .= 'col-md-9 content-area" id="primary">';
 		} else {
 			$html .= 'col-md-12 content-area" id="primary">';
 		}
