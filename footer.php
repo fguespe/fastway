@@ -13,7 +13,7 @@ $container   = $redux_demo['footer-width'];
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
-		<?php do_action( 'theshopier_footer_init' ); ?>
+		<?php do_action( 'fastway_footer_init' ); ?>
 	</div>
 </footer>
 <?php wp_footer(); ?>

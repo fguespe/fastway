@@ -1,12 +1,4 @@
 <?php
-/**
- * Package: TheShopier.
- * User: kinhdon
- * Date: 10/31/2015
- * Vertion: 1.0
- */
-
-
 global $redux_demo;
 ?>
 <nav class="navbar navbar-dark bg-dark d-md-none">

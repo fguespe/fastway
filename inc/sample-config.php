@@ -450,7 +450,7 @@
              array(
             'id'       => 'shop-loop-mobile-product-style',
             'type'     => 'image_select',
-            'title'    => esc_html__( 'Catalog Mobile Item style', 'theshopier' ),
+            'title'    => esc_html__( 'Catalog Mobile Item style', 'fastway' ),
             'full_width'    => true,
             'options'  => $loop_templates_mobile,
             'default'  => '1'
@@ -461,7 +461,7 @@
     
     
 
-    $static_block_args = theshopier_get_stblock();
+    $static_block_args = fastway_get_stblock();
 
     Redux::setSection( $opt_name, array(
     'title'         => 'Footer',
@@ -633,14 +633,14 @@
 
 
 Redux::setSection( $opt_name, array(
-    'title' => esc_html__( 'Woocommerce', 'theshopier' ),
+    'title' => esc_html__( 'Woocommerce', 'fastway' ),
     'id'    => 'woocommerce',
     'desc'  => '',
     'icon'  => 'el el-shopping-cart'
 ) );
 
 Redux::setSection( $opt_name, array(
-    'title'      => esc_html__( 'Shop page', 'theshopier' ),
+    'title'      => esc_html__( 'Shop page', 'fastway' ),
     'id'         => 'woo-shop-page',
     'subsection' => true,
     'icon'  => 'el el-folder-close',
@@ -648,8 +648,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',
-            'title'    => esc_html__( 'Shop Layout', 'theshopier' ),
-            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'theshopier' ),
+            'title'    => esc_html__( 'Shop Layout', 'fastway' ),
+            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'fastway' ),
             'desc'     => '',
             'options'  => array(
                 'full' => array(
@@ -690,8 +690,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'      => 'shop_per_page',
             'type'    => 'spinner',
-            'title'   => esc_html__( 'Product Per Page', 'theshopier' ),
-            'desc'    => esc_html__( 'Min: 4, max: 100, step:1, default: 12', 'theshopier' ),
+            'title'   => esc_html__( 'Product Per Page', 'fastway' ),
+            'desc'    => esc_html__( 'Min: 4, max: 100, step:1, default: 12', 'fastway' ),
             'default' => '12',
             'min'     => '4',
             'step'    => '1',
@@ -700,8 +700,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'      => 'shop_columns',
             'type'    => 'spinner',
-            'title'   => esc_html__( 'Shop Product Columns', 'theshopier' ),
-            'desc'    => esc_html__( 'Min: 2, max: 12, step:1, default value: 3', 'theshopier' ),
+            'title'   => esc_html__( 'Shop Product Columns', 'fastway' ),
+            'desc'    => esc_html__( 'Min: 2, max: 12, step:1, default value: 3', 'fastway' ),
             'default' => '3',
             'min'     => '2',
             'step'    => '1',
@@ -716,7 +716,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'shop-loop-product-style',
             'type'     => 'image_select',
-            'title'    => esc_html__( 'Catalog item style', 'theshopier' ),
+            'title'    => esc_html__( 'Catalog item style', 'fastway' ),
             'full_width'    => true,
             'options'  => $loop_templates,
             'default'  => '1'
@@ -728,7 +728,7 @@ Redux::setSection( $opt_name, array(
 
 
 Redux::setSection( $opt_name, array(
-    'title'      => esc_html__( 'Product page', 'theshopier' ),
+    'title'      => esc_html__( 'Product page', 'fastway' ),
     'id'         => 'woo-product-page',
     'desc'       => '',
     'icon'      => 'el el-file',
@@ -737,8 +737,8 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'product-page-layout',
             'type'     => 'image_select',
-            'title'    => esc_html__( 'Product Page Layout', 'theshopier' ),
-            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'theshopier' ),
+            'title'    => esc_html__( 'Product Page Layout', 'fastway' ),
+            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'fastway' ),
             'desc'     => '',
             'options'  => array(
                 'full' => array(

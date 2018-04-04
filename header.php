@@ -28,8 +28,11 @@ $hastop   = $redux_demo['top-header'];
     .fw_header_bottom{background:<?php echo $redux_demo['opt-color-bottheader']; ?>;}
     body{background:<?php echo $redux_demo['opt-color-bodycolor']; ?>;}
     footer{background:<?php echo $redux_demo['opt-color-footer']; ?>;}
-
-    
+    <?php echo $redux_demo['css_editor-header']; ?>
+    <?php echo $redux_demo['css_editor-body']; ?>
+    <?php echo $redux_demo['css_editor-footer']; ?>
+    <?php echo $redux_demo['css_editor-loop']; ?>
+    <?php echo $redux_demo['css_editor-single']; ?>
     ?>
 
     </style>
@@ -49,7 +52,7 @@ $hastop   = $redux_demo['top-header'];
                     <?php dynamic_sidebar( $sidebar_name ); ?>
                 </ul>
             <?php else:
-                esc_html_e( "Please add some widgets here!", 'theshopier' );
+                esc_html_e( "Please add some widgets here!", 'fastway' );
             endif;?>
         </div>
     </div>

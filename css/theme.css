@@ -1,10 +1,13 @@
 /*FIX VISUAl*/
 .vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill>.vc_column_container>.vc_column-inner{
-padding-top:0px !important;
+padding-top:0px ;
 }
 
 body .wpb_row, body .wpb_content_element{
-    margin-bottom:0px !important;
+    margin-bottom:0px ;
+}
+.entry-footer{
+	display: none ;
 }
 
 /*FOOTER BrizioLabz*/

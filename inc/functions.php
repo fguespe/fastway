@@ -1,14 +1,15 @@
 <?php
-add_action( 'theshopier_footer_init', 'theshopier_footer_1', 10 );
+add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 
-function theshopier_footer_1(){
+function fastway_footer_block(){
     global $redux_demo;
-    if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( 103 );
+    if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
 }
 
 
-if( !function_exists('theshopier_getLogo') ) {
-    function theshopier_getLogo( $type="" ){
+
+if( !function_exists('fastway_getLogo') ) {
+    function fastway_getLogo( $type="" ){
         global $redux_demo;
         switch( $type ) {
             case 'sticky':
@@ -20,10 +21,10 @@ if( !function_exists('theshopier_getLogo') ) {
                     'alt'   => esc_attr($title)
                 );
 
-                if( isset( $redux_demo['nth-logo'] ) && strlen(trim($redux_demo['nth-logo']['url'])) > 0 ){
-                    $logo_arg['src'] = esc_url( $redux_demo['nth-logo']['url'] );
-                    $logo_arg['width'] = absint($redux_demo['nth-logo']['width']);
-                    $logo_arg['height'] = absint($redux_demo['nth-logo']['height']);
+                if( isset( $redux_demo['general-logo'] ) && strlen(trim($redux_demo['general-logo']['url'])) > 0 ){
+                    $logo_arg['src'] = esc_url( $redux_demo['general-logo']['url'] );
+                    $logo_arg['width'] = absint($redux_demo['general-logo']['width']);
+                    $logo_arg['height'] = absint($redux_demo['general-logo']['height']);
                 } else {
                     $logo_arg['src'] = esc_url( THEME_IMG_URI . "logo.png" );
                     $logo_arg['width'] = 530;
@@ -32,9 +33,35 @@ if( !function_exists('theshopier_getLogo') ) {
 
                 echo '<div class="logo">';
                 echo '<a href="'.esc_attr(home_url()).'">';
-                theshopier_getImage($logo_arg);
+                fastway_getImage($logo_arg);
                 echo '</a>';
                 echo '</div>';
+        }
+    }
+}
+
+if(!function_exists('fastway_getImage')) {
+    function fastway_getImage($atts){
+        $atts = wp_parse_args($atts, array(
+            'alt'   => esc_attr__('image alt', 'fastway'),
+            'width' => '',
+            'height' => '',
+            'src'  => '',
+            'class' => 'fastway-image'
+        ));
+
+        $src = esc_url($atts['src']);
+
+        if(strlen(trim($src)) > 0) {
+            $_img = '<img';
+            foreach($atts as $k => $v) {
+                if(empty($v)) continue;
+                $_img .= " {$k}=\"{$v}\"";
+            }
+            $_img .= '>';
+            echo wp_kses($_img, array(
+                'img' => array('alt' => array(), 'width' => array(), 'height' => array(), 'src' => array(), 'class' => array())
+            ));
         }
     }
 }
@@ -98,17 +125,13 @@ if (!function_exists('loop_columns')) {
         return $redux_demo['shop_columns'];
     }
 }
-function theshopier_get_stblock( $cats = array('all') ){
+function fastway_get_stblock( $cats = array('all') ){
     $res_args = array();
 
     $meta_query = array();
-    $meta_query[] = array(
-        'key'   => 'theshopier_nth_stblock_options',
-        'value' => $cats,
-        'compare' => "IN"
-    );
+    
     $args = array(
-        'post_type'         => 'nth_stblock',
+        'post_type'         => 'fw_stblock',
         'post_status'       => 'publish',
         'posts_per_page'    => -1,
         'orderby'           => 'title',
