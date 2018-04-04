@@ -171,48 +171,6 @@
         )
     );
 
-    // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
-    $args['admin_bar_links'][] = array(
-        'id'    => 'redux-docs',
-        'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'redux-framework-demo' ),
-    );
-
-    $args['admin_bar_links'][] = array(
-        //'id'    => 'redux-support',
-        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'redux-framework-demo' ),
-    );
-
-    $args['admin_bar_links'][] = array(
-        'id'    => 'redux-extensions',
-        'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'redux-framework-demo' ),
-    );
-
-    // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-    $args['share_icons'][] = array(
-        'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
-        'title' => 'Visit us on GitHub',
-        'icon'  => 'el el-github'
-        //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
-    );
-    $args['share_icons'][] = array(
-        'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
-        'title' => 'Like us on Facebook',
-        'icon'  => 'el el-facebook'
-    );
-    $args['share_icons'][] = array(
-        'url'   => 'http://twitter.com/reduxframework',
-        'title' => 'Follow us on Twitter',
-        'icon'  => 'el el-twitter'
-    );
-    $args['share_icons'][] = array(
-        'url'   => 'http://www.linkedin.com/company/redux-framework',
-        'title' => 'Find us on LinkedIn',
-        'icon'  => 'el el-linkedin'
-    );
-
     // Panel Intro text -> before the form
     if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
         if ( ! empty( $args['global_variable'] ) ) {

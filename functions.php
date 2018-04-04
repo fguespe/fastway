@@ -29,6 +29,8 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/woocommerce.php';
+require get_template_directory() . '/inc/pagination.php';
+require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
 load_theme_textdomain( 'understrap', get_template_directory() . '/languages' );
