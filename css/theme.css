@@ -45,7 +45,7 @@
      height: auto !important;
 }
  a.remove:before {
-     content: "\f014";
+     content: "\f1f8";
      font: 20px/38px "FontAwesome";
      border: 1px solid #dfdfdf;
      background: #fff;

@@ -58,7 +58,7 @@ if( !function_exists( 'theshopier_shoppingCart' ) ) {
                     </div>
                 <?php else: ?>
                     <a href="javascript:void(0)" title="<?php esc_attr_e('My Cart','theshopier');?>">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                         <span class="cart-meta-st5"><?php printf(__('Cart: %s item(s)', 'theshopier'), absint($woocommerce->cart->cart_contents_count));?> </span>
                     </a>
                 <?php endif;?>
