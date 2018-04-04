@@ -15,7 +15,11 @@ get_header();
 global $redux_demo;
 $container   = $redux_demo['container-main'];
 
-
+$datas = array(
+	'show_bcrumb'	=> 1,
+	'is_shop'		=> 1
+); 
+do_action( 'theshopier_breadcrumb', $datas );
 ?>
 
 <div class="wrapper" id="woocommerce-wrapper">

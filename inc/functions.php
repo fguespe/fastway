@@ -7,7 +7,6 @@ function fastway_footer_block(){
 }
 
 
-
 if( !function_exists('fastway_getLogo') ) {
     function fastway_getLogo( $type="" ){
         global $redux_demo;

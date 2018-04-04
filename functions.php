@@ -17,6 +17,15 @@ function write_log ( $log )  {
 }   
 }
 
+if ( !function_exists( 'fw_checkPlugin' ) ){
+function fw_checkPlugin( $path = '' ){
+        if( strlen( $path ) == 0 ) return false;
+        $_actived = apply_filters( 'active_plugins', get_option( 'active_plugins' )  );
+        if ( in_array( trim( $path ), $_actived ) ) return true;
+        else return false;
+}
+}
+
 $THEME_DIR= get_template_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
 $THEME_IMG_URI= $THEME_URI . 'images/';
@@ -30,6 +39,7 @@ require get_template_directory() . '/inc/class-staticblocks.php';
 
 //WIDGETS
 require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
