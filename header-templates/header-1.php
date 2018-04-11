@@ -22,8 +22,9 @@ $classes=$container." ".$sticky;
 				)
 		); 
 		?>
-		<div><? theshopier_shoppingCart();?></div>
-		<div><?php do_shortcode('[custom-mini-cart]');?></div>
+		<div><? fw_shoppingCart();?></div>
+		
+		<div><? fw_search_form();?></div>
 		
 	</nav>
 </header>

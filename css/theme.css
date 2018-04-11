@@ -1,3 +1,16 @@
+/*BUSCAR*/
+.results{
+    background-color: white;
+    border-bottom: 0px;
+    position: fixed !important;
+    list-style-type: none;
+    padding-left: 0px !important;
+}
+
+.results a{
+display:block !important;
+}
+
 /*MINICARt*/
 .woocommerce ul.product_list_widget li img, ul.product_list_widget li ig {
      display: inline-block;

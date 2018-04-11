@@ -5,7 +5,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 	class Nexthemes_StaticBlock{
 
 		private $labels = array();
-		private static $post_type = 'nth_stblock';
+		private static $post_type = 'fw_stblock';
 		private $customCss;
 
 		public function __construct(){
@@ -102,8 +102,8 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 			if( !$output ) {
 				if(is_numeric($id))
-					$blocks = get_posts( array( 'include' => $id,'post_type' => 'nth_stblock', 'posts_per_page' => 1) );
-				else $blocks = get_posts( array( 'name' => $id,'post_type' => 'nth_stblock', 'posts_per_page' => 1) );
+					$blocks = get_posts( array( 'include' => $id,'post_type' => 'fw_stblock', 'posts_per_page' => 1) );
+				else $blocks = get_posts( array( 'name' => $id,'post_type' => 'fw_stblock', 'posts_per_page' => 1) );
 				$output = '';
 				$customCss = '';
 				ob_start();

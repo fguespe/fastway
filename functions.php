@@ -4,6 +4,7 @@
  *
  * @package understrap
  */
+
 if ( !function_exists( 'write_log' ) ){
 function write_log ( $log )  {
     if ( true === WP_DEBUG ) {
@@ -32,10 +33,12 @@ $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
 
-
 require get_template_directory() . '/inc/functions.php';
 require get_template_directory() . '/inc/enqueue.php';
+
+        
 require get_template_directory() . '/inc/class-staticblocks.php';
+require get_template_directory() . '/inc/fw-ajax-search.php';
 
 //WIDGETS
 require get_template_directory() . '/inc/widgets.php';
@@ -57,4 +60,7 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/i
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/sample-config.php' );
 }
+
+
+
 ?>

@@ -13,9 +13,12 @@ function fastway_singleblock_block(){
 
 
 
-if( !function_exists( 'theshopier_shoppingCart' ) ) {
 
-    function theshopier_shoppingCart($style = 1){
+
+
+if( !function_exists( 'fw_shoppingCart' ) ) {
+
+    function fw_shoppingCart($style = 1){
         if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
         global $woocommerce;
 
@@ -197,7 +200,7 @@ function fastway_get_stblock( $cats = array('all') ){
     $meta_query = array();
     
     $args = array(
-        'post_type'         => 'nth_stblock',
+        'post_type'         => 'fw_stblock',
         'post_status'       => 'publish',
         'posts_per_page'    => -1,
         'orderby'           => 'title',
