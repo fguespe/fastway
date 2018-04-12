@@ -1,11 +1,6 @@
 <?php
-/**
- * Understrap functions and definitions
- *
- * @package understrap
- */
 
-if ( !function_exists( 'write_log' ) ){
+if ( !function_exists( 'write_log' ) ):
 function write_log ( $log )  {
     if ( true === WP_DEBUG ) {
         $logg="GUESPES: ";
@@ -16,16 +11,16 @@ function write_log ( $log )  {
         }
     }
 }   
-}
+endif;
 
-if ( !function_exists( 'fw_checkPlugin' ) ){
+if ( !function_exists( 'fw_checkPlugin' ) ):
 function fw_checkPlugin( $path = '' ){
         if( strlen( $path ) == 0 ) return false;
         $_actived = apply_filters( 'active_plugins', get_option( 'active_plugins' )  );
         if ( in_array( trim( $path ), $_actived ) ) return true;
         else return false;
 }
-}
+endif;
 
 $THEME_DIR= get_template_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
@@ -47,6 +42,30 @@ require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
+
+require get_template_directory() . '/inc/shortcodes/class-woo-shortcodes.php' ;
+require get_template_directory() . '/inc/shortcodes/class-shortcodes.php' ;
+
+init_hooks();
+function init_hooks(){
+    if( is_request( 'frontend' ) ) {
+        $shortcode = new Nexthemes_Shortcodes();
+        add_action( 'init', array( $shortcode, 'init' ) );
+    }    
+}
+ function is_request( $type ) {
+    switch ( $type ) {
+        case 'admin' :
+            return is_admin();
+        case 'ajax' :
+            return defined( 'DOING_AJAX' );
+        case 'cron' :
+            return defined( 'DOING_CRON' );
+        case 'frontend' :
+            return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
+    }
+}
+
 
 load_theme_textdomain( 'understrap', get_template_directory() . '/languages' );
 register_nav_menus( array(

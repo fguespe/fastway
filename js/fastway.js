@@ -1,5 +1,6 @@
 jQuery(document).ready( function($) {
 
+
   // Set up variables for each of the pertinent elements
   var $searchWrap = $('.search-form'),
       $searchField = $('.search-form .search-field'),
