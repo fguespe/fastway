@@ -8,21 +8,21 @@ $heading_start = '<h3 class="heading-title">'.$title.'</h3>';
 
 
 ?>
+<?php if( strlen( $title ) > 0 ):?>
+<?php echo $heading_start;?>
+<?php endif;?>	
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">
 
     
-	<?php if( strlen( $title ) > 0 ):?>
-	<?php echo $heading_start;?>
-	<?php endif;?>	
-
-	<?php 
-	wc_get_template( 'loop/loop-start.php', array("item_style" => $item_style) ); 
+	
+	<?php wc_get_template( 'loop/loop-start.php', array("item_style" => $item_style) ); 
 	$i=0;
 	$ultimo=0;
 	echo '<div class="carousel-item active">';
 	while ( $products->have_posts() ) : $products->the_post(); 
-		
+
 		wc_get_template_part( 'content', 'product' ); 
 		$i++;
 		if ($i % $columns == 0 ){
