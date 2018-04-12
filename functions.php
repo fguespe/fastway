@@ -46,6 +46,10 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 require get_template_directory() . '/inc/shortcodes/class-woo-shortcodes.php' ;
 require get_template_directory() . '/inc/shortcodes/class-shortcodes.php' ;
 
+
+
+
+
 init_hooks();
 function init_hooks(){
     if( is_request( 'frontend' ) ) {
@@ -53,6 +57,8 @@ function init_hooks(){
         add_action( 'init', array( $shortcode, 'init' ) );
     }    
 }
+
+
  function is_request( $type ) {
     switch ( $type ) {
         case 'admin' :
@@ -80,6 +86,15 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-co
     require_once( dirname( __FILE__ ) . '/inc/sample-config.php' );
 }
 
-
+add_action( 'vc_before_init', 'vc_before_init_actions' );
+ 
+function vc_before_init_actions() {
+     
+    //.. Code from other Tutorials ..//
+ 
+    // Require new custom Element
+    require_once( get_template_directory().'/inc/vc_customs.php' ); 
+     
+}
 
 ?>
