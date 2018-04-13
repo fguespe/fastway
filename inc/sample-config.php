@@ -619,11 +619,23 @@
     ) );
 
     Redux::setSection( $opt_name, array(
-    'title' => 'Theme Editor',
+    'title' => 'CSS Editor',
     'id'    => 'editor-page',
     'desc'  => '',
     'icon'  => 'el el-file-edit',
     'fields'     => array(
+        array(
+            'id'        => 'css_editor-general',
+            'type'      => 'ace_editor',
+            'title'     => 'CSS General',
+            'mode'      => 'css',
+            'theme'     => 'chrome',
+            'full_width'    => true
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
         array(
             'id'        => 'css_editor-header',
             'type'      => 'ace_editor',
@@ -685,6 +697,7 @@
             'id'   => 'editor-page-divide-1',
             'type' => 'divide'
         ),
+
 
         
     ),
