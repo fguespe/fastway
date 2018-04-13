@@ -110,6 +110,20 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
 
             // Get the google array
             $this->getGoogleArray();
+            
+
+
+            //FASTWAY
+            if(is_child_theme()){
+                $files=glob(get_stylesheet_directory().'/fonts/*.otf');
+                $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));
+                foreach ($files as $path)$this->std_fonts=array_merge($this->std_fonts, array(basename($path,".otf")=>basename($path)));
+            }
+            //ENDFASTWAY
+
+
+
+
 
             if ( empty( $this->field['fonts'] ) ) {
                 $this->user_fonts     = false;

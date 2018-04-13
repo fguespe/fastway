@@ -446,6 +446,126 @@
       
     )
     ) );
+    // -> START Typography
+    Redux::setSection( $opt_name, array(
+        'title'  => __( 'Typography', 'redux-framework-demo' ),
+        'id'     => 'typography',
+        'desc'   => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
+        'icon'   => 'el el-font',
+        'fields' => array(
+            array(
+                'id'       => 'opt-typography-h1',
+                'type'     => 'typography',
+                'title'    => __( 'H1 Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '40px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+
+            array(
+                'id'       => 'opt-typography-h2',
+                'type'     => 'typography',
+                'title'    => __( 'H2 Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '32px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-h3',
+                'type'     => 'typography',
+                'title'    => __( 'H3 Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '28px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-h4',
+                'type'     => 'typography',
+                'title'    => __( 'H4 Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '24px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-div',
+                'type'     => 'typography',
+                'title'    => __( 'div Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '16px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-p',
+                'type'     => 'typography',
+                'title'    => __( 'p Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '16px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-span',
+                'type'     => 'typography',
+                'title'    => __( 'span Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '16px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+            array(
+                'id'       => 'opt-typography-a',
+                'type'     => 'typography',
+                'title'    => __( 'a Font', 'redux-framework-demo' ),
+                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'google'   => true,
+                'default'  => array(
+                    'color'       => 'black',
+                    'font-size'   => '16px',
+                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-weight' => 'Normal',
+                ),
+            ),
+           
+            
+           
+
+
+            
+        )
+    ) );
     Redux::setSection( $opt_name, array(
     'title'  => 'Color scheme',
     'id'     => 'color_scheme',
@@ -465,7 +585,7 @@
                 'id'       => 'opt-color-middheader',
                 'type'     => 'color',
                 'title'    => __( 'Middle Header', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a background color for the footer (default: black).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
                 'validate' => 'color',
         ),
@@ -474,7 +594,7 @@
                 'id'       => 'opt-color-bottheader',
                 'type'     => 'color',
                 'title'    => __( 'Bottom Header', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a background color for the footer (default: black).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
                 'validate' => 'color',
         ),
@@ -482,7 +602,7 @@
                 'id'       => 'opt-color-bodycolor',
                 'type'     => 'color',
                 'title'    => __( 'Body', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a background color for the footer (default: black).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
                 'validate' => 'color',
         ),
@@ -490,7 +610,7 @@
                 'id'       => 'opt-color-footer',
                 'type'     => 'color',
                 'title'    => __( 'Footer', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a background color for the footer (default: black).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
                 'validate' => 'color',
         ),

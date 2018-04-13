@@ -22,20 +22,7 @@ $hastop   = $redux_demo['top-header'];
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<style type="text/css">
-    .fw_header_top{background:<?php echo $redux_demo['opt-color-topheader']; ?>;}
-    .fw_header_middle{background:<?php echo $redux_demo['opt-color-middheader']; ?>;}
-    .fw_header_bottom{background:<?php echo $redux_demo['opt-color-bottheader']; ?>;}
-    body{background:<?php echo $redux_demo['opt-color-bodycolor']; ?>;}
-    footer{background:<?php echo $redux_demo['opt-color-footer']; ?>;}
-    <?php echo $redux_demo['css_editor-header']; ?>
-    <?php echo $redux_demo['css_editor-body']; ?>
-    <?php echo $redux_demo['css_editor-footer']; ?>
-    <?php echo $redux_demo['css_editor-loop']; ?>
-    <?php echo $redux_demo['css_editor-single']; ?>
-    ?>
-
-    </style>
+	<style type="text/css"><?php include( get_template_directory() . '/css/csstheme.php');?></style>
 
 	<?php wp_head(); ?>
 </head>

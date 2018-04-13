@@ -28,12 +28,13 @@ $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
 
-require get_template_directory() . '/inc/functions.php';
+require get_template_directory() . '/inc/extra-functions.php';
 require get_template_directory() . '/inc/enqueue.php';
 
         
 require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/fw-ajax-search.php';
+
 
 //WIDGETS
 require get_template_directory() . '/inc/widgets.php';
@@ -86,15 +87,13 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/sample-co
     require_once( dirname( __FILE__ ) . '/inc/sample-config.php' );
 }
 
+global $redux_demo;
+
+
 add_action( 'vc_before_init', 'vc_before_init_actions' );
  
 function vc_before_init_actions() {
-     
-    //.. Code from other Tutorials ..//
- 
-    // Require new custom Element
     require_once( get_template_directory().'/inc/vc_customs.php' ); 
-     
 }
 
 ?>

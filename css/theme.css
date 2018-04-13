@@ -1,3 +1,5 @@
+/*FIX MARGIN*/
+html { margin-top: 0px !important; }
 /*SLIDER*/
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -267,7 +269,7 @@ display:block !important;
 
 /*FIX VISUAl*/
 .vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner, .vc_row-has-fill>.vc_column_container>.vc_column-inner{
-padding-top:0px ;
+padding-top:0px  !important;
 }
 
 body .wpb_row, body .wpb_content_element{
@@ -297,8 +299,9 @@ body .wpb_row, body .wpb_content_element{
 	text-align:right;
 }
 
-#footer_firma .copyright{
-line-height:30px;
+#footer_firma{
+line-height:30px !important;
+font-size:15px !important;
 }
 @media (max-width: 700px) {
 	#footer_firma .copyright{
