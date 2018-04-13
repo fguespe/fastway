@@ -13,7 +13,7 @@
 get_header();
 
 global $redux_demo;
-$container   = $redux_demo['container-main'];
+$container   = $redux_demo['container-shop'];
 
 $datas = array(
 	'show_bcrumb'	=> 1,

@@ -28,6 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
+
 <li <?php post_class(); ?>>
 	<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-product-style'] );?>
 	<?php do_action( 'fastway_product_loop_init_mobile', $redux_demo['shop-loop-mobile-product-style'] );?>

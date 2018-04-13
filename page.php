@@ -14,6 +14,9 @@ get_header();
 
 global $redux_demo;
 $container   = $redux_demo['container-main'];
+if(fw_checkPlugin("woocommerce/woocommerce.php")){
+if(is_cart() || is_checkout() || is_account_page())$container   = $redux_demo['container-shop']." mt-4";
+}
 ?>
 
 <div class="wrapper" id="page-wrapper">

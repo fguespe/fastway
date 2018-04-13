@@ -339,12 +339,30 @@
             );
         }
     }
+    $single_templates = array();
+    for( $i=1; $i<=3; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/woo_product_single{$i}.jpg" ) ) {
+            $single_templates[$i] = array(
+                'alt' => $i,
+                'img' => $THEME_IMG_URI . "woo_product_single{$i}.jpg"
+            );
+        }
+    }
     $loop_templates_mobile = array();
     for( $i=1; $i<=3; $i++ ) {
         if( file_exists( $THEME_DIR . "images/woo_product_mobile{$i}.jpg" ) ) {
             $loop_templates_mobile[$i] = array(
                 'alt' => $i,
                 'img' => $THEME_IMG_URI . "woo_product_mobile{$i}.jpg"
+            );
+        }
+    }
+    $single_templates_mobile = array();
+    for( $i=1; $i<=3; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/woo_product_single{$i}.jpg" ) ) {
+            $single_templates_mobile[$i] = array(
+                'alt' => $i,
+                'img' => $THEME_IMG_URI . "woo_product_single{$i}.jpg"
             );
         }
     }
@@ -412,8 +430,16 @@
             'full_width'    => true,
             'options'  => $loop_templates_mobile,
             'default'  => '1'
-        ),
-
+            ),
+            array(
+            'id'       => 'shop-single-mobile-product-style',
+            'type'     => 'image_select',
+            'title'    => esc_html__( 'Single Mobile Style', 'fastway' ),
+            'full_width'    => true,
+            'options'  => $single_templates,
+            'default'  => '1'
+            ),
+           
         )
     ) );
     
@@ -737,6 +763,24 @@ Redux::setSection( $opt_name, array(
     'icon'  => 'el el-folder-close',
     'fields'     => array(
         array(
+            'id'       => 'container-shop',
+            'type'     => 'image_select',
+            'title'    => 'Shop Layout',
+            'subtitle' => 'Main layout: wide or boxed',
+            'desc'     => '',
+            'options'  => array(
+                'container-fluid' => array(
+                    'alt' => 'wide',
+                    'img' => $THEME_IMG_URI . 'layout-full.png'
+                ),
+                'container' => array(
+                    'alt' => 'boxed',
+                    'img' => $THEME_IMG_URI . 'layout-boxed.png'
+                )
+            ),
+            'default'  => 'wide'
+        ),
+        array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',
             'title'    => esc_html__( 'Shop Layout', 'fastway' ),
@@ -825,6 +869,7 @@ Redux::setSection( $opt_name, array(
     'icon'      => 'el el-file',
     'subsection' => true,
     'fields'     => array(
+
         array(
             'id'       => 'product-page-layout',
             'type'     => 'image_select',
@@ -851,6 +896,7 @@ Redux::setSection( $opt_name, array(
             ),
             'default'  => 'full'
         ),
+
         array(
             'id'       => 'product-page-left-sidebar',
             'type'     => 'select',
@@ -873,6 +919,14 @@ Redux::setSection( $opt_name, array(
             'type'     => 'select',
             'title'    => 'Footer block',
             'options'  => $static_block_args,
+        ),
+         array(
+            'id'       => 'shop-single-product-style',
+            'type'     => 'image_select',
+            'title'    => esc_html__( 'Catalog item style', 'fastway' ),
+            'full_width'    => true,
+            'options'  => $single_templates,
+            'default'  => '1'
         ),
 
       
