@@ -1,5 +1,5 @@
 <style type="text/css">
-    .add-to-cart-container{
+    .d-md-none .add-to-cart-container{
         display: none;
     }
 </style><div class='d-md-none'>
