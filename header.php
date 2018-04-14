@@ -22,7 +22,7 @@ $hastop   = $redux_demo['top-header'];
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<style type="text/css"><?php include( get_template_directory() . '/css/csstheme.php');?></style>
+	<style type="text/css"><?php include( get_template_directory() . '/assets/css/csstheme.php');?></style>
 
 	<?php wp_head(); ?>
 </head>

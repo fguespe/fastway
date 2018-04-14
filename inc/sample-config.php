@@ -405,6 +405,49 @@
             'options'  => $theme_headers,
             'default'  => '1',
             ),
+            array(
+            'id'       => 'header-headerwidget-start',
+            'type'     => 'section',
+            'title'    => esc_html__( 'header headerwidget', 'theshopier' ),
+            'indent'   => true,
+        ),
+        array(
+            'id'       => 'header-headerwidget-switch',
+            'type'     => 'switch',
+            'title'    => esc_html__( 'Show header headerwidget', 'theshopier' ),
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+        ),
+        array(
+            'id'       => 'header-headerwidget-text',
+            'type'     => 'editor',
+            'required' => array( 'header-headerwidget-switch', '=', '1' ),
+            'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
+            'default'  => '',
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
+        array(
+            'id'        => 'css_editor-header-headerwidget',
+            'type'      => 'ace_editor',
+            'required' => array( 'header-headerwidget-switch', '=', '1' ),
+            'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
+            'default'  => '',
+            'mode'      => 'css',
+            'theme' => 'chrome'
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
+        array(
+            'id'     => 'header-headerwidget-end',
+            'type'   => 'section',
+            'indent' => false,
+        ),
             
 
         )
@@ -469,9 +512,53 @@
             'title'    => 'Static block',
             'options'  => $static_block_args
         ),
+        array(
+            'id'       => 'footer-copyright-start',
+            'type'     => 'section',
+            'title'    => esc_html__( 'Footer copyright', 'theshopier' ),
+            'indent'   => true,
+        ),
+        array(
+            'id'       => 'footer-copyright-switch',
+            'type'     => 'switch',
+            'title'    => esc_html__( 'Show Footer copyright', 'theshopier' ),
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+        ),
+        array(
+            'id'       => 'footer-copyright-text',
+            'type'     => 'editor',
+            'required' => array( 'footer-copyright-switch', '=', '1' ),
+            'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
+            'default'  => '',
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
+        array(
+            'id'        => 'css_editor-footer-copywright',
+            'type'      => 'ace_editor',
+            'required' => array( 'footer-copyright-switch', '=', '1' ),
+            'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
+            'default'  => '',
+            'mode'      => 'css',
+            'theme' => 'chrome'
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
+        array(
+            'id'     => 'footer-copyright-end',
+            'type'   => 'section',
+            'indent' => false,
+        ),
       
     )
     ) );
+
     // -> START Typography
     Redux::setSection( $opt_name, array(
         'title'  => __( 'Typography', 'redux-framework-demo' ),

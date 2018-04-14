@@ -143,16 +143,16 @@ add_action( 'fastway_header_init_mobile', 'fastway_header_tablet', 20 );
 if( !function_exists('fastway_header_body') ){
     function fastway_header_body( $style = 1 ){
         global $THEME_DIR;
-        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'header-templates/header-'.$style.'.php') ) $style = 1;
-        get_template_part('header-templates/header', $style);
+        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'templates/header-templates/header-'.$style.'.php') ) $style = 1;
+        get_template_part('templates/header-templates/header', $style);
     }
 }
 
 if( !function_exists('fastway_header_tablet') ) {
     function fastway_header_tablet( $style = 1 ){
         global $THEME_DIR;
-        if( file_exists($THEME_DIR . 'header-templates/header-tablet-'.$style.'.php') )
-            get_template_part('header-templates/header-tablet', $style);
+        if( file_exists($THEME_DIR . 'templates/header-templates/header-tablet-'.$style.'.php') )
+            get_template_part('templates/header-templates/header-tablet', $style);
     }
 }
 
@@ -160,16 +160,16 @@ add_action( 'fastway_product_loop_init', 'fastway_product_loop', 20 );
 if( !function_exists('fastway_product_loop') ){
     function fastway_product_loop( $style = 1 ){
         global $THEME_DIR;
-        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'woocommerce/templates-loop/product-loop-'.$style.'.php') ) $style = 1;
-        get_template_part('woocommerce/templates-loop/product-loop', $style);
+        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'templates/product-loop-templates/product-loop-'.$style.'.php') ) $style = 1;
+        get_template_part('templates/product-loop-templates/product-loop', $style);
     }
 }
 add_action( 'fastway_product_loop_init_mobile', 'fastway_product_loop_mobile', 20 );
 if( !function_exists('fastway_product_loop_mobile') ){
     function fastway_product_loop_mobile( $style = 1 ){
         global $THEME_DIR;
-        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'woocommerce/templates-loop/product-loop-mobile-'.$style.'.php') ) $style = 1;
-        get_template_part('woocommerce/templates-loop/product-loop-mobile', $style);
+        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'templates/product-loop-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
+        get_template_part('templates/product-loop-templates/product-loop-mobile', $style);
     }
 }
 
@@ -177,8 +177,8 @@ add_action( 'fastway_product_single_init', 'fastway_product_single', 20 );
 if( !function_exists('fastway_product_single') ){
     function fastway_product_single( $style = 1 ){
         global $THEME_DIR;
-        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'woocommerce/templates-single/content-single-product-'.$style.'.php') ) $style = 1;
-        get_template_part('woocommerce/templates-single/content-single-product', $style);
+        if( strlen( $style ) == 0 || !file_exists($THEME_DIR . 'templates/single-product-templates/content-single-product-'.$style.'.php') ) $style = 1;
+        get_template_part('templates/single-product-templates/content-single-product', $style);
     }
 }
 add_action( 'fastway_product_single_init_mobile', 'fastway_product_single_mobile', 20 );

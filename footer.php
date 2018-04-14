@@ -16,8 +16,8 @@ $container   = $redux_demo['footer-width'];
 		<?php do_action( 'fastway_footer_init' ); ?>
 	</div>
 </footer>
+<?php if($redux_demo['footer-copyright-switch'])echo $redux_demo['footer-copyright-text']."<style>".$redux_demo['css_editor-footer-copywright']."</style>";?>
 <?php wp_footer(); ?>
-
 </body>
 
 </html>
