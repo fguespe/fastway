@@ -11,6 +11,44 @@ function fastway_singleblock_block(){
     if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
 }
 
+function fw_companyname() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyname'];
+}
+function fw_companywhatsapp() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companywhatsapp'];
+}
+function fw_companyig() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyig'];
+}
+function fw_companyyoutube() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyyoutube'];
+}
+function fw_companyemail() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyemail'];
+}
+function fw_companyphone() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyphone'];
+}
+function fw_companyfb() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyfb'];
+}
+
+
+add_shortcode('fw_companyfb', 'fw_companyfb');
+add_shortcode('fw_companyig', 'fw_companyig');
+add_shortcode('fw_companyyoutube', 'fw_companyyoutube');
+add_shortcode('fw_companyemail', 'fw_companyemail');
+add_shortcode('fw_companyphone', 'fw_companyphone');
+add_shortcode('fw_companywhatsapp', 'fw_companywhatsapp');
+add_shortcode('fw_companyname', 'fw_companyname');
+
 
 
 if( !function_exists( 'fw_shoppingCart' ) ) {

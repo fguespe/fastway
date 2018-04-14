@@ -322,11 +322,11 @@
         }
     }
     $theme_headers_mobile = array();
-    for( $i=1; $i<=2; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/theme-option-header{$i}.jpg" ) ) {
+    for( $i=1; $i<=3; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/theme-option-header-mobile{$i}.jpg" ) ) {
             $theme_headers_mobile[$i] = array(
                 'alt' => $i,
-                'img' => $THEME_IMG_URI . "theme-option-header{$i}.jpg"
+                'img' => $THEME_IMG_URI . "theme-option-header-mobile{$i}.jpg"
             );
         }
     }
@@ -464,6 +464,7 @@
             'type'     => 'image_select',
             'title'    => 'Mobile Header Style',
             'options'  => $theme_headers_mobile,
+            'full_width'    => true,
             'default'  => '1',
             ),
              array(
@@ -489,7 +490,6 @@
     
 
     $static_block_args = fastway_get_stblock();
-
     Redux::setSection( $opt_name, array(
     'title'         => 'Footer',
     'id'            => 'footer',
@@ -531,7 +531,7 @@
             'type'     => 'editor',
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
-            'default'  => '',
+            'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;" src="/wp-content/plugins/briziolabz-plugin/assets/img/logo.svg" /></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
         ),
         array(
             'id'   => 'editor-page-divide-1',
@@ -542,7 +542,7 @@
             'type'      => 'ace_editor',
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
-            'default'  => '',
+            'default'  => '#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
             'mode'      => 'css',
             'theme' => 'chrome'
         ),
@@ -572,11 +572,13 @@
                 'title'    => __( 'H1 Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
+                'text-transform'   => true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '40px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
 
@@ -584,6 +586,7 @@
                 'id'       => 'opt-typography-h2',
                 'type'     => 'typography',
                 'title'    => __( 'H2 Font', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
                 'default'  => array(
@@ -591,6 +594,7 @@
                     'font-size'   => '32px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
@@ -598,12 +602,14 @@
                 'type'     => 'typography',
                 'title'    => __( 'H3 Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '28px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
@@ -611,12 +617,14 @@
                 'type'     => 'typography',
                 'title'    => __( 'H4 Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '24px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
@@ -624,12 +632,14 @@
                 'type'     => 'typography',
                 'title'    => __( 'div Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '16px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
@@ -637,18 +647,21 @@
                 'type'     => 'typography',
                 'title'    => __( 'p Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '16px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
                 'id'       => 'opt-typography-span',
                 'type'     => 'typography',
                 'title'    => __( 'span Font', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
                 'default'  => array(
@@ -656,12 +669,14 @@
                     'font-size'   => '16px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
             array(
                 'id'       => 'opt-typography-a',
                 'type'     => 'typography',
                 'title'    => __( 'a Font', 'redux-framework-demo' ),
+                'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
                 'default'  => array(
@@ -669,6 +684,7 @@
                     'font-size'   => '16px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
+                    'text-transform'   => 'none',
                 ),
             ),
            
@@ -815,6 +831,85 @@
         
     ),
 ) );
+    // -> START Basic Fields
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Extras', 'redux-framework-demo' ),
+        'id'               => 'basic',
+        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+        'fields'           => array(
+            array(
+                'id'   => 'opt-info-field1',
+                'type' => 'info',
+                'style' => 'success',
+                'desc' => __( 'Hide on desktop class = d-md-none', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field2',
+                'type' => 'info',
+                'style' => 'success',
+                'desc' => __( 'Hide on mobile class = d-none d-md-flex', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field3',
+                'type' => 'info',
+                'style' => 'success',
+                'desc' => __( 'menu horizontal = .menuhor', 'redux-framework-demo' )
+            ),
+            array(
+                'id'       => 'short-fw_companyname',
+                'type'     => 'text',
+                'title'    => __( 'Company Name', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyname]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companywhatsapp',
+                'type'     => 'text',
+                'title'    => __( 'Company Whatsapp', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companywhatsapp]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyphone',
+                'type'     => 'text',
+                'title'    => __( 'Company Phone', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyphone]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyemail',
+                'type'     => 'text',
+                'title'    => __( 'Company Email', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyemail]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyfb',
+                'type'     => 'text',
+                'title'    => __( 'Company Facebook Url', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyfb]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyig',
+                'type'     => 'text',
+                'title'    => __( 'Company Instagram Url', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyig]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyyoutube',
+                'type'     => 'text',
+                'title'    => __( 'Company Youtube Url', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyyoutube]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+           
+
+        )
+    ) );
     
 
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {

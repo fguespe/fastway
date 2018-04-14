@@ -11,6 +11,7 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   font-weight: <?php echo $font['font-weight'];?> ;
   line-height: <?php echo $font['line-height'];?> ;
   color:<?php echo $font['color'];?> ;
+  text-transform:<?php echo $font['text-transform'];?> ;
 }
 <?}?>
 .fw_header_top{background:<?php echo $redux_demo['opt-color-topheader']; ?>;}
@@ -18,6 +19,7 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
 .fw_header_bottom{background:<?php echo $redux_demo['opt-color-bottheader']; ?>;}
 body{background:<?php echo $redux_demo['opt-color-bodycolor']; ?>;}
 footer{background:<?php echo $redux_demo['opt-color-footer']; ?>;}
+<?php echo $redux_demo['css_editor-general']; ?>
 <?php echo $redux_demo['css_editor-header']; ?>
 <?php echo $redux_demo['css_editor-body']; ?>
 <?php echo $redux_demo['css_editor-footer']; ?>
