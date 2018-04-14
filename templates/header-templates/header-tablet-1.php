@@ -1,34 +1,36 @@
 <?php
 global $redux_demo;
+$container   = $redux_demo['header-width'];
+$logo = $redux_demo['general-logo'];
+$sticky="";
+if($redux_demo['sticky-menu'])$sticky="sticky-top";
+$classes=$container." ".$sticky;
 ?>
-<nav class="navbar navbar-dark bg-dark d-md-none">
-      <a class="navbar-brand" href="#">Never expand</a>
+<style type="text/css">
+.fw_header_middle_mobile .logo img{
+height:50px !important;
+width:auto !important;
+}
+</style>
+<header class="fw_header_middle_mobile d-md-none navbar">
+      <?php echo fastway_getLogo();?>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fa fa-bars"></i>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarsExample01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <?php wp_nav_menu(
+        array(
+          'theme_location'  => 'primary',
+          'container_class' => '',
+          'container_id'    => '',
+          'menu_class'      => 'navbar-nav',
+          'fallback_cb'     => '',
+          'menu_id'         => 'main-menu',
+          'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+        )
+        ); 
+        if($redux_demo['fw-quicklinks'])quicklinks();
+        ?>
+        
       </div>
-    </nav>
+    </header>

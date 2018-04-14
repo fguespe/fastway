@@ -460,6 +460,14 @@
         'customizer_width' => '450px',
         'fields'           => array(
             array(
+            'id'       => 'fw-quicklinks',
+            'type'     => 'switch',
+            'title'    => 'Quicklinks',
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            ),
+            array(
             'id'       => 'header-mobile-style',
             'type'     => 'image_select',
             'title'    => 'Mobile Header Style',
@@ -876,6 +884,20 @@
                 'type'     => 'text',
                 'title'    => __( 'Company Phone', 'redux-framework-demo' ),
                 'desc'     => __( '[fw_companyphone]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companyadress',
+                'type'     => 'text',
+                'title'    => __( 'Company Adress', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyadress]', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'short-fw_companygooglemaps',
+                'type'     => 'text',
+                'title'    => __( 'Google Maps Url', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companygooglemaps]', 'redux-framework-demo' ),
                 'default'  => '',
             ),
             array(

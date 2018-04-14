@@ -29,7 +29,7 @@ $hastop   = $redux_demo['top-header'];
 
 <body <?php body_class(); ?>>
 <?php if($hastop):?>
-<div class="fw_header_top d-none d-md-flex">
+<div class="fw_header_top d-none d-lg-flex">
     <div class="<?php echo esc_attr( $container ); ?>">
         <div>
             <?php

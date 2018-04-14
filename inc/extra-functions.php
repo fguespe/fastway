@@ -49,7 +49,23 @@ add_shortcode('fw_companyphone', 'fw_companyphone');
 add_shortcode('fw_companywhatsapp', 'fw_companywhatsapp');
 add_shortcode('fw_companyname', 'fw_companyname');
 
-
+function quicklinks(){
+    echo "<div class='fw_quicklinks'>";
+    if(!empty(fw_companyfb()))echo '<a href="'.fw_companyfb().'"><i class="fa fa-facebook-official" style="color:blue;"></i> Facebook</a>';
+    if(!empty(fw_companyig()))echo '<a href="'.fw_companyig().'"><i class="fa fa-instagram"></i> Instagram</a>';
+    if(!empty(fw_companyemail()))echo '<a href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o" style="color:green;"></i> Mandar un mail</a>';
+    if(!empty(fw_companyphone()))echo '<a href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:green;"></i> Llamar</a>';
+    echo "</div>";
+    echo "<style>.fw_quicklinks a{
+        display:block !important;
+        line-height:40px;
+        font-size:18px;
+        }
+        .fw_quicklinks{
+        border-top:1px solid black !important;
+        margin-top:10px;
+        }</style>";
+}
 
 if( !function_exists( 'fw_shoppingCart' ) ) {
 
