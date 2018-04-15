@@ -384,7 +384,7 @@
             'id'       => 'transparent-header',
             'type'     => 'switch',
             'title'    => 'Transparent Header',
-            'default'  => 1,
+            'default'  => 0,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
             ),

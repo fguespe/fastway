@@ -1,11 +1,12 @@
+
 <?php
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $classes=$container;
-if($redux_demo['sticky-menu'])$container.=" sticky-top";
-if($redux_demo['transparent-header'])$container.=" fw-transparent-header";
+if($redux_demo['sticky-menu'])$classes.=" sticky-top";
+if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
 ?>
-<div class="<?php echo esc_attr( $classes ); ?>">
+<div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
 <div class="fw_header_middle py-3">
     <div class="row flex-nowrap">
       <div class="col-4 ">
