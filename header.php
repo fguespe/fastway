@@ -23,11 +23,11 @@ $hastop   = $redux_demo['top-header'];
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style type="text/css"><?php include( get_template_directory() . '/assets/css/csstheme.php');?></style>
-
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<header>
 <?php if($hastop):?>
 <div class="fw_header_top d-none d-lg-flex">
     <div class="<?php echo esc_attr( $container ); ?>">
@@ -47,3 +47,4 @@ $hastop   = $redux_demo['top-header'];
 <?php endif;?>
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
+</header>

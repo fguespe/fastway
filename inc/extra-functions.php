@@ -10,7 +10,12 @@ function fastway_singleblock_block(){
     global $redux_demo;
     if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
 }
-
+function fastway_getWidgetHeaderText(){
+    global $redux_demo;
+    if($redux_demo['header-headerwidget-switch']){
+      echo do_shortcode(stripslashes(htmlspecialchars_decode( $redux_demo['header-headerwidget-text'].'<style>'.$redux_demo['css_editor-header-headerwidget'].'</style>' )));
+    }
+}
 function fw_companyname() {
     global $redux_demo;
     return $redux_demo['short-fw_companyname'];

@@ -2,17 +2,15 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $logo = $redux_demo['general-logo'];
-$sticky="";
-if($redux_demo['sticky-menu'])$sticky="sticky-top";
-$classes=$container." ".$sticky;
+$classes="d-md-none";
 ?>
 <style type="text/css">
-.fw_header_middle_mobile .logo img{
+.header-mobile  .logo img{
 height:50px !important;
 width:auto !important;
 }
 </style>
-<header class="fw_header_middle_mobile d-md-none navbar">
+<div class="header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
       <?php echo fastway_getLogo();?>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
@@ -33,4 +31,4 @@ width:auto !important;
         ?>
         
       </div>
-    </header>
+</div>

@@ -381,6 +381,14 @@
             'off'      => 'Disabled',
             ),
             array(
+            'id'       => 'transparent-header',
+            'type'     => 'switch',
+            'title'    => 'Transparent Header',
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            ),
+            array(
             'id'       => 'top-header',
             'type'     => 'switch',
             'title'    => 'Top Header',

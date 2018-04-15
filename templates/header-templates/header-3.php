@@ -1,27 +1,19 @@
 <?php
-
 global $redux_demo;
 $container   = $redux_demo['header-width'];
-$logo = $redux_demo['general-logo'];
-$sticky="";
-if($redux_demo['sticky-menu'])$sticky="sticky-top";
-$classes=$container." ".$sticky;
+$classes=$container;
+if($redux_demo['sticky-menu'])$container.=" sticky-top";
+if($redux_demo['transparent-header'])$container.=" fw-transparent-header";
 ?>
-<div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
-<header class="fw_header_middle blog-header py-3 ">
+<div class="<?php echo esc_attr( $classes ); ?>">
+<div class="fw_header_middle py-3">
     <div class="row flex-nowrap">
       <div class="col-4 ">
         <?php echo fastway_getLogo();?>
       </div>
-      <div class="d-flex col-8 align-items-center">
-      <?php 
-      if($redux_demo['header-headerwidget-switch']){
-      echo do_shortcode(stripslashes(htmlspecialchars_decode( $redux_demo['header-headerwidget-text'].'<style>'.$redux_demo['css_editor-header-headerwidget'].'</style>' )));
-      }
-      ?>
-      </div>
+      <div class="d-flex col-8 align-items-center"><?php fastway_getWidgetHeaderText();?></div>
     </div>
-</header>
+</div>
 
 <div id="main-nav" class="row flex-nowrap">
   <?php wp_nav_menu(
@@ -38,8 +30,5 @@ $classes=$container." ".$sticky;
   ?>
 </div>
 </div>
-<style type="text/css">
-
-</style>
 
       
