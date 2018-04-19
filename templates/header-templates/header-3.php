@@ -9,7 +9,7 @@ if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
 <div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
 <div class="fw_header_middle py-3">
     <div class="row flex-nowrap">
-      <div class="col-4 ">
+      <div class="col-4">
         <?php echo fastway_getLogo();?>
       </div>
       <div class="d-flex col-8 align-items-center"><?php fastway_getWidgetHeaderText();?></div>

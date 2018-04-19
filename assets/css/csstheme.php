@@ -12,6 +12,7 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   line-height: <?php echo $font['line-height'];?> ;
   color:<?php echo $font['color'];?> ;
   text-transform:<?php echo $font['text-transform'];?> ;
+  text-align:<?php echo $font['text-align'];?> ;
 }
 <?}?>
 .fw_header_top{background:<?php echo $redux_demo['opt-color-topheader']; ?>;}

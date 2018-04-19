@@ -16,6 +16,7 @@
     $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
 
     /*
+
      *
      * --> Used within different fields. Simply examples. Search for ACTUAL DECLARATION for field examples
      *
@@ -278,7 +279,7 @@
                     'img' => $THEME_IMG_URI . 'layout-boxed.png'
                 )
             ),
-            'default'  => 'wide'
+            'default'  => 'container'
             ),
             array(
             'id'       => 'layout-main',
@@ -304,7 +305,7 @@
                     'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 ),
             ),
-            'default'  => '1-0',
+            'default'  => 'full',
              
 
         ),
@@ -373,13 +374,28 @@
         'customizer_width' => '450px',
         'fields'           => array(
             array(
-            'id'       => 'sticky-menu',
-            'type'     => 'switch',
-            'title'    => 'Sticky menu',
-            'default'  => 1,
-            'on'       => 'Enabled',
-            'off'      => 'Disabled',
+                'id'       => 'sticky-menu',
+                'type'     => 'switch',
+                'title'    => 'Sticky menu',
+                'default'  => 1,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
             ),
+            array(
+                'id'       => 'header-padding',
+                'type'     => 'text',
+                'title'    => __( 'Header Padding', 'redux-framework-demo' ),
+                'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
+                'default'  => "3",
+            ),
+            array(
+                'id'       => 'logo-width',
+                'type'     => 'text',
+                'title'    => __( 'Company Name', 'redux-framework-demo' ),
+                'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
+                'default'  => "250",
+            ),
+           
             array(
             'id'       => 'transparent-header',
             'type'     => 'switch',
@@ -429,7 +445,9 @@
         ),
         array(
             'id'       => 'header-headerwidget-text',
-            'type'     => 'editor',
+            'type'     => 'ace_editor',
+            'mode'       => 'php',
+            'theme'      => 'chrome',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
             'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
             'default'  => '',
@@ -444,8 +462,8 @@
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
             'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
             'default'  => '',
-            'mode'      => 'css',
-            'theme' => 'chrome'
+            'mode'     => 'css',
+            'theme'    => 'monokai',
         ),
         array(
             'id'   => 'editor-page-divide-1',
@@ -461,6 +479,8 @@
         )
     ) );
 
+
+    
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Mobile', 'redux-framework-demo' ),
         'id'               => 'mobile',
@@ -544,7 +564,10 @@
         ),
         array(
             'id'       => 'footer-copyright-text',
-            'type'     => 'editor',
+            'type'     => 'ace_editor',
+            'mode'       => 'php',
+            'theme'      => 'chrome',
+                
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
             'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;" src="/wp-content/plugins/briziolabz-plugin/assets/img/logo.svg" /></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
@@ -556,11 +579,12 @@
         array(
             'id'        => 'css_editor-footer-copywright',
             'type'      => 'ace_editor',
+            'mode'     => 'css',
+            'theme'    => 'monokai',
+                
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
             'default'  => '#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
-            'mode'      => 'css',
-            'theme' => 'chrome'
         ),
         array(
             'id'   => 'editor-page-divide-1',
@@ -774,7 +798,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS General',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -786,7 +810,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS Header',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -799,7 +823,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS Body',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -811,7 +835,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS Footer',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -823,7 +847,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS Product Loop',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -835,7 +859,7 @@
             'type'      => 'ace_editor',
             'title'     => 'CSS Product Single',
             'mode'      => 'css',
-            'theme'     => 'chrome',
+            'theme'    => 'monokai',
             'full_width'    => true
         ),
         array(
@@ -873,6 +897,12 @@
                 'style' => 'success',
                 'desc' => __( 'menu horizontal = .menuhor', 'redux-framework-demo' )
             ),
+             array(
+                'id'   => 'opt-info-field4',
+                'type' => 'info',
+                'style' => 'success',
+                'desc' => __( 'columna mobile a la mitad = .columnamobile', 'redux-framework-demo' )
+            ),
             array(
                 'id'       => 'short-fw_companyname',
                 'type'     => 'text',
@@ -895,10 +925,10 @@
                 'default'  => '',
             ),
             array(
-                'id'       => 'short-fw_companyadress',
+                'id'       => 'short-fw_companyaddress',
                 'type'     => 'text',
                 'title'    => __( 'Company Adress', 'redux-framework-demo' ),
-                'desc'     => __( '[fw_companyadress]', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companyaddress]', 'redux-framework-demo' ),
                 'default'  => '',
             ),
             array(

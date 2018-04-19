@@ -44,6 +44,10 @@ function fw_companyfb() {
     global $redux_demo;
     return $redux_demo['short-fw_companyfb'];
 }
+function fw_companyaddress() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companyaddress'];
+}
 
 
 add_shortcode('fw_companyfb', 'fw_companyfb');
@@ -53,6 +57,7 @@ add_shortcode('fw_companyemail', 'fw_companyemail');
 add_shortcode('fw_companyphone', 'fw_companyphone');
 add_shortcode('fw_companywhatsapp', 'fw_companywhatsapp');
 add_shortcode('fw_companyname', 'fw_companyname');
+add_shortcode('fw_companyaddress', 'fw_companyaddress');
 
 function quicklinks(){
     echo "<div class='fw_quicklinks'>";
@@ -148,12 +153,13 @@ if( !function_exists('fastway_getLogo') ) {
 
                 if( isset( $redux_demo['general-logo'] ) && strlen(trim($redux_demo['general-logo']['url'])) > 0 ){
                     $logo_arg['src'] = esc_url( $redux_demo['general-logo']['url'] );
-                    $logo_arg['width'] = absint($redux_demo['general-logo']['width']);
-                    $logo_arg['height'] = absint($redux_demo['general-logo']['height']);
+                    $logo_arg['width'] = $redux_demo['logo-width'];
+                    $logo_arg['height'] = "auto";
                 } else {
-                    $logo_arg['src'] = esc_url( $THEME_IMG_URI . "logo.png" );
-                    $logo_arg['width'] = 530;
-                    $logo_arg['height'] = 104;
+                    //Cargo logo default
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/images/logo.svg" );
+                    $logo_arg['width'] = $redux_demo['logo-width'];
+                    $logo_arg['height'] = "auto";
                 }
 
                 echo '<div class="logo">';

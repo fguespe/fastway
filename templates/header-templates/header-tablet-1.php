@@ -5,9 +5,13 @@ $logo = $redux_demo['general-logo'];
 $classes="d-md-none";
 ?>
 <style type="text/css">
-.header-mobile  .logo img{
-height:50px !important;
-width:auto !important;
+.header-mobile .logo img {
+height:auto !important;
+width:100% !important;
+}
+.header-mobile .logo {
+height:auto !important;
+width:60% !important;
 }
 </style>
 <div class="header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
@@ -18,7 +22,7 @@ width:auto !important;
       <div class="collapse navbar-collapse" id="navbarsExample01">
         <?php wp_nav_menu(
         array(
-          'theme_location'  => 'primary',
+          'theme_location'  => 'mobile',
           'container_class' => '',
           'container_id'    => '',
           'menu_class'      => 'navbar-nav',

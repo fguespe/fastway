@@ -1,13 +1,50 @@
 /*TRANSPARENT*/
-header .fw-transparent-header{
-position:absolute !important;
-top:0px !important;
-left:0px !important;
-width:100% !important;
-z-index:1;
-background:none !important;
+.header-mobile #main-menu{
+    margin-top:10px;
 }
+/*FIX MENU MOBILE*/
+.dropdown-menu{
+border:0px !important;
+padding-left:50px;
+}
+/*COLUMNA MOBILE*/
+@media (max-width: 799px) {/*OCULTAR ADMIN BAR*/
+    
+    
+    .columnamobile{
+        width:50% !important;
+        display:inline-block !important;
+    }
 
+    .columnamobile li a{
+           
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+}
+/*FIX FOOTER*/
+footer{
+height:100% !important;
+}
+/*FIX LISTAS*/
+li {
+   list-style-type: none; 
+}
+ul{
+padding:0px;
+margin:0px;
+}
+/*FIX SPACE*/
+.fw_header_top .container,. fw_header_top .container-fluid{
+padding-top:0 ;
+padding-bottom:0 ;
+}
+.fw_header_top p{
+margin:0px ;
+}
+/*FIX HEADER HEIGHT*/
 body.home.admin-bar .fw-transparent-header {
     top: 32px !important;
 }
