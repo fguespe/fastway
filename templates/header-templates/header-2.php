@@ -2,12 +2,12 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $classes=$container;
-if($redux_demo['sticky-menu'])$classes.=" sticky-top";
+if($redux_demo['sticky-menu'])$classes.=" fixed-top";
 if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
 $classes.=" py-".$redux_demo['header-padding'];
 ?>
 <div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
-<header class="fw_header_middle blog-header py-3 ">
+<div class="fw_header_middle blog-header py-3 ">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
         <a class="text-muted" href="#">Subscribe</a>
@@ -22,7 +22,7 @@ $classes.=" py-".$redux_demo['header-padding'];
         <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
       </div>
     </div>
-</header>
+</div>
 <div class="nav-scroller py-1 mb-2">
     <?php wp_nav_menu(
     array(

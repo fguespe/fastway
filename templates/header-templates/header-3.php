@@ -1,13 +1,13 @@
-
 <?php
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $classes=$container;
-if($redux_demo['sticky-menu'])$classes.=" sticky-top";
+if($redux_demo['sticky-menu'])$classes.=" fixed-top";
 if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
+$classes.=" py-".$redux_demo['header-padding'];
 ?>
-<div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
-<div class="fw_header_middle py-3">
+<div class="d-none d-md-block">
+<div class="fw_header_middle <?php echo esc_attr( $classes ); ?> ">
     <div class="row flex-nowrap">
       <div class="col-4">
         <?php echo fastway_getLogo();?>
