@@ -6,6 +6,7 @@ function fastway_footer_block(){
     global $redux_demo;
     if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
 }
+
 function fastway_singleblock_block(){
     global $redux_demo;
     if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
@@ -48,11 +49,16 @@ function fw_companyaddress() {
     global $redux_demo;
     return $redux_demo['short-fw_companyaddress'];
 }
+function fw_companygooglemaps() {
+    global $redux_demo;
+    return $redux_demo['short-fw_companygooglemaps'];
+}
 
 
 add_shortcode('fw_companyfb', 'fw_companyfb');
 add_shortcode('fw_companyig', 'fw_companyig');
 add_shortcode('fw_companyyoutube', 'fw_companyyoutube');
+add_shortcode('fw_companygooglemaps', 'fw_companygooglemaps');
 add_shortcode('fw_companyemail', 'fw_companyemail');
 add_shortcode('fw_companyphone', 'fw_companyphone');
 add_shortcode('fw_companywhatsapp', 'fw_companywhatsapp');
@@ -63,8 +69,10 @@ function quicklinks(){
     echo "<div class='fw_quicklinks'>";
     if(!empty(fw_companyfb()))echo '<a href="'.fw_companyfb().'"><i class="fa fa-facebook-official" style="color:blue;"></i> Facebook</a>';
     if(!empty(fw_companyig()))echo '<a href="'.fw_companyig().'"><i class="fa fa-instagram"></i> Instagram</a>';
-    if(!empty(fw_companyemail()))echo '<a href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o" style="color:green;"></i> Mandar un mail</a>';
-    if(!empty(fw_companyphone()))echo '<a href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:green;"></i> Llamar</a>';
+    if(!empty(fw_companyemail()))echo '<a href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o"></i> Mandar un mail</a>';
+    if(!empty(fw_companyphone()))echo '<a href="tel:'.fw_companyphone().'"><i class="fa fa-phone"></i> Llamar</a>';
+    if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a href="'.fw_companygooglemaps().'"><i class="fa fa-map-marker"></i> '.fw_companyaddress().'</a>';
+    
     echo "</div>";
     echo "<style>.fw_quicklinks a{
         display:block !important;

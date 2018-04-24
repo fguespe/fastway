@@ -13,6 +13,12 @@ width:100% !important;
 height:auto !important;
 width:60% !important;
 }
+.sticky-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0 auto !important;
+}
 </style>
 <div class="header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
       <?php echo fastway_getLogo();?>

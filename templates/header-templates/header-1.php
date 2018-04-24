@@ -2,7 +2,7 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $classes=$container;
-if($redux_demo['sticky-menu'])$classes.=" sticky-top";
+if($redux_demo['sticky-menu'])$classes.=" fixed-top";
 if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
 $classes.=" py-".$redux_demo['header-padding'];
 ?>

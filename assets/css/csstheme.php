@@ -15,6 +15,7 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   text-align:<?php echo $font['text-align'];?> ;
 }
 <?}?>
+.fw_quicklinks i{color:<?php echo $redux_demo['opt-color-main']; ?>;}
 .fw_header_top{background:<?php echo $redux_demo['opt-color-topheader']; ?>;}
 .fw_header_middle{background:<?php echo $redux_demo['opt-color-middheader']; ?>;}
 .fw_header_bottom{background:<?php echo $redux_demo['opt-color-bottheader']; ?>;}
@@ -37,5 +38,6 @@ $nombre=basename($nombre,".ttf");?>
 font-family: '<?php echo $nombre;?>';
 src:url('<?php echo get_stylesheet_directory_uri().'/fonts/'.basename($path);?>');
 }
-<?}
-}?>
+<?php } ?>
+<?php } ?>
+<?php  ?>

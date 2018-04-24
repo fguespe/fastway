@@ -1,10 +1,10 @@
 <?php
 global $redux_demo;
 $container   = $redux_demo['header-width'];
-$logo = $redux_demo['general-logo'];
-$sticky="";
-if($redux_demo['sticky-menu'])$sticky="sticky-top";
-$classes=$container." ".$sticky;
+$classes=$container;
+if($redux_demo['sticky-menu'])$classes.=" sticky-top";
+if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
+$classes.=" py-".$redux_demo['header-padding'];
 ?>
 <div class="<?php echo esc_attr( $classes ); ?> d-none d-md-block">
 <header class="fw_header_middle blog-header py-3 ">

@@ -743,13 +743,21 @@
     'fields' => array(
 
        array(
+                'id'       => 'opt-color-main',
+                'type'     => 'color',
+                'output'   => array( '.site-title' ),
+                'title'    => __( 'Main Color', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'default'  => '#ffffff',
+        ),
+       array(
                 'id'       => 'opt-color-topheader',
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Top Header', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
-            ),
+        ),
         array(
                 'id'       => 'opt-color-middheader',
                 'type'     => 'color',
@@ -903,6 +911,7 @@
                 'style' => 'success',
                 'desc' => __( 'columna mobile a la mitad = .columnamobile', 'redux-framework-demo' )
             ),
+            
             array(
                 'id'       => 'short-fw_companyname',
                 'type'     => 'text',

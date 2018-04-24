@@ -4,6 +4,7 @@ $container   = $redux_demo['header-width'];
 $classes=$container;
 if($redux_demo['sticky-menu'])$classes.=" sticky-top";
 if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
+$classes.=" py-".$redux_demo['header-padding'];
 ?>
 <div class="d-none d-md-block">
 <div class="fw_header_middle d-flex flex-md-row py-2 <?php echo esc_attr( $classes ); ?> d-none d-md-flex">
