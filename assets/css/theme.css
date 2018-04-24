@@ -6,10 +6,7 @@
     background: transparent;
     position: fixed !important;
 }
-.container-fluid.fixed-top{
-padding-left:5%;
-padding-right:5%;
-}
+
 /*FIX HEADER HEIGHT TRANS Y STICKY*/
 .admin-bar .fw-transparent-header,.admin-bar .fixed-top {
     top: 32px !important;
