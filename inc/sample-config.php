@@ -975,6 +975,16 @@
                 'desc'     => __( '[fw_companyyoutube]', 'redux-framework-demo' ),
                 'default'  => '',
             ),
+            array(
+                'id'       => 'opt-ace-editor-js',
+                'type'     => 'ace_editor',
+                'title'    => __( 'JS Code', 'redux-framework-demo' ),
+                'subtitle' => __( 'Paste your JS code here.', 'redux-framework-demo' ),
+                'mode'     => 'javascript',
+                'theme'    => 'chrome',
+                'desc'     => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
+                'default'  => "jQuery(document).ready(function(){\n\n});"
+            ),
            
 
         )

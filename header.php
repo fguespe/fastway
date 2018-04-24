@@ -9,6 +9,7 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $hastop   = $redux_demo['top-header'];
+$js=$redux_demo['opt-ace-editor-js'];
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ $hastop   = $redux_demo['top-header'];
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style type="text/css"><?php include( get_template_directory() . '/assets/css/csstheme.php');?></style>
+    
 	<?php wp_head(); ?>
 </head>
 

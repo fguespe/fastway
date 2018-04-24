@@ -9,6 +9,8 @@
 
 $the_theme = wp_get_theme();
 global $redux_demo;
+
+$js=$redux_demo['opt-ace-editor-js'];
 $container   = $redux_demo['footer-width'];
 ?>
 <footer id="footer" class="">
@@ -18,6 +20,7 @@ $container   = $redux_demo['footer-width'];
 </footer>
 <?php if($redux_demo['footer-copyright-switch'])echo $redux_demo['footer-copyright-text']."<style>".$redux_demo['css_editor-footer-copywright']."</style>";?>
 <?php wp_footer(); ?>
+<script><?php echo $js;?></script>
 </body>
 
 </html>

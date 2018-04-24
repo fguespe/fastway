@@ -4,9 +4,14 @@
 }   
 .fw-transparent-header{
     background: transparent;
+    position: fixed !important;
+}
+.container-fluid.fixed-top{
+padding-left:5%;
+padding-right:5%;
 }
 /*FIX HEADER HEIGHT TRANS Y STICKY*/
-body.home.admin-bar .fw-transparent-header,body.home.admin-bar .fixed-top {
+.admin-bar .fw-transparent-header,.admin-bar .fixed-top {
     top: 32px !important;
 }
 
