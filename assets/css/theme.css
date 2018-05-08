@@ -4,12 +4,14 @@
 }
 #mobileicons a{
     display:inline !important;
-    font-size:22px;
-    margin:5px;
+    font-size:25px;
+    margin-left:10px;
     line-height:20px !important;
 }
 #mobileicons .fw_quicklinks{
     border:0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 /*TRANSPARENT*/
 .header-mobile #main-menu{
