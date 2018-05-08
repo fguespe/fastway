@@ -1,3 +1,16 @@
+/*MOBILE ICONS*/
+#mobileicons span{
+    display:none !important;
+}
+#mobileicons a{
+    display:inline !important;
+    font-size:22px;
+    margin:5px;
+    line-height:20px !important;
+}
+#mobileicons .fw_quicklinks{
+    border:0px !important;
+}
 /*TRANSPARENT*/
 .header-mobile #main-menu{
     margin-top:10px;

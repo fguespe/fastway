@@ -923,7 +923,7 @@
                 'id'       => 'short-fw_companywhatsapp',
                 'type'     => 'text',
                 'title'    => __( 'Company Whatsapp', 'redux-framework-demo' ),
-                'desc'     => __( '[fw_companywhatsapp]', 'redux-framework-demo' ),
+                'desc'     => __( '[fw_companywhatsapp] empezar con +54', 'redux-framework-demo' ),
                 'default'  => '',
             ),
             array(

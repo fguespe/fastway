@@ -4,24 +4,13 @@ $container   = $redux_demo['header-width'];
 $logo = $redux_demo['general-logo'];
 $classes="d-md-none";
 ?>
-<style type="text/css">
-.header-mobile .logo img {
-height:auto !important;
-width:100% !important;
-}
-.header-mobile .logo {
-height:auto !important;
-width:60% !important;
-}
-.sticky-top {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  margin: 0 auto !important;
-}
-</style>
+
 <div class="header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
       <?php echo fastway_getLogo();?>
+      <div id="mobileicons">
+      <?php if($redux_demo['fw-quicklinks'])quicklinks();?>
+      </div>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
