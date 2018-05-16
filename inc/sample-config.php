@@ -874,6 +874,18 @@
             'id'   => 'editor-page-divide-1',
             'type' => 'divide'
         ),
+        array(
+            'id'        => 'css_editor-mobile',
+            'type'      => 'ace_editor',
+            'title'     => 'CSS Mobile',
+            'mode'      => 'css',
+            'theme'    => 'monokai',
+            'full_width'    => true
+        ),
+        array(
+            'id'   => 'editor-page-divide-1',
+            'type' => 'divide'
+        ),
 
 
         
@@ -883,12 +895,18 @@
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Extras', 'redux-framework-demo' ),
         'id'               => 'basic',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'Algunos tips y opciones generales', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-home',
         'fields'           => array(
             array(
                 'id'   => 'opt-info-field1',
+                'type' => 'info',
+                'style' => 'warning',
+                'desc' => __( 'USAR UN SOLO ESPACIO VACIO, NO VARIOS', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field45',
                 'type' => 'info',
                 'style' => 'success',
                 'desc' => __( 'Hide on desktop class = d-md-none', 'redux-framework-demo' )
@@ -905,11 +923,11 @@
                 'style' => 'success',
                 'desc' => __( 'menu horizontal = .menuhor', 'redux-framework-demo' )
             ),
-             array(
+            array(
                 'id'   => 'opt-info-field4',
                 'type' => 'info',
                 'style' => 'success',
-                'desc' => __( 'columna mobile a la mitad = .columnamobile', 'redux-framework-demo' )
+                'desc' => __( '.columnamobile (50%) | .trescolumnamobile (33%)', 'redux-framework-demo' )
             ),
             
             array(

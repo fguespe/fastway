@@ -27,6 +27,7 @@ footer{background:<?php echo $redux_demo['opt-color-footer']; ?>;}
 <?php echo $redux_demo['css_editor-footer']; ?>
 <?php echo $redux_demo['css_editor-loop']; ?>
 <?php echo $redux_demo['css_editor-single']; ?>
+<?php echo $redux_demo['css_editor-mobile']; ?>
 <?php
 if(is_child_theme()){
 $files=glob(get_stylesheet_directory().'/fonts/*.otf');

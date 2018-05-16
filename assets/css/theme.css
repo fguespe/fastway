@@ -13,6 +13,12 @@
     margin: 0px !important;
     padding: 0px !important;
 }
+/*LOGO*/
+@media (max-width: 799px) {
+.logo img{
+max-width:120px !important;
+}
+}
 /*TRANSPARENT*/
 .header-mobile #main-menu{
     margin-top:10px;
@@ -35,7 +41,10 @@
 /*COLUMNA MOBILE*/
 @media (max-width: 799px) {/*OCULTAR ADMIN BAR*/
     
-    
+    .trescolumnasmobile{
+        width:33% !important;
+        display:inline-block !important;
+    }
     .columnamobile{
         width:50% !important;
         display:inline-block !important;
@@ -69,7 +78,10 @@ ul{
 .fw_header_top p{
     margin:0px ;
 }
-
+@media (max-width: 799px) {
+.vc_empty_space{
+    max-height:60px;
+}
 
 
 /*MENU*/
