@@ -79,10 +79,10 @@ ul{
     margin:0px ;
 }
 @media (max-width: 799px) {
-.vc_empty_space{
-    max-height:60px;
+    .vc_empty_space{
+        max-height:60px;
+    }
 }
-
 
 /*MENU*/
 .menuhor li{
