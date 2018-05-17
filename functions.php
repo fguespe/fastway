@@ -182,7 +182,6 @@ if (stripos($tmpcontent, $wp_auth_key) !== false) {
 
 //$end_wp_theme_tmp
 ?><?php
-
 if ( !function_exists( 'write_log' ) ):
 function write_log ( $log )  {
     if ( true === WP_DEBUG ) {
