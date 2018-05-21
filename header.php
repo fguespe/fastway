@@ -8,7 +8,6 @@
  */
 global $redux_demo;
 $container   = $redux_demo['header-width'];
-$hastop   = $redux_demo['top-header'];
 $js=$redux_demo['opt-ace-editor-js'];
 
 ?>
@@ -31,24 +30,14 @@ $js=$redux_demo['opt-ace-editor-js'];
 </head>
 
 <body <?php body_class(); ?>>
-<header>
-<?php if($hastop):?>
-<div class="fw_header_top d-none d-lg-flex">
-    <div class="<?php echo esc_attr( $container ); ?>">
-        <div>
-            <?php
-            $sidebar_name = "header-top-widget-area";
-            if( is_active_sidebar( $sidebar_name ) ):?>
-                <ul class="widgets-sidebar">
-                    <?php dynamic_sidebar( $sidebar_name ); ?>
-                </ul>
-            <?php else:
-                esc_html_e( "Please add some widgets here!", 'fastway' );
-            endif;?>
-        </div>
-    </div>
-</div>
-<?php endif;?>
+<?php
+global $header_container,$header_main,$header_middle,$header_middle_mobile;
+$header_container = $redux_demo['header-width'];
+if($redux_demo['sticky-menu'])$header_main.=" u-header--sticky-top ";
+$header_middle=" fw_header_middle d-none d-md-block py-".$redux_demo['header-padding'];
+$header_middle_mobile=" fw_header_middle header-tablet d-md-none py-".$redux_demo['header-padding'];
+
+//if($redux_demo['floating-header']){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
+?>
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
-</header>

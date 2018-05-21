@@ -2,6 +2,25 @@
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
+
+add_action( 'add_topbar', 'get_topbar' );
+function get_topbar(){
+    global $redux_demo;
+    $container = $redux_demo['header-width'];
+    if(!$redux_demo['top-header'])return;
+    echo '<div class="fw_header_top d-none d-lg-flex">
+    <div class="'. esc_attr( $container ).'">
+    <div>';
+    $sidebar_name = "header-top-widget-area";
+    if( is_active_sidebar( $sidebar_name ) ):
+        echo '<ul class="widgets-sidebar">';
+        dynamic_sidebar( $sidebar_name );
+        echo '</ul>';
+    else:
+        esc_html_e( "Please add some widgets here!","fastway" );
+    endif;
+    echo '</div> </div>  </div>';
+}
 function fastway_footer_block(){
     global $redux_demo;
     if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
@@ -87,65 +106,7 @@ function quicklinks(){
         }</style>";
 }
 
-if( !function_exists( 'fw_shoppingCart' ) ) {
 
-    function fw_shoppingCart($style = 1){
-        if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
-        global $woocommerce;
-
-        $mini_popup_meta = '<p class="hidden-xs">%s</p>';
-        $mini_popup_icon = true;
-        $mini_popup_price = true;
-        switch($style) {
-            case 2:
-                $mini_popup_meta = '';
-                break;
-            case 3:
-                $mini_popup_meta = '<span>%s</span>';
-                $mini_popup_icon = false;
-                break;
-            case 4:
-                $mini_popup_meta = '<span class="arrow_down">%s</span>';
-                $mini_popup_icon = false;
-                $mini_popup_price = false;
-                break;
-            case 5:
-                break;
-        }
-
-        ?>
-        <div class="nth-mini-popup nth-shopping-cart">
-            <div class="mini-popup-hover nth-shopping-hover">
-                <?php if(absint($style) !== 5) : ?>
-                    <?php if($mini_popup_icon):?>
-                    <a href="javascript:void(0)" title="<?php esc_attr_e('My Cart','theshopier');?>">
-                        <span class="nth-icon icon-nth-cart" data-count="<?php echo absint($woocommerce->cart->cart_contents_count);?>"></span>
-                    </a>
-                    <?php endif;?>
-                    <div class="mini-popup-meta">
-                        <?php
-                        printf($mini_popup_meta, esc_html__("My Cart", 'theshopier' ));
-                        if($mini_popup_price) {
-                            printf('<span class="cart-total hidden-xs">%s</span>', $woocommerce->cart->get_cart_total());
-                        }
-                        ?>
-                    </div>
-                <?php else: ?>
-                    <a href="javascript:void(0)" title="<?php esc_attr_e('My Cart','theshopier');?>">
-                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-                        <span class="cart-meta-st5"><?php printf(__('Cart: %s item(s)', 'theshopier'), absint($woocommerce->cart->cart_contents_count));?> </span>
-                    </a>
-                <?php endif;?>
-            </div>
-
-            <div class="nth-mini-popup-cotent nth-shopping-cart-content">
-                <div class="widget_shopping_cart_content"></div>
-            </div>
-        </div>
-        <?php
-    }
-
-}
 
 
 if( !function_exists('fastway_getLogo') ) {
@@ -172,11 +133,10 @@ if( !function_exists('fastway_getLogo') ) {
                     $logo_arg['height'] = "auto";
                 }
 
-                echo '<div class="logo">';
-                echo '<a href="'.esc_attr(home_url()).'">';
+                //echo '<a class="logo">';
+                echo '<a class="logo navbar-brand u-header__navbar-brand "  href="'.esc_attr(home_url()).'">';
                 fastway_getImage($logo_arg);
                 echo '</a>';
-                echo '</div>';
         }
     }
 }

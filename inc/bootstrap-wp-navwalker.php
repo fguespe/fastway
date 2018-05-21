@@ -36,7 +36,8 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul class=\" dropdown-menu\" role=\"menu\">\n";
+		$output .= "\n$indent<ul id=\"pagesSubMenu\"  class=\" list-inline hs-sub-menu u-header__sub-menu py-3 mb-0\" style=\"min-width: 220px;\"
+                    aria-labelledby=\"pagesMegaMenu\">\n";
 	}
 
 	/**
@@ -73,15 +74,15 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			$class_names = $value = '';
 			$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[]   = 'nav-item menu-item-' . $item->ID;
-			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+			$class_names = " ";///join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 			/*
 			if ( $args->has_children )
 			  $class_names .= ' dropdown';
 			*/
 			if ( $args->has_children && $depth === 0 ) {
-				$class_names .= ' dropdown';
+				$class_names .= ' nav-item hs-has-sub-menu u-header__nav-item ';
 			} elseif ( $args->has_children && $depth > 0 ) {
-				$class_names .= ' dropdown-submenu';
+				$class_names .= ' dropdown-item hs-has-sub-menu ';
 			}
 			if ( in_array( 'current-menu-item', $classes ) ) {
 				$class_names .= ' active';
@@ -99,7 +100,14 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 			$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-			$output .= $indent . '<li' . $id . $value . $class_names . '>';
+			if ( $args->has_children && $depth === 0 ) {
+				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">';
+			}else{
+				$output .= $indent . '<li ' . $id .' class="hs-has-sub-menu" >';
+
+			}
+			//echo $value.":".$args->has_children." - ".$depth." <br>";
+			
 			$atts           = array();
 			if ( empty( $item->attr_title ) ) { $atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : ''; } else { $atts['title'] = $item->attr_title; }
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
@@ -108,11 +116,14 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']        = '#';
-				$atts['data-toggle'] = 'dropdown';
-				$atts['class']       = 'nav-link dropdown-toggle';
-			} else {
+				$atts['aria-haspopup'] = 'true';
+				$atts['aria-expanded'] = 'false';
+				$atts['aria-labelledby'] = 'pagesSubMenu';
+				$atts['class']       = 'nav-link u-header__nav-link';
+			}else {
 				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
-				$atts['class'] = 'nav-link';
+				$atts['class'] = 'nav-link u-header__sub-menu-nav-link u-list__link py-2';
+
 			}
 			$atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 			$attributes = '';
@@ -124,14 +135,10 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			}
 			$item_output = $args->before;
 			// Font Awesome icons
-			if ( ! empty( $icon ) ) {
-				$item_output .= '<a' . $attributes . '><span class="fa ' . esc_attr( $icon ) . '"></span>&nbsp;';
-			} else {
-				$item_output .= '<a' . $attributes . '>';
-			}
+			$item_output .= '<a id="pagesMegaMenu"' . $attributes . '>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title,
 					$item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="fa fa-angle-down u-header__nav-link-icon"></span></a>' : '</a>';
 			$item_output .= $args->after;
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}

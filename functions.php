@@ -45,6 +45,7 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
 require get_template_directory() . '/inc/shortcodes/class-woo-shortcodes.php' ;
 require get_template_directory() . '/inc/shortcodes/class-shortcodes.php' ;
+require get_template_directory() . '/inc/shortcodes/shopping-cart.php' ;
 
 
 

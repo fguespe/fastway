@@ -255,7 +255,7 @@
                 'title'    => __( 'Logo', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+                'default'  => array( 'url' => get_template_directory_uri() . "/assets/img/logo.svg"),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -325,20 +325,22 @@
         )
     ) );
     $theme_headers = array();
-    for( $i=1; $i<=11; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/theme-option-header{$i}.jpg" ) ) {
-            $theme_headers[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "theme-option-header{$i}.jpg"
-            );
-        }
+    for( $i=1; $i<=20; $i++ ) {
+        for( $j=1; $j<=5; $j++ ) {
+            if( file_exists( $THEME_DIR . "images/theme-option-header{$i}-{$j}.png" ) ) {
+                $theme_headers[$i."-".$j] = array(
+                    'alt' => $i."-".$j,
+                    'img' => $THEME_IMG_URI . "theme-option-header{$i}-{$j}.png"
+                );
+            }
+        }   
     }
     $theme_headers_mobile = array();
-    for( $i=1; $i<=3; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/theme-option-header-mobile{$i}.jpg" ) ) {
+    for( $i=1; $i<=20; $i++ ) {
+        if( file_exists( $THEME_DIR . "images/theme-option-header-mobile{$i}.png" ) ) {
             $theme_headers_mobile[$i] = array(
                 'alt' => $i,
-                'img' => $THEME_IMG_URI . "theme-option-header-mobile{$i}.jpg"
+                'img' => $THEME_IMG_URI . "theme-option-header-mobile{$i}.png"
             );
         }
     }
@@ -397,7 +399,7 @@
                 'type'     => 'text',
                 'title'    => __( 'Header Padding', 'redux-framework-demo' ),
                 'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
-                'default'  => "3",
+                'default'  => '1',
             ),
             array(
                 'id'       => 'logo-width',
@@ -406,20 +408,11 @@
                 'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
                 'default'  => "250",
             ),
-           
-            array(
-            'id'       => 'transparent-header',
-            'type'     => 'switch',
-            'title'    => 'Transparent Header',
-            'default'  => 0,
-            'on'       => 'Enabled',
-            'off'      => 'Disabled',
-            ),
             array(
             'id'       => 'top-header',
             'type'     => 'switch',
             'title'    => 'Top Header',
-            'default'  => 1,
+            'default'  => 0,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
             ),
@@ -687,7 +680,7 @@
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
-                    'font-size'   => '16px',
+                    'font-size'   => '14px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
@@ -702,7 +695,7 @@
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
-                    'font-size'   => '16px',
+                    'font-size'   => '14px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
@@ -717,7 +710,7 @@
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
-                    'font-size'   => '16px',
+                    'font-size'   => '14px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
@@ -732,7 +725,7 @@
                 'google'   => true,
                 'default'  => array(
                     'color'       => 'black',
-                    'font-size'   => '16px',
+                    'font-size'   => '14px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
@@ -768,6 +761,14 @@
                 'title'    => __( 'Top Header', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
+        ),
+       array(
+                'id'       => 'opt-color-iconheader',
+                'type'     => 'color',
+                'output'   => array( '.site-title' ),
+                'title'    => __( 'Icon Header', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'default'  => '#000000',
         ),
         array(
                 'id'       => 'opt-color-middheader',
@@ -938,7 +939,13 @@
                 'id'   => 'opt-info-field4',
                 'type' => 'info',
                 'style' => 'success',
-                'desc' => __( '.columnamobile (50%) | .trescolumnamobile (33%)', 'redux-framework-demo' )
+                'desc' => __( '.columnamobile (50%) | .trescolumnasmobile (33%) *solo usar en casos especiales', 'redux-framework-demo' )
+            ),
+             array(
+                'id'   => 'opt-info-field454',
+                'type' => 'info',
+                'style' => 'success',
+                'desc' => __( '.two_mobile_columns (50%) | three_mobile_columns (33%) | four_mobile_columns (25%)', 'redux-framework-demo' )
             ),
             
             array(

@@ -1,22 +1,14 @@
-<?php
-global $redux_demo;
-$container   = $redux_demo['header-width'];
-$logo = $redux_demo['general-logo'];
-$classes="d-md-none";
+<?php 
+global $header_container,$header_main,$header_middle;
 ?>
-
-<div class="u-header__section header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
-      <?php echo fastway_getLogo();?>
-      <div id="mobileicons">
-      <?php if($redux_demo['fw-quicklinks'])quicklinks();?>
-      </div>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-      <div class="collapse navbar-collapse" id="navbarsExample01">
+<header id="header" class="u-header u-header--floating <?php echo esc_attr( $header_main ); ?>">
+<?php do_action( 'add_topbar');?>
+<div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
+  <div class="u-header__section u-header--floating__inner <?php echo esc_attr( $header_middle ); ?>">
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->
-
+          <?php echo fastway_getLogo();?>
           <?php wp_nav_menu(
             array(
                   'theme_location'  => 'primary',
@@ -31,7 +23,6 @@ $classes="d-md-none";
             ?>
         </nav>
         <!-- End Nav -->
-       
-        
       </div>
 </div>
+</header>

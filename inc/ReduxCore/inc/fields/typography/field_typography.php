@@ -117,10 +117,11 @@ if ( ! class_exists( 'ReduxFramework_typography' ) ) {
             if(is_child_theme()){
                 $files=glob(get_stylesheet_directory().'/fonts/*.otf');
                 $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));
+                $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.OTF'));
                 foreach ($files as $path){
                     $nueva=basename($path,".otf");
+                    $nueva=basename($path,".OTF");
                     $nueva=basename($nueva,".ttf");
-                    
                     $this->std_fonts=array_merge($this->std_fonts,array($nueva.",Arial,sans-serif"=>basename($path).",Arial,sans-serif"));
                 }
             }

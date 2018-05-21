@@ -22,6 +22,60 @@ $container   = $redux_demo['footer-width'];
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
 </body>
+<script>
+    jQuery(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      jQuery('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: jQuery('.container'),
+        breakpoint: 768,
+        hideTimeOut: 0
+      });
+    });
+
+    jQuery(document).on('ready', function () {
+      // initialization of header
+      jQuery.HSCore.components.HSHeader.init(jQuery('#header'));
+
+      // initialization of go to
+      jQuery.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+  <script>
+    
+    jQuery(document).on('ready', function () {
+      // initialization of header
+      jQuery.HSCore.components.HSHeader.init(jQuery('#header'));
+
+      // initialization of unfold component
+      jQuery.HSCore.components.HSUnfold.init(jQuery('[data-unfold-target]'), {
+        afterOpen: function () {
+          jQuery(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      jQuery.HSCore.components.HSMalihuScrollBar.init(jQuery('.js-scrollbar'));
+
+      // initialization of forms
+      jQuery.HSCore.helpers.HSFocusState.init();
+
+      // initialization of form validation
+      jQuery.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirm_password: {
+            equalTo: '#password'
+          }
+        }
+      });
+
+      // initialization of show animations
+      jQuery.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of go to
+      jQuery.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
 
 </html>
 
