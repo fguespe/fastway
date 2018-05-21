@@ -290,7 +290,7 @@
                     'img' => $THEME_IMG_URI . 'layout-boxed.png'
                 )
             ),
-            'default'  => 'container'
+            'default'  => 'boxed'
             ),
             array(
             'id'       => 'layout-main',
@@ -1083,8 +1083,19 @@ Redux::setSection( $opt_name, array(
                     'img' => $THEME_IMG_URI . 'layout-boxed.png'
                 )
             ),
-            'default'  => 'wide'
+            'default'  => 'boxed'
         ),
+        array(
+            'id'       => 'cart-style',
+            'type'     => 'button_set',
+            'title'    => 'Cart Style',
+            'options'  => array(
+                'popup' => 'Popup',
+                'modal'  => 'Modal',
+                'sidebar'  => 'Sidebar',
+            ),
+            'default'  => 'popup'
+            ),
         array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',
@@ -1142,7 +1153,7 @@ Redux::setSection( $opt_name, array(
             'type'    => 'spinner',
             'title'   => esc_html__( 'Shop Product Columns', 'fastway' ),
             'desc'    => esc_html__( 'Min: 2, max: 12, step:1, default value: 3', 'fastway' ),
-            'default' => '3',
+            'default' => '4',
             'min'     => '2',
             'step'    => '1',
             'max'     => '12',

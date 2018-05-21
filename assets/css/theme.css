@@ -226,8 +226,8 @@ width:70%;
      display: inline-block;
 }
 */
-header .fa-shopping-cart{
-font-size:20px;
+header span.fa{
+font-size:20px !important;
 }
 .widget_shopping_cart_content a.remove:hover {
      background: none !important;

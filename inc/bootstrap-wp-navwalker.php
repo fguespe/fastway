@@ -36,8 +36,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul id=\"pagesSubMenu\"  class=\" list-inline hs-sub-menu u-header__sub-menu py-3 mb-0\" style=\"min-width: 220px;\"
-                    aria-labelledby=\"pagesMegaMenu\">\n";
+		$output .= "\n$indent<ul id=\"pagesSubMenu\"  class=\" list-inline hs-sub-menu u-header__sub-menu py-3 mb-0\" style=\"min-width: 220px;\" aria-labelledby=\"pagesMegaMenu\">\n";
 	}
 
 	/**
@@ -101,7 +100,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 			if ( $args->has_children && $depth === 0 ) {
-				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">';
+				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
 			}else{
 				$output .= $indent . '<li ' . $id .' class="hs-has-sub-menu" >';
 

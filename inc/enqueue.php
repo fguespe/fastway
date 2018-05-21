@@ -22,6 +22,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		wp_enqueue_style( 'animate-styles', get_template_directory_uri() . '/assets/css/animate.min.css', array(), $the_theme->get( 'Version' ) );
 		
 		wp_enqueue_style( 'megamenu-styles', get_template_directory_uri() . '/assets/css/hs.megamenu.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'custombox-styles', get_template_directory_uri() . '/assets/css/custombox.min.css', array(), $the_theme->get( 'Version' ) );
 		
 		wp_enqueue_style( 'scrollbar-styles', get_template_directory_uri() . '/assets/css/jquery.mCustomScrollbar.css', array(), $the_theme->get( 'Version' ) );
 		
@@ -58,6 +59,11 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		wp_enqueue_script( 'hsshowanimation-scripts', get_template_directory_uri() . '/assets/js/hs.show-animation.js', array(), $the_theme->get( 'Version' ), true );
 
 		wp_enqueue_script( 'hsgoto-scripts', get_template_directory_uri() . '/assets/js/hs.go-to.js', array(), $the_theme->get( 'Version' ), true );
+
+		//Modal
+		wp_enqueue_script( 'appear-scripts', get_template_directory_uri() . '/assets/js/appear.js', array(), $the_theme->get( 'Version' ), true );
+		wp_enqueue_script( 'showwindow-scripts', get_template_directory_uri() . '/assets/js/hs.modal-window.js', array(), $the_theme->get( 'Version' ), true );
+		wp_enqueue_script( 'custombox-scripts', get_template_directory_uri() . '/assets/js/custombox.min.js', array(), $the_theme->get( 'Version' ), true );
 
 
 		

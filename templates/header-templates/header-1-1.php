@@ -4,6 +4,7 @@ global $header_container,$header_main,$header_middle;
 <header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
 <?php do_action( 'add_topbar');?>
 <div class="u-header__section <?php echo esc_attr( $header_middle ); ?>">
+  
       <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
@@ -21,7 +22,7 @@ global $header_container,$header_main,$header_middle;
                 )
             ); 
             ?>
-           
+            <?php echo fw_shoppingCart();?>
         </nav>
         <!-- End Nav -->
       </div>

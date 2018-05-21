@@ -40,9 +40,7 @@ $container   = $redux_demo['footer-width'];
       // initialization of go to
       jQuery.HSCore.components.HSGoTo.init('.js-go-to');
     });
-  </script>
-  <script>
-    
+
     jQuery(document).on('ready', function () {
       // initialization of header
       jQuery.HSCore.components.HSHeader.init(jQuery('#header'));
@@ -52,6 +50,11 @@ $container   = $redux_demo['footer-width'];
         afterOpen: function () {
           jQuery(this).find('input[type="search"]').focus();
         }
+      });
+
+      // initialization of autonomous popups
+      jQuery.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-shopping-cart-window', {
+        autonomous: true
       });
 
       // initialization of malihu scrollbar

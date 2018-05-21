@@ -1,11 +1,8 @@
-<?php
-global $redux_demo;
-$container   = $redux_demo['header-width'];
-$logo = $redux_demo['general-logo'];
-$classes="d-md-none";
+<?php 
+global $header_main,$header_middle_mobile;
 ?>
-
-<div class="u-header__section header-mobile <?php echo esc_attr( $classes ); ?> fw_header_middle navbar">
+<header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
+<div class="u-header__section <?php echo esc_attr( $header_middle_mobile ); ?> ">
       <?php echo fastway_getLogo();?>
       <div id="mobileicons">
       <?php if($redux_demo['fw-quicklinks'])quicklinks();?>
@@ -34,4 +31,6 @@ $classes="d-md-none";
        
         
       </div>
+      
 </div>
+</header>
