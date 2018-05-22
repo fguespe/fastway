@@ -431,7 +431,7 @@
             'type'     => 'image_select',
             'title'    => 'Header style',
             'options'  => $theme_headers,
-            'default'  => '1',
+            'default'  => '1-1',
             ),
             array(
             'id'       => 'header-headerwidget-start',
@@ -1083,7 +1083,7 @@ Redux::setSection( $opt_name, array(
                     'img' => $THEME_IMG_URI . 'layout-boxed.png'
                 )
             ),
-            'default'  => 'boxed'
+            'default'  => 'container'
         ),
         array(
             'id'       => 'cart-style',
@@ -1099,7 +1099,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',
-            'title'    => esc_html__( 'Shop Layout', 'fastway' ),
+            'title'    => esc_html__( 'Shop Pages Layout', 'fastway' ),
             'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'fastway' ),
             'desc'     => '',
             'options'  => array(
