@@ -11,6 +11,16 @@ function write_log ( $log )  {
     }
 }   
 endif;
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
 
 if ( !function_exists( 'fw_checkPlugin' ) ):
 function fw_checkPlugin( $path = '' ){
@@ -46,6 +56,7 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 require get_template_directory() . '/inc/shortcodes/class-woo-shortcodes.php' ;
 require get_template_directory() . '/inc/shortcodes/class-shortcodes.php' ;
 require get_template_directory() . '/inc/shortcodes/shopping-cart.php' ;
+require get_template_directory() . '/inc/shortcodes/sidebar-menu.php' ;
 
 
 

@@ -36,21 +36,34 @@ $container   = $redux_demo['footer-width'];
     jQuery(document).on('ready', function () {
       // initialization of header
       jQuery.HSCore.components.HSHeader.init(jQuery('#header'));
-
+      
+      jQuery.HSCore.helpers.HSHamburgers.init('#hamburgerTrigger');
       // initialization of go to
       jQuery.HSCore.components.HSGoTo.init('.js-go-to');
-    });
-
-    jQuery(document).on('ready', function () {
+    
       // initialization of header
       jQuery.HSCore.components.HSHeader.init(jQuery('#header'));
 
+      
       // initialization of unfold component
       jQuery.HSCore.components.HSUnfold.init(jQuery('[data-unfold-target]'), {
         afterOpen: function () {
           jQuery(this).find('input[type="search"]').focus();
+          // Helper function for accordions in hidden block
+          jQuery('#headerSidebarList .u-header-collapse__nav-pointer').on('click', function (e) {
+            e.preventDefault();
+
+            var target = jQuery(this).attr('href');
+
+            jQuery('#headerSidebarList .u-header-collapse__submenu-list').collapse('hide');
+            jQuery(target).collapse('show');
+          });
+        },
+        beforeClose: function () {
+          jQuery('#hamburgerTrigger').removeClass('is-active');
         }
       });
+
 
       // initialization of autonomous popups
       jQuery.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-shopping-cart-window', {
@@ -76,7 +89,22 @@ $container   = $redux_demo['footer-width'];
       jQuery.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
       // initialization of go to
-      jQuery.HSCore.components.HSGoTo.init('.js-go-to');
+
+      
+      jQuery('#sidebarHeaderInvoker').on('click', function(e) {
+        jQuery('#headerSidebarList .collapse').collapse('hide');
+      });
+
+      jQuery('#sidebarHeader .close').on('click', function(e) {
+        jQuery('#headerSidebarList .collapse').collapse('hide');
+        jQuery('#hamburgerTrigger').removeClass('is-active');
+      });
+
+      jQuery(document).on('keydown', function (e) {
+        if (e.keyCode && e.keyCode === 27) {
+          jQuery('#headerSidebarList .collapse').collapse('hide');
+        }
+      });
     });
   </script>
 

@@ -11,19 +11,65 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if (! class_exists ( 'understrap_WP_Bootstrap_Navwalker' )) :
+if (! class_exists ( 'fw_Navwalker' )) :
+class fw_Navwalker extends Walker_Nav_Menu {
+	var $atts;
+    function __construct($tipo="") {
+    	if($tipo==="desktop-1"){
+	        $this->atts['li_class'] = 'nav-item hs-has-sub-menu u-header__nav-item';
+	        
+	        $this->atts['submenu_id'] = 'pagesSubMenu';
+	        $this->atts['submenu_class']='list-inline hs-sub-menu u-header__sub-menu py-3 mb-0';
+	        $this->atts['submenu_li_class']='hs-has-sub-menu';
+	        $this->atts['submenu_data_parent']='';
+	        
+	        $this->atts['class']= 'nav-link u-header__nav-link';	
+	        $this->atts['href']        = '#';
+			$this->atts['aria-haspopup'] = 'true';
+			$this->atts['aria-expanded'] = 'false';
+			$this->atts['aria-labelledby'] = 'pagesSubMenu';
+			$this->atts['role']='';
+	     	$this->atts['data-toggle']='';
+	     	$this->atts['aria-controls']='';
 
-/**
- * Class WP_Bootstrap_Navwalker
- * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
- * Description: A custom WordPress nav walker class to implement the Bootstrap 4
- * navigation style in a custom theme using the WordPress built in menu manager.
- * Version: 2.0.4
- * Author: Edward McIntyre - @twittem
- * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- */
-class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
+    	}else if($tipo==="mobile-1"){
+	        $this->atts['li_class'] = 'nav-item hs-has-sub-menu u-header__nav-item';
+
+	        $this->atts['submenu_id'] = 'pagesSubMenu';
+	        $this->atts['submenu_class']='list-inline hs-sub-menu u-header__sub-menu py-3 mb-0';
+	        $this->atts['submenu_li_class']='hs-has-sub-menu';
+	        $this->atts['submenu_data_parent']='';
+
+	        $this->atts['class'] = 'nav-link u-header__nav-link';	
+	        $this->atts['href']= '#';
+			$this->atts['aria-haspopup'] = 'true';
+			$this->atts['aria-expanded'] = 'false';
+			$this->atts['aria-labelledby'] = 'pagesSubMenu';
+	     	$this->atts['role']='';
+	     	$this->atts['data-toggle']='';
+	     	$this->atts['aria-controls']='';
+
+    	}else if($tipo==="sidebar-1"){
+	        $this->atts['li_class'] = 'u-has-submenu u-header-collapse__submenu';
+	        //Submenu
+	        $this->atts['submenu_id'] = 'headerSidebarHomeCollapse';//??????
+	        $this->atts['submenu_class']='collapse u-header-collapse__nav-list';
+	        $this->atts['submenu_li_class']='u-has-submenu u-header-collapse__submenu';
+	        $this->atts['submenu_data_parent']='#headerSidebarContent';
+	        //a first
+	        $this->atts['class'] = 'u-header-collapse__nav-link u-header-collapse__nav-pointer';	
+	        $this->atts['href']='#'.$this->atts['submenu_id'];
+			$this->atts['aria-haspopup'] = '';
+	     	$this->atts['aria-expanded']='';
+			$this->atts['aria-labelledby'] = '';
+	     	$this->atts['role']='button';
+	     	$this->atts['data-toggle']='collapse';
+	     	$this->atts['aria-controls']=$this->atts['submenu_id'];
+
+	           
+    	}
+
+    }
 	/**
 	 * The starting level of the menu.
 	 *
@@ -36,7 +82,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul id=\"pagesSubMenu\"  class=\" list-inline hs-sub-menu u-header__sub-menu py-3 mb-0\" style=\"min-width: 220px;\" aria-labelledby=\"pagesMegaMenu\">\n";
+		$output .= "\n$indent<ul id=\"".$this->atts['submenu_id']."\"  class=\"".$this->atts['submenu_class']."\" data-parent=\"".$this->atts['submenu_data_parent']."\" >\n";
 	}
 
 	/**
@@ -61,6 +107,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 		 * comparison that is not case sensitive. The strcasecmp() function returns
 		 * a 0 if the strings are equal.
 		 */
+
 		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li class="dropdown-divider" role="presentation">';
 		} else if ( strcasecmp( $item->title, 'divider' ) == 0 && $depth === 1 ) {
@@ -79,9 +126,9 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			  $class_names .= ' dropdown';
 			*/
 			if ( $args->has_children && $depth === 0 ) {
-				$class_names .= ' nav-item hs-has-sub-menu u-header__nav-item ';
+				$class_names .= $this->atts['li_class'];
 			} elseif ( $args->has_children && $depth > 0 ) {
-				$class_names .= ' dropdown-item hs-has-sub-menu ';
+				$class_names .= $this->atts['li_class'];
 			}
 			if ( in_array( 'current-menu-item', $classes ) ) {
 				$class_names .= ' active';
@@ -102,7 +149,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children && $depth === 0 ) {
 				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
 			}else{
-				$output .= $indent . '<li ' . $id .' class="hs-has-sub-menu" >';
+				$output .= $indent . '<li ' . $id .' class="'.$this->atts['submenu_li_class'].'" >';
 
 			}
 			//echo $value.":".$args->has_children." - ".$depth." <br>";
@@ -114,14 +161,21 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']        = '#';
-				$atts['aria-haspopup'] = 'true';
-				$atts['aria-expanded'] = 'false';
-				$atts['aria-labelledby'] = 'pagesSubMenu';
-				$atts['class']       = 'nav-link u-header__nav-link';
+				$this->atts['submenu_id']=$this->atts['submenu_id'].trim($item->ID);
+				$this->atts['href']='#'.$this->atts['submenu_id'];
+	     		$this->atts['aria-controls']=$this->atts['submenu_id'];
+	     		$atts['href'] = $this->atts['href'];
+				$atts['aria-haspopup'] = $this->atts['aria-haspopup'] ;
+	     		$atts['aria-expanded'] = $this->atts['aria-expanded'];
+				$atts['aria-labelledby'] = $this->atts['aria-labelledby'];
+	     		$atts['role'] = $this->atts['role'];
+	     		$atts['data-toggle'] = $this->atts['data-toggle'];
+	     		$atts['aria-controls'] = $this->atts['aria-controls'];
+				$atts['class']       =  $this->atts['class'];
+				
 			}else {
 				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
-				$atts['class'] = 'nav-link u-header__sub-menu-nav-link u-list__link py-2';
+				$atts['class'] =  $this->atts['class'];
 
 			}
 			$atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );

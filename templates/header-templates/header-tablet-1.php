@@ -22,7 +22,7 @@ global $header_main,$header_middle_mobile;
                   'menu_class'      => 'navbar-nav u-header__navbar-nav ml-lg-auto',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
-                  'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+                  'walker'          => new fw_Navwalker('mobile-1'),
                 )
             ); 
             ?>
