@@ -290,7 +290,7 @@
                     'img' => $THEME_IMG_URI . 'layout-boxed.png'
                 )
             ),
-            'default'  => 'boxed'
+            'default'  => 'container'
             ),
             array(
             'id'       => 'layout-main',
@@ -1090,6 +1090,7 @@ Redux::setSection( $opt_name, array(
             'type'     => 'button_set',
             'title'    => 'Cart Style',
             'options'  => array(
+                'link' => 'Link',
                 'popup' => 'Popup',
                 'modal'  => 'Modal',
                 'sidebar'  => 'Sidebar',

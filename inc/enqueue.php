@@ -13,18 +13,18 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		// Get the theme data.
 		$the_theme = wp_get_theme();
 
-		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), $the_theme->get( 'Version' ) );
-		wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+		wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 
-		//wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.css', array(), $the_theme->get( 'Version' ) );
-		wp_enqueue_style( 'front-styles', get_template_directory_uri() . '/assets/css/front.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.css');
+		wp_enqueue_style( 'front-styles', get_template_directory_uri() . '/assets/css/headers.css');
 		
-		wp_enqueue_style( 'animate-styles', get_template_directory_uri() . '/assets/css/animate.min.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'animate-styles', get_template_directory_uri() . '/assets/css/animate.min.css');
 		
-		wp_enqueue_style( 'megamenu-styles', get_template_directory_uri() . '/assets/css/hs.megamenu.css', array(), $the_theme->get( 'Version' ) );
-		wp_enqueue_style( 'custombox-styles', get_template_directory_uri() . '/assets/css/custombox.min.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'megamenu-styles', get_template_directory_uri() . '/assets/css/hs.megamenu.css');
+		wp_enqueue_style( 'custombox-styles', get_template_directory_uri() . '/assets/css/custombox.min.css');
 		
-		wp_enqueue_style( 'scrollbar-styles', get_template_directory_uri() . '/assets/css/jquery.mCustomScrollbar.css', array(), $the_theme->get( 'Version' ) );
+		wp_enqueue_style( 'scrollbar-styles', get_template_directory_uri() . '/assets/css/jquery.mCustomScrollbar.css');
 		
 		
 		wp_enqueue_script( 'jquery');

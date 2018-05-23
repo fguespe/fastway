@@ -5,9 +5,7 @@
  * @package understrap
  */
 
-if ( ! is_active_sidebar( 'right-sidebar' ) ) {
-	return;
-}
+
 global $redux_demo;
 // when both sidebars turned on reduce col size to 3 from 4.
 

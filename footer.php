@@ -86,7 +86,7 @@ $container   = $redux_demo['footer-width'];
       });
 
       // initialization of show animations
-      jQuery.HSCore.components.HSShowAnimation.init('.js-animation-link');
+      //jQuery.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
       // initialization of go to
 

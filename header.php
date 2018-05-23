@@ -33,7 +33,6 @@ $js=$redux_demo['opt-ace-editor-js'];
 <?php
 global $header_container,$header_main,$header_middle,$header_middle_mobile;
 $header_container = $redux_demo['header-width'];
-if($redux_demo['sticky-menu'])$header_main.=" u-header--sticky-top ";
 $header_middle=" fw_header_middle d-none d-md-block py-".$redux_demo['header-padding'];
 $header_middle_mobile=" fw_header_middle header-mobile d-md-none navbar";
 
@@ -41,4 +40,15 @@ $header_middle_mobile=" fw_header_middle header-mobile d-md-none navbar";
 ?>
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
-
+<?if($redux_demo['sticky-menu']){?>
+<script type="text/javascript">
+jQuery(window).scroll(function() {
+ if (jQuery(this).scrollTop() > 100){  
+    jQuery('header').addClass("u-header--sticky-top");
+  }
+  else{
+    jQuery('header').removeClass("u-header--sticky-top");
+  }
+});
+</script>
+<?}?>

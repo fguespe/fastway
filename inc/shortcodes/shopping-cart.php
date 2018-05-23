@@ -14,7 +14,14 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $style=$redux_demo['cart-style'];
         $rand=generateRandomString(10);
         $cant=absint($woocommerce->cart->cart_contents_count);
-        if($style==="popup"){?>
+        if($style==="link"){?>
+        <li class="list-inline-item position-relative">
+              <a id="" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="<?php echo wc_get_cart_url()?>" role="button">
+                <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
+                <span class="u-badge u-badge-primary u-badge-pos rounded-circle"><?=$cant?></span>
+              </a>
+        </li>
+        <?php }else if($style==="popup"){?>
         <li class="list-inline-item position-relative">
               <a id="<?=$rand?>shoppingCartDropdownInvoker" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
                       aria-controls="<?=$rand?>shoppingCartDropdown"
@@ -35,7 +42,7 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
                 <?php if(absint($woocommerce->cart->cart_contents_count)>0) get_mini_cart();
                 else get_empty_cart();?>
                 </div>
-            </li>
+        </li>
         <?php }else if($style==="modal"){?>
             <li class="list-inline-item position-relative">
               <a class="btn btn-xs u-btn--icon u-btn-text-secondary" href="#<?=$rand?>shoppingCartModal" role="button"
@@ -159,7 +166,7 @@ function get_empty_cart(){?>
     </div>
   <?}
   function get_mini_cart(){
-  if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
+  //if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
   global $woocommerce;
         
   ?>
@@ -181,9 +188,6 @@ function get_empty_cart(){?>
       <strong>Total</strong>
       <span class="d-block"><?php echo $woocommerce->cart->get_cart_total();?></span>
     </div>
-    <a class="btn btn-sm u-btn-primary--air transition-3d-hover" href="/checkout">Completar la compra</a>
+    <a class="btn btn-sm u-btn-primary--air transition-3d-hover" href="<?php echo wc_get_checkout_url()?>">Completar la compra</a>
   </div>
-  <?
-}
-
-?>
+<? } ?>

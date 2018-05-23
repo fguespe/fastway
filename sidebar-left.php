@@ -5,15 +5,11 @@
  * @package understrap
  */
 
-if ( ! is_active_sidebar( 'left-sidebar' ) ) {
-	return;
-}
 
 global $redux_demo;
 
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = $redux_demo['layout-main'];
-if(is_shop())$sidebar_pos = $redux_demo['shop-layout'];
 $sidebarname='left-sidebar';
 if(is_shop() || is_product_category()){
 	$sidebar_pos = $redux_demo['shop-layout'];
