@@ -74,6 +74,57 @@ function fw_companygooglemaps() {
 }
 
 
+function fw_extras_short($atts = [], $content = null, $tag = '')
+{
+    // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
+    $font_size=$wporg_atts['size'];
+    //if(empty($font_size))$font_size=$wporg_atts['size'];
+    // override default attributes with user attributes
+    $wporg_atts = shortcode_atts($atts);
+    if($wporg_atts['type']==="phone"){
+        $font_icon="fa-phone";
+        $value="tel:".fw_companyphone();
+        $value=fw_companyphone();
+    }else if($wporg_atts['type']==="whatsapp"){
+        $font_icon="fa-whatsapp";
+        $link="https://api.whatsapp.com/send?phone=".fw_companywhatsapp();
+        $value=fw_companywhatsapp();
+    }else if($wporg_atts['type']==="email"){
+        $font_icon="fa-envelope-o";
+        $link="mailto:".fw_companyemail();
+        $value=fw_companyemail();
+    }else if($wporg_atts['type']==="fb"){
+        $font_icon="fa-facebook-square";
+        $link=fw_companyfb();
+        $value="Ir al Facebook";
+    }else if($wporg_atts['type']==="ig"){
+        $font_icon="fa-instagram";
+        $link=fw_companyig();
+        $value="Ir al Instagram";
+    }else if($wporg_atts['type']==="youtube"){
+        $font_icon="fa-youtube-square";
+        $link=fw_companyyoutube();
+        $value="Ir a Youtube";
+    }else if($wporg_atts['type']==="address"){
+        $font_icon="fa-map-marker";
+        $link=fw_companygooglemaps();
+        $value=fw_companyaddress();
+    }
+    $first='<a style="font-size:'.$wporg_atts['size'].'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+    if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
+    $first.='</a>';
+    return $first;
+}
+ 
+function wporg_shortcodes_init()
+{
+    add_shortcode('fw_extras_short', 'fw_extras_short');
+}
+ 
+add_action('init', 'wporg_shortcodes_init');
+
+
 add_shortcode('fw_companyfb', 'fw_companyfb');
 add_shortcode('fw_companyig', 'fw_companyig');
 add_shortcode('fw_companyyoutube', 'fw_companyyoutube');
@@ -87,7 +138,7 @@ add_shortcode('fw_companyaddress', 'fw_companyaddress');
 function quicklinks(){
     echo "<div class='fw_quicklinks'>";
     if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:blue;"></i><span> Facebook</span></a>';
-    if(!empty(fw_companyyoutube()))echo '<a class="Youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:red;"></i><span>  Youtube</span></a>';
+    if(!empty(fw_companyyoutube()))echo '<a class="youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:red;"></i><span>  Youtube</span></a>';
     if(!empty(fw_companywhatsapp()))echo '<a class="whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span></a>';
     if(!empty(fw_companyig()))echo '<a class="ig" href="'.fw_companyig().'"><i class="fa fa-instagram"></i><span>  Instagram</span></a>';
     if(!empty(fw_companyemail()))echo '<a class="mail" href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o"></i><span>  Mandar un mail</span></a>';

@@ -1,5 +1,5 @@
 <?php 
-global $header_main,$header_middle_mobile;
+global $header_main,$header_middle_mobile,$redux_demo;
 ?>
 <header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
 <div class="u-header__section <?php echo esc_attr( $header_middle_mobile ); ?> ">
@@ -25,8 +25,11 @@ global $header_main,$header_middle_mobile;
                   'walker'          => new fw_Navwalker('mobile-1'),
                 )
             ); 
+          if($redux_demo['fw-quicklinks'])quicklinks();
             ?>
+
         </nav>
+
         <!-- End Nav -->
        
         

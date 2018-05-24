@@ -22,8 +22,6 @@ global $header_container,$header_main,$header_middle;
                 )
             ); 
             ?>
-            <?php echo fw_shoppingCart();?>
-            <?php echo fw_sidebarMenu();?>
         </nav>
         <!-- End Nav -->
       </div>

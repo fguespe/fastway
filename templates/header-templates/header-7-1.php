@@ -2,10 +2,9 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $classes=$container;
-if($redux_demo['sticky-menu'])$classes.=" fixed-top";
-if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
 $classes.=" py-".$redux_demo['header-padding'];
 ?>
+<header>
 <div class="d-none d-md-block">
 <div class="fw_header_middle <?php echo esc_attr( $classes ); ?> ">
     <div class="row flex-nowrap">
@@ -25,11 +24,12 @@ $classes.=" py-".$redux_demo['header-padding'];
         'menu_class'      => 'nav d-flex  container d-flex flex-column flex-md-row justify-content-between',
         'fallback_cb'     => '',
         'menu_id'         => 'main-menu',
-        'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+        'walker'          => new fw_Navwalker(),
       )
   ); 
   ?>
 </div>
 </div>
+</header>
 
       

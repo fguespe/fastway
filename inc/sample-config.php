@@ -915,7 +915,13 @@
                 'id'   => 'opt-info-field1',
                 'type' => 'info',
                 'style' => 'warning',
-                'desc' => __( 'USAR UN SOLO ESPACIO VACIO, NO VARIOS', 'redux-framework-demo' )
+                'desc' => __( 'USAR UN SOLO ESPACIO VACIO , NO VARIOS ABAJO DEL OTRO', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field1',
+                'type' => 'info',
+                'style' => 'warning',
+                'desc' => __( 'ACORDARSE DE LA DESCRIPCION SEO Y FAVICON', 'redux-framework-demo' )
             ),
             array(
                 'id'   => 'opt-info-field45',

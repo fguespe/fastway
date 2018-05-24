@@ -11,6 +11,8 @@ function write_log ( $log )  {
     }
 }   
 endif;
+remove_filter( 'the_content', 'wpautop' );
+remove_filter('the_excerpt', 'wpautop');
 function generateRandomString($length = 10) {
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

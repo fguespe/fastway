@@ -120,7 +120,7 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			$class_names = $value = '';
 			$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[]   = 'nav-item menu-item-' . $item->ID;
-			$class_names = " ";///join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 			/*
 			if ( $args->has_children )
 			  $class_names .= ' dropdown';
@@ -143,13 +143,15 @@ class fw_Navwalker extends Walker_Nav_Menu {
 				$class_names = str_replace( $classes[ $key ], '', $class_names );
 			}
 
-			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+			$class_names = $class_names ? esc_attr( $class_names ): '';
+
 			$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 			if ( $args->has_children && $depth === 0 ) {
 				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
 			}else{
-				$output .= $indent . '<li ' . $id .' class="'.$this->atts['submenu_li_class'].'" >';
+				$class_names.=' '.$this->atts['submenu_li_class'].' ';
+				$output .= $indent . '<li ' . $id .' class="'.$class_names.'" >';
 
 			}
 			//echo $value.":".$args->has_children." - ".$depth." <br>";
