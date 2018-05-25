@@ -752,7 +752,7 @@
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Main Color', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
-                'default'  => '#ffffff',
+                'default'  => '#000000',
         ),
        array(
                 'id'       => 'opt-color-topheader',
@@ -911,11 +911,24 @@
         'customizer_width' => '400px',
         'icon'             => 'el el-home',
         'fields'           => array(
+            
             array(
                 'id'   => 'opt-info-field1',
                 'type' => 'info',
                 'style' => 'warning',
                 'desc' => __( 'USAR UN SOLO ESPACIO VACIO , NO VARIOS ABAJO DEL OTRO', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field1',
+                'type' => 'info',
+                'style' => 'warning',
+                'desc' => __( 'Setear el icon header color sino los iconos qedan negros', 'redux-framework-demo' )
+            ),
+            array(
+                'id'   => 'opt-info-field121',
+                'type' => 'info',
+                'style' => 'warning',
+                'desc' => __( '[fw_extras_short type="address" text="Ruta panamericana KM 49,5. Complejo concord - Edificio Los almendros 122 1° Piso " size="15" icon_color="#97AABA" text_color="#97AABA"]', 'redux-framework-demo' )
             ),
             array(
                 'id'   => 'opt-info-field1',

@@ -78,7 +78,8 @@ function fw_extras_short($atts = [], $content = null, $tag = '')
 {
     // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
-    $font_size=$wporg_atts['size'];
+    $font_size=16;
+
     //if(empty($font_size))$font_size=$wporg_atts['size'];
     // override default attributes with user attributes
     $wporg_atts = shortcode_atts($atts);
@@ -111,7 +112,16 @@ function fw_extras_short($atts = [], $content = null, $tag = '')
         $link=fw_companygooglemaps();
         $value=fw_companyaddress();
     }
-    $first='<a style="font-size:'.$wporg_atts['size'].'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+    if($wporg_atts['text']){
+       $value=$wporg_atts['text'];
+    }
+    if($wporg_atts['link']){
+       $link=$wporg_atts['link'];
+    }
+    if($wporg_atts['size']){
+        $font_size=$wporg_atts['size'];
+    }
+    $first='<a style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
     if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
     $first.='</a>';
     return $first;
