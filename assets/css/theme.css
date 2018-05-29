@@ -117,11 +117,40 @@ ul{
 .menuhor{
     text-align:center ;
 }
-
-
+/*FOOTER STANDAR*/
+footer h2{
+font-size:25px  !important;
+margin-bottom:30px !important;
+}
+footer .widget_nav_menu li a{
+font-size:15px ;
+line-height:25px ;
+}
+/*SEARCH*/
+.fw-searchform,.fw-searchform .search-form{
+width:95% ;
+margin:0 auto;
+}
+.fw-searchform input{
+width:80% ;
+}
+.fw-searchform button{
+width:19% ;
+}
+.fw-searchform input,.fw-searchform button{
+font-size:18px !important;
+line-height:22px !important;
+border:1px solid grey !important;
+padding:5px;
+}
 
 /*FIX MARGIN*/
 html { margin-top: 0px !important; }
+
+/*FIX >BOOTSTRAP COLOR*/
+.wrapper a{
+color:black !important;
+}
 /*SLIDER*/
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -226,8 +255,11 @@ width:70%;
      display: inline-block;
 }
 */
-header span.fa{
-font-size:20px !important;
+header span.fa,header i{
+font-size:25px !important;
+}
+.fw_header_middle .u-header__nav-link-icon,.fw_header_bottom .u-header__nav-link-icon{
+    font-size:15px !important;
 }
 .widget_shopping_cart_content a.remove:hover {
      background: none !important;

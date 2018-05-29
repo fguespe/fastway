@@ -67,7 +67,7 @@ if( !function_exists( 'fw_search_form' ) ) {
             $_placeholder = esc_attr__("Search anything...", 'theshopier' );
         }
         ?>
-        <form id="form_<?php echo esc_attr($rand_id)?>" method="get" class="searchform nth-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <form id="form_<?php echo esc_attr($rand_id)?>" method="get" class="searchform fw-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
             <div class="search-form">
                 <input type="text" class="search-field" placeholder="<?php echo esc_attr($_placeholder);?>" value="<?php echo get_search_query() ?>" name="s" id="s_<?php echo esc_attr($rand_id)?>" />
                 <?php if($check_woo): ?>

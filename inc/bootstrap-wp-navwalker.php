@@ -148,9 +148,9 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 			if ( $args->has_children && $depth === 0 ) {
-				$output .= $indent . '<li ' . $id . $value . $class_names . ' data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
+				$output .= $indent . '<li ' . $id . $value .' class="'. $class_names .'" data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
 			}else{
-				$class_names.=' '.$this->atts['submenu_li_class'].' ';
+				//FIJARS$class_names.=' '.$this->atts['submenu_li_class'].' ';
 				$output .= $indent . '<li ' . $id .' class="'.$class_names.'" >';
 
 			}
@@ -166,7 +166,7 @@ class fw_Navwalker extends Walker_Nav_Menu {
 				$this->atts['submenu_id']=$this->atts['submenu_id'].trim($item->ID);
 				$this->atts['href']='#'.$this->atts['submenu_id'];
 	     		$this->atts['aria-controls']=$this->atts['submenu_id'];
-	     		$atts['href'] = $this->atts['href'];
+	     		$atts['href'] = 'javacript:;';$this->atts['href'];
 				$atts['aria-haspopup'] = $this->atts['aria-haspopup'] ;
 	     		$atts['aria-expanded'] = $this->atts['aria-expanded'];
 				$atts['aria-labelledby'] = $this->atts['aria-labelledby'];
@@ -184,7 +184,7 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
-					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$value = $value;//( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}

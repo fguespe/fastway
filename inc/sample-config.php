@@ -326,7 +326,7 @@
     ) );
     $theme_headers = array();
     for( $i=1; $i<=20; $i++ ) {
-        for( $j=1; $j<=5; $j++ ) {
+        for( $j=1; $j<=20; $j++ ) {
             if( file_exists( $THEME_DIR . "images/theme-option-header{$i}-{$j}.png" ) ) {
                 $theme_headers[$i."-".$j] = array(
                     'alt' => $i."-".$j,
@@ -386,37 +386,44 @@
         'id'               => 'header',
         'customizer_width' => '450px',
         'fields'           => array(
-            array(
-                'id'       => 'sticky-menu',
-                'type'     => 'switch',
-                'title'    => 'Sticky menu',
-                'default'  => 1,
-                'on'       => 'Enabled',
-                'off'      => 'Disabled',
+        array(
+            'id'       => 'sticky-menu',
+            'type'     => 'button_set',
+            'title'    => __( 'Deactivate Sticky', 'redux-framework-demo' ),
+            'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+            'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+            'multi'    => true,
+            //Must provide key => value pairs for radio options
+            'options'  => array(
+                'fw_header_top' => 'Top',
+                'fw_header_middle' => 'Middle',
+                'fw_header_bottom' => 'Bottom'
             ),
-            array(
-                'id'       => 'header-padding',
-                'type'     => 'text',
-                'title'    => __( 'Header Padding', 'redux-framework-demo' ),
-                'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
-                'default'  => '1',
-            ),
-            array(
-                'id'       => 'logo-width',
-                'type'     => 'text',
-                'title'    => __( 'Company Name', 'redux-framework-demo' ),
-                'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
-                'default'  => "250",
-            ),
-            array(
+            'default'  => array( '2', '3' )
+        ),
+        array(
+            'id'       => 'header-padding',
+            'type'     => 'text',
+            'title'    => __( 'Header Padding', 'redux-framework-demo' ),
+            'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
+            'default'  => '1',
+        ),
+        array(
+            'id'       => 'logo-width',
+            'type'     => 'text',
+            'title'    => __( 'Company Name', 'redux-framework-demo' ),
+            'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
+            'default'  => "250",
+        ),
+        array(
             'id'       => 'top-header',
             'type'     => 'switch',
             'title'    => 'Top Header',
             'default'  => 0,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
-            ),
-            array(
+        ),
+        array(
             'id'       => 'header-width',
             'type'     => 'button_set',
             'title'    => 'Header width',
@@ -425,15 +432,15 @@
                 'container-fluid'  => 'Big Container'
             ),
             'default'  => 'container'
-            ),
-            array(
+        ),
+        array(
             'id'       => 'header-style',
             'type'     => 'image_select',
             'title'    => 'Header style',
             'options'  => $theme_headers,
             'default'  => '1-1',
-            ),
-            array(
+        ),
+        array(
             'id'       => 'header-headerwidget-start',
             'type'     => 'section',
             'title'    => esc_html__( 'header headerwidget', 'theshopier' ),
