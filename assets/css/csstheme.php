@@ -1,3 +1,6 @@
+:root{
+	--main:<?php echo $redux_demo['opt-color-main']; ?>;
+}
 <?php
 $tipos=array("p","span","div","a","h4","h3","h2","h1");
 foreach ($tipos as $key) {
@@ -8,7 +11,18 @@ $font=$redux_demo[$nombre];
 header i,header span{
 color:<?php echo $redux_demo['opt-color-iconheader']; ?>;
 }
-header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $key;?>,#main-nav <?php echo $key;?>{
+.fw_header_top_banner{
+	background-color:<?php echo $redux_demo['opt-color-topheader-banner']; ?>;
+	width:100%;
+	text-align:center;
+}
+.search-form .input-group-append .btn{
+color:<?php echo $redux_demo['opt-color-iconheader']; ?>;
+background-color:white;
+border-color:lightgrey;
+}
+.btn-outline-primary:hover{background:<?php echo $redux_demo['opt-color-main']; ?> !important;}
+header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $key;?>,#woocommerce-wrapper <?php echo $key;?>,#main-nav <?php echo $key;?>{
   font-family: '<?php echo str_replace(",", "','", $font['font-family']);?>' ;
   font-size: <?php echo $font['font-size'];?> ;
   font-weight: <?php echo $font['font-weight'];?> ;

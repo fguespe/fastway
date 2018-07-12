@@ -16,15 +16,15 @@ class fw_Navwalker extends Walker_Nav_Menu {
 	var $atts;
     function __construct($tipo="") {
     	if($tipo==="desktop-1"){
-	        $this->atts['li_class'] = 'nav-item hs-has-sub-menu u-header__nav-item';
 	        
 	        $this->atts['submenu_id'] = 'pagesSubMenu';
 	        $this->atts['submenu_class']='list-inline hs-sub-menu u-header__sub-menu py-3 mb-0';
 	        $this->atts['submenu_li_class']='hs-has-sub-menu';
 	        $this->atts['submenu_data_parent']='';
 	        
-	        $this->atts['class']= 'nav-link u-header__nav-link';	
-	        $this->atts['href']        = '#';
+	        $this->atts['a_class']= ' nav-link u-header__nav-link ';	
+	        $this->atts['a_hijos_class']= ' nav-link u-header__nav-link ';	
+	        $this->atts['href']  = '#';
 			$this->atts['aria-haspopup'] = 'true';
 			$this->atts['aria-expanded'] = 'false';
 			$this->atts['aria-labelledby'] = 'pagesSubMenu';
@@ -32,32 +32,45 @@ class fw_Navwalker extends Walker_Nav_Menu {
 	     	$this->atts['data-toggle']='';
 	     	$this->atts['aria-controls']='';
 
+	     	$this->atts['tipo']='desktop-1';
+	        
+
+	        $this->atts['li_class'] = ' nav-item ';
+	        $this->atts['li_hijos_class'] = ' hs-has-sub-menu u-header__nav-item ';
+
+	     
+	        
+
     	}else if($tipo==="mobile-1"){
-	        $this->atts['li_class'] = 'nav-item hs-has-sub-menu u-header__nav-item';
+	        $this->atts['tipo']='mobile-1';
+	        $this->atts['li_class'] = ' nav-item ';
+	        $this->atts['li_hijos_class'] = ' hs-has-sub-menu u-header__nav-item ';
 
 	        $this->atts['submenu_id'] = 'pagesSubMenu';
 	        $this->atts['submenu_class']='list-inline hs-sub-menu u-header__sub-menu py-3 mb-0';
 	        $this->atts['submenu_li_class']='hs-has-sub-menu';
 	        $this->atts['submenu_data_parent']='';
 
-	        $this->atts['class'] = 'nav-link u-header__nav-link';	
+	        $this->atts['a_class'] = '  ';	
+	        $this->atts['a_hijos_class'] = '  ';	
 	        $this->atts['href']= '#';
-			$this->atts['aria-haspopup'] = 'true';
+			$this->atts['aria-haspopup'] = 'false';
 			$this->atts['aria-expanded'] = 'false';
-			$this->atts['aria-labelledby'] = 'pagesSubMenu';
-	     	$this->atts['role']='';
-	     	$this->atts['data-toggle']='';
-	     	$this->atts['aria-controls']='';
-
+			//$this->atts['aria-labelledby'] = 'pagesSubMenu';
+	     	
     	}else if($tipo==="sidebar-1"){
-	        $this->atts['li_class'] = 'u-has-submenu u-header-collapse__submenu';
+	        $this->atts['tipo']='sidebar-1';
+	        $this->atts['li_class'] = ' u-header-collapse__submenu ';
+	        $this->atts['li_hijos_class'] = ' u-has-submenu ';
 	        //Submenu
 	        $this->atts['submenu_id'] = 'headerSidebarHomeCollapse';//??????
 	        $this->atts['submenu_class']='collapse u-header-collapse__nav-list';
 	        $this->atts['submenu_li_class']='u-has-submenu u-header-collapse__submenu';
 	        $this->atts['submenu_data_parent']='#headerSidebarContent';
 	        //a first
-	        $this->atts['class'] = 'u-header-collapse__nav-link u-header-collapse__nav-pointer';	
+	        $this->atts['a_class'] = 'u-header-collapse__nav-link';
+	        $this->atts['a_hijos_class'] = 'u-header-collapse__nav-link u-header-collapse__nav-pointer';	
+
 	        $this->atts['href']='#'.$this->atts['submenu_id'];
 			$this->atts['aria-haspopup'] = '';
 	     	$this->atts['aria-expanded']='';
@@ -109,30 +122,43 @@ class fw_Navwalker extends Walker_Nav_Menu {
 		 */
 
 		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
+			error_log("jaja1",0);
 			$output .= $indent . '<li class="dropdown-divider" role="presentation">';
 		} else if ( strcasecmp( $item->title, 'divider' ) == 0 && $depth === 1 ) {
+			error_log("jaja2",0);
 			$output .= $indent . '<li class="dropdown-divider" role="presentation">';
 		} else if ( strcasecmp( $item->attr_title, 'dropdown-header' ) == 0 && $depth === 1 ) {
+			error_log("jaja3",0);
 			$output .= $indent . '<li class="dropdown-header" role="presentation">' . esc_html( $item->title );
 		} else if ( strcasecmp( $item->attr_title, 'disabled' ) == 0 ) {
+			error_log("jaja",0);
 			$output .= $indent . '<li class="disabled" role="presentation"><a href="#">' . esc_html( $item->title ) . '</a>';
 		} else {
+			error_log("jaja",0);
+			
 			$class_names = $value = '';
 			$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[]   = 'nav-item menu-item-' . $item->ID;
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-			/*
-			if ( $args->has_children )
-			  $class_names .= ' dropdown';
-			*/
+			
+			//Depth es el nivel del item actual, no los niveles inferiores
 			if ( $args->has_children && $depth === 0 ) {
+				error_log("	Es item padre y tiene hijos (".$args->has_children." - ".$depth.")",0);
+				$class_names .= $this->atts['li_class'].$this->atts['li_hijos_class'];
+			}else if ( $args->has_children && $depth > 0 ) {
+				error_log("	Es hijo y tiene hijos (".$args->has_children." - ".$depth.")",0);
+				$class_names .= $this->atts['li_class'].$this->atts['li_hijos_class'];
+			}else if ( !$args->has_children && $depth > 0 ) {
+				error_log("	Es hijo y no tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'];
-			} elseif ( $args->has_children && $depth > 0 ) {
+			}else if ( !$args->has_children && $depth === 0 ) {
+				error_log("	Es padre y no tiene hijos (".$args->has_children." - ".$depth.")",0);
+				$class_names .= $this->atts['li_class'];
+			}else{
+				error_log("	No tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'];
 			}
-			if ( in_array( 'current-menu-item', $classes ) ) {
-				$class_names .= ' active';
-			}
+
 			// remove Font Awesome icon from classes array and save the icon
 			// we will add the icon back in via a <span> below so it aligns with
 			// the menu item
@@ -143,43 +169,61 @@ class fw_Navwalker extends Walker_Nav_Menu {
 				$class_names = str_replace( $classes[ $key ], '', $class_names );
 			}
 
+			//Formatea las clases
 			$class_names = $class_names ? esc_attr( $class_names ): '';
-
+			//Agrega IDs?
 			$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+			//Crea el <li>
 			if ( $args->has_children && $depth === 0 ) {
+				//Crea el li con hijos
 				$output .= $indent . '<li ' . $id . $value .' class="'. $class_names .'" data-event="hover" data-animation-in="fadeIn" data-animation-out="fadeOut">';
 			}else{
-				//FIJARS$class_names.=' '.$this->atts['submenu_li_class'].' ';
+				//No tiene hijos o tiene hijos con hijos?
+
+				//$class_names.=' '.$this->atts['submenu_li_class'].' ';
 				$output .= $indent . '<li ' . $id .' class="'.$class_names.'" >';
 
 			}
-			//echo $value.":".$args->has_children." - ".$depth." <br>";
-			
-			$atts           = array();
+			//Empieza el LINK <a>
+			$atts=array();
 			if ( empty( $item->attr_title ) ) { $atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : ''; } else { $atts['title'] = $item->attr_title; }
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
-			// If item has_children add atts to a.
+			
 
+
+			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
+				//<a> con hijos
 				$this->atts['submenu_id']=$this->atts['submenu_id'].trim($item->ID);
 				$this->atts['href']='#'.$this->atts['submenu_id'];
 	     		$this->atts['aria-controls']=$this->atts['submenu_id'];
-	     		$atts['href'] = 'javacript:;';$this->atts['href'];
+
+	     		if($this->atts['tipo']=="sidebar-1"){
+	     			$atts['href'] = $this->atts['href'];
+	     		
+	     		}else if($this->atts['tipo']=="desktop-1"){
+	     			//Sirve?
+	     			$atts['href'] = 'javascript:;';
+	     		}
+
 				$atts['aria-haspopup'] = $this->atts['aria-haspopup'] ;
 	     		$atts['aria-expanded'] = $this->atts['aria-expanded'];
-				$atts['aria-labelledby'] = $this->atts['aria-labelledby'];
+				$atts['aria-labelledby'] = $this->atts['aria-labelledby'];//.$item->ID;
 	     		$atts['role'] = $this->atts['role'];
 	     		$atts['data-toggle'] = $this->atts['data-toggle'];
-	     		$atts['aria-controls'] = $this->atts['aria-controls'];
-				$atts['class']       =  $this->atts['class'];
+	     		$atts['aria-controls'] = $this->atts['aria-controls'];//sidebar?
+				$atts['class']       =  $this->atts['a_hijos_class'];
+				
 				
 			}else {
 				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
-				$atts['class'] =  $this->atts['class'];
+				$atts['class'] =  $this->atts['a_class'];
 
 			}
+
 			$atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -190,10 +234,22 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			}
 			$item_output = $args->before;
 			// Font Awesome icons
-			$item_output .= '<a id="pagesMegaMenu"' . $attributes . '>';
+			//hace falta? 		
+
+			if($this->atts['tipo']=="desktop-1"){
+	     		$item_output .= '<a id="pagesMegaMenu'.$item->ID.'"' . $attributes . '>';
+	     	}else{
+	     		$item_output .= '<a ' . $attributes . '>';
+	     	}
+
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title,
 					$item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="fa fa-angle-down u-header__nav-link-icon"></span></a>' : '</a>';
+			if($this->atts['tipo']=="sidebar-1"){
+	     		$item_output .= ( $args->has_children && 0 === $depth ) ? ' </a>' : '</a>';
+	     	}else if($this->atts['tipo']=="desktop-1"){
+	     		$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="fa fa-angle-down u-header__nav-link-icon"></span></a>' : '</a>';
+	     	}
+
 			$item_output .= $args->after;
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}

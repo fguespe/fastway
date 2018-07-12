@@ -2,7 +2,14 @@
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
-
+add_action('fastway_header_topbanner','get_fastway_header_topbanner');
+function get_fastway_header_topbanner(){
+    global $redux_demo;
+    
+    if( isset( $redux_demo['topheader-img'] ) && strlen(trim($redux_demo['topheader-img']['url'])) > 0 ){
+        echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.$redux_demo['topheader-img']['url'].'"></div>';
+    }
+}
 add_action( 'add_topbar', 'get_topbar' );
 function get_topbar(){
     global $redux_demo;
@@ -344,6 +351,32 @@ function get_blocks( ){
         $res_args[$slug] = get_the_title($block->ID);
     }
     return $res_args;
+}
+
+// Change add to cart text on archives depending on product type
+add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_woocommerce_product_add_to_cart_text' );
+function custom_woocommerce_product_add_to_cart_text() {
+    global $product,$redux_demo;
+    
+    $product_type = $product->product_type;
+    
+    switch ( $product_type ) {
+        case 'external':
+            return __( $redux_demo['add-to-cart-text'], 'woocommerce' );
+        break;
+        case 'grouped':
+            return __( $redux_demo['add-to-cart-text'], 'woocommerce' );
+        break;
+        case 'simple':
+            return __( $redux_demo['add-to-cart-text'], 'woocommerce' );
+        break;
+        case 'variable':
+            return __( $redux_demo['add-to-cart-text'], 'woocommerce' );
+        break;
+        default:
+            return __( $redux_demo['add-to-cart-text'], 'woocommerce' );
+    }
+    
 }
 
 /**

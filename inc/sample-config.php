@@ -327,10 +327,10 @@
     $theme_headers = array();
     for( $i=1; $i<=20; $i++ ) {
         for( $j=1; $j<=20; $j++ ) {
-            if( file_exists( $THEME_DIR . "images/theme-option-header{$i}-{$j}.png" ) ) {
+            if( file_exists( $THEME_DIR . "images/headers-desktop/theme-option-header{$i}-{$j}.png" ) ) {
                 $theme_headers[$i."-".$j] = array(
                     'alt' => $i."-".$j,
-                    'img' => $THEME_IMG_URI . "theme-option-header{$i}-{$j}.png"
+                    'img' => $THEME_IMG_URI . "/headers-desktop/theme-option-header{$i}-{$j}.png"
                 );
             }
         }   
@@ -401,6 +401,7 @@
             ),
             'default'  => array( '2', '3' )
         ),
+
         array(
             'id'       => 'header-padding',
             'type'     => 'text',
@@ -411,7 +412,7 @@
         array(
             'id'       => 'logo-width',
             'type'     => 'text',
-            'title'    => __( 'Company Name', 'redux-framework-demo' ),
+            'title'    => __( 'Logo width', 'redux-framework-demo' ),
             'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
             'default'  => "250",
         ),
@@ -433,6 +434,19 @@
             ),
             'default'  => 'container'
         ),
+        array(
+                'id'       => 'topheader-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Top Header Img', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                //'default'  => array( 'url' => get_template_directory_uri() . "/assets/img/logo.svg"),
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
         array(
             'id'       => 'header-style',
             'type'     => 'image_select',
@@ -770,6 +784,14 @@
                 'default'  => '#ffffff',
         ),
        array(
+                'id'       => 'opt-color-topheader-banner',
+                'type'     => 'color',
+                'output'   => array( '.site-title' ),
+                'title'    => __( 'Top Header Bannner Background', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'default'  => '#ffffff',
+        ),
+       array(
                 'id'       => 'opt-color-iconheader',
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
@@ -953,7 +975,7 @@
                 'id'   => 'opt-info-field2',
                 'type' => 'info',
                 'style' => 'success',
-                'desc' => __( 'Hide on mobile class = d-none d-md-flex', 'redux-framework-demo' )
+                'desc' => __( 'Hide on mobile class = d-none d-md-block', 'redux-framework-demo' )
             ),
             array(
                 'id'   => 'opt-info-field3',
@@ -1111,6 +1133,12 @@ Redux::setSection( $opt_name, array(
             ),
             'default'  => 'container'
         ),
+         array(
+            'id'       => 'add-to-cart-text',
+            'type'     => 'text',
+            'title'    => __( 'Add to cart text', 'redux-framework-demo' ),
+            'default'  => 'Buy',
+        ),
         array(
             'id'       => 'cart-style',
             'type'     => 'button_set',
@@ -1263,14 +1291,7 @@ Redux::setSection( $opt_name, array(
             'title'    => 'Footer block',
             'options'  => $static_block_args,
         ),
-         array(
-            'id'       => 'shop-single-product-style',
-            'type'     => 'image_select',
-            'title'    => esc_html__( 'Catalog item style', 'fastway' ),
-            'full_width'    => true,
-            'options'  => $single_templates,
-            'default'  => '1'
-        ),
+         
 
       
     ),

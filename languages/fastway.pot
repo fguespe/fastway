@@ -402,6 +402,11 @@ msgstr ""
 msgid "Proceed to Checkout"
 msgstr ""
 
+#: woocommerce/checkout/form-checkout.php:55
+msgid "Your order"
+msgstr ""
+
+
 #: woocommerce/cart/mini-cart.php:49 woocommerce/cart/cart.php:60
 msgid "Remove this item"
 msgstr ""

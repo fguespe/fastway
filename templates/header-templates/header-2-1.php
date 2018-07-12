@@ -17,7 +17,7 @@ global $header_container,$header_main,$header_middle;
                   'menu_class'      => 'navbar-nav u-header__navbar-nav ml-lg-auto',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
-                  'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+                  'walker'          => new fw_Navwalker('desktop-1'),
                 )
             ); 
             ?>

@@ -40,7 +40,7 @@ function ajax_search() {
   } else {
     
     // There are no results, output a message
-    echo '<p class="no-results">No results</p>';
+    echo '<p class="no-results">'._e("No results","understrap").'</p>';
   
   }
   
@@ -58,7 +58,7 @@ add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
 
 
 if( !function_exists( 'fw_search_form' ) ) {
-    function fw_search_form(){
+    function fw_search_form($numero=0){
         $rand_id = wp_rand();
         $check_woo = fw_checkPlugin('woocommerce/woocommerce.php');
         if($check_woo) {
@@ -67,21 +67,28 @@ if( !function_exists( 'fw_search_form' ) ) {
             $_placeholder = esc_attr__("Search anything...", 'theshopier' );
         }
         ?>
-        <form id="form_<?php echo esc_attr($rand_id)?>" method="get" class="searchform fw-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <div class="search-form">
-                <input type="text" class="search-field" placeholder="<?php echo esc_attr($_placeholder);?>" value="<?php echo get_search_query() ?>" name="s" id="s_<?php echo esc_attr($rand_id)?>" />
-                <?php if($check_woo): ?>
+        <form id="form_<?php echo esc_attr($rand_id)?>" class="search-form js-focus-state input-group u-form fw-searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="<?php echo esc_attr($_placeholder);?>" value="<?php echo get_search_query() ?>" name="s" id="s_<?php echo esc_attr($rand_id)?>">
+            <?php if($check_woo): ?>
                     <input type="hidden" name="post_type" value="product" />
-                <?php endif;?>
+              <?php endif;?>
+
+            <div class="input-group-append">
                 <!--
                 <?php if ( defined( 'ICL_LANGUAGE_CODE' ) ): ?>
                     <input type="hidden" name="lang" value="<?php echo( ICL_LANGUAGE_CODE ); ?>" />
                 <?php endif ?>
                 -->
-                
-                <button type="submit" class="icon-nth-search searchsubmit"><?php echo esc_attr_x( 'Search', 'submit button', 'theshopier' ); ?></button>
+                <?php if ( $numero==0): ?>
+                  <button type="button" class="btn btn-primary">Buscar</button>
+                <?php endif ?>
+                <?php if ( $numero==1): ?>
+                  <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <?php endif ?>
             </div>
-        </form>
+          </form>
+         
+
         <?php
     }
 }

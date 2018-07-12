@@ -2,6 +2,11 @@
 .d-md-none .add-to-cart-container{
     display: none !important;
 }
+#productloop_mobile .woocommerce-loop-product__title{
+    font-size: 12px !important;
+    line-height: inherit !important;
+
+}
 </style>
 <div id="productloop_mobile" class='d-md-none'>
     <?php
