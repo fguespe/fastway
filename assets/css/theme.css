@@ -291,7 +291,7 @@ padding-bottom:0px !important;
 }
 
 
-.mini_cart_item .quantity{
+.mini_cart_item .quantity,.mini_cart_item .woocommerce-Price-amount{
 color: grey !important;
 }
 .mini_cart_item img{

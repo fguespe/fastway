@@ -24,7 +24,7 @@ HTML;
         
         $idname=$rand."shoppingCartDropdownInvoker";
         $idname2=$rand.'shoppingCartDropdown';
-        $variable=absint($woocommerce->cart->cart_contents_count)>0?get_mini_cart(): get_empty_cart();
+        $variable=absint($woocommerce->cart->cart_contents_count)>0?get_mini_cart(): get_mini_cart();
         return <<<HTML
         <li class="list-inline-item position-relative">
               <a id="$idname" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
@@ -47,7 +47,7 @@ HTML;
 HTML;
         }else if($style==="modal"){
          $idname2=$rand.'shoppingCartModal';
-          $variable=absint($woocommerce->cart->cart_contents_count)>0?get_mini_cart(): get_empty_cart();
+          $variable=absint($woocommerce->cart->cart_contents_count)>0?get_mini_cart(): get_mini_cart();
           return <<<HTML
               <li class="list-inline-item position-relative">
                 <a class="btn btn-xs u-btn--icon u-btn-text-secondary" href="#$idname2" role="button"
@@ -69,7 +69,7 @@ HTML;
         $idname=$rand.'sidebarContent';
         $cant=$woocommerce->cart->cart_contents_count;
         $total=$woocommerce->cart->get_cart_total();
-        $contenido=absint($cant>0)?get_full_cart_sidebar($total):get_empty_cart();
+        $contenido=absint($cant>0)?get_full_cart_sidebar($total):get_full_cart_sidebar($total);
   
        return <<<HTML
     <li class="list-inline-item position-relative">
@@ -264,5 +264,4 @@ function warp_ajax_product_remove()
 
 add_action( 'wp_ajax_product_remove', 'warp_ajax_product_remove' );
 add_action( 'wp_ajax_nopriv_product_remove', 'warp_ajax_product_remove' );
-
 ?>

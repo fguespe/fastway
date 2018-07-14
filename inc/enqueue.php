@@ -47,7 +47,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		
 		wp_enqueue_script( 'validate-scripts', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), $the_theme->get( 'Version' ), true );
 
-		wp_enqueue_script( 'minicart-script', get_template_directory_uri() . '/assets/js/mini-cart.js', array(), $the_theme->get( 'Version' ), true );
+
 		
 		wp_enqueue_script( 'hscore-scripts', get_template_directory_uri() . '/assets/js/hs.core.js', array(), $the_theme->get( 'Version' ), true );
 
