@@ -1,0 +1,22 @@
+.banner_url_form_field fieldset {
+	float: left; 
+	clear: left;
+	margin-bottom: 20px;
+}
+
+.banner_url_form_field .button,
+.banner_url_form_field label {
+	float: left;
+	margin-right: 10px;
+}
+
+.banner_url_form_field label {
+	line-height: 2em;
+}
+
+.banner_url_form_field img {
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	max-height: 100px;
+}

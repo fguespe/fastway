@@ -16,7 +16,7 @@ global $header_main,$header_middle_mobile,$redux_demo;
 
           <?php wp_nav_menu(
             array(
-                  'theme_location'  => 'primary',
+                  'theme_location'  => 'mobile',
                   'container_class' => 'navbar-collapse py-0',
                   'container_id'    => 'navBar',
                   'menu_class'      => 'navbar-nav u-header__navbar-nav ml-lg-auto',

@@ -40,16 +40,15 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
 					<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
-						<?php
-						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
-							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'understrap' ),
-							esc_attr( $product_id ),
-							esc_attr( $cart_item_key ),
-							esc_attr( $_product->get_sku() )
-						), $cart_item_key );
-						?>
+						<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+    '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s">×</a>',
+    esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+    esc_html__( 'Remove this item', 'deepsoul' ),
+    esc_attr( $product_id ),
+    esc_attr( $_product->get_sku() ),
+    esc_attr( $cart_item_key )
+), $cart_item_key ); ?>
+
 						<?php if ( ! $_product->is_visible() ) : ?>
 							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
 						<?php else : ?>

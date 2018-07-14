@@ -237,6 +237,7 @@
 
     // -> START Basic Fields
     global $THEME_DIR;
+    global $TEMPLATE_DIR;
     global $THEME_URI;
     global $THEME_IMG_URI;
     global $THEME_CSS_URI;
@@ -283,11 +284,11 @@
             'options'  => array(
                 'container-fluid' => array(
                     'alt' => 'wide',
-                    'img' => $THEME_IMG_URI . 'layout-full.png'
+                    'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                 ),
                 'container' => array(
                     'alt' => 'boxed',
-                    'img' => $THEME_IMG_URI . 'layout-boxed.png'
+                    'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 )
             ),
             'default'  => 'container'
@@ -324,62 +325,12 @@
             
         )
     ) );
-    $theme_headers = array();
-    for( $i=1; $i<=20; $i++ ) {
-        for( $j=1; $j<=20; $j++ ) {
-            if( file_exists( $THEME_DIR . "images/headers-desktop/theme-option-header{$i}-{$j}.png" ) ) {
-                $theme_headers[$i."-".$j] = array(
-                    'alt' => $i."-".$j,
-                    'img' => $THEME_IMG_URI . "/headers-desktop/theme-option-header{$i}-{$j}.png"
-                );
-            }
-        }   
-    }
-    $theme_headers_mobile = array();
-    for( $i=1; $i<=20; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/theme-option-header-mobile{$i}.png" ) ) {
-            $theme_headers_mobile[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "theme-option-header-mobile{$i}.png"
-            );
-        }
-    }
-    $loop_templates = array();
-    for( $i=1; $i<=3; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/woo_product{$i}.jpg" ) ) {
-            $loop_templates[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "woo_product{$i}.jpg"
-            );
-        }
-    }
-    $single_templates = array();
-    for( $i=1; $i<=3; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/woo_product_single{$i}.jpg" ) ) {
-            $single_templates[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "woo_product_single{$i}.jpg"
-            );
-        }
-    }
-    $loop_templates_mobile = array();
-    for( $i=1; $i<=3; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/woo_product_mobile{$i}.jpg" ) ) {
-            $loop_templates_mobile[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "woo_product_mobile{$i}.jpg"
-            );
-        }
-    }
-    $single_templates_mobile = array();
-    for( $i=1; $i<=3; $i++ ) {
-        if( file_exists( $THEME_DIR . "images/woo_product_single{$i}.jpg" ) ) {
-            $single_templates_mobile[$i] = array(
-                'alt' => $i,
-                'img' => $THEME_IMG_URI . "woo_product_single{$i}.jpg"
-            );
-        }
-    }
+    global $theme_headers;
+    global $theme_headers_mobile ;
+    global $loop_templates ;
+    global $loop_templates_mobile;
+    global $single_templates ;
+    global $single_templates_mobile;
 
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'redux-framework-demo' ),
@@ -1069,12 +1020,30 @@
                 'desc'     => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
                 'default'  => "jQuery(document).ready(function(){\n\n});"
             ),
-             array(
+            array(
+                'id'       => 'analytics-id',
+                'type'     => 'text',
+                'title'    => __( 'Analyitics ID', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
                     'id'       => 'seo-desc',
                     'type'     => 'textarea',
                     'title'    => __( 'SEO Description', 'redux-framework-demo' ),
                     'default'  => 'Default Text',
-                )
+            ),
+            array(
+                    'id'       => 'header-insert',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Insert Scripts Footer', 'redux-framework-demo' ),
+                    'default'  => ' ',
+            ),
+            array(
+                    'id'       => 'footer-insert',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Insert Scripts Header', 'redux-framework-demo' ),
+                    'default'  => '',
+            )
             
 
            
@@ -1124,11 +1093,11 @@ Redux::setSection( $opt_name, array(
             'options'  => array(
                 'container-fluid' => array(
                     'alt' => 'wide',
-                    'img' => $THEME_IMG_URI . 'layout-full.png'
+                    'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                 ),
                 'container' => array(
                     'alt' => 'boxed',
-                    'img' => $THEME_IMG_URI . 'layout-boxed.png'
+                    'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 )
             ),
             'default'  => 'container'
@@ -1147,7 +1116,7 @@ Redux::setSection( $opt_name, array(
                 'link' => 'Link',
                 'popup' => 'Popup',
                 'modal'  => 'Modal',
-                'sidebar'  => 'Sidebar',
+                //'sidebar'  => 'Sidebar',
             ),
             'default'  => 'popup'
             ),

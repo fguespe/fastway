@@ -3,8 +3,6 @@
 if( !function_exists( 'fw_sidebarMenu' ) ) {
     
     function fw_sidebarMenu(){
-        if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
-        global $woocommerce,$redux_demo;
         $style=$redux_demo['cart-style'];?>
        <button id="sidebarHeaderInvoker" class="navbar-toggler d-block btn u-hamburger u-hamburger--white ml-auto"
                   aria-controls="sidebarHeader"

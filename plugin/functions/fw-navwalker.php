@@ -122,19 +122,14 @@ class fw_Navwalker extends Walker_Nav_Menu {
 		 */
 
 		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
-			error_log("jaja1",0);
 			$output .= $indent . '<li class="dropdown-divider" role="presentation">';
 		} else if ( strcasecmp( $item->title, 'divider' ) == 0 && $depth === 1 ) {
-			error_log("jaja2",0);
 			$output .= $indent . '<li class="dropdown-divider" role="presentation">';
 		} else if ( strcasecmp( $item->attr_title, 'dropdown-header' ) == 0 && $depth === 1 ) {
-			error_log("jaja3",0);
 			$output .= $indent . '<li class="dropdown-header" role="presentation">' . esc_html( $item->title );
 		} else if ( strcasecmp( $item->attr_title, 'disabled' ) == 0 ) {
-			error_log("jaja",0);
 			$output .= $indent . '<li class="disabled" role="presentation"><a href="#">' . esc_html( $item->title ) . '</a>';
 		} else {
-			error_log("jaja",0);
 			
 			$class_names = $value = '';
 			$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -143,19 +138,19 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			
 			//Depth es el nivel del item actual, no los niveles inferiores
 			if ( $args->has_children && $depth === 0 ) {
-				error_log("	Es item padre y tiene hijos (".$args->has_children." - ".$depth.")",0);
+				//error_log("	Es item padre y tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'].$this->atts['li_hijos_class'];
 			}else if ( $args->has_children && $depth > 0 ) {
-				error_log("	Es hijo y tiene hijos (".$args->has_children." - ".$depth.")",0);
+				//error_log("	Es hijo y tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'].$this->atts['li_hijos_class'];
 			}else if ( !$args->has_children && $depth > 0 ) {
-				error_log("	Es hijo y no tiene hijos (".$args->has_children." - ".$depth.")",0);
+				//error_log("	Es hijo y no tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'];
 			}else if ( !$args->has_children && $depth === 0 ) {
-				error_log("	Es padre y no tiene hijos (".$args->has_children." - ".$depth.")",0);
+				//error_log("	Es padre y no tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'];
 			}else{
-				error_log("	No tiene hijos (".$args->has_children." - ".$depth.")",0);
+				//error_log("	No tiene hijos (".$args->has_children." - ".$depth.")",0);
 				$class_names .= $this->atts['li_class'];
 			}
 
