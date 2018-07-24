@@ -256,7 +256,7 @@
                 'title'    => __( 'Logo', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => get_template_directory_uri() . "/assets/img/logo.svg"),
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/logo.svg"),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -269,7 +269,7 @@
                 'title'    => __( '404 img', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => get_template_directory_uri() . "/assets/img/error.png" ),
+                'default'  => array( 'url' => '/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/error.png' ),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -546,7 +546,7 @@
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
-            'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;" src="'.get_template_directory_uri() . "/assets/img/logo.svg".'" /></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
+            'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
         ),
         array(
             'id'   => 'editor-page-divide-1',
@@ -1116,7 +1116,7 @@ Redux::setSection( $opt_name, array(
                 'link' => 'Link',
                 'popup' => 'Popup',
                 'modal'  => 'Modal',
-                //'sidebar'  => 'Sidebar',
+                'sidebar'  => 'Sidebar',
             ),
             'default'  => 'popup'
             ),

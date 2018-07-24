@@ -33,24 +33,11 @@ class vcInfoBox extends WPBakeryShortCode {
                         'heading' => __( 'Title', 'text-domain' ),
                         'param_name' => 'title',
                         'value' => __( 'Default value', 'text-domain' ),
-                        'description' => __( 'Box Title', 'text-domain' ),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Custom Group',
+                        'group' => 'Options',
                     ),  
                      
-                    array(
-                        'type' => 'textarea',
-                        'holder' => 'div',
-                        'class' => 'text-class',
-                        'heading' => __( 'Text', 'text-domain' ),
-                        'param_name' => 'text',
-                        'value' => __( 'Default value', 'text-domain' ),
-                        'description' => __( 'Box Text', 'text-domain' ),
-                        'admin_label' => false,
-                        'weight' => 0,
-                        'group' => 'Custom Group',
-                    ),                      
                         
                 ),
             )

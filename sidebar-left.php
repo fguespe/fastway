@@ -22,9 +22,9 @@ if(is_shop() || is_product_category()){
 ?>
 
 <?php if ( 'both' === $sidebar_pos ) : ?>
-<div class="col-md-2 widget-area" id="left-sidebar" role="complementary">
+<div class="col-md-3 widget-area" id="left-sidebar" role="complementary">
 	<?php else : ?>
-<div class="col-md-2 widget-area" id="left-sidebar" role="complementary">
+<div class="col-md-3 widget-area" id="left-sidebar" role="complementary">
 	<?php endif; ?>
 <?php dynamic_sidebar( $sidebarname ); ?>
 

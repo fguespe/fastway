@@ -88,8 +88,8 @@ $container   = $redux_demo['footer-width'];
       // initialization of show animations
       //jQuery.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
-      // initialization of go to
 
+      jQuery.HSCore.components.HSGoTo.init('.js-go-to');
       
       jQuery('#sidebarHeaderInvoker').on('click', function(e) {
         jQuery('#headerSidebarList .collapse').collapse('hide');

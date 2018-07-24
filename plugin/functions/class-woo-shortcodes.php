@@ -15,7 +15,7 @@ class Nexthemes_Woo_Shortcodes {
 			extract( $args );
 		}
 		
-		$located = get_template_directory() . '/inc/shortcodes/'.$template_name;
+		$located = get_template_directory() . '/plugin/functions/shortcodes/'.$template_name;
 		
 		if ( ! file_exists( $located ) ) {
 			_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $located ), '1.0' );
@@ -64,7 +64,6 @@ class Nexthemes_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-
 		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
 		$cache = self::get_cached_shortcode($atts, 'theshopier_'. __FUNCTION__ );
 
@@ -101,7 +100,8 @@ class Nexthemes_Woo_Shortcodes {
 		$old_columns = $woocommerce_loop['columns'];
 		
 		if ( $products->have_posts() ) :
-
+			self::get_template( 'woo-carousel.php', $atts, $products );
+			/*
 			if( absint($atts['as_widget']) )
 				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
 			else {
@@ -109,6 +109,7 @@ class Nexthemes_Woo_Shortcodes {
 				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
 				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
 			}
+			*/
 			
 		endif;
 		

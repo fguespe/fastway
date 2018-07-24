@@ -1,5 +1,14 @@
 :root{
 	--main:<?php echo $redux_demo['opt-color-main']; ?>;
+  --top-banner:<?php echo $redux_demo['opt-color-topheader-banner']; ?>;
+  --icon-header:<?php echo $redux_demo['opt-color-iconheader']; ?>;
+  --top-header:<?php echo $redux_demo['opt-color-topheader']; ?>;
+  --middle-header:<?php echo $redux_demo['opt-color-middheader']; ?>;
+  --bottom-header:<?php echo $redux_demo['opt-color-bottheader']; ?>;
+  --body:<?php echo $redux_demo['opt-color-bodycolor']; ?>;
+  --footer:<?php echo $redux_demo['opt-color-footer']; ?>;
+
+
 }
 <?php
 $tipos=array("p","span","div","a","h4","h3","h2","h1");
@@ -8,20 +17,6 @@ $nombre='opt-typography-'.$key;
 if(!isset($redux_demo[$nombre]))continue;
 $font=$redux_demo[$nombre];
 ?>
-header i,header span{
-color:<?php echo $redux_demo['opt-color-iconheader']; ?>;
-}
-.fw_header_top_banner{
-	background-color:<?php echo $redux_demo['opt-color-topheader-banner']; ?>;
-	width:100%;
-	text-align:center;
-}
-.search-form .input-group-append .btn{
-color:<?php echo $redux_demo['opt-color-iconheader']; ?>;
-background-color:white;
-border-color:lightgrey;
-}
-.btn-outline-primary:hover{background:<?php echo $redux_demo['opt-color-main']; ?> !important;}
 header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $key;?>,#woocommerce-wrapper <?php echo $key;?>,#main-nav <?php echo $key;?>{
   font-family: '<?php echo str_replace(",", "','", $font['font-family']);?>' ;
   font-size: <?php echo $font['font-size'];?> ;
@@ -32,12 +27,6 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   text-align:<?php echo $font['text-align'];?> ;
 }
 <?}?>
-.fw_quicklinks i{color:<?php echo $redux_demo['opt-color-main']; ?>;}
-.fw_header_top{background:<?php echo $redux_demo['opt-color-topheader']; ?>;}
-.fw_header_middle{background:<?php echo $redux_demo['opt-color-middheader']; ?>;}
-.fw_header_bottom{background:<?php echo $redux_demo['opt-color-bottheader']; ?>;}
-body{background:<?php echo $redux_demo['opt-color-bodycolor']; ?>;}
-footer{background:<?php echo $redux_demo['opt-color-footer']; ?>;}
 <?php echo $redux_demo['css_editor-general']; ?>
 <?php echo $redux_demo['css_editor-header']; ?>
 <?php echo $redux_demo['css_editor-body']; ?>

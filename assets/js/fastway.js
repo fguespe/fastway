@@ -1,14 +1,10 @@
 function remove_item_cart(element) {
- 
-
+   
     var product_id = jQuery('#'+element.id).attr("data-product_id"),
         cart_item_key = jQuery('#'+element.id).attr("data-cart_item_key"),
         product_container = jQuery('#'+element.id).parents('.mini_cart_item');
-    
-    //return;
-    product_container.hide();
+    product_container.attr("style", "display: none !important");
     $("<div class='loading-div'><img style='margin: 7px 0px 0px 0px;' src='/wp-admin/images/spinner-2x.gif' /></div>").insertBefore(product_container);
-
     jQuery.ajax({
         type: 'POST',
         dataType: 'json',
@@ -21,9 +17,7 @@ function remove_item_cart(element) {
         success: function(response) {
             if ( ! response || response.error )
                 return;
-
             var fragments = response.fragments;
-
             // Replace fragments
             if ( fragments ) {
                 jQuery.each( fragments, function( key, value ) {

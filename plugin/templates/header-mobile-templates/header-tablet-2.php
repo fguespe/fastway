@@ -6,7 +6,7 @@ global $header_main,$header_middle_mobile;
 
     	<div class="col-2 align-items-center"><?php echo fw_sidebarMenu();?></div>
     	<div class="col-8 align-items-center text-center"><?php echo fastway_getLogo();?></div>
-		<div class="col-2 align-items-center"><?php echo fw_shoppingCart();?></div>
+		<div class="col-2 align-items-center"><?php echo fw_shoppingCart("sidebar");?></div>
 
 </div>
 </header>

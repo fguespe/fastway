@@ -3,7 +3,6 @@ global $woocommerce_loop;
 
 $woocommerce_loop['columns'] = $columns;
 
-$title="JAJA";
 $heading_start = '<h3 class="heading-title">'.$title.'</h3>';
 
 
@@ -48,5 +47,56 @@ $heading_start = '<h3 class="heading-title">'.$title.'</h3>';
 <span class="sr-only">Next</span>
 </a>
 </div>
+<style type="text/css">
+	.carousel-control-next{
+   position: absolute !important;
+
+    left: 95.5% !important;
+    color: transparent !important;
+}
+.carousel-control-prev{
+       position: absolute;
+
+    left:-10% !important;
+
+    color: transparent;
+}
+    
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+position: absolute;
+    z-index: 2;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%!important;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after{
+    position: absolute;
+    top: 13px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.carousel-control-next-icon::after{
+    transform: rotate(45deg);
+	
+    right: 15px;
+}
+.carousel-control-prev-icon::after{
+    transform: rotate(225deg);
+    left: 15px;
+    
+}
 
 
+
+</style>
