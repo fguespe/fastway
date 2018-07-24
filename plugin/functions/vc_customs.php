@@ -28,19 +28,33 @@ class vcInfoBox extends WPBakeryShortCode {
                          
                     array(
                         'type' => 'textfield',
-                        'holder' => 'h3',
-                        'class' => 'title-class',
+                        
                         'heading' => __( 'Title', 'text-domain' ),
                         'param_name' => 'title',
-                        'value' => __( 'Default value', 'text-domain' ),
-                        'admin_label' => false,
+                        'value' => __( 'Products', 'text-domain' ),
+                        'admin_label' => true,
                         'weight' => 0,
                         'group' => 'Options',
-                    ),  
+                    ), 
+                    array(
+                      "type"        => "dropdown",
+                      "heading"     => __("Select category"),
+                      "param_name"  => "ja",
+                      "admin_label" => true,
+                      "value"       => array(
+                          'Featured'   => 'Featured',
+                          'Recent'   => 'Recent',
+                          'Most selled' => 'Most selled ',
+                      ), //value
+                      'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Options',
+                    ),      
                      
                         
                 ),
             )
+            
         );                                
         
     }
