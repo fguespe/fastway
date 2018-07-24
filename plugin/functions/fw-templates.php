@@ -30,8 +30,8 @@ if( !function_exists('fastway_product_loop_mobile') ){
     function fastway_product_loop_mobile( $style = 1 ){
 
         global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/product-loop-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/product-loop-templates/product-loop-mobile', $style);
+        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/product-loop-mobile-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
+        get_template_part('plugin/templates/product-loop-mobile-templates/product-loop-mobile', $style);
     }
 }
 
@@ -83,10 +83,10 @@ for( $i=1; $i<=4; $i++ ) {
 }
 $loop_templates_mobile = array();
 for( $i=1; $i<=3; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates-images/woo_product_mobile{$i}.jpg" ) ) {
+    if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates-images/product-loop-mobile-{$i}.jpg" ) ) {
         $loop_templates_mobile[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-mobile-templates-images/woo_product_mobile{$i}.jpg"
+            'img' => $TEMPLATE_URI . "product-loop-mobile-templates-images/product-loop-mobile-{$i}.jpg"
         );
     }
 }

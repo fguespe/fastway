@@ -38,9 +38,9 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<li class="d-flex u-shopping-cart-item-divider woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<li class="d-flex  woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-    '<a href="javascript:;" id="item%s" onClick="remove_item_cart(this)" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s">×</a>',
+    '<a href="javascript:;" id="item%s" onClick="remove_item_cart(this)" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s">X</a>',
     //esc_url(wc_get_cart_remove_url( $cart_item_key ) ),
     esc_attr( $product_id ),
     esc_html__( 'Remove this item', 'deepsoul' ),

@@ -9,7 +9,7 @@
 global $redux_demo;
 $container   = $redux_demo['header-width'];
 $js=$redux_demo['opt-ace-editor-js'];
-
+$favi=$redux_demo["general-favi"];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,6 +19,7 @@ $js=$redux_demo['opt-ace-editor-js'];
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" type="image/png" href="<?php echo $favi['url'];?>"/>
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <meta name="description" content="<?php echo $redux_demo['seo-desc'];?>">
@@ -51,9 +52,6 @@ jQuery(window).scroll(function() {
     <?php 	foreach($redux_demo['sticky-menu'] as $key){?>
 	jQuery('.<?=$key?>').attr("style", "display: none !important; ");
     <?}?>
-    jQuery('.fw_header_middle').attr("style", "display: flex; ");
-    
-
   }
   else{
     jQuery('header').removeClass("u-header--sticky-top");

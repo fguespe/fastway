@@ -11,11 +11,8 @@ $heading_start = '<h3 class="heading-title">'.$title.'</h3>';
 <?php echo $heading_start;?>
 <?php endif;?>	
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="fwcarousel" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">
-
-    
-	
 	<?php wc_get_template( 'loop/loop-start.php', array("item_style" => $item_style) ); 
 	$i=0;
 	$ultimo=0;
@@ -38,30 +35,17 @@ $heading_start = '<h3 class="heading-title">'.$title.'</h3>';
 
 </div>
 </div>
-<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+<a class="carousel-control-prev d-flex p-2 align-left" href="#fwcarousel" role="button" data-slide="prev">
 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 <span class="sr-only">Previous</span>
 </a>
-<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+<a class="carousel-control-next" href="#fwcarousel" role="button" data-slide="next">
 <span class="carousel-control-next-icon " aria-hidden="true"></span>
 <span class="sr-only">Next</span>
 </a>
 </div>
 <style type="text/css">
-	.carousel-control-next{
-   position: absolute !important;
 
-    left: 95.5% !important;
-    color: transparent !important;
-}
-.carousel-control-prev{
-       position: absolute;
-
-    left:-10% !important;
-
-    color: transparent;
-}
-    
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
 position: absolute;
@@ -88,7 +72,7 @@ position: absolute;
 
 .carousel-control-next-icon::after{
     transform: rotate(45deg);
-	
+    
     right: 15px;
 }
 .carousel-control-prev-icon::after{
@@ -96,7 +80,6 @@ position: absolute;
     left: 15px;
     
 }
-
 
 
 </style>

@@ -2,6 +2,7 @@
 	--main:<?php echo $redux_demo['opt-color-main']; ?>;
   --top-banner:<?php echo $redux_demo['opt-color-topheader-banner']; ?>;
   --icon-header:<?php echo $redux_demo['opt-color-iconheader']; ?>;
+  --second-color:<?php echo $redux_demo['opt-color-second']; ?>;
   --top-header:<?php echo $redux_demo['opt-color-topheader']; ?>;
   --middle-header:<?php echo $redux_demo['opt-color-middheader']; ?>;
   --bottom-header:<?php echo $redux_demo['opt-color-bottheader']; ?>;

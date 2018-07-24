@@ -2,9 +2,9 @@
 // ! File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if( ! class_exists( 'Nexthemes_Shortcodes' ) ) :
+if( ! class_exists( 'fw_Shortcodes' ) ) :
 
-class Nexthemes_Shortcodes extends Nexthemes_Woo_Shortcodes {
+class fw_Shortcodes extends fw_Woo_Shortcodes {
 
 	public function init() {
 

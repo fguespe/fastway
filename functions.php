@@ -53,14 +53,15 @@ require get_template_directory() . '/plugin/functions/sidebar-menu.php' ;
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/functions/fw-templates.php';
 
-    require get_template_directory() . '/plugin/functions/class-woo-shortcodes.php' ;
-    require get_template_directory() . '/plugin/functions/class-shortcodes.php' ;
-    require get_template_directory() . '/plugin/functions/fw-navwalker.php';
+require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
+require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;
+require get_template_directory() . '/plugin/functions/fw-navwalker.php';
 
 //if(fw_checkPlugin('woocommerce/woocommerce.php')){
     require get_template_directory() . '/plugin/functions/user-account.php';
+    require get_template_directory() . '/plugin/functions/vc_customs/vc_woo_carousels.php';
     require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
-    require get_template_directory() . '/plugin/functions/shopping-cart.php' ;
+    require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;
     require get_template_directory() . '/plugin/functions/woocommerce-category-banner/woocommerce-category-banner.php';
     require get_template_directory() . '/plugin/functions/product-enquiry-form/product-enquiry-form.php';
     require get_template_directory() . '/plugin/functions/woo-empty-cart-button.php';
@@ -76,7 +77,7 @@ require get_template_directory() . '/plugin/functions/fw-templates.php';
 init_hooks();
 function init_hooks(){
     if( is_request( 'frontend' ) ) {
-        $shortcode = new Nexthemes_Shortcodes();
+        $shortcode = new fw_Shortcodes();
         add_action( 'init', array( $shortcode, 'init' ) );
     }    
 }
@@ -105,18 +106,13 @@ register_nav_menus( array(
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
 }
+global $redux_demo;
+
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' );
 }
 
-global $redux_demo;
 
-
-add_action( 'vc_before_init', 'vc_before_init_actions' );
- 
-function vc_before_init_actions() {
-    require_once( get_template_directory().'/plugin/functions/vc_customs.php' ); 
-}
 
 
 

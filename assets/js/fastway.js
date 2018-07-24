@@ -1,3 +1,11 @@
+$(document).ready(function(){
+  $("#myCarousel").carousel();
+    if ( $(window).width() < 640 ) {
+       $('.col-sm-6').unwrap().addClass('item');
+       $('.col-sm-6:first').addClass('active');
+    }
+});
+
 function remove_item_cart(element) {
    
     var product_id = jQuery('#'+element.id).attr("data-product_id"),

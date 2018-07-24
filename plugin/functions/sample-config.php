@@ -263,6 +263,15 @@
                 //)
             ),
             array(
+                'id'       => 'general-favi',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Faivon', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/favi.png"),
+
+            ),
+            array(
                 'id'       => 'img-404',
                 'type'     => 'media',
                 'url'      => true,
@@ -723,6 +732,14 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Main Color', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'default'  => '#000000',
+        ),
+       array(
+                'id'       => 'opt-color-second',
+                'type'     => 'color',
+                'output'   => array( '.site-title' ),
+                'title'    => __( 'Secondary Color', 'redux-framework-demo' ),
                 'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
                 'default'  => '#000000',
         ),
