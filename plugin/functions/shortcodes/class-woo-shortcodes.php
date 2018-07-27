@@ -40,6 +40,8 @@ class fw_Woo_Shortcodes {
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
 			'fw_recent_products'				=> __CLASS__ . '::recent_products',
+			'fw_category_carousel'				=> __CLASS__ . '::products_category',
+			'fw_categories_carousel'			=> __CLASS__ . '::woo_categories',
 		);
 	}
 	private static function pareShortcodeClass( $class = '' ){
@@ -105,17 +107,7 @@ class fw_Woo_Shortcodes {
 		$old_columns = $woocommerce_loop['columns'];
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-carousel.php', $atts, $products );
-			/*
-			if( absint($atts['as_widget']) )
-				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-			else {
-
-				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-			}
-			*/
-			
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
@@ -254,7 +246,6 @@ class fw_Woo_Shortcodes {
 	
 	public static function products_category( $atts ){
 		global $woocommerce_loop;
-		
 		$atts = shortcode_atts( array(
 			"title" 		=> '',
 			"item_style"	=> 'grid',
@@ -277,7 +268,7 @@ class fw_Woo_Shortcodes {
 		
 		$ordering_args = WC()->query->get_catalog_ordering_args( $atts['orderby'], $atts['order'] );
 		$meta_query    = WC()->query->get_meta_query();
-		
+	
 		$args = array(
 			'post_type'				=> 'product',
 			'post_status' 			=> 'publish',
@@ -299,20 +290,12 @@ class fw_Woo_Shortcodes {
 		if ( isset( $ordering_args['meta_key'] ) ) {
 			$args['meta_key'] = $ordering_args['meta_key'];
 		}
-		
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 		
 		if ( $products->have_posts() ) :
-
-			if( absint($atts['as_widget']) )
-				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-			else {
-				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-			}
-			
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
@@ -320,6 +303,53 @@ class fw_Woo_Shortcodes {
 		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
 
 		return '<div class="'.esc_attr(implode(' ', $classes)).'">' . ob_get_clean() . '</div>';
+	}
+
+	public static function woo_categories( $atts ){
+		global $woocommerce_loop;
+		$taxonomy     = 'product_cat';
+  $orderby      = 'name';  
+  $show_count   = 0;      // 1 for yes, 0 for no
+  $pad_counts   = 0;      // 1 for yes, 0 for no
+  $hierarchical = 1;      // 1 for yes, 0 for no  
+  $title        = '';  
+  $empty        = 0;
+
+  $args = array(
+         'taxonomy'     => $taxonomy,
+         'orderby'      => $orderby,
+         'show_count'   => $show_count,
+         'pad_counts'   => $pad_counts,
+         'hierarchical' => $hierarchical,
+         'title_li'     => $title,
+         'hide_empty'   => $empty
+  );
+ $all_categories = get_categories( $args );
+ foreach ($all_categories as $cat) {
+    if($cat->category_parent == 0) {
+        $category_id = $cat->term_id;       
+        echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
+
+        $args2 = array(
+                'taxonomy'     => $taxonomy,
+                'child_of'     => 0,
+                'parent'       => $category_id,
+                'orderby'      => $orderby,
+                'show_count'   => $show_count,
+                'pad_counts'   => $pad_counts,
+                'hierarchical' => $hierarchical,
+                'title_li'     => $title,
+                'hide_empty'   => $empty
+        );
+        $sub_cats = get_categories( $args2 );
+        if($sub_cats) {
+            foreach($sub_cats as $sub_category) {
+                echo  $sub_category->name ;
+            }   
+        }
+    }       
+}
+		
 	}
 	
 	public static function recent_products( $atts ){
@@ -381,13 +411,8 @@ class fw_Woo_Shortcodes {
 		$old_columns = $woocommerce_loop['columns'];
 		
 		if ( $products->have_posts() ) :
-
-			if( absint($atts['as_widget']) )
-				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-			else {
-				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-			}
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
+			
 			
 		endif;
 		

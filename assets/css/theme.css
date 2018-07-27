@@ -7,13 +7,9 @@ header i,header span{
 color:var(--icon-header);
 }
 
-.search-form .input-group-append .btn{
-color:var(--icon-header);
-background-color:white;
-border-color:lightgrey;
-}
+
 .btn-outline-primary:hover{
-    background:var(--main) !important;
+    background:transparent !important;
 }
 
 .fw_quicklinks i{color:var(--main);}
@@ -160,6 +156,18 @@ font-size:15px ;
 line-height:25px ;
 }
 /*SEARCH*/
+.search-form .input-group-append .btn{
+color:var(--icon-header);
+background-color:white;
+border-color:lightgrey;
+}
+.fw-searchform i::before{
+color:var(--main) !important;
+}
+.fw-searchform input,.fw-searchform button{
+border-radius:0px;
+border:0px;
+}
 /*BUSCAR  position: fixed !important;*/
  
 .results-list{

@@ -256,7 +256,7 @@
                 'title'    => __( 'Logo', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/logo.svg"),
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/fastway.png"),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -811,6 +811,16 @@
     'icon'  => 'el el-file-edit',
     'fields'     => array(
         array(
+            'id'       => 'css-onoff',
+            'type'     => 'button_set',
+            'title'    => __( 'Activate Custom CSS', 'redux-framework-demo' ),
+            'options'  => array(
+                'on' => 'On',
+                'off' => 'Off',
+            ),
+            'default'  => 'on'
+        ),
+        array(
             'id'        => 'css_editor-general',
             'type'      => 'ace_editor',
             'title'     => 'CSS General',
@@ -1161,7 +1171,7 @@ Redux::setSection( $opt_name, array(
                     'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
                 ),
             ),
-            'default'  => 'full'
+            'default'  => 'left'
         ),
         array(
             'id'       => 'shop-left-sidebar',

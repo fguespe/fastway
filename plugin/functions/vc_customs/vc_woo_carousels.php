@@ -1,4 +1,129 @@
 <?php
+add_action( 'vc_before_init', 'vc_category_carousel' );//Prds de categoria
+function vc_category_carousel() {
+
+    vc_map( 
+            array(
+                'name' => __('Category Products Carousel', 'text-domain'),
+                'base' => 'fw_category_carousel',
+                'description' => __('Carousel of products', 'text-domain'), 
+                'category' => __('Fastway', 'text-domain'),   
+                'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
+                'params' => array(
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Title', 'text-domain' ),
+                        'param_name' => 'title',
+                        'value' => 'Title',
+                        'std' => 'Title',
+                        'admin_label' => true,
+                        'weight' => 0,
+                    ), 
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Categories Slugs', 'text-domain' ),
+                        'param_name' => 'category',
+                        'value' => '',
+                        'std' => '',
+                        'admin_label' => true,
+                        'weight' => 0,
+                    ), 
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Prods per row ', 'text-domain' ),
+                        'param_name' => 'prodsperrow',
+                        'value' => '4',
+                        'std' => '4',
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
+                        'type' => 'el_id',
+                        'heading' => __( 'Element ID', 'js_composer' ),
+                        'param_name' => 'el_id',
+                        'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Extra class name', 'js_composer' ),
+                        'param_name' => 'el_class',
+                        'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                    ),   array(
+                        'type' => 'css_editor',
+                        'heading' => __( 'CSS box', 'js_composer' ),
+                        'param_name' => 'css',
+                        'group' => __( 'Design Options', 'js_composer' ),
+                    ),
+                ),
+            )
+
+            
+        );          
+
+}
+add_action( 'vc_before_init', 'vc_categories_carousel' );//Cates en general
+function vc_categories_carousel() {
+
+    vc_map( 
+            array(
+                'name' => __('Categories Carousel', 'text-domain'),
+                'base' => 'fw_categories_carousel',
+                'description' => __('Carousel of products', 'text-domain'), 
+                'category' => __('Fastway', 'text-domain'),   
+                'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
+                'params' => array(
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Title', 'text-domain' ),
+                        'param_name' => 'title',
+                        'value' => 'Title',
+                        'std' => 'Title',
+                        'admin_label' => true,
+                        'weight' => 0,
+                    ), 
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Categories Slugs', 'text-domain' ),
+                        'param_name' => 'category',
+                        'value' => '',
+                        'std' => '',
+                        'admin_label' => true,
+                        'weight' => 0,
+                    ), 
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Prods per row ', 'text-domain' ),
+                        'param_name' => 'prodsperrow',
+                        'value' => '4',
+                        'std' => '4',
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
+                        'type' => 'el_id',
+                        'heading' => __( 'Element ID', 'js_composer' ),
+                        'param_name' => 'el_id',
+                        'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Extra class name', 'js_composer' ),
+                        'param_name' => 'el_class',
+                        'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                    ),   array(
+                        'type' => 'css_editor',
+                        'heading' => __( 'CSS box', 'js_composer' ),
+                        'param_name' => 'css',
+                        'group' => __( 'Design Options', 'js_composer' ),
+                    ),
+                ),
+            )
+
+            
+        );          
+
+}
+
 add_action( 'vc_before_init', 'vc_featured_products' );
 function vc_featured_products() {
 

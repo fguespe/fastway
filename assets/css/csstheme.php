@@ -27,15 +27,16 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   text-transform:<?php echo $font['text-transform'];?> ;
   text-align:<?php echo $font['text-align'];?> ;
 }
-<?}?>
-<?php echo $redux_demo['css_editor-general']; ?>
-<?php echo $redux_demo['css_editor-header']; ?>
-<?php echo $redux_demo['css_editor-body']; ?>
-<?php echo $redux_demo['css_editor-footer']; ?>
-<?php echo $redux_demo['css_editor-loop']; ?>
-<?php echo $redux_demo['css_editor-single']; ?>
-<?php echo $redux_demo['css_editor-mobile']; ?>
-<?php
+<?}
+if($redux_demo['css-onoff']=="on"){
+echo $redux_demo['css_editor-general']; 
+echo $redux_demo['css_editor-header']; 
+echo $redux_demo['css_editor-body']; 
+echo $redux_demo['css_editor-footer']; 
+echo $redux_demo['css_editor-loop']; 
+echo $redux_demo['css_editor-single']; 
+echo $redux_demo['css_editor-mobile']; 
+}
 if(is_child_theme()){
 $files=glob(get_stylesheet_directory().'/fonts/*.otf');
 $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));

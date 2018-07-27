@@ -55,44 +55,44 @@ if( !function_exists('fastway_product_single_mobile') ){
 $theme_headers = array();
 for( $i=1; $i<=20; $i++ ) {
     for( $j=1; $j<=20; $j++ ) {
-        if( file_exists( $TEMPLATE_DIR . "header-templates-images/theme-option-header{$i}-{$j}.png" ) ) {
+        if( file_exists( $TEMPLATE_DIR . "header-templates/images/theme-option-header{$i}-{$j}.png" ) ) {
             $theme_headers[$i."-".$j] = array(
                 'alt' => $i."-".$j,
-                'img' => $TEMPLATE_URI . "header-templates-images/theme-option-header{$i}-{$j}.png"
+                'img' => $TEMPLATE_URI . "header-templates/images/theme-option-header{$i}-{$j}.png"
             );
         }
     }   
 }
 $theme_headers_mobile = array();
 for( $i=1; $i<=20; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "header-mobile-templates-images/theme-option-header-mobile{$i}.png" ) ) {
+    if( file_exists( $TEMPLATE_DIR . "header-mobile-templates/images/theme-option-header-mobile{$i}.png" ) ) {
         $theme_headers_mobile[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "header-mobile-templates-images/theme-option-header-mobile{$i}.png"
+            'img' => $TEMPLATE_URI . "header-mobile-templates/images/theme-option-header-mobile{$i}.png"
         );
     }
 }
 $loop_templates = array();
-for( $i=1; $i<=4; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-templates-images/product-loop-{$i}.jpg" ) ) {
+for( $i=1; $i<=5; $i++ ) {
+    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/product-loop-{$i}.jpg" ) ) {
         $loop_templates[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-templates-images/product-loop-{$i}.jpg"
+            'img' => $TEMPLATE_URI . "product-loop-templates/images/product-loop-{$i}.jpg"
         );
     }
 }
 $loop_templates_mobile = array();
 for( $i=1; $i<=3; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates-images/product-loop-mobile-{$i}.jpg" ) ) {
+    if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates/images/product-loop-mobile-{$i}.jpg" ) ) {
         $loop_templates_mobile[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-mobile-templates-images/product-loop-mobile-{$i}.jpg"
+            'img' => $TEMPLATE_URI . "product-loop-mobile-templates/images/product-loop-mobile-{$i}.jpg"
         );
     }
 }
 $single_templates = array();
 for( $i=1; $i<=3; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-templates-images/woo_product_single{$i}.jpg" ) ) {
+    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/woo_product_single{$i}.jpg" ) ) {
         $single_templates[$i] = array(
             'alt' => $i,
             'img' => $TEMPLATE_URI . "woo_product_single{$i}.jpg"
