@@ -1156,11 +1156,11 @@ Redux::setSection( $opt_name, array(
             'title'    => 'Cart Style',
             'options'  => array(
                 'link' => 'Link',
-                'popup' => 'Popup',
+                //'popup' => 'Popup',
                 'modal'  => 'Modal',
                 //'sidebar'  => 'Sidebar',
             ),
-            'default'  => 'popup'
+            'default'  => 'modal'
             ),
         array(
             'id'       => 'shop-layout',

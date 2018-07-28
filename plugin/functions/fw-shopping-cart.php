@@ -56,15 +56,13 @@ HTML;
           $idname2=$rand.'shoppingCartModal';
         
           return <<<HTML
-<li class="list-inline-item position-relative">
-   <a class="btn btn-xs u-btn--icon u-btn-text-secondary" 
+<a class="btn btn-xs u-btn--icon u-btn-text-secondary" 
       role="button"
       data-target="#$idname2"
       data-toggle="modal">
    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
    </a>
-</li>
 <!-- Modal -->
 <div class="modal fade" id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -86,9 +84,6 @@ HTML;
       </div>
     </div>
   </div>
-</div>
-<div id="$idname2" class="js-shopping-cart-window u-modal-window u-modal-window--shopping-cart fw-mini-cart">
-   
 </div>
 HTML;
         }

@@ -9,10 +9,7 @@ global $header_main,$header_middle_mobile,$redux_demo;
 
       
       <div class="collapse navbar-collapse" id="navbarsExample01">
-        <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
-          <!-- Logo -->
-
           <?php wp_nav_menu(
             array(
                   'theme_location'  => 'mobile',
@@ -24,25 +21,10 @@ global $header_main,$header_middle_mobile,$redux_demo;
                   'walker'          => new fw_Navwalker('mobile-1'),
                 )
             ); 
-          if($redux_demo['fw-quicklinks'])quicklinks();
+            if($redux_demo['fw-quicklinks'])quicklinks();
             ?>
-
-        </nav>
-      </div>
+            </nav>
+          </div>
       
 </div>
 </header>
-
-
-<!--
-<header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
-<div class="<?php echo esc_attr( $header_middle_mobile ); ?> align-items-center">
-		
-		<div class="col-2 align-items-center"><?php echo fw_shoppingCart();?></div>
-    	<div class="col-8 align-items-center text-center"><?php echo fastway_getLogo();?></div>
-		<div class="col-2 align-items-center"><?php echo fw_shoppingCart();?></div>
-
-</div>
-</header>
--->
-
