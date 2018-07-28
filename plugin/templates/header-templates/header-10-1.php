@@ -34,7 +34,7 @@ global $header_container,$header_main,$header_middle,$header_bottom;
                   'menu_class'      => 'navbar-nav u-header__navbar-nav',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
-                  'walker'          => new fw_Navwalker('desktop-1'),
+                  //'walker'          => new fw_Navwalker('desktop-1'),
                 )
             ); 
             ?>

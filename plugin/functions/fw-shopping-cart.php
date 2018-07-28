@@ -23,117 +23,73 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
 </li>
 HTML;
         }else if($style==="popup"){
-        $idname=$rand."shoppingCartDropdownInvoker";
-        $idname2=$rand.'shoppingCartDropdown';
+        $idname=$rand."cart-popover";
+        $idname2=$rand.'popover_content_wrapper';
         return <<<HTML
-<li class="list-inline-item position-relative">
-   <a id="$idname" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
-      aria-controls="$idname2"
-      aria-haspopup="true"
-      aria-expanded="false"
-      data-unfold-event="hover"
-      data-unfold-target="#$idname2"
-      data-unfold-type="css-animation"
-      data-unfold-duration="00"
-      data-unfold-delay="00"
-      data-unfold-hide-on-scroll="true"
-      data-unfold-animation-in="fadeIn"
-      data-unfold-animation-out="fadeOut">
-   <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-   <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
-   </a>
-   <div id="$idname2" class="u-unfold u-unfold right-0 p-0 mt-2 fw-mini-cart" aria-labelledby="shoppingCartDropdownInvoker" style="width: 350px;">
-      <div class="mini-cart-item-title">Your Shopping Cart</div>
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('#$idname').popover({
+        html : true,
+        container: 'body',
+        content: function() {
+            return jQuery('#$idname2').html();
+        }
+    });
+});
+</script>
+<a id="$idname" class="btn" data-placement="bottom" title="Carrinho de Compras">
+    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
+    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
+</a>
+   
+
+<div id="$idname2" style="display: none">
+   <div class="mini-cart-item-title">Your Shopping Cart</div>
       <div class="widget_shopping_cart_content"></div>
       <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
          <a class="checkoutbtn" href="../shop/shop-checkout.html">PROCEED TO CHECKOUT</a>
     </div>
-   </div>
-</li>
+</div>
 HTML;
         }else if($style==="modal"){
           $idname2=$rand.'shoppingCartModal';
         
           return <<<HTML
 <li class="list-inline-item position-relative">
-   <a class="btn btn-xs u-btn--icon u-btn-text-secondary" href="#$idname2" role="button"
-      data-modal-target="#$idname2"
-      data-overlay-color="#111722">
+   <a class="btn btn-xs u-btn--icon u-btn-text-secondary" 
+      role="button"
+      data-target="#$idname2"
+      data-toggle="modal">
    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
    </a>
 </li>
-<div id="$idname2" class="js-shopping-cart-window u-modal-window u-modal-window--shopping-cart fw-mini-cart">
-   <div class="mini-cart-item-title">Your Shopping Cart</div>
-   <div class="widget_shopping_cart_content"></div>
-   <div class="mini-cart-footer">
-         <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="../shop/shop-checkout.html">PROCEED TO CHECKOUT</a>
-    </div>
-</div>
-HTML;
-        }else if($style==="sidebar"){
-        $idname2=$rand.'sidebarNavToggler';
-        $idname=$rand.'sidebarContent';
-  
-       return <<<HTML
-<li class="list-inline-item position-relative">
-   <a id="$idname2" class="btn btn-xs u-btn--icon u-btn-text-secondary ml-1" href="javascript:;" role="button"
-      aria-controls=""
-      aria-haspopup="true"
-      aria-expanded="false"
-      data-unfold-event="click"
-      data-unfold-hide-on-scroll="false"
-      data-unfold-target="#$idname"
-      data-unfold-type="css-animation"
-      data-unfold-animation-in="fadeInRight"
-      data-unfold-animation-out="fadeOutRight"
-      data-unfold-duration="500">
-   <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-   <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
-   </a>
-</li>
-<!-- Account Sidebar Navigation -->
-<aside id="$idname" class="u-sidebar u-unfold--css-animation u-unfold--hidden fw-mini-cart" aria-labelledby="$idname2">
-   <div class="u-sidebar__scroller">
-      <div class="u-sidebar__container">
-         <div class="u-sidebar--cart__footer-offset">
-            <!-- Toggle Button -->
-            <div class="d-flex align-items-center pt-4 px-7">
-               <div class="mini-cart-item-title">Your Shopping Cart</div>
-                <button type="button" class="close ml-auto"
-                  aria-controls="$idname"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-unfold-event="click"
-                  data-unfold-hide-on-scroll="false"
-                  data-unfold-target="#$idname"
-                  data-unfold-type="css-animation"
-                  data-unfold-animation-in="fadeInRight"
-                  data-unfold-animation-out="fadeOutRight"
-                  data-unfold-duration="500">
-               <span aria-hidden="true">&times;</span>
-               </button>
-            </div>
-            <!-- End Toggle Button -->
-            <div class="js-scrollbar u-sidebar__body">
-               <div class="u-sidebar__content">
-                  <div class="u-sidebar__content--cart">
-                     <div class="widget_shopping_cart_content"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
+<!-- Modal -->
+<div class="modal fade" id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+       <div class="mini-cart-item-title">Your Shopping Cart</div>
       </div>
-   </div>
-   <!-- End Content -->
-   <div class="mini-cart-footer u-sidebar__footer u-sidebar__footer--cart">
+      <div class="modal-body">
+        <div class="widget_shopping_cart_content"></div>
+      </div>
+      <div class="modal-footer">
+      <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
          <a class="checkoutbtn" href="../shop/shop-checkout.html">PROCEED TO CHECKOUT</a>
     </div>
-   <!-- End Footer -->
-</aside>
+   
+   
+      </div>
+    </div>
+  </div>
+</div>
+<div id="$idname2" class="js-shopping-cart-window u-modal-window u-modal-window--shopping-cart fw-mini-cart">
+   
+</div>
 HTML;
         }
     }

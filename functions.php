@@ -12,7 +12,9 @@ function write_log ( $log )  {
 }   
 endif;
 remove_filter( 'the_content', 'wpautop' );
-remove_filter('the_excerpt', 'wpautop');
+remove_filter( 'the_excerpt', 'wpautop' );
+
+
 function generateRandomString($length = 10) {
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -49,7 +51,6 @@ require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 require get_template_directory() . '/plugin/functions/extra-functions.php';
-require get_template_directory() . '/plugin/functions/sidebar-menu.php' ;
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/functions/fw-templates.php';
 
@@ -111,7 +112,15 @@ global $redux_demo;
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' );
 }
+function template_sredirect() {
+        global $redux_demo;
+        $url=$redux_demo["mobile-redirect"];
+        if(!wp_is_mobile())return;
+        if(!is_front_page())return;
+        wp_redirect( $url);
 
+    }
+add_action( 'template_redirect', 'template_sredirect' );
 
 
 

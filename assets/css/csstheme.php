@@ -21,7 +21,6 @@ $font=$redux_demo[$nombre];
 header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $key;?>,#woocommerce-wrapper <?php echo $key;?>,#main-nav <?php echo $key;?>{
   font-family: '<?php echo str_replace(",", "','", $font['font-family']);?>' ;
   font-size: <?php echo $font['font-size'];?> ;
-  font-weight: <?php echo $font['font-weight'];?> ;
   line-height: <?php echo $font['line-height'];?> ;
   color:<?php echo $font['color'];?> ;
   text-transform:<?php echo $font['text-transform'];?> ;

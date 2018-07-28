@@ -1,3 +1,16 @@
+/*FIX WPAUTOP*/
+p:empty{
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.mce_SELRES_start{
+   height: 0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
 .fw_header_top_banner{
     background-color:var(--top-banner);
     width:100%;

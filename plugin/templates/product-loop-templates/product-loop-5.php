@@ -1,19 +1,19 @@
 <style type="text/css">
 .product-loop-5 .woocommerce-loop-product__title{
-font-size:12px !important;
-line-height:12px !important;
-margin-bottom: 20px !important;
+    font-size:12px !important;
+    line-height:12px !important;
+    margin-bottom: 20px !important;
 }
 
 .product-loop-5 .price span{
-color:var(--main) !important;
+    color:var(--main) !important;
 }
 
 .product-loop-5 .add-to-cart-container a{
-border-radius:4px !important;
-max-width:90%;
-margin-top: 30px !important;
-border-color: var(--main) !important;
+    border-radius:4px !important;
+    max-width:90%;
+    margin-top: 30px !important;
+    border-color: var(--main) !important;
 }
 @media (min-width: 799px) {
     .woocommerce-page ul.products li{
@@ -35,9 +35,9 @@ border-color: var(--main) !important;
 
 
 .product-loop-5  .woocommerce-loop-product__link img{
-max-width:150px;
-margin:0 auto !important;
-margin-bottom:30px !important;
+    max-width:150px;
+    margin:0 auto !important;
+    margin-bottom:30px !important;
 }
 </style>
 <div id="productloop_desktop" class='d-none d-md-block product-loop-5'>

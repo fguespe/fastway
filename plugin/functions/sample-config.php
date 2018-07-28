@@ -488,13 +488,20 @@
             'full_width'    => true,
             'default'  => '1',
             ),
+            array(
+                'id'       => 'mobile-redirect',
+                'type'     => 'text',
+                'title'    => __( 'Company Name', 'redux-framework-demo' ),
+                'desc'     => __( '/permalink', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
              array(
-            'id'       => 'shop-loop-mobile-product-style',
-            'type'     => 'image_select',
-            'title'    => esc_html__( 'Catalog Mobile Item style', 'fastway' ),
-            'full_width'    => true,
-            'options'  => $loop_templates_mobile,
-            'default'  => '1'
+                'id'       => 'shop-loop-mobile-product-style',
+                'type'     => 'image_select',
+                'title'    => esc_html__( 'Catalog Mobile Item style', 'fastway' ),
+                'full_width'    => true,
+                'options'  => $loop_templates_mobile,
+                'default'  => '1'
             ),
             array(
             'id'       => 'shop-single-mobile-product-style',
@@ -597,6 +604,7 @@
                 'title'    => __( 'H1 Font', 'redux-framework-demo' ),
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
+                'all_styles'=>true,
                 'text-transform'   => true,
                 'default'  => array(
                     'color'       => 'black',
@@ -614,6 +622,7 @@
                 'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '32px',
@@ -629,6 +638,7 @@
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '28px',
@@ -644,6 +654,7 @@
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '24px',
@@ -659,6 +670,7 @@
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
@@ -674,6 +686,7 @@
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
@@ -689,6 +702,7 @@
                 'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
@@ -704,6 +718,7 @@
                 'text-transform'   => true,
                 'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
                 'google'   => true,
+                'all_styles'=>true,
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
@@ -1143,7 +1158,7 @@ Redux::setSection( $opt_name, array(
                 'link' => 'Link',
                 'popup' => 'Popup',
                 'modal'  => 'Modal',
-                'sidebar'  => 'Sidebar',
+                //'sidebar'  => 'Sidebar',
             ),
             'default'  => 'popup'
             ),

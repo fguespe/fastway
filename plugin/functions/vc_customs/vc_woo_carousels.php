@@ -233,7 +233,7 @@ function getwoocampos(){
                     array(
                         'type' => 'textfield',
                         'heading' => __( 'Max Quantiy', 'text-domain' ),
-                        'param_name' => 'prodsperrow',
+                        'param_name' => 'maxcant',
                         'value' => '12',
                         'std' => '12',
                         'admin_label' => false,

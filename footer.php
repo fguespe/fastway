@@ -22,7 +22,7 @@ $container   = $redux_demo['footer-width'];
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
 </body>
-<script>
+<!--<script>
     jQuery(window).on('load', function () {
       // initialization of HSMegaMenu component
       jQuery('.js-mega-menu').HSMegaMenu({
@@ -106,7 +106,7 @@ $container   = $redux_demo['footer-width'];
         }
       });
     });
-  </script>
+  </script>-->
 
 </html>
 

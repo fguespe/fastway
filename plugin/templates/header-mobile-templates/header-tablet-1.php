@@ -2,7 +2,7 @@
 global $header_main,$header_middle_mobile,$redux_demo;
 ?>
 <header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
-<div class="u-header__section <?php echo esc_attr( $header_middle_mobile ); ?> ">
+<div class="<?php echo esc_attr( $header_middle_mobile ); ?> ">
       <?php echo fastway_getLogo();?>
       <div id="mobileicons">
       <?php if($redux_demo['fw-quicklinks'])quicklinks();?>

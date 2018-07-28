@@ -71,7 +71,7 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
+		//$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
 		$cache = self::get_cached_shortcode($atts, 'fw_'. __FUNCTION__ );
 
 		if( !is_array($cache) && strlen(trim($cache)) > 0 ) {
@@ -86,7 +86,6 @@ class fw_Woo_Shortcodes {
             'terms'    => 'featured',
             'operator' => 'IN',
         );
-		
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',
@@ -100,7 +99,7 @@ class fw_Woo_Shortcodes {
 
 		
 
-		ob_start();
+		//ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
@@ -112,13 +111,8 @@ class fw_Woo_Shortcodes {
 		
 		wp_reset_postdata();
 		
-		$woocommerce_loop['columns'] = $old_columns;
-
-		$output = ob_get_clean();
-
-		$output = self::cache_shortcode($atts, 'fw_'. __FUNCTION__, $output, $cache);
 		
-		return '<div class="'.esc_attr( implode( ' ', $classes ) ).'">' . $output . '</div>';
+		return $output;
 	}
 
 	public static function sale_products( $atts ) {
