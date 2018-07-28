@@ -11,12 +11,14 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $rand=generateRandomString(5);
         $cant=$woocommerce->cart->cart_contents_count;
         $total=$woocommerce->cart->get_cart_total();
+        $carturl=wc_get_cart_url();
+        $checkurl=wc_get_checkout_url();
         if($style==="link"){
-          $carurl=wc_get_cart_url();
+          
 
           return <<<HTML
 <li class="list-inline-item position-relative">
-  <a id="" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="$carurl" role="button">
+  <a id="" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="$carturl" role="button">
     <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
     <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
   </a>
@@ -48,7 +50,7 @@ HTML;
       <div class="widget_shopping_cart_content"></div>
       <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="../shop/shop-checkout.html">PROCEED TO CHECKOUT</a>
+         <a class="checkoutbtn" href="$checkurl">PROCEED TO CHECKOUT</a>
     </div>
 </div>
 HTML;
@@ -56,7 +58,7 @@ HTML;
           $idname2=$rand.'shoppingCartModal';
         
           return <<<HTML
-<a class="btn btn-xs u-btn--icon u-btn-text-secondary" 
+<a class="btn btn-xs u-btn--icon u-btn-text-secondary"  href0="$carturl"
       role="button"
       data-target="#$idname2"
       data-toggle="modal">
@@ -77,7 +79,7 @@ HTML;
       <div class="modal-footer">
       <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="../shop/shop-checkout.html">PROCEED TO CHECKOUT</a>
+         <a class="checkoutbtn" href="$checkurl">PROCEED TO CHECKOUT</a>
     </div>
    
    
