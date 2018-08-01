@@ -41,7 +41,7 @@ class fw_Woo_Shortcodes {
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
 			'fw_recent_products'				=> __CLASS__ . '::recent_products',
 			'fw_category_carousel'				=> __CLASS__ . '::products_category',
-			'fw_categories_carousel'			=> __CLASS__ . '::woo_categories',
+			'fw_categories_carousel'			=> __CLASS__ . '::product_cats',
 		);
 	}
 	private static function pareShortcodeClass( $class = '' ){
@@ -71,13 +71,7 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-		//$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-		$cache = self::get_cached_shortcode($atts, 'fw_'. __FUNCTION__ );
-
-		if( !is_array($cache) && strlen(trim($cache)) > 0 ) {
-			return '<div class="cached_shortcode '.esc_attr( implode( ' ', $classes ) ).'">' . $cache . '</div>';
-		}
-
+		
         $meta_query  = WC()->query->get_meta_query();
         $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
@@ -98,13 +92,10 @@ class fw_Woo_Shortcodes {
 		);
 
 		
-
-		//ob_start();
 		
+		ob_start();
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
-		$old_columns = $woocommerce_loop['columns'];
-		
 		if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
@@ -112,7 +103,7 @@ class fw_Woo_Shortcodes {
 		wp_reset_postdata();
 		
 		
-		return $output;
+		return ob_get_clean();
 	}
 
 	public static function sale_products( $atts ) {
@@ -210,32 +201,18 @@ class fw_Woo_Shortcodes {
 		
 		ob_start();
 		
-		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 		
-		$old_columns = $woocommerce_loop['columns'];
+		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
+
 		
 		if ( $products->have_posts() ) :
-
-			if( absint($atts['supper_style'] == 1) ) {
-				self::get_template( 'shortcode-woo-supper.tpl.php', $atts, $products );
-			} else {
-				if( absint($atts['as_widget']) )
-					self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-				else {
-					if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-					else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-				}
-			}
-		
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
 		
-		$woocommerce_loop['columns'] = $old_columns;
 		
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-		
-		return '<div class="'.esc_attr(implode(' ', $classes)).'">' . ob_get_clean() . '</div>';
+		return ob_get_clean();
 	}
 	
 	public static function products_category( $atts ){
@@ -287,6 +264,7 @@ class fw_Woo_Shortcodes {
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
+
 		
 		if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel.php', $atts, $products );
@@ -294,55 +272,54 @@ class fw_Woo_Shortcodes {
 		
 		wp_reset_postdata();
 		
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-
-		return '<div class="'.esc_attr(implode(' ', $classes)).'">' . ob_get_clean() . '</div>';
+		
+		return ob_get_clean();
 	}
 
 	public static function woo_categories( $atts ){
 		global $woocommerce_loop;
 		$taxonomy     = 'product_cat';
-  $orderby      = 'name';  
-  $show_count   = 0;      // 1 for yes, 0 for no
-  $pad_counts   = 0;      // 1 for yes, 0 for no
-  $hierarchical = 1;      // 1 for yes, 0 for no  
-  $title        = '';  
-  $empty        = 0;
+		  $orderby      = 'name';  
+		  $show_count   = 0;      // 1 for yes, 0 for no
+		  $pad_counts   = 0;      // 1 for yes, 0 for no
+		  $hierarchical = 1;      // 1 for yes, 0 for no  
+		  $title        = '';  
+		  $empty        = 0;
 
-  $args = array(
-         'taxonomy'     => $taxonomy,
-         'orderby'      => $orderby,
-         'show_count'   => $show_count,
-         'pad_counts'   => $pad_counts,
-         'hierarchical' => $hierarchical,
-         'title_li'     => $title,
-         'hide_empty'   => $empty
-  );
- $all_categories = get_categories( $args );
- foreach ($all_categories as $cat) {
-    if($cat->category_parent == 0) {
-        $category_id = $cat->term_id;       
-        echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
+		  $args = array(
+		         'taxonomy'     => $taxonomy,
+		         'orderby'      => $orderby,
+		         'show_count'   => $show_count,
+		         'pad_counts'   => $pad_counts,
+		         'hierarchical' => $hierarchical,
+		         'title_li'     => $title,
+		         'hide_empty'   => $empty
+		  );
+		 $all_categories = get_categories( $args );
+		 foreach ($all_categories as $cat) {
+		    if($cat->category_parent == 0) {
+		        $category_id = $cat->term_id;       
+		        echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
 
-        $args2 = array(
-                'taxonomy'     => $taxonomy,
-                'child_of'     => 0,
-                'parent'       => $category_id,
-                'orderby'      => $orderby,
-                'show_count'   => $show_count,
-                'pad_counts'   => $pad_counts,
-                'hierarchical' => $hierarchical,
-                'title_li'     => $title,
-                'hide_empty'   => $empty
-        );
-        $sub_cats = get_categories( $args2 );
-        if($sub_cats) {
-            foreach($sub_cats as $sub_category) {
-                echo  $sub_category->name ;
-            }   
-        }
-    }       
-}
+		        $args2 = array(
+		                'taxonomy'     => $taxonomy,
+		                'child_of'     => 0,
+		                'parent'       => $category_id,
+		                'orderby'      => $orderby,
+		                'show_count'   => $show_count,
+		                'pad_counts'   => $pad_counts,
+		                'hierarchical' => $hierarchical,
+		                'title_li'     => $title,
+		                'hide_empty'   => $empty
+		        );
+		        $sub_cats = get_categories( $args2 );
+		        if($sub_cats) {
+		            foreach($sub_cats as $sub_category) {
+		                echo  $sub_category->name ;
+		            }   
+		        }
+		    }       
+		}
 		
 	}
 	
@@ -401,86 +378,49 @@ class fw_Woo_Shortcodes {
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-		
-		$old_columns = $woocommerce_loop['columns'];
+
 		
 		if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel.php', $atts, $products );
-			
-			
 		endif;
 		
 		wp_reset_postdata();
 		
-		$woocommerce_loop['columns'] = $old_columns;
 		
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-		
-		return '<div class="'.esc_attr( implode( ' ', $classes ) ).'">' . ob_get_clean() . '</div>';
+		return ob_get_clean();
 	}
-	
-	public static function top_rated_products( $atts ){
-		global $woocommerce_loop;
-		
-		$atts = shortcode_atts(array(
-			"title" 		=> '',
-			"item_style"	=> 'grid',
-			"as_widget"		=> '0',
-			"box_style"		=> '',
-			"head_style"	=> '',
-			"border_color"	=> '',
-			"is_slider"		=> '1',
-			"is_biggest"	=> 0,
-			"auto_play"		=> '0',
-			"excerpt_limit" => 10,
+	public static function product_cats( $atts ){
+		$atts = shortcode_atts( array(
+			'title'			=> '',
+			'cats' 			=> '',
+			'terms' 			=> '',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
-			"orderby"		=> 'date',
-			"order"			=> 'desc',
-		),$atts);
+		), $atts );
 		
-		$meta_query = WC()->query->get_meta_query();
+		if( strlen( trim( $atts['cats'] ) ) == 0 ) return;
+		
+		$cats = explode( ',', $atts['cats'] );
 		
 		$args = array(
-			'post_type'           => 'product',
-			'post_status'         => 'publish',
-			'ignore_sticky_posts' => 1,
-			'orderby'             => $atts['orderby'],
-			'order'               => $atts['order'],
-			'posts_per_page'      => $atts['per_page'],
-			'meta_query'          => $meta_query
+			'slug' => $cats,
+			'orderby'	=> 'name',
+			'order'		=> 'ASC',
+			'hide_empty'	=> false,
 		);
 		
 		ob_start();
 		
-		add_filter( 'posts_clauses', array( __CLASS__, 'order_by_rating_post_clauses' ) );
-		
-		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-		
-		remove_filter( 'posts_clauses', array( __CLASS__, 'order_by_rating_post_clauses' ) );
-		
-		$old_columns = $woocommerce_loop['columns'];
-		
-		if ( $products->have_posts() ) :
-
-			if( absint($atts['as_widget']) )
-				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-			else {
-				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-			}
-			
-		endif;
+		$atts['terms'] = get_terms('product_cat', $args);
+		error_log("ja");
+		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();
 		
-		$woocommerce_loop['columns'] = $old_columns;
 		
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-		
-		return '<div class="'.esc_attr( implode( ' ', $classes ) ).'">' . ob_get_clean() . '</div>';
+		return ob_get_clean();
 	}
-	
+
 	public static function best_selling_products( $atts ){
 		global $woocommerce_loop;
 		$atts = shortcode_atts(array(
@@ -513,47 +453,19 @@ class fw_Woo_Shortcodes {
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-		
-		$old_columns = $woocommerce_loop['columns'];
+
 		
 		if ( $products->have_posts() ) :
-
-			if( absint($atts['as_widget']) )
-				self::get_template( 'shortcode-woo-widget.tpl.php', $atts, $products );
-			else {
-				if( absint($atts['is_biggest']) ) self::get_template( 'shortcode-woo-big.tpl.php', $atts, $products );
-				else self::get_template( 'shortcode-woo-nomal.tpl.php', $atts, $products );
-			}
-			
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
 		
-		$woocommerce_loop['columns'] = $old_columns;
 		
-		$classes = self::pareShortcodeClass( 'columns-' . absint( $atts['columns'] ) );
-		
-		return '<div class="'.esc_attr( implode( ' ', $classes ) ).'">' . ob_get_clean() . '</div>';
+		return ob_get_clean();
 	}
 
 
-	public static function get_cached_shortcode( $atts, $key ){
-		
-		$cache_id = md5(serialize($atts));
-		$cache = wp_cache_get( $key, 'shortcode');
-		if ( ! is_array( $cache ) ) $cache = array();
-		if ( isset( $cache[$cache_id] ) )
-			return $cache[ $cache_id ];
-		else return $cache;
-	}
-
-	public static function cache_shortcode( $atts, $key, $content, $cache ) {
-
-		$cache_id = md5(serialize($atts));
-		$cache[$cache_id] = $content;
-		wp_cache_set( $key, $cache, 'shortcode' );
-		return $content;
-	}
 }
 
 endif;

@@ -83,11 +83,8 @@ function vc_categories_carousel() {
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Categories Slugs', 'text-domain' ),
-                        'param_name' => 'category',
-                        'value' => '',
-                        'std' => '',
-                        'admin_label' => true,
+                        'heading' => __( 'Categories', 'text-domain' ),
+                        'param_name' => 'cats',
                         'weight' => 0,
                     ), 
                     array(
@@ -176,29 +173,13 @@ function vc_bestselling_products() {
 
 }
 
-add_action( 'vc_before_init', 'vc_toprated_products' );
-function vc_toprated_products() {
 
-  vc_map( 
-            array(
-                'name' => __('Top Rated Products Carousel', 'text-domain'),
-                'base' => 'fw_toprated_products',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
-                'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
-                'params' => getwoocampos(),
-            )
-
-            
-        );          
-
-}
 add_action( 'vc_before_init', 'vc_recent_products' );
 function vc_recent_products() {
 
   vc_map( 
             array(
-                'name' => __('Sale Products Carousel', 'text-domain'),
+                'name' => __('Recent Products Carousel', 'text-domain'),
                 'base' => 'fw_recent_products',
                 'description' => __('Carousel of products', 'text-domain'), 
                 'category' => __('Fastway', 'text-domain'),   

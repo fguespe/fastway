@@ -27,35 +27,30 @@ function remove_item_cart(element) {
         }
     });
 }
-
-jQuery(document).ready( function(jQuery) {
-
-
-  // Set up variables for each of the pertinent elements
-  var jQuerysearchWrap = jQuery('.search-form'),
-      jQuerysearchField = jQuery('.search-form .search-field'),
-      jQueryloadingIcon = jQuery('.search-form .loading'),
-      termExists = "";
-  
-  // Debounce function from https://davidwalsh.name/javascript-debounce-function
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
     };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
   };
-  
-  // Add results container and disable autocomplete on search field
+};
+function applySearch(tipo){
+
+  var jQuerysearchWrap = jQuery('.search-form-'+tipo),
+      jQuerysearchField = jQuery('.search-form-'+tipo+' .search-field'),
+      jQueryloadingIcon = jQuery('.search-form-'+tipo+' .loading'),
+      termExists = "";
+
+    // Add results container and disable autocomplete on search field
   jQuerysearchWrap.append('<div class="results"></div>');
-  var jQuerysearchResults = jQuery('.search-form .results');
+  var jQuerysearchResults = jQuery('.search-form-'+tipo+' .results');
   jQuerysearchField.attr('autocomplete', 'off');
   
   // Perform search on keyup in search field, hide/show loading icon
@@ -95,5 +90,11 @@ jQuery(document).ready( function(jQuery) {
       }
     });
   }, 200);
+}
+jQuery(document).ready( function(jQuery) {
+
+  applySearch("desktop");
+  applySearch("mobile");
+  
   
 });

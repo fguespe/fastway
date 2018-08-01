@@ -10,12 +10,12 @@ function ajax_search() {
       'posts_per_page' => 8,
       's' => $search,
       'post_type'           => 'product',
-    'post_status'         => 'publish',
-    'ignore_sticky_posts' => 1,
-    //'orderby'             => $ordering_args['orderby'],
-    //'order'               => $ordering_args['order'],
-    'posts_per_page'      => 5,
-    'suppress_filters'    => false,
+      'post_status'         => 'publish',
+      'ignore_sticky_posts' => 1,
+      //'orderby'             => $ordering_args['orderby'],
+      //'order'               => $ordering_args['order'],
+      'posts_per_page'      => 5,
+      'suppress_filters'    => false,
     )
   );
   
@@ -40,7 +40,7 @@ function ajax_search() {
   } else {
     
     // There are no results, output a message
-    echo '<p class="no-results">'._e("No results","understrap").'</p>';
+    echo '<p class="no-results">'._e("No results","fastway").'</p>';
   
   }
   
@@ -66,8 +66,11 @@ if( !function_exists( 'fw_search_form' ) ) {
         } else {
             $_placeholder = esc_attr__("Search anything...", 'theshopier' );
         }
+        $class="search-form-desktop";
+        if($numero==3)$class="search-form-mobile";
         ?>
-        <form id="form_<?php echo esc_attr($rand_id)?>" class="search-form js-focus-state input-group u-form fw-searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+
+        <form id="form_<?php echo esc_attr($rand_id)?>" class="<? echo $class?> js-focus-state input-group u-form fw-searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
             <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="<?php echo esc_attr($_placeholder);?>" value="<?php echo get_search_query() ?>" name="s" id="s_<?php echo esc_attr($rand_id)?>">
             <?php if($check_woo): ?>
                     <input type="hidden" name="post_type" value="product" />
@@ -84,6 +87,9 @@ if( !function_exists( 'fw_search_form' ) ) {
                 <?php endif ?>
                 <?php if ( $numero==1): ?>
                   <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <?php endif ?>
+                <?php if ( $numero==3): ?>
+                  
                 <?php endif ?>
             </div>
           </form>

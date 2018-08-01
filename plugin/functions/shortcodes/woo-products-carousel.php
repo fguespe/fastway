@@ -1,83 +1,32 @@
-<?php
+<?php 
+if( strlen( $title ) > 0 ):
+    echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
+endif;
 
-$heading_start = '<h3 class="heading-title">'.$title.'</h3>';
+$rand=generateRandomString(5);
+
 ?>
-<?php if( strlen( $title ) > 0 ):?>
-<?php echo $heading_start;?>
-<?php endif;?>	
-
+<style type="text/css">
+  .vc_row-fluid{
+    max-width:1440px;
+  }
+</style>
 <div id="owl-slider">
-<div class="owl-carousel owl-theme">
+<div class="owl-carousel owl-theme <?=$rand?>-owl">
 	<?php 
-	$i=0;
-	$ultimo=0;
-	while ( $products->have_posts() ) : $products->the_post(); 
-
+	while ( $products->have_posts() ) : 
+        
+        $products->the_post(); 
         echo '<div class="item">';
-    	wc_get_template_part( 'content', 'product' ); 
-        echo '</div>';		
+        wc_get_template_part( 'content', 'product' ); 
+        echo '</div>';  	
 	endwhile; 
     ?>
 </div>
 </div>
-
-<style type="text/css">
-#owl-slider img{height:auto ;}
-#owl-slider .owl-nav .owl-prev, 
-#owl-slider .owl-nav .owl-next {
-    color: black !important;;
-    font-size: 20px;
-    margin-top: -20px;
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    line-height: 39px;
-    opacity: 0;
-    border:1px solid black;
-    width: 40px;
-    height: 40px;
-    border-radius:40px;
-}
-#owl-slider .owl-nav .owl-prev{
-    left: 0%;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -ms-transition: 0.4s;
-}
-#owl-slider .owl-nav .owl-next {
-    right: 0%;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -ms-transition: 0.4s;
-}
-#owl-slider:hover .owl-nav .owl-next{
-    right: 2%;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -ms-transition: 0.4s;
-    opacity: 1;
-}
-#owl-slider:hover .owl-nav .owl-prev{
-    left: 2%;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    -ms-transition: 0.4s;
-    opacity: 1;
-}
-#owl-slider:hover .owl-nav .owl-next:hover,
-#owl-slider:hover .owl-nav .owl-prev:hover{
-    color:black !important;
-
-}
-</style>
-
 <script type="text/javascript">
 jQuery(document).ready(function(){
-    jQuery('.owl-carousel').owlCarousel({
+    jQuery('.<?=$rand?>-owl').owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -93,7 +42,7 @@ jQuery(document).ready(function(){
             nav: true,
           },
           1000: {
-            items: 6,
+            items: <?=$columns?>,
             loop: false,
             nav: true,
             margin: 20

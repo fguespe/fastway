@@ -1,3 +1,65 @@
+/*stickty*/
+
+.u-header--sticky-top {
+  position:fixed ;
+
+width:100% ;
+z-index:999 ;
+}
+/*OWL*/
+#owl-slider img{
+    height:auto ;
+}
+#owl-slider .owl-nav .owl-prev, 
+#owl-slider .owl-nav .owl-next {
+    color: black !important;;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    line-height: 39px;
+    opacity: 0;
+    border:1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius:40px;
+}
+#owl-slider .owl-nav .owl-prev{
+    left: 0%;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+}
+#owl-slider .owl-nav .owl-next {
+    right: 0%;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+}
+#owl-slider:hover .owl-nav .owl-next{
+    right: 2%;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    opacity: 1;
+}
+#owl-slider:hover .owl-nav .owl-prev{
+    left: 2%;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    opacity: 1;
+}
+#owl-slider:hover .owl-nav .owl-next:hover,
+#owl-slider:hover .owl-nav .owl-prev:hover{
+    color:black !important;
+
+}
 /*FIX WPAUTOP*/
 p:empty{
   height: 0;
@@ -169,7 +231,7 @@ font-size:15px ;
 line-height:25px ;
 }
 /*SEARCH*/
-.search-form .input-group-append .btn{
+.fw-searchform .input-group-append .btn{
 color:var(--icon-header);
 background-color:white;
 border-color:lightgrey;
@@ -181,7 +243,7 @@ color:var(--main) !important;
 border-radius:0px;
 border:0px;
 }
-.search-form a{
+.fw-searchform a{
 color:black !important;
 }
 

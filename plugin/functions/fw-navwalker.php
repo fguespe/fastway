@@ -232,9 +232,9 @@ class fw_Navwalker extends Walker_Nav_Menu {
 			//hace falta? 		
 
 			if($this->atts['tipo']=="desktop-1"){
-	     		$item_output .= '<a id="pagesMegaMenu'.$item->ID.'"' . $attributes . '>';
+	     		$item_output .= '<a id="pagesMegaMenu'.$item->ID.'"' . $attributes . '></a>';
 	     	}else{
-	     		$item_output .= '<a ' . $attributes . '>';
+	     		$item_output .= '<a ' . $attributes . '></a>';
 	     	}
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title,
