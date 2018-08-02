@@ -44,23 +44,23 @@ $header_middle_mobile=" fw_header_middle header-mobile d-md-none navbar";
 <?php do_action( 'fastway_header_topbanner');?>
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
-
+<!--FWWARNING-->
 <script type="text/javascript">
-
 jQuery(window).scroll(function() {
-
  if (jQuery(this).scrollTop() > 600){  
- 
     jQuery('header').addClass("u-header--sticky-top");
-    <?php 	foreach($redux_demo['sticky-menu'] as $key){?>
+    <?php 	
+    foreach($redux_demo['sticky-menu'] as $key){?>
 	jQuery('.<?=$key?>').attr("style", "display: none !important; ");
     <?}?>
+	jQuery('.fw_header_top_banner').attr("style", "display: none !important; ");
   }
   else{
     jQuery('header').removeClass("u-header--sticky-top");
     <?php foreach($redux_demo['sticky-menu'] as $key){?>
 	jQuery('.<?=$key?>').attr("style", "display: flex;");
     <?}?>
+	jQuery('.fw_header_top_banner').attr("style", "display: block ; ");
   }
 });
 </script>

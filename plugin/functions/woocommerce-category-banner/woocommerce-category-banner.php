@@ -10,7 +10,7 @@ Author URI: http://www.wpbackoffice.com
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'WCB_Category_Banner' ) ) :
+if ( ! class_exists( 'WCB_Category_Banner' )  ) :
 
 class WCB_Category_Banner {
 	
@@ -29,7 +29,7 @@ class WCB_Category_Banner {
 		add_action( 'edited_product_cat', array( $this, 'wcb_product_cat_save_taxonomy_custom_fields'), 10, 2 );  
 
 		// Add a banner image based on category taxonomy image, only if it's set to auto show (default)
-		add_action( 'woocommerce_before_main_content', array( $this, 'wcb_show_category_banner'), 30 );
+		add_action( 'woocommerce_before_main_content', array( $this, 'fw_show_category_banner'), 30 );
 
 	}
 
@@ -128,7 +128,7 @@ class WCB_Category_Banner {
 		    <td>  
 		    	<fieldset>
 		    	<input name="term_meta[auto_display_banner]" type="checkbox" value="on" class="auto_display_banner" <?php if($auto_display_banner) echo " checked "; ?>/>
-				<label class="auto_display_banner_label" for="auto_display_banner"><em>If you want to display the banner in a custom spot on your category page, you can deselect this checkbox and use the wcb_show_category_banner() in your category template to dictate where it will appear.</em></label>		
+				<label class="auto_display_banner_label" for="auto_display_banner"><em>If you want to display the banner in a custom spot on your category page, you can deselect this checkbox and use the fw_show_category_banner() in your category template to dictate where it will appear.</em></label>		
 		    	</fieldset>
 			</td>  
 		</tr> 
@@ -161,7 +161,7 @@ class WCB_Category_Banner {
 	}
 	
 	// Retreives and print the category banner
-	public function wcb_show_category_banner() {
+	public function fw_show_category_banner() {
 		global $woocommerce;
 		global $wp_query;
 
@@ -204,7 +204,7 @@ endif;
 $WCB_Category_Banner = new WCB_Category_Banner();
 
 //Shortcode function for displaying banner.
-function wcb_show_category_banner() {
+function fw_show_category_banner() {
 	global $WCB_Category_Banner;
-	$WCB_Category_Banner->wcb_show_category_banner(); //disable the only show for category tag.
+	$WCB_Category_Banner->fw_show_category_banner(); //disable the only show for category tag.
 }

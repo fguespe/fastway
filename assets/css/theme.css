@@ -122,9 +122,15 @@ footer{background:var(--footer);}
 }
 
 @media (min-width: 799px) {
-.logo{
-    margin:0 auto ;
-}
+  .logo{
+      margin:0 auto ;
+  }
+  .logo img{
+      max-width:100% ;
+  }
+  .navbar,.navbar-brand{
+    padding:0px;
+  }
 }
 
 /*TRANSPARENT*/
@@ -144,8 +150,13 @@ footer{background:var(--footer);}
 /*FIX MENU MOBILE*/
 .dropdown-menu{
     border:0px !important;
-    padding-left:50px;
 }
+.dropdown-menu a{
+color:black !important;
+padding:6px;
+}
+
+
 /*COLUMNA MOBILE*/
 @media (max-width: 799px) {/*OCULTAR ADMIN BAR*/
     .two_mobile_columns .wpb_column{

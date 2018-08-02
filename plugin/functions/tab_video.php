@@ -1,6 +1,6 @@
 <?php
-add_filter( 'woocommerce_product_tabs', 'video_tab_f' );
-function video_tab_f( $tabs ) {
+add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
+function fw_video_tab( $tabs ) {
   global $product;
   $json = get_post_meta($product->id, '_nth_wootabs', true );
 
@@ -9,7 +9,7 @@ function video_tab_f( $tabs ) {
         $tabs['_tab_video'] = array(
           'title'   => __( 'Videos', 'woocommerce' ),
           'priority'  => 50,
-          'callback'  => 'video_tab'
+          'callback'  => 'fwvideo_tab'
         );
 
   }
@@ -18,7 +18,7 @@ function video_tab_f( $tabs ) {
 }
 
 
-function video_tab() {
+function fwvideo_tab() {
 
   // The new tab content
   global $product;

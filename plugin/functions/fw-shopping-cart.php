@@ -18,7 +18,7 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
 
           return <<<HTML
 <li class="list-inline-item position-relative">
-  <a id="" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="$carturl" role="button">
+  <a id="" class="" href="$carturl" role="button">
     <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
     <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
   </a>
@@ -39,7 +39,7 @@ HTML;
     });
 });
 </script>
-<a id="$idname" class="btn" data-placement="bottom" title="Carrinho de Compras">
+<a id="$idname" class="" data-placement="bottom" title="Carrinho de Compras">
     <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
     <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
 </a>
@@ -58,10 +58,7 @@ HTML;
           $idname2=$rand.'shoppingCartModal';
         
           return <<<HTML
-<a class="btn btn-xs u-btn--icon u-btn-text-secondary"  href0="$carturl"
-      role="button"
-      data-target="#$idname2"
-      data-toggle="modal">
+<a class=""  href0="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
    </a>

@@ -29,9 +29,9 @@ woothemes_queue_update( plugin_basename( __FILE__ ), '5a0f5d72519a8ffcc86669f042
 
 if ( is_woocommerce_active() ) {
 
-	add_action( 'plugins_loaded', 'init_woocommerce_product_enquirey_form' );
+	add_action( 'plugins_loaded', 'fw_init_woocommerce_product_enquirey_form' );
 
-	function init_woocommerce_product_enquirey_form() {
+	function fw_init_woocommerce_product_enquirey_form() {
 		
         if(get_option("nubicommerce_modulo_enquiry_loggin") && !is_user_logged_in())return;
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc_enquiry_form' );

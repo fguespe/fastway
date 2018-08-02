@@ -24,7 +24,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 			Version' ), true );
 		wp_enqueue_script( 'jquery-scripts', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), $the_theme->get( 'Version' ), true );
 		//wp_enqueue_script( 'migrate-scripts', get_template_directory_uri() . '/assets/js/jquery-migrate.min.js', array(), $the_theme->get( 'Version' ), true );
-		//wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(), $the_theme->get( 'Version' ), true );
+		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(), $the_theme->get( 'Version' ), true );
 
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), $the_theme->get( 'Version' ), true );
 		wp_enqueue_script( 'owl-scripts', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $the_theme->get( 'Version' ), true );

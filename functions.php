@@ -59,7 +59,7 @@ require get_template_directory() . '/plugin/functions/shortcodes/class-shortcode
 require get_template_directory() . '/plugin/functions/fw-navwalker.php';
 
 //if(fw_checkPlugin('woocommerce/woocommerce.php')){
-    require get_template_directory() . '/plugin/functions/user-account.php';
+    require get_template_directory() . '/plugin/functions/fw-user-account.php';
     require get_template_directory() . '/plugin/functions/vc_customs/vc_woo_carousels.php';
     require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
     require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;

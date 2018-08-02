@@ -85,12 +85,12 @@ function fw_companygooglemaps() {
 
 function fw_extras_short($atts = [], $content = null, $tag = '')
 {
-    // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
     $font_size=16;
-
+    //FWWARNING
     //if(empty($font_size))$font_size=$wporg_atts['size'];
     // override default attributes with user attributes
+
     $wporg_atts = shortcode_atts($atts);
     if($wporg_atts['type']==="phone"){
         $font_icon="fa-phone";

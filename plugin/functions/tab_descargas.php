@@ -1,6 +1,6 @@
 <?php
-add_filter( 'woocommerce_product_tabs', 'woo_new_product_taba' );
-function woo_new_product_taba( $tabs ) {
+add_filter( 'woocommerce_product_tabs', 'fw_new_product_taba' );
+function fw_new_product_taba( $tabs ) {
     global $product;
     if (!class_exists('WC_Product_Documents_Collection'))return $tabs;
     $documents_collection = new WC_Product_Documents_Collection( $product->id );
@@ -8,13 +8,13 @@ function woo_new_product_taba( $tabs ) {
 		$tabs['descargas'] = array(
         'title'     => __( 'Descargas', 'woocommerce' ),
         'priority'  => 50,
-        'callback'  => 'pestana_descargas'
+        'callback'  => 'fw_pestana_descargas'
         );
 	}
     return $tabs;
 
 }
-function pestana_descargas() {
+function fw_pestana_descargas() {
     echo '<table id="myTable">
 <tr class="header">
 <th style="width: 60%;">Producto</th>

@@ -7,7 +7,7 @@ global $header_container,$header_main,$header_middle;
   
       <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
         <!-- Nav -->
-        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
+        <nav class="navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->
           <?php echo fastway_getLogo();?>
           <?php wp_nav_menu(
@@ -18,7 +18,7 @@ global $header_container,$header_main,$header_middle;
                   'menu_class'      => 'navbar-nav u-header__navbar-nav ml-lg-auto',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
-                  'walker'          => new fw_Navwalker('desktop-1'),
+                  'walker'          => new fw_Navwalker(''),
                 )
             ); 
             ?>

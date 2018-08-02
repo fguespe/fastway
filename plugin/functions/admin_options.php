@@ -1,5 +1,5 @@
 <?php
-function myplugin_register_settings() {
+function fw_register_settings() {
 
    add_option( 'sendy_list', 'ID');
    add_option( 'wpallimport_id', '1');
@@ -137,10 +137,10 @@ function myplugin_register_settings() {
 
    
 }
-add_action( 'admin_init', 'myplugin_register_settings' );
+add_action( 'admin_init', 'fw_register_settings' );
 
 
-function myplugin_options_page(){
+function fw_options_page(){
 ?>
 
 <div class="paginaopciones">
@@ -316,7 +316,7 @@ Copiar en mercadopago
 
 
 
-function mails_page(){
+function fw_mails_page(){
 ?>
 <div class="paginaopciones">
 <style type="text/css">
@@ -445,7 +445,7 @@ Scripts en el Footer (luego de < body >)
 } 
 
 
-function exitofile_page(){
+function fw_exitofile_page(){
 ?>
 <div class="paginaopciones">
 <style type="text/css">
