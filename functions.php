@@ -53,6 +53,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/plugin/functions/extra-functions.php';
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/functions/fw-templates.php';
+require get_template_directory() . '/plugin/functions/fw-democontent.php';
 
 require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
 require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;

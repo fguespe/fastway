@@ -338,7 +338,7 @@
     global $theme_headers_mobile ;
     global $loop_templates ;
     global $loop_templates_mobile;
-    global $single_templates ;
+    global $single_templates;
     global $single_templates_mobile;
 
     Redux::setSection( $opt_name, array(
@@ -508,7 +508,7 @@
             'type'     => 'image_select',
             'title'    => esc_html__( 'Single Mobile Style', 'fastway' ),
             'full_width'    => true,
-            'options'  => $single_templates,
+            'options'  => $single_templates_mobile,
             'default'  => '1'
             ),
            
@@ -1224,20 +1224,15 @@ Redux::setSection( $opt_name, array(
             'step'    => '1',
             'max'     => '12',
         ),
-
         array(
-            'id'   => 'shop-layout-opt-divide',
-            'type' => 'divide'
-        ),
-
-        array(
-            'id'       => 'shop-loop-product-style',
-            'type'     => 'image_select',
-            'title'    => esc_html__( 'Catalog item style', 'fastway' ),
-            'full_width'    => true,
-            'options'  => $loop_templates,
-            'default'  => '1'
-        ),
+                'id'       => 'shop-loop-product-style',
+                'type'     => 'image_select',
+                'title'    => esc_html__( 'Catalog Mobile Item style', 'fastway' ),
+                'full_width'    => true,
+                'options'  => $loop_templates,
+                'default'  => '1'
+            ),
+        
 
 
     ),
@@ -1279,22 +1274,7 @@ Redux::setSection( $opt_name, array(
             'default'  => 'full'
         ),
 
-        array(
-            'id'       => 'product-page-left-sidebar',
-            'type'     => 'select',
-            'title'    => 'Select Left Sidebar',
-            'data'     => 'sidebars',
-            'default'  => '',
-            'required' => array( 'product-page-layout', '=', array( '1-0', '1-1' ) )
-        ),
-        array(
-            'id'       => 'product-page-right-sidebar',
-            'type'     => 'select',
-            'title'    => 'Select Right Sidebar',
-            'data'     => 'sidebars',
-            'default'  => '',
-            'required' => array( 'product-page-layout', '=', array( '0-1', '1-1' ) )
-        ),
+    
 
         array(
             'id'       => 'product-page-footer-block',
@@ -1302,6 +1282,15 @@ Redux::setSection( $opt_name, array(
             'title'    => 'Footer block',
             'options'  => $static_block_args,
         ),
+        array(
+                'id'       => 'shop-single-product-style',
+                'type'     => 'image_select',
+                'title'    => esc_html__( 'Single Product Template', 'fastway' ),
+                'full_width'    => true,
+                'options'  => $single_templates,
+                'default'  => '1'
+            ),
+
          
 
       

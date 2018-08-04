@@ -28,7 +28,6 @@ if( !function_exists('fastway_product_loop') ){
 add_action( 'fastway_product_loop_init_mobile', 'fastway_product_loop_mobile', 20 );
 if( !function_exists('fastway_product_loop_mobile') ){
     function fastway_product_loop_mobile( $style = 1 ){
-
         global $TEMPLATE_DIR;
         if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/product-loop-mobile-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
         get_template_part('plugin/templates/product-loop-mobile-templates/product-loop-mobile', $style);
@@ -91,20 +90,20 @@ for( $i=1; $i<=3; $i++ ) {
     }
 }
 $single_templates = array();
-for( $i=1; $i<=3; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/woo_product_single{$i}.jpg" ) ) {
+for( $i=1; $i<=2; $i++ ) {
+    if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-{$i}.jpg" ) ) {
         $single_templates[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "woo_product_single{$i}.jpg"
+            'img' => $TEMPLATE_URI . "single-product-templates/images/content-single-product-{$i}.jpg"
         );
     }
 }
 $single_templates_mobile = array();
-for( $i=1; $i<=3; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "images/woo_product_single{$i}.jpg" ) ) {
+for( $i=1; $i<=1; $i++ ) {
+    if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-mobile-{$i}.jpg" ) ) {
         $single_templates_mobile[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "woo_product_single{$i}.jpg"
+            'img' => $TEMPLATE_URI . "single-product-templates/images/content-single-product-mobile-{$i}.jpg"
         );
     }
 }

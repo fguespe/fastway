@@ -27,7 +27,7 @@
 
     }
     .woocommerce-page ul.products li{
-        width: 25%;
+        width: 25% !important;
         margin:0px !important;
         background:#FFFFFF;
     }
