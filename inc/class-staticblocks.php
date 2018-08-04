@@ -17,20 +17,20 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 		public function setLabel(){
 			$this->labels = array(
-				'name'               => _x( 'Static blocks', 'post type general name', 'nexthemes-plugin' ),
-				'singular_name'      => _x( 'Block', 'post type singular name', 'nexthemes-plugin' ),
-				'menu_name'          => _x( 'Static Blocks', 'admin menu', 'nexthemes-plugin' ),
-				'name_admin_bar'     => _x( 'Block', 'add new on admin bar', 'nexthemes-plugin' ),
-				'add_new'            => _x( 'Add New', 'static block', 'nexthemes-plugin' ),
-				'add_new_item'       => __( 'Add New Static Blocks', 'nexthemes-plugin' ),
-				'new_item'           => __( 'New Block', 'nexthemes-plugin' ),
-				'edit_item'          => __( 'Edit Block', 'nexthemes-plugin' ),
-				'view_item'          => __( 'View Block', 'nexthemes-plugin' ),
-				'all_items'          => __( 'Static Blocks', 'nexthemes-plugin' ),
-				'search_items'       => __( 'Search Static Blocks', 'nexthemes-plugin' ),
-				'parent_item_colon'  => __( 'Parent Static Blocks:', 'nexthemes-plugin' ),
-				'not_found'          => __( 'No Static blocks found.', 'nexthemes-plugin' ),
-				'not_found_in_trash' => __( 'No Static blocks found in Trash.', 'nexthemes-plugin' )
+				'name'               => _x( 'Static blocks', 'post type general name', 'fastway' ),
+				'singular_name'      => _x( 'Block', 'post type singular name', 'fastway' ),
+				'menu_name'          => _x( 'Static Blocks', 'admin menu', 'fastway' ),
+				'name_admin_bar'     => _x( 'Block', 'add new on admin bar', 'fastway' ),
+				'add_new'            => _x( 'Add New', 'static block', 'fastway' ),
+				'add_new_item'       => __( 'Add New Static Blocks', 'fastway' ),
+				'new_item'           => __( 'New Block', 'fastway' ),
+				'edit_item'          => __( 'Edit Block', 'fastway' ),
+				'view_item'          => __( 'View Block', 'fastway' ),
+				'all_items'          => __( 'Static Blocks', 'fastway' ),
+				'search_items'       => __( 'Search Static Blocks', 'fastway' ),
+				'parent_item_colon'  => __( 'Parent Static Blocks:', 'fastway' ),
+				'not_found'          => __( 'No Static blocks found.', 'fastway' ),
+				'not_found_in_trash' => __( 'No Static blocks found in Trash.', 'fastway' )
 			);
 		}
 
@@ -132,8 +132,8 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 		public function tableHeader( $cols ){
 			unset( $cols['date'] );
-			$cols['position'] = __('Position', 'nexthemes-plugin');
-			$cols['date'] = __('Date', 'nexthemes-plugin');
+			$cols['position'] = __('Position', 'fastway');
+			$cols['date'] = __('Date', 'fastway');
 			return $cols;
 		}
 
@@ -143,13 +143,13 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 				if( isset( $data ) && strlen( $data ) > 0 ) {
 					switch( $data ) {
 						case 'menu':
-							$text = __( 'Mega menu', 'nexthemes-plugin' );
+							$text = __( 'Mega menu', 'fastway' );
 							break;
 						case 'widget':
-							$text = __( 'Widget', 'nexthemes-plugin' );
+							$text = __( 'Widget', 'fastway' );
 							break;
 						default:
-							$text = __( "Standard", 'nexthemes-plugin' );
+							$text = __( "Standard", 'fastway' );
 					}
 					printf( '<span class="nth-label %1$s">%2$s</span>', esc_attr($data), $text );
 				}

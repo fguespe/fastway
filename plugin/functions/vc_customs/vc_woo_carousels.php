@@ -4,15 +4,15 @@ function vc_category_carousel() {
 
     vc_map( 
             array(
-                'name' => __('Category Products Carousel', 'text-domain'),
+                'name' => __('Category Products Carousel', 'fastway'),
                 'base' => 'fw_category_carousel',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => array(
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Title', 'text-domain' ),
+                        'heading' => __( 'Title', 'fastway' ),
                         'param_name' => 'title',
                         'value' => 'Title',
                         'std' => 'Title',
@@ -21,7 +21,7 @@ function vc_category_carousel() {
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Categories Slugs', 'text-domain' ),
+                        'heading' => __( 'Categories Slugs', 'fastway' ),
                         'param_name' => 'category',
                         'value' => '',
                         'std' => '',
@@ -30,7 +30,7 @@ function vc_category_carousel() {
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Prods per row ', 'text-domain' ),
+                        'heading' => __( 'Prods per row ', 'fastway' ),
                         'param_name' => 'prodsperrow',
                         'value' => '4',
                         'std' => '4',
@@ -66,15 +66,15 @@ function vc_categories_carousel() {
 
     vc_map( 
             array(
-                'name' => __('Categories Carousel', 'text-domain'),
+                'name' => __('Categories Carousel', 'fastway'),
                 'base' => 'fw_categories_carousel',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => array(
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Title', 'text-domain' ),
+                        'heading' => __( 'Title', 'fastway' ),
                         'param_name' => 'title',
                         'value' => 'Title',
                         'std' => 'Title',
@@ -83,13 +83,13 @@ function vc_categories_carousel() {
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Categories', 'text-domain' ),
+                        'heading' => __( 'Categories', 'fastway' ),
                         'param_name' => 'cats',
                         'weight' => 0,
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Prods per row ', 'text-domain' ),
+                        'heading' => __( 'Prods per row ', 'fastway' ),
                         'param_name' => 'prodsperrow',
                         'value' => '4',
                         'std' => '4',
@@ -126,10 +126,10 @@ function vc_featured_products() {
 
   vc_map( 
             array(
-                'name' => __('Featured Products Carousel', 'text-domain'),
+                'name' => __('Featured Products Carousel', 'fastway'),
                 'base' => 'fw_featured_products',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => getwoocampos(),
             )
@@ -143,10 +143,10 @@ function vc_sale_products() {
 
   vc_map( 
             array(
-                'name' => __('Sale Products Carousel', 'text-domain'),
+                'name' => __('Sale Products Carousel', 'fastway'),
                 'base' => 'fw_sale_products',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => getwoocampos(),
             )
@@ -160,10 +160,10 @@ function vc_bestselling_products() {
 
   vc_map( 
             array(
-                'name' => __('Best Selling Products Carousel', 'text-domain'),
+                'name' => __('Best Selling Products Carousel', 'fastway'),
                 'base' => 'fw_bestselling_products',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => getwoocampos(),
             )
@@ -179,10 +179,10 @@ function vc_recent_products() {
 
   vc_map( 
             array(
-                'name' => __('Recent Products Carousel', 'text-domain'),
+                'name' => __('Recent Products Carousel', 'fastway'),
                 'base' => 'fw_recent_products',
-                'description' => __('Carousel of products', 'text-domain'), 
-                'category' => __('Fastway', 'text-domain'),   
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/vc-icon.png',            
                 'params' => getwoocampos(),
             )
@@ -195,7 +195,7 @@ function getwoocampos(){
   return array(
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Title', 'text-domain' ),
+                        'heading' => __( 'Title', 'fastway' ),
                         'param_name' => 'title',
                         'value' => 'Title',
                         'std' => 'Title',
@@ -204,7 +204,7 @@ function getwoocampos(){
                     ), 
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Prods per row ', 'text-domain' ),
+                        'heading' => __( 'Prods per row ', 'fastway' ),
                         'param_name' => 'prodsperrow',
                         'value' => '4',
                         'std' => '4',
@@ -213,7 +213,7 @@ function getwoocampos(){
                     ),
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Max Quantiy', 'text-domain' ),
+                        'heading' => __( 'Max Quantiy', 'fastway' ),
                         'param_name' => 'maxcant',
                         'value' => '12',
                         'std' => '12',

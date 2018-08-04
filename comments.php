@@ -59,12 +59,10 @@ if ( post_password_required() ) {
 				<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'fastway' ); ?></h1>
 				
 				<?php if ( get_previous_comments_link() ) { ?>
-					<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments',
-					'fastway' ) ); ?></div>
+					<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','fastway' ) ); ?></div>
 				<?php }
 					if ( get_next_comments_link() ) { ?>
-					<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;',
-					'fastway' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','fastway' ) ); ?></div>
 				<?php } ?>
 
 			</nav><!-- #comment-nav-above -->

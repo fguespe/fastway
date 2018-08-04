@@ -14,12 +14,12 @@ if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
 		/* === OPTIONS === */
 		$text = array(
 			"home"		=> '<i class="fa fa-home"></i>',
-			"category"	=> esc_html__( 'Archive by Category "%s"', 'fw' ),
-			"tax"		=> esc_html__( 'Archive for "%s"', 'fw' ),
-			"search"	=> esc_html__( 'Search Results for "%s" Query', 'fw' ),
-			"tag"		=> esc_html__( 'Posts Tagged "%s"', 'fw' ),
-			"author"	=> esc_html__( 'Articles Posted by %s', 'fw' ),
-			"404"		=> esc_html__( 'Error 404', 'fw' )
+			"category"	=> esc_html__( 'Archive by Category "%s"', 'fastway' ),
+			"tax"		=> esc_html__( 'Archive for "%s"', 'fastway' ),
+			"search"	=> esc_html__( 'Search Results for "%s" Query', 'fastway' ),
+			"tag"		=> esc_html__( 'Posts Tagged "%s"', 'fastway' ),
+			"author"	=> esc_html__( 'Articles Posted by %s', 'fastway' ),
+			"404"		=> esc_html__( 'Error 404', 'fastway' )
 		);
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -103,7 +103,7 @@ if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
 					$post_type_name = $post_type->labels->singular_name;
 				
 					if(strcmp('Product',$post_type->labels->singular_name)==0){
-						$post_type_name = esc_html__('Shop','fw' );
+						$post_type_name = esc_html__('Shop','fastway' );
 					}
 					printf($link, get_post_type_archive_link( get_post_type() ), $post_type_name);
 					//printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
@@ -123,11 +123,11 @@ if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
 				$post_type_name = $post_type->labels->singular_name;
 				
 				if(strcmp('Product',$post_type->labels->singular_name)==0){
-					$post_type_name = esc_html__('Shop','fw' );
+					$post_type_name = esc_html__('Shop','fastway' );
 				}
 				
 				if ( is_tag() ) {
-					echo sprintf($before, '<li class="current">') . esc_html__('Tagged "','fw' ) . single_tag_title('', false) . '"' . $after;
+					echo sprintf($before, '<li class="current">') . esc_html__('Tagged "','fastway' ) . single_tag_title('', false) . '"' . $after;
 					
 				} elseif(is_taxonomy_hierarchical(get_query_var('taxonomy'))){
 					printf($link, get_post_type_archive_link( get_post_type() ), $post_type_name);
@@ -195,7 +195,7 @@ if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
 
 			if ( get_query_var('paged') ) {
 				//if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-				echo sprintf($before, '<li class="current">') . esc_html__('Page', 'fw' ) . ' ' . get_query_var('paged') . $after;
+				echo sprintf($before, '<li class="current">') . esc_html__('Page', 'fastway' ) . ' ' . get_query_var('paged') . $after;
 				//if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 			}
 
