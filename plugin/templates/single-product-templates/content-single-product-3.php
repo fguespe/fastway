@@ -37,7 +37,7 @@ width:30%;
 text-align:right;
 font-weight: 300 !important;
 }
-.woocommerce-page div.product div.images .flex-viewport img,.woocommerce-product-gallery__wrapper div{
+.woocommerce-page div.product .flex-viewport img,.woocommerce-product-gallery__wrapper div{
 margin:0px !important;
 height:500px;
 width:auto !important;

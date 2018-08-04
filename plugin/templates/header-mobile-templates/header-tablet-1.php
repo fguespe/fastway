@@ -1,7 +1,6 @@
 <?php 
 global $header_main,$header_middle_mobile,$redux_demo;
 ?>
-<header id="header" class="<?php echo esc_attr( $header_main ); ?>">
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?> ">
       <div class="col-6 " style="padding: 0px;" ><?php echo fastway_getLogo();?></div>
       <div class="col-4 align-items-center"><div id="mobileicons"><?php if($redux_demo['fw-quicklinks'])quicklinks();?></div></div>

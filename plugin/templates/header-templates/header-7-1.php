@@ -4,7 +4,6 @@ $container   = $redux_demo['header-width'];
 $classes=$container;
 $classes.=" py-".$redux_demo['header-padding'];
 ?>
-<header>
 <div class="d-none d-md-block">
 <div class="fw_header_middle <?php echo esc_attr( $classes ); ?> ">
     <div class="row flex-nowrap">
@@ -30,6 +29,5 @@ $classes.=" py-".$redux_demo['header-padding'];
   ?>
 </div>
 </div>
-</header>
 
       

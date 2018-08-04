@@ -1,7 +1,6 @@
 <?php 
 global $header_main,$header_middle_mobile,$redux_demo;
 ?>
-<header id="header" class="u-header <?php echo esc_attr( $header_main ); ?>">
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
     <div class="col-2 align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button></div>
