@@ -417,13 +417,13 @@
         array(
             'id'       => 'header-headerwidget-start',
             'type'     => 'section',
-            'title'    => esc_html__( 'header headerwidget', 'theshopier' ),
+            'title'    => esc_html__( 'header headerwidget', 'fastway' ),
             'indent'   => true,
         ),
         array(
             'id'       => 'header-headerwidget-switch',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Show header headerwidget', 'theshopier' ),
+            'title'    => esc_html__( 'Show header headerwidget', 'fastway' ),
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -434,7 +434,7 @@
             'mode'       => 'php',
             'theme'      => 'chrome',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
+            'title'    => esc_html__( 'header headerwidget text', 'fastway' ),
             'default'  => '',
         ),
         array(
@@ -445,7 +445,7 @@
             'id'        => 'css_editor-header-headerwidget',
             'type'      => 'ace_editor',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget text', 'theshopier' ),
+            'title'    => esc_html__( 'header headerwidget text', 'fastway' ),
             'default'  => '',
             'mode'     => 'css',
             'theme'    => 'monokai',
@@ -543,13 +543,13 @@
         array(
             'id'       => 'footer-copyright-start',
             'type'     => 'section',
-            'title'    => esc_html__( 'Footer copyright', 'theshopier' ),
+            'title'    => esc_html__( 'Footer copyright', 'fastway' ),
             'indent'   => true,
         ),
         array(
             'id'       => 'footer-copyright-switch',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Show Footer copyright', 'theshopier' ),
+            'title'    => esc_html__( 'Show Footer copyright', 'fastway' ),
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -561,7 +561,7 @@
             'theme'      => 'chrome',
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
-            'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
+            'title'    => esc_html__( 'Footer copyright text', 'fastway' ),
             'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
         ),
         array(
@@ -575,7 +575,7 @@
             'theme'    => 'monokai',
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
-            'title'    => esc_html__( 'Footer copyright text', 'theshopier' ),
+            'title'    => esc_html__( 'Footer copyright text', 'fastway' ),
             'default'  => '#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
         ),
         array(

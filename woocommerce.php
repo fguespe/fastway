@@ -19,7 +19,7 @@ $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
 ); 
-do_action( 'theshopier_breadcrumb', $datas );
+do_action( 'fw_breadcrumb', $datas );
 ?>
 
 <div class="wrapper" id="woocommerce-wrapper">

@@ -41,7 +41,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 	 */
 	function understrap_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Main Right Sidebar', 'understrap' ),
+			'name'          => __( 'Main Right Sidebar', 'fastway' ),
 			'id'            => 'right-sidebar',
 			'description'   => 'Right sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -51,7 +51,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Main Left Sidebar', 'understrap' ),
+			'name'          => __( 'Main Left Sidebar', 'fastway' ),
 			'id'            => 'left-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -60,7 +60,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Top Header', 'understrap' ),
+			'name'          => __( 'Top Header', 'fastway' ),
 			'id'            => 'header-top-widget-area',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -69,7 +69,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Shop Right Sidebar', 'understrap' ),
+			'name'          => __( 'Shop Right Sidebar', 'fastway' ),
 			'id'            => 's-right-sidebar',
 			'description'   => 'Right sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -79,7 +79,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Shop Left Sidebar', 'understrap' ),
+			'name'          => __( 'Shop Left Sidebar', 'fastway' ),
 			'id'            => 's-left-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -88,7 +88,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Single Product Right Sidebar', 'understrap' ),
+			'name'          => __( 'Single Product Right Sidebar', 'fastway' ),
 			'id'            => 'sp-right-sidebar',
 			'description'   => 'Right sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -98,7 +98,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Single Product Left Sidebar', 'understrap' ),
+			'name'          => __( 'Single Product Left Sidebar', 'fastway' ),
 			'id'            => 'sp-left-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',

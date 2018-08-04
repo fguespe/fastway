@@ -32,15 +32,15 @@ if ( ! is_ajax() ) {
 						wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 					}
 				} else {
-					echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'understrap' ) : __( 'Please fill in your details above to see available payment methods.', 'understrap' ) ) . '</li>';
+					echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'fastway' ) : __( 'Please fill in your details above to see available payment methods.', 'fastway' ) ) . '</li>';
 				}
 			?>
 		</ul>
 	<?php endif; ?>
 	<div class="form-row place-order">
 		<noscript>
-			<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'understrap' ); ?>
-			<br/><input type="submit" class="btn btn-primary" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'understrap' ); ?>" />
+			<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'fastway' ); ?>
+			<br/><input type="submit" class="btn btn-primary" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'fastway' ); ?>" />
 		</noscript>
 
 		<?php wc_get_template( 'checkout/terms.php' ); ?>

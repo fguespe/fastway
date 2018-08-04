@@ -70,7 +70,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php else : ?>
 
-	<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'understrap' ); ?></p>
+	<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'fastway' ); ?></p>
 
 <?php endif; ?>
 

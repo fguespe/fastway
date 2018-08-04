@@ -61,7 +61,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 				'order'		=> 'ASC',
 				/*'meta_query' => array(
 					array(
-						'key'	=> 'theshopier_nth_stblock_options',
+						'key'	=> 'fw_nth_stblock_options',
 						'value'	=> $cats,
 						'compare' => "IN"
 					),
@@ -139,7 +139,7 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 		public function tableContent( $column_name, $post_id ){
 			if( strcmp( trim( $column_name ), 'position' ) == 0 ) {
-				$data = get_post_meta($post_id, 'theshopier_nth_stblock_options',true);
+				$data = get_post_meta($post_id, 'fw_nth_stblock_options',true);
 				if( isset( $data ) && strlen( $data ) > 0 ) {
 					switch( $data ) {
 						case 'menu':

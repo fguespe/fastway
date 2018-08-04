@@ -357,7 +357,7 @@ class fw_Navwalker extends Walker_Nav_Menu {
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'understrap' ) . '">' . esc_html__( 'Add a menu', 'understrap' ) . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'fastway' ) . '">' . esc_html__( 'Add a menu', 'fastway' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';

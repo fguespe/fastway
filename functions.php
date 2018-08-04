@@ -99,11 +99,11 @@ function init_hooks(){
 }
 
 
-load_theme_textdomain( 'understrap', get_template_directory() . '/languages' );
+load_theme_textdomain( 'fastway', get_template_directory() . '/languages' );
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'understrap' ),
-	'vertical' => __( 'Vertical Menu', 'understrap' ),
-	'mobile' => __( 'Mobile Menu', 'understrap' ),
+	'primary' => __( 'Primary Menu', 'fastway' ),
+	'vertical' => __( 'Vertical Menu', 'fastway' ),
+	'mobile' => __( 'Mobile Menu', 'fastway' ),
 ) );
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );

@@ -29,7 +29,7 @@ $container   = $redux_demo['container-main'];
 						
 							<h1 class="page-title"><?php printf(
 							/* translators:*/
-							 esc_html__( 'Search Results for: %s', 'understrap' ),
+							 esc_html__( 'Search Results for: %s', 'fastway' ),
 								'<span>' . get_search_query() . '</span>' ); ?></h1>
 
 					</header><!-- .page-header -->
