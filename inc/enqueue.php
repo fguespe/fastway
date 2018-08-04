@@ -1,16 +1,7 @@
 <?php
-/**
- * Understrap enqueue scripts
- *
- * @package understrap
- */
 
 if ( ! function_exists( 'understrap_scripts' ) ) {
-	/**
-	 * Load theme's JavaScript sources.
-	 */
 	function understrap_scripts() {
-		// Get the theme data.
 		$the_theme = wp_get_theme();
 		global $redux_demo;
 		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
@@ -18,12 +9,9 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.css');
 		wp_enqueue_style( 'owl-styles', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 			
-		wp_enqueue_script( 'jquery');
-
+		
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.js', array(), $the_theme->get( '
 			Version' ), true );
-		wp_enqueue_script( 'jquery-scripts', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), $the_theme->get( 'Version' ), true );
-		//wp_enqueue_script( 'migrate-scripts', get_template_directory_uri() . '/assets/js/jquery-migrate.min.js', array(), $the_theme->get( 'Version' ), true );
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(), $the_theme->get( 'Version' ), true );
 
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), $the_theme->get( 'Version' ), true );

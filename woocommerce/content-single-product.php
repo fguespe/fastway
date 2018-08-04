@@ -32,9 +32,15 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+global $single_desktop,$single_desktop_mobile;
+
+$single_desktop=" fw_single_desktop d-none d-md-block ";
+$single_desktop_mobile=" fw_single_desktop_mobile d-md-none navbar";
+
+do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'] );
+do_action( 'fastway_product_single_init_mobile', $redux_demo['shop-single-mobile-product-style'] );
+
 ?>
-<?php do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'] );?>
-<?php do_action( 'fastway_product_single_init_mobile', $redux_demo['shop-single-mobile-product-style'] );?>
 
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

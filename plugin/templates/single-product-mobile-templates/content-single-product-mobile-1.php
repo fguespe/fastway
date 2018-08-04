@@ -1,4 +1,7 @@
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?
+global $single_desktop_mobile;
+?>
+<div id="product-<?php the_ID(); ?>" <?php post_class($single_desktop_mobile); ?>>
 
 	<?php
 		/**

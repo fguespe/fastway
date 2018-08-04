@@ -6,7 +6,8 @@ function bbloomer_change_gallery_columns() {
 }
 ?>
 <style type="text/css">
-	.single-product div.product .woocommerce-product-gallery .flex-viewport {
+@media (min-width: 799px) {
+		.single-product div.product .woocommerce-product-gallery .flex-viewport {
     width: 80%;
     float: right;
 }
@@ -25,6 +26,29 @@ display:block !important;
     float: none;
     margin: 0 0 10% 10%;
 }
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
+width:65%;
+
+}
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
+width:30%;
+}.summary{
+text-align:right;
+font-weight: 300 !important;
+}
+.woocommerce-page div.product div.images .flex-viewport img,.woocommerce-product-gallery__wrapper div{
+margin:0px !important;
+height:500px;
+width:auto !important;
+
+}
+.flex-viewport{
+overflow: auto !important;
+}
+
+}
+
 
 </style>
 <?

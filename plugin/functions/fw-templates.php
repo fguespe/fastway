@@ -46,8 +46,8 @@ add_action( 'fastway_product_single_init_mobile', 'fastway_product_single_mobile
 if( !function_exists('fastway_product_single_mobile') ){
     function fastway_product_single_mobile( $style = 1 ){
         global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . 'woocommerce/templates-single/content-single-product-mobile-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/templates-single/content-single-product-mobile', $style);
+        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . 'woocommerce/single-product-mobile-templates/content-single-product-mobile-'.$style.'.php') ) $style = 1;
+        get_template_part('plugin/templates/single-product-mobile-templates/content-single-product-mobile', $style);
     }
 }
 
@@ -90,7 +90,7 @@ for( $i=1; $i<=3; $i++ ) {
     }
 }
 $single_templates = array();
-for( $i=1; $i<=2; $i++ ) {
+for( $i=1; $i<=3; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-{$i}.jpg" ) ) {
         $single_templates[$i] = array(
             'alt' => $i,
