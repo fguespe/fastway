@@ -1,7 +1,6 @@
 <?php 
-global $header_middle;
+global $header_middle,$header_bottom;
 ?>
-
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div class="row flex-nowrap">
       <div class="col-4">
@@ -11,7 +10,7 @@ global $header_middle;
     </div>
 </div>
 
-<div id="main-nav" class="row d-none d-md-block">
+<div id="main-nav" class="row <?php echo esc_attr( $header_bottom ); ?>">
   <?php wp_nav_menu(
   array(
         'theme_location'  => 'primary',

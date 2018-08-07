@@ -1,13 +1,8 @@
 <?php
-global $redux_demo;
-$container   = $redux_demo['header-width'];
-$classes=$container;
-if($redux_demo['sticky-menu'])$classes.=" fixed-top";
-if($redux_demo['transparent-header'])$classes.=" fw-transparent-header";
-$classes.=" py-".$redux_demo['header-padding'];
-?>
+global $redux_demo,$header_middle;
 
-<div class="fw_header_middle <?php echo esc_attr( $classes ); ?> navbar flex-column flex-md-row align-items-center px-md-4 d-none d-md-flex">
+?>
+<div class="<?php echo esc_attr( $header_middle ); ?> ">
       	<?php echo fastway_getLogo();?>
      
 		<div class="d-flex col-4 align-items-center">

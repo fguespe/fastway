@@ -64,9 +64,9 @@ jQuery(window).scroll(function() {
   else{
     jQuery('header').removeClass("u-header--sticky-top");
     <?php foreach($redux_demo['sticky-menu'] as $key){?>
-	jQuery('.<?=$key?>').attr("style", "display: block;");
+	jQuery('.<?=$key?>').attr("style", "display: flex;");
     <?}?>
-	jQuery('.fw_header_top_banner').attr("style", "display: block ; ");
+	jQuery('.fw_header_top_banner').attr("style", "display: flex ; ");
   }
 });
 </script>

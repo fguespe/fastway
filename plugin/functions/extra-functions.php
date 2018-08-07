@@ -155,7 +155,7 @@ add_shortcode('fw_companyname', 'fw_companyname');
 add_shortcode('fw_companyaddress', 'fw_companyaddress');
 
 function quicklinks(){
-    echo "<div class='fw_quicklinks'>";
+    echo "<div class='fw_quicklinks text-center'>";
     if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:blue;"></i><span> Facebook</span></a>';
     if(!empty(fw_companyyoutube()))echo '<a class="youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:red;"></i><span>  Youtube</span></a>';
     if(!empty(fw_companywhatsapp()))echo '<a class="whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span></a>';
