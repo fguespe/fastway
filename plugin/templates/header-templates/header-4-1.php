@@ -1,8 +1,7 @@
 <?php 
 global $header_container,$header_main,$header_middle;
 ?>
-<?php do_action( 'add_topbar');?>
-<div class="u-header__section <?php echo esc_attr( $header_middle ); ?>">
+<div class="<?php echo esc_attr( $header_middle ); ?>">
   <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
       <div class="u-header__hide-content">
       <div class="u-header--center-aligned__inner u-header--center-aligned-md__inner">

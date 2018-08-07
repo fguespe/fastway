@@ -1,7 +1,6 @@
 <?php 
 global $header_container,$header_middle,$header_bottom;
 ?>
-<?php do_action( 'add_topbar');?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
       <div class="row">

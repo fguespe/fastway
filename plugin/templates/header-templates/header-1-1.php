@@ -1,13 +1,10 @@
 <?php 
 global $header_container,$header_main,$header_middle;
 ?>
-<?php do_action( 'add_topbar');?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
   
       <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
-        <!-- Nav -->
         <nav class="navbar navbar-expand-md">
-          <!-- Logo -->
           <?php echo fastway_getLogo();?>
           <?php wp_nav_menu(
           array(
@@ -22,6 +19,5 @@ global $header_container,$header_main,$header_middle;
           )
         ); ?>
         </nav>
-        <!-- End Nav -->
       </div>
 </div>

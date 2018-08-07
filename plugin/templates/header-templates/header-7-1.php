@@ -1,11 +1,8 @@
-<?php
-global $redux_demo;
-$container   = $redux_demo['header-width'];
-$classes=$container;
-$classes.=" py-".$redux_demo['header-padding'];
+<?php 
+global $header_middle;
 ?>
-<div class="d-none d-md-block">
-<div class="fw_header_middle <?php echo esc_attr( $classes ); ?> ">
+
+<div class="<?php echo esc_attr( $header_middle ); ?>">
     <div class="row flex-nowrap">
       <div class="col-4">
         <?php echo fastway_getLogo();?>
@@ -14,7 +11,7 @@ $classes.=" py-".$redux_demo['header-padding'];
     </div>
 </div>
 
-<div id="main-nav" class="row flex-nowrap">
+<div id="main-nav" class="row d-none d-md-block">
   <?php wp_nav_menu(
   array(
         'theme_location'  => 'primary',
