@@ -2,7 +2,6 @@
 if( strlen( $title ) > 0 ):
     echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
 endif;
-error_log($title."ja",0);
 $rand=generateRandomString(5);
 
 ?>

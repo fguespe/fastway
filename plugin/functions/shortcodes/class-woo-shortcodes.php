@@ -412,7 +412,7 @@ class fw_Woo_Shortcodes {
 		ob_start();
 		
 		$atts['terms'] = get_terms('product_cat', $args);
-		error_log("ja");
+
 		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();

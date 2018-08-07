@@ -2,7 +2,7 @@
 global $header_middle;
 ?>
 <div class="u-header__section <?php echo esc_attr( $header_middle ); ?>">
-      <div id="logoAndNav" class="container">
+      <div  class="container">
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->

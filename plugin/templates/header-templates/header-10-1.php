@@ -2,7 +2,7 @@
 global $header_container,$header_main,$header_middle,$header_bottom;
 ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
-    <div id="logoAndNav" class="<?php echo esc_attr( $header_container ); ?>">
+    <div  class="<?php echo esc_attr( $header_container ); ?>">
 	    <div class="row">
 		  <div class="col-2">
           <?php echo fastway_getLogo();?>

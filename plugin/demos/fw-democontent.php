@@ -20,18 +20,18 @@ function ocdi_after_import_setup() {
 add_action( 'pt-ocdi/after_import', 'ocdi_after_import_setup' );
 
 function ocdi_import_files() {
-    $url="http://fastway/wp-content/themes/".wp_get_theme()->parent_theme."/demos/";
+    $url="http://fastway/wp-content/themes/".wp_get_theme()->parent_theme."/plugin/demos/";
 
     return array(
         array(
-            'import_file_name'           => 'Ian',
+            'import_file_name'           => 'Cedar',
             'categories'                 => array( 'Category 1', 'Category 2' ),
-            'import_file_url'            => $url.'demo2/wordpress.xml',
-            'import_widget_file_url'     => $url.'demo2/widgets',
-            'import_customizer_file_url' => $url.'demo2/customizer.dat',
+            'import_file_url'            => $url.'cedar/cedar.xml',
+            'import_widget_file_url'     => $url.'cedar/cedar.wie',
+            'import_customizer_file_url' => $url.'cedar/cedar.dat',
             'import_redux'               => array(
                 array(
-                    'file_url'    => $url.'demo2/redux.json',
+                    'file_url'    => $url.'cedar/cedar.json',
                     'option_name' => 'redux_demo',
                 ),
             ),
@@ -40,24 +40,20 @@ function ocdi_import_files() {
             'preview_url'                => 'http://www.your_domain.com/my-demo-1',
         ),
         array(
-            'import_file_name'           => 'Demo Import 2',
-            'categories'                 => array( 'New category', 'Old category' ),
-            'import_file_url'            => 'http://www.your_domain.com/ocdi/demo-content2.xml',
-            'import_widget_file_url'     => 'http://www.your_domain.com/ocdi/widgets2.json',
-            'import_customizer_file_url' => 'http://www.your_domain.com/ocdi/customizer2.dat',
+            'import_file_name'           => 'Ian',
+            'categories'                 => array( 'Category 1', 'Category 2' ),
+            'import_file_url'            => $url.'cedar/cedar.xml',
+            'import_widget_file_url'     => $url.'cedar/cedar.wie',
+            'import_customizer_file_url' => $url.'cedar/cedar.dat',
             'import_redux'               => array(
                 array(
-                    'file_url'    => 'http://www.your_domain.com/ocdi/redux.json',
-                    'option_name' => 'redux_option_name',
-                ),
-                array(
-                    'file_url'    => 'http://www.your_domain.com/ocdi/redux2.json',
-                    'option_name' => 'redux_option_name_2',
+                    'file_url'    => $url.'cedar/cedar.json',
+                    'option_name' => 'redux_demo',
                 ),
             ),
-            'import_preview_image_url'   => 'http://www.your_domain.com/ocdi/preview_import_image2.jpg',
-            'import_notice'              => __( 'A special note for this import.', 'your-textdomain' ),
-            'preview_url'                => 'http://www.your_domain.com/my-demo-2',
+            'import_preview_image_url'   => 'http://ian.briziolabz.com/wp-content/uploads/sites/17/2018/06/banner-header-b-1.jpg',
+            'import_notice'              => __( 'Fijate de tener activado woocommerce, visual composer, metalslider y gravity forms. Acordarse de ir a ajustes y cambiar la pagina de inicio.', 'your-textdomain' ),
+            'preview_url'                => 'http://www.your_domain.com/my-demo-1',
         ),
     );
 }

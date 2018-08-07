@@ -1,6 +1,7 @@
+
 /*navbar*/
 @media (min-width: 799px) {
-.navbar-nav .nav-link{
+.navbar-nav .dropdown-toggle{
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -17,7 +18,7 @@ color:white !important;
 
 /*stickty*/
 
-.u-header--sticky-top {
+.fw-sticky-top {
   position:fixed ;
 
 width:100% ;

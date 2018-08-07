@@ -45,29 +45,33 @@ $header_middle_mobile=" fw_header_middle header-mobile d-md-none navbar";
 <?php do_action( 'add_topbar');?>
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
-<?
-error_log($redux_demo['header-width']);
-?>
 </header>
-<?php if(!empty($redux_demo['sticky-menu'])):?>
+<?php ?>
 <script type="text/javascript">
 
 jQuery(window).scroll(function() {
  if (jQuery(this).scrollTop() > 600){  
-    jQuery('header').addClass("u-header--sticky-top");
+    jQuery('header').addClass("fw-sticky-top");
     <?php 	
-    foreach($redux_demo['sticky-menu'] as $key){?>
+    if(!empty($redux_demo['sticky-menu'])):
+    foreach($redux_demo['sticky-menu'] as $key){
+    ?>
 	jQuery('.<?=$key?>').attr("style", "display: none !important; ");
     <?}?>
+    <?php endif; ?>
 	jQuery('.fw_header_top_banner').attr("style", "display: none !important; ");
   }
   else{
-    jQuery('header').removeClass("u-header--sticky-top");
-    <?php foreach($redux_demo['sticky-menu'] as $key){?>
+    jQuery('header').removeClass("fw-sticky-top");
+    <?php
+    if(!empty($redux_demo['sticky-menu'])):
+    foreach($redux_demo['sticky-menu'] as $key){
+    ?>
 	jQuery('.<?=$key?>').attr("style", "display: flex;");
     <?}?>
+    <?php endif; ?>
 	jQuery('.fw_header_top_banner').attr("style", "display: flex ; ");
   }
 });
 </script>
-<? endif; ?>
+

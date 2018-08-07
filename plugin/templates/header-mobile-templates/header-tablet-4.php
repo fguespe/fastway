@@ -2,7 +2,7 @@
 global $header_middle_mobile;
 ?>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>">
-  <div id="logoAndNav" class="container">
+  <div  class="container">
     <!-- Nav -->
     <nav class="navbar navbar-expand u-header__navbar py-2">
       <!-- Logo -->

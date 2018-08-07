@@ -2,7 +2,7 @@
 global $header_container,$header_main,$header_middle;
 ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
-  <div class="u-header__section u-header--floating__inner <?php echo esc_attr( $header_middle ); ?>">
+  <div class="<?php echo esc_attr( $header_middle ); ?>">
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->
