@@ -1,5 +1,5 @@
 <?php 
-global $header_main,$header_middle_mobile,$redux_demo;
+global $header_middle_mobile,$redux_demo;
 ?>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?> ">
       <div class="col-3 " style="padding: 0px;" ><?php echo fastway_getLogo();?></div>

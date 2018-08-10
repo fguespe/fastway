@@ -1,7 +1,5 @@
-<?php 
-global $header_middle;
-?>
-<div class="u-header__section <?php echo esc_attr( $header_middle ); ?>">
+<?php global $header_container,$header_middle,$header_container; ?>
+<div class=" <?php echo esc_attr( $header_middle ); ?>">
       <div  class="container">
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">

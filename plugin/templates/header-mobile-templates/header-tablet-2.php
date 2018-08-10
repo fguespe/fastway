@@ -1,5 +1,5 @@
 <?php 
-global $header_main,$header_middle_mobile,$redux_demo;
+global $header_middle_mobile,$redux_demo;
 ?>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
     <div class="col-2 align-items-center">

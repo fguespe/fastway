@@ -106,6 +106,17 @@ color:var(--icon-header);
 }
 
 .fw_quicklinks i{color:var(--main);}
+.fw_quicklinks a{
+  display:block !important;
+  line-height:40px;
+  font-size:18px;
+  text-align: left;
+}
+.fw_quicklinks{
+  border-top:1px solid black !important;
+  margin-top:10px;
+}
+
 .fw_header_top{background:var(--top-header);}
 .fw_header_middle{background:var(--middle-header);}
 .fw_header_bottom{background:var(--bottom-header);}
@@ -140,12 +151,14 @@ footer{background:var(--footer);}
 }
 
 @media (min-width: 799px) {
+  /*
   .logo{
       margin:0 auto ;
-  }
+  }*/
   .logo img{
       max-width:100% ;
   }
+  
   .navbar,.navbar-brand{
     padding:0px;
   }
@@ -306,7 +319,7 @@ html { margin-top: 0px !important; }
 
 /*FIX >BOOTSTRAP COLOR*/
 .wrapper a{
-color:var(--main) !important;
+color:var(--main);
 }
 a:hover {
     color: var(--main);

@@ -156,24 +156,15 @@ add_shortcode('fw_companyaddress', 'fw_companyaddress');
 
 function quicklinks(){
     echo "<div class='fw_quicklinks text-center'>";
-    if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:blue;"></i><span> Facebook</span></a>';
-    if(!empty(fw_companyyoutube()))echo '<a class="youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:red;"></i><span>  Youtube</span></a>';
+    if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:#4267B2;"></i><span> Facebook</span></a>';
+    if(!empty(fw_companyyoutube()))echo '<a class="youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:#FF0200;"></i><span>  Youtube</span></a>';
     if(!empty(fw_companywhatsapp()))echo '<a class="whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span></a>';
-    if(!empty(fw_companyig()))echo '<a class="ig" href="'.fw_companyig().'"><i class="fa fa-instagram"></i><span>  Instagram</span></a>';
+    if(!empty(fw_companyig()))echo '<a class="ig" href="'.fw_companyig().'"><i class="fa fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
     if(!empty(fw_companyemail()))echo '<a class="mail" href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o"></i><span>  Mandar un mail</span></a>';
     if(!empty(fw_companyphone()))echo '<a class="tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone"></i><span>  Llamar</span></a>';
     if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a class="map" href="'.fw_companygooglemaps().'"><i class="fa fa-map-marker"></i><span>  '.fw_companyaddress().'</span></a>';
     
     echo "</div>";
-    echo "<style>.fw_quicklinks a{
-        display:block !important;
-        line-height:40px;
-        font-size:18px;
-        }
-        .fw_quicklinks{
-        border-top:1px solid black !important;
-        margin-top:10px;
-        }</style>";
 }
 
 

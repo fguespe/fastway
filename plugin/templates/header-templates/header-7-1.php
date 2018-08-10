@@ -1,8 +1,6 @@
-<?php 
-global $header_middle,$header_bottom;
-?>
+<?php global $header_container,$header_middle,$header_container,$header_bottom; ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
-    <div class="row flex-nowrap">
+    <div class="row flex-nowrap <?php echo esc_attr( $header_container ); ?>">
       <div class="col-4">
         <?php echo fastway_getLogo();?>
       </div>

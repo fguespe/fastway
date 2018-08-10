@@ -1,6 +1,4 @@
-<?php 
-global $header_container,$header_middle,$header_bottom;
-?>
+<?php global $header_container,$header_middle,$header_container; ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
       <div class="row">
