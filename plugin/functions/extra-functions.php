@@ -195,7 +195,7 @@ if( !function_exists('fastway_getLogo') ) {
                 }
 
                 //echo '<a class="logo">';
-                echo '<a class="logo navbar-brand u-header__navbar-brand "  href="'.esc_attr(home_url()).'">';
+                echo '<a class="logo "  href="'.esc_attr(home_url()).'">';
                 fastway_getImage($logo_arg);
                 echo '</a>';
         }
