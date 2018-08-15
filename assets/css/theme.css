@@ -217,6 +217,9 @@ padding:6px;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
     }
+    .columnamobile{
+      margin-top:30px;
+    }
 
 }
 /*FIX FOOTER*/

@@ -6,11 +6,11 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		global $redux_demo;
 		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 		wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
-		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.css');
+		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.min.css');
 		wp_enqueue_style( 'owl-styles', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 			
 		wp_enqueue_script('jquery');
-		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.js', array(), $the_theme->get( '
+		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array(), $the_theme->get( '
 			Version' ), true );
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(), $the_theme->get( 'Version' ), true );
 
