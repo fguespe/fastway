@@ -9,6 +9,7 @@
 global $redux_demo;
 $js=$redux_demo['opt-ace-editor-js'];
 $favi=$redux_demo["general-favi"];
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -26,7 +27,7 @@ $favi=$redux_demo["general-favi"];
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	
 	<?php wp_head(); ?>
-	<style type="text/css"><?php include( get_template_directory() . '/assets/css/csstheme.php');?></style>
+	<style type="text/css"><?php echo fw_custom_css(); ?></style>
     
 </head>
 

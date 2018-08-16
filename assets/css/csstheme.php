@@ -8,8 +8,6 @@
   --bottom-header:<?php echo $redux_demo['opt-color-bottheader']; ?>;
   --body:<?php echo $redux_demo['opt-color-bodycolor']; ?>;
   --footer:<?php echo $redux_demo['opt-color-footer']; ?>;
-
-
 }
 <?php
 $tipos=array("p","span","div","a","h4","h3","h2","h1");

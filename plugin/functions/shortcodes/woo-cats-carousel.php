@@ -11,7 +11,7 @@ $rand=generateRandomString(5);
   }
 </style>
 <div id="owl-slider">
-<div class="owl-carousel owl-theme <?=$rand?>-owl product-cats">
+<div class="owl-carousel owl-theme <?=$rand?>-owl owl-product-cats">
     <?php 
     foreach ($terms as $term) {
             $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
@@ -19,7 +19,7 @@ $rand=generateRandomString(5);
             $link = get_term_link($term);
             echo '<div class="item">';
             echo '<img src="'.$image.'" width="300" height="300"/>';
-            echo '<a href="'.$link.'" title="'.$title.'">'.$title.'</a>';
+            echo '<a href="'.$link.'" >'.$term->name.'</a>';
             echo '</div>';         
     }
     ?>

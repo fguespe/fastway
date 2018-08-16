@@ -12,6 +12,66 @@ function get_fastway_header_topbanner(){
         echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.$redux_demo['topheader-img']['url'].'"></div>';
     }
 }
+function fw_custom_css(){
+    global $redux_demo;
+    $css="";
+    $css.=":root{";
+    $css.="--main:".$redux_demo['opt-color-main'].";";
+    $css.="--top-banner:".$redux_demo['opt-color-topheader-banner'].";";
+    $css.="--icon-header:".$redux_demo['opt-color-iconheader'].";";
+    $css.="--second-color:".$redux_demo['opt-color-second'].";";
+    $css.="--top-header:".$redux_demo['opt-color-topheader'].";"; 
+    $css.="--middle-header:".$redux_demo['opt-color-middheader'].";";
+    $css.="--bottom-header:".$redux_demo['opt-color-bottheader'].";";
+    $css.="--body:".$redux_demo['opt-color-bodycolor'].";";
+    $css.="--footer:".$redux_demo['opt-color-footer'].";";
+    $css.= "}";
+    $tipos=array("p","span","div","a","h4","h3","h2","h1");
+    //Fonts comunes
+    foreach ($tipos as $key) {
+        $nombre='opt-typography-'.$key;
+        if(!isset($redux_demo[$nombre]))continue;
+        $font=$redux_demo[$nombre];
+        $css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
+        $css.= "font-family:".str_replace(",", "','", $font['font-family']).";";
+        $css.= "font-size:".$font['font-size'].";";
+        $css.= "line-height:".$font['line-height'].";";
+        $css.= "color:".$font['color'].";";
+        $css.= "text-transform:".$font['text-transform'].";";
+        $css.= "text-align:".$font['text-align'].";";
+        $css.= "}";   
+    }
+    if($redux_demo['css-onoff']=="on"){
+        $css.=  $redux_demo['css_editor-general']; 
+        $css.=  $redux_demo['css_editor-header']; 
+        $css.=  $redux_demo['css_editor-body']; 
+        $css.=  $redux_demo['css_editor-footer']; 
+        $css.=  $redux_demo['css_editor-loop']; 
+        $css.=  $redux_demo['css_editor-single']; 
+        $css.=  $redux_demo['css_editor-mobile']; 
+    }
+    if(is_child_theme()){
+        $files=glob(get_stylesheet_directory().'/fonts/*.otf');
+        $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));
+        $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.OTF'));
+        if(!empty($files)){
+            foreach ($files as $path){ 
+                $nombre=basename($path,".otf");
+                $nombre=basename($nombre,".ttf");
+                $nombre=basename($nombre,".OTF");
+                $css.= "@font-face {";
+                $css.= "font-family: '".$nombre."'";
+                $css.= "src:url('".get_stylesheet_directory_uri().'/fonts/'.basename($path)."')";
+                $css.= " }";
+                $css.= " }";
+                $css.= " }";
+            }
+        }
+    }
+    return trim(preg_replace('/\t+/', '', $css));
+}
+
+
 add_action( 'add_topbar', 'get_topbar' );
 function get_topbar(){
     global $redux_demo;

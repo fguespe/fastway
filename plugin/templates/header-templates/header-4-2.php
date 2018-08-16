@@ -1,4 +1,4 @@
-<?php global $header_container,$header_middle,$header_container; ?>
+<?php global $header_container,$header_middle,$header_container,$header_bottom; ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
       <div class="row">
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Nav -->
-<div class="<?php echo esc_attr( $header_bottom ); ?> align-items-center">
+<div class="<?php echo esc_attr( $header_bottom ); ?> align-items-center justify-content-center">
 <nav class="navbar navbar-expand-md align-items-center">
     <!-- Logo -->
     <?php wp_nav_menu(
