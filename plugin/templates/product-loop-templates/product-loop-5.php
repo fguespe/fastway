@@ -40,7 +40,7 @@
     margin-bottom:30px !important;
 }
 </style>
-<div id="productloop_desktop" class='d-none d-md-block product-loop-5'>
+<div class='productloop_desktop d-none d-md-block product-loop-5'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.

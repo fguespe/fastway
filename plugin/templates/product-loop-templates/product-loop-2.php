@@ -1,12 +1,12 @@
 <style type="text/css">
-#productloop_desktop .woocommerce-loop-product__title{
+.product-loop-2 .woocommerce-loop-product__title{
     margin: 5px 0 10px;
     text-transform: uppercase;
     text-align: left;
     color: #D1030F;
     font-weight: bold;
 }
-#productloop_desktop  .price .woocommerce-Price-amount.amount{
+.product-loop-2  .price .woocommerce-Price-amount.amount{
     font-size: 30px;
     line-height: 40px;
     font-weight: bold;
@@ -14,11 +14,11 @@
     text-align: left;
     margin-right: 4px;
 }
-#productloop_desktop{
+.product-loop-2{
     border: 1px solid #ccc;
 }
 
-#productloop_desktop .add-to-cart-container .add_to_cart_button{
+.product-loop-2 .add-to-cart-container .add_to_cart_button{
     color: #fff;
     text-transform: uppercase;
     font-size: 16px;
@@ -32,7 +32,7 @@
 }
 
 </style>
-<div id="productloop_desktop" class='d-none d-md-block'>
+<div id="" class='productloop_desktop d-none d-md-block product-loop-2'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.

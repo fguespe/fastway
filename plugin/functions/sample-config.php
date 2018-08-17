@@ -434,7 +434,7 @@
             'mode'       => 'php',
             'theme'      => 'chrome',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget text', 'fastway' ),
+            'title'    => esc_html__( 'header headerwidget html', 'fastway' ),
             'default'  => '',
         ),
         array(
@@ -445,7 +445,7 @@
             'id'        => 'css_editor-header-headerwidget',
             'type'      => 'ace_editor',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget text', 'fastway' ),
+            'title'    => esc_html__( 'header headerwidget css', 'fastway' ),
             'default'  => '',
             'mode'     => 'css',
             'theme'    => 'monokai',

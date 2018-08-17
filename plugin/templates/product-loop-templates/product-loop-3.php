@@ -1,12 +1,12 @@
 <style type="text/css">
-#productloop_desktop .add_to_cart_button{
+.product-loop-3 .add_to_cart_button{
 font-size:0px;
 border-radius:0px ;
 border:0px;
 border-left:1px solid grey;
 line-height: 1.5 !important;
 }
-#productloop_desktop .add_to_cart_button:before{
+.product-loop-3 .add_to_cart_button:before{
 content:"\f07a" !important;
 font-family:"fontawesome" !important;
 color:black !important;
@@ -14,12 +14,12 @@ font-size:20px !important;
 padding:0px !important;
 }
 
-#productloop_desktop{
+.product-loop-3{
 font-family:'GOTHAMRND-MEDIUM_0','Arial','sans-serif';
 border:1px solid grey;
 float:left;
 }
-#productloop_desktop .woocommerce-loop-product__title{
+.product-loop-3 .woocommerce-loop-product__title{
 font-size:13px;
  min-height: 52px !important;
 border-bottom:1px solid grey;
@@ -30,13 +30,13 @@ line-height: inherit !important;
 
 }
 
-#productloop_desktop .price{
+.product-loop-3 .price{
 vertical-align: middle !important;
 padding:0px !important;
 margin:0px !important;
 line-height: inherit !important;
 }
-#productloop_desktop .price {
+.product-loop-3 .price {
 color:black !important;
 font-size:25px;
 line-height:40px !important;
@@ -52,7 +52,7 @@ width:100% !important;
 }
 
 </style>
-<div id="productloop_desktop" class='d-none d-md-block'>
+<div id="" class='productloop_desktop d-none d-md-block product-loop-3'>
     <div>
     <?php
     global $product;

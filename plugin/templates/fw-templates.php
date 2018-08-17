@@ -72,7 +72,7 @@ for( $i=1; $i<=20; $i++ ) {
     }
 }
 $loop_templates = array();
-for( $i=1; $i<=5; $i++ ) {
+for( $i=1; $i<=6; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/product-loop-{$i}.jpg" ) ) {
         $loop_templates[$i] = array(
             'alt' => $i,
