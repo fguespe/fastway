@@ -498,8 +498,10 @@ display:block !important;
 padding-top:0px !important;
 padding-bottom:0px !important;
 }
-
-
+.woocommerce button.button.alt,
+.woocommerce button.button.alt:hover{
+  background: var(--main);
+}
 
 
 /*FIX VISUAl*/

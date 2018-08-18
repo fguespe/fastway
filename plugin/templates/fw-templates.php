@@ -81,7 +81,7 @@ for( $i=1; $i<=6; $i++ ) {
     }
 }
 $loop_templates_mobile = array();
-for( $i=1; $i<=3; $i++ ) {
+for( $i=1; $i<=20; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates/images/product-loop-mobile-{$i}.jpg" ) ) {
         $loop_templates_mobile[$i] = array(
             'alt' => $i,
@@ -90,7 +90,7 @@ for( $i=1; $i<=3; $i++ ) {
     }
 }
 $single_templates = array();
-for( $i=1; $i<=3; $i++ ) {
+for( $i=1; $i<=20; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-{$i}.jpg" ) ) {
         $single_templates[$i] = array(
             'alt' => $i,
@@ -99,7 +99,7 @@ for( $i=1; $i<=3; $i++ ) {
     }
 }
 $single_templates_mobile = array();
-for( $i=1; $i<=1; $i++ ) {
+for( $i=1; $i<=20; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-mobile-{$i}.jpg" ) ) {
         $single_templates_mobile[$i] = array(
             'alt' => $i,

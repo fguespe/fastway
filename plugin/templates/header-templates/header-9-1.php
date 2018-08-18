@@ -1,5 +1,4 @@
 <?php global $header_container,$header_middle,$header_container,$header_bottom; ?>
-<?php do_action( 'add_topbar');?>
 <div class=" <?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
 	    <div class="row">
