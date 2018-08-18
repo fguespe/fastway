@@ -72,11 +72,11 @@ for( $i=1; $i<=20; $i++ ) {
     }
 }
 $loop_templates = array();
-for( $i=1; $i<=6; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/product-loop-{$i}.jpg" ) ) {
+for( $i=1; $i<=7; $i++ ) {
+    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/product-loop-{$i}.png" ) ) {
         $loop_templates[$i] = array(
             'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-templates/images/product-loop-{$i}.jpg"
+            'img' => $TEMPLATE_URI . "product-loop-templates/images/product-loop-{$i}.png"
         );
     }
 }

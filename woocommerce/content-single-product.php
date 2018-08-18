@@ -34,8 +34,8 @@ if ( post_password_required() ) {
 }
 global $single_desktop,$single_desktop_mobile;
 
-$single_desktop=" fw_single_desktop d-none d-md-block ";
-$single_desktop_mobile=" fw_single_desktop_mobile d-md-none navbar";
+$single_desktop=" fw_single_product fw_single_desktop d-none d-md-block ";
+$single_desktop_mobile=" fw_single_product fw_single_mobile d-md-none navbar";
 
 do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'] );
 do_action( 'fastway_product_single_init_mobile', $redux_demo['shop-single-mobile-product-style'] );

@@ -502,6 +502,10 @@ padding-bottom:0px !important;
 .woocommerce button.button.alt:hover{
   background: var(--main);
 }
+/*fix margin en price*/
+.woocommerce ul.products li.product .price{
+  margin: 0px;
+}
 
 
 /*FIX VISUAl*/

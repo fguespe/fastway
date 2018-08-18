@@ -1,6 +1,9 @@
 <?php
 
 
+
+
+
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
@@ -90,15 +93,7 @@ function get_topbar(){
     endif;
     echo '</div> </div>  </div>';
 }
-function fastway_footer_block(){
-    global $redux_demo;
-    if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
-}
 
-function fastway_singleblock_block(){
-    global $redux_demo;
-    if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("Nexthemes_StaticBlock") ) Nexthemes_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
-}
 function fastway_getWidgetHeaderText(){
     global $redux_demo;
     if($redux_demo['header-headerwidget-switch']){
@@ -299,6 +294,22 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
+/**
+ * Change number of related products output
+ */ 
+function woo_related_products_limit() {
+    global $product,$redux_demo;
+    
+    $args['posts_per_page'] = $redux_demo['shop_columns']+2;
+    return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+    global $redux_demo;
+    $args['posts_per_page'] = $redux_demo['shop_columns']+2; // 4 related products
+    $args['columns'] = $redux_demo['shop_columns']+2; // arranged in 2 columns
+    return $args;
+}
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
@@ -307,6 +318,21 @@ if (!function_exists('loop_columns')) {
         return $redux_demo['shop_columns'];
     }
 }
+/*Static Blocks*/
+function fastway_footer_block(){
+    global $redux_demo;
+    if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
+}
+
+function fastway_singleblock_block(){
+    global $redux_demo;
+    if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
+}
+add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
+function fw_shortcode_stblock( $atts ) {
+    fw_StaticBlock::getSticBlockContent( $atts["slug"] );
+}
+
 function fastway_get_stblock( $cats = array('all') ){
     $res_args = array();
 

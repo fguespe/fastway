@@ -1,8 +1,8 @@
 <?php
 
-if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
+if( !class_exists( 'fw_StaticBlock' ) ) {
 
-	class Nexthemes_StaticBlock{
+	class fw_StaticBlock{
 
 		private $labels = array();
 		private static $post_type = 'fw_stblock';
@@ -158,5 +158,5 @@ if( !class_exists( 'Nexthemes_StaticBlock' ) ) {
 
 	}
 
-	new Nexthemes_StaticBlock();
+	new fw_StaticBlock();
 }
