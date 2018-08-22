@@ -1,9 +1,42 @@
 <style type="text/css">
+.fw_product_loop .woocommerce-loop-product__title{
+font-size:12px !important;
+line-height:12px !important;
+text-align:left !important;
+text-transform:uppercase !important;
+color: #35434e !important;
+margin-top:10px;
+margin-bottom:10px;
+font-weight:600 !important;
+}
+.fw_product_loop img{
+max-height:250px;
+width:auto !important;
+margin:0 auto;
+}
+.fw_product_loop{
+background:white;
+padding:10px;
+}
 
+.fw_product_loop .price span{
+color:black !important;
+font-size:20px !important;
+line-height:20px !important;
+font-weight:bold;
+}
+
+.fw_product_loop .monthly{
+color:#ff710b !important;
+font-size:17px !important;
+line-height:17px !important;
+font-weight:bold !important;
+text-transform:uppercase !important;
+display:block ;
+margin-top:15px;
+}
 </style>
-<div class='productloop_desktop d-none d-md-block product-loop-6'>
-
-    <?php
+<?php
     global $product;
     /**
      * woocommerce_before_shop_loop_item hook.
@@ -37,4 +70,3 @@
 
     ?>
     <span class="monthly"> Monthly payments of $<?php echo round($product->regular_price/12); ?></span>
-</div>

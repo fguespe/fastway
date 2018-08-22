@@ -1,10 +1,9 @@
 <style type="text/css">
-.product-loop-4 .woocommerce-loop-product__title{
-font-size:12px !important;
-line-height:12px !important;
+.fw_product_loop .woocommerce-loop-product__title{
+    font-size:12px !important;
+    line-height:12px !important;
 }
 </style>
-<div id="productloop_desktop" class='d-none d-md-block product-loop-4'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.
@@ -37,4 +36,3 @@ line-height:12px !important;
     do_action( 'woocommerce_after_shop_loop_item_title' );
 
     ?>
-</div>

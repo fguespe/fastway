@@ -1,4 +1,3 @@
-<div id="productloop_desktop" class='d-none d-md-block'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.
@@ -38,4 +37,3 @@
      */
     do_action( 'woocommerce_after_shop_loop_item' );
     ?>
-</div>

@@ -81,15 +81,14 @@ for( $i=1; $i<=7; $i++ ) {
     }
 }
 $loop_templates_mobile = array();
-for( $i=1; $i<=20; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-mobile-templates/images/product-loop-mobile-{$i}.jpg" ) ) {
-        $loop_templates_mobile[$i] = array(
-            'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-mobile-templates/images/product-loop-mobile-{$i}.jpg"
-        );
-    }
-}
+$loop_templates_mobile =  array_merge($loop_templates_mobile,array( 0 => "Use same as desktop"));
+for( $i=1; $i<=1; $i++ )$loop_templates_mobile=array_merge($loop_templates_mobile,array( $i => "Product Loop Template ".$i));
+
 $single_templates = array();
+$single_templates =  array_merge($single_templates,array( 0 => "Select en option"));
+for( $i=1; $i<=4; $i++ )$single_templates=array_merge($single_templates,array( $i => "Single Product Template ".$i));
+
+/*
 for( $i=1; $i<=20; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-{$i}.jpg" ) ) {
         $single_templates[$i] = array(
@@ -98,6 +97,7 @@ for( $i=1; $i<=20; $i++ ) {
         );
     }
 }
+
 $single_templates_mobile = array();
 for( $i=1; $i<=20; $i++ ) {
     if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-mobile-{$i}.jpg" ) ) {
@@ -107,3 +107,4 @@ for( $i=1; $i<=20; $i++ ) {
         );
     }
 }
+*/

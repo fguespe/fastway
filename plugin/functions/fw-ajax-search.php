@@ -83,10 +83,10 @@ if( !function_exists( 'fw_search_form' ) ) {
                 <?php endif ?>
                 -->
                 <?php if ( $numero==0): ?>
-                  <button type="button" class="btn btn-primary">Buscar</button>
+                  <button type="button" class="">Buscar</button>
                 <?php endif ?>
                 <?php if ( $numero==1): ?>
-                  <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  <button type="button" class=""><i class="fa fa-search"></i></button>
                 <?php endif ?>
                 <?php if ( $numero==3): ?>
                   

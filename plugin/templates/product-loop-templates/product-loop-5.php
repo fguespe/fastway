@@ -1,15 +1,15 @@
 <style type="text/css">
-.product-loop-5 .woocommerce-loop-product__title{
+.fw_product_loop .woocommerce-loop-product__title{
     font-size:12px !important;
     line-height:12px !important;
     margin-bottom: 20px !important;
 }
 
-.product-loop-5 .price span{
+.fw_product_loop .price span{
     color:var(--main) !important;
 }
 
-.product-loop-5 .add-to-cart-container a{
+.fw_product_loop .add-to-cart-container a{
     border-radius:4px !important;
     max-width:90%;
     margin-top: 30px !important;
@@ -34,13 +34,12 @@
 }
 
 
-.product-loop-5  .woocommerce-loop-product__link img{
+.fw_product_loop  .woocommerce-loop-product__link img{
     max-width:150px;
     margin:0 auto !important;
     margin-bottom:30px !important;
 }
 </style>
-<div class='productloop_desktop d-none d-md-block product-loop-5'>
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.
@@ -75,4 +74,3 @@
     
     do_action( 'woocommerce_after_shop_loop_item' );
     ?>
-</div>

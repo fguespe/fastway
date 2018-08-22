@@ -37,7 +37,7 @@ global $header_main,$header_middle,$header_middle_mobile,$header_bottom,$header_
 $header_container   = $redux_demo['header-width'];
 $header_middle=" fw_header_middle d-none d-md-flex py-".$redux_demo['header-padding']." ";
 $header_bottom=" fw_header_bottom d-none d-md-flex ";
-$header_middle_mobile=" fw_header_middle header-mobile d-md-none navbar";
+$header_middle_mobile=" fw_header_middle mobile d-md-none navbar";
 
 //if($redux_demo['floating-header']){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
 ?>

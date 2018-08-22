@@ -1,7 +1,7 @@
 <?
 global $single_desktop;
 ?>
-<div id="product-<?php the_ID(); ?>" <?php post_class($single_desktop); ?>>
+<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 		/**

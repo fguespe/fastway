@@ -27,11 +27,20 @@ global $redux_demo;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+$classname_desktop="fw_product_loop desktop ";
+if($redux_demo['shop-loop-mobile-product-style']>0){
+	$classname_desktop.=" d-none d-md-block ";
+}
+
 ?>
-
-
-<li <?php post_class(); ?>>
-	<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-product-style'] );?>
-	<?php do_action( 'fastway_product_loop_init_mobile', $redux_demo['shop-loop-mobile-product-style'] );?>
+<li <?php post_class($classname_desktop); ?>>
+	<div class=''>
+		<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-product-style'] );?>
+	</div>
+	<? if($redux_demo['shop-loop-mobile-product-style']>0){?>
+		<div class='fw_product_loop mobile d-md-none'>
+			<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-mobile-product-style'] );?>
+		</div>
+	<? } ?>
 </li>
 

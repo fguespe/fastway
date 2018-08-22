@@ -14,15 +14,13 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $carturl=wc_get_cart_url();
         $checkurl=wc_get_checkout_url();
         if($style==="link"){
-          
-
           return <<<HTML
-<li class="list-inline-item position-relative">
-  <a id="" class="" href="$carturl" role="button">
-    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
-  </a>
-</li>
+          <a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
+    <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+  </span>
+</a>
+
 HTML;
         }else if($style==="popup"){
         $idname=$rand."cart-popover";
@@ -39,11 +37,12 @@ HTML;
     });
 });
 </script>
-<a id="$idname" class="" data-placement="bottom" title="Carrinho de Compras">
-    <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-    <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
-</a>
-   
+
+<a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
+    <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+  </span>
+</a>   
 
 <div id="$idname2" style="display: none">
    <div class="mini-cart-item-title">Your Shopping Cart</div>
@@ -58,10 +57,12 @@ HTML;
           $idname2=$rand.'shoppingCartModal';
         
           return <<<HTML
-<a class=""  href0="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
-   <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-   <span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">$cant</span>
-   </a>
+
+<a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
+    <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+  </span>
+</a>
 <!-- Modal -->
 <div class="modal fade" id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -98,7 +99,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 
 
 function iconic_cart_count_fragments( $fragments ) {
     
-    $fragments['.header-cart-count'] = '<span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">' . WC()->cart->get_cart_contents_count() . '</span>';
+    //$fragments['.header-cart-count'] = '<span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">' . WC()->cart->get_cart_contents_count() . '</span>';
+    $fragments['.header-cart-count-badge'] = '<span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.WC()->cart->get_cart_contents_count().'">
+    <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
+
     
     $fragments['.total-mini-cart'] = '<span class="d-block total-mini-cart">' . WC()->cart->get_cart_total() . '</span>';
     

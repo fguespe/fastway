@@ -11,7 +11,7 @@ add_action('fastway_header_topbanner','get_fastway_header_topbanner');
 function get_fastway_header_topbanner(){
     global $redux_demo;
     
-    if( isset( $redux_demo['topheader-img'] ) && strlen(trim($redux_demo['topheader-img']['url'])) > 0 ){
+    if( isset($redux_demo['topheader-img']['url']) && isset( $redux_demo['topheader-img'] ) && strlen(trim($redux_demo['topheader-img']['url'])) > 0 ){
         echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.$redux_demo['topheader-img']['url'].'"></div>';
     }
 }
