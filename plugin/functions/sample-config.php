@@ -974,13 +974,13 @@
                 'id'   => 'opt-info-field4',
                 'type' => 'info',
                 'style' => 'success',
-                'desc' => __( '.columnamobile (50%) | .trescolumnasmobile (33%) *solo usar en casos especiales', 'redux-framework-demo' )
+                'desc' => __( 'Column classes => .onehalf_mobile (50%) | .onethird_mobile (33%) | .onefourth_mobile (25%)', 'redux-framework-demo' )
             ),
              array(
                 'id'   => 'opt-info-field454',
                 'type' => 'info',
                 'style' => 'success',
-                'desc' => __( '.two_mobile_columns (50%) | three_mobile_columns (33%) | four_mobile_columns (25%)', 'redux-framework-demo' )
+                'desc' => __( 'Row classes => .two_mobile_columns (50%) | three_mobile_columns (33%) | four_mobile_columns (25%)', 'redux-framework-demo' )
             ),
             
             array(
@@ -1066,7 +1066,8 @@
                     'id'       => 'seo-desc',
                     'type'     => 'textarea',
                     'title'    => __( 'SEO Description', 'redux-framework-demo' ),
-                    'default'  => 'Default Text',
+                    'default'  => '',
+                    'description' => 'Max 150 characters',
             ),
             array(
                     'id'       => 'header-insert',
@@ -1138,7 +1139,26 @@ Redux::setSection( $opt_name, array(
             ),
             'default'  => 'container'
         ),
-         array(
+        array(
+            'id'       => 'checkout-msg',
+            'type'     => 'text',
+            'title'    => __( 'Check out message', 'redux-framework-demo' ),
+            'default'  => '',
+            'description'=>'Display a messsage/notice before checkout',
+        ),
+        array(
+            'id'       => 'in-stock-text',
+            'type'     => 'text',
+            'title'    => __( 'In stock text', 'redux-framework-demo' ),
+            'default'  => 'In Stock',
+        ),
+        array(
+            'id'       => 'out-of-stock-text',
+            'type'     => 'text',
+            'title'    => __( 'Out of stock text', 'redux-framework-demo' ),
+            'default'  => 'Sold',
+        ),
+        array(
             'id'       => 'add-to-cart-text',
             'type'     => 'text',
             'title'    => __( 'Add to cart text', 'redux-framework-demo' ),
@@ -1155,7 +1175,25 @@ Redux::setSection( $opt_name, array(
                 //'sidebar'  => 'Sidebar',
             ),
             'default'  => 'modal'
-            ),
+        ),
+        array(
+            'id'       => 'catalog-mode',
+            'type'     => 'switch',
+            'title'    => 'Catalog Mode',
+            'default'  => 0,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            'description' => 'hide prices and add to car button'
+        ),
+        array(
+            'id'       => 'sold-alone',
+            'type'     => 'switch',
+            'title'    => 'Sold Individually',
+            'default'  => 0,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            'description' => 'redirects to checkout directly *redirect to cart has to be activated in woocommerce product options'
+        ),
         array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',

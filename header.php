@@ -8,26 +8,34 @@
  */
 global $redux_demo;
 $js=$redux_demo['opt-ace-editor-js'];
-$favi=$redux_demo["general-favi"];
-
+$favi=$redux_demo["general-favi"]['url'];
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html dir="ltr" <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="shortcut icon" type="image/png" href="<?php echo $favi['url'];?>"/>
-	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+	<link rel="shortcut icon" type="image/png" href="<?php echo $favi;?>"/>
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <meta name="description" content="<?php echo $redux_demo['seo-desc'];?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	
-	<?php wp_head(); ?>
-	<style type="text/css"><?php echo fw_custom_css(); ?></style>
+   
+	<!-- APPLE -->
+        <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="<?php echo $favi;?>">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $favi;?>">
+        <!--loading -->
+        <link rel="apple-touch-startup-image" href="<?php echo $favi;?>">
+        <!--barra -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+
+    <?php wp_head(); ?>
+	<style ><?php echo fw_custom_css(); ?></style>
     
 </head>
 
@@ -47,7 +55,7 @@ $header_middle_mobile=" fw_header_middle mobile d-md-none navbar";
 <?php do_action( 'fastway_header_init', $redux_demo['header-style'] );?>
 <?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'] );?>
 </header>
-<script type="text/javascript">
+<script >
 
 jQuery(window).scroll(function() {
  if (jQuery(this).scrollTop() > 600){  

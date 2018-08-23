@@ -13,6 +13,7 @@
   font-size:14px !important;
   background:var(--main) !important;
   color:white !important;
+  position: absolute;
 }
 
 
@@ -203,11 +204,15 @@ footer{background:var(--footer);}
         width:25%;
         display:inline-block;
     }
-    .trescolumnasmobile{
+    .trescolumnasmobile,.onethird_mobile{
         width:33% !important;
         display:inline-block !important;
     }
-    .columnamobile{
+    .onefourth_mobile{
+        width:25% !important;
+        display:inline-block !important;
+    }
+    .columnamobile,.onehalf_mobile{
         width:50% !important;
         display:inline-block !important;
     }

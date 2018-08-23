@@ -16,8 +16,12 @@
     padding:4px;
 }
 .fw_product_loop .price del{
-    display:block !important;
-    color:grey;
+    display: block!important;
+}
+.fw_product_loop .price del span{
+  font-weight: normal;;
+    color:grey !important;
+    font-size: 12px !important;
 }
 .fw_product_loop .price span{
     font-size:16px !important;
@@ -64,8 +68,7 @@ do_action( 'woocommerce_shop_loop_item_title' );?>
 <div class="meta">
 <div class="pull-left ">
 <span class="price">
-    <del>$<?php echo $product->regular_price;?></del>
-    <span>$<?php echo $product->regular_price;?><span>
+    <?php echo $product->get_price_html();?>
 </span>
 </div>
 <div class="pull-right">
