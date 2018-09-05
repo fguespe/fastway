@@ -54,6 +54,7 @@ require get_template_directory() . '/plugin/functions/extra-functions.php';
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/templates/fw-templates.php';
 require get_template_directory() . '/plugin/demos/fw-democontent.php';
+require get_template_directory() . '/plugin/briziolabz-fw-plugin/briziolabz-fw-plugin.php';
 //require get_template_directory() . '/plugin/demos/one-click-demo-import/one-click-demo-import.php';
 
 require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
