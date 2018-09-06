@@ -1,85 +1,51 @@
 <?php
-add_action( 'fastway_header_init', 'fastway_header_body', 20 );
-if( !function_exists('fastway_header_body') ){
-    function fastway_header_body( $style = 1 ){
+add_action( 'fastway_header_init', 'fw_get_template_part', 20 ,2);
+add_action( 'fastway_header_init_mobile', 'fw_get_template_part', 20,2 );
+add_action( 'fastway_product_loop_init', 'fw_get_template_part', 20 ,2);
+add_action( 'fastway_product_loop_init_mobile', 'fw_get_template_part', 20,2 );
+add_action( 'fastway_product_single_init', 'fw_get_template_part', 20 ,2);
+if( !function_exists('fw_get_template_part') ){
+    function fw_get_template_part( $style = 1 ,$var){
         global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/header-templates/header-'.$style.'.php') ) $style = 1;
-            get_template_part('plugin/templates/header-templates/header', $style);
+        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php') ) $style = 1;
+        get_template_part('plugin/templates/'.$var.'s/'.$var, $style);
     }
 }
 
-add_action( 'fastway_header_init_mobile', 'fastway_header_tablet', 20 );
-if( !function_exists('fastway_header_tablet') ) {
-    function fastway_header_tablet( $style = 1 ){
-        global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/header-mobile-templates/header-tablet-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/header-mobile-templates/header-tablet', $style);
-    }
-}
+$theme_headers=loadimgs("header");
+$theme_headers_mobile=loadimgs("mobile-header");
+$loop_templates=loadimgs("product-loop");
+$loop_templates_mobile=loadimgs("mobile-product-loop");
+$single_templates=loadimgs("single-product");
 
-add_action( 'fastway_product_loop_init', 'fastway_product_loop', 20 );
-if( !function_exists('fastway_product_loop') ){
-    function fastway_product_loop( $style = 1 ){
-        global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/product-loop-templates/product-loop-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/product-loop-templates/product-loop', $style);
-    }
-}
-add_action( 'fastway_product_loop_init_mobile', 'fastway_product_loop_mobile', 20 );
-if( !function_exists('fastway_product_loop_mobile') ){
-    function fastway_product_loop_mobile( $style = 1 ){
-        global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/product-loop-mobile-templates/product-loop-mobile-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/product-loop-mobile-templates/product-loop-mobile', $style);
-    }
-}
 
-add_action( 'fastway_product_single_init', 'fastway_product_single', 20 );
-if( !function_exists('fastway_product_single') ){
-    function fastway_product_single( $style = 1 ){
-        global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/single-product-templates/content-single-product-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/single-product-templates/content-single-product', $style);
-    }
-}
-add_action( 'fastway_product_single_init_mobile', 'fastway_product_single_mobile', 20 );
-if( !function_exists('fastway_product_single_mobile') ){
-    function fastway_product_single_mobile( $style = 1 ){
-        global $TEMPLATE_DIR;
-        if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . 'woocommerce/single-product-mobile-templates/content-single-product-mobile-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/single-product-mobile-templates/content-single-product-mobile', $style);
-    }
-}
 
-$theme_headers = array();
-for( $i=1; $i<=20; $i++ ) {
-    for( $j=1; $j<=20; $j++ ) {
-        if( file_exists( $TEMPLATE_DIR . "header-templates/images/theme-option-header{$i}-{$j}.png" ) ) {
-            $theme_headers[$i."-".$j] = array(
+function loadimgs($phpprefix){
+    global $TEMPLATE_DIR,$TEMPLATE_URI;
+    $lavar=$phpprefix."s";
+    $imgurl=$lavar."/images/".$phpprefix."-";
+
+    $dir = new DirectoryIterator($TEMPLATE_DIR .$lavar );
+    
+    $miarray=array();
+    foreach ($dir as $fileinfo) {
+        if (!$fileinfo->isDot()) {
+            if(!strpos($fileinfo->getFilename(),".php"))continue;
+            $nombre= str_replace($phpprefix."-", "", str_replace(".php", "", $fileinfo->getFilename()));
+            $i=explode("-", $nombre)[0];
+            $j=explode("-", $nombre)[1];
+            $imgg=$TEMPLATE_URI . $imgurl.$i;
+            if(isset($j))$imgg.="-".$j;
+            $imgg.=".png";
+            $miarray[$i."-".$j] = array(
                 'alt' => $i."-".$j,
-                'img' => $TEMPLATE_URI . "header-templates/images/theme-option-header{$i}-{$j}.png"
-            );
+                'img' => $imgg
+            );  
         }
-    }   
-}
-$theme_headers_mobile = array();
-for( $i=1; $i<=20; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "header-mobile-templates/images/theme-option-header-mobile{$i}.png" ) ) {
-        $theme_headers_mobile[$i] = array(
-            'alt' => $i,
-            'img' => $TEMPLATE_URI . "header-mobile-templates/images/theme-option-header-mobile{$i}.png"
-        );
     }
+    return $miarray;
 }
-$loop_templates = array();
-for( $i=1; $i<=7; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "product-loop-templates/images/product-loop-{$i}.png" ) ) {
-        $loop_templates[$i] = array(
-            'alt' => $i,
-            'img' => $TEMPLATE_URI . "product-loop-templates/images/product-loop-{$i}.png"
-        );
-    }
-}
+/*
 $loop_templates_mobile = array();
 $loop_templates_mobile =  array_merge($loop_templates_mobile,array( 0 => "Use same as desktop"));
 for( $i=1; $i<=1; $i++ )$loop_templates_mobile=array_merge($loop_templates_mobile,array( $i => "Product Loop Template ".$i));
@@ -87,24 +53,4 @@ for( $i=1; $i<=1; $i++ )$loop_templates_mobile=array_merge($loop_templates_mobil
 $single_templates = array();
 $single_templates =  array_merge($single_templates,array( 0 => "Select en option"));
 for( $i=1; $i<=4; $i++ )$single_templates=array_merge($single_templates,array( $i => "Single Product Template ".$i));
-
-/*
-for( $i=1; $i<=20; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-{$i}.jpg" ) ) {
-        $single_templates[$i] = array(
-            'alt' => $i,
-            'img' => $TEMPLATE_URI . "single-product-templates/images/content-single-product-{$i}.jpg"
-        );
-    }
-}
-
-$single_templates_mobile = array();
-for( $i=1; $i<=20; $i++ ) {
-    if( file_exists( $TEMPLATE_DIR . "single-product-templates/images/content-single-product-mobile-{$i}.jpg" ) ) {
-        $single_templates_mobile[$i] = array(
-            'alt' => $i,
-            'img' => $TEMPLATE_URI . "single-product-templates/images/content-single-product-mobile-{$i}.jpg"
-        );
-    }
-}
 */

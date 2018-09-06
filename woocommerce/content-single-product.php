@@ -37,7 +37,7 @@ $single_classes=" fw_single_product ";
 
 ?>
 <div <?php post_class($single_classes); ?>>
-	<?php do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'] );?>
+	<?php do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'],"single-product" );?>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
