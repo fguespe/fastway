@@ -1,8 +1,8 @@
 <?php
 
-add_action('admin_head', 'my_custom_fonts');
+add_action('admin_head', 'custom_redux_panel');
 
-function my_custom_fonts() {
+function custom_redux_panel() {
   echo '<style>
     #redux-header,#redux-intro-text{
 display:none;
@@ -106,6 +106,7 @@ function fw_custom_css(){
         $css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
         $css.= "font-family:".str_replace(",", "','", $font['font-family']).";";
         $css.= "font-size:".$font['font-size'].";";
+        $css.= "font-weight:".$font['font-weight'].";";
         $css.= "line-height:".$font['line-height'].";";
         $css.= "color:".$font['color'].";";
         $css.= "text-transform:".$font['text-transform'].";";

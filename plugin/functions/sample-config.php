@@ -1314,6 +1314,7 @@ Redux::setSection( $opt_name, array(
             'title'    => 'Footer block',
             'options'  => $static_block_args,
         ),
+        /*
         array(
                 'id'       => 'shop-single-product-style',
                 'type'     => 'select',
@@ -1321,6 +1322,14 @@ Redux::setSection( $opt_name, array(
                 'options'  => $single_templates,
                 'default'  => '1'
             ),
+            */
+            array(
+            'id'       => 'shop-single-product-style',
+            'type'     => 'image_select',
+            'title'    => 'Single style',
+            'options'  => $single_templates,
+            'default'  => '1',
+        ),
 
          
 

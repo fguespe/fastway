@@ -105,6 +105,72 @@ class fw_Woo_Shortcodes {
 		
 		return ob_get_clean();
 	}
+	public static function recent_products( $atts ){
+		global $woocommerce_loop;
+		
+		$atts = shortcode_atts(array(
+			"title" 		=> '',
+			"item_style"	=> 'grid',
+			"as_widget"		=> '0',
+			"box_style"		=> '',
+			"head_style"	=> '',
+			"border_color"	=> '',
+			"is_slider"		=> '1',
+			"is_biggest"	=> 0,
+			"auto_play"		=> '0',
+			"excerpt_limit" => 10,
+			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+			"orderby"		=> 'date',
+			"order"			=> 'desc',
+			"hide_free"		=> 0,
+			"show_hidden"	=> 0
+		),$atts);
+		
+		$args = array(
+			'post_type'				=> 'product',
+			'post_status'			=> 'publish',
+			'no_found_rows'			=> 1,
+			'posts_per_page' 		=> $atts['per_page'],
+			'orderby' 				=> $atts['orderby'],
+			'order' 				=> $atts['order'],
+			'meta_query' 			=> array()
+		);
+		
+		if ( !absint($atts['show_hidden']) ) {
+            $product_visibility_term_ids = wc_get_product_visibility_term_ids();
+            $query_args['tax_query'][] = array(
+                'taxonomy' => 'product_visibility',
+                'field'    => 'term_taxonomy_id',
+                'terms'    => is_search() ? $product_visibility_term_ids['exclude-from-search'] : $product_visibility_term_ids['exclude-from-catalog'],
+                'operator' => 'NOT IN',
+            );
+            $query_args['post_parent']  = 0;
+		}
+		
+		if ( absint( $atts['hide_free'] ) ) {
+			$args['meta_query'][] = array(
+				'key'     => '_price',
+				'value'   => 0,
+				'compare' => '>',
+				'type'    => 'DECIMAL',
+			);
+		}
+		
+		ob_start();
+		
+		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
+
+		
+		if ( $products->have_posts() ) :
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
+		endif;
+		
+		wp_reset_postdata();
+		
+		
+		return ob_get_clean();
+	}
 
 	public static function sale_products( $atts ) {
 		global $woocommerce_loop, $woocommerce;
@@ -323,72 +389,7 @@ class fw_Woo_Shortcodes {
 		
 	}
 	
-	public static function recent_products( $atts ){
-		global $woocommerce_loop;
-		
-		$atts = shortcode_atts(array(
-			"title" 		=> '',
-			"item_style"	=> 'grid',
-			"as_widget"		=> '0',
-			"box_style"		=> '',
-			"head_style"	=> '',
-			"border_color"	=> '',
-			"is_slider"		=> '1',
-			"is_biggest"	=> 0,
-			"auto_play"		=> '0',
-			"excerpt_limit" => 10,
-			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
-			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
-			"orderby"		=> 'date',
-			"order"			=> 'desc',
-			"hide_free"		=> 0,
-			"show_hidden"	=> 0
-		),$atts);
-		
-		$args = array(
-			'post_type'				=> 'product',
-			'post_status'			=> 'publish',
-			'no_found_rows'			=> 1,
-			'posts_per_page' 		=> $atts['per_page'],
-			'orderby' 				=> $atts['orderby'],
-			'order' 				=> $atts['order'],
-			'meta_query' 			=> array()
-		);
-		
-		if ( !absint($atts['show_hidden']) ) {
-            $product_visibility_term_ids = wc_get_product_visibility_term_ids();
-            $query_args['tax_query'][] = array(
-                'taxonomy' => 'product_visibility',
-                'field'    => 'term_taxonomy_id',
-                'terms'    => is_search() ? $product_visibility_term_ids['exclude-from-search'] : $product_visibility_term_ids['exclude-from-catalog'],
-                'operator' => 'NOT IN',
-            );
-            $query_args['post_parent']  = 0;
-		}
-		
-		if ( absint( $atts['hide_free'] ) ) {
-			$args['meta_query'][] = array(
-				'key'     => '_price',
-				'value'   => 0,
-				'compare' => '>',
-				'type'    => 'DECIMAL',
-			);
-		}
-		
-		ob_start();
-		
-		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-
-		
-		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel.php', $atts, $products );
-		endif;
-		
-		wp_reset_postdata();
-		
-		
-		return ob_get_clean();
-	}
+	
 	public static function product_cats( $atts ){
 		$atts = shortcode_atts( array(
 			'title'			=> '',

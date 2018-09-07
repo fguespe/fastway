@@ -35,10 +35,16 @@ function loadimgs($phpprefix){
             $i=explode("-", $nombre)[0];
             $j=explode("-", $nombre)[1];
             $imgg=$TEMPLATE_URI . $imgurl.$i;
-            if(isset($j))$imgg.="-".$j;
+            $alt=$i;
+            if(isset($j)){
+                $imgg.="-".$j;
+                $alt.="-".$j;
+            }
             $imgg.=".png";
-            $miarray[$i."-".$j] = array(
-                'alt' => $i."-".$j,
+
+            
+            $miarray[$alt] = array(
+                'alt' => $alt,
                 'img' => $imgg
             );  
         }

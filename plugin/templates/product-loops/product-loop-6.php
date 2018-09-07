@@ -1,6 +1,7 @@
 <style type="text/css">
 .fw_product_loop .woocommerce-loop-product__title{
 font-size:12px !important;
+min-height:25px;;
 line-height:12px !important;
 text-align:left !important;
 text-transform:uppercase !important;
@@ -28,8 +29,8 @@ font-weight:bold;
 
 .fw_product_loop .monthly{
 color:#ff710b !important;
-font-size:17px !important;
-line-height:17px !important;
+font-size:13px !important;
+line-height:14px !important;
 font-weight:bold !important;
 text-transform:uppercase !important;
 display:block ;
@@ -69,4 +70,6 @@ margin-top:15px;
     do_action( 'woocommerce_after_shop_loop_item_title' );
 
     ?>
-    <span class="monthly"> Monthly payments of $<?php echo round($product->regular_price/12); ?></span>
+    <span class="monthly"> 6 CUOTAS SIN INTERES DE $<?php echo round($product->regular_price/6); ?></span>
+    </a>
+    

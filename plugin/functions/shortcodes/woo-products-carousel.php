@@ -15,7 +15,6 @@ $rand=generateRandomString(5);
 <div class="owl-carousel owl-theme <?=$rand?>-owl">
 	<?php 
 	while ( $products->have_posts() ) : 
-        
         $products->the_post(); 
         echo '<div class="item">';
         wc_get_template_part( 'content', 'product' ); 

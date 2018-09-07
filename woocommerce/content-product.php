@@ -31,12 +31,11 @@ $classname_desktop="fw_product_loop desktop ";
 if($redux_demo['shop-loop-mobile-product-style']>0){
 	$classname_desktop.=" d-none d-md-block ";
 }
-
 ?>
-<li <?php post_class($classname_desktop); ?>>
-	<div class=''>
+<li <?php wc_product_class($classname_desktop); ?>>
+
 		<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-product-style'],"product-loop" );?>
-	</div>
+
 	<? if($redux_demo['shop-loop-mobile-product-style']>0){?>
 		<div class='fw_product_loop mobile d-md-none'>
 			<?php do_action( 'fastway_product_loop_init', $redux_demo['shop-loop-mobile-product-style'] ,"mobile-product-looop");?>
