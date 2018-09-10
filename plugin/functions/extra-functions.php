@@ -64,8 +64,8 @@ add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2);
 
 function fw_custom_get_availability( $availability, $_product ) { // Change Out of Stock Text 
     global $redux_demo;
-    if ( ! $_product->is_in_stock() )$availability['availability'] = $redux_demo["in-stock-text"];
-    if ( $_product->is_in_stock() )$availability['availability'] =  $redux_demo["out-of-stock-text"];
+    if ( $_product->is_in_stock() )$availability['availability'] = $redux_demo["in-stock-text"];
+    if ( !$_product->is_in_stock() )$availability['availability'] =  $redux_demo["out-of-stock-text"];
     return $availability; 
 }
 
