@@ -1,23 +1,5 @@
 <?php
-/*
-Plugin Name: Custom Related Products for WooCommerce
-Description: Select your own related products instead of pulling them in by category.
-Version:     1.3
-Plugin URI:  http://scottnelle.com
-Author:      Scott Nelle
-Author URI:  http://scottnelle.com
-*/
 
-/**
- * Force related products to show if some have been selected.
- * This is required for WooCommerce 3.0, which will not display products if
- * There are no categories or tags.
- *
- * @param bool $result Whether or not we should force related posts to display.
- * @param int $product_id The ID of the current product.
- *
- * @return bool Modified value - should we force related products to display?
- */
 function fw_fw_force_display( $result, $product_id ) {
 	$related_ids = get_post_meta( $product_id, '_related_ids', true );
 	return empty( $related_ids ) ? $result : true;

@@ -250,6 +250,12 @@
         'icon'             => 'el el-home',
         'fields'           => array(
             array(
+                'id'   => 'opt-info-haha',
+                'type' => 'info',
+                'style' => 'warning',
+                'desc' => __( 'ACORDARSE DE LA DESCRIPCION SEO Y FAVICON', 'redux-framework-demo' )
+            ),
+            array(
                 'id'       => 'general-logo',
                 'type'     => 'media',
                 'url'      => true,
@@ -272,64 +278,57 @@
                 'description'=>'Also works for mobile icons in case of WPA'
 
             ),
+           
             array(
-                'id'       => 'img-404',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( '404 img', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => '/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/error.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
+                    'id'       => 'seo-desc',
+                    'type'     => 'textarea',
+                    'title'    => __( 'SEO Description', 'redux-framework-demo' ),
+                    'default'  => '',
+                    'description' => 'Max 150 characters',
             ),
             array(
-            'id'       => 'container-main',
-            'type'     => 'image_select',
-            'title'    => 'Main Layout',
-            'subtitle' => 'Main layout: wide or boxed',
-            'desc'     => '',
-            'options'  => array(
-                'container-fluid' => array(
-                    'alt' => 'wide',
-                    'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                'id'       => 'container-main',
+                'type'     => 'image_select',
+                'title'    => 'Main Layout',
+                'subtitle' => 'Main layout: wide or boxed',
+                'desc'     => '',
+                'options'  => array(
+                    'container-fluid' => array(
+                        'alt' => 'wide',
+                        'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                    ),
+                    'container' => array(
+                        'alt' => 'boxed',
+                        'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                    )
                 ),
-                'container' => array(
-                    'alt' => 'boxed',
-                    'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
-                )
-            ),
-            'default'  => 'container'
+                'default'  => 'container'
             ),
             array(
-            'id'       => 'layout-main',
-            'type'     => 'image_select',
-            'title'    => 'Sidebars Layout',
-            'subtitle' => '',
-            'desc'     => '',
-            'options'  => array(
-                'full' => array(
-                    'alt' => 'full_width',
-                    'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                'id'       => 'layout-main',
+                'type'     => 'image_select',
+                'title'    => 'Sidebars Layout',
+                'subtitle' => '',
+                'desc'     => '',
+                'options'  => array(
+                    'full' => array(
+                        'alt' => 'full_width',
+                        'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                    ),
+                    'left' => array(
+                        'alt' => 'left_sidebar',
+                        'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                    ),
+                    'right' => array(
+                        'alt' => 'right_sidebar',
+                        'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                    ),
+                    'both' => array(
+                        'alt' => 'all_sidebar',
+                        'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                    ),
                 ),
-                'left' => array(
-                    'alt' => 'left_sidebar',
-                    'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
-                ),
-                'right' => array(
-                    'alt' => 'right_sidebar',
-                    'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
-                ),
-                'both' => array(
-                    'alt' => 'all_sidebar',
-                    'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
-                ),
-            ),
-            'default'  => 'full',
-             
-
+                'default'  => 'full',
         ),
             
             
@@ -957,12 +956,7 @@
                 'style' => 'warning',
                 'desc' => __( '[fw_extras_short type="address" text="Ruta panamericana KM 49,5. Complejo concord - Edificio Los almendros 122 1° Piso " size="15" icon_color="#97AABA" text_color="#97AABA"]', 'redux-framework-demo' )
             ),
-            array(
-                'id'   => 'opt-info-field1',
-                'type' => 'info',
-                'style' => 'warning',
-                'desc' => __( 'ACORDARSE DE LA DESCRIPCION SEO Y FAVICON', 'redux-framework-demo' )
-            ),
+            
             array(
                 'id'   => 'opt-info-field45',
                 'type' => 'info',
@@ -1073,25 +1067,49 @@
                 'title'    => __( 'Analyitics ID', 'redux-framework-demo' ),
                 'default'  => '',
             ),
-            array(
-                    'id'       => 'seo-desc',
-                    'type'     => 'textarea',
-                    'title'    => __( 'SEO Description', 'redux-framework-demo' ),
-                    'default'  => '',
-                    'description' => 'Max 150 characters',
-            ),
+            
             array(
                     'id'       => 'header-insert',
                     'type'     => 'textarea',
-                    'title'    => __( 'Insert Scripts Footer', 'redux-framework-demo' ),
+                    'title'    => __( 'Insert Scripts Header', 'redux-framework-demo' ),
                     'default'  => ' ',
             ),
             array(
                     'id'       => 'footer-insert',
                     'type'     => 'textarea',
-                    'title'    => __( 'Insert Scripts Header', 'redux-framework-demo' ),
+                    'title'    => __( 'Insert Scripts Footer', 'redux-framework-demo' ),
                     'default'  => '',
-            )
+            ),
+            array(
+                'id'       => 'img-404',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( '404 img', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'default'  => array( 'url' => '/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/error.png' ),
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
+            array(
+                'id'       => 'maintainance-mode',
+                'type'     => 'switch',
+                'title'    => 'Maintainance Mode',
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'maintainance-mode-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Maintainance Mode', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/mantenimiento.png"),
+            ),
+
             
 
            
@@ -1152,7 +1170,7 @@ Redux::setSection( $opt_name, array(
         ),
         array(
             'id'       => 'checkout-msg',
-            'type'     => 'text',
+            'type'     => 'textarea',
             'title'    => __( 'Check out message', 'redux-framework-demo' ),
             'default'  => '',
             'description'=>'Display a messsage/notice before checkout',
@@ -1199,7 +1217,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'purchases-enabled',
             'type'     => 'switch',
-            'title'    => 'Purchaes',
+            'title'    => 'Purchases',
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',

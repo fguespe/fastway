@@ -1,12 +1,9 @@
 <?php
 global $single_desktop;
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 10);
-function wc_remove_all_quantity_fields( $return, $product ) {
-    return true;
-}
-add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+//add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 10);
+
 ?>
 <style type="text/css">
 	
