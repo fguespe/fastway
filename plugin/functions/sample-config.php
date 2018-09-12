@@ -1188,13 +1188,22 @@ Redux::setSection( $opt_name, array(
             'default'  => 'modal'
         ),
         array(
-            'id'       => 'catalog-mode',
+            'id'       => 'prices-enabled',
             'type'     => 'switch',
-            'title'    => 'Catalog Mode',
-            'default'  => 0,
+            'title'    => 'Prices',
+            'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
-            'description' => 'hide prices and add to car button'
+            'description' => 'hide prices '
+        ),
+        array(
+            'id'       => 'purchases-enabled',
+            'type'     => 'switch',
+            'title'    => 'Purchaes',
+            'default'  => 1,
+            'on'       => 'Enabled',
+            'off'      => 'Disabled',
+            'description' => 'diable add to car button'
         ),
         array(
             'id'       => 'sold-alone',

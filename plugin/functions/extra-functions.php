@@ -31,12 +31,21 @@ background:white;
 add_action( 'init', 'fw_otherwoo_options');
 function fw_otherwoo_options(){
     global $redux_demo;
-    if($redux_demo["catalog-mode"]){
-        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );   
+
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30);
+
+    if(!$redux_demo["prices-enabled"]){
         add_filter( 'woocommerce_get_price_html', function( $price ) {
             return '';
         } );
+    }
+    if(!$redux_demo["purchases-enabled"]){
+        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart' );   
+        error_log("entra");
     }
     if($redux_demo["sold-alone"]){
         add_filter( 'woocommerce_add_to_cart_redirect', 'my_custom_add_to_cart_redirect' );
