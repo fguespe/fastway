@@ -987,7 +987,38 @@
                 'style' => 'success',
                 'desc' => __( 'Row classes => .two_mobile_columns (50%) | three_mobile_columns (33%) | four_mobile_columns (25%)', 'redux-framework-demo' )
             ),
-            
+            array(
+                'id'       => 'maintainance-mode',
+                'type'     => 'switch',
+                'title'    => 'Maintainance Mode',
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'popup-mode',
+                'type'     => 'switch',
+                'title'    => 'Popup',
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'maintainance-mode-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Maintainance Mode', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/mantenimiento.png"),
+            ),
+            array(
+                'id'       => 'popup-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Simple Popup Image', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/mantenimiento.png"),
+            ),
             array(
                 'id'       => 'short-fw_companyname',
                 'type'     => 'text',
@@ -1093,22 +1124,7 @@
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
                 //)
             ),
-            array(
-                'id'       => 'maintainance-mode',
-                'type'     => 'switch',
-                'title'    => 'Maintainance Mode',
-                'default'  => 0,
-                'on'       => 'Enabled',
-                'off'      => 'Disabled',
-            ),
-            array(
-                'id'       => 'maintainance-mode-img',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'Maintainance Mode', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/mantenimiento.png"),
-            ),
+            
 
             
 

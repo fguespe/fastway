@@ -40,7 +40,17 @@ function child_manage_woocommerce_styles() {
  
 }
 
+if($redux_demo["maintenance-mode"]){
 
+    add_action('get_header', 'fw_maintenance_mode');
+}
+
+function fw_maintenance_mode(){
+    global $redux_demo;
+    if(!current_user_can('administrator') ){
+        wp_die('<div id="mantenimiento" style="width:100% !important; text-align:center;"><img align="middle" src="'.$redux_demo["maintainance-mode-img"]['url'].'" style="width:100%; height:auto !important;"></div>');
+    }
+}
 
 add_action('admin_head', 'custom_redux_panel');
 
