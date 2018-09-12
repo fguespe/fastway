@@ -266,9 +266,10 @@
                 'id'       => 'general-favi',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Faivon', 'redux-framework-demo' ),
+                'title'    => __( 'Favicon', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 'default'  => array( 'url' => "/wp-content/themes/".wp_get_theme()->parent_theme."/assets/img/favi.png"),
+                'description'=>'Also works for mobile icons in case of WPA'
 
             ),
             array(
@@ -387,7 +388,7 @@
         array(
             'id'       => 'header-width',
             'type'     => 'button_set',
-            'title'    => 'Header width',
+            'title'    => 'Header Width',
             'options'  => array(
                 'container' => 'Container',
                 'container-fluid'  => 'Big Container'
@@ -409,21 +410,22 @@
             ),
         array(
             'id'       => 'header-style',
-            'type'     => 'image_select',
-            'title'    => 'Header style',
+            'type'     => 'select',//'type'     => 'image_select',
+            'title'    => esc_html__( 'Header Template', 'fastway' ),
             'options'  => $theme_headers,
             'default'  => '1-1',
+            'description'=>'See all templates <a target="_blank" href="http://mvp/templates/#header">HEADERS</a>'
         ),
         array(
             'id'       => 'header-headerwidget-start',
             'type'     => 'section',
-            'title'    => esc_html__( 'header headerwidget', 'fastway' ),
+            'title'    => esc_html__( 'Header Widget', 'fastway' ),
             'indent'   => true,
         ),
         array(
             'id'       => 'header-headerwidget-switch',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Show header headerwidget', 'fastway' ),
+            'title'    => esc_html__( 'Show Header Widget', 'fastway' ),
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -434,7 +436,7 @@
             'mode'       => 'php',
             'theme'      => 'chrome',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget html', 'fastway' ),
+            'title'    => esc_html__( 'Header Widget HTML', 'fastway' ),
             'default'  => '',
         ),
         array(
@@ -445,7 +447,7 @@
             'id'        => 'css_editor-header-headerwidget',
             'type'      => 'ace_editor',
             'required' => array( 'header-headerwidget-switch', '=', '1' ),
-            'title'    => esc_html__( 'header headerwidget css', 'fastway' ),
+            'title'    => esc_html__( 'Header Widget CSS', 'fastway' ),
             'default'  => '',
             'mode'     => 'css',
             'theme'    => 'monokai',
@@ -480,13 +482,15 @@
             'on'       => 'Enabled',
             'off'      => 'Disabled',
             ),
+            
             array(
             'id'       => 'header-mobile-style',
-            'type'     => 'image_select',
-            'title'    => 'Mobile Header Style',
+            'type'     => 'select',//'type'     => 'image_select',
+            'title'    => esc_html__( 'Header Template', 'fastway' ),
             'options'  => $theme_headers_mobile,
-            'full_width'    => true,
+            //'full_width'    => true,
             'default'  => '1',
+            'description'=>'See all templates <a target="_blank" href="http://mvp/templates/#mobile-header">MOBILE HEADERS</a>'
             ),
             array(
                 'id'       => 'mobile-redirect',
@@ -521,7 +525,7 @@
         array(
             'id'       => 'footer-width',
             'type'     => 'button_set',
-            'title'    => 'Footer width',
+            'title'    => 'Footer Width',
             'options'  => array(
                 'container' => 'Container',
                 'container-fluid'  => 'Big Container'
@@ -531,19 +535,19 @@
         array(
             'id'       => 'footer-stblock',
             'type'     => 'select',
-            'title'    => 'Static block',
+            'title'    => 'Static Block',
             'options'  => $static_block_args
         ),
         array(
             'id'       => 'footer-copyright-start',
             'type'     => 'section',
-            'title'    => esc_html__( 'Footer copyright', 'fastway' ),
+            'title'    => esc_html__( 'Footer Copyright', 'fastway' ),
             'indent'   => true,
         ),
         array(
             'id'       => 'footer-copyright-switch',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Show Footer copyright', 'fastway' ),
+            'title'    => esc_html__( 'Show Footer Copyright', 'fastway' ),
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -555,7 +559,7 @@
             'theme'      => 'chrome',
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
-            'title'    => esc_html__( 'Footer copyright text', 'fastway' ),
+            'title'    => esc_html__( 'Footer Copyright HTML', 'fastway' ),
             'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="/wp-content/themes/'.wp_get_theme()->parent_theme.'/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
         ),
         array(
@@ -569,7 +573,7 @@
             'theme'    => 'monokai',
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
-            'title'    => esc_html__( 'Footer copyright text', 'fastway' ),
+            'title'    => __( 'Footer Copyright CSS', 'fastway' ),
             'default'  => '#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
         ),
         array(
@@ -589,14 +593,13 @@
     Redux::setSection( $opt_name, array(
         'title'  => __( 'Typography', 'redux-framework-demo' ),
         'id'     => 'typography',
-        'desc'   => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
         'icon'   => 'el el-font',
         'fields' => array(
             array(
                 'id'       => 'opt-typography-h1',
                 'type'     => 'typography',
                 'title'    => __( 'H1 Font', 'redux-framework-demo' ),
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'google'   => true,
                 'all_styles'=>true,
                 'text-transform'   => true,
@@ -614,7 +617,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'H2 Font', 'redux-framework-demo' ),
                 'text-transform'   => true,
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'google'   => true,
                 'all_styles'=>true,
                 'default'  => array(
@@ -629,7 +632,7 @@
                 'id'       => 'opt-typography-h3',
                 'type'     => 'typography',
                 'title'    => __( 'H3 Font', 'redux-framework-demo' ),
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
                 'all_styles'=>true,
@@ -645,7 +648,7 @@
                 'id'       => 'opt-typography-h4',
                 'type'     => 'typography',
                 'title'    => __( 'H4 Font', 'redux-framework-demo' ),
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
                 'all_styles'=>true,
@@ -661,7 +664,7 @@
                 'id'       => 'opt-typography-div',
                 'type'     => 'typography',
                 'title'    => __( 'div Font', 'redux-framework-demo' ),
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
                 'all_styles'=>true,
@@ -677,7 +680,7 @@
                 'id'       => 'opt-typography-p',
                 'type'     => 'typography',
                 'title'    => __( 'p Font', 'redux-framework-demo' ),
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'text-transform'   => true,
                 'google'   => true,
                 'all_styles'=>true,
@@ -694,7 +697,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'span Font', 'redux-framework-demo' ),
                 'text-transform'   => true,
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'google'   => true,
                 'all_styles'=>true,
                 'default'  => array(
@@ -710,7 +713,7 @@
                 'type'     => 'typography',
                 'title'    => __( 'a Font', 'redux-framework-demo' ),
                 'text-transform'   => true,
-                'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Select a font style.', 'redux-framework-demo' ),
                 'google'   => true,
                 'all_styles'=>true,
                 'default'  => array(
@@ -741,7 +744,7 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Main Color', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a color.', 'redux-framework-demo' ),
                 'default'  => '#000000',
         ),
        array(
@@ -749,7 +752,7 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Secondary Color', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a color.', 'redux-framework-demo' ),
                 'default'  => '#000000',
         ),
        array(
@@ -757,7 +760,7 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Top Header', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a color.', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
         ),
        array(
@@ -765,7 +768,7 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Top Header Bannner Background', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a color.', 'redux-framework-demo' ),
                 'default'  => '#ffffff',
         ),
        array(
@@ -773,7 +776,7 @@
                 'type'     => 'color',
                 'output'   => array( '.site-title' ),
                 'title'    => __( 'Icon Header', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a title color for the theme (default: #000).', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pick a color.', 'redux-framework-demo' ),
                 'default'  => '#000000',
         ),
         array(
@@ -887,6 +890,14 @@
             'full_width'    => true
         ),
         array(
+            'id'        => 'css_editor-sidebarcats',
+            'type'      => 'ace_editor',
+            'title'     => 'CSS Category Sidebar',
+            'mode'      => 'css',
+            'theme'    => 'monokai',
+            'full_width'    => true
+        ),
+        array(
             'id'   => 'editor-page-divide-1',
             'type' => 'divide'
         ),
@@ -923,7 +934,7 @@
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Extras', 'redux-framework-demo' ),
         'id'               => 'basic',
-        'desc'             => __( 'Algunos tips y opciones generales', 'redux-framework-demo' ),
+        'desc'             => __( 'Extra info and fields', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-home',
         'fields'           => array(
@@ -1198,7 +1209,7 @@ Redux::setSection( $opt_name, array(
             'id'       => 'shop-layout',
             'type'     => 'image_select',
             'title'    => esc_html__( 'Shop Pages Layout', 'fastway' ),
-            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'fastway' ),
+            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar, right slidebar or both', 'fastway' ),
             'desc'     => '',
             'options'  => array(
                 'full' => array(
@@ -1256,11 +1267,12 @@ Redux::setSection( $opt_name, array(
             'step'    => '1',
             'max'     => '12',
         ),
+
         array(
                 'id'       => 'shop-loop-product-style',
-                'type'     => 'image_select',
-                'title'    => esc_html__( 'Catalog Item Style', 'fastway' ),
-                'full_width'    => true,
+                'type'     => 'select',//'type'     => 'image_select',
+                'title'    => esc_html__( 'Catalog Loop Style', 'fastway' ),
+                //'full_width'    => true,
                 'options'  => $loop_templates,
                 'default'  => '1'
             ),
@@ -1283,7 +1295,7 @@ Redux::setSection( $opt_name, array(
             'id'       => 'product-page-layout',
             'type'     => 'image_select',
             'title'    => esc_html__( 'Product Page Layout', 'fastway' ),
-            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar or right slidebar.', 'fastway' ),
+            'subtitle' => esc_html__( 'Main layout: none slidebar, left slidebar ,right slidebar or both', 'fastway' ),
             'desc'     => '',
             'options'  => array(
                 'full' => array(
@@ -1311,22 +1323,14 @@ Redux::setSection( $opt_name, array(
         array(
             'id'       => 'product-page-footer-block',
             'type'     => 'select',
-            'title'    => 'Footer block',
+            'title'    => 'Footer Block',
             'options'  => $static_block_args,
         ),
-        /*
-        array(
-                'id'       => 'shop-single-product-style',
-                'type'     => 'select',
-                'title'    => esc_html__( 'Single Product Template', 'fastway' ),
-                'options'  => $single_templates,
-                'default'  => '1'
-            ),
-            */
+       
             array(
             'id'       => 'shop-single-product-style',
-            'type'     => 'image_select',
-            'title'    => 'Single style',
+            'type'     => 'select',//'type'     => 'image_select',
+            'title'    => 'Single Product Template',
             'options'  => $single_templates,
             'default'  => '1',
         ),

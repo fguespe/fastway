@@ -118,7 +118,8 @@ function fw_custom_css(){
         $css.=  $redux_demo['css_editor-header']; 
         $css.=  $redux_demo['css_editor-body']; 
         $css.=  $redux_demo['css_editor-footer']; 
-        $css.=  $redux_demo['css_editor-loop']; 
+        $css.=  $redux_demo['css_editor-loop'];  
+        $css.=  $redux_demo['css_editor-sidebarcats']; 
         $css.=  $redux_demo['css_editor-single']; 
         $css.=  $redux_demo['css_editor-mobile']; 
     }

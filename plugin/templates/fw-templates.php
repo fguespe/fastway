@@ -12,11 +12,11 @@ if( !function_exists('fw_get_template_part') ){
     }
 }
 
-$theme_headers=loadimgs("header");
-$theme_headers_mobile=loadimgs("mobile-header");
-$loop_templates=loadimgs("product-loop");
-$loop_templates_mobile=loadimgs("mobile-product-loop");
-$single_templates=loadimgs("single-product");
+$theme_headers=loadnoimgs("header");
+$theme_headers_mobile=loadnoimgs("mobile-header");
+$loop_templates=loadnoimgs("product-loop");
+$loop_templates_mobile=loadnoimgs("mobile-product-loop",true);
+$single_templates=loadnoimgs("single-product");
 
 
 
@@ -49,6 +49,30 @@ function loadimgs($phpprefix){
             );  
         }
     }
+
+    return $miarray;
+}
+function loadnoimgs($phpprefix,$usesame=false){
+    global $TEMPLATE_DIR,$TEMPLATE_URI;
+    $lavar=$phpprefix."s";
+    $dir = new DirectoryIterator($TEMPLATE_DIR .$lavar);
+    $miarray=array();
+    if($usesame)$miarray[0]= "Use same as desktop";
+    
+    foreach ($dir as $fileinfo) {
+        if (!$fileinfo->isDot()) {
+            if(!strpos($fileinfo->getFilename(),".php"))continue;
+            $nombre= str_replace($phpprefix."-", "", str_replace(".php", "", $fileinfo->getFilename()));
+            $i=explode("-", $nombre)[0];
+            $j=explode("-", $nombre)[1];
+            $alt=$i;
+            if(isset($j))$alt.="-".$j;
+            
+            $miarray[$alt] =$phpprefix."-".$alt;
+        }
+    }
+    
+
     return $miarray;
 }
 /*
