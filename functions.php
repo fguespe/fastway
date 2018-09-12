@@ -72,7 +72,6 @@ require get_template_directory() . '/plugin/functions/fw-navwalker.php';
     require get_template_directory() . '/plugin/functions/woocommerce_custom_related_products.php';
     require get_template_directory() . '/plugin/functions/tab_descargas.php';
     require get_template_directory() . '/plugin/functions/tab_video.php';
-    require get_template_directory() . '/plugin/functions/admin_options.php';
 //}
 
 
@@ -112,8 +111,8 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/i
 }
 global $redux_demo;
 
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/plugin/functions/sample-config.php' );
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
 }
 function template_sredirect() {
         global $redux_demo;
