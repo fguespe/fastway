@@ -494,19 +494,13 @@
             array(
                 'id'       => 'mobile-redirect',
                 'type'     => 'text',
-                'title'    => __( 'Company Name', 'redux-framework-demo' ),
+                'title'    => __( 'Redirect Mobile', 'redux-framework-demo' ),
                 'desc'     => __( '/permalink', 'redux-framework-demo' ),
                 'default'  => '',
+                'description'=>'Redirect to other homepage in mobile'
             ),
            
-            array(
-                'id'       => 'shop-loop-mobile-product-style',
-                'type'     => 'select',
-                'title'    => 'Mobile Loop templates',
-                'options'  => $loop_templates_mobile,
-                'default' => '0',
-
-            ),
+            
           
            
         )
@@ -1152,6 +1146,7 @@
     }
 
 
+if(fw_checkPlugin('woocommerce/woocommerce.php')){
 
 Redux::setSection( $opt_name, array(
     'title' => esc_html__( 'Woocommerce', 'fastway' ),
@@ -1184,6 +1179,14 @@ Redux::setSection( $opt_name, array(
             ),
             'default'  => 'container'
         ),
+        array(
+                'id'       => 'shop-loop-mobile-product-style',
+                'type'     => 'select',
+                'title'    => 'Mobile Loop templates',
+                'options'  => $loop_templates_mobile,
+                'default' => '0',
+
+            ),
         array(
             'id'       => 'checkout-msg',
             'type'     => 'textarea',
@@ -1383,6 +1386,7 @@ Redux::setSection( $opt_name, array(
       
     ),
 ) );
+}
     /*
      * <--- END SECTIONS
      */
