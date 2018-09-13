@@ -262,7 +262,7 @@
                 'title'    => __( 'Logo', 'redux-framework-demo' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'default'  => array( 'url' => get_template_directory_uri()."/assets/img/fastway.png"),
+                'default'  => array( 'url' => get_template_directory_uri()."/assets/img/logo.png"),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
