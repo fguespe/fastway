@@ -5,6 +5,7 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
     add_shortcode('fw_shopping_cart', 'fw_shoppingCart');
 
     function fw_shoppingCart($style=""){
+      
         if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
         global $woocommerce,$redux_demo;
         if(empty($style))$style=$redux_demo['cart-style'];

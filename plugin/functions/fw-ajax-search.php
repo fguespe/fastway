@@ -58,6 +58,7 @@ add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
 
 
 if( !function_exists( 'fw_search_form' ) ) {
+
     function fw_search_form($numero=0){
         $rand_id = wp_rand();
         $check_woo = fw_checkPlugin('woocommerce/woocommerce.php');
