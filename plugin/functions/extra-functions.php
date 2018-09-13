@@ -285,7 +285,7 @@ if( !function_exists('fastway_getLogo') ) {
                     $logo_arg['height'] = "auto";
                 } else {
                     //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.svg" );
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
                     $logo_arg['width'] = $redux_demo['logo-width'];
                     $logo_arg['height'] = "auto";
                 }

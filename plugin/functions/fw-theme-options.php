@@ -400,12 +400,6 @@
                 'url'      => true,
                 'title'    => __( 'Top Header Img', 'redux-framework-demo' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                //'default'  => array( 'url' => get_template_directory_uri() . "/assets/img/logo.svg"),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
         array(
             'id'       => 'header-style',
@@ -553,7 +547,7 @@
                 
             'required' => array( 'footer-copyright-switch', '=', '1' ),
             'title'    => esc_html__( 'Footer Copyright HTML', 'fastway' ),
-            'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
+            'default'  => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
         ),
         array(
             'id'   => 'editor-page-divide-1',
