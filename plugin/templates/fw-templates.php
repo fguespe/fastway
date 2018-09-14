@@ -12,11 +12,11 @@ if( !function_exists('fw_get_template_part') ){
     }
 }
 
-$theme_headers=loadimgs("header");
-$theme_headers_mobile=loadimgs("mobile-header");
-$loop_templates=loadimgs("product-loop");
-$loop_templates_mobile=loadimgs("mobile-product-loop",true);
-$single_templates=loadimgs("single-product");
+$theme_headers=loadnoimgs("header");
+$theme_headers_mobile=loadnoimgs("mobile-header");
+$loop_templates=loadnoimgs("product-loop");
+$loop_templates_mobile=loadnoimgs("mobile-product-loop",true);
+$single_templates=loadnoimgs("single-product");
 
 
 

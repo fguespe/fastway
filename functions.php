@@ -111,7 +111,7 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/i
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
 }
 global $redux_demo;
-error_log($redux_demo['shop-loop-product-style']);
+
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' ) ) {
     require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
 }
