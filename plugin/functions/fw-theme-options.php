@@ -374,7 +374,7 @@
             'type'     => 'text',
             'title'    => __( 'Logo width', 'redux-framework-demo' ),
             'desc'     => __( 'Header Padding', 'redux-framework-demo' ),
-            'default'  => "250",
+            'default'  => "180",
         ),
         array(
             'id'       => 'top-header',
@@ -407,7 +407,7 @@
             'title'    => esc_html__( 'Header Template', 'fastway' ),
             'options'  => $theme_headers,
             'default'  => '1-1',
-            'description'=>'See all templates <a target="_blank" href="http://mvp/templates/#header">HEADERS</a>'
+            'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>'
         ),
         array(
             'id'       => 'header-headerwidget-start',
@@ -483,7 +483,7 @@
             'options'  => $theme_headers_mobile,
             //'full_width'    => true,
             'default'  => '1',
-            'description'=>'See all templates <a target="_blank" href="http://mvp/templates/#mobile-header">MOBILE HEADERS</a>'
+            'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>'
             ),
             array(
                 'id'       => 'mobile-redirect',
@@ -593,7 +593,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '40px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -610,7 +610,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '32px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -626,7 +626,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '28px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -642,7 +642,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '24px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -658,7 +658,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -674,7 +674,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -690,7 +690,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -706,7 +706,7 @@
                 'default'  => array(
                     'color'       => 'black',
                     'font-size'   => '14px',
-                    'font-family' => 'Arial,Helvetica,sans-serif',
+                    'font-family' => 'Rubik',
                     'font-weight' => 'Normal',
                     'text-transform'   => 'none',
                 ),
@@ -1180,6 +1180,8 @@ Redux::setSection( $opt_name, array(
                 'options'  => $loop_templates_mobile,
                 'default' => '0',
 
+            'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>'
+
             ),
         array(
             'id'       => 'checkout-msg',
@@ -1314,7 +1316,9 @@ Redux::setSection( $opt_name, array(
                 'title'    => esc_html__( 'Catalog Loop Style', 'fastway' ),
                 //'full_width'    => true,
                 'options'  => $loop_templates,
-                'default'  => '1'
+                'default'  => '1',
+
+            'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>'
             ),
         
 
@@ -1373,6 +1377,8 @@ Redux::setSection( $opt_name, array(
             'title'    => 'Single Product Template',
             'options'  => $single_templates,
             'default'  => '1',
+
+            'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>'
         ),
 
          
