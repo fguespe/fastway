@@ -49,6 +49,8 @@ require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
 
+
+
 require get_template_directory() . '/plugin/functions/extra-functions.php';
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/templates/fw-templates.php';
@@ -110,10 +112,13 @@ register_nav_menus( array(
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
 }
+
+require get_template_directory() . '/inc/kirki/kirki.php';
+require get_template_directory() . '/inc/kirki.php';
 global $redux_demo;
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
+    //require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
 }
 function template_sredirect() {
         global $redux_demo;
