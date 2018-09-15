@@ -138,10 +138,7 @@ function get_topbar(){
 }
 
 function fastway_getWidgetHeaderText(){
-    
-    if(fw_theme_mod('header-headerwidget-switch')){
-      echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text').'<style>'.fw_theme_mod('css_editor-header-headerwidget').'</style>' )));
-    }
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text').'<style>'.fw_theme_mod('css_editor-header-headerwidget').'</style>' )));
 }
 function fw_companyname() {
     

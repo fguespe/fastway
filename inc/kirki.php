@@ -282,7 +282,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'headerwidget-html',
+	'settings'    => 'header-headerwidget-text',
 	'label'       => __( 'Header Widget HTML', 'textdomain' ),
 	'description'       => __( 'Not all headers have Header Widget', 'textdomain' ),
 	'section'     => 'section_header',
@@ -984,6 +984,8 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+if(fw_checkPlugin('woocommerce/woocommerce.php')){
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-loop',
@@ -1014,6 +1016,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-mobile',

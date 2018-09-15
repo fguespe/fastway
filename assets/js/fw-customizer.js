@@ -4,6 +4,11 @@ wp.customize( 'css_editor-header', function( value ) {
     jQuery( '#css_editor-header' ).text(newval );
   } );
 } );
+wp.customize( 'css_editor-body', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_editor-body' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor-footer', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-footer' ).text(newval );
