@@ -8,7 +8,6 @@
 ?>
 
 <?php
-error_log("jas");
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = fw_theme_mod('layout-main');
 if(fw_checkPlugin("woocommerce/woocommerce.php")){

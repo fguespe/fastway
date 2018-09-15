@@ -24,3 +24,8 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 add_action( 'wp_enqueue_scripts', 'fw_scripts' );
 
 
+function admincustojs(){
+	wp_enqueue_script( 'custo-scripts', get_template_directory_uri() . '/assets/js/fw-customizer.js', array(), true );
+
+}
+add_action( 'customize_preview_init', 'admincustojs' );

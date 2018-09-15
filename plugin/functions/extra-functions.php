@@ -70,7 +70,8 @@ function fw_custom_css(){
     $tipos=array("p","span","div","a","h4","h3","h2","h1");
     //Fonts comunes
     foreach ($tipos as $key) {
-        $nombre='opt-typography-'.$key;
+        if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
+        else $nombre='opt-typography-'.$key;
         if(empty(fw_theme_mod($nombre)))continue;
         $font=fw_theme_mod($nombre);
    
@@ -84,6 +85,7 @@ function fw_custom_css(){
         $css.= "text-align:".$font['text-align'].";";
         $css.= "}";   
     }
+    /*
     if(fw_theme_mod('css-onoff')=="on"){
         $css.=  fw_theme_mod('css_editor-general'); 
         $css.=  fw_theme_mod('css_editor-header'); 
@@ -93,7 +95,7 @@ function fw_custom_css(){
         $css.=  fw_theme_mod('css_editor-sidebarcats'); 
         $css.=  fw_theme_mod('css_editor-single'); 
         $css.=  fw_theme_mod('css_editor-mobile'); 
-    }
+    }*/
     if(is_child_theme()){
         $files=glob(get_stylesheet_directory().'/fonts/*.otf');
         $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));

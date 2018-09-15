@@ -97,8 +97,8 @@ p:empty{
     width:100%;
     text-align:center;
 }
-header i,header span{
-color:var(--icon-header) !important;
+header i,header span,.fw-searchform .input-group-append .btn{
+  color:var(--icon-header);
 }
 
 
@@ -283,7 +283,6 @@ line-height:25px ;
 }
 /*SEARCH*/
 .fw-searchform .input-group-append .btn{
-color:var(--icon-header);
 background-color:white;
 border-color:lightgrey;
 }
