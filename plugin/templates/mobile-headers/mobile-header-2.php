@@ -1,5 +1,5 @@
 <?php 
-global $header_middle_mobile,$redux_demo;
+global $header_middle_mobile;
 ?>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
     <div class="col-2 align-items-center">
@@ -23,7 +23,7 @@ global $header_middle_mobile,$redux_demo;
                   'walker'          => new fw_Navwalker('mobile-1'),
                 )
             ); 
-            if($redux_demo['fw-quicklinks'])quicklinks();
+            if(fw_theme_mod('fw-quicklinks'))quicklinks();
             ?>
             </nav>
           </div>

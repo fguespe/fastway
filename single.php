@@ -6,8 +6,7 @@
  */
 
 get_header();
-global $redux_demo;
-$container   = $redux_demo['container-main'];
+$container   = fw_theme_mod('container-main');
 ?>
 
 <div class="wrapper" id="single-wrapper">

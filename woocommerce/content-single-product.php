@@ -19,8 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-global $redux_demo;
-//do_action( 'fastway_product_single_init_mobile', $redux_demo['shop-single-mobile-product-style'] );
+//do_action( 'fastway_product_single_init_mobile', $redusx_demo['shop-single-mobile-product-style'] );
 
 /**
  * Hook Woocommerce_before_single_product.
@@ -37,7 +36,7 @@ $single_classes=" fw_single_product ";
 
 ?>
 <div <?php post_class($single_classes); ?>>
-	<?php do_action( 'fastway_product_single_init', $redux_demo['shop-single-product-style'],"single-product" );?>
+	<?php do_action( 'fastway_product_single_init', fw_theme_mod('shop-single-product-style'),"single-product" );?>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

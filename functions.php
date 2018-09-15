@@ -1,4 +1,76 @@
 <?php
+
+$my_theme_defaults = array(
+'general-logo'=>get_template_directory_uri()."/assets/img/logo.png",
+'general-favi'=>get_template_directory_uri()."/assets/img/favi.png",
+'container-main'=>'container',
+'layout-main'=>'full',
+'sticky-menu'=>array('fw_header_middle', 'fw_header_bottom'),
+'header-padding'=>1,
+'logo-width'=>180,
+'header-width'=>'container',
+'header-style'=>'1-1',
+'header-mobile-style'=>'1',
+'footer-width'=>'container',
+'footer-copyright-switch'=>1,
+'footer-copyright-text'=>'<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
+'css_editor-footer-copywright'=>'#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
+'opt-typography-h1'=>array(
+        'font-family'    => 'Rubik',
+        'variant'        => 'regular',
+        'font-size'      => '40px',
+        'line-height'    => '40px',
+        'letter-spacing' => '0',
+        'text-transform' => 'none',
+        'text-align'     => 'left',
+    ),
+'opt-typography-h2'=>array(
+        'font-family'    => 'Rubik',
+        'variant'        => 'regular',
+        'font-size'      => '32px',
+        'line-height'    => '32px',
+        'letter-spacing' => '0',
+        'text-transform' => 'none',
+        'text-align'     => 'left',
+    ),
+'opt-typography-h3'=> array(
+        'font-family'    => 'Rubik',
+        'variant'        => 'regular',
+        'font-size'      => '28px',
+        'line-height'    => '28px',
+        'letter-spacing' => '0',
+        'text-transform' => 'none',
+        'text-align'     => 'left',
+    ),
+'opt-typography-h4'=>array(
+        'font-family'    => 'Rubik',
+        'variant'        => 'regular',
+        'font-size'      => '24px',
+        'line-height'    => '24px',
+        'letter-spacing' => '0',
+        'color'          => '#333333',
+        'text-transform' => 'none',
+        'text-align'     => 'left',
+    ),
+'opt-typography-body'=>array(
+        'font-family'    => 'Rubik',
+        'variant'        => 'regular',
+        'font-size'      => '14px',
+        'line-height'    => '14px',
+        'letter-spacing' => '0',
+        'color'          => '#333333',
+        'text-transform' => 'none',
+        'text-align'     => 'left',
+    ),
+'maintainance-mode-img'=>get_template_directory_uri()."/assets/img/mantenimiento.png",
+'img-404'=>get_template_directory_uri().'/assets/img/error.png',
+);
+
+
+function fw_theme_mod( $name ) {
+    global $my_theme_defaults;
+    return get_theme_mod( $name, $my_theme_defaults[ $name ] );
+}
 if ( !function_exists( 'write_log' ) ):
 function write_log ( $log )  {
     if ( true === WP_DEBUG ) {
@@ -105,24 +177,30 @@ function init_hooks(){
 
 load_theme_textdomain( 'fastway', get_template_directory() . '/languages' );
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'fastway' ),
-	'vertical' => __( 'Vertical Menu', 'fastway' ),
-	'mobile' => __( 'Mobile Menu', 'fastway' ),
+    'primary' => __( 'Primary Menu', 'fastway' ),
+    'vertical' => __( 'Vertical Menu', 'fastway' ),
+    'mobile' => __( 'Mobile Menu', 'fastway' ),
 ) );
+/*
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
 }
 
-require get_template_directory() . '/inc/kirki/kirki.php';
-require get_template_directory() . '/inc/kirki.php';
 global $redux_demo;
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' ) ) {
-    //require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
+    require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
 }
+*/
+
+require get_template_directory() . '/inc/kirki/kirki.php';
+require get_template_directory() . '/inc/kirki.php';
+
+
+
 function template_sredirect() {
-        global $redux_demo;
-        $url=$redux_demo["mobile-redirect"];
+        $url=fw_theme_mod("mobile-redirect");
+        if(empty($url))return;
         if(!wp_is_mobile())return;
         if(!is_front_page())return;
         wp_redirect( $url);

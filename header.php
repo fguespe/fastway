@@ -6,9 +6,7 @@
  *
  * @package understrap
  */
-global $redux_demo;
-$js=$redux_demo['opt-ace-editor-js'];
-$favi=$redux_demo["general-favi"]['url'];
+$js=fw_theme_mod('opt-ace-editor-js');
 ?>
 <!DOCTYPE html>
 <html dir="ltr" <?php language_attributes(); ?>>
@@ -17,9 +15,8 @@ $favi=$redux_demo["general-favi"]['url'];
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
-	<link rel="shortcut icon" type="image/png" href="<?php echo $favi;?>"/>
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
-    <meta name="description" content="<?php echo $redux_demo['seo-desc'];?>">
+    <meta name="description" content="<?php echo fw_theme_mod('seo-desc');?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
    
@@ -42,17 +39,18 @@ $favi=$redux_demo["general-favi"]['url'];
 <body <?php body_class(); ?>>
 <?php
 global $header_main,$header_middle,$header_middle_mobile,$header_bottom,$header_container;
-$header_container   = $redux_demo['header-width'];
-$header_middle=" fw_header_middle desktop d-none d-md-flex py-".$redux_demo['header-padding']." ";
+$header_container   = fw_theme_mod('header-width');
+$header_middle=" fw_header_middle desktop d-none d-md-flex py-".fw_theme_mod('header-padding')." ";
 $header_bottom=" fw_header_bottom d-none d-md-flex ";
 $header_middle_mobile=" fw_header_middle mobile d-md-none navbar";
-//if($redux_demo['floating-header']){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
+//if(fw_theme_mod('floating-header'){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
 ?>
 <?php do_action( 'fastway_header_topbanner');?>
 <header id="header">
 <?php do_action( 'add_topbar');?>
-<?php do_action( 'fastway_header_init', $redux_demo['header-style'],"header" );?>
-<?php do_action( 'fastway_header_init_mobile', $redux_demo['header-mobile-style'],"mobile-header" );?>
+
+<?php do_action( 'fastway_header_init', fw_theme_mod('header-style'),"header" );?>
+<?php do_action( 'fastway_header_init_mobile', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
 </header>
 <script >
 
@@ -61,8 +59,8 @@ jQuery(window).scroll(function() {
      if (jQuery(this).scrollTop() > 600){  
         jQuery('header').addClass("fw-sticky-top");
         <?php 	
-        if(!empty($redux_demo['sticky-menu'])):
-        foreach($redux_demo['sticky-menu'] as $key){
+        if(!empty(fw_theme_mod('sticky-menu'))):
+        foreach(fw_theme_mod('sticky-menu') as $key){
         ?>
     	jQuery('.<?=$key?>').attr("style", "display: none !important; ");
         <?}?>
@@ -72,8 +70,8 @@ jQuery(window).scroll(function() {
       else{
         jQuery('header').removeClass("fw-sticky-top");
         <?php
-        if(!empty($redux_demo['sticky-menu'])):
-        foreach($redux_demo['sticky-menu'] as $key){
+        if(!empty(fw_theme_mod('sticky-menu'))):
+        foreach(fw_theme_mod('sticky-menu') as $key){
         ?>
     	jQuery('.<?=$key?>').attr("style", "display: flex;");
         <?}?>

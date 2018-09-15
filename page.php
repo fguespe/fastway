@@ -12,10 +12,10 @@
 
 get_header();
 
-global $redux_demo;
-$container   = $redux_demo['container-main'];
+
+$container   = fw_theme_mod('container-main');
 if(fw_checkPlugin("woocommerce/woocommerce.php")){
-if(is_cart() || is_checkout() || is_account_page())$container   = $redux_demo['container-shop']." mt-4";
+if(is_cart() || is_checkout() || is_account_page())$container   = fw_theme_mod('container-shop')." mt-4";
 }
 ?>
 

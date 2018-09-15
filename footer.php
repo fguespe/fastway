@@ -7,25 +7,23 @@
  * @package understrap
  */
 
-$the_theme = wp_get_theme();
-global $redux_demo;
 
-$js=$redux_demo['opt-ace-editor-js'];
-$container   = $redux_demo['footer-width'];
-$popup = $redux_demo['popup-img']['url'];
+$js=fw_theme_mod('opt-ace-editor-js');
+$container   = fw_theme_mod('footer-width');
+$popup = fw_theme_mod('popup-img');
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<?php do_action( 'fastway_footer_init' ); ?>
 	</div>
 </footer>
-<?php if($redux_demo['footer-copyright-switch'])echo $redux_demo['footer-copyright-text']."<style>".$redux_demo['css_editor-footer-copywright']."</style>";?>
+<?php if(fw_theme_mod('footer-copyright-switch'))echo fw_theme_mod('footer-copyright-text')."<style>".fw_theme_mod('css_editor-footer-copywright')."</style>";?>
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
 
 <?php
 
-if($redux_demo["popup-mode"]){
+if(fw_theme_mod("popup-mode")){
 ?>
 <div id="jaja" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">

@@ -1,9 +1,9 @@
 <?php 
-global $header_middle_mobile,$redux_demo;
+global $header_middle_mobile;
 ?>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?> ">
       <div class="col-2 " style="padding: 0px;"><?php echo fastway_getLogo();?></div>
-      <div class="col-8 align-items-center" style="padding: 0px;"><div id="mobileicons"><?php if($redux_demo['fw-quicklinks'])quicklinks();?></div></div>
+      <div class="col-8 align-items-center" style="padding: 0px;"><div id="mobileicons"><?php if(fw_theme_mod('fw-quicklinks'))quicklinks();?></div></div>
       <div class="col-1 align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
       </div>
@@ -23,7 +23,7 @@ global $header_middle_mobile,$redux_demo;
             'walker'          => new fw_Navwalker(),
           )
         ); 
-            if($redux_demo['fw-quicklinks'])quicklinks();
+            if(fw_theme_mod('fw-quicklinks'))quicklinks();
             ?>
 
         </nav>

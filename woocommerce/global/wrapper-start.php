@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // load container setting
-global $redux_demo;
-$container   = $redux_demo['container-main'];
+
+$container   = fw_theme_mod('container-main');
 
 // if we use container-fluid add some margin
 if ( 'container-fluid' === $container ) {

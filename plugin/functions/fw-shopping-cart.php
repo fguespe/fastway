@@ -7,8 +7,8 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
     function fw_shoppingCart($style=""){
       
         if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
-        global $woocommerce,$redux_demo;
-        if(empty($style))$style=$redux_demo['cart-style'];
+        global $woocommerce;
+        if(empty($style))$style=fw_theme_mod('cart-style');
         $rand=generateRandomString(5);
         $cant=$woocommerce->cart->cart_contents_count;
         $total=$woocommerce->cart->get_cart_total();

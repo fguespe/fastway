@@ -14,13 +14,13 @@ function ihaf_frontendFooter() {ihaf_output( 'footer-insert');}
 */
 function ihaf_output( $setting ) {
 
-	global $redux_demo;
+
 	// Ignore admin, feed, robots or trackbacks
 	if ( is_admin() || is_feed() || is_robots() || is_trackback() ) {
 		return;
 	}
 	// Get meta
-	$meta = wp_unslash($redux_demo[$setting]);
+	$meta = wp_unslash(fw_theme_mod($setting));
 	if ( empty( $meta ) ) {
 		return;
 	}

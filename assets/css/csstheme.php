@@ -1,20 +1,20 @@
 :root{
-	--main:<?php echo $redux_demo['opt-color-main']; ?>;
-  --top-banner:<?php echo $redux_demo['opt-color-topheader-banner']; ?>;
-  --icon-header:<?php echo $redux_demo['opt-color-iconheader']; ?>;
-  --second-color:<?php echo $redux_demo['opt-color-second']; ?>;
-  --top-header:<?php echo $redux_demo['opt-color-topheader']; ?>;
-  --middle-header:<?php echo $redux_demo['opt-color-middheader']; ?>;
-  --bottom-header:<?php echo $redux_demo['opt-color-bottheader']; ?>;
-  --body:<?php echo $redux_demo['opt-color-bodycolor']; ?>;
-  --footer:<?php echo $redux_demo['opt-color-footer']; ?>;
+	--main:<?php echo fw_theme_mod('opt-color-main'); ?>;
+  --top-banner:<?php echo fw_theme_mod('opt-color-topheader-banner'); ?>;
+  --icon-header:<?php echo fw_theme_mod('opt-color-iconheader'); ?>;
+  --second-color:<?php echo fw_theme_mod('opt-color-second'); ?>;
+  --top-header:<?php echo fw_theme_mod('opt-color-topheader'); ?>;
+  --middle-header:<?php echo fw_theme_mod('opt-color-middheader'); ?>;
+  --bottom-header:<?php echo fw_theme_mod('opt-color-bottheader'); ?>;
+  --body:<?php echo fw_theme_mod('opt-color-bodycolor'); ?>;
+  --footer:<?php echo fw_theme_mod('opt-color-footer'); ?>;
 }
 <?php
 $tipos=array("p","span","div","a","h4","h3","h2","h1");
 foreach ($tipos as $key) {
 $nombre='opt-typography-'.$key;
-if(!isset($redux_demo[$nombre]))continue;
-$font=$redux_demo[$nombre];
+if(!isset(fw_theme_mod($nombre))continue;
+$font=fw_theme_mod($nombre);
 ?>
 header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $key;?>,#woocommerce-wrapper <?php echo $key;?>,#main-nav <?php echo $key;?>{
   font-family: '<?php echo str_replace(",", "','", $font['font-family']);?>' ;
@@ -25,14 +25,14 @@ header <?php echo $key;?>,footer <?php echo $key;?>,#page-wrapper <?php echo $ke
   text-align:<?php echo $font['text-align'];?> ;
 }
 <?}
-if($redux_demo['css-onoff']=="on"){
-echo $redux_demo['css_editor-general']; 
-echo $redux_demo['css_editor-header']; 
-echo $redux_demo['css_editor-body']; 
-echo $redux_demo['css_editor-footer']; 
-echo $redux_demo['css_editor-loop']; 
-echo $redux_demo['css_editor-single']; 
-echo $redux_demo['css_editor-mobile']; 
+if(fw_theme_mod('css-onoff')=="on"){
+echo fw_theme_mod('css_editor-general'); 
+echo fw_theme_mod('css_editor-header');
+echo fw_theme_mod('css_editor-body');
+echo fw_theme_mod('css_editor-footer'); 
+echo fw_theme_mod('css_editor-loop');
+echo fw_theme_mod('css_editor-single'); 
+echo fw_theme_mod('css_editor-mobile'); 
 }
 if(is_child_theme()){
 $files=glob(get_stylesheet_directory().'/fonts/*.otf');

@@ -12,14 +12,14 @@
 
 get_header();
 
-global $redux_demo;
-$container   = $redux_demo['container-shop'];
+$container   = fw_theme_mod('container-shop');
 
 $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
 ); 
 do_action( 'fw_breadcrumb', $datas );
+
 ?>
 
 <div class="wrapper" id="woocommerce-wrapper">

@@ -2,8 +2,7 @@
 
 if ( ! function_exists( 'fw_scripts' ) ) {
 	function fw_scripts() {
-		$the_theme = wp_get_theme();
-		global $redux_demo;
+		
 		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 		wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.min.css');

@@ -1,15 +1,15 @@
 <?php
 
 
-if($redux_demo["maintenance-mode"]){
+if(fw_theme_mod("maintenance-mode")){
 
     add_action('get_header', 'fw_maintenance_mode');
 }
 
 function fw_maintenance_mode(){
-    global $redux_demo;
+    
     if(!current_user_can('administrator') ){
-        wp_die('<div id="mantenimiento" style="width:100% !important; text-align:center;"><img align="middle" src="'.$redux_demo["maintainance-mode-img"]['url'].'" style="width:100%; height:auto !important;"></div>');
+        wp_die('<div id="mantenimiento" style="width:100% !important; text-align:center;"><img align="middle" src="'.fw_theme_mod("maintainance-mode-img").'" style="width:100%; height:auto !important;"></div>');
     }
 }
 
@@ -47,32 +47,33 @@ add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
 add_action('fastway_header_topbanner','get_fastway_header_topbanner');
 function get_fastway_header_topbanner(){
-    global $redux_demo;
     
-    if( isset($redux_demo['topheader-img']['url']) && isset( $redux_demo['topheader-img'] ) && strlen(trim($redux_demo['topheader-img']['url'])) > 0 ){
-        echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.$redux_demo['topheader-img']['url'].'"></div>';
+    
+    if( empty(fw_theme_mod('topheader-img')) && empty( fw_theme_mod('topheader-img') ) && strlen(trim(fw_theme_mod('topheader-img') )) > 0 ){
+        echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.fw_theme_mod('topheader-img').'"></div>';
     }
 }
 function fw_custom_css(){
-    global $redux_demo;
+   
     $css="";
     $css.=":root{";
-    $css.="--main:".$redux_demo['opt-color-main'].";";
-    $css.="--top-banner:".$redux_demo['opt-color-topheader-banner'].";";
-    $css.="--icon-header:".$redux_demo['opt-color-iconheader'].";";
-    $css.="--second-color:".$redux_demo['opt-color-second'].";";
-    $css.="--top-header:".$redux_demo['opt-color-topheader'].";"; 
-    $css.="--middle-header:".$redux_demo['opt-color-middheader'].";";
-    $css.="--bottom-header:".$redux_demo['opt-color-bottheader'].";";
-    $css.="--body:".$redux_demo['opt-color-bodycolor'].";";
-    $css.="--footer:".$redux_demo['opt-color-footer'].";";
+    $css.="--main:".fw_theme_mod('opt-color-main').";";
+    $css.="--top-banner:".fw_theme_mod('opt-color-topheader-banner').";";
+    $css.="--icon-header:".fw_theme_mod('opt-color-iconheader').";";
+    $css.="--second-color:".fw_theme_mod('opt-color-second').";";
+    $css.="--top-header:".fw_theme_mod('opt-color-topheader').";"; 
+    $css.="--middle-header:".fw_theme_mod('opt-color-middheader').";";
+    $css.="--bottom-header:".fw_theme_mod('opt-color-bottheader').";";
+    $css.="--body:".fw_theme_mod('opt-color-bodycolor').";";
+    $css.="--footer:".fw_theme_mod('opt-color-footer').";";
     $css.= "}";
     $tipos=array("p","span","div","a","h4","h3","h2","h1");
     //Fonts comunes
     foreach ($tipos as $key) {
         $nombre='opt-typography-'.$key;
-        if(!isset($redux_demo[$nombre]))continue;
-        $font=$redux_demo[$nombre];
+        if(empty(fw_theme_mod($nombre)))continue;
+        $font=fw_theme_mod($nombre);
+   
         $css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
         $css.= "font-family:".str_replace(",", "','", $font['font-family']).";";
         $css.= "font-size:".$font['font-size'].";";
@@ -83,15 +84,15 @@ function fw_custom_css(){
         $css.= "text-align:".$font['text-align'].";";
         $css.= "}";   
     }
-    if($redux_demo['css-onoff']=="on"){
-        $css.=  $redux_demo['css_editor-general']; 
-        $css.=  $redux_demo['css_editor-header']; 
-        $css.=  $redux_demo['css_editor-body']; 
-        $css.=  $redux_demo['css_editor-footer']; 
-        $css.=  $redux_demo['css_editor-loop'];  
-        $css.=  $redux_demo['css_editor-sidebarcats']; 
-        $css.=  $redux_demo['css_editor-single']; 
-        $css.=  $redux_demo['css_editor-mobile']; 
+    if(fw_theme_mod('css-onoff')=="on"){
+        $css.=  fw_theme_mod('css_editor-general'); 
+        $css.=  fw_theme_mod('css_editor-header'); 
+        $css.=  fw_theme_mod('css_editor-body'); 
+        $css.=  fw_theme_mod('css_editor-footer'); 
+        $css.=  fw_theme_mod('css_editor-loop');  
+        $css.=  fw_theme_mod('css_editor-sidebarcats'); 
+        $css.=  fw_theme_mod('css_editor-single'); 
+        $css.=  fw_theme_mod('css_editor-mobile'); 
     }
     if(is_child_theme()){
         $files=glob(get_stylesheet_directory().'/fonts/*.otf');
@@ -117,9 +118,9 @@ function fw_custom_css(){
 
 add_action( 'add_topbar', 'get_topbar' );
 function get_topbar(){
-    global $redux_demo;
-    $container = $redux_demo['header-width'];
-    if(!$redux_demo['top-header'])return;
+    
+    $container = fw_theme_mod('header-width');
+    if(!fw_theme_mod('top-header'))return;
     echo '<div class="fw_header_top d-none d-lg-flex">
     <div class="'. esc_attr( $container ).'">
     <div>';
@@ -135,46 +136,46 @@ function get_topbar(){
 }
 
 function fastway_getWidgetHeaderText(){
-    global $redux_demo;
-    if($redux_demo['header-headerwidget-switch']){
-      echo do_shortcode(stripslashes(htmlspecialchars_decode( $redux_demo['header-headerwidget-text'].'<style>'.$redux_demo['css_editor-header-headerwidget'].'</style>' )));
+    
+    if(fw_theme_mod('header-headerwidget-switch')){
+      echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text').'<style>'.fw_theme_mod('css_editor-header-headerwidget').'</style>' )));
     }
 }
 function fw_companyname() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyname'];
+    
+    return fw_theme_mod('short-fw_companyname');
 }
 function fw_companywhatsapp() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companywhatsapp'];
+    
+    return fw_theme_mod('short-fw_companywhatsapp');
 }
 function fw_companyig() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyig'];
+    
+    return fw_theme_mod('short-fw_companyig');
 }
 function fw_companyyoutube() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyyoutube'];
+    
+    return fw_theme_mod('short-fw_companyyoutube');
 }
 function fw_companyemail() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyemail'];
+    
+    return fw_theme_mod('short-fw_companyemail');
 }
 function fw_companyphone() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyphone'];
+    
+    return fw_theme_mod('short-fw_companyphone');
 }
 function fw_companyfb() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyfb'];
+    
+    return fw_theme_mod('short-fw_companyfb');
 }
 function fw_companyaddress() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companyaddress'];
+    
+    return fw_theme_mod('short-fw_companyaddress');
 }
 function fw_companygooglemaps() {
-    global $redux_demo;
-    return $redux_demo['short-fw_companygooglemaps'];
+    
+    return fw_theme_mod('short-fw_companygooglemaps');
 }
 
 
@@ -268,25 +269,25 @@ function quicklinks(){
 
 if( !function_exists('fastway_getLogo') ) {
     function fastway_getLogo( $type="" ){
-        global $redux_demo;
+        
         switch( $type ) {
             case 'sticky':
                 break;
             default:
-                $title = !empty($redux_demo['logo-text'])? esc_attr($redux_demo['logo-text']): get_bloginfo('name');
+                $title = !empty(fw_theme_mod('logo-text'))? esc_attr(fw_theme_mod('logo-text')): get_bloginfo('name');
                 $logo_arg = array(
                     'title' => esc_attr($title),
                     'alt'   => esc_attr($title)
                 );
 
-                if( isset( $redux_demo['general-logo'] ) && strlen(trim($redux_demo['general-logo']['url'])) > 0 ){
-                    $logo_arg['src'] = esc_url( $redux_demo['general-logo']['url'] );
-                    $logo_arg['width'] = $redux_demo['logo-width'];
+                if( empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
+                    $logo_arg['src'] =  fw_theme_mod('general-logo') ;
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = "auto";
                 } else {
                     //Cargo logo default
                     $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
-                    $logo_arg['width'] = $redux_demo['logo-width'];
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = "auto";
                 }
 
@@ -330,20 +331,22 @@ if(!function_exists('fastway_getImage')) {
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 function new_loop_shop_per_page( $cols ) {
-    global $redux_demo;
-  $cols =  $redux_demo['shop_per_page'];
+    
+  $cols =  fw_theme_mod('shop_per_page');
   return $cols;
 }
 
 /*Static Blocks*/
 function fastway_footer_block(){
-    global $redux_demo;
-    if( isset( $redux_demo["footer-stblock"] ) && strlen( $redux_demo["footer-stblock"] ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( $redux_demo["footer-stblock"] );
+        
+    if( !empty( fw_theme_mod("footer-stblock") ) && strlen( fw_theme_mod("footer-stblock")) > 0 && class_exists("fw_StaticBlock") ) {
+        fw_StaticBlock::getSticBlockContent( fw_theme_mod("footer-stblock") );
+    }
 }
 
 function fastway_singleblock_block(){
-    global $redux_demo;
-    if( isset( $redux_demo["product-page-footer-block"] ) && strlen( $redux_demo["product-page-footer-block"] ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( $redux_demo["product-page-footer-block"] );
+    
+    if( !empty( fw_theme_mod("product-page-footer-block") ) && strlen( fw_theme_mod("product-page-footer-block") ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( fw_theme_mod("product-page-footer-block") );
 }
 add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
 function fw_shortcode_stblock( $atts ) {
@@ -427,11 +430,11 @@ endif;
 
 
 function init_analytics() {
-    global $redux_demo;
+    
     $analytics = '<script type="text/javascript">
 
                   var _gaq = _gaq || [];
-                  _gaq.push([\'_setAccount\', \''.$redux_demo['analytics-id'].'\']);
+                  _gaq.push([\'_setAccount\', \''.fw_theme_mod('analytics-id').'\']);
                   _gaq.push([\'_trackPageview\']);
 
                   (function() {

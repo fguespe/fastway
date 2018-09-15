@@ -6,16 +6,13 @@
  */
 
 
-global $redux_demo;
-// when both sidebars turned on reduce col size to 3 from 4.
-
-$sidebar_pos = $redux_demo['layout-main'];
+$sidebar_pos =fw_theme_mod('layout-main');
 $sidebarname='right-sidebar';
 if(is_shop() || is_product_category()){
-	$sidebar_pos = $redux_demo['shop-layout'];
+	$sidebar_pos = fw_theme_mod('shop-layout');
 	$sidebarname='s-'.$sidebarname;
 }else if(is_product()){
-	$sidebar_pos = $redux_demo['product-page-layout'];
+	$sidebar_pos = fw_theme_mod('product-page-layout');
 	$sidebarname='sp-'.$sidebarname;
 }
 

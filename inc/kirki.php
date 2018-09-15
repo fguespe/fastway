@@ -5,6 +5,21 @@ global $loop_templates ;
 global $loop_templates_mobile;
 global $single_templates;
 global $single_templates_mobile;
+function kirki_sidebars_select_example() { 
+  	do_action('widgets_init');
+ 	$sidebars = array(); 
+ 	if ( isset( $GLOBALS['wp_registered_sidebars'] ) ) { 
+ 		$sidebars = $GLOBALS['wp_registered_sidebars']; 
+ 	} 
+ 	$sidebars_choices = array(); 
+ 	foreach ( $sidebars as $sidebar ) { 
+ 		$sidebars_choices[ $sidebar['id'] ] = $sidebar['name']; 
+ 		
+ 	}  
+ 	    return $sidebars_choices; 
+}  
+
+$static_block_args = fastway_get_stblock();
 
 Kirki::add_config( 'theme_config_id', array(
 	'capability'    => 'edit_theme_options',
@@ -13,130 +28,122 @@ Kirki::add_config( 'theme_config_id', array(
 
 
 Kirki::add_panel( 'panel_fastway', array(
-    'priority'    => 10,
-    'title'       => esc_attr__( 'Fastway', 'textdomain' ),
-    //'description' => esc_attr__( 'My panel description', 'textdomain' ),
+
+    'title'       => __( 'Fastway', 'textdomain' ),
+    //'description' => __( 'My panel description', 'textdomain' ),
 ) );
 Kirki::add_section( 'section_general', array(
-    'title'          => esc_attr__( 'General', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'General', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 Kirki::add_section( 'section_header', array(
-    'title'          => esc_attr__( 'Header', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Header', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 Kirki::add_section( 'section_mobile', array(
-    'title'          => esc_attr__( 'Mobile', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Mobile', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 Kirki::add_section( 'section_typos', array(
-    'title'          => esc_attr__( 'Typography', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Typography', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 Kirki::add_section( 'section_colors', array(
-    'title'          => esc_attr__( 'Color Scheme', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Color Scheme', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 
 Kirki::add_section( 'section_footer', array(
-    'title'          => esc_attr__( 'Footer', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Footer', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 Kirki::add_section( 'section_css', array(
-    'title'          => esc_attr__( 'CSS Editor', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'CSS Editor', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 Kirki::add_section( 'section_extras', array(
-    'title'          => esc_attr__( 'Extras', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Extras', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 
 Kirki::add_section( 'section_woo', array(
-    'title'          => esc_attr__( 'Woocommerce', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Woocommerce', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+
 ) );
 Kirki::add_section( 'section_woo_single', array(
-    'title'          => esc_attr__( 'Single Product', 'textdomain' ),
-    //'description'    => esc_attr__( 'My section description.', 'textdomain' ),
+    'title'          => __( 'Single Product', 'textdomain' ),
+    //'description'    => __( 'My section description.', 'textdomain' ),
     'panel'          => 'panel_fastway',
-    'priority'       => 160,
+  
 ) );
 
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'general-logo',
-	'label'       => esc_attr__( 'Logo', 'textdomain' ),
-	//'description' => esc_attr__( 'Description Here.', 'textdomain' ),
+	'label'       => __( 'Logo', 'textdomain' ),
+	//'description' => __( 'Description Here.', 'textdomain' ),
 	'section'     => 'section_general',
-	'default'     => '',
+	'default'     => get_template_directory_uri()."/assets/img/logo.png",
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'general-favi',
-	'label'       => esc_attr__( 'Favi', 'textdomain' ),
-    'description' => 'Also works for mobile icons in case of WPA',
-	'section'     => 'section_general',
-	'default'     => '',
-) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'seo-desc',
-	'label'       => esc_attr__( 'Meta Description', 'textdomain' ),
+	'label'       => __( 'Meta Description', 'textdomain' ),
     'description' => 'Max 150 characters',
 	'section'     => 'section_general',
 	'default'     => '',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-image',
+	'type'        => 'radio-buttonset',
 	'settings'    => 'container-main',
-	'label'       => esc_html__( 'Main layout: wide or boxed', 'textdomain' ),
+	'label'       => __( 'Main layout: wide or boxed', 'textdomain' ),
 	'section'     => 'section_general',
 	'default'     => 'container',
-	'priority'    => 10,
+	
 	'choices'     => array(
-		'container-fluid'   => get_template_directory_uri() . '/assets/img/options/wide.png',
-		'container'   => get_template_directory_uri() . '/assets/img/options/boxed.png',
+		'container-fluid'   => 'Wide',
+		'container'   => 'Boxed',
 	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-image',
+	'type'        => 'radio-buttonset',
 	'settings'    => 'layout-main',
-	'label'       => esc_html__( 'Sidebars Layout', 'textdomain' ),
+	'label'       => __( 'Sidebars Layout', 'textdomain' ),
 	'section'     => 'section_general',
 	'default'     => 'full',
-	'priority'    => 10,
 	'choices'     => array(
-		'full'   => get_template_directory_uri() . '/assets/img/options/wide.png',
-		'left'   => get_template_directory_uri() . '/assets/img/options/left.png',
-		'right'   => get_template_directory_uri() . '/assets/img/options/right.png',
-		'both'   => get_template_directory_uri() . '/assets/img/options/boxed.png',
+		'full' => __( 'Full Width', 'textdomain' ),
+		'left' => __( 'Left Sidebar', 'textdomain' ),
+		'right' => __( 'Right Sidebar', 'textdomain' ),
+		'both' => __( 'Both Sidebars', 'textdomain' ),
 	),
 ) );
 
@@ -144,21 +151,21 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
-	'settings'    => 'my_setting',
-	'label'       => esc_attr__( 'Deactivate Sticky', 'textdomain' ),
+	'settings'    => 'sticky-menu',
+	'label'       => __( 'Deactivate Sticky', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => array('fw_header_middle', 'fw_header_bottom'),
-	'priority'    => 10,
+
 	'choices'     => array(
-		'fw_header_top' => esc_attr__( 'Top', 'textdomain' ),
-		'fw_header_middle' => esc_attr__( 'Middle', 'textdomain' ),
-		'fw_header_bottom' => esc_attr__( 'Bottom', 'textdomain' ),
+		'fw_header_top' => __( 'Top', 'textdomain' ),
+		'fw_header_middle' => __( 'Middle', 'textdomain' ),
+		'fw_header_bottom' => __( 'Bottom', 'textdomain' ),
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'header-padding',
-	'label'       => esc_attr__( 'Header Padding', 'textdomain' ),
+	'label'       => __( 'Header Padding', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => 1,
 	'choices'     => array(
@@ -170,7 +177,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'logo-width',
-	'label'       => esc_attr__( 'Logo Width', 'textdomain' ),
+	'label'       => __( 'Logo Width', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => 180,
 	'choices'     => array(
@@ -182,12 +189,12 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'top-header',
-	'label'       => esc_attr__( 'Top Header', 'textdomain' ),
+	'label'       => __( 'Top Header', 'textdomain' ),
 	'section'     => 'section_header',
-	'default'     => '0',
+	'default'     => 0,
 	'choices' => array(
-	    'on'  => esc_attr__( 'Enable', 'textdomain' ),
-	    'off' => esc_attr__( 'Disable', 'textdomain' )
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
 	)
 ) );
 
@@ -196,45 +203,36 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header-width',
 	'label'       => __( 'Header Width', 'textdomain' ),
 	'section'     => 'section_header',
-	'default'     => 'container',
 	'choices'     => array(
-		'container'   => esc_attr__( 'Boxed', 'textdomain' ),
-		'container-fluid' => esc_attr__( 'Wide ', 'textdomain' ),
+		'container'   => __( 'Boxed', 'textdomain' ),
+		'container-fluid' => __( 'Wide ', 'textdomain' ),
 	),
+	'default'     => 'container',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'topheader-img',
-	'label'       => esc_attr__( 'Top Header Img', 'textdomain' ),
-	//'description' => esc_attr__( 'Description Here.', 'textdomain' ),
+	'label'       => __( 'Top Header Img', 'textdomain' ),
+	//'description' => __( 'Description Here.', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => '',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'topheader-img',
-	'label'       => esc_attr__( 'Top Header Img', 'textdomain' ),
-	//'description' => esc_attr__( 'Description Here.', 'textdomain' ),
-	'section'     => 'section_header',
-	'default'     => '',
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style',
 	'label'       => __( 'Header Block', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => '1-1',
-	'multiple'    => 1,
 	'choices'     => $theme_headers,
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'headerwidget-html',
-	'label'       => esc_attr__( 'Header Widget HTML', 'textdomain' ),
-	'description'       => esc_attr__( 'Not all headers have Header Widget', 'textdomain' ),
+	'label'       => __( 'Header Widget HTML', 'textdomain' ),
+	'description'       => __( 'Not all headers have Header Widget', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => '',
 	'choices'     => array(
@@ -245,8 +243,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-header-headerwidget',
-	'label'       => esc_attr__( 'Header Widget CSS', 'textdomain' ),
-	'description'       => esc_attr__( 'Not all headers have Header Widget', 'textdomain' ),
+	'label'       => __( 'Header Widget CSS', 'textdomain' ),
+	'description'       => __( 'Not all headers have Header Widget', 'textdomain' ),
 	'section'     => 'section_header',
 	'default'     => '',
 	'choices'     => array(
@@ -259,12 +257,12 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw-quicklinks',
-	'label'       => esc_attr__( 'Quicklinks', 'textdomain' ),
+	'label'       => __( 'Quicklinks', 'textdomain' ),
 	'section'     => 'section_mobile',
 	'default'     => 0,
 	'choices' => array(
-	    'on'  => esc_attr__( 'Enable', 'textdomain' ),
-	    'off' => esc_attr__( 'Disable', 'textdomain' )
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
 	)
 ) );
 
@@ -274,8 +272,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Mobile Block', 'textdomain' ),
 	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_mobile',
-	'default'     => '1-1',
-	'multiple'    => 1,
+	'default'     => '1',
 	'choices'     => $theme_headers_mobile,
 ) );
 
@@ -288,7 +285,223 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+/*WOOCOMMERCE*/
+if(fw_checkPlugin('woocommerce/woocommerce.php')){
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'container-shop',
+	'label'       => __( 'Shop Layout', 'textdomain' ),
+	'section'     => 'section_woo',
+	'default'     => 'container',
+	'choices'     => array(
+		'container'   => __( 'Boxed', 'textdomain' ),
+		'container-fluid' => __( 'Wide ', 'textdomain' ),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-loop-product-style',
+	'label'       => __( 'Catalog Loop Style', 'textdomain' ),
+	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
+	'section'     => 'section_woo',
+	'default'     => 'shop-loop-product-style',
+	'choices'     => $loop_templates,
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-loop-mobile-product-style',
+	'label'       => __( 'Mobile Loop templates', 'textdomain' ),
+	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
+	'section'     => 'section_woo',
+	'choices'     => $loop_templates_mobile,
+	'default'		=> '0',
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'in-stock-text',
+	'label'    => __( 'In Stock Label', 'redux-framework-demo' ),
+	'section'     => 'section_woo',
+	'default'	=>__( 'In Stock', 'redux-framework-demo' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'out-of-stock-text',
+	'label'    => __( 'Out of Stock Label', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'	=>__( 'Sold', 'redux-framework-demo' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'add-to-cart-text',
+	'label'    => __( 'Add to cart Label', 'redux-framework-demo' ),
+	'section'     => 'section_woo',
+	'default'	=>__( 'Buy', 'redux-framework-demo' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'cart-style',
+	'label'       => __( 'Cart Style', 'textdomain' ),
+	'section'     => 'section_woo',
+	'default'     => 'modal',
+	'choices'     => array(
+		'link'   => __( 'Link', 'textdomain' ),
+		'modal' => __( 'Modal ', 'textdomain' ),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'header-style',
+	'label'       => __( 'Header Block', 'textdomain' ),
+	'section'     => 'section_header',
+	'default'     => '1-1',
+	'choices'     => $theme_headers,
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'prices-enabled',
+	'label'       => __( 'Prices', 'textdomain' ),
+	'section'     => 'section_woo',
+	'description' => 'hide prices ',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'purchases-enabled',
+	'label'       => __( 'Purchases', 'textdomain' ),
+	'section'     => 'section_woo',
+	'description' => 'diable add to car button',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'checkout-msg',
+	'label'       => __( 'Check out message', 'textdomain' ),
+	'description'=>'Display a messsage/notice before checkout',
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'sold-alone',
+	'label'       => __( 'Sold Individually', 'textdomain' ),
+	'section'     => 'section_woo',
+	'description' => 'redirects to checkout directly *redirect to cart has to be activated in woocommerce product options',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'shop-layout',
+	'label'       => __( 'Shop Pages Layout', 'textdomain' ),
+	'section'     => 'section_woo',
+	'default'     => 'left',
+	'choices'     => array(
+		'full' => __( 'Full Width', 'textdomain' ),
+		'left' => __( 'Left Sidebar', 'textdomain' ),
+		'right' => __( 'Right Sidebar', 'textdomain' ),
+		'both' => __( 'Both Sidebars', 'textdomain' ),
+	),
+) );
+
+
+/*
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-left-sidebar',
+	'label'       => __( 'Select Left Sidebar', 'textdomain' ),
+	'section'     => 'section_woo',
+	'choices'     => kirki_sidebars_select_example(),
+	'default'     => 's-left-sidebar',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-right-sidebar',
+	'label'       => __( 'Select Right Sidebar', 'textdomain' ),
+	'section'     => 'section_woo',
+	'choices'     => kirki_sidebars_select_example(),
+	'default'     => 's-right-sidebar',
+) );
+*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'shop_per_page',
+	'label'       => esc_attr__( 'Products Per Page', 'textdomain' ),
+	'section'     => 'section_woo',
+	'default'     => 12,
+	'choices'     => array(
+		'min'  => '4',
+		'max'  => '100',
+		'step' => '1',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'shop_columns',
+	'label'       => esc_attr__( 'Products Per Page', 'textdomain' ),
+	'section'     => 'section_woo',
+	'default'     => 4,
+	'choices'     => array(
+		'min'  => '2',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+
+
+
+/*SINGLE*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'product-page-layout',
+	'label'       => __( 'Product Page Layout', 'textdomain' ),
+	'section'     => 'section_woo_single',
+	'default'     => 'full',
+	'choices'     => array(
+		'full' => __( 'Full Width', 'textdomain' ),
+		'left' => __( 'Left Sidebar', 'textdomain' ),
+		'right' => __( 'Right Sidebar', 'textdomain' ),
+		'both' => __( 'Both Sidebars', 'textdomain' ),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'product-page-footer-block',
+	'label'       => __( 'Footer Block', 'textdomain' ),
+	'section'     => 'section_woo_single',
+	'choices'     => $static_block_args,
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-single-product-style',
+	'label'       => __( 'Single Product Template', 'textdomain' ),
+	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
+	'section'     => 'section_woo_single',
+	'choices'     => $single_templates,
+	'default'		=> '1',
+) );
+
+}
 /*FOOTER*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
@@ -297,17 +510,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_footer',
 	'default'     => 'container',
 	'choices'     => array(
-		'container'   => esc_attr__( 'Boxed', 'textdomain' ),
-		'container-fluid' => esc_attr__( 'Wide ', 'textdomain' ),
+		'container'   => __( 'Boxed', 'textdomain' ),
+		'container-fluid' => __( 'Wide ', 'textdomain' ),
 	),
 ) );
 
-$static_block_args = fastway_get_stblock();
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'footer-stblock',
 	'label'       => __( 'Static Block', 'textdomain' ),
-	'section'     => 'section_mobile',
+	'section'     => 'section_footer',
 	'choices'     => $static_block_args,
 ) );
 
@@ -315,19 +527,19 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'footer-copyright-switch',
-	'label'       => esc_attr__( 'Show Footer Copyright', 'textdomain' ),
+	'label'       => __( 'Show Footer Copyright', 'textdomain' ),
 	'section'     => 'section_footer',
 	'default'     => 1,
 	'choices' => array(
-	    'on'  => esc_attr__( 'Enable', 'textdomain' ),
-	    'off' => esc_attr__( 'Disable', 'textdomain' )
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
 	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'footer-copyright-text',
-	'label'       => esc_attr__( 'Footer Copyright HTML', 'textdomain' ),
-	'description'       => esc_attr__( 'Not all headers have Header Widget', 'textdomain' ),
+	'label'       => __( 'Footer Copyright HTML', 'textdomain' ),
+	'description'       => __( 'Not all headers have Header Widget', 'textdomain' ),
 	'section'     => 'section_footer',
 	'default'     => '<div id="footercopy"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
 	'choices'     => array(
@@ -338,8 +550,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-footer-copywright',
-	'label'       => esc_attr__( 'Footer Copyright CSS', 'textdomain' ),
-	'description'       => esc_attr__( 'Not all headers have Header Widget', 'textdomain' ),
+	'label'       => __( 'Footer Copyright CSS', 'textdomain' ),
+	'description'       => __( 'Not all headers have Header Widget', 'textdomain' ),
 	'section'     => 'section_footer',
 	'default'     => '#footercopy{width:100%;float:left!important;padding:5px 15px;border-top:1px solid #d3d3d3;line-height:30px!important;font-size:15px!important}#footercopy .izquierda{display:inline-block;float:left;width:50%}#footercopy .derecha{float:right!important;text-align:right;width:50%!important}@media (max-width:700px){#footercopy .copyright{display:none}#footercopy .izquierda{width:100%;text-align:center!important}}#footercopy .logofirma{height:30px}',
 	'choices'     => array(
@@ -352,7 +564,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-h1',
-	'label'       => esc_attr__( 'H1', 'textdomain' ),
+	'label'       => __( 'H1', 'textdomain' ),
 	'section'     => 'section_typos',
 	'default'     => array(
 		'font-family'    => 'Rubik',
@@ -367,7 +579,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-h2',
-	'label'       => esc_attr__( 'H2', 'textdomain' ),
+	'label'       => __( 'H2', 'textdomain' ),
 	'section'     => 'section_typos',
 	'default'     => array(
 		'font-family'    => 'Rubik',
@@ -382,7 +594,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-h3',
-	'label'       => esc_attr__( 'H3', 'textdomain' ),
+	'label'       => __( 'H3', 'textdomain' ),
 	'section'     => 'section_typos',
 	'default'     => array(
 		'font-family'    => 'Rubik',
@@ -397,7 +609,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-h4',
-	'label'       => esc_attr__( 'H4', 'textdomain' ),
+	'label'       => __( 'H4', 'textdomain' ),
 	'section'     => 'section_typos',
 	'default'     => array(
 		'font-family'    => 'Rubik',
@@ -413,7 +625,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-body',
-	'label'       => esc_attr__( 'Body', 'textdomain' ),
+	'label'       => __( 'Body', 'textdomain' ),
 	'section'     => 'section_typos',
 	'default'     => array(
 		'font-family'    => 'Rubik',
@@ -433,7 +645,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-general',
-	'label'       => esc_attr__( 'CSS General', 'textdomain' ),
+	'label'       => __( 'CSS General', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -443,7 +655,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-header',
-	'label'       => esc_attr__( 'CSS Header', 'textdomain' ),
+	'label'       => __( 'CSS Header', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -453,7 +665,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-body',
-	'label'       => esc_attr__( 'CSS Body', 'textdomain' ),
+	'label'       => __( 'CSS Body', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -463,7 +675,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-footer',
-	'label'       => esc_attr__( 'CSS Footer', 'textdomain' ),
+	'label'       => __( 'CSS Footer', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -473,7 +685,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-loop',
-	'label'       => esc_attr__( 'CSS Product Loop', 'textdomain' ),
+	'label'       => __( 'CSS Product Loop', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -483,7 +695,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-sidebarcats',
-	'label'       => esc_attr__( 'CSS Sidebar Categorys', 'textdomain' ),
+	'label'       => __( 'CSS Sidebar Categorys', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -493,7 +705,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-single',
-	'label'       => esc_attr__( 'CSS Single Product', 'textdomain' ),
+	'label'       => __( 'CSS Single Product', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -503,7 +715,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-mobile',
-	'label'       => esc_attr__( 'CSS Mobile', 'textdomain' ),
+	'label'       => __( 'CSS Mobile', 'textdomain' ),
 	'section'     => 'section_css',
 	'default'     => '',
 	'choices'     => array(
@@ -514,43 +726,44 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'maintainance-mode',
-	'label'       => esc_attr__( 'Maintainance Mode', 'textdomain' ),
+	'label'       => __( 'Maintainance Mode', 'textdomain' ),
 	'section'     => 'section_extras',
 	'default'     => 0,
 	'choices' => array(
-	    'on'  => esc_attr__( 'Enable', 'textdomain' ),
-	    'off' => esc_attr__( 'Disable', 'textdomain' )
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
 	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'popup-mode',
-	'label'       => esc_attr__( 'Popup', 'textdomain' ),
+	'label'       => __( 'Popup', 'textdomain' ),
 	'section'     => 'section_extras',
 	'default'     => 0,
 	'choices' => array(
-	    'on'  => esc_attr__( 'Enable', 'textdomain' ),
-	    'off' => esc_attr__( 'Disable', 'textdomain' )
+	    'on'  => __( 'Enable', 'textdomain' ),
+	    'off' => __( 'Disable', 'textdomain' )
 	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'maintainance-mode-img',
-	'label'       => esc_attr__( 'Maintainance Mode Img', 'textdomain' ),
+	'label'       => __( 'Maintainance Mode Img', 'textdomain' ),
 	'section'     => 'section_extras',
 	'default'		=> get_template_directory_uri()."/assets/img/mantenimiento.png"
 
-) );Kirki::add_field( 'theme_config_id', array(
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'popup-img',
-	'label'       => esc_attr__( 'Popup Img', 'textdomain' ),
+	'label'       => __( 'Popup Img', 'textdomain' ),
 	'section'     => 'section_extras',
 
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'img-404',
-	'label'       => esc_attr__( '404 img', 'textdomain' ),
+	'label'       => __( '404 img', 'textdomain' ),
 	'section'     => 'section_extras',
 	'default'  =>  get_template_directory_uri().'/assets/img/error.png',
 ) );
@@ -624,8 +837,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'opt-ace-editor-js',
-	'label'       => esc_attr__( 'JS Code', 'textdomain' ),
-	'description'       => esc_attr__( 'Paste your JS code here.', 'textdomain' ),
+	'label'       => __( 'JS Code', 'textdomain' ),
+	'description'       => __( 'Paste your JS code here.', 'textdomain' ),
 	'section'     => 'section_extras',
 	'default'  => 'jQuery(document).ready(function(){
 		
@@ -656,16 +869,25 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+if(empty(get_theme_mod("header-style"))){
+	$jaja=get_option("redux_demo");
+    foreach ($jaja as $key => $value) {
+    	if($key=='opt-typography-div')$key='opt-typography-body';
+    	if(isset($jaja[$key]['url']))$value=$jaja[$key]['url'];
+        set_theme_mod($key,$value);
+    }
+     error_log("set init");
+}
+
+/*
+foreach (Kirki::$fields as $field ) {
+    if(isset($field["default"]) && !isset($redux_demo[$field["settings"]])){
+        $redux_demo[$field["settings"]]=$field["default"];
+    }
+}
+*/
 
 
-global $redux_demo;
-$redux_demo=get_theme_mods();
-
-
-
-/**
- * This function adds some styles to the WordPress Customizer
- */
 function my_customizer_styles() { ?>
 	<style>
 	.customize-control-kirki-multicheck ul {
