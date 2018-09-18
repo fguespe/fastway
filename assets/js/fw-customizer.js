@@ -39,4 +39,9 @@ wp.customize( 'css_editor-sidebarcats', function( value ) {
     jQuery( '#css_editor-sidebarcats' ).text(newval );
   } );
 } );
+wp.customize( 'css_editor-header-headerwidget', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_editor-widget' ).text(newval );
+  } );
+} );
 });

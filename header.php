@@ -41,6 +41,7 @@ $js=fw_theme_mod('opt-ace-editor-js');
     <style type="text/css" id="css_editor-loop"><? echo fw_theme_mod('css_editor-loop')?></style>
     <style type="text/css" id="css_editor-single"><? echo fw_theme_mod('css_editor-single')?></style>
     <style type="text/css" id="css_editor-mobile"><? echo fw_theme_mod('css_editor-mobile')?></style>
+    <style type="text/css" id="css_editor-widget"><? echo fw_theme_mod('css_editor-header-headerwidget')?></style>
     
 </head>
 

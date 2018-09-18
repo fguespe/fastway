@@ -67,7 +67,7 @@ function fw_custom_css(){
     $css.="--body:".fw_theme_mod('opt-color-bodycolor').";";
     $css.="--footer:".fw_theme_mod('opt-color-footer').";";
     $css.= "}";
-    $tipos=array("p","span","div","a","h4","h3","h2","h1");
+    $tipos=array("p","span","a","h4","h3","h2","h1");
     //Fonts comunes
     foreach ($tipos as $key) {
         if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
@@ -138,7 +138,7 @@ function get_topbar(){
 }
 
 function fastway_getWidgetHeaderText(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text').'<style>'.fw_theme_mod('css_editor-header-headerwidget').'</style>' )));
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
 function fw_companyname() {
     
@@ -279,7 +279,7 @@ if( !function_exists('fastway_getLogo') ) {
                     'alt'   => esc_attr($title)
                 );
 
-                if( empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
+                if( !empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
                     $logo_arg['src'] =  fw_theme_mod('general-logo') ;
                     $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = "auto";
