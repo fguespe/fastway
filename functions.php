@@ -194,7 +194,7 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functi
 */
 
 require get_template_directory() . '/inc/kirki/kirki.php';
-require get_template_directory() . '/inc/kirki.php';
+require get_template_directory() . '/plugin/functions/fw-theme-options.php';
 
 
 
