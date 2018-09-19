@@ -9,6 +9,11 @@ wp.customize( 'css_editor-body', function( value ) {
     jQuery( '#css_editor-body' ).text(newval );
   } );
 } );
+wp.customize( 'css_editor-footer-copywright', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_editor-footer-copywright' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor-footer', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-footer' ).text(newval );

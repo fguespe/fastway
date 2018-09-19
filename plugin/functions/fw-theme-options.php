@@ -248,7 +248,27 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.logo img',
+			'element' => '.fw_header_middle.desktop .logo img',
+			'property'	=> 'width',
+			'units'=>'px'
+		),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'logo-width-mobile',
+	'label'       => __( 'Mobile Logo Width', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default'     => 110,
+	'choices'     => array(
+		'min'  => 0,
+		'max'  => 500,
+		'step' => 5,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header_middle.mobile .logo img',
 			'property'	=> 'width',
 			'units'=>'px'
 		),
@@ -600,6 +620,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style',
 	'label'       => __( 'Header Block', 'fastway' ),
+	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_header',
 	'default'     => '1-1',
 	'choices'     => $theme_headers,
@@ -784,7 +805,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="footercopy"><div class="izquierda">Developed with<a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
+	'default'     => '<div id="footercopy" class="d-flex justify-content-between"><div class="izquierda">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.get_template_directory_uri().'/wp-content/themes/fastway/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © COMPANY | Todos los derechos reservados.</div></div></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -796,28 +817,21 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright CSS', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
+	'transport'	=> 'postMessage',
 	'default'     => '
 #footercopy{
-    width:100%;
-    float:left!important;
-    padding:5px 15px;
     border-top:1px solid #d3d3d3;
-    line-height:30px!important;
-    font-size:15px!important
+    
 }
-#footercopy .izquierda{
-    display:inline-block;
-    float:left;
-    width:50%
-}
-#footercopy .derecha .copyright{
-    float:right!important;
-    text-align:right;
-    width:50%!important
+
+#footercopy .derecha div,
+#footercopy .izquierda {
+line-height:30px !important;
+font-size:15px!important
 }
 @media (max-width:700px){
     #footercopy .copyright{
-        display:none
+        display:none;
     }
     #footercopy .izquierda{
         width:100%;
@@ -825,7 +839,7 @@ Kirki::add_field( 'theme_config_id', array(
     }
 }
 #footercopy .logofirma{
-    height:30px
+    height:30px !important;
 }',
 	'choices'     => array(
 		'language' => 'css',
@@ -979,8 +993,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => array(
 		'font-family'    => 'Rubik',
 		'variant'        => 'regular',
-		'font-size'      => '14px',
-		'line-height'    => '14px',
+		'font-size'      => '16px',
+		'line-height'    => '18px',
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
