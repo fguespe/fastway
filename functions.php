@@ -137,6 +137,7 @@ require get_template_directory() . '/plugin/functions/fw-user-account.php';
     require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;
     require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
 
+    require get_template_directory() . '/plugin/functions/vc_customs/vc_fastway.php';
 if(fw_checkPlugin('woocommerce/woocommerce.php')){
     require get_template_directory() . '/plugin/functions/extra-woo-functions.php';
     require get_template_directory() . '/inc/woocommerce.php';
@@ -207,6 +208,7 @@ function template_sredirect() {
 
     }
 add_action( 'template_redirect', 'template_sredirect' );
+
 
 
 

@@ -1,4 +1,5 @@
 <?php
+
 add_action( 'vc_before_init', 'vc_category_carousel' );//Prds de categoria
 function vc_category_carousel() {
 
