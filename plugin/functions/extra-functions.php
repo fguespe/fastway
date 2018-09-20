@@ -53,8 +53,9 @@ function get_fastway_header_topbanner(){
         echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.fw_theme_mod('topheader-img').'"></div>';
     }
 }
+/*
 function fw_custom_css(){
-   
+
     $css="";
     $css.=":root{";
     $css.="--main:".fw_theme_mod('opt-color-main').";";
@@ -75,7 +76,8 @@ function fw_custom_css(){
         if(empty(fw_theme_mod($nombre)))continue;
         $font=fw_theme_mod($nombre);
    
-        $css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
+        //$css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
+        $css.= "body ".$key."{";
         $css.= "font-family:".str_replace(",", "','", $font['font-family']).";";
         $css.= "font-size:".$font['font-size'].";";
         $css.= "font-weight:".$font['font-weight'].";";
@@ -83,9 +85,11 @@ function fw_custom_css(){
         $css.= "color:".$font['color'].";";
         $css.= "text-transform:".$font['text-transform'].";";
         $css.= "text-align:".$font['text-align'].";";
+        $css.= "letter-spacing:".$font['letter-spacing'].";";
         $css.= "}";   
     }
-    /*
+    
+    
     if(fw_theme_mod('css-onoff')=="on"){
         $css.=  fw_theme_mod('css_editor-general'); 
         $css.=  fw_theme_mod('css_editor-header'); 
@@ -95,7 +99,7 @@ function fw_custom_css(){
         $css.=  fw_theme_mod('css_editor-sidebarcats'); 
         $css.=  fw_theme_mod('css_editor-single'); 
         $css.=  fw_theme_mod('css_editor-mobile'); 
-    }*/
+    }
     if(is_child_theme()){
         $files=glob(get_stylesheet_directory().'/fonts/*.otf');
         $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));
@@ -116,8 +120,31 @@ function fw_custom_css(){
     }
     return trim(preg_replace('/\t+/', '', $css));
 }
+*/
 
+function fw_custom_css(){
+    $css="";
+    
+    if(fw_theme_mod('responsive-typo')){
+        $tipos=array("p","span","a","h4","h3","h2","h1");
+            foreach ($tipos as $key) {
+                
+        if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
+        else $nombre='opt-typography-'.$key;
+                if(empty(fw_theme_mod($nombre)))continue;
+                $font=fw_theme_mod($nombre);
+                $size=str_replace("px", "", $font['font-size']);
+                $height=str_replace("px", "", $font['line-height']);
 
+                $css.= "body ".$key."{";
+                $css.= "font-size: calc(16px + (".$size." - 16) * ((100vw - 300px) / (1600 - 300))); ";
+                $css.= "line-height: calc(18px + (".$height." - 18) * ((100vw - 300px) / (1600 - 300))); ";
+                $css.= "}";   
+            }
+       
+    }
+    return $css;
+}
 add_action( 'add_topbar', 'get_topbar' );
 function get_topbar(){
     
