@@ -113,10 +113,10 @@ function vc_after_init_actions() {
         // Example
         array(
             'type' => 'textfield',
-                'heading' => __( 'Image size', 'js_composer' ),
-                'param_name' => 'img_size',
-                'value' => 'full',
-                'description' => __( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)). Leave parameter empty to use "thumbnail" by default.', 'js_composer' ),
+            'heading' => __( 'Image size', 'js_composer' ),
+            'param_name' => 'img_size',
+            'value' => 'full',
+            'description' => __( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)). Leave parameter empty to use "thumbnail" by default.', 'js_composer' ),
         ),  
         array(
                 'type' => 'dropdown',
@@ -165,7 +165,7 @@ function vc_after_init_actions() {
     );
      
     vc_add_params( 'vc_single_image', $vc_single_image_params ); 
-    vc_add_params( 'vc_empty_space', $vc_empty_space_params ); 
+    //vc_add_params( 'vc_empty_space', $vc_empty_space_params ); 
     vc_add_params( 'vc_row', $vc_row_params ); 
          
 }

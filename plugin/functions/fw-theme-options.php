@@ -126,6 +126,12 @@ Kirki::add_section( 'section_css_single', array(
     'panel'          => 'panel_css',
 
 ) );
+Kirki::add_section( 'section_css_mobile', array(
+    'title'          => __( 'CSS Mobile ', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_css',
+
+) );
 Kirki::add_section( 'section_css_sidebarcats', array(
     'title'          => __( 'CSS Sidebar Category ', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -287,7 +293,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -860,7 +866,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '40px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -895,7 +901,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '32px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -929,7 +935,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '28px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -964,7 +970,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -998,7 +1004,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'left',
+		'text-align'     => '',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
