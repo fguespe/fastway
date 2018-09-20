@@ -32,7 +32,6 @@ $js=fw_theme_mod('opt-ace-editor-js');
     
 
     <?php wp_head(); ?>
-	<style ><?php echo fw_custom_css(); ?></style>
     <style type="text/css" id="css_editor-general"><? echo fw_theme_mod('css_editor-general')?></style>
     <style type="text/css" id="css_editor-header"><? echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor-body"><? echo fw_theme_mod('css_editor-body')?></style>
@@ -42,6 +41,7 @@ $js=fw_theme_mod('opt-ace-editor-js');
     <style type="text/css" id="css_editor-single"><? echo fw_theme_mod('css_editor-single')?></style>
     <style type="text/css" id="css_editor-mobile"><? echo fw_theme_mod('css_editor-mobile')?></style>
     <style type="text/css" id="css_editor-widget"><? echo fw_theme_mod('css_editor-header-headerwidget')?></style>
+    <style ><?php echo fw_custom_css(); ?></style>
     
 </head>
 
