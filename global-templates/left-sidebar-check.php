@@ -11,8 +11,8 @@
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = fw_theme_mod('layout-main');
 if(fw_checkPlugin("woocommerce/woocommerce.php")){
-if(is_shop() || is_product_category())$sidebar_pos = fw_theme_mod('shop-layout');
-else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
+	if(is_shop() || is_product_category())$sidebar_pos = fw_theme_mod('shop-layout');
+	else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 }
 ?>
 
@@ -23,20 +23,11 @@ else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 <?php 
 	$html = '';
 	if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {
-		$html = '<div class="';
-		if ( is_active_sidebar( 'right-sidebar' ) || is_active_sidebar( 'left-sidebar' ) ) {
-			$html .= 'col-md-10 content-area" id="primary">';
-		} else {
-			$html .= 'col-md-12 content-area" id="primary">';
-		}
+		error_log("pepe");
+		$html = '<div class="col-md-10 content-area" id="primary">';
 		echo $html; // WPCS: XSS OK.
 	} elseif ( 'both' === $sidebar_pos ) {
-		$html = '<div class="';
-		if ( 'both' === $sidebar_pos ) {
-			$html .= 'col-md-8 content-area" id="primary">';
-		} else {
-			$html .= 'col-md-12 content-area" id="primary">';
-		}
+		$html = '<div class="col-md-8 content-area" id="primary">';
 		echo $html; // WPCS: XSS OK.
 	} else {
 	    echo '<div class="col-md-12 content-area" id="primary">';
