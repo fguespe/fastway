@@ -511,6 +511,7 @@ display:none;
 .woocommerce .widget-title{
 font-size:12px !important;
 }
+.woocommerce-breadcrumb a,
 .woocommerce-breadcrumb{
 font-size:12px !important;
 }

@@ -293,7 +293,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -368,7 +368,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-main',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
+	'default'     => '#00A2DE',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -385,7 +385,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-second',
 	'label'       => __( 'Secondary Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
+	'default'     => '#EFBA03',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -437,7 +437,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-iconheader',
 	'label'       => __( 'Icons in Header', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
+	'default'     => '#00A2DE',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -649,7 +649,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Prices', 'fastway' ),
 	'section'     => 'section_woo',
 	'description' => 'hide prices ',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -661,7 +661,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Purchases', 'fastway' ),
 	'section'     => 'section_woo',
 	'description' => 'diable add to car button',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -877,7 +877,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '40px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -915,7 +915,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '32px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -952,7 +952,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '28px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -990,7 +990,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1027,7 +1027,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'letter-spacing' => '0',
 		'color'     => 'black',
 		'text-transform' => 'none',
-		'text-align'     => 'center',
+		'text-align'     => 'left',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1289,23 +1289,23 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-if(empty(get_theme_mod("header-style"))){
+if(empty(get_theme_mod("header-style")) && !empty(get_option("redux_demo"))){
 	$jaja=get_option("redux_demo");
     foreach ($jaja as $key => $value) {
     	if($key=='opt-typography-div')$key='opt-typography-body';
     	if(isset($jaja[$key]['url']))$value=$jaja[$key]['url'];
         set_theme_mod($key,$value);
     }
-     error_log("set init");
-}
+    error_log("redux_init");
+}else if(empty(get_theme_mod("header-style") )){
+	error_log("super init");
+	foreach (Kirki::$fields as $field ) {
+	    if(isset($field["default"]) && !isset($redux_demo[$field["settings"]])){
+	        set_theme_mod($field["settings"],$field["default"]);
+	    }
+	}
 
-/*
-foreach (Kirki::$fields as $field ) {
-    if(isset($field["default"]) && !isset($redux_demo[$field["settings"]])){
-        $redux_demo[$field["settings"]]=$field["default"];
-    }
 }
-*/
 
 
 function my_customizer_styles() { ?>
