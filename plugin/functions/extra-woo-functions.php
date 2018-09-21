@@ -114,6 +114,8 @@ if (!function_exists('loop_columns')) {
 
 // Change add to cart text on archives depending on product type
 add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_woocommerce_product_add_to_cart_text' );
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text' );
+add_filter( 'woocommerce_booking_single_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text' );
 function custom_woocommerce_product_add_to_cart_text() {
     global $product;
     

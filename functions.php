@@ -53,9 +53,6 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
-
-
-
 require get_template_directory() . '/plugin/functions/extra-functions.php';
 require get_template_directory() . '/plugin/functions/ihaf.php';
 require get_template_directory() . '/plugin/templates/fw-templates.php';
@@ -64,18 +61,20 @@ require get_template_directory() . '/plugin/demos/fw-democontent.php';
 require get_template_directory() . '/plugin/functions/fw-navwalker.php';
 require get_template_directory() . '/plugin/functions/fw-user-account.php';
 
-    require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
-    require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;
-    
-    require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;
-    require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
+require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
+require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;
 
-    require get_template_directory() . '/plugin/functions/vc_customs/vc_fastway.php';
+require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;
+require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
+
+require get_template_directory() . '/plugin/functions/vc_customs/vc_fastway.php';
+
 if(fw_checkPlugin('woocommerce/woocommerce.php')){
     require get_template_directory() . '/plugin/functions/extra-woo-functions.php';
     require get_template_directory() . '/inc/woocommerce.php';
     require get_template_directory() . '/plugin/functions/vc_customs/vc_woo_carousels.php';
     require get_template_directory() . '/plugin/functions/woocommerce-category-banner/woocommerce-category-banner.php';
+    require get_template_directory() . '/plugin/functions/hide-default-woocomerce-category.php';
     require get_template_directory() . '/plugin/functions/product-enquiry-form/product-enquiry-form.php';
     require get_template_directory() . '/plugin/functions/woo-empty-cart-button.php';
     require get_template_directory() . '/plugin/functions/woocommerce_custom_related_products.php';
