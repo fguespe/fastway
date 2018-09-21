@@ -563,7 +563,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*WOOCOMMERCE*/
-if(fw_checkPlugin('woocommerce/woocommerce.php')){
+//if(fw_checkPlugin('woocommerce/woocommerce.php')){
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -781,7 +781,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'		=> '1',
 ) );
 
-}
+//}
 /*FOOTER*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
