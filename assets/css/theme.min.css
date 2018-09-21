@@ -493,6 +493,11 @@ position:relative !important;
 
 
 /*WOO*/
+/*RELATED*/
+.related{
+clear:both;
+}
+
 .woocommerce input,
 .woocommerce div,
 #page-wrapper span,

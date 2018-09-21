@@ -30,7 +30,7 @@ global $single_desktop;
 			do_action( 'woocommerce_single_product_summary' );
 		?>
 	</div>
-
+</div>
 	<?php
 		/**
 		 * Hook: woocommerce_after_single_product_summary.
