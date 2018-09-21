@@ -23,7 +23,6 @@ if(fw_checkPlugin("woocommerce/woocommerce.php")){
 <?php 
 	$html = '';
 	if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {
-		error_log("pepe");
 		$html = '<div class="col-md-10 content-area" id="primary">';
 		echo $html; // WPCS: XSS OK.
 	} elseif ( 'both' === $sidebar_pos ) {

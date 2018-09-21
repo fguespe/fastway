@@ -16,12 +16,10 @@
  * @version 3.0.0
  */
 
-error_log("ja");
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-error_log("ja");
 global $product;
 // Ensure visibility
 
@@ -32,7 +30,6 @@ $classname_desktop="fw_product_loop desktop ";
 if(fw_theme_mod('shop-loop-mobile-product-style')>0){
 	$classname_desktop.=" d-none d-md-block ";
 }
-error_log('shop-loop-mobile-product-style');
 ?>
 <li <?php wc_product_class($classname_desktop); ?>>
 

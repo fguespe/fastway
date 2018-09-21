@@ -584,8 +584,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Catalog Loop Style', 'fastway' ),
 	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_woo',
-	'default'     => 'shop-loop-product-style',
 	'choices'     => $loop_templates,
+	'default'     => '1',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
