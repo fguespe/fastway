@@ -1191,14 +1191,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
 	'label'    => __( 'Company Name', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyname]', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companyname] ', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con +54', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companywhatsapp] empezar con +54 [fw_extras_short type="whatsapp"]', 'redux-framework-demo' ),
                 
 	'section'     => 'section_extras',
 ) );
@@ -1206,35 +1206,35 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyphone]', 'redux-framework-demo' ),            
+    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'redux-framework-demo' ),            
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
 	'label'    => __( 'Company Adress', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyaddress]', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companygooglemaps',
 	'label'    => __( 'Google Maps Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companygooglemaps]', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companygooglemaps] ', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',
 	'label'    => __( 'Company Email', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyemail]', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
 	'label'    => __( 'Company Facebook Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyfb]', 'redux-framework-demo' ),
+    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 
@@ -1242,7 +1242,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
 	'label'    => __( 'Company Instagram Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyig]', 'redux-framework-demo' ),            
+    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'redux-framework-demo' ),            
 	'section'     => 'section_extras',
 ) );
 
@@ -1250,7 +1250,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
 	'label'    => __( 'Company Youtube Url', 'redux-framework-demo' ),
-   	'description'     => __( '[fw_companyyoutube]', 'redux-framework-demo' ),
+   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'redux-framework-demo' ),
 	'section'     => 'section_extras',
 ) );
 
