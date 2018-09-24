@@ -1,27 +1,19 @@
 <?php global $header_container,$header_middle,$header_container,$header_bottom; ?>
 <div class=" <?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
-	    <div class="row">
-		    <div class="col-3"><?php echo fastway_getLogo();?> 
-			</div>
-			<div class="col-6 form-row align-items-center">
-				<?php echo fw_search_form();?> 
-			</div>
-			<div class="icons col-3 row align-items-center justify-content-center">
-          <table border="collapse" style="border: grey !important;">
-          <td><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="align-items-center justify-content-center"><i class="fa fa-user"></i><span class="ingresar"> INGRESAR</span></a></td>
-		      <td><?php echo fw_shoppingCart();?></td>
-          </table>
-			</div>
-	        	
-        <!-- End Nav -->
-      	</div>
+	    <div class="row d-flex justify-content-between">
+  		  <div class=""><?php echo fastway_getLogo();?></div>
+  			<div class="form-row align-items-center">
+          
+  				<?php fastway_getWidgetHeaderText();?>
+  			</div>
+	    </div>
   </div>
 </div>
-<div class="fw_header_bottom <?php echo esc_attr( $header_bottom ); ?>">
-  <div class="<?php echo esc_attr( $header_container ); ?>">
+<div class="fw_header_bottom <?php echo esc_attr( $header_bottom ); ?> ">
+  <div class="<?php echo esc_attr( $header_container ); ?> ">
+      <div class="row d-flex justify-content-between">
 	       <nav class="js-mega-menu  navbar-expand-md u-header__navbar">
-          <!-- Logo -->
           <?php wp_nav_menu(
             array(
                   'theme_location'  => 'primary',
@@ -35,5 +27,12 @@
             ); 
             ?>
         </nav>
+        <a class="mudamos" href="">
+            <i class="fa fa-map-marker"></i>
+            <strong>NOS MUDAMOS</strong>
+            <span>Sarmiento 2608 </span>
+          </a>
+      </div>
   </div>
+        
 </div>

@@ -9,7 +9,7 @@ add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
 function fw_recentposts_hor() {
     $rPosts = new WP_Query();
     $rPosts->query('showposts=3');
-    ?><div class="fw_news d-flex flex-row justify-content-between" ><? 
+    ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><? 
     while ($rPosts->have_posts()) : $rPosts->the_post(); ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
     <?php $image_url = $image[0]; ?>
