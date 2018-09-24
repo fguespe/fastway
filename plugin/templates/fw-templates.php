@@ -75,6 +75,39 @@ function loadnoimgs($phpprefix,$usesame=false){
 
     return $miarray;
 }
+
+function loadimgscontent($phpprefix){
+    $lavar=$phpprefix."s";
+    $imgurl=WP_CONTENT_URL."/template-images/".$lavar."/".$phpprefix."-";
+    $dir = new DirectoryIterator(WP_CONTENT_DIR."/template-images/".$lavar );
+    
+    $miarray=array();
+    foreach ($dir as $fileinfo) {
+        if (!$fileinfo->isDot()) {
+            if(!strpos($fileinfo->getFilename(),".png"))continue;
+            
+            $nombre= str_replace($phpprefix."-", "", str_replace(".png", "", $fileinfo->getFilename()));
+
+            $i=explode("-", $nombre)[0];
+            $j=explode("-", $nombre)[1];
+            $imgg= $imgurl.$i;
+            $alt=$i;
+            if(isset($j)){
+                $imgg.="-".$j;
+                $alt.="-".$j;
+            }
+            $imgg.=".png";
+
+            error_log($imgg);
+            $miarray[$alt] = array(
+                'alt' => $alt,
+                'img' => $imgg
+            );  
+        }
+    }
+
+    return $miarray;
+}
 /*
 $loop_templates_mobile = array();
 $loop_templates_mobile =  array_merge($loop_templates_mobile,array( 0 => "Use same as desktop"));
