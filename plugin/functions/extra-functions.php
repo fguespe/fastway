@@ -42,6 +42,9 @@ background:white;
 }
 
 
+
+
+
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
@@ -252,7 +255,7 @@ function fw_extras_short($atts = [], $content = null, $tag = '')
     if($wporg_atts['size']){
         $font_size=$wporg_atts['size'];
     }
-    $first='<a style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+    $first='<a class="fw_quicklink" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
     if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
     $first.='</a>';
     return $first;

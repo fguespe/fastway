@@ -60,6 +60,7 @@ require get_template_directory() . '/plugin/demos/fw-democontent.php';
 //require get_template_directory() . '/plugin/demos/one-click-demo-import/one-click-demo-import.php';
 require get_template_directory() . '/plugin/functions/fw-navwalker.php';
 require get_template_directory() . '/plugin/functions/fw-user-account.php';
+require get_template_directory() . '/plugin/functions/fw-blog-options.php';
 
 require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
 require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;

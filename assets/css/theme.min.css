@@ -1,9 +1,11 @@
 /*TOP MARGIN*/
+@media (max-width: 799px) {
 .withtopmargin{
     margin-top:30px ;
 }
 .withbottommargin{
     margin-bottom:30px;
+}
 }
 
 /*navbar*/
@@ -22,7 +24,6 @@
   color:white !important;
   position: absolute;
 }
-
 
 /*stickty*/
 
