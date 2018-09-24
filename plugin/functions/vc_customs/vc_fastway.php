@@ -65,13 +65,25 @@ vc_add_param("vc_column", array(
     "type" => "dropdown",
     "group" => "Fastway",
     "class" => "",
-    "heading" => "Width of Columns Inside",
+    "heading" => "Width of Column In Mobile",
     "param_name" => "fw_columns_responsive",
     "value" => array(
         "Select an option" => "",
         "50%" => "onehalf_mobile",
         "33%" => "onethird_mobile",
         "25%" => "onefourth_mobile",
+    )
+));
+vc_add_param("vc_column", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Margin in Mobile",
+    "param_name" => "fw_columns_margin",
+    "value" => array(
+        "Select an option" => "",
+        "Top" => "withtopmargin",
+        "Bottom" => "withbottommargin",
     )
 ));
 vc_add_param("vc_column_inner", array(
@@ -90,7 +102,19 @@ vc_add_param("vc_column_inner", array(
     "type" => "dropdown",
     "group" => "Fastway",
     "class" => "",
-    "heading" => "Width of Columns Inside",
+    "heading" => "Margin in Mobile",
+    "param_name" => "fw_columns_margin",
+    "value" => array(
+        "Select an option" => "",
+        "Top" => "withtopmargin",
+        "Bottom" => "withbottommargin",
+    )
+));
+vc_add_param("vc_column_inner", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Width of Column In Mobile",
     "param_name" => "fw_columns_responsive",
     "value" => array(
         "Select an option" => "",

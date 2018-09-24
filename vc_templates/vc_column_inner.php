@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_Column_Inner
  */
-$el_class = $width = $el_id = $css = $offset = $fw_responsive = $fw_columns_responsive = '';
+$el_class = $width = $el_id = $css = $offset = $fw_responsive = $fw_columns_responsive = $fw_columns_margin = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -29,6 +29,7 @@ $css_classes = array(
 	'vc_column_container',
 	$fw_responsive,
 	$fw_columns_responsive,
+	$fw_columns_margin,
 	$width,
 );
 
