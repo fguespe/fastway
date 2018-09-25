@@ -208,15 +208,17 @@ function fw_companygooglemaps() {
 }
 
 
-function fw_extras_short($atts = [], $content = null, $tag = '')
-{
-    $atts = array_change_key_case((array)$atts, CASE_LOWER);
-    $font_size=16;
-    //FWWARNING
-    //if(empty($font_size))$font_size=$wporg_atts['size'];
-    // override default attributes with user attributes
+function fw_extras_short( $atts ) {
+    $wporg_atts = shortcode_atts(
+        array(
+            'type' => '',
+            'text' =>  '',
+            'size' =>  '',
+            'link' =>  '',
+        ), $atts, 'fw_extras_short' );
 
-    $wporg_atts = shortcode_atts($atts);
+    $font_size=16;
+    
     if($wporg_atts['type']==="phone"){
         $font_icon="fa-phone";
         $value="tel:".fw_companyphone();
@@ -264,7 +266,8 @@ function fw_extras_short($atts = [], $content = null, $tag = '')
 function wporg_shortcodes_init()
 {
 
-    add_shortcode('fw_extras_short', 'fw_extras_short');
+    add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
+
 }
  
 add_action('init', 'wporg_shortcodes_init');
