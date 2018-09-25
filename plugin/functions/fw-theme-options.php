@@ -298,7 +298,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '#main-menu li a',
+			'element' => '.navbar-nav li a',
 		),
 	),
 ) );
@@ -372,6 +372,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--main);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -389,6 +390,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--second-color);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -406,6 +408,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--top-header);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -423,6 +426,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--top-banner);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -441,6 +445,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--icon-header);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -458,6 +463,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--middle-header);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -475,6 +481,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--bottom-header);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -492,6 +499,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--body);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -509,6 +517,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'description'=>'var(--footer);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
