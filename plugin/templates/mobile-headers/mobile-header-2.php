@@ -17,7 +17,7 @@ global $header_middle_mobile;
                   'theme_location'  => 'mobile',
                   'container_class' => 'navbar-collapse py-0',
                   'container_id'    => 'navBar',
-                  'menu_class'      => 'navbar-nav u-header__navbar-nav ml-lg-auto',
+                  'menu_class'      => 'navbar-nav  ml-lg-auto',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
                   'walker'          => new fw_Navwalker('mobile-1'),

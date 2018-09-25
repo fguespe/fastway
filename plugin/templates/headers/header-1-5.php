@@ -10,7 +10,7 @@
                   'theme_location'  => 'primary',
                   'container_class' => 'navbar-collapse py-0',
                   'container_id'    => 'navBar',
-                  'menu_class'      => 'navbar-nav u-header__navbar-nav',
+                  'menu_class'      => 'navbar-nav ',
                   'fallback_cb'     => '',
                   'menu_id'         => '',
                   'walker'          => new fw_Navwalker('desktop-1'),
