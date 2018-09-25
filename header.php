@@ -45,7 +45,7 @@ $js=fw_theme_mod('opt-ace-editor-js');
     
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class("page-".basename(get_permalink())); ?>>
 <?php
 global $header_main,$header_middle,$header_middle_mobile,$header_bottom,$header_container;
 $header_container   = fw_theme_mod('header-width');
