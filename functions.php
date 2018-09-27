@@ -41,8 +41,8 @@ function fw_checkPlugin( $path = '' ){
 endif;
 $THEME_DIR= get_template_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
-$TEMPLATE_DIR=$THEME_DIR."plugin/templates/";
-$TEMPLATE_URI=$THEME_URI."plugin/templates/";
+$TEMPLATE_DIR=$THEME_DIR."templates/";
+$TEMPLATE_URI=$THEME_URI."templates/";
 $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
@@ -53,34 +53,34 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/plugin/functions/extra-functions.php';
-require get_template_directory() . '/plugin/functions/ihaf.php';
-require get_template_directory() . '/plugin/templates/fw-templates.php';
-require get_template_directory() . '/plugin/demos/fw-democontent.php';
-//require get_template_directory() . '/plugin/demos/one-click-demo-import/one-click-demo-import.php';
-require get_template_directory() . '/plugin/functions/fw-navwalker.php';
-require get_template_directory() . '/plugin/functions/fw-user-account.php';
-require get_template_directory() . '/plugin/functions/fw-blog-options.php';
+require get_template_directory() . '/functions/extra-functions.php';
+require get_template_directory() . '/functions/ihaf.php';
+require get_template_directory() . '/templates/fw-templates.php';
+require get_template_directory() . '/demos/fw-democontent.php';
+//require get_template_directory() . '/demos/one-click-demo-import/one-click-demo-import.php';
+require get_template_directory() . '/functions/fw-navwalker.php';
+require get_template_directory() . '/functions/fw-user-account.php';
+require get_template_directory() . '/functions/fw-blog-options.php';
 
-require get_template_directory() . '/plugin/functions/shortcodes/class-woo-shortcodes.php' ;
-require get_template_directory() . '/plugin/functions/shortcodes/class-shortcodes.php' ;
+require get_template_directory() . '/functions/shortcodes/class-woo-shortcodes.php' ;
+require get_template_directory() . '/functions/shortcodes/class-shortcodes.php' ;
 
-require get_template_directory() . '/plugin/functions/fw-shopping-cart.php' ;
-require get_template_directory() . '/plugin/functions/fw-ajax-search.php';
+require get_template_directory() . '/functions/fw-shopping-cart.php' ;
+require get_template_directory() . '/functions/fw-ajax-search.php';
 
-require get_template_directory() . '/plugin/functions/vc_customs/vc_fastway.php';
+require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 
 if(fw_checkPlugin('woocommerce/woocommerce.php')){
-    require get_template_directory() . '/plugin/functions/extra-woo-functions.php';
+    require get_template_directory() . '/functions/extra-woo-functions.php';
     require get_template_directory() . '/inc/woocommerce.php';
-    require get_template_directory() . '/plugin/functions/vc_customs/vc_woo_carousels.php';
-    require get_template_directory() . '/plugin/functions/woocommerce-category-banner/woocommerce-category-banner.php';
-    require get_template_directory() . '/plugin/functions/hide-default-woocomerce-category.php';
-    require get_template_directory() . '/plugin/functions/product-enquiry-form/product-enquiry-form.php';
-    require get_template_directory() . '/plugin/functions/woo-empty-cart-button.php';
-    require get_template_directory() . '/plugin/functions/woocommerce_custom_related_products.php';
-    require get_template_directory() . '/plugin/functions/tab_descargas.php';
-    require get_template_directory() . '/plugin/functions/tab_video.php';
+    require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
+    require get_template_directory() . '/functions/woocommerce-category-banner/woocommerce-category-banner.php';
+    require get_template_directory() . '/functions/hide-default-woocomerce-category.php';
+    require get_template_directory() . '/functions/product-enquiry-form/product-enquiry-form.php';
+    require get_template_directory() . '/functions/woo-empty-cart-button.php';
+    require get_template_directory() . '/functions/woocommerce_custom_related_products.php';
+    require get_template_directory() . '/functions/tab_descargas.php';
+    require get_template_directory() . '/functions/tab_video.php';
 }
 
 
@@ -122,13 +122,13 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/i
 
 global $redux_demo;
 
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/plugin/functions/fw-theme-options.php' );
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-theme-options.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/functions/fw-theme-options.php' );
 }
 */
 
 require get_template_directory() . '/inc/kirki/kirki.php';
-require get_template_directory() . '/plugin/functions/fw-theme-options.php';
+require get_template_directory() . '/functions/fw-theme-options.php';
 
 
 

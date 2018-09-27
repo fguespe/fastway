@@ -1285,16 +1285,24 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
+	'type'        => 'code',
 	'settings'    => 'header-insert',
 	'label'    => __( 'Insert Scripts Header', 'redux-framework-demo' ),       
 	'section'     => 'section_extras',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
+	'type'        => 'code',
 	'settings'    => 'footer-insert',
 	'label'    => __( 'Insert Scripts Footer', 'redux-framework-demo' ),       
 	'section'     => 'section_extras',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
 ) );
 
 

@@ -1,15 +1,8 @@
 <?php 
-/**
-	 * Dimox Breadcrumbs
-	 * http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
-	 * Since ver 1.0
-	 * Add this to any template file by calling fw_dimox_breadcrumbs()
-	 * Changes: MC added taxonomy support
-	 */
-	 
-if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
+
+if( !function_exists( 'fw_breadcrumbs' ) ) {
 	
-	function fw_dimox_breadcrumbs(){
+	function fw_breadcrumbs(){
 		global $post, $fw_datas;
 		/* === OPTIONS === */
 		$text = array(
@@ -219,7 +212,7 @@ if( !function_exists( 'fw_dimox_breadcrumbs' ) ) {
 				<?php 
 				if( isset( $datas['is_shop'] ) && absint( $datas['is_shop'] ) ){
 					woocommerce_breadcrumb();
-				} else fw_dimox_breadcrumbs();
+				} else fw_breadcrumbs();
 				?>
 			</div>
 		</div>

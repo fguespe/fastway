@@ -8,7 +8,7 @@ if( !function_exists('fw_get_template_part') ){
     function fw_get_template_part( $style = 1 ,$var){
         global $TEMPLATE_DIR;
         if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php') ) $style = 1;
-        get_template_part('plugin/templates/'.$var.'s/'.$var, $style);
+        get_template_part('templates/'.$var.'s/'.$var, $style);
     }
 }
 

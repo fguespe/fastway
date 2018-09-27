@@ -15,7 +15,7 @@ class fw_Woo_Shortcodes {
 			extract( $args );
 		}
 		
-		$located = get_template_directory() . '/plugin/functions/shortcodes/'.$template_name;
+		$located = get_template_directory() . '/functions/shortcodes/'.$template_name;
 		
 		if ( ! file_exists( $located ) ) {
 			_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $located ), '1.0' );
