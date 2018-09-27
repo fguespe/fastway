@@ -47,7 +47,6 @@ $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
 
-include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
 
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
@@ -130,6 +129,8 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-
 */
 
 //require get_template_directory() . '/inc/kirki/kirki.php';
+
+include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
 require get_template_directory() . '/functions/fw-theme-options.php';
 
 
