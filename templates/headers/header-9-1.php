@@ -21,16 +21,16 @@
           <!-- Logo -->
           <?php wp_nav_menu(
             array(
-                  'theme_location'  => 'primary',
-                  'container_class' => 'navbar-collapse py-0',
-                  'container_id'    => 'navBar',
-                  'menu_class'      => 'navbar-nav',
-                  'fallback_cb'     => '',
-                  'menu_id'         => '',
-                  'walker'          => new fw_Navwalker('desktop-1'),
-                )
-            ); 
-            ?>
+              'theme_location'  => 'primary',
+              'container_class' => 'collapse navbar-collapse show align-items-center',
+              'container_id'    => 'navbarNavDropdown',
+              'menu_class'      => 'navbar-nav ml-auto',
+              'fallback_cb'     => '',
+              'menu_id'         => 'main-menu',
+              'depth'           => 2,
+              'walker'          => new fw_Navwalker(),
+            )
+          ); ?>
         </nav>
   </div>
 </div>
