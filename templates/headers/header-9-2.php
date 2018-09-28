@@ -2,7 +2,7 @@
 <div class=" <?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
 	    <div class="row d-flex justify-content-between">
-  		  <div class=""><?php echo fastway_getLogo();?></div>
+  		  <div class="logo"><?php echo fastway_getLogo();?></div>
   			<div class="form-row align-items-center">
           
   				<?php fastway_getWidgetHeaderText();?>
@@ -19,7 +19,7 @@
               'theme_location'  => 'primary',
               'container_class' => 'collapse navbar-collapse show align-items-center',
               'container_id'    => 'navbarNavDropdown',
-              'menu_class'      => 'navbar-nav ml-auto',
+              'menu_class'      => 'navbar-nav mr-auto',
               'fallback_cb'     => '',
               'menu_id'         => 'main-menu',
               'depth'           => 2,

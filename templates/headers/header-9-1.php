@@ -24,7 +24,7 @@
               'theme_location'  => 'primary',
               'container_class' => 'collapse navbar-collapse show align-items-center',
               'container_id'    => 'navbarNavDropdown',
-              'menu_class'      => 'navbar-nav ml-auto',
+              'menu_class'      => 'navbar-nav mr-auto',
               'fallback_cb'     => '',
               'menu_id'         => 'main-menu',
               'depth'           => 2,

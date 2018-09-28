@@ -86,9 +86,10 @@ Kirki::add_section( 'section_footer', array(
 
 Kirki::add_panel( 'panel_css', array(
 
-    'title'       => __( 'Fastway Live CSS Editor', 'fastway' ),
+    'title'       => __( 'Live CSS (depreceated)', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
+
 Kirki::add_section( 'section_css_general', array(
     'title'          => __( 'CSS General', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -127,7 +128,7 @@ Kirki::add_section( 'section_css_single', array(
 
 ) );
 Kirki::add_section( 'section_css_mobile', array(
-    'title'          => __( 'CSS Mobile ', 'fastway' ),
+    'title'          => __( 'CSS Mobile', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_css',
 
@@ -167,6 +168,13 @@ Kirki::add_field( 'theme_config_id', array(
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_general',
 	'default'     => get_template_directory_uri()."/assets/img/logo.png",
+	'transport'=>'postMessage',
+	'partial_refresh' => array(
+	    'kirki_hero_title' => array(
+	        'selector'        => '.logo',
+	        'render_callback' => 'fastway_getLogo',
+	    ),
+	),
 ) );
 
 
@@ -612,23 +620,23 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'in-stock-text',
-	'label'    => __( 'In Stock Label', 'redux-framework-demo' ),
+	'label'    => __( 'In Stock Label', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'	=>__( 'In Stock', 'redux-framework-demo' ),
+	'default'	=>__( 'In Stock', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'out-of-stock-text',
 	'label'    => __( 'Out of Stock Label', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'	=>__( 'Sold', 'redux-framework-demo' ),
+	'default'	=>__( 'Sold', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-text',
-	'label'    => __( 'Add to cart Label', 'redux-framework-demo' ),
+	'label'    => __( 'Add to cart Label', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'	=>__( 'Buy', 'redux-framework-demo' ),
+	'default'	=>__( 'Buy', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
@@ -695,6 +703,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'shop-layout',
@@ -708,7 +717,18 @@ Kirki::add_field( 'theme_config_id', array(
 		'both' => __( 'Both Sidebars', 'fastway' ),
 	),
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'sidebar-ratio',
+	'label'       => __( 'Sidebar Width', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 2,
+	'choices'     => array(
+		'min'  => '2',
+		'max'  => '4',
+		'step' => '1',
+	),
+) );
 
 /*
 Kirki::add_field( 'theme_config_id', array(
@@ -1075,7 +1095,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-header',
 	'label'       => __( 'CSS Header', 'fastway' ),
-	'section'     => 'section_css_header',
+	'section'     => 'section_header',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1097,7 +1117,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-footer',
 	'label'       => __( 'CSS Footer', 'fastway' ),
-	'section'     => 'section_css_footer',
+	'section'     => 'section_footer',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1110,7 +1130,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-loop',
 	'label'       => __( 'CSS Product Loop', 'fastway' ),
-	'section'     => 'section_css_loop',
+	'section'     => 'section_woo',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1121,7 +1141,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-sidebarcats',
 	'label'       => __( 'CSS Sidebar Categorys', 'fastway' ),
-	'section'     => 'section_css_sidebarcats',
+	'section'     => 'section_woo',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1132,7 +1152,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-single',
 	'label'       => __( 'CSS Single Product', 'fastway' ),
-	'section'     => 'section_css_single',
+	'section'     => 'section_woo_singlef',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1144,7 +1164,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-mobile',
 	'label'       => __( 'CSS Mobile', 'fastway' ),
-	'section'     => 'section_css_mobile',
+	'section'     => 'section_mobile',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1199,67 +1219,67 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
-	'label'    => __( 'Company Name', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyname] ', 'redux-framework-demo' ),
+	'label'    => __( 'Company Name', 'fastway' ),
+    'description'     => __( '[fw_companyname] ', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
-	'label'    => __( 'Company Whatsapp', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con +54 [fw_extras_short type="whatsapp"]', 'redux-framework-demo' ),
+	'label'    => __( 'Company Whatsapp', 'fastway' ),
+    'description'     => __( '[fw_companywhatsapp] empezar con +54 [fw_extras_short type="whatsapp"]', 'fastway' ),
                 
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
-	'label'    => __( 'Company Phone', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'redux-framework-demo' ),            
+	'label'    => __( 'Company Phone', 'fastway' ),
+    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'fastway' ),            
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
-	'label'    => __( 'Company Adress', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'redux-framework-demo' ),
+	'label'    => __( 'Company Adress', 'fastway' ),
+    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companygooglemaps',
-	'label'    => __( 'Google Maps Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companygooglemaps] ', 'redux-framework-demo' ),
+	'label'    => __( 'Google Maps Url', 'fastway' ),
+    'description'     => __( '[fw_companygooglemaps] ', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',
-	'label'    => __( 'Company Email', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'redux-framework-demo' ),
+	'label'    => __( 'Company Email', 'fastway' ),
+    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
-	'label'    => __( 'Company Facebook Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'redux-framework-demo' ),
+	'label'    => __( 'Company Facebook Url', 'fastway' ),
+    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
-	'label'    => __( 'Company Instagram Url', 'redux-framework-demo' ),
-    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'redux-framework-demo' ),            
+	'label'    => __( 'Company Instagram Url', 'fastway' ),
+    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'fastway' ),            
 	'section'     => 'section_extras',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
-	'label'    => __( 'Company Youtube Url', 'redux-framework-demo' ),
-   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'redux-framework-demo' ),
+	'label'    => __( 'Company Youtube Url', 'fastway' ),
+   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 
@@ -1280,14 +1300,14 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
-	'label'    => __( 'Analyitics ID', 'redux-framework-demo' ),       
+	'label'    => __( 'Analyitics ID', 'fastway' ),       
 	'section'     => 'section_extras',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header-insert',
-	'label'    => __( 'Insert Scripts Header', 'redux-framework-demo' ),       
+	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
 	'section'     => 'section_extras',
 	'default'     => '',
 	'choices'     => array(
@@ -1297,7 +1317,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'footer-insert',
-	'label'    => __( 'Insert Scripts Footer', 'redux-framework-demo' ),       
+	'label'    => __( 'Insert Scripts Footer', 'fastway' ),       
 	'section'     => 'section_extras',
 	'default'     => '',
 	'choices'     => array(
@@ -1306,9 +1326,12 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+
+
 if(empty(get_theme_mod("header-style")) && !empty(get_option("redux_demo"))){
 	$jaja=get_option("redux_demo");
     foreach ($jaja as $key => $value) {
+    	if (strpos($key, 'copyright') !== false)continue;
     	if($key=='opt-typography-div')$key='opt-typography-body';
     	if(isset($jaja[$key]['url']))$value=$jaja[$key]['url'];
         set_theme_mod($key,$value);

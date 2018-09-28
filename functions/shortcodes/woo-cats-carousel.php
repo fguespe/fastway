@@ -6,9 +6,9 @@ $rand=generateRandomString(5);
 
 ?>
 <style type="text/css">
-  .vc_row-fluid{
+  /*.vc_row-fluid{
     max-width:1440px;
-  }
+  }*/
 </style>
 <div id="owl-slider">
 <div class="owl-carousel owl-theme <?=$rand?>-owl owl-product-cats">

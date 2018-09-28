@@ -1,7 +1,7 @@
 <?php
 
 function fw_theme_mod( $name ) {
-   //global $my_theme_defaults;
+    //global $my_theme_defaults;
     return get_theme_mod( $name);
 }
 if ( !function_exists( 'write_log' ) ):
@@ -116,19 +116,17 @@ register_nav_menus( array(
     'vertical' => __( 'Vertical Menu', 'fastway' ),
     'mobile' => __( 'Mobile Menu', 'fastway' ),
 ) );
+
 /*
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
 }
-
 global $redux_demo;
-
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-theme-options.php' ) ) {
     require_once( dirname( __FILE__ ) . '/functions/fw-theme-options.php' );
 }
-*/
-
 //require get_template_directory() . '/inc/kirki/kirki.php';
+*/
 
 include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
 require get_template_directory() . '/functions/fw-theme-options.php';

@@ -1,3 +1,4 @@
+<?php //if not woocommerce_after_shop_loop_item close with </a> at the end?>
 <style type="text/css">
 .fw_product_loop .woocommerce-loop-product__title{
     font-size:12px !important;
@@ -36,3 +37,4 @@
     do_action( 'woocommerce_after_shop_loop_item_title' );
 
     ?>
+    </a>

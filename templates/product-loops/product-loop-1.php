@@ -1,4 +1,6 @@
+<?php //if not woocommerce_after_shop_loop_item close with </a> at the end?>
     <?php
+    //if not woocommerce_after_shop_loop_item close with </a> at the end
     /**
      * woocommerce_before_shop_loop_item hook.
      *
