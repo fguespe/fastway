@@ -106,6 +106,12 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+		register_sidebar( array(
+			'name'          => __( 'Dashboard', 'fastway' ),
+			'id'            => 'dash-sidebar',
+			'description'   => 'Dashboard metaboxes',
+
+		) );
 		
 
 		

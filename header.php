@@ -65,7 +65,7 @@ $header_middle_mobile=" fw_header_middle mobile d-md-none navbar";
 
 jQuery(window).scroll(function() {
     
-     if (jQuery(this).scrollTop() > 600 && jQuery(document).height()>1600){  
+     if (jQuery(this).scrollTop() > 600 && jQuery(document).height()>1800){  
         jQuery('header').addClass("fw-sticky-top");
         <?php 	
         if(!empty(fw_theme_mod('sticky-menu'))):

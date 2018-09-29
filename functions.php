@@ -131,6 +131,10 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-
 include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
 require get_template_directory() . '/functions/fw-theme-options.php';
 
+if(fw_theme_mod('ca-switch')){
+    require get_template_directory() . '/functions/client-area/client-area.php';   
+}
+
 
 
 function template_sredirect() {

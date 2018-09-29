@@ -41,6 +41,7 @@ Kirki::add_section( 'section_css', array(
 ) );
 
 
+
 Kirki::add_section( 'section_general', array(
     'title'          => __( 'General', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -77,6 +78,12 @@ Kirki::add_section( 'section_colors', array(
 
 Kirki::add_section( 'section_footer', array(
     'title'          => __( 'Footer', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
+Kirki::add_section( 'section_clientarea', array(
+    'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
@@ -1119,6 +1126,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'CSS Footer', 'fastway' ),
 	'section'     => 'section_footer',
 	'default'     => '',
+	'priority'=>2,
 	'transport'	=> 'postMessage',
 	'choices'     => array(
 		'language' => 'css',
@@ -1324,6 +1332,99 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+/*CLIENT AREA*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'ca-switch',
+	'label'       => __( 'Enable', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-main-color',
+	'label'       => __( 'Main Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#00A2DE',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-text-color',
+	'label'       => __( 'Text Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-icon-color',
+	'label'       => __( 'Icon Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-client-logo',
+	'label'       => __( 'Login Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => get_template_directory_uri()."/assets/img/logo.png",
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-dev-logo',
+	'label'       => __( 'Developer Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => get_template_directory_uri()."/assets/img/logo.png",
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-dev-favi',
+	'label'       => __( 'Top Left Icon', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => get_template_directory_uri()."/assets/img/favi.png",
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca-home-redirect',
+	'label'       => __( 'Default Home', 'fastway' ),
+	'description'	=>	'Redirect to other homepage in mobile. Ej. /permalink',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-header-headerwidget',
+	'label'       => __( 'Client Area Custom CSS', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '',
+	'priority'	=> 20,
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
+
+
 
 
 
@@ -1355,22 +1456,22 @@ function my_customizer_styles() { ?>
 	}
 
 	.customize-control-kirki-multicheck ul li {
-	  width: 100%;
+	  	width: 100%;
 	}
 
 	.customize-control-kirki-multicheck ul li label {
-	  background: rgba(0, 0, 0, 0.1);
-	  border: 1px rgba(0, 0, 0, 0.1);
-	  color: #555d66;
-	  margin: 0;
-	  text-align: center;
-	  padding: 0.5em 1em;
-	  display: block;
+		  background: rgba(0, 0, 0, 0.1);
+		  border: 1px rgba(0, 0, 0, 0.1);
+		  color: #555d66;
+		  margin: 0;
+		  text-align: center;
+		  padding: 0.5em 1em;
+		  display: block;
 	}
 
 	.customize-control-kirki-multicheck ul li label.checked {
-	  background-color: #00a0d2;
-	  color: rgba(255, 255, 255, 0.8);
+	  	background-color: #00a0d2;
+	  	color: rgba(255, 255, 255, 0.8);
 	}
 
 	.customize-control-kirki-multicheck ul li input {
@@ -1381,11 +1482,11 @@ function my_customizer_styles() { ?>
 	  height: 400px !important;
 	}
 	.CodeMirror-gutters, .CodeMirror-gutter-wrapper{
-display:none !important;
-}
-.CodeMirror-sizer{
-margin:0px !important;
-}
+		display:none !important;
+	}
+	.CodeMirror-sizer{
+		margin:0px !important;
+	}
 	</style>
 	<?php
 }
