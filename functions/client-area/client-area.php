@@ -290,13 +290,16 @@ function init_adminbar(){
 
 }
 
-function wca_FontAwesome() {
+function ca_enqueue() {
     wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
     wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css');
     wp_enqueue_script('cajs-style', get_template_directory_uri() . '/functions/client-area/ca.js');
 }
-add_action('admin_head', 'wca_FontAwesome');
-add_action('wp_head', 'wca_FontAwesome');
+
+if (current_user_can('shop_manager')  && !current_user_can('administrator')) {
+add_action('admin_head', 'ca_enqueue');
+add_action('wp_head', 'ca_enqueue');
+}
 
 
 
@@ -325,7 +328,8 @@ function wca_custom_admincss() {
 //Mobile?
 
 function wca_admin_css_ui() {
-    if (current_user_can('shop_manager') && !current_user_can('administrator'))add_action('admin_head', 'wca_custom_admincss');
+    if (current_user_can('shop_manager') && !current_user_can('administrator'))
+        add_action('admin_head', 'wca_custom_admincss');
 }
 add_action('admin_enqueue_scripts', 'wca_admin_css_ui');
 

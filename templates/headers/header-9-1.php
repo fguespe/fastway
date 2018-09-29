@@ -8,7 +8,7 @@
   			</div>
   			<div class="icons col-3 row align-items-center justify-content-center">
             <table border="collapse" style="border: grey !important;">
-            <td><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="align-items-center justify-content-center"><i class="fa fa-user"></i><span class="ingresar"> INGRESAR</span></a></td>
+            <td><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="align-items-center justify-content-center"><?php echo fw_userAccount();?></td>
   		      <td><?php echo fw_shoppingCart();?></td>
             </table>
   			</div>
