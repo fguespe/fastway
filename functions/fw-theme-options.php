@@ -1160,7 +1160,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-single',
 	'label'       => __( 'CSS Single Product', 'fastway' ),
-	'section'     => 'section_woo_singlef',
+	'section'     => 'section_woo_single',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(

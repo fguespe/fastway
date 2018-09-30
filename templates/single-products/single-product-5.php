@@ -6,48 +6,6 @@ function bbloomer_change_gallery_columns() {
 }
 ?>
 <style type="text/css">
-@media (min-width: 799px) {
-		.single-product div.product .woocommerce-product-gallery .flex-viewport {
-    width: 80%;
-    float: right;
-}
-
-.single-product div.product .woocommerce-product-gallery li{
-width:100% !important;
-}
-.single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
-    width: 20%;
-    float: right;
-display:block !important;
-}
-
-.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img {
-    width: 90%;
-    float: none;
-    margin: 0 0 10% 10%;
-}
-
-.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
-width:65%;
-
-}
-.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
-width:30%;
-}.summary{
-text-align:right;
-font-weight: 300 !important;
-}
-.woocommerce-page div.product .flex-viewport img,.woocommerce-product-gallery__wrapper div{
-margin:0px !important;
-height:500px;
-width:auto !important;
-
-}
-.flex-viewport{
-overflow: auto !important;
-}
-
-}
 
 
 </style>
@@ -55,7 +13,7 @@ overflow: auto !important;
 global $single_desktop;
 ?>
 <div id="product-<?php the_ID(); ?>" <?php post_class($single_desktop); ?>>
-
+	<div class="fw_gallery">
 	<?php
 		/**
 		 * Hook: woocommerce_before_single_product_summary.
@@ -65,8 +23,9 @@ global $single_desktop;
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
+	</div>
 
-	<div class="summary entry-summary">
+	<div class="summary entry-summary side-detalle">
 		<?php
 			/**
 			 * Hook: Woocommerce_single_product_summary.
@@ -82,6 +41,16 @@ global $single_desktop;
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
+		<div class="compra-segura"><i class="fa fa-shield"></i> <a href="#" target="_blank">Compra segura</a>, garantía de fábrica en todo el país.</div>
+		<a data-fancybox="" href="https://wp.bidcom.com.ar/cuotas-tarjetas-bancos.php?preciocontado=28149&amp;_ga=2.165564543.1796437698.1538259347-188261107.1538053526" class="fancybox btn-medios block btn-mobile t2">
+		                <div class="row">
+		                    <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
+		                    <div class="col-10 text-left calcular-costo-envio">
+		                    	<h4 class="t1">Ver cuotas y medios de pago</h4>
+			                    <span class="link1 t1">Hasta 12 cuotas fijas de $ 2,347</span>
+		                    </div>
+		                </div>
+        </a>
 	</div>
 
 	<?php

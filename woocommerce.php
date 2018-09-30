@@ -18,21 +18,16 @@ $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
 ); 
-do_action( 'fw_breadcrumb', $datas );
+
 
 ?>
 
 <div class="wrapper" id="woocommerce-wrapper">
-
+	<?do_action( 'fw_breadcrumb', $datas );?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
-
 		<div class="row">
-
-			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
 			<main class="site-main" id="main">
-
 			<?php 
 				$template_name = '/archive-product.php'; 
 				$args = array(); 
