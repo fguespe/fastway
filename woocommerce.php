@@ -23,7 +23,7 @@ $datas = array(
 ?>
 
 <div class="wrapper" id="woocommerce-wrapper">
-	<?do_action( 'fw_breadcrumb', $datas );?>
+	<?if(is_product())do_action( 'fw_breadcrumb', $datas );?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
