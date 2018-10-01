@@ -507,6 +507,10 @@ position:relative !important;
 
 
 /*WOO*/
+
+/*stars*/
+
+.woocommerce .star-rating span,.stars a{font-family: star;color:gold;}
 /*RELATED*/
 .related{
 clear:both;

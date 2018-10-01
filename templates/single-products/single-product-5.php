@@ -42,7 +42,7 @@ global $single_desktop;
 			do_action( 'woocommerce_single_product_summary' );
 		?>
 		<div class="compra-segura"><i class="fa fa-shield"></i> <a href="#" target="_blank">Compra segura</a>, garantía de fábrica en todo el país.</div>
-		<a data-fancybox="" href="https://wp.bidcom.com.ar/cuotas-tarjetas-bancos.php?preciocontado=28149&amp;_ga=2.165564543.1796437698.1538259347-188261107.1538053526" class="fancybox btn-medios block btn-mobile t2">
+		<a target="_blak" href="https://wp.bidcom.com.ar/cuotas-tarjetas-bancos.php?preciocontado=28149&amp;_ga=2.165564543.1796437698.1538259347-188261107.1538053526" class="fancybox btn-medios block btn-mobile t2">
 		                <div class="row">
 		                    <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
 		                    <div class="col-10 text-left calcular-costo-envio">
