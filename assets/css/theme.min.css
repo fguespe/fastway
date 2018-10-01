@@ -511,6 +511,9 @@ position:relative !important;
 .related{
 clear:both;
 }
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+  margin-bottom: 0px;
+}
 
 .woocommerce input,
 .woocommerce div,
@@ -587,9 +590,7 @@ line-height: 1rem ;
 width:100%;
 margin-bottom:20px ;
 }
-.summary h1{
-    font-size: 30px ;
-}
+
 .woocommerce-checkout .wrapper .form-row,.woocommerce-cart-form .form-row{
 display:block !important;
 }

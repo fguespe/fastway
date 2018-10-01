@@ -1141,7 +1141,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
-if(fw_checkPlugin('woocommerce/woocommerce.php')){
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1176,7 +1175,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
-}
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-mobile',

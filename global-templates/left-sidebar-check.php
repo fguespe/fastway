@@ -9,7 +9,6 @@ if(fw_checkPlugin("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category() || is_product()){
 		$ratio=12-fw_theme_mod("sidebar-ratio");
 		$ratioboth=$ratio-fw_theme_mod("sidebar-ratio");
-		error_log($ratio);
 	}
 }
 ?>
