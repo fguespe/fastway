@@ -138,13 +138,19 @@ function fw_custom_css(){
                 $font=fw_theme_mod($nombre);
                 $size=str_replace("px", "", $font['font-size']);
                 $height=str_replace("px", "", $font['line-height']);
-
                 $css.= "body ".$key."{";
                 $css.= "font-size: calc(16px + (".$size." - 16) * ((100vw - 300px) / (1600 - 300))); ";
                 $css.= "line-height: calc(18px + (".$height." - 18) * ((100vw - 300px) / (1600 - 300))); ";
                 $css.= "}";   
             }
        
+    }
+    if(!empty(fw_theme_mod('sticky-menu'))){
+        foreach(fw_theme_mod('sticky-menu') as $key){
+           $css.=".fw-sticky-top .".$key."{
+                display:none !important;
+           }";
+        }
     }
     return $css;
 }

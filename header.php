@@ -23,10 +23,10 @@ $js=fw_theme_mod('opt-ace-editor-js');
 	<!-- APPLE -->
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="<?php echo $favi;?>">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $favi;?>">
+    <link rel="apple-touch-icon" href="<?php echo fw_theme_mod('mobile-icon');?>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <!--loading -->
-    <link rel="apple-touch-startup-image" href="<?php echo $favi;?>">
+    <link rel="apple-touch-startup-image" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
@@ -62,31 +62,21 @@ $header_middle_mobile=" fw_header_middle mobile d-md-none navbar";
 <?php do_action( 'fastway_header_init_mobile', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
 </header>
 <script >
-
-jQuery(window).scroll(function() {
     
-     if (jQuery(this).scrollTop() > 600 && jQuery(document).height()>1800){  
-        jQuery('header').addClass("fw-sticky-top");
-        <?php 	
-        if(!empty(fw_theme_mod('sticky-menu'))):
-        foreach(fw_theme_mod('sticky-menu') as $key){
-        ?>
-    	jQuery('.<?=$key?>').attr("style", "display: none !important; ");
-        <?}?>
-        <?php endif; ?>
-    	jQuery('.fw_header_top_banner').attr("style", "display: none !important; ");
-      }
-      else{
-        jQuery('header').removeClass("fw-sticky-top");
-        <?php
-        if(!empty(fw_theme_mod('sticky-menu'))):
-        foreach(fw_theme_mod('sticky-menu') as $key){
-        ?>
-    	jQuery('.<?=$key?>').attr("style", "display: flex;");
-        <?}?>
-        <?php endif; ?>
-    	jQuery('.fw_header_top_banner').attr("style", "display: flex ; ");
-      }
+jQuery(window).scroll(function() {
+  var sticky = jQuery('header'),
+    scroll = jQuery(window).scrollTop();
+   
+  if (scroll >= 171) { 
+    sticky.addClass('fw-sticky-top'); 
+   
+}
+  else { 
+   sticky.removeClass('fw-sticky-top');
+   
+}
 });
+
 </script>
+
 

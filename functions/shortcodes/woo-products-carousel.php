@@ -13,13 +13,13 @@ $rand=generateRandomString(5);
 </style>
 <div id="owl-slider">
 <div class="owl-carousel owl-theme <?=$rand?>-owl">
-	<?php 
-	while ( $products->have_posts() ) : 
+  <?php 
+  while ( $products->have_posts() ) : 
         $products->the_post(); 
         echo '<div class="item">';
         wc_get_template_part( 'content', 'product' ); 
-        echo '</div>';  	
-	endwhile; 
+        echo '</div>';    
+  endwhile; 
     ?>
 </div>
 </div>

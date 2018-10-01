@@ -543,6 +543,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*MOBILE*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'responsive-typo',
@@ -586,6 +587,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'mobile-icon',
+	'label'       => __( 'Mobile App Icon', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_general',
+	'default'     => get_template_directory_uri()."/assets/img/favi.png",
+) );
 /*WOOCOMMERCE*/
 //if(fw_checkPlugin('woocommerce/woocommerce.php')){
 
