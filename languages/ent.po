@@ -1,0 +1,1391 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fastway2\n"
+"POT-Creation-Date: 2018-10-03 17:34-0300\n"
+"PO-Revision-Date: 2018-10-03 17:43-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e(;__(\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:62 comments.php:90
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:65 comments.php:94
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: demos/fw-democontent.php:39 demos/fw-democontent.php:55
+msgid ""
+"Fijate de tener activado woocommerce, visual composer, metalslider y gravity "
+"forms. Acordarse de ir a ajustes y cambiar la pagina de inicio."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Downloader.php:58
+msgid "Missing URL for downloading a file!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Downloader.php:76
+#, php-format
+msgid ""
+"An error occurred while fetching file from: %1$s%2$s%3$s!%4$sReason: %5$s - "
+"%6$s."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:197
+#: demos/one-click-demo-import/inc/Helpers.php:240
+#, php-format
+msgid ""
+"An error occurred while writing file to your server! Tried to write a file "
+"to: %s%s."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:274
+#, php-format
+msgid ""
+"An error occurred while reading a file from your server! Tried reading file "
+"from path: %s%s."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:297
+#, php-format
+msgid ""
+"This WordPress page does not have %sdirect%s write file access. This plugin "
+"needs it in order to save the demo import xml file to the upload directory "
+"of your site. You can change this setting with these instructions: %s."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:321
+msgid ""
+"An error occurred while retrieving reading/writing permissions to your "
+"server (could not retrieve WP filesystem credentials)!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:329
+msgid "Your WordPress login credentials don't allow to use WP_Filesystem!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:403
+#, php-format
+msgid ""
+"%sYour user role isn't high enough. You don't have permission to import demo "
+"data.%s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:449
+#, php-format
+msgid "Content file was not uploaded. Error: %s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:466
+#, php-format
+msgid "Widget file was not uploaded. Error: %s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:483
+#, php-format
+msgid "Customizer file was not uploaded. Error: %s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:514
+#, php-format
+msgid "Redux file was not uploaded. Error: %s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:524
+msgid "The import files were successfully uploaded!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:550
+#, php-format
+msgid "Initial max execution time = %s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Helpers.php:554
+#, php-format
+msgid ""
+"Files info:%1$sSite URL = %2$s%1$sData file = %3$s%1$sWidget file = %4$s"
+"%1$sCustomizer file = %5$s%1$sRedux files:%1$s%6$s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/Importer.php:172
+msgid "New AJAX call!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/OneClickDemoImport.php:261
+#, php-format
+msgid "The import files for: %s were successfully downloaded!"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/OneClickDemoImport.php:394
+#, php-format
+msgid ""
+"%1$s%6$sWasn't this a great One Click Demo Import experience?%7$s Created "
+"and maintained by %3$sProteusThemes%4$s. %2$s%5$sClick to Tweet!%4$s%8$s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/OneClickDemoImport.php:407
+#, php-format
+msgid ""
+"%1$s%3$sThat's it, all done!%4$s%2$sThe demo import has finished. Please "
+"check your page and make sure that everything has imported correctly. If it "
+"did, you can deactivate the %3$sOne Click Demo Import%4$s plugin, because it "
+"has done its job.%5$s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/OneClickDemoImport.php:418
+#, php-format
+msgid ""
+"%1$sThe demo import has finished, but there were some import errors.%2$sMore "
+"details about the errors can be found in this %3$s%5$slog file%6$s%4$s%7$s"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:88
+msgid "Error: Widget import file could not be found."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:118
+msgid ""
+"Error: Widget import data could not be read. Please try a different file."
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:157
+msgid "Sidebar does not exist in theme (moving widget to Inactive)"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:178
+msgid "Site does not support widget"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:211
+msgid "Widget already exists"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:269
+msgid "Imported"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:273
+msgid "Imported to Inactive"
+msgstr ""
+
+#: demos/one-click-demo-import/inc/WidgetImporter.php:279
+msgid "No Title"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:131
+msgid "Could not open the file for parsing"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:167
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:283
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:356
+#, php-format
+msgid ""
+"This WXR file (version %s) is newer than the importer (version %s) and may "
+"not be supported. Please consider updating."
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:506
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:566
+msgid "Invalid author mapping"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:667
+msgid "Cannot import auto-draft posts"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:755
+#, php-format
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:765
+#, php-format
+msgid "%s \"%s\" already exists."
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:843
+#, php-format
+msgid "Skipping attachment \"%s\", fetching attachments disabled"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:857
+#, php-format
+msgid "Failed to import \"%s\" (%s)"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:889
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1772
+#, php-format
+msgid "Imported \"%s\" (%s)"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:894
+#, php-format
+msgid "Post %d remapped to %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1075
+msgid "Invalid file type"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1558
+#, php-format
+msgid "Failed to import user \"%s\""
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1579
+#, php-format
+msgid "Imported user \"%s\""
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1583
+#, php-format
+msgid "User %d remapped to %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1733
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1777
+#, php-format
+msgid "Term %d remapped to %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1835
+#, php-format
+msgid "Failed to add metakey: %s, metavalue: %s to term_id: %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1844
+#, php-format
+msgid "Meta for term_id %d : %s => %s ; successfully added!"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1895
+#, php-format
+msgid "Remote server returned %1$d %2$s for %3$s"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1917
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1923
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1948
+#, php-format
+msgid "Running post-processing for post %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1961
+#, php-format
+msgid "Could not find the post parent for \"%s\" (post #%d)"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1966
+#, php-format
+msgid "Post %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1980
+#, php-format
+msgid "Could not find the author for \"%s\" (post #%d)"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1985
+#, php-format
+msgid "Post %d was imported with author \"%s\", but could not be found"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2011
+#, php-format
+msgid "Post %d was marked for post-processing, but none was required."
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2022
+#, php-format
+msgid "Could not update \"%s\" (post #%d) with mapped data"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2067
+#, php-format
+msgid "Could not find the menu object for \"%s\" (post #%d)"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2072
+#, php-format
+msgid ""
+"Post %d was imported with object \"%d\" of type \"%s\", but could not be "
+"found"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2094
+#, php-format
+msgid "Could not find the comment parent for comment #%d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2098
+#, php-format
+msgid "Comment %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2112
+#, php-format
+msgid "Could not find the author for comment #%d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2116
+#, php-format
+msgid "Comment %d was imported with author %d, but could not be found"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2133
+#, php-format
+msgid "Could not update comment #%d with mapped data"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2162
+#, php-format
+msgid "Faulty term_id provided in terms-to-be-remapped array %s"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2172
+#, php-format
+msgid "No taxonomy provided in terms-to-be-remapped array for term #%d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2183
+#, php-format
+msgid "No parent_slug identified in remapping-array for term: %d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2191
+#, php-format
+msgid "The term(%d)\"s parent_slug (%s) is not found in the remapping-array."
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2205
+#, php-format
+msgid "No data returned by get_term_by for term_id #%d"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2224
+#, php-format
+msgid "Could not update \"%s\" (term #%d) with mapped data"
+msgstr ""
+
+#: demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2234
+#, php-format
+msgid "Term %d was successfully updated with parent %d"
+msgstr ""
+
+#: functions.php:115
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:116
+msgid "Vertical Menu"
+msgstr ""
+
+#: functions.php:117
+msgid "Mobile Menu"
+msgstr ""
+
+#: functions/client-area/client-area.php:110
+msgid "Client Area Menu (Shop Manager)"
+msgstr ""
+
+#: functions/client-area/client-area.php:111
+msgid "Client Area Menu (Editor)"
+msgstr ""
+
+#: functions/client-area/metabox.php:4
+msgid "Fastway Client Area"
+msgstr ""
+
+#: functions/fw-theme-options.php:32
+#: functions/vc_customs/vc_woo_carousels.php:11
+#: functions/vc_customs/vc_woo_carousels.php:73
+#: functions/vc_customs/vc_woo_carousels.php:133
+#: functions/vc_customs/vc_woo_carousels.php:150
+#: functions/vc_customs/vc_woo_carousels.php:167
+#: functions/vc_customs/vc_woo_carousels.php:186
+msgid "Fastway"
+msgstr ""
+
+#: functions/fw-theme-options.php:37
+msgid "CSS Live"
+msgstr ""
+
+#: functions/fw-theme-options.php:46
+msgid "General"
+msgstr ""
+
+#: functions/fw-theme-options.php:52
+msgid "Header"
+msgstr ""
+
+#: functions/fw-theme-options.php:58
+msgid "Mobile"
+msgstr ""
+
+#: functions/fw-theme-options.php:65
+msgid "Typography"
+msgstr ""
+
+#: functions/fw-theme-options.php:72
+msgid "Color Scheme"
+msgstr ""
+
+#: functions/fw-theme-options.php:80
+msgid "Footer"
+msgstr ""
+
+#: functions/fw-theme-options.php:86
+msgid "Client Area"
+msgstr ""
+
+#: functions/fw-theme-options.php:96
+msgid "Live CSS (depreceated)"
+msgstr ""
+
+#: functions/fw-theme-options.php:101 functions/fw-theme-options.php:1102
+msgid "CSS General"
+msgstr ""
+
+#: functions/fw-theme-options.php:108 functions/fw-theme-options.php:1113
+msgid "CSS Header"
+msgstr ""
+
+#: functions/fw-theme-options.php:114 functions/fw-theme-options.php:1124
+msgid "CSS Body"
+msgstr ""
+
+#: functions/fw-theme-options.php:120 functions/fw-theme-options.php:1135
+msgid "CSS Footer"
+msgstr ""
+
+#: functions/fw-theme-options.php:126 functions/fw-theme-options.php:1148
+msgid "CSS Product Loop"
+msgstr ""
+
+#: functions/fw-theme-options.php:132
+msgid "CSS Single Product "
+msgstr ""
+
+#: functions/fw-theme-options.php:138 functions/fw-theme-options.php:1182
+msgid "CSS Mobile"
+msgstr ""
+
+#: functions/fw-theme-options.php:144
+msgid "CSS Sidebar Category "
+msgstr ""
+
+#: functions/fw-theme-options.php:151
+msgid "Extras"
+msgstr ""
+
+#: functions/fw-theme-options.php:158
+msgid "Woocommerce"
+msgstr ""
+
+#: functions/fw-theme-options.php:164
+msgid "Single Product"
+msgstr ""
+
+#: functions/fw-theme-options.php:174
+msgid "Logo"
+msgstr ""
+
+#: functions/fw-theme-options.php:191
+msgid "Meta Description"
+msgstr ""
+
+#: functions/fw-theme-options.php:200
+msgid "Main layout: wide or boxed"
+msgstr ""
+
+#: functions/fw-theme-options.php:213
+msgid "Sidebars Layout"
+msgstr ""
+
+#: functions/fw-theme-options.php:217 functions/fw-theme-options.php:730
+#: functions/fw-theme-options.php:803
+msgid "Full Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:218 functions/fw-theme-options.php:731
+#: functions/fw-theme-options.php:804
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions/fw-theme-options.php:219 functions/fw-theme-options.php:732
+#: functions/fw-theme-options.php:805
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions/fw-theme-options.php:220 functions/fw-theme-options.php:733
+#: functions/fw-theme-options.php:806
+msgid "Both Sidebars"
+msgstr ""
+
+#: functions/fw-theme-options.php:228 functions/fw-theme-options.php:672
+msgid "Header Block"
+msgstr ""
+
+#: functions/fw-theme-options.php:237
+msgid "Deactivate Sticky"
+msgstr ""
+
+#: functions/fw-theme-options.php:241
+msgid "Top"
+msgstr ""
+
+#: functions/fw-theme-options.php:242
+msgid "Middle"
+msgstr ""
+
+#: functions/fw-theme-options.php:243
+msgid "Bottom"
+msgstr ""
+
+#: functions/fw-theme-options.php:249
+msgid "Header Padding"
+msgstr ""
+
+#: functions/fw-theme-options.php:261
+msgid "Logo Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:281
+msgid "Mobile Logo Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:301
+msgid "Main Menu"
+msgstr ""
+
+#: functions/fw-theme-options.php:324 inc/widgets.php:63
+msgid "Top Header"
+msgstr ""
+
+#: functions/fw-theme-options.php:328 functions/fw-theme-options.php:555
+#: functions/fw-theme-options.php:566 functions/fw-theme-options.php:687
+#: functions/fw-theme-options.php:699 functions/fw-theme-options.php:718
+#: functions/fw-theme-options.php:860 functions/fw-theme-options.php:1198
+#: functions/fw-theme-options.php:1209 functions/fw-theme-options.php:1355
+#: functions/fw-theme-options.php:1359
+msgid "Enable"
+msgstr ""
+
+#: functions/fw-theme-options.php:329 functions/fw-theme-options.php:556
+#: functions/fw-theme-options.php:567 functions/fw-theme-options.php:688
+#: functions/fw-theme-options.php:700 functions/fw-theme-options.php:719
+#: functions/fw-theme-options.php:861 functions/fw-theme-options.php:1199
+#: functions/fw-theme-options.php:1210 functions/fw-theme-options.php:1360
+msgid "Disable"
+msgstr ""
+
+#: functions/fw-theme-options.php:336
+msgid "Header Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:339 functions/fw-theme-options.php:609
+#: functions/fw-theme-options.php:838
+msgid "Boxed"
+msgstr ""
+
+#: functions/fw-theme-options.php:340 functions/fw-theme-options.php:610
+#: functions/fw-theme-options.php:839
+msgid "Wide "
+msgstr ""
+
+#: functions/fw-theme-options.php:348
+msgid "Top Header Img"
+msgstr ""
+
+#: functions/fw-theme-options.php:358
+msgid "Header Widget HTML"
+msgstr ""
+
+#: functions/fw-theme-options.php:359 functions/fw-theme-options.php:371
+#: functions/fw-theme-options.php:868 functions/fw-theme-options.php:880
+msgid "Not all headers have Header Widget"
+msgstr ""
+
+#: functions/fw-theme-options.php:370
+msgid "Header Widget CSS"
+msgstr ""
+
+#: functions/fw-theme-options.php:384 functions/fw-theme-options.php:1367
+msgid "Main Color"
+msgstr ""
+
+#: functions/fw-theme-options.php:402
+msgid "Secondary Color"
+msgstr ""
+
+#: functions/fw-theme-options.php:420
+msgid "Top Header "
+msgstr ""
+
+#: functions/fw-theme-options.php:438
+msgid "Top Header Banner"
+msgstr ""
+
+#: functions/fw-theme-options.php:457
+msgid "Icons in Header"
+msgstr ""
+
+#: functions/fw-theme-options.php:475
+msgid "Middle Header "
+msgstr ""
+
+#: functions/fw-theme-options.php:493
+msgid "Bottom Header "
+msgstr ""
+
+#: functions/fw-theme-options.php:511
+msgid "Body "
+msgstr ""
+
+#: functions/fw-theme-options.php:529
+msgid "Footer "
+msgstr ""
+
+#: functions/fw-theme-options.php:550
+msgid "Responsive Typo "
+msgstr ""
+
+#: functions/fw-theme-options.php:562
+msgid "Quicklinks"
+msgstr ""
+
+#: functions/fw-theme-options.php:574
+msgid "Header Mobile Block"
+msgstr ""
+
+#: functions/fw-theme-options.php:584
+msgid "Redirect Mobile"
+msgstr ""
+
+#: functions/fw-theme-options.php:593
+msgid "Mobile App Icon"
+msgstr ""
+
+#: functions/fw-theme-options.php:605
+msgid "Shop Layout"
+msgstr ""
+
+#: functions/fw-theme-options.php:617
+msgid "Catalog Loop Style"
+msgstr ""
+
+#: functions/fw-theme-options.php:626
+msgid "Mobile Loop templates"
+msgstr ""
+
+#: functions/fw-theme-options.php:639
+msgid "In Stock Label"
+msgstr ""
+
+#: functions/fw-theme-options.php:641
+msgid "In Stock"
+msgstr ""
+
+#: functions/fw-theme-options.php:646
+msgid "Out of Stock Label"
+msgstr ""
+
+#: functions/fw-theme-options.php:648
+msgid "Sold"
+msgstr ""
+
+#: functions/fw-theme-options.php:653
+msgid "Add to cart Label"
+msgstr ""
+
+#: functions/fw-theme-options.php:655
+msgid "Buy"
+msgstr ""
+
+#: functions/fw-theme-options.php:660
+msgid "Cart Style"
+msgstr ""
+
+#: functions/fw-theme-options.php:664
+msgid "Link"
+msgstr ""
+
+#: functions/fw-theme-options.php:665
+msgid "Modal "
+msgstr ""
+
+#: functions/fw-theme-options.php:682
+msgid "Prices"
+msgstr ""
+
+#: functions/fw-theme-options.php:694
+msgid "Purchases"
+msgstr ""
+
+#: functions/fw-theme-options.php:706
+msgid "Check out message"
+msgstr ""
+
+#: functions/fw-theme-options.php:713
+msgid "Sold Individually"
+msgstr ""
+
+#: functions/fw-theme-options.php:726
+msgid "Shop Pages Layout"
+msgstr ""
+
+#: functions/fw-theme-options.php:739
+msgid "Sidebar Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:799
+msgid "Product Page Layout"
+msgstr ""
+
+#: functions/fw-theme-options.php:814
+msgid "Footer Block"
+msgstr ""
+
+#: functions/fw-theme-options.php:822
+msgid "Single Product Template"
+msgstr ""
+
+#: functions/fw-theme-options.php:834
+msgid "Footer Width"
+msgstr ""
+
+#: functions/fw-theme-options.php:846
+msgid "Static Block"
+msgstr ""
+
+#: functions/fw-theme-options.php:856
+msgid "Show Footer Copyright"
+msgstr ""
+
+#: functions/fw-theme-options.php:867
+msgid "Footer Copyright HTML"
+msgstr ""
+
+#: functions/fw-theme-options.php:879
+msgid "Footer Copyright CSS"
+msgstr ""
+
+#: functions/fw-theme-options.php:916
+msgid "H1"
+msgstr ""
+
+#: functions/fw-theme-options.php:954
+msgid "H2"
+msgstr ""
+
+#: functions/fw-theme-options.php:991
+msgid "H3"
+msgstr ""
+
+#: functions/fw-theme-options.php:1028
+msgid "H4"
+msgstr ""
+
+#: functions/fw-theme-options.php:1065
+msgid "Body"
+msgstr ""
+
+#: functions/fw-theme-options.php:1159
+msgid "CSS Sidebar Categorys"
+msgstr ""
+
+#: functions/fw-theme-options.php:1170
+msgid "CSS Single Product"
+msgstr ""
+
+#: functions/fw-theme-options.php:1194
+msgid "Maintainance Mode"
+msgstr ""
+
+#: functions/fw-theme-options.php:1205
+msgid "Popup"
+msgstr ""
+
+#: functions/fw-theme-options.php:1216
+msgid "Maintainance Mode Img"
+msgstr ""
+
+#: functions/fw-theme-options.php:1224
+msgid "Popup Img"
+msgstr ""
+
+#: functions/fw-theme-options.php:1231
+msgid "404 img"
+msgstr ""
+
+#: functions/fw-theme-options.php:1238
+msgid "Company Name"
+msgstr ""
+
+#: functions/fw-theme-options.php:1239
+msgid "[fw_companyname] "
+msgstr ""
+
+#: functions/fw-theme-options.php:1245
+msgid "Company Whatsapp"
+msgstr ""
+
+#: functions/fw-theme-options.php:1246
+msgid ""
+"[fw_companywhatsapp] empezar con +54 [fw_extras_short type=\"whatsapp\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1253
+msgid "Company Phone"
+msgstr ""
+
+#: functions/fw-theme-options.php:1254
+msgid "[fw_companyphone] [fw_extras_short type=\"phone\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1260
+msgid "Company Adress"
+msgstr ""
+
+#: functions/fw-theme-options.php:1261
+msgid "[fw_companyaddress] [fw_extras_short type=\"address\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1267
+msgid "Google Maps Url"
+msgstr ""
+
+#: functions/fw-theme-options.php:1268
+msgid "[fw_companygooglemaps] "
+msgstr ""
+
+#: functions/fw-theme-options.php:1274
+msgid "Company Email"
+msgstr ""
+
+#: functions/fw-theme-options.php:1275
+msgid "[fw_companyemail] [fw_extras_short type=\"email\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1281
+msgid "Company Facebook Url"
+msgstr ""
+
+#: functions/fw-theme-options.php:1282
+msgid "[fw_companyfb] [fw_extras_short type=\"fb\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1289
+msgid "Company Instagram Url"
+msgstr ""
+
+#: functions/fw-theme-options.php:1290
+msgid "[fw_companyig] [fw_extras_short type=\"ig\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1297
+msgid "Company Youtube Url"
+msgstr ""
+
+#: functions/fw-theme-options.php:1298
+msgid "[fw_companyyoutube] [fw_extras_short type=\"youtube\"]"
+msgstr ""
+
+#: functions/fw-theme-options.php:1305
+msgid "JS Code"
+msgstr ""
+
+#: functions/fw-theme-options.php:1306
+msgid "Paste your JS code here."
+msgstr ""
+
+#: functions/fw-theme-options.php:1319
+msgid "Analyitics ID"
+msgstr ""
+
+#: functions/fw-theme-options.php:1326
+msgid "Insert Scripts Header"
+msgstr ""
+
+#: functions/fw-theme-options.php:1336
+msgid "Insert Scripts Footer"
+msgstr ""
+
+#: functions/fw-theme-options.php:1347
+msgid "Login Logo"
+msgstr ""
+
+#: functions/fw-theme-options.php:1378
+msgid "Text Color"
+msgstr ""
+
+#: functions/fw-theme-options.php:1389
+msgid "Icon Color"
+msgstr ""
+
+#: functions/fw-theme-options.php:1401
+msgid "Developer Logo"
+msgstr ""
+
+#: functions/fw-theme-options.php:1409
+msgid "Top Left Icon"
+msgstr ""
+
+#: functions/fw-theme-options.php:1417
+msgid "Default Home"
+msgstr ""
+
+#: functions/fw-theme-options.php:1425
+msgid "Client Area Custom CSS"
+msgstr ""
+
+#: functions/fw-user-account.php:8
+msgid "Ingresar"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:63
+msgid "Product Enquiries"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:65
+msgid "Product enquiry email"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:66
+msgid "Where to send product enquiries."
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:72
+msgid "ReCaptcha public key"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:73
+#: functions/product-enquiry-form/product-enquiry-form.php:80
+msgid ""
+"Enter your key if you wish to use <a href=\"https://www.google.com/recaptcha/"
+"\">recaptcha</a> on the product enquiry form."
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:79
+msgid "ReCaptcha private key"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:142
+msgid "Consulta"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:262
+msgid "Enquiry sent successfully. We will get back to you shortly."
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:306
+msgid "Product Enquiry"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:350
+msgid "Invalid product!"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:353
+msgid "Please enter a valid email."
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:367
+msgid "Please click on the anti-spam checkbox."
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:372
+#, php-format
+msgid "Product Enquiry - %s"
+msgstr ""
+
+#: functions/product-enquiry-form/product-enquiry-form.php:443
+msgid "Disable enquiry form?"
+msgstr ""
+
+#: functions/tab_descargas.php:9
+msgid "Descargas"
+msgstr ""
+
+#: functions/tab_video.php:10
+msgid "Videos"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:140
+msgid "Image size"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:143
+msgid ""
+"Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by theme). Alternatively enter size in pixels (Example: "
+"200x100 (Width x Height)). Leave parameter empty to use \"thumbnail\" by "
+"default."
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:147
+msgid "Image alignment"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:150
+msgid "Left"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:151
+msgid "Right"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:152
+msgid "Center"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:155
+msgid "Select image alignment."
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:164
+msgid "Height"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:176
+msgid "Row stretch"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:179
+msgid "Default"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:180
+msgid "Stretch row"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:181
+msgid "Stretch row and content"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:182
+msgid "Stretch row and content (no paddings)"
+msgstr ""
+
+#: functions/vc_customs/vc_fastway.php:185
+msgid ""
+"Select stretching options for row and content (Note: stretched may not work "
+"properly if parent container has \"overflow: hidden\" CSS property"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:8
+msgid "Category Products Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:10
+#: functions/vc_customs/vc_woo_carousels.php:72
+#: functions/vc_customs/vc_woo_carousels.php:132
+#: functions/vc_customs/vc_woo_carousels.php:149
+#: functions/vc_customs/vc_woo_carousels.php:166
+#: functions/vc_customs/vc_woo_carousels.php:185
+msgid "Carousel of products"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:16
+#: functions/vc_customs/vc_woo_carousels.php:78
+#: functions/vc_customs/vc_woo_carousels.php:199
+msgid "Title"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:25
+msgid "Categories Slugs"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:34
+#: functions/vc_customs/vc_woo_carousels.php:93
+#: functions/vc_customs/vc_woo_carousels.php:208
+msgid "Prods per row "
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:43
+#: functions/vc_customs/vc_woo_carousels.php:102
+#: functions/vc_customs/vc_woo_carousels.php:244
+msgid "Element ID"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:45
+#: functions/vc_customs/vc_woo_carousels.php:104
+#: functions/vc_customs/vc_woo_carousels.php:246
+#, php-format
+msgid ""
+"Enter element ID (Note: make sure it is unique and valid according to <a "
+"href=\"%s\" target=\"_blank\">w3c specification</a>)."
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:49
+#: functions/vc_customs/vc_woo_carousels.php:108
+#: functions/vc_customs/vc_woo_carousels.php:250
+msgid "Extra class name"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:51
+#: functions/vc_customs/vc_woo_carousels.php:110
+#: functions/vc_customs/vc_woo_carousels.php:252
+msgid ""
+"Style particular content element differently - add a class name and refer to "
+"it in custom CSS."
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:54
+#: functions/vc_customs/vc_woo_carousels.php:113
+#: functions/vc_customs/vc_woo_carousels.php:255
+msgid "CSS box"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:56
+#: functions/vc_customs/vc_woo_carousels.php:115
+#: functions/vc_customs/vc_woo_carousels.php:257
+msgid "Design Options"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:70
+msgid "Categories Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:87
+msgid "Categories"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:130
+msgid "Featured Products Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:147
+msgid "Sale Products Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:164
+msgid "Best Selling Products Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:183
+msgid "Recent Products Carousel"
+msgstr ""
+
+#: functions/vc_customs/vc_woo_carousels.php:217
+msgid "Max Quantiy"
+msgstr ""
+
+#: functions/woocommerce_custom_related_products.php:49
+msgid "Related products are displayed on the product detail page."
+msgstr ""
+
+#: inc/class-staticblocks.php:25
+msgid "Add New Static Blocks"
+msgstr ""
+
+#: inc/class-staticblocks.php:26
+msgid "New Block"
+msgstr ""
+
+#: inc/class-staticblocks.php:27
+msgid "Edit Block"
+msgstr ""
+
+#: inc/class-staticblocks.php:28
+msgid "View Block"
+msgstr ""
+
+#: inc/class-staticblocks.php:29
+msgid "Static Blocks"
+msgstr ""
+
+#: inc/class-staticblocks.php:30
+msgid "Search Static Blocks"
+msgstr ""
+
+#: inc/class-staticblocks.php:31
+msgid "Parent Static Blocks:"
+msgstr ""
+
+#: inc/class-staticblocks.php:32
+msgid "No Static blocks found."
+msgstr ""
+
+#: inc/class-staticblocks.php:33
+msgid "No Static blocks found in Trash."
+msgstr ""
+
+#: inc/class-staticblocks.php:74
+msgid "--Select--"
+msgstr ""
+
+#: inc/class-staticblocks.php:135
+msgid "Position"
+msgstr ""
+
+#: inc/class-staticblocks.php:136 woocommerce/myaccount/my-orders.php:14
+msgid "Date"
+msgstr ""
+
+#: inc/class-staticblocks.php:146
+msgid "Mega menu"
+msgstr ""
+
+#: inc/class-staticblocks.php:149
+msgid "Widget"
+msgstr ""
+
+#: inc/class-staticblocks.php:152
+msgid "Standard"
+msgstr ""
+
+#: inc/widgets.php:44
+msgid "Main Right Sidebar"
+msgstr ""
+
+#: inc/widgets.php:54
+msgid "Main Left Sidebar"
+msgstr ""
+
+#: inc/widgets.php:72
+msgid "Shop Right Sidebar"
+msgstr ""
+
+#: inc/widgets.php:82
+msgid "Shop Left Sidebar"
+msgstr ""
+
+#: inc/widgets.php:91
+msgid "Single Product Right Sidebar"
+msgstr ""
+
+#: inc/widgets.php:101
+msgid "Single Product Left Sidebar"
+msgstr ""
+
+#: inc/widgets.php:110
+msgid "Dashboard"
+msgstr ""
+
+#: loop-templates/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: loop-templates/content-page.php:25 loop-templates/content-single.php:31
+#: loop-templates/content.php:37
+msgid "Pages:"
+msgstr ""
+
+#: loop-templates/content-page.php:34
+msgid "Edit"
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:27
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:29
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:28
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:28
+msgid "Click here to enter your code"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:79
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:35
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:35
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:23
+#: woocommerce/myaccount/my-address.php:28
+#: woocommerce/myaccount/my-address.php:33
+msgid "Billing address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:23
+#: woocommerce/myaccount/my-address.php:29
+msgid "Shipping address"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:27
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#: woocommerce/myaccount/form-reset-password.php:27
+msgid "Enter a new password below."
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:42
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:13
+msgid "Order"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:15
+msgid "Status"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:16
+msgid "Total"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:30
+msgid "Recent Orders"
+msgstr "Recientes"
+
+#: woocommerce/myaccount/my-orders.php:72
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:76
+msgid "View"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:80
+msgid "Cancel"
+msgstr ""

@@ -36,7 +36,7 @@ function clasesbody(){
 	}else if(pagina.includes('gf_entries')){
 		clase="altamayoristas";
 	}
-	var agregar=" admin_nubicommerce "+clase;
+	var agregar=" "+clase;
 	document.body.className += agregar;
 }
 

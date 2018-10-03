@@ -16,7 +16,8 @@ body{
 
 /*ICONOS*/
 
-.faviconizq{
+.faviconizq,
+.faviconizq:hover a{
 	background: var(--ca-background-color) !important;
 	padding:0px !important;
 }
@@ -153,7 +154,7 @@ display:none !important;
 
 /*TOPBAR*/
 
-#wp-admin-bar-site-name,#wp-admin-bar-gform-forms,#wp-admin-bar-my-account,#wp-admin-bar-itsec_admin_bar_menu,#wp-admin-bar-my-sites,#wp-admin-bar-wp-rocket,#wp-admin-bar-archive,#wp-admin-bar-wp-logo,#wp-admin-bar-comments,#wp-admin-bar-new-content{
+#wp-admin-bar-site-name,#wp-admin-bar-gform-forms,#wp-admin-bar-my-account,#wp-admin-bar-itsec_admin_bar_menu,#wp-admin-bar-my-sites,#wp-admin-bar-wp-rocket,#wp-admin-bar-archive,#wp-admin-bar-wp-logo,#wp-admin-bar-comments,#wp-admin-bar-new-content,#wp-admin-bar-wpseo-menu{
 	 display: none !important
 }
 /*EXPORTAR IMPORTAR*/

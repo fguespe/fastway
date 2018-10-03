@@ -1341,7 +1341,14 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 /*CLIENT AREA*/
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-client-logo',
+	'label'       => __( 'Login Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => get_template_directory_uri()."/assets/img/logo.png",
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'ca-switch',
@@ -1387,14 +1394,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'ca-client-logo',
-	'label'       => __( 'Login Logo', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_clientarea',
-	'default'     => get_template_directory_uri()."/assets/img/logo.png",
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'ca-dev-logo',

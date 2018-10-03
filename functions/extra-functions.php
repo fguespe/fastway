@@ -6,6 +6,39 @@ if(fw_theme_mod("maintenance-mode")){
     add_action('get_header', 'fw_maintenance_mode');
 }
 
+function wca_custom_loginui() {
+echo '<style type="text/css">
+h1 a {background-image: url('.fw_theme_mod('ca-client-logo').') !important; }
+/*LOGIN*/
+#login h1 a{
+    width:100%;
+    background-size: auto auto;
+    background-size: contain; 
+}
+p.register{
+    display:none;
+}
+button,a,input,textarea,.vc_row,ul,li,div{
+    border-radius:0px !important;
+}
+.login{
+    background:white !important;
+}
+#loginform{
+    border: 1px solid '.fw_theme_mod('ca-main-color').';
+}
+#wp-submit{
+    color: white;
+    border:0px !important;
+    border-radius:0px;
+    background: '.fw_theme_mod('ca-main-color').' !important;
+    text-shadow:none;
+    -webkit-box-shadow:none;
+}</style>';
+}
+add_action('login_head', 'wca_custom_loginui');
+
+
 function fw_maintenance_mode(){
     
     if(!current_user_can('administrator') ){

@@ -74,7 +74,7 @@ function wca_menu_items($wp_admin_bar){
     $wp_admin_bar->add_node($args);
 
     $locations = get_nav_menu_locations();
-    $menu = get_term( $locations["clientarea"], 'nav_menu' );
+    $menu = get_term( $locations["clientarea-shop_manager"], 'nav_menu' );
     $menu_items = wp_get_nav_menu_items($menu->term_id);
  
     foreach( $menu_items as $i ) {
@@ -192,10 +192,6 @@ function wca_custom_remove_optionspages() {
 add_action('admin_head-nav-menus.php', 'wca_custom_remove_optionspages');
 
 
-function wca_custom_js() {
-    if (current_user_can('shop_manager'))wp_enqueue_script( 'adminscripts', plugins_url('assets/js/admin.js', __FILE__), array('jquery'), NULL, true );
-}
-add_action( 'admin_enqueue_scripts', 'wca_custom_js' );
 
 
 
@@ -231,38 +227,6 @@ if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'wca_allow_users_to
 *
 */
 
-function wca_custom_loginui() {
-echo '<style type="text/css">
-h1 a {background-image: url('.fw_theme_mod('ca-client-logo').') !important; }
-/*LOGIN*/
-#login h1 a{
-    width:100%;
-    background-size: auto auto;
-    background-size: contain; 
-}
-p.register{
-    display:none;
-}
-button,a,input,textarea,.vc_row,ul,li,div{
-    border-radius:0px !important;
-}
-.login{
-    background:white !important;
-}
-#loginform{
-    border: 1px solid '.fw_theme_mod('ca-main-color').';
-}
-#wp-submit{
-    color: white;
-    border:0px !important;
-    border-radius:0px;
-    background: '.fw_theme_mod('ca-main-color').' !important;
-    text-shadow:none;
-    -webkit-box-shadow:none;
-}</style>';
-}
-add_action('login_head', 'wca_custom_loginui');
-
 
 function wca_remove_footer_admin(){
     echo '<div width="100%" style="margin:0 auto;text-align:center;" ><a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.home_url().'/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.svg"></a></div>';
@@ -290,15 +254,14 @@ function init_adminbar(){
 
 }
 
-function ca_enqueue() {
+if (current_user_can('shop_manager')  && !current_user_can('administrator')) {
+add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
+}
+function wpdocs_enqueue_custom_admin_style() {
     wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
     wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css');
     wp_enqueue_script('cajs-style', get_template_directory_uri() . '/functions/client-area/ca.js');
-}
-
-if (current_user_can('shop_manager')  && !current_user_can('administrator')) {
-add_action('admin_head', 'ca_enqueue');
-add_action('wp_head', 'ca_enqueue');
+    
 }
 
 

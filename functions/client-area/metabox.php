@@ -20,18 +20,32 @@ function custom_menu_meta_box(){
 	}
 	/* set values to required item properties */
 	$items=array(
-            array('Orders','credit-card','edit.php?post_type=shop_order'),
-            array('Reports','bar-chart','admin.php?page=wc-reports'),
-            array('Coupons','bullhorn','edit.php?post_type=shop_coupon'),
-            array('Blog','rss','edit.php'),
-            array('Products','shopping-cart','edit.php?post_type=product'),
-            array('Categories','tags','edit-tags.php?taxonomy=product_cat&post_type=product'),
-            array('Attributes','caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
-            array('Menus','bars','nav-menus.php'),
-            array('Users','users','users.php'),
-            array('Media','image','upload.php'),
-            array('Pages','document','edit.php?post_type=page'),
-            array('Comments','document','edit-comments.php'),
+		/*
+            array(__('Orders','fastway'),'credit-card','edit.php?post_type=shop_order'),
+            array(__('Reports','fastway'),'bar-chart','admin.php?page=wc-reports'),
+            array(__('Coupons','fastway'),'bullhorn','edit.php?post_type=shop_coupon'),
+            array(__('Blog','fastway'),'rss','edit.php'),
+            array(__('Products','fastway'),'shopping-cart','edit.php?post_type=product'),
+            array(__('Categories','fastway'),'tags','edit-tags.php?taxonomy=product_cat&post_type=product'),
+            array(__('Attributes','fastway'),'caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
+            array(__('Menus','fastway'),'bars','nav-menus.php'),
+            array(__('Users','fastway'),'users','users.php'),
+            array(__('Media','fastway'),'image','upload.php'),
+            array(__('Pages','fastway'),'document','edit.php?post_type=page'),
+            array(__('Comments','fastway'),'document','edit-comments.php'),
+            */
+            array(__('Pedidos','fastway'),'credit-card','edit.php?post_type=shop_order'),
+            array(__('Reportes','fastway'),'bar-chart','admin.php?page=wc-reports'),
+            array(__('Cupones','fastway'),'bullhorn','edit.php?post_type=shop_coupon'),
+            array(__('Blog','fastway'),'rss','edit.php'),
+            array(__('Productos','fastway'),'shopping-cart','edit.php?post_type=product'),
+            array(__('Categorias','fastway'),'tags','edit-tags.php?taxonomy=product_cat&post_type=product'),
+            array(__('Atributos','fastway'),'caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
+            array(__('Menus','fastway'),'bars','nav-menus.php'),
+            array(__('Usuarios','fastway'),'users','users.php'),
+            array(__('Media','fastway'),'image','upload.php'),
+            array(__('Paginas','fastway'),'file-text','edit.php?post_type=page'),
+            array(__('Comentarios','fastway'),'comments','edit-comments.php'),
         );
 	$authors=array();
 	foreach ($items as $item) {

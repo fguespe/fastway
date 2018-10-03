@@ -20,13 +20,13 @@ function child_manage_woocommerce_styles() {
              wp_dequeue_script( 'wc_price_slider' );
              wp_dequeue_script( 'wc-single-product' );
              wp_dequeue_script( 'wc-add-to-cart' );
-             //wp_dequeue_script( 'wc-cart-fragments' );
+             wp_dequeue_script( 'wc-cart-fragments' );
              wp_dequeue_script( 'wc-checkout' );
              wp_dequeue_script( 'wc-add-to-cart-variation' );
              wp_dequeue_script( 'wc-single-product' );
              wp_dequeue_script( 'wc-cart' );
              wp_dequeue_script( 'wc-chosen' );
-             //wp_dequeue_script( 'woocommerce' );
+             wp_dequeue_script( 'woocommerce' );
              wp_dequeue_script( 'prettyPhoto' );
              wp_dequeue_script( 'prettyPhoto-init' );
              wp_dequeue_script( 'jquery-blockui' );
@@ -107,7 +107,6 @@ add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_arg
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
     function loop_columns() {
-           
         return fw_theme_mod('shop_columns');
     }
 }
