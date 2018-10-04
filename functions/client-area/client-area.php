@@ -41,7 +41,7 @@ function wca_remove_menu_pages() {
         add_menu_page( 'escritorios', "<i class=' fa fa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
         
         $locations = get_nav_menu_locations();
-        $menu = get_term( $locations["clientarea"], 'nav_menu' );
+        $menu = get_term( $locations["clientarea-shop_manager"], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
      
         foreach( $menu_items as $i ) {
