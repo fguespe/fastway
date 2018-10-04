@@ -1354,7 +1354,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'ca-switch',
 	'label'       => __( 'Enable', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
