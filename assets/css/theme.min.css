@@ -163,10 +163,11 @@ footer{background:var(--footer);}
 }
 */
 @media (min-width: 799px) {
-  
+  /*
   .logo{
       margin:0 auto ;
   }
+  */
   .logo img{
       max-width:100% ;
   }

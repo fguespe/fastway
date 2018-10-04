@@ -10,7 +10,7 @@
 	    </div>
   </div>
 </div>
-<div class="fw_header_bottom <?php echo esc_attr( $header_bottom ); ?> ">
+<div class=" <?php echo esc_attr( $header_bottom ); ?> ">
   <div class="<?php echo esc_attr( $header_container ); ?> ">
       <div class="row d-flex justify-content-between">
 	       <nav class="js-mega-menu  navbar-expand-md u-header__navbar">

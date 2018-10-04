@@ -1421,7 +1421,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'css_editor-header-headerwidget',
+	'settings'    => 'ca-customcss',
 	'label'       => __( 'Client Area Custom CSS', 'fastway' ),
 	'section'     => 'section_clientarea',
 	'default'     => '',

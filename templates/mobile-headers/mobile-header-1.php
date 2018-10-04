@@ -32,4 +32,3 @@ global $header_middle_mobile;
      
       
 </div>
-</header>

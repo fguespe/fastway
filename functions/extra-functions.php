@@ -1,7 +1,7 @@
 <?php
 
 
-if(fw_theme_mod("maintenance-mode")){
+if(fw_theme_mod("maintainance-mode")){
 
     add_action('get_header', 'fw_maintenance_mode');
 }
@@ -163,19 +163,19 @@ function fw_custom_css(){
     
     if(fw_theme_mod('responsive-typo')){
         $tipos=array("p","span","a","h4","h3","h2","h1");
-            foreach ($tipos as $key) {
-                
-        if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
-        else $nombre='opt-typography-'.$key;
-                if(empty(fw_theme_mod($nombre)))continue;
-                $font=fw_theme_mod($nombre);
-                $size=str_replace("px", "", $font['font-size']);
-                $height=str_replace("px", "", $font['line-height']);
-                $css.= "body ".$key."{";
-                $css.= "font-size: calc(16px + (".$size." - 16) * ((100vw - 300px) / (1600 - 300))); ";
-                $css.= "line-height: calc(18px + (".$height." - 18) * ((100vw - 300px) / (1600 - 300))); ";
-                $css.= "}";   
-            }
+        foreach ($tipos as $key) {    
+            if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
+            else $nombre='opt-typography-'.$key;
+            if(empty(fw_theme_mod($nombre)))continue;
+            $font=fw_theme_mod($nombre);
+            $size=str_replace("px", "", $font['font-size']);
+            $height=str_replace("px", "", $font['line-height']);
+            $resized=round($size*0.7);
+            $css.= "body ".$key."{";
+            $css.= "font-size: calc(".$resized."px + (".$size." - ".$resized.") * ((100vw - 300px) / (1600 - 300))); ";
+            $css.= "line-height: calc(".($resized+2)."px + (".$height." - ".($resized+2).") * ((100vw - 300px) / (1600 - 300))); ";
+            $css.= "}";   
+        }
        
     }
     if(!empty(fw_theme_mod('sticky-menu'))){
@@ -326,7 +326,7 @@ function quicklinks(){
     echo "<div class='fw_quicklinks text-center'>";
     if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:#4267B2;"></i><span> Facebook</span></a>';
     if(!empty(fw_companyyoutube()))echo '<a class="youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_companywhatsapp()))echo '<a class="whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span></a>';
+    if(!empty(fw_companywhatsapp()))echo '<a class="whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
     if(!empty(fw_companyig()))echo '<a class="ig" href="'.fw_companyig().'"><i class="fa fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
     if(!empty(fw_companyemail()))echo '<a class="mail" href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
     if(!empty(fw_companyphone()))echo '<a class="tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';

@@ -15,7 +15,7 @@
 	    </div>
   </div>
 </div>
-<div class="fw_header_bottom <?php echo esc_attr( $header_bottom ); ?>">
+<div class=" <?php echo esc_attr( $header_bottom ); ?>">
   <div class="<?php echo esc_attr( $header_container ); ?>">
 	       <nav class="js-mega-menu  navbar-expand-md u-header__navbar">
           <!-- Logo -->
