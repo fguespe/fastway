@@ -11,6 +11,11 @@ if(fw_checkPlugin("woocommerce/woocommerce.php")){
 		$ratioboth=$ratio-fw_theme_mod("sidebar-ratio");
 	}
 }
+if ( is_home() && ! is_front_page() ){
+	$sidebar_pos = fw_theme_mod('layout-blog');
+	$ratio=9;
+	$ratioboth=6;
+}
 ?>
 
 <?php if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>

@@ -14,6 +14,7 @@ if(is_shop() || is_product_category())$sidebar_pos = fw_theme_mod('shop-layout')
 else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 }
 
+if ( is_home() && ! is_front_page() )$sidebar_pos = fw_theme_mod('layout-blog');
 ?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>

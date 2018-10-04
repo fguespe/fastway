@@ -1,18 +1,19 @@
 <?php
 
-
-
-$sidebar_pos = fw_theme_mod('layout-main');
 $sidebarname='left-sidebar';
 $ratio=2;
-if(is_shop() || is_product_category()){
-	$sidebar_pos = fw_theme_mod('shop-layout');
-	$sidebarname='s-'.$sidebarname;
-	$ratio=fw_theme_mod("sidebar-ratio");
-}else if(is_product()){
-	$sidebar_pos = fw_theme_mod('product-page-layout');
-	$sidebarname='sp-'.$sidebarname;
-	$ratio=fw_theme_mod("sidebar-ratio");
+
+if(fw_checkPlugin("woocommerce/woocommerce.php")){
+	if(is_shop() || is_product_category()){
+		$sidebarname='s-'.$sidebarname;
+		$ratio=fw_theme_mod("sidebar-ratio");
+	}else if(is_product()){
+		$sidebarname='sp-'.$sidebarname;
+		$ratio=fw_theme_mod("sidebar-ratio");
+	}
+}
+if ( is_home() && ! is_front_page() ){
+	$ratio=3;
 }
 
 ?>

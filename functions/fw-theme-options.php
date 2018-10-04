@@ -48,6 +48,7 @@ Kirki::add_section( 'section_general', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
 Kirki::add_section( 'section_header', array(
     'title'          => __( 'Header', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -88,7 +89,12 @@ Kirki::add_section( 'section_clientarea', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_blog', array(
+    'title'          => __( 'Blog', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
 
+) );
 /*CSSs*/
 
 Kirki::add_panel( 'panel_css', array(
@@ -166,7 +172,20 @@ Kirki::add_section( 'section_woo_single', array(
     'panel'          => 'panel_fastway',
   
 ) );
-
+//Blofg
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'layout-blog',
+	'label'       => __( 'Blog Layout', 'fastway' ),
+	'section'     => 'section_blog',
+	'default'     => 'full',
+	'choices'     => array(
+		'full' => __( 'Full Width', 'fastway' ),
+		'left' => __( 'Left Sidebar', 'fastway' ),
+		'right' => __( 'Right Sidebar', 'fastway' ),
+		'both' => __( 'Both Sidebars', 'fastway' ),
+	),
+) );
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
