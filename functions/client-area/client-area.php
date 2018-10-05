@@ -139,23 +139,7 @@ function wca_menu_items($wp_admin_bar){
 
 
 
-function wca_redirect_after_login( $redirect_to, $request, $user ){
-    // is there a user ?
-     if ( ! is_wp_error( $user ) ) {
-        // do redirects on successful login
-        if ( !$user->has_cap( 'administrator' ) && $user->has_cap( 'shop_manager' ) ) {
-            return admin_url( fw_theme_mod('ca-home-redirect') );
-        } else {
-            return admin_url();
-        }
-    } else {
-        // display errors, basically
-        return $redirect_to;
-    } 
-}
-if(fw_theme_mod('ca-home-redirect')){
-    add_filter( 'login_redirect', 'wca_redirect_after_login', 10, 3 );   
-}
+
 
 
 

@@ -1445,6 +1445,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_clientarea',
 	'default'     => urlforimages()."/assets/img/favi.png",
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca-home-redirect',
@@ -1453,6 +1454,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_clientarea',
 	'default'     => '',
 ) );
+*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'ca-customcss',

@@ -12,7 +12,10 @@ body{
 .estiloiconomenu{
 	color: var(--ca-text-color) !important;
 }
-
+/*Yoast*/
+#wpseo-dashboard-overview{
+	display: none;
+}
 
 /*ICONOS*/
 
@@ -87,7 +90,13 @@ background: none !important;
 	display: none !important;
 }
 */
-
+/*Bookly*/
+.bookly-tbs-body .dropdown,
+.bookly-tbs-body #bookly-help-btn,
+#bookly-contact-us-btn
+,#bookly-feedback-btn{
+display:none !important;
+}
 
 /*reportes*/
 .subsubsub{
