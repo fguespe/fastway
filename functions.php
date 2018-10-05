@@ -30,7 +30,12 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-
+add_action('wp_enqueue_scripts', function() {
+    if (function_exists('gravity_form_enqueue_scripts')) {
+        // newsletter subscription form
+        gravity_form_enqueue_scripts(5);
+    }
+});
 if ( !function_exists( 'fw_checkPlugin' ) ):
 function fw_checkPlugin( $path = '' ){
         if( strlen( $path ) == 0 ) return false;
@@ -53,7 +58,6 @@ require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
-require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/functions/extra-functions.php';
 require get_template_directory() . '/functions/ihaf.php';
 require get_template_directory() . '/templates/fw-templates.php';

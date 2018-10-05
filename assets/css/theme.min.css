@@ -1,3 +1,54 @@
+/*BLOG*/
+#index-wrapper .widget-area .widget-title{
+border-bottom:1px solid black;
+}
+#index-wrapper .widget-area .widget ul li a{
+font-size:14px;
+color:grey;
+}
+
+#index-wrapper .widget-area .widget{
+margin-bottom:50px;
+
+}
+#index-wrapper{
+padding-top:30px;
+padding-bottom:60px;
+}
+#index-wrapper .fw_post.vertical .foto img {
+    width: 100% !important;
+    height: auto !important;
+}
+#index-wrapper .fw_post{
+margin-bottom:60px;
+}
+#index-wrapper .page-title{
+margin-bottom:60px;
+}
+/*SINGLE*/
+#single-wrapper{
+padding-top:30px;
+padding-bottom:60px;
+}
+#single-wrapper .entry-header,
+.entry-header .entry-title{
+margin-bottom:30px;
+}
+#single-wrapper .nav-previous a{
+font-size:14px;
+color:grey;
+display:block !important;
+margin-top:30px;
+margin-bottom:30px;
+}
+#single-wrapper .comment-form-comment label{
+display:block !important;
+}
+#single-wrapper .entry-content{
+margin-top:40px;;
+}
+
+
 /*TOP MARGIN*/
 @media (max-width: 799px) {
 .withtopmargin{
