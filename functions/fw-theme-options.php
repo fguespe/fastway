@@ -1388,13 +1388,19 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles',
-	'label'       => esc_attr__( 'My Control', 'textdomain' ),
+	'label'       => esc_attr__( 'Allowed Roles', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => array('option-1', 'option-3', 'option-4'),
 	'priority'    => 10,
 	'choices'     => fw_getme_roles(),
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca_users',
+	'label'       => __( 'Allowed Users', 'fastway' ),
+	'description'	=>	'Usernames with ,',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'ca-main-color',

@@ -4,7 +4,14 @@ include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){
     $roles=fw_theme_mod('ca_roles');
-    return in_array(fw_get_current_user_role() , $roles);
+    if(in_array(fw_get_current_user_role() , $roles) && !current_user_can('administrator')){
+        return true;
+    }
+    $users=explode(",", fw_theme_mod('ca_users'));
+    if(in_array(wp_get_current_user()->user_login,$users)){
+        return true;
+    }
+    return false;
 }
 function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
@@ -15,15 +22,32 @@ function fw_get_current_user_role() {
     return false;
   }
  }
+ function get_is_role_or_name_before(){
+    $users=explode(",", fw_theme_mod('ca_users'));
+    if(in_array(wp_get_current_user()->user_login,$users)){
+        return wp_get_current_user()->user_login;
+
+    }
+    return fw_get_current_user_role();
+ }
 
 
 add_action('init','fw_create_menus');
 
+function fw_getmeroles_and_names(){
+    $usuarios=explode(",", fw_theme_mod('ca_users'));
+    $devolver=fw_getme_roles();
+    foreach ($usuarios as $key) {
+        error_log($key);
+        $devolver=array_merge($devolver,array($key=>$key));
+    }
+    return $devolver;
+}
 function fw_create_menus(){
     $roles=fw_theme_mod('ca_roles');
     $menues=array();
-    foreach (fw_getme_roles() as $rol => $name) {
-        if(!in_array($rol, $roles))continue;
+    foreach (fw_getmeroles_and_names() as $rol => $name) {
+        if(!in_array($rol, $roles) && $rol!=$name)continue;
         $menues=array_merge($menues,array('clientarea-'.$rol => __( 'Client Area Menu ('.$name.')', 'fastway' )));
     }
     register_nav_menus( $menues );
@@ -65,13 +89,13 @@ add_action( 'init', 'fw_dashboard_widgets' );
 //Menu mobile
 add_action( 'admin_menu', 'wca_remove_menu_pages' );
 function wca_remove_menu_pages() { 
-    if (activarCA() && !current_user_can('administrator')){
+    if (activarCA() ){
         add_menu_page( 'escritorios', "<i class=' fa fa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
         
         $locations = get_nav_menu_locations();
-        $menu = get_term( $locations["clientarea-".fw_get_current_user_role()], 'nav_menu' );
+        $menu = get_term( $locations["clientarea-".get_is_role_or_name_before()], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
-     
+        if(empty($menu_items))return;
         foreach( $menu_items as $i ) {
      
             add_menu_page("fw-".$i->title, "<i class=' fa fa-".$i->classes[0]."'></i> ".$i->title,'read',get_admin_url().$i->url);
@@ -102,19 +126,20 @@ function wca_menu_items($wp_admin_bar){
     $wp_admin_bar->add_node($args);
 
     $locations = get_nav_menu_locations();
-    $menu = get_term( $locations["clientarea-".fw_get_current_user_role()], 'nav_menu' );
+    $menu = get_term( $locations["clientarea-".get_is_role_or_name_before()], 'nav_menu' );
     $menu_items = wp_get_nav_menu_items($menu->term_id);
- 
-    foreach( $menu_items as $i ) {
-        $args = array(
-            'id' => 'custom-node-'.$i->ID,
-            'title' => "<i class=' fa fa-".$i->classes[0]."'></i> ".$i->title,
-            'href' => $i->url,
-            'meta' => array(
-                'class' => 'estiloiconomenu titulo-'.$i->slug
-            )
-        );
-        $wp_admin_bar->add_node($args);
+    if(!empty($menu_items)){
+        foreach( $menu_items as $i ) {
+            $args = array(
+                'id' => 'custom-node-'.$i->ID,
+                'title' => "<i class=' fa fa-".$i->classes[0]."'></i> ".$i->title,
+                'href' => $i->url,
+                'meta' => array(
+                    'class' => 'estiloiconomenu titulo-'.$i->slug
+                )
+            );
+            $wp_admin_bar->add_node($args);
+        }
     }
 
     $args = array(
@@ -154,7 +179,7 @@ CLIENT AREA
 */
 // Remove dashboard widgets
 function wca_remove_dashboard_metaboxes() {
-    if (activarCA() && !current_user_can('administrator')){
+    if (activarCA() ){
         //Dashboard
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
         remove_meta_box( 'email_log_dashboard_widget', 'dashboard', 'normal' );
@@ -178,7 +203,7 @@ add_action( 'admin_init', 'wca_remove_dashboard_metaboxes' );
 
 
 function wca_custom_remove_optionspages() {      
-    if (activarCA() && !current_user_can('administrator')){
+    if (activarCA() ){
         remove_meta_box('nav-menu-theme-locations', 'nav-menus', 'side'); 
         remove_meta_box('add-post', 'nav-menus', 'side'); 
         remove_meta_box('add-category', 'nav-menus', 'side'); 
@@ -258,14 +283,14 @@ function init_adminbar(){
     add_action( 'login_footer', 'wca_change_back_to_url' );
     add_filter('admin_footer_text', 'wca_remove_footer_admin');
 
-    if (activarCA() && !current_user_can('administrator')){
+    if (activarCA() ){
         add_action('admin_bar_menu', 'wca_menu_items', 50);
     }
 
 }
 
 
-if (activarCA()  && !current_user_can('administrator')) {
+if (activarCA()  ) {
     add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 }
 function wpdocs_enqueue_custom_admin_style() {
@@ -302,7 +327,7 @@ function wca_custom_admincss() {
 //Mobile?
 
 function wca_admin_css_ui() {
-    if (activarCA() && !current_user_can('administrator'))
+    if (activarCA() )
         add_action('admin_head', 'wca_custom_admincss');
 }
 add_action('admin_enqueue_scripts', 'wca_admin_css_ui');
