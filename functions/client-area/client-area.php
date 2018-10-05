@@ -2,6 +2,34 @@
 
 include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
+function activarCA(){
+    $roles=fw_theme_mod('ca_roles');
+    return in_array(fw_get_current_user_role() , $roles);
+}
+function fw_get_current_user_role() {
+  if( is_user_logged_in() ) {
+    $user = wp_get_current_user();
+    $role = ( array ) $user->roles;
+    return $role[0];
+  } else {
+    return false;
+  }
+ }
+
+
+add_action('init','fw_create_menus');
+
+function fw_create_menus(){
+    $roles=fw_theme_mod('ca_roles');
+    $menues=array();
+    foreach (fw_getme_roles() as $rol => $name) {
+        if(!in_array($rol, $roles))continue;
+        $menues=array_merge($menues,array('clientarea-'.$rol => __( 'Client Area Menu ('.$name.')', 'fastway' )));
+    }
+    register_nav_menus( $menues );
+}
+
+
 add_filter( 'login_headerurl', 'wca_wp_logo_url' );
 function wca_wp_logo_url($url){
     return "#";
@@ -14,7 +42,7 @@ function fw_dashboard_widgets() {
     $sidebar_id = 'dash-sidebar';
     $sidebars_widgets = wp_get_sidebars_widgets();
     $widget_ids = $sidebars_widgets[$sidebar_id]; 
-   
+   if(empty($widget_ids))return;
     foreach( $widget_ids as $id ) {
         $wdgtvar = 'widget_'._get_widget_id_base( $id );
         $idvar = _get_widget_id_base( $id );
@@ -37,11 +65,11 @@ add_action( 'init', 'fw_dashboard_widgets' );
 //Menu mobile
 add_action( 'admin_menu', 'wca_remove_menu_pages' );
 function wca_remove_menu_pages() { 
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
+    if (activarCA() && !current_user_can('administrator')){
         add_menu_page( 'escritorios', "<i class=' fa fa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
         
         $locations = get_nav_menu_locations();
-        $menu = get_term( $locations["clientarea-shop_manager"], 'nav_menu' );
+        $menu = get_term( $locations["clientarea-".fw_get_current_user_role()], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
      
         foreach( $menu_items as $i ) {
@@ -74,7 +102,7 @@ function wca_menu_items($wp_admin_bar){
     $wp_admin_bar->add_node($args);
 
     $locations = get_nav_menu_locations();
-    $menu = get_term( $locations["clientarea-shop_manager"], 'nav_menu' );
+    $menu = get_term( $locations["clientarea-".fw_get_current_user_role()], 'nav_menu' );
     $menu_items = wp_get_nav_menu_items($menu->term_id);
  
     foreach( $menu_items as $i ) {
@@ -105,11 +133,10 @@ function wca_menu_items($wp_admin_bar){
 
 }
 
+    
+
 //Declare menus
-register_nav_menus( array(
-    'clientarea-shop_manager' => __( 'Client Area Menu (Shop Manager)', 'fastway' ),
-    'clientarea-editor' => __( 'Client Area Menu (Editor)', 'fastway' ),
-) );
+
 
 
 function wca_redirect_after_login( $redirect_to, $request, $user ){
@@ -143,7 +170,7 @@ CLIENT AREA
 */
 // Remove dashboard widgets
 function wca_remove_dashboard_metaboxes() {
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
+    if (activarCA() && !current_user_can('administrator')){
         //Dashboard
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
         remove_meta_box( 'email_log_dashboard_widget', 'dashboard', 'normal' );
@@ -167,7 +194,7 @@ add_action( 'admin_init', 'wca_remove_dashboard_metaboxes' );
 
 
 function wca_custom_remove_optionspages() {      
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
+    if (activarCA() && !current_user_can('administrator')){
         remove_meta_box('nav-menu-theme-locations', 'nav-menus', 'side'); 
         remove_meta_box('add-post', 'nav-menus', 'side'); 
         remove_meta_box('add-category', 'nav-menus', 'side'); 
@@ -247,15 +274,15 @@ function init_adminbar(){
     add_action( 'login_footer', 'wca_change_back_to_url' );
     add_filter('admin_footer_text', 'wca_remove_footer_admin');
 
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
+    if (activarCA() && !current_user_can('administrator')){
         add_action('admin_bar_menu', 'wca_menu_items', 50);
-        // change url for login screen
     }
 
 }
 
-if (current_user_can('shop_manager')  && !current_user_can('administrator')) {
-add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
+
+if (activarCA()  && !current_user_can('administrator')) {
+    add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 }
 function wpdocs_enqueue_custom_admin_style() {
     wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
@@ -291,7 +318,7 @@ function wca_custom_admincss() {
 //Mobile?
 
 function wca_admin_css_ui() {
-    if (current_user_can('shop_manager') && !current_user_can('administrator'))
+    if (activarCA() && !current_user_can('administrator'))
         add_action('admin_head', 'wca_custom_admincss');
 }
 add_action('admin_enqueue_scripts', 'wca_admin_css_ui');

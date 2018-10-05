@@ -4,6 +4,19 @@ function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
     return get_theme_mod( $name);
 }
+function fw_getme_roles(){
+    $editable_roles = get_editable_roles();
+    $roles=array();
+    foreach ($editable_roles as $role => $details) {
+        $rol = esc_attr($role);
+        if($rol=='administrator')continue;
+        $name = translate_user_role($details['name']);
+        $roles=array_merge($roles,array($rol => $name));
+       
+    }
+    return $roles;
+}
+
 if ( !function_exists( 'write_log' ) ):
 function write_log ( $log )  {
     if ( true === WP_DEBUG ) {

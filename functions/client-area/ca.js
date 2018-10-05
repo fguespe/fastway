@@ -48,8 +48,9 @@ function iconosmenu(){
 	    if(item)obj.className+=" estiloiconomenu titulo-"+item.replace(/ /g,'');
 	}
 }
-
+window.onload = function() {
 
 clasesbody();
 iconosmenu();
+}
 

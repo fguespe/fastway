@@ -1,11 +1,4 @@
-<?php
-/**
- * Search results partial template.
- *
- * @package understrap
- */
 
-?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">

@@ -219,7 +219,7 @@ display:none !important;
 
 
 .fade,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
-display:none !important;
+display:none;
 }
 .notice-success{
 display:block!important;
@@ -238,7 +238,7 @@ margin-left:0px !important;
 	padding: 0px !important;
 
 }
-#vc_license-activation-notice,.update-nag,.fade{
+#vc_license-activation-notice,.update-nag{
 	display: none;
 }
 .wrap{

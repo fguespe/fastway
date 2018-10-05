@@ -1,10 +1,4 @@
 <?php
-/**
- * The right sidebar containing the main widget area.
- *
- * @package understrap
- */
-
 
 $sidebar_pos =fw_theme_mod('layout-main');
 $sidebarname='right-sidebar';
