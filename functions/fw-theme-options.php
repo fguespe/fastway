@@ -340,6 +340,20 @@ Kirki::add_field( 'theme_config_id', array(
 			'element' => '.navbar-nav li a',
 		),
 	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
+		),
+	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -804,7 +818,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'shop_columns',
-	'label'       => esc_attr__( 'Products Per Page', 'fastway' ),
+	'label'       => esc_attr__( 'Columns', 'fastway' ),
 	'section'     => 'section_woo',
 	'default'     => 4,
 	'choices'     => array(
@@ -967,21 +981,20 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => 'body h1',
 		),
-		/*array(
-			'element' => 'header h1',
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
 		),
-		array(
-			'element' => 'footer h1',
-		),
-		array(
-			'element' => '#page-wrapper h1',
-		),
-		array(
-			'element' => '#woocommerce-wrapper h1',
-		),
-		array(
-			'element' => '#main-nav h1',
-		),*/
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1004,21 +1017,20 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => 'body h2',
 		),
-		/*array(
-			'element' => 'header h2',
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
 		),
-		array(
-			'element' => 'footer h2',
-		),
-		array(
-			'element' => '#page-wrapper h2',
-		),
-		array(
-			'element' => '#woocommerce-wrapper h2',
-		),
-		array(
-			'element' => '#main-nav h2',
-		),*/
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1041,21 +1053,20 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => 'body h3',
 		),
-		/*array(
-			'element' => 'header h3',
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
 		),
-		array(
-			'element' => 'footer h3',
-		),
-		array(
-			'element' => '#page-wrapper h3',
-		),
-		array(
-			'element' => '#woocommerce-wrapper h3',
-		),
-		array(
-			'element' => '#main-nav h3',
-		),*/
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1078,21 +1089,20 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => 'body h4',
 		),
-		/*array(
-			'element' => 'header h4',
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
 		),
-		array(
-			'element' => 'footer h4',
-		),
-		array(
-			'element' => '#page-wrapper h4',
-		),
-		array(
-			'element' => '#woocommerce-wrapper h4',
-		),
-		array(
-			'element' => '#main-nav h4',
-		),*/
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1125,6 +1135,20 @@ Kirki::add_field( 'theme_config_id', array(
 			'element' => 'body span',
 		),
 		
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
+		),
 	),
 ) );
 
@@ -1513,7 +1537,42 @@ if(empty(get_theme_mod("header-style")) && !empty(get_option("redux_demo"))){
 
 function my_customizer_styles() { ?>
 	<style>
-	
+	.customize-control-kirki-multicheck ul {
+	  display: flex;
+	}
+
+	.customize-control-kirki-multicheck ul li {
+	  	width: 100%;
+	}
+
+	.customize-control-kirki-multicheck ul li label {
+		  background: rgba(0, 0, 0, 0.1);
+		  border: 1px rgba(0, 0, 0, 0.1);
+		  color: #555d66;
+		  margin: 0;
+		  text-align: center;
+		  padding: 0.5em 1em;
+		  display: block;
+	}
+
+	.customize-control-kirki-multicheck ul li label.checked {
+	  	background-color: #00a0d2;
+	  	color: rgba(255, 255, 255, 0.8);
+	}
+
+	.customize-control-kirki-multicheck ul li input {
+	  display: none;
+	}
+	.CodeMirror {
+	  border: 1px solid #eee;
+	  height: 400px !important;
+	}
+	.CodeMirror-gutters, .CodeMirror-gutter-wrapper{
+		display:none !important;
+	}
+	.CodeMirror-sizer{
+		margin:0px !important;
+	}
 	</style>
 	<?php
 }

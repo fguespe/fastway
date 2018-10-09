@@ -568,7 +568,11 @@ position:relative !important;
 }
 /*stars*/
 
-.woocommerce .star-rating span,.stars a{font-family: star;color:gold;}
+.woocommerce .star-rating span,.stars a,.woocommerce .star-rating:before{
+  font-family: star;
+  color:gold;
+  font-size: 14px !important;
+}
 /*RELATED*/
 .related{
 clear:both;

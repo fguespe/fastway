@@ -7,17 +7,10 @@ function bbloomer_change_gallery_columns() {
 
 add_filter( 'woocommerce_get_price_html', 'fw_price_html', 100, 2 );
 function fw_price_html( $price, $product ){
-    return '
-    <div class="precioproducto">
-    <span class="precio">$'.$product->regular_price.'</span>
+    return '<div class="precioproducto">
+    <span class="precio">$'.$product->sale_price.'</span>
 	<div class="tachado">
-		<span>
-			<span class="precio-anterior t1 tachado">$ 14.199</span>
-		</span>
-		<span>
-			<span hidden="true" itemprop="priceCurrency">ARS</span>
-			<span hidden="true" itemprop="price">14199</span>
-		</span>
+		<span class="precio-anterior t1 tachado">$'.$product->regular_price.'</span>
 		<span class="badge badge-success txt-12">25% OFF</span>
 	</div>
 	</div>';
@@ -84,3 +77,4 @@ global $single_desktop,$product;
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
+
