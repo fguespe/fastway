@@ -4,8 +4,10 @@ include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){
     $roles=fw_theme_mod('ca_roles');
-    if(in_array(fw_get_current_user_role() , $roles) && !current_user_can('administrator')){
-        return true;
+    if(!empty($roles)){
+        if(in_array(fw_get_current_user_role() , $roles) && !current_user_can('administrator')){
+            return true;
+        }    
     }
     $users=explode(",", fw_theme_mod('ca_users'));
     if(in_array(wp_get_current_user()->user_login,$users)){
@@ -45,12 +47,13 @@ function fw_getmeroles_and_names(){
 }
 function fw_create_menus(){
     $roles=fw_theme_mod('ca_roles');
+    if(empty($roles))return;
     $menues=array();
     foreach (fw_getmeroles_and_names() as $rol => $name) {
         if(!in_array($rol, $roles) && $rol!=$name)continue;
         $menues=array_merge($menues,array('clientarea-'.$rol => __( 'Client Area Menu ('.$name.')', 'fastway' )));
     }
-    register_nav_menus( $menues );
+    if(!empty($menues))register_nav_menus( $menues );
 }
 
 
@@ -249,7 +252,26 @@ if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'wca_allow_users_to
 
 
 
+/*
 
+function wca_redirect_after_login( $redirect_to, $request, $user ){
+    // is there a user ?
+    
+     if ( ! is_wp_error( $user ) ) {
+        error_log("ja");
+        // do redirects on successful login
+        if ( !$user->has_cap( 'administrator' ) && $user->has_cap( 'calendario' ) ) {
+            return admin_url('admin.php?page=bookly-calendar' );
+        } else {
+            return admin_url();
+        }
+    } else {
+        // display errors, basically
+        return $redirect_to;
+    } 
+}
+add_filter( 'login_redirect', 'wca_redirect_after_login', 10, 3 );   
+*/
 
 
 

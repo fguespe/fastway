@@ -98,9 +98,9 @@ function fw_custom_get_availability( $availability, $_product ) { // Change Out 
 
 add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
   function jk_related_products_args( $args ) {
-    
-    $args['posts_per_page'] = 4; // 4 related products
-    $args['columns'] = 4; // arranged in 2 columns
+    error_log(fw_theme_mod("related_columns"));
+    $args['posts_per_page'] = fw_theme_mod("related_columns"); // 4 related products
+    $args['columns'] = fw_theme_mod("related_columns"); // arranged in 2 columns
     return $args;
 }
 // Change number or products per row to 3

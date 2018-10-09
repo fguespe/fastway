@@ -813,6 +813,18 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'related_columns',
+	'label'       => esc_attr__( 'Related Columns', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 6,
+	'choices'     => array(
+		'min'  => '4',
+		'max'  => '6',
+		'step' => '1',
+	),
+) );
 
 
 

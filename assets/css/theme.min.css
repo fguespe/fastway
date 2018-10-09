@@ -336,6 +336,10 @@ max-width:1200px;
     border-right: 0px ; 
 }
 
+.menuhor ul{
+    text-align:center;
+}
+
 .menuhor{
     text-align:center ;
 }
@@ -559,7 +563,9 @@ position:relative !important;
 
 
 /*WOO*/
-
+#woocommerce-wrapper{
+  padding-top: 32px;
+}
 /*stars*/
 
 .woocommerce .star-rating span,.stars a{font-family: star;color:gold;}
@@ -594,7 +600,6 @@ font-size:12px !important;
 font-size:12px !important;
 }
 .woocommerce-breadcrumb{
-padding-top:25px !important;
 margin-bottom: 20px !important;
 }
 .widget_shopping_cart_content ul.cart_list li a, .woocommerce ul.product_list_widget li a{
