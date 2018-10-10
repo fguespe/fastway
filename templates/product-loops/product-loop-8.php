@@ -65,24 +65,11 @@ do_action( 'woocommerce_before_shop_loop_item_title' );
  *
  * @hooked woocommerce_template_loop_product_title - 10
  */
-do_action( 'woocommerce_shop_loop_item_title' );?>
-</a>
-<div class="precioproducto">
-<div class="precio">
-    <span hidden="true" itemprop="priceCurrency">ARS</span>
-    <span>$</span>
-    <span hidden="true" itemprop="price">10649</span>
-    10.649
-</div>
-<div class="tachado">
-    <span>
-        <span class="precio-anterior t1 tachado">$ 14.199</span>
-    </span>
-    <span>
-        <span hidden="true" itemprop="priceCurrency">ARS</span>
-        <span hidden="true" itemprop="price">14199</span>
-    </span>
-    <span class="badge badge-success txt-12">25% OFF</span>
-</div>
-    
+do_action( 'woocommerce_shop_loop_item_title' );
 
+
+?>
+</a>
+<?
+echo fw_price_html1($product);
+?>

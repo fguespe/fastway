@@ -12,7 +12,6 @@
       <div class="d-flex col-3 align-items-center header-text"><?php fastway_getWidgetHeaderText();?></div>
 			<div class="col-1 row align-items-center justify-content-end px-4">
           <?php echo fw_shoppingCart();?>
-          </table>
 			</div>
 	        	
         <!-- End Nav -->

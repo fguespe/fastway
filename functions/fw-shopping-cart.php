@@ -58,7 +58,7 @@ HTML;
         
           return <<<HTML
 
-<a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+<a class="fw-minicart-icon"  href="#" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
     <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>

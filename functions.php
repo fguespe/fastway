@@ -67,7 +67,9 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 
 
 
-
+function is_woo_active(){
+    return fw_checkPlugin('woocommerce/woocommerce.php');
+}
 
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';

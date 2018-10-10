@@ -7,13 +7,42 @@ function bbloomer_change_gallery_columns() {
 
 add_filter( 'woocommerce_get_price_html', 'fw_price_html', 100, 2 );
 function fw_price_html( $price, $product ){
-    return '<div class="precioproducto">
-    <span class="precio">$'.$product->sale_price.'</span>
-	<div class="tachado">
-		<span class="precio-anterior t1 tachado">$'.$product->regular_price.'</span>
-		<span class="badge badge-success txt-12">25% OFF</span>
-	</div>
-	</div>';
+	if($product->product_type == 'variable'){
+		$available_variations = $product->get_available_variations();								
+		$maximumper = 0;
+		for ($i = 0; $i < count($available_variations); ++$i) {
+			$variation_id=$available_variations[$i]['variation_id'];
+			$variable_product1= new WC_Product_Variation( $variation_id );
+			$regular_price = $variable_product1 ->regular_price;
+			$sale_price = $variable_product1 ->sale_price;
+			error_log($regular_price);
+			error_log($sale_price);
+			$percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));	
+			error_log($percentage);
+			if ($percentage > $maximumper) {
+				$maximumper = $percentage;
+			}
+		}
+		$percentage=$maximumper;
+	}else{
+		$regular_price=$product->regular_price;
+		$sale_price=$product->sale_price;
+		$percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));	
+	}
+	if($product->is_on_sale()){
+		return '<div class="precioproducto">
+		    <span class="precio">$'.$sale_price.'</span>
+			<div class="tachado">
+				<span class="precio-anterior t1 tachado">$'.$regular_price.'</span>
+				<span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
+			</div>
+			</div>';
+	}else{
+		 return '<div class="precioproducto">
+		    <span class="precio">$'.$regular_price.'</span>
+			</div>';
+	}
+   
 }
 ?>
 <style type="text/css">

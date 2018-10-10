@@ -546,7 +546,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bodycolor',
-	'label'       => __( 'Body ', 'fastway' ),
+	'label'       => __( 'Body Background', 'fastway' ),
 	'section'     => 'section_colors',
 	'default'     => '#fff',
 	'choices'     => array(
@@ -558,6 +558,24 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element'  => ':root',
 			'property' => '--body',
+		),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'opt-color-bodycolor',
+	'label'       => __( 'Shop Background ', 'fastway' ),
+	'section'     => 'section_colors',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--shop);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--shop',
 		),
 	),
 ) );
@@ -827,6 +845,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'related_columns',
@@ -840,7 +859,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
+*/
 
 /*SINGLE*/
 Kirki::add_field( 'theme_config_id', array(
@@ -1263,6 +1282,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'popup-mode',
 	'label'       => __( 'Popup', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'whats-widget',
+	'label'       => __( 'Whatsapp Widget', 'fastway' ),
 	'section'     => 'section_extras',
 	'default'     => 0,
 	'choices' => array(

@@ -17,10 +17,10 @@ $rand=generateRandomString(5);
             $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
             $image = wp_get_attachment_url( $thumbnail_id ); 
             $link = get_term_link($term);
-            echo '<div class="item">';
+            echo '<a href="'.$link.'" ><div class="item product-category">';
             echo '<img src="'.$image.'" width="300" height="300"/>';
-            echo '<a href="'.$link.'" >'.$term->name.'</a>';
-            echo '</div>';         
+            echo '<h2 class="woocommerce-loop-category__title" >'.$term->name.'</h2>';
+            echo '</div></a>';         
     }
     ?>
 </div>
