@@ -9,9 +9,10 @@ function pngcheckout_short() {
     if(is_cart()){
         $active1="active";
     }else if( is_checkout() && !is_order_received_page() ) {
+        error_log(fw_theme_mod('general-logo'));
 
         $active2="active";
-        $devuelvo .='<div class="logocheckout"><img src="'.get_option('plugin_clientarea_settings')['client_logo'].'"/></div>';
+        $devuelvo .='<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
     
     }else if( is_checkout() && is_order_received_page() ) {
         
@@ -23,11 +24,13 @@ function pngcheckout_short() {
               <li class="'.$active2.'"><a>PAGO Y ENVÍO</a></li>
               <li class="'.$active3.'"><a>TERMINAR</a></li>
             </ul>';
-    return $devuelvo;
+
+    echo $devuelvo;
 
 }
 if(fw_theme_mod("cart-steps")){
-add_shortcode('woocommerce_before_cart', 'pngcheckout_short');   
+add_action('woocommerce_before_cart', 'pngcheckout_short');   
+add_action('woocommerce_before_checkout_form', 'pngcheckout_short');  
 }
 
 if(fw_theme_mod("checkout-minimal")){

@@ -156,7 +156,20 @@ require get_template_directory() . '/functions/fw-theme-options.php';
 if(fw_theme_mod('ca-switch')){
     require get_template_directory() . '/functions/client-area/client-area.php';   
 }
+add_action( 'init', 'fw_login_dev_logo', 999 );
+function fw_login_dev_logo(){
 
+    add_action( 'login_footer', 'fw_login_footer' );
+}
+function fw_login_footer() {
+
+    ?>
+    <script type="text/javascript">
+        var backToBlog = document.getElementById( 'backtoblog' ).getElementsByTagName( 'a' )[0];
+        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="https://www.briziolabz.com"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo fw_theme_mod('ca-dev-logo');?>"></a></div>';
+    </script>
+    <?php
+}
 
 
 function template_sredirect() {

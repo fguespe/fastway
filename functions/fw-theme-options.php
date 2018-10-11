@@ -1536,7 +1536,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Developer Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/logo.png",
+	'default'     => urlforimages()."/assets/img/brizio.png",
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
@@ -1544,7 +1544,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Top Left Icon', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/favi.png",
+	'default'     => urlforimages()."/assets/img/favib.png",
 ) );
 /*
 Kirki::add_field( 'theme_config_id', array(

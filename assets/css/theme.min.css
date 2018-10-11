@@ -1,3 +1,7 @@
+/*fix menu*/
+.dropdown-item.active, .dropdown-item:active{
+background:none !important;
+}
 /*BLOG*/
 #index-wrapper .widget-area .widget-title{
 border-bottom:1px solid black;
@@ -186,6 +190,12 @@ body{background:var(--body);}
 footer{background:var(--footer);}
 
 /*MOBILE ICONS*/
+@media (max-width: 799px) {
+
+.navbar-collapse{
+    padding-top:10px;
+}
+}
 #mobileicons span{
     display:none !important;
 }

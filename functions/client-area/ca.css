@@ -22,7 +22,7 @@ body{
 .faviconizq,
 .faviconizq:hover a{
 	background: var(--ca-background-color) !important;
-	padding:0px !important;
+	
 }
 .faviconizq img{
 	width:30px !important;

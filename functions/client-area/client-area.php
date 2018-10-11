@@ -34,22 +34,24 @@ function fw_get_current_user_role() {
  }
 
 
-add_action('init','fw_create_menus');
 
 function fw_getmeroles_and_names(){
     $usuarios=explode(",", fw_theme_mod('ca_users'));
     $devolver=fw_getme_roles();
     foreach ($usuarios as $key) {
-        error_log($key);
         $devolver=array_merge($devolver,array($key=>$key));
     }
     return $devolver;
 }
+add_action('init','fw_create_menus');
+
 function fw_create_menus(){
+
     $roles=fw_theme_mod('ca_roles');
     if(empty($roles))return;
     $menues=array();
     foreach (fw_getmeroles_and_names() as $rol => $name) {
+        if(empty($rol))continue;
         if(!in_array($rol, $roles) && $rol!=$name)continue;
         $menues=array_merge($menues,array('clientarea-'.$rol => __( 'Client Area Menu ('.$name.')', 'fastway' )));
     }
@@ -250,7 +252,35 @@ function wca_allow_users_to_shopmanager() {
 
 if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'wca_allow_users_to_shopmanager');
 
+/**
+ * Add all Gravity Forms capabilities to Editor role.
+ * Runs during plugin activation.
+ * 
+ * @access public
+ * @return void
+ */
+function activate_pluginname() {
+  
+  $role = get_role( 'editor' );
+  $role->add_cap( 'gform_full_access' );
+}
+// Register our activation hook
+register_activation_hook( __FILE__, 'activate_pluginname' );
 
+/**
+ * Remove Gravity Forms capabilities from Editor role.
+ * Runs during plugin deactivation.
+ * 
+ * @access public
+ * @return void
+ */
+function deactivate_pluginname() {
+ 
+ $role = get_role( 'editor' );
+ $role->remove_cap( 'gform_full_access' );
+}
+// Register our de-activation hook
+register_deactivation_hook( __FILE__, 'deactivate_pluginname' );
 
 /*
 
@@ -287,22 +317,14 @@ add_filter( 'login_redirect', 'wca_redirect_after_login', 10, 3 );
 
 
 function wca_remove_footer_admin(){
-    echo '<div width="100%" style="margin:0 auto;text-align:center;" ><a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.home_url().'/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.svg"></a></div>';
+    echo '<div width="100%" style="margin:0 auto;text-align:center;" ><a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
  
 }
- 
-function wca_change_back_to_url() {
-    ?>
-    <script type="text/javascript">
-        var backToBlog = document.getElementById( 'backtoblog' ).getElementsByTagName( 'a' )[0];
-        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="https://www.briziolabz.com"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo home_url().'/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.svg';?>"></a></div>';
-    </script>
-    <?php
-}
+
 
 add_action( 'init', 'init_adminbar', 999 );
 function init_adminbar(){
-    add_action( 'login_footer', 'wca_change_back_to_url' );
+//    add_action( 'login_footer', 'wca_change_back_to_url' );
     add_filter('admin_footer_text', 'wca_remove_footer_admin');
 
     if (activarCA() ){
