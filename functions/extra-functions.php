@@ -244,6 +244,9 @@ function fw_companyaddress() {
 function fw_companygooglemaps() {
     
     return fw_theme_mod('short-fw_companygooglemaps');
+}function fw_company_data($value) {
+    
+    return fw_theme_mod('short-fw_company'.$value);
 }
 
 
@@ -301,12 +304,40 @@ function fw_extras_short( $atts ) {
     $first.='</a>';
     return $first;
 }
+
+function fw_extras_iconsnext( $atts ) {
+    
+    
+    $wporg_atts = shortcode_atts(
+        array(
+            'type' => '',
+            'size' =>  '',
+        ), $atts, 'fw_extras_iconsnext' );
+
+    $font_size=16;
+    if($wporg_atts['size']){
+        $font_size=$wporg_atts['size'];
+    }
+    foreach (explode(",", $wporg_atts['type']) as $icon) {
+       // error_log($icon);
+        if($icon==="fb")$font_icon="fa-facebook-square";
+        else if($icon==="ig")$font_icon="fa-instagram";
+        else if($icon==="youtube")$font_icon="fa-youtube-square";
+        else if($icon==="twitter")$font_icon="fa-twitter-square";
+        $link=fw_company_data($icon);
+        
+        $first.='<a class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+        $first.='</a>';
+    }
+    
+    
+    return $first;
+}
  
-function wporg_shortcodes_init()
-{
-
+function wporg_shortcodes_init(){
     add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
-
+    add_shortcode('fw_extras_iconsnext', 'fw_extras_iconsnext', 10, 2);
+       
 }
  
 add_action('init', 'wporg_shortcodes_init');

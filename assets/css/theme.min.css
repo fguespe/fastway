@@ -699,3 +699,73 @@ line-height: 2em   !important;
 #order_review_heading{
     margin-top: 30px 
 }
+/*PASOS CEHCKOUT*/
+
+.pasoscheckout { 
+  list-style: none; 
+  overflow: hidden; 
+  margin: 0px;
+  margin-bottom: 30px !important;
+  padding: 0px;
+    width:100% !important;
+}
+.pasoscheckout li { 
+    float: left; 
+    width:33% !important;
+}
+
+.pasoscheckout li a {
+    color: white;
+    text-decoration: none; 
+    padding:10px 0 10px 0px !important;
+    background: #E3E4E7; 
+    position: relative; 
+    display: block;
+    float: left;
+    text-align:center !important;
+    width:100% !important;
+}
+
+.pasoscheckout li a:after { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 20px solid #E3E4E7;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+} 
+.pasoscheckout li a:before { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 20px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1; 
+} 
+
+
+.pasoscheckout li.active a { 
+  background: #43A0DA !important;u
+}
+
+.pasoscheckout li.active a:after{
+border-left-color: #5C9FD2 !important;
+}
+.logocheckout{
+margin:0 auto;
+text-align:center;
+margin-bottom:30px;
+}

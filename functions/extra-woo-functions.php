@@ -1,5 +1,45 @@
 <?php
 
+// Function to add subscribe text to posts and pages
+function pngcheckout_short() {
+    $active1="";
+    $active2="";
+    $active3="";
+    $devuelvo="";
+    if(is_cart()){
+        $active1="active";
+    }else if( is_checkout() && !is_order_received_page() ) {
+
+        $active2="active";
+        $devuelvo .='<div class="logocheckout"><img src="'.get_option('plugin_clientarea_settings')['client_logo'].'"/></div>';
+    
+    }else if( is_checkout() && is_order_received_page() ) {
+        
+        $active3="active";   
+        
+    }
+    $devuelvo.='<ul class="pasoscheckout">
+              <li class="'.$active1.'"><a>MI COMPRA</a></li>
+              <li class="'.$active2.'"><a>PAGO Y ENVÍO</a></li>
+              <li class="'.$active3.'"><a>TERMINAR</a></li>
+            </ul>';
+    return $devuelvo;
+
+}
+if(fw_theme_mod("cart-steps")){
+add_shortcode('woocommerce_before_cart', 'pngcheckout_short');   
+}
+
+if(fw_theme_mod("checkout-minimal")){
+add_action( 'wp_head', 'add_chkstl_to_head' );
+}
+
+function add_chkstl_to_head() {
+    echo "<style>.woocommerce-checkout:not(.woocommerce-order-received) header,.woocommerce-checkout:not(.woocommerce-order-received) footer{
+    display:none !important;
+}</style>";
+}
+
 
 //Aplicar precio global
 add_action( 'woocommerce_product_data_panels', 'fw_global_variation_price' );

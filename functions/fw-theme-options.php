@@ -14,9 +14,8 @@ function kirki_sidebars_select_example() {
  	$sidebars_choices = array(); 
  	foreach ( $sidebars as $sidebar ) { 
  		$sidebars_choices[ $sidebar['id'] ] = $sidebar['name']; 
- 		
  	}  
- 	    return $sidebars_choices; 
+ 	return $sidebars_choices; 
 }  
 
 function urlforimages(){
@@ -563,7 +562,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
-	'settings'    => 'opt-color-bodycolor',
+	'settings'    => 'opt-color-shopcolor',
 	'label'       => __( 'Shop Background ', 'fastway' ),
 	'section'     => 'section_colors',
 	'default'     => '#fff',
@@ -738,6 +737,29 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Prices', 'fastway' ),
 	'section'     => 'section_woo',
 	'description' => 'hide prices ',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'cart-steps',
+	'label'       => __( 'Cart/Checkout Steps ', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'checkout-minimal',
+	'label'       => __( 'Checkout Minimal ', 'fastway' ),
+	'description'	=> 'Hides header and footer',
+	'section'     => 'section_woo',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1386,6 +1408,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'short-fw_companyyoutube',
 	'label'    => __( 'Company Youtube Url', 'fastway' ),
    	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
+	'section'     => 'section_extras',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companytwitter',
+	'label'    => __( 'Company Twitter Url', 'fastway' ),
+   	'description'     => __( '[fw_companytwitter] [fw_extras_short type="twitter"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
 
