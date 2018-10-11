@@ -21,7 +21,7 @@ global $header_middle_mobile;
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
       <div class="col-3 d-flex justify-content-around">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
+          <button class="navbar-toggler fw_search_icon" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
       </div>
       <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart();?></div>

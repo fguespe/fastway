@@ -1,4 +1,50 @@
 <?php
+
+
+//Aplicar precio global
+add_action( 'woocommerce_product_data_panels', 'fw_global_variation_price' );
+function fw_global_variation_price() {
+    global $woocommerce;
+    ?>
+        <script type="text/javascript">
+            function addVariationLinks() {
+                a = jQuery( '<br><a href="#">Aplicar a todas las variaciones</a>' );
+                b = jQuery( 'input[name^="variable_regular_price"]' );
+                a.click( function( c ) {
+                    d = jQuery( this ).parent( 'label' ).next( 'input[name^="variable_regular_price"]' ).val();
+                    e = confirm( "Desea aplicar $" + d + " a todas las variaciones?" );
+                    if ( e ) b.val( d ).trigger( 'change' );
+                    c.preventDefault();
+                } );
+                b.prev( 'label' ).append( " " ).append( a );
+            }
+            function addVariationLinksale() {
+                z = jQuery( '<br><a href="#">Aplicar a todas las ofertas</a>' );
+                y = jQuery( 'input[name^="variable_sale_price["]' );
+                z.click( function( x ) {
+                    w = jQuery( this ).parent( 'label' ).next( 'input[name^="variable_sale_price["]' ).val();
+                    v = confirm( "Desea aplicar $" + w + " a todas las ofertas?" );
+                    if ( v ) y.val( w ).trigger( 'change' );
+                    x.preventDefault();
+                } );
+                y.prev( 'label' ).append( " " ).append( z );
+            }
+            <?php if ( version_compare( $woocommerce->version, '2.4', '>=' ) ) : ?>
+                jQuery( document ).ready( function() {
+                    jQuery( document ).ajaxComplete( function( event, request, settings ) {
+                        if ( settings.data.lastIndexOf( "action=woocommerce_load_variations", 0 ) === 0 ) {
+                            addVariationLinks();addVariationLinksale();
+                        }
+                    } );
+                } );
+            <?php else: ?>
+                addVariationLinks();addVariationLinksale();
+            <?php endif; ?>
+        </script>
+    <?php
+}
+
+
 function fw_price_html1(  $product ){
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
