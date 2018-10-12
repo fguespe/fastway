@@ -25,7 +25,7 @@ if ( ! wc_coupons_enabled() ) {
 }
 
 if ( empty( WC()->cart->applied_coupons ) ) {
-	$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'fastway' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'fastway' ) . '</a>' );
+	$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Tenes un cupón?', 'fastway' ) . ' <a href="#" class="showcoupon">' . __( 'Click aquí para ingresar el código.', 'fastway' ) . '</a>' );
 	wc_print_notice( $info_message, 'notice' );
 }
 ?>

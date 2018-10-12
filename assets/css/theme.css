@@ -1,3 +1,7 @@
+/*fix menu*/
+.dropdown-item.active, .dropdown-item:active{
+background:none !important;
+}
 /*BLOG*/
 #index-wrapper .widget-area .widget-title{
 border-bottom:1px solid black;
@@ -47,6 +51,16 @@ display:block !important;
 #single-wrapper .entry-content{
 margin-top:40px;;
 }
+/*Mercadoenvios*/
+#inputPostcode,#btn_mp_calc_shipping{
+display:inline !important;
+width:auto !important;
+padding:5px;
+}
+#btn_mp_calc_shipping{
+background:var(--second-color) ;
+}
+
 
 
 /*TOP MARGIN*/
@@ -186,6 +200,12 @@ body{background:var(--body);}
 footer{background:var(--footer);}
 
 /*MOBILE ICONS*/
+@media (max-width: 799px) {
+
+.navbar-collapse{
+    padding-top:10px;
+}
+}
 #mobileicons span{
     display:none !important;
 }
@@ -247,8 +267,8 @@ footer{background:var(--footer);}
     border:0px !important;
 }
 .dropdown-menu a{
-	color:black !important;
-	padding:6px;
+  color:black !important;
+  padding:6px;
 }
 
 
@@ -563,6 +583,10 @@ position:relative !important;
 
 
 /*WOO*/
+/*gallery*/
+.woocommerce div.product div.images .flex-control-thumbs li{
+  width: auto;
+}
 /*review link*/
 .woocommerce-review-link,.woocommerce-review-link span{
   font-size:12px;
@@ -663,7 +687,7 @@ body .wpb_row, body .wpb_content_element{
     margin-bottom:0px ;
 }
 .entry-footer{
-	display: none ;
+  display: none ;
 }
 
 
@@ -694,4 +718,74 @@ line-height: 2em   !important;
 }
 #order_review_heading{
     margin-top: 30px 
+}
+/*PASOS CEHCKOUT*/
+
+.pasoscheckout { 
+  list-style: none; 
+  overflow: hidden; 
+  margin: 0px;
+  margin-bottom: 30px !important;
+  padding: 0px;
+    width:100% !important;
+}
+.pasoscheckout li { 
+    float: left; 
+    width:33% !important;
+}
+
+.pasoscheckout li a {
+    color: white;
+    text-decoration: none; 
+    padding:10px 0 10px 0px !important;
+    background: #E3E4E7; 
+    position: relative; 
+    display: block;
+    float: left;
+    text-align:center !important;
+    width:100% !important;
+}
+
+.pasoscheckout li a:after { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 20px solid #E3E4E7;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+} 
+.pasoscheckout li a:before { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 20px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1; 
+} 
+
+
+.pasoscheckout li.active a { 
+  background: #43A0DA !important;u
+}
+
+.pasoscheckout li.active a:after{
+border-left-color: #5C9FD2 !important;
+}
+.logocheckout{
+margin:0 auto;
+text-align:center;
+margin-bottom:30px;
 }
