@@ -45,11 +45,11 @@ HTML;
 </a>   
 
 <div id="$idname2" style="display: none">
-   <div class="mini-cart-item-title">Your Shopping Cart</div>
+   <div class="mini-cart-item-title">Carrito</div>
       <div class="widget_shopping_cart_content"></div>
       <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="$checkurl">PROCEED TO CHECKOUT</a>
+         <a class="checkoutbtn" href="$checkurl">Completar la compra</a>
     </div>
 </div>
 HTML;
@@ -69,7 +69,7 @@ HTML;
     <div class="modal-content">
       <div class="modal-header">
         
-       <div class="mini-cart-item-title">Your Shopping Cart</div>
+       <div class="mini-cart-item-title">Carrito</div>
       </div>
       <div class="modal-body">
         <div class="widget_shopping_cart_content"></div>
@@ -77,7 +77,7 @@ HTML;
       <div class="modal-footer">
       <div class="mini-cart-footer">
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="$checkurl">PROCEED TO CHECKOUT</a>
+         <a class="checkoutbtn" href="$checkurl">Completar la compra</a>
     </div>
    
    

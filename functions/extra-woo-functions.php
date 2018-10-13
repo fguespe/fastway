@@ -1,5 +1,14 @@
 <?php
+// Update WooCommerce Flexslider options
 
+add_filter( 'woocommerce_single_product_carousel_options', 'ud_update_woo_flexslider_options' );
+
+function ud_update_woo_flexslider_options( $options ) {
+
+    $options['directionNav'] = true;
+
+    return $options;
+}
 // Function to add subscribe text to posts and pages
 function pngcheckout_short() {
     $active1="";
@@ -9,7 +18,6 @@ function pngcheckout_short() {
     if(is_cart()){
         $active1="active";
     }else if( is_checkout() && !is_order_received_page() ) {
-        error_log(fw_theme_mod('general-logo'));
 
         $active2="active";
         $devuelvo .='<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
@@ -88,7 +96,7 @@ function fw_global_variation_price() {
 }
 
 
-function fw_price_html1(  $product ){
+function fw_price_html1( $price, $product ){
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
         $maximumper = 0;
@@ -97,10 +105,7 @@ function fw_price_html1(  $product ){
             $variable_product1= new WC_Product_Variation( $variation_id );
             $regular_price = $variable_product1 ->regular_price;
             $sale_price = $variable_product1 ->sale_price;
-            error_log($regular_price);
-            error_log($sale_price);
             $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-            error_log($percentage);
             if ($percentage > $maximumper) {
                 $maximumper = $percentage;
             }
@@ -111,7 +116,10 @@ function fw_price_html1(  $product ){
         $sale_price=$product->sale_price;
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
-    if($product->is_on_sale()){
+
+    //if($product->is_on_sale()){
+  
+        if($product->is_on_sale()){
         return '<div class="precioproducto">
             <span class="precio">$'.$sale_price.'</span>
             <div class="tachado">
@@ -119,51 +127,58 @@ function fw_price_html1(  $product ){
                 <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
             </div>
             </div>';
-    }else{
-         return '<div class="precioproducto">
-            <span class="precio">$'.$regular_price.'</span>
-            </div>';
-    }
+        }else{
+             return '<div class="precioproducto">
+                <span class="precio">$'.$regular_price.'</span>
+                </div>';
+        }    
+    
+    
    
 }
-
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 /**
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
-add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 99 );
- 
+add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 100 );
+
+wp_dequeue_style( 'photoswipe-default-skin' );
+wp_dequeue_style( 'photoswipe' );
 function child_manage_woocommerce_styles() {
-     //remove generator meta tag
-     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
-     
-     //first check that woo exists to prevent fatal errors
-     if ( function_exists( 'is_woocommerce' ) ) {
-         //dequeue scripts and styles
-         if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-             wp_dequeue_style( 'woocommerce_frontend_styles' );
-             wp_dequeue_style( 'woocommerce_fancybox_styles' );
-             wp_dequeue_style( 'woocommerce_chosen_styles' );
-             wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
-             wp_dequeue_script( 'wc_price_slider' );
-             wp_dequeue_script( 'wc-single-product' );
-             wp_dequeue_script( 'wc-add-to-cart' );
-             wp_dequeue_script( 'wc-cart-fragments' );
-             wp_dequeue_script( 'wc-checkout' );
-             wp_dequeue_script( 'wc-add-to-cart-variation' );
-             wp_dequeue_script( 'wc-single-product' );
-             wp_dequeue_script( 'wc-cart' );
-             wp_dequeue_script( 'wc-chosen' );
-             wp_dequeue_script( 'woocommerce' );
-             wp_dequeue_script( 'prettyPhoto' );
-             wp_dequeue_script( 'prettyPhoto-init' );
-             wp_dequeue_script( 'jquery-blockui' );
-             wp_dequeue_script( 'jquery-placeholder' );
-             wp_dequeue_script( 'fancybox' );
-             wp_dequeue_script( 'jqueryui' );
-         }
-         
-     }
+    //remove generator meta tag
+    remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
+    //first check that woo exists to prevent fatal errors
+    if ( function_exists( 'is_woocommerce' ) ) {
+        wp_dequeue_style('photoswipe-css');
+        wp_deregister_style('photoswipe-default-skin-css');
+    
+        //dequeue scripts and styles
+        if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
+            wp_dequeue_style( 'woocommerce_frontend_styles' );
+            wp_dequeue_style( 'woocommerce_fancybox_styles' );
+            wp_dequeue_style( 'woocommerce_chosen_styles' );
+            wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
+            wp_dequeue_script( 'wc_price_slider' );
+            wp_dequeue_script( 'wc-single-product' );
+            wp_dequeue_script( 'wc-add-to-cart' );
+            wp_dequeue_script( 'wc-cart-fragments' );
+            wp_dequeue_script( 'wc-checkout' );
+            wp_dequeue_script( 'wc-add-to-cart-variation' );
+            wp_dequeue_script( 'wc-single-product' );
+            wp_dequeue_script( 'wc-cart' );
+            wp_dequeue_script( 'wc-chosen' );
+            wp_dequeue_script( 'woocommerce' );
+            wp_dequeue_script( 'prettyPhoto' );
+            wp_dequeue_script( 'prettyPhoto-init' );
+            wp_dequeue_script( 'jquery-blockui' );
+            wp_dequeue_script( 'jquery-placeholder' );
+            wp_dequeue_script( 'fancybox' );
+            wp_dequeue_script( 'jqueryui' );
+
+
+        }
+    }
  
 }
 

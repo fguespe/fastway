@@ -1,5 +1,6 @@
 <?php
 
+
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
     return get_theme_mod( $name);

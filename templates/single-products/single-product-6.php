@@ -15,10 +15,7 @@ function fw_price_html( $price, $product ){
 			$variable_product1= new WC_Product_Variation( $variation_id );
 			$regular_price = $variable_product1 ->regular_price;
 			$sale_price = $variable_product1 ->sale_price;
-			error_log($regular_price);
-			error_log($sale_price);
 			$percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));	
-			error_log($percentage);
 			if ($percentage > $maximumper) {
 				$maximumper = $percentage;
 			}

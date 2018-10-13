@@ -71,5 +71,5 @@ do_action( 'woocommerce_shop_loop_item_title' );
 ?>
 </a>
 <?
-echo fw_price_html1($product);
+echo fw_price_html1(null,$product);
 ?>
