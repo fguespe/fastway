@@ -65,33 +65,34 @@ do_action( 'woocommerce_after_single_product_summary' );
 
 ?>
 <div class="container" style="max-width: 1200px;">
-        <h4 class="titulo-24">Quienes vieron este producto también compraron</h4>
-        <div class="clear">&nbsp;</div>
-        <div class="swiper-products over-hidden container relative swiper-container-horizontal">
-            <div class="swiper-wrapper clear-ul">
-                <?
-                foreach (wc_get_related_products($product->ID) as $prod) {?>
-                    <div class="swiper-slide">
-                    <?wc_get_template_part( 'content', 'product' );?>
-                    </div>
-                <?}?>
+<h3 class="" style="margin-bottom: 20px;">Quienes vieron este producto también compraron</h3>
+        
+  <div class="swiper-products2 over-hidden container relative swiper-container-horizontal">
+    <div class="swiper-wrapper">
+        <?
+        foreach (wc_get_related_products($product->ID) as $prod) {
+            echo '<div class="swiper-slide">';
+            wc_get_template_part( 'content', 'product' ); 
+            echo '</div>';  
+        }?>
+    </div>
 
-            </div>
-            
-            <div class="swiper-prev swiper-prod-prev"><i class="fa fa-angle-left"></i></div>
-            <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
-        </div>
+    <div class="swiper-prev swiper-prod-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
+  </div>
 </div>
 
 <script type="text/javascript">
 jQuery( document ).ready(function() {
 	//Crea las thumnails de la izquierda
-    var ProductSwiper = new Swiper('.swiper-products', {
+    var ProductSwiper = new Swiper('.swiper-products2', {
+            //pagination: '.swiper-prod-rel-pagination',
             nextButton: '.swiper-prod-next',
             prevButton: '.swiper-prod-prev',
-            slidesPerView: 6,
-            slidesPerGroup:16,
-            spaceBetween: 10,
+            slidesPerView: 5,
+            slidesPerGroup:5,
+            paginationClickable: true,
+            spaceBetween: 20,
             loop: true,
             breakpoints: {
             // when window width is <= 320px
@@ -136,14 +137,6 @@ jQuery( document ).ready(function() {
 });
 </script>
 
-<script type="text/javascript">
-	 
-        
-
-        
-
-
-</script>
 <style type="text/css">
 .fw_single_product{
 background:white;
@@ -288,116 +281,9 @@ text-align: center;
     position: relative;
 }
 
-/*====================
-Pasador Principal   */
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-    .swiper-container img{
-        max-width: 100%;
-    }
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-.swiper-next,
-.swiper-prev{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 10;
-    cursor: pointer;
-    background: #fff;
-    opacity: 0.6;
-    color: #444;
-    transition: all 200ms linear 0s;
-    width: 40px!important;
-    height: 55px!important;
-    padding: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px; 
-    text-align: center;
-}
-    .swiper-next i,
-    .swiper-prev i{
-        color: #444;
-        font-size: 45px;
-        position: absolute;
-        top: 5px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-.swiper-prev{
-    left: 10px;
-    right: auto;
-}
-.swiper-next{
-    right: 10px;
-    left: auto;
-}
-.swiper-next:hover,
-.swiper-prev:hover{
-    opacity: 1;
-    -webkit-box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
-    -moz-box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
-    box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
-    transition: all 200ms linear 0s;
-}
 
 /*====================
 AdaptaciÃ³n Fancybox  */
-.fancybox-controls{
-    height: 100%;
-}
-.fancybox-button.fancybox-button--right,
-.fancybox-button.fancybox-button--left{
-    display: block!important;
-    width: 40px;
-    height: 40px;
-    z-index: 3000;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto !important;
-    background-color: rgba(255,255,255,0.6);
-}
-
-.fancybox-button.fancybox-button--left{
-    left: 0;
-}
-.fancybox-button.fancybox-button--right{
-    right: 0;
-}
-.fancybox-button--left::after, 
-.fancybox-button--right::after{
-    top: 14px !important;
-    width: 14px !important;
-    height: 14px !important;
-    color: #666 !important; 
-}
-
-.fancybox-button--left:hover::after, 
-.fancybox-button--right:hover::after{
-    color: #fff !important; 
-}
 
 
 </style>

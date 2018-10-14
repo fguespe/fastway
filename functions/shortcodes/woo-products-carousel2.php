@@ -31,7 +31,9 @@ endif;
 $rand=generateRandomString(5);
 
 ?>
-  <div class="swiper-container">
+
+<div class="container" style="max-width: 1200px;">
+  <div class="swiper-products-rel over-hidden container relative swiper-container-horizontal">
     <div class="swiper-wrapper">
 
   <?php 
@@ -44,32 +46,27 @@ $rand=generateRandomString(5);
   endwhile; 
     ?>
 </div>
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
+<div class="swiper-prev swiper-prod-prev"><i class="fa fa-angle-left"></i></div>
+<div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
+</div>
 </div>
  <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 4,
-      spaceBetween: 0,
-      slidesPerGroup: 4,
-      loop: true,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        // when window width is <= 320px
-            600:    {slidesPerView: 1,slidesPerGroup:1},
-            900:    {slidesPerView: 1,slidesPerGroup:2},
-            1000:   {slidesPerView: 1,slidesPerGroup:1},            
-            1200:    {slidesPerView: 4,slidesPerGroup:4}
-        },
-    });
+     var ProductSwiper = new Swiper('.swiper-products-rel', {
+            pagination: '.swiper-prod-rel-pagination',
+            nextButton: '.swiper-prod-rel-next',
+            prevButton: '.swiper-prod-rel-prev',
+            slidesPerView: 5,
+            slidesPerGroup:5,
+            paginationClickable: true,
+            spaceBetween: 20,
+            loop: true,
+            breakpoints: {
+            // when window width is <= 320px
+                900:    {slidesPerView: 2,slidesPerGroup:2},
+                1000:   {slidesPerView: 3,slidesPerGroup:3},            
+                1200:    {slidesPerView: 4,slidesPerGroup:4}
+            }
+        });
   </script>
 
 

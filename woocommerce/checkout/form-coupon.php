@@ -37,7 +37,7 @@ if ( empty( WC()->cart->applied_coupons ) ) {
 	</p>
 
 	<p class="form-row form-row-last">
-		<input type="submit" class="btn btn-outline-primary" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'fastway' ); ?>" />
+		<input type="submit" class="btn btn-outline-primary" name="apply_coupon" value="<?php _e( 'Aplicar Código', 'fastway' ); ?>" />
 	</p>
 
 	<div class="clear"></div>

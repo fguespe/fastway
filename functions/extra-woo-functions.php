@@ -136,23 +136,20 @@ function fw_price_html1( $price, $product ){
     
    
 }
+
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 /**
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
 add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 100 );
 
-wp_dequeue_style( 'photoswipe-default-skin' );
-wp_dequeue_style( 'photoswipe' );
 function child_manage_woocommerce_styles() {
     //remove generator meta tag
     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
     //first check that woo exists to prevent fatal errors
-    if ( function_exists( 'is_woocommerce' ) ) {
-        wp_dequeue_style('photoswipe-css');
-        wp_deregister_style('photoswipe-default-skin-css');
-    
+    if ( function_exists( 'is_woocommerce' ) ) {   
         //dequeue scripts and styles
         if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
             wp_dequeue_style( 'woocommerce_frontend_styles' );
