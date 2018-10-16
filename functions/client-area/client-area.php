@@ -338,7 +338,7 @@ if (activarCA()  ) {
     add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 }
 function wpdocs_enqueue_custom_admin_style() {
-    wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/fonts/font-awesome/css/font-awesome.min.css');
     wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css');
     wp_enqueue_script('cajs-style', get_template_directory_uri() . '/functions/client-area/ca.js');
     
