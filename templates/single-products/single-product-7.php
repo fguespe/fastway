@@ -64,7 +64,7 @@ do_action( 'woocommerce_after_single_product_summary' );
 
 
 ?>
-<div class="container" style="max-width: 1200px;">
+<div class="container related" style="max-width: 1200px;">
 <h3 class="" style="margin-bottom: 20px;">Quienes vieron este producto también compraron</h3>
         
   <div class="swiper-products2 over-hidden container relative swiper-container-horizontal">
