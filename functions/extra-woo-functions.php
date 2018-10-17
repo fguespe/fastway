@@ -1,14 +1,5 @@
 <?php
-// Update WooCommerce Flexslider options
 
-add_filter( 'woocommerce_single_product_carousel_options', 'ud_update_woo_flexslider_options' );
-
-function ud_update_woo_flexslider_options( $options ) {
-
-    $options['directionNav'] = true;
-
-    return $options;
-}
 // Function to add subscribe text to posts and pages
 function pngcheckout_short() {
     $active1="";
@@ -136,6 +127,9 @@ function fw_price_html1( $price, $product ){
     
    
 }
+$my_theme = wp_get_theme();
+if($my_theme!="lombok-child")
+    add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
  * Optimize WooCommerce Scripts
@@ -171,6 +165,7 @@ function child_manage_woocommerce_styles() {
             wp_dequeue_script( 'fancybox' );
             wp_dequeue_script( 'jqueryui' );
 
+            wp_enqueue_style( 'woocommerce-layout' );
 
         }
     }

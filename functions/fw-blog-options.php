@@ -17,7 +17,7 @@ function fw_recentposts_hor() {
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
           <h4 class="title"><?php the_title();?></h4>
           <p class="excerpt"><?php the_excerpt(); ?></p>
-          <a href="<?php echo get_permalink();?>" class="vermas" target="_blank">Leer más</a>
+          <a href="<? echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
         </div>
         
     <?php endwhile;?>
@@ -40,7 +40,7 @@ function fw_recentposts_ver() {
           <div class="col-9">
               <h4><?php the_title();?></h4>
               <p><?php the_excerpt(); ?></p>
-              <a href="" class="vermas" target="_blank">Leer más</a>
+              <a href="<? echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
     <?php endwhile;?>
@@ -56,23 +56,22 @@ if ( ! function_exists( 'understrap_posted_on' ) ) :
 function understrap_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s"> (%4$s) </time>';
+    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s"> </time>';
   }
   $time_string = sprintf( $time_string,
     esc_attr( get_the_date( 'c' ) ),
     esc_html( get_the_date() ),
-    esc_attr( get_the_modified_date( 'c' ) ),
-    esc_html( get_the_modified_date() )
+    esc_attr( get_the_modified_date( 'c' ) )
   );
   $posted_on = sprintf(
     esc_html_x( 'Subido el %s', 'post date', 'fastway' ),
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
   );
   $byline = sprintf(
-    esc_html_x( 'by %s', 'post author', 'fastway' ),
+    esc_html_x( '%s', 'fastway' ),
     '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
   );
-  echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+  echo '<span class="posted-on">' . $posted_on . '</span><span class="author"> por ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 
