@@ -137,8 +137,6 @@ function fw_price_html1( $price, $product ){
    
 }
 
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
 /**
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
@@ -198,7 +196,6 @@ function fw_otherwoo_options(){
         add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
     }
     if(!empty(fw_theme_mod("checkout-msg"))){
-        error_log(fw_theme_mod("checkout-msg"));
         add_action( 'woocommerce_before_checkout_form', 'fw_before_paying_notice' );
     }
 

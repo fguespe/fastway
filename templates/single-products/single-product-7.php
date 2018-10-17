@@ -1,4 +1,3 @@
-
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">
@@ -6,7 +5,6 @@
                 <?
                 global $product;
                 foreach ($product->get_gallery_attachment_ids() as $ids) {
-                    error_log($ids);
                     $url=wp_get_attachment_url( $ids);
                     ?>
                     <a href="<?php echo $url;?>" data-fancybox="gallery" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">

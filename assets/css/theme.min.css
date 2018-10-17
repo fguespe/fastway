@@ -720,6 +720,10 @@ position:relative !important;
 h3.heading-title{
   margin-bottom: 20px;
 }
+.product-category img{
+width:270px;
+height:auto;
+}
 /*gallery*/
 .woocommerce div.product div.images .flex-control-thumbs li{
   width: auto;
