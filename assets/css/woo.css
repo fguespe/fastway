@@ -1,3 +1,43 @@
+/*pagination*/
+.woocommerce .products{
+float:left;
+}
+
+.woocommerce nav.woocommerce-pagination{
+    text-align:center
+}
+.woocommerce nav.woocommerce-pagination ul{
+    display:inline-block;
+    white-space:nowrap;
+    padding:0;
+    clear:both;
+    border:1px solid #d3ced2;
+    border-right:0;
+    margin:1px
+}
+.woocommerce nav.woocommerce-pagination ul li{
+    border-right:1px solid #d3ced2;
+    padding:0;
+    margin:0;
+    float:left;
+    display:inline;
+    overflow:hidden
+}
+.woocommerce nav.woocommerce-pagination ul li a,.woocommerce nav.woocommerce-pagination ul li span{
+    margin:0;
+    text-decoration:none;
+    padding:0;
+    line-height:1;
+    font-size:1em;
+    font-weight:400;
+    padding:.5em;
+    min-width:1em;
+    display:block
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus,.woocommerce nav.woocommerce-pagination ul li a:hover,.woocommerce nav.woocommerce-pagination ul li span.current{
+    background:#ebe9eb;
+    color:#8a7e88
+}
 .fw_product_loop img{
 width:100%;
 height:auto;
