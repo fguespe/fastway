@@ -37,6 +37,13 @@ text-transform:uppercase !important;
 display:block ;
 margin-top:15px;
 }
+.fw_product_loop .star-rating{
+  display: none;
+}
+.fw_product_loop{
+float:left !important;
+width:100% !important;
+}
 </style>
 <?php
     global $product;
