@@ -312,11 +312,16 @@ function fw_extras_iconsnext( $atts ) {
         array(
             'type' => '',
             'size' =>  '',
+            'icon_color' => '',
         ), $atts, 'fw_extras_iconsnext' );
 
     $font_size=16;
+    $icon_color="var(--main)";
     if($wporg_atts['size']){
         $font_size=$wporg_atts['size'];
+    }
+    if($wporg_atts['icon_color']){
+        $icon_color=$wporg_atts['icon_color'];
     }
     foreach (explode(",", $wporg_atts['type']) as $icon) {
        // error_log($icon);
@@ -326,7 +331,7 @@ function fw_extras_iconsnext( $atts ) {
         else if($icon==="twitter")$font_icon="fa-twitter-square";
         $link=fw_company_data($icon);
         
-        $first.='<a class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+        $first.='<a class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.'"></i>';
         $first.='</a>';
     }
     
