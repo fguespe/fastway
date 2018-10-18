@@ -24,6 +24,17 @@ vc_add_param("vc_row", array(
         "25%" => "four_mobile_columns",
     )
 ));
+vc_add_param("vc_row", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Has a FW Slider In It?",
+    "param_name" => "fw_swiper",
+    "value" => array(
+        "Select an option" => "",
+        "Yes" => "fw_swiper",
+    )
+));
 vc_add_param("vc_row_inner", array(
     "type" => "dropdown",
     "group" => "Fastway",

@@ -60,11 +60,6 @@ float:left !important;
 .woocommerce ul.products li.last,.woocommerce-page ul.products li.last{
     margin-right:0
 }
-
-
-
-
-
 .woocommerce ul.products.columns-2 li.product,.woocommerce-page ul.products.columns-2 li.product{
     width:48%
 }

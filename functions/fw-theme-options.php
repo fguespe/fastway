@@ -1598,6 +1598,7 @@ function my_customizer_styles() { ?>
 	<style>
 	.customize-control-kirki-multicheck ul {
 	  display: flex;
+	  flex-wrap: wrap;
 	}
 
 	.customize-control-kirki-multicheck ul li {
