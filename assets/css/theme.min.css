@@ -238,12 +238,12 @@ padding:5px;
 }
 }
 .onsale{
-  border-radius:0px !important;
-  padding:0px !important;
-  margin:0px !important;
-  font-size:14px !important;
-  background:var(--main) !important;
-  color:white !important;
+  border-radius:0px ;
+  padding:0px ;
+  margin:0px ;
+  font-size:14px ;
+  background:var(--main) ;
+  color:white ;
   position: absolute;
 }
 
@@ -726,7 +726,9 @@ position:relative !important;
 h3.heading-title{
   margin-bottom: 20px;
 }
-
+.woocommerce{
+margin-bottom:60px;
+}
 /*gallery*/
 .woocommerce div.product div.images .flex-control-thumbs li{
   width: auto;

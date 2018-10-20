@@ -1,19 +1,19 @@
 <?php //if not woocommerce_after_shop_loop_item close with </a> at the end?>
 <style type="text/css">
 .fw_product_loop .woocommerce-loop-product__title{
-font-size:12px !important;
+font-size:12px ;
 min-height:25px;;
-line-height:12px !important;
-text-align:left !important;
-text-transform:uppercase !important;
-color: #35434e !important;
+line-height:12px ;
+text-align:left ;
+text-transform:uppercase ;
+color: #35434e ;
 margin-top:10px;
 margin-bottom:10px;
-font-weight:600 !important;
+font-weight:600 ;
 }
 .fw_product_loop img{
 max-height:250px;
-width:auto !important;
+width:auto ;
 margin:0 auto;
 }
 .fw_product_loop{
@@ -22,18 +22,18 @@ padding:10px;
 }
 
 .fw_product_loop .price span{
-color:black !important;
-font-size:20px !important;
-line-height:20px !important;
+color:black ;
+font-size:20px ;
+line-height:20px ;
 font-weight:bold;
 }
 
 .fw_product_loop .monthly{
-color:#ff710b !important;
-font-size:13px !important;
-line-height:14px !important;
-font-weight:bold !important;
-text-transform:uppercase !important;
+color:#ff710b ;
+font-size:13px ;
+line-height:14px ;
+font-weight:bold ;
+text-transform:uppercase ;
 display:block ;
 margin-top:15px;
 }
@@ -41,8 +41,8 @@ margin-top:15px;
   display: none;
 }
 .fw_product_loop{
-float:left !important;
-width:100% !important;
+float:left ;
+width:100% ;
 }
 </style>
 <?php
