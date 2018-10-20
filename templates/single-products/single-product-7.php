@@ -4,7 +4,10 @@
             <div id="imagenListado" itemscope="" itemtype="http://schema.org/MediaObject" style="position: relative; overflow: hidden;">
                 <?
                 global $product;
-                foreach ($product->get_gallery_attachment_ids() as $ids) {
+                $fotos=$product->get_gallery_attachment_ids();
+                array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
+                $fotos=array_reverse($fotos);
+                foreach ($fotos as $ids) {
                     $url=wp_get_attachment_url( $ids);
                     ?>
                     <a href="<?php echo $url;?>" data-fancybox="gallery" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
@@ -68,18 +71,37 @@ do_action( 'woocommerce_after_single_product_summary' );
   <div class="swiper-products2 over-hidden container relative swiper-container-horizontal">
     <div class="swiper-wrapper">
         <?
-        foreach (wc_get_related_products($product->ID) as $prod) {
+        $myarray = wc_get_related_products($product->id);
+
+        $args = array(
+           'post_type' => 'product',
+           'post__in'      => $myarray
+        );
+        // The Query
+        $products = new WP_Query( $args );
+        $contada=0;
+
+        while ( $products->have_posts() ) : 
+            $contada++;
+            $products->the_post(); 
             echo '<div class="swiper-slide">';
             wc_get_template_part( 'content', 'product' ); 
-            echo '</div>';  
-        }?>
+            echo '</div>';    
+        endwhile; 
+        ?>
+
     </div>
 
     <div class="swiper-prev swiper-prod-prev"><i class="fa fa-angle-left"></i></div>
     <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
   </div>
 </div>
+<style type="text/css">
+    .related .swiper-slide{
+width:25% !important;
+}
 
+</style>
 <script type="text/javascript">
 jQuery( document ).ready(function() {
 	//Crea las thumnails de la izquierda
@@ -87,17 +109,11 @@ jQuery( document ).ready(function() {
             //pagination: '.swiper-prod-rel-pagination',
             nextButton: '.swiper-prod-next',
             prevButton: '.swiper-prod-prev',
-            slidesPerView: 5,
-            slidesPerGroup:5,
+            slidesPerView: <?=$contada?>,
+            slidesPerGroup: <?=$contada?>,
             paginationClickable: true,
-            spaceBetween: 20,
-            loop: true,
-            breakpoints: {
-            // when window width is <= 320px
-                900:    {slidesPerView: 2,slidesPerGroup:2},
-                1000:   {slidesPerView: 3,slidesPerGroup:3},            
-                1200:    {slidesPerView: 4,slidesPerGroup:4}
-            }
+            spaceBetween: 10,
+            loop: false,
         });
 
         //Fancybox
@@ -124,6 +140,7 @@ jQuery( document ).ready(function() {
         // callback fn that creates a thumbnail to use as pager anchor 
         pagerAnchorBuilder: function(idx, slide) {             
             var img     = jQuery(slide).find('img').attr('src');
+            //alert(img);
             if(img == null){
                 return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
             }else{

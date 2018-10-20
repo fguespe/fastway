@@ -368,6 +368,19 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'transparent-header',
+	'label'       => __( 'Transparent Header', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'header-width',
 	'label'       => __( 'Header Width', 'fastway' ),

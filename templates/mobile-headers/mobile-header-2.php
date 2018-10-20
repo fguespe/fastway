@@ -14,9 +14,6 @@ global $header_middle_mobile;
         padding:0px
     }
 
-  .fw_header_middle.mobile .col-6{
-        padding:0px
-    }
 </style>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
       <div class="col-3 d-flex justify-content-around">

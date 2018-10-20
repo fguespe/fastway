@@ -249,11 +249,10 @@ padding:5px;
 
 /*stickty*/
 @media (min-width: 799px) {
-  .fw-sticky-top {
-  position:fixed ;
-
-  width:100% ;
-  z-index:999 ;
+  .fw_sticky_top,.fw_transparent_top {
+    position:fixed ;
+    width:100% ;
+    z-index:999 ;
   }
 }
 
@@ -414,10 +413,6 @@ footer{background:var(--footer);}
     position: fixed !important;
 }
 
-/*FIX HEADER HEIGHT TRANS Y STICKY*/
-.admin-bar .u-header--sticky-top,.admin-bar .u-header--bg-transparent {
-    top: 32px !important;
-}
 
 /*FIX MENU MOBILE*/
 .dropdown-menu{
