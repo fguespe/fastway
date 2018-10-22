@@ -76,8 +76,11 @@ width:100% ;
      * @hooked woocommerce_template_loop_price - 10
      */
     do_action( 'woocommerce_after_shop_loop_item_title' );
-
+    $precio=$product->regular_price;
+    if($product->is_on_sale()){
+        $precio=$product->sale_price;
+    }
     ?>
-    <span class="monthly"> 6 CUOTAS SIN INTERES DE $<?php echo round($product->regular_price/6); ?></span>
+    <span class="monthly"> 12 CUOTAS SIN INTERES DE $<?php echo round($precio/12); ?></span>
     </a>
     

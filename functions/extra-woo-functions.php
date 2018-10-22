@@ -114,7 +114,7 @@ function fw_price_html1( $price, $product ){
         return '<div class="precioproducto">
             <span class="precio">$'.$sale_price.'</span>
             <div class="tachado">
-                <span class="precio-anterior t1 tachado">$'.$regular_price.'</span>
+                <span class="precio-anterior t1 tachado"><del>$'.$regular_price.'</del></span>
                 <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
             </div>
             </div>';

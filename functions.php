@@ -6,6 +6,9 @@ function fw_theme_mod( $name ) {
     return get_theme_mod( $name);
 }
 function fw_getme_roles(){
+    if ( ! function_exists( 'get_editable_roles' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/user.php';
+    }
     $editable_roles = get_editable_roles();
     $roles=array();
     foreach ($editable_roles as $role => $details) {
