@@ -299,7 +299,7 @@ function fw_extras_short( $atts ) {
     if($wporg_atts['size']){
         $font_size=$wporg_atts['size'];
     }
-    $first='<a class="fw_quicklink" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+    $first='<a target="_blank" class="fw_quicklink '.$wporg_atts['type'].'" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
     if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
     $first.='</a>';
     return $first;
@@ -331,7 +331,7 @@ function fw_extras_iconsnext( $atts ) {
         else if($icon==="twitter")$font_icon="fa-twitter-square";
         $link=fw_company_data($icon);
         
-        $first.='<a class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.'"></i>';
+        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.'"></i>';
         $first.='</a>';
     }
     

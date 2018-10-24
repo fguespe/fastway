@@ -1,3 +1,159 @@
+button{
+cursor:pointer;
+}
+/*Cosas raras*/
+/*FIX LISTAS*/
+li {
+   list-style-type: none; 
+}
+ul{
+    padding:0px;
+    margin:0px;
+}
+.container{
+max-width:1200px;
+}
+
+
+/*SWIPER*/
+
+.vc_row.fw_swiper{
+  width: 100vw;
+  max-width: 100vw;
+}
+@media (max-width: 799px) {
+.vc_row.fw_swiper{
+position: static !important;
+width:100% !important;
+left:0px !important;
+margin:0px;
+}
+}
+
+/*swiper*/
+.over-hidden {
+    overflow: hidden;
+}
+.clear-ul, .clear-ul li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.relative{
+  position:relative!important;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-container img{
+    max-width: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-next,
+.swiper-prev{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    cursor: pointer;
+    background: #fff;
+    opacity: 0.6;
+    color: #444;
+    transition: all 200ms linear 0s;
+    width: 40px!important;
+    height: 55px!important;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; 
+    text-align: center;
+}
+    .swiper-next i,
+    .swiper-prev i{
+        color: #444;
+        font-size: 45px;
+        position: absolute;
+        top: 5px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+.swiper-prev{
+    left: 10px;
+    right: auto;
+}
+.swiper-next{
+    right: 10px;
+    left: auto;
+}
+.swiper-next:hover,
+.swiper-prev:hover{
+    opacity: 1;
+    -webkit-box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
+    -moz-box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
+    box-shadow: 0px 3px 4px 0px rgba(102,102,102,0.6);
+    transition: all 200ms linear 0s;
+}
+
+
+
+/*fancybox*/
+.fancybox-controls{
+    height: 100%;
+}
+.fancybox-button.fancybox-button--right,
+.fancybox-button.fancybox-button--left{
+    display: block!important;
+    width: 40px;
+    height: 40px;
+    z-index: 3000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto !important;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.fancybox-button.fancybox-button--left{
+    left: 0;
+}
+.fancybox-button.fancybox-button--right{
+    right: 0;
+}
+.fancybox-button--left::after, 
+.fancybox-button--right::after{
+    top: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+    color: #666 !important; 
+}
+
+.fancybox-button--left:hover::after, 
+.fancybox-button--right:hover::after{
+    color: #fff !important; 
+}
+
+
 /*fix menu*/
 .dropdown-item.active, .dropdown-item:active{
 background:none !important;
@@ -56,9 +212,13 @@ margin-top:40px;;
 display:inline !important;
 width:auto !important;
 padding:5px;
+font-size:16px;
+line-height:18px;
+padding:5px;
 }
 #btn_mp_calc_shipping{
-background:var(--second-color) ;
+  border: 0px ;
+  background:var(--second-color) ;
 }
 
 
@@ -81,22 +241,21 @@ background:var(--second-color) ;
 }
 }
 .onsale{
-  border-radius:0px !important;
-  padding:0px !important;
-  margin:0px !important;
-  font-size:14px !important;
-  background:var(--main) !important;
-  color:white !important;
+  border-radius:0px ;
+  padding:0px ;
+  margin:0px ;
+  font-size:14px ;
+  background:var(--main) ;
+  color:white ;
   position: absolute;
 }
 
 /*stickty*/
 @media (min-width: 799px) {
-  .fw-sticky-top {
-  position:fixed ;
-
-  width:100% ;
-  z-index:999 ;
+  .fw_sticky_top,.fw_transparent_top {
+    position:fixed ;
+    width:100% ;
+    z-index:999 ;
   }
 }
 
@@ -198,7 +357,7 @@ header i,header span,.fw-searchform .input-group-append .btn{
 .fw_header_bottom{background:var(--bottom-header);}
 body{background:var(--body);}
 footer{background:var(--footer);}
-
+#footercopy{background:white;}
 /*MOBILE ICONS*/
 @media (max-width: 799px) {
 
@@ -257,10 +416,6 @@ footer{background:var(--footer);}
     position: fixed !important;
 }
 
-/*FIX HEADER HEIGHT TRANS Y STICKY*/
-.admin-bar .u-header--sticky-top,.admin-bar .u-header--bg-transparent {
-    top: 32px !important;
-}
 
 /*FIX MENU MOBILE*/
 .dropdown-menu{
@@ -314,18 +469,6 @@ footer{background:var(--footer);}
 footer{
     height:100% !important;
 }
-/*FIX LISTAS*/
-li {
-   list-style-type: none; 
-}
-ul{
-    padding:0px;
-    margin:0px;
-}
-.container{
-max-width:1200px;
-}
-
 /*FIX SPACE*/
 .fw_header_top .container,. fw_header_top .container-fluid{
     padding-top:0 ;
@@ -583,6 +726,12 @@ position:relative !important;
 
 
 /*WOO*/
+h3.heading-title{
+  margin-bottom: 20px;
+}
+.woocommerce{
+margin-bottom:60px;
+}
 /*gallery*/
 .woocommerce div.product div.images .flex-control-thumbs li{
   width: auto;
@@ -612,11 +761,7 @@ position:relative !important;
 }
 /*stars*/
 
-.woocommerce .star-rating span,.stars a,.woocommerce .star-rating:before{
-  font-family: star;
-  color:gold;
-  font-size: 14px !important;
-}
+
 /*Fix de un margin que aparece en la pagina de catalogo abajo de la imagen*/
 
 /*RELATED*/
