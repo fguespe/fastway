@@ -359,13 +359,13 @@ add_shortcode('fw_companyname', 'fw_companyname');
 add_shortcode('fw_companyaddress', 'fw_companyaddress');
 
 function quicklinks(){
-    echo "<div class='row d-flex fw_quicklinks '>";
-    if(!empty(fw_companyfb()))echo '<a class="col-6 fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:#4267B2;"></i><span> Facebook</span></a>';
-    if(!empty(fw_companyyoutube()))echo '<a class="col-6 youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_companywhatsapp()))echo '<a class="col-6  whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
-    if(!empty(fw_companyig()))echo '<a class="col-6 ig" href="'.fw_companyig().'"><i class="fa fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_companyemail()))echo '<a class="col-6 mail" href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
-    if(!empty(fw_companyphone()))echo '<a class="col-6 tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
+    echo "<div class='fw_quicklinks '>";
+    if(!empty(fw_companyfb()))echo '<a class=" fb" href="'.fw_companyfb().'"><i class="fa fa-facebook-square" style="color:#4267B2;"></i><span> Facebook</span></a>';
+    if(!empty(fw_companyyoutube()))echo '<a class=" youtube" href="'.fw_companyyoutube().'"><i class="fa fa-youtube-square" style="color:#FF0200;"></i><span>  Youtube</span></a>';
+    if(!empty(fw_companywhatsapp()))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fa fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
+    if(!empty(fw_companyig()))echo '<a class=" ig" href="'.fw_companyig().'"><i class="fa fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
+    if(!empty(fw_companyemail()))echo '<a class=" mail" href="mailto:'.fw_companyemail().'"><i class="fa fa-envelope-o" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
+    if(!empty(fw_companyphone()))echo '<a class=" tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
     if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a class="map" href="'.fw_companygooglemaps().'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_companyaddress().'</span></a>';
     
     echo "</div>";
