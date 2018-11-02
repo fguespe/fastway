@@ -144,7 +144,6 @@ jQuery( document ).ready(function() {
         // callback fn that creates a thumbnail to use as pager anchor 
         pagerAnchorBuilder: function(idx, slide) {             
             var img     = jQuery(slide).find('img').attr('src');
-            alert("ja");
             if(img == null){
                 return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
             }else{

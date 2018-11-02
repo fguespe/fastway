@@ -42,10 +42,11 @@ float:left;
 width:100%;
 height:auto;
 }
-
+/*
 .fw_product_loop{
 float:left !important;
 }
+*/
 .woocommerce ul.products li.product,.woocommerce-page ul.products li.product{
     float:left;
     margin:0 3.8% 2.992em 0;
@@ -60,6 +61,7 @@ float:left !important;
 .woocommerce ul.products li.last,.woocommerce-page ul.products li.last{
     margin-right:0
 }
+
 .woocommerce ul.products.columns-2 li.product,.woocommerce-page ul.products.columns-2 li.product{
     width:48%
 }
@@ -73,6 +75,27 @@ float:left !important;
     width:13.5%
 }
 
+@media (max-width: 799px) {
+    .woocommerce ul.products.columns-2 li.product,.woocommerce-page ul.products.columns-2 li.product{
+        width:48%;
+    }
+    .woocommerce ul.products.columns-3 li.product,.woocommerce-page ul.products.columns-3 li.product{
+        width:48%;
+    }
+    .woocommerce ul.products.columns-5 li.product,.woocommerce-page ul.products.columns-5 li.product{
+        width:48%;
+    }
+    .woocommerce ul.products.columns-6 li.product,.woocommerce-page ul.products.columns-6 li.product{
+        width:48%;
+    }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+        margin-right: 0px;
+    }
+   .woocommerce ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
+    float: right;
+    clear: none!important;
+}
+}
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
 	list-style: none;
@@ -212,7 +235,7 @@ float:left !important;
     float: left;
 }
 .actions input{
-float: right;
+    float: right;
 }
 .woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
     width: 80px;

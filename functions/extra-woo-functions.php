@@ -37,7 +37,7 @@ add_action( 'wp_head', 'add_chkstl_to_head' );
 }
 
 function add_chkstl_to_head() {
-    echo "<style>.woocommerce-checkout:not(.woocommerce-order-received) header,.woocommerce-checkout:not(.woocommerce-order-received) footer{
+echo "<style>.woocommerce-checkout:not(.woocommerce-order-received) header,.woocommerce-checkout:not(.woocommerce-order-received) footer{
     display:none !important;
 }</style>";
 }
