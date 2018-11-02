@@ -122,10 +122,7 @@ function fw_price_html1( $price, $product ){
              return '<div class="precioproducto">
                 <span class="precio">$'.$regular_price.'</span>
                 </div>';
-        }    
-    
-    
-   
+        }      
 }
 $my_theme = wp_get_theme();
 if($my_theme!="lombok-child")

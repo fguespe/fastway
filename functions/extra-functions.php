@@ -6,6 +6,7 @@ if(fw_theme_mod("maintainance-mode")){
     add_action('get_header', 'fw_maintenance_mode');
 }
 
+
 function wca_custom_loginui() {
 echo '<style type="text/css">
 h1 a {background-image: url('.fw_theme_mod('ca-client-logo').') !important; }

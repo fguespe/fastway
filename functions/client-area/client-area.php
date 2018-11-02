@@ -64,8 +64,6 @@ function wca_wp_logo_url($url){
     return "#";
 }
 
-
-
 //dashboard widgets
 function fw_dashboard_widgets() {
     $sidebar_id = 'dash-sidebar';

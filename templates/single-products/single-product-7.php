@@ -7,7 +7,9 @@
                 $fotos=$product->get_gallery_attachment_ids();
                 array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
                 $fotos=array_reverse($fotos);
+                
                 foreach ($fotos as $ids) {
+                    
                     $url=wp_get_attachment_url( $ids);
                     ?>
                     <a href="<?php echo $url;?>" data-fancybox="gallery" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
@@ -35,7 +37,7 @@
             remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
             add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
             function send_to_html(){
-                global $product;        echo fw_price_html1(null,$product);}
+                global $product;echo fw_price_html1(null,$product);}
 
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
@@ -45,7 +47,7 @@
 
          ?>
          <div class="compra-segura"><i class="fa fa-shield"></i> <a href="#" target="_blank">Compra segura</a>, recibi el producto que esperas o te devolvemos el dinero.</div>
-			<a target="_blank" href="https://www.mercadolibre.com.ar/gz/promociones-bancos" class="fancybox btn-medios block btn-mobile t2">
+		<a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile t2">
 	            <div class="row">
 	                <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
@@ -53,7 +55,9 @@
 	                    <span class="azul">(Chequear promociones vigentes)</span>
 	                </div>
 	            </div>
-	        </a>
+	       </a>
+
+                    <?php  global $product; echo getFinanciacion($product);?>
 	</div>
 
 </div>
@@ -66,7 +70,7 @@ do_action( 'woocommerce_after_single_product_summary' );
 
 ?>
 <div class="container related" style="max-width: 1200px;">
-<h3 class="" style="margin-bottom: 20px;">Quienes vieron este producto también compraron</h3>
+<h3 class="titulo">Quienes vieron este producto también compraron</h3>
         
   <div class="swiper-products2 over-hidden container relative swiper-container-horizontal">
     <div class="swiper-wrapper">
@@ -140,7 +144,7 @@ jQuery( document ).ready(function() {
         // callback fn that creates a thumbnail to use as pager anchor 
         pagerAnchorBuilder: function(idx, slide) {             
             var img     = jQuery(slide).find('img').attr('src');
-            //alert(img);
+            alert("ja");
             if(img == null){
                 return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
             }else{
@@ -160,6 +164,8 @@ background:white;
 /************************************************************************************ 
 DETALLE PRODUCTO
 ************************************************************************************/
+
+
 #paginationIL {
     left: 0;
     right: 0;
@@ -233,60 +239,76 @@ text-align: center;
 .detalle-imagenListado{
     position: relative;
     float: right;
-    width: 80%;
     height: 400px;
+    width: 80%
 }
-    .detalle-imagenListado #imagenListado a{
-        width: 100%;
-        height: 100%;
-        background: transparent !important;
+<?php if(count($fotos)==1){ ?>
+    
+    #paginationIL{
+        display: none !important;
     }
-    .detalle-imagenListado #imagenListado img{
-        max-width: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin:auto;
+    .detalle-imagenListado{
+        width:100%;
     }
-    .detalle-imagenListado .lupaImg{
-        opacity: 0.6;
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin:auto;
-        background-color: rgba(255,255,255,0.6);
-        z-index: 300;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px; 
-        transition: all 300ms linear 0s;
-    }
-    .detalle-imagenListado .lupaImg.active,
-    .detalle-imagenListado .lupaImg:hover{
-        opacity: 1;
-        transition: all 300ms linear 0s;
-    }
-    .detalle-imagenListado .lupaImg i{
-        color: #444;
-        font-size: 40px;
-        text-align: center;
-        margin-top: 20px!important;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin:auto;
-    }
+
     .detalle-imagenListado.active #mainPrevIL,
     .detalle-imagenListado.active #mainNextIL{
-        opacity: 1;
-        transition: all 450ms linear 0s;
+        display: none;
     }
+ 
+<?php } ?>
+
+.detalle-imagenListado #imagenListado a{
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+}
+.detalle-imagenListado #imagenListado img{
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+.detalle-imagenListado .lupaImg{
+    opacity: 0.6;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-color: rgba(255,255,255,0.6);
+    z-index: 300;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+    transition: all 300ms linear 0s;
+}
+.detalle-imagenListado .lupaImg.active,
+.detalle-imagenListado .lupaImg:hover{
+    opacity: 1;
+    transition: all 300ms linear 0s;
+}
+.detalle-imagenListado .lupaImg i{
+    color: #444;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px!important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin:auto;
+}
+.detalle-imagenListado.active #mainPrevIL,
+.detalle-imagenListado.active #mainNextIL{
+    opacity: 1;
+    transition: all 450ms linear 0s;
+}
 
 
 

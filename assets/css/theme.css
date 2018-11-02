@@ -780,7 +780,10 @@ margin-bottom:60px;
 .related{
 clear:both;
 }
-
+.related .titulo{
+margin-bottom: 30px !important;
+margin-top: 50px !important;
+}
 
 
 @media (min-width: 1040px) {
