@@ -28,7 +28,6 @@ if(fw_theme_mod('whats-widget')){?>
     <i class="fa fa-whatsapp"></i>
     <span class="t5">Estamos<br>On-Line!</span>
 </a>
-</body>
 <style type="text/css">
   .btn-wapp{
     display: block;
@@ -105,9 +104,6 @@ if(fw_theme_mod("popup-mode")){
     </div>
   </div>
 </div>
-</body>
-</html>
-
 <script type="text/javascript">
 	jQuery(document).ready( function(jQuery) {
 		jQuery('#jaja').modal('show'); 
@@ -116,3 +112,5 @@ if(fw_theme_mod("popup-mode")){
 <?
 }
 ?>
+</body>
+</html>
