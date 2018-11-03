@@ -7,7 +7,7 @@ if(fw_theme_mod("maintainance-mode")){
 }
 
 
-function wca_custom_loginui() {
+function fw_custom_loginui() {
 echo '<style type="text/css">
 h1 a {background-image: url('.fw_theme_mod('ca-client-logo').') !important; }
 /*LOGIN*/
@@ -37,7 +37,7 @@ button,a,input,textarea,.vc_row,ul,li,div{
     -webkit-box-shadow:none;
 }</style>';
 }
-add_action('login_head', 'wca_custom_loginui');
+add_action('login_head', 'fw_custom_loginui');
 
 
 function fw_maintenance_mode(){

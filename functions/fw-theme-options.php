@@ -723,6 +723,25 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=>__( 'Buy', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_user_text',
+	'label'    => __( 'User shortcode text', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'	=>__( 'Ingresar', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_user_template',
+	'label'       => __( 'User Template', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'icon',
+	'choices'     => array(
+		'icon'   => __( 'Only Icon', 'fastway' ),
+		'iconwt' => __( 'Icon With Text ', 'fastway' ),
+		'iconwu' => __( 'Icon With Username ', 'fastway' ),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'cart-style',
 	'label'       => __( 'Cart Style', 'fastway' ),

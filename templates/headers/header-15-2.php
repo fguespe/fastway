@@ -17,13 +17,13 @@
   </div>
 </div>
 <div class="<?php echo esc_attr( $header_bottom ); ?>">
-  <div class="<?php echo esc_attr( $header_container ); ?>">
-         <nav class="js-mega-menu  navbar-expand-md">
+  <div class="<?php echo esc_attr( $header_container ); ?> justify-content-end">
+         <nav class="row navbar-expand-md">
           <!-- Logo -->
           <?php wp_nav_menu(
             array(
                   'theme_location'  => 'primary',
-                  'container_class' => 'collapse navbar-collapse show align-items-center',
+                  'container_class' => 'col-10 collapse navbar-collapse show align-items-center',
                   'container_id'    => 'navbarNavDropdown',
                   'menu_class'      => 'navbar-nav ',
                   'fallback_cb'     => '',
@@ -35,8 +35,11 @@
                 )
             ); 
             ?>
-            <div class="col-1 row align-items-center justify-content-end px-4">
+            <div class="col-1 align-items-center">
               <?php echo fw_shoppingCart();?>
+            </div>
+            <div class="col-1 align-items-center">
+              <?php echo fw_userAccount();?>
             </div>
         </nav>
         
