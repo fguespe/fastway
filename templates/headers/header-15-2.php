@@ -35,10 +35,10 @@
                 )
             ); 
             ?>
-            <div class="col-1 align-items-center">
+            <div class="col-1 row align-items-center">
               <?php echo fw_shoppingCart();?>
             </div>
-            <div class="col-1 align-items-center">
+            <div class="col-1 row align-items-center">
               <?php echo fw_userAccount();?>
             </div>
         </nav>
