@@ -1152,10 +1152,10 @@ body .wpb_content_element {
     float:left;
   }
 
-   nav-pagination{
+   nav.woocommerce-pagination{
       text-align:center
   }
-   nav-pagination ul{
+   nav.woocommerce-pagination ul{
       display:inline-block;
       white-space:nowrap;
       padding:0;
@@ -1164,7 +1164,7 @@ body .wpb_content_element {
       border-right:0;
       margin:1px
   }
-   nav-pagination ul li{
+   nav.woocommerce-pagination ul li{
       border-right:1px solid #d3ced2;
       padding:0;
       margin:0;
@@ -1172,7 +1172,7 @@ body .wpb_content_element {
       display:inline;
       overflow:hidden
   }
-   nav-pagination ul li a, nav-pagination ul li span{
+   nav.woocommerce-pagination ul li a, nav.woocommerce-pagination ul li span{
       margin:0;
       text-decoration:none;
       padding:0;
@@ -1183,7 +1183,7 @@ body .wpb_content_element {
       min-width:1em;
       display:block
   }
-   nav-pagination ul li a:focus, nav-pagination ul li a:hover, nav-pagination ul li span.current{
+   nav.woocommerce-pagination ul li a:focus, nav.woocommerce-pagination ul li a:hover, nav.woocommerce-pagination ul li span.current{
       background:#ebe9eb;
       color:#8a7e88
   }

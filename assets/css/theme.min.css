@@ -910,6 +910,13 @@ body .wpb_content_element {
   display: none;
 }
 
+/*Gravity Forms*/
+.validation_error, .gform_wrapper li.gfield.gfield_error {
+  display: none;
+  border: 0px;
+  background: none;
+}
+
 /*PASOS CEHCKOUT*/
 .pasoscheckout {
   list-style: none;
@@ -1089,10 +1096,10 @@ body .wpb_content_element {
 .woocommerce .products {
   float: left;
 }
-.woocommerce nav-pagination {
+.woocommerce nav.woocommerce-pagination {
   text-align: center;
 }
-.woocommerce nav-pagination ul {
+.woocommerce nav.woocommerce-pagination ul {
   display: inline-block;
   white-space: nowrap;
   padding: 0;
@@ -1101,7 +1108,7 @@ body .wpb_content_element {
   border-right: 0;
   margin: 1px;
 }
-.woocommerce nav-pagination ul li {
+.woocommerce nav.woocommerce-pagination ul li {
   border-right: 1px solid #d3ced2;
   padding: 0;
   margin: 0;
@@ -1109,7 +1116,7 @@ body .wpb_content_element {
   display: inline;
   overflow: hidden;
 }
-.woocommerce nav-pagination ul li a, .woocommerce nav-pagination ul li span {
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span {
   margin: 0;
   text-decoration: none;
   padding: 0;
@@ -1120,7 +1127,7 @@ body .wpb_content_element {
   min-width: 1em;
   display: block;
 }
-.woocommerce nav-pagination ul li a:focus, .woocommerce nav-pagination ul li a:hover, .woocommerce nav-pagination ul li span.current {
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
   background: #ebe9eb;
   color: #8a7e88;
 }
