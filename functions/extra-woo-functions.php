@@ -1,7 +1,7 @@
 <?php
 
 // Function to add subscribe text to posts and pages
-function pngcheckout_short() {
+function fw_pngcheckout_short() {
     $active1="";
     $active2="";
     $active3="";
@@ -28,8 +28,8 @@ function pngcheckout_short() {
 
 }
 if(fw_theme_mod("cart-steps")){
-add_action('woocommerce_before_cart', 'pngcheckout_short');   
-add_action('woocommerce_before_checkout_form', 'pngcheckout_short');  
+add_action('woocommerce_before_cart', 'fw_pngcheckout_short');   
+add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short');  
 }
 
 if(fw_theme_mod("checkout-minimal")){
