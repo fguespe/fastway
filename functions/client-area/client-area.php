@@ -344,13 +344,13 @@ function wpdocs_enqueue_custom_admin_style() {
 
 
 
-function hide_admin_bar(){
+function fw_hide_admin_bar(){
   if (current_user_can('administrator')) {
     return true;
   }
   return false;
 }
-add_filter( 'show_admin_bar', 'hide_admin_bar' );
+add_filter( 'show_admin_bar', 'fw_hide_admin_bar' );
 
 
 function fw_custom_admincss() {
