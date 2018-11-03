@@ -320,8 +320,8 @@ function fw_remove_footer_admin(){
 }
 
 
-add_action( 'init', 'init_adminbar', 999 );
-function init_adminbar(){
+add_action( 'init', 'fw_init_adminbar', 999 );
+function fw_init_adminbar(){
 //    add_action( 'login_footer', 'fw_change_back_to_url' );
     add_filter('admin_footer_text', 'fw_remove_footer_admin');
 
