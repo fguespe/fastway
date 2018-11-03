@@ -1,4 +1,30 @@
 <?php
+add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
+function vc_statick_block() {
+
+    $static_block_args = fastway_get_stblock();
+    vc_map( array(
+            "name" => __("Statick Block", 'fastway'),
+            'base' => 'fw_shortcode_stblock',
+            'description' => __('FW Statick Block', 'fastway'), 
+            'category' => __('Fastway', 'fastway'),   "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                "params" => array(
+                array(
+                  "type"        => "dropdown",
+                  "heading"     => __("Select Block"),
+                  "param_name"  => "slug",
+                  "admin_label" => true,
+                  "value"       => $static_block_args,
+                  "std"         => " ",
+                ),
+            )
+    ) );
+
+}
+
+
+
 
 add_action( 'vc_before_init', 'vc_category_carousel' );//Prds de categoria
 function vc_category_carousel() {
@@ -62,6 +88,9 @@ function vc_category_carousel() {
         );          
 
 }
+
+
+
 add_action( 'vc_before_init', 'vc_categories_carousel' );//Cates en general
 function vc_categories_carousel() {
 
