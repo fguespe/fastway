@@ -456,6 +456,7 @@ function fastway_singleblock_block(){
     
     if( !empty( fw_theme_mod("product-page-footer-block") ) && strlen( fw_theme_mod("product-page-footer-block") ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( fw_theme_mod("product-page-footer-block") );
 }
+
 add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
 function fw_shortcode_stblock( $atts ) {
     fw_StaticBlock::getSticBlockContent( $atts["slug"] );
