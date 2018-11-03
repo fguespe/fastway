@@ -59,8 +59,8 @@ function fw_create_menus(){
 }
 
 
-add_filter( 'login_headerurl', 'wca_wp_logo_url' );
-function wca_wp_logo_url($url){
+add_filter( 'login_headerurl', 'fw_wp_logo_url' );
+function fw_wp_logo_url($url){
     return "#";
 }
 
@@ -90,8 +90,8 @@ add_action( 'init', 'fw_dashboard_widgets' );
 
 
 //Menu mobile
-add_action( 'admin_menu', 'wca_remove_menu_pages' );
-function wca_remove_menu_pages() { 
+add_action( 'admin_menu', 'fw_remove_menu_pages' );
+function fw_remove_menu_pages() { 
     if (activarCA() ){
         add_menu_page( 'escritorios', "<i class=' fa fa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
         
@@ -105,11 +105,11 @@ function wca_remove_menu_pages() {
         }
 
         
-        add_menu_page( 'salir', "<i class=' fa fa-sign-out'></i> ".'Salir', 'read', 'salir', 'wca_menu_salir_link');
+        add_menu_page( 'salir', "<i class=' fa fa-sign-out'></i> ".'Salir', 'read', 'salir', 'fw_menu_salir_link');
     }
 }
 
-function wca_menu_salir_link_ca(){
+function fw_menu_salir_link_ca(){
   wp_redirect( wp_logout_url( home_url())); 
   exit;
 }
@@ -117,7 +117,7 @@ function wca_menu_salir_link_ca(){
 
 //Top bar
 
-function wca_menu_items($wp_admin_bar){
+function fw_menu_items($wp_admin_bar){
     $args = array(
             'id' => 'custom-node-dashboard',
             'title' => '<img src="'.fw_theme_mod('ca-dev-favi').'"/>',
@@ -181,7 +181,7 @@ CLIENT AREA
 *
 */
 // Remove dashboard widgets
-function wca_remove_dashboard_metaboxes() {
+function fw_remove_dashboard_metaboxes() {
     if (activarCA() ){
         //Dashboard
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
@@ -202,10 +202,10 @@ function wca_remove_dashboard_metaboxes() {
         
     }
 }
-add_action( 'admin_init', 'wca_remove_dashboard_metaboxes' ); 
+add_action( 'admin_init', 'fw_remove_dashboard_metaboxes' ); 
 
 
-function wca_custom_remove_optionspages() {      
+function fw_custom_remove_optionspages() {      
     if (activarCA() ){
         remove_meta_box('nav-menu-theme-locations', 'nav-menus', 'side'); 
         remove_meta_box('add-post', 'nav-menus', 'side'); 
@@ -228,14 +228,14 @@ function wca_custom_remove_optionspages() {
 
     }
 }
-add_action('admin_head-nav-menus.php', 'wca_custom_remove_optionspages');
+add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
 
 
 
 
 
 /*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function wca_allow_users_to_shopmanager() {
+function fw_allow_users_to_shopmanager() {
     $role = get_role( 'shop_manager' );
     $role->add_cap( 'edit_theme_options' ); 
     $role->add_cap( 'manage_options' ); 
@@ -248,7 +248,7 @@ function wca_allow_users_to_shopmanager() {
     $role->add_cap( 'gravityforms_user_registration'); 
 }
 
-if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'wca_allow_users_to_shopmanager');
+if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 
 /**
  * Add all Gravity Forms capabilities to Editor role.
@@ -282,7 +282,7 @@ register_deactivation_hook( __FILE__, 'deactivate_pluginname' );
 
 /*
 
-function wca_redirect_after_login( $redirect_to, $request, $user ){
+function fw_redirect_after_login( $redirect_to, $request, $user ){
     // is there a user ?
     
      if ( ! is_wp_error( $user ) ) {
@@ -298,7 +298,7 @@ function wca_redirect_after_login( $redirect_to, $request, $user ){
         return $redirect_to;
     } 
 }
-add_filter( 'login_redirect', 'wca_redirect_after_login', 10, 3 );   
+add_filter( 'login_redirect', 'fw_redirect_after_login', 10, 3 );   
 */
 
 
@@ -314,7 +314,7 @@ add_filter( 'login_redirect', 'wca_redirect_after_login', 10, 3 );
 */
 
 
-function wca_remove_footer_admin(){
+function fw_remove_footer_admin(){
     echo '<div width="100%" style="margin:0 auto;text-align:center;" ><a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
  
 }
@@ -322,11 +322,11 @@ function wca_remove_footer_admin(){
 
 add_action( 'init', 'init_adminbar', 999 );
 function init_adminbar(){
-//    add_action( 'login_footer', 'wca_change_back_to_url' );
-    add_filter('admin_footer_text', 'wca_remove_footer_admin');
+//    add_action( 'login_footer', 'fw_change_back_to_url' );
+    add_filter('admin_footer_text', 'fw_remove_footer_admin');
 
     if (activarCA() ){
-        add_action('admin_bar_menu', 'wca_menu_items', 50);
+        add_action('admin_bar_menu', 'fw_menu_items', 50);
     }
 
 }
@@ -353,7 +353,7 @@ function hide_admin_bar(){
 add_filter( 'show_admin_bar', 'hide_admin_bar' );
 
 
-function wca_custom_admincss() {
+function fw_custom_admincss() {
     echo '<style type="text/css">
     :root{
         --ca-main-color: '.fw_theme_mod('ca-main-color').';
@@ -368,10 +368,10 @@ function wca_custom_admincss() {
 
 //Mobile?
 
-function wca_admin_css_ui() {
+function fw_admin_css_ui() {
     if (activarCA() )
-        add_action('admin_head', 'wca_custom_admincss');
+        add_action('admin_head', 'fw_custom_admincss');
 }
-add_action('admin_enqueue_scripts', 'wca_admin_css_ui');
+add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 
 
