@@ -1,6 +1,4 @@
 <?php
-require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_2427( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
 
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
