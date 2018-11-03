@@ -132,9 +132,9 @@ if($my_theme!="lombok-child")
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
-add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 100 );
+add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
 
-function child_manage_woocommerce_styles() {
+function fw_child_manage_woocommerce_styles() {
     //remove generator meta tag
     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
     //first check that woo exists to prevent fatal errors
