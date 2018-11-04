@@ -892,9 +892,6 @@ h3.heading-title {
   background: var(--shop);
 }
 
-/*stars*/
-/*Fix de un margin que aparece en la pagina de catalogo abajo de la imagen*/
-/*RELATED*/
 /*FIX VISUAl*/
 .vc_row-has-fill + .vc_row-full-width + .vc_row > .vc_column_container > .vc_column-inner,
 .vc_row-has-fill + .vc_row > .vc_column_container > .vc_column-inner,
@@ -1027,7 +1024,7 @@ body .wpb_content_element {
 }
 @media (min-width: 1040px) {
   .woocommerce ul.products.columns-6 li.product,
-.woocommerce .woocommerce-page ul.products.columns-6 li.product {
+.woocommerce .woocommerce.woocommerce-page ul.products.columns-6 li.product {
     width: 15%;
     margin-right: 18px;
   }
@@ -1137,7 +1134,7 @@ body .wpb_content_element {
   width: 100%;
   height: auto;
 }
-.woocommerce ul.products li.product, .woocommerce -page ul.products li.product {
+.woocommerce ul.products li.product, .woocommerce .woocommerce-page ul.products li.product {
   float: left;
   margin: 0 3.8% 2.992em 0;
   padding: 0;
@@ -1145,56 +1142,60 @@ body .wpb_content_element {
   width: 22.05%;
   margin-left: 0;
 }
-.woocommerce ul.products li.first, .woocommerce -page ul.products li.first {
+.woocommerce ul.products li.first, .woocommerce .woocommerce-page ul.products li.first {
   clear: both;
 }
-.woocommerce ul.products li.last, .woocommerce -page ul.products li.last {
+.woocommerce ul.products li.last, .woocommerce .woocommerce-page ul.products li.last {
   margin-right: 0;
 }
-.woocommerce ul.products.columns-2 li.product, .woocommerce -page ul.products.columns-2 li.product {
+.woocommerce ul.products.columns-2 li.product, .woocommerce .woocommerce-page ul.products.columns-2 li.product {
   width: 48%;
 }
-.woocommerce ul.products.columns-3 li.product, .woocommerce -page ul.products.columns-3 li.product {
+.woocommerce ul.products.columns-3 li.product, .woocommerce .woocommerce-page ul.products.columns-3 li.product {
   width: 30.75%;
 }
-.woocommerce ul.products.columns-5 li.product, .woocommerce -page ul.products.columns-5 li.product {
+.woocommerce ul.products.columns-5 li.product, .woocommerce .woocommerce-page ul.products.columns-5 li.product {
   width: 16.95%;
 }
-.woocommerce ul.products.columns-6 li.product, .woocommerce -page ul.products.columns-6 li.product {
+.woocommerce ul.products.columns-6 li.product, .woocommerce .woocommerce-page ul.products.columns-6 li.product {
   width: 13.5%;
 }
 @media (max-width: 799px) {
-  .woocommerce ul.products.columns-2 li.product, .woocommerce -page ul.products.columns-2 li.product {
+  .woocommerce ul.products.columns-2 li.product, .woocommerce .woocommerce-page ul.products.columns-2 li.product {
     width: 48%;
   }
-  .woocommerce ul.products.columns-3 li.product, .woocommerce -page ul.products.columns-3 li.product {
+  .woocommerce ul.products.columns-3 li.product, .woocommerce .woocommerce-page ul.products.columns-3 li.product {
     width: 48%;
   }
-  .woocommerce ul.products.columns-4 li.product, .woocommerce -page ul.products.columns-4 li.product {
+  .woocommerce ul.products.columns-4 li.product, .woocommerce .woocommerce-page ul.products.columns-4 li.product {
     width: 48%;
   }
-  .woocommerce ul.products.columns-5 li.product, .woocommerce -page ul.products.columns-5 li.product {
+  .woocommerce ul.products.columns-5 li.product, .woocommerce .woocommerce-page ul.products.columns-5 li.product {
     width: 48%;
   }
-  .woocommerce ul.products.columns-6 li.product, .woocommerce -page ul.products.columns-6 li.product {
+  .woocommerce ul.products.columns-6 li.product, .woocommerce .woocommerce-page ul.products.columns-6 li.product {
     width: 48%;
   }
-  .woocommerce ul.products li.product, .woocommerce -page ul.products li.product {
+  .woocommerce ul.products li.product, .woocommerce .woocommerce-page ul.products li.product {
     margin-right: 0px;
   }
-  .woocommerce ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce -page ul.products[class*=columns-] li.product:nth-child(2n) {
+  .woocommerce ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
     float: right;
     clear: none !important;
   }
 }
-.woocommerce div.product -tabs ul.tabs {
+.woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
+  background: white;
+  border: 0px;
+}
+.woocommerce .woocommerce-tabs ul.tabs {
   list-style: none;
   padding: 0 0 0 1em;
   margin: 0 0 1.618em;
   overflow: hidden;
   position: relative;
 }
-.woocommerce div.product -tabs ul.tabs li {
+.woocommerce .woocommerce-tabs ul.tabs li {
   border: 1px solid #d3ced2;
   background-color: #ebe9eb;
   display: inline-block;
@@ -1204,34 +1205,34 @@ body .wpb_content_element {
   margin: 0 -5px;
   padding: 0 1em;
 }
-.woocommerce div.product -tabs ul.tabs li a {
+.woocommerce .woocommerce-tabs ul.tabs li a {
   display: inline-block;
   padding: 0.5em 0;
   font-weight: 700;
   color: #515151;
   text-decoration: none;
 }
-.woocommerce div.product -tabs ul.tabs li a:hover {
+.woocommerce .woocommerce-tabs ul.tabs li a:hover {
   text-decoration: none;
   color: #6b6a6b;
 }
-.woocommerce div.product -tabs ul.tabs li.active {
+.woocommerce .woocommerce-tabs ul.tabs li.active {
   background: #fff;
   z-index: 2;
   border-bottom-color: #fff;
 }
-.woocommerce div.product -tabs ul.tabs li.active a {
+.woocommerce .woocommerce-tabs ul.tabs li.active a {
   color: inherit;
   text-shadow: inherit;
 }
-.woocommerce div.product -tabs ul.tabs li.active::before {
+.woocommerce .woocommerce-tabs ul.tabs li.active::before {
   box-shadow: 2px 2px 0 #fff;
 }
-.woocommerce div.product -tabs ul.tabs li.active::after {
+.woocommerce .woocommerce-tabs ul.tabs li.active::after {
   box-shadow: -2px 2px 0 #fff;
 }
-.woocommerce div.product -tabs ul.tabs li::after,
-.woocommerce div.product -tabs ul.tabs li::before {
+.woocommerce .woocommerce-tabs ul.tabs li::after,
+.woocommerce .woocommerce-tabs ul.tabs li::before {
   border: 1px solid #d3ced2;
   position: absolute;
   bottom: -1px;
@@ -1240,19 +1241,19 @@ body .wpb_content_element {
   content: " ";
   box-sizing: border-box;
 }
-.woocommerce div.product -tabs ul.tabs li::before {
+.woocommerce .woocommerce-tabs ul.tabs li::before {
   left: -5px;
   border-bottom-right-radius: 4px;
   border-width: 0 1px 1px 0;
   box-shadow: 2px 2px 0 #ebe9eb;
 }
-.woocommerce div.product -tabs ul.tabs li::after {
+.woocommerce .woocommerce-tabs ul.tabs li::after {
   right: -5px;
   border-bottom-left-radius: 4px;
   border-width: 0 0 1px 1px;
   box-shadow: -2px 2px 0 #ebe9eb;
 }
-.woocommerce div.product -tabs ul.tabs::before {
+.woocommerce .woocommerce-tabs ul.tabs::before {
   position: absolute;
   content: " ";
   width: 100%;
@@ -1261,7 +1262,7 @@ body .wpb_content_element {
   border-bottom: 1px solid #d3ced2;
   z-index: 1;
 }
-.woocommerce div.product -tabs .panel {
+.woocommerce .woocommerce-tabs .panel {
   margin: 0 0 2em;
   padding: 0;
 }
@@ -1295,30 +1296,30 @@ body .wpb_content_element {
   font-weight: 700;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce -page #content table.cart img, .woocommerce -page table.cart img {
+.woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce .woocommerce-page #content table.cart img, .woocommerce .woocommerce-page table.cart img {
   height: auto;
 }
 .woocommerce #add_payment_method table.cart img, .woocommerce -cart table.cart img, .woocommerce -checkout table.cart img {
   width: 32px;
   box-shadow: none;
 }
-.woocommerce #content table.cart td.actions .coupon, .woocommerce table.cart td.actions .coupon, .woocommerce -page #content table.cart td.actions .coupon, .woocommerce -page table.cart td.actions .coupon {
+.woocommerce #content table.cart td.actions .coupon, .woocommerce table.cart td.actions .coupon, .woocommerce .woocommerce-page #content table.cart td.actions .coupon, .woocommerce .woocommerce-page table.cart td.actions .coupon {
   float: left;
 }
 .woocommerce .actions input {
   float: right;
 }
-.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce -page #content table.cart td.actions .input-text, .woocommerce -page table.cart td.actions .input-text {
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce .woocommerce-page #content table.cart td.actions .input-text, .woocommerce .woocommerce-page table.cart td.actions .input-text {
   width: 80px;
 }
 .woocommerce #coupon_code {
   font-size: 16px;
   line-height: 17px;
 }
-.woocommerce #content table.cart td.actions .coupon label, .woocommerce table.cart td.actions .coupon label, .woocommerce -page #content table.cart td.actions .coupon label, .woocommerce -page table.cart td.actions .coupon label {
+.woocommerce #content table.cart td.actions .coupon label, .woocommerce table.cart td.actions .coupon label, .woocommerce .woocommerce-page #content table.cart td.actions .coupon label, .woocommerce .woocommerce-page table.cart td.actions .coupon label {
   display: none;
 }
-.woocommerce .cart-collaterals .cart_totals, .woocommerce -page .cart-collaterals .cart_totals {
+.woocommerce .cart-collaterals .cart_totals, .woocommerce .woocommerce-page .cart-collaterals .cart_totals {
   float: right;
   width: 48%;
 }

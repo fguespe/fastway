@@ -271,17 +271,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header-padding',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => 1,
+	'default'     => 3,
 	'choices'     => array(
-		'.25'  => 1,
-		'.5'  => 2,
+		'0.25'  => 1,
+		'0.5'  => 2,
 		'1' => 3,
+		'1.5' => 4,
+		'3' => 5,
 	),
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
 			'element' => '.fw_header_middle.desktop',
 			'property'	=> 'padding-top',
+			'units'=>'rem'
+		),
+		array(
+			'element' => '.fw_header_middle.desktop',
+			'property'	=> 'padding-bottom',
 			'units'=>'rem'
 		),
 	),
@@ -356,11 +363,26 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header_padding_mobile',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_mobile',
-	'default'     => 1,
+	'default'     => 3,
 	'choices'     => array(
-		'min'  => 0,
-		'max'  => 4,
-		'step' => 1,
+		'0.25'  => 1,
+		'0.5'  => 2,
+		'1' => 3,
+		'1.5' => 4,
+		'3' => 5,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header_middle.mobile',
+			'property'	=> 'padding-top',
+			'units'=>'rem'
+		),
+		array(
+			'element' => '.fw_header_middle.mobile',
+			'property'	=> 'padding-bottom',
+			'units'=>'rem'
+		),
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(

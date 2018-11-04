@@ -66,16 +66,15 @@
 remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 do_action( 'woocommerce_after_single_product_summary' );
-
-
 ?>
+
 <div class="container related" style="max-width: 1200px;">
-<h3 class="titulo">Quienes vieron este producto también compraron</h3>
+<h4 class="titulo">Quienes vieron este producto también compraron</h3>
         
-  <div class="swiper-products2 over-hidden container relative swiper-container-horizontal">
+  <div class="swiper-related over-hidden container relative swiper-container-horizontal">
     <div class="swiper-wrapper">
         <?
-        $myarray = wc_get_related_products($product->id);
+        $myarray = wc_get_related_products($product->id,12);
 
         $args = array(
            'post_type' => 'product',
@@ -83,10 +82,9 @@ do_action( 'woocommerce_after_single_product_summary' );
         );
         // The Query
         $products = new WP_Query( $args );
-        $contada=0;
 
         while ( $products->have_posts() ) : 
-            $contada++;
+            //$contada++;
             $products->the_post(); 
             echo '<div class="swiper-slide">';
             wc_get_template_part( 'content', 'product' ); 
@@ -109,15 +107,21 @@ width:25% !important;
 <script type="text/javascript">
 jQuery( document ).ready(function() {
 	//Crea las thumnails de la izquierda
-    var ProductSwiper = new Swiper('.swiper-products2', {
+    var ProductSwiper = new Swiper('.swiper-related', {
             //pagination: '.swiper-prod-rel-pagination',
             nextButton: '.swiper-prod-next',
             prevButton: '.swiper-prod-prev',
-            slidesPerView: <?=$contada?>,
-            slidesPerGroup: <?=$contada?>,
+            slidesPerView:6,
+            slidesPerGroup:6,
             paginationClickable: true,
             spaceBetween: 10,
-            loop: false,
+            loop: true,
+            breakpoints: {
+            // when window width is <= 320px
+                900:    {slidesPerView: 2,slidesPerGroup:2},
+                1000:   {slidesPerView: 3,slidesPerGroup:3},            
+                1200:    {slidesPerView: 4,slidesPerGroup:4}
+            }
         });
 
         //Fancybox
