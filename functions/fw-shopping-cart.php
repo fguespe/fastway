@@ -15,7 +15,7 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $checkurl=wc_get_checkout_url();
         if($style==="link"){
           return <<<HTML
-          <a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+          <a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
     <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>
@@ -38,7 +38,7 @@ HTML;
 });
 </script>
 
-<a class="fw-minicart-icon"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+<a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
     <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>
@@ -58,7 +58,7 @@ HTML;
         
           return <<<HTML
 
-<a class="fw-minicart-icon"  href="#" role="button" data-target="#$idname2" data-toggle="modal">
+<a class="fw-header-icon minicart"  href="#" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
     <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>

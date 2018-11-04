@@ -5,7 +5,7 @@ global $header_middle_mobile;
       <div class="col-5 " style="padding: 0px;"><?php echo fastway_getLogo();?></div>
       <div class="col-5 align-items-center" style="padding: 0px;"><div id="mobileicons" style="display: none;"><?php if(fw_theme_mod('fw-quicklinks'))quicklinks();?></div></div>
       <div class="col-1 align-items-center">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <button class="navbar-toggler fw-header-icon toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
       </div>
       
       
