@@ -15,7 +15,7 @@ global $header_middle_mobile;
     }
 
 </style>
-<div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center ">
+<div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center">
       <div class="col-3 d-flex justify-content-around">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
           <button class="navbar-toggler fw_search_icon" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>

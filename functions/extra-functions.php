@@ -250,7 +250,6 @@ function fw_companygooglemaps() {
     return fw_theme_mod('short-fw_company'.$value);
 }
 
-
 function fw_extras_short( $atts ) {
     $wporg_atts = shortcode_atts(
         array(
@@ -258,35 +257,38 @@ function fw_extras_short( $atts ) {
             'text' =>  '',
             'size' =>  '',
             'link' =>  '',
+            'isli' =>  '',
+            'stext' =>  '',
         ), $atts, 'fw_extras_short' );
 
     $font_size=16;
-    
-    if($wporg_atts['type']==="phone"){
+    $type=$wporg_atts['type'];
+
+    if($type==="phone"){
         $font_icon="fa-phone";
         $value="tel:".fw_companyphone();
         $value=fw_companyphone();
-    }else if($wporg_atts['type']==="whatsapp"){
+    }else if($type==="whatsapp"){
         $font_icon="fa-whatsapp";
         $link="https://api.whatsapp.com/send?phone=".fw_companywhatsapp();
         $value=fw_companywhatsapp();
-    }else if($wporg_atts['type']==="email"){
+    }else if($type==="email"){
         $font_icon="fa-envelope-o";
         $link="mailto:".fw_companyemail();
         $value=fw_companyemail();
-    }else if($wporg_atts['type']==="fb"){
+    }else if($type==="fb"){
         $font_icon="fa-facebook-square";
         $link=fw_companyfb();
         $value="Ir al Facebook";
-    }else if($wporg_atts['type']==="ig"){
+    }else if($type==="ig"){
         $font_icon="fa-instagram";
         $link=fw_companyig();
         $value="Ir al Instagram";
-    }else if($wporg_atts['type']==="youtube"){
+    }else if($type==="youtube"){
         $font_icon="fa-youtube-square";
         $link=fw_companyyoutube();
         $value="Ir a Youtube";
-    }else if($wporg_atts['type']==="address"){
+    }else if($type==="address"){
         $font_icon="fa-map-marker";
         $link=fw_companygooglemaps();
         $value=fw_companyaddress();
@@ -300,7 +302,15 @@ function fw_extras_short( $atts ) {
     if($wporg_atts['size']){
         $font_size=$wporg_atts['size'];
     }
-    $first='<a target="_blank" class="fw_quicklink '.$wporg_atts['type'].'" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
+
+    if($wporg_atts["isli"]){
+        return '<li class="d-flex align-items-center "> 
+          <span class="icon"><i style="color:#7ACB71;" class="fa '.$font_icon.'"></i></span> 
+          <span class="text"> <big>'.$wporg_atts['text'].'</big> <small>'.$wporg_atts['stext'].'</small> </span>
+        </li>';
+
+    }
+    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
     if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
     $first.='</a>';
     return $first;
@@ -324,7 +334,7 @@ function fw_extras_iconsnext( $atts ) {
     if($wporg_atts['icon_color']){
         $icon_color=$wporg_atts['icon_color'];
     }
-    foreach (explode(",", $wporg_atts['type']) as $icon) {
+    foreach (explode(",", $type) as $icon) {
        // error_log($icon);
         if($icon==="fb")$font_icon="fa-facebook-square";
         else if($icon==="ig")$font_icon="fa-instagram";

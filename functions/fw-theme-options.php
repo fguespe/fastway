@@ -319,6 +319,18 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'header_padding_mobile',
+	'label'       => __( 'Header Padding', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default'     => 1,
+	'choices'     => array(
+		'min'  => 0,
+		'max'  => 4,
+		'step' => 1,
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
 	'settings'    => 'opt-typography-header',
 	'label'       => __( 'Main Menu', 'fastway' ),

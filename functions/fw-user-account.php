@@ -16,8 +16,8 @@ if( !function_exists( 'fw_userAccount' ) ) {
           if(!empty($name))$name="<span class='ingresar_text'>".$name."</span>";
           $url=get_permalink( wc_get_page_id( 'myaccount' ) );
 return <<<HTML
-<a class="fw-minicart-icon"  href="$url" role="button" data-target="" data-toggle="">
-  <span class="p1 header-cart-count-badge fa-stack has-badge">
+<a class="fw-useraccount-icon" href="$url" role="button" data-target="" data-toggle="">
+  <span class="p1">
     <i class="p3  fa fa-user fa-stack-1x xfa-inverse"></i>
   </span>
 </a>   
