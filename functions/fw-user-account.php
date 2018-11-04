@@ -17,7 +17,7 @@ if( !function_exists( 'fw_userAccount' ) ) {
           $url=get_permalink( wc_get_page_id( 'myaccount' ) );
 return <<<HTML
 <a class="fw-header-icon user" href="$url" role="button" data-target="" data-toggle="">
-  <span class="p1">
+  <span class="p1 fa-stack">
     <i class="p3  fa fa-user fa-stack-1x xfa-inverse"></i>
   </span>
 </a>   

@@ -280,6 +280,31 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
+	'settings'    => 'header_icons_size',
+	'label'       => __( 'Header Icons Size', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 20,
+	'choices'     => array(
+		'min'  => 10,
+		'max'  => 40,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw-header-icon',
+			'property'	=> 'font-size',
+			'units'=>'px'
+		),
+		array(
+			'element' => '.fw-header-icon span',
+			'property'	=> 'font-size',
+			'units'=>'px'
+		),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
 	'settings'    => 'logo-width',
 	'label'       => __( 'Logo Width', 'fastway' ),
 	'section'     => 'section_header',
