@@ -1010,7 +1010,7 @@ body .wpb_content_element {
 .woocommerce .related {
   clear: both;
 }
-.woocommerce .related h3 {
+.woocommerce .related h4.titulo {
   margin-bottom: 30px !important;
   margin-top: 50px !important;
 }

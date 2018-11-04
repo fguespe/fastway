@@ -98,12 +98,7 @@ do_action( 'woocommerce_after_single_product_summary' );
     <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
   </div>
 </div>
-<style type="text/css">
-    .related .swiper-slide{
-width:25% !important;
-}
 
-</style>
 <script type="text/javascript">
 jQuery( document ).ready(function() {
 	//Crea las thumnails de la izquierda

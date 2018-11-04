@@ -19,7 +19,7 @@ global $header_middle_mobile;
             'container_id'    => '',
             'menu_class'      => 'navbar-nav ml-auto',
             'fallback_cb'     => '',
-            'menu_id'         => 'main-menu',
+            'menu_id'         => 'main-menu-mobile',
             'depth'           => 2,
             'walker'          => new fw_Navwalker(),
           )
