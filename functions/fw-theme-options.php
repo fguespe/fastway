@@ -267,15 +267,23 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
+	'type'        => 'select',
 	'settings'    => 'header-padding',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_header',
 	'default'     => 1,
 	'choices'     => array(
-		'min'  => 0,
-		'max'  => 4,
-		'step' => 1,
+		'.25'  => 1,
+		'.5'  => 2,
+		'1' => 3,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header_middle.desktop',
+			'property'	=> 'padding-top',
+			'units'=>'rem'
+		),
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
