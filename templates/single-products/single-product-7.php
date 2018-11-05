@@ -180,13 +180,14 @@ DETALLE PRODUCTO
 }
 #paginationIL {
     float: left !important;
-    width: 10% !important;
+    width: 20% !important;
 }
 #paginationIL li {
     list-style: none;
     display: block;
     max-width: 20%;
     opacity: 0.4;
+    margin: 0 auto !important;
 }
 #paginationIL li.activeSlide {
     opacity: 1;
