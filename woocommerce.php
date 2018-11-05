@@ -12,8 +12,8 @@
 
 get_header();
 
-$container   = fw_theme_mod('container-shop');
-
+//$container   = fw_theme_mod('container-shop');
+$container="container";
 $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
