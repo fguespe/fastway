@@ -359,7 +359,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
+	'type'        => 'select',
 	'settings'    => 'header_padding_mobile',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_mobile',
