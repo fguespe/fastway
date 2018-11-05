@@ -1,11 +1,3 @@
-html,
-body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
-
-body {
-  padding-top: 56px;
-}
 
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
@@ -827,7 +819,9 @@ html {
 
 
 /*FIX >BOOTSTRAP COLOR*/
-
+.form-control{
+  height: auto !important;
+}
 .wrapper a {
   color: var(--main);
 }
