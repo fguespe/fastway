@@ -46,7 +46,7 @@
 
 
          ?>
-         <div class="compra-segura"><i class="fa fa-shield"></i> <a href="#" target="_blank">Compra segura</a>, recibi el producto que esperas o te devolvemos el dinero.</div>
+         <div class="compra-segura"><i class="fa fa-shield"></i> <a>Compra segura</a>, recibi el producto que esperas o te devolvemos el dinero.</div>
 		<a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile t2">
 	            <div class="row">
 	                <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
