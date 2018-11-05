@@ -18,13 +18,14 @@ global $header_middle_mobile;
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center">
       <div class="col-3 d-flex justify-content-around">
           <button class="navbar-toggler fw-header-icon toggler" type="button" data-toggle="offcanvas" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+          <a href="#" class="btn-bars-mobile"><i class="fa fa-bars"></i></a>
           <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
           
       </div>
       <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart();?></div>
-      <div class="menu-madre-mobile opened">
-<div class="sub-menu-mobile t2"> 
+      <div class="menu-madre-mobile">
+      <div class="sub-menu-mobile t2"> 
     <div class="telefono-header t1 txt-16 text-left">         
       <a href="tel:08103451102" rel="nofollow" title="Llamar a precio local desde cualquier punto del país" alt="Llamar gratis al 0810 345 1102" class="btn btn-primary"><i class="fa fa-phone" aria-hidden="true"></i> Llamar Ahora</a><br>
       <!--<a href="tel:01152733400" rel="nofollow" title="Llamar desde cualquier punto del país" alt="Llamar  al 011 5273 3400" class="btn btn-primary"><i class="fa fa-phone" aria-hidden="true"></i> Llamar Ahora</a><br />-->
