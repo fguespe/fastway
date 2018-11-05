@@ -271,7 +271,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header-padding',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => 3,
+	'default'     => 1,
 	'choices'     => array(
 		'0.25'  => 1,
 		'0.5'  => 2,
@@ -363,7 +363,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header_padding_mobile',
 	'label'       => __( 'Header Padding', 'fastway' ),
 	'section'     => 'section_mobile',
-	'default'     => 3,
+	'default'     => 1,
 	'choices'     => array(
 		'0.25'  => 1,
 		'0.5'  => 2,
