@@ -41,6 +41,12 @@
     text-align: center;
     transition: all 
 }
+
+.fw_product_loop img{
+
+        width:100%;
+        height:auto;   
+}
 </style>
 
 <?php
