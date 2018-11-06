@@ -6,9 +6,7 @@ global $header_middle_mobile;
   .fw_header_middle.mobile i{
     font-size:24px !important;
 }
-.fw_header_middle.mobile.navbar{
-    padding:0px;
-}
+
 
   .fw_header_middle.mobile .col-3:nth-child(1){
         padding:0px

@@ -361,15 +361,14 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header_padding_mobile',
-	'label'       => __( 'Header Padding', 'fastway' ),
+	'label'       => __( 'Header Padding Mobile', 'fastway' ),
 	'section'     => 'section_mobile',
 	'default'     => 1,
 	'choices'     => array(
+		'0'  => 0,
 		'0.25'  => 1,
 		'0.5'  => 2,
 		'1' => 3,
-		'1.5' => 4,
-		'3' => 5,
 	),
 	'transport'   => 'auto',
 	'output'      => array(
