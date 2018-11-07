@@ -496,6 +496,10 @@ ul {
     position: fixed;
     width: 100%;
     z-index: 999;
+
+  }
+  .fw_sticky_top{
+    top:0px;
   }
 }
 
@@ -1212,10 +1216,10 @@ body .wpb_content_element {
      margin-bottom: 60px;
      display: flex;
      .summary .button {
-         padding: 20px;
-         font-size: 20px;
+       padding: 20px;
+       font-size: 20px;
     }
-     .related {
+    .related {
          clear: both;
     }
      .related h4.titulo {

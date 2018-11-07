@@ -479,6 +479,10 @@ ul {
     width: 100%;
     z-index: 999;
   }
+
+  .fw_sticky_top {
+    top: 0px;
+  }
 }
 /*OWL*/
 #owl-slider img {
