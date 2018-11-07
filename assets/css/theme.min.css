@@ -1129,9 +1129,42 @@ body .wpb_content_element {
   margin-bottom: 30px;
 }
 
+/*Mi cuenta*/
+.woocommerce-account .woocommerce-MyAccount-navigation {
+  float: left;
+  width: 30%;
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+  float: right;
+  width: 68%;
+  padding: 20px;
+}
+
+#customer_login form.checkout_coupon, #customer_login form.login, #customer_login form.register {
+  border: 1px solid #d3ced2;
+  padding: 20px;
+  margin: 2em 0;
+  text-align: left;
+  border-radius: 5px;
+}
+#customer_login label,
+#customer_login input[type=text],
+#customer_login input[type=email],
+#customer_login input[type=password] {
+  display: block !important;
+  width: 100%;
+}
+#customer_login input[type=submit] {
+  background: var(--main);
+  color: white !important;
+  padding: 10px;
+  border: 0px;
+}
+
 /*General Woocommerce*/
 .woocommerce {
   margin-bottom: 60px;
+  display: flex;
   /*review link*/
   /*fix imagenes*/
   /*fix margin en price*/

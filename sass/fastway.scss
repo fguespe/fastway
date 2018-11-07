@@ -1173,11 +1173,46 @@ body .wpb_content_element {
   margin-bottom: 30px;
 }
 
+  /*Mi cuenta*/
+.woocommerce-account {
+  .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 30%;
+  }
+  .woocommerce-MyAccount-content{
+      float: right;
+      width: 68%;
+      padding:20px;
+  }}
+#customer_login{
 
+  form.checkout_coupon, form.login, form.register {
+      border: 1px solid #d3ced2;
+      padding: 20px;
+      margin: 2em 0;
+      text-align: left;
+      border-radius: 5px;
+  }
+  label,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]{
+  display:block !important;
+  width:100%;
+  }
 
+  input[type="submit"]{
+  background:var(--main);
+  color:white !important;
+  padding:10px;
+  border:0px;
+  }}
 /*General Woocommerce*/
 .woocommerce{ 
   margin-bottom: 60px;
+
+  display: flex;
+
   .summary .button {
     padding: 20px;
     font-size: 20px;
@@ -1374,8 +1409,7 @@ body .wpb_content_element {
       ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
       float: right;
       clear: none!important;
-  }
-}
+  }}
 .woocommerce-tabs{
   ul.tabs li:not(.active){
     background:white;

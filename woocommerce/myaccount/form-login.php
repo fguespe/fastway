@@ -28,9 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-<div class="u-columns col2-set row" id="customer_login">
+<div class="row col-12" id="customer_login">
 
-	<div class="u-column1 col-md-6">
+	<div class="col-md-6">
 
 <?php endif; ?>
 
@@ -41,11 +41,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="username"><?php _e( 'Username or email address', 'fastway' ); ?> <span class="required">*</span></label>
+				<label for="username"><?php _e( 'Email', 'fastway' ); ?> <span class="required">*</span></label>
 				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" />
 			</p>
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-				<label for="password"><?php _e( 'Password', 'fastway' ); ?> <span class="required">*</span></label>
+				<label for="password"><?php _e( 'Contraseña', 'fastway' ); ?> <span class="required">*</span></label>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
 			</p>
 
@@ -53,13 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<input type="submit" class="btn btn-outline-primary" name="login" value="<?php esc_attr_e( 'Login', 'fastway' ); ?>" />
+				<input type="submit" class="btn btn-outline-primary" name="login" value="<?php esc_attr_e( 'Entrar', 'fastway' ); ?>" />
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'fastway' ); ?></span>
+					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Recordarme', 'fastway' ); ?></span>
 				</label>
 			</p>
 			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'fastway' ); ?></a>
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Pediste tu constraseña?', 'fastway' ); ?></a>
 			</p>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
-	<div class="u-column2 col-md-6">
+	<div class="col-md-6">
 
 		<h2><?php _e( 'Register', 'fastway' ); ?></h2>
 
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label for="reg_password"><?php _e( 'Password', 'fastway' ); ?> <span class="required">*</span></label>
+					<label for="reg_password"><?php _e( 'Contraseña', 'fastway' ); ?> <span class="required">*</span></label>
 					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
 				</p>
 
@@ -105,7 +105,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="woocommerce-FormRow form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'fastway' ); ?>" />
+				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Registrarse', 'fastway' ); ?>" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>

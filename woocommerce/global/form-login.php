@@ -32,11 +32,11 @@ if ( is_user_logged_in() ) {
 	<?php if ( $message ) echo wpautop( wptexturize( $message ) ); ?>
 
 	<p class="form-row form-row-first">
-		<label for="username"><?php _e( 'Username or email', 'fastway' ); ?> <span class="required">*</span></label>
+		<label for="username"><?php _e( 'Email', 'fastway' ); ?> <span class="required">*</span></label>
 		<input type="text" class="input-text form-control" name="username" id="username" />
 	</p>
 	<p class="form-row form-row-last">
-		<label for="password"><?php _e( 'Password', 'fastway' ); ?> <span class="required">*</span></label>
+		<label for="password"><?php _e( 'Contraseña', 'fastway' ); ?> <span class="required">*</span></label>
 		<input class="input-text form-control" type="password" name="password" id="password" />
 	</p>
 	<div class="clear"></div>
@@ -45,10 +45,10 @@ if ( is_user_logged_in() ) {
 
 	<p class="form-row">
 		<?php wp_nonce_field( 'woocommerce-login' ); ?>
-		<input type="submit" class="btn btn-outline-primary" name="login" value="<?php esc_attr_e( 'Login', 'fastway' ); ?>" />
+		<input type="submit" class="btn btn-outline-primary" name="login" value="<?php esc_attr_e( 'Entrar', 'fastway' ); ?>" />
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
 		<label for="rememberme" class="inline">
-			<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'fastway' ); ?>
+			<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Recordarme', 'fastway' ); ?>
 		</label>
 	</p>
 	<p class="lost_password">
