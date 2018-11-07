@@ -1,11 +1,12 @@
+
 <?php global $header_container,$header_middle,$header_container,$header_bottom; ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
-    <div class="row flex-nowrap <?php echo esc_attr( $header_container ); ?>">
-      <div class="col-4">
-        <?php echo fastway_getLogo();?>
-      </div>
-      <div class="d-flex col-8 align-items-center"><?php fastway_getWidgetHeaderText();?></div>
+    <div  class="<?php echo esc_attr( $header_container ); ?>">
+      <div class="row">
+      <div class="col-4"><?php echo fastway_getLogo();?></div>
+      <div class="col-8 align-items-center d-flex"><?php fastway_getWidgetHeaderText();?></div>
     </div>
+  </div>
 </div>
 
 <div id="main-nav" class="row <?php echo esc_attr( $header_bottom ); ?>">
