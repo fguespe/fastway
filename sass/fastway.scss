@@ -1,4 +1,3 @@
-
 .mobile-menu-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
@@ -491,8 +490,7 @@ ul {
 /*stickty*/
 
 @media (min-width: 799px) {
-  .fw_sticky_top,
-  .fw_transparent_top {
+  .fw_sticky_top, .fw_transparent_top {
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -500,6 +498,9 @@ ul {
   }
   .fw_sticky_top{
     top:0px;
+  }
+  .fw_sticky_top .fw_transparent_top{
+    background: var(--transparent-sticky-middle);
   }
 }
 

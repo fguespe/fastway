@@ -605,6 +605,22 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
+	'settings'    => 'opt-color-transparent-sticky-middle',
+	'label'       => __( 'Transparent Sticky Color ', 'fastway' ),
+	'section'     => 'section_colors',
+	'default'     => '#fff',
+	'description'=>'var(--transparent-sticky-middle);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--transparent-sticky-middle',
+		),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
 	'settings'    => 'opt-color-bottheader',
 	'label'       => __( 'Bottom Header ', 'fastway' ),
 	'section'     => 'section_colors',
