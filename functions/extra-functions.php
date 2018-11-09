@@ -90,74 +90,6 @@ function get_fastway_header_topbanner(){
         echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.fw_theme_mod('topheader-img').'"></div>';
     }
 }
-/*
-function fw_custom_css(){
-
-    $css="";
-    $css.=":root{";
-    $css.="--main:".fw_theme_mod('opt-color-main').";";
-    $css.="--top-banner:".fw_theme_mod('opt-color-topheader-banner').";";
-    $css.="--icon-header:".fw_theme_mod('opt-color-iconheader').";";
-    $css.="--second-color:".fw_theme_mod('opt-color-second').";";
-    $css.="--top-header:".fw_theme_mod('opt-color-topheader').";"; 
-    $css.="--middle-header:".fw_theme_mod('opt-color-middheader').";";
-    $css.="--bottom-header:".fw_theme_mod('opt-color-bottheader').";";
-    $css.="--body:".fw_theme_mod('opt-color-bodycolor').";";
-    $css.="--footer:".fw_theme_mod('opt-color-footer').";";
-    $css.= "}";
-    $tipos=array("p","span","a","h4","h3","h2","h1");
-    //Fonts comunes
-    foreach ($tipos as $key) {
-        if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
-        else $nombre='opt-typography-'.$key;
-        if(empty(fw_theme_mod($nombre)))continue;
-        $font=fw_theme_mod($nombre);
-   
-        //$css.= "header ".$key.",footer ".$key.",#page-wrapper ".$key.",#woocommerce-wrapper ".$key.",#main-nav ".$key."{";
-        $css.= "body ".$key."{";
-        $css.= "font-family:".str_replace(",", "','", $font['font-family']).";";
-        $css.= "font-size:".$font['font-size'].";";
-        $css.= "font-weight:".$font['font-weight'].";";
-        $css.= "line-height:".$font['line-height'].";";
-        $css.= "color:".$font['color'].";";
-        $css.= "text-transform:".$font['text-transform'].";";
-        $css.= "text-align:".$font['text-align'].";";
-        $css.= "letter-spacing:".$font['letter-spacing'].";";
-        $css.= "}";   
-    }
-    
-    
-    if(fw_theme_mod('css-onoff')=="on"){
-        $css.=  fw_theme_mod('css_editor-general'); 
-        $css.=  fw_theme_mod('css_editor-header'); 
-        $css.=  fw_theme_mod('css_editor-body'); 
-        $css.=  fw_theme_mod('css_editor-footer'); 
-        $css.=  fw_theme_mod('css_editor-loop');  
-        $css.=  fw_theme_mod('css_editor-sidebarcats'); 
-        $css.=  fw_theme_mod('css_editor-single'); 
-        $css.=  fw_theme_mod('css_editor-mobile'); 
-    }
-    if(is_child_theme()){
-        $files=glob(get_stylesheet_directory().'/fonts/*.otf');
-        $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.ttf'));
-        $files=array_merge($files,glob(get_stylesheet_directory().'/fonts/*.OTF'));
-        if(!empty($files)){
-            foreach ($files as $path){ 
-                $nombre=basename($path,".otf");
-                $nombre=basename($nombre,".ttf");
-                $nombre=basename($nombre,".OTF");
-                $css.= "@font-face {";
-                $css.= "font-family: '".$nombre."'";
-                $css.= "src:url('".get_stylesheet_directory_uri().'/fonts/'.basename($path)."')";
-                $css.= " }";
-                $css.= " }";
-                $css.= " }";
-            }
-        }
-    }
-    return trim(preg_replace('/\t+/', '', $css));
-}
-*/
 
 function fw_custom_css(){
     $css="";
@@ -305,13 +237,13 @@ function fw_extras_short( $atts ) {
 
     if($wporg_atts["isli"]){
         return '<li class="d-flex align-items-center "> 
-          <span class="icon"><i style="color:#7ACB71;" class="fa '.$font_icon.'"></i></span> 
+          <span class="icon"><i style="color:#7ACB71 !important;" class="fa '.$font_icon.'"></i></span> 
           <span class="text"> <big>'.$wporg_atts['text'].'</big> <small>'.$wporg_atts['stext'].'</small> </span>
         </li>';
 
     }
-    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"></i>';
-    if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].';font-size:'.$wporg_atts['size'].'px;">'.$value.'</span>';
+    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$wporg_atts['icon_color'].'"!important;></i>';
+    if($wporg_atts['only_icon']!=="true")$first.='  <span style="color:'.$wporg_atts['text_color'].' !important;font-size:'.$wporg_atts['size'].'px !important;">'.$value.'</span>';
     $first.='</a>';
     return $first;
 }
@@ -341,7 +273,7 @@ function fw_extras_iconsnext( $atts ) {
         else if($icon==="twitter")$font_icon="fa-twitter-square";
         $link=fw_company_data($icon);
         
-        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px;font-size:'.$font_size.'px;line-height:'.($font_size+20).'px;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.'"></i>';
+        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.' !important;"></i>';
         $first.='</a>';
     }
     
