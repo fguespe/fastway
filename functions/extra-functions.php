@@ -236,6 +236,7 @@ function fw_extras_short( $atts ) {
     if($fwatts['size']){
         $font_size=$fwatts['size'];
     }
+    error_log($font_size);
    
     if($fwatts["isli"]){
         return '<li class="d-flex align-items-center "> 
