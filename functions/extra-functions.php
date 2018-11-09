@@ -334,8 +334,8 @@ function fw_extras_iconsnext( $atts ) {
     if($wporg_atts['icon_color']){
         $icon_color=$wporg_atts['icon_color'];
     }
-    foreach (explode(",", $type) as $icon) {
-       // error_log($icon);
+    foreach (explode(",", $wporg_atts['type']) as $icon) {
+        error_log($icon);
         if($icon==="fb")$font_icon="fa-facebook-square";
         else if($icon==="ig")$font_icon="fa-instagram";
         else if($icon==="youtube")$font_icon="fa-youtube-square";
