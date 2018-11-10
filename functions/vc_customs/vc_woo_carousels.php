@@ -1,4 +1,49 @@
 <?php
+
+function alispx_get_type_posts_data() {
+    $args = array(
+    'taxonomy'   => "product_cat",
+    'number'     => $number,
+    'orderby'    => $orderby,
+    'order'      => $order,
+    'hide_empty' => $hide_empty,
+    'include'    => $ids
+    );
+    $product_categories = get_terms($args);
+    
+    $result = array();
+    foreach ( $product_categories as $post ) {
+
+        $jaja=array($post->name=>$post->slug);
+        $result=array_merge($result,$jaja);
+        
+    }
+    return $result;
+}
+add_action( 'vc_before_init', 'alispx_post_finder_integrateWithVC' );
+function alispx_post_finder_integrateWithVC() {
+   vc_map( array(
+        'name'                  => esc_html__( 'Alispx Post Finder', 'alispx' ),
+        'base'                  => 'alispx_post_finder',
+        'class'                 => 'alispx-ico',
+        'icon'                  => 'alispx-ico',
+            'category' => __('Fastway', 'fastway'),   
+        'admin_enqueue_css'     => array( get_template_directory_uri . '/your-path/alispxvc.css' ),
+        'description'           => esc_html__( 'Alispx Post Finder', 'alispx' ),
+        'params'                => array(
+            array(
+                'type'          => 'autocomplete',
+                'class'         => '',
+                'heading'       => esc_html__( 'Post Name', 'alispx' ),
+                'param_name'    => 'id',
+                'settings'      => array( 'values' => alispx_get_type_posts_data() ),
+            ),
+        )
+    ) );
+}
+
+
+
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
 function vc_statick_block() {
 
@@ -21,6 +66,33 @@ function vc_statick_block() {
             )
     ) );
 
+}
+// Create multi dropdown param type
+vc_add_shortcode_param( 'dropdown_multi', 'dropdown_multi_settings_field' );
+function dropdown_multi_settings_field( $param, $value ) {
+   $param_line = '';
+   $param_line .= '<select multiple name="'. esc_attr( $param['param_name'] ).'" class="wpb_vc_param_value wpb-input wpb-select '. esc_attr( $param['param_name'] ).' '. esc_attr($param['type']).'">';
+   foreach ( $param['value'] as $text_val => $val ) {
+       if ( is_numeric($text_val) && (is_string($val) || is_numeric($val)) ) {
+                    $text_val = $val;
+                }
+                $text_val = __($text_val, "js_composer");
+                $selected = '';
+
+                if(!is_array($value)) {
+                    $param_value_arr = explode(',',$value);
+                } else {
+                    $param_value_arr = $value;
+                }
+
+                if ($value!=='' && in_array($val, $param_value_arr)) {
+                    $selected = ' selected="selected"';
+                }
+                $param_line .= '<option class="'.$val.'" value="'.$val.'"'.$selected.'>'.$text_val.'</option>';
+            }
+   $param_line .= '</select>';
+
+   return  $param_line;
 }
 
 add_action( 'vc_before_init', 'vc_meta_slider' );//Prds de categoria
@@ -81,7 +153,7 @@ function vc_category_carousel() {
                         'weight' => 0,
                     ), 
                     array(
-                        'type' => 'textfield',
+                        'type' => 'categories_array',
                         'heading' => __( 'Categories Slugs', 'fastway' ),
                         'param_name' => 'category',
                         'value' => '',
@@ -146,10 +218,11 @@ function vc_categories_carousel() {
                         'weight' => 0,
                     ), 
                     array(
-                        'type' => 'textfield',
+                        'type' => 'dropdown_multi',
                         'heading' => __( 'Categories', 'fastway' ),
                         'param_name' => 'cats',
                         'weight' => 0,
+                        'value'=>alispx_get_type_posts_data(),
                     ), 
                     array(
                         'type' => 'textfield',
