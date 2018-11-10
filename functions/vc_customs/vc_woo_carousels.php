@@ -4,7 +4,7 @@ function vc_statick_block() {
 
     $static_block_args = fastway_get_stblock();
     vc_map( array(
-            "name" => __("Statick Block", 'fastway'),
+            "name" => __("Static Block", 'fastway'),
             'base' => 'fw_shortcode_stblock',
             'description' => __('FW Statick Block', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   "controls" => "full",
@@ -18,6 +18,40 @@ function vc_statick_block() {
                   "value"       => $static_block_args,
                   "std"         => " ",
                 ),
+            )
+    ) );
+
+}
+
+add_action( 'vc_before_init', 'vc_meta_slider' );//Prds de categoria
+function vc_meta_slider() {
+
+    $fw_getmsliders = fw_getmsliders();
+    vc_map( array(
+            "name" => __("Meta Sliders", 'fastway'),
+            'base' => 'fw_shortcode_metaslider',
+            'description' => __('FW Meta Sliders', 'fastway'), 
+            'category' => __('Fastway', 'fastway'),   "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            "params" => array(
+                array(
+                  "type"        => "dropdown",
+                  "heading"     => __("Desktop Slider"),
+                  "param_name"  => "sl_desktop",
+                  "admin_label" => true,
+                  "value"       => $fw_getmsliders,
+                  "std"         => " ",
+                ),
+                array(
+                  "type"        => "dropdown",
+                  "heading"     => __("Mobile Slider"),
+                  "description"     => __("Leave empty to use desktop also"),
+                  "param_name"  => "sl_mobile",
+                  "admin_label" => true,
+                  "value"       => $fw_getmsliders,
+                  "std"         => " ",
+                ),
+
             )
     ) );
 

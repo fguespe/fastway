@@ -1,5 +1,28 @@
 <?php
 
+function fw_getmsliders(){
+    $res_args = array();
+
+    $meta_query = array();
+    
+    $args = array(
+        'post_type'         => 'ml-slider',
+        'post_status'       => 'publish',
+        'posts_per_page'    => -1,
+        'orderby'           => 'title',
+        'order'             => 'ASC',
+        //'meta_query'        => $meta_query
+    );
+
+    $blocks = get_posts( $args );
+
+    foreach($blocks as $block) {
+        $jaja=array(get_the_title($block->ID)=>$block->ID);
+        $res_args=array_merge($res_args,$jaja);
+    }
+    return $res_args;
+}
+
 
 if(fw_theme_mod("maintainance-mode")){
 
@@ -424,6 +447,7 @@ function fastway_get_stblock( $cats = array('all') ){
 
     foreach($blocks as $block) {
         $slug = $block->post_name;
+
         $res_args[$slug] = get_the_title($block->ID);
     }
     return $res_args;
