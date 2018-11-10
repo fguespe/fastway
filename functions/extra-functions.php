@@ -1,4 +1,19 @@
 <?php
+
+add_shortcode("fw_shortcode_metaslider","fw_shortcode_metaslider");
+function fw_shortcode_metaslider( $atts ) {
+    $fwatts = shortcode_atts(
+    array(
+        'sl_desktop' => '',
+        'sl_mobile' => '',
+    ), $atts, 'fw_shortcode_metaslider' );
+    $desk=$fwatts["sl_desktop"];
+    $mob=$fwatts["sl_mobile"];
+    if(empty($mob))$mob=$desk;
+    echo '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
+    echo '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
+
+}
 function fw_vc_get_posts($typ) {
     $args = array(
     'taxonomy'   => $typ,
