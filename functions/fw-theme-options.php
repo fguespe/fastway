@@ -972,7 +972,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'shop_per_page',
 	'label'       => esc_attr__( 'Products Per Page', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'     => 12,
+	'default'     => 40,
 	'choices'     => array(
 		'min'  => '4',
 		'max'  => '100',

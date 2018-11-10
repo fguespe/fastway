@@ -40,7 +40,7 @@ function ajax_search() {
   } else {
     
     // There are no results, output a message
-    echo '<p class="no-results">'._e("No results","fastway").'</p>';
+    echo '<p class="no-results">'._e("Sin resultados...","fastway").'</p>';
   
   }
   
