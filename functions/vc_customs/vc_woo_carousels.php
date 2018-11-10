@@ -1,4 +1,7 @@
 <?php
+
+
+
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
 function vc_statick_block() {
 
@@ -22,7 +25,6 @@ function vc_statick_block() {
     ) );
 
 }
-// Create multi dropdown param type
 vc_add_shortcode_param( 'dropdown_multi', 'dropdown_multi_settings_field' );
 function dropdown_multi_settings_field( $param, $value ) {
    $param_line = '';
@@ -177,7 +179,8 @@ function vc_categories_carousel() {
                         'heading' => __( 'Categories', 'fastway' ),
                         'param_name' => 'cats',
                         'weight' => 0,
-                        'value'=>alispx_get_type_posts_data(),
+                         "admin_label" => true,
+                        'value'=>fw_vc_get_posts("product_cat"),
                     ), 
                     array(
                         'type' => 'textfield',
