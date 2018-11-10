@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 						}
 					} else {
-						echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', __( 'Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements.', 'fastway' ) ) . '</li>';
+						echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', __( 'Disculas, no hay metodos de pago disponibles.', 'fastway' ) ) . '</li>';
 					}
 				?>
 			</ul>

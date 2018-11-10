@@ -972,43 +972,35 @@ ul.product_list_widget li .star-rating {
 .fw-mini-cart {
   padding: 10px !important;
 }
-
-.mini_cart_item {
+.fw-mini-cart .mini-cart-item {
   display: block !important;
   padding-left: 4% !important;
   padding-right: 4% !important;
 }
-
-.mini_cart_item a {
+.fw-mini-cart .mini-cart-item a {
   color: black !important;
   border: 0px !important;
 }
-
-.mini-cart-footer {
+.fw-mini-cart .mini-cart-footer {
   width: 90% !important;
   text-align: right !important;
   padding: 0;
   margin: 0 auto;
 }
-
-.mini_cart_item span {
+.fw-mini-cart .mini-cart-item span {
   color: black !important;
 }
-
-.mini-cart-footer span {
+.fw-mini-cart .mini-cart-footer span {
   display: inline !important;
   color: black !important;
 }
-
-.remove {
+.fw-mini-cart .remove {
   color: red !important;
 }
-
-.remove:hover {
+.fw-mini-cart .remove:hover {
   color: red !important;
 }
-
-.mini-cart-footer .checkoutbtn {
+.fw-mini-cart .mini-cart-footer .checkoutbtn {
   background: var(--second-color) !important;
   margin: 0 auto;
   padding: 5px;
@@ -1018,8 +1010,7 @@ ul.product_list_widget li .star-rating {
   margin-top: 10px;
   border: 0px;
 }
-
-.mini-cart-item-title {
+.fw-mini-cart .mini-cart-item-title {
   padding-bottom: 5px;
   text-align: center;
   border-bottom: 1px solid black;
@@ -1254,6 +1245,51 @@ body .wpb_content_element {
     width: 100% !important;
   }
 }
+.woocommerce-cart .btn,
+.woocommerce-checkout .btn {
+  border: 1px solid var(--main);
+  color: var(--main);
+  padding: 6px 6px 5px;
+}
+.woocommerce-cart table.cart img,
+.woocommerce-checkout table.cart img {
+  width: 40px;
+  box-shadow: none;
+  height: auto;
+}
+.woocommerce-cart table.cart td.actions .coupon,
+.woocommerce-checkout table.cart td.actions .coupon {
+  float: left;
+}
+.woocommerce-cart .actions input,
+.woocommerce-checkout .actions input {
+  float: right;
+}
+.woocommerce-cart #content table.cart td.actions .input-text,
+.woocommerce-checkout #content table.cart td.actions .input-text {
+  width: 80px;
+  line-height: 24px;
+}
+.woocommerce-cart table.cart td.actions .coupon label,
+.woocommerce-checkout table.cart td.actions .coupon label {
+  display: none;
+}
+.woocommerce-cart .cart-collaterals .cart_totals,
+.woocommerce-checkout .cart-collaterals .cart_totals {
+  float: right;
+  width: 48%;
+  margin-bottom: 32px;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+  float: left;
+  box-sizing: border-box;
+  border: 1px solid #d3ced2;
+  padding: 6px 6px 5px;
+  margin: 0 4px 0 0;
+  outline: 0;
+}
+
 /*General Woocommerce*/
 .woocommerce {
   margin-bottom: 10px;
@@ -1340,9 +1376,6 @@ body .wpb_content_element {
 .woocommerce .summary .quantity {
   width: 100%;
   margin-bottom: 20px;
-}
-.woocommerce .woocommerce .wrapper .form-row, .woocommerce .woocommerce-cart-form .form-row {
-  display: block !important;
 }
 .woocommerce .select2 span {
   line-height: 2em !important;
@@ -1549,37 +1582,6 @@ body .wpb_content_element {
 .woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th {
   font-weight: 700;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-.woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce .woocommerce-page #content table.cart img, .woocommerce .woocommerce-page table.cart img {
-  height: auto;
-}
-.woocommerce #add_payment_method, .woocommerce table.cart img, .woocommerce .woocommerce table.cart img, .woocommerce .woocommerce table.cart img {
-  width: 32px;
-  box-shadow: none;
-}
-.woocommerce #content table.cart td.actions .coupon, .woocommerce table.cart td.actions .coupon, .woocommerce .woocommerce-page #content table.cart td.actions .coupon, .woocommerce .woocommerce-page table.cart td.actions .coupon {
-  float: left;
-}
-.woocommerce .actions input {
-  float: right;
-}
-.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce .woocommerce-page #content table.cart td.actions .input-text, .woocommerce .woocommerce-page table.cart td.actions .input-text {
-  width: 80px;
-}
-.woocommerce #content table.cart td.actions .coupon label, .woocommerce table.cart td.actions .coupon label, .woocommerce .woocommerce-page #content table.cart td.actions .coupon label, .woocommerce .woocommerce-page table.cart td.actions .coupon label {
-  display: none;
-}
-.woocommerce .cart-collaterals .cart_totals, .woocommerce .woocommerce-page .cart-collaterals .cart_totals {
-  float: right;
-  width: 48%;
-}
-.woocommerce #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce .woocommerce table.cart td.actions .coupon .input-text, .woocommerce .woocommerce table.cart td.actions .coupon .input-text {
-  float: left;
-  box-sizing: border-box;
-  border: 1px solid #d3ced2;
-  padding: 6px 6px 5px;
-  margin: 0 4px 0 0;
-  outline: 0;
 }
 .woocommerce .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);

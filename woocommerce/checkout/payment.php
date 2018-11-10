@@ -32,7 +32,7 @@ if ( ! is_ajax() ) {
 						wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 					}
 				} else {
-					echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'fastway' ) : __( 'Please fill in your details above to see available payment methods.', 'fastway' ) ) . '</li>';
+					echo '<li>' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Disculpas, no hay metodos de pago disponibles.', 'fastway' ) : __( 'Please fill in your details above to see available payment methods.', 'fastway' ) ) . '</li>';
 				}
 			?>
 		</ul>
