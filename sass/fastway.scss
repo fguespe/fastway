@@ -13,6 +13,24 @@
   }
 }
 
+.fw_icon_bs_short {
+  i{
+  font-size:30px;
+  color:var(--second-color);
+
+  }
+  big{
+  display:block;
+  font-size:20px !important;
+  font-weight:700;
+  line-height:20px;
+  }
+  .icon {
+      width: 30px;
+      margin-right:10px;
+  }
+
+}
 
 .mobile-menu-overlay {
     background-color: rgba(0, 0, 0, 0.5);

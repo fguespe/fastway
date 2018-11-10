@@ -257,7 +257,7 @@ function fw_extras_short( $atts ) {
     $font_size=16;
     $type=$fwatts['type'];
     $icon=$type;
-
+    $value="";
     if($type==="phone"){
         $icon="fa-phone";
         $value="tel:".fw_companyphone();
@@ -287,7 +287,7 @@ function fw_extras_short( $atts ) {
         $link=fw_companygooglemaps();
         $value=fw_companyaddress();
     }
-    if($fwatts['text']){
+    if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
     }
     if($fwatts['link']){
@@ -298,9 +298,9 @@ function fw_extras_short( $atts ) {
     }
    
     if($fwatts["isli"]){
-        return '<li class="d-flex align-items-center "> 
-          <span class="icon"><i style="color:#7ACB71 !important;" class="fa '.$icon.'"></i></span> 
-          <span class="text"> <big>'.$fwatts['text'].'</big> <small>'.$fwatts['stext'].'</small> </span>
+        return '<li class="fw_icon_bs_short d-flex align-items-center "> 
+          <span class="icon"><i class="fa '.$icon.'"></i></span> 
+          <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span>
         </li>';
 
     }

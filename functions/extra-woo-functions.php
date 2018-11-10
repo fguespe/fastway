@@ -88,6 +88,7 @@ function fw_global_variation_price() {
 
 
 function fw_price_html1( $price, $product ){
+    if(fw_theme_mod("prices-enabled"))return '';
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
         $maximumper = 0;

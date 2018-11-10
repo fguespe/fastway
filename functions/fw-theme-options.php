@@ -308,12 +308,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw-header-icon',
+			'element' => '.desktop .fw-header-icon i',
 			'property'	=> 'font-size',
 			'units'=>'px'
 		),
 		array(
-			'element' => '.fw-header-icon span',
+			'element' => '.desktop .fw-header-icon span',
 			'property'	=> 'font-size',
 			'units'=>'px'
 		),
