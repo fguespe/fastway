@@ -249,39 +249,41 @@ function fw_extras_short( $atts ) {
             'link' =>  '',
             'isli' =>  '',
             'icon_color' =>  '',
+            'icon' =>  '',
             'text_color' => '',
             'stext' =>  '',
         ), $atts, 'fw_extras_short' );
 
     $font_size=16;
     $type=$fwatts['type'];
+    $icon=$type;
 
     if($type==="phone"){
-        $font_icon="fa-phone";
+        $icon="fa-phone";
         $value="tel:".fw_companyphone();
         $value=fw_companyphone();
     }else if($type==="whatsapp"){
-        $font_icon="fa-whatsapp";
+        $icon="fa-whatsapp";
         $link="https://api.whatsapp.com/send?phone=".fw_companywhatsapp();
         $value=fw_companywhatsapp();
     }else if($type==="email"){
-        $font_icon="fa-envelope-o";
+        $icon="fa-envelope-o";
         $link="mailto:".fw_companyemail();
         $value=fw_companyemail();
     }else if($type==="fb"){
-        $font_icon="fa-facebook-square";
+        $icon="fa-facebook-square";
         $link=fw_companyfb();
         $value="Ir al Facebook";
     }else if($type==="ig"){
-        $font_icon="fa-instagram";
+        $icon="fa-instagram";
         $link=fw_companyig();
         $value="Ir al Instagram";
     }else if($type==="youtube"){
-        $font_icon="fa-youtube-square";
+        $icon="fa-youtube-square";
         $link=fw_companyyoutube();
         $value="Ir a Youtube";
     }else if($type==="address"){
-        $font_icon="fa-map-marker";
+        $icon="fa-map-marker";
         $link=fw_companygooglemaps();
         $value=fw_companyaddress();
     }
@@ -294,16 +296,15 @@ function fw_extras_short( $atts ) {
     if($fwatts['size']){
         $font_size=$fwatts['size'];
     }
-    error_log($font_size);
    
     if($fwatts["isli"]){
         return '<li class="d-flex align-items-center "> 
-          <span class="icon"><i style="color:#7ACB71 !important;" class="fa '.$font_icon.'"></i></span> 
+          <span class="icon"><i style="color:#7ACB71 !important;" class="fa '.$icon.'"></i></span> 
           <span class="text"> <big>'.$fwatts['text'].'</big> <small>'.$fwatts['stext'].'</small> </span>
         </li>';
 
     }
-    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
+    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
     if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
     $first.='</a>';
     return $first;
@@ -328,13 +329,13 @@ function fw_extras_iconsnext( $atts ) {
         $icon_color=$fwatts['icon_color'];
     }
     foreach (explode(",", $fwatts['type']) as $icon) {
-        if($icon==="fb")$font_icon="fa-facebook-square";
-        else if($icon==="ig")$font_icon="fa-instagram";
-        else if($icon==="youtube")$font_icon="fa-youtube-square";
-        else if($icon==="twitter")$font_icon="fa-twitter-square";
+        if($icon==="fb")$icon="fa-facebook-square";
+        else if($icon==="ig")$icon="fa-instagram";
+        else if($icon==="youtube")$icon="fa-youtube-square";
+        else if($icon==="twitter")$icon="fa-twitter-square";
         $link=fw_company_data($icon);
         
-        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$font_icon.'" style="color:'.$icon_color.' !important;"></i>';
+        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="fa '.$icon.'" style="color:'.$icon_color.' !important;"></i>';
         $first.='</a>';
     }
     

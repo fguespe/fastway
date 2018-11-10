@@ -100,12 +100,13 @@ Kirki::add_section( 'section_blog', array(
 
 ) );
 /*CSSs*/
-
+if(!empty(fw_theme_mod("css_editor-general")) || !empty(fw_theme_mod("css_editor-general"))){
 Kirki::add_panel( 'panel_css', array(
 
     'title'       => __( 'Live CSS (depreceated)', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
-) );
+) );	
+}
 
 Kirki::add_section( 'section_css_general', array(
     'title'          => __( 'CSS General', 'fastway' ),
@@ -467,7 +468,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-header',
+	'label'       => __( 'CSS Header', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header-headerwidget-text',
@@ -1333,17 +1344,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-header',
-	'label'       => __( 'CSS Header', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-body',
@@ -1469,7 +1470,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con +54 [fw_extras_short type="whatsapp"]', 'fastway' ),
+    'description'     => __( '[fw_companywhatsapp] empezar con 549 [fw_extras_short type="whatsapp"]', 'fastway' ),
                 
 	'section'     => 'section_extras',
 ) );
