@@ -134,12 +134,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php _e( 'Código:', 'fastway' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Código', 'fastway' ); ?>" /> <input type="submit" class="btn btn-outline-primary" name="apply_coupon" value="<?php esc_attr_e( 'Aplicar Descuento', 'fastway' ); ?>" />
+							<label for="coupon_code"><?php _e( 'Código:', 'fastway' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Código', 'fastway' ); ?>" /> <input type="submit" class="btn " name="apply_coupon" value="<?php esc_attr_e( 'Aplicar Descuento', 'fastway' ); ?>" />
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 
-				<input type="submit" class="btn btn-outline-primary"  name="update_cart" value="<?php esc_attr_e( 'Actualizar', 'fastway' ); ?>" />
+				<input type="submit" class="btn "  name="update_cart" value="<?php esc_attr_e( 'Actualizar', 'fastway' ); ?>" />
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 

@@ -1385,7 +1385,7 @@ width: 100% !important;
      ul.products li.product .price {
          margin: 0px;
     }
-     .woocommerce-checkout .wrapper .btn, .woocommerce-cart .wrapper .btn, .summary .button {
+     .woocommerce .wrapper .btn, .woocommerce .wrapper .btn, .summary .button {
          background-color: white;
          border: 1px solid var(--main);
          color: black;
@@ -1395,7 +1395,7 @@ width: 100% !important;
          width: 100%;
          margin-bottom: 20px;
     }
-     .woocommerce-checkout .wrapper .form-row, .woocommerce-cart-form .form-row {
+     .woocommerce .wrapper .form-row, .woocommerce-cart-form .form-row {
          display: block !important;
     }
      .select2 span {
@@ -1615,7 +1615,7 @@ width: 100% !important;
     #content table.cart img, table.cart img, .woocommerce-page #content table.cart img, .woocommerce-page table.cart img {
          height: auto;
     }
-    #add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img {
+    #add_payment_method, table.cart img, .woocommerce table.cart img, .woocommerce table.cart img {
          width: 32px;
          box-shadow: none;
     }
@@ -1628,10 +1628,7 @@ width: 100% !important;
      #content table.cart td.actions .input-text, table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
          width: 80px;
     }
-     #coupon_code {
-         font-size: 16px;
-         line-height: 17px;
-    }
+    
      #content table.cart td.actions .coupon label, table.cart td.actions .coupon label, .woocommerce-page #content table.cart td.actions .coupon label, .woocommerce-page table.cart td.actions .coupon label {
          display: none;
     }
@@ -1639,7 +1636,7 @@ width: 100% !important;
          float: right;
          width: 48%;
     }
-     #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
+     #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce table.cart td.actions .coupon .input-text, .woocommerce table.cart td.actions .coupon .input-text {
          float: left;
          box-sizing: border-box;
          border: 1px solid #d3ced2;

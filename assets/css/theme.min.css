@@ -1331,7 +1331,7 @@ body .wpb_content_element {
 .woocommerce ul.products li.product .price {
   margin: 0px;
 }
-.woocommerce .woocommerce-checkout .wrapper .btn, .woocommerce .woocommerce-cart .wrapper .btn, .woocommerce .summary .button {
+.woocommerce .woocommerce .wrapper .btn, .woocommerce .woocommerce .wrapper .btn, .woocommerce .summary .button {
   background-color: white;
   border: 1px solid var(--main);
   color: black;
@@ -1341,7 +1341,7 @@ body .wpb_content_element {
   width: 100%;
   margin-bottom: 20px;
 }
-.woocommerce .woocommerce-checkout .wrapper .form-row, .woocommerce .woocommerce-cart-form .form-row {
+.woocommerce .woocommerce .wrapper .form-row, .woocommerce .woocommerce-cart-form .form-row {
   display: block !important;
 }
 .woocommerce .select2 span {
@@ -1553,7 +1553,7 @@ body .wpb_content_element {
 .woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce .woocommerce-page #content table.cart img, .woocommerce .woocommerce-page table.cart img {
   height: auto;
 }
-.woocommerce #add_payment_method table.cart img, .woocommerce .woocommerce-cart table.cart img, .woocommerce .woocommerce-checkout table.cart img {
+.woocommerce #add_payment_method, .woocommerce table.cart img, .woocommerce .woocommerce table.cart img, .woocommerce .woocommerce table.cart img {
   width: 32px;
   box-shadow: none;
 }
@@ -1566,10 +1566,6 @@ body .wpb_content_element {
 .woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce .woocommerce-page #content table.cart td.actions .input-text, .woocommerce .woocommerce-page table.cart td.actions .input-text {
   width: 80px;
 }
-.woocommerce #coupon_code {
-  font-size: 16px;
-  line-height: 17px;
-}
 .woocommerce #content table.cart td.actions .coupon label, .woocommerce table.cart td.actions .coupon label, .woocommerce .woocommerce-page #content table.cart td.actions .coupon label, .woocommerce .woocommerce-page table.cart td.actions .coupon label {
   display: none;
 }
@@ -1577,7 +1573,7 @@ body .wpb_content_element {
   float: right;
   width: 48%;
 }
-.woocommerce #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce .woocommerce-checkout table.cart td.actions .coupon .input-text {
+.woocommerce #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce .woocommerce table.cart td.actions .coupon .input-text, .woocommerce .woocommerce table.cart td.actions .coupon .input-text {
   float: left;
   box-sizing: border-box;
   border: 1px solid #d3ced2;

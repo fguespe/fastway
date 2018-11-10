@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<input type="submit" class="btn btn-outline-primary" name="login" value="<?php esc_attr_e( 'Entrar', 'fastway' ); ?>" />
+				<input type="submit" class="btn " name="login" value="<?php esc_attr_e( 'Entrar', 'fastway' ); ?>" />
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Recordarme', 'fastway' ); ?></span>
 				</label>

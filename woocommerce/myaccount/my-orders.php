@@ -91,7 +91,7 @@ if ( $customer_orders ) : ?>
 
 									if ( $actions = apply_filters( 'woocommerce_my_account_my_orders_actions', $actions, $order ) ) {
 										foreach ( $actions as $key => $action ) {
-											echo '<a href="' . esc_url( $action['url'] ) . '" class="btn btn-outline-primary ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
+											echo '<a href="' . esc_url( $action['url'] ) . '" class="btn  ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 										}
 									}
 								?>
