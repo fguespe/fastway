@@ -1,49 +1,4 @@
 <?php
-
-function alispx_get_type_posts_data() {
-    $args = array(
-    'taxonomy'   => "product_cat",
-    'number'     => $number,
-    'orderby'    => $orderby,
-    'order'      => $order,
-    'hide_empty' => $hide_empty,
-    'include'    => $ids
-    );
-    $product_categories = get_terms($args);
-    
-    $result = array();
-    foreach ( $product_categories as $post ) {
-
-        $jaja=array($post->name=>$post->slug);
-        $result=array_merge($result,$jaja);
-        
-    }
-    return $result;
-}
-add_action( 'vc_before_init', 'alispx_post_finder_integrateWithVC' );
-function alispx_post_finder_integrateWithVC() {
-   vc_map( array(
-        'name'                  => esc_html__( 'Alispx Post Finder', 'alispx' ),
-        'base'                  => 'alispx_post_finder',
-        'class'                 => 'alispx-ico',
-        'icon'                  => 'alispx-ico',
-            'category' => __('Fastway', 'fastway'),   
-        'admin_enqueue_css'     => array( get_template_directory_uri . '/your-path/alispxvc.css' ),
-        'description'           => esc_html__( 'Alispx Post Finder', 'alispx' ),
-        'params'                => array(
-            array(
-                'type'          => 'autocomplete',
-                'class'         => '',
-                'heading'       => esc_html__( 'Post Name', 'alispx' ),
-                'param_name'    => 'id',
-                'settings'      => array( 'values' => alispx_get_type_posts_data() ),
-            ),
-        )
-    ) );
-}
-
-
-
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
 function vc_statick_block() {
 
