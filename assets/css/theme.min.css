@@ -1553,7 +1553,7 @@ body .wpb_content_element {
 .woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce .woocommerce-page #content table.cart img, .woocommerce .woocommerce-page table.cart img {
   height: auto;
 }
-.woocommerce #add_payment_method table.cart img, .woocommerce -cart table.cart img, .woocommerce -checkout table.cart img {
+.woocommerce #add_payment_method table.cart img, .woocommerce .woocommerce-cart table.cart img, .woocommerce .woocommerce-checkout table.cart img {
   width: 32px;
   box-shadow: none;
 }
@@ -1577,7 +1577,7 @@ body .wpb_content_element {
   float: right;
   width: 48%;
 }
-.woocommerce #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce -cart table.cart td.actions .coupon .input-text, .woocommerce -checkout table.cart td.actions .coupon .input-text {
+.woocommerce #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce .woocommerce-checkout table.cart td.actions .coupon .input-text {
   float: left;
   box-sizing: border-box;
   border: 1px solid #d3ced2;
@@ -1597,7 +1597,7 @@ body .wpb_content_element {
   width: 3.631em;
   text-align: center;
 }
-.woocommerce -error, .woocommerce -info, .woocommerce -message {
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
   padding: 1em 2em 1em 3.5em;
   margin: 0 0 2em;
   position: relative;
@@ -1608,7 +1608,7 @@ body .wpb_content_element {
   width: auto;
   word-wrap: break-word;
 }
-.woocommerce -error::before, .woocommerce -info::before, .woocommerce -message::before {
+.woocommerce .woocommerce-error::before, .woocommerce .woocommerce-info::before, .woocommerce .woocommerce-message::before {
   font-family: "fontawesome";
   content: "";
   display: inline-block;
@@ -1722,7 +1722,7 @@ body .wpb_content_element {
   font-family: star;
 }
 .woocommerce .star-rating span, .woocommerce .stars a, .woocommerce .star-rating:before {
-  color: gold !important;
+  color: yellow !important;
   font-size: 14px !important;
 }
 
