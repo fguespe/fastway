@@ -1,4 +1,19 @@
 @charset "UTF-8";
+.woocommerce-loop-category__title {
+  text-align: center;
+  font-size: 22px !important;
+  text-transform: uppercase;
+  background-color: #F5F5F5;
+  border-top: 3px solid var(--main);
+  padding: 10px;
+}
+.woocommerce-loop-category__title .product-category img {
+  margin: 0px !important;
+}
+.woocommerce-loop-category__title mark {
+  display: none;
+}
+
 .mobile-menu-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
