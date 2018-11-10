@@ -71,7 +71,7 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 
 
 function is_woo_active(){
-    return fw_checkPlugin('woocommerce/woocommerce.php');
+    return fw_checkPlugin('woocommerce/woocommerce.php') || is_plugin_active_for_network('woocommerce/woocommerce.php');
 }
 
 require get_template_directory() . '/inc/enqueue.php';
@@ -151,8 +151,11 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-
 //require get_template_directory() . '/inc/kirki/kirki.php';
 */
 
-include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
-require get_template_directory() . '/functions/fw-theme-options.php';
+//include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
+error_log(is_plugin_active_for_network('kirki'));
+if(is_plugin_active_for_network('kirki')){
+    require get_template_directory() . '/functions/fw-theme-options.php';
+}
 
 if(fw_theme_mod('ca-switch')){
     require get_template_directory() . '/functions/client-area/client-area.php';   

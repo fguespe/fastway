@@ -13,7 +13,6 @@ if ( ! function_exists( 'kirki_installer_register' ) ) {
 	 * @param object $wp_customize The main customizer object.
 	 */
 	function kirki_installer_register( $wp_customize ) {
-
 		// Early exit if Kirki exists.
 		if ( class_exists( 'Kirki' ) ) {
 			return;
