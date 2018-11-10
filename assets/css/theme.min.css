@@ -1245,43 +1245,62 @@ body .wpb_content_element {
     width: 100% !important;
   }
 }
-.woocommerce-cart .btn,
 .woocommerce-checkout .btn {
   border: 1px solid var(--main);
   color: var(--main);
   padding: 6px 6px 5px;
 }
-.woocommerce-cart table.cart img,
-.woocommerce-checkout table.cart img {
+.woocommerce-checkout .form-group {
+  display: inline-block !important;
+  width: 50%;
+  padding: 10px;
+}
+.woocommerce-checkout #billing_company_field {
+  display: none !important;
+}
+.woocommerce-checkout .woocommerce-additional-fields__field-wrapper label {
+  display: block !important;
+  width: 100% !important;
+}
+.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .woocommerce-input-wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+.woocommerce-checkout table img {
+  width: 60px;
+  box-shadow: none;
+  height: auto;
+}
+
+.woocommerce-cart .btn {
+  border: 1px solid var(--main);
+  color: var(--main);
+  padding: 6px 6px 5px;
+}
+.woocommerce-cart table.cart img {
   width: 40px;
   box-shadow: none;
   height: auto;
 }
-.woocommerce-cart table.cart td.actions .coupon,
-.woocommerce-checkout table.cart td.actions .coupon {
+.woocommerce-cart table.cart td.actions .coupon {
   float: left;
 }
-.woocommerce-cart .actions input,
-.woocommerce-checkout .actions input {
+.woocommerce-cart .actions input {
   float: right;
 }
-.woocommerce-cart #content table.cart td.actions .input-text,
-.woocommerce-checkout #content table.cart td.actions .input-text {
+.woocommerce-cart #content table.cart td.actions .input-text {
   width: 80px;
   line-height: 24px;
 }
-.woocommerce-cart table.cart td.actions .coupon label,
-.woocommerce-checkout table.cart td.actions .coupon label {
+.woocommerce-cart table.cart td.actions .coupon label {
   display: none;
 }
-.woocommerce-cart .cart-collaterals .cart_totals,
-.woocommerce-checkout .cart-collaterals .cart_totals {
+.woocommerce-cart .cart-collaterals .cart_totals {
   float: right;
   width: 48%;
   margin-bottom: 32px;
 }
-.woocommerce-cart table.cart td.actions .coupon .input-text,
-.woocommerce-checkout table.cart td.actions .coupon .input-text {
+.woocommerce-cart table.cart td.actions .coupon .input-text {
   float: left;
   box-sizing: border-box;
   border: 1px solid #d3ced2;
@@ -1297,10 +1316,6 @@ body .wpb_content_element {
   /*fix imagenes*/
   /*fix margin en price*/
   /*pagination*/
-  /* .fw_product_loop{
-       float:left !important;
-  }
-   */
   /*cart*/
   /*reivews*/
   /* Base */
