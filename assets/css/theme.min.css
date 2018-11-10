@@ -873,6 +873,10 @@ html {
   height: auto !important;
 }
 
+.form-control:focus {
+  box-shadow: none !important;
+}
+
 .wrapper a {
   color: var(--main);
 }
