@@ -29,7 +29,7 @@ function fw_pngcheckout_short() {
 }
 if(fw_theme_mod("cart-steps")){
 add_action('woocommerce_before_cart', 'fw_pngcheckout_short');   
-add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short');  
+add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short',0);  
 }
 
 if(fw_theme_mod("checkout-minimal")){
