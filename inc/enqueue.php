@@ -11,7 +11,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(),'',  true );
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		
-		if(is_woo_active()){
+		if(is_plugin_active("woocommerce")){
 			wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/js/swiper.min.js'  );
 			wp_enqueue_style( 'swiper-styles', get_template_directory_uri() . '/assets/css/swiper.min.css');
 			if(is_product()){

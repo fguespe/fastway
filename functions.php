@@ -70,8 +70,8 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 
 
 
-function is_woo_active(){
-    return fw_checkPlugin('woocommerce/woocommerce.php') || is_plugin_active_for_network('woocommerce/woocommerce.php');
+function is_plugin_active($name){
+    return fw_checkPlugin($name.'/'.$name.'.php') || is_plugin_active_for_network($name.'/'.$name.'.php');
 }
 
 require get_template_directory() . '/inc/enqueue.php';
@@ -151,9 +151,7 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-
 //require get_template_directory() . '/inc/kirki/kirki.php';
 */
 
-//include_once get_theme_file_path( 'inc/class-kirki-installer-section.php' );
-error_log(is_plugin_active_for_network('kirki'));
-if(is_plugin_active_for_network('kirki')){
+if(is_plugin_active('kirki')){
     require get_template_directory() . '/functions/fw-theme-options.php';
 }
 

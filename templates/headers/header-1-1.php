@@ -15,7 +15,7 @@
             'walker'          => new fw_Navwalker(),
           )
         ); 
-        if(is_woo_active()) echo fw_shoppingCart();?>
+        if(is_plugin_active("woocommerce")) echo fw_shoppingCart();?>
         </nav>
       </div>
       
