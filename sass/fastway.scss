@@ -623,11 +623,7 @@ p:empty {
   text-align: center;
 }
 
-header i,
-header span,
-.fw-searchform .input-group-append .btn {
-  color: var(--icon-header);
-}
+
 
 .btn-outline-primary:hover {
   background: transparent !important;
@@ -865,24 +861,30 @@ footer .widget_nav_menu li a {
 
 
 /*SEARCH*/
-
+ header i,
+header span,
 .fw-searchform .input-group-append .btn {
-  background-color: white;
-  border-color: lightgrey;
+  color: var(--icon-header);
 }
-
-.fw-searchform i::before {
-  color: var(--main) !important;
+.see-all-results {
+border-top:1px solid var(--main);
+color:var(--main);
 }
-
-.fw-searchform input,
-.fw-searchform button {
-  border-radius: 0px;
-  border: 0px;
-}
-
-.fw-searchform a {
-  color: black !important;
+.fw-searchform {  
+  .input-group-append .btn {
+    background-color: white;
+    border-color: lightgrey;
+  }
+  i::before {
+    color: var(--main) !important;
+  }
+  input,button {
+    border-radius: 0px;
+    border: 0px;
+  }
+  a {
+    color: black !important;
+  }
 }
 
 

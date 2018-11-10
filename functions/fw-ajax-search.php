@@ -34,7 +34,7 @@ function ajax_search() {
     // If there is more than one page of results, add link to the full results page
     if ( $query->max_num_pages > 1 ) {
       // We use urlencode() here to handle any spaces or odd characters in the search string
-      echo '<a class="see-all-results" href="' . get_site_url() . '?s=' . urlencode( $search ) . '">Ver todos.</a>';
+      echo '<a class="see-all-results" href="' . get_site_url() . '?s=' . urlencode( $search ) . '&post_type=product">Ver todos.</a>';
     }
     
   } else {
