@@ -44,7 +44,7 @@ HTML;
   </span>
 </a>   
 
-<div id="$idname2" style="display: none">
+<div id="$idname2" class="fw-mini-cart" style="display: none">
    <div class="mini-cart-item-title">Carrito</div>
       <div class="widget_shopping_cart_content"></div>
       <div class="mini-cart-footer">
@@ -64,7 +64,7 @@ HTML;
   </span>
 </a>
 <!-- Modal -->
-<div class="modal fade" id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade fw-mini-cart " id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -72,7 +72,7 @@ HTML;
        <div class="mini-cart-item-title">Carrito</div>
       </div>
       <div class="modal-body">
-        <div class="widget_shopping_cart_content"></div>
+        <div class="widget_shopping_cart_content">El carrito esta vacío.</div>
       </div>
       <div class="modal-footer">
       <div class="mini-cart-footer">
