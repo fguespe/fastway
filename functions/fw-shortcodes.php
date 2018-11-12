@@ -159,7 +159,7 @@ function fwi( $atts ) {
             'type' => '',
             'size' =>  '',
             'color' => '',
-        ), $atts, 'fw_icons_fa' );
+        ), $atts, 'fwi' );
     $type=$fwatts["type"];
     $color=$fwatts["color"];
     $size=$fwatts["size"];
