@@ -163,7 +163,7 @@ function fw_icons_fa( $atts ) {
     $type=$fwatts["type"];
     $color=$fwatts["color"];
     $size=$fwatts["size"];
-    if(strpos($type, "-") === false)$type="fa-".$type;
+    if(strpos($type, "fa-") === false)$type="fa-".$type;
     if(strpos($type, " ") === false)$type=get_icon_fw()." ".$type;
     return  '<i class="'.$type.'" style="color:'.$color.'font-size:'.$size.'"></i>';        
 }

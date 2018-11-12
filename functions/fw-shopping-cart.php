@@ -5,7 +5,7 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
 
     function fw_shoppingCart($style=""){
 
-        if( !fw_checkPlugin('woocommerce/woocommerce.php') ) return;
+        if( !is_plugin_active('woocommerce/woocommerce.php') ) return;
         global $woocommerce;
         if(empty($style))$style=fw_theme_mod('cart-style');
         $rand=generateRandomString(5);

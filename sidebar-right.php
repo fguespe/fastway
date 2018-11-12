@@ -4,7 +4,7 @@ $sidebar_pos =fw_theme_mod('layout-main');
 $sidebarname='right-sidebar';
 $ratio=2;
 
-if(fw_checkPlugin("woocommerce/woocommerce.php")){
+if(is_plugin_active("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category()){
 		$sidebar_pos = fw_theme_mod('shop-layout');
 		$sidebarname='s-'.$sidebarname;

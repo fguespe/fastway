@@ -757,7 +757,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => urlforimages()."/assets/img/favi.png",
 ) );
 /*WOOCOMMERCE*/
-//if(fw_checkPlugin('woocommerce/woocommerce.php')){
+//if(is_plugin_active('woocommerce/woocommerce.php')){
 
 
 Kirki::add_field( 'theme_config_id', array(

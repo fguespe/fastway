@@ -3,7 +3,7 @@
 $sidebarname='left-sidebar';
 $ratio=2;
 
-if(fw_checkPlugin("woocommerce/woocommerce.php")){
+if(is_plugin_active("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category()){
 		$sidebarname='s-'.$sidebarname;
 		$ratio=fw_theme_mod("sidebar-ratio");

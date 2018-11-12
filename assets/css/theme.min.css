@@ -228,7 +228,7 @@ li {
 }
 
 .listachecks li:before {
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Pro";
   content: "";
   margin: 0 5px 0 -15px;
   color: var(--main);
@@ -456,6 +456,12 @@ ul {
 
 #single-wrapper .entry-content {
   margin-top: 40px;
+}
+
+.summary .single_add_to_cart_button:before {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  margin-right: 10px;
 }
 
 /*Mercadoenvios*/
@@ -1636,7 +1642,7 @@ body .wpb_content_element {
   word-wrap: break-word;
 }
 .woocommerce .woocommerce-error::before, .woocommerce .woocommerce-info::before, .woocommerce .woocommerce-message::before {
-  font-family: "fontawesome";
+  font-family: "Font Awesome 5 Pro";
   content: "";
   display: inline-block;
   position: absolute;
@@ -1712,7 +1718,7 @@ body .wpb_content_element {
   text-indent: 0;
 }
 .woocommerce p.stars.selected a.active ~ a:before, .woocommerce p.stars:hover a:before, .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
-  font-family: fontawesome !important;
+  font-family: "Font Awesome 5 Pro" !important;
 }
 .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active ~ a:before {
   content: "" !important;

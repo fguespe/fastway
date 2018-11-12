@@ -228,7 +228,7 @@ li {
 }
 
 .listachecks li:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Pro';
   content: '\f00c';
   margin: 0 5px 0 -15px;
   color: var(--main);
@@ -468,6 +468,12 @@ ul {
 #single-wrapper .entry-content {
   margin-top: 40px;
   ;
+}
+.summary .single_add_to_cart_button:before{
+    content:"\f217";
+    font-family: "Font Awesome 5 Pro";
+    margin-right:10px;
+    
 }
 
 
@@ -1710,7 +1716,7 @@ body .wpb_content_element {
          word-wrap: break-word;
     }
      .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
-         font-family: "fontawesome";
+         font-family: "Font Awesome 5 Pro";
          content: '\f0f3';
          display: inline-block;
          position: absolute;
@@ -1786,7 +1792,7 @@ body .wpb_content_element {
     }
     /* Base */
      p.stars.selected a.active~a:before, p.stars:hover a:before, p.stars a:before, p.stars a:hover~a:before, p.stars.selected a:not(.active):before, p.stars.selected a.active:before {
-         font-family: fontawesome !important;
+         font-family: "Font Awesome 5 Pro" !important;
     }
     /* Empty Stars */
      p.stars a:before, p.stars a:hover~a:before, p.stars.selected a.active~a:before {

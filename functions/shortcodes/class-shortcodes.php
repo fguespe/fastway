@@ -10,7 +10,7 @@ class fw_Shortcodes extends fw_Woo_Shortcodes {
 
 		$shortcodes = array();
 			
-		if( fw_checkPlugin( 'woocommerce/woocommerce.php' ) ) {
+		if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 			$woo_args = parent::shortcodeArgs();
 			$shortcodes = array_merge( $shortcodes, $woo_args );
 		}

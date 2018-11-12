@@ -3,7 +3,7 @@
 $sidebar_pos = fw_theme_mod('layout-main');
 $ratio=10;
 $ratioboth=8;
-if(fw_checkPlugin("woocommerce/woocommerce.php")){
+if(is_plugin_active("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category())$sidebar_pos = fw_theme_mod('shop-layout');
 	else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 	if(is_shop() || is_product_category() || is_product()){
