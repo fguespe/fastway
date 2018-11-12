@@ -10,7 +10,7 @@ line-height: 1.5 !important;
 }
 .fw_product_loop .add_to_cart_button:before{
 content:"\f07a" !important;
-font-family:"fontawesome" !important;
+font-family:'Font Awesome 5 Pro' !important;
 color:black !important;
 font-size:20px !important;
 padding:0px !important;

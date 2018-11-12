@@ -60,14 +60,14 @@ display:none !important;
 }
 /*MENU SUPERIOR*/
 .estiloiconomenu i:before{
-	font-family: "FontAwesome" !important;
+	font-family: "Font Awesome 5 Pro" !important;
     color:var(--ca-icon-color) !important;
 	text-align:center !important;
 	line-height:25px !important;
 	font-size:18px !important;
 }
 .estiloiconomenu i:after{
-	font-family: "FontAwesome" !important;
+	font-family: "Font Awesome 5 Pro" !important;
     color: var(--ca-second-color)  !important;
 	text-align:center !important;
 	line-height:25px !important;
@@ -316,7 +316,7 @@ display:none;
 /*ICONITO VIDEO*/
 #woocommerce-product-data ul.product_data_tabs li.nth_videos_tab a:before{
 	content: "\f1c8" !important;
-	font-family: "FontAwesome" !important;
+	font-family: "Font Awesome 5 Pro" !important;
 
 }
 /*DESACTIVAR PESTANIA CONSULTA*/

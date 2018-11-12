@@ -100,8 +100,10 @@ function fw_remove_menu_pages() {
         $menu_items = wp_get_nav_menu_items($menu->term_id);
         if(empty($menu_items))return;
         foreach( $menu_items as $i ) {
-     
-            add_menu_page("fw-".$i->title, "<i class=' fa fa-".$i->classes[0]."'></i> ".$i->title,'read',get_admin_url().$i->url);
+            /*Fix FA 4*/
+            $fwi=$i->classes[0];
+            if($fwi==="bar-chart"){$fwi="chart-bar";}
+            add_menu_page("fw-".$i->title, "<i class='fas fa-".$fwi."'></i> ".$i->title,'read',get_admin_url().$i->url);
         }
 
         
@@ -133,9 +135,11 @@ function fw_menu_items($wp_admin_bar){
     $menu_items = wp_get_nav_menu_items($menu->term_id);
     if(!empty($menu_items)){
         foreach( $menu_items as $i ) {
+            $fwi=$i->classes[0];
+            if($fwi==="bar-chart"){$fwi="chart-bar";}
             $args = array(
                 'id' => 'custom-node-'.$i->ID,
-                'title' => "<i class=' fa fa-".$i->classes[0]."'></i> ".$i->title,
+                'title' => "<i class='fas fa-".$fwi."'></i> ".$i->title,
                 'href' => $i->url,
                 'meta' => array(
                     'class' => 'estiloiconomenu titulo-'.$i->slug
@@ -336,7 +340,7 @@ if (activarCA()  ) {
     add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 }
 function wpdocs_enqueue_custom_admin_style() {
-    wp_enqueue_style('awesome-style', get_template_directory_uri() . '/assets/fonts/font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
     wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css');
     wp_enqueue_script('cajs-style', get_template_directory_uri() . '/functions/client-area/ca.js');
     
