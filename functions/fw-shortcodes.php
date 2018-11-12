@@ -108,7 +108,7 @@ function fw_extras_short( $atts ) {
         $link="https://api.whatsapp.com/send?phone=".fw_companywhatsapp();
         $value=fw_companywhatsapp();
     }else if($type==="email"){
-        $icon=get_icon_fw()." fa-envelope-o";
+        $icon=get_icon_fw()." fa-envelope";
         $link="mailto:".fw_companyemail();
         $value=fw_companyemail();
     }else if($type==="fb"){
@@ -221,12 +221,12 @@ add_shortcode('fw_companyaddress', 'fw_companyaddress');
 function quicklinks(){
     echo "<div class='fw_quicklinks '>";
     if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fab fa-facebook" style="color:#4267B2;"></i><span> Facebook</span></a>';
-    if(!empty(fw_companyyoutube()))echo '<a class=" youtube" href="'.fw_companyyoutube().'"><i class="fa-youtube-square" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_companywhatsapp()))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
-    if(!empty(fw_companyig()))echo '<a class=" ig" href="'.fw_companyig().'"><i class="fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_companyemail()))echo '<a class=" mail" href="mailto:'.fw_companyemail().'"><i class="fa-envelope-o" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
-    if(!empty(fw_companyphone()))echo '<a class=" tel" href="tel:'.fw_companyphone().'"><i class="fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
-    if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a class="map" href="'.fw_companygooglemaps().'"><i class="fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_companyaddress().'</span></a>';
+    if(!empty(fw_companyyoutube()))echo '<a class=" youtube" href="'.fw_companyyoutube().'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
+    if(!empty(fw_companywhatsapp()))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
+    if(!empty(fw_companyig()))echo '<a class=" ig" href="'.fw_companyig().'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
+    if(!empty(fw_companyemail()))echo '<a class=" mail" href="mailto:'.fw_companyemail().'"><i class="fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
+    if(!empty(fw_companyphone()))echo '<a class=" tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
+    if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a class="map" href="'.fw_companygooglemaps().'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_companyaddress().'</span></a>';
     
     echo "</div>";
 }
