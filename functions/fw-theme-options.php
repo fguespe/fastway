@@ -1415,6 +1415,20 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'icons_style',
+	'label'       => __( 'Icons Style', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => 'regular',
+	'choices'     => array(
+		'regular'	=> __( 'Regular', 'fastway' ),
+		'solid' 	=> __( 'Solid ', 'fastway' ),
+		'light' 	=> __( 'Light ', 'fastway' ),
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'popup-mode',

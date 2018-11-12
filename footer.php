@@ -26,7 +26,7 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
 <?php
 if(fw_theme_mod('whats-widget')){?>
 <a href="https://api.whatsapp.com/send?phone=<?php echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('short-fw_companywhatsapp'))));?>&amp;text=Hola, tengo una consulta" target="_blank" class="btn-wapp">
-    <i class="fa fa-whatsapp"></i>
+    <i class="fab fa-whatsapp"></i>
     <span class="t5">Estamos<br>On-Line!</span>
 </a>
 <style type="text/css">

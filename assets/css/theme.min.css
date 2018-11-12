@@ -868,6 +868,20 @@ html {
   margin-top: 0px !important;
 }
 
+/*PULL BOTSTRAP3*/
+.fw_header_top .pull-left, .fw_header_top .pull-right {
+  width: 50%;
+  display: inline;
+  margin: 0px;
+}
+.fw_header_top .pull-left {
+  float: left;
+}
+.fw_header_top .pull-right {
+  float: right;
+  text-align: right;
+}
+
 /*FIX >BOOTSTRAP COLOR*/
 .form-control {
   height: auto !important;
