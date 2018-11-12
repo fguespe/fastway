@@ -60,8 +60,9 @@ function fw_checkPlugin( $path = '' ){
         if ( in_array( trim( $path ), $_actived ) ) return true;
         else return false;
 }
-*/
 endif;
+*/
+
 $THEME_DIR= get_template_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
 $TEMPLATE_DIR=$THEME_DIR."templates/";
