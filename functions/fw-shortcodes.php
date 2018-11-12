@@ -165,7 +165,7 @@ function fwi( $atts ) {
     $size=$fwatts["size"];
     if(strpos($type, "fa-") === false)$type="fa-".$type;
     if(strpos($type, " ") === false)$type=get_icon_fw()." ".$type;
-    return  '<i class="'.$type.'" style="color:'.$color.'font-size:'.$size.'"></i>';        
+    return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.';"></i>';        
 }
 function fw_extras_iconsnext( $atts ) {
     $fwatts = shortcode_atts(
