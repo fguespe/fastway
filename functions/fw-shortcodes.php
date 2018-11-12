@@ -152,8 +152,8 @@ function fw_extras_short( $atts ) {
 }
 
 
-add_shortcode("fw_icons_fa","fw_icons_fa");
-function fw_icons_fa( $atts ) {
+add_shortcode("fwi","fwi");
+function fwi( $atts ) {
     $fwatts = shortcode_atts(
         array(
             'type' => '',
