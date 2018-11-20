@@ -35,6 +35,7 @@ function fw_extras_short( $atts ) {
             'text' =>  '',
             'size' =>  '',
             'link' =>  '',
+            'cant' =>  '',
             'isli' =>  '',
             'isli_i' =>  '',
             'icon_color' =>  '',
@@ -48,34 +49,37 @@ function fw_extras_short( $atts ) {
     $icon=$type;
     $icons_style=get_icon_fw();
     $value="";
+    $cant=0;
+    if($fwatts['cant'])$cant=intval($fwatts['cant']);
+
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
-        $link="tel:".fw_company_data("phone",true);
-        $value=fw_company_data("phone");
+        $link="tel:".fw_company_data($type,true,$cant);
+        $value=fw_company_data($type,false,$cant);
     }else if($type==="whatsapp"){
         $icon="fab fa-whatsapp";
-        $link="https://api.whatsapp.com/send?phone=".fw_company_data("whatsapp",true);
-        $value=fw_company_data("whatsapp");
+        $link="https://api.whatsapp.com/send?phone=".fw_company_data($type,true,$cant);
+        $value=fw_company_data($type,false,$cant);
     }else if($type==="email"){
         $icon=$icons_style." fa-envelope";
-        $link="mailto:".fw_company_data("email",true);
-        $value=fw_company_data("email");
+        $link="mailto:".fw_company_data($type,true,$cant);
+        $value=fw_company_data($type,false,$cant);
     }else if($type==="fb"){
         $icon="fab fa-facebook";
-        $link=fw_company_data("fb",true);
+        $link=fw_company_data($type,true,$cant);
         $value="Ir al Facebook";
     }else if($type==="ig"){
         $icon="fab fa-instagram";
-        $link=fw_company_data("ig",true);
+        $link=fw_company_data($type,true,$cant);
         $value="Ir al Instagram";
     }else if($type==="youtube"){
         $icon=$icons_style." fa-youtube-square";
-        $link=fw_company_data("youtube",true);
+        $link=fw_company_data($type,true,$cant);
         $value="Ir a Youtube";
     }else if($type==="address"){
         $icon=$icons_style." fa-map-marker-alt";
-        $link=fw_company_data("googlemaps",true);
-        $value=fw_company_data("address");
+        $link=fw_company_data("googlemaps",true,$cant);
+        $value=fw_company_data("address",false,$cant);
     }
     if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
@@ -174,9 +178,8 @@ function quicklinks(){
 }
 
 
-function fw_company_data($value, $link=false) {
-
-    $value= fw_theme_mod('short-fw_company'.$value);
+function fw_company_data($value, $link=false,$cant=0) {
+    $value=explode("|", fw_theme_mod('short-fw_company'.$value))[$cant];
     preg_match('#\((.*?)\)#', $value, $match);
     $parent= $match[1];
     if(!empty($parent)){
