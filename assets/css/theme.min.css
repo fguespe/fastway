@@ -16,16 +16,14 @@
 
 .fw_icon_bs_short i {
   font-size: 30px;
-  color: var(--second-color);
 }
 .fw_icon_bs_short big {
   display: block;
   font-size: 20px !important;
   font-weight: 700;
-  line-height: 20px;
+  line-height: 17px;
 }
 .fw_icon_bs_short .icon {
-  width: 30px;
   margin-right: 10px;
 }
 
