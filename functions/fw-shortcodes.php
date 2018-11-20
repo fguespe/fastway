@@ -18,60 +18,7 @@ function fw_shortcode_metaslider( $atts ) {
 function fastway_getWidgetHeaderText(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
-function fw_companyname() {
-    
-    return fw_theme_mod('short-fw_companyname');
-}
-function fw_companywhatsapp() {
-    
-    return fw_theme_mod('short-fw_companywhatsapp');
-}
-function fw_companyig() {
-    
-    return fw_theme_mod('short-fw_companyig');
-}
-function fw_companyyoutube() {
-    
-    return fw_theme_mod('short-fw_companyyoutube');
-}
-function fw_companyemail() {
-    
-    return fw_theme_mod('short-fw_companyemail');
-}
-function fw_companyphone() {
-    
-    return fw_theme_mod('short-fw_companyphone');
-}
-function fw_companyfb() {
-    
-    return fw_theme_mod('short-fw_companyfb');
-}
-function fw_companyaddress() {
-    
-    return fw_theme_mod('short-fw_companyaddress');
-}
-function fw_companygooglemaps() {
-    
-    return fw_theme_mod('short-fw_companygooglemaps');
-}function fw_company_data($value) {
-    
-    return fw_theme_mod('short-fw_company'.$value);
-}
-function fw_icon( $atts ) {
-    $fwatts = shortcode_atts(
-        array(
-            'type' => '',
-            'text' =>  '',
-            'size' =>  '',
-            'link' =>  '',
-            'isli' =>  '',
-            'icon_color' =>  '',
-            'icon' =>  '',
-            'text_color' => '',
-            'stext' =>  '',
-        ), $atts, 'fw_extras_short' );
 
-}
 function get_icon_fw(){
     $icon=fw_theme_mod("icons_style");
     if($icon=="regular")$icon="fa";
@@ -89,6 +36,7 @@ function fw_extras_short( $atts ) {
             'size' =>  '',
             'link' =>  '',
             'isli' =>  '',
+            'isli_i' =>  '',
             'icon_color' =>  '',
             'icon' =>  '',
             'text_color' => '',
@@ -98,35 +46,36 @@ function fw_extras_short( $atts ) {
     $font_size=16;
     $type=$fwatts['type'];
     $icon=$type;
+    $icons_style=get_icon_fw();
     $value="";
     if($type==="phone"){
-        $icon=get_icon_fw()." fa-phone";
-        $value="tel:".fw_companyphone();
-        $value=fw_companyphone();
+        $icon=$icons_style." fa-phone";
+        $link="tel:".fw_company_data("phone",true);
+        $value=fw_company_data("phone");
     }else if($type==="whatsapp"){
         $icon="fab fa-whatsapp";
-        $link="https://api.whatsapp.com/send?phone=".fw_companywhatsapp();
-        $value=fw_companywhatsapp();
+        $link="https://api.whatsapp.com/send?phone=".fw_company_data("whatsapp",true);
+        $value=fw_company_data("whatsapp");
     }else if($type==="email"){
-        $icon=get_icon_fw()." fa-envelope";
-        $link="mailto:".fw_companyemail();
-        $value=fw_companyemail();
+        $icon=$icons_style." fa-envelope";
+        $link="mailto:".fw_company_data("email",true);
+        $value=fw_company_data("email");
     }else if($type==="fb"){
         $icon="fab fa-facebook";
-        $link=fw_companyfb();
+        $link=fw_company_data("fb",true);
         $value="Ir al Facebook";
     }else if($type==="ig"){
         $icon="fab fa-instagram";
-        $link=fw_companyig();
+        $link=fw_company_data("ig",true);
         $value="Ir al Instagram";
     }else if($type==="youtube"){
-        $icon=get_icon_fw()." fa-youtube-square";
-        $link=fw_companyyoutube();
+        $icon=$icons_style." fa-youtube-square";
+        $link=fw_company_data("youtube",true);
         $value="Ir a Youtube";
     }else if($type==="address"){
-        $icon=get_icon_fw()." fa-map-marker-alt";
-        $link=fw_companygooglemaps();
-        $value=fw_companyaddress();
+        $icon=$icons_style." fa-map-marker-alt";
+        $link=fw_company_data("googlemaps",true);
+        $value=fw_company_data("address");
     }
     if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
@@ -143,7 +92,12 @@ function fw_extras_short( $atts ) {
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span>
         </li>';
-
+    }
+    if($fwatts["isli_i"]){
+        return '<li class="fw_icon_bs_short d-flex align-items-center "> 
+          <span class="icon"><i class="'.$icon.'"></i></span> 
+          <span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span>
+        </li>';
     }
     $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
     if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
@@ -152,7 +106,6 @@ function fw_extras_short( $atts ) {
 }
 
 
-add_shortcode("fwi","fwi");
 function fwi( $atts ) {
     $fwatts = shortcode_atts(
         array(
@@ -164,7 +117,7 @@ function fwi( $atts ) {
     $color=$fwatts["color"];
     $size=$fwatts["size"];
     if(strpos($type, "fa-") === false)$type="fa-".$type;
-    if(strpos($type, " ") === false)$type=get_icon_fw()." ".$type;
+    if(strpos($type, " ") === false)$type=$icons_style." ".$type;
     return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.';"></i>';        
 }
 function fw_extras_iconsnext( $atts ) {
@@ -199,34 +152,37 @@ function fw_extras_iconsnext( $atts ) {
 }
 
 function wporg_shortcodes_init(){
-    add_shortcode('fw_icon', 'fw_icon', 10, 2);
     add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
     add_shortcode('fw_extras_iconsnext', 'fw_extras_iconsnext', 10, 2);
-       
+    add_shortcode("fwi","fwi",10,2);
 }
  
 add_action('init', 'wporg_shortcodes_init');
 
 
-add_shortcode('fw_companyfb', 'fw_companyfb');
-add_shortcode('fw_companyig', 'fw_companyig');
-add_shortcode('fw_companyyoutube', 'fw_companyyoutube');
-add_shortcode('fw_companygooglemaps', 'fw_companygooglemaps');
-add_shortcode('fw_companyemail', 'fw_companyemail');
-add_shortcode('fw_companyphone', 'fw_companyphone');
-add_shortcode('fw_companywhatsapp', 'fw_companywhatsapp');
-add_shortcode('fw_companyname', 'fw_companyname');
-add_shortcode('fw_companyaddress', 'fw_companyaddress');
-
 function quicklinks(){
     echo "<div class='fw_quicklinks '>";
-    if(!empty(fw_companyfb()))echo '<a class="fb" href="'.fw_companyfb().'"><i class="fab fa-facebook" style="color:#4267B2;"></i><span> Facebook</span></a>';
-    if(!empty(fw_companyyoutube()))echo '<a class=" youtube" href="'.fw_companyyoutube().'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_companywhatsapp()))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_companywhatsapp().'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
-    if(!empty(fw_companyig()))echo '<a class=" ig" href="'.fw_companyig().'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_companyemail()))echo '<a class=" mail" href="mailto:'.fw_companyemail().'"><i class="fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
-    if(!empty(fw_companyphone()))echo '<a class=" tel" href="tel:'.fw_companyphone().'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
-    if(!empty(fw_companyaddress()) && !empty(fw_companygooglemaps()))echo '<a class="map" href="'.fw_companygooglemaps().'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_companyaddress().'</span></a>';
+    if(!empty(fw_company_data("fb")))echo '<a class="fb" href="'.fw_company_data("name",true).'"><i class="fab fa-facebook" style="color:#4267B2;"></i><span> Facebook</span></a>';
+    if(!empty(fw_company_data("youtube")))echo '<a class=" youtube" href="'.fw_company_data("youtube",true).'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
+    if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
+    if(!empty(fw_company_data("ig")))echo '<a class=" ig" href="'.fw_company_data("ig",true).'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
+    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="mailto:'.fw_company_data("email",true).'"><i class="fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
+    if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="tel:'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
+    if(!empty(fw_company_data("address")) && !empty(fw_company_data("googlemaps")))echo '<a class="map" href="'.fw_company_data("googlemaps",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address",true).'</span></a>';
     
     echo "</div>";
+}
+
+
+function fw_company_data($value, $link=false) {
+
+    $value= fw_theme_mod('short-fw_company'.$value);
+    preg_match('#\((.*?)\)#', $value, $match);
+    $parent= $match[1];
+    if(!empty($parent)){
+        $value=str_replace("(".$parent.")","",$value);
+    }else if(!empty($parent) && $link){
+        $value=$parent;
+    }
+    return $value;
 }

@@ -136,6 +136,9 @@ function get_fastway_header_topbanner(){
     }
 }
 
+
+
+
 function fw_custom_css(){
     $css="";
     
