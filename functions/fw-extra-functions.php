@@ -151,7 +151,7 @@ function fw_custom_css(){
             $resized=round($size*0.7);
             $css.= "body ".$key."{";
             $css.= "font-size: calc(".$resized."px + (".$size." - ".$resized.") * ((100vw - 300px) / (1600 - 300))); ";
-            $css.= "line-height: calc(".($resized+2)."px + (".$height." - ".($resized+2).") * ((100vw - 300px) / (1600 - 300))); ";
+            $css.= "line-height: calc(".($resized+4)."px + (".$height." - ".($resized+4).") * ((100vw - 300px) / (1600 - 300))); ";
             $css.= "}";   
         }
        
