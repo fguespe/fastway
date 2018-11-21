@@ -51,7 +51,8 @@
 .fwmenu2 .nav-item.padre a {
   font-weight: 700 !important;
 }
-.fwmenu2 .submenu-overlay {
+
+.submenu-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   left: 0;
@@ -63,7 +64,8 @@
   visibility: hidden;
   z-index: 0;
 }
-.fwmenu2 .submenu-overlay.active {
+
+.submenu-overlay.active {
   opacity: 1;
   visibility: visible;
   z-index: 1101;
