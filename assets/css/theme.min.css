@@ -1,13 +1,15 @@
 @charset "UTF-8";
 #menu-madre {
   position: relative;
-  z-index: 2101;
+  z-index: 3000;
   border-radius: 0px !important;
+}
+#menu-madre .nav-item.padre a {
+  font-weight: 700 !important;
 }
 #menu-madre ul li a {
   color: #fff;
   font-size: 14px;
-  font-weight: 400;
   line-height: 14px;
   padding: 8px;
   text-decoration: none;
