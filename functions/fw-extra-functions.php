@@ -13,7 +13,7 @@ function fw_mega_menu( $theme_location ) {
 
         $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav mr-auto">'."\n";
  
-        //$width=100;
+        $width=100;
 
         foreach( $menu_items as $menu_item ) {
             if( $menu_item->menu_item_parent == 0 ) {
