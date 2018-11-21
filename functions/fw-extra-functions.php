@@ -4,15 +4,16 @@ function fw_mega_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
-        $megamenu=false;
+        $megamenu=fw_theme_mod("mega_menu");
+        $cols="";
+        if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
+        error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
         if($megamenu)$clasem="fwmenu2";
 
         $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav mr-auto">'."\n";
  
         //$width=100;
-        if($megamenu)$cols=4;
-        else $cols=12;
 
         foreach( $menu_items as $menu_item ) {
             if( $menu_item->menu_item_parent == 0 ) {

@@ -255,6 +255,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $theme_headers,
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'sticky-menu',
@@ -434,6 +435,30 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'mega_menu',
+	'label'       => __( 'Mega Menu', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'mega_menu_cols',
+	'label'       => __( 'Mega Menu Layout', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 3,
+	'choices'     => array(
+		6 => __( '2 cols', 'fastway' ),
+		4 => __( '3 cols', 'fastway' ),
+		3 => __( '4 cols', 'fastway' ),
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'transparent-header',
