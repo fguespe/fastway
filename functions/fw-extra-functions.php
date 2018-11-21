@@ -19,16 +19,24 @@ function fw_mega_menu( $theme_location ) {
             if( $menu_item->menu_item_parent == 0 ) {
                 $parent = $menu_item->ID;
                 $menu_array = array();
-                        
+                //error_log("".$menu_item->title);
+                $nuevoitem="";
+                $first=false;
                 foreach( $menu_items as $submenu ) {
                    if( $submenu->menu_item_parent == $parent ) {
+                        //error_log($submenu->title." ".);
+                        error_log($submenu->title);
+                        if($submenu->attr_title==="col" ){
+                            if($first)$menu_array[] ='</div>';
+                            $first=true;
+                            $menu_array[]='<div class="col-md-'.$cols.'">';
+                            error_log("Abre-----".$submenu->title);
+                        }
                         $bool = true;
                         $url=$submenu->url;
                         $title=$submenu->title;
-                        if($submenu->attr_title=="col" && $megamenu)$nuevoitem='<div class="col-md-'.$cols.'">';
-                        $nuevoitem .= '<li class="nav-item padre"><a class="nav-link" href="' . $url . '">' . $title . '</a></li>' ."\n";
-                        $menu_array[] = $nuevoitem;
                         
+                        $menu_array[] = '<li class="nav-item padre"><a class="nav-link" href="' . $url . '">' . $title . '</a></li>' ."\n";
                         //3er nivel
                         if($megamenu){
                             $s_parent = $submenu->ID;
@@ -36,17 +44,16 @@ function fw_mega_menu( $theme_location ) {
                                 if( $s_submenu->menu_item_parent == $s_parent ) {
                                   $s_url=$s_submenu->url;
                                   $s_title=$s_submenu->title;
-                                  $s_nuevoitem = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
-                                  $menu_array[] = $s_nuevoitem;
-                                  //error_log("------------".$s_submenu->title);
+                                  $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
+                                  //error_log("Pone:---------".$s_submenu->title);
                               } 
                             }
-                            if($submenu->attr_title=="col" && $megamenu)$menu_array[] ='</div>';
+                           
                         }
                         
                     }
-                    
                 }
+
 
                 if( $bool == true && count( $menu_array ) > 0 ) {
                      
@@ -71,6 +78,7 @@ function fw_mega_menu( $theme_location ) {
             }
             // end <li>
             $menu_list .= '</li>' ."\n";
+            
         }
         $menu_list .= '</ul></div></nav><div class="submenu-overlay"></div>' ."\n";
 
