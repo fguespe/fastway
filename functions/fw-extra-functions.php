@@ -7,7 +7,7 @@ function fw_mega_menu( $theme_location ) {
         $megamenu=fw_theme_mod("mega_menu");
         $cols="";
         if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
-        error_log(fw_theme_mod("mega_menu_cols"));
+        //error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
         if($megamenu)$clasem="fwmenu2";
 
@@ -38,7 +38,7 @@ function fw_mega_menu( $theme_location ) {
                                   $s_title=$s_submenu->title;
                                   $s_nuevoitem = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
                                   $menu_array[] = $s_nuevoitem;
-                                  error_log("------------".$s_submenu->title);
+                                  //error_log("------------".$s_submenu->title);
                               } 
                             }
                             if($submenu->attr_title=="col" && $megamenu)$menu_array[] ='</div>';
