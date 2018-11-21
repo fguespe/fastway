@@ -2,6 +2,9 @@
 
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
+    if($name=="icons_style" && empty(get_theme_mod( $name)))return "fa";
+    if($name=="icons_style" &&  get_theme_mod( $name) === "light")return "fal";
+    if($name=="icons_style" &&  get_theme_mod( $name) === "solid")return "fal";
     return get_theme_mod( $name);
 }
 function fw_getme_roles(){

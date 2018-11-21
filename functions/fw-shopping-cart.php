@@ -13,11 +13,12 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $total=$woocommerce->cart->get_cart_total();
         $carturl=wc_get_cart_url();
         $checkurl=wc_get_checkout_url();
+        $istyle=fw_theme_mod("icons_style");
         if($style==="link"){
           return <<<HTML
           <a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-    <i class="p3 fal fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+    <i class="p3 $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>
 </a>
 
@@ -25,6 +26,7 @@ HTML;
         }else if($style==="popup"){
         $idname=$rand."cart-popover";
         $idname2=$rand.'popover_content_wrapper';
+        $istyle=fw_theme_mod("icons_style");
         return <<<HTML
 <script type="text/javascript">
   jQuery(document).ready(function() {
@@ -40,7 +42,7 @@ HTML;
 
 <a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-    <i class="p3  fal fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+    <i class="p3 $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>
 </a>   
 
@@ -55,12 +57,13 @@ HTML;
 HTML;
         }else if($style==="modal"){
           $idname2=$rand.'shoppingCartModal';
+        $istyle=fw_theme_mod("icons_style");
         
           return <<<HTML
 
 <a class="fw-header-icon minicart"  href="#" role="button" data-target="#$idname2" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-    <i class="p3  fal fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+    <i class="p3  $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
   </span>
 </a>
 <!-- Modal -->
@@ -92,7 +95,6 @@ HTML;
 
   
 
-
 }
 //actualiza counter
 add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
@@ -101,7 +103,7 @@ function iconic_cart_count_fragments( $fragments ) {
     
     //$fragments['.header-cart-count'] = '<span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">' . WC()->cart->get_cart_contents_count() . '</span>';
     $fragments['.header-cart-count-badge'] = '<span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.WC()->cart->get_cart_contents_count().'">
-    <i class="p3  fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
+    <i class="p3 '.fw_theme_mod("icons_style").' fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
 
     
     $fragments['.total-mini-cart'] = '<span class="d-block total-mini-cart">' . WC()->cart->get_cart_total() . '</span>';

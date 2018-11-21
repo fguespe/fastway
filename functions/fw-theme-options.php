@@ -1446,11 +1446,11 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'icons_style',
 	'label'       => __( 'Icons Style', 'fastway' ),
 	'section'     => 'section_extras',
-	'default'     => 'regular',
+	'default'     => 'fa',
 	'choices'     => array(
-		'regular'	=> __( 'Regular', 'fastway' ),
-		'solid' 	=> __( 'Solid ', 'fastway' ),
-		'light' 	=> __( 'Light ', 'fastway' ),
+		'fa'	=> __( 'Regular', 'fastway' ),
+		'fas' 	=> __( 'Solid ', 'fastway' ),
+		'fal' 	=> __( 'Light ', 'fastway' ),
 	),
 ) );
 

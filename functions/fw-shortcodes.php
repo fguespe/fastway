@@ -19,15 +19,6 @@ function fastway_getWidgetHeaderText(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
 
-function get_icon_fw(){
-    $icon=fw_theme_mod("icons_style");
-    if($icon=="regular")$icon="fa";
-    else if($icon=="solid")$icon="fas";
-    else if($icon=="light")$icon="fal";
-    if(empty($icon))$icon="fa";
-    
-    return $icon;
-}
 function fw_extras_short( $atts ) {
     $fwatts = shortcode_atts(
         array(
@@ -47,7 +38,7 @@ function fw_extras_short( $atts ) {
     $font_size=16;
     $type=$fwatts['type'];
     $icon=$type;
-    $icons_style=get_icon_fw();
+    $icons_style=fw_theme_mod("icons_style");
     $value="";
     $cant=0;
     if($fwatts['cant'])$cant=intval($fwatts['cant']);
