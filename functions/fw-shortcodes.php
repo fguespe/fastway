@@ -187,20 +187,21 @@ function quicklinks(){
 
 
 function fw_company_data($value, $link=false,$cant=0) {
-    $value=trim($value);$link=trim($link);
-    error_log($value);$pre="";
+    $value=trim($value);$link=trim($link);$pre="";
+    error_log($value);
     if($value=="whatsapp")$pre="https://api.whatsapp.com/send?phone=";
     if($value=="phone")$pre="tel: ";
     if($value=="mail" || $value==="email")$pre="mailto: ";
     $value=explode("|", fw_theme_mod('short-fw_company'.$value))[$cant];
     preg_match('#\((.*?)\)#', $value, $match);
-    $parent= $match[1];
-    if(!empty($parent)){
-        $value=$pre.str_replace("(".$parent.")","",$value);
-    }else if(!empty($parent) && $link){
-        error_log("entra");
-        $value=$pre.$parent;
-        
+    $link_en_parentesis= $match[1];
+    if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
+        $value=$pre.str_replace("(".$link_en_parentesis.")","",$value);
+    }else if(!empty($link_en_parentesis) && $link){
+        $value=$pre.$link_en_parentesis;
+    }else if(empty($link_en_parentesis) && $link){
+        $value=$pre.$value;
     }
+    error_log($value);
     return $value;
 }
