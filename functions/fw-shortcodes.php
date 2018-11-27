@@ -49,7 +49,7 @@ function fw_extras_short( $atts ) {
 
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
-        $link="tel:".fw_company_data($type,true,$cant);
+        $link=fw_company_data($type,true,$cant);
         $value=fw_company_data($type,false,$cant);
     }else if($type==="whatsapp"){
         $icon="fab fa-whatsapp";
@@ -57,7 +57,7 @@ function fw_extras_short( $atts ) {
         $value=fw_company_data($type,false,$cant);
     }else if($type==="email"){
         $icon=$icons_style." fa-envelope";
-        $link="mailto:".fw_company_data($type,true,$cant);
+        $link=fw_company_data($type,true,$cant);
         $value=fw_company_data($type,false,$cant);
     }else if($type==="fb"){
         $icon="fab fa-facebook";
@@ -178,8 +178,8 @@ function quicklinks(){
     if(!empty(fw_company_data("youtube")))echo '<a class=" youtube" href="'.fw_company_data("youtube",true).'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
     if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
     if(!empty(fw_company_data("ig")))echo '<a class=" ig" href="'.fw_company_data("ig",true).'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="mailto:'.fw_company_data("email",true).'"><i class="fa fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
-    if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="tel:'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
+    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="'.fw_company_data("email",true).'"><i class="fa fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
+    if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
     if(!empty(fw_company_data("address")) && !empty(fw_company_data("googlemaps")))echo '<a class="map" href="'.fw_company_data("googlemaps",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address",true).'</span></a>';
     
     echo "</div>";
@@ -188,7 +188,6 @@ function quicklinks(){
 
 function fw_company_data($value, $link=false,$cant=0) {
     $value=trim($value);$link=trim($link);$pre="";
-    error_log($value);
     if($value=="whatsapp")$pre="https://api.whatsapp.com/send?phone=";
     if($value=="phone")$pre="tel: ";
     if($value=="mail" || $value==="email")$pre="mailto: ";
@@ -202,6 +201,5 @@ function fw_company_data($value, $link=false,$cant=0) {
     }else if(empty($link_en_parentesis) && $link){
         $value=$pre.$value;
     }
-    error_log($value);
     return $value;
 }

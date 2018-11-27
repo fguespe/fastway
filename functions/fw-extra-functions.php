@@ -27,7 +27,7 @@ function fw_mega_menu( $theme_location ) {
         $clasem="fwmenu1";
         if($megamenu)$clasem="fwmenu2";
 
-        $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav mr-auto">'."\n";
+        $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav">'."\n";
  
         $width=100;
 
@@ -41,7 +41,7 @@ function fw_mega_menu( $theme_location ) {
                 foreach( $menu_items as $submenu ) {
                    if( $submenu->menu_item_parent == $parent ) {
                         //error_log($submenu->title." ".);
-                        error_log($submenu->title);
+                        //error_log($submenu->title);
                         if($submenu->attr_title==="init_col" && $megamenu){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
