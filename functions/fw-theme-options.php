@@ -100,13 +100,13 @@ Kirki::add_section( 'section_blog', array(
 
 ) );
 /*CSSs*/
-if(!empty(fw_theme_mod("css_editor-general")) || !empty(fw_theme_mod("css_editor-general"))){
+//if(!empty(fw_theme_mod("css_editor-general")) || !empty(fw_theme_mod("css_editor-general"))){
 Kirki::add_panel( 'panel_css', array(
 
     'title'       => __( 'Live CSS (depreceated)', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );	
-}
+//}
 
 Kirki::add_section( 'section_css_general', array(
     'title'          => __( 'CSS General', 'fastway' ),
