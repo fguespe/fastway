@@ -33,6 +33,10 @@ function fw_extras_short( $atts ) {
             'icon' =>  '',
             'text_color' => '',
             'stext' =>  '',
+            'blink' =>  '',
+            'tlink' =>  '',
+            'sblock' =>  '',
+            'iframe' =>  '',
         ), $atts, 'fw_extras_short' );
 
     $font_size=16;
@@ -71,8 +75,8 @@ function fw_extras_short( $atts ) {
         $icon=$icons_style." fa-map-marker-alt";
         $link=fw_company_data("googlemaps",true,$cant);
         $value=fw_company_data("address",false,$cant);
-    }
-    if($fwatts['text'] || empty($value)){
+    
+    }if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
     }
     if($fwatts['link']){
@@ -83,20 +87,32 @@ function fw_extras_short( $atts ) {
     }
    
     if($fwatts["isli"]){
-        return '<li class="fw_icon_bs_short d-flex align-items-center "> 
+        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span>
         </li>';
-    }
-    if($fwatts["isli_i"]){
-        return '<li class="fw_icon_bs_short d-flex align-items-center "> 
+    }else if($fwatts["isli_i"]){
+        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span>
         </li>';
+    }else{
+        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
+        if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
+        $first.='</a>';
     }
-    $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
-    if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
-    $first.='</a>';
+    if(!empty($fwatts['sblock'])){
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
+        $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
+    }else if(!empty($fwatts['iframe'])){
+        $rand=generateRandomString();
+        error_log($rand);
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
+        $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
+    }else if(!empty($link) && $fwatts["isli_i"] || $fwatts["isli"]){
+        $first='<a target="_blank" href="'.$link.'">'.$first;
+        $first.= "</a>";
+    }
     return $first;
 }
 

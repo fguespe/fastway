@@ -1,5 +1,21 @@
 <?php
 
+function fw_modal_block($slug,$id,$iframe=false){
+    if(!$iframe)$block=fw_StaticBlock::getSticBlockContent($slug,true);
+    else $block='<iframe height="868" width="100%" frameBorder="0" title="Promociones bancarias" scrolling="no" src="'.$id.'" scrolling="no"></iframe>';
+  return <<<HTML
+<!-- Modal -->
+<div class="modal fade" id="$slug" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        $block
+      </div>
+    </div>
+  </div>
+</div>
+HTML;
+}
 function fw_mega_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
