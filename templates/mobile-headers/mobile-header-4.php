@@ -24,8 +24,8 @@ global $header_middle_mobile;
       <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">         
-          <a href="" rel="nofollow" title="Llamar" class="btn btn-success" style="color:white;background:#307BFF;font-size:20px;"><i class="fa fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
-          <a href="" rel="nofollow" title="WhatsApp" class="btn btn-success" style="color:white !important;font-size:20px;"><i class="fab fa-whatsapp" style="color:white;"></i> Consultar</a>
+          <a href="<?echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn btn-success" style="color:white;background:#307BFF;font-size:20px;"><i class="fa fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
+          <a href="<?echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn btn-success" style="color:white !important;font-size:20px;"><i class="fab fa-whatsapp" style="color:white;"></i> Consultar</a>
         </div>
         <div class="separa-menu-mobile">&nbsp;</div>
         <div>

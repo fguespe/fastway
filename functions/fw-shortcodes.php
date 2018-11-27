@@ -53,7 +53,7 @@ function fw_extras_short( $atts ) {
         $value=fw_company_data($type,false,$cant);
     }else if($type==="whatsapp"){
         $icon="fab fa-whatsapp";
-        $link="https://api.whatsapp.com/send?phone=".fw_company_data($type,true,$cant);
+        $link=fw_company_data($type,true,$cant);
         $value=fw_company_data($type,false,$cant);
     }else if($type==="email"){
         $icon=$icons_style." fa-envelope";
@@ -106,7 +106,6 @@ function fw_extras_short( $atts ) {
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if(!empty($fwatts['iframe'])){
         $rand=generateRandomString();
-        error_log($rand);
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
     }else if(!empty($link) && $fwatts["isli_i"] || $fwatts["isli"]){
@@ -188,13 +187,20 @@ function quicklinks(){
 
 
 function fw_company_data($value, $link=false,$cant=0) {
+    $value=trim($value);$link=trim($link);
+    error_log($value);$pre="";
+    if($value=="whatsapp")$pre="https://api.whatsapp.com/send?phone=";
+    if($value=="phone")$pre="tel: ";
+    if($value=="mail" || $value==="email")$pre="mailto: ";
     $value=explode("|", fw_theme_mod('short-fw_company'.$value))[$cant];
     preg_match('#\((.*?)\)#', $value, $match);
     $parent= $match[1];
     if(!empty($parent)){
-        $value=str_replace("(".$parent.")","",$value);
+        $value=$pre.str_replace("(".$parent.")","",$value);
     }else if(!empty($parent) && $link){
-        $value=$parent;
+        error_log("entra");
+        $value=$pre.$parent;
+        
     }
     return $value;
 }
