@@ -135,7 +135,7 @@
 }
 .menu-madre-mobile a {
   color: #666 !important;
-  font-size: 14px;
+  font-size: 14px !important;
   display: block;
   padding: 8px 30px;
   color: black;
