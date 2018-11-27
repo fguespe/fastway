@@ -1307,7 +1307,14 @@ body .wpb_content_element {
   }
   li.active a:after {
     border-left-color: #5C9FD2 !important;
-  }}
+  }
+}
+@media (max-width: 799px) {
+  .pasoscheckout{
+    display: none;
+  } 
+
+}
 
 .logocheckout {
   margin: 0 auto;

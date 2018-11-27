@@ -179,7 +179,7 @@ function quicklinks(){
     if(!empty(fw_company_data("youtube")))echo '<a class=" youtube" href="'.fw_company_data("youtube",true).'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
     if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
     if(!empty(fw_company_data("ig")))echo '<a class=" ig" href="'.fw_company_data("ig",true).'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="mailto:'.fw_company_data("email",true).'"><i class="fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
+    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="mailto:'.fw_company_data("email",true).'"><i class="fa fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
     if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="tel:'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
     if(!empty(fw_company_data("address")) && !empty(fw_company_data("googlemaps")))echo '<a class="map" href="'.fw_company_data("googlemaps",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address",true).'</span></a>';
     
