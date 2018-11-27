@@ -127,9 +127,11 @@ function fwi( $atts ) {
     $type=$fwatts["type"];
     $color=$fwatts["color"];
     $size=$fwatts["size"];
+
+    $icons_style=fw_theme_mod("icons_style");
     if(strpos($type, "fa-") === false)$type="fa-".$type;
     if(strpos($type, " ") === false)$type=$icons_style." ".$type;
-    return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.';"></i>';        
+    return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.'px;"></i>';        
 }
 function fw_extras_iconsnext( $atts ) {
     $fwatts = shortcode_atts(
