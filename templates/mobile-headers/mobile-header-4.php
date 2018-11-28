@@ -16,8 +16,9 @@ global $header_middle_mobile;
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center">
       <div class="col-3 d-flex justify-content-around">
           <button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fa fa-bars"></i></button>
-          <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
-          
+          <?if(!empty(fw_company_data("whatsapp"))){?>
+            <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
+          <?}?>
       </div>
       <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart("link");?></div>
@@ -25,6 +26,7 @@ global $header_middle_mobile;
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">         
           <a href="<?echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn btn-success" style="color:white;background:#307BFF;font-size:20px;"><i class="fa fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
+         
           <a href="<?echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn btn-success" style="color:white !important;font-size:20px;"><i class="fab fa-whatsapp" style="color:white;"></i> Consultar</a>
         </div>
         <div class="separa-menu-mobile">&nbsp;</div>
