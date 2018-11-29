@@ -1,4 +1,4 @@
-<?php 
+<?php //Este es tipo el de bid
 global $header_middle_mobile;
 ?>
 <style type="text/css">
