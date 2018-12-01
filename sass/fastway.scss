@@ -1835,90 +1835,9 @@ body .wpb_content_element {
          border-radius: 4px;
          padding: 1em 1em 0;
     }
-     @font-face{
-         font-family:star;
-         src:url(../fonts/star.eot);
-         src:url(../fonts/star.eot?#iefix) format("embedded-opentype"),url(../fonts/star.woff) format("woff"),url(../fonts/star.ttf) format("truetype"),url(../fonts/star.svg#star) format("svg");
-         font-weight:400;
-         font-style:normal 
-    }
-     .star-rating{
-         display: inline-block;
-         overflow:hidden;
-         position:relative;
-         height:1em;
-         line-height:1;
-         font-size:1em;
-         width:5.4em;
-         font-family:star 
-    }
+    
      #review_form #respond textarea {
          box-sizing: border-box;
          width: 100% 
-    }
-     p.stars a {
-         position: relative;
-         height: 1em;
-         width: 1em;
-         text-indent: -999em;
-         display: inline-block;
-         text-decoration: none 
-    }
-     p.stars a:before {
-         display: block;
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 1em;
-         height: 1em;
-         line-height: 1;
-         text-indent: 0 
-    }
-    /* Base */
-     p.stars.selected a.active~a:before, p.stars:hover a:before, p.stars a:before, p.stars a:hover~a:before, p.stars.selected a:not(.active):before, p.stars.selected a.active:before {
-         font-family: "Font Awesome 5 Pro" !important;
-    }
-    /* Empty Stars */
-     p.stars a:before, p.stars a:hover~a:before, p.stars.selected a.active~a:before {
-         content: "\f006" !important;
-    }
-    /* Filled Stars */
-     p.stars:hover a:before, p.stars.selected a:not(.active):before, p.stars.selected a.active:before {
-         content: "\f005" !important;
-    }
-    /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
-     .star-rating:before {
-         content: "\73\73\73\73\73";
-         color: #d3ced2;
-         float: left;
-         top: 0;
-         left: 0;
-         position: absolute;
-         font-family: star;
-    }
-    /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
-     .star-rating span {
-         overflow: hidden;
-         float: left;
-         top: 0;
-         left: 0;
-         position: absolute;
-         padding-top: 1.5em;
-         font-family:star;
-         color: #52a0cd;
-    }
-    /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
-     .star-rating span:before {
-         content: "\53\53\53\53\53";
-         top: 0;
-         position: absolute;
-         left: 0;
-         font-family: star;
-         visibility: visible;
-         font-family: star;
-    }
-     .star-rating span,.stars a, .star-rating:before{
-         color: yellow !important;
-         font-size: 14px !important;
     }
 }
