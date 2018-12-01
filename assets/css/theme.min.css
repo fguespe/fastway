@@ -1,4 +1,62 @@
 @charset "UTF-8";
+.opiniones-visibles .row-calificacion {
+  border: 0 !important;
+}
+
+.opiniones-visibles .btn-link {
+  padding: 35px 0 0 0;
+}
+
+/***** Modal opiniones *****/
+.promedio-calificaciones {
+  padding: 5px 0 20px 0;
+}
+
+.promedio-calificaciones .rating-number {
+  font-size: 50px;
+}
+
+.promedio-calificaciones .rating i {
+  font-size: 22px;
+  margin: 0 1px;
+}
+
+.promedio-calificaciones .rating a {
+  line-height: 20px;
+}
+
+.promedio-calificaciones .rating a .fa-star-half.star-vacia {
+  margin-left: -25px;
+}
+
+.row-calificacion {
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #666;
+}
+
+.row-calificacion .rating span {
+  color: #999;
+  font-style: italic;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.row-calificacion h4 {
+  font-size: 18px;
+  display: block;
+  padding: 10px 0;
+}
+
+.row-calificacion h4 span {
+  color: #999;
+  font-style: italic;
+  font-size: 15px;
+}
+
 .rating {
   /*color: #3483fa;*/
   color: #FFB400;
@@ -1442,6 +1500,12 @@ body .wpb_content_element {
   /*pagination*/
   /*cart*/
   /*reivews*/
+  /* Base */
+  /* Empty Stars */
+  /* Filled Stars */
+  /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
+  /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
+  /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
 }
 .woocommerce .summary .button {
   padding: 20px;
@@ -1777,6 +1841,67 @@ body .wpb_content_element {
 .woocommerce #review_form #respond textarea {
   box-sizing: border-box;
   width: 100%;
+}
+.woocommerce p.stars a {
+  position: relative;
+  height: 1em;
+  width: 1em;
+  text-indent: -999em;
+  display: inline-block;
+  text-decoration: none;
+}
+.woocommerce p.stars a:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-indent: 0;
+}
+.woocommerce p.stars.selected a.active ~ a:before, .woocommerce p.stars:hover a:before, .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
+  font-family: "Font Awesome 5 Pro" !important;
+}
+.woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active ~ a:before {
+  content: "" !important;
+  color: grey;
+}
+.woocommerce p.stars:hover a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
+  content: "" !important;
+  color: gold;
+}
+.woocommerce .star-rating:before {
+  content: "sssss";
+  color: #d3ced2;
+  float: left;
+  top: 0;
+  left: 0;
+  font-family: "Font Awesome 5 Pro" !important;
+  position: absolute;
+}
+.woocommerce .star-rating span {
+  overflow: hidden;
+  float: left;
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-family: "Font Awesome 5 Pro" !important;
+  padding-top: 1.5em;
+  color: #52a0cd;
+}
+.woocommerce .star-rating span:before {
+  content: "SSSSS";
+  top: 0;
+  font-family: "Font Awesome 5 Pro" !important;
+  position: absolute;
+  left: 0;
+  visibility: visible;
+}
+.woocommerce .star-rating span, .woocommerce .stars a, .woocommerce .star-rating:before {
+  color: gold !important;
+  font-size: 14px !important;
+  font-family: "Font Awesome 5 Pro" !important;
 }
 
 /*# sourceMappingURL=theme.min.css.map */

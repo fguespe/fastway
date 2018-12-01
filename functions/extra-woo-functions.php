@@ -1,5 +1,31 @@
 <?php
-
+function fw_getfastars($average){
+    if(!is_numeric($average))return "";
+    $html='<a href="" data-toggle="modal" data-target="#opiniones" >';
+	$vacia=false;
+	for($i=1;$i<=5;$i++){
+        $clase="";
+		error_log($i." ".$average." ".floor($average));
+		if(!$vacia){
+			if($i==floor($average) && floor($average)!=$average){
+                $clase="-half ";$vacia=true;
+                error_log("entro?");
+			}
+			else if($i>=$average)$vacia=true;
+			else if($i<$average)$clase="";
+			//else $vacia=true;
+		}else{
+            error_log("entro?");
+			$clase=" star-vacia ";
+		}
+		$html.= '<i class="fa fa-star'.$clase.' star'.$i.'" aria-hidden="true"></i>';
+		if($i==floor($average) && floor($average)!=$average && $vacia){
+			$html.= '<i class="fa fa-star-half star-vacia" aria-hidden="true"></i>';
+		}
+    }
+    $html.="</a>";
+	return $html;
+}
 // Function to add subscribe text to posts and pages
 function fw_pngcheckout_short() {
     $active1="";

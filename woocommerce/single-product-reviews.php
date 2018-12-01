@@ -36,8 +36,8 @@ $average      = $product->get_average_rating();
 <div class="row promedio-calificaciones">
 	<div class="col-4 col-lg-2 align-self-center rating-number"><?=$average?></div>
 	<div class="col-8 col-lg-4 align-self-center rating">							
-		<a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half" aria-hidden="true"></i><i class="fa fa-star-half star-vacia" aria-hidden="true"></i></a>
-		<a href="#">En promedio de 121 opiniones</a>
+		<?echo fw_getfastars($average);?>
+		<br><a href="#">En promedio de <?=$review_count?> opiniones</a>
 	</div>
 </div><?
 	$args = array (
@@ -47,12 +47,14 @@ $average      = $product->get_average_rating();
     );
 	$comments = get_comments($args);
 	foreach($comments as $comm){
+		$cant=get_comment_meta( $comm->comment_ID, 'rating', true );
 		?>
 		<div class="row-calificacion">
 			<div class="rating">
-				<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>								<span>01-09-2018</span>
+				<h4 style="display:inline-block !important;" ><span>(<?=$comm->comment_author?>)   </span></h4>
+				<?echo fw_getfastars($cant);?>
+				<span>01-09-2018</span>
 			</div>							
-			<h4><span>(<?=$comm->comment_author?>)</span></h4>
 			<p><?=$comm->comment_content;?></p>
 		</div>
 	<?}?>
