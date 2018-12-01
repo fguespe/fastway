@@ -172,15 +172,46 @@ function wporg_shortcodes_init(){
 add_action('init', 'wporg_shortcodes_init');
 
 
-function quicklinks(){
+function quicklinks3(){
+
     echo "<div class='fw_quicklinks '>";
-    if(!empty(fw_company_data("fb")))echo '<a class="fb" href="'.fw_company_data("name",true).'"><i class="fab fa-facebook" style="color:#4267B2;"></i><span> Facebook</span></a>';
+    if(!empty(fw_company_data("fb")))echo '<a class="fb" href="'.fw_company_data("name",true).'"><i class="fab fa-facebook" style="color:#;"></i><span> Facebook</span></a>';
     if(!empty(fw_company_data("youtube")))echo '<a class=" youtube" href="'.fw_company_data("youtube",true).'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="https://api.whatsapp.com/send?phone='.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
+    if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="'.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
     if(!empty(fw_company_data("ig")))echo '<a class=" ig" href="'.fw_company_data("ig",true).'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
     if(!empty(fw_company_data("email")))echo '<a class=" mail" href="'.fw_company_data("email",true).'"><i class="fa fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
     if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
-    if(!empty(fw_company_data("address")) && !empty(fw_company_data("googlemaps")))echo '<a class="map" href="'.fw_company_data("googlemaps",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address",true).'</span></a>';
+    if(!empty(fw_company_data("address")))echo '<a class="map" href="'.fw_company_data("address",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address").'</span></a>';
+    echo "</div>";
+}
+
+
+function quicklinks(){
+    $quick =trim(fw_theme_mod("fw_quickmenu_links"));
+    $arra=array(
+        "fb"=>array("fab fa-facebook","#4267B2"), 
+        "youtube"=>array("fab fa-youtube","#FF0200"), 
+        "whatsapp"=>array("fab fa-whatsapp","#1BD760"), 
+        "ig"=>array("fab fa-instagram","#D1178A"), 
+        "email"=>array("fa fa-envelope","var(--icon-header)"),  
+        "phone"=>array("fa fa-phone","var(--icon-header)"),  
+        "address"=>array("fa fa-map-marker","var(--icon-header)"), 
+    );
+    $quick = explode(",",$quick);
+    echo "<div class='fw_quicklinks '>";
+    $i=0;
+    foreach($quick as $q){
+        $i++;
+        $num=0;
+        $char=substr($q, -1);
+        if(intval($char)){
+            //error_log($char);
+            $num=$char;
+            $q=str_replace($char,"",$q);
+        }
+        $label=fw_company_data($q,false,$num);
+        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" style="color:'.$arra[$q][1].'"></i><span>  '.$label.'</span></a>';
+    }
     
     echo "</div>";
 }

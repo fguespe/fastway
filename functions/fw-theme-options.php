@@ -1500,6 +1500,13 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_quickmenu_links',
+	'label'    => __( 'Mobile Menu Order', 'fastway' ),
+	'default'=>'fb,youtube,whatsapp,ig,email,phone,address',
+	'section'     => 'section_extras',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
 	'label'    => __( 'Company Name', 'fastway' ),
     'description'     => __( '[fw_companyname] ', 'fastway' ),
@@ -1527,6 +1534,7 @@ Kirki::add_field( 'theme_config_id', array(
     'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companygooglemaps',
@@ -1534,6 +1542,7 @@ Kirki::add_field( 'theme_config_id', array(
     'description'     => __( '[fw_companygooglemaps] ', 'fastway' ),
 	'section'     => 'section_extras',
 ) );
+*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',

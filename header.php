@@ -65,7 +65,7 @@ if(fw_theme_mod("transparent-header"))$header_middle.=" fw_transparent_top ";
 </header>
 <script >
 jQuery(window).on('load', function() {
-    if(jQuery(document).height()>1000){
+    if(jQuery(document).height()>1400){
         jQuery(window).scroll(function() {
             var sticky = jQuery('header'),
             scroll = jQuery(window).scrollTop();
