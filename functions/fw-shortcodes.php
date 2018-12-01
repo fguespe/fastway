@@ -219,9 +219,9 @@ function quicklinks(){
 
 function fw_company_data($value, $link=false,$cant=0) {
     $value=trim($value);$link=trim($link);$pre="";
-    if($value=="whatsapp")$pre="https://api.whatsapp.com/send?phone=";
-    if($value=="phone")$pre="tel: ";
-    if($value=="mail" || $value==="email")$pre="mailto: ";
+    if($value=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?phone=";
+    if($value=="phone" && $link)$pre="tel:";
+    if($value==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$value);
     if(empty($value))return "";
     //error_log($value);
