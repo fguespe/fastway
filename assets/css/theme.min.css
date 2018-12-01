@@ -1,4 +1,37 @@
 @charset "UTF-8";
+.rating {
+  /*color: #3483fa;*/
+  color: #FFB400;
+  font-size: 14px;
+}
+.rating a {
+  color: #999 !important;
+  font-size: 12px;
+  line-height: 12px;
+  display: inline-block !important;
+  text-decoration: none;
+}
+.rating a .star-vacia,
+.rating .star-vacia {
+  color: #e5e5e5 !important;
+}
+.rating a .fa-star-half.star-vacia {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: "FlipH";
+  filter: FlipH;
+  margin-left: -14px;
+}
+.rating :hover a {
+  color: #444;
+}
+.rating a i {
+  color: #FFB400;
+  margin: 0 1px;
+}
+
 #menu-madre {
   position: relative;
   z-index: 3000;
@@ -1409,12 +1442,6 @@ body .wpb_content_element {
   /*pagination*/
   /*cart*/
   /*reivews*/
-  /* Base */
-  /* Empty Stars */
-  /* Filled Stars */
-  /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
-  /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
-  /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
 }
 .woocommerce .summary .button {
   padding: 20px;
@@ -1747,87 +1774,9 @@ body .wpb_content_element {
   border-radius: 4px;
   padding: 1em 1em 0;
 }
-@font-face {
-  .woocommerce {
-    font-family: star;
-    src: url(../fonts/star.eot);
-    src: url(../fonts/star.eot?#iefix) format("embedded-opentype"), url(../fonts/star.woff) format("woff"), url(../fonts/star.ttf) format("truetype"), url(../fonts/star.svg#star) format("svg");
-    font-weight: 400;
-    font-style: normal;
-  }
-}
-.woocommerce .star-rating {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  height: 1em;
-  line-height: 1;
-  font-size: 1em;
-  width: 5.4em;
-  font-family: star;
-}
 .woocommerce #review_form #respond textarea {
   box-sizing: border-box;
   width: 100%;
-}
-.woocommerce p.stars a {
-  position: relative;
-  height: 1em;
-  width: 1em;
-  text-indent: -999em;
-  display: inline-block;
-  text-decoration: none;
-}
-.woocommerce p.stars a:before {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-indent: 0;
-}
-.woocommerce p.stars.selected a.active ~ a:before, .woocommerce p.stars:hover a:before, .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
-  font-family: "Font Awesome 5 Pro" !important;
-}
-.woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active ~ a:before {
-  content: "" !important;
-}
-.woocommerce p.stars:hover a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
-  content: "" !important;
-}
-.woocommerce .star-rating:before {
-  content: "sssss";
-  color: #d3ced2;
-  float: left;
-  top: 0;
-  left: 0;
-  position: absolute;
-  font-family: star;
-}
-.woocommerce .star-rating span {
-  overflow: hidden;
-  float: left;
-  top: 0;
-  left: 0;
-  position: absolute;
-  padding-top: 1.5em;
-  font-family: star;
-  color: #52a0cd;
-}
-.woocommerce .star-rating span:before {
-  content: "SSSSS";
-  top: 0;
-  position: absolute;
-  left: 0;
-  font-family: star;
-  visibility: visible;
-  font-family: star;
-}
-.woocommerce .star-rating span, .woocommerce .stars a, .woocommerce .star-rating:before {
-  color: yellow !important;
-  font-size: 14px !important;
 }
 
 /*# sourceMappingURL=theme.min.css.map */

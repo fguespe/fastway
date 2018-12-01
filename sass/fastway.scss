@@ -1,4 +1,35 @@
-
+.rating{
+  /*color: #3483fa;*/
+  color:#FFB400;
+  font-size: 14px;
+  a {
+      color: #999 !important;
+      font-size: 12px;
+      line-height: 12px;
+      display: inline-block !important;
+      text-decoration: none;
+  }
+  a .star-vacia,
+  .star-vacia{
+      color:#e5e5e5 !important;
+  }
+  a .fa-star-half.star-vacia{
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      -ms-filter: "FlipH";
+      filter: FlipH;
+      margin-left: -14px;
+  }
+  :hover a{
+      color: #444;
+  }
+  a i{
+      color:#FFB400;
+      margin: 0 1px;
+  }
+}
 #menu-madre{
     position:relative;
     z-index: 3000;
