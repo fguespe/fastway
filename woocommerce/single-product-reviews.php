@@ -60,7 +60,7 @@ $average      = $product->get_average_rating();
 	<?}?>
 </div>
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
-
+		<hr/>
 		<div id="review_form_wrapper">
 			<div id="review_form">
 				<?php
@@ -88,7 +88,7 @@ $average      = $product->get_average_rating();
 					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'woocommerce' ) . '</label><select name="rating" id="rating" required>
+						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating" style="display:inline !important;">' . esc_html__( 'Your rating', 'woocommerce' ) . '</label> <select name="rating" id="rating" required>
 							<option value="">' . esc_html__( 'Rate&hellip;', 'woocommerce' ) . '</option>
 							<option value="5">' . esc_html__( 'Perfect', 'woocommerce' ) . '</option>
 							<option value="4">' . esc_html__( 'Good', 'woocommerce' ) . '</option>

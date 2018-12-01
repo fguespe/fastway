@@ -1842,6 +1842,14 @@ body .wpb_content_element {
   box-sizing: border-box;
   width: 100%;
 }
+.woocommerce #reply-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+.woocommerce p.stars {
+  display: inline;
+}
 .woocommerce p.stars a {
   position: relative;
   height: 1em;
