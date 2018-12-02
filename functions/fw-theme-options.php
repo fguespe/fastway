@@ -313,11 +313,14 @@ Kirki::add_field( 'theme_config_id', array(
 			'property'	=> 'font-size',
 			'units'=>'px'
 		),
+		
 		array(
-			'element' => '.desktop .fw-header-icon span',
+			'element' => '.desktop .fw-header-icon .header-cart-count-badge',
 			'property'	=> 'font-size',
-			'units'=>'px'
+			'value_pattern'   => 'calc($px - 6px)',
+			
 		),
+		
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
