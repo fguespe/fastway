@@ -52,6 +52,7 @@ function fw_extras_short( $atts ) {
             'tlink' =>  '',
             'sblock' =>  '',
             'iframe' =>  '',
+            'only_text' =>  '',
         ), $atts, 'fw_extras_short' );
 
     $font_size=16;
@@ -111,12 +112,9 @@ function fw_extras_short( $atts ) {
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span>
         </li>';
-    }else{
-        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
-        if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
-        $first.='</a>';
-    }
-    if(!empty($fwatts['sblock'])){
+    }else if($fwatts["only_text"]){
+        $first= '<a href="'.fw_company_data($type,true).'">'.fw_company_data($type).'</a>';
+    }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if(!empty($fwatts['iframe'])){
@@ -126,6 +124,10 @@ function fw_extras_short( $atts ) {
     }else if(!empty($link) && $fwatts["isli_i"] || $fwatts["isli"]){
         $first='<a target="_blank" href="'.$link.'">'.$first;
         $first.= "</a>";
+    }else{
+        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
+        if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
+        $first.='</a>';
     }
     return $first;
 }
