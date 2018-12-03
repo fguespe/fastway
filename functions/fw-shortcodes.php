@@ -141,7 +141,7 @@ function fw_info_modal( $atts ) {
             'content' => '',
         ), $atts, 'fw_info_modal' );
     $first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$fwatts['class'].'">'.$fwatts['label'].'</button>';
-    $first.= ( fw_modal_block($rand,'info-banco'));
+    $first.= ( fw_modal_block($rand,$fwatts['sblock']));
     return $first;
 }
 
