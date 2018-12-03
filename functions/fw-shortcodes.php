@@ -1,4 +1,19 @@
 <?php
+
+function wporg_shortcodes_init(){
+    //Icons
+    add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
+    add_shortcode('fw_extras_iconsnext', 'fw_extras_iconsnext', 10, 2);
+    add_shortcode("fwi","fwi",10,2);
+
+    add_shortcode("fw_info_modal","fw_info_modal",10,2);
+    
+}
+ 
+add_action('init', 'wporg_shortcodes_init');
+
+
+
 add_shortcode("fw_shortcode_metaslider","fw_shortcode_metaslider");
 function fw_shortcode_metaslider( $atts ) {
     $fwatts = shortcode_atts(
@@ -115,6 +130,20 @@ function fw_extras_short( $atts ) {
     return $first;
 }
 
+function fw_info_modal( $atts ) {
+    $rand=generateRandomString();
+        
+    $fwatts = shortcode_atts(
+        array(
+            'sblock' => '',
+            'label' => '',
+            'class' =>  '',
+            'content' => '',
+        ), $atts, 'fw_info_modal' );
+    $first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$fwatts['class'].'">'.$fwatts['label'].'</button>';
+    $first.= ( fw_modal_block($rand,'info-banco'));
+    return $first;
+}
 
 function fwi( $atts ) {
     $fwatts = shortcode_atts(
@@ -162,14 +191,6 @@ function fw_extras_iconsnext( $atts ) {
     
     return $first;
 }
-
-function wporg_shortcodes_init(){
-    add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
-    add_shortcode('fw_extras_iconsnext', 'fw_extras_iconsnext', 10, 2);
-    add_shortcode("fwi","fwi",10,2);
-}
- 
-add_action('init', 'wporg_shortcodes_init');
 
 
 function quicklinks3(){
