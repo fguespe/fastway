@@ -13,7 +13,7 @@
                     
                     $url=wp_get_attachment_url( $ids);
                     ?>
-                    <a href="<?php echo $url;?>" data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
+                    <a href="<?php echo $url;?>" data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; opacity: 1;">
                       <img itemprop="image" src="<?php echo $url;?>" width=400 height="auto">
                       <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                     </a>
@@ -170,7 +170,6 @@ DETALLE PRODUCTO
     right: 0;
     bottom: 0;
     padding-right: 0px;
-    z-index: 1000;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -283,7 +282,6 @@ text-align: center;
     right: 0;
     margin:auto;
     background-color: rgba(255,255,255,0.6);
-    z-index: 300;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px; 
@@ -536,7 +534,9 @@ padding:0px;
   display:block;
   width:60px;
 }
-
+#mainNextIL,#mainPrevIL{
+    z-index:999;
+}
 
 
 </style>
