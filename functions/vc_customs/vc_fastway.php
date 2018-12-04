@@ -7,7 +7,7 @@ vc_add_param("vc_row", array(
     "param_name" => "fw_responsive",
     "value" => array(
         "Select an option" => "",
-        "Only In Desktop" => "d-none d-md-block",
+        "Only In Desktop" => "d-none d-md-flex",
         "Only on Mobile" => "d-md-none",
     )
 ));
@@ -43,7 +43,7 @@ vc_add_param("vc_row_inner", array(
     "param_name" => "fw_responsive",
     "value" => array(
         "Select an option" => "",
-        "Only In Desktop" => "d-none d-md-block",
+        "Only In Desktop" => "d-none d-md-flex",
         "Only on Mobile" => "d-md-none",
     )
 ));
@@ -68,7 +68,7 @@ vc_add_param("vc_column", array(
     "param_name" => "fw_responsive",
     "value" => array(
         "Select an option" => "",
-        "Only In Desktop" => "d-none d-md-block",
+        "Only In Desktop" => "d-none d-md-flex",
         "Only on Mobile" => "d-md-none",
     )
 ));
@@ -105,7 +105,7 @@ vc_add_param("vc_column_inner", array(
     "param_name" => "fw_responsive",
     "value" => array(
         "Select an option" => "",
-        "Only In Desktop" => "d-none d-md-block",
+        "Only In Desktop" => "d-none d-md-flex",
         "Only on Mobile" => "d-md-none",
     )
 ));

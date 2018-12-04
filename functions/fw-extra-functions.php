@@ -91,7 +91,7 @@ function fw_mega_menu( $theme_location ) {
                 } else {
                      
                     $menu_list .= '<li class="nav-item">' ."\n";
-                    $menu_list .= '<a href=" class="nav-link"' . $menu_item->url . '">' . $menu_item->title . '</a>' ."\n";
+                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >' . $menu_item->title . '</a>' ."\n";
                 }
                  
             }
@@ -99,8 +99,9 @@ function fw_mega_menu( $theme_location ) {
             $menu_list .= '</li>' ."\n";
             
         }
-        $menu_list .= '</ul></div></nav><div class="submenu-overlay"></div>' ."\n";
-
+        $menu_list .= '</ul></div></nav>';
+        if(fw_theme_mod("mega_menu_overlay"))$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
+        
     } 
     echo $menu_list;
 }

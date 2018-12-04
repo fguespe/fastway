@@ -157,6 +157,12 @@ Kirki::add_section( 'section_css_sidebarcats', array(
     'panel'          => 'panel_css',
 
 ) );
+Kirki::add_section( 'section_data', array(
+    'title'          => __( 'Company Data', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 
 Kirki::add_section( 'section_extras', array(
     'title'          => __( 'Extras', 'fastway' ),
@@ -300,7 +306,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header_icons_size',
 	'label'       => __( 'Header Icons Size', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => 20,
+	'default'     => 24,
 	'choices'     => array(
 		'min'  => 10,
 		'max'  => 40,
@@ -313,7 +319,11 @@ Kirki::add_field( 'theme_config_id', array(
 			'property'	=> 'font-size',
 			'units'=>'px'
 		),
-		
+		array(
+			'element' => '.desktop i',
+			'property'	=> 'font-size',
+			'units'=>'px'
+		),
 		array(
 			'element' => '.desktop .fw-header-icon .header-cart-count-badge',
 			'property'	=> 'font-size',
@@ -362,6 +372,13 @@ Kirki::add_field( 'theme_config_id', array(
 			'units'=>'px'
 		),
 	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_quickmenu_links',
+	'label'    => __( 'Mobile Menu Order', 'fastway' ),
+	'default'=>'fb,youtube,whatsapp,ig,email,phone,address',
+	'section'     => 'section_mobile',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
@@ -461,6 +478,17 @@ Kirki::add_field( 'theme_config_id', array(
 		4 => __( '3 cols', 'fastway' ),
 		3 => __( '4 cols', 'fastway' ),
 	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'mega_menu_overlay',
+	'label'       => __( 'Overlay', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1164,6 +1192,18 @@ font-size:15px!important
 ) );
 
 /*TYPOGRAPHY*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'icons_style',
+	'label'       => __( 'Icons Style', 'fastway' ),
+	'section'     => 'section_typos',
+	'default'     => 'fa',
+	'choices'     => array(
+		'fa'	=> __( 'Regular', 'fastway' ),
+		'fas' 	=> __( 'Solid ', 'fastway' ),
+		'fal' 	=> __( 'Light ', 'fastway' ),
+	),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
@@ -1431,6 +1471,82 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+/*Company DATA*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyname',
+	'label'    => __( 'Company Name', 'fastway' ),
+    'description'     => __( '[fw_companyname] ', 'fastway' ),
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companywhatsapp',
+	'label'    => __( 'Company Whatsapp', 'fastway' ),
+    'description'     => __( '[fw_companywhatsapp] empezar con 549 [fw_extras_short type="whatsapp"]', 'fastway' ),
+                
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyphone',
+	'label'    => __( 'Company Phone', 'fastway' ),
+    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'fastway' ),            
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyaddress',
+	'label'    => __( 'Company Adress', 'fastway' ),
+    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'fastway' ),
+	'section'     => 'section_data',
+) );
+/*
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companygooglemaps',
+	'label'    => __( 'Google Maps Url', 'fastway' ),
+    'description'     => __( '[fw_companygooglemaps] ', 'fastway' ),
+	'section'     => 'section_data',
+) );
+*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyemail',
+	'label'    => __( 'Company Email', 'fastway' ),
+    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'fastway' ),
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyfb',
+	'label'    => __( 'Company Facebook Url', 'fastway' ),
+    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'fastway' ),
+	'section'     => 'section_data',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyig',
+	'label'    => __( 'Company Instagram Url', 'fastway' ),
+    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'fastway' ),            
+	'section'     => 'section_data',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companyyoutube',
+	'label'    => __( 'Company Youtube Url', 'fastway' ),
+   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companytwitter',
+	'label'    => __( 'Company Twitter Url', 'fastway' ),
+   	'description'     => __( '[fw_companytwitter] [fw_extras_short type="twitter"]', 'fastway' ),
+	'section'     => 'section_data',
+) );
 /*Extras*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1444,18 +1560,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'icons_style',
-	'label'       => __( 'Icons Style', 'fastway' ),
-	'section'     => 'section_extras',
-	'default'     => 'fa',
-	'choices'     => array(
-		'fa'	=> __( 'Regular', 'fastway' ),
-		'fas' 	=> __( 'Solid ', 'fastway' ),
-		'fal' 	=> __( 'Light ', 'fastway' ),
-	),
-) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1501,88 +1606,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_extras',
 	'default'  =>  urlforimages().'/assets/img/error.png',
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_quickmenu_links',
-	'label'    => __( 'Mobile Menu Order', 'fastway' ),
-	'default'=>'fb,youtube,whatsapp,ig,email,phone,address',
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyname',
-	'label'    => __( 'Company Name', 'fastway' ),
-    'description'     => __( '[fw_companyname] ', 'fastway' ),
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companywhatsapp',
-	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con 549 [fw_extras_short type="whatsapp"]', 'fastway' ),
-                
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyphone',
-	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'fastway' ),            
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyaddress',
-	'label'    => __( 'Company Adress', 'fastway' ),
-    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'fastway' ),
-	'section'     => 'section_extras',
-) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companygooglemaps',
-	'label'    => __( 'Google Maps Url', 'fastway' ),
-    'description'     => __( '[fw_companygooglemaps] ', 'fastway' ),
-	'section'     => 'section_extras',
-) );
-*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyemail',
-	'label'    => __( 'Company Email', 'fastway' ),
-    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'fastway' ),
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyfb',
-	'label'    => __( 'Company Facebook Url', 'fastway' ),
-    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'fastway' ),
-	'section'     => 'section_extras',
-) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyig',
-	'label'    => __( 'Company Instagram Url', 'fastway' ),
-    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'fastway' ),            
-	'section'     => 'section_extras',
-) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companyyoutube',
-	'label'    => __( 'Company Youtube Url', 'fastway' ),
-   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
-	'section'     => 'section_extras',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companytwitter',
-	'label'    => __( 'Company Twitter Url', 'fastway' ),
-   	'description'     => __( '[fw_companytwitter] [fw_extras_short type="twitter"]', 'fastway' ),
-	'section'     => 'section_extras',
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',

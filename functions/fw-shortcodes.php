@@ -33,7 +33,27 @@ function fw_shortcode_metaslider( $atts ) {
 function fastway_getWidgetHeaderText(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
+function fw_extras_iconsnext( $atts ) {
+    $fwatts = shortcode_atts(
+        array(
+            'type' => '',
+            'size' =>  '',
+            'icon_color' => '',
+        ), $atts, 'fw_extras_iconsnext' );
 
+    $font_size=16;
+    $icon_color="var(--main)";
+    if($fwatts['size']){
+        $font_size=$fwatts['size'];
+    }
+    if($fwatts['icon_color']){
+        $icon_color=$fwatts['icon_color'];
+    }
+    
+    
+    
+    return $first;
+}
 function fw_extras_short( $atts ) {
     $fwatts = shortcode_atts(
         array(
@@ -44,6 +64,7 @@ function fw_extras_short( $atts ) {
             'cant' =>  '',
             'isli' =>  '',
             'isli_i' =>  '',
+            'iconsnext' =>  '',
             'icon_color' =>  '',
             'icon' =>  '',
             'text_color' => '',
@@ -124,6 +145,17 @@ function fw_extras_short( $atts ) {
     }else if(!empty($link) && $fwatts["isli_i"] || $fwatts["isli"]){
         $first='<a target="_blank" href="'.$link.'">'.$first;
         $first.= "</a>";
+    }else if($fwatts['iconsnext']){
+        foreach (explode(",", $fwatts['type']) as $icon) {
+            if($icon==="fb")$icon="fab fa-facebook";
+            else if($icon==="ig")$icon="fab fa-instagram";
+            else if($icon==="youtube")$icon="fab fa-youtube";
+            else if($icon==="twitter")$icon="fab fa-twitter";
+            $link=fw_company_data($icon);
+            
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+            $first.='</a>';
+        }
     }else{
         $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
         if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
@@ -163,36 +195,7 @@ function fwi( $atts ) {
     if(strpos($type, " ") === false)$type=$icons_style." ".$type;
     return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.'px;"></i>';        
 }
-function fw_extras_iconsnext( $atts ) {
-    $fwatts = shortcode_atts(
-        array(
-            'type' => '',
-            'size' =>  '',
-            'icon_color' => '',
-        ), $atts, 'fw_extras_iconsnext' );
 
-    $font_size=16;
-    $icon_color="var(--main)";
-    if($fwatts['size']){
-        $font_size=$fwatts['size'];
-    }
-    if($fwatts['icon_color']){
-        $icon_color=$fwatts['icon_color'];
-    }
-    foreach (explode(",", $fwatts['type']) as $icon) {
-        if($icon==="fb")$icon="fab fa-facebook";
-        else if($icon==="ig")$icon="fab fa-instagram";
-        else if($icon==="youtube")$icon="fab fa-youtube";
-        else if($icon==="twitter")$icon="fab fa-twitter";
-        $link=fw_company_data($icon);
-        
-        $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
-        $first.='</a>';
-    }
-    
-    
-    return $first;
-}
 
 
 function quicklinks3(){
