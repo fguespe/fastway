@@ -197,6 +197,11 @@ function fw_child_manage_woocommerce_styles() {
 }
 
 
+add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
+function remove_product_description_heading() {
+ return '';
+}
+
 add_action( 'init', 'fw_otherwoo_options');
 function fw_otherwoo_options(){
     

@@ -1,4 +1,4 @@
-<!-- EL de bidcom -->
+<!-- EL de bidcom invertido-->
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">
@@ -200,26 +200,6 @@ DETALLE PRODUCTO
     padding: 2px 2px 0px 2px;
     border: 1px solid transparent;
 }
-
-/*break column*/
-#paginationIL {
-  display:flex !important;
-  flex-direction:column;
-  flex-wrap:wrap;
-  height:400px !important;
-  width:0;
-}
-
-/* demo show */
-#paginationIL  {
-  padding:0;
-  counter-reset:lis;
-}
-#paginationIL  li {
-  display:block;
-  width:100px;
-}
-
 
 /***** Pasador imagen detalle *****/
 
