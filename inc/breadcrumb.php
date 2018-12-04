@@ -210,8 +210,9 @@ if( !function_exists( 'fw_breadcrumbs' ) ) {
 		<div class="<?php echo esc_attr(implode(' ', $classes))?>">
 			<div class="container">
 				<?php 
-				if( isset( $datas['is_shop'] ) && absint( $datas['is_shop'] ) ){
-					woocommerce_breadcrumb();
+				
+				if( isset( $datas['is_shop'] ) && absint( $datas['is_shop'] )){
+					if(fw_theme_mod("bread-enabled"))woocommerce_breadcrumb();
 				} else fw_breadcrumbs();
 				?>
 			</div>

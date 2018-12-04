@@ -828,6 +828,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'shop-loop-product-style',
@@ -911,7 +912,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '1-1',
 	'choices'     => $theme_headers,
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'bread-enabled',
+	'label'       => __( 'Breadcrumb', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'prices-enabled',
