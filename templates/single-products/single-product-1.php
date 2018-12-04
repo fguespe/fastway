@@ -179,15 +179,15 @@ DETALLE PRODUCTO
     margin-bottom: 10px;
 }
 #paginationIL {
-    float: left !important;
-    width: 20% !important;
+    float: left ;
+    width: 20% ;
 }
 #paginationIL li {
     list-style: none;
     display: block;
     max-width: 20%;
     opacity: 0.4;
-    margin: 0 auto !important;
+    margin: 0 auto ;
 }
 #paginationIL li.activeSlide {
     opacity: 1;
@@ -210,15 +210,15 @@ DETALLE PRODUCTO
 
 @media (max-width: 992px){
 #paginationIL {
-display: none !important;
+display: none ;
 }
 .detalle-imagenListado {
- width: 100% !important;
+ width: 100% ;
 }
 }
 @media (max-width: 760px){
 .detalle-imagenListado {
-height: auto !important;
+height: auto ;
 }
 }
 
@@ -244,7 +244,7 @@ text-align: center;
 <?php if(count($fotos)==1){ ?>
     
     #paginationIL{
-        display: none !important;
+        display: none ;
     }
     .detalle-imagenListado{
         width:100%;
@@ -294,7 +294,7 @@ text-align: center;
     color: #444;
     font-size: 40px;
     text-align: center;
-    margin-top: 20px!important;
+    margin-top: 20px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -319,6 +319,196 @@ text-align: center;
 
 /*====================
 AdaptaciÃ³n Fancybox  */
+
+.fw_single_product .precio {
+    line-height: 45px;
+    font-weight: 300;
+font-size:45px ;
+display: block;
+    margin-bottom: 0px;
+text-align:center ;
+}
+.precioproducto{
+text-align:center;
+}
+
+
+.fw_single_product .precioproducto .tachado{
+		text-align:center;
+		font-size:18px;
+    margin-bottom:20px;
+}
+		
+.fw_single_product .precio-anterior {
+    color: #999;
+    font-size: 15px;
+    line-height: 13px;
+    padding: 5px 0 0 5px;
+		text-align:center ;
+}
+
+
+
+@media (min-width: 799px) {
+.woocommerce-product-gallery {
+  width:90% ;
+}
+}
+
+
+.fw_single_product .woocommerce-product-gallery a img{
+max-width:400px ;
+max-height: 400px ;
+margin:0 auto ;
+max-width: 100%;
+}
+
+
+
+
+
+.fw_single_product .btn-medios {
+		display:block ;
+ text-decoration: none;
+padding: 2% 0 0% 2%;
+border-top: 1px solid #dfdfdf ;
+margin-top:25px;
+}
+a.btn-medios:hover{
+        text-decoration: none;        
+ }
+.btn-medios h4{
+        font-size: 18px;
+        margin:0px;
+}
+.btn-medios .azul{
+        font-size: 14px;
+}
+    .short-description.fixed .cuadro-tarjeta, .short-description.fixed .btn-medios {
+        display: none;
+    }
+.txt-28 {
+    font-size: 28px;
+}
+
+.fw_single_product .summary .quantity{
+		display:none;
+}
+.woocommerce div.product form.cart .button{
+		float:none ;
+		display:block;
+		margin:0 auto ;
+
+}
+.fw_single_product .stock{
+		text-align:center;
+}
+.fw_single_product .single_add_to_cart_button{
+		background: #8c3482 ;
+color:white;
+		border:0px ;
+		font-weight:bold;
+}
+
+
+
+.compra-segura,
+.compra-segura a {
+margin-top:20px ;
+	font-size:13px ;
+}
+.fw_single_product .compra-segura a,
+.fw_single_product .compra-segura .fa{
+		color:orange;
+		font-size:15px ;
+		line-height:20px;
+}
+
+.fw_single_product .compra-segura i {
+ color: #999;
+font-size: 17px ;
+}
+.fw_single_product{
+    background: #fff none repeat scroll 0 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 1% 2% 2%;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+
+@media (min-width: 799px) {
+
+.fw_single_product .side-detalle{
+    width: 30% ;
+    float: right ;
+    position: relative ;
+}
+.fw_single_product .fw_gallery{
+   width: 67%;
+		padding-right: 1%;
+float:left;
+}
+.woocommerce-product-gallery{
+width:100% ;
+}
+		.fw_single_product .onsale{
+				display:none;
+		}
+.single-product div.product .woocommerce-product-gallery .flex-viewport {
+width: 80% ;
+float: right;
+}
+
+.single-product div.product .woocommerce-product-gallery li{
+width:100% ;
+padding-left:0px ;;
+padding-right:60%;
+}
+
+
+}
+.fw_single_product .product_title{
+		font-size:24px;
+		line-height:24px ;
+		font-weight:200 ;
+		margin-bottom:20px;
+}
+
+
+
+@media (max-width: 992px){
+#paginationIL {
+display: none ;
+}
+.detalle-imagenListado {
+ width: 100% ;
+}
+}
+@media (max-width: 760px){
+.detalle-imagenListado {
+height: auto ;
+}
+}
+
+#imagenListado {
+height: 400px;
+text-align: center;	
+}
+@media (max-width: 799px) {
+#imagenListado {
+height: 300px;
+text-align: center;
+		
+}
+}
+
+.content-area{
+		padding:0px;
+}
 
 
 </style>

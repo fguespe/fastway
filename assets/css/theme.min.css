@@ -1516,6 +1516,7 @@ body .wpb_content_element {
 }
 .woocommerce .related {
   clear: both;
+  margin-bottom: 50px !important;
 }
 .woocommerce .related h4.titulo {
   margin-bottom: 30px !important;
