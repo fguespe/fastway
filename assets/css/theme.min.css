@@ -1497,7 +1497,10 @@ body .wpb_content_element {
   /*review link*/
   /*fix imagenes*/
   /*fix margin en price*/
-  /*pagination*/
+  /*pagination
+   .products{
+       float:left;
+  }*/
   /*cart*/
   /*reivews*/
   /* Base */
@@ -1579,9 +1582,6 @@ body .wpb_content_element {
 }
 .woocommerce #order_review_heading {
   margin-top: 30px;
-}
-.woocommerce .products {
-  float: left;
 }
 .woocommerce nav.woocommerce-pagination {
   text-align: center;
