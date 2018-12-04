@@ -186,7 +186,6 @@ DETALLE PRODUCTO
 #paginationIL li {
     list-style: none;
     display: block;
-    max-width: 20%;
     opacity: 0.4;
     margin: 0 auto ;
 }
@@ -201,24 +200,6 @@ DETALLE PRODUCTO
     border: 1px solid transparent;
 }
 
-/*break column*/
-#paginationIL {
-  display:flex !important;
-  flex-direction:column;
-  flex-wrap:wrap;
-  height:400px !important;
-  width:0;
-}
-
-/* demo show */
-#paginationIL  {
-  padding:0;
-  counter-reset:lis;
-}
-#paginationIL  li {
-  display:block;
-  width:100px;
-}
 
 
 /***** Pasador imagen detalle *****/
@@ -237,6 +218,8 @@ display: none ;
  width: 100% ;
 }
 }
+
+
 @media (max-width: 760px){
 .detalle-imagenListado {
 height: auto ;
@@ -528,8 +511,32 @@ text-align: center;
 }
 
 .content-area{
-		padding:0px;
+padding:0px;
 }
+
+
+
+
+
+/*break column*/
+#paginationIL {
+  display:flex !important;
+  flex-direction:column;
+  flex-wrap:wrap;
+  height:400px !important;
+  width:0;
+}
+
+/* demo show */
+#paginationIL  {
+  padding:0;
+  counter-reset:lis;
+}
+#paginationIL  li {
+  display:block;
+  width:60px;
+}
+
 
 
 </style>
