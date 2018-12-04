@@ -133,23 +133,23 @@ jQuery( document ).ready(function() {
         jQuery(".fancybox").click(function(){
             jQuery(".fancybox-iframe").attr("scrolling", "auto");            
         });        
-    jQuery('#imagenListado').before('<ul id="navIL">').cycle({ 
-        fx:     'scrollLeft', 
-        speed:  'fast', 
-        timeout: 0, 
-        next:   '#mainNextIL', 
-        prev:   '#mainPrevIL',
-        pager:  '#paginationIL', 
-        // callback fn that creates a thumbnail to use as pager anchor 
-        pagerAnchorBuilder: function(idx, slide) {             
-            var img     = jQuery(slide).find('img').attr('src');
-            if(img == null){
-                return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
-            }else{
-                return '<li><a href="#"><img src="'+ img + '" width="50" /></a></li>';
-            }    
-        } 
-    });
+        jQuery('#imagenListado').before('<ul id="navIL">').cycle({ 
+            fx:     'scrollLeft', 
+            speed:  'fast', 
+            timeout: 0, 
+            next:   '#mainNextIL', 
+            prev:   '#mainPrevIL',
+            pager:  '#paginationIL', 
+            // callback fn that creates a thumbnail to use as pager anchor 
+            pagerAnchorBuilder: function(idx, slide) {             
+                var img     = jQuery(slide).find('img').attr('src');
+                if(img == null){
+                    return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
+                }else{
+                    return '<li><a href="#"><img src="'+ img + '" width="50" /></a></li>';
+                }    
+            } 
+        });
 
 });
 </script>
@@ -294,13 +294,13 @@ text-align: center;
     color: #444;
     font-size: 40px;
     text-align: center;
+    margin:auto;
     margin-top: 20px;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    margin:auto;
 }
 .detalle-imagenListado.active #mainPrevIL,
 .detalle-imagenListado.active #mainNextIL{
@@ -405,7 +405,7 @@ a.btn-medios:hover{
 }
 .fw_single_product .single_add_to_cart_button{
 		background: #8c3482 ;
-color:white;
+        color:white;
 		border:0px ;
 		font-weight:bold;
 }

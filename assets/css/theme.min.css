@@ -1568,7 +1568,7 @@ body .wpb_content_element {
 .woocommerce ul.products li.product .price {
   margin: 0px;
 }
-.woocommerce .woocommerce .wrapper .btn, .woocommerce .woocommerce .wrapper .btn, .woocommerce .summary .button {
+.woocommerce .woocommerce .wrapper .btn, .woocommerce .woocommerce .wrapper .btn {
   background-color: white;
   border: 1px solid var(--main);
   color: black;
