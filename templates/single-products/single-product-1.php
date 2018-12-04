@@ -12,7 +12,7 @@
                     
                     $url=wp_get_attachment_url( $ids);
                     ?>
-                    <a href="<?php echo $url;?>" data-fancybox="gallery" style="background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
+                    <a href="<?php echo $url;?>" data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
                       <img itemprop="image" src="<?php echo $url;?>" width=400 height="auto">
                       <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                     </a>
@@ -260,7 +260,6 @@ text-align: center;
 .detalle-imagenListado #imagenListado a{
     width: 100%;
     height: 100%;
-    background: transparent !important;
 }
 .detalle-imagenListado #imagenListado img{
     max-width: 100%;
