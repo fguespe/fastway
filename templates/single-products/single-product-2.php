@@ -1,4 +1,11 @@
-<!-- EL de bidcom invertido-->
+<?php
+		
+remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+do_action( 'woocommerce_after_single_product_summary' );
+?>
+
+
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">
@@ -13,7 +20,7 @@
                     
                     $url=wp_get_attachment_url( $ids);
                     ?>
-                    <a href="<?php echo $url;?>" data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1;">
+                    <a href="<?php echo $url;?>" data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; opacity: 1;">
                       <img itemprop="image" src="<?php echo $url;?>" width=400 height="auto">
                       <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                     </a>
@@ -62,12 +69,6 @@
 	</div>
 
 </div>
-<?php
-		
-remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-do_action( 'woocommerce_after_single_product_summary' );
-?>
 
 <div class="container related" style="max-width: 1200px;">
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
@@ -170,7 +171,6 @@ DETALLE PRODUCTO
     right: 0;
     bottom: 0;
     padding-right: 0px;
-    z-index: 1000;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -186,7 +186,6 @@ DETALLE PRODUCTO
 #paginationIL li {
     list-style: none;
     display: block;
-    max-width: 20%;
     opacity: 0.4;
     margin: 0 auto ;
 }
@@ -200,6 +199,8 @@ DETALLE PRODUCTO
     padding: 2px 2px 0px 2px;
     border: 1px solid transparent;
 }
+
+
 
 /***** Pasador imagen detalle *****/
 
@@ -217,6 +218,8 @@ display: none ;
  width: 100% ;
 }
 }
+
+
 @media (max-width: 760px){
 .detalle-imagenListado {
 height: auto ;
@@ -280,7 +283,6 @@ text-align: center;
     right: 0;
     margin:auto;
     background-color: rgba(255,255,255,0.6);
-    z-index: 300;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px; 
@@ -508,7 +510,33 @@ text-align: center;
 }
 
 .content-area{
-		padding:0px;
+padding:0px;
+}
+
+
+
+
+
+/*break column*/
+#paginationIL {
+  display:flex !important;
+  flex-direction:column;
+  flex-wrap:wrap;
+  height:400px !important;
+  width:0;
+}
+
+/* demo show */
+#paginationIL  {
+  padding:0;
+  counter-reset:lis;
+}
+#paginationIL  li {
+  display:block;
+  width:60px;
+}
+#mainNextIL,#mainPrevIL{
+    z-index:999;
 }
 
 
