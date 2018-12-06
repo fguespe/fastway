@@ -5,17 +5,17 @@ function fw_getfastars($average){
 	$vacia=false;
 	for($i=1;$i<=5;$i++){
         $clase="";
-		error_log($i." ".$average." ".floor($average));
+		//error_log($i." ".$average." ".floor($average));
 		if(!$vacia){
 			if($i==floor($average) && floor($average)!=$average){
                 $clase="-half ";$vacia=true;
-                error_log("entro?");
+                //error_log("entro?");
 			}
 			else if($i>=$average)$vacia=true;
 			else if($i<$average)$clase="";
 			//else $vacia=true;
 		}else{
-            error_log("entro?");
+            //error_log("entro?");
 			$clase=" star-vacia ";
 		}
 		$html.= '<i class="fa fa-star'.$clase.' star'.$i.'" aria-hidden="true"></i>';
