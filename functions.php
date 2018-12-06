@@ -36,6 +36,8 @@ function write_log ( $log )  {
     }
 }   
 endif;
+//remove_filter( 'the_content', 'wpautop' );
+//remove_filter( 'the_excerpt', 'wpautop' );
 
 add_filter( 'map_meta_cap', 'multisite_custom_css_map_meta_cap', 20, 2 );
 function multisite_custom_css_map_meta_cap( $caps, $cap ) {
