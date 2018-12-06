@@ -192,6 +192,10 @@
   margin-right: 10px;
 }
 
+.mobile .fw-header-icon .header-cart-count-badge::after {
+  display: none;
+}
+
 .mobile-menu-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;

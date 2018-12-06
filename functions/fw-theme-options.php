@@ -319,11 +319,7 @@ Kirki::add_field( 'theme_config_id', array(
 			'property'	=> 'font-size',
 			'units'=>'px'
 		),
-		array(
-			'element' => '.desktop i',
-			'property'	=> 'font-size',
-			'units'=>'px'
-		),
+	
 		array(
 			'element' => '.desktop .fw-header-icon .header-cart-count-badge',
 			'property'	=> 'font-size',
