@@ -7,7 +7,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 		wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
 			
 		wp_enqueue_script('jquery');
-		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array(),'', true );
+		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ), rand(1, 100), true);
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(),'',  true );
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		
