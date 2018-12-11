@@ -24,8 +24,8 @@ function fw_shortcode_metaslider( $atts ) {
     $desk=$fwatts["sl_desktop"];
     $mob=$fwatts["sl_mobile"];
     if(empty($mob))$mob=$desk;
-    echo '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
-    echo '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
+    return '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
+    return '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
 
 }
 
@@ -138,13 +138,6 @@ function fw_extras_short( $atts ) {
     }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
-    }else if(!empty($fwatts['iframe'])){
-        $rand=generateRandomString();
-        $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
-        $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
-    }else if(!empty($link) && $fwatts["isli_i"] || $fwatts["isli"]){
-        $first='<a target="_blank" href="'.$link.'">'.$first;
-        $first.= "</a>";
     }else if($fwatts['iconsnext']){
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
@@ -160,6 +153,15 @@ function fw_extras_short( $atts ) {
         $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
         if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
         $first.='</a>';
+    }
+
+    if(!empty($fwatts['iframe'] )){
+        $rand=generateRandomString();
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
+        $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
+    }else if(!empty($link) && ($fwatts["isli_i"] || $fwatts["isli"])){
+        $first='<a target="_blank" href="'.$link.'">'.$first;
+        $first.= "</a>";
     }
     return $first;
 }

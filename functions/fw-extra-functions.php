@@ -1,6 +1,6 @@
 <?php
 
-function fw_modal_block($rand,$id,$iframe=false,$size=""){
+function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
     if(!$iframe){
         $block=fw_StaticBlock::getSticBlockContent($id,true);
         $block=nl2br($block);
