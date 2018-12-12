@@ -146,7 +146,7 @@ function fw_extras_short( $atts ) {
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
-            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].' !important;"></i>';
             $first.='</a>';
         }
     }else{
