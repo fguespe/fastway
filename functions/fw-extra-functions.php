@@ -460,7 +460,8 @@ endif;
 
 function init_analytics() {
     
-    $analytics = '<script type="text/javascript">
+    $analytics = '<!-- Analyitics  Code -->
+    <script type="text/javascript">
 
                   var _gaq = _gaq || [];
                   _gaq.push([\'_setAccount\', \''.fw_theme_mod('analytics-id').'\']);
@@ -476,11 +477,62 @@ function init_analytics() {
 
     echo "\n" . $analytics;
 }
+function init_fb() {
+    
+    $analytics = "<!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '".fw_theme_mod('fbpixel_id')."');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height='1' width='1'
+    src='https://www.facebook.com/tr?id=".fw_theme_mod("fbpixel_id")."&ev=PageView
+    &noscript=1'/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->";
+    echo "\n" . $analytics;
+}
+function init_gtagmanager() {
+    
+    $analytics = "<!-- Global site tag (gtag.js) - Google Ads:  -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=AW-".fw_theme_mod("gtagmanager_id")."'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-".fw_theme_mod("gtagmanager_id")."');
+    </script>";
+    echo "\n" . $analytics;
+}
+function init_gtagcheckout() {
+    
+    $analytics = "<!-- Global site tag (gtag.js) - CHECKOUT -->
+    <script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-860462306/".fw_theme_mod("gtagcheckout_id")."',
+      'transaction_id': ''
+  });
+</script>";
+    echo "\n" . $analytics;
+}
 
 if (!is_admin()) {
   //load front-end options here.
   if(!current_user_can( 'manage_options' ) ) {
-    add_action('wp_footer', 'init_analytics', 35);
+    if(!empty(fw_theme_mod('analytics-id')))add_action('wp_head', 'init_analytics', 35);
+    if(!empty(fw_theme_mod('fbpixel_id')))add_action('wp_head', 'init_fb', 35);
+    if(!empty(fw_theme_mod('gtagmanager_id')))add_action('wp_head', 'init_gtagmanager', 35);
+    if(!empty(fw_theme_mod('gtagcheckout_id')))add_action('wp_head', 'init_gtagcheckout', 35);
+
   }
 }
 

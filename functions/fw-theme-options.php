@@ -1635,6 +1635,28 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'analytics-id',
 	'label'    => __( 'Analyitics ID', 'fastway' ),       
 	'section'     => 'section_extras',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fbpixel_id',
+	'label'    => __( 'Facebook Pixel ID', 'fastway' ),       
+	'section'     => 'section_extras',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'gtagmanager_id',
+	'label'    => __( 'Google Tag Manager (Global)', 'fastway' ),       
+	'section'     => 'section_extras',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'gtagcheckout_id',
+	'label'    => __( ' Tag Manager Conversion ID (Checkout)', 'fastway' ),       
+	'section'     => 'section_extras',
+	'description' =>'refresh cache!'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
