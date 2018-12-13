@@ -85,7 +85,12 @@ function fw_extras_short( $atts ) {
         $value=fw_company_data("address",false,$cant);
         $link=fw_company_data("address",true,$cant);
         if(empty($link))fw_company_data("googlemaps",true,$cant);
-    }if($fwatts['text'] || empty($value)){
+    }else{
+        $icon=$icons_style.' '.$type;
+        $type='custom';
+    }
+    
+    if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
     }
     if($fwatts['link']){
