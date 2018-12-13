@@ -1,5 +1,31 @@
 <?php
 
+
+/*
+function tmu_custom_fonts( $standard_fonts ){
+ 
+    $my_custom_fonts = array();
+    
+    $my_custom_fonts['kitten'] = array(
+       'label' => 'kitten',
+       'variants' => array('regular'),
+       'stack' => 'kitten, sans-serif',
+    );
+    
+    $my_custom_fonts['font2'] = array(
+       'label' => 'Another Font',
+       'variants' => array('regular','italic','700','700italic'),
+       'stack' => 'anotherfont, sans-serif',
+    );
+    
+    return array_merge_recursive( $my_custom_fonts, $standard_fonts );
+    
+}
+add_filter( 'kirki/fonts/standard_fonts', 'tmu_custom_fonts', 20 );
+
+   */
+
+
 function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
     if(!$iframe){
         $block=fw_StaticBlock::getSticBlockContent($id,true);
