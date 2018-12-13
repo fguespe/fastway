@@ -539,6 +539,8 @@ function init_gtagmanager() {
     </script>";
     echo "\n" . $analytics;
 }
+if(!empty(fw_theme_mod('gtagcheckout_id')))add_action( 'woocommerce_thankyou', 'init_gtagcheckout' );
+ 
 function init_gtagcheckout() {
     
     $analytics = "<!-- Global site tag (gtag.js) - CHECKOUT -->
@@ -557,8 +559,7 @@ if (!is_admin()) {
     if(!empty(fw_theme_mod('analytics-id')))add_action('wp_head', 'init_analytics', 35);
     if(!empty(fw_theme_mod('fbpixel_id')))add_action('wp_head', 'init_fb', 35);
     if(!empty(fw_theme_mod('gtagmanager_id')))add_action('wp_head', 'init_gtagmanager', 35);
-    if(!empty(fw_theme_mod('gtagcheckout_id')))add_action('wp_head', 'init_gtagcheckout', 35);
-
+    
   }
 }
 
