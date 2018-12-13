@@ -83,7 +83,8 @@ function fw_extras_short( $atts ) {
         $icon=$icons_style." fa-map-marker-alt";
         $link=fw_company_data("googlemaps",true,$cant);
         $value=fw_company_data("address",false,$cant);
-    
+        $link=fw_company_data("address",false,$cant);
+        if(empty($link))fw_company_data("googlemaps",true,$cant);
     }if($fwatts['text'] || empty($value)){
        $value=$fwatts['text'];
     }
