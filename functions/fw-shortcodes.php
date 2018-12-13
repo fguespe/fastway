@@ -1,17 +1,9 @@
 <?php
 
-function wporg_shortcodes_init(){
-    //Icons
-    add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
-    add_shortcode('fw_extras_iconsnext', 'fw_extras_iconsnext', 10, 2);
-    add_shortcode("fwi","fwi",10,2);
+add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
+add_shortcode("fwi","fwi",10,2);
 
-    add_shortcode("fw_info_modal","fw_info_modal",10,2);
-    
-}
- 
-add_action('init', 'wporg_shortcodes_init');
-
+add_shortcode("fw_info_modal","fw_info_modal",10,2);
 
 
 add_shortcode("fw_shortcode_metaslider","fw_shortcode_metaslider");
@@ -33,27 +25,7 @@ function fw_shortcode_metaslider( $atts ) {
 function fastway_getWidgetHeaderText(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
-function fw_extras_iconsnext( $atts ) {
-    $fwatts = shortcode_atts(
-        array(
-            'type' => '',
-            'size' =>  '',
-            'icon_color' => '',
-        ), $atts, 'fw_extras_iconsnext' );
 
-    $font_size=16;
-    $icon_color="var(--main)";
-    if($fwatts['size']){
-        $font_size=$fwatts['size'];
-    }
-    if($fwatts['icon_color']){
-        $icon_color=$fwatts['icon_color'];
-    }
-    
-    
-    
-    return $first;
-}
 function fw_extras_short( $atts ) {
     $fwatts = shortcode_atts(
         array(
@@ -62,17 +34,16 @@ function fw_extras_short( $atts ) {
             'size' =>  '',
             'link' =>  '',
             'cant' =>  '',
+            'icon_color' =>  '',
+            'text_color' => '',
+            'stext' =>  '',
+            'sblock' =>  '',
+            'iframe' =>  '',
+            'format' =>  '',
+            //Depreceated
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
-            'icon_color' =>  '',
-            'icon' =>  '',
-            'text_color' => '',
-            'stext' =>  '',
-            'blink' =>  '',
-            'tlink' =>  '',
-            'sblock' =>  '',
-            'iframe' =>  '',
             'only_text' =>  '',
         ), $atts, 'fw_extras_short' );
 
@@ -122,23 +93,28 @@ function fw_extras_short( $atts ) {
     if($fwatts['size']){
         $font_size=$fwatts['size'];
     }
-   
-    if($fwatts["isli"]){
+    if($fwatts["format"])$format=$fwatts["format"];
+    else if($fwatts["isli"])$format="isli";
+    else if($fwatts["isli_i"])$format="isli_i";
+    else if($fwatts["only_text"])$format="only_text";
+    else if($fwatts["iconsnext"])$format="iconsnext";
+    error_log($type);
+    if($format=="isli"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span>
         </li>';
-    }else if($fwatts["isli_i"]){
+    }else if($format=="isli_i"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
           <span class="icon"><i class="'.$icon.'"></i></span> 
           <span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span>
         </li>';
-    }else if($fwatts["only_text"]){
+    }else if($format=="only_text"){
         $first= '<a href="'.fw_company_data($type,true).'">'.fw_company_data($type).'</a>';
     }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
-    }else if($fwatts['iconsnext']){
+    }else if($format=='iconsnext'){
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
@@ -159,7 +135,7 @@ function fw_extras_short( $atts ) {
         $rand=generateRandomString();
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
-    }else if(!empty($link) && ($fwatts["isli_i"] || $fwatts["isli"])){
+    }else if(!empty($link) && ($format=="isli_i" || $format=="isli")){
         $first='<a target="_blank" href="'.$link.'">'.$first;
         $first.= "</a>";
     }

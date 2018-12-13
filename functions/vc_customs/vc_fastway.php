@@ -158,6 +158,101 @@ function vc_statick_block() {
     ) );
 
 }
+
+add_action( 'vc_before_init', 'vc_fw_shorts' );//Prds de categoria
+function vc_fw_shorts() {
+
+    $static_block_args = fastway_get_stblock();
+    $static_block_args=array_merge(array(
+        "Select an option" => "",),$static_block_args);
+
+    vc_map( array(
+            "name" => __("Icon Shorts", 'fastway'),
+            'base' => 'fw_extras_short',
+            'description' => __('Icon Shorts', 'fastway'), 
+            'category' => __('Fastway', 'fastway'),   "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                "params" => array(
+                array(
+                  "type" => 'textfield',
+                  "heading"     => __("Type"),
+                  "param_name"  => "type",
+                  "admin_label" => true,
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Text"),
+                    "param_name"  => "text",
+                    "admin_label" => true,
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("size"),
+                    "param_name"  => "size",
+                    "admin_label" => true,
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("link"),
+                    "param_name"  => "link",
+                    "admin_label" => true,
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("cant"),
+                    "param_name"  => "cant",
+                    "admin_label" => true,
+                ),
+
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Type"),
+                    "param_name"  => "format",
+                    "admin_label" => true,
+                    "value" => array(
+                        "Select an option" => "",
+                        "isli" => "isli",
+                        "isli_i" => "isli_i",
+                        "iconsnext" => "iconsnext",
+                        "only_text" => "only_text",
+                    )
+                ),
+                array(
+                    "type" => "colorpicker",
+                    "class" => "",
+                    "heading" => __( "Icon color", "fastway" ),
+                    "param_name" => "icon_color",
+                    "value" => '#000', //Default Red color
+                    "description" => __( "Choose text color", "fastway" )
+                ),
+                array(
+                    "type" => "colorpicker",
+                    "class" => "",
+                    "heading" => __( "Text color", "fastway" ),
+                    "param_name" => "text_color",
+                    "value" => '#000', //Default Red color
+                    "description" => __( "Choose text color", "fastway" )
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("iframe"),
+                    "param_name"  => "iframe",
+                    "admin_label" => true,
+                ),
+                array(
+                    "type"        => "dropdown",
+                    "heading"     => __("Select Block"),
+                    "param_name"  => "sblock",
+                    "value"       => $static_block_args,
+                    "std"         => "",
+                  ),
+                  
+                
+                
+            )
+    ) );
+
+}
 add_action( 'vc_before_init', 'vc_meta_slider' );//Prds de categoria
 function vc_meta_slider() {
 
