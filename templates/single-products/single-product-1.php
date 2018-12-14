@@ -255,21 +255,7 @@ text-align: center;
     height: 400px;
     width: 80%
 }
-<?php if(count($fotos)==1){ ?>
-    
-    #paginationIL{
-        display: none ;
-    }
-    .detalle-imagenListado{
-        width:100%;
-    }
 
-    .detalle-imagenListado.active #mainPrevIL,
-    .detalle-imagenListado.active #mainNextIL{
-        display: none;
-    }
- 
-<?php } ?>
 
 .detalle-imagenListado #imagenListado a{
     width: 100%;
@@ -513,9 +499,10 @@ text-align: center;
 }
 @media (max-width: 799px) {
 #imagenListado {
-height: 300px;
+height: 400px;
+width: 100%;
 text-align: center;
-		
+margin-bottom:20px;
 }
 }
 
@@ -535,7 +522,11 @@ padding:0px;
   height:400px !important;
   width:0;
 }
-
+@media (max-width: 799px) {
+#paginationIL {
+  display:none !important;
+}  
+}
 /* demo show */
 #paginationIL  {
   padding:0;
