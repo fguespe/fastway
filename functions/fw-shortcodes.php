@@ -54,7 +54,7 @@ function fw_extras_short( $atts ) {
     $value="";
     $cant=0;
     if($fwatts['cant'])$cant=intval($fwatts['cant']);
-
+        
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
         $link=fw_company_data($type,true,$cant);
@@ -63,6 +63,7 @@ function fw_extras_short( $atts ) {
         $icon="fab fa-whatsapp";
         $link=fw_company_data($type,true,$cant);
         $value=fw_company_data($type,false,$cant);
+        $icon_color="#0CBC47";
     }else if($type==="email"){
         $icon=$icons_style." fa-envelope";
         $link=fw_company_data($type,true,$cant);
@@ -71,40 +72,41 @@ function fw_extras_short( $atts ) {
         $icon="fab fa-facebook";
         $link=fw_company_data($type,true,$cant);
         $value="Ir al Facebook";
+        $icon_color="#3A5999";
     }else if($type==="ig"){
         $icon="fab fa-instagram";
         $link=fw_company_data($type,true,$cant);
         $value="Ir al Instagram";
+        $icon_color="#9A3CC3";
     }else if($type==="youtube"){
         $icon=$icons_style." fa-youtube-square";
         $link=fw_company_data($type,true,$cant);
         $value="Ir a Youtube";
+        $icon_color="#FF0400";
     }else if($type==="address"){
         $icon=$icons_style." fa-map-marker-alt";
         $link=fw_company_data("googlemaps",true,$cant);
         $value=fw_company_data("address",false,$cant);
         $link=fw_company_data("address",true,$cant);
         if(empty($link))fw_company_data("googlemaps",true,$cant);
+        $icon_color="black";
     }else{
         $icon=$icons_style.' '.$type;
         $type='custom';
     }
-    
-    if($fwatts['text'] || empty($value)){
-       $value=$fwatts['text'];
-    }
-    if($fwatts['link']){
-       $link=$fwatts['link'];
-    }
-    if($fwatts['size']){
-        $font_size=$fwatts['size'];
-    }
+    if(!empty($fwatts['icon_color']))$icon_color=$fwatts['icon_color'];
+    error_log($type.' '.$icon_color);
+    if($fwatts['text'] || empty($value))$value=$fwatts['text'];
+    if($fwatts['link'])$link=$fwatts['link'];
+    if($fwatts['size'])$font_size=$fwatts['size'];
+
+    //format
     if($fwatts["format"])$format=$fwatts["format"];
     else if($fwatts["isli"])$format="isli";
     else if($fwatts["isli_i"])$format="isli_i";
     else if($fwatts["only_text"])$format="only_text";
     else if($fwatts["iconsnext"])$format="iconsnext";
-    error_log($type);
+    //error_log($type);
     if($format=="isli"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
           <span class="icon"><i class="'.$icon.'"></i></span> 
@@ -128,11 +130,11 @@ function fw_extras_short( $atts ) {
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
-            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].' !important;"></i>';
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
             $first.='</a>';
         }
     }else{
-        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$fwatts['icon_color'].'"!important;></i>';
+        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.'"!important;></i>';
         if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
         $first.='</a>';
     }

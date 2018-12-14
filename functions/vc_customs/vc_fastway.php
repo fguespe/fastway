@@ -222,7 +222,7 @@ function vc_fw_shorts() {
                     "class" => "",
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
-                    "value" => '#000', //Default Red color
+                    "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
@@ -230,7 +230,7 @@ function vc_fw_shorts() {
                     "class" => "",
                     "heading" => __( "Text color", "fastway" ),
                     "param_name" => "text_color",
-                    "value" => '#000', //Default Red color
+                    "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
