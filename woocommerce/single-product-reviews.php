@@ -32,6 +32,7 @@ $average      = $product->get_average_rating();
 ?>
 <div id="reviews" class="woocommerce-Reviews">
 <div class="opiniones-visibles">
+<hr/>
 <h5>Opiniones sobre el producto</h5>
 <div class="row promedio-calificaciones">
 	<div class="col-4 col-lg-2 align-self-center rating-number"><?=$average?></div>
