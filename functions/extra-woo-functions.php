@@ -1,8 +1,9 @@
 <?php
 function fw_getfastars($average){
     if(!is_numeric($average))return "";
-    $html='<a href="" data-toggle="modal" data-target="#opiniones" >';
-	$vacia=false;
+    $html='<a >';
+    $vacia=false;
+    if($average==0)$vacia=true;
 	for($i=1;$i<=5;$i++){
         $clase="";
 		//error_log($i." ".$average." ".floor($average));

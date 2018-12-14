@@ -29,10 +29,17 @@ if ( 'no' === get_option( 'woocommerce_enable_review_rating' ) ) {
 $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average      = $product->get_average_rating();
-if ( $rating_count > 0 ) : ?>
+
+if ( $rating_count > 0 ) { ?>
 	<div class="rating">
-		<?echo fw_getfastars($average);?>
-		<a href="" data-toggle="modal" data-target="#opiniones"> (Ver <span itemprop="reviewCount"><?php echo esc_html( $review_count ); ?> </span> opiniones)</a>
+		<?php echo fw_getfastars($average);?>
+		<a href="#reviews"> (Ver <span itemprop="reviewCount"><?php echo esc_html( $review_count ); ?> </span> opiniones)</a>
+	</div>
+<?php }else{ ?>
+	<div class="rating">
+		<?php echo fw_getfastars(0);?>
+		<a href="#reviews"> Dejar un comentario </a>
 	</div>
 
-<?php endif; ?>
+<?php } ?>
+

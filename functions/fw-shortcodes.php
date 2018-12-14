@@ -95,7 +95,7 @@ function fw_extras_short( $atts ) {
         $type='custom';
     }
     if(!empty($fwatts['icon_color']))$icon_color=$fwatts['icon_color'];
-    error_log($type.' '.$icon_color);
+    //error_log($type.' '.$icon_color);
     if($fwatts['text'] || empty($value))$value=$fwatts['text'];
     if($fwatts['link'])$link=$fwatts['link'];
     if($fwatts['size'])$font_size=$fwatts['size'];

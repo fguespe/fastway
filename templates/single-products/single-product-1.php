@@ -1,4 +1,13 @@
 <!-- EL de bidcom -->
+<?
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['reviews'] );  // Removes the reviews tab
+    return $tabs;
+}
+add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
+
+?>
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">

@@ -37,15 +37,16 @@ $average      = $product->get_average_rating();
 	<div class="col-4 col-lg-2 align-self-center rating-number"><?=$average?></div>
 	<div class="col-8 col-lg-4 align-self-center rating">							
 		<?echo fw_getfastars($average);?>
-		<br><a href="#">En promedio de <?=$review_count?> opiniones</a>
+		<br><a>En promedio de <?=$review_count?> opiniones</a>
 	</div>
 </div><?
 	$args = array (
 		'post_type' => 'product', 
-		'post_ID' =>$product->id,  // Product Id
+		'post_id' =>$product->id,  // Product Id
 		'status' => "approve", // Status you can also use 'hold', 'spam', 'trash', 
     );
 	$comments = get_comments($args);
+
 	foreach($comments as $comm){
 		$cant=get_comment_meta( $comm->comment_ID, 'rating', true );
 		?>
@@ -53,7 +54,7 @@ $average      = $product->get_average_rating();
 			<div class="rating">
 				<h4 style="display:inline-block !important;" ><span>(<?=$comm->comment_author?>)   </span></h4>
 				<?echo fw_getfastars($cant);?>
-				<span>01-09-2018</span>
+				<span><? echo explode(" ",$comm->comment_date)[0];?></span>
 			</div>							
 			<p><?=$comm->comment_content;?></p>
 		</div>
