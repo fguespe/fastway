@@ -69,7 +69,7 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
             </a>
             <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 prueba">
 	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-gift"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
 	                	<h4 class="">Beneficio incluído</h4>
 	                    <span class="">10 días de prueba</span>
@@ -78,7 +78,7 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
             </a>
             <a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile pagos">
 	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-gift"></i></div>
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
 	                	<h4 class="">Ver cuotas y medios de pago</h4>
 	                    <span class="">(Chequear promociones vigentes)</span>
