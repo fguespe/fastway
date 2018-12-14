@@ -58,16 +58,33 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 
 
          ?>
-         <div class="compra-segura"><i class="fa fa-shield"></i> <a>Compra segura</a>, recibi el producto que esperas o te devolvemos el dinero.</div>
-		<a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile t2">
+            <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2">
 	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
+	                <div class="col-2 text-left v-top txt-28"><i class="far fa-shield-alt"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
-	                	<h4 class="verde">Pagá en cuotas sin interes</h4>
-	                    <span class="azul">(Chequear promociones vigentes)</span>
+	                	<h4 class="">Compra Segura</h4>
+	                    <span class="">Garantía de Fabrica</span>
+	                </div>
+                </div>
+            </a>
+            <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2">
+	            <div class="row">
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
+	                <div class="col-10 text-left calcular-costo-envio">
+	                	<h4 class="">Beneficio incluído</h4>
+	                    <span class="">10 días de prueba</span>
+	                </div>
+                </div>
+            </a>
+            <a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile t2">
+	            <div class="row">
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-gift"></i></div>
+	                <div class="col-10 text-left calcular-costo-envio">
+	                	<h4 class="">Ver cuotas y medios de pago</h4>
+	                    <span class="">(Chequear promociones vigentes)</span>
 	                </div>
 	            </div>
-	       </a>
+	        </a>
 
                     <?php  global $product; echo getFinanciacion($product);?>
 	</div>
