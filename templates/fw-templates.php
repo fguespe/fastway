@@ -98,7 +98,7 @@ function loadimgscontent($phpprefix){
             }
             $imgg.=".png";
 
-            error_log($imgg);
+            //error_log($imgg);
             $miarray[$alt] = array(
                 'alt' => $alt,
                 'img' => $imgg
