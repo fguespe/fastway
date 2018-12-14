@@ -8,6 +8,7 @@ function woo_remove_product_tabs( $tabs ) {
 add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
 
 ?>
+
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">
@@ -26,14 +27,15 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
                       <img itemprop="image" src="<?php echo $url;?>" width=400 height="auto">
                       <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                     </a>
-                <? } ?>
-               <!--<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" style="width: 100%; background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 1;">
-                  <span hidden="true" itemprop="name">Scooter Balance Gadnic 10" | Bluetooth</span>
-                  <span hidden="true" itemprop="thumbnailUrl">https://www.youtube.com/embed/JJJDgPSzboo?rel=0 </span>
-                  <span hidden="true" itemprop="description">Video del: SCOOTER6XXX</span>
-                  <span hidden="true" itemprop="uploadDate">2018-01-02 16:59:09</span>
-                  <iframe width="100%" height="400" src="https://www.youtube.com/embed/JJJDgPSzboo?rel=0" frameborder="0" allowfullscreen=""></iframe>
-               </div>-->
+                <?}
+                foreach(fw_get_yt_videos() as $coin){
+                    $url = $coin[1]; ?>
+                   <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" style="width: 100%; background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 1;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/<?=$url?>?rel=0" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+
+               <? }?>
+               
             </div>
             <div id="mainNextIL" class="swiper-next"><i class="fa fa-angle-right"></i></div>
             <div id="mainPrevIL" class="swiper-prev"><i class="fa fa-angle-left"></i></div>

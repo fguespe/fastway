@@ -1681,6 +1681,9 @@ body .wpb_content_element {
     clear: none !important;
   }
 }
+.woocommerce .woocommerce-tabs {
+  margin-top: 32px;
+}
 .woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
   background: white;
   border: 0px;
@@ -1919,6 +1922,21 @@ body .wpb_content_element {
   color: gold !important;
   font-size: 14px !important;
   font-family: "Font Awesome 5 Pro" !important;
+}
+
+.fw_container_video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.fw_video_frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=theme.min.css.map */

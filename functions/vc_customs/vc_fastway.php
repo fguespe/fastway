@@ -211,10 +211,10 @@ function vc_fw_shorts() {
                     "admin_label" => true,
                     "value" => array(
                         "Select an option" => "",
-                        "isli" => "isli",
-                        "isli_i" => "isli_i",
-                        "iconsnext" => "iconsnext",
-                        "only_text" => "only_text",
+                        "isli" => "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)",
+                        "isli_i" => "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)",
+                        "iconsnext" => "Solo Icono (Separar con ,)",
+                        "only_text" => "Solo texto",
                     )
                 ),
                 array(
