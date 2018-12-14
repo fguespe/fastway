@@ -1,6 +1,9 @@
 <?php
 
 
+
+
+
 function getFinanciacion($product){
   $precio=$product->price;
   return <<<HTML

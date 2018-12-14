@@ -1,20 +1,31 @@
 <?php
-add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
-function fw_video_tab( $tabs ) {
-  global $product;
-  $json = get_post_meta($product->id, '_nth_wootabs', true );
 
-  if (strpos($json, 'youtube') || strpos($json, '.mp4') ){
+//video
+// Display Fields
+add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
+function woocommerce_product_custom_fields()
+{
+    global $woocommerce, $post;
+    echo '<div class="product_custom_field">';
+    //Custom Product  Textarea
+    woocommerce_wp_textarea_input(
+        array(
+            'id' => '_custom_product_textarea',
+            'placeholder' => 'Uno por linea',
+            'label' => __('Videos', 'woocommerce')
+        )
+    );
+    echo '</div>';
 
-        $tabs['_tab_video'] = array(
-          'title'   => __( 'Videos', 'woocommerce' ),
-          'priority'  => 50,
-          'callback'  => 'fwvideo_tab'
-        );
+}
+// Save Fields
+add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_fields_save');
+function woocommerce_product_custom_fields_save($post_id){
+// Custom Product Textarea Field
+    $woocommerce_custom_procut_textarea = $_POST['_custom_product_textarea'];
+    if (!empty($woocommerce_custom_procut_textarea))
+        update_post_meta($post_id, '_custom_product_textarea', esc_html($woocommerce_custom_procut_textarea));
 
-  }
-  
-  return $tabs; 
 }
 
 
