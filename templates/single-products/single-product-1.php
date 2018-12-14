@@ -483,10 +483,10 @@ padding-right:60%;
 
 }
 .fw_single_product .product_title{
-		font-size:24px;
+		font-size:22px ;
 		line-height:24px ;
-		font-weight:200 ;
-		margin-bottom:20px;
+		font-weight:400 ;
+		margin-bottom:10px ;
 }
 
 
