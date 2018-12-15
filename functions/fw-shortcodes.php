@@ -16,7 +16,6 @@ function fw_shortcode_metaslider( $atts ) {
     $desk=$fwatts["sl_desktop"];
     $mob=$fwatts["sl_mobile"];
     if(empty($mob))$mob=$desk;
-    error_log('sd');
     echo '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
     echo '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
 

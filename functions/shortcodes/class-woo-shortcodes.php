@@ -393,6 +393,7 @@ class fw_Woo_Shortcodes {
 	
 	
 	public static function product_cats( $atts ){
+		
 		$atts = shortcode_atts( array(
 			'title'			=> '',
 			'cats' 			=> '',
@@ -404,17 +405,19 @@ class fw_Woo_Shortcodes {
 		if( strlen( trim( $atts['cats'] ) ) == 0 ) return;
 		
 		$cats = explode( ',', $atts['cats'] );
-		
+		//error_log(print_r($cats,true));
 		$args = array(
 			'slug' => $cats,
-			'orderby'	=> 'name',
+			'orderby'	=> 'slug',
 			'order'		=> 'ASC',
 			'hide_empty'	=> false,
 		);
 		
 		ob_start();
-		
-		$atts['terms'] = get_terms('product_cat', $args);
+		$cates=array();
+		foreach($cats as $cat){
+			$atts['terms'][]=  get_term_by('slug' , $cat,'product_cat');
+		}
 
 		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel2.php', $atts,$atts['terms']  );
 		
