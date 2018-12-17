@@ -221,7 +221,7 @@ function vc_fw_shorts() {
                         "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"isli_i",
                         "Solo Icono (Separar con ,)"=>"iconsnext",
                         "Solo texto" => "only_text"
-                    )
+                    ),
                 ),
                 array(
                     "type" => "colorpicker",

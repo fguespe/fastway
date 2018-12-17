@@ -1582,6 +1582,16 @@ body .wpb_content_element {
        padding: 20px;
        font-size: 20px;
     }
+    /* coment button*/
+  #respond input{
+    background:var(--main) !important;
+    color:white;
+    border:0px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    
+  }
     .related {
          clear: both;
          margin-bottom: 50px !important;
