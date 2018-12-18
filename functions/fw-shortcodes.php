@@ -254,7 +254,7 @@ function fw_company_data($value, $link=false,$cant=0) {
 
 function fw_whatsappfooter(){
     if(!fw_theme_mod('whats-widget'))return;
-    error_log('sd');
+ 
     echo '<a href="https://api.whatsapp.com/send?phone='.fw_company_data('whatsapp',true).'&amp;text=Hola, tengo una consulta" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp"></i>
             <span class="t5">Estamos<br>On-Line!</span>
