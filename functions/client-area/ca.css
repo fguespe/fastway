@@ -309,7 +309,7 @@ display:none;
 }
 
 /*PESTAÑAS*/
-.nth_custom_tab_options,.wcwl_waitlist_tab,.advanced_options{
+.nth_custom_tab_options,.wcwl_waitlist_tab{
 	display:none !important;
 }
 
