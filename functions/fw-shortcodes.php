@@ -40,11 +40,11 @@ function fw_extras_short( $atts ) {
             'sblock' =>  '',
             'iframe' =>  '',
             'format' =>  '',
+            'only_text' =>  '',
             //Depreceated
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
-            'only_text' =>  '',
         ), $atts, 'fw_extras_short' );
 
     $font_size=16;
@@ -99,26 +99,22 @@ function fw_extras_short( $atts ) {
     if($fwatts['text'] || empty($value))$value=$fwatts['text'];
     if($fwatts['link'])$link=$fwatts['link'];
     if($fwatts['size'])$font_size=$fwatts['size'];
-
+    $only_text=false;
+    if(($fwatts["only_text"]))$only_text=true;
     //format
     if($fwatts["format"])$format=$fwatts["format"];
     else if($fwatts["isli"])$format="isli";
     else if($fwatts["isli_i"])$format="isli_i";
-    else if($fwatts["only_text"])$format="only_text";
     else if($fwatts["iconsnext"])$format="iconsnext";
     //error_log($type);
     if($format=="isli"){
-        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
-          <span class="icon"><i class="'.$icon.'"></i></span> 
-          <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span>
-        </li>';
+        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
+        if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
+        $first.=' <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
-        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> 
-          <span class="icon"><i class="'.$icon.'"></i></span> 
-          <span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span>
-        </li>';
-    }else if($format=="only_text"){
-        $first= '<a href="'.fw_company_data($type,true).'">'.fw_company_data($type).'</a>';
+        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
+        if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
+        $first.='<span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span></li>';
     }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
@@ -134,8 +130,9 @@ function fw_extras_short( $atts ) {
             $first.='</a>';
         }
     }else{
-        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.'"!important;></i>';
-        if($fwatts['only_icon']!=="true")$first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
+        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.'"!important;></i>';
+        $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
         $first.='</a>';
     }
 

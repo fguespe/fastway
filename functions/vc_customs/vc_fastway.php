@@ -180,11 +180,19 @@ function vc_fw_shorts() {
                   "admin_label" => true,
                 ),
                 array(
+                    "type" => 'checkbox',
+                    "heading"     => "Hide Icon",
+                    "param_name"  => "only_text",
+                    "admin_label" => true,
+                    "std"         => "",
+                ),
+                array(
                     "type" => 'textfield',
                     "heading"     => "Texto (Por default pone company data solo)",
                     "param_name"  => "text",
                     "admin_label" => true,
                 ),
+                
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Text Secundario (Abajo)"),
@@ -219,8 +227,7 @@ function vc_fw_shorts() {
                         "Select an option" => "",
                         "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)" =>"isli"  ,
                         "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"isli_i",
-                        "Solo Icono (Separar con ,)"=>"iconsnext",
-                        "Solo texto" => "only_text"
+                        "Solo Icono/s (Separar con ,)"=>"iconsnext",
                     ),
                 ),
                 array(
