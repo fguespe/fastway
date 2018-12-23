@@ -1499,6 +1499,25 @@ body .wpb_content_element {
   outline: 0;
 }
 
+.woocommerce-checkout-review-order {
+  background: white;
+}
+
+#payment {
+  background: white !important;
+  padding: 20px;
+}
+
+#payment ul li label {
+  font-weight: bold;
+}
+
+#payment ul li {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
 /*General Woocommerce*/
 .woocommerce {
   margin-bottom: 10px;
