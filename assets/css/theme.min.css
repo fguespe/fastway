@@ -1499,6 +1499,12 @@ body .wpb_content_element {
   outline: 0;
 }
 
+/*checkout*/
+.shop_table .shipping ul li label {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
 .woocommerce-cart, .woocommerce-checkout {
   background: white;
 }
