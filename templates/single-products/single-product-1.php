@@ -43,21 +43,13 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
          <ul id="paginationIL" class="d-none d-sm-block"></ul>
 	</div>
  	<div class="summary col-md-4">
-     
-         <?
-
-            remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+            <?remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
             add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
             function send_to_html(){
                 global $product;echo fw_price_html1(null,$product);}
-
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
-			do_action( 'woocommerce_single_product_summary' );
-
-
-
-         ?>
+			do_action( 'woocommerce_single_product_summary' );?>
             <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 segura">
 	            <div class="row">
 	                <div class="col-2 text-left v-top txt-28"><i class="far fa-shield-alt"></i></div>
@@ -81,12 +73,11 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
 	                	<h4 class="">Ver cuotas y medios de pago</h4>
-	                    <span class="">(Chequear promociones vigentes)</span>
+	                    <span class="">(Ver promociones vigentes)</span>
 	                </div>
 	            </div>
 	        </a>
-
-                    <?php  global $product; echo getFinanciacion($product);?>
+            <?php  global $product; echo getFinanciacion($product);?>
 	</div>
 
 </div>
@@ -352,7 +343,7 @@ text-align:center;
 .fw_single_product .precioproducto .tachado{
 		text-align:center;
 		font-size:18px;
-    margin-bottom:20px;
+    margin-bottom:5px;
 }
 		
 .fw_single_product .precio-anterior {
@@ -491,7 +482,7 @@ padding-right:60%;
 		font-size:22px ;
 		line-height:24px ;
 		font-weight:400 ;
-		margin-bottom:10px ;
+		margin-bottom:5px ;
 }
 
 

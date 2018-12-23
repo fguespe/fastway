@@ -30,7 +30,7 @@ $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average      = $product->get_average_rating();
 ?>
-<div class="rating" style="margin-bottom: 30px;">
+<div class="rating" style="margin-bottom: 5px;">
 <?if ( $rating_count > 0 ) { ?>
 	<?php echo fw_getfastars($average);?>
 	<a href="#reviews"> (Ver <span itemprop="reviewCount"><?php echo esc_html( $review_count ); ?> </span> opiniones)</a>

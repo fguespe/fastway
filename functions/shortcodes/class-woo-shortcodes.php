@@ -51,7 +51,6 @@ class fw_Woo_Shortcodes {
 		return $classes;
 	}
 	public static function featured_products( $atts ){
-		
 		global $woocommerce_loop;
 		$atts = shortcode_atts( array(
 			"title" 		=> '',
@@ -63,6 +62,7 @@ class fw_Woo_Shortcodes {
 			"is_slider"		=> '1',
 			"is_biggest"	=> '0',
 			"auto_play"		=> '0',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -79,7 +79,16 @@ class fw_Woo_Shortcodes {
             'field'    => 'name',
             'terms'    => 'featured',
             'operator' => 'IN',
-        );
+		);
+		if($atts["uncategorized"]){
+			$tax_query[] = array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categoria'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
+		
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',

@@ -1,11 +1,9 @@
-
-  <?php 
+<?php 
 if( strlen( $title ) > 0 ):
     echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
 endif;
 
 $rand=generateRandomString(5);
-
 ?>
 <div class="swiper-products-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
