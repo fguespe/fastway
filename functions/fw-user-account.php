@@ -1,11 +1,14 @@
 <?php
 
+
 if( !function_exists( 'fw_userAccount' ) ) {
     
     add_shortcode('fw_user_account', 'fw_userAccount');
 
     function fw_userAccount(){
           $name="";
+
+        $istyle=fw_theme_mod("icons_style");
           $current_user = wp_get_current_user();
           if ( 0 != $current_user->ID && fw_theme_mod("fw_user_template")=="iconwu") {
               $name=$current_user->user_login;
@@ -18,7 +21,7 @@ if( !function_exists( 'fw_userAccount' ) ) {
 return <<<HTML
 <a class="fw-header-icon user" href="$url" role="button" data-target="" data-toggle="">
   <span class="p1 fa-stack">
-    <i class="p3  fa fa-user fa-stack-1x xfa-inverse"></i>
+    <i class="p3  $istyle fa-user fa-stack-1x xfa-inverse"></i>
   </span>
 </a>   
 HTML;
