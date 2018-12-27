@@ -22,10 +22,11 @@ $rand=generateRandomString(5);
 <div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
 </div>
  <script>
-     var ProductSwiper = new Swiper('.swiper-products-<?=$rand?>', {
-            //pagination: '.swiper-prod-rel-pagination',
-            nextButton: '.swiper-products-<?=$rand?>-next',
-            prevButton: '.swiper-products-<?=$rand?>-prev',
+     var ProductSwiper2 = new Swiper('.swiper-products-<?=$rand?>', {
+            navigation: {
+                nextEl: '.swiper-products-<?=$rand?>-next',
+                prevEl: '.swiper-products-<?=$rand?>-prev',
+            }, 
             slidesPerView: <?=$columns?>,
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,

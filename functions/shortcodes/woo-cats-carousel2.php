@@ -30,9 +30,10 @@ $rand=generateRandomString(5);
 </div>
  <script>
      var ProductSwiper = new Swiper('.swiper-cats-<?=$rand?>', {
-            //pagination: '.swiper-prod-rel-pagination',
-            nextButton: '.swiper-cats-<?=$rand?>-next',
-            prevButton: '.swiper-cats-<?=$rand?>-prev',
+            navigation: {
+                nextEl: '.swiper-cats-<?=$rand?>-next',
+                prevEl: '.swiper-cats-<?=$rand?>-prev',
+            },   
             slidesPerView: <?=$columns?>,
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
