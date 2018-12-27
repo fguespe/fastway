@@ -1,4 +1,5 @@
 <?php
+//Solo logo
 global $header_middle_mobile;
 ?>
 <style type="text/css">

@@ -1,4 +1,4 @@
-<?php //Este es tipo el de bidcom
+<?php //CSB elementos
 global $header_middle_mobile;
 ?>
 <style type="text/css">
@@ -14,13 +14,15 @@ global $header_middle_mobile;
 
 </style>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center">
-      <div class="col-3 d-flex justify-content-around">
-          <button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fa fa-bars"></i></button>
-          <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
-          
+      <div class="container text-center align-items-around py-3"><?php echo fastway_getLogo();?></div>
+      <style>
+      
+      </style>
+      <div class="container d-flex justify-content-around py-2 iconosmenumobile px-4">
+          <button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fal fa-bars"></i></button>
+          <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fal fa-search"></i></button>
+          <?php echo fw_shoppingCart("link");?>
       </div>
-      <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
-      <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart("link");?></div>
       <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">         
