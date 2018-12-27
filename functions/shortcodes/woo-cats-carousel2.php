@@ -38,7 +38,9 @@ $rand=generateRandomString(5);
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
             spaceBetween: 10,
-            loop: true,
+            loop: true,autoplay: {
+    delay: 5000,
+  },
             breakpoints: {
             // when window width is <= 320px
                 900:    {slidesPerView: 2,slidesPerGroup:2},
