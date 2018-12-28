@@ -1548,9 +1548,18 @@ body .wpb_content_element {
   /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
   /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
 }
-.woocommerce .summary .button {
-  padding: 20px;
+.woocommerce .summary .single_add_to_cart_button {
+  background: var(--main);
+  color: white;
+  border: 0px;
   font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto !important;
 }
 .woocommerce #respond input {
   background: var(--main) !important;

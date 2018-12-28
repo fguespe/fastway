@@ -1,12 +1,20 @@
-<!--tacsa-->
+<!-- EL de bidcom -->
+<?
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['reviews'] );  // Removes the reviews tab
+    return $tabs;
+}
+add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
+
+?>
 <?php
 		
-remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-do_action( 'woocommerce_after_single_product_summary' );
-?>
-
-
+        remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
+        remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+        do_action( 'woocommerce_after_single_product_summary' );
+        ?>
+        
 <div class="container d-flex row px-0 mx-0">
 	<div class="gallery col-md-8 px-0">
          <div class="detalle-imagenListado active">
@@ -25,14 +33,15 @@ do_action( 'woocommerce_after_single_product_summary' );
                       <img itemprop="image" src="<?php echo $url;?>" width=400 height="auto">
                       <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                     </a>
-                <? } ?>
-               <!--<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" style="width: 100%; background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 1;">
-                  <span hidden="true" itemprop="name">Scooter Balance Gadnic 10" | Bluetooth</span>
-                  <span hidden="true" itemprop="thumbnailUrl">https://www.youtube.com/embed/JJJDgPSzboo?rel=0 </span>
-                  <span hidden="true" itemprop="description">Video del: SCOOTER6XXX</span>
-                  <span hidden="true" itemprop="uploadDate">2018-01-02 16:59:09</span>
-                  <iframe width="100%" height="400" src="https://www.youtube.com/embed/JJJDgPSzboo?rel=0" frameborder="0" allowfullscreen=""></iframe>
-               </div>-->
+                <?}
+                foreach(fw_get_yt_videos() as $coin){
+                    $url = $coin[1]; ?>
+                   <div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" style="width: 100%; background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 1;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/<?=$url?>?rel=0" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+
+               <? }?>
+               
             </div>
             <div id="mainNextIL" class="swiper-next"><i class="fa fa-angle-right"></i></div>
             <div id="mainPrevIL" class="swiper-prev"><i class="fa fa-angle-left"></i></div>
@@ -40,33 +49,41 @@ do_action( 'woocommerce_after_single_product_summary' );
          <ul id="paginationIL" class="d-none d-sm-block"></ul>
 	</div>
  	<div class="summary col-md-4">
-     
-         <?
-
-            remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+            <?remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
             add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
             function send_to_html(){
                 global $product;echo fw_price_html1(null,$product);}
-
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
-			do_action( 'woocommerce_single_product_summary' );
-
-
-
-         ?>
-         <div class="compra-segura"><i class="fa fa-shield"></i> <a>Compra segura</a>, recibi el producto que esperas o te devolvemos el dinero.</div>
-		<a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile t2">
+			do_action( 'woocommerce_single_product_summary' );?>
+            <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 segura">
 	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fa fa-credit-card"></i></div>
+	                <div class="col-2 text-left v-top txt-28"><i class="far fa-shield-alt"></i></div>
 	                <div class="col-10 text-left calcular-costo-envio">
-	                	<h4 class="verde">Pagá en cuotas sin interes</h4>
-	                    <span class="azul">(Chequear promociones vigentes)</span>
+	                	<h4 class="">Compra Segura</h4>
+	                    <span class="">Garantía de Fabrica</span>
+	                </div>
+                </div>
+            </a>
+            <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 prueba">
+	            <div class="row">
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-gift"></i></div>
+	                <div class="col-10 text-left calcular-costo-envio">
+	                	<h4 class="">Beneficio incluído</h4>
+	                    <span class="">10 días de prueba</span>
+	                </div>
+                </div>
+            </a>
+            <a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile pagos">
+	            <div class="row">
+	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
+	                <div class="col-10 text-left calcular-costo-envio">
+	                	<h4 class="">Ver cuotas y medios de pago</h4>
+	                    <span class="">(Ver promociones vigentes)</span>
 	                </div>
 	            </div>
-	       </a>
-
-                    <?php  global $product; echo getFinanciacion($product);?>
+	        </a>
+            <?php  global $product; echo getFinanciacion($product);?>
 	</div>
 
 </div>
@@ -246,21 +263,7 @@ text-align: center;
     height: 400px;
     width: 80%
 }
-<?php if(count($fotos)==1){ ?>
-    
-    #paginationIL{
-        display: none ;
-    }
-    .detalle-imagenListado{
-        width:100%;
-    }
 
-    .detalle-imagenListado.active #mainPrevIL,
-    .detalle-imagenListado.active #mainNextIL{
-        display: none;
-    }
- 
-<?php } ?>
 
 .detalle-imagenListado #imagenListado a{
     width: 100%;
@@ -340,7 +343,7 @@ text-align:center;
 .fw_single_product .precioproducto .tachado{
 		text-align:center;
 		font-size:18px;
-    margin-bottom:20px;
+    margin-bottom:5px;
 }
 		
 .fw_single_product .precio-anterior {
@@ -407,13 +410,6 @@ a.btn-medios:hover{
 .fw_single_product .stock{
 		text-align:center;
 }
-.fw_single_product .single_add_to_cart_button{
-		background: #8c3482 ;
-        color:white;
-		border:0px ;
-		font-weight:bold;
-}
-
 
 
 .compra-segura,
@@ -476,10 +472,10 @@ padding-right:60%;
 
 }
 .fw_single_product .product_title{
-		font-size:24px;
+		font-size:22px ;
 		line-height:24px ;
-		font-weight:200 ;
-		margin-bottom:20px;
+		font-weight:400 ;
+		margin-bottom:5px ;
 }
 
 
@@ -504,9 +500,10 @@ text-align: center;
 }
 @media (max-width: 799px) {
 #imagenListado {
-height: 300px;
+height: 400px;
+width: 100%;
 text-align: center;
-		
+margin-bottom:20px;
 }
 }
 
@@ -526,7 +523,11 @@ padding:0px;
   height:400px !important;
   width:0;
 }
-
+@media (max-width: 799px) {
+#paginationIL {
+  display:none !important;
+}  
+}
 /* demo show */
 #paginationIL  {
   padding:0;

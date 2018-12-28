@@ -410,12 +410,6 @@ a.btn-medios:hover{
 .fw_single_product .stock{
 		text-align:center;
 }
-.fw_single_product .single_add_to_cart_button{
-		background: #8c3482 ;
-        color:white;
-		border:0px ;
-		font-weight:bold;
-}
 
 
 

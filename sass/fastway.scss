@@ -1602,9 +1602,18 @@ body .wpb_content_element {
 /*General Woocommerce*/
 .woocommerce{
      margin-bottom: 10px;
-     .summary .button {
-       padding: 20px;
-       font-size: 20px;
+     .summary .single_add_to_cart_button {
+      background: var(--main) ;
+      color:white;
+      border:0px ;
+      font-size: 20px;
+      font-weight:bold;
+      color: white ;
+      text-transform: capitalize ;
+      padding: 20px ;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin: 0 auto  !important;
     }
     /* coment button*/
   #respond input{
