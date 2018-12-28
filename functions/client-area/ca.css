@@ -360,6 +360,10 @@ display:none;
 .rocket_purge,#rocket_post_exclude{
 	display: none !important;
 }
+/*visual editar fila*/
+.row-actions .edit_vc{
+	display:none 
+}
 /*VIUSAL EN PRODUCTOS*/
 .productos .edit_vc,.composer-switch{
 	display: none !important;
