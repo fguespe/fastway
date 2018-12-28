@@ -39,7 +39,7 @@ $rand=generateRandomString(5);
             paginationClickable: true,
             spaceBetween: 10,
             loop: true,autoplay: {
-    delay: 5000,
+    delay: 4000,
   },
             breakpoints: {
             // when window width is <= 320px
