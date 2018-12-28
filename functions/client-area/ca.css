@@ -360,9 +360,9 @@ display:none;
 .rocket_purge,#rocket_post_exclude{
 	display: none !important;
 }
-/*visual editar fila*/
-.row-actions .edit_vc{
-	display:none 
+/*paginas visual editar fila*/
+.row-actions .edit_vc,#vc_navbar,#wp-admin-bar-view{
+	display:none ;
 }
 /*VIUSAL EN PRODUCTOS*/
 .productos .edit_vc,.composer-switch{
