@@ -119,8 +119,31 @@ do_action( 'woocommerce_after_single_product_summary' );
   </div>
 </div>
 
+
+
+
 <script type="text/javascript">
+// Update price according to variable price
+if (jQuery('form.variations_form').length !== 0) {
+  var form = jQuery('form.variations_form');
+  var variable_product_price = '';
+  setInterval(function() {
+      
+      if (jQuery('.single_variation_wrap span.price span.amount').length !== 0) {
+       
+        if (jQuery('.single_variation_wrap span.price span.amount').text() !== variable_product_price) {
+              variable_product_price = jQuery('.single_variation_wrap span.price span.amount').text();
+            //  alert(variable_product_price);
+              jQuery('.single-product-summary p.price span.amount').text(variable_product_price);
+              jQuery('.precioproducto span.precio').text(variable_product_price);
+          }
+      }
+  }, 500);
+}
+
+
 jQuery( document ).ready(function() {
+    
 	//Crea las thumnails de la izquierda
     var ProductSwiper = new Swiper('.swiper-related', {
             //pagination: '.swiper-prod-rel-pagination',
@@ -216,6 +239,9 @@ DETALLE PRODUCTO
     margin: 2px;
     padding: 2px 2px 0px 2px;
     border: 1px solid transparent;
+}
+.single_variation_wrap .price {
+    display: none;
 }
 
 
@@ -410,7 +436,6 @@ a.btn-medios:hover{
 .fw_single_product .stock{
 		text-align:center;
 }
-
 
 
 .compra-segura,
