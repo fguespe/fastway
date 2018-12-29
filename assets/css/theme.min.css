@@ -1274,7 +1274,11 @@ body .wpb_content_element {
 }
 
 /*Gravity Forms*/
-
+.validation_error{
+  display: none;
+  border: 0px;
+  background: none;
+}
 
 /*PASOS CEHCKOUT*/
 .pasoscheckout {
