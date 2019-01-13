@@ -1504,10 +1504,12 @@ body .wpb_content_element {
 .woocommerce-cart table.cart td.actions .coupon label {
   display: none;
 }
-.woocommerce-cart .cart-collaterals .cart_totals {
-  float: right;
-  width: 48%;
-  margin-bottom: 32px;
+@media (min-width: 799px) {
+  .woocommerce-cart .cart-collaterals .cart_totals {
+    float: right;
+    width: 48%;
+    margin-bottom: 32px;
+  }
 }
 .woocommerce-cart table.cart td.actions .coupon .input-text {
   float: left;

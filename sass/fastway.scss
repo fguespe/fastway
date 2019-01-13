@@ -1578,11 +1578,13 @@ body .wpb_content_element {
     table.cart td.actions .coupon label{
          display: none;
     }
-    .cart-collaterals .cart_totals{
-         float: right;
-         width: 48%;
-         margin-bottom: 32px;
-    }
+    @media (min-width: 799px) {
+      .cart-collaterals .cart_totals{
+              float: right;
+              width: 48%;
+              margin-bottom: 32px;
+         }
+     }
     table.cart td.actions .coupon .input-text{
          float: left;
          box-sizing: border-box;
