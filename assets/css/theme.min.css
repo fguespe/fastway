@@ -1274,7 +1274,7 @@ body .wpb_content_element {
 }
 
 /*Gravity Forms*/
-.validation_error{
+.validation_error, .gform_wrapper li.gfield.gfield_error {
   display: none;
   border: 0px;
   background: none;
@@ -1535,10 +1535,6 @@ body .wpb_content_element {
   /*review link*/
   /*fix imagenes*/
   /*fix margin en price*/
-  /*pagination
-   .products{
-       float:left;
-  }*/
   /*cart*/
   /*reivews*/
   /* Base */
@@ -1583,6 +1579,9 @@ body .wpb_content_element {
 }
 .woocommerce ul.products li.product a img {
   margin: 0px !important;
+}
+.woocommerce .woocommerce-page ul.products {
+  float: left;
 }
 @media (min-width: 1040px) {
   .woocommerce ul.products.columns-6 li.product, .woocommerce .woocommerce.woocommerce-page ul.products.columns-6 li.product {

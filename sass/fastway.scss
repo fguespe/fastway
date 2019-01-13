@@ -1642,6 +1642,11 @@ body .wpb_content_element {
      ul.products li.product a img {
          margin: 0px !important;
     }
+    //*FIX PAGINATION*/
+    .woocommerce-page ul.products {
+      float:left 
+      
+  }
      @media (min-width: 1040px) {
          ul.products.columns-6 li.product, .woocommerce.woocommerce-page ul.products.columns-6 li.product {
              width: 15%;
@@ -1699,10 +1704,7 @@ body .wpb_content_element {
      #order_review_heading {
          margin-top: 30px 
     }
-    /*pagination
-     .products{
-         float:left;
-    }*/
+
      nav.woocommerce-pagination{
          text-align:center 
     }
