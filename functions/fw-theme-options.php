@@ -871,12 +871,34 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'	=>__( 'Buy', 'fastway' ),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_user_text',
-	'label'    => __( 'User shortcode text', 'fastway' ),
+	'label'    => __( 'Login Text', 'fastway' ),
 	'section'     => 'section_woo',
 	'default'	=>__( 'Ingresar', 'fastway' ),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_user_text',
+	'label'    => __( 'Login Text', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'	=>__( 'Ingresar', 'fastway' ),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_min_purchase',
+	'label'    => __( 'Min Purchase', 'fastway' ),
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_min_purchase2',
+	'label'    => __( 'Min Re-Purchase', 'fastway' ),
+	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',

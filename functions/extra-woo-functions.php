@@ -1,4 +1,59 @@
 <?php
+
+if(fw_theme_mod('fw_min_purchase')>0 && fw_theme_mod('fw_min_purchase2')>0 ){
+    add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
+    add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
+}
+
+
+
+// VERFW
+
+function fw_minimum_order_amount() {
+    // Set this variable to specify a minimum order value
+    $customer      = wp_get_current_user();
+    $customer_id   = $customer->ID; // customer ID
+    $customer_email = $customer->email; // customer email
+
+    // Get all orders for this customer_id
+    $customer_orders = get_posts( array(
+        'numberposts' => -1,
+        'meta_key'    => '_customer_user',
+        'meta_value'  => $customer_id,
+        'post_type'   => wc_get_order_types(),
+        'post_status' => array_keys( wc_get_order_statuses() ),
+    ) );
+    $minimum = fw_theme_mod('fw_min_purchase');  
+    if(count($customer_orders)>0){
+        $minimum = fw_theme_mod('fw_min_purchase2');   
+    }
+
+    if ( WC()->cart->cart_contents_total < $minimum ) {
+
+        if( is_cart() ) {
+
+            wc_print_notice( 
+                sprintf( 'El minimo de compra es: %s +IVA, tu orden recién es de %s.' , 
+                    wc_price( $minimum ), 
+                    wc_price( WC()->cart->cart_contents_total )
+                ), 'error' 
+            );
+
+        } else {
+
+            wc_add_notice( 
+                sprintf( 'El minimo de compra es: %s +IVA, tu orden recién es de %s.' , 
+                    wc_price( $minimum ), 
+                    wc_price( WC()->cart->cart_contents_total )
+                ), 'error' 
+            );
+
+        }
+    }
+
+}
+
+
 function fw_getfastars($average){
     if(!is_numeric($average))return "";
     $html='<a >';
