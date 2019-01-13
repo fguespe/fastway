@@ -861,6 +861,20 @@ footer {
     padding: 0px;
   }
 }
+/*Fix catalog spinner*/
+.woocommerce a.button.loading:before {
+  display: inline-block;
+  margin-right: 0;
+  position: static;
+  content: "";
+  font-family: "Font Awesome 5 Pro" !important;
+  animation: fa-spin 2s linear infinite;
+}
+
+.woocommerce .wc-store-catalog-pdf-download .loading i {
+  display: none !important;
+}
+
 /*TRANSPARENT*/
 .header-mobile #main-menu {
   margin-top: 10px;

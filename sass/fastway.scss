@@ -896,6 +896,19 @@ footer {
   }
 }
 
+/*Fix catalog spinner*/
+.woocommerce a.button.loading:before {
+  display: inline-block;
+  margin-right: 0;
+  position: static;
+  content: "\f110";
+  font-family: "Font Awesome 5 Pro" !important;
+  animation: fa-spin 2s linear infinite;
+}
+.woocommerce .wc-store-catalog-pdf-download .loading i{
+display:none !important;
+}
+
 
 /*TRANSPARENT*/
 
