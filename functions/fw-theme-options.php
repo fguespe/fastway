@@ -19,7 +19,8 @@ function kirki_sidebars_select_example() {
 }  
 
 function urlforimages(){
-	return str_replace(site_url(), "", get_template_directory_uri() );
+	$stri=str_replace(site_url(), "", get_template_directory_uri() );
+	return $stri;
 
 }
 

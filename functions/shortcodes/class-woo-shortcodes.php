@@ -127,6 +127,7 @@ class fw_Woo_Shortcodes {
 			"head_style"	=> '',
 			"border_color"	=> '',
 			"is_slider"		=> '1',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"is_biggest"	=> 0,
 			"auto_play"		=> '0',
 			"excerpt_limit" => 10,
@@ -147,6 +148,14 @@ class fw_Woo_Shortcodes {
 			'order' 				=> $atts['order'],
 			'meta_query' 			=> array()
 		);
+		if($atts["uncategorized"]){
+			$tax_query[] = array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categoria'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
 		
 		if ( !absint($atts['show_hidden']) ) {
             $product_visibility_term_ids = wc_get_product_visibility_term_ids();
@@ -193,6 +202,7 @@ class fw_Woo_Shortcodes {
 			"is_biggest"	=> 0,
 			'cats'			=> '',
 			'auto_play'		=> '0',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			'orderby'		=> 'title',
@@ -220,7 +230,14 @@ class fw_Woo_Shortcodes {
 			'post__in'			=> array_merge( array( 0 ), wc_get_product_ids_on_sale() ),
 
 		);
-
+		if($atts["uncategorized"]){
+			$tax_query[] = array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categoria'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
 		if( strlen(trim($atts['cats'])) > 0 ) {
 			$args['tax_query'] = array(
 				array(
@@ -300,6 +317,7 @@ class fw_Woo_Shortcodes {
 			"as_widget"		=> '0',
 			"box_style"		=> '',
 			"head_style"	=> '',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			"border_color"	=> '',
@@ -334,7 +352,14 @@ class fw_Woo_Shortcodes {
 				)
 			)
 		);
-		
+		if($atts["uncategorized"]){
+			$tax_query[] = array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categoria'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
 		if ( isset( $ordering_args['meta_key'] ) ) {
 			$args['meta_key'] = $ordering_args['meta_key'];
 		}
@@ -356,57 +381,58 @@ class fw_Woo_Shortcodes {
 	public static function woo_categories( $atts ){
 		global $woocommerce_loop;
 		$taxonomy     = 'product_cat';
-		  $orderby      = 'name';  
-		  $show_count   = 0;      // 1 for yes, 0 for no
-		  $pad_counts   = 0;      // 1 for yes, 0 for no
-		  $hierarchical = 1;      // 1 for yes, 0 for no  
-		  $title        = '';  
-		  $empty        = 0;
+		$orderby      = 'name';  
+		$show_count   = 0;      // 1 for yes, 0 for no
+		$pad_counts   = 0;      // 1 for yes, 0 for no
+		$hierarchical = 1;      // 1 for yes, 0 for no  
+		$title        = '';  
+		$empty        = 0;
 
-		  $args = array(
-		         'taxonomy'     => $taxonomy,
-		         'orderby'      => $orderby,
-		         'show_count'   => $show_count,
-		         'pad_counts'   => $pad_counts,
-		         'hierarchical' => $hierarchical,
-		         'title_li'     => $title,
-		         'hide_empty'   => $empty
-		  );
-		 $all_categories = get_categories( $args );
-		 foreach ($all_categories as $cat) {
-		    if($cat->category_parent == 0) {
-		        $category_id = $cat->term_id;       
-		        echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
+		$args = array(
+				'taxonomy'     => $taxonomy,
+				'orderby'      => $orderby,
+				'show_count'   => $show_count,
+				'pad_counts'   => $pad_counts,
+				'hierarchical' => $hierarchical,
+				'title_li'     => $title,
+				'hide_empty'   => $empty
+		);
+		$all_categories = get_categories( $args );
+		foreach ($all_categories as $cat) {
+			if($cat->category_parent == 0) {
+				$category_id = $cat->term_id;  
+				error_log(json_encode($cat));     
+				echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
 
-		        $args2 = array(
-		                'taxonomy'     => $taxonomy,
-		                'child_of'     => 0,
-		                'parent'       => $category_id,
-		                'orderby'      => $orderby,
-		                'show_count'   => $show_count,
-		                'pad_counts'   => $pad_counts,
-		                'hierarchical' => $hierarchical,
-		                'title_li'     => $title,
-		                'hide_empty'   => $empty
-		        );
-		        $sub_cats = get_categories( $args2 );
-		        if($sub_cats) {
-		            foreach($sub_cats as $sub_category) {
-		                echo  $sub_category->name ;
-		            }   
-		        }
-		    }       
+				$args2 = array(
+						'taxonomy'     => $taxonomy,
+						'child_of'     => 0,
+						'parent'       => $category_id,
+						'orderby'      => $orderby,
+						'show_count'   => $show_count,
+						'pad_counts'   => $pad_counts,
+						'hierarchical' => $hierarchical,
+						'title_li'     => $title,
+						'hide_empty'   => $empty
+				);
+				$sub_cats = get_categories( $args2 );
+				if($sub_cats) {
+					foreach($sub_cats as $sub_category) {
+						echo  $sub_category->name ;
+					}   
+				}
+			}       
 		}
 		
 	}
 	
 	
 	public static function product_cats( $atts ){
-		
 		$atts = shortcode_atts( array(
 			'title'			=> '',
 			'cats' 			=> '',
 			'terms' 			=> '',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		), $atts );
@@ -414,18 +440,22 @@ class fw_Woo_Shortcodes {
 		if( strlen( trim( $atts['cats'] ) ) == 0 ) return;
 		
 		$cats = explode( ',', $atts['cats'] );
-		//error_log(print_r($cats,true));
+	
 		$args = array(
 			'slug' => $cats,
 			'orderby'	=> 'slug',
 			'order'		=> 'ASC',
-			'hide_empty'	=> false,
 		);
+
 		
 		ob_start();
 		$cates=array();
 		foreach($cats as $cat){
-			$atts['terms'][]=  get_term_by('slug' , $cat,'product_cat');
+			$term=get_term_by('slug' , $cat,'product_cat');
+			if($atts["uncategorized"] && $term->count==0)continue;
+			
+			//error_log(json_encode($term));
+			$atts['terms'][]=  $term;
 		}
 
 		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel2.php', $atts,$atts['terms']  );
@@ -449,6 +479,8 @@ class fw_Woo_Shortcodes {
 			"is_biggest"	=> 0,
 			"auto_play"		=> '0',
 			"excerpt_limit" => 10,
+
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		),$atts);
@@ -464,7 +496,14 @@ class fw_Woo_Shortcodes {
 			'orderby'             => 'meta_value_num',
 			'meta_query'          => $meta_query
 		);
-		
+		if($atts["uncategorized"]){
+			$tax_query[] = array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categoria'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
