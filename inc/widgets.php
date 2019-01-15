@@ -107,6 +107,15 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
+			'name'          => __( 'Single Product Summary', 'fastway' ),
+			'id'            => 'sp-sumary',
+			'description'   => 'Single Product Summary Content',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
 			'name'          => __( 'Dashboard', 'fastway' ),
 			'id'            => 'dash-sidebar',
 			'description'   => 'Dashboard metaboxes',

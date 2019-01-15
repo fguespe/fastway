@@ -81,7 +81,24 @@ function fw_minimum_order_amount() {
     }
 
 }
+function fw_single_related(){
+    $myarray = wc_get_related_products($product->id,12);
 
+    $args = array(
+        'post_type' => 'product',
+        'post__in'      => $myarray
+    );
+    // The Query
+    $products = new WP_Query( $args );
+
+    while ( $products->have_posts() ) : 
+        //$contada++;
+        $products->the_post(); 
+        echo '<div class="swiper-slide">';
+        wc_get_template_part( 'content', 'product' ); 
+        echo '</div>';    
+    endwhile; 
+}
 
 function fw_getfastars($average){
     if(!is_numeric($average))return "";
@@ -152,7 +169,27 @@ echo "<style>.woocommerce-checkout:not(.woocommerce-order-received) header,.wooc
     display:none !important;
 }</style>";
 }
+function fw_product_gallery($product){
+    $fotos=$product->get_gallery_attachment_ids();
+    array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
+    $fotos=array_reverse($fotos);
+    
+    foreach ($fotos as $ids) {
+        
+        $url=wp_get_attachment_url( $ids);
+        echo '<a href='.$url.' data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; opacity: 1;">
+            <img itemprop="image" src="'.$url.'" width=400 height="auto">
+            <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
+        </a>';
+    }
+    foreach(fw_get_yt_videos() as $coin){
+        $url = $coin[1]; 
+        echo '<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" style="width: 100%; background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 1;">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/'.$url.'?rel=0" frameborder="0" allowfullscreen=""></iframe>
+        </div>';
 
+    }
+}
 
 //Aplicar precio global
 add_action( 'woocommerce_product_data_panels', 'fw_global_variation_price' );
@@ -197,6 +234,11 @@ function fw_global_variation_price() {
     <?php
 }
 
+function envio_labels($product){
+    if($product->get_shipping_class()=="envio-gratis"){
+        echo '<div class="envio-gratis-tag grupo-envio-6" title="Éste producto tiene envío Gratis"><i class="fal fa-shipping-fast"></i> Gratis</div>';
+    }
+}
 
 function fw_price_html1( $price, $product ){
     if(fw_theme_mod("prices-enabled"))return '';

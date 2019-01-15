@@ -1,3 +1,23 @@
+.envio-gratis-tag {
+  position: absolute;
+  height: 25px;
+  width: auto;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px !important;
+  bottom: 50px;
+  right: 0px;
+  line-height: 25px;
+  text-align: center;
+  text-indent: -1px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #39B54A;
+}
+
 .opiniones-visibles .row-calificacion{
   border:0!important;
 }
@@ -601,7 +621,7 @@ ul {
 }
 
 
-/*SINGLE*/
+/*SINGLE blog?*/
 
 #single-wrapper {
   padding-top: 30px;
@@ -629,12 +649,7 @@ ul {
   margin-top: 40px;
   ;
 }
-.summary .single_add_to_cart_button:before{
-    content:"\f217";
-    font-family: "Font Awesome 5 Pro";
-    margin-right:10px;
-    
-}
+
 
 
 /*Mercadoenvios*/
@@ -1621,20 +1636,8 @@ body .wpb_content_element {
   
 /*General Woocommerce*/
 .woocommerce{
-     margin-bottom: 10px;
-     .summary .single_add_to_cart_button {
-      background: var(--main) ;
-      color:white;
-      border:0px ;
-      font-size: 20px;
-      font-weight:bold;
-      color: white ;
-      text-transform: capitalize ;
-      padding: 20px ;
-      padding-left: 30px;
-      padding-right: 30px;
-      margin: 0 auto  !important;
-    }
+  margin-bottom: 10px;
+  
     /* coment button*/
   #respond input{
     background:var(--main) !important;
@@ -1703,16 +1706,13 @@ body .wpb_content_element {
      ul.products li.product .price {
          margin: 0px;
     }
-     .woocommerce .wrapper .btn, .woocommerce .wrapper .btn/*, .summary .button */{
+     .woocommerce .wrapper .btn, .woocommerce .wrapper .btn{
          background-color: white;
          border: 1px solid var(--main);
          color: black;
          line-height: 1rem;
     }
-     .summary .quantity {
-         width: 100%;
-         margin-bottom: 20px;
-    }
+    
      
      .select2 span {
          line-height: 2em !important;
