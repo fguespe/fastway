@@ -2,10 +2,7 @@
 body{
 	background: var(--ca-background-color) !important;
 }
-/*MENSAJE ERROR*/
-.error{
-	display: none !important;
-}
+
 #welcome-panel{
 	display:none !important;
 }
@@ -227,12 +224,6 @@ display:none !important;
 
 
 
-.fade,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
-display:none;
-}
-.notice-success{
-display:block!important;
-}
 
 #wpcontent{
 margin-left:0px !important;
@@ -340,6 +331,13 @@ border-radius:0px;
 form#your-profile table:nth-child(6),form#your-profile h2:nth-child(11),form#your-profile h2:nth-child(5),form#your-profile table:nth-child(12){
 display:none !important;
 }
+.usuarios .row-actions,.usuarios .page-title-action{
+	display: none !important;
+}
+.usuarios .export-users{
+	display: none !important;
+
+}
 #adduser{
 	display:none;
 }
@@ -431,6 +429,23 @@ border:0px !important;
 /*QUANTITY RULE*/
 .post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
 	display: none;
-}';
+}
+
+/*MENSAJE ERROR
+cuidado con el update notice y el error de create user
+.error{
+	display: none !important;
+}
+.usuarios .error{
+	display: block !important;
+}
+.fade,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
+	display:none;
+}
+.notice-success{
+	display:block!important;
+}*/
+	
+
 
 

@@ -1,0 +1,1426 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "/Users/fabrizioguespe/Developer/htdocs/fastway/wp-content/themes/fastway",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2019-01-14 18:54:47",
+            "filesum": 233,
+            "codesum": 26654,
+            "commentsum": 4548,
+            "blanksum": 4559,
+            "filelist": [
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "404.php"
+                },
+                {
+                    "blank": 23,
+                    "code": 36,
+                    "comment": 5,
+                    "filename": "archive.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 7,
+                    "filename": "assets/css/bootstrap.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "assets/css/jquery.fancybox.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 11,
+                    "filename": "assets/css/swiper.min.css"
+                },
+                {
+                    "blank": 187,
+                    "code": 1831,
+                    "comment": 76,
+                    "filename": "assets/css/theme.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "assets/css/theme.min.css.map"
+                },
+                {
+                    "filename": "assets/img/brizio.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/cupones.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/error.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/favi.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/favib.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/logo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "assets/img/logo.svg"
+                },
+                {
+                    "filename": "assets/img/mantenimiento.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/theme-option-variable-style1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/img/theme-option-variable-style2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 6,
+                    "filename": "assets/js/bootstrap.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "assets/js/cycle.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 11,
+                    "filename": "assets/js/fancybox.min.js"
+                },
+                {
+                    "blank": 29,
+                    "code": 185,
+                    "comment": 22,
+                    "filename": "assets/js/fastway.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 142,
+                    "comment": 11,
+                    "filename": "assets/js/fastway.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "assets/js/fw-customizer.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 2,
+                    "filename": "assets/js/jquery.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "assets/js/popper.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 12,
+                    "filename": "assets/js/swiper.min.js"
+                },
+                {
+                    "blank": 30,
+                    "code": 61,
+                    "comment": 7,
+                    "filename": "author.php"
+                },
+                {
+                    "blank": 29,
+                    "code": 70,
+                    "comment": 24,
+                    "filename": "comments.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/cedar/cedar.dat"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/cedar/cedar.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/cedar/cedar.wie"
+                },
+                {
+                    "blank": 8,
+                    "code": 1253,
+                    "comment": 16,
+                    "filename": "demos/cedar/cedar.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/demo2/customizer.dat"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/demo2/redux.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "demos/demo2/widgets"
+                },
+                {
+                    "blank": 7,
+                    "code": 3983,
+                    "comment": 16,
+                    "filename": "demos/demo2/wordpress.xml"
+                },
+                {
+                    "blank": 6,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "demos/fw-democontent.php"
+                },
+                {
+                    "blank": 69,
+                    "code": 284,
+                    "comment": 12,
+                    "filename": "demos/one-click-demo-import/assets/css/main.css"
+                },
+                {
+                    "blank": 53,
+                    "code": 210,
+                    "comment": 64,
+                    "filename": "demos/one-click-demo-import/assets/js/main.js"
+                },
+                {
+                    "blank": 36,
+                    "code": 136,
+                    "comment": 69,
+                    "filename": "demos/one-click-demo-import/inc/CustomizerImporter.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 16,
+                    "filename": "demos/one-click-demo-import/inc/CustomizerOption.php"
+                },
+                {
+                    "blank": 21,
+                    "code": 68,
+                    "comment": 49,
+                    "filename": "demos/one-click-demo-import/inc/Downloader.php"
+                },
+                {
+                    "blank": 106,
+                    "code": 367,
+                    "comment": 177,
+                    "filename": "demos/one-click-demo-import/inc/Helpers.php"
+                },
+                {
+                    "blank": 27,
+                    "code": 63,
+                    "comment": 73,
+                    "filename": "demos/one-click-demo-import/inc/ImportActions.php"
+                },
+                {
+                    "blank": 41,
+                    "code": 75,
+                    "comment": 85,
+                    "filename": "demos/one-click-demo-import/inc/Importer.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 26,
+                    "comment": 28,
+                    "filename": "demos/one-click-demo-import/inc/Logger.php"
+                },
+                {
+                    "blank": 95,
+                    "code": 250,
+                    "comment": 215,
+                    "filename": "demos/one-click-demo-import/inc/OneClickDemoImport.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 40,
+                    "comment": 18,
+                    "filename": "demos/one-click-demo-import/inc/ReduxImporter.php"
+                },
+                {
+                    "blank": 56,
+                    "code": 186,
+                    "comment": 112,
+                    "filename": "demos/one-click-demo-import/inc/WidgetImporter.php"
+                },
+                {
+                    "blank": 65,
+                    "code": 166,
+                    "comment": 64,
+                    "filename": "demos/one-click-demo-import/inc/WPCLICommands.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 60,
+                    "comment": 39,
+                    "filename": "demos/one-click-demo-import/inc/WXRImporter.php"
+                },
+                {
+                    "blank": 148,
+                    "code": 261,
+                    "comment": 0,
+                    "filename": "demos/one-click-demo-import/languages/pt-ocdi.pot"
+                },
+                {
+                    "blank": 15,
+                    "code": 38,
+                    "comment": 41,
+                    "filename": "demos/one-click-demo-import/one-click-demo-import.php"
+                },
+                {
+                    "blank": 79,
+                    "code": 235,
+                    "comment": 13,
+                    "filename": "demos/one-click-demo-import/readme.txt"
+                },
+                {
+                    "blank": 3,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/autoload.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/composer/autoload_classmap.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/composer/autoload_namespaces.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/composer/autoload_psr4.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 40,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/composer/autoload_real.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 32,
+                    "comment": 1,
+                    "filename": "demos/one-click-demo-import/vendor/composer/autoload_static.php"
+                },
+                {
+                    "blank": 44,
+                    "code": 253,
+                    "comment": 148,
+                    "filename": "demos/one-click-demo-import/vendor/composer/ClassLoader.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "demos/one-click-demo-import/vendor/composer/installed.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "demos/one-click-demo-import/vendor/composer/LICENSE"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/composer.json"
+                },
+                {
+                    "blank": 11,
+                    "code": 14,
+                    "comment": 3,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/README.md"
+                },
+                {
+                    "blank": 9,
+                    "code": 36,
+                    "comment": 92,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WPImporterLogger.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 8,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WPImporterLoggerCLI.php"
+                },
+                {
+                    "blank": 392,
+                    "code": 1530,
+                    "comment": 565,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImportInfo.php"
+                },
+                {
+                    "blank": 37,
+                    "code": 150,
+                    "comment": 12,
+                    "filename": "demos/one-click-demo-import/views/plugin-page.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 38,
+                    "comment": 7,
+                    "filename": "footer.php"
+                },
+                {
+                    "blank": 34,
+                    "code": 149,
+                    "comment": 25,
+                    "filename": "functions.php"
+                },
+                {
+                    "blank": 59,
+                    "code": 316,
+                    "comment": 59,
+                    "filename": "functions/client-area/ca.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "functions/client-area/ca.js"
+                },
+                {
+                    "blank": 79,
+                    "code": 229,
+                    "comment": 66,
+                    "filename": "functions/client-area/client-area.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 71,
+                    "comment": 16,
+                    "filename": "functions/client-area/metabox.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 153,
+                    "comment": 0,
+                    "filename": "functions/extra-woo-functions-arg.php"
+                },
+                {
+                    "blank": 57,
+                    "code": 262,
+                    "comment": 29,
+                    "filename": "functions/extra-woo-functions.php"
+                },
+                {
+                    "blank": 21,
+                    "code": 67,
+                    "comment": 13,
+                    "filename": "functions/fw-ajax-search.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 118,
+                    "comment": 28,
+                    "filename": "functions/fw-blog-options.php"
+                },
+                {
+                    "blank": 107,
+                    "code": 334,
+                    "comment": 50,
+                    "filename": "functions/fw-extra-functions.php"
+                },
+                {
+                    "blank": 44,
+                    "code": 238,
+                    "comment": 268,
+                    "filename": "functions/fw-navwalker.php"
+                },
+                {
+                    "blank": 37,
+                    "code": 120,
+                    "comment": 5,
+                    "filename": "functions/fw-shopping-cart.php"
+                },
+                {
+                    "blank": 27,
+                    "code": 222,
+                    "comment": 8,
+                    "filename": "functions/fw-shortcodes.php"
+                },
+                {
+                    "blank": 146,
+                    "code": 1629,
+                    "comment": 97,
+                    "filename": "functions/fw-theme-options.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "functions/fw-user-account.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 30,
+                    "comment": 32,
+                    "filename": "functions/hide-default-woocomerce-category.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 19,
+                    "comment": 9,
+                    "filename": "functions/ihaf.php"
+                },
+                {
+                    "blank": 43,
+                    "code": 192,
+                    "comment": 98,
+                    "filename": "functions/navbackup.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "functions/product-enquiry-form/.gitignore"
+                },
+                {
+                    "blank": 38,
+                    "code": 95,
+                    "comment": 0,
+                    "filename": "functions/product-enquiry-form/languages/wc_enquiry_form.pot"
+                },
+                {
+                    "blank": 88,
+                    "code": 265,
+                    "comment": 111,
+                    "filename": "functions/product-enquiry-form/product-enquiry-form.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "functions/product-enquiry-form/readme.txt"
+                },
+                {
+                    "blank": 10,
+                    "code": 13,
+                    "comment": 5,
+                    "filename": "functions/product-enquiry-form/woo-includes/class-wc-dependencies.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 59,
+                    "comment": 23,
+                    "filename": "functions/product-enquiry-form/woo-includes/woo-functions.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "functions/shortcodes/class-shortcodes.php"
+                },
+                {
+                    "blank": 86,
+                    "code": 436,
+                    "comment": 16,
+                    "filename": "functions/shortcodes/class-woo-shortcodes.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 45,
+                    "comment": 1,
+                    "filename": "functions/shortcodes/woo-cats-carousel2.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 41,
+                    "comment": 1,
+                    "filename": "functions/shortcodes/woo-products-carousel2.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "functions/tab_descargas.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 45,
+                    "comment": 6,
+                    "filename": "functions/tab_video.php"
+                },
+                {
+                    "blank": 30,
+                    "code": 335,
+                    "comment": 11,
+                    "filename": "functions/vc_customs/vc_fastway.php"
+                },
+                {
+                    "blank": 42,
+                    "code": 260,
+                    "comment": 20,
+                    "filename": "functions/vc_customs/vc_woo_carousels.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 54,
+                    "comment": 43,
+                    "filename": "functions/woo-empty-cart-button.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "functions/woocommerce-category-banner/assets/css/wcb-admin.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 29,
+                    "comment": 11,
+                    "filename": "functions/woocommerce-category-banner/assets/js/wcb-admin.js"
+                },
+                {
+                    "blank": 45,
+                    "code": 130,
+                    "comment": 39,
+                    "filename": "functions/woocommerce-category-banner/woocommerce-category-banner.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 120,
+                    "comment": 46,
+                    "filename": "functions/woocommerce_custom_related_products.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "global-templates/left-sidebar-check.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 63,
+                    "comment": 23,
+                    "filename": "global-templates/pagination.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "global-templates/right-sidebar-check.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 62,
+                    "comment": 8,
+                    "filename": "header.php"
+                },
+                {
+                    "blank": 37,
+                    "code": 182,
+                    "comment": 10,
+                    "filename": "inc/breadcrumb.php"
+                },
+                {
+                    "blank": 21,
+                    "code": 134,
+                    "comment": 7,
+                    "filename": "inc/class-staticblocks.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "inc/enqueue.php"
+                },
+                {
+                    "blank": 19,
+                    "code": 57,
+                    "comment": 17,
+                    "filename": "inc/pagination.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 99,
+                    "comment": 11,
+                    "filename": "inc/widgets.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 66,
+                    "comment": 33,
+                    "filename": "inc/woocommerce.php"
+                },
+                {
+                    "blank": 29,
+                    "code": 33,
+                    "comment": 5,
+                    "filename": "index.php"
+                },
+                {
+                    "filename": "languages/ent.mo",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 370,
+                    "code": 1021,
+                    "comment": 0,
+                    "filename": "languages/ent.po"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "loop-templates/content-blank.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "loop-templates/content-empty.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "loop-templates/content-none.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "loop-templates/content-page.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "loop-templates/content-search.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "loop-templates/content-single.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "loop-templates/content.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 23,
+                    "comment": 8,
+                    "filename": "page-templates/blank.php"
+                },
+                {
+                    "blank": 18,
+                    "code": 27,
+                    "comment": 9,
+                    "filename": "page-templates/both-sidebarspage.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 6,
+                    "comment": 8,
+                    "filename": "page-templates/empty.php"
+                },
+                {
+                    "blank": 18,
+                    "code": 23,
+                    "comment": 9,
+                    "filename": "page-templates/fullwidthpage.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 26,
+                    "comment": 9,
+                    "filename": "page-templates/left-sidebarpage.php"
+                },
+                {
+                    "blank": 18,
+                    "code": 26,
+                    "comment": 9,
+                    "filename": "page-templates/right-sidebarpage.php"
+                },
+                {
+                    "blank": 19,
+                    "code": 29,
+                    "comment": 12,
+                    "filename": "page.php"
+                },
+                {
+                    "blank": 239,
+                    "code": 1829,
+                    "comment": 75,
+                    "filename": "sass/fastway.scss"
+                },
+                {
+                    "filename": "screenshot.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 26,
+                    "code": 35,
+                    "comment": 11,
+                    "filename": "search.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 5,
+                    "filename": "searchform.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "sidebar-left.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "sidebar-right.php"
+                },
+                {
+                    "blank": 18,
+                    "code": 27,
+                    "comment": 7,
+                    "filename": "single.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 8,
+                    "filename": "style.css"
+                },
+                {
+                    "blank": 19,
+                    "code": 90,
+                    "comment": 10,
+                    "filename": "templates/fw-templates.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "templates/headers/header-1-1.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "templates/headers/header-1-2.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-1-3.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-1-4.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-1-5.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "templates/headers/header-10-1.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "templates/headers/header-100-1.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "templates/headers/header-100-2.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 66,
+                    "comment": 0,
+                    "filename": "templates/headers/header-11-1.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "templates/headers/header-12-1.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "templates/headers/header-13-1.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 24,
+                    "comment": 1,
+                    "filename": "templates/headers/header-14-1.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "templates/headers/header-15-1.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "templates/headers/header-15-2.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-15-3.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-15-4.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-2-1.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "templates/headers/header-2-2.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-2-3.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-2-4.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-2-5.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-3-1.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-3-2.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-3-3.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-3-4.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "templates/headers/header-3-5.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "templates/headers/header-4-1.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "templates/headers/header-4-2.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "templates/headers/header-7-1.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "templates/headers/header-8-1.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "templates/headers/header-9-1.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "templates/headers/header-9-2.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "templates/mobile-headers/mobile-header-1.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "templates/mobile-headers/mobile-header-2.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "templates/mobile-headers/mobile-header-3.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 48,
+                    "comment": 1,
+                    "filename": "templates/mobile-headers/mobile-header-4.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "templates/mobile-headers/mobile-header-5.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 18,
+                    "comment": 28,
+                    "filename": "templates/mobile-product-loops/mobile-product-loop-1.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 30,
+                    "filename": "templates/product-loops/product-loop-1.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 43,
+                    "comment": 29,
+                    "filename": "templates/product-loops/product-loop-2.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 60,
+                    "comment": 17,
+                    "filename": "templates/product-loops/product-loop-3.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 23,
+                    "filename": "templates/product-loops/product-loop-4.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 44,
+                    "comment": 23,
+                    "filename": "templates/product-loops/product-loop-5.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 58,
+                    "comment": 23,
+                    "filename": "templates/product-loops/product-loop-6.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 58,
+                    "comment": 17,
+                    "filename": "templates/product-loops/product-loop-7.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 55,
+                    "comment": 17,
+                    "filename": "templates/product-loops/product-loop-8.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 25,
+                    "filename": "templates/single-products/single-product-1-1.php"
+                },
+                {
+                    "blank": 85,
+                    "code": 466,
+                    "comment": 21,
+                    "filename": "templates/single-products/single-product-1.php"
+                },
+                {
+                    "blank": 82,
+                    "code": 467,
+                    "comment": 21,
+                    "filename": "templates/single-products/single-product-2.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 77,
+                    "comment": 14,
+                    "filename": "vc_templates/vc_column.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 12,
+                    "filename": "vc_templates/vc_column_inner.php"
+                },
+                {
+                    "blank": 19,
+                    "code": 115,
+                    "comment": 26,
+                    "filename": "vc_templates/vc_row.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 58,
+                    "comment": 14,
+                    "filename": "vc_templates/vc_row_inner.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 38,
+                    "comment": 13,
+                    "filename": "woocommerce.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 20,
+                    "filename": "woocommerce/cart/cart-empty.php"
+                },
+                {
+                    "blank": 26,
+                    "code": 118,
+                    "comment": 24,
+                    "filename": "woocommerce/cart/cart.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 47,
+                    "comment": 19,
+                    "filename": "woocommerce/cart/mini-cart.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 19,
+                    "filename": "woocommerce/cart/proceed-to-checkout-button.php"
+                },
+                {
+                    "blank": 18,
+                    "code": 32,
+                    "comment": 17,
+                    "filename": "woocommerce/checkout/form-checkout.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 21,
+                    "comment": 17,
+                    "filename": "woocommerce/checkout/form-coupon.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 72,
+                    "comment": 16,
+                    "filename": "woocommerce/checkout/form-pay.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 38,
+                    "comment": 16,
+                    "filename": "woocommerce/checkout/payment.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 86,
+                    "comment": 16,
+                    "filename": "woocommerce/checkout/review-order.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 21,
+                    "comment": 18,
+                    "filename": "woocommerce/content-product.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 15,
+                    "comment": 23,
+                    "filename": "woocommerce/content-single-product.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 35,
+                    "comment": 17,
+                    "filename": "woocommerce/global/form-login.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 16,
+                    "filename": "woocommerce/global/quantity-input.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 17,
+                    "filename": "woocommerce/global/wrapper-end.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 19,
+                    "filename": "woocommerce/global/wrapper-start.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 16,
+                    "filename": "woocommerce/loop/add-to-cart.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 26,
+                    "comment": 18,
+                    "filename": "woocommerce/loop/orderby.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 20,
+                    "comment": 18,
+                    "filename": "woocommerce/myaccount/downloads.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 45,
+                    "comment": 16,
+                    "filename": "woocommerce/myaccount/form-edit-account.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 33,
+                    "comment": 16,
+                    "filename": "woocommerce/myaccount/form-edit-address.php"
+                },
+                {
+                    "blank": 36,
+                    "code": 68,
+                    "comment": 17,
+                    "filename": "woocommerce/myaccount/form-login.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 19,
+                    "comment": 16,
+                    "filename": "woocommerce/myaccount/form-lost-password.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 25,
+                    "comment": 16,
+                    "filename": "woocommerce/myaccount/form-reset-password.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 51,
+                    "comment": 18,
+                    "filename": "woocommerce/myaccount/my-address.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 84,
+                    "comment": 5,
+                    "filename": "woocommerce/myaccount/my-orders.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 16,
+                    "filename": "woocommerce/myaccount/navigation.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 72,
+                    "comment": 19,
+                    "filename": "woocommerce/myaccount/orders.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 16,
+                    "filename": "woocommerce/product-searchform.php"
+                },
+                {
+                    "blank": 14,
+                    "code": 80,
+                    "comment": 19,
+                    "filename": "woocommerce/single-product-reviews.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 29,
+                    "comment": 28,
+                    "filename": "woocommerce/single-product/add-to-cart/simple.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 14,
+                    "filename": "woocommerce/single-product/add-to-cart/variation-add-to-cart-button.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 24,
+                    "comment": 16,
+                    "filename": "woocommerce/single-product/product-thumbnails.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 21,
+                    "comment": 17,
+                    "filename": "woocommerce/single-product/rating.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 17,
+                    "filename": "woocommerce/single-product/review-rating.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 17,
+                    "filename": "woocommerce/single-product/short-description.php"
+                }
+            ]
+        }
+    ]
+}

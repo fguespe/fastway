@@ -235,25 +235,6 @@ function fw_custom_remove_optionspages() {
 add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
 
 
-
-
-
-/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function fw_allow_users_to_shopmanager() {
-    $role = get_role( 'shop_manager' );
-    $role->add_cap( 'edit_theme_options' ); 
-    $role->add_cap( 'manage_options' ); 
-    $role->add_cap( 'add_users' ); 
-    $role->add_cap( 'create_users' ); 
-    $role->add_cap( 'edit_users' ); 
-    $role->add_cap( 'gravityforms_create_form' ); 
-    $role->add_cap( 'gravityforms_edit_forms' ); 
-    $role->add_cap( 'gravityforms_view_entries' ); 
-    $role->add_cap( 'gravityforms_user_registration'); 
-}
-
-if ( class_exists( 'WooCommerce' ))add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
-
 /**
  * Add all Gravity Forms capabilities to Editor role.
  * Runs during plugin activation.

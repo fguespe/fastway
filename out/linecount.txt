@@ -1,0 +1,245 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-01-14 18:54:47
+count workspace : /Users/fabrizioguespe/Developer/htdocs/fastway/wp-content/themes/fastway
+total files : 233
+total code lines : 26654
+total comment lines : 4548
+total blank lines : 4559
+
+404.php, code is 3, comment is 0, blank is 2.
+archive.php, code is 36, comment is 5, blank is 23.
+assets/css/bootstrap.min.css, code is 1, comment is 7, blank is 0.
+assets/css/jquery.fancybox.min.css, code is 1, comment is 0, blank is 0.
+assets/css/swiper.min.css, code is 1, comment is 11, blank is 0.
+assets/css/theme.min.css, code is 1831, comment is 76, blank is 187.
+assets/css/theme.min.css.map, code is 1, comment is 0, blank is 0.
+assets/img/brizio.png, it is a binary file.
+assets/img/cupones.png, it is a binary file.
+assets/img/error.png, it is a binary file.
+assets/img/favi.png, it is a binary file.
+assets/img/favib.png, it is a binary file.
+assets/img/logo.png, it is a binary file.
+assets/img/logo.svg, code is 37, comment is 0, blank is 0.
+assets/img/mantenimiento.png, it is a binary file.
+assets/img/theme-option-variable-style1.jpg, it is a binary file.
+assets/img/theme-option-variable-style2.jpg, it is a binary file.
+assets/js/bootstrap.min.js, code is 1, comment is 6, blank is 0.
+assets/js/cycle.min.js, code is 1, comment is 0, blank is 0.
+assets/js/fancybox.min.js, code is 2, comment is 11, blank is 0.
+assets/js/fastway.js, code is 185, comment is 22, blank is 29.
+assets/js/fastway.min.js, code is 142, comment is 11, blank is 15.
+assets/js/fw-customizer.js, code is 52, comment is 0, blank is 0.
+assets/js/jquery.min.js, code is 1, comment is 2, blank is 0.
+assets/js/popper.min.js, code is 1, comment is 4, blank is 0.
+assets/js/swiper.min.js, code is 1, comment is 12, blank is 0.
+author.php, code is 61, comment is 7, blank is 30.
+comments.php, code is 70, comment is 24, blank is 29.
+demos/cedar/cedar.dat, code is 1, comment is 0, blank is 0.
+demos/cedar/cedar.json, code is 1, comment is 0, blank is 0.
+demos/cedar/cedar.wie, code is 1, comment is 0, blank is 0.
+demos/cedar/cedar.xml, code is 1253, comment is 16, blank is 8.
+demos/demo2/customizer.dat, code is 1, comment is 0, blank is 0.
+demos/demo2/redux.json, code is 1, comment is 0, blank is 0.
+demos/demo2/widgets, code is 1, comment is 0, blank is 0.
+demos/demo2/wordpress.xml, code is 3983, comment is 16, blank is 7.
+demos/fw-democontent.php, code is 53, comment is 2, blank is 6.
+demos/one-click-demo-import/assets/css/main.css, code is 284, comment is 12, blank is 69.
+demos/one-click-demo-import/assets/js/main.js, code is 210, comment is 64, blank is 53.
+demos/one-click-demo-import/inc/CustomizerImporter.php, code is 136, comment is 69, blank is 36.
+demos/one-click-demo-import/inc/CustomizerOption.php, code is 7, comment is 16, blank is 2.
+demos/one-click-demo-import/inc/Downloader.php, code is 68, comment is 49, blank is 21.
+demos/one-click-demo-import/inc/Helpers.php, code is 367, comment is 177, blank is 106.
+demos/one-click-demo-import/inc/ImportActions.php, code is 63, comment is 73, blank is 27.
+demos/one-click-demo-import/inc/Importer.php, code is 75, comment is 85, blank is 41.
+demos/one-click-demo-import/inc/Logger.php, code is 26, comment is 28, blank is 8.
+demos/one-click-demo-import/inc/OneClickDemoImport.php, code is 250, comment is 215, blank is 95.
+demos/one-click-demo-import/inc/ReduxImporter.php, code is 40, comment is 18, blank is 13.
+demos/one-click-demo-import/inc/WidgetImporter.php, code is 186, comment is 112, blank is 56.
+demos/one-click-demo-import/inc/WPCLICommands.php, code is 166, comment is 64, blank is 65.
+demos/one-click-demo-import/inc/WXRImporter.php, code is 60, comment is 39, blank is 11.
+demos/one-click-demo-import/languages/pt-ocdi.pot, code is 261, comment is 0, blank is 148.
+demos/one-click-demo-import/one-click-demo-import.php, code is 38, comment is 41, blank is 15.
+demos/one-click-demo-import/readme.txt, code is 235, comment is 13, blank is 79.
+demos/one-click-demo-import/vendor/autoload.php, code is 3, comment is 1, blank is 3.
+demos/one-click-demo-import/vendor/composer/autoload_classmap.php, code is 5, comment is 1, blank is 3.
+demos/one-click-demo-import/vendor/composer/autoload_namespaces.php, code is 5, comment is 1, blank is 3.
+demos/one-click-demo-import/vendor/composer/autoload_psr4.php, code is 7, comment is 1, blank is 3.
+demos/one-click-demo-import/vendor/composer/autoload_real.php, code is 40, comment is 1, blank is 11.
+demos/one-click-demo-import/vendor/composer/autoload_static.php, code is 32, comment is 1, blank is 6.
+demos/one-click-demo-import/vendor/composer/ClassLoader.php, code is 253, comment is 148, blank is 44.
+demos/one-click-demo-import/vendor/composer/installed.json, code is 45, comment is 0, blank is 2.
+demos/one-click-demo-import/vendor/composer/LICENSE, code is 16, comment is 0, blank is 5.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/composer.json, code is 17, comment is 0, blank is 0.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/README.md, code is 14, comment is 3, blank is 11.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WPImporterLogger.php, code is 36, comment is 92, blank is 9.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WPImporterLoggerCLI.php, code is 31, comment is 8, blank is 5.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php, code is 1530, comment is 565, blank is 392.
+demos/one-click-demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImportInfo.php, code is 14, comment is 0, blank is 2.
+demos/one-click-demo-import/views/plugin-page.php, code is 150, comment is 12, blank is 37.
+footer.php, code is 38, comment is 7, blank is 5.
+functions.php, code is 149, comment is 25, blank is 34.
+functions/client-area/ca.css, code is 316, comment is 59, blank is 59.
+functions/client-area/ca.js, code is 53, comment is 0, blank is 3.
+functions/client-area/client-area.php, code is 229, comment is 66, blank is 79.
+functions/client-area/metabox.php, code is 71, comment is 16, blank is 11.
+functions/extra-woo-functions-arg.php, code is 153, comment is 0, blank is 7.
+functions/extra-woo-functions.php, code is 262, comment is 29, blank is 57.
+functions/fw-ajax-search.php, code is 67, comment is 13, blank is 21.
+functions/fw-blog-options.php, code is 118, comment is 28, blank is 9.
+functions/fw-extra-functions.php, code is 334, comment is 50, blank is 107.
+functions/fw-navwalker.php, code is 238, comment is 268, blank is 44.
+functions/fw-shopping-cart.php, code is 120, comment is 5, blank is 37.
+functions/fw-shortcodes.php, code is 222, comment is 8, blank is 27.
+functions/fw-theme-options.php, code is 1629, comment is 97, blank is 146.
+functions/fw-user-account.php, code is 24, comment is 0, blank is 8.
+functions/hide-default-woocomerce-category.php, code is 30, comment is 32, blank is 13.
+functions/ihaf.php, code is 19, comment is 9, blank is 5.
+functions/navbackup.php, code is 192, comment is 98, blank is 43.
+functions/product-enquiry-form/.gitignore, code is 1, comment is 0, blank is 0.
+functions/product-enquiry-form/languages/wc_enquiry_form.pot, code is 95, comment is 0, blank is 38.
+functions/product-enquiry-form/product-enquiry-form.php, code is 265, comment is 111, blank is 88.
+functions/product-enquiry-form/readme.txt, code is 23, comment is 0, blank is 11.
+functions/product-enquiry-form/woo-includes/class-wc-dependencies.php, code is 13, comment is 5, blank is 10.
+functions/product-enquiry-form/woo-includes/woo-functions.php, code is 59, comment is 23, blank is 15.
+functions/shortcodes/class-shortcodes.php, code is 16, comment is 1, blank is 10.
+functions/shortcodes/class-woo-shortcodes.php, code is 436, comment is 16, blank is 86.
+functions/shortcodes/woo-cats-carousel2.php, code is 45, comment is 1, blank is 5.
+functions/shortcodes/woo-products-carousel2.php, code is 41, comment is 1, blank is 6.
+functions/tab_descargas.php, code is 20, comment is 0, blank is 3.
+functions/tab_video.php, code is 45, comment is 6, blank is 5.
+functions/vc_customs/vc_fastway.php, code is 335, comment is 11, blank is 30.
+functions/vc_customs/vc_woo_carousels.php, code is 260, comment is 20, blank is 42.
+functions/woo-empty-cart-button.php, code is 54, comment is 43, blank is 13.
+functions/woocommerce-category-banner/assets/css/wcb-admin.css, code is 19, comment is 0, blank is 3.
+functions/woocommerce-category-banner/assets/js/wcb-admin.js, code is 29, comment is 11, blank is 10.
+functions/woocommerce-category-banner/woocommerce-category-banner.php, code is 130, comment is 39, blank is 45.
+functions/woocommerce_custom_related_products.php, code is 120, comment is 46, blank is 17.
+global-templates/left-sidebar-check.php, code is 30, comment is 1, blank is 3.
+global-templates/pagination.php, code is 63, comment is 23, blank is 17.
+global-templates/right-sidebar-check.php, code is 11, comment is 1, blank is 4.
+header.php, code is 62, comment is 8, blank is 10.
+inc/breadcrumb.php, code is 182, comment is 10, blank is 37.
+inc/class-staticblocks.php, code is 134, comment is 7, blank is 21.
+inc/enqueue.php, code is 30, comment is 1, blank is 10.
+inc/pagination.php, code is 57, comment is 17, blank is 19.
+inc/widgets.php, code is 99, comment is 11, blank is 15.
+inc/woocommerce.php, code is 66, comment is 33, blank is 2.
+index.php, code is 33, comment is 5, blank is 29.
+languages/ent.mo, it is a binary file.
+languages/ent.po, code is 1021, comment is 0, blank is 370.
+loop-templates/content-blank.php, code is 2, comment is 0, blank is 1.
+loop-templates/content-empty.php, code is 2, comment is 0, blank is 2.
+loop-templates/content-none.php, code is 23, comment is 0, blank is 10.
+loop-templates/content-page.php, code is 19, comment is 0, blank is 12.
+loop-templates/content-search.php, code is 17, comment is 0, blank is 16.
+loop-templates/content-single.php, code is 21, comment is 0, blank is 16.
+loop-templates/content.php, code is 12, comment is 0, blank is 1.
+page-templates/blank.php, code is 23, comment is 8, blank is 3.
+page-templates/both-sidebarspage.php, code is 27, comment is 9, blank is 18.
+page-templates/empty.php, code is 6, comment is 8, blank is 3.
+page-templates/fullwidthpage.php, code is 23, comment is 9, blank is 18.
+page-templates/left-sidebarpage.php, code is 26, comment is 9, blank is 17.
+page-templates/right-sidebarpage.php, code is 26, comment is 9, blank is 18.
+page.php, code is 29, comment is 12, blank is 19.
+sass/fastway.scss, code is 1829, comment is 75, blank is 239.
+screenshot.png, it is a binary file.
+search.php, code is 35, comment is 11, blank is 26.
+searchform.php, code is 13, comment is 5, blank is 1.
+sidebar-left.php, code is 19, comment is 0, blank is 3.
+sidebar-right.php, code is 25, comment is 0, blank is 4.
+single.php, code is 27, comment is 7, blank is 18.
+style.css, code is 0, comment is 8, blank is 0.
+templates/fw-templates.php, code is 90, comment is 10, blank is 19.
+templates/headers/header-1-1.php, code is 21, comment is 0, blank is 2.
+templates/headers/header-1-2.php, code is 25, comment is 0, blank is 2.
+templates/headers/header-1-3.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-1-4.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-1-5.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-10-1.php, code is 34, comment is 0, blank is 1.
+templates/headers/header-100-1.php, code is 11, comment is 0, blank is 1.
+templates/headers/header-100-2.php, code is 21, comment is 0, blank is 2.
+templates/headers/header-11-1.php, code is 66, comment is 0, blank is 6.
+templates/headers/header-12-1.php, code is 30, comment is 0, blank is 1.
+templates/headers/header-13-1.php, code is 37, comment is 0, blank is 1.
+templates/headers/header-14-1.php, code is 24, comment is 1, blank is 1.
+templates/headers/header-15-1.php, code is 38, comment is 0, blank is 2.
+templates/headers/header-15-2.php, code is 43, comment is 0, blank is 4.
+templates/headers/header-15-3.php, code is 23, comment is 0, blank is 2.
+templates/headers/header-15-4.php, code is 23, comment is 0, blank is 2.
+templates/headers/header-2-1.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-2-2.php, code is 24, comment is 0, blank is 0.
+templates/headers/header-2-3.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-2-4.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-2-5.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-3-1.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-3-2.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-3-3.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-3-4.php, code is 23, comment is 0, blank is 1.
+templates/headers/header-3-5.php, code is 23, comment is 0, blank is 0.
+templates/headers/header-4-1.php, code is 31, comment is 0, blank is 3.
+templates/headers/header-4-2.php, code is 37, comment is 0, blank is 2.
+templates/headers/header-7-1.php, code is 24, comment is 0, blank is 3.
+templates/headers/header-8-1.php, code is 13, comment is 0, blank is 3.
+templates/headers/header-9-1.php, code is 36, comment is 0, blank is 0.
+templates/headers/header-9-2.php, code is 36, comment is 0, blank is 2.
+templates/mobile-headers/mobile-header-1.php, code is 27, comment is 0, blank is 7.
+templates/mobile-headers/mobile-header-2.php, code is 40, comment is 0, blank is 4.
+templates/mobile-headers/mobile-header-3.php, code is 11, comment is 1, blank is 0.
+templates/mobile-headers/mobile-header-4.php, code is 48, comment is 1, blank is 7.
+templates/mobile-headers/mobile-header-5.php, code is 50, comment is 1, blank is 7.
+templates/mobile-product-loops/mobile-product-loop-1.php, code is 18, comment is 28, blank is 7.
+templates/product-loops/product-loop-1.php, code is 8, comment is 30, blank is 4.
+templates/product-loops/product-loop-2.php, code is 43, comment is 29, blank is 6.
+templates/product-loops/product-loop-3.php, code is 60, comment is 17, blank is 12.
+templates/product-loops/product-loop-4.php, code is 14, comment is 23, blank is 4.
+templates/product-loops/product-loop-5.php, code is 44, comment is 23, blank is 11.
+templates/product-loops/product-loop-6.php, code is 58, comment is 23, blank is 5.
+templates/product-loops/product-loop-7.php, code is 58, comment is 17, blank is 6.
+templates/product-loops/product-loop-8.php, code is 55, comment is 17, blank is 8.
+templates/single-products/single-product-1-1.php, code is 16, comment is 25, blank is 3.
+templates/single-products/single-product-1.php, code is 466, comment is 21, blank is 85.
+templates/single-products/single-product-2.php, code is 467, comment is 21, blank is 82.
+vc_templates/vc_column.php, code is 77, comment is 14, blank is 12.
+vc_templates/vc_column_inner.php, code is 40, comment is 12, blank is 7.
+vc_templates/vc_row.php, code is 115, comment is 26, blank is 19.
+vc_templates/vc_row_inner.php, code is 58, comment is 14, blank is 11.
+woocommerce.php, code is 38, comment is 13, blank is 16.
+woocommerce/cart/cart-empty.php, code is 13, comment is 20, blank is 4.
+woocommerce/cart/cart.php, code is 118, comment is 24, blank is 26.
+woocommerce/cart/mini-cart.php, code is 47, comment is 19, blank is 11.
+woocommerce/cart/proceed-to-checkout-button.php, code is 8, comment is 19, blank is 2.
+woocommerce/checkout/form-checkout.php, code is 32, comment is 17, blank is 18.
+woocommerce/checkout/form-coupon.php, code is 21, comment is 17, blank is 7.
+woocommerce/checkout/form-pay.php, code is 72, comment is 16, blank is 10.
+woocommerce/checkout/payment.php, code is 38, comment is 16, blank is 6.
+woocommerce/checkout/review-order.php, code is 86, comment is 16, blank is 17.
+woocommerce/content-product.php, code is 21, comment is 18, blank is 6.
+woocommerce/content-single-product.php, code is 15, comment is 23, blank is 5.
+woocommerce/global/form-login.php, code is 35, comment is 17, blank is 11.
+woocommerce/global/quantity-input.php, code is 18, comment is 16, blank is 2.
+woocommerce/global/wrapper-end.php, code is 6, comment is 17, blank is 1.
+woocommerce/global/wrapper-start.php, code is 10, comment is 19, blank is 4.
+woocommerce/loop/add-to-cart.php, code is 17, comment is 16, blank is 1.
+woocommerce/loop/orderby.php, code is 26, comment is 18, blank is 2.
+woocommerce/myaccount/downloads.php, code is 20, comment is 18, blank is 9.
+woocommerce/myaccount/form-edit-account.php, code is 45, comment is 16, blank is 12.
+woocommerce/myaccount/form-edit-address.php, code is 33, comment is 16, blank is 13.
+woocommerce/myaccount/form-login.php, code is 68, comment is 17, blank is 36.
+woocommerce/myaccount/form-lost-password.php, code is 19, comment is 16, blank is 10.
+woocommerce/myaccount/form-reset-password.php, code is 25, comment is 16, blank is 11.
+woocommerce/myaccount/my-address.php, code is 51, comment is 18, blank is 12.
+woocommerce/myaccount/my-orders.php, code is 84, comment is 5, blank is 16.
+woocommerce/myaccount/navigation.php, code is 15, comment is 16, blank is 4.
+woocommerce/myaccount/orders.php, code is 72, comment is 19, blank is 16.
+woocommerce/product-searchform.php, code is 14, comment is 16, blank is 3.
+woocommerce/single-product-reviews.php, code is 80, comment is 19, blank is 14.
+woocommerce/single-product/add-to-cart/simple.php, code is 29, comment is 28, blank is 13.
+woocommerce/single-product/add-to-cart/variation-add-to-cart-button.php, code is 21, comment is 14, blank is 4.
+woocommerce/single-product/product-thumbnails.php, code is 24, comment is 16, blank is 6.
+woocommerce/single-product/rating.php, code is 21, comment is 17, blank is 6.
+woocommerce/single-product/review-rating.php, code is 9, comment is 17, blank is 3.
+woocommerce/single-product/short-description.php, code is 12, comment is 17, blank is 4.
+===============================================================================

@@ -203,6 +203,4 @@ add_action( 'template_redirect', 'template_sredirect' );
 
 
 
-
-
 ?>

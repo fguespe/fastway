@@ -23,7 +23,7 @@ function clasesbody(){
 		clase="slider";
 	}else if(pagina=="edit.php?post_type=product&page=product_attributes"){
 		clase="atributos";
-	}else if(pagina=="users.php"){
+	}else if(pagina.includes("users.php") || pagina.includes("user-new.php")){
 		clase="usuarios";
 	}else if(pagina.includes('upload.php')){
 		clase="importacion";
