@@ -15,7 +15,6 @@ function addanotherrole($roles) {
 
 /*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
 function fw_allow_users_to_shopmanager() {
-    error_log('jaa');
     $role = get_role( 'shop_manager' );
     $role->add_cap( 'edit_theme_options' ); 
     $role->add_cap( 'manage_options' ); 
