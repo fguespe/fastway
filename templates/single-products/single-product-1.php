@@ -13,29 +13,31 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
 ?>
 
 <div class="container d-flex row px-0 mx-0">
-	<div class="gallery col-md-8 px-0">
-         <div class="detalle-imagenListado <?=$clasecant?> active">
+	<div class="gallery col-md-8 px-0 <?=$clasecant?>">
+         <div class="detalle-imagenListado  active">
             <div id="imagenListado" itemscope="" itemtype="http://schema.org/MediaObject" style="position: relative; overflow: hidden;">
                 <?fw_product_gallery($product);?>
             </div>
             <div id="mainNextIL" class="swiper-next"><i class="fa fa-angle-right"></i></div>
             <div id="mainPrevIL" class="swiper-prev"><i class="fa fa-angle-left"></i></div>
          </div>
+
+         <ul id="paginationIL" class="d-none d-sm-block"></ul>
 	</div>
  	<div class="summary col-md-4">
-            <?remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+			<?
+			remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
             add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
             function send_to_html(){
                 global $product;
                 echo fw_price_html1(null,$product);
             }
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
-			remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
-            do_action( 'woocommerce_single_product_summary' );
+			do_action( 'woocommerce_single_product_summary' );
             dynamic_sidebar('sp-sumary');
-            ?>
-            
-            <? echo getFinanciacion($product);?>
+            echo getFinanciacion($product);
+			fw_share_redes();
+			?>
 	</div>
 
 </div>
@@ -61,68 +63,6 @@ do_action( 'woocommerce_after_single_product_summary' );
 
 
 
-
-<script type="text/javascript">
-
-
-jQuery( document ).ready(function() {
-    // Cambia los precios variables
-	if (jQuery('form.variations_form').length !== 0) {
-	var form = jQuery('form.variations_form');
-	var variable_product_price = '';
-	setInterval(function() {
-		
-		if (jQuery('.single_variation_wrap span.price span.amount').length !== 0) {
-		
-			if (jQuery('.single_variation_wrap span.price span.amount').text() !== variable_product_price) {
-				variable_product_price = jQuery('.single_variation_wrap span.price span.amount').text();
-				//  alert(variable_product_price);
-				jQuery('.single-product-summary p.price span.amount').text(variable_product_price);
-				jQuery('.precioproducto span.precio').text(variable_product_price);
-			}
-		}
-	}, 500);
-	}
-
-	//Crea las thumnails de la izquierda
-    var ProductSwiper = new Swiper('.swiper-related', {
-            //pagination: '.swiper-prod-rel-pagination',
-            nextButton: '.swiper-prod-next',
-            prevButton: '.swiper-prod-prev',
-            slidesPerView:6,
-            slidesPerGroup:6,
-            paginationClickable: true,
-            spaceBetween: 10,
-            loop: true,
-            breakpoints: {
-            // when window width is <= 320px
-                900:    {slidesPerView: 2,slidesPerGroup:2},
-                1000:   {slidesPerView: 3,slidesPerGroup:3},            
-                1200:    {slidesPerView: 4,slidesPerGroup:4}
-            }
-        });
-
-       //Llena la galeria del centro
-        jQuery('#imagenListado').before('<ul id="navIL">').cycle({ 
-            fx:     'scrollLeft', 
-            speed:  'fast', 
-            timeout: 0, 
-            next:   '#mainNextIL', 
-            prev:   '#mainPrevIL',
-            pager:  '#paginationIL', 
-            // callback fn that creates a thumbnail to use as pager anchor 
-            pagerAnchorBuilder: function(idx, slide) {             
-                var img     = jQuery(slide).find('img').attr('src');
-                if(img == null){
-                    return '<li><a href="#"><img src="https://www.bidcom.com.ar/images/video-thumb.png" width="50" height="50" /></a></li>'; 
-                }else{
-                    return '<li><a href="#"><img src="'+ img + '" width="50" /></a></li>';
-                }    
-            } 
-        });
-
-});
-</script>
 <style>
 /*generales*/
 
@@ -169,7 +109,9 @@ jQuery( document ).ready(function() {
 	height: 400px !important;
 	width: 0;
 }
-
+.vacio #paginationIL{
+	display:none !important;
+}
 
 /***** Pasador imagen detalle *****/
 
@@ -182,15 +124,15 @@ jQuery( document ).ready(function() {
 	position: relative;
 	float: right;
 	height: 400px;
-	width: 80%
+	width: 80%;
 }
 /*si esta sin galeria*/
-.detalle-imagenListado.vacio{
+.vacio .detalle-imagenListado{
 		float:none;
 		width:100%;
 }
-.detalle-imagenListado.vacio .swiper-next,
-.detalle-imagenListado.vacio .swiper-prev{
+.vacio .detalle-imagenListado .swiper-next,
+.vacio .detalle-imagenListado .swiper-prev{
 		display:none;
 }
 
@@ -249,6 +191,19 @@ jQuery( document ).ready(function() {
 	transition: all 450ms linear 0s;
 }
 
+@media (max-width: 992px) {
+    #paginationIL{
+        display: none;
+    }
+   .detalle-imagenListado{
+	height:auto;
+	width: 100%;
+    }
+    .detalle-imagenListado #imagenListado img{
+        width: 100%;
+        position: relative;
+    }
+}
 
 /*precio*/
 
@@ -384,14 +339,4 @@ a.btn-medios:hover {
 	display: none !important;
 }
 
-
-/*stock*/
-
-.fw_single_product .summary .quantity {
-	display: none;
-}
-
-.summary .stock {
-	display: none;
-}
 </style>

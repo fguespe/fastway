@@ -271,7 +271,6 @@ function fw_redirect_after_login( $redirect_to, $request, $user ){
     // is there a user ?
     
      if ( ! is_wp_error( $user ) ) {
-        error_log("ja");
         // do redirects on successful login
         if ( !$user->has_cap( 'administrator' ) && $user->has_cap( 'calendario' ) ) {
             return admin_url('admin.php?page=bookly-calendar' );

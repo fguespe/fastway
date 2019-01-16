@@ -2,7 +2,40 @@
 
 /*SHOP MANAGER ROLES*/
 
-
+function fw_share_redes(){
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    
+    echo '<div id="fw_share_redes" class="d-flex justify-content-between">
+    <!-- Email -->
+    <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u='.$actual_link.'" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    
+    <!-- Link -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url='.$actual_link.'" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+    
+    <!-- Facebook -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+    </a>
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    </a>
+    
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url='.$actual_link.'&amp;text=Mirá este producto que encontré" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+    </div>';
+}
 add_filter( 'woocommerce_shop_manager_editable_roles', 'addanotherrole' );
 function addanotherrole($roles) {
     // add the additional role to the woocommerce allowed roles (customer)

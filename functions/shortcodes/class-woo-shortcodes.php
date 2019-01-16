@@ -401,7 +401,7 @@ class fw_Woo_Shortcodes {
 		foreach ($all_categories as $cat) {
 			if($cat->category_parent == 0) {
 				$category_id = $cat->term_id;  
-				error_log(json_encode($cat));     
+				//error_log(json_encode($cat));     
 				echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
 
 				$args2 = array(

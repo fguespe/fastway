@@ -24,7 +24,6 @@ function ajax_search() {
   // Run search query
   if ( $query->have_posts() ) {
     while ( $query->have_posts() ) : $query->the_post();
-      write_log(get_the_title());
       /* Output a link to each result
          This is where the post thumbnail, excerpt, or anything else could be added */
       echo '<a class="autocomplete-suggestion" href="' . get_permalink() . '">' . get_the_title() . '</a>';

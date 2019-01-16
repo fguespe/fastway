@@ -24,18 +24,7 @@ function fw_getme_roles(){
     return $roles;
 }
 
-if ( !function_exists( 'write_log' ) ):
-function write_log ( $log )  {
-    if ( true === WP_DEBUG ) {
-        $logg="GUESPES: ";
-        if ( is_array( $log ) || is_object( $log ) ) {
-            error_log( $logg.print_r( $log, true ) );
-        } else {
-            error_log( $logg.$log );
-        }
-    }
-}   
-endif;
+
 //remove_filter( 'the_content', 'wpautop' );
 //remove_filter( 'the_excerpt', 'wpautop' );
 
