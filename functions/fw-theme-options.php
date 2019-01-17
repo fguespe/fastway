@@ -1737,6 +1737,28 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-logged_in',
+	'label'       => __( 'CSS Logged In', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-admin',
+	'label'       => __( 'CSS Admin', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 /*CLIENT AREA*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',

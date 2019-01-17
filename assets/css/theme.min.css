@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.fw_header_top .widget_nav_menu ul li {
+  display: inline;
+}
+.fw_header_top .widget_nav_menu .widget-title {
+  display: none;
+}
+.fw_header_top .widget_nav_menu ul a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .envio-gratis-tag {
   position: absolute;
   height: 25px;
@@ -8,8 +19,8 @@
   border: 1px solid #eaeaea;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
-  border-radius: 40px !important;
-  bottom: 50px;
+  border-radius: 0px !important;
+  top: 0px;
   right: 0px;
   line-height: 25px;
   text-align: center;
