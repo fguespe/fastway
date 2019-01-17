@@ -77,5 +77,5 @@ add_action('woocommerce_shop_loop_item_title','envio_labels');
 
 ?>
 </a>
-<? echo fw_price_html1(); ?>
+<? echo fw_price_html1(null,$product); ?>
 

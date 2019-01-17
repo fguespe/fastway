@@ -26,7 +26,7 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
 	</div>
  	<div class="summary col-md-4">
 			<?
-			add_filter('woocommerce_get_price_html', 'fw_price_html1', 80, 2 );
+			add_filter('woocommerce_get_price_html', 'fw_price_html1', 10, 2 );
 			do_action( 'woocommerce_single_product_summary' );
 			dynamic_sidebar('sp-sumary');
 			echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('shop-single-product-html'))));
