@@ -5,7 +5,7 @@
 function fw_share_redes(){
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     
-    echo '<div id="fw_share_redes" class="d-flex justify-content-between">
+    return '<div id="fw_share_redes" class="d-flex justify-content-between">
     <!-- Email -->
     <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
         <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
@@ -267,13 +267,15 @@ function fw_global_variation_price() {
     <?php
 }
 
-function envio_labels($product){
+function envio_labels(){
+    global $product;
     if($product->get_shipping_class()=="envio-gratis"){
         echo '<div class="envio-gratis-tag grupo-envio-6" title="Éste producto tiene envío Gratis"><i class="fal fa-shipping-fast"></i> Gratis</div>';
     }
 }
 
-function fw_price_html1( $price, $product ){
+function fw_price_html1(){
+    global $product;
     if(fw_theme_mod("prices-enabled"))return '';
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -294,22 +296,18 @@ function fw_price_html1( $price, $product ){
         $sale_price=$product->sale_price;
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
-
-    //if($product->is_on_sale()){
-  
-        if($product->is_on_sale()){
-        return '<div class="precioproducto">
-            <span class="precio">$'.$sale_price.'</span>
-            <div class="tachado">
-                <span class="precio-anterior t1 tachado"><del>$'.$regular_price.'</del></span>
-                <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
-            </div>
-            </div>';
-        }else{
-             return '<div class="precioproducto">
-                <span class="precio">$'.$regular_price.'</span>
-                </div>';
-        }      
+    error_log(get_option('woocommerce_price_display_suffix'));
+    if($product->is_on_sale()){
+    return '<div class="precioproducto">
+        <span class="precio">$'.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
+        <div class="tachado">
+            <span class="precio-anterior t1 tachado"><del>$'.$regular_price.'</del></span>
+            <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
+        </div>
+        </div>';
+    }else{
+        return '<div class="precioproducto"><span class="precio">$'.$regular_price.' '.fw_theme_mod('fw_price_suffix').'</span></div>';
+    }      
 }
 $my_theme = wp_get_theme();
 if($my_theme!="lombok-child")

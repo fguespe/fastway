@@ -73,10 +73,10 @@ do_action( 'woocommerce_before_shop_loop_item_title' );
  */
 do_action( 'woocommerce_shop_loop_item_title' );
 
+add_action('woocommerce_shop_loop_item_title','envio_labels'); 
 
 ?>
 </a>
-<? echo fw_price_html1(null,$product); 
-echo envio_labels($product); 
+<? echo fw_price_html1(); 
 ?>
 

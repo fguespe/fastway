@@ -902,6 +902,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_price_suffix',
+	'label'    => __( 'Price Suffix', 'fastway' ),
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',
 	'label'       => __( 'User Template', 'fastway' ),
@@ -1131,7 +1137,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $single_templates,
 	'default'		=> '1',
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'shop-single-product-html',
+	'label'    => __( 'Summary HTML', 'fastway' ),       
+	'section'     => 'section_woo_single',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
 //}
 /*FOOTER*/
 Kirki::add_field( 'theme_config_id', array(

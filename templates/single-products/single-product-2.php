@@ -50,10 +50,8 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 	</div>
  	<div class="summary col-md-4">
             <?remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-            add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
-            function send_to_html(){
-                global $product;echo fw_price_html1(null,$product);
-            }
+            add_action('woocommerce_single_product_summary', 'fw_price_html1', 10 );
+
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
 			remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
 			do_action( 'woocommerce_single_product_summary' );?>

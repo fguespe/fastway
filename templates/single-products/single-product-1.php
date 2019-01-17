@@ -26,45 +26,12 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
 	</div>
  	<div class="summary col-md-4">
 			<?
-			remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-            add_action('woocommerce_single_product_summary', 'send_to_html', 10 );
-            function send_to_html(){
-                global $product;
-                echo fw_price_html1(null,$product);
-            }
-			remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
+			add_filter('woocommerce_get_price_html', 'fw_price_html1', 80, 2 );
 			do_action( 'woocommerce_single_product_summary' );
-			?>
-			<a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 segura">
-	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="far fa-shield-alt"></i></div>
-	                <div class="col-10 text-left calcular-costo-envio">
-	                	<h4 class="">Compra Segura</h4>
-	                    <span class="">Garantía de Fabrica</span>
-	                </div>
-                </div>
-            </a>
-            <a target="_blank" data-toggle="" data-target="" class="fancybox btn-medios block btn-mobile t2 prueba">
-	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-gift"></i></div>
-	                <div class="col-10 text-left calcular-costo-envio">
-	                	<h4 class="">Beneficio incluído</h4>
-	                    <span class="">10 días de prueba</span>
-	                </div>
-                </div>
-            </a>
-            <a target="_blank" data-toggle="modal" data-target="#modalMediosPago" class="fancybox btn-medios block btn-mobile pagos">
-	            <div class="row">
-	                <div class="col-2 text-left v-top txt-28"><i class="fal fa-credit-card"></i></div>
-	                <div class="col-10 text-left calcular-costo-envio">
-	                	<h4 class="">Ver cuotas y medios de pago</h4>
-	                    <span class="">(Ver promociones vigentes)</span>
-	                </div>
-	            </div>
-			</a>
-			<?
-            echo getFinanciacion($product);
-			fw_share_redes();
+			dynamic_sidebar('sp-sumary');
+			echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('shop-single-product-html'))));
+			echo getFinanciacion($product);
+			echo fw_share_redes();
 			?>
 	</div>
 
