@@ -178,7 +178,7 @@ function fw_slider_function( $atts, $content ) {
     //Desktop
     $image_ids = explode(',',$gallery['slides_desktop']);
     $return = '
-    <div class="swiper-fwslider-'.$rand.' over-hidden relative">
+    <div class="swiper-fwslider-'.$rand.'  d-none d-md-block  over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     foreach( $image_ids as $image_id ){
         $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
@@ -212,7 +212,7 @@ function fw_slider_function( $atts, $content ) {
     //Mobile
     $image_ids = explode(',',$gallery['slides_mobile']);
     $return .= '
-    <div class="swiper-fwslider-'.$rand.' over-hidden relative">
+    <div class="swiper-fwslider-'.$rand.' d-md-none   over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     foreach( $image_ids as $image_id ){
         $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
