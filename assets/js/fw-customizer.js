@@ -49,4 +49,9 @@ wp.customize( 'css_editor-header-headerwidget', function( value ) {
     jQuery( '#css_editor-widget' ).text(newval );
   } );
 } );
+wp.customize( 'css_editor-logged_in', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_editor-logged_in' ).text(newval );
+  } );
+} );
 });

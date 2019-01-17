@@ -124,7 +124,7 @@
 		}
 	}
   /*PRECIO*/
-  .precio {
+  .summary .precio {
     line-height: 45px;
     font-weight: 300;
     font-size:45px ;
@@ -132,10 +132,10 @@
     margin-bottom: 0px;
     text-align:center ;
   }
-  .precio1{
+  .summary .precio1{
     text-align:center;
   }
-  .precio1 .tachado{
+  .summary .precio1 .tachado{
     text-align:center;
     font-size:18px;
     margin-bottom:5px;
@@ -148,10 +148,11 @@
     text-align:center ;
   }
 
-  .product-type-variable .precio1{
+  .summary .product-type-variable .precio1{
 		  display:none;
   }
-  .single_variation_wrap .precio1{
+  
+  .summary .single_variation_wrap .precio1{
       display:block;
   }
 	/*btn medios*/
@@ -249,6 +250,9 @@
   .widget_nav_menu ul a{
     padding-left:5px; 
     padding-right:5px;
+  }
+  .widget_nav_menu:nth-child(1){
+    float:right;
   }
 } 
 .envio-gratis-tag {
