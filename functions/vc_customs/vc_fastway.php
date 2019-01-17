@@ -147,16 +147,26 @@ function fw_slider() {
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Desktop Images", "appcastle-core" ),
+                    "heading"     => esc_html__( "Desktop Images", "fastway" ),
                     "param_name"  => "slides_desktop",
                     "value"       => "",
                 ),
                 array(
+                    "type" => 'textfield',
+                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "param_name"  => "links_desktop",
+                  ),
+                array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Mobile Images", "appcastle-core" ),
+                    "heading"     => esc_html__( "Mobile Images", "fastway" ),
                     "param_name"  => "slides_mobile",
                     "value"       => "",
                 ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "param_name"  => "links_mobile",
+                  ),
 
             )
         )
@@ -169,25 +179,30 @@ add_action( 'vc_before_init', 'fw_slider' );
 
 function fw_slider_function( $atts, $content ) {
     $rand=generateRandomString(5);
-    $gallery = shortcode_atts(
+    $atts = shortcode_atts(
         array(
             'slides_desktop'      =>  'slides_desktop',
+            'links_desktop'      =>  'links_desktop',
             'slides_mobile'      =>  'slides_mobile',
+            'links_mobile'      =>  'links_mobile',
         ), $atts );
     
     //Desktop
-    $image_ids = explode(',',$gallery['slides_desktop']);
+    $image_ids = explode(',',$atts['slides_desktop']);
+    $links = explode(',',$atts['links_desktop']);
     $return = '
     <div class="swiper-fwslider-'.$rand.'  d-none d-md-block  over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
+    $cant=0;
     foreach( $image_ids as $image_id ){
-        $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
-        $link='#';
+        $images = wp_get_attachment_image_src( $image_id, '' );
+        $link=$links[$cant];
         $image=$images[0];
         $return .= '<div class="swiper-slide">';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
+        $cant++;
     }
     $return .='</div>
     <div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
@@ -210,13 +225,15 @@ function fw_slider_function( $atts, $content ) {
     </script>';
 
     //Mobile
-    $image_ids = explode(',',$gallery['slides_mobile']);
+    $image_ids = explode(',',$atts['slides_mobile']);
+    $links = explode(',',$atts['links_mobile']);
+    $cant=0;
     $return .= '
     <div class="swiper-fwslider-'.$rand.' d-md-none   over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     foreach( $image_ids as $image_id ){
-        $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
-        $link='#';
+        $images = wp_get_attachment_image_src( $image_id, '' );
+        $link=$links[$cant];
         $image=$images[0];
         $return .= '<div class="swiper-slide">';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
