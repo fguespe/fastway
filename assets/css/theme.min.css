@@ -13,6 +13,7 @@
   /*break column*/
   /***** Pasador imagen detalle *****/
   /*si esta sin galeria*/
+  /*PRECIO*/
   /*btn medios*/
   /*boton compra*/
   /*titulo*/
@@ -126,6 +127,35 @@
     width: 100%;
     position: relative;
   }
+}
+.fw_single_product .precio {
+  line-height: 45px;
+  font-weight: 300;
+  font-size: 45px;
+  display: block;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.fw_single_product .precio1 {
+  text-align: center;
+}
+.fw_single_product .precio1 .tachado {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.fw_single_product .precio1 .precio-anterior {
+  color: #999;
+  font-size: 15px;
+  line-height: 13px;
+  padding: 5px 0 0 5px;
+  text-align: center;
+}
+.fw_single_product .product-type-variable .precio1 {
+  display: none;
+}
+.fw_single_product .single_variation_wrap .precio1 {
+  display: block;
 }
 .fw_single_product .btn-medios {
   display: block;
