@@ -306,7 +306,7 @@ function fw_price_html1(){
         </div>
         </div>';
     }else{
-        return '<div class="precioproducto"><span class="precio">$'.$regular_price.' '.fw_theme_mod('fw_price_suffix').'</span></div>';
+        return '<div class="precioproducto"><span class="precio">$'.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></div>';
     }      
 }
 $my_theme = wp_get_theme();
