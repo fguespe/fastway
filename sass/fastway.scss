@@ -12,7 +12,10 @@
 	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	.content-area {
 		padding: 0px;
-	}
+  }
+  #mainNextIL,#mainPrevIL{
+    z-index:999;
+  }
 	/*THUMBNAILS*/
 	#paginationIL li {
 		opacity: 0.4;
