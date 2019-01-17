@@ -135,6 +135,119 @@ vc_add_param("vc_column_inner", array(
     )
 ));
 
+function fw_slider() {
+    // Title
+    vc_map(
+        array(
+            'name' => __( 'FW Slider' ),
+            'base' => 'fw_slider_function',
+            'description' => __('FW Slider', 'fastway'), 
+            'category' => __('Fastway', 'fastway'), 
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'params' => array(
+                array(
+                    "type"        => "attach_images",
+                    "heading"     => esc_html__( "Desktop Images", "appcastle-core" ),
+                    "param_name"  => "slides_desktop",
+                    "value"       => "",
+                ),
+                array(
+                    "type"        => "attach_images",
+                    "heading"     => esc_html__( "Mobile Images", "appcastle-core" ),
+                    "param_name"  => "slides_mobile",
+                    "value"       => "",
+                ),
+
+            )
+        )
+    );
+    }
+
+add_action( 'vc_before_init', 'fw_slider' );
+
+
+
+function fw_slider_function( $atts, $content ) {
+    $rand=generateRandomString(5);
+    $gallery = shortcode_atts(
+        array(
+            'slides_desktop'      =>  'slides_desktop',
+            'slides_mobile'      =>  'slides_mobile',
+        ), $atts );
+    
+    //Desktop
+    $image_ids = explode(',',$gallery['slides_desktop']);
+    $return = '
+    <div class="swiper-fwslider-'.$rand.' over-hidden relative">
+    <div class="swiper-wrapper clear-ul">';
+    foreach( $image_ids as $image_id ){
+        $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
+        $link='#';
+        $image=$images[0];
+        $return .= '<div class="swiper-slide">';
+        $return .= '<a href="'.$link.'" ><div class="item product-category">';
+        $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+        $return .= '</div></a></div>';    
+    }
+    $return .='</div>
+    <div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
+    </div>
+    <script>
+    var swiper = new Swiper(".swiper-fwslider-'.$rand.'", {
+        navigation: {
+            nextEl: ".swiper-fwslider-'.$rand.'-next",
+            prevEl: ".swiper-fwslider-'.$rand.'-prev",
+        },   
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 4500,
+        loop: true,
+        autoplayDisableOnInteraction: true,
+        slidesPerView: 1
+    });
+    </script>';
+
+    //Mobile
+    $image_ids = explode(',',$gallery['slides_mobile']);
+    $return .= '
+    <div class="swiper-fwslider-'.$rand.' over-hidden relative">
+    <div class="swiper-wrapper clear-ul">';
+    foreach( $image_ids as $image_id ){
+        $images = wp_get_attachment_image_src( $image_id, 'company_logo' );
+        $link='#';
+        $image=$images[0];
+        $return .= '<div class="swiper-slide">';
+        $return .= '<a href="'.$link.'" ><div class="item product-category">';
+        $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+        $return .= '</div></a></div>';    
+    }
+    $return .='</div>
+    <div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
+    </div>
+    <script>
+    var swiper = new Swiper(".swiper-fwslider-'.$rand.'", {
+        navigation: {
+            nextEl: ".swiper-fwslider-'.$rand.'-next",
+            prevEl: ".swiper-fwslider-'.$rand.'-prev",
+        },   
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 4500,
+        loop: true,
+        autoplayDisableOnInteraction: true,
+        slidesPerView: 1
+    });
+    </script>';
+    
+    return $return;
+}   
+add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
+
+
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
 function vc_statick_block() {
 
@@ -143,7 +256,8 @@ function vc_statick_block() {
             "name" => __("Static Block", 'fastway'),
             'base' => 'fw_shortcode_stblock',
             'description' => __('FW Statick Block', 'fastway'), 
-            'category' => __('Fastway', 'fastway'),   "controls" => "full",
+            'category' => __('Fastway', 'fastway'),   
+            "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 "params" => array(
                 array(
