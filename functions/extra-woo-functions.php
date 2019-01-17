@@ -140,18 +140,14 @@ function fw_getfastars($average){
     if($average==0)$vacia=true;
 	for($i=1;$i<=5;$i++){
         $clase="";
-		//error_log($i." ".$average." ".floor($average));
 		if(!$vacia){
 			if($i==floor($average) && floor($average)!=$average){
                 $clase="-half ";$vacia=true;
-                //error_log("entro?");
-			}
+        	}
 			else if($i>=$average)$vacia=true;
 			else if($i<$average)$clase="";
-			//else $vacia=true;
 		}else{
-            //error_log("entro?");
-			$clase=" star-vacia ";
+        	$clase=" star-vacia ";
 		}
 		$html.= '<i class="fa fa-star'.$clase.' star'.$i.'" aria-hidden="true"></i>';
 		if($i==floor($average) && floor($average)!=$average && $vacia){
@@ -274,8 +270,7 @@ function envio_labels(){
     }
 }
 
-function fw_price_html1(){
-    global $product;
+function fw_price_html1($price,$product){
     if(fw_theme_mod("prices-enabled"))return '';
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -296,7 +291,6 @@ function fw_price_html1(){
         $sale_price=$product->sale_price;
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
-    error_log(get_option('woocommerce_price_display_suffix'));
     if($product->is_on_sale()){
     return '<div class="precioproducto">
         <span class="precio">$'.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
