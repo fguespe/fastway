@@ -310,8 +310,8 @@ function fw_price_html1(){
     }      
 }
 $my_theme = wp_get_theme();
-if($my_theme!="lombok-child")
-    add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+//if($my_theme!="lombok-child")
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
  * Optimize WooCommerce Scripts
