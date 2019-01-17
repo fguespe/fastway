@@ -13,9 +13,7 @@
 	.content-area {
 		padding: 0px;
   }
-  #mainNextIL,#mainPrevIL{
-    z-index:999;
-  }
+  
 	/*THUMBNAILS*/
 	#paginationIL li {
 		opacity: 0.4;
@@ -50,7 +48,10 @@
 		float: right;
 		height: 400px;
 		width: 80%;
-	}
+  }
+  #mainNextIL,#mainPrevIL{
+    z-index:999;
+  }
 	/*si esta sin galeria*/
 	.vacio .detalle-imagenListado {
 		float: none;

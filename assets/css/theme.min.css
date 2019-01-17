@@ -22,9 +22,6 @@
 .fw_single_product .content-area {
   padding: 0px;
 }
-.fw_single_product #mainNextIL, .fw_single_product #mainPrevIL {
-  z-index: 999;
-}
 .fw_single_product #paginationIL li {
   opacity: 0.4;
 }
@@ -56,6 +53,9 @@
   float: right;
   height: 400px;
   width: 80%;
+}
+.fw_single_product #mainNextIL, .fw_single_product #mainPrevIL {
+  z-index: 999;
 }
 .fw_single_product .vacio .detalle-imagenListado {
   float: none;
