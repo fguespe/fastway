@@ -294,10 +294,10 @@ display:none;
 #wp-content-media-buttons a{
 	display:none;
 }
-/*CLASE ENVIOS*/
+/*CLASE ENVIOS
 #shipping_product_data div:nth-child(2){
 	display:none !important;
-}
+}*/
 
 /*PESTAÑAS*/
 .nth_custom_tab_options,.wcwl_waitlist_tab{
