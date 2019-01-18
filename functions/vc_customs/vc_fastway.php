@@ -217,8 +217,8 @@ function fw_slider_function( $atts, $content ) {
         paginationClickable: true,
         spaceBetween: 30,
         centeredSlides: true,
-        autoplay: 4500,
         loop: true,
+        autoplay: { delay: 4500, },
         autoplayDisableOnInteraction: true,
         slidesPerView: 1
     });
@@ -253,7 +253,7 @@ function fw_slider_function( $atts, $content ) {
         paginationClickable: true,
         spaceBetween: 30,
         centeredSlides: true,
-        autoplay: 4500,
+        autoplay: { delay: 4500, },
         loop: true,
         autoplayDisableOnInteraction: true,
         slidesPerView: 1
