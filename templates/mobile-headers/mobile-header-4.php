@@ -21,6 +21,7 @@ global $header_middle_mobile;
       </div>
       <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart("link");?></div>
+      <div class="mobile-menu-overlay ">&nbsp;</div>
       <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">         

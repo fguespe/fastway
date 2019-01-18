@@ -489,6 +489,11 @@
     visibility: hidden;
     z-index: 3000;
 }
+.mobile-menu-overlay {
+width:100% !important;
+height:100% !important;
+
+}
     .mobile-menu-overlay.opened {
         opacity: 1;
         visibility: visible;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*generales*/
 .fw_single_product {
   background: #fff none repeat scroll 0 0;
@@ -489,6 +490,11 @@
   transition: opacity 0.2s ease-out 0s, visibility 0.3s ease-out 0s;
   visibility: hidden;
   z-index: 3000;
+}
+
+.mobile-menu-overlay {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .mobile-menu-overlay.opened {
