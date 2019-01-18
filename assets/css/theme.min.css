@@ -1,5 +1,49 @@
 @charset "UTF-8";
 /*generales*/
+:root {
+  --facebok:#4267B2;
+  --pinterest:red;
+  --youtube:#FF0200;
+  --whatsapp:#1BD760;
+  --instagram:#D1178A;
+  --linkedin:#0976b4;
+  --twitter:#38A1F3;
+}
+
+.fa-facebook-square,
+.fa-facebook {
+  color: var(--facebok) !important;
+}
+
+.fa-pinterest-square,
+.fa-pinterest {
+  color: var(--pinterest) !important;
+}
+
+.fa-twitter-square,
+.fa-twitter {
+  color: var(--twitter) !important;
+}
+
+.fa-youtube-square,
+.fa-youtube {
+  color: var(--youtube) !important;
+}
+
+.fa-instagram-square,
+.fa-instagram {
+  color: var(--instagram) !important;
+}
+
+.fa-whatsapp-square,
+.fa-whatsapp {
+  color: var(--whatsapp) !important;
+}
+
+.fa-linkedin {
+  color: var(--linkedin) !important;
+}
+
 .fw_single_product {
   background: #fff none repeat scroll 0 0;
   -webkit-border-radius: 4px;
@@ -270,16 +314,14 @@
   color: #39B54A;
 }
 
-#fw_share_redes img {
-  padding: 5px;
-  border: 0;
-  box-shadow: 0;
-  width: 35px;
-}
-
 #fw_share_redes {
   width: 80%;
   margin: 0 auto;
+}
+
+#fw_share_redes i {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .opiniones-visibles .row-calificacion {

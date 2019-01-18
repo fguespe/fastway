@@ -43,10 +43,10 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_re
 do_action( 'woocommerce_after_single_product_summary' );
 ?>
 
-<div class="container related" style="max-width: 1200px;">
+<div class="related" style="max-width: 1200px;">
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
         
-  <div class="swiper-related over-hidden container relative swiper-container-horizontal">
+  <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">
         <?fw_single_related($product);?>
     </div>

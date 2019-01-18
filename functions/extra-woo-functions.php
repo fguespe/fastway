@@ -8,31 +8,42 @@ function fw_share_redes(){
     return '<div id="fw_share_redes" class="d-flex justify-content-between">
     <!-- Email -->
     <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
-        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    <i class="fas fa-envelope"></i>
     </a>
- 
+    <a href="whatsapp://send?text=Mirá el producto este '.$actual_link.'" data-action="share/whatsapp/share">
+    <i class="fab fa-whatsapp-square"></i>
+    </a>
+    <a onclick="copy_to_clipboard(\'fw_copyclip\')">
+    <i class="fas fa-copy"></i>
+    <input type="text" value="'.$actual_link.'" id="fw_copyclip">
+    </a>
+    <style>
+    #fw_copyclip{
+        display: none;
+    }
+      </style>
     <!-- Facebook -->
     <a href="http://www.facebook.com/sharer.php?u='.$actual_link.'" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    <i class="fab fa-facebook-square"></i>
     </a>
     
     <!-- Link -->
     <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url='.$actual_link.'" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    <i class="fab fa-linkedin"></i>
     </a>
     
-    <!-- Facebook -->
+    <!-- Pinteres -->
     <a href="javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+    <i class="fab fa-pinterest-square"></i>
     </a>
     <!-- Print -->
     <a href="javascript:;" onclick="window.print()">
-        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    <i class="fas fa-print"></i>
     </a>
     
     <!-- Twitter -->
     <a href="https://twitter.com/share?url='.$actual_link.'&amp;text=Mirá este producto que encontré" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    <i class="fab fa-twitter-square"></i>
     </a>
     </div>';
 }
