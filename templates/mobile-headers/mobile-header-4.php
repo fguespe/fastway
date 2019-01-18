@@ -48,7 +48,7 @@ global $header_middle_mobile;
       </div>
     </div>
 
-    <div class="" id="navbarsExample02">
+    <div class="collapse navbar-collapse" id="navbarsExample02">
       <?php echo fw_search_form(3);?>
     </div>
      

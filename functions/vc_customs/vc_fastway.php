@@ -196,9 +196,11 @@ function fw_slider_function( $atts, $content ) {
     
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);
+    $claserespo='';
+    if(count(explode(',',$atts['slides_desktop']))>0)$claserespo=' d-none d-md-block ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
-    <div class="swiper-fwslider-'.$rand.'  d-none d-md-block  over-hidden relative">
+    <div class="swiper-fwslider-'.$rand.'  '.$claserespo.'  over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     $cant=0;
     foreach( $image_ids as $image_id ){
