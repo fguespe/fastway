@@ -155,7 +155,7 @@ function fw_slider() {
                     "type" => 'textfield',
                     "heading"     => __("Desktop Links (separated with ,)"),
                     "param_name"  => "links_desktop",
-                  ),
+                ),
                 array(
                     "type"        => "attach_images",
                     "heading"     => esc_html__( "Mobile Images", "fastway" ),
@@ -166,7 +166,13 @@ function fw_slider() {
                     "type" => 'textfield',
                     "heading"     => __("Desktop Links (separated with ,)"),
                     "param_name"  => "links_mobile",
-                  ),
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Columns"),
+                    "param_name"  => "cols",
+                    'value' => '1',
+                ),
 
             )
         )
@@ -185,6 +191,7 @@ function fw_slider_function( $atts, $content ) {
             'links_desktop'      =>  'links_desktop',
             'slides_mobile'      =>  'slides_mobile',
             'links_mobile'      =>  'links_mobile',
+            'cols'      =>  'cols',
         ), $atts );
     
     //Desktop
@@ -220,7 +227,7 @@ function fw_slider_function( $atts, $content ) {
         loop: true,
         autoplay: { delay: 4500, },
         autoplayDisableOnInteraction: true,
-        slidesPerView: 1
+        slidesPerView: '.$atts['cols'].'
     });
     </script>';
 
