@@ -65,8 +65,10 @@ endif;
 */
 
 $THEME_DIR= get_template_directory() . '/';
+$CHILDTHEME_DIR= get_stylesheet_directory() . '/';
 $THEME_URI = get_template_directory_uri() . '/';
 $TEMPLATE_DIR=$THEME_DIR."templates/";
+$CHILDTEMPLATE_DIR=$CHILDTHEME_DIR."templates/";
 $TEMPLATE_URI=$THEME_URI."templates/";
 $THEME_IMG_URI= $THEME_URI . 'images/';
 $THEME_CSS_URI= $THEME_URI . 'css/';

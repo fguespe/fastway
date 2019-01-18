@@ -19,13 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-//do_action( 'fastway_product_single_init_mobile', $redusx_demo['shop-single-mobile-product-style'] );
 
-/**
- * Hook Woocommerce_before_single_product.
- *
- * @hooked wc_print_notices - 10
- */
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {

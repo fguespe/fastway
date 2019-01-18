@@ -1,4 +1,4 @@
-<?php //CSB elementos
+<?php //CSB y elementos
 global $header_middle_mobile;
 ?>
 <style type="text/css">
@@ -22,6 +22,7 @@ global $header_middle_mobile;
           <button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fal fa-bars"></i></button>
           <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fal fa-search"></i></button>
           <?php echo fw_shoppingCart("link");?>
+          <?php echo fw_userAccount();?>
       </div>
       <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 

@@ -110,11 +110,11 @@ function fw_remove_menu_pages() {
         add_menu_page( 'salir', "<i class=' fa fa-sign-out'></i> ".'Salir', 'read', 'salir', 'fw_menu_salir_link');
     }
 }
-
+/*
 function fw_menu_salir_link_ca(){
   wp_redirect( wp_logout_url( home_url())); 
   exit;
-}
+}*/
 
 
 //Top bar
