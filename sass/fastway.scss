@@ -38,7 +38,21 @@ color:var(--whatsapp) !important;
 color:var(--linkedin) !important;
 }
 
-
+.woocommerce-form-login{
+  label{
+  width:10% !important;
+  }
+  .btn{
+  margin-right:20px;
+  border-color:var(--main);
+  
+  }
+}
+.woocommerce-ResetPassword .btn{
+  margin-right:20px;
+  border-color:var(--main);
+  
+  }
 
 .fw_single_product {
 	background: #fff none repeat scroll 0 0;
