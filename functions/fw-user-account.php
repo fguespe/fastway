@@ -18,7 +18,7 @@ if( !function_exists( 'fw_userAccount' ) ) {
 
           if(!empty($name))$name="<span class='ingresar_text'>".$name."</span>";
           $url='';
-          if(is_plugin_active('woocommerce/woocommerce.php'))$url=get_permalink( wc_get_page_id( 'myaccount' ) );
+          if(is_plugin_active('woocommerce/woocommerce.php'))$url=get_permalink( wc_get_page_id( 'my-account' ) );
 return <<<HTML
 <a class="fw-header-icon user" href="$url" role="button" data-target="" data-toggle="">
   <span class="p1 fa-stack">
