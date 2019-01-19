@@ -314,15 +314,13 @@ function fw_price_html1($price,$product){
         return '<div class="precioproducto precio1"><span class="precio">$'.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></div>';
     }      
 }
-$my_theme = wp_get_theme();
-//if($my_theme!="lombok-child")
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 /**
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
-add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
+//add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
 
 function fw_child_manage_woocommerce_styles() {
     //remove generator meta tag
