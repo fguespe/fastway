@@ -208,9 +208,6 @@
   padding: 5px 0 0 5px;
   text-align: center;
 }
-.fw_single_product .summary .product-type-variable .precio1 {
-  display: none;
-}
 .fw_single_product .summary .single_variation_wrap .precio1 {
   display: block;
 }
@@ -291,6 +288,10 @@
 }
 .fw_single_product .summary .cart br {
   display: none !important;
+}
+
+.product-type-variable .precio1 {
+  display: none;
 }
 
 .fw_header_top .widget_nav_menu ul li {

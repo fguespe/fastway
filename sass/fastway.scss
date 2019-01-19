@@ -200,10 +200,7 @@ color:var(--linkedin) !important;
     padding: 5px 0 0 5px;
     text-align:center ;
   }
-
-  .summary .product-type-variable .precio1{
-		  display:none;
-  }
+  
   
   .summary .single_variation_wrap .precio1{
       display:block;
@@ -292,7 +289,9 @@ color:var(--linkedin) !important;
 		display: none !important;
 	}
 }
-
+.product-type-variable .precio1{
+  display:none;
+}
 .fw_header_top{
   .widget_nav_menu ul li{
     display: inline;
