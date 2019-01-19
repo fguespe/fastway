@@ -227,13 +227,16 @@ function quicklinks(){
 }
 
 
-function fw_company_data($value, $link=false,$cant=0) {
-    $value=trim($value);$link=trim($link);$pre="";$after='';
-    if($value=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?phone=+";
-    if($value=="whatsapp" && $link)$after="&amp;text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web";
-    if($value=="phone" && $link)$pre="tel:";
-    if($value==="email" && $link)$pre="mailto:";
-    $value=fw_theme_mod('short-fw_company'.$value);
+function fw_company_data($type, $link=false,$cant=0) {
+    $type=trim($type);$link=trim($link);$pre="";
+    if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web&phone=";
+    else if($type=="phone" && $link)$pre="tel:";
+    else if($type==="email" && $link)$pre="mailto:";
+    
+    $value=fw_theme_mod('short-fw_company'.$type);
+    //fix whatsapp +
+    if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
+  
     if(empty($value))return "";
     //error_log($value);
     //error_log("Pre es: ".$pre);
@@ -254,7 +257,7 @@ function fw_whatsappfooter(){
     if(!fw_theme_mod('whats-widget'))return;
  
     echo '<a href="'.fw_company_data('whatsapp',true).'" target="_blank" class="btn-wapp">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">Estamos<br>On-Line!</span>
         </a>';
 }
