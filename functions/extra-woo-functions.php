@@ -10,7 +10,7 @@ function fw_share_redes(){
     <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
     <i class="fas fa-envelope"></i>
     </a>
-    <a href="whatsapp://send?text=Mirá el producto este '.$actual_link.'" data-action="share/whatsapp/share">
+    <a href="whatsapp://send?text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web '.$actual_link.'" data-action="share/whatsapp/share">
     <i class="fab fa-whatsapp-square"></i>
     </a>
     <a onclick="copy_to_clipboard(\'fw_copyclip\')">

@@ -1547,7 +1547,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con 549 [fw_extras_short type="whatsapp"]', 'fastway' ),
+    'description'     => __( '[fw_companywhatsapp] empezar con 549, sin el + [fw_extras_short type="whatsapp"]', 'fastway' ),
                 
 	'section'     => 'section_data',
 ) );

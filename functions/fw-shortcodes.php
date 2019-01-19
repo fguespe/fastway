@@ -228,8 +228,9 @@ function quicklinks(){
 
 
 function fw_company_data($value, $link=false,$cant=0) {
-    $value=trim($value);$link=trim($link);$pre="";
-    if($value=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?phone=";
+    $value=trim($value);$link=trim($link);$pre="";$after='';
+    if($value=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?phone=+";
+    if($value=="whatsapp" && $link)$after="&amp;text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web";
     if($value=="phone" && $link)$pre="tel:";
     if($value==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$value);
@@ -252,7 +253,7 @@ function fw_company_data($value, $link=false,$cant=0) {
 function fw_whatsappfooter(){
     if(!fw_theme_mod('whats-widget'))return;
  
-    echo '<a href="https://api.whatsapp.com/send?phone='.fw_company_data('whatsapp',true).'&amp;text=Hola, tengo una consulta" target="_blank" class="btn-wapp">
+    echo '<a href="'.fw_company_data('whatsapp',true).'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp"></i>
             <span class="t5">Estamos<br>On-Line!</span>
         </a>';
