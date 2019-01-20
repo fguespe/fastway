@@ -2,7 +2,7 @@
 <div class="<?php echo esc_attr( $header_middle ); ?>">
   <div class=" <?php echo esc_attr( $header_middle ); ?>">
         <!-- Nav -->
-        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
+        <nav class="js-mega-menu navbar navbar-expand-md ">
           <!-- Logo -->
           <?php echo fastway_getLogo();?>
           <?php wp_nav_menu(
