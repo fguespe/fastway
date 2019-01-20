@@ -195,7 +195,6 @@ function fw_slider_function( $atts, $content ) {
         ), $atts );
     $cols=$atts['cols'];
     if(!is_numeric($cols))$cols=1;
-    error_log($cols);
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);
     $claserespo='';
