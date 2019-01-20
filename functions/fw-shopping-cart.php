@@ -14,27 +14,26 @@ if( !function_exists( 'fw_shoppingCart' ) ) {
         $carturl=wc_get_cart_url();
         $checkurl=wc_get_checkout_url();
         $istyle=fw_theme_mod("icons_style");
-        if($style==="link"){
+        if($style==="link" || $style==="modal"){
           return <<<HTML
-          <a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
-  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-    <i class="p3 $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
-  </span>
+<a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
+    <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
+      <i class="p3 $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+    </span>
 </a>
-
 HTML;
-        }else if($style==="popup"){
+        }/*else if($style==="popup"){
         $idname=$rand."cart-popover";
         $idname2=$rand.'popover_content_wrapper';
         $istyle=fw_theme_mod("icons_style");
-        return <<<HTML
+        echo '
 <script type="text/javascript">
   jQuery(document).ready(function() {
-    jQuery('#$idname').popover({
+    jQuery("'.$idname2.'").popover({
         html : true,
-        container: 'body',
+        container: \'body\',
         content: function() {
-            return jQuery('#$idname2').html();
+            return jQuery("'.$idname2.'").html();
         }
     });
 });
@@ -53,43 +52,37 @@ HTML;
          <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
          <a class="checkoutbtn" href="$checkurl">Completar la compra</a>
     </div>
-</div>
-HTML;
+</div>';
         }else if($style==="modal"){
-          $idname2=$rand.'shoppingCartModal';
+        $idname2=$rand.'shoppingCartModal';
         $istyle=fw_theme_mod("icons_style");
         
-          return <<<HTML
-
-<a class="fw-header-icon minicart"  href="#" role="button" data-target="#$idname2" data-toggle="modal">
-  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-    <i class="p3  $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+        echo '<a class="fw-header-icon minicart"  href="#" role="button" data-target="#'.$idname2.'" data-toggle="modal">
+  <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.$cant.'">
+    <i class="p3  '.$istyle.' fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.$cant.'"></i>
   </span>
 </a>
 <!-- Modal -->
-<div class="modal fade fw-mini-cart " id="$idname2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade fw-mini-cart " id="'.$idname2.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        
-       <div class="mini-cart-item-title">Carrito</div>
-      </div>
-      <div class="modal-body">
-        <div class="widget_shopping_cart_content">El carrito esta vacío.</div>
-      </div>
-      <div class="modal-footer">
-      <div class="mini-cart-footer">
-         <span>SUBTOTAL:<span class="d-block total-mini-cart">$total</span></span>
-         <a class="checkoutbtn" href="$checkurl">Completar la compra</a>
-    </div>
-   
-   
-      </div>
-    </div>
+        <div class="modal-header">
+          <div class="mini-cart-item-title">Carrito</div>
+        </div>
+        <div class="modal-body">
+          <div class="widget_shopping_cart_content">El carrito esta vacío.</div>
+        </div>';
+      if($total>0)echo '
+        <div class="modal-footer">
+          <div class="mini-cart-footer">
+            <span>SUBTOTAL:<span class="d-block total-mini-cart">'.$total.'</span></span>
+            <a class="checkoutbtn" href="'.$checkurl.'">Completar la compra</a>
+          </div>
+        </div>';
+  echo '</div>
   </div>
-</div>
-HTML;
-        }
+</div>';
+        }*/
     }
 
 
