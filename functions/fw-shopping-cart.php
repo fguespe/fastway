@@ -72,7 +72,8 @@ HTML;
         <div class="modal-body">
           <div class="widget_shopping_cart_content">El carrito esta vacío.</div>
         </div>';
-      if($total>0)echo '
+      error_log($cant);
+      if($cant>0)echo '
         <div class="modal-footer">
           <div class="mini-cart-footer">
             <span>SUBTOTAL:<span class="d-block total-mini-cart">'.$total.'</span></span>
