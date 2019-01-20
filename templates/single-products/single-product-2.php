@@ -23,16 +23,22 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
                         $fotos=$product->get_gallery_attachment_ids();
                         array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
                         $fotos=array_reverse($fotos);
-                        
+                        $index=0;
                         foreach ($fotos as $ids) {
                             echo '<div class="swiper-slide">';
-                            
                             $url=wp_get_attachment_url( $ids);
                             echo '<a href='.$url.' data-fancybox="gallery" class="d-flex align-items-center" style="background-color: white; position: absolute; top: 0px; left: 0px; opacity: 1;">
                                 <img itemprop="image" src="'.$url.'" width=400 height="auto">
                                 <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                             </a>';
                             echo '</div>';
+                            $ul.= '
+                            <li class="">
+                                <a class="thumb" href="javascript:slideTo('.$index.')">
+                                    <img  src="'.$url.'" width="50">
+                                </a>
+                            </li>';
+                            $index++;
                         }?>
                     </div>
                     
@@ -42,26 +48,33 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
             </div>
         </div>
         <style>
-        .swiper-single{
+.swiper-single{
 width:100%;
 height:100% ;
+}
 </style>
-        <script>
-                    var swiper = new Swiper(".swiper-single", {
-                        navigation: {
-                            nextEl: ".swiper-single-next",
-                            prevEl: ".swiper-single-prev",
-                        },   
-                        paginationClickable: true,
-                        spaceBetween: 30,
-                        centeredSlides: true,
-                        loop: true,
-                        autoplay: { delay: 4500, },
-                        autoplayDisableOnInteraction: true,
-                        slidesPerView: '.$cols.'
-                    });
-                    </script>
-         <ul id="paginationIL" class="d-none d-sm-block"><li class=""><a href="#"><img class="thumb" src="http://digital.fastway/wp-content/uploads/sites/32/2018/12/829998-MLA27559396554_062018-O.jpg" width="50"></a></li><li class=""><a href="#"><img src="http://digital.fastway/wp-content/uploads/sites/32/2018/12/camaras-deportivas.jpg" width="50"></a></li><li class="activeSlide"><a href="#"><img src="http://digital.fastway/wp-content/uploads/sites/32/2018/12/829998-MLA27559396554_062018-O.jpg" width="50"></a></li></ul>
+<script>
+var swiper = new Swiper(".swiper-single", {
+    navigation: {
+        nextEl: ".swiper-single-next",
+        prevEl: ".swiper-single-prev",
+    },   
+    paginationClickable: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: { delay: 4500, },
+    autoplayDisableOnInteraction: true,
+    slidesPerView: 1
+});
+function slideTo(val){
+    swiper.slideTo(val+1, 500);
+}
+
+
+</script>
+       
+         <ul id="paginationIL" class="d-none d-sm-block"><?=$ul?></ul>
   </div>
     
   <div class="summary col-md-4">
