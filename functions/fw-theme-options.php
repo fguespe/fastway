@@ -1541,14 +1541,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
 	'label'    => __( 'Company Name', 'fastway' ),
-    'description'     => __( '[fw_companyname] ', 'fastway' ),
+    'description'     => __( '[[fw_extras_short type="name"] ', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_companywhatsapp] empezar con 549, sin el + [fw_extras_short type="whatsapp"]', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="whatsapp"] empezar con 549, sin el + [fw_extras_short type="whatsapp"]', 'fastway' ),
                 
 	'section'     => 'section_data',
 ) );
@@ -1556,14 +1556,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_companyphone] [fw_extras_short type="phone"]', 'fastway' ),            
+    'description'     => __( '[fw_extras_short type="phone"] [fw_extras_short type="phone"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
 	'label'    => __( 'Company Adress', 'fastway' ),
-    'description'     => __( '[fw_companyaddress] [fw_extras_short type="address"]', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="address"] [fw_extras_short type="address"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
