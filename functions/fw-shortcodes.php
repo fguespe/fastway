@@ -79,7 +79,7 @@ function fw_extras_short( $atts ) {
         $value="Ir al Instagram";
         $icon_color="#9A3CC3";
     }else if($type==="youtube"){
-        $icon=$icons_style." fa-youtube-square";
+        $icon="fab fa-youtube";
         $link=fw_company_data($type,true,$cant);
         $value="Ir a Youtube";
         $icon_color="#FF0400";
