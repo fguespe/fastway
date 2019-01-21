@@ -108,8 +108,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/product-enquiry-form/product-enquiry-form.php';
     require get_template_directory() . '/functions/woo-empty-cart-button.php';
     require get_template_directory() . '/functions/woocommerce_custom_related_products.php';
-    require get_template_directory() . '/functions/tab_descargas.php';
-    require get_template_directory() . '/functions/tab_video.php';
+
 }
 
 
