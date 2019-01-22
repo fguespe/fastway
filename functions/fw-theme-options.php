@@ -371,11 +371,11 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_quickmenu_links',
-	'label'    => __( 'Mobile Menu Order', 'fastway' ),
-	'default'=>'fb,youtube,whatsapp,ig,email,phone,address',
-	'section'     => 'section_mobile',
+	'type'      => 'text',
+	'settings'  => 'fw_quickmenu_links',
+	'label'    	=> __( 'Mobile Menu Order', 'fastway' ),
+	'default' 	=>	'fb,youtube,whatsapp,ig,email,phone,address',
+	'section'   => 'section_mobile',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
@@ -518,8 +518,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'topheader-img',
-	'label'       => __( 'Top Header Img', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
+	'label'       => __( 'Top Banner Img', 'fastway' ),
+	'description' => __( 'A banner that goes on top of all, like for a discount or some news.', 'fastway' ),
 	'section'     => 'section_header',
 	'default'     => '',
 ) );
