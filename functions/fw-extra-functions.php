@@ -117,7 +117,7 @@ function fw_mega_menu( $theme_location ) {
                      
                 } else {
                      
-                    $menu_list .= '<li class="nav-item '.$clases.'">' ."\n";
+                    $menu_list .= '<li class="nav-item menu-item '.$clases.'">' ."\n";
                     $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >' . $menu_item->title . '</a>' ."\n";
                 }
                  
