@@ -262,6 +262,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $theme_headers,
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'header-style-top',
+	'label'       => __( 'Header Top Template', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '1',
+	'choices'     => $theme_headers,
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
