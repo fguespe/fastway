@@ -64,6 +64,8 @@ function fw_mega_menu( $theme_location ) {
             if( $menu_item->menu_item_parent == 0 ) {
                 $parent = $menu_item->ID;
                 $menu_array = array();
+
+                $clases=implode(' ',$menu_item->classes);
                 //error_log("".$menu_item->title);
                 $nuevoitem="";
                 $first=false;
@@ -80,7 +82,6 @@ function fw_mega_menu( $theme_location ) {
                         $bool = true;
                         $url=$submenu->url;
                         $title=$submenu->title;
-                        
                         $menu_array[] = '<li class="nav-item padre"><a class="nav-link" href="' . $url . '">' . $title . '</a></li>' ."\n";
                         //3er nivel
                         if($megamenu){
@@ -102,7 +103,7 @@ function fw_mega_menu( $theme_location ) {
 
                 if( $bool == true && count( $menu_array ) > 0 ) {
                      
-                    $menu_list .= '<li class="nav-item dropdown ">' ."\n";
+                    $menu_list .= '<li class="nav-item dropdown '.$clases.'">' ."\n";
                     $menu_list .= '<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu_item->title . ' <span class="caret"></span></a>' ."\n";
                     $clasemenu="submenu-madre"; 
                 
@@ -116,7 +117,7 @@ function fw_mega_menu( $theme_location ) {
                      
                 } else {
                      
-                    $menu_list .= '<li class="nav-item">' ."\n";
+                    $menu_list .= '<li class="nav-item '.$clases.'">' ."\n";
                     $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >' . $menu_item->title . '</a>' ."\n";
                 }
                  
