@@ -12,7 +12,7 @@ if( !function_exists('fw_get_template_part') ){
         //if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php') ) $style = 1;
         //if( file_exists($CHILDTEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php') )error_log('existe en child');
         //if(preg_match('/\bsingle\b/',$var)) error_log($CHILDTEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php');
-        error_log('templates/'.$var.'s/'.$var.'/'.$style);
+        //error_log('templates/'.$var.'s/'.$var.'/'.$style);
         get_template_part('templates/'.$var.'s/'.$var, $style);
         
     }
