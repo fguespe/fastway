@@ -9,7 +9,7 @@
 			<div class="col-5 form-row align-items-center" >
           <?php echo fw_search_form(1);?> 
         </div> 
-      <div class="d-flex col-4 align-items-center header-text"><?php fastway_getWidgetHeaderText();?></div>
+      <div class="d-flex col-4 align-items-center header-text"><?php fw_header_html();?></div>
 			<div class="col-1 row align-items-center justify-content-end px-4">
           <?php echo fw_shoppingCart();?>
 			</div>

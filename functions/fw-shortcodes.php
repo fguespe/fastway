@@ -22,7 +22,7 @@ function fw_shortcode_metaslider( $atts ) {
 }
 
 
-function fastway_getWidgetHeaderText(){
+function fw_header_html(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
 

@@ -1,10 +1,8 @@
-<?php global $header_container,$header_middle; ?>
+<?php global $header_middle; ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
    <div  class="d-flex row justify-content-between <?php echo esc_attr( $header_container ); ?>">
-          <?php echo fastway_getLogo();?>
-          <?php fw_mega_menu("primary"); 
-          if(is_plugin_active("woocommerce")) echo fw_shoppingCart();?>
-          <?php fastway_getWidgetHeaderText();?>
-     
+          <?php echo fastway_getLogo();
+          fw_mega_menu("primary"); 
+          fw_header_html();?>
     </div>
 </div>

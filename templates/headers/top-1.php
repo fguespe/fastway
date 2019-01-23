@@ -5,7 +5,7 @@
           <?php echo fastway_getLogo();?>
           <?php fw_mega_menu("primary"); 
           if(is_plugin_active("woocommerce")) echo fw_shoppingCart();?>
-          <?php fastway_getWidgetHeaderText();?>
+          <?php fw_header_html();?>
       </div>
       </div>
 </div>

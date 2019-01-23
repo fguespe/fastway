@@ -3,10 +3,10 @@
       <div  class="<?php echo esc_attr( $header_container ); ?>">
         <nav class="navbar navbar-expand-md">
           <?php echo fastway_getLogo();?>
-          <?php //fastway_getWidgetHeaderText();?>
+          <?php //fw_header_html();?>
           <div class="row d-flex mx-auto leftarriba">
             
-            <?php fastway_getWidgetHeaderText();?>
+            <?php fw_header_html();?>
             <?php wp_nav_menu(
             array(
               'theme_location'  => 'primary',

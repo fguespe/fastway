@@ -5,7 +5,7 @@
   		  <div class="logo"><?php echo fastway_getLogo();?></div>
   			<div class="form-row align-items-center">
           
-  				<?php fastway_getWidgetHeaderText();?>
+  				<?php fw_header_html();?>
   			</div>
 	    </div>
   </div>

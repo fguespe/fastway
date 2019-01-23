@@ -4,7 +4,7 @@
     <div  class="<?php echo esc_attr( $header_container ); ?>">
       <div class="row">
       <div class="col-4"><?php echo fastway_getLogo();?></div>
-      <div class="col-8 align-items-center d-flex"><?php fastway_getWidgetHeaderText();?></div>
+      <div class="col-8 align-items-center d-flex"><?php fw_header_html();?></div>
     </div>
   </div>
 </div>
