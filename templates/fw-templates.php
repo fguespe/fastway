@@ -1,9 +1,5 @@
 <?php
-add_action( 'fastway_header_init', 'fw_get_template_part', 20 ,2);
-add_action( 'fastway_header_init_mobile', 'fw_get_template_part', 20,2 );
-add_action( 'fastway_product_loop_init', 'fw_get_template_part', 20 ,2);
-add_action( 'fastway_product_loop_init_mobile', 'fw_get_template_part', 20,2 );
-add_action( 'fastway_product_single_init', 'fw_get_template_part', 20 ,2);
+add_action( 'fw_get_template_part', 'fw_get_template_part', 20 ,2);
 if( !function_exists('fw_get_template_part') ){
     function fw_get_template_part( $style = 1 ,$var){
 

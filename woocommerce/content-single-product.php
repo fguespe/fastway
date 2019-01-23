@@ -30,7 +30,7 @@ $single_classes=" fw_single_product ";
 
 ?>
 <div <?php post_class($single_classes); ?>>
-	<?php do_action( 'fastway_product_single_init', fw_theme_mod('shop-single-product-style'),"single-product" );?>
+	<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-single-product-style'),"single-product" );?>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

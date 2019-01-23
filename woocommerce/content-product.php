@@ -33,11 +33,11 @@ if(fw_theme_mod('shop-loop-mobile-product-style')>0){
 ?>
 <li <?php wc_product_class($classname_desktop); ?>>
 
-		<?php do_action( 'fastway_product_loop_init', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
+		<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
 
 	<? if(fw_theme_mod('shop-loop-mobile-product-style')>0){?>
 		<div class='fw_product_loop mobile d-md-none'>
-			<?php do_action( 'fastway_product_loop_init', fw_theme_mod('shop-loop-mobile-product-style'),"mobile-product-looop");?>
+			<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-mobile-product-style'),"mobile-product-looop");?>
 		</div>
 	<? } ?>
 </li>
