@@ -256,7 +256,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style',
-	'label'       => __( 'Header Block', 'fastway' ),
+	'label'       => __( 'Header Template', 'fastway' ),
 	'section'     => 'section_header',
 	'default'     => '1-1',
 	'choices'     => $theme_headers,

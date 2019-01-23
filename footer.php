@@ -29,7 +29,7 @@ fw_whatsappfooter();
 if(fw_theme_mod("popup-mode")){
 ?>
 
-<div id="jaja" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
         <div class="modal-body">
@@ -40,7 +40,7 @@ if(fw_theme_mod("popup-mode")){
 </div>
 <script type="text/javascript">
 	jQuery(document).ready( function(jQuery) {
-		jQuery('#jaja').modal('show'); 
+		jQuery('#modalpopup').modal('show'); 
     });
 </script>
 <? 
