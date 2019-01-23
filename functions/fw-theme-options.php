@@ -1,7 +1,7 @@
 <?php
 global $theme_headers;
-global $theme_header_top;
-global $theme_header_bottom;
+global $theme_header_tops;
+global $theme_header_bottoms;
 global $theme_headers_mobile ;
 global $loop_templates ;
 global $loop_templates_mobile;
@@ -270,7 +270,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Top Template', 'fastway' ),
 	'section'     => 'section_header',
 	'default'     => '1',
-	'choices'     => $theme_headers,
+	'choices'     => $theme_header_tops,
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'header-style-bottom',
+	'label'       => __( 'Header Bottom Template', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '1',
+	'choices'     => $theme_header_bottoms,
 ) );
 
 
