@@ -265,6 +265,19 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'header-new',
+	'label'       => __( 'New Header', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style-top',
 	'label'       => __( 'Header Top Template', 'fastway' ),
