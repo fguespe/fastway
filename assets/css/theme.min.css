@@ -451,7 +451,7 @@
 #menu-madre .ancho-sitio {
   padding: 0;
 }
-#menu-madre ul li .submenu-madre {
+#menu-madre ul li .dropdown-menu {
   display: none;
   background-color: #fff;
   position: absolute;
@@ -463,13 +463,13 @@
   -moz-box-shadow: 0px -1px 2px 0px rgba(50, 50, 50, 0.15);
   box-shadow: 0px -1px 2px 0px rgba(50, 50, 50, 0.15);
 }
-#menu-madre ul li .submenu-madre a {
+#menu-madre ul li .dropdown-menu a {
   color: #444;
   padding: 3px 0 5px 0;
   height: auto;
   font-weight: 400;
 }
-#menu-madre ul li .submenu-madre a:hover {
+#menu-madre ul li .dropdown-menu a:hover {
   color: #0067a1;
   text-decoration: underline;
 }

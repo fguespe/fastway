@@ -146,9 +146,8 @@ function fw_menu( $theme_location ) {
                      
                     $menu_list .= '<li class="nav-item menu-item dropdown '.$clases.'">' ."\n";
                     $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
-                    $clasemenu = "submenu-madre"; 
-                 
-                    $menu_list .= '<ul class="dropdown-menu '.$clasemenu.'" >' ."\n";
+             
+                    $menu_list .= '<ul class="dropdown-menu">' ."\n";
                     if($megamenu)$menu_list .= '<div class="row">';
                 
                     $menu_list .= implode( "\n", $menu_array );

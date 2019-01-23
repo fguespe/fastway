@@ -439,7 +439,7 @@ color:var(--linkedin) !important;
     .ancho-sitio{
         padding: 0;
     }
-    ul li .submenu-madre{
+    ul li .dropdown-menu {
         display: none;
         background-color: #fff;
         position: absolute;
@@ -451,13 +451,13 @@ color:var(--linkedin) !important;
         -moz-box-shadow:    0px -1px 2px 0px rgba(50, 50, 50, 0.15);
         box-shadow:         0px -1px 2px 0px rgba(50, 50, 50, 0.15);
     }
-    ul li .submenu-madre a{
+    ul li .dropdown-menu  a{
         color: #444;
         padding: 3px 0 5px 0;
         height: auto;
         font-weight: 400;
     }
-    ul li .submenu-madre a:hover{
+    ul li .dropdown-menu a:hover{
         color: #0067a1;
         text-decoration: underline;
     }
