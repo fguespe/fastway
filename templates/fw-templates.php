@@ -1,8 +1,8 @@
 <?php
 add_action( 'fw_get_template_part', 'fw_get_template_part', 20 ,2);
+
 if( !function_exists('fw_get_template_part') ){
     function fw_get_template_part( $style = 1 ,$var){
-
         global $TEMPLATE_DIR,$CHILDTEMPLATE_DIR;
         if( strlen( $style ) == 0  ) $style = 1;
         //if( strlen( $style ) == 0 || !file_exists($TEMPLATE_DIR . '/'.$var.'s/'.$var.'-'.$style.'.php') ) $style = 1;
