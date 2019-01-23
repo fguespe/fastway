@@ -59,7 +59,7 @@ if(fw_theme_mod("transparent-header"))$header_middle.=" fw_transparent_top ";
 //if(fw_theme_mod('floating-header'){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
 ?>
 <?php do_action( 'fastway_header_topbanner');?>
-<header id="header" class="<?=$header_container?>">
+<header id="header">
 <? do_action( 'add_topbar');
 do_action( 'fastway_header_init', fw_theme_mod('header-style'),"header" );
 do_action( 'fastway_header_init_mobile', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
@@ -74,8 +74,4 @@ jQuery(window).on('load', function() {
         });
     }
 });
-
-
 </script>
-<!-- Button trigger modal -->
-

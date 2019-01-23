@@ -13,13 +13,7 @@
 			<div class="col-1 row align-items-center justify-content-end px-4">
           <?php echo fw_shoppingCart();?>
 			</div>
-	        	
-        <!-- End Nav -->
+
       	</div>
-  </div>
-</div>
-<div class="<?php echo esc_attr( $header_bottom ); ?>">
-  <div class="<?php echo esc_attr( $header_container ); ?>">
-      <?php fw_mega_menu("primary"); ?>
   </div>
 </div>
