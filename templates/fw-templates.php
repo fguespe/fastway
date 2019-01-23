@@ -17,6 +17,8 @@ if( !function_exists('fw_get_template_part') ){
 }
 
 $theme_headers=loadnoimgs("header");
+$theme_header_tops=loadnoimgs("header-top");
+$theme_header_bottoms=loadnoimgs("header-bottom");
 $theme_headers_mobile=loadnoimgs("mobile-header");
 $loop_templates=loadnoimgs("product-loop");
 $loop_templates_mobile=loadnoimgs("mobile-product-loop",true);

@@ -1,5 +1,7 @@
 <?php
 global $theme_headers;
+global $theme_header_top;
+global $theme_header_bottom;
 global $theme_headers_mobile ;
 global $loop_templates ;
 global $loop_templates_mobile;
