@@ -72,7 +72,7 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
 </div>
 HTML;
 }
-function fw_mega_menu( $theme_location ) {
+function fw_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
@@ -81,9 +81,9 @@ function fw_mega_menu( $theme_location ) {
         if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
         //error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
-        if($megamenu)$clasem="fwmenu2";
+        if($megamenu)$clasem="fw_mega_menu";
 
-        $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav">'."\n";
+        $menu_list  = '<nav id="menu-madre" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
  
         if(empty($menu_items))return;
         foreach( $menu_items as $menu_item ) {

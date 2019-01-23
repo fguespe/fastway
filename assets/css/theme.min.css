@@ -435,7 +435,6 @@
   border-radius: 0px !important;
 }
 #menu-madre ul li a {
-  /*padding: 8px;*/
   display: block;
   z-index: 1200;
 }
@@ -475,10 +474,13 @@
   text-decoration: underline;
 }
 
-.fwmenu2 li {
+.fw_mega_menu ul {
+  width: 100%;
+}
+.fw_mega_menu li {
   position: static;
 }
-.fwmenu2 .nav-item.padre a {
+.fw_mega_menu .nav-item.padre a {
   font-weight: 700 !important;
   margin-bottom: 5px;
   margin-top: 5px;
