@@ -439,7 +439,11 @@ color:var(--linkedin) !important;
     .ancho-sitio{
         padding: 0;
     }
+
     ul li .dropdown-menu {
+        margin:0px !important;
+        border-radius:0px !important;
+        box-shadow:none !important;
         display: none;
         background-color: #fff;
         position: absolute;
