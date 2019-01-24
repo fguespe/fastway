@@ -451,7 +451,7 @@
 #fw-menu .ancho-sitio {
   padding: 0;
 }
-#fw-menu ul li .dropdown-menu {
+#fw-menu .dropdown-menu {
   margin: 0px !important;
   border-radius: 0px !important;
   box-shadow: none !important;
