@@ -89,7 +89,6 @@ function fw_extras_short( $atts ) {
         $value=fw_company_data("address",false,$cant);
         $link=fw_company_data("address",true,$cant);
         if(empty($link))fw_company_data("googlemaps",true,$cant);
-        $icon_color="black";
     }else{
         $icon=$icons_style.' '.$type;
         $type='custom';
