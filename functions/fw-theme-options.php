@@ -484,7 +484,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
-	)
+	),
+	
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -646,6 +647,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'property' => '--top-header',
 		),
 	),
+	'choices'     =>  array(
+		'alpha' => true,
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
@@ -663,6 +667,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'element'  => ':root',
 			'property' => '--top-banner',
 		),
+	),
+	'choices'     =>  array(
+		'alpha' => true,
 	),
 ) );
 
@@ -701,11 +708,14 @@ Kirki::add_field( 'theme_config_id', array(
 			'property' => '--middle-header',
 		),
 	),
+	'choices'     =>  array(
+		'alpha' => true,
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-transparent-sticky-middle',
-	'label'       => __( 'Transparent Sticky Color ', 'fastway' ),
+	'label'       => __( 'Header Sticky Color ', 'fastway' ),
 	'section'     => 'section_colors',
 	'default'     => '#fff',
 	'description'=>'var(--transparent-sticky-middle);',
@@ -715,6 +725,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'element'  => ':root',
 			'property' => '--transparent-sticky-middle',
 		),
+	),
+	'choices'     =>  array(
+		'alpha' => true,
 	),
 ) );
 
@@ -735,6 +748,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'property' => '--bottom-header',
 		),
 	),
+	'choices'     =>  array(
+		'alpha' => true,
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
@@ -753,6 +769,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'property' => '--body',
 		),
 	),
+	'choices'     =>  array(
+		'alpha' => true,
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
@@ -770,6 +789,9 @@ Kirki::add_field( 'theme_config_id', array(
 			'element'  => ':root',
 			'property' => '--shop',
 		),
+	),
+	'choices'     =>  array(
+		'alpha' => true,
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(

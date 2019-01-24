@@ -360,8 +360,8 @@ function get_topbar(){
     echo '</div> </div>  </div>';
 }
 
-
 if( !function_exists('fastway_getLogo') ) {
+    add_shortcode('fw_logo', 'fastway_getLogo');
     function fastway_getLogo( $type="" ){
         
         switch( $type ) {
