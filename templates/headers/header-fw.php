@@ -1,19 +1,19 @@
 <?php global $header_container,$header_middle,$header_bottom; 
-$antdesp=explode("bottom_init",fw_header_html());
+$antdesp=explode("bottom_init",fw_header_html2());
 $middleh=$antdesp[0];
 $afterh=$antdesp[1];
 ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
 	      <div class="d-flex row align-items-center">
-            <?php $middleh; ?>
+            <?php echo $middleh; ?>
       	</div>
     </div>
 </div>
 <div class="<?php echo esc_attr( $header_bottom ); ?>">
   <div class="<?php echo esc_attr( $header_container ); ?>">
         <div class="d-flex row align-items-center">
-            <?php $afterh; ?>
+            <?php echo $afterh; ?>
       	</div>
   </div>
 </div>

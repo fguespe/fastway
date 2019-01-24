@@ -21,7 +21,9 @@ function fw_shortcode_metaslider( $atts ) {
 
 }
 
-
+function fw_header_html2(){
+    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
+}
 function fw_header_html(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
 }
