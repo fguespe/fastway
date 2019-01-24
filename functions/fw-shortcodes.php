@@ -131,7 +131,7 @@ function fw_extras_short( $atts ) {
         }
     }else{
         $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
-        if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.'"!important;></i>';
+        if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;></i>';
         $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
         $first.='</a>';
     }
