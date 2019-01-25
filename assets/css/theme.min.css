@@ -1614,6 +1614,7 @@ h3.heading-title {
 
 .woocommerce-page ul.products {
   float: left;
+  width: 100%;
 }
 
 /*FIX VISUAl*/
