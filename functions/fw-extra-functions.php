@@ -28,6 +28,7 @@ add_filter( 'kirki/fonts/standard_fonts', 'tmu_custom_fonts', 20 );
 function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth=0 ) {
     // Loop through $classes array to find linkmod or icon classes.
     foreach ( $classes as $key => $class ) {
+        //error_log($class);
         // If any special classes are found, store the class in it's
         // holder array and and unset the item from $classes.
         if ( preg_match( '/^disabled|^sr-only/i', $class ) ) {
@@ -95,6 +96,8 @@ function fw_menu( $theme_location ) {
                 $icon_classes    = array();
                 $classes = seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes );
                 $classes=implode(' ',$classes);
+
+                error_log($classes);
                 $icon_classes=implode(' ',$icon_classes);
                 if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
                 
@@ -118,7 +121,7 @@ function fw_menu( $theme_location ) {
                         $linkmod_classes = array();
                         $icon_classes    = array();
                         $classes = seporate_linkmods_and_icons_from_classes( $submenu->classes, $linkmod_classes, $icon_classes );
-                        $classes=implode(' ',$classes);
+                  
                         $icon_classes=implode(' ',$icon_classes);
                         if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
                 
@@ -144,7 +147,7 @@ function fw_menu( $theme_location ) {
 
                 if( $bool == true && count( $menu_array ) > 0 ) {
                      
-                    $menu_list .= '<li class="nav-item menu-item dropdown '.$clases.'">' ."\n";
+                    $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
                     $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
              
                     $menu_list .= '<ul class="dropdown-menu">' ."\n";
@@ -157,7 +160,7 @@ function fw_menu( $theme_location ) {
                      
                 } else {
                      
-                    $menu_list .= '<li class="nav-item menu-item '.$clases.'">' ."\n";
+                    $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
                     $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
                 }
                  
