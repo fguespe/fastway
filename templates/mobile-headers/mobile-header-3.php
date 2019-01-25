@@ -8,5 +8,5 @@ margin:auto !important;
 }
 </style>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?> align-items-center ">
-      <?php echo fastway_getLogo();?>
+      <?php echo fw_logo();?>
 </div>

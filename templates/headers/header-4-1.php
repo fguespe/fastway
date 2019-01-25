@@ -6,7 +6,7 @@
         <div class="col-4"></div>
         
         <div class="col-4 form-row align-items-center" >
-            <?php echo fastway_getLogo();?> 
+            <?php echo fw_logo();?> 
         </div>    
         <div class="col-4 form-row align-items-center" >
         </div> 

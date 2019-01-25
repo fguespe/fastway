@@ -1,5 +1,5 @@
 <?php global $header_container,$header_middle,$header_bottom; 
-$antdesp=explode("bottom_init",fw_header_html2());
+$antdesp=explode("bottom_init",fw_header_html());
 $middleh=$antdesp[0];
 $afterh=$antdesp[1];
 ?>

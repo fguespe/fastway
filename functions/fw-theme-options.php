@@ -212,7 +212,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'partial_refresh' => array(
 	    'kirki_hero_title' => array(
 	        'selector'        => '.logo',
-	        'render_callback' => 'fastway_getLogo',
+	        'render_callback' => 'fw_logo',
 	    ),
 	),
 ) );

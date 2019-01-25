@@ -2,11 +2,10 @@
 <div class="<?php echo esc_attr( $header_middle ); ?>">
       <div  class="<?php echo esc_attr( $header_container ); ?>">
         <nav class="navbar navbar-expand-md">
-          <?php echo fastway_getLogo();?>
-          <?php //fw_header_html();?>
+          <?php echo fw_logo();?>
           <div class="row d-flex mx-auto leftarriba">
             
-            <?php fw_header_html();?>
+            <?php echo fw_header_html();?>
             <?php wp_nav_menu(
             array(
               'theme_location'  => 'primary',

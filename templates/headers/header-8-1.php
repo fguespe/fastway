@@ -2,7 +2,7 @@
 <div class="<?php echo esc_attr( $header_middle ); ?> ">
 	<div  class="d-flex <?php echo esc_attr( $header_container ); ?>">
       
-      	<?php echo fastway_getLogo();?>
+      	<?php echo fw_logo();?>
      
 		<div class="d-flex col align-items-center">
       	<?php 

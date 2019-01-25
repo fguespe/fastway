@@ -360,9 +360,9 @@ function get_topbar(){
     echo '</div> </div>  </div>';
 }
 
-if( !function_exists('fastway_getLogo') ) {
-    add_shortcode('fw_logo', 'fastway_getLogo');
-    function fastway_getLogo( $type="" ){
+if( !function_exists('fw_logo') ) {
+    add_shortcode('fw_logo', 'fw_logo');
+    function fw_logo( $type="" ){
         
         switch( $type ) {
             case 'sticky':
@@ -386,9 +386,9 @@ if( !function_exists('fastway_getLogo') ) {
                 }
 
                 //echo '<a class="logo">';
-                echo '<a class="logo "  href="'.esc_attr(home_url()).'">';
-                fastway_getImage($logo_arg);
-                echo '</a>';
+                $devolver = '<a class="logo "  href="'.esc_attr(home_url()).'">';
+                $devolver .= fastway_getImage($logo_arg);
+                $devolver =  '</a>';
         }
     }
 }
@@ -412,7 +412,7 @@ if(!function_exists('fastway_getImage')) {
                 $_img .= " {$k}=\"{$v}\"";
             }
             $_img .= '>';
-            echo wp_kses($_img, array(
+            return wp_kses($_img, array(
                 'img' => array('alt' => array(), 'width' => array(), 'height' => array(), 'src' => array(), 'class' => array())
             ));
         }

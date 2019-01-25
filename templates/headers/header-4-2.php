@@ -6,7 +6,7 @@
           <?php echo fw_search_form(1);?> 
         </div> 
         <div class="col-4 form-row align-items-center" >
-            <?php echo fastway_getLogo();?> 
+            <?php echo fw_logo();?> 
         </div>    
         
         <div class="col-4 icons col-3 row align-items-center justify-content-center">

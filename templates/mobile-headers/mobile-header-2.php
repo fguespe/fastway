@@ -18,7 +18,7 @@ global $header_middle_mobile;
           <button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>
           
       </div>
-      <div class="col-6 text-center align-items-center"><?php echo fastway_getLogo();?></div>
+      <div class="col-6 text-center align-items-center"><?php echo fw_logo();?></div>
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart();?></div>
       <div class="collapse navbar-collapse" id="navbarsExample01">
         <nav class="navbar navbar-expand-md ">

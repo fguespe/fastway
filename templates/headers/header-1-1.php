@@ -2,9 +2,9 @@
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div class="<?php echo esc_attr( $header_container ); ?>">
         <div  class="d-flex row align-items-center justify-content-between <?php echo esc_attr( $header_container ); ?>">
-            <?php echo fastway_getLogo();
+            <?php echo fw_logo();
             fw_menu("primary"); 
-            fw_header_html();?>
+            echo fw_header_html();?>
         </div>
     </div>
 </div>

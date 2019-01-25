@@ -14,7 +14,7 @@ global $header_middle_mobile;
 
 </style>
 <div class="<?php echo esc_attr( $header_middle_mobile ); ?>  align-items-center">
-      <div class="container text-center align-items-around py-3"><?php echo fastway_getLogo();?></div>
+      <div class="container text-center align-items-around py-3"><?php echo fw_logo();?></div>
       <style>
       
       </style>
