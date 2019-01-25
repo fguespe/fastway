@@ -170,7 +170,7 @@ function fw_menu( $theme_location ) {
         if(fw_theme_mod("mega_menu_overlay"))$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
         
     } 
-    echo $menu_list;
+    return $menu_list;
 }
 
 
