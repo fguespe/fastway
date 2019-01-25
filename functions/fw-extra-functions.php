@@ -388,7 +388,7 @@ if( !function_exists('fw_logo') ) {
                 //echo '<a class="logo">';
                 $devolver = '<a class="logo "  href="'.esc_attr(home_url()).'">';
                 $devolver .= fastway_getImage($logo_arg);
-                $devolver =  '</a>';
+                $devolver .=  '</a>';
                 return $devolver;
         }
     }
