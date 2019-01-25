@@ -22,19 +22,8 @@
   <div class="<?php echo esc_attr( $header_container ); ?>">
          <nav class="js-mega-menu  navbar-expand-md ">
           <!-- Logo -->
-          <?php wp_nav_menu(
-            array(
-                  'theme_location'  => 'primary',
-                  'container_class' => 'collapse navbar-collapse show align-items-center',
-                  'container_id'    => 'navbarNavDropdown',
-                  'menu_class'      => 'navbar-nav ',
-                  'fallback_cb'     => '',
-                  'menu_id'         => 'main-menu',
-                  'depth'           => 2,
-                  'walker'          => new fw_Navwalker('desktop-1'),
-                )
-            ); 
-            ?>
+
+          <?php echo fw_menu("primary"); ?>
         </nav>
   </div>
 </div>

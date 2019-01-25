@@ -6,18 +6,8 @@
           <div class="row d-flex mx-auto leftarriba">
             
             <?php echo fw_header_html();?>
-            <?php wp_nav_menu(
-            array(
-              'theme_location'  => 'primary',
-              'container_class' => 'collapse navbar-collapse show align-items-center',
-              'container_id'    => 'navbarNavDropdown',
-              'menu_class'      => 'navbar-nav ml-auto',
-              'fallback_cb'     => '',
-              'menu_id'         => 'main-menu',
-              'depth'           => 2,
-              'walker'          => new fw_Navwalker(),
-            )
-          ); ?>
+
+            <?php echo fw_menu("primary"); ?>
         </div>
         </nav>
       </div>

@@ -23,17 +23,6 @@
 <div class="<?php echo esc_attr( $header_bottom ); ?> align-items-center justify-content-center">
 <nav class="navbar navbar-expand-md align-items-center">
     <!-- Logo -->
-    <?php wp_nav_menu(
-          array(
-            'theme_location'  => 'primary',
-            'container_class' => 'collapse navbar-collapse show align-items-center',
-            'container_id'    => 'navbarNavDropdown',
-            'menu_class'      => 'navbar-nav m-auto',
-            'fallback_cb'     => '',
-            'menu_id'         => 'main-menu',
-            'depth'           => 2,
-            'walker'          => new fw_Navwalker(),
-          )
-        ); ?>
+    <?php echo fw_menu("primary"); ?>
 </nav>
 </div>

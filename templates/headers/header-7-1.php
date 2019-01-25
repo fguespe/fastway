@@ -10,18 +10,8 @@
 </div>
 
 <div id="main-nav" class="row <?php echo esc_attr( $header_bottom ); ?>">
-  <?php wp_nav_menu(
-  array(
-        'theme_location'  => 'primary',
-        'container_class' => 'container d-flex flex-column flex-md-row justify-content-between',
-        'container_id'    => '',
-        'menu_class'      => 'nav d-flex  container d-flex flex-column flex-md-row justify-content-between',
-        'fallback_cb'     => '',
-        'menu_id'         => 'main-menu',
-        'walker'          => new fw_Navwalker(),
-      )
-  ); 
-  ?>
+
+<?php echo fw_menu("primary"); ?>
 </div>
 </div>
 
