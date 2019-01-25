@@ -232,14 +232,13 @@ function fw_product_gallery($product){
 }
 
 //Oculto Sin Categoria del Front
-/*
 add_filter( 'woocommerce_product_subcategories_args', array( $this, 'hide_from_main_loop' ) );
 function hide_from_main_loop( $args ) {
     if ( false !== get_option( 'default_product_cat' ) ) {
         $args['exclude'] = get_option( 'default_product_cat' );
     }
     return $args;
-}*/
+}
 
 //Aplicar precio global
 add_action( 'woocommerce_product_data_panels', 'fw_global_variation_price' );
