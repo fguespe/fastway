@@ -201,13 +201,13 @@ function quicklinks(){
     $quick =trim(fw_theme_mod("fw_quickmenu_links"));
     if(empty($quick))$quick="fb,youtube,whatsapp,ig,email,phone,address";
     $arra=array(
-        "fb"=>array("fab fa-facebook","#4267B2"), 
-        "youtube"=>array("fab fa-youtube","#FF0200"), 
-        "whatsapp"=>array("fab fa-whatsapp","#1BD760"), 
-        "ig"=>array("fab fa-instagram","#D1178A"), 
-        "email"=>array("fa fa-envelope","var(--icon-header)"),  
-        "phone"=>array("fa fa-phone","var(--icon-header)"),  
-        "address"=>array("fa fa-map-marker","var(--icon-header)"), 
+        "fb"=>array("fab fa-facebook"), 
+        "youtube"=>array("fab fa-youtube"), 
+        "whatsapp"=>array("fab fa-whatsapp"), 
+        "ig"=>array("fab fa-instagram"), 
+        "email"=>array("fa fa-envelope"),  
+        "phone"=>array("fa fa-phone"),  
+        "address"=>array("fa fa-map-marker"), 
     );
     $quick = explode(",",$quick);
     echo "<div class='fw_quicklinks '>";
@@ -221,7 +221,10 @@ function quicklinks(){
             $q=str_replace($char,"",$q);
         }
         $label=fw_company_data($q,false,$num);
-        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>  '.$label.'</span></a>';
+        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';
+        $label=fw_company_data($q,false,1);
+        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';
+        
     }
     
     echo "</div>";
