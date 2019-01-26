@@ -68,33 +68,23 @@ if( !function_exists( 'fw_search_form' ) ) {
         }
         $class="search-form-desktop";
         if($numero==3)$class="search-form-mobile";
-        ?>
+        
 
-        <form id="form_<?php echo esc_attr($rand_id)?>" class="<? echo $class?> js-focus-state input-group u-form fw-searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="<?php echo esc_attr($_placeholder);?>" value="<?php echo get_search_query() ?>" name="s" id="s_<?php echo esc_attr($rand_id)?>">
-            <?php if($check_woo): ?>
-                    <input type="hidden" name="post_type" value="product" />
-              <?php endif;?>
-
-            <div class="input-group-append">
-                <!--
-                <?php if ( defined( 'ICL_LANGUAGE_CODE' ) ): ?>
-                    <input type="hidden" name="lang" value="<?php echo( ICL_LANGUAGE_CODE ); ?>" />
-                <?php endif ?>
-                -->
-                <?php if ( $numero==0): ?>
-                  <button type="button" class="">Buscar</button>
-                <?php endif ?>
-                <?php if ( $numero==1): ?>
-                  <button type="button" class=""><i class="fa fa-search"></i></button>
-                <?php endif ?>
-                <?php if ( $numero==3): ?>
-                  
-                <?php endif ?>
-            </div>
-          </form>
-         
-
-        <?php
+        $devolver= 
+        '<form id="form_'.esc_attr($rand_id).'" class="'.$class.'" js-focus-state input-group u-form fw-searchform" method="get" action="'.esc_url( home_url( '/' ) ).'">
+        <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="'.esc_attr($_placeholder).'" value="'.get_search_query().'" name="s" id="s_'.esc_attr($rand_id).'">';
+        if($check_woo){
+              $devolver.='<input type="hidden" name="post_type" value="product" />';
+        }
+        $devolver.='<div class="input-group-append">';
+        if ( defined( 'ICL_LANGUAGE_CODE' ) ){
+          $devolver.='<input type="hidden" name="lang" value="'.(ICL_LANGUAGE_CODE).'" />';
+        }if ( $numero==0){
+          $devolver.='<button type="button" class="">Buscar</button>';
+        }if ( $numero==1){
+          $devolver.='<button type="button" class=""><i class="fa fa-search"></i></button>';
+        }
+        $devolver.='</div></form>';
+        return $devolver;
     }
 }
