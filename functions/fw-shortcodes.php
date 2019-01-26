@@ -221,7 +221,7 @@ function quicklinks(){
             $q=str_replace($char,"",$q);
         }
         $label=fw_company_data($q,false,$num);
-        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" style="color:'.$arra[$q][1].'"></i><span>  '.$label.'</span></a>';
+        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>  '.$label.'</span></a>';
     }
     
     echo "</div>";
