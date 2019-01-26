@@ -76,7 +76,7 @@ if( !function_exists( 'fw_search_form' ) ) {
         '<form id="form_'.esc_attr($rand_id).'" class="'.$class.' js-focus-state input-group u-form fw-searchform" method="get" action="'.esc_url( home_url( '/' ) ).'">
         <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="'.esc_attr($_placeholder).'" value="'.get_search_query().'" name="s" id="s_'.esc_attr($rand_id).'">';
         if($check_woo){
-              $devolver.='<input type="hidden" name="post_type" value="product" />';
+          $devolver.='<input type="hidden" name="post_type" value="product" />';
         }
         $devolver.='<div class="input-group-append">';
         if ( defined( 'ICL_LANGUAGE_CODE' ) ){
