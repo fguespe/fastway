@@ -176,7 +176,7 @@ if( !function_exists( 'fw_menu' ) ) {
                             $linkmod_classes = array();
                             $icon_classes    = array();
                             $classes = seporate_linkmods_and_icons_from_classes( $submenu->classes, $linkmod_classes, $icon_classes );
-                    
+                            $classes=implode(' ',$classes);
                             $icon_classes=implode(' ',$icon_classes);
                             if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
                     
