@@ -28,7 +28,7 @@ $afterh=$antdesp[1];
       </div>
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarsExample02">
+    <div class="collapse" id="navbarsExample02">
       <?php echo fw_search_form(3);?>
     </div>
 </div>
