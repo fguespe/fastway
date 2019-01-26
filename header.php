@@ -62,13 +62,7 @@ if(fw_theme_mod("transparent-header"))$header_middle.=" fw_transparent_top ";
 <header id="header">
 <? 
 do_action( 'add_topbar');
-//if(fw_theme_mod('header-new')){
-    //do_action( 'fw_get_template_part', fw_theme_mod('header-style-top'),"header-top" );
-    //do_action( 'fw_get_template_part', fw_theme_mod('header-style-bottom'),"header-bottom" );
-//}else{
-    do_action( 'fw_get_template_part', fw_theme_mod('header-style'),"header" );
-
-//}
+do_action( 'fw_get_template_part', fw_theme_mod('header-style'),"header" );
 do_action( 'fw_get_template_part', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
 </header>
 <script >

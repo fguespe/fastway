@@ -73,110 +73,119 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
 </div>
 HTML;
 }
-function fw_menu( $theme_location ) {
-    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-        $menu = get_term( $locations[$theme_location], 'nav_menu' );
-        $menu_items = wp_get_nav_menu_items($menu->term_id);
-        $megamenu=fw_theme_mod("mega_menu");
-        $cols="";
-        if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
-        //error_log(fw_theme_mod("mega_menu_cols"));
-        $clasem="fwmenu1";
-        if($megamenu)$clasem="fw_mega_menu";
 
-        $menu_list  = '<nav id="fw-menu" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
- 
-        if(empty($menu_items))return;
-        foreach( $menu_items as $menu_item ) {
-            if( $menu_item->menu_item_parent == 0 ) {
-                $parent = $menu_item->ID;
-                $menu_array = array();
+if( !function_exists( 'fw_menu' ) ) {
+    add_shortcode('fw_menu', 'fw_menu');
+    function fw_menu( $atts ) {
+        $atts = shortcode_atts(array('id' => 'primary' ), $atts );
+        $id=$atts['id'];
+        if ( ($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
+            $menu = get_term( $locations[$id], 'nav_menu' );
+            $menu_items = wp_get_nav_menu_items($menu->term_id);
+            $megamenu=fw_theme_mod("mega_menu");
+            $cols="";
+            if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
+            //error_log(fw_theme_mod("mega_menu_cols"));
+            $clasem="fwmenu1";
+            if($megamenu)$clasem="fw_mega_menu";
 
-                $linkmod_classes = array();
-                $icon_classes    = array();
-                $classes = seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes );
-                $classes=implode(' ',$classes);
-                $icon_classes=implode(' ',$icon_classes);
-                if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
-                
+            $menu_list  = '<nav id="fw-menu" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
+    
+            if(empty($menu_items))return;
+            foreach( $menu_items as $menu_item ) {
+                if( $menu_item->menu_item_parent == 0 ) {
+                    $parent = $menu_item->ID;
+                    $menu_array = array();
 
-                $nuevoitem="";
-                $first=false;
-                foreach( $menu_items as $submenu ) {
-                   if( $submenu->menu_item_parent == $parent ) {
-                        //error_log($submenu->title." ".);
-                        //error_log($submenu->title);
-                        if($submenu->attr_title==="init_col" && $megamenu){
-                            if($first)$menu_array[] ='</div>';
-                            $first=true;
-                            $menu_array[]='<div class="col-md-'.$cols.'">';
-                            //error_log("Abre-----".$submenu->title);
-                        }
-                        $bool = true;
-                        $url=$submenu->url;
-                        $title=$submenu->title;
+                    $linkmod_classes = array();
+                    $icon_classes    = array();
+                    $classes = seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes );
+                    $classes=implode(' ',$classes);
+                    $icon_classes=implode(' ',$icon_classes);
+                    if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
+                    
 
-                        $linkmod_classes = array();
-                        $icon_classes    = array();
-                        $classes = seporate_linkmods_and_icons_from_classes( $submenu->classes, $linkmod_classes, $icon_classes );
-                  
-                        $icon_classes=implode(' ',$icon_classes);
-                        if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
-                
-                        
-                        $menu_array[] = '<li class="nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
-                        //3er nivel
-                        if($megamenu){
-                            $s_parent = $submenu->ID;
-                            foreach( $menu_items as $s_submenu ) {
-                                if( $s_submenu->menu_item_parent == $s_parent ) {
-                                  $s_url=$s_submenu->url;
-                                  $s_title=$s_submenu->title;
-                                  $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
-                                  //error_log("Pone:---------".$s_submenu->title);
-                              } 
+                    $nuevoitem="";
+                    $first=false;
+                    foreach( $menu_items as $submenu ) {
+                    if( $submenu->menu_item_parent == $parent ) {
+                            //error_log($submenu->title." ".);
+                            //error_log($submenu->title);
+                            if($submenu->attr_title==="init_col" && $megamenu){
+                                if($first)$menu_array[] ='</div>';
+                                $first=true;
+                                $menu_array[]='<div class="col-md-'.$cols.'">';
+                                //error_log("Abre-----".$submenu->title);
                             }
-                           
+                            $bool = true;
+                            $url=$submenu->url;
+                            $title=$submenu->title;
+
+                            $linkmod_classes = array();
+                            $icon_classes    = array();
+                            $classes = seporate_linkmods_and_icons_from_classes( $submenu->classes, $linkmod_classes, $icon_classes );
+                    
+                            $icon_classes=implode(' ',$icon_classes);
+                            if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
+                    
+                            
+                            $menu_array[] = '<li class="nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
+                            //3er nivel
+                            if($megamenu){
+                                $s_parent = $submenu->ID;
+                                foreach( $menu_items as $s_submenu ) {
+                                    if( $s_submenu->menu_item_parent == $s_parent ) {
+                                    $s_url=$s_submenu->url;
+                                    $s_title=$s_submenu->title;
+                                    $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
+                                    //error_log("Pone:---------".$s_submenu->title);
+                                } 
+                                }
+                            
+                            }
+                            
                         }
-                        
                     }
-                }
 
 
-                if( $bool == true && count( $menu_array ) > 0 ) {
-                     
-                    $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
-                    $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
-             
-                    $menu_list .= '<ul class="dropdown-menu">' ."\n";
-                    if($megamenu)$menu_list .= '<div class="row">';
+                    if( $bool == true && count( $menu_array ) > 0 ) {
+                        
+                        $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
+                        $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
                 
-                    $menu_list .= implode( "\n", $menu_array );
-                    if($megamenu)$menu_list .= '</div>';
-                
-                    $menu_list .= '</ul>' ."\n";
-                     
-                } else {
-                     
-                    $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
-                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
+                        $menu_list .= '<ul class="dropdown-menu">' ."\n";
+                        if($megamenu)$menu_list .= '<div class="row">';
+                    
+                        $menu_list .= implode( "\n", $menu_array );
+                        if($megamenu)$menu_list .= '</div>';
+                    
+                        $menu_list .= '</ul>' ."\n";
+                        
+                    } else {
+                        
+                        $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                        $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
+                    }
+                    
                 }
-                 
+                // end <li>
+                $menu_list .= '</li>' ."\n";
+                
             }
-            // end <li>
-            $menu_list .= '</li>' ."\n";
+            $menu_list .= '</ul></div></nav>';
+            if(fw_theme_mod("mega_menu_overlay"))$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
             
-        }
-        $menu_list .= '</ul></div></nav>';
-        if(fw_theme_mod("mega_menu_overlay"))$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
-        
-    } 
-    return $menu_list;
+        } 
+        return $menu_list;
+    }
 }
 
-function fw_menu_vertical( $theme_location ) {
-    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-        $menu = get_term( $locations[$theme_location], 'nav_menu' );
+function fw_menu_vertical( $atts ) {
+    $atts = shortcode_atts(array('id' => 'primary' ), $atts );
+    $id=$atts['id'];
+    
+    if ( ($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
+        $menu = get_term( $locations[$id], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
         $cols="";
         $clasem="fwmenu1";
@@ -459,40 +468,6 @@ function get_topbar(){
     echo '</div> </div>  </div>';
 }
 
-if( !function_exists('fw_logo') ) {
-    add_shortcode('fw_logo', 'fw_logo');
-    function fw_logo( $type="" ){
-        
-        switch( $type ) {
-            case 'sticky':
-                break;
-            default:
-                $title = !empty(fw_theme_mod('logo-text'))? esc_attr(fw_theme_mod('logo-text')): get_bloginfo('name');
-                $logo_arg = array(
-                    'title' => esc_attr($title),
-                    'alt'   => esc_attr($title)
-                );
-
-                if( !empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
-                    $logo_arg['src'] =  fw_theme_mod('general-logo') ;
-                    $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
-                } else {
-                    //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
-                    $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
-                }
-
-                //echo '<a class="logo">';
-                $devolver = '<a class="logo "  href="'.esc_attr(home_url()).'">';
-                $devolver .= fastway_getImage($logo_arg);
-                $devolver .=  '</a>';
-                return $devolver;
-        }
-    }
-}
-
 if(!function_exists('fastway_getImage')) {
     function fastway_getImage($atts){
         $atts = wp_parse_args($atts, array(
@@ -541,35 +516,6 @@ function fastway_footer_block(){
 function fastway_singleblock_block(){
     
     if( !empty( fw_theme_mod("product-page-footer-block") ) && strlen( fw_theme_mod("product-page-footer-block") ) > 0 && class_exists("fw_StaticBlock") ) fw_StaticBlock::getSticBlockContent( fw_theme_mod("product-page-footer-block") );
-}
-
-add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
-function fw_shortcode_stblock( $atts ) {
-    fw_StaticBlock::getSticBlockContent( $atts["slug"] );
-}
-
-function fastway_get_stblock( $cats = array('all') ){
-    $res_args = array();
-
-    $meta_query = array();
-    
-    $args = array(
-        'post_type'         => 'fw_stblock',
-        'post_status'       => 'publish',
-        'posts_per_page'    => -1,
-        'orderby'           => 'title',
-        'order'             => 'ASC',
-        //'meta_query'        => $meta_query
-    );
-
-    $blocks = get_posts( $args );
-
-    foreach($blocks as $block) {
-        $slug = $block->post_name;
-
-        $res_args[$slug] = get_the_title($block->ID);
-    }
-    return $res_args;
 }
 
 

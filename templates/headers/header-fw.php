@@ -26,5 +26,9 @@ $afterh=$antdesp[1];
 .fw_header_bottom.desktop #fw-menu .navbar-nav{
   width:100% !important;
   justify-content:space-around !important;
-}*/
+}
+#fw-menu{
+		width:100% !important;
+}
+*/
 </style>

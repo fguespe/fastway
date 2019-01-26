@@ -59,8 +59,11 @@ add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
 if( !function_exists( 'fw_search_form' ) ) {
     add_shortcode('fw_search_form', 'fw_search_form');
     function fw_search_form($atts){
-        $atts = shortcode_atts(array('id' => 1 ), $atts );
-        $numero=$atts['id'];
+        if(!is_numeric($atts)){
+          $atts = shortcode_atts(array('id' => 1 ), $atts );
+          $id=$atts['id'];
+        }else $id=$atts;
+      
         $rand_id = wp_rand();
         $check_woo = is_plugin_active('woocommerce/woocommerce.php');
         if($check_woo) {
@@ -69,7 +72,7 @@ if( !function_exists( 'fw_search_form' ) ) {
             $_placeholder = esc_attr__("¿Que estas buscando?", 'fastway' );
         }
         $class="search-form-desktop";
-        if($numero==3)$class="search-form-mobile";
+        if($id==3)$class="search-form-mobile";
         
 
         $devolver= 
@@ -81,9 +84,9 @@ if( !function_exists( 'fw_search_form' ) ) {
         $devolver.='<div class="input-group-append">';
         if ( defined( 'ICL_LANGUAGE_CODE' ) ){
           $devolver.='<input type="hidden" name="lang" value="'.(ICL_LANGUAGE_CODE).'" />';
-        }else if ( $numero==0){
+        }else if ( $id==0){
           $devolver.='<button type="button" class="">Buscar</button>';
-        }else if ( $numero==1){
+        }else if ( $id==1){
           $devolver.='<button type="button" class=""><i class="fa fa-search"></i></button>';
         }
         $devolver.='</div></form>';

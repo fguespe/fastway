@@ -1,7 +1,5 @@
 <?php
 global $theme_headers;
-global $theme_header_tops;
-global $theme_header_bottoms;
 global $theme_headers_mobile ;
 global $loop_templates ;
 global $loop_templates_mobile;
@@ -263,37 +261,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '1-1',
 	'choices'     => $theme_headers,
 ) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'header-new',
-	'label'       => __( 'New Header', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'header-style-top',
-	'label'       => __( 'Header Top Template', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '1',
-	'choices'     => $theme_header_tops,
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'header-style-bottom',
-	'label'       => __( 'Header Bottom Template', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '1',
-	'choices'     => $theme_header_bottoms,
-) );
-
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
@@ -559,6 +526,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
+	'settings'    => 'header-headerwidget-text',
+	'label'       => __( 'Header Code', 'fastway' ),
+	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
 	'settings'    => 'css_editor-header',
 	'label'       => __( 'CSS Header', 'fastway' ),
 	'section'     => 'section_header',
@@ -570,20 +549,8 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'header-headerwidget-text',
-	'label'       => __( 'Header Widget HTML', 'fastway' ),
-	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
 	'settings'    => 'css_editor-header-headerwidget',
-	'label'       => __( 'Header Widget CSS', 'fastway' ),
+	'label'       => __( 'Header Widget CSS (Depreceated)', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_header',
 	'default'     => '',
