@@ -69,15 +69,19 @@ var swiper = new Swiper(".swiper-single", {
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
+    on: {
+        slideChange: function(){
+            var val=this.activeIndex-1;
+            jQuery('.lithumb').removeClass('active');
+            jQuery('.lithumb.c'+val).addClass('active');
+        },
+    },
     autoplay: { delay: 4500, },
     autoplayDisableOnInteraction: true,
     slidesPerView: 1
 });
 function slideTo(val){
     swiper.slideTo(val+1, 500);
-    jQuery('.lithumb').removeClass('active');
-    
-    jQuery('.lithumb.c'+val).addClass('active');
 }
 
     
