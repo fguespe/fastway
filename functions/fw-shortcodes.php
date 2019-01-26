@@ -217,7 +217,6 @@ function quicklinks(){
         $num=0;
         $char=substr($q, -1);
         if(intval($char)){
-            //error_log($char);
             $num=$char;
             $q=str_replace($char,"",$q);
         }

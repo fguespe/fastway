@@ -8,7 +8,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 			
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ),$version , true);
-		//wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/assets/js/popper.min.js', array(),'',  true );
+		//wp_enqueue_script( 'popper-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array(),'',  true );
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/js/swiper.min.js'  );
 		wp_enqueue_style( 'swiper-styles', get_template_directory_uri() . '/assets/css/swiper.min.css');
