@@ -32,9 +32,11 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
                                 <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
                             </a>';
                             echo '</div>';
+                            if($index==0)$claseactive="active";
+                            else $claseactive='';
                             $ul.= '
-                            <li class="">
-                                <a class="thumb" href="javascript:slideTo('.$index.')">
+                            <li class="lithumb c'.$index.' '.$claseactive.'">
+                                <a class="thumb " href="javascript:slideTo('.$index.')">
                                     <img  src="'.$url.'" width="50">
                                 </a>
                             </li>';
@@ -52,8 +54,12 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
 width:100%;
 height:100% ;
 }
+#paginationIL li.active{
+    opacity:1;
+}
 </style>
 <script>
+   
 var swiper = new Swiper(".swiper-single", {
     navigation: {
         nextEl: ".swiper-single-next",
@@ -69,9 +75,12 @@ var swiper = new Swiper(".swiper-single", {
 });
 function slideTo(val){
     swiper.slideTo(val+1, 500);
+    jQuery('.lithumb').removeClass('active');
+    
+    jQuery('.lithumb.c'+val).addClass('active');
 }
 
-
+    
 </script>
        
          <ul id="paginationIL" class="d-none d-sm-block"><?=$ul?></ul>
@@ -108,3 +117,21 @@ do_action( 'woocommerce_after_single_product_summary' );
     <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
   </div>
 </div>
+<script>
+    var ProductSwiper = new Swiper('.swiper-related', {
+            //pagination: '.swiper-prod-rel-pagination',
+            nextButton: '.swiper-prod-next',
+            prevButton: '.swiper-prod-prev',
+            slidesPerView:6,
+            slidesPerGroup:6,
+            paginationClickable: true,
+            spaceBetween: 10,
+            loop: true,
+            breakpoints: {
+            // when window width is <= 320px
+                900:    {slidesPerView: 2,slidesPerGroup:2},
+                1000:   {slidesPerView: 3,slidesPerGroup:3},            
+                1200:    {slidesPerView: 4,slidesPerGroup:4}
+            }
+        });
+</script>
