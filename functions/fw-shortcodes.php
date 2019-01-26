@@ -23,7 +23,7 @@ function fw_shortcode_metaslider( $atts ) {
 
 
 function fw_header_html(){
-    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header-headerwidget-text'))));
+    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
 }
 
 function fw_extras_short( $atts ) {

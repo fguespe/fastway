@@ -526,9 +526,9 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'header-headerwidget-text',
+	'settings'    => 'header_code',
 	'label'       => __( 'Header Code', 'fastway' ),
-	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
+	'description'       => '[fw_logo][fw_menu][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
 	'section'     => 'section_header',
 	'default'     => '',
 	'choices'     => array(
@@ -547,6 +547,8 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+if(empty(fw_theme_mod("css_editor-header-headerwidget"))){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-header-headerwidget',
@@ -559,6 +561,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+}
 
 /*COLOR SCHEME*/
 Kirki::add_field( 'theme_config_id', array(
