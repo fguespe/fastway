@@ -1171,6 +1171,10 @@ footer {
 }
 
 /*MOBILE ICONS*/
+.fw_header.middle .codes {
+  justify-content: space-between;
+}
+
 .fw_header.mobile .input-group-append {
   display: none;
 }
