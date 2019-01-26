@@ -778,7 +778,9 @@ ul {
 .over-hidden {
   overflow: hidden;
 }
-
+.swiper-slide a{
+	width:100%;
+}
 .clear-ul,
 .clear-ul li {
   margin: 0px;

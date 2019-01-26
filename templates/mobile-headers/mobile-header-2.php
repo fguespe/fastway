@@ -25,9 +25,9 @@ global $header_middle_mobile;
             <?php echo fw_menu_vertical("mobile"); 
             if(fw_theme_mod('fw-quicklinks'))quicklinks();
             ?>
-            </nav>
-          </div>
-           <div class="collapse navbar-collapse" id="navbarsExample02">
+        </nav>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarsExample02">
           <?php echo fw_search_form(3);?>
       </div>
 </div>
