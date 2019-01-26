@@ -1140,6 +1140,14 @@ p:empty {
   background: var(--top-header);
 }
 
+.fw_header.mobile .middle {
+  background: var(--middle-header);
+}
+
+.fw_header.mobile .bottom {
+  background: var(--bottom-header);
+}
+
 .fw_header.middle {
   background: var(--middle-header);
 }
