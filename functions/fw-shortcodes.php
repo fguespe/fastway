@@ -25,6 +25,9 @@ function fw_shortcode_metaslider( $atts ) {
 function fw_header_html(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
 }
+function fw_header_html_mobile(){
+    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
+}
 
 function fw_extras_short( $atts ) {
     $fwatts = shortcode_atts(
@@ -325,4 +328,14 @@ function fastway_get_stblock( $cats = array('all') ){
         $res_args[$slug] = get_the_title($block->ID);
     }
     return $res_args;
+}
+
+
+add_shortcode('fw_m_menu','fw_m_menu');
+function fw_m_menu(){
+    return '<button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fa fa-bars"></i></button>';
+}
+add_shortcode('fw_m_search_form','fw_m_search_form');
+function fw_m_search_form(){
+    return '<button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>';
 }

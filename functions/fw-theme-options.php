@@ -835,17 +835,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $theme_headers_mobile,
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'header_code',
-	'label'       => __( 'Header Mobile Code', 'fastway' ),
-	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
-	'section'     => 'section_header',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -855,7 +845,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_mobile',
 	'default'     => '',
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'header_mobile_code',
+	'label'       => __( 'Header Mobile Code', 'fastway' ),
+	'description'       => '[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]bottom_init',
+	'section'     => 'section_mobile',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'mobile-icon',

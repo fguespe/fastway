@@ -12,7 +12,7 @@ $afterh=$antdesp[1];
 </div>
 <div class="<?php echo esc_attr( $header_bottom ); ?>">
   <div class="<?php echo esc_attr( $header_container ); ?>">
-        <div class="d-flex row align-items-center">
+        <div class="d-flex row align-items-center codes">
             <?php echo $afterh; ?>
       	</div>
   </div>
