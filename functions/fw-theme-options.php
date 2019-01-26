@@ -526,6 +526,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+if(!empty(fw_theme_mod("header-headerwidget-text"))){
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'header-headerwidget-text',
+	'label'       => __( 'Header Widget (Depreceated)', 'fastway' ),
+	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+}
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_code',
