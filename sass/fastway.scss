@@ -1192,9 +1192,8 @@ footer {
 
 
 /*MOBILE ICONS*/
-.fw_header.middle .codes{
-  justify-content:space-between;
-}
+.fw_header.middle .codes,
+.fw_header.bottom .codes,
 .fw_header.mobile .codes{
   justify-content:space-between;
 }
