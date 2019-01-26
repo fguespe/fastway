@@ -364,10 +364,38 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header.middle.mobile .logo img',
+			'element' => '.fw_header.mobile .middle .logo img',
 			'property'	=> 'width',
 			'units'=>'px'
 		),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'header__mobile_icons_size',
+	'label'       => __( 'Mobile Header Icons Size', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default'     => 20,
+	'choices'     => array(
+		'min'  => 10,
+		'max'  => 40,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header.mobile i',
+			'property'	=> 'font-size',
+			'units'=>'px'
+		),
+	
+		array(
+			'element' => '.fw_header.mobile .header-cart-count-badge',
+			'property'	=> 'font-size',
+			'value_pattern'   => 'calc($px - 6px)',
+			
+		),
+		
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -392,12 +420,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header.middle.mobile',
+			'element' => '.fw_header.mobile .middle',
 			'property'	=> 'padding-top',
 			'units'=>'rem'
 		),
 		array(
-			'element' => '.fw_header.middle.mobile',
+			'element' => '.fw_header.mobile .middle',
 			'property'	=> 'padding-bottom',
 			'units'=>'rem'
 		),
