@@ -494,7 +494,7 @@ function fw_custom_css(){
     }
     if(!empty(fw_theme_mod('sticky-menu'))){
         foreach(fw_theme_mod('sticky-menu') as $key){
-           $css.=".fw_sticky_top .".$key."{
+           $css.=".fw_sticky .".$key."{
                 display:none !important;
            }";
         }

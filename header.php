@@ -60,8 +60,7 @@ if(fw_theme_mod("transparent-header"))$header_middle.=" fw_transparent_top ";
 ?>
 <?php do_action( 'fastway_header_topbanner');?>
 <header id="header">
-<? 
-do_action( 'add_topbar');
+<? do_action( 'add_topbar');
 do_action( 'fw_get_template_part', fw_theme_mod('header-style'),"header" );
 do_action( 'fw_get_template_part', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
 </header>
@@ -71,7 +70,7 @@ jQuery(window).on('load', function() {
         jQuery(window).scroll(function() {
             var sticky = jQuery('header'),
             scroll = jQuery(window).scrollTop();
-            if (scroll >= 171) { sticky.addClass('fw_sticky_top'); }else { sticky.removeClass('fw_sticky_top');}
+            if (scroll >= 171) { sticky.addClass('fw_sticky'); }else { sticky.removeClass('fw_sticky');}
         });
     }
 });

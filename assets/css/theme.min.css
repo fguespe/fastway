@@ -1026,18 +1026,14 @@ ul {
 
 /*stickty*/
 @media (min-width: 799px) {
-  .fw_sticky_top, .fw_transparent_top {
+  .fw_sticky, .fw_transparent_top {
     position: fixed;
     width: 100%;
     z-index: 999;
   }
 
-  .fw_sticky_top {
+  .fw_sticky {
     top: 0px;
-  }
-
-  .fw_sticky_top .fw_transparent_top {
-    background: var(--transparent-sticky-middle);
   }
 }
 /*OWL*/

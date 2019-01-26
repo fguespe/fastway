@@ -726,6 +726,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'alpha' => true,
 	),
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-transparent-sticky-middle',
@@ -744,7 +745,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'alpha' => true,
 	),
 ) );
-
+*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bottheader',
