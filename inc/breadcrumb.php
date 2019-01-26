@@ -3,7 +3,7 @@
 if( !function_exists( 'fw_breadcrumbs' ) ) {
 	
 	function fw_breadcrumbs(){
-		global $post, $fw_datas;
+		global $post, $fw_breadatass;
 		/* === OPTIONS === */
 		$text = array(
 			"home"		=> '<i class="fa fa-home"></i>',
@@ -28,8 +28,8 @@ if( !function_exists( 'fw_breadcrumbs' ) ) {
 		$linkAfter = '</li>';
 		$linkAttr = '';
 
-		if( isset($fw_datas['breadcrum-style']) ) {
-			switch($fw_datas['breadcrum-style']){
+		if( isset($fw_breadatass['breadcrum-style']) ) {
+			switch($fw_breadatass['breadcrum-style']){
 				case 'transparent':
 					$delimiter = '<span class="delimiter">&rarr;</span>';
 					$breadBefore = '%s';
@@ -201,10 +201,10 @@ if( !function_exists( 'fw_breadcrumbs' ) ) {
 	add_action( 'fw_breadcrumb', 'fw_breadcrumb_function', 10 ,1 );
 	
 	function fw_breadcrumb_function( $datas = array() ){
-		global $fw_datas;
+		global $fw_breadatas;
 		if ( is_front_page() ) return '';
 		$classes = array('fw-breadcrumb-wrapper');
-		if(!empty($fw_datas['breadcrum-style'])) $classes[] = esc_attr($fw_datas['breadcrum-style']);
+		if(!empty($fw_breadatass['breadcrum-style'])) $classes[] = esc_attr($fw_breadatass['breadcrum-style']);
 		if(!isset($datas['show_bcrumb']) || absint($datas['show_bcrumb']) == 1) :
 	?>
 		<div class="<?php echo esc_attr(implode(' ', $classes))?>">
