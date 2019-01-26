@@ -8,7 +8,6 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 			
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ),$version , true);
-		wp_enqueue_script( 'popper-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array(),'',  true );
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/js/swiper.min.js'  );
 		wp_enqueue_style( 'swiper-styles', get_template_directory_uri() . '/assets/css/swiper.min.css');
@@ -16,7 +15,6 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 		if(is_plugin_active("woocommerce/woocommerce.php")){
 			if(is_product()){
 				wp_enqueue_style( 'fancybox-styles', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css');
-				//wp_enqueue_script( 'cycle-script', get_template_directory_uri() . '/assets/js/cycle.min.js' , array(),'',true );
 				wp_enqueue_script( 'fancy-script', get_template_directory_uri() . '/assets/js/fancybox.min.js');	
 			}
 		}
