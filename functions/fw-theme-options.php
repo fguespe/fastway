@@ -375,7 +375,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header__mobile_icons_size',
 	'label'       => __( 'Mobile Header Icons Size', 'fastway' ),
 	'section'     => 'section_mobile',
-	'default'     => 20,
+	'default'     => 24,
 	'choices'     => array(
 		'min'  => 10,
 		'max'  => 40,

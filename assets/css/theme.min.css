@@ -1163,6 +1163,10 @@ footer {
 }
 
 /*MOBILE ICONS*/
+.fw_header.mobile .input-group-append {
+  display: none;
+}
+
 @media (max-width: 799px) {
   .navbar-collapse {
     padding-top: 10px;
