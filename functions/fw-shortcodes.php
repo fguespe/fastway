@@ -28,7 +28,7 @@ function fw_header_html_mobile(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
 }
 
-add_shortcode('fe_extras_short', 'fe_extras_short', 10, 2);
+add_shortcode('fe_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
 function fw_data( $fwatts ) {
     $fwatts = shortcode_atts(
