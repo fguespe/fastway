@@ -11,18 +11,8 @@ global $header_middle_mobile;
       
       <div class="collapse navbar-collapse" id="navbarNavDropdown2">
       
-           <?php wp_nav_menu(
-          array(
-            'theme_location'  => 'primary',
-            'container_class' => 'align-items-center',
-            'container_id'    => '',
-            'menu_class'      => 'navbar-nav ml-auto',
-            'fallback_cb'     => '',
-            'menu_id'         => 'main-menu-mobile',
-            'depth'           => 2,
-            'walker'          => new fw_Navwalker(),
-          )
-        ); 
+           
+            <?php echo fw_menu_vertical("mobile"); 
             if(fw_theme_mod('fw-quicklinks'))quicklinks();
             ?>
 

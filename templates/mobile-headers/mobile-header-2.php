@@ -22,18 +22,7 @@ global $header_middle_mobile;
       <div class="col-3 text-right align-items-center"><?php echo fw_shoppingCart();?></div>
       <div class="collapse navbar-collapse" id="navbarsExample01">
         <nav class="navbar navbar-expand-md ">
-          <?php wp_nav_menu(
-            array(
-                  'theme_location'  => 'mobile',
-                  'container_class' => 'navbar-collapse py-0',
-                  'container_id'    => 'navBar',
-                  'menu_class'      => 'navbar-nav  ml-lg-auto',
-                  'fallback_cb'     => '',
-                  'menu_id'         => 'main-menu-mobile',
-                  'depth'           => 2,
-                  'walker'          => new fw_Navwalker(''),
-                )
-            ); 
+            <?php echo fw_menu_vertical("mobile"); 
             if(fw_theme_mod('fw-quicklinks'))quicklinks();
             ?>
             </nav>
