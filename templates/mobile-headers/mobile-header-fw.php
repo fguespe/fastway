@@ -3,11 +3,11 @@ $antdesp=explode("bottom_init",fw_header_html_mobile());
 $middleh=$antdesp[0];
 $afterh=$antdesp[1];
 ?>
-<div class="fw_header mobile d-md-none navbar ">
-    <div class="middle d-flex row align-items-center codes" style="width:100%;">
+<div class="container fw_header mobile d-md-none">
+    <div class="middle d-flex row align-items-center codes" >
           <?php echo $middleh; ?>
     </div>
-    <div class="bottom d-flex row align-items-center codes" style="width:100%;">
+    <div class="bottom d-flex row align-items-center codes" >
         <?php echo $afterh; ?>
     </div>
     <div class="mobile-menu-overlay ">&nbsp;</div>
