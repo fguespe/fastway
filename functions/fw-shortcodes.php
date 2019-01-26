@@ -260,3 +260,69 @@ function fw_whatsappfooter(){
             <span class="t5">Estamos<br>On-Line!</span>
         </a>';
 }
+
+
+
+
+if( !function_exists('fw_logo') ) {
+    add_shortcode('fw_logo', 'fw_logo');
+    function fw_logo( $type="" ){
+        
+        switch( $type ) {
+            case 'sticky':
+                break;
+            default:
+                $title = !empty(fw_theme_mod('logo-text'))? esc_attr(fw_theme_mod('logo-text')): get_bloginfo('name');
+                $logo_arg = array(
+                    'title' => esc_attr($title),
+                    'alt'   => esc_attr($title)
+                );
+
+                if( !empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
+                    $logo_arg['src'] =  fw_theme_mod('general-logo') ;
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
+                    $logo_arg['height'] = "auto";
+                } else {
+                    //Cargo logo default
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
+                    $logo_arg['height'] = "auto";
+                }
+
+                //echo '<a class="logo">';
+                $devolver = '<a class="logo "  href="'.esc_attr(home_url()).'">';
+                $devolver .= fastway_getImage($logo_arg);
+                $devolver .=  '</a>';
+                return $devolver;
+        }
+    }
+}
+
+add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
+function fw_shortcode_stblock( $atts ) {
+    fw_StaticBlock::getSticBlockContent( $atts["slug"] );
+}
+
+function fastway_get_stblock( $cats = array('all') ){
+    $res_args = array();
+
+    $meta_query = array();
+    
+    $args = array(
+        'post_type'         => 'fw_stblock',
+        'post_status'       => 'publish',
+        'posts_per_page'    => -1,
+        'orderby'           => 'title',
+        'order'             => 'ASC',
+        //'meta_query'        => $meta_query
+    );
+
+    $blocks = get_posts( $args );
+
+    foreach($blocks as $block) {
+        $slug = $block->post_name;
+
+        $res_args[$slug] = get_the_title($block->ID);
+    }
+    return $res_args;
+}
