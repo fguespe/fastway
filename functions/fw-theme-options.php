@@ -259,7 +259,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header-style',
 	'label'       => __( 'Header Template', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => '1-1',
+	'default'     => 'fw',
 	'choices'     => $theme_headers,
 ) );
 
@@ -1019,7 +1019,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Block', 'fastway' ),
 	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_header',
-	'default'     => '1-1',
+	'default'     => 'fw',
 	'choices'     => $theme_headers,
 ) );
 Kirki::add_field( 'theme_config_id', array(
