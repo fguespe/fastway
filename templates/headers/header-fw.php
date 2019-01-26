@@ -5,7 +5,7 @@ $afterh=$antdesp[1];
 ?>
 <div class="<?php echo esc_attr( $header_middle ); ?>">
     <div  class="<?php echo esc_attr( $header_container ); ?>">
-	      <div class="d-flex row align-items-center">
+	      <div class=" d-flex row align-items-center codes">
             <?php echo $middleh; ?>
       	</div>
     </div>
@@ -20,10 +20,14 @@ $afterh=$antdesp[1];
 
 <style>
 /*
-.fw_header_bottom.desktop #fw-menu .navbar-nav{
+.fw_header.bottom.desktop #fw-menu .navbar-nav{
 		margin:0 auto;
 }
-.fw_header_bottom.desktop #fw-menu .navbar-nav{
+centrar logo o cualquier otro
+.logo{
+margin:0 auto !important;
+}
+.fw_header.bottom.desktop #fw-menu .navbar-nav{
   width:100% !important;
   justify-content:space-around !important;
 }

@@ -506,7 +506,7 @@ function get_topbar(){
     
     $container = fw_theme_mod('header-width');
     if(!fw_theme_mod('top-header'))return;
-    echo '<div class="fw_header_top d-none d-lg-flex py-2">
+    echo '<div class="fw_header.top d-none d-lg-flex py-2">
     <div class="'. esc_attr( $container ).'">
     <div>';
     $sidebar_name = "header-top-widget-area";

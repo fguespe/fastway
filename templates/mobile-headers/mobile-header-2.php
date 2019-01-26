@@ -3,11 +3,11 @@ global $header_middle_mobile;
 ?>
 <style type="text/css">
 
-  .fw_header_middle.mobile i{
+  .fw_header.middle.mobile i{
     font-size:24px !important;
 }
 
-  .fw_header_middle.mobile .col-3:nth-child(1){
+  .fw_header.middle.mobile .col-3:nth-child(1){
         padding:0px
     }
 

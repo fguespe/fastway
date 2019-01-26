@@ -268,11 +268,11 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'sticky-menu',
 	'label'       => __( 'Deactivate Sticky', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => array('fw_header_middle', 'fw_header_bottom'),
+	'default'     => array('fw_header.middle', 'fw_header.bottom'),
 	'choices'     => array(
-		'fw_header_top' => __( 'Top', 'fastway' ),
-		'fw_header_middle' => __( 'Middle', 'fastway' ),
-		'fw_header_bottom' => __( 'Bottom', 'fastway' ),
+		'fw_header.top' => __( 'Top', 'fastway' ),
+		'fw_header.middle' => __( 'Middle', 'fastway' ),
+		'fw_header.bottom' => __( 'Bottom', 'fastway' ),
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -291,12 +291,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header_middle.desktop',
+			'element' => '.fw_header.middle.desktop',
 			'property'	=> 'padding-top',
 			'units'=>'rem'
 		),
 		array(
-			'element' => '.fw_header_middle.desktop',
+			'element' => '.fw_header.middle.desktop',
 			'property'	=> 'padding-bottom',
 			'units'=>'rem'
 		),
@@ -344,7 +344,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header_middle.desktop .logo img',
+			'element' => '.fw_header.middle.desktop .logo img',
 			'property'	=> 'width',
 			'units'=>'px'
 		),
@@ -364,7 +364,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header_middle.mobile .logo img',
+			'element' => '.fw_header.middle.mobile .logo img',
 			'property'	=> 'width',
 			'units'=>'px'
 		),
@@ -392,12 +392,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header_middle.mobile',
+			'element' => '.fw_header.middle.mobile',
 			'property'	=> 'padding-top',
 			'units'=>'rem'
 		),
 		array(
-			'element' => '.fw_header_middle.mobile',
+			'element' => '.fw_header.middle.mobile',
 			'property'	=> 'padding-bottom',
 			'units'=>'rem'
 		),
@@ -530,7 +530,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_code',
 	'label'       => __( 'Header Code', 'fastway' ),
-	'description'       => '[fw_logo][fw_menu][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
+	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
 	'section'     => 'section_header',
 	'default'     => '',
 	'choices'     => array(
@@ -550,7 +550,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-if(empty(fw_theme_mod("css_editor-header-headerwidget"))){
+if(!empty(fw_theme_mod("css_editor-header-headerwidget"))){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-header-headerwidget',

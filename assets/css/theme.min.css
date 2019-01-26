@@ -303,17 +303,17 @@
   display: none;
 }
 
-.fw_header_top .widget_nav_menu ul li {
+.fw_header.top .widget_nav_menu ul li {
   display: inline;
 }
-.fw_header_top .widget_nav_menu .widget-title {
+.fw_header.top .widget_nav_menu .widget-title {
   display: none;
 }
-.fw_header_top .widget_nav_menu ul a {
+.fw_header.top .widget_nav_menu ul a {
   padding-left: 5px;
   padding-right: 5px;
 }
-.fw_header_top .widget_nav_menu:nth-child(1) {
+.fw_header.top .widget_nav_menu:nth-child(1) {
   float: right;
 }
 
@@ -1136,15 +1136,15 @@ p:empty {
   margin-top: 10px;
 }
 
-.fw_header_top {
+.fw_header.top {
   background: var(--top-header);
 }
 
-.fw_header_middle {
+.fw_header.middle {
   background: var(--middle-header);
 }
 
-.fw_header_bottom {
+.fw_header.bottom {
   background: var(--bottom-header);
 }
 
@@ -1298,21 +1298,6 @@ footer {
 }
 
 /*FIX SPACE*/
-.fw_header_top .container,
-.fw_header_top .container-fluid {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.fw_header_top p {
-  margin: 0px;
-}
-
-@media (max-width: 799px) {
-  .vc_empty_space {
-    max-height: 30px;
-  }
-}
 /*MENU*/
 .menuhor li {
   display: inline-block !important;
@@ -1359,6 +1344,10 @@ header span,
   color: var(--main);
 }
 
+.fw-searchform.input-group {
+  width: inherit;
+}
+
 .fw-searchform .input-group-append .btn {
   background-color: white;
   border-color: lightgrey;
@@ -1402,19 +1391,32 @@ html {
 }
 
 /*PULL BOTSTRAP3*/
-.fw_header_top .pull-left, .fw_header_top .pull-right {
+/*FX SPACE*/
+.fw_header.top .pull-left, .fw_header.top .pull-right {
   display: inline;
   width: 50%;
   margin: 0px;
 }
-.fw_header_top .pull-left {
+.fw_header.top .container, .fw_header.top .container-fluid {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.fw_header.top .pull-left {
   float: left;
 }
-.fw_header_top .pull-right {
+.fw_header.top .pull-right {
   float: right;
   text-align: right;
 }
+.fw_header.top p {
+  margin: 0px;
+}
 
+@media (max-width: 799px) {
+  .vc_empty_space {
+    max-height: 30px;
+  }
+}
 /*FIX >BOOTSTRAP COLOR*/
 .form-control {
   height: auto !important;

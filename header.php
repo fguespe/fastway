@@ -52,9 +52,9 @@ $js=fw_theme_mod('opt-ace-editor-js');
 <?php
 global $header_main,$header_middle,$header_middle_mobile,$header_bottom,$header_container;
 $header_container   = fw_theme_mod('header-width');
-$header_middle=" fw_header_middle desktop d-none d-md-block ";
-$header_bottom=" fw_header_bottom desktop d-none d-md-block ";
-$header_middle_mobile=" fw_header_middle mobile d-md-none navbar ";
+$header_middle=" fw_header middle desktop d-none d-md-block ";
+$header_bottom=" fw_header bottom desktop d-none d-md-block ";
+$header_middle_mobile=" fw_header middle mobile d-md-none navbar ";
 if(fw_theme_mod("transparent-header"))$header_middle.=" fw_transparent_top ";
 //if(fw_theme_mod('floating-header'){$header_main.=" u-header--floating ";$header_middle.=" u-header--floating__inner ";}
 ?>
