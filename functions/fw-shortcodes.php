@@ -1,6 +1,5 @@
 <?php
 
-add_shortcode('fw_extras_short', 'fw_extras_short', 10, 2);
 add_shortcode("fwi","fwi",10,2);
 
 add_shortcode("fw_info_modal","fw_info_modal",10,2);
@@ -29,7 +28,9 @@ function fw_header_html_mobile(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
 }
 
-function fw_extras_short( $atts ) {
+add_shortcode('fe_extras_short', 'fe_extras_short', 10, 2);
+add_shortcode('fw_data', 'fw_data', 10, 2);
+function fw_data( $fwatts ) {
     $fwatts = shortcode_atts(
         array(
             'type' => '',
@@ -39,6 +40,7 @@ function fw_extras_short( $atts ) {
             'cant' =>  '',
             'icon_color' =>  '',
             'text_color' => '',
+            'stext_color' => '',
             'stext' =>  '',
             'sblock' =>  '',
             'iframe' =>  '',
@@ -48,7 +50,7 @@ function fw_extras_short( $atts ) {
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
-        ), $atts, 'fw_extras_short' );
+        ), $fwatts );
 
     $font_size=16;
     $type=$fwatts['type'];
@@ -112,7 +114,7 @@ function fw_extras_short( $atts ) {
     if($format=="isli"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.=' <span class="text"> <big>'.$value.'</big> <small>'.$fwatts['stext'].'</small> </span></li>';
+        $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;>'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;>'.$fwatts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';

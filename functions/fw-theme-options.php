@@ -572,7 +572,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_code',
 	'label'       => __( 'Header Code', 'fastway' ),
-	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
+	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_data type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
 	'section'     => 'section_header',
 	'default'     => '',
 	'choices'     => array(
@@ -1624,14 +1624,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
 	'label'    => __( 'Company Name', 'fastway' ),
-    'description'     => __( '[[fw_extras_short type="name"] ', 'fastway' ),
+    'description'     => __( '[[fw_data type="name"] ', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="whatsapp"] empezar con 549, sin el + [fw_extras_short type="whatsapp"]', 'fastway' ),
+    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"]', 'fastway' ),
                 
 	'section'     => 'section_data',
 ) );
@@ -1639,14 +1639,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="phone"] ', 'fastway' ),            
+    'description'     => __( '[fw_data type="phone"] ', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
 	'label'    => __( 'Company Adress', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="address"] ', 'fastway' ),
+    'description'     => __( '[fw_data type="address"] ', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
@@ -1663,14 +1663,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',
 	'label'    => __( 'Company Email', 'fastway' ),
-    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'fastway' ),
+    'description'     => __( '[fw_companyemail] [fw_data type="email"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
 	'label'    => __( 'Company Facebook Url', 'fastway' ),
-    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'fastway' ),
+    'description'     => __( '[fw_companyfb] [fw_data type="fb"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
@@ -1678,7 +1678,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
 	'label'    => __( 'Company Instagram Url', 'fastway' ),
-    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'fastway' ),            
+    'description'     => __( '[fw_companyig] [fw_data type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 
@@ -1686,14 +1686,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
 	'label'    => __( 'Company Youtube Url', 'fastway' ),
-   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
+   	'description'     => __( '[fw_companyyoutube] [fw_data type="youtube"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companytwitter',
 	'label'    => __( 'Company Twitter Url', 'fastway' ),
-   	'description'     => __( '[fw_companytwitter] [fw_extras_short type="twitter"]', 'fastway' ),
+   	'description'     => __( '[fw_companytwitter] [fw_data type="twitter"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 /*Extras*/

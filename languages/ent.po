@@ -857,7 +857,7 @@ msgstr ""
 
 #: functions/fw-theme-options.php:1246
 msgid ""
-"[fw_companywhatsapp] empezar con +54 [fw_extras_short type=\"whatsapp\"]"
+"[fw_companywhatsapp] empezar con +54 [fw_data type=\"whatsapp\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1253
@@ -865,7 +865,7 @@ msgid "Company Phone"
 msgstr ""
 
 #: functions/fw-theme-options.php:1254
-msgid "[fw_companyphone] [fw_extras_short type=\"phone\"]"
+msgid "[fw_companyphone] [fw_data type=\"phone\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1260
@@ -873,7 +873,7 @@ msgid "Company Adress"
 msgstr ""
 
 #: functions/fw-theme-options.php:1261
-msgid "[fw_companyaddress] [fw_extras_short type=\"address\"]"
+msgid "[fw_companyaddress] [fw_data type=\"address\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1267
@@ -889,7 +889,7 @@ msgid "Company Email"
 msgstr ""
 
 #: functions/fw-theme-options.php:1275
-msgid "[fw_companyemail] [fw_extras_short type=\"email\"]"
+msgid "[fw_companyemail] [fw_data type=\"email\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1281
@@ -897,7 +897,7 @@ msgid "Company Facebook Url"
 msgstr ""
 
 #: functions/fw-theme-options.php:1282
-msgid "[fw_companyfb] [fw_extras_short type=\"fb\"]"
+msgid "[fw_companyfb] [fw_data type=\"fb\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1289
@@ -905,7 +905,7 @@ msgid "Company Instagram Url"
 msgstr ""
 
 #: functions/fw-theme-options.php:1290
-msgid "[fw_companyig] [fw_extras_short type=\"ig\"]"
+msgid "[fw_companyig] [fw_data type=\"ig\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1297
@@ -913,7 +913,7 @@ msgid "Company Youtube Url"
 msgstr ""
 
 #: functions/fw-theme-options.php:1298
-msgid "[fw_companyyoutube] [fw_extras_short type=\"youtube\"]"
+msgid "[fw_companyyoutube] [fw_data type=\"youtube\"]"
 msgstr ""
 
 #: functions/fw-theme-options.php:1305
