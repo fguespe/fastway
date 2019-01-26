@@ -28,7 +28,7 @@ function fw_header_html_mobile(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
 }
 
-add_shortcode('fe_extras_short', 'fw_data', 10, 2);
+add_shortcode('fw_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
 function fw_data( $fwatts ) {
     $fwatts = shortcode_atts(
@@ -114,7 +114,7 @@ function fw_data( $fwatts ) {
     if($format=="isli"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;>'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;>'.$fwatts['stext'].'</small> </span></li>';
+        $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;">'.$fwatts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
         $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
