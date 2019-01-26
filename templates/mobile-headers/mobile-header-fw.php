@@ -4,12 +4,14 @@ $middleh=$antdesp[0];
 $afterh=$antdesp[1];
 ?>
 <div class="container fw_header mobile d-md-none">
-    <div class="middle d-flex row align-items-center codes" >
+    <div class="middle d-flex row align-items-center codes navbar" >
           <?php echo $middleh; ?>
     </div>
-    <div class="bottom d-flex row align-items-center codes" >
+    <? if(!empty($afterh)){?>
+    <div class="bottom d-flex row align-items-center codes navbar" >
         <?php echo $afterh; ?>
     </div>
+    <? }?>
     <div class="mobile-menu-overlay ">&nbsp;</div>
       <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
