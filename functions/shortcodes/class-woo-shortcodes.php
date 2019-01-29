@@ -455,9 +455,10 @@ class fw_Woo_Shortcodes {
 			if($atts["uncategorized"] && $term->count==0)continue;
 			
 			//error_log(json_encode($term));
-			$atts['terms'][]=  $term;
+			array_push($cates,$term);
+			//$atts['terms'][]=  $term;
 		}
-
+		$atts['terms']=$cates;
 		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel2.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();
