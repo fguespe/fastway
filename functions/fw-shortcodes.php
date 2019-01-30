@@ -69,6 +69,11 @@ function fw_data( $fwatts ) {
         $link=fw_company_data($type,true,$cant);
         $value=fw_company_data($type,false,$cant);
         $icon_color="#0CBC47";
+    }else if($type==="name"){
+        $icon="";
+        $link='';
+        $value=fw_company_data($type,false,$cant);
+        $icon_color="";
     }else if($type==="email"){
         $icon=$icons_style." fa-envelope";
         $link=fw_company_data($type,true,$cant);
@@ -236,8 +241,9 @@ function fw_company_data($type, $link=false,$cant=0) {
     if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web&phone=";
     else if($type=="phone" && $link)$pre="tel:";
     else if($type==="email" && $link)$pre="mailto:";
-    
+    error_log($type);
     $value=fw_theme_mod('short-fw_company'.$type);
+
     //fix whatsapp +
     if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
   

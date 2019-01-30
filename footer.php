@@ -14,6 +14,7 @@ $popup = fw_theme_mod('popup-img');
 ?>
 
 <footer id="footer" class="">
+<? echo do_shortcode('[fw_extras_short type="name"]').'fguespe';?>
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<?php do_action( 'fastway_footer_init' ); ?>
 	</div>
@@ -22,6 +23,7 @@ $popup = fw_theme_mod('popup-img');
 if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('footer-copyright-text'))));?>
 <style type="text/css" id="css_editor-footer-copywright"><? echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
+
 <script><?php echo $js;?></script>
 <?php  
 
