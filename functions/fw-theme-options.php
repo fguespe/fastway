@@ -574,7 +574,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Code', 'fastway' ),
 	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
 	'section'     => 'section_header',
-	'default'     => '',
+	'default'     => '[fw_logo][fw_menu]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1645,7 +1645,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
-	'label'    => __( 'Company Adress', 'fastway' ),
+	'label'    => __( 'Company Address', 'fastway' ),
     'description'     => __( '[fw_extras_short type="address"] ', 'fastway' ),
 	'section'     => 'section_data',
 ) );
