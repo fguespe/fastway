@@ -241,7 +241,6 @@ function fw_company_data($type, $link=false,$cant=0) {
     if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web&phone=";
     else if($type=="phone" && $link)$pre="tel:";
     else if($type==="email" && $link)$pre="mailto:";
-    error_log($type);
     $value=fw_theme_mod('short-fw_company'.$type);
 
     //fix whatsapp +
@@ -311,31 +310,8 @@ if( !function_exists('fw_logo') ) {
 
 add_shortcode('fw_shortcode_stblock', 'fw_shortcode_stblock');
 function fw_shortcode_stblock( $atts ) {
-    fw_StaticBlock::getSticBlockContent( $atts["slug"] );
-}
-
-function fastway_get_stblock( $cats = array('all') ){
-    $res_args = array();
-
-    $meta_query = array();
-    
-    $args = array(
-        'post_type'         => 'fw_stblock',
-        'post_status'       => 'publish',
-        'posts_per_page'    => -1,
-        'orderby'           => 'title',
-        'order'             => 'ASC',
-        //'meta_query'        => $meta_query
-    );
-
-    $blocks = get_posts( $args );
-
-    foreach($blocks as $block) {
-        $slug = $block->post_name;
-
-        $res_args[$slug] = get_the_title($block->ID);
-    }
-    return $res_args;
+    $atts = shortcode_atts(array('slug' => '' ), $atts );
+    return fw_StaticBlock::getSticBlockContent( $atts["slug"],true );
 }
 
 
