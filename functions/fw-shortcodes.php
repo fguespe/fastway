@@ -224,8 +224,6 @@ function quicklinks(){
         }
         $label=fw_company_data($q,false,$num);
         if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';
-        $label=fw_company_data($q,false,1);
-        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';
         
     }
     
