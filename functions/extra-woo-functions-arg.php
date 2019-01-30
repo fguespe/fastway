@@ -6,6 +6,11 @@
 
 function getFinanciacion($product){
   $precio=$product->price;
+  $cuotas6=floor($precio/6);
+  $cuotas3=floor($precio/3);
+  $infopopup_cash=do_shortcode('[datos_efectivo_popup]');
+  $infopopup_banc=do_shortcode('[datos_bancarios_popup]');
+  
   return <<<HTML
   <div class="modal modalMediosPago fade" id="modalMediosPago" tabindex="-1" role="dialog" aria-labelledby="modalMediosPagoTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">
@@ -13,41 +18,41 @@ function getFinanciacion($product){
          <div class="modal-body">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MERCADOPAGO</a>
+                  <a class="nav-link active" id="mercadopago-tab" data-toggle="tab" href="#mercadopago" role="tab" aria-controls="mercadopago" aria-selected="true">MERCADOPAGO</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">TODOPAGO</a>
+                  <a class="nav-link" id="todopago-tab" data-toggle="tab" href="#todopago" role="tab" aria-controls="todopago" aria-selected="false">TODOPAGO</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">A CONVENIR O TRANSFERENCIA BANCARIA</a>
+                  <a class="nav-link" id="banco-tab" data-toggle="tab" href="#banco" role="tab" aria-controls="banco" aria-selected="false">TRANSFERENCIA BANCARIA</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" id="efectivo-tab" data-toggle="tab" href="#efectivo" role="tab" aria-controls="efectivo" aria-selected="false">EFECTIVO</a>
                </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+               <div class="tab-pane fade show active" id="mercadopago" role="tabpanel" aria-labelledby="mercadopago-tab">
                   <div class="full-width pull-left">
                      <div class="box-title">Tarjetas de crédito</div>
                      <div class="box-container">
                         <div class="pull-left full-width border-box">
                            <div class="installments-container">
                               <h4 class="">
-                                 6  cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$precio}</b>
+                                 6  cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$cuotas6}</b>
                               </h4>
                               <div class="legal-info p-bottom-half">
                                  <span class="m-right-quarter"><span>CFT: </span><b>0,00%</b></span>
                                  <span class="m-right-quarter"><span>Total: </span><b>$ {$precio}</b></span>
                                  <span class="m-right-quarter"><span>En 1 pago: </span><b>$ {$precio}</b></span>
                               </div>
-                             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/provencred@2x.png" class="card-img card-img-big" alt="Provencred">
                              <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-municipal@2x.png" class="card-img card-img-big" alt="Banco Municipal">
-                             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-saenz@2x.png" class="card-img card-img-big" alt="Banco Saenz">
-                             <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/efectivo-si@2x.png" class="card-img card-img-big" alt="Efectivo Si">
                              <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-coinag@2x.png" class="card-img card-img-big" alt="Banco Coinag">
                              <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-patagonia-mp@2x.png" class="card-img card-img-big" alt="Mercado Pago + Banco Patagonia">
                               <div class="divider"></div>
                            </div>
                            <div class="installments-container">
                               <h4 class="">
-                                 6  cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$precio}</b>
+                                 3  cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$cuotas3}</b>
                               </h4>
                               <div class="legal-info p-bottom-half">
                                  <span class="m-right-quarter"><span>CFT: </span><b>0,00%</b></span>
@@ -56,7 +61,7 @@ function getFinanciacion($product){
                               </div>
                                 <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-ciudad@2x.png" class="card-img card-img-big" alt="Banco Ciudad">
                                 <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/fueguina@2x.png" class="card-img card-img-big" alt="Fueguina">
-                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-comafi@2x.png" class="card-img card-img-big" alt="Comafi Chicas">
+                                <!--<img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-comafi@2x.png" class="card-img card-img-big" alt="Comafi Chicas">-->
                               <div class="divider"></div>
                            </div>
                            <div class="installments-container">
@@ -66,6 +71,16 @@ function getFinanciacion($product){
                               <div class="legal-info p-bottom-half">
                                  <span>O en 1 pago de: </span><b>$ {$precio}</b>
                               </div>
+                              <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" class="card-img card-img-medium">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" class="card-img card-img-medium">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" class="card-img card-img-medium">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" class="card-img card-img-medium">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png" class="card-img card-img-medium">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/nativa@2x.png" class="card-img card-img-big" alt="Nativa Mastercard">
+                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-patagonia-mp@2x.png" class="card-img card-img-big" alt="Mercado Pago + Banco Patagonia">
+                           <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" class="card-img card-img-big" alt="Tarjeta Shopping">
+                           <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-walmart@2x.png" class="card-img card-img-big" alt="Tarjeta Walmart">
+                             
                               <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" class="card-img card-img-big" alt="Tarjeta Shopping">
                               <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/itau@2x.png" class="card-img card-img-big" alt="Itau">
                               <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banco-patagonia@2x.png" class="card-img card-img-big" alt="Banco Patagonia">
@@ -118,7 +133,7 @@ function getFinanciacion($product){
                      </div>
                   </div>
                </div>
-               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+               <div class="tab-pane fade" id="todopago" role="tabpanel" aria-labelledby="todopago-tab">
                   <div class="full-width pull-left">
                      <div class="box-title">Tarjetas de crédito</div>
                      <div class="box-container">
@@ -143,9 +158,19 @@ function getFinanciacion($product){
 
                   </div>
                </div>
-               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+               <div class="tab-pane fade" id="banco" role="tabpanel" aria-labelledby="banco-tab">
                   <div class="box-container">
                      <p class="weight-strong m-bottom-half">Cuando termines la compra vas a ver la información de pago en relación a esta opción.</p>
+                     <p>{$infopopup_banc}</p>
+                     <h4>
+                        <span class="m-right-quarter">Total:</span><b>$ {$precio}</b>
+                     </h4>
+                  </div>
+               </div>
+               <div class="tab-pane fade" id="efectivo" role="tabpanel" aria-labelledby="efectivo-tab">
+                  <div class="box-container">
+                     <p class="weight-strong m-bottom-half">Pagá de contado en nuestro local.</p>
+                     <p>{$infopopup_cash}</p>
                      <h4>
                         <span class="m-right-quarter">Total:</span><b>$ {$precio}</b>
                      </h4>
