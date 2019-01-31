@@ -46,7 +46,7 @@ function fw_data( $fwatts ) {
             'el_id' =>  '',
         ), $fwatts );
 
-    $font_size=16;
+    $font_size=16;$font_weight='normal';
     $type=$fwatts['type'];
     $icon=$type;
     $icons_style=fw_theme_mod("icons_style");
@@ -102,6 +102,7 @@ function fw_data( $fwatts ) {
     if($fwatts['text'] || empty($value))$value=$fwatts['text'];
     if($fwatts['link'])$link=$fwatts['link'];
     if($fwatts['size'])$font_size=$fwatts['size'];
+    if($fwatts['weight'])$font_weight=$fwatts['weight'];
     $only_text=false;
     if(($fwatts["only_text"]))$only_text=true;
     //format
@@ -133,15 +134,15 @@ function fw_data( $fwatts ) {
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
-            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
             $first.='</a>';
         }
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="fw_icon '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        $first='<a target="_blank" class="fw_icon '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
         if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
-        $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
+        $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;">'.$value.'</span>';
         $first.='</a>';
     }
 

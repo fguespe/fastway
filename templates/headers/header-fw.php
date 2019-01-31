@@ -1,7 +1,4 @@
-<?php
-
-echo fw_header_html();
-?>
+<?php echo fw_header_html();?>
 <style>
 /*
 centrar menu
