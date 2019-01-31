@@ -1,17 +1,6 @@
 <?php 
-$antdesp=explode("bottom_init",fw_header_html_mobile());
-$middleh=$antdesp[0];
-$afterh=$antdesp[1];
+echo fw_header_html_mobile();
 ?>
-<div class="container fw_header mobile d-md-none">
-    <div class="middle d-flex row align-items-center codes px-3" >
-          <?php echo $middleh; ?>
-    </div>
-    <? if(!empty($afterh)){?>
-    <div class="bottom d-flex row align-items-center codes py-1 px-3" >
-        <?php echo $afterh; ?>
-    </div>
-    <? }?>
     <div class="mobile-menu-overlay ">&nbsp;</div>
     <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
