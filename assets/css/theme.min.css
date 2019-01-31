@@ -1825,12 +1825,14 @@ body .wpb_content_element {
 
 @media (max-width: 799px) {
   .fwhorform .gform_footer {
-    width: 50%;
+    width: 100%;
     margin-top: 10px;
     padding: 0px;
   }
   .fwhorform .gform_body {
     width: 100% !important;
+    display: block !important;
+    float: none !important;
   }
 }
 .woocommerce-checkout .btn {

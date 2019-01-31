@@ -128,7 +128,7 @@ function fw_data( $fwatts ) {
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if($format=='iconsnext'){
-        $first.="<div class='fw_icons ".$rand."'>";
+        $first.="<div class='fw_icons'>";
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
