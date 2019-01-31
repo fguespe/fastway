@@ -1027,7 +1027,7 @@ ul {
 
 /*stickty*/
 @media (min-width: 799px) {
-  .fw_sticky, .fw_transparent_top {
+  .fw_sticky_header, .fw_transparent_header {
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -1035,6 +1035,10 @@ ul {
 
   .fw_sticky {
     top: 0px;
+  }
+
+  .fw_sticky_header .fw_header {
+    background: var(--sticky-header) !important;
   }
 }
 /*OWL*/

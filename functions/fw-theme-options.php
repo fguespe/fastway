@@ -726,26 +726,26 @@ Kirki::add_field( 'theme_config_id', array(
 		'alpha' => true,
 	),
 ) );
-/*
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
-	'settings'    => 'opt-color-transparent-sticky-middle',
+	'settings'    => 'color-sticky-header',
 	'label'       => __( 'Header Sticky Color ', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
-	'description'=>'var(--transparent-sticky-middle);',
+	'default'     => 'rgba(255,255,255,0)',
+	'description'=>' var(--sticky-header);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
 			'element'  => ':root',
-			'property' => '--transparent-sticky-middle',
+			'property' => '--sticky-header',
 		),
 	),
 	'choices'     =>  array(
 		'alpha' => true,
 	),
 ) );
-*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bottheader',
@@ -1708,7 +1708,27 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
+//General
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'dark-logo',
+	'label'       => __( 'Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => urlforimages()."/assets/img/logo.png",
+	'transport'=>'postMessage',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'darklogo_sticky',
+	'label'       => __( 'Dark Logo on Sticky', 'fastway' ),
+	'section'     => 'section_extras',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 
 
 Kirki::add_field( 'theme_config_id', array(
