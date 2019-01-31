@@ -254,6 +254,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*HEAADER*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style',
