@@ -112,20 +112,21 @@ function fw_data( $fwatts ) {
     else if($fwatts["iconsnext"])$format="iconsnext";
     //error_log($type);
 
+    $iconclass=" fw_icon fw_icon_bs_short ";
 
     if($format=="isli"){
-        $first= '<li class="fw_icon '.$atts['el_class'].' d-flex align-items-center "> ';
+        $first= '<li class="'.$iconclass.' '.$atts['el_class'].' d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;">'.$fwatts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
-        $first= '<li class="fw_icon '.$atts['el_class'].' d-flex align-items-center "> ';
+        $first= '<li class="'.$iconclass.' '.$atts['el_class'].' d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.='<span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span></li>';
     }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if($format=='iconsnext'){
-        $first.="<div id='".$atts['el_id']."' class='fw_icon_next ".$atts['el_class']."'>";
+        $first.="<div id='".$atts['el_id']."' class=''.$iconclass.' ".$atts['el_class']."'>";
 
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
@@ -140,7 +141,7 @@ function fw_data( $fwatts ) {
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="fw_icon '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        $first='<a target="_blank" class="'.$iconclass.' '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
         if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
         $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;">'.$value.'</span>';
         $first.='</a>';
