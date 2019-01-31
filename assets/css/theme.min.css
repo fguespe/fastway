@@ -533,16 +533,16 @@
   display: none;
 }
 
-.fw_icon_bs_short i {
+.fw_icon i {
   font-size: 30px;
 }
-.fw_icon_bs_short big {
+.fw_icon big {
   display: block;
   font-size: 20px !important;
   font-weight: 700;
   line-height: 17px;
 }
-.fw_icon_bs_short .icon {
+.fw_icon .icon {
   margin-right: 10px;
 }
 
