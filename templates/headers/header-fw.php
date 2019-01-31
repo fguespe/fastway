@@ -1,22 +1,31 @@
-<?php global $header_container,$header_middle,$header_bottom; 
-$antdesp=explode("bottom_init",fw_header_html());
-$middleh=$antdesp[0];
-$afterh=$antdesp[1];
+<?php
+
+function fw_header_builder($atts = [], $content = null){
+  $atts = shortcode_atts(array('type' => 'middle' ), $atts );
+  $header_container   = fw_theme_mod('header-width');
+  $header_class=" fw_header ".$atts['type']." desktop d-none d-md-block ";
+  if(fw_theme_mod("transparent-header"))$header_class.=" fw_transparent_header ";
+  $volver='<div class="'.esc_attr( $header_class ).'">';
+  $volver.='<div class="'.esc_attr( $header_container).'">';
+  $volver.='<div class=" d-flex row align-items-center codes">';
+  $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+  $volver .='</div></div></div>';
+  error_log($volver);
+  return $volver;
+}
+add_shortcode('fw_header', 'fw_header_builder');
+
+function fw_header_html(){
+  return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
+}
+function fw_header_html_mobile(){
+  return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
+}
+echo fw_header_html();
+
+
 ?>
-<div class="<?php echo esc_attr( $header_middle ); ?>">
-    <div  class="<?php echo esc_attr( $header_container ); ?>">
-	      <div class=" d-flex row align-items-center codes">
-            <?php echo $middleh; ?>
-      	</div>
-    </div>
-</div>
-<div class="<?php echo esc_attr( $header_bottom ); ?>">
-  <div class="<?php echo esc_attr( $header_container ); ?>">
-        <div class="d-flex row align-items-center codes">
-            <?php echo $afterh; ?>
-      	</div>
-  </div>
-</div>
+
 
 <style>
 /*

@@ -1,7 +1,6 @@
 <?php
 
 add_shortcode("fwi","fwi",10,2);
-
 add_shortcode("fw_info_modal","fw_info_modal",10,2);
 
 
@@ -20,14 +19,6 @@ function fw_shortcode_metaslider( $atts ) {
 
 }
 
-
-function fw_header_html(){
-    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
-}
-function fw_header_html_mobile(){
-    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
-}
-
 add_shortcode('fw_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
 function fw_data( $fwatts ) {
@@ -36,6 +27,7 @@ function fw_data( $fwatts ) {
             'type' => '',
             'text' =>  '',
             'size' =>  '',
+            'weight' =>  '',
             'link' =>  '',
             'cant' =>  '',
             'icon_color' =>  '',

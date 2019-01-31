@@ -545,15 +545,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'container',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'topheader-img',
-	'label'       => __( 'Top Banner Img', 'fastway' ),
-	'description' => __( 'A banner that goes on top of all, like for a discount or some news.', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '',
-) );
-
 if(!empty(fw_theme_mod("header-headerwidget-text"))){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',

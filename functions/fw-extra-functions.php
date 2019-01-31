@@ -484,14 +484,6 @@ background:white;
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
-add_action('fastway_header_topbanner','get_fastway_header_topbanner');
-function get_fastway_header_topbanner(){
-    
-    
-    if( empty(fw_theme_mod('topheader-img')) && empty( fw_theme_mod('topheader-img') ) && strlen(trim(fw_theme_mod('topheader-img') )) > 0 ){
-        echo '<div class="fw_header_top_banner d-none d-md-block"><img src="'.fw_theme_mod('topheader-img').'"></div>';
-    }
-}
 
 
 
