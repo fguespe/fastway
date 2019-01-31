@@ -309,7 +309,8 @@ function getwoocampos(){
             'heading' => __( 'Extra class name', 'js_composer' ),
             'param_name' => 'el_class',
             'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
-        ),   array(
+        ),   
+        array(
             'type' => 'css_editor',
             'heading' => __( 'CSS box', 'js_composer' ),
             'param_name' => 'css',

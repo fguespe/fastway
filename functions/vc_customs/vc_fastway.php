@@ -173,6 +173,18 @@ function fw_slider() {
                     "param_name"  => "cols",
                     'value' => '1',
                 ),
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
 
             )
         )
@@ -399,7 +411,19 @@ function vc_fw_shorts() {
                     "param_name"  => "sblock",
                     "value"       => $static_block_args,
                     "std"         => "",
-                  ),
+                ),
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
                   
                 
                 
@@ -407,40 +431,6 @@ function vc_fw_shorts() {
     ) );
 
 }
-add_action( 'vc_before_init', 'vc_meta_slider' );//Prds de categoria
-function vc_meta_slider() {
-
-    $fw_getmsliders = fw_getmsliders();
-    vc_map( array(
-            "name" => __("Meta Sliders", 'fastway'),
-            'base' => 'fw_shortcode_metaslider',
-            'description' => __('FW Meta Sliders', 'fastway'), 
-            'category' => __('Fastway', 'fastway'),   "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
-            "params" => array(
-                array(
-                  "type"        => "dropdown",
-                  "heading"     => __("Desktop Slider"),
-                  "param_name"  => "sl_desktop",
-                  "admin_label" => true,
-                  "value"       => $fw_getmsliders,
-                  "std"         => " ",
-                ),
-                array(
-                  "type"        => "dropdown",
-                  "heading"     => __("Mobile Slider"),
-                  "description"     => __("Leave empty to use desktop also"),
-                  "param_name"  => "sl_mobile",
-                  "admin_label" => true,
-                  "value"       => $fw_getmsliders,
-                  "std"         => " ",
-                ),
-
-            )
-    ) );
-
-}
-
 // After VC Init
 add_action( 'vc_after_init', 'vc_after_init_actions' );
  
