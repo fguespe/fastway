@@ -646,7 +646,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
-	'description'=>'var(--icon-header);',
+	'description'=>'var(--icon-header); Its a color for all icons in header. Can be owewritten in css.',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
