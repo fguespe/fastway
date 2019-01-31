@@ -83,7 +83,7 @@ require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/functions/fw-extra-functions.php';
 require get_template_directory() . '/functions/fw-shortcodes.php';
-require get_template_directory() . '/demos/fw-democontent.php';
+//require get_template_directory() . '/demos/fw-democontent.php';
 //require get_template_directory() . '/demos/one-click-demo-import/one-click-demo-import.php';
 require get_template_directory() . '/functions/fw-user-account.php';
 require get_template_directory() . '/functions/fw-blog-options.php';

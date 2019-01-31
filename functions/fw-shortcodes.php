@@ -239,7 +239,7 @@ function quicklinks(){
 
 function fw_company_data($type, $link=false,$cant=0) {
     $type=trim($type);$link=trim($link);$pre="";
-    if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web&phone=";
+    if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=".fw_theme_mod('fw_share_message')."&phone=";
     else if($type=="phone" && $link)$pre="tel:";
     else if($type==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$type);

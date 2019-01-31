@@ -1782,7 +1782,13 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'js',
 	),
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_share_message',
+	'label'    => __( 'Share Message', 'fastway' ),       
+	'section'     => 'section_extras',
+	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
