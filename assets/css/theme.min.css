@@ -1111,12 +1111,6 @@ p:empty {
   display: none;
 }
 
-.fw_header_top_banner {
-  background-color: var(--top-banner);
-  width: 100%;
-  text-align: center;
-}
-
 .btn-outline-primary:hover {
   background: transparent !important;
 }

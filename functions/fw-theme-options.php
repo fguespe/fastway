@@ -636,6 +636,25 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'opt-color-iconheader',
+	'label'       => __( 'Icons in Header', 'fastway' ),
+	'section'     => 'section_colors',
+	'default'     => '#00A2DE',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--icon-header);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--icon-header',
+		),
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-topheader',
@@ -657,46 +676,8 @@ Kirki::add_field( 'theme_config_id', array(
 		'alpha' => true,
 	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'color',
-	'settings'    => 'opt-color-topheader-banner',
-	'label'       => __( 'Top Header Banner', 'fastway' ),
-	'section'     => 'section_colors',
-	'default'     => '#fff',
-	'choices'     => array(
-		'alpha' => true,
-	),
-	'description'=>'var(--top-banner);',
-	'transport'   => 'auto',
-	'output' => array(
-		array(
-			'element'  => ':root',
-			'property' => '--top-banner',
-		),
-	),
-	'choices'     =>  array(
-		'alpha' => true,
-	),
-) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'color',
-	'settings'    => 'opt-color-iconheader',
-	'label'       => __( 'Icons in Header', 'fastway' ),
-	'section'     => 'section_colors',
-	'default'     => '#00A2DE',
-	'choices'     => array(
-		'alpha' => true,
-	),
-	'description'=>'var(--icon-header);',
-	'transport'   => 'auto',
-	'output' => array(
-		array(
-			'element'  => ':root',
-			'property' => '--icon-header',
-		),
-	),
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-middheader',
