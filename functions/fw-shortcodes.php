@@ -50,6 +50,8 @@ function fw_data( $fwatts ) {
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
+            'el_class' =>  '',
+            'el_id' =>  '',
         ), $fwatts );
 
     $font_size=16;
@@ -59,7 +61,7 @@ function fw_data( $fwatts ) {
     $value="";
     $cant=0;
     if($fwatts['cant'])$cant=intval($fwatts['cant']);
-        
+    
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
         $link=fw_company_data($type,true,$cant);
@@ -116,19 +118,22 @@ function fw_data( $fwatts ) {
     else if($fwatts["isli_i"])$format="isli_i";
     else if($fwatts["iconsnext"])$format="iconsnext";
     //error_log($type);
+
+
     if($format=="isli"){
-        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
+        $first= '<li class="fw-icon '.$atts['el_class'].' d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;">'.$fwatts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
-        $first= '<li class="fw_icon_bs_short d-flex align-items-center "> ';
+        $first= '<li class="fw_icon '.$atts['el_class'].' d-flex align-items-center "> ';
         if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.='<span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span></li>';
     }else if(!empty($fwatts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if($format=='iconsnext'){
-        $first.="<div class='fw_icons'>";
+        $first.="<div id='".$atts['el_id']."' class='fw_icons ".$atts['el_class']."'>";
+
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
@@ -140,8 +145,9 @@ function fw_data( $fwatts ) {
             $first.='</a>';
         }
         $first.="</div>";
+    
     }else{
-        $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        $first='<a target="_blank" class="fw_icon '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
         if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
         $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$fwatts['size'].'px !important;">'.$value.'</span>';
         $first.='</a>';
