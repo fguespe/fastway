@@ -234,7 +234,7 @@ Kirki::add_field( 'theme_config_id', array(
 	
 	'choices'     => array(
 		'container-fluid'   => 'Wide',
-		'container-mid'   => 'Midium',
+		'container-mid'   => 'Medium',
 		'container'   => 'Boxed',
 	),
 ) );
@@ -539,7 +539,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_header',
 	'choices'     => array(
 		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Midium',
+		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
 	),
 	'default'     => 'container',
@@ -905,7 +905,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'container',
 	'choices'     => array(
 		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Midium',
+		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
 	),
 ) );
@@ -1240,7 +1240,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'container',
 	'choices'     => array(
 		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Midium',
+		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
 	),
 ) );

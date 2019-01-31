@@ -128,6 +128,7 @@ function fw_data( $fwatts ) {
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
     }else if($format=='iconsnext'){
+        $first.="<div class='fw_icons ".$rand."'>";
         foreach (explode(",", $fwatts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
@@ -138,6 +139,7 @@ function fw_data( $fwatts ) {
             $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
             $first.='</a>';
         }
+        $first.="</div>";
     }else{
         $first='<a target="_blank" class="fw_quicklink '.$type.'" style="font-size:'.$font_size.'px !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
         if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
