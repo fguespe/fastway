@@ -51,7 +51,7 @@ function fw_data( $fwatts ) {
     $icon=$type;
     $icons_style=fw_theme_mod("icons_style");
     $value="";
-    $cant=0;
+    $cant=1;
     if($fwatts['cant'])$cant=intval($fwatts['cant']);
     
     if($type==="phone"){
@@ -237,7 +237,7 @@ function quicklinks(){
 }
 
 
-function fw_company_data($type, $link=false,$cant=0) {
+function fw_company_data($type, $link=false,$cant=1) {
     $type=trim($type);$link=trim($link);$pre="";
     if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=".fw_theme_mod('fw_share_message')."&phone=";
     else if($type=="phone" && $link)$pre="tel:";
@@ -250,7 +250,7 @@ function fw_company_data($type, $link=false,$cant=0) {
     if(empty($value))return "";
     //error_log($value);
     //error_log("Pre es: ".$pre);
-    $value=explode("|", $value)[$cant];
+    $value=explode("|", $value)[$cant-1];
     preg_match('#\((.*?)\)#', $value, $match);
     $link_en_parentesis= $match[1];
     if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
