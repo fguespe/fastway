@@ -724,7 +724,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'color-sticky-header',
 	'label'       => __( 'Header Sticky Color ', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => 'rgba(255,255,255,0)',
+	'default'     => '#fff',
 	'description'=>' var(--sticky-header);',
 	'transport'   => 'auto',
 	'output' => array(
