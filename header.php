@@ -48,12 +48,12 @@ jQuery(window).on('load', function() {
             scroll = jQuery(window).scrollTop();
             if (scroll >= 171) { 
                 sticky.addClass('fw_sticky_header'); 
-                if(<?=fw_theme_mod('darklogo_sticky')?>  && <?=!empty(fw_theme_mod('dark-logo'))?>){
+                if(<?=fw_theme_mod('darklogo_sticky')?'true':'false'?>  && <?=!empty(fw_theme_mod('dark-logo'))?'true':'false'?>){
                     jQuery('.logo .fastway-image').attr('src','<?=fw_theme_mod('dark-logo')?>');
                 }
-            }else { 
+            }else{ 
                 sticky.removeClass('fw_sticky_header');
-                if(<?=fw_theme_mod('darklogo_sticky')?>){
+                if(<?=fw_theme_mod('darklogo_sticky')?'true':'false'?>){
                     jQuery('.logo .fastway-image').attr('src','<?=fw_theme_mod('general-logo')?>');
                 }
             }
