@@ -69,7 +69,17 @@ jQuery(window).on('load', function() {
         jQuery(window).scroll(function() {
             var sticky = jQuery('header'),
             scroll = jQuery(window).scrollTop();
-            if (scroll >= 171) { sticky.addClass('fw_sticky_header'); }else { sticky.removeClass('fw_sticky_header');}
+            if (scroll >= 171) { 
+                sticky.addClass('fw_sticky_header'); 
+                if(<?=fw_theme_mod('darklogo_sticky')?>  && <?=!empty(fw_theme_mod('dark-logo'))?>){
+                    jQuery('.logo .fastway-image').attr('src','<?=fw_theme_mod('dark-logo')?>');
+                }
+            }else { 
+                sticky.removeClass('fw_sticky_header');
+                if(<?=fw_theme_mod('darklogo_sticky')?>){
+                    jQuery('.logo .fastway-image').attr('src','<?=fw_theme_mod('general-logo')?>');
+                }
+            }
         });
     }
 });

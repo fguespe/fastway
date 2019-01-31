@@ -1712,7 +1712,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'dark-logo',
-	'label'       => __( 'Logo', 'fastway' ),
+	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_extras',
 	'default'     => urlforimages()."/assets/img/logo.png",

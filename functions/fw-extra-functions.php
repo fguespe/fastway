@@ -516,6 +516,7 @@ function fw_custom_css(){
         }
        
     }
+    //Oculta las partes del sticky
     if(!empty(fw_theme_mod('sticky-menu'))){
         foreach(fw_theme_mod('sticky-menu') as $key){
            $css.=".fw_sticky_header .".$key."{
