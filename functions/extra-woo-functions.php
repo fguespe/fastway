@@ -179,23 +179,25 @@ function fw_pngcheckout_short() {
     }else if( is_checkout() && !is_order_received_page() ) {
 
         $active2="active";
-        $devuelvo .='<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
+        if(fw_theme_mod("checkout-minimal"))$devuelvo .='<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
     
     }else if( is_checkout() && is_order_received_page() ) {
         
         $active3="active";   
         
     }
+    if(fw_theme_mod("cart-steps")){
     $devuelvo.='<ul class="pasoscheckout">
               <li class="'.$active1.'"><a>MI COMPRA</a></li>
               <li class="'.$active2.'"><a>PAGO Y ENVÍO</a></li>
               <li class="'.$active3.'"><a>TERMINAR</a></li>
             </ul>';
+    }
 
     echo $devuelvo;
 
 }
-if(fw_theme_mod("cart-steps")){
+if(fw_theme_mod("cart-steps") || fw_theme_mod("checkout-minimal")){
 add_action('woocommerce_before_cart', 'fw_pngcheckout_short');   
 add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short',0);  
 }
@@ -231,14 +233,7 @@ function fw_product_gallery($product){
     }
 }
 
-//Oculto Sin Categoria del Front
-/*add_filter( 'woocommerce_product_subcategories_args', array( $this, 'hide_from_main_loop' ) );
-function hide_from_main_loop( $args ) {
-    if ( false !== get_option( 'default_product_cat' ) ) {
-        $args['exclude'] = get_option( 'default_product_cat' );
-    }
-    return $args;
-}*/
+
 
 //Aplicar precio global
 add_action( 'woocommerce_product_data_panels', 'fw_global_variation_price' );
