@@ -191,23 +191,9 @@ function fwi( $atts ) {
 
 
 
-function quicklinks3(){
-
-    echo "<div class='fw_quicklinks '>";
-    if(!empty(fw_company_data("fb")))echo '<a class="fb" href="'.fw_company_data("name",true).'"><i class="fab fa-facebook" style="color:#;"></i><span> Facebook</span></a>';
-    if(!empty(fw_company_data("youtube")))echo '<a class=" youtube" href="'.fw_company_data("youtube",true).'"><i class="fab fa-youtube" style="color:#FF0200;"></i><span>  Youtube</span></a>';
-    if(!empty(fw_company_data("whatsapp")))echo '<a class="  whats" href="'.fw_company_data("whatsapp",true).'" style="color:var(--icon-header);"><i class="fab fa-whatsapp" style="color:green;"></i><span>  Whatsapp</span><span class="solochat" style="display:none;"> (Solo para chat)</a>';
-    if(!empty(fw_company_data("ig")))echo '<a class=" ig" href="'.fw_company_data("ig",true).'"><i class="fab fa-instagram" style="color:#D1178A;"></i><span>  Instagram</span></a>';
-    if(!empty(fw_company_data("email")))echo '<a class=" mail" href="'.fw_company_data("email",true).'"><i class="fa fa-envelope" style="color:var(--icon-header);"></i><span>  Mandar un mail</span></a>';
-    if(!empty(fw_company_data("phone")))echo '<a class=" tel" href="'.fw_company_data("phone",true).'"><i class="fa fa-phone" style="color:var(--icon-header);"></i><span>  Llamar</span></a>';
-    if(!empty(fw_company_data("address")))echo '<a class="map" href="'.fw_company_data("address",true).'"><i class="fa fa-map-marker" style="color:var(--icon-header);"></i><span>  '.fw_company_data("address").'</span></a>';
-    echo "</div>";
-}
-
 
 function quicklinks(){
     $quick =trim(fw_theme_mod("fw_quickmenu_links"));
-    if(empty($quick))$quick="fb,youtube,whatsapp,ig,email,phone,address";
     $arra=array(
         "fb"=>array("fab fa-facebook"), 
         "youtube"=>array("fab fa-youtube"), 
@@ -239,17 +225,19 @@ function quicklinks(){
 
 function fw_company_data($type, $link=false,$cant=1) {
     $type=trim($type);$link=trim($link);$pre="";
+  
     if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=".fw_theme_mod('fw_share_message')."&phone=";
     else if($type=="phone" && $link)$pre="tel:";
     else if($type==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$type);
-
+    
     //fix whatsapp +
     if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
-  
+
     if(empty($value))return "";
-    //error_log($value);
-    //error_log("Pre es: ".$pre);
+    
+    
+    if($cant==0)$cant=1;
     $value=explode("|", $value)[$cant-1];
     preg_match('#\((.*?)\)#', $value, $match);
     $link_en_parentesis= $match[1];

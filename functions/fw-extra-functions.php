@@ -488,7 +488,7 @@ function fw_header_builder($atts = [], $content = null){
     $volver.='<div class=" d-flex row align-items-center codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div></div></div>';
-    error_log($volver);
+    
     return $volver;
   }
   add_shortcode('fw_header', 'fw_header_builder');
