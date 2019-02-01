@@ -565,7 +565,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'header_code',
 	'label'       => __( 'Header Code', 'fastway' ),
 	'description' => '
-					[fw_header type="bottom,top,middle"]
+					[fw_header id="bottom,top,middle"]
 					[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
 					[/fw_header]',
 	'section'     => 'section_header',
@@ -836,7 +836,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Mobile Template', 'fastway' ),
 	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_mobile',
-	'default'     => '1',
+	'default'     => 'fw',
 	'choices'     => $theme_headers_mobile,
 ) );
 
@@ -854,7 +854,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_mobile_code',
 	'label'       => __( 'Header Mobile Code', 'fastway' ),
-	'description' => '[fw_m_header type="bottom,top,middle"]
+	'description' => '[fw_m_header id="bottom,top,middle"]
 					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
 					[/fw_m_header]',
 	'section'     => 'section_mobile',
