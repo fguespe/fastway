@@ -1,10 +1,11 @@
 <?php
 
-if( !function_exists( 'fw_shoppingCart' ) ) {
-    add_shortcode('fw_shopping_cart', 'fw_shoppingCart');
+if( !function_exists( 'fw_shopping_cart' ) ) {
+    add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
 
-    function fw_shoppingCart($style="link"){
-        error_log($style);
+    function fw_shopping_cart($style = "link"){
+      
+        $style='link';
         if( !is_plugin_active('woocommerce/woocommerce.php') ) return;
         global $woocommerce;
         if(empty($style))$style=fw_theme_mod('cart-style');
