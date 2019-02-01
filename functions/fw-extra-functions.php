@@ -155,8 +155,7 @@ if( !function_exists( 'fw_menu' ) ) {
     function fw_menu( $atts ) {
         $atts = shortcode_atts(array('id' => 'primary' ), $atts );
         $id=$atts['id'];
-        error_log($id);
-        if ( ($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
+        if ( !empty($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
             $menu = get_term( $locations[$id], 'nav_menu' );
             $menu_items = wp_get_nav_menu_items($menu->term_id);
             $megamenu=fw_theme_mod("mega_menu");
@@ -483,7 +482,7 @@ function fw_header_builder($atts = [], $content = null){
     $atts = shortcode_atts(array('type' => 'middle','id' => 'middle' ), $atts );
     $header_class=" fw_header ".$atts['id']." desktop d-none d-md-block ";
     $header_container   = fw_theme_mod('header-width');
-    if(fw_theme_mod("transparent-header"))$header_class.=" fw_transparent_header ";
+    if(fw_theme_mod("transparent-header") && is_home())$header_class.=" fw_transparent_header ";
     $volver='<div class="'.esc_attr( $header_class ).'">';
     $volver.='<div class="'.esc_attr( $header_container).'">';
     $volver.='<div class=" d-flex row align-items-center codes">';
