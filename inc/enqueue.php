@@ -4,7 +4,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 	function fw_scripts() {
 		$version=wp_get_theme("fastway")->get( 'Version' ) ;
 		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-		//wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
+		wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
 			
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ),$version , true);
