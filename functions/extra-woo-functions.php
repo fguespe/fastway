@@ -309,10 +309,10 @@ function fw_price_html1($price,$product){
     if($product->is_on_sale()){
     return '<span class="fw_price price1">
         <span class="precio">$'.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
-        <div class="tachado">
+        <span class="tachado">
             <span class="precio-anterior t1 tachado"><del>$'.$regular_price.'</del></span>
             <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
-        </div>
+        </span>
         </span>';
     }else{
         return '<span class="fw_price price1"><span class="precio">$'.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
