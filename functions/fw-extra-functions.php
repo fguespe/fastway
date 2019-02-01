@@ -485,7 +485,7 @@ function fw_header_builder($atts = [], $content = null){
     //if(fw_theme_mod("transparent-header") && is_home())$header_class.=" fw_transparent_header ";
     $volver='<div class="'.esc_attr( $header_class ).'">';
     $volver.='<div class="'.esc_attr( $header_container).'">';
-    $volver.='<div class=" d-flex row align-items-center codes">';
+    $volver.='<div class="navbar codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div></div></div>';
     
