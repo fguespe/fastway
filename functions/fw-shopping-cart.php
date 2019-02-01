@@ -3,8 +3,8 @@
 if( !function_exists( 'fw_shoppingCart' ) ) {
     add_shortcode('fw_shopping_cart', 'fw_shoppingCart');
 
-    function fw_shoppingCart($style=""){
-
+    function fw_shoppingCart($style="link"){
+        error_log($style);
         if( !is_plugin_active('woocommerce/woocommerce.php') ) return;
         global $woocommerce;
         if(empty($style))$style=fw_theme_mod('cart-style');

@@ -564,9 +564,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_code',
 	'label'       => __( 'Header Code', 'fastway' ),
-	'description'       => '[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]bottom_init',
+	'description' => '
+					[fw_header type="bottom,top,middle"]
+					[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
+					[/fw_header]',
 	'section'     => 'section_header',
-	'default'     => '[fw_logo][fw_menu]',
+	'default'     => '[fw_header][fw_logo][fw_menu][/fw_header]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -851,7 +854,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_mobile_code',
 	'label'       => __( 'Header Mobile Code', 'fastway' ),
-	'description'       => '[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]bottom_init',
+	'description' => '[fw_m_header type="bottom,top,middle"]
+					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
+					[/fw_m_header]',
 	'section'     => 'section_mobile',
 	'default'     => '',
 	'choices'     => array(
