@@ -9,7 +9,7 @@ if(!function_exists('fw_loop_image')){
     add_shortcode('fw_loop_title', 'fw_loop_title');
     function fw_loop_title(){
         global $product;
-        return '<h2 class="woocommerce-loop-product__title">'.$product->post->post_title.'</h2>';
+        return '<h2 class="product_title">'.$product->post->post_title.'</h2>';
     }
     add_shortcode('fw_loop_price', 'fw_loop_price');
     function fw_loop_price(){

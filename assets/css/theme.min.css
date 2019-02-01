@@ -303,9 +303,6 @@
 .fw_header.top .navbar-nav li {
   display: inline;
 }
-.fw_header.top .navbar-nav .widget-title {
-  display: none;
-}
 .fw_header.top .navbar-nav a {
   padding: 5px;
 }
@@ -1348,6 +1345,18 @@ footer .widget_nav_menu li a {
   line-height: 25px;
 }
 
+.fw_product_loop .product_title {
+  line-height: 20px;
+  padding: 5px;
+  text-align: center;
+  color: #444444;
+  font-size: 14px;
+}
+.fw_product_loop img {
+  width: 100%;
+  height: auto;
+}
+
 /*SEARCH*/
 header i,
 header span,
@@ -1409,7 +1418,7 @@ html {
 /*PULL BOTSTRAP3*/
 /*FX SPACE*/
 .fw_header.top .pull-left, .fw_header.top .pull-right {
-  display: inline;
+  display: inline-block;
   width: 50%;
   margin: 0px;
 }
@@ -2061,10 +2070,6 @@ body .wpb_content_element {
 .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
   background: #ebe9eb;
   color: #8a7e88;
-}
-.woocommerce .fw_product_loop img {
-  width: 100%;
-  height: auto;
 }
 .woocommerce ul.products li.product, .woocommerce .woocommerce-page ul.products li.product {
   float: left;
