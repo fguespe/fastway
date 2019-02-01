@@ -155,6 +155,7 @@ if( !function_exists( 'fw_menu' ) ) {
     function fw_menu( $atts ) {
         $atts = shortcode_atts(array('id' => 'primary' ), $atts );
         $id=$atts['id'];
+        error_log($id);
         if ( ($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
             $menu = get_term( $locations[$id], 'nav_menu' );
             $menu_items = wp_get_nav_menu_items($menu->term_id);
