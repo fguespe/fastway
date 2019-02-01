@@ -296,15 +296,15 @@ function fw_price_html1($price,$product){
             $regular_price = $variable_product1 ->regular_price;
             $sale_price = $variable_product1 ->sale_price;
             $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-            if ($percentage > $maximumper) {
-                $maximumper = $percentage;
-            }
+            if ($percentage > $maximumper) $maximumper = $percentage;
+            
         }
         $percentage=$maximumper;
     }else{
         $regular_price=$product->regular_price;
         $sale_price=$product->sale_price;
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+        
     }
     if($product->is_on_sale()){
     return '<span class="fw_price price1">

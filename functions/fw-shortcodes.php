@@ -97,9 +97,6 @@ function fw_data( $fwatts ) {
         //Puso directo las clases
         $icon=$icons_style.' '.$type;
         $type='custom';
-
-    error_log($icon);
-    error_log($type);
     }
     if(!empty($fwatts['icon_color']))$icon_color=$fwatts['icon_color'];
     //error_log($type.' '.$icon_color);
