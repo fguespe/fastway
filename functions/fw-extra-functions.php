@@ -479,13 +479,14 @@ background:white;
 
 
 function fw_header_builder($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => 'middle','id' => 'middle' ), $atts );
+    $atts = shortcode_atts(array('type' => '','id' => 'middle' ), $atts );
+    if(!empty($atts['type']))$atts['id']=$atts['type'];
     $header_class=" fw_header ".$atts['id']." desktop d-none d-md-block ";
     $header_container   = fw_theme_mod('header-width');
     //if(fw_theme_mod("transparent-header") && is_home())$header_class.=" fw_transparent_header ";
     $volver='<div class="'.esc_attr( $header_class ).'">';
     $volver.='<div class="'.esc_attr( $header_container).'">';
-    $volver.='<div class="navbar codes">';
+    $volver.='<div class=" d-flex row align-items-center codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div></div></div>';
     
@@ -494,10 +495,13 @@ function fw_header_builder($atts = [], $content = null){
   add_shortcode('fw_header', 'fw_header_builder');
 
   function fw_header_builder_mobile($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => 'middle','id' => 'middle'  ), $atts );
-    $volver.='<div class="navbar fw_header mobile d-md-none codes">';
+    $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
+    if(!empty($atts['type']))$atts['id']=$atts['type'];
+    
+    $volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div>';
+    
     return $volver;
   }
   add_shortcode('fw_m_header', 'fw_header_builder_mobile');

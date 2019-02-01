@@ -471,7 +471,7 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'top-header',
@@ -483,7 +483,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	),
 	
-) );
+) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
