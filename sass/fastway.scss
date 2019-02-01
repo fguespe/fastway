@@ -1046,8 +1046,8 @@ ul {
   .fw_sticky{
     top:0px;
   }
-  .fw_sticky_header .fw_header{
-    background:var(--sticky-header) !important;
+  .fw_sticky_header .fw_header.middle{
+    background:var(--sticky-header);
   }
 
 }
