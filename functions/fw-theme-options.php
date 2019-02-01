@@ -178,6 +178,12 @@ Kirki::add_section( 'section_woo', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_woo_loop', array(
+    'title'          => __( 'Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+  
+) );
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -365,7 +371,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header.mobile .middle .logo img',
+			'element' => '.fw_header.middle.mobile  .logo img',
 			'property'	=> 'width',
 			'units'=>'px'
 		),
@@ -421,12 +427,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.fw_header.mobile .middle',
+			'element' => '.fw_header.middle.mobile',
 			'property'	=> 'padding-top',
 			'units'=>'rem'
 		),
 		array(
-			'element' => '.fw_header.mobile .middle',
+			'element' => '.fw_header.middle.mobile',
 			'property'	=> 'padding-bottom',
 			'units'=>'rem'
 		),
@@ -889,26 +895,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-loop-product-style',
-	'label'       => __( 'Catalog Loop Style', 'fastway' ),
-	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_woo',
-	'choices'     => $loop_templates,
-	'default'     => '1',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-loop-mobile-product-style',
-	'label'       => __( 'Mobile Loop templates', 'fastway' ),
-	'placeholder' => esc_attr__( 'Use desktop template', 'fastway' ),
-	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_woo',
-	'choices'     => $loop_templates_mobile,
-	'default'		=> '0',
-) );
-
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -979,19 +965,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'iconwu' => __( 'Icon With Username ', 'fastway' ),
 	),
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'cart-style',
-	'label'       => __( 'Cart Style', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 'modal',
-	'choices'     => array(
-		'link'   => __( 'Link', 'fastway' ),
-		'modal' => __( 'Modal ', 'fastway' ),
-	),
-) );
-*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-style',
@@ -1105,24 +1079,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-left-sidebar',
-	'label'       => __( 'Select Left Sidebar', 'fastway' ),
-	'section'     => 'section_woo',
-	'choices'     => kirki_sidebars_select_example(),
-	'default'     => 's-left-sidebar',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-right-sidebar',
-	'label'       => __( 'Select Right Sidebar', 'fastway' ),
-	'section'     => 'section_woo',
-	'choices'     => kirki_sidebars_select_example(),
-	'default'     => 's-right-sidebar',
-) );
-*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'shop_per_page',
@@ -1148,21 +1104,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'slider',
-	'settings'    => 'related_columns',
-	'label'       => esc_attr__( 'Related Columns', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 6,
-	'choices'     => array(
-		'min'  => '4',
-		'max'  => '6',
-		'step' => '1',
-	),
-) );
 
-*/
 
 /*SINGLE*/
 Kirki::add_field( 'theme_config_id', array(
@@ -1535,18 +1477,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-loop',
-	'label'       => __( 'CSS Product Loop', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-sidebarcats',
@@ -1581,6 +1511,52 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+/*LOOP*/
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-loop-product-style',
+	'label'       => __( 'Catalog Loop Style', 'fastway' ),
+	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
+	'section'     => 'section_woo_loop',
+	'choices'     => $loop_templates,
+	'default'     => '1',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'shop-loop-mobile-product-style',
+	'label'       => __( 'Mobile Loop templates', 'fastway' ),
+	'placeholder' => esc_attr__( 'Use desktop template', 'fastway' ),
+	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
+	'section'     => 'section_woo_loop',
+	'choices'     => $loop_templates_mobile,
+	'default'		=> '0',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'woo_loop_code',
+	'label'       => __( ' Product Loop Code', 'fastway' ),
+	'section'     => 'section_woo_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-loop',
+	'label'       => __( 'CSS Product Loop', 'fastway' ),
+	'section'     => 'section_woo_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
 /*Company DATA*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'custom',
