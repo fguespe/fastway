@@ -192,15 +192,15 @@ color:var(--linkedin) !important;
     margin-bottom: 0px;
     text-align:center ;
   }
-  .summary .precio1{
+  .summary .fw_price.price1{
     text-align:center;
   }
-  .summary .precio1 .tachado{
+  .summary .fw_price.price1 .tachado{
     text-align:center;
     font-size:18px;
     margin-bottom:5px;
   }
-  .precio1 .precio-anterior {
+  .fw_price.price1 .precio-anterior {
     color: #999;
     font-size: 15px;
     line-height: 13px;
@@ -208,10 +208,10 @@ color:var(--linkedin) !important;
     text-align:center ;
   }
   
-  
-  .summary .single_variation_wrap .precio1{
-      display:block;
+  .single_variation_wrap .price {
+    display: none;
   }
+
 	/*btn medios*/
 	.btn-medios {
 		display: block;

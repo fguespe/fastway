@@ -202,23 +202,23 @@
   margin-bottom: 0px;
   text-align: center;
 }
-.fw_single_product .summary .precio1 {
+.fw_single_product .summary .fw_price.price1 {
   text-align: center;
 }
-.fw_single_product .summary .precio1 .tachado {
+.fw_single_product .summary .fw_price.price1 .tachado {
   text-align: center;
   font-size: 18px;
   margin-bottom: 5px;
 }
-.fw_single_product .precio1 .precio-anterior {
+.fw_single_product .fw_price.price1 .precio-anterior {
   color: #999;
   font-size: 15px;
   line-height: 13px;
   padding: 5px 0 0 5px;
   text-align: center;
 }
-.fw_single_product .summary .single_variation_wrap .precio1 {
-  display: block;
+.fw_single_product .single_variation_wrap .price {
+  display: none;
 }
 .fw_single_product .btn-medios {
   display: block;
