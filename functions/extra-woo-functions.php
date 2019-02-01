@@ -310,8 +310,8 @@ function fw_price_html1($price,$product){
     return '<span class="fw_price price1">
         <span class="precio">$'.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
         <span class="tachado">
-            <span class="precio-anterior t1 tachado"><del>$'.$regular_price.'</del></span>
-            <span class="badge badge-success txt-12">'.$percentage.'% OFF</span>
+            <span class="precio-anterior"><del>$'.$regular_price.'</del></span>
+            <span class="badge badge-success">'.$percentage.'% OFF</span>
         </span>
         </span>';
     }else{

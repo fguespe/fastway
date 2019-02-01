@@ -209,6 +209,7 @@
   text-align: center;
   font-size: 18px;
   margin-bottom: 5px;
+  display: block;
 }
 .fw_single_product .fw_price.price1 .precio-anterior {
   color: #999;
