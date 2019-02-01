@@ -496,7 +496,7 @@ function fw_header_builder($atts = [], $content = null){
 
   function fw_header_builder_mobile($atts = [], $content = null){
     $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
-    if(!empty($atts['type']))$ ['id']=$atts['type'];
+    if(!empty($atts['type']))$atts['id']=$atts['type'];
     
     $volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
