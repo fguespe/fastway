@@ -1540,9 +1540,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
 	'default'     => '',
-	'transport'	=> 'postMessage',
 	'choices'     => array(
-		'language' => 'css',
+		'language' => 'html',
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(

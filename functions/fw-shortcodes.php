@@ -94,8 +94,12 @@ function fw_data( $fwatts ) {
         $link=fw_company_data("address",true,$cant);
         if(empty($link))fw_company_data("googlemaps",true,$cant);
     }else{
+        //Puso directo las clases
         $icon=$icons_style.' '.$type;
         $type='custom';
+
+    error_log($icon);
+    error_log($type);
     }
     if(!empty($fwatts['icon_color']))$icon_color=$fwatts['icon_color'];
     //error_log($type.' '.$icon_color);
