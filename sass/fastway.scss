@@ -63,26 +63,26 @@ color:var(--linkedin) !important;
 
 
 .fw-medios {
-  display: block;
-  text-decoration: none;
-  padding: 2% 0 0% 2%;
-  border-top: 1px solid #dfdfdf !important;
-  margin-top: 5px ;
-  color: #444;
+    display: block;
+    text-decoration: none;
+    padding: 2% 0 0% 2%;
+    border-top: 1px solid #dfdfdf !important;
+    margin-top: 10px ;
+    color: #444;
 
-  .icon{
-		width:15% !important;
-  }
-  big {
-  font-size: 18px;
-  margin: 0px;
-  color: var(--main) ;
-  font-size: 28px;
-  font-weight:400 !important;
-  }
-  small{
-    font-size: 14px ;
-  }
+    .icon{
+      width:15% !important;
+    }
+    big {
+    font-size: 18px;
+    margin: 0px;
+    color: var(--main) ;
+    font-size: 28px;
+    font-weight:400 !important;
+    }
+    small{
+      font-size: 14px ;
+    }
 }
 
 .fw_single_product {

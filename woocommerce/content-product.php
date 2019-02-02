@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li class="fw_product_loop desktop">
+<li class="fw_product_loop product desktop">
 	<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
 </li>
 
