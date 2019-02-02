@@ -1,16 +1,14 @@
 <?php
-
-
-
-
-
 function getFinanciacion($product){
   $precio=$product->price;
   $cuotas6=floor($precio/6);
   $cuotas3=floor($precio/3);
   $infopopup_cash=do_shortcode('[datos_efectivo_popup]');
-  $infopopup_banc=do_shortcode('[datos_bancarios_popup]');
-  
+  ob_start();
+  do_shortcode('[datos_bancarios_popup]');
+
+  $infopopup_banc=ob_get_contents();
+  ob_end_flush();
   return <<<HTML
   <div class="modal modalMediosPago fade" id="modalMediosPago" tabindex="-1" role="dialog" aria-labelledby="modalMediosPagoTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">

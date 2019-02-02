@@ -33,7 +33,6 @@ function fw_loop_cart() {
 
 function fw_loop_container($atts = [], $content = null){
     global $product;
-    error_log('sds');
     return '<a href="'.$product->get_permalink($product->id).'">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</a>';
 
 }

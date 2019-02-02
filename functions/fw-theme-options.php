@@ -2,9 +2,10 @@
 global $theme_headers;
 global $theme_headers_mobile ;
 global $loop_templates ;
-global $loop_templates_mobile;
+//global $loop_templates_mobile;
 global $single_templates;
 global $single_templates_mobile;
+
 function kirki_sidebars_select_example() { 
   	do_action('widgets_init');
  	$sidebars = array(); 
@@ -870,7 +871,7 @@ Kirki::add_field( 'theme_config_id', array(
 					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
 					[/fw_m_header]',
 	'section'     => 'section_mobile',
-	'default'     => '',
+	'default'     => '[fw_m_header] [fw_logo][fw_m_menu][/fw_m_header]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1107,7 +1108,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_woo_single',
 	'choices'     => $single_templates,
-	'default'		=> '1',
+	'default'		=> 'fw',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1491,8 +1492,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
 	'section'     => 'section_woo_loop',
 	'choices'     => $loop_templates,
-	'default'     => '1',
+	'default'     => 'fw',
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'shop-loop-mobile-product-style',
@@ -1502,13 +1504,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_loop',
 	'choices'     => $loop_templates_mobile,
 	'default'		=> '0',
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'default'     => '',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][fw_loop_cart][/fw_loop_container]',
+	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1952,16 +1955,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-if(empty(get_theme_mod("header-style")) && !empty(get_option("redux_demo"))){
-	$jaja=get_option("redux_demo");
-    foreach ($jaja as $key => $value) {
-    	if (strpos($key, 'copyright') !== false)continue;
-    	if($key=='opt-typography-div')$key='opt-typography-body';
-    	if(isset($jaja[$key]['url']))$value=$jaja[$key]['url'];
-        set_theme_mod($key,$value);
-    }
-    error_log("redux_init");
-}else if(empty(get_theme_mod("header-style") )){
+if(empty(get_theme_mod("header-style") )){
 	error_log("super init");
 	foreach (Kirki::$fields as $field ) {
 	    if(isset($field["default"]) && !isset($redux_demo[$field["settings"]])){

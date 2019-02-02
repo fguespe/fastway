@@ -6,13 +6,13 @@ add_shortcode("fw_info_modal","fw_info_modal",10,2);
 
 add_shortcode("fw_shortcode_metaslider","fw_shortcode_metaslider");
 function fw_shortcode_metaslider( $atts ) {
-    $fwatts = shortcode_atts(
+    $atts = shortcode_atts(
     array(
         'sl_desktop' => '',
         'sl_mobile' => '',
     ), $atts, 'fw_shortcode_metaslider' );
-    $desk=$fwatts["sl_desktop"];
-    $mob=$fwatts["sl_mobile"];
+    $desk=$atts["sl_desktop"];
+    $mob=$atts["sl_mobile"];
     if(empty($mob))$mob=$desk;
     echo '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
     echo '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
@@ -21,8 +21,8 @@ function fw_shortcode_metaslider( $atts ) {
 
 add_shortcode('fw_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
-function fw_data( $fwatts ) {
-    $fwatts = shortcode_atts(
+function fw_data( $atts ) {
+    $atts = shortcode_atts(
         array(
             'type' => '',
             'text' =>  '',
@@ -36,6 +36,7 @@ function fw_data( $fwatts ) {
             'stext' =>  '',
             'sblock' =>  '',
             'iframe' =>  '',
+            'modal' =>  '',
             'format' =>  '',
             'only_text' =>  '',
             //Depreceated
@@ -44,15 +45,15 @@ function fw_data( $fwatts ) {
             'iconsnext' =>  '',
             'el_class' =>  '',
             'el_id' =>  '',
-        ), $fwatts );
+        ), $atts );
 
     $font_size=16;$font_weight='normal';
-    $type=$fwatts['type'];
+    $type=$atts['type'];
     $icon=$type;
     $icons_style=fw_theme_mod("icons_style");
     $value="";
     $cant=1;
-    if($fwatts['cant'])$cant=intval($fwatts['cant']);
+    if($atts['cant'])$cant=intval($atts['cant']);
     
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
@@ -98,38 +99,38 @@ function fw_data( $fwatts ) {
         $icon=$icons_style.' '.$type;
         $type='custom';
     }
-    if(!empty($fwatts['icon_color']))$icon_color=$fwatts['icon_color'];
+    if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
     //error_log($type.' '.$icon_color);
-    if($fwatts['text'] || empty($value))$value=$fwatts['text'];
-    if($fwatts['link'])$link=$fwatts['link'];
-    if($fwatts['size'])$font_size=$fwatts['size'];
-    if($fwatts['weight'])$font_weight=$fwatts['weight'];
+    if($atts['text'] || empty($value))$value=$atts['text'];
+    if($atts['link'])$link=$atts['link'];
+    if($atts['size'])$font_size=$atts['size'];
+    if($atts['weight'])$font_weight=$atts['weight'];
     $only_text=false;
-    if(($fwatts["only_text"]))$only_text=true;
+    if(($atts["only_text"]))$only_text=true;
     //format
-    if($fwatts["format"])$format=$fwatts["format"];
-    else if($fwatts["isli"])$format="isli";
-    else if($fwatts["isli_i"])$format="isli_i";
-    else if($fwatts["iconsnext"])$format="iconsnext";
+    if($atts["format"])$format=$atts["format"];
+    else if($atts["isli"])$format="isli";
+    else if($atts["isli_i"])$format="isli_i";
+    else if($atts["iconsnext"])$format="iconsnext";
     //error_log($type);
-
-    $iconclass=" fw_icon fw_icon_bs_short ";
+    error_log($atts['el_class']);
+    $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
     if($format=="isli"){
-        $first= '<li class="'.$iconclass.' '.$atts['el_class'].' d-flex align-items-center "> ';
-        if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.=' <span class="text"> <big style="color:'.$fwatts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$fwatts['text_color'].' !important;">'.$fwatts['stext'].'</small> </span></li>';
+        $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
+        if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
+        $first.=' <span class="text"> <big style="color:'.$atts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$atts['text_color'].' !important;">'.$atts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
-        $first= '<li class="'.$iconclass.' '.$atts['el_class'].' d-flex align-items-center "> ';
-        if(!$fwatts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.='<span class="text"> <small>'.$value.'</small> <big>'.$fwatts['stext'].'</big> </span></li>';
-    }else if(!empty($fwatts['sblock'])){
-        $first='<a target="_blank" data-toggle="modal" data-target="#'.$fwatts['sblock'].'" class="fancybox">'.$first;
-        $first.= "</a>".fw_modal_block($fwatts['sblock'],$fwatts['sblock']);
+        $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
+        if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
+        $first.='<span class="text"> <small>'.$value.'</small> <big>'.$atts['stext'].'</big> </span></li>';
+    }else if(!empty($atts['sblock'])){
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
+        $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if($format=='iconsnext'){
-        $first.='<div id="'.$atts['el_id'].'" class="'.$iconclass.' '.$atts['el_class'].'">';
+        $first.='<div id="'.$atts['el_id'].'" class="'.$iconclass.'">';
 
-        foreach (explode(",", $fwatts['type']) as $icon) {
+        foreach (explode(",", $atts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
             else if($icon==="youtube")$icon="fab fa-youtube";
@@ -142,16 +143,19 @@ function fw_data( $fwatts ) {
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="'.$iconclass.' '.$atts['el_class'].' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
-        if(!$fwatts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
-        $first.='  <span style="color:'.$fwatts['text_color'].' !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;">'.$value.'</span>';
+        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        if(!$atts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+        $first.='  <span style="color:'.$atts['text_color'].' !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;">'.$value.'</span>';
         $first.='</a>';
     }
 
-    if(!empty($fwatts['iframe'] )){
+    if(!empty($atts['iframe'] )){
         $rand=generateRandomString();
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
-        $first.= "</a>".fw_modal_block($rand,$fwatts['iframe'],true);
+        $first.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
+    }if(!empty($atts['modal'] )){
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fancybox">'.$first;
+        $first.= "</a>";
     }else if(!empty($link) && ($format=="isli_i" || $format=="isli")){
         $first='<a target="_blank" href="'.$link.'">'.$first;
         $first.= "</a>";
@@ -162,28 +166,28 @@ function fw_data( $fwatts ) {
 function fw_info_modal( $atts ) {
     $rand=generateRandomString();
         
-    $fwatts = shortcode_atts(
+    $atts = shortcode_atts(
         array(
             'sblock' => '',
             'label' => '',
             'class' =>  '',
             'content' => '',
         ), $atts, 'fw_info_modal' );
-    $first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$fwatts['class'].'">'.$fwatts['label'].'</button>';
-    $first.= ( fw_modal_block($rand,$fwatts['sblock']));
+    $first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</button>';
+    $first.= ( fw_modal_block($rand,$atts['sblock']));
     return $first;
 }
 
 function fwi( $atts ) {
-    $fwatts = shortcode_atts(
+    $atts = shortcode_atts(
         array(
             'type' => '',
             'size' =>  '',
             'color' => '',
         ), $atts, 'fwi' );
-    $type=$fwatts["type"];
-    $color=$fwatts["color"];
-    $size=$fwatts["size"];
+    $type=$atts["type"];
+    $color=$atts["color"];
+    $size=$atts["size"];
 
     $icons_style=fw_theme_mod("icons_style");
     if(strpos($type, "fa-") === false)$type="fa-".$type;

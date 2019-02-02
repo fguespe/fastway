@@ -26,19 +26,8 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-$classname_desktop="fw_product_loop desktop ";
-if(fw_theme_mod('shop-loop-mobile-product-style')>0){
-	$classname_desktop.=" d-none d-md-block ";
-}
 ?>
-<li <?php wc_product_class($classname_desktop); ?>>
-
+<li class="fw_product_loop desktop">
 	<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
-
-	<? if(fw_theme_mod('shop-loop-mobile-product-style')>0){?>
-		<div class='fw_product_loop mobile d-md-none'>
-			<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-mobile-product-style'),"mobile-product-looop");?>
-		</div>
-	<? } ?>
 </li>
 
