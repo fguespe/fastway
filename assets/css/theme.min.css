@@ -71,14 +71,12 @@
   text-decoration: none;
   padding: 2% 0 0% 2%;
   border-top: 1px solid #dfdfdf !important;
-  margin-top: 25px;
+  margin-top: 5px;
   color: #444;
 }
-
 .fw-medios .icon {
   width: 15% !important;
 }
-
 .fw-medios big {
   font-size: 18px;
   margin: 0px;
@@ -86,13 +84,8 @@
   font-size: 28px;
   font-weight: 400;
 }
-
 .fw-medios small {
   font-size: 14px;
-}
-
-.fw-medios {
-  margin-top: 5px;
 }
 
 .fw_single_product {
