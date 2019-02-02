@@ -4,7 +4,7 @@ if(!function_exists('fw_loop_image')){
     add_shortcode('fw_loop_image', 'fw_loop_image');
     function fw_loop_image(){
         global $product;
-        return '<a href="'.$product->get_permalink( $product->id ).'">'.woocommerce_get_product_thumbnail().'</a>';
+        return woocommerce_get_product_thumbnail();
     }
     add_shortcode('fw_loop_title', 'fw_loop_title');
     function fw_loop_title(){
@@ -14,7 +14,7 @@ if(!function_exists('fw_loop_image')){
     add_shortcode('fw_loop_price', 'fw_loop_price');
     function fw_loop_price(){
         global $product;
-        return  '<span class="price">'.fw_price_html1(null,$product).'</span>';
+        return '<span class="price">'.fw_price_html1(null,$product).'</span>';
     }
     add_shortcode('fw_loop_cart', 'fw_loop_cart');
     function fw_loop_cart() {
@@ -31,6 +31,14 @@ if(!function_exists('fw_loop_image')){
             );
     }
 
+    function fw_loop_container($atts = [], $content = null){
+        global $product;
+        error_log('sds');
+        return '<a href="'.$product->get_permalink($product->id).'">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</a>';
+    
+    }
+
+    add_shortcode('fw_loop_container', 'fw_loop_container');
 
     function woo_loop_code(){
         return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
