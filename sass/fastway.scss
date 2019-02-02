@@ -214,39 +214,7 @@ color:var(--linkedin) !important;
   }
 
 	/*btn medios*/
-	.btn-medios {
-		display: block;
-		text-decoration: none;
-		padding: 2% 0 0% 2%;
-		border-top: 1px solid #dfdfdf !important;
-		margin-top: 25px;
-		color: #444;
-	}
-	a.btn-medios:hover {
-		text-decoration: none;
-	}
-	.btn-medios h4 {
-		font-size: 18px;
-		margin: 0px;
-		color: var(--main);
-	}
-	.btn-medios .azul {
-		font-size: 14px;
-		color: blue;
-	}
-	.short-description.fixed .cuadro-tarjeta,
-	.short-description.fixed .btn-medios {
-		display: none;
-	}
-	.txt-28 {
-		font-size: 28px;
-	}
-	.btn-medios .col-10 span {
-		font-size: 14px !important;
-	}
-	.btn-medios {
-		margin-top: 5px !important;
-	}
+	
 	/*boton compra*/
 	.summary .single_add_to_cart_button {
 		background: var(--main);

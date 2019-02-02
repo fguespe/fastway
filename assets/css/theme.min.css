@@ -221,39 +221,6 @@
 .fw_single_product .single_variation_wrap .price {
   display: none;
 }
-.fw_single_product .btn-medios {
-  display: block;
-  text-decoration: none;
-  padding: 2% 0 0% 2%;
-  border-top: 1px solid #dfdfdf !important;
-  margin-top: 25px;
-  color: #444;
-}
-.fw_single_product a.btn-medios:hover {
-  text-decoration: none;
-}
-.fw_single_product .btn-medios h4 {
-  font-size: 18px;
-  margin: 0px;
-  color: var(--main);
-}
-.fw_single_product .btn-medios .azul {
-  font-size: 14px;
-  color: blue;
-}
-.fw_single_product .short-description.fixed .cuadro-tarjeta,
-.fw_single_product .short-description.fixed .btn-medios {
-  display: none;
-}
-.fw_single_product .txt-28 {
-  font-size: 28px;
-}
-.fw_single_product .btn-medios .col-10 span {
-  font-size: 14px !important;
-}
-.fw_single_product .btn-medios {
-  margin-top: 5px !important;
-}
 .fw_single_product .summary .single_add_to_cart_button {
   background: var(--main);
   color: white;
