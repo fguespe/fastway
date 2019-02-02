@@ -199,10 +199,10 @@ function fw_slider_function( $atts, $content ) {
     $rand=generateRandomString(5);
     $atts = shortcode_atts(
         array(
-            'slides_desktop'      =>  'slides_desktop',
-            'links_desktop'      =>  'links_desktop',
-            'slides_mobile'      =>  'slides_mobile',
-            'links_mobile'      =>  'links_mobile',
+            'slides_desktop'      =>  '',
+            'links_desktop'      =>  '',
+            'slides_mobile'      =>  '',
+            'links_mobile'      =>  '',
             'cols'      =>  'cols',
         ), $atts );
     $cols=$atts['cols'];
@@ -220,6 +220,7 @@ function fw_slider_function( $atts, $content ) {
         $images = wp_get_attachment_image_src( $image_id, '' );
         $link=$links[$cant];
         $image=$images[0];
+        if(!$link)$link="#";
         $return .= '<div class="swiper-slide">';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
