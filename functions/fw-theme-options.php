@@ -184,6 +184,12 @@ Kirki::add_section( 'section_woo_loop', array(
     'panel'          => 'panel_fastway',
   
 ) );
+Kirki::add_section( 'section_labels', array(
+    'title'          => __( 'Labels', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+  
+) );
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -897,43 +903,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'in-stock-text',
-	'label'    => __( 'In Stock Label', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'	=>__( 'In Stock', 'fastway' ),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'out-of-stock-text',
-	'label'    => __( 'Out of Stock Label', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'	=>__( 'Sold', 'fastway' ),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'add-to-cart-text',
-	'label'    => __( 'Add to cart Label', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'	=>__( 'Buy', 'fastway' ),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_user_text',
-	'label'    => __( 'Login Text', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'	=>__( 'Ingresar', 'fastway' ),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_user_text',
-	'label'    => __( 'Login Text', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'	=>__( 'Ingresar', 'fastway' ),
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1744,13 +1713,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'js',
 	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_share_message',
-	'label'    => __( 'Share Message', 'fastway' ),       
-	'section'     => 'section_extras',
-	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
@@ -1933,7 +1896,59 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+/*LABELS*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'in-stock-text',
+	'label'    => __( 'In Stock Label', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'In Stock', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'out-of-stock-text',
+	'label'    => __( 'Out of Stock Label', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'Sold', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'add-to-cart-text',
+	'label'    => __( 'Add to cart Label', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'Buy', 'fastway' ),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_user_text',
+	'label'    => __( 'Login Text', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'Ingresar', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_share_message',
+	'label'    => __( 'Share Message', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_search',
+	'label'    => __( 'Search Placeholder', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'¿Que estas buscando?',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_sale',
+	'label'    => __( 'Sale Message', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'¡Oferta!',
+) );
 
 
 

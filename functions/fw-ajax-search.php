@@ -66,11 +66,7 @@ if( !function_exists( 'fw_search_form' ) ) {
       
         $rand_id = wp_rand();
         $check_woo = is_plugin_active('woocommerce/woocommerce.php');
-        if($check_woo) {
-            $_placeholder = esc_attr__("¿Que estas buscando?", 'fastway' );
-        } else {
-            $_placeholder = esc_attr__("¿Que estas buscando?", 'fastway' );
-        }
+        $_placeholder=fw_theme_mod('fw_label_search');
         $class="search-form-desktop";
         if($id==3)$class="search-form-mobile";
         
