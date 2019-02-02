@@ -1334,6 +1334,9 @@ footer .widget_nav_menu li a {
   line-height: 25px;
 }
 
+.fw_product_loop {
+  margin-bottom: 10px;
+}
 .fw_product_loop .product_title {
   line-height: 20px;
   padding: 5px;
