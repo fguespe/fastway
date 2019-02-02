@@ -113,7 +113,6 @@ function fw_data( $atts ) {
     else if($atts["isli_i"])$format="isli_i";
     else if($atts["iconsnext"])$format="iconsnext";
     //error_log($type);
-    error_log($atts['el_class']);
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
     if($format=="isli"){
@@ -137,15 +136,15 @@ function fw_data( $atts ) {
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
-            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
             $first.='</a>';
         }
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
+        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
         if(!$atts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
-        $first.='  <span style="color:'.$atts['text_color'].' !important;font-size:'.$font_size.'px !important;weight:'.$font_weight.' !important;">'.$value.'</span>';
+        $first.='  <span style="color:'.$atts['text_color'].' !important;font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;">'.$value.'</span>';
         $first.='</a>';
     }
 
