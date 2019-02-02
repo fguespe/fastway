@@ -82,7 +82,7 @@
   margin: 0px;
   color: var(--main);
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 .fw-medios small {
   font-size: 14px;
