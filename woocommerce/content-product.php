@@ -26,8 +26,13 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-?>
-<li class="fw_product_loop product desktop">
-	<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
-</li>
 
+
+$classname_desktop="fw_product_loop desktop ";
+
+?>
+<li <?php wc_product_class($classname_desktop); ?>>
+
+	<?php do_action( 'fw_get_template_part', fw_theme_mod('shop-loop-product-style'),"product-loop" );?>
+
+</li>
