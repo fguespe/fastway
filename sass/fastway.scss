@@ -114,10 +114,10 @@ color:var(--linkedin) !important;
 	}
 	/*break column*/
 	#paginationIL {
-		display: flex !important;
+		display: flex ;
 		flex-direction: column;
 		flex-wrap: wrap;
-		height: 400px !important;
+		height: 400px ;
 		width: 0;
 	}
 	.vacio #paginationIL {
@@ -217,16 +217,16 @@ color:var(--linkedin) !important;
     margin-bottom: 0px;
     text-align:center ;
   }
-  .summary .fw_price.price1{
+  .summary .fw_price{
     text-align:center;
   }
-  .summary .fw_price.price1 .tachado{
+  .summary .fw_price .tachado{
     text-align:center;
     font-size:18px;
     margin-bottom:5px;
     display:block;
   }
-  .fw_price.price1 .precio-anterior {
+  .fw_price .precio-anterior {
     color: #999;
     font-size: 15px;
     line-height: 13px;
@@ -1388,8 +1388,23 @@ footer .widget_nav_menu li a {
       width:100%;
       height:auto;   
   }
+  .precio-anterior del,
+  .precio-anterior{
+    color:lightgray;
+    font-weight:200 ;
+  }
 }
+/* Filters woo*/
 
+.woocommerce-result-count{
+  display:inline ;
+  float:left ;
+  padding-top:15px
+}
+.woocommerce-ordering{
+  display:inline ;
+  float:right;
+}
 /*SEARCH*/
  header i,
 header span,

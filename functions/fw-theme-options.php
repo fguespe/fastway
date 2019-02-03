@@ -1113,7 +1113,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'shop-single-product-html',
-	'label'    => __( 'Summary HTML', 'fastway' ),       
+	'label'    => __( 'Single Product Code', 'fastway' ),      
+	'description' => '.fw_price .tachado', 
 	'section'     => 'section_woo_single',
 	'default'     => '',
 	'choices'     => array(
