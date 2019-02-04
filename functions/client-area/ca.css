@@ -431,6 +431,12 @@ border:0px !important;
 	display: none;
 }
 
+
+
+.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
+	display:none;
+}
+
 /*MENSAJE ERROR
 cuidado con el update notice y el error de create user
 .error{
