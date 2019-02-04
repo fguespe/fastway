@@ -1814,6 +1814,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles',
 	'label'       => esc_attr__( 'Allowed Roles', 'fastway' ),
+	'description'=> 'REFRESH TO EDIT MENU IN CUSTOMIZER!',
 	'section'     => 'section_clientarea',
 	'priority'    => 10,
 	'choices'     => fw_getme_roles(),
