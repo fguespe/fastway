@@ -14,12 +14,12 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
         $total=$woocommerce->cart->get_cart_total();
         $carturl=wc_get_cart_url();
         $checkurl=wc_get_checkout_url();
-        $istyle=fw_theme_mod("icons_style");
+        $istyle=fw_theme_mod("fw_icons_style");
         if($style==="link" || $style==="modal"){
           return <<<HTML
-<a class="fw-header-icon minicart"  href="$carturl" role="button" data-target="#$idname2" data-toggle="modal">
-    <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="$cant">
-      <i class="p3 $istyle fa-shopping-cart fa-stack-1x xfa-inverse" data-count="$cant"></i>
+<a class="fw-header-icon minicart"  href="$carturl" role="button">
+    <span class="p1  fa-stack" data-count="$cant">
+      <i class="p3 fal fa-cart-plus fa-stack-1x xfa-inverse" data-count="$cant"></i>
     </span>
 </a>
 HTML;

@@ -311,9 +311,9 @@ function fw_shortcode_stblock( $atts ) {
 
 add_shortcode('fw_m_menu','fw_m_menu');
 function fw_m_menu(){
-    return '<button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="fa fa-bars"></i></button>';
+    return '<button class="navbar-toggler fw-header-icon toggler btn-bars-mobile" type="button"><i class="'.fw_theme_mod('fw_icons_style').' fa-bars"></i></button>';
 }
 add_shortcode('fw_m_search_form','fw_m_search_form');
 function fw_m_search_form(){
-    return '<button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-search"></i></button>';
+    return '<button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="'.fw_theme_mod('fw_icons_style').' fa-search"></i></button>';
 }

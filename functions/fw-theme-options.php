@@ -1215,18 +1215,21 @@ font-size:15px!important
 ) );
 
 /*TYPOGRAPHY*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'icons_style',
-	'label'       => __( 'Icons Style', 'fastway' ),
+	'settings'    => 'fw_icons_style',
+	'label'       => 'Font Awesome Pro Styles',
 	'section'     => 'section_typos',
 	'default'     => 'fa',
+	
 	'choices'     => array(
-		'fa'	=> __( 'Regular', 'fastway' ),
-		'fas' 	=> __( 'Solid ', 'fastway' ),
-		'fal' 	=> __( 'Light ', 'fastway' ),
+		'fa'   => 'Regular',
+		'fas'   => 'Solid',
+		'fal'   => 'Light',
 	),
 ) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
@@ -1495,17 +1498,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $loop_templates,
 	'default'     => 'fw',
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-loop-mobile-product-style',
-	'label'       => __( 'Mobile Loop templates', 'fastway' ),
-	'placeholder' => esc_attr__( 'Use desktop template', 'fastway' ),
-	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_woo_loop',
-	'choices'     => $loop_templates_mobile,
-	'default'		=> '0',
-) );*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_code',
