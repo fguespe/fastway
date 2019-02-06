@@ -47,7 +47,7 @@ function fw_data( $atts ) {
             'el_id' =>  '',
         ), $atts );
 
-    $font_size=16;$font_weight='normal';
+   // $font_size=16;$font_weight='normal';
     $type=$atts['type'];
     $icon=$type;
     $icons_style=fw_theme_mod("fw_icons_style");

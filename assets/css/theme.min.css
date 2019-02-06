@@ -1144,12 +1144,11 @@ footer {
   background: var(--footer);
 }
 
-#footercopy {
-  background: white;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+@media (max-width: 900px) {
+  #fw_footercopy .izquierda {
+    margin: 0 auto !important;
+  }
 }
-
 /*MOBILE ICONS*/
 /*
 .fw_header.middle .codes,
