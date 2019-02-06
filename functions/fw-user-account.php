@@ -8,7 +8,6 @@ if( !function_exists( 'fw_user_account' ) ) {
           $name="";
 
           $istyle=fw_theme_mod("fw_icons_style");
-          error_log($istyle);
           $current_user = wp_get_current_user();
           if ( 0 != $current_user->ID && fw_theme_mod("fw_user_template")=="iconwu") {
               $name=$current_user->user_login;
