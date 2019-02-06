@@ -1224,9 +1224,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'fa',
 	
 	'choices'     => array(
-		'fa'   => 'Regular',
-		'fas'   => 'Solid',
-		'fal'   => 'Light',
+		'fa'   =>  'Regular',
+		'fas'  => 'Solid',
+		'fal'  => 'Light',
 	),
 ) );
 

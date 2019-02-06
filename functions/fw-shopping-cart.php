@@ -26,7 +26,7 @@ HTML;
         }/*else if($style==="popup"){
         $idname=$rand."cart-popover";
         $idname2=$rand.'popover_content_wrapper';
-        $istyle=fw_theme_mod("icons_style");
+        $istyle=fw_theme_mod("fw_icons_style");
         echo '
 <script type="text/javascript">
   jQuery(document).ready(function() {
@@ -56,7 +56,7 @@ HTML;
 </div>';
         }else if($style==="modal"){
         $idname2=$rand.'shoppingCartModal';
-        $istyle=fw_theme_mod("icons_style");
+        $istyle=fw_theme_mod("fw_icons_style");
         
         echo '<a class="fw-header-icon minicart"  href="#" role="button" data-target="#'.$idname2.'" data-toggle="modal">
   <span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.$cant.'">
@@ -97,7 +97,7 @@ function iconic_cart_count_fragments( $fragments ) {
     
     //$fragments['.header-cart-count'] = '<span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">' . WC()->cart->get_cart_contents_count() . '</span>';
     $fragments['.header-cart-count-badge'] = '<span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.WC()->cart->get_cart_contents_count().'">
-    <i class="p3 '.fw_theme_mod("icons_style").' fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
+    <i class="p3 '.fw_theme_mod("fw_icons_style").' fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
 
     
     $fragments['.total-mini-cart'] = '<span class="d-block total-mini-cart">' . WC()->cart->get_cart_total() . '</span>';

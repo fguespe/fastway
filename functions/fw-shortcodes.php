@@ -50,7 +50,7 @@ function fw_data( $atts ) {
     $font_size=16;$font_weight='normal';
     $type=$atts['type'];
     $icon=$type;
-    $icons_style=fw_theme_mod("icons_style");
+    $icons_style=fw_theme_mod("fw_icons_style");
     $value="";
     $cant=1;
     if($atts['cant'])$cant=intval($atts['cant']);
@@ -188,7 +188,7 @@ function fwi( $atts ) {
     $color=$atts["color"];
     $size=$atts["size"];
 
-    $icons_style=fw_theme_mod("icons_style");
+    $icons_style=fw_theme_mod("fw_icons_style");
     if(strpos($type, "fa-") === false)$type="fa-".$type;
     if(strpos($type, " ") === false)$type=$icons_style." ".$type;
     return  '<i class="'.$type.'" style="color:'.$color.';font-size:'.$size.'px;"></i>';        

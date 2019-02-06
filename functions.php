@@ -2,9 +2,9 @@
 
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
-    if($name=="icons_style"){
-        if(get_theme_mod( $name) === "solid")return "fas";
-        if(get_theme_mod( $name) === "light")return "fal";
+    if($name=="fw_icons_style"){
+        if(get_theme_mod( $name) === "solid" || get_theme_mod( $name) === "fas")return "fas";
+        if(get_theme_mod( $name) === "light" || get_theme_mod( $name) === "fal")return "fal";
         else return 'fa';
     }
     return get_theme_mod( $name);
