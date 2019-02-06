@@ -1170,12 +1170,10 @@ footer {
   background: var(--footer);
 }
 
-#footercopy {
-  background: white;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
 
+#footercopy .izquierda{
+  display:flex;
+}
 
 /*MOBILE ICONS*/
 /*

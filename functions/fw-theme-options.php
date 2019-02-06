@@ -1173,7 +1173,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="footercopy" class="container-fluid d-flex justify-content-between"><div class="izquierda align-items-center">Desarrollado por <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" style="height: 30px !important;"  src="'.'/wp-content/themes/fastway/assets/img/logo.svg"/></a></div><div class="derecha"><div class="copyright">Copyright © [fw_extras_short  type="name"] | Todos los derechos reservados.</div></div></div>',
+	'default'     => '<div id="footercopy" class="container-fluid d-flex justify-content-between"><div class="izquierda align-items-center">Desarrollado por  <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" src="'.'/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © [fw_extras_short  type="name"] | Todos los derechos reservados.</div></div></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
