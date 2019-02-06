@@ -170,9 +170,11 @@ if( !function_exists( 'fw_menu' ) ) {
         if($megamenu && $isprimary)$cols=fw_theme_mod("mega_menu_cols");
         //error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
+        $idmenu='';
         if($megamenu && $isprimary)$clasem="fw_mega_menu";
+        if($megamenu && $isprimary)$idmenu="fw-menu";
 
-        $menu_list  = '<nav id="fw-menu" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
+        $menu_list  = '<nav id="'.$idmenu.'" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
 
         if(empty($menu_items))return;
         foreach( $menu_items as $menu_item ) {
