@@ -186,6 +186,6 @@ function template_sredirect() {
 add_action( 'template_redirect', 'template_sredirect' );
 
 
-
+update_option('fw_briziolabz_defaultoptions','1');
 
 ?>
