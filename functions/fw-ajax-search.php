@@ -83,7 +83,6 @@ if( !function_exists( 'fw_search_form' ) ) {
         }else if ( $id==0){
           $devolver.='<button type="button" class="">Buscar</button>';
         }else if ( $id==1){
-          error_log(fw_theme_mod('fw_icons_style').'sdss');
           $devolver.='<button type="button" class=""><i class="'.fw_theme_mod('fw_icons_style').' fa-search"></i></button>';
         }
         $devolver.='</div></form>';
