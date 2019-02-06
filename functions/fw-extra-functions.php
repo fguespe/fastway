@@ -172,7 +172,7 @@ if( !function_exists( 'fw_menu' ) ) {
         $clasem="fwmenu1";
         $idmenu='';
         if($megamenu && $isprimary)$clasem="fw_mega_menu";
-        if($megamenu && $isprimary)$idmenu="fw-menu";
+        if($megamenu || $isprimary)$idmenu="fw-menu";
 
         $menu_list  = '<nav id="'.$idmenu.'" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
 
