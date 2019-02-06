@@ -155,9 +155,11 @@ if( !function_exists( 'fw_menu' ) ) {
     function fw_menu( $atts ) {
         $atts = shortcode_atts(array('id' => 'primary' ), $atts );
         $id=$atts['id'];
+        $isprimary=false;
         if ( empty($id) ) return;
         if (($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
             $menu = get_term( $locations[$id], 'nav_menu' );
+            $isprimary=true;
             $menu_items = wp_get_nav_menu_items($menu->term_id);
         }else{
             $menu = wp_get_nav_menu_object($id);
@@ -165,10 +167,10 @@ if( !function_exists( 'fw_menu' ) ) {
         }
         $megamenu=fw_theme_mod("mega_menu");
         $cols="";
-        if($megamenu)$cols=fw_theme_mod("mega_menu_cols");
+        if($megamenu && $isprimary)$cols=fw_theme_mod("mega_menu_cols");
         //error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
-        if($megamenu)$clasem="fw_mega_menu";
+        if($megamenu && $isprimary)$clasem="fw_mega_menu";
 
         $menu_list  = '<nav id="fw-menu" class="'.$clasem.' navbar navbar-expand-md"><div class="collapse navbar-collapse" id=""><ul class="navbar-nav ">'."\n";
 
@@ -192,7 +194,7 @@ if( !function_exists( 'fw_menu' ) ) {
                 if( $submenu->menu_item_parent == $parent ) {
                         //error_log($submenu->title." ".);
                         //error_log($submenu->title);
-                        if($submenu->attr_title==="init_col" && $megamenu){
+                        if($submenu->attr_title==="init_col" && $megamenu && $isprimary){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
                             $menu_array[]='<div class="col-md-'.$cols.'">';
@@ -212,7 +214,7 @@ if( !function_exists( 'fw_menu' ) ) {
                         
                         $menu_array[] = '<li class="nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
                         //3er nivel
-                        if($megamenu){
+                        if($megamenu && $isprimary){
                             $s_parent = $submenu->ID;
                             foreach( $menu_items as $s_submenu ) {
                                 if( $s_submenu->menu_item_parent == $s_parent ) {
@@ -254,7 +256,7 @@ if( !function_exists( 'fw_menu' ) ) {
             
         }
         $menu_list .= '</ul></div></nav>';
-        if(fw_theme_mod("mega_menu_overlay"))$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
+        if(fw_theme_mod("mega_menu_overlay") && $isprimary)$menu_list .= '<div class="submenu-overlay"></div>' ."\n";
         
         return $menu_list;
     }
