@@ -1173,46 +1173,33 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="footercopy" class="container-fluid d-flex justify-content-between"><div class="izquierda align-items-center">Desarrollado por  <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma" src="'.'/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.png"/></a></div><div class="derecha"><div class="copyright">Copyright © [fw_extras_short  type="name"] | Todos los derechos reservados.</div></div></div>',
+	'default'     => '<div id="footercopy" style="border-top:1px solid #d3d3d3" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda">Desarrollado por  <a href="https://www.briziolabz.com" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.png"/></a></div><div class="copyright d-none d-md-block">Copyright © [fw_extras_short  type="name"] | Todos los derechos reservados.</div></div>
+		<style>
+		@media (max-width:700px){
+		
+			#footercopy .izquierda{
+		        width:100% !important;
+		        text-align:center!important
+			}
+		}</style>',
 	'choices'     => array(
 		'language' => 'html',
 	),
 ) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-footer-copywright',
-	'label'       => __( 'Footer Copyright CSS', 'fastway' ),
-	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
-	'section'     => 'section_footer',
-	'transport'	=> 'postMessage',
-	'default'     => '
-#footercopy{
-    border-top:1px solid #d3d3d3;
-    
+if(!empty(fw_theme_mod('css_editor-footer-copywright'))){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'code',
+		'settings'    => 'css_editor-footer-copywright',
+		'label'       => __( 'Footer Copyright CSS', 'fastway' ),
+		'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
+		'section'     => 'section_footer',
+		'transport'	=> 'postMessage',
+		'choices'     => array(
+			'language' => 'css',
+		),
+	) );
 }
 
-#footercopy .derecha div,
-#footercopy .izquierda {
-line-height:30px !important;
-font-size:15px!important
-}
-@media (max-width:700px){
-    #footercopy .copyright{
-        display:none;
-    }
-    #footercopy .izquierda{
-        width:100%;
-        text-align:center!important
-    }
-}
-#footercopy .logofirma{
-    height:30px !important;
-}',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
 
 /*TYPOGRAPHY*/
 
@@ -1825,7 +1812,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'ca-main-color',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => '#00A2DE',
+	'default'     => '#0C2E5C',
 	'choices'     => array(
 		'alpha' => true,
 	),
