@@ -211,7 +211,6 @@ function fw_slider_function( $atts, $content ) {
     $image_ids = explode(',',$atts['slides_desktop']);
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['slides_mobile']);
-    error_log($ismobile);
     if(!$ismobile)$claserespo=' ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
@@ -248,7 +247,6 @@ function fw_slider_function( $atts, $content ) {
         slidesPerView: '.$cols.'
     });
     </script>';
-    error_log(!$ismobile);
     if(!$ismobile)return $return;
     //Mobile
     $image_ids = explode(',',$atts['slides_mobile']);
