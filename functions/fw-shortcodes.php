@@ -53,8 +53,13 @@ function fw_data( $atts ) {
     $icons_style=fw_theme_mod("fw_icons_style");
     $value="";
     $cant=1;
+    $num=0;
+    $char=substr($type, -1);
+    if(intval($char)){
+        $type=str_replace($char,"",$type);
+        $atts['cant']=$char;
+    }
     if($atts['cant'])$cant=intval($atts['cant']);
-    
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
         $link=fw_company_data($type,true,$cant);
