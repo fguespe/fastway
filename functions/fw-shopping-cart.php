@@ -19,7 +19,7 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
           return <<<HTML
 <a class="fw-header-icon minicart"  href="$carturl" role="button">
     <span class="p1  fa-stack" data-count="$cant">
-      <i class="p3 fal fa-cart-plus fa-stack-1x xfa-inverse" data-count="$cant"></i>
+      <i class="p3 $istyle fa-cart-plus fa-stack-1x xfa-inverse" data-count="$cant"></i>
     </span>
 </a>
 HTML;

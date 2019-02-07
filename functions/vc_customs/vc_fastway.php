@@ -209,8 +209,10 @@ function fw_slider_function( $atts, $content ) {
     if(!is_numeric($cols))$cols=1;
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);
-    $claserespo='';
-    if(count(explode(',',$atts['slides_desktop']))>0)$claserespo=' d-none d-md-block ';
+    $claserespo=' d-none d-md-block ';
+    $ismobile=!empty($atts['slides_mobile']);
+    error_log($ismobile);
+    if(!$ismobile)$claserespo=' ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
     <div class="swiper-fwslider-'.$rand.'  '.$claserespo.'  over-hidden relative">
@@ -246,7 +248,8 @@ function fw_slider_function( $atts, $content ) {
         slidesPerView: '.$cols.'
     });
     </script>';
-
+    error_log(!$ismobile);
+    if(!$ismobile)return $return;
     //Mobile
     $image_ids = explode(',',$atts['slides_mobile']);
     $links = explode(',',$atts['links_mobile']);

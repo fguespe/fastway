@@ -47,7 +47,7 @@ function fw_data( $atts ) {
             'el_id' =>  '',
         ), $atts );
 
-   // $font_size=16;$font_weight='normal';
+    $atts['size']=16;$$atts['weight']='normal';
     $type=$atts['type'];
     $icon=$type;
     $icons_style=fw_theme_mod("fw_icons_style");
@@ -123,7 +123,7 @@ function fw_data( $atts ) {
     if($format=="isli"){
         $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.=' <span class="text"> <big style="color:'.$atts['text_color'].' !important;">'.$value.'</big> <small style="color:'.$atts['text_color'].' !important;">'.$atts['stext'].'</small> </span></li>';
+        $first.=' <span class="text"> <big style="color:'.$atts['text_color'].' ;">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
     }else if($format=="isli_i"){
         $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
@@ -141,15 +141,15 @@ function fw_data( $atts ) {
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
-            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px !important;font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
+            $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
             $first.='</a>';
         }
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;line-height:'.($font_size+20).'px !important;" href="'.$link.'">';
-        if(!$atts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
-        $first.='  <span style="color:'.$atts['text_color'].' !important;font-size:'.$font_size.'px !important;font-weight:'.$font_weight.' !important;">'.$value.'</span>';
+        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'">';
+        if(!$atts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' ;"></i>';
+        $first.='  <span style="color:'.$atts['text_color'].' ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;">'.$value.'</span>';
         $first.='</a>';
     }
 

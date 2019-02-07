@@ -103,7 +103,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
-    require get_template_directory() . '/functions/woocommerce-category-banner/woocommerce-category-banner.php';
+    //require get_template_directory() . '/functions/woocommerce-category-banner/woocommerce-category-banner.php';
     require get_template_directory() . '/functions/woocommerce_custom_related_products.php';
 
 }
