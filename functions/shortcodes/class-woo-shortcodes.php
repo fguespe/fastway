@@ -71,25 +71,25 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-		error_log($atts['uncategorized']);
+		
         $meta_query  = WC()->query->get_meta_query();
         $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
             'taxonomy' => 'product_visibility',
-            'field'    => 'name',
-            'terms'    => 'featured',
-            'operator' => 'IN',
+			'field'    => 'name',
+			'terms'    => 'featured',
+			'operator' => 'IN'
 		);
 		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
 				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
-			error_log('sds');
 		}
-		
+
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',
@@ -105,7 +105,7 @@ class fw_Woo_Shortcodes {
 		
 		ob_start();
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-		error_log(print_r($products,true));
+
 		if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel2.php', $atts, $products );
 		else:
@@ -116,47 +116,6 @@ class fw_Woo_Shortcodes {
 		
 		
 		return ob_get_clean();
-	}
-	public static function featured_products2( $atts ){
-		global $woocommerce_loop;
-		$atts = shortcode_atts( array(
-			"title" 		=> '',
-			"item_style"	=> 'grid',
-			"as_widget"		=> '0',
-			"box_style"		=> '',
-			"head_style"	=> '',
-			"border_color"	=> '',
-			"is_slider"		=> '1',
-			"is_biggest"	=> '0',
-			"auto_play"		=> '0',
-			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
-			"excerpt_limit" => 10,
-			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
-			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
-			"orderby"		=> 'date',
-			"order"			=> 'desc',
-			"hide_free"		=> 0,
-			"show_hidden"	=> 0
-		), $atts );
-
-		// Get downloadable products that don't allow reviews.
-		$query = new WC_Product_Query( array(
-			'limit' => 6,
-			'orderby' => 'title',
-			'order' => 'ASC',
-			'category' => $club_cat,
-			'stock_status' => 'instock',
-			'featured' => true,
-			'return' => 'ids',
-			
-			 ) );
-			
-		$products = $query->get_products();
-		//if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
-		//endif;
-
-		return;
 	}
 	public static function recent_products( $atts ){
 		global $woocommerce_loop;
@@ -191,10 +150,11 @@ class fw_Woo_Shortcodes {
 			'meta_query' 			=> array()
 		);
 		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria'),
+				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -233,7 +193,7 @@ class fw_Woo_Shortcodes {
 		
 		return ob_get_clean();
 	}
-	
+
 	public static function sale_products( $atts ) {
 		global $woocommerce_loop, $woocommerce;
 		
@@ -273,10 +233,11 @@ class fw_Woo_Shortcodes {
 
 		);
 		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria'),
+				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -395,10 +356,11 @@ class fw_Woo_Shortcodes {
 			)
 		);
 		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria'),
+				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -540,10 +502,11 @@ class fw_Woo_Shortcodes {
 			'meta_query'          => $meta_query
 		);
 		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria'),
+				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
