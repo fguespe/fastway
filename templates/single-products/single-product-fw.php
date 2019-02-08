@@ -20,9 +20,10 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
                     <div class="swiper-wrapper clear-ul">
 
                         <?//fw_product_gallery($product);
-                        $fotos=$product->get_gallery_attachment_ids();
+                        $fotos=array();
                         array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
-                        $fotos=array_reverse($fotos);
+                        $fotos=array_merge($fotos,$product->get_gallery_attachment_ids());
+                       
                         $index=0;
                         foreach ($fotos as $ids) {
                             echo '<div class="swiper-slide">';
