@@ -89,3 +89,5 @@ if( !function_exists( 'fw_search_form' ) ) {
         return $devolver;
     }
 }
+
+?>
