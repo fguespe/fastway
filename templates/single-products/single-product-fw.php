@@ -50,15 +50,7 @@ if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
                 </div>
             </div>
         </div>
-        <style>
-.swiper-single{
-width:100%;
-height:100% ;
-}
-#paginationIL li.active{
-    opacity:1;
-}
-</style>
+
 <script>
    
 var swiper = new Swiper(".swiper-single", {

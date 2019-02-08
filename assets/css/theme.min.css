@@ -111,6 +111,13 @@
 .fw_single_product .content-area {
   padding: 0px;
 }
+.fw_single_product .swiper-single {
+  width: 100%;
+  height: 100%;
+}
+.fw_single_product #paginationIL li.active {
+  opacity: 1;
+}
 .fw_single_product #paginationIL li {
   opacity: 0.4;
 }
@@ -124,7 +131,7 @@
   border: 1px solid transparent;
 }
 .fw_single_product #paginationIL {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   flex-wrap: wrap;
   height: 400px;

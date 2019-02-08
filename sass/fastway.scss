@@ -98,7 +98,13 @@ color:var(--linkedin) !important;
 	.content-area {
 		padding: 0px;
   }
-  
+  .swiper-single{
+    width:100%;
+    height:100% ;
+  }
+  #paginationIL li.active{
+      opacity:1;
+  }
 	/*THUMBNAILS*/
 	#paginationIL li {
 		opacity: 0.4;
@@ -114,7 +120,7 @@ color:var(--linkedin) !important;
 	}
 	/*break column*/
 	#paginationIL {
-		display: flex ;
+		display: flex !important;
 		flex-direction: column;
 		flex-wrap: wrap;
 		height: 400px ;
