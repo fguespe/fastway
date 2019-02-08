@@ -54,3 +54,6 @@ clasesbody();
 iconosmenu();
 }
 
+jQuery(document).ready( function(jQuery) {
+	jQuery('#wpb_visual_composer h2 span').html('ALTO WEB BUILDER');
+});

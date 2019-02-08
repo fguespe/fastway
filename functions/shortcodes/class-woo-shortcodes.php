@@ -35,7 +35,7 @@ class fw_Woo_Shortcodes {
 		self::ajax_call();
 
 		return array(
-			'fw_featured_products'				=> __CLASS__ . '::featured_products2',
+			'fw_featured_products'				=> __CLASS__ . '::featured_products',
 			'fw_sale_products'				=> __CLASS__ . '::sale_products',
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
@@ -140,18 +140,22 @@ class fw_Woo_Shortcodes {
 		), $atts );
 
 		// Get downloadable products that don't allow reviews.
-		$args = array(
+		$query = new WC_Product_Query( array(
+			'limit' => 6,
+			'orderby' => 'title',
+			'order' => 'ASC',
+			'category' => $club_cat,
+			'stock_status' => 'instock',
 			'featured' => true,
-		);
-		$products = wc_get_products( $args );
-
-		if ( $products->have_posts() ) :
+			'return' => 'ids',
+			
+			 ) );
+			
+		$products = $query->get_products();
+		//if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel2.php', $atts, $products );
-		else:
-			//return fw_Woo_Shortcodes::recent_products($atts);
-		endif;
-		
-		
+		//endif;
+
 		return;
 	}
 	public static function recent_products( $atts ){
