@@ -35,7 +35,7 @@ class fw_Woo_Shortcodes {
 		self::ajax_call();
 
 		return array(
-			'fw_featured_products'				=> __CLASS__ . '::featured_products',
+			'fw_featured_products'				=> __CLASS__ . '::featured_products2',
 			'fw_sale_products'				=> __CLASS__ . '::sale_products',
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
@@ -71,7 +71,7 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-		
+		error_log($atts['uncategorized']);
         $meta_query  = WC()->query->get_meta_query();
         $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
@@ -84,9 +84,10 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria'),
+				'terms'    => array('sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
+			error_log('sds');
 		}
 		
 		$args = array(
@@ -104,7 +105,7 @@ class fw_Woo_Shortcodes {
 		
 		ob_start();
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
-
+		error_log(print_r($products,true));
 		if ( $products->have_posts() ) :
 			self::get_template( 'woo-products-carousel2.php', $atts, $products );
 		else:
@@ -115,6 +116,43 @@ class fw_Woo_Shortcodes {
 		
 		
 		return ob_get_clean();
+	}
+	public static function featured_products2( $atts ){
+		global $woocommerce_loop;
+		$atts = shortcode_atts( array(
+			"title" 		=> '',
+			"item_style"	=> 'grid',
+			"as_widget"		=> '0',
+			"box_style"		=> '',
+			"head_style"	=> '',
+			"border_color"	=> '',
+			"is_slider"		=> '1',
+			"is_biggest"	=> '0',
+			"auto_play"		=> '0',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			"excerpt_limit" => 10,
+			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+			"orderby"		=> 'date',
+			"order"			=> 'desc',
+			"hide_free"		=> 0,
+			"show_hidden"	=> 0
+		), $atts );
+
+		// Get downloadable products that don't allow reviews.
+		$args = array(
+			'featured' => true,
+		);
+		$products = wc_get_products( $args );
+
+		if ( $products->have_posts() ) :
+			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+		else:
+			//return fw_Woo_Shortcodes::recent_products($atts);
+		endif;
+		
+		
+		return;
 	}
 	public static function recent_products( $atts ){
 		global $woocommerce_loop;
@@ -191,7 +229,7 @@ class fw_Woo_Shortcodes {
 		
 		return ob_get_clean();
 	}
-
+	
 	public static function sale_products( $atts ) {
 		global $woocommerce_loop, $woocommerce;
 		
