@@ -204,6 +204,7 @@ function fwi( $atts ) {
 
 function quicklinks(){
     $quick =trim(fw_theme_mod("fw_quickmenu_links"));
+    if(empty($quick))$quick="fb,youtube,whatsapp,ig,email,phone,address";
     $arra=array(
         "fb"=>array("fab fa-facebook"), 
         "youtube"=>array("fab fa-youtube"), 
