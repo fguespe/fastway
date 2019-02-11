@@ -322,9 +322,9 @@ function vc_fw_shorts() {
         "Select an option" => "",),$static_block_args);
 
     vc_map( array(
-            "name" => __("Icon Shorts", 'fastway'),
+            "name" => __("FW Icon", 'fastway'),
             'base' => 'fw_data',
-            'description' => __('Icon Shorts', 'fastway'), 
+            'description' => __('FW Icon', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 "params" => array(
