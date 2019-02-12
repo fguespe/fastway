@@ -880,12 +880,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_price_suffix',
 	'label'    => __( 'Price Suffix', 'fastway' ),
+	'description' =>'Goes next to the right of the price.',
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_symbol',
 	'label'    => __( 'Currency Symbol', 'fastway' ),
+	'descriptiom' => 'Only affecs main currecy. Leave empty for default.',
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
