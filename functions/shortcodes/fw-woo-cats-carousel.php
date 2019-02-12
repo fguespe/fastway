@@ -10,13 +10,16 @@ $rand=generateRandomString(5);
 <div class="swiper-cats-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
 
-  <?php 
-
-  foreach ($terms as $term) {
-            echo woo_loop_cat($term);
+<?php 
+global $fw_woo_cat;          
+foreach ($terms as $term) {
+    echo '<div class="swiper-slide">';
+    $fw_woo_cat=$term;
+    echo woo_loop_cat();
+    echo '</div>';
     
-    }
-    ?>
+}
+?>
 </div>
 <div class="swiper-prev swiper-cats-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-cats-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>

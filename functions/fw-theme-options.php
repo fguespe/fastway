@@ -554,19 +554,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'container',
 ) );
 
-if(!empty(fw_theme_mod("header-headerwidget-text"))){
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'header-headerwidget-text',
-	'label'       => __( 'Header Widget (Depreceated)', 'fastway' ),
-	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-}
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -595,20 +583,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-if(!empty(fw_theme_mod("css_editor-header-headerwidget"))){
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-header-headerwidget',
-	'label'       => __( 'Header Widget CSS (Depreceated)', 'fastway' ),
-	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
-}
 
 /*COLOR SCHEME*/
 Kirki::add_field( 'theme_config_id', array(
@@ -871,7 +845,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => urlforimages()."/assets/img/favi.png",
 ) );
 /*WOOCOMMERCE*/
-//if(is_plugin_active('woocommerce/woocommerce.php')){
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1147,21 +1120,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
-/*
-if(!empty(fw_theme_mod('css_editor-footer-copywright'))){
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'code',
-		'settings'    => 'css_editor-footer-copywright',
-		'label'       => __( 'Footer Copyright CSS', 'fastway' ),
-		'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
-		'section'     => 'section_footer',
-		'transport'	=> 'postMessage',
-		'choices'     => array(
-			'language' => 'css',
-		),
-	) );
-}
-*/
 
 /*TYPOGRAPHY*/
 
@@ -1436,6 +1394,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*LOOP*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_code',
@@ -1459,6 +1418,28 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'woo_loop_cat_code',
+	'label'       => __( ' Category Loop Code', 'fastway' ),
+	'section'     => 'section_woo_loop',
+	'description'     => '',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_loop_cat',
+	'label'       => __( 'CSS Category Loop', 'fastway' ),
+	'section'     => 'section_woo_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 /*Company DATA*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'custom',
@@ -1887,15 +1868,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-if(empty(get_theme_mod("header-style") )){
-	error_log("super init");
-	foreach (Kirki::$fields as $field ) {
-	    if(isset($field["default"]) && !isset($redux_demo[$field["settings"]])){
-	        set_theme_mod($field["settings"],$field["default"]);
-	    }
-	}
-
-}
 
 
 function my_customizer_styles() { ?>

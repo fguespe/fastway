@@ -1,4 +1,45 @@
 <?php
+function woo_loop_cat(){
+    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
+}
+function woo_loop_cat2($term){
+    $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
+    $image = wp_get_attachment_url( $thumbnail_id ); 
+    $link = get_term_link($term);
+    if(!is_string($link))return;
+    $devolver.= '<a href="'.$link.'" ><div class="item product-category">';
+    $devolver.= '<img src="'.$image.'" width="100%" height="auto"/>';
+    $devolver.= '<h2 class="woocommerce-loop-category__title" >'.$term->name.'</h2>';
+    $devolver.='<span class="desc">'.$term->description.'</span>';
+    $devolver.= '</div></a>';  
+    return $devolver;       
+}
+
+add_shortcode('fw_cat_title', 'fw_cat_title');
+function fw_cat_title(){
+    global $fw_woo_cat;
+    error_log('sd');
+    return 'jaja';
+}
+
+function fw_cat_container($atts = [], $content = null){
+   
+    return '<a href="">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</a>';
+
+}
+
+add_shortcode('fw_cat_container', 'fw_cat_container');
+
+
+
+
+
+
+
+
+
+
+
 
 /*SHOP MANAGER ROLES*/
 add_shortcode('fw_loop_image', 'fw_loop_image');
@@ -40,25 +81,10 @@ function fw_loop_container($atts = [], $content = null){
 add_shortcode('fw_loop_container', 'fw_loop_container');
 
 
-function woo_loop_cat($term){
-    $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
-    $image = wp_get_attachment_url( $thumbnail_id ); 
-    $link = get_term_link($term);
-    if(!is_string($link))return;
-    $devolver='<div class="swiper-slide">';
-    $devolver.= '<a href="'.$link.'" ><div class="item product-category">';
-    $devolver.= '<img src="'.$image.'" width="100%" height="auto"/>';
-    $devolver.= '<h2 class="woocommerce-loop-category__title" >'.$term->name.'</h2>';
-    echo '<span class="desc">'.$term->description.'</span>';
-    $devolver.= '</div></a></div>';  
-    return $devolver;       
-}
 function woo_loop_code(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
-function woo_loop_cat2(){
-    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
-}
+
 function fw_share_redes(){
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     
