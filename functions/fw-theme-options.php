@@ -1062,13 +1062,24 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'shop-single-product-html',
-	'label'    => __( 'Single Product Code', 'fastway' ),      
-	'description' => '.fw_price .tachado', 
+	'settings'    => 'woo_single_code',
+	'label'    => __( 'Single Product Code', 'fastway' ),     
 	'section'     => 'section_woo_single',
 	'default'     => '',
 	'choices'     => array(
 		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-single',
+	'label'       => __( 'CSS Single Product', 'fastway' ), 
+	'description' => '.fw_price', 
+	'section'     => 'section_woo_single',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
 	),
 ) );
 //}
