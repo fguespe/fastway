@@ -107,7 +107,7 @@ class fw_Woo_Shortcodes {
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		else:
 			return fw_Woo_Shortcodes::recent_products($atts);
 		endif;
@@ -185,7 +185,7 @@ class fw_Woo_Shortcodes {
 
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
@@ -303,7 +303,7 @@ class fw_Woo_Shortcodes {
 
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
@@ -373,7 +373,7 @@ class fw_Woo_Shortcodes {
 
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
@@ -463,7 +463,7 @@ class fw_Woo_Shortcodes {
 			//$atts['terms'][]=  $term;
 		}
 		$atts['terms']=$cates;
-		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel2.php', $atts,$atts['terms']  );
+		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();
 		
@@ -516,7 +516,7 @@ class fw_Woo_Shortcodes {
 
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'woo-products-carousel2.php', $atts, $products );
+			self::get_template( 'woo-products-carousel.php', $atts, $products );
 		endif;
 		
 		wp_reset_postdata();
