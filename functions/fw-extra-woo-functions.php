@@ -2,32 +2,31 @@
 function woo_loop_cat(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
 }
-function woo_loop_cat2($term){
-    $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
-    $image = wp_get_attachment_url( $thumbnail_id ); 
-    $link = get_term_link($term);
-    if(!is_string($link))return;
-    $devolver.= '<a href="'.$link.'" ><div class="item product-category">';
-    $devolver.= '<img src="'.$image.'" width="100%" height="auto"/>';
-    $devolver.= '<h2 class="woocommerce-loop-category__title" >'.$term->name.'</h2>';
-    $devolver.='<span class="desc">'.$term->description.'</span>';
-    $devolver.= '</div></a>';  
-    return $devolver;       
-}
 
 add_shortcode('fw_cat_title', 'fw_cat_title');
 function fw_cat_title(){
     global $fw_woo_cat;
     return '<h2 class="woocommerce-loop-category__title" >'.$fw_woo_cat->name.'</h2>';
 }
-
-function fw_cat_container($atts = [], $content = null){
-   
-    return '<a href="">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</a>';
-
+add_shortcode('fw_cat_desc', 'fw_cat_desc');
+function fw_cat_desc(){
+    global $fw_woo_cat;
+    return '<span class="desc">'.$fw_woo_cat->description.'</span>';
 }
 
+add_shortcode('fw_cat_image', 'fw_cat_image');
+function fw_cat_image(){
+    global $fw_woo_cat;
+    $thumbnail_id = get_woocommerce_term_meta( $fw_woo_cat->term_id, 'thumbnail_id', true ); 
+    $image = wp_get_attachment_url( $thumbnail_id ); 
+    return '<img src="'.$image.'" width="100%" height="auto"/>';
+}
 add_shortcode('fw_cat_container', 'fw_cat_container');
+function fw_cat_container($atts = [], $content = null){
+    $link = get_term_link($term);
+    if(!is_string($link))return;
+    return '<a href="'.$link.'"><div class="item product-category">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</div></a>';
+}
 
 
 
