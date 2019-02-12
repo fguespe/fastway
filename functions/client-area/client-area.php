@@ -228,7 +228,6 @@ function fw_custom_remove_optionspages() {
         remove_meta_box('add-nth_gallery_cat', 'nav-menus', 'side');
         remove_meta_box('woocommerce_endpoints_nav_link', 'nav-menus', 'side'); 
         remove_meta_box('add-post-type-post', 'nav-menus', 'side'); 
-        remove_meta_box('metaslider', 'nav-menus', 'side'); 
 
     }
 }

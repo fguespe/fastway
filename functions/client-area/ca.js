@@ -19,8 +19,6 @@ function clasesbody(){
 		clase="edicionmasiva";
 	}else if(pagina.includes("nav-menus.php")){
 		clase="menus";
-	}else if(pagina.includes("metaslider")){
-		clase="slider";
 	}else if(pagina=="edit.php?post_type=product&page=product_attributes"){
 		clase="atributos";
 	}else if(pagina.includes("users.php") || pagina.includes("user-new.php")){

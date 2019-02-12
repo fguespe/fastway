@@ -1293,8 +1293,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => array(
 		'font-family'    => 'Rubik',
 		'variant'        => 'regular',
-		'font-size'      => '28px',
-		'line-height'    => '32px',
+		'font-size'      => '25px',
+		'line-height'    => '30px',
 		'letter-spacing' => '0',
 		'text-transform' => 'none',
 		'text-align'     => 'left',

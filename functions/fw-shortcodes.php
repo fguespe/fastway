@@ -4,21 +4,6 @@ add_shortcode("fwi","fwi",10,2);
 add_shortcode("fw_info_modal","fw_info_modal",10,2);
 
 
-add_shortcode("fw_shortcode_metaslider","fw_shortcode_metaslider");
-function fw_shortcode_metaslider( $atts ) {
-    $atts = shortcode_atts(
-    array(
-        'sl_desktop' => '',
-        'sl_mobile' => '',
-    ), $atts, 'fw_shortcode_metaslider' );
-    $desk=$atts["sl_desktop"];
-    $mob=$atts["sl_mobile"];
-    if(empty($mob))$mob=$desk;
-    echo '<div class="d-none d-md-block">'.do_shortcode('[metaslider id="'.$desk.'"]').'</div>';
-    echo '<div class="d-md-none">'.do_shortcode('[metaslider id="'.$mob.'"]').'</div>';
-
-}
-
 add_shortcode('fw_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
 function fw_data( $atts ) {

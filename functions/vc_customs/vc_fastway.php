@@ -338,46 +338,41 @@ function vc_fw_shorts() {
                     "type" => 'checkbox',
                     "heading"     => "Hide Icon",
                     "param_name"  => "only_text",
-                    "admin_label" => true,
                     "std"         => "",
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => "Texto (Por default pone company data solo)",
+                    "heading"     => "Texto",
+                    'description' => '(Por default pone company data solo)',
                     "param_name"  => "text",
                     "admin_label" => true,
                 ),
                 
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Text Secundario (Abajo)"),
+                    "heading"     => 'Subtext',
                     "param_name"  => "stext",
-                    "admin_label" => true,
                 ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("size"),
                     "param_name"  => "size",
-                    "admin_label" => true,
                 ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("link"),
                     "param_name"  => "link",
-                    "admin_label" => true,
                 ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("cant"),
                     "param_name"  => "cant",
-                    "admin_label" => true,
                 ),
 
                 array(
                     "type" => 'dropdown',
                     "heading"     => __("Type"),
                     "param_name"  => "format",
-                    "admin_label" => true,
                     "value" => array(
                         "Select an option" => "",
                         "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)" =>"isli"  ,

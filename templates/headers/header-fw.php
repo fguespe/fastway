@@ -11,13 +11,15 @@ margin:0 auto !important;
 }
 
 
-#fw-menu{
-		width:100% !important;
-}
-.fw_header.bottom.desktop #fw-menu .navbar-nav{
-  width:100% !important;
-  justify-content:space-around !important;
+.fw_header.bottom.desktop #fw-menu{
+		width:100%;
 }
 
+.fw_header.bottom.desktop #fw-menu .navbar-nav{
+  justify-content:space-around;
+}
+.fw-searchform.desktop{
+		width:50%;
+}
 */
 </style>

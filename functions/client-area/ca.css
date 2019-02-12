@@ -405,27 +405,7 @@ form#addtag div:nth-child(13),
 form#addtag div:nth-child(12){
 display:none !important;
 }
-/*META SLIDER*/
 
-.slider .metaslider-ui-top,
-.slider h1,
-.slider .metaslider-shortcode,
-.slider .delete-slider,
-.slider .ms-postbox .metaslider-preview,
-.slider .ms-postbox:nth-child(2),
-.slider .ms-postbox:nth-child(3),
-#metaslider_configuration .inside,
-.slider #create_new_tab{
-display:none !important;
-}
-
-.slider .metaslider-ui .metaslider-inner,.ms-postbox, .metaslider-actions{
-background:transparent !important;
-border:0px !important;
-}
-.slider .metaslider-ui .metaslider-inner{
-	border: 0px !important;
-}
 /*QUANTITY RULE*/
 .post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
 	display: none;
