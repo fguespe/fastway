@@ -347,6 +347,7 @@ function envio_labels(){
 
 function fw_price_html1($price,$product){
     if(fw_theme_mod("prices-enabled"))return '';
+    $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
         $maximumper = 0;
@@ -368,14 +369,14 @@ function fw_price_html1($price,$product){
     }
     if($product->is_on_sale()){
     return '<span class="fw_price price1">
-        <span class="precio">$'.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
+        <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
         <span class="tachado">
-            <span class="precio-anterior"><del>$'.$regular_price.'</del></span>
+            <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
             <span class="badge badge-success">'.$percentage.'% OFF</span>
         </span>
         </span>';
     }else{
-        return '<span class="fw_price price1"><span class="precio">$'.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+        return '<span class="fw_price price1"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
     }      
 }
 
@@ -427,7 +428,7 @@ function fw_child_manage_woocommerce_styles() {
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
-    if(fw_theme_mod('currency_symbol'))return fw_theme_mod('currency_symbol');
+    if(fw_theme_mod('fw_currency_symbol'))return fw_theme_mod('fw_currency_symbol');
     else $currency_symbol;
 }
 
