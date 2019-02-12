@@ -499,6 +499,22 @@ color:var(--linkedin) !important;
     z-index: 1101;
 }
 
+.woocommerce-loop-category__title{
+  text-align:center;
+  font-size:22px;
+  text-transform:uppercase;
+  background-color:#F5F5F5;
+  padding:10px;
+  .product-category img{
+    margin:0px;
+  }
+  .desc{
+    font-size:12px;
+  }
+  mark{
+    display:none;
+  }
+}
 
 .fw_icon {
   i{

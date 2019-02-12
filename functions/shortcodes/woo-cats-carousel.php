@@ -17,12 +17,8 @@ $rand=generateRandomString(5);
             $image = wp_get_attachment_url( $thumbnail_id ); 
             $link = get_term_link($term);
             if(!is_string($link))continue;
-            echo '<div class="swiper-slide">';
-            echo '<a href="'.$link.'" ><div class="item product-category">';
-            echo '<img src="'.$image.'" width="100%" height="auto"/>';
-            echo '<h2 class="woocommerce-loop-category__title" >'.$term->name.'</h2>';
-            echo '<span>'.$term->description.'</span>';
-            echo '</div></a></div>';         
+
+        wc_get_template_part( 'content', 'product_cat' ); 
     }
     ?>
 </div>

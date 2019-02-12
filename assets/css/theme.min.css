@@ -506,14 +506,16 @@
 
 .woocommerce-loop-category__title {
   text-align: center;
-  font-size: 22px !important;
+  font-size: 22px;
   text-transform: uppercase;
   background-color: #F5F5F5;
-  border-top: 3px solid var(--main);
   padding: 10px;
 }
 .woocommerce-loop-category__title .product-category img {
-  margin: 0px !important;
+  margin: 0px;
+}
+.woocommerce-loop-category__title .desc {
+  font-size: 12px;
 }
 .woocommerce-loop-category__title mark {
   display: none;
