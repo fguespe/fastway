@@ -13,7 +13,7 @@ $rand=generateRandomString(5);
   while ( $products->have_posts() ) : 
         $products->the_post(); 
         echo '<div class="swiper-slide">';
-        wc_get_template_part( 'content', 'product' ); 
+        wc_get_template_part( 'content','product' ); 
         echo '</div>';    
   endwhile; 
     ?>

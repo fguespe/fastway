@@ -90,8 +90,8 @@ require get_template_directory() . '/functions/fw-shortcodes.php';
 //require get_template_directory() . '/demos/one-click-demo-import/one-click-demo-import.php';
 require get_template_directory() . '/functions/fw-user-account.php';
 require get_template_directory() . '/functions/fw-blog-options.php';
-require get_template_directory() . '/functions/shortcodes/class-woo-shortcodes.php' ;
-require get_template_directory() . '/functions/shortcodes/class-shortcodes.php' ;
+require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcodes.php' ;
+require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 
@@ -99,14 +99,14 @@ if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
-    require get_template_directory() . '/functions/extra-woo-functions.php';
-    require get_template_directory() . '/functions/extra-woo-functions-arg.php';
+    require get_template_directory() . '/functions/fw-extra-woo-functions.php';
+    require get_template_directory() . '/functions/fw-extra-woo-functions-arg.php';
     require get_template_directory() . '/inc/woocommerce.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
     //require get_template_directory() . '/functions/woocommerce-category-banner/woocommerce-category-banner.php';
-    require get_template_directory() . '/functions/woocommerce_custom_related_products.php';
+    require get_template_directory() . '/functions/fw-custom-related.php';
 
 }
 

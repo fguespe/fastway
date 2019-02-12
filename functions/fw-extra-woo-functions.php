@@ -42,6 +42,9 @@ add_shortcode('fw_loop_container', 'fw_loop_container');
 function woo_loop_code(){
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
+function woo_loop_cat(){
+    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
+}
 function fw_share_redes(){
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     
