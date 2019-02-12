@@ -53,7 +53,7 @@ function vc_category_carousel() {
                         'weight' => 0,
                     ), 
                     array(
-                        'type' => 'categories_array',
+                        'type' => 'textfield',
                         'heading' => __( 'Categories Slugs', 'fastway' ),
                         'param_name' => 'category',
                         'value' => '',
