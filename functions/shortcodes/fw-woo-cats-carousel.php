@@ -13,10 +13,8 @@ $rand=generateRandomString(5);
   <?php 
 
   foreach ($terms as $term) {
-            $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ); 
-            $image = wp_get_attachment_url( $thumbnail_id ); 
-            $link = get_term_link($term);
-            if(!is_string($link))continue;
+            echo woo_loop_cat($term);
+    
     }
     ?>
 </div>

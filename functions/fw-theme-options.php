@@ -1,10 +1,4 @@
 <?php
-global $theme_headers;
-global $theme_headers_mobile ;
-global $loop_templates ;
-//global $loop_templates_mobile;
-global $single_templates;
-global $single_templates_mobile;
 
 function kirki_sidebars_select_example() { 
   	do_action('widgets_init');
@@ -844,15 +838,6 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'header-mobile-style',
-	'label'       => __( 'Header Mobile Template', 'fastway' ),
-	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_mobile',
-	'default'     => 'fw',
-	'choices'     => $theme_headers_mobile,
-) );
 
 
 
@@ -937,15 +922,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'header-style',
-	'label'       => __( 'Header Block', 'fastway' ),
-	'description'	=>	'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_header',
-	'default'     => 'fw',
-	'choices'     => $theme_headers,
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'bread-enabled',
@@ -1102,15 +1079,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => $static_block_args,
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-single-product-style',
-	'label'       => __( 'Single Product Template', 'fastway' ),
-	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_woo_single',
-	'choices'     => $single_templates,
-	'default'		=> 'fw',
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'shop-single-product-html',
@@ -1468,18 +1436,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*LOOP*/
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'shop-loop-product-style',
-	'label'       => __( 'Catalog Loop Style', 'fastway' ),
-	'description'=>'<a target="_blank" href="http://mvp/blocks/">See all blocks</a>',
-	'section'     => 'section_woo_loop',
-	'choices'     => $loop_templates,
-	'default'     => 'fw',
-) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_code',

@@ -463,7 +463,7 @@ class fw_Woo_Shortcodes {
 			//$atts['terms'][]=  $term;
 		}
 		$atts['terms']=$cates;
-		if(!empty($atts['terms']))self::get_template( 'woo-cats-carousel.php', $atts,$atts['terms']  );
+		if(!empty($atts['terms']))self::get_template( 'fw-woo-cats-carousel.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();
 		
