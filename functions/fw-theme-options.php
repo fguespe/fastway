@@ -1423,8 +1423,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_cat_code',
 	'label'       => __( ' Category Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '',
-	'default'     => '',
+	'description'     => '[fw_cat_container][fw_cat_image][fw_cat_title][fw_cat_desc][/fw_cat_container]',
+	'default'     => '[fw_cat_container][fw_cat_image][fw_cat_title][/fw_cat_container]',
 	'choices'     => array(
 		'language' => 'html',
 	),

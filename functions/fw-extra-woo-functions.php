@@ -23,7 +23,8 @@ function fw_cat_image(){
 }
 add_shortcode('fw_cat_container', 'fw_cat_container');
 function fw_cat_container($atts = [], $content = null){
-    $link = get_term_link($term);
+    global $fw_woo_cat;
+    $link = get_term_link($fw_woo_cat);
     if(!is_string($link))return;
     return '<a href="'.$link.'"><div class="item product-category">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</div></a>';
 }

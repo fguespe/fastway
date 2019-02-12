@@ -7,16 +7,14 @@ $rand=generateRandomString(5);
 ?>
 <div class="swiper-products-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
-
-  <?php 
-
-  while ( $products->have_posts() ) : 
-        $products->the_post(); 
-        echo '<div class="swiper-slide">';
-        wc_get_template_part( 'content','product' ); 
-        echo '</div>';    
-  endwhile; 
-    ?>
+<?php 
+while ( $products->have_posts() ) : 
+    $products->the_post(); 
+    echo '<div class="swiper-slide">';
+    wc_get_template_part( 'content','product' ); 
+    echo '</div>';    
+endwhile; 
+?>
 </div>
 <div class="swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
