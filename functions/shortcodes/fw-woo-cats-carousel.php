@@ -17,8 +17,6 @@ $rand=generateRandomString(5);
             $image = wp_get_attachment_url( $thumbnail_id ); 
             $link = get_term_link($term);
             if(!is_string($link))continue;
-            $product_cat = get_queried_object();
-            wc_get_template_part( 'content', 'product_cat' ); 
     }
     ?>
 </div>
