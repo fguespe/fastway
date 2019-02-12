@@ -18,8 +18,7 @@ function woo_loop_cat2($term){
 add_shortcode('fw_cat_title', 'fw_cat_title');
 function fw_cat_title(){
     global $fw_woo_cat;
-    error_log('sd');
-    return 'jaja';
+    return '<h2 class="woocommerce-loop-category__title" >'.$fw_woo_cat->name.'</h2>';
 }
 
 function fw_cat_container($atts = [], $content = null){
