@@ -883,6 +883,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_currency_symbol',
+	'label'    => __( 'Currency Symbol', 'fastway' ),
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',
 	'label'       => __( 'User Template', 'fastway' ),

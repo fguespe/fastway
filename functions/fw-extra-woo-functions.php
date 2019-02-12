@@ -421,6 +421,16 @@ function fw_child_manage_woocommerce_styles() {
  
 }
 
+/**
+ * Change a currency symbol
+ */
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+    if(fw_theme_mod('currency_symbol'))return fw_theme_mod('currency_symbol');
+    else $currency_symbol;
+}
+
 
 add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
 function remove_product_description_heading() {
