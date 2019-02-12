@@ -18,7 +18,6 @@ $rand=generateRandomString(5);
             $link = get_term_link($term);
             if(!is_string($link))continue;
 
-        wc_get_template_part( 'content', 'product_cat' ); 
     }
     ?>
 </div>

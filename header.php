@@ -20,6 +20,7 @@
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <?php wp_head(); ?>
+
     <style type="text/css" id="css_editor-general"><? echo fw_theme_mod('css_editor-general')?></style>
     <style type="text/css" id="css_editor-header"><? echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor-body"><? echo fw_theme_mod('css_editor-body')?></style>
@@ -36,9 +37,59 @@
 
 <body <?php body_class("page-".basename(get_permalink())); ?>>
 <header id="header">
-<? 
-do_action( 'fw_get_template_part', fw_theme_mod('header-style'),"header" );
-do_action( 'fw_get_template_part', fw_theme_mod('header-mobile-style'),"mobile-header" );?>
+<? echo fw_header_html();?>
+<style>
+/*
+centrar menu
+.fw_header.bottom.desktop #fw-menu .navbar-nav{
+		margin:0 auto;
+}
+centrar logo o cualquier otro
+.logo{
+margin:0 auto !important;
+}
+
+
+.fw_header.bottom.desktop #fw-menu{
+		width:100%;
+}
+
+.fw_header.bottom.desktop #fw-menu .navbar-nav{
+  justify-content:space-around;
+}
+.fw-searchform.desktop{
+		width:50%;
+}
+*/
+</style>
+
+<?php 
+echo fw_header_html_mobile();
+?>
+    <div class="mobile-menu-overlay ">&nbsp;</div>
+    <div class="menu-madre-mobile">
+        <div class="sub-menu-mobile"> 
+        <div class="telefono-header t1 txt-16 text-left">      
+          <?if(!empty(fw_company_data("phone"))){?>   
+          <a href="<?echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
+          <?}if(!empty(fw_company_data("whatsapp"))){?>
+          <a href="<?echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> Consultar</a>
+          <?}?>
+          
+        </div>
+        <div class="separa-menu-mobile">&nbsp;</div>
+   
+        <?php echo fw_menu_vertical("mobile"); 
+        if(fw_theme_mod('fw-quicklinks'))quicklinks();?>
+      </div>
+    </div>
+   
+
+    <div class="collapse" id="navbarsExample02">
+      <?php echo fw_search_form(3);?>
+    </div>
+</div>
+
 </header>
 <script >
 jQuery(window).on('load', function() {
