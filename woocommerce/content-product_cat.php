@@ -4,6 +4,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+//No borrar y ver como carajo usar
+
+
 ?>
 <li <?php wc_product_cat_class( '', $category ); ?>>
 	<?php
