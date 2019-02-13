@@ -920,11 +920,11 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_price_visibility',
 	'label'       => __( 'User Template', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'     => 0,
+	'default'     => 'show',
 	'choices'     => array(
-		0 => __( 'Show', 'fastway' ),
-		1 => __( 'Logged In', 'fastway' ),
-		2 => __( 'Hide', 'fastway' ),
+		'show' => __( 'Show', 'fastway' ),
+		'logged' => __( 'Logged In', 'fastway' ),
+		'hide' => __( 'Hide', 'fastway' ),
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -932,9 +932,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_pruchases_visibility',
 	'label'       => __( 'User Template', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'     => 'icon',
+	'default'     => 'show',
 	'choices'     => array(
-		'allow'   => __( 'Show', 'fastway' ),
+		'show'   => __( 'Show', 'fastway' ),
 		'logged' => __( 'Logged In', 'fastway' ),
 		'hide' => __( 'Hide', 'fastway' ),
 	),
