@@ -163,24 +163,6 @@ function fw_minimum_order_amount() {
     }
 
 }
-function fw_single_related(){
-    $myarray = wc_get_related_products($product->id,12);
-
-    $args = array(
-        'post_type' => 'product',
-        'post__in'      => $myarray
-    );
-    // The Query
-    $products = new WP_Query( $args );
-
-    while ( $products->have_posts() ) : 
-        //$contada++;
-        $products->the_post(); 
-        echo '<div class="swiper-slide">';
-        wc_get_template_part( 'content', 'product' ); 
-        echo '</div>';    
-    endwhile; 
-}
 
 function fw_getfastars($average){
     if(!is_numeric($average))return "";
@@ -525,6 +507,7 @@ add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
 function fw_video_tab( $tabs ) {
   global $product;
   $json = get_post_meta($product->id, '_fw_products_videos', true );
+  error_log('sd');
   if (strpos($json, 'youtube') || strpos($json, '.mp4') ){
 
         $tabs['_tab_video'] = array(
