@@ -20,16 +20,17 @@
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <?php wp_head(); ?>
-
+    <!--
     <style type="text/css" id="css_editor-general"><? echo fw_theme_mod('css_editor-general')?></style>
-    <style type="text/css" id="css_editor-header"><? echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor-body"><? echo fw_theme_mod('css_editor-body')?></style>
     <style type="text/css" id="css_editor-footer"><? echo fw_theme_mod('css_editor-footer')?></style>
+    <style type="text/css" id="css_editor-widget"><? echo fw_theme_mod('css_editor-header-headerwidget')?></style>-->
+
+    <style type="text/css" id="css_editor-header"><? echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor-sidebarcats"><? echo fw_theme_mod('css_editor-sidebarcats')?></style>
     <style type="text/css" id="css_editor-loop"><? echo fw_theme_mod('css_editor-loop')?></style>
     <style type="text/css" id="css_editor-single"><? echo fw_theme_mod('css_editor-single')?></style>
     <style type="text/css" id="css_editor-mobile"><? echo fw_theme_mod('css_editor-mobile')?></style>
-    <style type="text/css" id="css_editor-widget"><? echo fw_theme_mod('css_editor-header-headerwidget')?></style>
     <style ><?php echo fw_custom_css(); ?></style>
     <style type="text/css" id="css_editor-logged_in"><? if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>
     <style type="text/css" id="css_editor-admin"><? if(current_user_can("administrator"))echo fw_theme_mod('css_editor-admin')?></style>
