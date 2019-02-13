@@ -591,21 +591,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'transparent-header',
-	'label'       => __( 'Transparent Header', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-*/
-
-
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1566,6 +1551,32 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'construction_code',
+	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
+	'section'     => 'section_general',
+	'default'	=>'<!doctype html>
+	<title>Site Maintenance</title>
+	<style>
+	  body { text-align: center; padding: 150px; }
+	  h1 { font-size: 50px; }
+	  body { font: 20px Helvetica, sans-serif; color: #333; }
+	  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+	  a { color: #dc8100; text-decoration: none; }
+	  a:hover { color: #333; text-decoration: none; }
+	</style>
+	
+	<article>
+		<h1>We&rsquo;ll be back soon!</h1>
+		<div>
+			<p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.will be back online shortly!</p>
+			<p>&mdash; [fw_data type="name"]</p>
+		</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
@@ -1627,12 +1638,34 @@ Kirki::add_field( 'theme_config_id', array(
 
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'img-404',
-	'label'       => __( '404 img', 'fastway' ),
+	'type'        => 'code',
+	'settings'    => '404_code',
+	'label'       => __( '404 Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'  =>  urlforimages().'/assets/img/error.png',
+	'default'	=>'<div class="container">
+	<div class="content-detalle row" style="margin:0 auto;margin-top:40px;">
+		<div class="col-3">
+            <i class="fal fa-debug" style="color:var(--main);font-size:200px;"></i>
+		</div>
+		<div class="col-9">
+			<h1 class="txt-24 t2 tit-pagina" style="font-weight: 400;">No encontramos productos que coincidan con tu búsqueda</h1>
+			<br>
+			<b>Vamos a afinar tu puntería</b>
+			<ul class="t1 txt-16">
+				<li>Revisa la ortografía de la palabra</li>
+				<li>Usa pocas palabras y más genéricas</li>
+				<li>Ayudate con el menú y buscá por categorías</li>
+			</ul>
+		</div>
+	</div>
+		<div style="margin-top:40px;">
+[fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]</div>
+</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
 ) );
+
 
 
 

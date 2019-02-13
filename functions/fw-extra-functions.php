@@ -433,7 +433,7 @@ add_action('login_head', 'fw_custom_loginui');
 function fw_maintenance_mode(){
     
     if(!current_user_can('administrator') ){
-        wp_die('<div id="mantenimiento" style="width:100% !important; text-align:center;"><img align="middle" src="'.fw_theme_mod("maintainance-mode-img").'" style="width:100%; height:auto !important;"></div>');
+        wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('construction_code')))));
     }
 }
 

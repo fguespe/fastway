@@ -60,15 +60,6 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Top Header', 'fastway' ),
-			'id'            => 'header-top-widget-area',
-			'description'   => 'Left sidebar widget area',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-		register_sidebar( array(
 			'name'          => __( 'Shop Right Sidebar', 'fastway' ),
 			'id'            => 's-right-sidebar',
 			'description'   => 'Right sidebar widget area',
