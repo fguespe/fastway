@@ -284,7 +284,7 @@ function envio_labels(){
 }
 
 function fw_price_html1($price,$product){
-    if(fw_theme_mod("prices-enabled"))return '';
+    //if(fw_theme_mod("prices-enabled"))return '';
     $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -380,10 +380,8 @@ add_action( 'init', 'fw_otherwoo_options');
 function fw_otherwoo_options(){
     
 
-    if(fw_theme_mod("prices-enabled")){
-        add_filter( 'woocommerce_get_price_html', function( $price ) {
-            return '';
-        } );
+    if(fw_theme_mod("fw_prices_visibility")=="logged" && !is_user_logged_in() || fw_theme_mod("fw_prices_visibility")=="hide"){
+        add_filter( 'woocommerce_get_price_html',function( $price ) {return '';});
     }
     if(fw_theme_mod("purchases-enabled")){
         remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );

@@ -917,8 +917,8 @@ Kirki::add_field( 'theme_config_id', array(
 ) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_price_visibility',
-	'label'       => __( 'User Template', 'fastway' ),
+	'settings'    => 'fw_prices_visibility',
+	'label'       => __( 'Prices', 'fastway' ),
 	'section'     => 'section_woo',
 	'default'     => 'show',
 	'choices'     => array(
@@ -930,7 +930,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_pruchases_visibility',
-	'label'       => __( 'User Template', 'fastway' ),
+	'label'       => __( 'Purchases', 'fastway' ),
 	'section'     => 'section_woo',
 	'default'     => 'show',
 	'choices'     => array(
