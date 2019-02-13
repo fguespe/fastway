@@ -902,7 +902,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'iconwu' => __( 'Icon With Username ', 'fastway' ),
 	),
 ) );
-
+/*
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -914,7 +914,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_price_visibility',
