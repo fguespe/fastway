@@ -284,7 +284,8 @@ function envio_labels(){
 }
 
 function fw_price_html1($price,$product){
-    //if(fw_theme_mod("prices-enabled"))return '';
+    if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return;
+    
     $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -379,11 +380,10 @@ function remove_product_description_heading() {
 add_action( 'init', 'fw_otherwoo_options');
 function fw_otherwoo_options(){
     
-
-    if(fw_theme_mod("fw_prices_visibility")=="logged" && !is_user_logged_in() || fw_theme_mod("fw_prices_visibility")=="hide"){
+    if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide"){
         add_filter( 'woocommerce_get_price_html',function( $price ) {return '';});
     }
-    if(fw_theme_mod("purchases-enabled")){
+    if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide"){
         remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart',30 ); 
     }
@@ -505,7 +505,6 @@ add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
 function fw_video_tab( $tabs ) {
   global $product;
   $json = get_post_meta($product->id, '_fw_products_videos', true );
-  error_log('sd');
   if (strpos($json, 'youtube') || strpos($json, '.mp4') ){
 
         $tabs['_tab_video'] = array(

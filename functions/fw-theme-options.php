@@ -929,7 +929,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_pruchases_visibility',
+	'settings'    => 'fw_purchases_visibility',
 	'label'       => __( 'Purchases', 'fastway' ),
 	'section'     => 'section_woo',
 	'default'     => 'show',

@@ -27,6 +27,7 @@ function fw_single_price(){
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart(){
     global $product;
+    if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
     echo '<button type="submit" name="add-to-cart" value="'.esc_attr( $product->get_id() ).'" class="single_add_to_cart_button button alt">'.esc_html( $product->single_add_to_cart_text() ).'</button>';
 }
 add_shortcode('fw_single_review', 'fw_single_review');
