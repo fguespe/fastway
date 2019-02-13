@@ -916,17 +916,30 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'prices-enabled',
-	'label'       => __( 'Prices', 'fastway' ),
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_price_visibility',
+	'label'       => __( 'User Template', 'fastway' ),
 	'section'     => 'section_woo',
-	'description' => 'hide prices ',
 	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
+	'choices'     => array(
+		0 => __( 'Show', 'fastway' ),
+		1 => __( 'Logged In', 'fastway' ),
+		2 => __( 'Hide', 'fastway' ),
+	),
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_pruchases_visibility',
+	'label'       => __( 'User Template', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'icon',
+	'choices'     => array(
+		'allow'   => __( 'Show', 'fastway' ),
+		'logged' => __( 'Logged In', 'fastway' ),
+		'hide' => __( 'Hide', 'fastway' ),
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'cart-steps',
@@ -950,18 +963,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'purchases-enabled',
-	'label'       => __( 'Purchases', 'fastway' ),
-	'section'     => 'section_woo',
-	'description' => 'diable add to car button',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'checkout-msg',
