@@ -16,15 +16,45 @@ function fw_single_price(){
     global $product;
     return '<span class="price">'.fw_price_html1(null,$product).'</span>';
 }
+add_shortcode('fw_single_cart', 'fw_single_cart');
+function fw_single_cart(){
+    global $product;
+    return '<button type="submit" name="add-to-cart" value="'.esc_attr( $product->get_id() ).'" class="single_add_to_cart_button button alt">'.esc_html( $product->single_add_to_cart_text() ).'</button>';
+}
+add_shortcode('fw_single_review', 'fw_single_review');
+function fw_single_review(){
+    global $product;
+    return wc_get_rating_html( $product->get_average_rating() );
+}
+add_shortcode('fw_single_stock', 'fw_single_stock');
+function fw_single_stock(){
+    global $product;
+    $stocklabel=$product->get_stock_status()=="instock"?fw_theme_mod("in-stock-text"):fw_theme_mod("out-of-stock-text");
+    return '<p class="stock in-stock">'.$stocklabel.'</p>';
+}
+add_shortcode('fw_single_quantity', 'fw_single_quantity');
+function fw_single_quantity(){
+    global $product;
+    ob_start();
+    woocommerce_quantity_input( array(
+        'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+        'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+        'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
+    ) );
+    $devolver=ob_get_contents();
+    ob_end_flush();
+    return $devolver;
+}
+add_shortcode('fw_single_share', 'fw_single_share');
+function fw_single_share(){
+    return fw_share_redes();
+}
+
 add_shortcode('fw_single_summary', 'fw_single_summary');
 function fw_single_summary($atts = [], $content = null){
       /*
-      add_filter('woocommerce_get_price_html', 'fw_price_html1', 10, 2 );
-      do_action( 'woocommerce_single_product_summary' );
-      dynamic_sidebar('sp-sumary');
-      echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('shop-single-product-html'))));
       echo getFinanciacion($product);
-      echo fw_share_redes();*/
+     */
     return '<div class="summary col-md-4">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</div>';
 }
 add_shortcode('fw_single_gallery', 'fw_single_gallery');
