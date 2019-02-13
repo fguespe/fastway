@@ -33,17 +33,34 @@ Kirki::add_panel( 'panel_fastway', array(
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
-Kirki::add_section( 'section_css', array(
-    'title'          => __( 'CSS Live', 'fastway' ),
+
+Kirki::add_section( 'section_general', array(
+    'title'          => __( 'General', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
+Kirki::add_section( 'section_layouts', array(
+    'title'          => __( 'Layouts', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
+Kirki::add_section( 'section_colors', array(
+    'title'          => __( 'Color Scheme', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
 ) );
 
+Kirki::add_section( 'section_typos', array(
+    'title'          => __( 'Typography', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
 
-
-Kirki::add_section( 'section_general', array(
-    'title'          => __( 'General', 'fastway' ),
+) );
+Kirki::add_section( 'section_data', array(
+    'title'          => __( 'Company Data', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
@@ -62,40 +79,20 @@ Kirki::add_section( 'section_mobile', array(
 
 ) );
 
-Kirki::add_section( 'section_typos', array(
-    'title'          => __( 'Typography', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
-
-) );
-
-Kirki::add_section( 'section_colors', array(
-    'title'          => __( 'Color Scheme', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
-
-) );
-
-
 Kirki::add_section( 'section_footer', array(
     'title'          => __( 'Footer', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
 ) );
-Kirki::add_section( 'section_clientarea', array(
-    'title'          => __( 'Client Area', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
 
-) );
 Kirki::add_section( 'section_blog', array(
     'title'          => __( 'Blog', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
 ) );
-/*CSSs*/
+/*CSSs
 if(!empty(fw_theme_mod("css_editor-general")) || !empty(fw_theme_mod("css_editor-general"))){
 Kirki::add_panel( 'panel_css', array(
 
@@ -152,59 +149,162 @@ Kirki::add_section( 'section_css_sidebarcats', array(
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_css',
 
-) );
-Kirki::add_section( 'section_data', array(
-    'title'          => __( 'Company Data', 'fastway' ),
+) );*/
+
+Kirki::add_section( 'section_clientarea', array(
+    'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
 ) );
 
-Kirki::add_section( 'section_extras', array(
-    'title'          => __( 'Extras', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+Kirki::add_panel( 'panel_fastwaywoo', array(
 
+    'title'       => __( 'Fastway Woocommerce', 'fastway' ),
+    //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
 Kirki::add_section( 'section_woo', array(
-    'title'          => __( 'Woocommerce', 'fastway' ),
+    'title'          => __( 'General', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwaywoo',
 
 ) );
 Kirki::add_section( 'section_woo_loop', array(
     'title'          => __( 'Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwaywoo',
   
 ) );
 Kirki::add_section( 'section_labels', array(
     'title'          => __( 'Labels', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwaywoo',
   
 ) );
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwaywoo',
   
 ) );
+
+ 
+
 //Blofg
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'header-width',
+	'label'       => __( 'Header Width', 'fastway' ),
+	'section'     => 'section_layouts',
+	'choices'     => array(
+		'container'   => __( 'Boxed', 'fastway' ),
+		'container-mid'   => 'Medium',
+		'container-fluid' => __( 'Wide ', 'fastway' ),
+	),
+	'default'     => 'container',
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'layout-blog',
 	'label'       => __( 'Blog Layout', 'fastway' ),
-	'section'     => 'section_blog',
+	'section'     => 'section_layouts',
 	'default'     => 'full',
 	'choices'     => array(
-		'full' => __( 'Full Width', 'fastway' ),
 		'left' => __( 'Left Sidebar', 'fastway' ),
 		'right' => __( 'Right Sidebar', 'fastway' ),
 		'both' => __( 'Both Sidebars', 'fastway' ),
+		'full' => __( 'Full Width', 'fastway' ),
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'container-main',
+	'label'       => __( 'Main layout: wide or boxed', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'container',
+	
+	'choices'     => array(
+		'container-fluid'   => 'Wide',
+		'container-mid'   => 'Medium',
+		'container'   => 'Boxed',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'layout-main',
+	'label'       => __( 'Sidebars Layout', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'full',
+	'choices'     => array(
+		'left' => __( 'Left Sidebar', 'fastway' ),
+		'right' => __( 'Right Sidebar', 'fastway' ),
+		'both' => __( 'Both Sidebars', 'fastway' ),
+		'full' => __( 'Full Width', 'fastway' ),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'container-shop',
+	'label'       => __( 'Shop Layout', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'container',
+	'choices'     => array(
+		'container'   => __( 'Boxed', 'fastway' ),
+		'container-mid'   => 'Medium',
+		'container-fluid' => __( 'Wide ', 'fastway' ),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'shop-layout',
+	'label'       => __( 'Shop Pages Layout', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'left',
+	'choices'     => array(
+		'left' => __( 'Left Sidebar', 'fastway' ),
+		'right' => __( 'Right Sidebar', 'fastway' ),
+		'both' => __( 'Both Sidebars', 'fastway' ),
+		'full' => __( 'Full Width', 'fastway' ),
+	),
+) );
+/*SINGLE*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'product-page-layout',
+	'label'       => __( 'Product Page Layout', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'full',
+	'choices'     => array(
+		'left' => __( 'Left Sidebar', 'fastway' ),
+		'right' => __( 'Right Sidebar', 'fastway' ),
+		'both' => __( 'Both Sidebars', 'fastway' ),
+		'full' => __( 'Full Width', 'fastway' ),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'footer-width',
+	'label'       => __( 'Footer Width', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 'container',
+	'choices'     => array(
+		'container'   => __( 'Boxed', 'fastway' ),
+		'container-mid'   => 'Medium',
+		'container-fluid' => __( 'Wide ', 'fastway' ),
+	),
+) );
+
+
+
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
@@ -232,44 +332,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'container-main',
-	'label'       => __( 'Main layout: wide or boxed', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => 'container',
-	
-	'choices'     => array(
-		'container-fluid'   => 'Wide',
-		'container-mid'   => 'Medium',
-		'container'   => 'Boxed',
-	),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'layout-main',
-	'label'       => __( 'Sidebars Layout', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => 'full',
-	'choices'     => array(
-		'full' => __( 'Full Width', 'fastway' ),
-		'left' => __( 'Left Sidebar', 'fastway' ),
-		'right' => __( 'Right Sidebar', 'fastway' ),
-		'both' => __( 'Both Sidebars', 'fastway' ),
-	),
-) );
-
 /*HEAADER*/
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'header-style',
-	'label'       => __( 'Header Template', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => 'fw',
-	'choices'     => $theme_headers,
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
@@ -541,18 +605,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 */
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'header-width',
-	'label'       => __( 'Header Width', 'fastway' ),
-	'section'     => 'section_header',
-	'choices'     => array(
-		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Medium',
-		'container-fluid' => __( 'Wide ', 'fastway' ),
-	),
-	'default'     => 'container',
-) );
 
 
 
@@ -847,18 +899,6 @@ Kirki::add_field( 'theme_config_id', array(
 /*WOOCOMMERCE*/
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'container-shop',
-	'label'       => __( 'Shop Layout', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 'container',
-	'choices'     => array(
-		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Medium',
-		'container-fluid' => __( 'Wide ', 'fastway' ),
-	),
-) );
 
 
 
@@ -985,19 +1025,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'shop-layout',
-	'label'       => __( 'Shop Pages Layout', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 'left',
-	'choices'     => array(
-		'full' => __( 'Full Width', 'fastway' ),
-		'left' => __( 'Left Sidebar', 'fastway' ),
-		'right' => __( 'Right Sidebar', 'fastway' ),
-		'both' => __( 'Both Sidebars', 'fastway' ),
-	),
-) );
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'sidebar-ratio',
 	'label'       => __( 'Sidebar Width', 'fastway' ),
@@ -1037,21 +1064,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-/*SINGLE*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'product-page-layout',
-	'label'       => __( 'Product Page Layout', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'default'     => 'full',
-	'choices'     => array(
-		'full' => __( 'Full Width', 'fastway' ),
-		'left' => __( 'Left Sidebar', 'fastway' ),
-		'right' => __( 'Right Sidebar', 'fastway' ),
-		'both' => __( 'Both Sidebars', 'fastway' ),
-	),
-) );
-
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
@@ -1086,18 +1098,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 //}
 /*FOOTER*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'footer-width',
-	'label'       => __( 'Footer Width', 'fastway' ),
-	'section'     => 'section_footer',
-	'default'     => 'container',
-	'choices'     => array(
-		'container'   => __( 'Boxed', 'fastway' ),
-		'container-mid'   => 'Medium',
-		'container-fluid' => __( 'Wide ', 'fastway' ),
-	),
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
@@ -1559,7 +1559,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'maintainance-mode',
 	'label'       => __( 'Maintainance Mode', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1572,7 +1572,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'dark-logo',
 	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => urlforimages()."/assets/img/logo.png",
 	'transport'=>'postMessage',
 ) );
@@ -1580,7 +1580,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'darklogo_sticky',
 	'label'       => __( 'Dark Logo on Sticky', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1593,7 +1593,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'popup-mode',
 	'label'       => __( 'Popup', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1604,7 +1604,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'whats-widget',
 	'label'       => __( 'Whatsapp Widget', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1615,7 +1615,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'maintainance-mode-img',
 	'label'       => __( 'Maintainance Mode Img', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'		=> urlforimages()."/assets/img/mantenimiento.png"
 
 ) );
@@ -1623,14 +1623,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'popup-img',
 	'label'       => __( 'Popup Img', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'img-404',
 	'label'       => __( '404 img', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'  =>  urlforimages().'/assets/img/error.png',
 ) );
 
@@ -1641,7 +1641,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-ace-editor-js',
 	'label'       => __( 'JS Code', 'fastway' ),
 	'description'       => __( 'Paste your JS code here.', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'  => 'jQuery(document).ready(function(){
 		
 	});',
@@ -1654,28 +1654,28 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
 	'label'    => __( 'Analyitics ID', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'description' =>'refresh cache!'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fbpixel_id',
 	'label'    => __( 'Facebook Pixel ID', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'description' =>'refresh cache!'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'gtagmanager_id',
 	'label'    => __( 'Google Tag Manager (Global)', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'description' =>'refresh cache!'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'gtagcheckout_id',
 	'label'    => __( ' Tag Manager Conversion ID (Checkout)', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'description' =>'refresh cache!'
 ) );
 
@@ -1683,7 +1683,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header-insert',
 	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => '',
 	'choices'     => array(
 		'language' => 'html',
@@ -1693,7 +1693,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'footer-insert',
 	'label'    => __( 'Insert Scripts Footer', 'fastway' ),       
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => '',
 	'choices'     => array(
 		'language' => 'html',
@@ -1703,7 +1703,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-logged_in',
 	'label'       => __( 'CSS Logged In', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1714,7 +1714,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-admin',
 	'label'       => __( 'CSS Admin', 'fastway' ),
-	'section'     => 'section_extras',
+	'section'     => 'section_general',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1901,7 +1901,9 @@ function my_customizer_styles() { ?>
 	.customize-control-kirki-multicheck ul li {
 	  	width: 100%;
 	}
-
+        #customize-control-sticky-menu ul li{
+width:33.3%;
+}
 	.customize-control-kirki-multicheck ul li label {
 		  background: rgba(0, 0, 0, 0.1);
 		  border: 1px rgba(0, 0, 0, 0.1);
