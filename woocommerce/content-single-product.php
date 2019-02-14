@@ -171,7 +171,8 @@ function fw_single_gallery(){
         $ul.= '
         <li class="lithumb c'.$index.' '.$claseactive.'">
             <a class="thumb " href="javascript:slideTo('.$index.')">
-                <img  src="https://www.bidcom.com.ar/images/video-thumb.png" width="50">
+                <i class="fab fa-youtube" style="font-size:35px;width:100% !important;
+                text-align:center;"></i>
             </a>
         </li>';
         
