@@ -28,19 +28,14 @@ add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart(){
     global $product;
     if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
-    do_action('woocommerce_single_product_summary');
+    woocommerce_template_single_add_to_cart();
 }
 add_shortcode('fw_single_review', 'fw_single_review');
 function fw_single_review(){
     global $product;
     echo wc_get_rating_html( $product->get_average_rating() );
 }
-add_shortcode('fw_single_stock', 'fw_single_stock');
-function fw_single_stock(){
-    global $product;
-    $stocklabel=$product->get_stock_status()=="instock"?fw_theme_mod("in-stock-text"):fw_theme_mod("out-of-stock-text");
-    echo '<p class="stock in-stock">'.$stocklabel.'</p>';
-}
+
 add_shortcode('fw_single_tabs','fw_single_tabs');
 function fw_single_tabs(){
     remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
