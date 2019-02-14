@@ -501,7 +501,7 @@ function fw_pestana_descargas() {
     
 }
 /*VIDE*/
-add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
+//add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
 function fw_video_tab( $tabs ) {
   global $product;
   $json = get_post_meta($product->id, '_fw_products_videos', true );
