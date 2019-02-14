@@ -573,8 +573,8 @@ function fw_get_yt_videos() {
   return $coincidencias;
 }
 function fwvideo_tab() {
-  foreach(fw_get_yt_videos() as $coin){
-    $url = $coin[1];
+  foreach(fw_get_yt_videos() as $video){
+    $url = $video[1];
     echo '<div class="fw_container_video"><iframe src="https://www.youtube.com/embed/'.$url.'" frameborder="0" allowfullscreen class="fw_video_frame"></iframe></div>';
   }
 }
