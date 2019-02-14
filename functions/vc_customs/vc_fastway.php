@@ -1,4 +1,5 @@
-<?
+<?php
+
 vc_add_param("vc_row", array(
     "type" => "dropdown",
     "group" => "Fastway",

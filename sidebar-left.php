@@ -17,6 +17,6 @@ if ( is_home() && ! is_front_page() ){
 }
 
 ?>
-<div class="col-md-<? echo $ratio;?> widget-area" id="left-sidebar" role="complementary">
+<div class="col-md-<?php echo $ratio;?> widget-area" id="left-sidebar" role="complementary">
 	<?php dynamic_sidebar( $sidebarname ); ?>
 </div>

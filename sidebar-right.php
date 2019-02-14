@@ -20,9 +20,9 @@ if ( is_home() && ! is_front_page() ){
 ?>
 
 <?php if ( 'both' === $sidebar_pos ) : ?>
-<div class="col-md-<? echo $ratio;?> widget-area" id="right-sidebar" role="complementary">
+<div class="col-md-<?php echo $ratio;?> widget-area" id="right-sidebar" role="complementary">
 	<?php else : ?>
-<div class="col-md-<? echo $ratio;?> widget-area" id="right-sidebar" role="complementary">
+<div class="col-md-<?php echo $ratio;?> widget-area" id="right-sidebar" role="complementary">
 	<?php endif; ?>
 <?php dynamic_sidebar( $sidebarname ); ?>
 

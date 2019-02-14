@@ -1,4 +1,4 @@
-<?
+<?php
 
 function fw_custom_excerpt_length( $length ) {
     return 20;
@@ -7,30 +7,30 @@ add_filter( 'excerpt_length', 'fw_custom_excerpt_length', 999 );
     
 add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
 function fw_recentposts_hor() {
-    $rPosts = new WP_Query();
-    $rPosts->query('showposts=3');
-    ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><? 
-    while ($rPosts->have_posts()) : $rPosts->the_post(); ?>
+    $rPosts = new WP_Query('showposts=3');
+    ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><?php 
+    while ($rPosts->have_posts()){
+      $rPosts->the_post(); ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
     <?php $image_url = $image[0]; ?>
        <div class="fw_post hor" >
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
           <h4 class="title"><?php the_title();?></h4>
           <p class="excerpt"><?php the_excerpt(); ?></p>
-          <a href="<? echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
+          <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
         </div>
         
-    <?php endwhile;?>
+    <?php }?>
     </div>
-    <?  wp_reset_query();
-};
+    <?php  wp_reset_query();
+}
 add_shortcode('fw_recentposts_hor', 'fw_recentposts_hor');
 
 function fw_recentposts_ver() {
     $rPosts = new WP_Query();
     $rPosts->query('showposts=3');
-    ?><div class="fw_news" ><? 
-    while ($rPosts->have_posts()) : $rPosts->the_post(); ?>
+    ?><div class="fw_news" ><?php
+    while ($rPosts->have_posts()) { $rPosts->the_post(); ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
     <?php $image_url = $image[0]; ?>
        <div class="fw_post ver d-flex flex-row" >
@@ -40,12 +40,12 @@ function fw_recentposts_ver() {
           <div class="col-9">
               <h4><?php the_title();?></h4>
               <p><?php the_excerpt(); ?></p>
-              <a href="<? echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
+              <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
-    <?php endwhile;?>
+  <?php }?>
     </div>
-    <?  wp_reset_query();
+    <?php  wp_reset_query();
 };
 add_shortcode('fw_recentposts_ver', 'fw_recentposts_ver');
 

@@ -55,7 +55,7 @@ $average      = $product->get_average_rating();
 			<div class="rating">
 				<h4 style="display:inline-block !important;" ><span>(<?=$comm->comment_author?>)   </span></h4>
 				<?echo fw_getfastars($cant);?>
-				<span><? echo explode(" ",$comm->comment_date)[0];?></span>
+				<span><?php echo explode(" ",$comm->comment_date)[0];?></span>
 			</div>							
 			<p><?=$comm->comment_content;?></p>
 		</div>

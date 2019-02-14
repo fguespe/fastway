@@ -25,10 +25,10 @@ if ( is_home() && ! is_front_page() ){
 <?php 
 $html = '';
 if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {?>
-	<div class="col-md-<? echo $ratio;?> content-area" id="primary">
-<?} elseif ( 'both' === $sidebar_pos ) {?>
-	<div class="col-md-<? echo $ratioboth;?> content-area" id="primary">
-<?} else {?>
+	<div class="col-md-<?php echo $ratio;?> content-area" id="primary">
+<?php } elseif ( 'both' === $sidebar_pos ) {?>
+	<div class="col-md-<?php echo $ratioboth;?> content-area" id="primary">
+<?php } else {?>
     <div class="col-md-12 content-area" id="primary">
-<?}?>
+<?php }?>
 
