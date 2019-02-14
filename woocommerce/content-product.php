@@ -63,7 +63,9 @@ function fw_loop_cart() {
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     global $product;
-    echo '<a href="'.$product->get_permalink($product->id).'">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</a>';
+    echo '<a href="'.$product->get_permalink($product->id).'">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</a>';
 
 }
 
