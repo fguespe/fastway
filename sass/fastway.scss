@@ -1865,7 +1865,22 @@ body .wpb_content_element {
 }
 
 
+
 .woocommerce-cart{
+    #content table.cart td.actions button{
+      line-height:24px !important;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid #d3ced2;
+        padding: 6px 6px 5px;
+        margin: 0 4px 0 0;
+        outline: 0;
+    
+    }
+    #content a.checkout-button {
+      border:1px solid var(--main) !important;
+      padding:10px;
+    }
     .btn{
       border:1px solid var(--main);
       color:var(--main);
