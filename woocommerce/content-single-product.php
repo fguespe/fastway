@@ -222,7 +222,7 @@ $single_classes=" fw_single_product ";
 ?>
 <div <?php post_class($single_classes); ?>>
 <!-- EL de bidcom -->
-<?
+<?php
 
 woo_single();
 

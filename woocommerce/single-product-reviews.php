@@ -1,20 +1,5 @@
 <?php
-/**
- * Display single product reviews (comments)
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product-reviews.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     3.5.0
- */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -37,10 +22,10 @@ $average      = $product->get_average_rating();
 <div class="row promedio-calificaciones">
 	<div class="col-4 col-lg-2 align-self-center rating-number"><?=$average?></div>
 	<div class="col-8 col-lg-4 align-self-center rating">							
-		<?echo fw_getfastars($average);?>
+		<?php echo fw_getfastars($average);?>
 		<br><a>En promedio de <?=$review_count?> opiniones</a>
 	</div>
-</div><?
+</div><?php
 	$args = array (
 		'post_type' => 'product', 
 		'post_id' =>$product->id,  // Product Id
@@ -54,12 +39,12 @@ $average      = $product->get_average_rating();
 		<div class="row-calificacion">
 			<div class="rating">
 				<h4 style="display:inline-block !important;" ><span>(<?=$comm->comment_author?>)   </span></h4>
-				<?echo fw_getfastars($cant);?>
+				<?php echo fw_getfastars($cant);?>
 				<span><?php echo explode(" ",$comm->comment_date)[0];?></span>
 			</div>							
 			<p><?=$comm->comment_content;?></p>
 		</div>
-	<?}?>
+	<?php } ?>
 </div>
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 		<hr/>

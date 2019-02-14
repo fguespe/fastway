@@ -24,7 +24,8 @@
     <style type="text/css" id="css_editor-general"><?php echo fw_theme_mod('css_editor-general')?></style>
     <style type="text/css" id="css_editor-body"><?php echo fw_theme_mod('css_editor-body')?></style>
     <style type="text/css" id="css_editor-footer"><?php echo fw_theme_mod('css_editor-footer')?></style>
-    <style type="text/css" id="css_editor-widget"><?php echo fw_theme_mod('css_editor-header-headerwidget')?></style>-->
+    <style type="text/css" id="css_editor-widget"><?php echo fw_theme_mod('css_editor-header-headerwidget')?></style>
+    !-->
 
     <style type="text/css" id="css_editor-header"><?php echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor-sidebarcats"><?php echo fw_theme_mod('css_editor-sidebarcats')?></style>
@@ -71,11 +72,14 @@ echo fw_header_html_mobile();
     <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">      
-          <?if(!empty(fw_company_data("phone"))){?>   
-          <a href="<?echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
-          <?}if(!empty(fw_company_data("whatsapp"))){?>
-          <a href="<?echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> Consultar</a>
-          <?}?>
+          <?php 
+          if(!empty(fw_company_data("phone"))){?>   
+          <a href="<?php echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
+          <?php
+          } 
+          if(!empty(fw_company_data("whatsapp"))){?>
+          <a href="<?php echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> Consultar</a>
+          <?php } ?>
           
         </div>
         <div class="separa-menu-mobile">&nbsp;</div>

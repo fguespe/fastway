@@ -1128,7 +1128,18 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*TYPOGRAPHY*/
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fa_pro',
+	'label'       => __( 'FontAwesome Pro', 'fastway' ),
+	'description' => '*you have to purchase a pro licence and then add your domains.',
+	'section'     => 'section_typos',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_icons_style',
@@ -1572,7 +1583,8 @@ Kirki::add_field( 'theme_config_id', array(
 		<div>
 			<p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.will be back online shortly!</p>
 			<p>&mdash; [fw_data type="name"]</p>
-		</div>',
+		</div>
+		</article>',
 	'choices'     => array(
 		'language' => 'html',
 	),
