@@ -3223,3 +3223,14 @@ body .wpb_content_element {
   }
 
 }
+
+.woocommerce-MyAccount-navigation li{
+  padding:10px;
+  border-bottom:1px solid;
+  }
+  /*Fix*/
+.woocommerce{
+.col-1, .col-2{
+max-width:none !important;
+}
+}

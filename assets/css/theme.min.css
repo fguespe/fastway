@@ -3035,4 +3035,14 @@ body .wpb_content_element {
   font-size: 20px !important;
 }
 
+.woocommerce-MyAccount-navigation li {
+  padding: 10px;
+  border-bottom: 1px solid;
+}
+
+/*Fix*/
+.woocommerce .col-1, .woocommerce .col-2 {
+  max-width: none !important;
+}
+
 /*# sourceMappingURL=theme.min.css.map */
