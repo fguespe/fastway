@@ -1834,6 +1834,9 @@ body .wpb_content_element {
   }
 }
 .woocommerce-cart{
+    .woocommerce-cart-form,.shop_table{
+      background:white;
+    }
     #content table.cart td.actions button{
       line-height:24px !important;
         float: left;
@@ -1896,7 +1899,7 @@ body .wpb_content_element {
 .woocommerce{
   /*margin-bottom: 10px;*/
   
-    /* coment button*/
+    /* coment button
   #respond input{
     background:var(--main) !important;
     color:white;
@@ -1905,7 +1908,7 @@ body .wpb_content_element {
     padding-left:20px;
     padding-right:20px;
     
-  }
+  }*/
     .related {
          clear: both;
          margin-bottom: 50px !important;

@@ -63,8 +63,10 @@ margin:0 auto !important;
 </style>
 <header id="header">
 <?php 
-if(fw_theme_mod("checkout-minimal")){
-    echo '<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
+if(fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+    error_log('sds');
+    echo 'assasas';
+    echo fw_theme_mod('general-logo');
 }else{
     echo fw_header_html();
     echo fw_header_html_mobile();

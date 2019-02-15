@@ -1768,6 +1768,9 @@ body .wpb_content_element {
     float: none !important;
   }
 }
+.woocommerce-cart .woocommerce-cart-form, .woocommerce-cart .shop_table {
+  background: white;
+}
 .woocommerce-cart #content table.cart td.actions button {
   line-height: 24px !important;
   float: left;
@@ -1827,7 +1830,16 @@ body .wpb_content_element {
 /*General Woocommerce*/
 .woocommerce {
   /*margin-bottom: 10px;*/
-  /* coment button*/
+  /* coment button
+  #respond input{
+    background:var(--main) !important;
+    color:white;
+    border:0px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+
+  }*/
   /*review link*/
   /*fix imagenes*/
   /*fix margin en price*/
@@ -1847,14 +1859,6 @@ body .wpb_content_element {
   /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
   /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
   /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
-}
-.woocommerce #respond input {
-  background: var(--main) !important;
-  color: white;
-  border: 0px;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .woocommerce .related {
   clear: both;
