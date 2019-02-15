@@ -3164,4 +3164,47 @@ body .wpb_content_element {
 
 
 
+
+  input[type="radio"]{
+    display:none !important;
+    }
+    .wc_payment_methods{
+      background:#FFFFFF;
+    border-left:1px solid grey !important;
+    border-right:1px solid grey !important;
+    border-bottom:1px solid grey !important;
+    }
+    .wc_payment_methods  li label{
+    border-top:1px solid grey ;
+    border-bottom:0px solid grey ;
+      font-size:16px !important;
+      padding:15px;
+    margin:0px;
+    }
+    
+    .wc_payment_methods  li p{
+      padding:15px;
+      font-size: 12px;
+      border-left:1px solid grey !important;
+    }
+    #place_order{
+      padding:15px;
+      background: var(--main);
+      color:white;
+      margin-top:30px;
+      font-size:25px
+    }
+  .payment_method_bacs label::before{
+    font-family:'Font Awesome 5 Pro' !important;
+    content:'\f53d';
+    color:var(--main) !important;
+    margin-right:5px;
+  }
+  .payment_method_cod label::before{
+    font-family:'Font Awesome 5 Pro' !important;
+    content:'\f0d6';
+    color:var(--main) !important;
+    margin-right:5px;
+  }
+  
 }

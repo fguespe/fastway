@@ -957,7 +957,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'hide' => __( 'Hide', 'fastway' ),
 	),
 ) );
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'cart-steps',
@@ -968,7 +968,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'checkout-minimal',

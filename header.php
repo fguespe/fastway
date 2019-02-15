@@ -36,10 +36,7 @@
     <style type="text/css" id="css_editor-logged_in"><?php if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>
     <style type="text/css" id="css_editor-admin"><?php if(current_user_can("administrator"))echo fw_theme_mod('css_editor-admin')?></style>
 </head>
-
 <body <?php body_class("page-".basename(get_permalink())); ?>>
-<header id="header">
-<?php echo fw_header_html();?>
 <style>
 /*
 centrar menu
@@ -64,9 +61,14 @@ margin:0 auto !important;
 }
 */
 </style>
-
+<header id="header">
 <?php 
-echo fw_header_html_mobile();
+if(fw_theme_mod("checkout-minimal")){
+    echo '<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
+}else{
+    echo fw_header_html();
+    echo fw_header_html_mobile();
+}
 ?>
     <div class="mobile-menu-overlay ">&nbsp;</div>
     <div class="menu-madre-mobile">
@@ -88,13 +90,10 @@ echo fw_header_html_mobile();
         if(fw_theme_mod('fw-quicklinks'))quicklinks();?>
       </div>
     </div>
-   
-
     <div class="collapse" id="navbarsExample02">
       <?php echo fw_search_form(3);?>
     </div>
 </div>
-
 </header>
 <script >
 jQuery(window).on('load', function() {
