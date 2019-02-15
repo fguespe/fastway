@@ -333,6 +333,8 @@ function vc_fw_shorts() {
                   "type" => 'textfield',
                   "heading"     => __("Type"),
                   "param_name"  => "type",
+                  'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
+                  or fa-icon fal or fa-icon',
                   "admin_label" => true,
                 ),
                 array(

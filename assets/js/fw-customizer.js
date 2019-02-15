@@ -29,6 +29,11 @@ wp.customize( 'css_editor-mobile', function( value ) {
     jQuery( '#css_editor-mobile' ).text(newval );
   } );
 } );
+wp.customize( 'css_loop_cat', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_loop_cat' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor-loop', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-loop' ).text(newval );
