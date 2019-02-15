@@ -10,34 +10,32 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see       https://docs.woocommerce.com/document/template-structure/
- * @author    WooThemes
- * @package   WooCommerce/Templates
+ * @see 	    https://docs.woocommerce.com/document/template-structure/
+ * @author 		WooThemes
+ * @package 	WooCommerce/Templates
  * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-  exit;
+	exit;
 }
 
 wc_print_notices();
 
+do_action( 'woocommerce_before_checkout_form', $checkout );
+
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
-  echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'fastway' ) );
-  return;
+	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'fastway' ) );
+	return;
 }
 
 ?>
-<style>
 
-</style>
-<form name="checkout" method="post" class="checkout woocommerce-checkout vcv-checkout processing vcv-processing" action="https://wpbakery.com/checkout/" enctype="multipart/form-data" id="payment-form" novalidate="novalidate" style="position: relative;" _lpchecked="1">
-   <div class="vcv-woocommerce-notice-group">
-      <ul class="vcv-woocommerce-error">
-      </ul>
-   </div>
-   <div class="vcv-checkout-wrapper">
+<form name="checkout" method="post" class="checkout woocommerce-checkout vcv-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+
+		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+    <div class="vcv-checkout-wrapper">
       <div class="vcv-checkout-main" id="customer_details">
          <div class="woocommerce-billing-fields">
             <?php do_action( 'woocommerce_checkout_billing' ); ?>
@@ -50,49 +48,66 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
       <div id="payment" class="woocommerce-checkout-payment">
         <?php do_action( 'woocommerce_checkout_order_review' ); ?>
       </div>
-   </div>
-   <div class="vcv-side-summary" style="">
-   <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
-   <div class="vcv-summary-box">
-      <h3 id="">Detalle</h3>
-      <a href="/cart" style="font-size:12px;">Volver al carrito</a>
-      <div class="vcv-promo" style="display:none!important;">
-         <button id="show-promo-form">
-            Got promo code?
-            <span class="vcv-arrow">
-              <i class="fa fa-arrow-down" id="coupon" onclick="abrir()"></i>
-            </span>
-         </button>
-         <script>
-           function abrir(){
-            jQuery('.vcv-promo-content').toggle();
-           }
-        </script>
-         <div class="vcv-promo-content" style="display:none;">
+      <h3 id="order_review_heading"><?php _e( 'Tu Pedido', 'fastway' ); ?></h3>
 
-          <p class="form-row form-row-first">
-            <input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'fastway' ); ?>" id="coupon_code" value="" />
-          </p>
+      <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-          <p class="form-row form-row-last">
-            <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Aplicar Código', 'fastway' ); ?>" />
-          </p>
-
-            <div class="clear"></div>
-            </form>
-         </div>
-      </div>
       <div id="order_review" class="woocommerce-checkout-review-order">
-         <table class="shop_table woocommerce-checkout-review-order-table">
-
-         </table>
+        <?php do_action( 'woocommerce_checkout_order_review' ); ?>
       </div>
-      <div class="vcv-block-overlay"></div>
+
+      <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+
    </div>
-   <p class="description">
-      El mejor precio garantizado 
-   </p>
+
+		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+
+
+   <div class="vcv-side-summary" style="">
+    <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
+    <div class="vcv-summary-box">
+        <h3 id="">Detalle</h3>
+        <a href="/cart" style="font-size:12px;">Volver al carrito</a>
+        <div class="vcv-promo" style="display:none!important;">
+          <button id="show-promo-form">
+              Got promo code?
+              <span class="vcv-arrow">
+                <i class="fa fa-arrow-down" id="coupon" onclick="abrir()"></i>
+              </span>
+          </button>
+          <script>
+            function abrir(){
+              jQuery('.vcv-promo-content').toggle();
+            }
+          </script>
+          <div class="vcv-promo-content" style="display:none;">
+
+            <p class="form-row form-row-first">
+              <input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'fastway' ); ?>" id="coupon_code" value="" />
+            </p>
+
+            <p class="form-row form-row-last">
+              <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Aplicar Código', 'fastway' ); ?>" />
+            </p>
+
+              <div class="clear"></div>
+              </form>
+          </div>
+        </div>
+        <div id="order_review" class="woocommerce-checkout-review-order">
+          <table class="shop_table woocommerce-checkout-review-order-table">
+
+          </table>
+        </div>
+        <div class="vcv-block-overlay"></div>
+    </div>
+    <p class="description">
+        El mejor precio garantizado 
+    </p>
 </form>
+
+
+<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
 
 
