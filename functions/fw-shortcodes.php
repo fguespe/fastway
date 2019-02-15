@@ -108,16 +108,17 @@ function fw_data( $atts ) {
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
     if($format=="isli" || $format=="isli_i"){
-        $first= '<li class="'.$iconclass.'  d-flex align-items-center '.$format.'"> ';
+        error_log($format);
+        $first= '<li class="'.$iconclass.'  d-flex align-items-center '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $big="big";
         $small="small";
         if($format=="isli_i"){$big="small";$small="big";}
         $first.=' <span class="text"> <'.$big.' style="color:'.$atts['text_color'].' ;">'.$value.'</'.$big.'> <'.$small.' style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</'.$small.'> </span></li>';
-    }if($format=="iconbox"){
-        $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.'"> ';
+    }else if($format=="iconbox"){
+        $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.=' <span class="text"> <big style="color:'.$atts['text_color'].' ;">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
+        $first.=' <span class="text"> <big style="color:'.$atts['text_color'].';text-align:'.$text_align.';">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
     }else if(!empty($atts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
