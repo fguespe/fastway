@@ -219,12 +219,13 @@ function fw_pngcheckout_short() {
 }
 if(fw_theme_mod("cart-steps") || fw_theme_mod("checkout-minimal")){
 //add_action('woocommerce_before_cart', 'fw_pngcheckout_short');   
-//add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short',0);  
+//add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short',0); 
+if(fw_theme_mod("checkout-minimal")){
+//add_action( 'wp_head', 'add_chkstl_to_head' );
+} 
 }
 
-if(fw_theme_mod("checkout-minimal")){
-add_action( 'wp_head', 'add_chkstl_to_head' );
-}
+
 
 function add_chkstl_to_head() {
 echo "<style>.woocommerce-checkout:not(.woocommerce-order-received) header,.woocommerce-checkout:not(.woocommerce-order-received) footer{

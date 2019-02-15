@@ -496,9 +496,15 @@ function fw_header_builder($atts = [], $content = null){
 
 
   function fw_header_html(){
+    if(fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+        return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_header][fw_logo][/fw_header]')));
+    }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
   }
   function fw_header_html_mobile(){
+    if(fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+        return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_m_header][fw_logo][/fw_m_header]')));
+    }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
   }
 

@@ -85,17 +85,6 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
       <div id="order_review" class="woocommerce-checkout-review-order">
          <table class="shop_table woocommerce-checkout-review-order-table">
 
-               <tr class="cart-subtotal">
-                  <th>Subtotal</th>
-                  <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>45.00</span></td>
-               </tr>
-               <tr class="order-total">
-                  <th>Total</th>
-                  <td><strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>45.00</span></strong> </td>
-               </tr>
-               <tr class="recurring-footer-text">
-                  <th colspan="2"><i>One year of premium class support and free updates.</i></th>
-               </tr>
          </table>
       </div>
       <div class="vcv-block-overlay"></div>
