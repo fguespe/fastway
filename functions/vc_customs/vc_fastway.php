@@ -336,6 +336,32 @@ function vc_fw_shorts() {
                   "admin_label" => true,
                 ),
                 array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Type"),
+                    "param_name"  => "format",
+                    
+                    "value" => array(
+                        "Select an option" => "",
+                        "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)" =>"isli"  ,
+                        "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"isli_i",
+                        "Solo Icono/s (Separar con ,)"=>"iconsnext",
+                        "Icono arriba, texto abajo"=>"iconbox",
+                    ),
+                    "std" => 'iconsnext', //Default Red color
+                ),
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Alignment"),
+                    "param_name"  => "text_align",
+                    
+                    "value" => array(
+                        "Left" =>"left",
+                        "Center"=>"center",
+                        "Right"=>"right",
+                    ),
+                    "std" => 'left', //Default Red color
+                ),
+                array(
                     "type" => 'checkbox',
                     "heading"     => "Hide Icon",
                     "param_name"  => "only_text",
@@ -370,17 +396,7 @@ function vc_fw_shorts() {
                     "param_name"  => "cant",
                 ),
 
-                array(
-                    "type" => 'dropdown',
-                    "heading"     => __("Type"),
-                    "param_name"  => "format",
-                    "value" => array(
-                        "Select an option" => "",
-                        "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)" =>"isli"  ,
-                        "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"isli_i",
-                        "Solo Icono/s (Separar con ,)"=>"iconsnext",
-                    ),
-                ),
+               
                 array(
                     "type" => "colorpicker",
                     "class" => "",

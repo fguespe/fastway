@@ -17,6 +17,7 @@ function fw_data( $atts ) {
             'cant' =>  '',
             'icon_color' =>  '',
             'text_color' => '',
+            'text_align' => '',
             'stext_color' => '',
             'stext' =>  '',
             'sblock' =>  '',
@@ -74,7 +75,7 @@ function fw_data( $atts ) {
         $value="Ir al Instagram";
         $icon_color="#9A3CC3";
     }else if($type==="youtube"){
-        $icon="fab fa-youtube";
+        $icon="fab fa-youtube-square";
         $link=fw_company_data($type,true,$cant);
         $value="Ir a Youtube";
         $icon_color="#FF0400";
@@ -93,6 +94,7 @@ function fw_data( $atts ) {
     //error_log($type.' '.$icon_color);
     if($atts['text'] || empty($value))$value=$atts['text'];
     if($atts['link'])$link=$atts['link'];
+    if($atts['text_align'])$text_align=$atts['text_align'];
     if($atts['size'])$font_size=$atts['size'];
     if($atts['weight'])$font_weight=$atts['weight'];
     $only_text=false;
@@ -105,24 +107,26 @@ function fw_data( $atts ) {
     //error_log($type);
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
-    if($format=="isli"){
-        $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
+    if($format=="isli" || $format=="isli_i"){
+        $first= '<li class="'.$iconclass.'  d-flex align-items-center '.$format.'"> ';
+        if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
+        $big="big";
+        $small="small";
+        if($format=="isli_i"){$big="small";$small="big";}
+        $first.=' <span class="text"> <'.$big.' style="color:'.$atts['text_color'].' ;">'.$value.'</'.$big.'> <'.$small.' style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</'.$small.'> </span></li>';
+    }if($format=="iconbox"){
+        $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.'"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$atts['text_color'].' ;">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
-    }else if($format=="isli_i"){
-        $first= '<li class="'.$iconclass.'  d-flex align-items-center "> ';
-        if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
-        $first.='<span class="text"> <small>'.$value.'</small> <big>'.$atts['stext'].'</big> </span></li>';
     }else if(!empty($atts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if($format=='iconsnext'){
         $first.='<div id="'.$atts['el_id'].'" class="'.$iconclass.'">';
-
         foreach (explode(",", $atts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
-            else if($icon==="youtube")$icon="fab fa-youtube";
+            else if($icon==="youtube")$icon="fab fa-youtube-square";
             else if($icon==="twitter")$icon="fab fa-twitter";
             $link=fw_company_data($icon);
             
