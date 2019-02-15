@@ -3022,4 +3022,17 @@ body .wpb_content_element {
   margin-right: 5px;
 }
 
+.woocommerce-order .woocommerce-order-details,
+.woocommerce-order .woocommerce-customer-details,
+.woocommerce-order .woocommerce-customer-details .col-1,
+.woocommerce-order .woocommerce-customer-details .col-2 {
+  max-width: 100% !important;
+  padding: 0px;
+}
+.woocommerce-order h2 {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  font-size: 20px !important;
+}
+
 /*# sourceMappingURL=theme.min.css.map */

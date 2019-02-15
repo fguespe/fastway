@@ -33,7 +33,21 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout vcv-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<div class="mostrar" style="display:none;text-align:center;width:100%;">
+  <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;"></i>
+  <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+</div>
+<style>
 
+form.processing div:not(.mostrar){
+display:none;
+}
+
+form.processing .mostrar{
+display:block !important;
+
+}
+</style>
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
     <div class="vcv-checkout-wrapper">
       <div class="vcv-checkout-main" id="customer_details">
@@ -48,13 +62,10 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
       <div id="payment" class="woocommerce-checkout-payment">
         <?php do_action( 'woocommerce_checkout_order_review' ); ?>
       </div>
-      <h3 id="order_review_heading"><?php _e( 'Tu Pedido', 'fastway' ); ?></h3>
-
+      
       <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-      <div id="order_review" class="woocommerce-checkout-review-order">
-        <?php do_action( 'woocommerce_checkout_order_review' ); ?>
-      </div>
+      <div id="order_review" class="woocommerce-checkout-review-order"></div>
 
       <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 

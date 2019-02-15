@@ -3207,3 +3207,19 @@ body .wpb_content_element {
   }
   
 }
+
+.woocommerce-order {
+  .woocommerce-order-details,
+  .woocommerce-customer-details,
+  .woocommerce-customer-details .col-1,
+  .woocommerce-customer-details .col-2{
+    max-width:100% !important;
+    padding:0px;
+  }
+  h2{
+    margin-top:30px !important;
+    margin-bottom:30px !important;
+    font-size:20px !important;
+  }
+
+}
