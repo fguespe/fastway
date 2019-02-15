@@ -504,23 +504,6 @@
   z-index: 1101;
 }
 
-.woocommerce-loop-category__title {
-  text-align: center;
-  font-size: 22px;
-  text-transform: uppercase;
-  background-color: #F5F5F5;
-  padding: 10px;
-}
-.woocommerce-loop-category__title .product-category img {
-  margin: 0px;
-}
-.woocommerce-loop-category__title .desc {
-  font-size: 12px;
-}
-.woocommerce-loop-category__title mark {
-  display: none;
-}
-
 .fw_icon i {
   font-size: 30px;
 }

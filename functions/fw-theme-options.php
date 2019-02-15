@@ -92,6 +92,12 @@ Kirki::add_section( 'section_blog', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_labels', array(
+    'title'          => __( 'Labels', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+  
+) );
 /*CSSs
 if(!empty(fw_theme_mod("css_editor-general")) || !empty(fw_theme_mod("css_editor-general"))){
 Kirki::add_panel( 'panel_css', array(
@@ -165,17 +171,18 @@ Kirki::add_section( 'section_woo', array(
 
 ) );
 Kirki::add_section( 'section_woo_loop', array(
-    'title'          => __( 'Loop', 'fastway' ),
+    'title'          => __( 'Product Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
 ) );
-Kirki::add_section( 'section_labels', array(
-    'title'          => __( 'Labels', 'fastway' ),
+Kirki::add_section( 'section_woo_loop_cat', array(
+    'title'          => __( 'Category Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1041,7 +1048,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
+/*
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
@@ -1050,7 +1057,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_single',
 	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
 	'choices'     => $static_block_args,
-) );
+) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1432,7 +1439,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_cat_code',
 	'label'       => __( ' Category Loop Code', 'fastway' ),
-	'section'     => 'section_woo_loop',
+	'section'     => 'section_woo_loop_cat',
 	'description'     => '[fw_cat_container][fw_cat_image][fw_cat_title][fw_cat_desc][/fw_cat_container]',
 	'default'     => '[fw_cat_container][fw_cat_image][fw_cat_title][/fw_cat_container]',
 	'choices'     => array(
@@ -1443,7 +1450,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_loop_cat',
 	'label'       => __( 'CSS Category Loop', 'fastway' ),
-	'section'     => 'section_woo_loop',
+	'section'     => 'section_woo_loop_cat',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(

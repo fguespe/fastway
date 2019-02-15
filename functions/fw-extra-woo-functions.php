@@ -1,12 +1,12 @@
 <?php
 function woo_loop_cat(){
-    return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
 }
 
 add_shortcode('fw_cat_title', 'fw_cat_title');
 function fw_cat_title(){
     global $fw_woo_cat;
-    return '<h2 class="woocommerce-loop-category__title" >'.$fw_woo_cat->name.'</h2>';
+    return '<h4 class="title" >'.$fw_woo_cat->name.'</h4>';
 }
 add_shortcode('fw_cat_desc', 'fw_cat_desc');
 function fw_cat_desc(){
@@ -26,7 +26,10 @@ function fw_cat_container($atts = [], $content = null){
     global $fw_woo_cat;
     $link = get_term_link($fw_woo_cat);
     if(!is_string($link))return;
-    return '<a href="'.$link.'"><div class="item product-category">'.do_shortcode(stripslashes(htmlspecialchars_decode($content))).'</div></a>';
+    echo '<li class="fw_cat_loop">';
+    echo '<a href="'.$link.'">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</a></li>';
 }
 
 
@@ -43,7 +46,7 @@ function fw_cat_container($atts = [], $content = null){
 function fw_share_redes(){
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     
-    return '<div id="fw_share_redes" class="d-flex justify-content-between">
+    echo '<div id="fw_share_redes" class="d-flex justify-content-between">
     <!-- Email -->
     <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
     <i class="fas fa-envelope"></i>

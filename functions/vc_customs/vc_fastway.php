@@ -261,7 +261,7 @@ function fw_slider_function( $atts, $content ) {
         $link=$links[$cant];
         $image=$images[0];
         $return .= '<div class="swiper-slide">';
-        $return .= '<a href="'.$link.'" ><div class="item product-category">';
+        $return .= '<a href="'.$link.'" ><div class="item">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
     }
