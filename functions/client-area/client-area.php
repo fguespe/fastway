@@ -1,5 +1,126 @@
 <?php
 
+Kirki::add_panel( 'panel_clientarea', array(
+
+    'title'       => __( 'Fastway Client Area', 'fastway' ),
+    //'description' => __( 'My panel description', 'fastway' ),
+) );
+Kirki::add_section( 'section_clientarea', array(
+    'title'          => __( 'General', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_clientarea',
+
+) );
+
+/*CLIENT AREA*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-client-logo',
+	'label'       => __( 'Login Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => urlforimages()."/assets/img/logo.png",
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'ca-switch',
+	'label'       => __( 'Enable', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'multicheck',
+	'settings'    => 'ca_roles',
+	'label'       => esc_attr__( 'Allowed Roles', 'fastway' ),
+	'description'=> 'REFRESH TO EDIT MENU IN CUSTOMIZER!',
+	'section'     => 'section_clientarea',
+	'choices'     => fw_getme_roles(),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca_users',
+	'label'       => __( 'Allowed Users', 'fastway' ),
+	'description'	=>	'Usernames with ,',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-main-color',
+	'label'       => __( 'Main Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#0C2E5C',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-text-color',
+	'label'       => __( 'Text Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-icon-color',
+	'label'       => __( 'Icon Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-dev-logo',
+	'label'       => __( 'Developer Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => urlforimages()."/assets/img/brizio.png",
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'ca-dev-favi',
+	'label'       => __( 'Top Left Icon', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => urlforimages()."/assets/img/favib.png",
+) );
+/*
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca-home-redirect',
+	'label'       => __( 'Default Home', 'fastway' ),
+	'description'	=>	'Redirect to other homepage in mobile. Ej. /permalink',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+) );
+*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'ca-customcss',
+	'label'       => __( 'Client Area Custom CSS', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '',
+	'priority'	=> 20,
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
 include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){

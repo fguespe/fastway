@@ -157,9 +157,8 @@ function fw_single_gallery(){
     }
     foreach(fw_get_yt_videos() as $video){
         $url = $video[1];
-        error_log($url);
         echo '<div class="swiper-slide">';
-        echo  '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'.$url.'?rel=0" frameborder="0" allowfullscreen=""></iframe>';
+        echo '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'.$url.'?rel=0" frameborder="0" allowfullscreen=""></iframe>';
         echo '</div>';
         if($index==0)$claseactive="active";
         else $claseactive='';
