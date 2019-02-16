@@ -1317,14 +1317,14 @@ header span,
   border-color: lightgrey;
 }
 .fw-searchform i::before {
-  color: var(--main) !important;
+  color: var(--main);
 }
 .fw-searchform input, .fw-searchform button {
   border-radius: 0px;
   border: 0px;
 }
 .fw-searchform a {
-  color: black !important;
+  color: black;
 }
 
 /*BUSCAR  position: fixed !important;*/

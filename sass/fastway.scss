@@ -1357,7 +1357,7 @@ color:var(--main);
     border-color: lightgrey;
   }
   i::before {
-    color: var(--main) !important;
+    color: var(--main) ;
   }
   input,button {
     border-radius: 0px;
@@ -1365,7 +1365,7 @@ color:var(--main);
   }
   
   a {
-    color: black !important;
+    color: black;
   }
 }
 
