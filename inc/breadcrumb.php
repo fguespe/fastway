@@ -212,7 +212,8 @@ if( !function_exists( 'fw_breadcrumbs' ) ) {
 				<?php 
 				
 				if( isset( $datas['is_shop'] ) && absint( $datas['is_shop'] )){
-					if(!fw_theme_mod("bread-enabled"))woocommerce_breadcrumb();
+					//if(!fw_theme_mod("bread-enabled"))
+					woocommerce_breadcrumb();
 				} else fw_breadcrumbs();
 				?>
 			</div>

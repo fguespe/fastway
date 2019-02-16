@@ -24,6 +24,10 @@ function fw_single_price(){
     global $product;
     echo '<span class="price">'.fw_price_html1(null,$product).'</span>';
 }
+add_shortcode('fw_summary_container', 'fw_summary_container');
+function fw_summary_container($atts = [], $content = null){
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+}
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart(){
     global $product;
@@ -107,15 +111,15 @@ function fw_single_quantity(){
 }
 add_shortcode('fw_single_share', 'fw_single_share');
 function fw_single_share(){
+
     echo fw_share_redes();
 }
 
 add_shortcode('fw_single_summary', 'fw_single_summary');
 function fw_single_summary($atts = [], $content = null){
-      /*
-      echo getFinanciacion($product);
-     */
+     
     echo '<div class="summary col-md-4">';
+
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }

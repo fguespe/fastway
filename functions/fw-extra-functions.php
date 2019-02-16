@@ -219,7 +219,7 @@ if( !function_exists( 'fw_menu' ) ) {
                     $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
             
                     $menu_list .= '<ul class="dropdown-menu">' ."\n";
-                    if($megamenu)$menu_list .= '<div class="row">';
+                    if($megamenu)$menu_list .= '<div class="container row">';
                 
                     $menu_list .= implode( "\n", $menu_array );
                     if($megamenu)$menu_list .= '</div>';

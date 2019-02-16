@@ -67,7 +67,7 @@ if( !function_exists( 'fw_search_form' ) ) {
         $rand_id = wp_rand();
         $check_woo = is_plugin_active('woocommerce/woocommerce.php');
         $_placeholder=fw_theme_mod('fw_label_search');
-        $class="input-group fw-searchform desktop";
+        $class="input-group fw_search_form fw-searchform desktop";
         if($id==3)$class="search-form-mobile";
         
 

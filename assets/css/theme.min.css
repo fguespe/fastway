@@ -240,14 +240,14 @@
   margin-bottom: 5px;
   display: block;
 }
-.fw_single_product .fw_price .precio-anterior {
+.fw_single_product .summary .fw_price .precio-anterior {
   color: #999;
   font-size: 15px;
   line-height: 13px;
   padding: 5px 0 0 5px;
   text-align: center;
 }
-.fw_single_product .single_variation_wrap .price {
+.fw_single_product .summary .single_variation_wrap .price {
   display: none;
 }
 .fw_single_product .summary .single_add_to_cart_button {
@@ -257,16 +257,15 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
-  text-transform: capitalize;
   padding: 20px;
   padding-left: 30px;
   padding-right: 30px;
-  margin: 0 auto !important;
-  float: none !important;
+  margin: 0 auto;
+  float: none;
   display: block;
-  margin: 0 auto !important;
-  line-height: 5px !important;
-  margin-bottom: 10px !important;
+  margin: 0 auto;
+  line-height: 5px;
+  margin-bottom: 10px;
 }
 .fw_single_product .stock {
   text-align: center;
@@ -435,6 +434,7 @@
 }
 #fw-menu ul li a {
   display: block;
+  text-align: center;
 }
 #fw-menu ul li:hover a {
   background-color: #fff;
@@ -1299,32 +1299,37 @@ footer .widget_nav_menu li a {
 /*SEARCH*/
 header i,
 header span,
-.fw-searchform .input-group-append .btn {
+.fw_search_form.input-group-append .btn {
   color: var(--icon-header);
 }
 
-.see-all-results {
-  border-top: 1px solid var(--main);
-  color: var(--main);
-}
-
-.fw-searchform.input-group {
+.fw_search_form .input-group {
   width: inherit;
 }
 
-.fw-searchform .input-group-append .btn {
+.fw_search_form .input-group-append .btn {
   background-color: white;
   border-color: lightgrey;
 }
-.fw-searchform i::before {
+.fw_search_form i::before {
   color: var(--main);
 }
-.fw-searchform input, .fw-searchform button {
+.fw_search_form input, .fw_search_form button {
   border-radius: 0px;
   border: 0px;
 }
-.fw-searchform a {
+.fw_search_form .see-all-results {
+  border-top: 1px solid var(--main);
+  color: var(--main);
+}
+.fw_search_form a {
   color: black;
+}
+.fw_search_form .results-list {
+  padding: 0px !important;
+}
+.fw_search_form .results-list a {
+  font-size: 14px !important;
 }
 
 /*BUSCAR  position: fixed !important;*/
@@ -2332,7 +2337,6 @@ body .wpb_content_element {
   }
 }
 .woocommerce-checkout {
-  background-color: #f9f9f9;
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
 }

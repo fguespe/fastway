@@ -232,7 +232,7 @@ color:var(--linkedin) !important;
     margin-bottom:5px;
     display:block;
   }
-  .fw_price .precio-anterior {
+  .summary .fw_price .precio-anterior {
     color: #999;
     font-size: 15px;
     line-height: 13px;
@@ -240,7 +240,7 @@ color:var(--linkedin) !important;
     text-align:center ;
   }
   
-  .single_variation_wrap .price {
+  .summary  .single_variation_wrap .price {
     display: none;
   }
 
@@ -254,16 +254,15 @@ color:var(--linkedin) !important;
 		font-size: 20px;
 		font-weight: bold;
 		color: white;
-		text-transform: capitalize;
 		padding: 20px;
 		padding-left: 30px;
 		padding-right: 30px;
-		margin: 0 auto !important;
-		float: none !important;
+		margin: 0 auto ;
+		float: none ;
 		display: block;
-		margin: 0 auto !important;
-		line-height: 5px !important;
-		margin-bottom: 10px !important;
+		margin: 0 auto ;
+		line-height: 5px ;
+		margin-bottom: 10px ;
 	}
 	.stock {
 		text-align: center;
@@ -422,9 +421,10 @@ color:var(--linkedin) !important;
     position:relative;
     z-index: 1200;
     border-radius:0px !important;
-   
+    
     ul li a{
         display: block;     
+        text-align: center;
     }   
     ul li:hover a{
         background-color: #fff;
@@ -1341,17 +1341,14 @@ footer .widget_nav_menu li a {
 /*SEARCH*/
  header i,
 header span,
-.fw-searchform .input-group-append .btn {
+.fw_search_form.input-group-append .btn {
   color: var(--icon-header);
 }
-.see-all-results {
-border-top:1px solid var(--main);
-color:var(--main);
-}
-.fw-searchform.input-group{
+
+.fw_search_form .input-group{
   width:inherit;
 }
-.fw-searchform {  
+.fw_search_form{  
   .input-group-append .btn {
     background-color: white;
     border-color: lightgrey;
@@ -1363,10 +1360,21 @@ color:var(--main);
     border-radius: 0px;
     border: 0px;
   }
-  
+  .see-all-results {
+    border-top:1px solid var(--main);
+    color:var(--main);
+    }
   a {
     color: black;
   }
+  .results-list{
+    padding:0px !important;
+    
+    }
+    
+    .results-list a{
+    font-size:14px !important;
+    }
 }
 
 
@@ -2393,7 +2401,6 @@ body .wpb_content_element {
 
 
 .woocommerce-checkout{
-  background-color: #f9f9f9;
   h3{
     text-align: left !important;
     color:black !important;
