@@ -1852,9 +1852,6 @@ body .wpb_content_element {
   /* Base */
   /* Empty Stars */
   /* Filled Stars */
-  /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
-  /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
-  /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
 }
 .woocommerce .related {
   clear: both;
@@ -2208,38 +2205,6 @@ body .wpb_content_element {
 .woocommerce p.stars:hover a:before, .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
   content: "" !important;
   color: gold;
-}
-.woocommerce .star-rating:before {
-  content: "sssss";
-  color: #d3ced2;
-  float: left;
-  top: 0;
-  left: 0;
-  font-family: "Font Awesome 5 Pro" !important;
-  position: absolute;
-}
-.woocommerce .star-rating span {
-  overflow: hidden;
-  float: left;
-  top: 0;
-  left: 0;
-  position: absolute;
-  font-family: "Font Awesome 5 Pro" !important;
-  padding-top: 1.5em;
-  color: #52a0cd;
-}
-.woocommerce .star-rating span:before {
-  content: "SSSSS";
-  top: 0;
-  font-family: "Font Awesome 5 Pro" !important;
-  position: absolute;
-  left: 0;
-  visibility: visible;
-}
-.woocommerce .star-rating span, .woocommerce .stars a, .woocommerce .star-rating:before {
-  color: gold !important;
-  font-size: 14px !important;
-  font-family: "Font Awesome 5 Pro" !important;
 }
 
 .fw_container_video {

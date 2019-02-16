@@ -170,6 +170,12 @@ Kirki::add_section( 'section_woo', array(
     'panel'          => 'panel_fastwaywoo',
 
 ) );
+Kirki::add_section( 'section_woo_shop', array(
+    'title'          => __( 'Shop Page', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
 Kirki::add_section( 'section_woo_loop', array(
     'title'          => __( 'Product Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1013,7 +1019,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'sidebar-ratio',
 	'label'       => __( 'Sidebar Width', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_shop',
 	'default'     => 2,
 	'choices'     => array(
 		'min'  => '2',
@@ -1026,7 +1032,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'shop_per_page',
 	'label'       => esc_attr__( 'Products Per Page', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_shop',
 	'default'     => 40,
 	'choices'     => array(
 		'min'  => '4',
@@ -1038,8 +1044,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'shop_columns',
-	'label'       => esc_attr__( 'Columns', 'fastway' ),
-	'section'     => 'section_woo',
+	'label'       => esc_attr__( 'Shop Columns', 'fastway' ),
+	'section'     => 'section_woo_shop',
 	'default'     => 4,
 	'choices'     => array(
 		'min'  => '2',
@@ -1047,17 +1053,17 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
-
-/*
-
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'product-page-footer-block',
-	'label'       => __( 'Footer Block', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
-	'choices'     => $static_block_args,
-) );*/
+	'type'        => 'code',
+	'settings'    => 'css_editor_shop',
+	'label'       => __( 'CSS Shop Page ', 'fastway' ),
+	'section'     => 'section_woo_shop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1375,17 +1381,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-sidebarcats',
-	'label'       => __( 'CSS Sidebar Categorys', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-single',

@@ -19,11 +19,11 @@ $average      = $product->get_average_rating();
 <div class="opiniones-visibles">
 <hr/>
 <h5>Opiniones sobre el producto</h5>
-<div class="row promedio-calificaciones">
-	<div class="col-4 col-lg-2 align-self-center rating-number"><?=$average?></div>
-	<div class="col-8 col-lg-4 align-self-center rating">							
+<div class="d-flex align-items-center promedio-calificaciones">
+	<div class="rating-number"><?=$average?></div>
+	<div class="rating d-flex flex-column">							
 		<?php echo fw_getfastars($average);?>
-		<br><a>En promedio de <?=$review_count?> opiniones</a>
+		<a>En promedio de <?=$review_count?> opiniones</a>
 	</div>
 </div><?php
 	$args = array (

@@ -18,6 +18,7 @@ add_shortcode('fw_single_title', 'fw_single_title');
 function fw_single_title(){
     global $product;
     echo '<h1 class="product_title entry-title">'.$product->post->post_title.'</h1>';
+    echo '<div class="rating" >'.fw_getfastars($product->get_average_rating()).'<a href="#reviews"> Dejar un comentario </a></div>';
 }
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
@@ -33,11 +34,6 @@ function fw_single_cart(){
     global $product;
     if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
     woocommerce_template_single_add_to_cart();
-}
-add_shortcode('fw_single_review', 'fw_single_review');
-function fw_single_review(){
-    global $product;
-    echo wc_get_rating_html( $product->get_average_rating() );
 }
 
 add_shortcode('fw_single_tabs','fw_single_tabs');

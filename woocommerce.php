@@ -18,10 +18,12 @@ $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
 ); 
+$clase="";
+if(is_shop() || is_product_category())$clase="woocommerce-shop";
 
 ?>
 
-<div class="wrapper" id="woocommerce-wrapper">
+<div class="wrapper <?=$clase?>" id="woocommerce-wrapper">
 	<?php if(is_product())do_action( 'fw_breadcrumb', $datas );?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">

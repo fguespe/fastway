@@ -2293,41 +2293,7 @@ body .wpb_content_element {
         content: "\f005" !important;
   color:gold;
   }
-  /* Adds empty stars behind user submitted star ratings & grey s's to shop page */
-    .star-rating:before {
-    content: "\73\73\73\73\73";
-        color: #d3ced2;
-        float: left;
-        top: 0;
-        left: 0;
-        font-family: "Font Awesome 5 Pro" !important;
-        position: absolute;
-  }
-  /* Changes product page black stars to blue and removes previous "# out of #" text & removes "# out of # from Shop page*/
-    .star-rating span {
-        overflow: hidden;
-        float: left;
-        top: 0;
-        left: 0;
-        position: absolute;
-        font-family: "Font Awesome 5 Pro" !important;
-        padding-top: 1.5em;
-        color: #52a0cd;
-  }
-  /* Fills in product page review stars and avg star ratings appropriately based on posted reviews & Add's uppercase blue S's to Shop page */
-    .star-rating span:before {
-        content: "\53\53\53\53\53";
-        top: 0;
-        font-family: "Font Awesome 5 Pro" !important;
-        position: absolute;
-        left: 0;
-        visibility: visible;
-  }
-    .star-rating span,.stars a, .star-rating:before{
-        color: gold !important;
-        font-size: 14px !important;
-        font-family: "Font Awesome 5 Pro" !important;
-  }
+  
 }
 .fw_container_video {
   position: relative;
