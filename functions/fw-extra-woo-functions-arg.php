@@ -1,16 +1,16 @@
 <?php
-add_shortcode('altoweb_financiacion','altoweb_financiacion');
-function getFinanciacion($product){
+add_shortcode('altoweb_financiacion','getFinanciacion');
+function getFinanciacion(){
+global $product;
   $precio=$product->price;
   $cuotas6=floor($precio/6);
   $cuotas3=floor($precio/3);
   $infopopup_cash=do_shortcode('[datos_efectivo_popup]');
   ob_start();
   do_shortcode('[datos_bancarios_popup]');
-
   $infopopup_banc=ob_get_contents();
   ob_end_flush();
-  echo <<<HTML
+  return <<<HTML
   <div class="modal modalMediosPago fade" id="modalMediosPago" tabindex="-1" role="dialog" aria-labelledby="modalMediosPagoTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
