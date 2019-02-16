@@ -126,8 +126,12 @@ add_shortcode('fw_single_gallery', 'fw_single_gallery');
 function fw_single_gallery(){
     global $product;
     $clasecant='vacio';
+    $loop="true";
     if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
-    echo '
+    if(!empty($clasecant)){
+        $loop="false";
+        
+    }    echo '
     <div class="gallery '.$clasecant.'">
     <div class="detalle-imagenListado  active">
        <div id="imagenListado" style="position: relative; overflow: hidden;">
@@ -194,7 +198,7 @@ navigation: {
 paginationClickable: true,
 spaceBetween: 30,
 centeredSlides: true,
-loop: true,
+loop: '.$loop.',
 on: {
    slideChange: function(){
        var val=this.activeIndex-1;
