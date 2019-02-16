@@ -375,7 +375,7 @@ add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10,
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
     if(fw_theme_mod('fw_currency_symbol'))return fw_theme_mod('fw_currency_symbol');
-    else $currency_symbol;
+    return $currency_symbol;
 }
 
 

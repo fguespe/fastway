@@ -10,7 +10,7 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 
 add_shortcode('fw_single_container', 'fw_single_container');
 function fw_single_container($atts = [], $content = null){
-    echo '<div class="container fguespe d-flex row px-0 mx-0">';
+    echo '<div class="container d-flex row">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
@@ -118,8 +118,7 @@ function fw_single_share(){
 add_shortcode('fw_single_summary', 'fw_single_summary');
 function fw_single_summary($atts = [], $content = null){
      
-    echo '<div class="summary col-md-4">';
-
+    echo '<div class="summary">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
@@ -129,7 +128,7 @@ function fw_single_gallery(){
     $clasecant='vacio';
     if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
     echo '
-    <div class="gallery col-md-8 px-0 '.$clasecant.'">
+    <div class="gallery '.$clasecant.'">
     <div class="detalle-imagenListado  active">
        <div id="imagenListado" style="position: relative; overflow: hidden;">
            <div class="swiper-single over-hidden relative">

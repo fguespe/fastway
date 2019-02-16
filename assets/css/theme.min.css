@@ -108,6 +108,16 @@
   /* rating */
   /*mercadoenvios*/
 }
+.fw_single_product .container {
+  justify-content: space-between;
+}
+.fw_single_product .gallery {
+  width: 67%;
+  padding-right: 3%;
+}
+.fw_single_product .summary {
+  flex: 1;
+}
 .fw_single_product .content-area {
   padding: 0px;
 }
@@ -258,8 +268,6 @@
   font-weight: bold;
   color: white;
   padding: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
   margin: 0 auto;
   float: none;
   display: block;
