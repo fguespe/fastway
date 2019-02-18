@@ -994,8 +994,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'     => 0,
 	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
+	    0  => __( 'Enable', 'fastway' ),
+	    1 => __( 'Disable', 'fastway' )
 	)
 ) );
 
