@@ -42,7 +42,7 @@
 <style>
 /*
 centrar menu
-.fw_header.bottom.desktop #fw-menu .navbar-nav{
+.fw_header.bottom.desktop #fw_menu .navbar-nav{
 		margin:0 auto;
 }
 centrar logo o cualquier otro
@@ -51,11 +51,11 @@ margin:0 auto !important;
 }
 
 
-.fw_header.bottom.desktop #fw-menu{
+.fw_header.bottom.desktop #fw_menu{
 		width:100%;
 }
 
-.fw_header.bottom.desktop #fw-menu .navbar-nav{
+.fw_header.bottom.desktop #fw_menu .navbar-nav{
   justify-content:space-around;
 }
 .fw-searchform.desktop{
