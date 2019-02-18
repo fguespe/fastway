@@ -1306,7 +1306,8 @@ footer .widget_nav_menu li a {
 .woocommerce-shop .widget-area li {
   padding-left: 10px;
 }
-.woocommerce-shop .widget-area li a {
+.woocommerce-shop .widget-area li a,
+.woocommerce-shop .widget-area li span {
   font-size: 13px;
   text-align: left;
   text-transform: lowercase !important;
@@ -1314,8 +1315,37 @@ footer .widget_nav_menu li a {
   font-weight: 400;
   color: #444444;
 }
+.woocommerce-shop .widget_layered_nav_filters a {
+  background-color: #fff;
+  color: #666;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 2px 22px 4px 5px;
+  margin: 0 5px 5px 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.woocommerce-shop .widget_layered_nav_filters a:after {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  padding-left: 5px;
+}
+.woocommerce-shop .widget-area .woocommerce-widget-layered-nav-list a:before {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  padding-right: 5px;
+  display: inline-block !important;
+}
 .woocommerce-shop .woocommerce-ordering, .woocommerce-shop .woocommerce-ordering select {
   max-width: 100%;
+}
+.woocommerce-shop .woocommerce-breadcrumb a, .woocommerce-shop .woocommerce-breadcrumb, .woocommerce-shop .woocommerce-result-count {
+  font-size: 12px !important;
 }
 .woocommerce-shop .content-area .woocommerce-result-count, .woocommerce-shop .content-area .woocommerce-ordering, .woocommerce-shop .content-area .term-description {
   display: none;
@@ -1919,12 +1949,6 @@ body .wpb_content_element {
 }
 .woocommerce .widget-title, .woocommerce .widget-title span {
   font-weight: bold;
-}
-.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb {
-  font-size: 12px !important;
-}
-.woocommerce .woocommerce-breadcrumb {
-  margin-bottom: 10px !important;
 }
 .woocommerce .widget_shopping_cart_content ul.cart_list li a, .woocommerce ul.product_list_widget li a {
   font-weight: 700 !important;
