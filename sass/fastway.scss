@@ -431,14 +431,13 @@ color:var(--linkedin) !important;
 .modal{
   z-index:3000;
 }
-#fw-menu{
+#fw_menu{
     position:relative;
     z-index: 1200;
     border-radius:0px !important;
     
-    ul li a{
+    ul li > a{
         display: block;     
-        text-align: center;
     }   
     ul li:hover a{
         background-color: #fff;
