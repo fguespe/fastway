@@ -243,7 +243,7 @@ function fw_slider_function( $atts, $content ) {
         spaceBetween: 30,
         centeredSlides: true,
         loop: true,
-        autoplay: { delay: 4500, },
+       
         autoplayDisableOnInteraction: true,
         slidesPerView: '.$cols.'
     });
@@ -349,7 +349,7 @@ function vc_fw_shorts() {
                         "Solo Icono/s (Separar con ,)"=>"iconsnext",
                         "Icono arriba, texto abajo"=>"iconbox",
                     ),
-                    "std" => 'iconsnext', //Default Red color
+                    "std" => '', //Default Red color
                 ),
                 array(
                     "type" => 'dropdown',

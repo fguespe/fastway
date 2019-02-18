@@ -141,6 +141,7 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'fastway' ),
     'vertical' => __( 'Vertical Menu', 'fastway' ),
     'mobile' => __( 'Mobile Menu', 'fastway' ),
+    'mobile_bottom' => __( 'Bottom Mobile Menu', 'fastway' ),
 ) );
 
 /*
@@ -191,5 +192,134 @@ function template_sredirect() {
     }
 add_action( 'template_redirect', 'template_sredirect' );
 
+
+
+
+/**
+ * Utility function: Get the product attribute ID from the name.
+ *
+ * @since 3.0.0
+ * @param string $name | The name (slug).
+ */
+function get_attribute_id_from_name( $name ){
+    global $wpdb;
+    $attribute_id = $wpdb->get_var("SELECT attribute_id
+    FROM {$wpdb->prefix}woocommerce_attribute_taxonomies
+    WHERE attribute_name LIKE '$name'");
+    return $attribute_id;
+}
+
+/**
+ * Utility function: Save a new product attribute from his name (slug).
+ *
+ * @since 3.0.0
+ * @param string $name  | The product attribute name (slug).
+ * @param string $label | The product attribute label (name).
+ */
+function save_product_attribute_from_name( $name, $label='', $set=true ){
+    if( ! function_exists ('get_attribute_id_from_name') ) return;
+
+    global $wpdb;
+
+    $label = $label == '' ? ucfirst($name) : $label;
+    $attribute_id = get_attribute_id_from_name( $name );
+
+    if( empty($attribute_id) ){
+        $attribute_id = NULL;
+    } else {
+        $set = false;
+    }
+    $args = array(
+        'attribute_id'      => $attribute_id,
+        'attribute_name'    => $name,
+        'attribute_label'   => $label,
+        'attribute_type'    => 'select',
+        'attribute_orderby' => 'menu_order',
+        'attribute_public'  => 0,
+    );
+
+    if( empty($attribute_id) )
+        $wpdb->insert(  "{$wpdb->prefix}woocommerce_attribute_taxonomies", $args );
+
+    if( $set ){
+        $attributes = wc_get_attribute_taxonomies();
+        $args['attribute_id'] = get_attribute_id_from_name( $name );
+        $attributes[] = (object) $args;
+        set_transient( 'wc_attribute_taxonomies', $attributes );
+    } else {
+        return;
+    }
+}
+
+
+function create_attributtes_from_categories( $product_id = 51 ){
+    $product_id = $product_id == 0 ? get_the_ID() : $product_id;
+    $taxonomy = 'product_cat';
+    $product_categories = wp_get_post_terms( $product_id, $taxonomy );
+    $product_categories_data = $product_cats = $product_attributes = array();
+
+    // 1. Get and process product categories from a product
+    if( count($product_categories) > 0 ){
+        // 1st Loop get parent/child categories pairs
+        foreach ( $product_categories as $product_category ) {
+            $term_name   = $product_category->name; // Category name
+            // keep product categories that have parent category
+            if( $product_category->parent > 0 ){
+                $parent_name = get_term_by( 'id', $product_category->parent, $taxonomy)->name; // Parent category name
+                // Set them in the array
+                $product_categories_data[$parent_name] = $term_name;
+            }
+        }
+        // 2nd Loop: The get missing categories (the last child category or a unique category) and assign an temporary value to it
+        foreach ( $product_categories as $product_category ) {
+            if( ! in_array($product_category->name, array_keys($product_categories_data) ) ){
+                // Assign an temporary value for the category name in the array of values
+                $product_categories_data[$product_category->name] = 'Temp';
+            }
+        }
+    }
+
+    // 2. create and process product attributes and values from the product categories
+    if( count($product_categories_data) > 0 ){
+        // Get product attributes post meta data
+        $existing_data_attributes = (array) get_post_meta( $product_id, '_product_attributes', true );
+        // Get the position
+        if( count($existing_data_attributes) > 0 )
+            $position = count($existing_data_attributes);
+
+        // Loop through our categories array
+        foreach ( $product_categories_data as $key_label => $value_name ) {
+            $taxonomy = wc_attribute_taxonomy_name($key_label);
+            $attr_name = wc_sanitize_taxonomy_name($key_label); // attribute slug name
+
+            // NEW Attributes: Register and save them (if it doesn't exits)
+            if( ! taxonomy_exists( $taxonomy ) )
+                save_product_attribute_from_name( $attr_name, $key_label );
+
+            // Check if the Term name exist and if not we create it.
+            if( ! term_exists( $value_name, $taxonomy ) ){
+                wp_insert_term( $value_name, $taxonomy, array('slug' => sanitize_title($value_name) ) );
+
+                // Set attribute value for the product
+                wp_set_post_terms( $product_id, $value_name, $taxonomy, true );
+            }
+
+            if( ! in_array( $taxonomy, array_keys($existing_data_attributes) ) ){
+                $position++;
+                // Setting formatted post meta data if it doesn't exist in the array
+                $product_attributes[$taxonomy] = array (
+                    'name'         => $taxonomy,
+                    'value'        => '',
+                    'position'     => $position,
+                    'is_visible'   => 1,
+                    'is_variation' => 1,
+                    'is_taxonomy'  => 1
+                );
+            }
+        }
+        // Save merged data updating the product meta data
+        update_post_meta( $product_id, '_product_attributes', array_merge( $existing_data_attributes, $product_attributes ) );
+    }
+}
 
 ?>

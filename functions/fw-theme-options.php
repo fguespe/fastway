@@ -655,12 +655,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'alpha' => true,
 	),
-	'description'=>'var(--second-color);',
+	'description'=>'var(--second);',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
 			'element'  => ':root',
 			'property' => '--second-color',
+		),
+		array(
+			'element'  => ':root',
+			'property' => '--second',
 		),
 	),
 ) );
@@ -1398,6 +1402,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-mobile',
 	'label'       => __( 'CSS Mobile', 'fastway' ),
+	'description'	=> 'Put everything inside @media',
 	'section'     => 'section_mobile',
 	'default'     => '',
 	'transport'	=> 'postMessage',

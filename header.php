@@ -68,8 +68,8 @@ margin:0 auto !important;
 echo fw_header_html();
 echo fw_header_html_mobile();
 ?>
-    <div class="mobile-menu-overlay ">&nbsp;</div>
-    <div class="menu-madre-mobile">
+<div class="mobile-menu-overlay ">&nbsp;</div>
+<div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">      
           <?php 
@@ -84,7 +84,13 @@ echo fw_header_html_mobile();
         </div>
         <div class="separa-menu-mobile">&nbsp;</div>
    
-        <?php echo fw_menu_vertical("mobile"); 
+        <?php 
+        echo fw_menu_vertical(array('id' => 'mobile' )); 
+        $bottommneu=fw_menu_vertical(array('id' => 'mobile_bottom' )); 
+        if(!empty($bottommneu)){
+            echo '<div class="separa-menu-mobile">&nbsp;</div>';
+            echo $bottommneu;
+        }
         if(fw_theme_mod('fw-quicklinks'))quicklinks();?>
       </div>
     </div>
