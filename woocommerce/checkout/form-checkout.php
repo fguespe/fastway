@@ -113,7 +113,7 @@ display:block !important;
         <div class="vcv-block-overlay"></div>
     </div>
     <p class="description">
-        El mejor precio garantizado 
+        <!-- El mejor precio garantizado -->
     </p>
 </form>
 
