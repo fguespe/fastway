@@ -3036,7 +3036,7 @@ body .wpb_content_element {
 .woocommerce-checkout .wc_payment_methods li p {
   padding: 15px;
   font-size: 12px;
-  border-left: 1px solid grey !important;
+  /*border-left:1px solid grey !important;*/
 }
 .woocommerce-checkout #place_order {
   padding: 15px;

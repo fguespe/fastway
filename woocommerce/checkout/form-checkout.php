@@ -78,7 +78,7 @@ display:block !important;
     <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
     <div class="vcv-summary-box">
         <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
-        <a href="/cart" style="font-size:12px;">Volver al carrito</a>
+        <a href="/cart" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a>
         <div class="vcv-promo" style="display:none!important;">
           <button id="show-promo-form">
               Got promo code?
