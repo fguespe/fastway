@@ -1343,14 +1343,48 @@ footer .widget_nav_menu li a {
 }
 /* Filters woo*/
 
-.woocommerce-result-count{
-  display:inline ;
-  float:left ;
-  padding-top:15px
-}
-.woocommerce-ordering{
-  display:inline ;
-  float:right;
+.woocommerce-shop { 
+  .widget-area h3.widget-title{
+    font-size:16px;
+    text-align:left;
+    line-height:24px;
+    font-weight:600;
+    color:#444444;
+    
+  }
+  .widget-area aside,.woocommerce-ordering{
+    margin-bottom:20px ;
+  }
+  .widget-area li{
+    padding-left:10px;
+  }
+  .widget-area li a{		font-size:13px;
+    text-align:left;
+    text-transform:lowercase !important;
+    line-height:20px;
+    font-weight:400;
+    color:#444444;
+    
+  }
+  .woocommerce-ordering,.woocommerce-ordering select{
+  max-width:100%;
+  }
+  .content-area .woocommerce-result-count,.woocommerce-shop .content-area .woocommerce-ordering,.woocommerce-shop .content-area .term-description{
+  display:none ;
+  }
+  .price_slider_amount input{
+    display:flex !important;
+    width:48%;
+    display:inline !important;
+  }
+  .price_slider_amount button{
+    background:var(--main);
+    color:white;
+    border:0px ;
+  }
+  .price_slider_amount .price_label{
+    display:none !important;
+  }
 }
 /*SEARCH*/
  header i,

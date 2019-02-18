@@ -94,6 +94,7 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
+require get_template_directory() . '/functions/fw-widgets.php';
 
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
@@ -189,7 +190,6 @@ function template_sredirect() {
 
     }
 add_action( 'template_redirect', 'template_sredirect' );
-
 
 
 ?>
