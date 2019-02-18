@@ -82,7 +82,7 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/widgets.php';
-require get_template_directory() . '/inc/breadcrumb.php';
+//require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/functions/fw-extra-functions.php';
 require get_template_directory() . '/functions/fw-shortcodes.php';

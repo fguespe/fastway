@@ -1369,8 +1369,8 @@ footer .widget_nav_menu li a {
   .woocommerce-ordering,.woocommerce-ordering select{
   max-width:100%;
   }
-  .content-area .woocommerce-result-count,.woocommerce-shop .content-area .woocommerce-ordering,.woocommerce-shop .content-area .term-description{
-  display:none ;
+  .content-area .woocommerce-result-count,.content-area .woocommerce-ordering, .content-area .term-description{
+  display:none;
   }
   .price_slider_amount input{
     display:flex !important;
@@ -1384,6 +1384,10 @@ footer .widget_nav_menu li a {
   }
   .price_slider_amount .price_label{
     display:none !important;
+  }
+  .wcapf-layered-nav ul li::before{
+		font-family:'Font Awesome 5 Pro' !important;
+		
   }
 }
 /*SEARCH*/
