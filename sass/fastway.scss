@@ -435,7 +435,9 @@ color:var(--linkedin) !important;
     position:relative;
     z-index: 1200;
     border-radius:0px !important;
-    
+    .dropdown-toggle::after{
+      display:none;
+    }
     ul li > a{
         display: block;     
     }   
