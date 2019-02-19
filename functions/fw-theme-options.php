@@ -798,7 +798,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-shopcolor',
 	'label'       => __( 'Shop Background ', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
+	'default'     => '#F5F5F5',
 	'choices'     => array(
 		'alpha' => true,
 	),
