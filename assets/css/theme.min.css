@@ -3036,6 +3036,10 @@ body .wpb_content_element {
 .woocommerce-checkout label, .woocommerce-checkout span {
   font-size: 14px !important;
 }
+.woocommerce-checkout #shipping_method label {
+  display: inline !important;
+  margin-left: 5px;
+}
 .woocommerce-checkout #payment input[type=radio] {
   display: none !important;
 }
