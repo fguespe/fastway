@@ -2396,6 +2396,11 @@ body .wpb_content_element {
     transform: scale(1) rotate(0);
   }
 }
+/*CUPON*/
+.woocommerce-form-coupon-toggle, .checkout_coupon {
+  display: none;
+}
+
 .woocommerce-checkout {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */

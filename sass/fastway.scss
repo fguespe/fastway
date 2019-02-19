@@ -2474,9 +2474,10 @@ body .wpb_content_element {
 
 
 
-
-
-
+/*CUPON*/
+.woocommerce-form-coupon-toggle,.checkout_coupon{
+  display:none;
+}
 
 .woocommerce-checkout{
   h3{
