@@ -1457,7 +1457,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'CSS Category Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_cat',
 	'description' => 'Everything goes inside .fw_cat_loop',
-	'default'     => '',
+	'default'     => '
+	.fw_cat_loop .title {
+		text-align: center;
+		font-size: 22px!important;
+		text-transform: uppercase;
+		background-color: #F5F5F5;
+		border-top: 3px solid var(--main);
+		padding: 10px;
+	}',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
 		'language' => 'css',
