@@ -205,6 +205,7 @@ function fw_slider_function( $atts, $content ) {
             'slides_mobile'      =>  '',
             'links_mobile'      =>  '',
             'cols'      =>  'cols',
+            'autoplay'      =>  'false',
         ), $atts );
     $cols=$atts['cols'];
     if(!is_numeric($cols))$cols=1;
@@ -215,7 +216,7 @@ function fw_slider_function( $atts, $content ) {
     if(!$ismobile)$claserespo=' ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
-    <div class="swiper-fwslider-'.$rand.'  '.$claserespo.'  over-hidden relative">
+    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.'  over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     $cant=0;
     foreach( $image_ids as $image_id ){
@@ -234,7 +235,7 @@ function fw_slider_function( $atts, $content ) {
     <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
     </div>
     <script>
-    var swiper = new Swiper(".swiper-fwslider-'.$rand.'", {
+    var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
         navigation: {
             nextEl: ".swiper-fwslider-'.$rand.'-next",
             prevEl: ".swiper-fwslider-'.$rand.'-prev",
@@ -243,13 +244,15 @@ function fw_slider_function( $atts, $content ) {
         spaceBetween: 30,
         centeredSlides: true,
         loop: true,
-       
+        autoplay:'.$atts['autoplay'].' ,
         autoplayDisableOnInteraction: true,
         slidesPerView: '.$cols.'
     });
     </script>';
     if(!$ismobile)return $return;
     //Mobile
+
+    $rand=generateRandomString(5);
     $image_ids = explode(',',$atts['slides_mobile']);
     $links = explode(',',$atts['links_mobile']);
     $cant=0;
@@ -270,7 +273,7 @@ function fw_slider_function( $atts, $content ) {
     <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
     </div>
     <script>
-    var swiper = new Swiper(".swiper-fwslider-'.$rand.'", {
+    var swiper_mobile = new Swiper(".swiper-fwslider-'.$rand.'", {
         navigation: {
             nextEl: ".swiper-fwslider-'.$rand.'-next",
             prevEl: ".swiper-fwslider-'.$rand.'-prev",
