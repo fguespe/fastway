@@ -3276,19 +3276,22 @@ body .wpb_content_element {
     color:var(--main) !important;
     margin-right:5px;
   }
-  .payment_method_woo-mercado-pago-basic div a img{
-    width:100% !important;
-    height: auto !important;
-    }
-    .payment_method_woo-mercado-pago-basic label img{
-    display:none;
-    }
-    .payment_method_woo-mercado-pago-basic label::before {
-        font-family: "Font Awesome 5 Pro" !important;
-        content: "\f09d";
-        color: var(--main) !important;
-        margin-right: 5px;
-    }
+  .payment_method_woo-mercado-pago-basic div a img,
+  .payment_method_mercadoenvios-gateway div a img{
+      width:100% !important;
+      height: auto !important;
+  }
+  .payment_method_woo-mercado-pago-basic label img,
+  .payment_method_mercadoenvios-gateway label img{
+      display:none;
+  }
+  .payment_method_woo-mercado-pago-basic label::before ,
+  .payment_method_mercadoenvios-gateway label::before {
+      font-family: "Font Awesome 5 Pro" !important;
+      content: "\f09d";
+      color: var(--main) !important;
+      margin-right: 5px;
+  }
   
 }
 
