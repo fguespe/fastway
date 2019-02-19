@@ -175,6 +175,12 @@ function fw_slider() {
                     'value' => '1',
                 ),
                 array(
+                    "type" => 'checkbox',
+                    "heading"     => "Autplay ",
+                    "param_name"  => "autplay",
+                    "std"         => "true",
+                ),
+                array(
                     'type' => 'el_id',
                     'heading' => __( 'Element ID', 'js_composer' ),
                     'param_name' => 'el_id',
@@ -205,7 +211,7 @@ function fw_slider_function( $atts, $content ) {
             'slides_mobile'      =>  '',
             'links_mobile'      =>  '',
             'cols'      =>  'cols',
-            'autoplay'      =>  'false',
+            'autoplay'      =>  'true',
         ), $atts );
     $cols=$atts['cols'];
     if(!is_numeric($cols))$cols=1;
