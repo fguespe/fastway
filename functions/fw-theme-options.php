@@ -1062,6 +1062,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor_shop',
 	'label'       => __( 'CSS Shop Page ', 'fastway' ),
 	'section'     => 'section_woo_shop',
+	'description' => 'Everything goes inside .woocommerce-shop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1096,7 +1097,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-single',
 	'label'       => __( 'CSS Single Product', 'fastway' ), 
-	'description' => '.fw_price', 
+	'description' => 'Everything goes inside .fw_single_product',
 	'section'     => 'section_woo_single',
 	'default'     => '',
 	'transport'	=> 'postMessage',
@@ -1373,7 +1374,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 /*Section CSS*/
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-general',
@@ -1398,18 +1399,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-single',
-	'label'       => __( 'CSS Single Product', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
+*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1442,6 +1432,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-loop',
 	'label'       => __( 'CSS Product Loop', 'fastway' ),
 	'section'     => 'section_woo_loop',
+	'description' => 'Everything goes inside .fw_product_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1465,6 +1456,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_loop_cat',
 	'label'       => __( 'CSS Category Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_cat',
+	'description' => 'Everything goes inside .fw_cat_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
