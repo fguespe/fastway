@@ -1306,8 +1306,8 @@ footer {
 /*bread single*/
 .woocommerce-breadcrumb,.woocommerce-breadcrumb a{
   font-size:13px;
-      color: #888;
-      text-decoration: none;
+      color: #888 !important;
+      text-decoration: none !important;
   }
   .woocommerce-breadcrumb{
   margin-bottom:10px;
