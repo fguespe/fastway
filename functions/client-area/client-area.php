@@ -419,8 +419,8 @@ add_filter( 'login_redirect', 'fw_redirect_after_login', 10, 3 );
 
 
 function fw_remove_footer_admin(){
-    //return '<div class="footerfw" ><a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
-    return '<a href="https://www.briziolabz.com"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
+    //return '<div class="footerfw" ><a href="https://www.altoweb.co"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
+    return '<a href="https://www.altoweb.co"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
         
 }
 

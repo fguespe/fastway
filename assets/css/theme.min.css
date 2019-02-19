@@ -3036,7 +3036,7 @@ body .wpb_content_element {
 .woocommerce-checkout label, .woocommerce-checkout span {
   font-size: 14px !important;
 }
-.woocommerce-checkout input[type=radio] {
+.woocommerce-checkout #payment input[type=radio] {
   display: none !important;
 }
 .woocommerce-checkout .wc_payment_methods {
