@@ -530,7 +530,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '#fw_menu > .navbar-nav > li > a',
+			'element' => '.navbar-nav li > a',
 		),
 	),
 	'choices'  => array(
