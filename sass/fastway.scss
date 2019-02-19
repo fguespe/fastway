@@ -1303,7 +1303,15 @@ footer {
   height: 100% !important;
 }
 
-
+/*bread single*/
+.woocommerce-breadcrumb,.woocommerce-breadcrumb a{
+  font-size:13px;
+      color: #888;
+      text-decoration: none;
+  }
+  .woocommerce-breadcrumb{
+  margin-bottom:10px;
+  }
 /*FIX SPACE*/
 
 

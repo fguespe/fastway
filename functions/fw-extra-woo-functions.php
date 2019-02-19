@@ -310,8 +310,11 @@ function fw_price_html1($price,$product){
     }else{
         $regular_price=$product->regular_price;
         $sale_price=$product->sale_price;
+        if(intval($regular_price) && intval($sale_price)){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-        
+        }else{
+            $percentage=0;
+        }
     }
     if($product->is_on_sale()){
     return '<span class="fw_price price1">
