@@ -50,7 +50,7 @@ $css_classes = array(
 
 if ( 'yes' === $disable_element ) {
 	if ( vc_is_page_editable() ) {
-		$css_classes[] = 'vc_hidden-lg vc_hidden-xs vc_hidden-sm vc_hidden-md';
+		//$css_classes[] = 'vc_hidden-lg vc_hidden-xs vc_hidden-sm vc_hidden-md';
 	} else {
 		return '';
 	}
