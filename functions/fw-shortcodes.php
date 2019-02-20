@@ -146,11 +146,15 @@ function fw_data( $atts ) {
         $rand=generateRandomString();
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
-    }if(!empty($atts['modal'] )){
+    }
+    
+    if(!empty($atts['modal'] )){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fancybox">'.$first;
         $first.= "</a>";
-    }else if(!empty($link) && ($format=="isli_i" || $format=="isli")){
-        $first='<a target="_blank" href="'.$link.'">'.$first;
+    }
+    
+    if(!empty($link) && ($format=="isli_i" || $format=="isli")){
+        $first='<a target="_blank" class="fw_icon_link" href="'.$link.'">'.$first;
         $first.= "</a>";
     }
     

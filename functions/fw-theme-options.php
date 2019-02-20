@@ -619,6 +619,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-header',
 	'label'       => __( 'CSS Header', 'fastway' ),
 	'section'     => 'section_header',
+	'description' => 'Examples: .fw_search_form',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(

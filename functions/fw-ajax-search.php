@@ -77,7 +77,7 @@ if( !function_exists( 'fw_search_form' ) ) {
         if($check_woo){
           $devolver.='<input type="hidden" name="post_type" value="product" />';
         }
-        $devolver.='<div class="input-group-append">';
+        $devolver.='<div class="input-group-append icon">';
         if ( defined( 'ICL_LANGUAGE_CODE' ) ){
           $devolver.='<input type="hidden" name="lang" value="'.(ICL_LANGUAGE_CODE).'" />';
         }else if ( $id==0 || $id==2){
