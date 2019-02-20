@@ -60,6 +60,10 @@ function fw_loop_cart() {
         );
 }
 
+add_shortcode('fw_echo', 'fw_echo');
+function fw_echo($atts = [], $content = null){
+    echo stripslashes(htmlspecialchars_decode($content));
+}
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     global $product;
