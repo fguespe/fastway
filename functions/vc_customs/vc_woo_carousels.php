@@ -279,6 +279,12 @@ function getwoocampos(){
             'std' => 'true',
             'admin_label' => false,
         ), 
+        array(
+            "type" => 'checkbox',
+            "heading"     => "Autoplay ",
+            "param_name"  => "autoplay",
+            'std' => 'true',
+        ),
         
         /*
         array(

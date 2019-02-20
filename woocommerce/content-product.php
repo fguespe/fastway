@@ -59,9 +59,15 @@ function fw_loop_cart() {
             esc_html( $product->add_to_cart_text() )
         );
 }
-
+add_shortcode('fw_loop_meta', 'fw_loop_meta');
+function fw_loop_meta($atts = [], $content = null){
+    echo '<div class="meta">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</div>';
+}
 add_shortcode('fw_echo', 'fw_echo');
 function fw_echo($atts = [], $content = null){
+    
     echo stripslashes(htmlspecialchars_decode($content));
 }
 add_shortcode('fw_loop_container', 'fw_loop_container');

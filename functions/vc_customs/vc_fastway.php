@@ -176,9 +176,9 @@ function fw_slider() {
                 ),
                 array(
                     "type" => 'checkbox',
-                    "heading"     => "Autplay ",
+                    "heading"     => "Autoplay ",
                     "param_name"  => "autoplay",
-                    "std"         => true,
+                    'std' => 'true',
                 ),
                 array(
                     'type' => 'el_id',
