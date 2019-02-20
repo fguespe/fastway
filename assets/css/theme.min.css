@@ -1116,14 +1116,14 @@ footer {
   }
 }
 /*MOBILE ICONS*/
-/*
-.fw_header.middle .codes,
-.fw_header.bottom .codes,
-.fw_header.mobile .codes{
-  justify-content:space-between;
-}*/
-.fw_header div {
-  justify-content: space-between;
+.fw_header .codes {
+  justify-content: space-around;
+}
+
+.fw_header .codes .subcode {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
 }
 
 .fw_header.mobile .input-group-append {
