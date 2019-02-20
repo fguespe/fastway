@@ -1557,7 +1557,7 @@ html {
 
 @media (max-width: 799px) {
   .vc_empty_space {
-    max-height: 30px;
+    max-height: 20px;
   }
 }
 /*FIX >BOOTSTRAP COLOR*/
@@ -1573,7 +1573,7 @@ html {
 
 a:hover {
   color: var(--main);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
