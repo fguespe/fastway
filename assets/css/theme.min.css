@@ -1034,7 +1034,7 @@ ul {
     z-index: 999;
   }
 
-  .fw_sticky {
+  .fw_sticky_header {
     top: 0px;
   }
 
@@ -2408,6 +2408,12 @@ body .wpb_content_element {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
 }
+.woocommerce-checkout .select2-selection__clear {
+  display: none;
+}
+.woocommerce-checkout .vcv-checkout .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 36px !important;
+}
 .woocommerce-checkout h3 {
   text-align: left !important;
   color: black !important;
@@ -2499,7 +2505,7 @@ body .wpb_content_element {
 .woocommerce-checkout .woocommerce form.vcv-checkout .form-row.woocommerce-validated select {
   border-color: #ccc;
 }
-.woocommerce-checkout .vcv-checkout .select2 {
+.woocommerce-checkout .vcv-checkout .select2-selection__rendered {
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 14px;
