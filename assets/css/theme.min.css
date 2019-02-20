@@ -447,7 +447,6 @@
   display: block;
 }
 #fw_menu ul li:hover a {
-  background-color: #fff;
   color: #482979;
 }
 #fw_menu ul li:hover .link-madre {
@@ -1994,9 +1993,6 @@ body .wpb_content_element {
 .woocommerce .u-shopping-cart-items-wrapper {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-}
-.woocommerce button.button.alt, .woocommerce button.button.alt:hover {
-  background: var(--main);
 }
 .woocommerce ul.products li.product .price {
   margin: 0px;

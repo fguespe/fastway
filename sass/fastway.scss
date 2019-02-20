@@ -442,7 +442,6 @@ color:var(--linkedin) !important;
         display: block;     
     }   
     ul li:hover a{
-        background-color: #fff;
         color: #482979;
     }
     ul li:hover .link-madre{
@@ -2071,9 +2070,8 @@ body .wpb_content_element {
          padding-top: 0px !important;
          padding-bottom: 0px !important;
     }
-     button.button.alt, button.button.alt:hover {
-         background: var(--main);
-    }
+
+
     /*fix margin en price*/
      ul.products li.product .price {
          margin: 0px;
