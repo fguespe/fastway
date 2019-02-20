@@ -772,6 +772,10 @@ ul {
     width: 100% !important;
     left: 0px !important;
   }
+
+  .vc_row[data-vc-full-width].fw_swiper {
+    overflow: visible !important;
+  }
 }
 .vc_row-no-padding.fw_swiper,
 .vc_row-no-padding.fw_swiper .vc_column-inner {
