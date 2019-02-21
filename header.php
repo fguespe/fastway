@@ -51,6 +51,9 @@ margin:0 auto !important;
 }
 
 
+.fw_header.bottom.desktop #fw_menu .navbar-nav > li > a{ 
+padding:8px !important;
+}
 .fw_header.bottom.desktop #fw_menu{
 		width:100%;
 }
