@@ -537,6 +537,9 @@
   z-index: 1101;
 }
 
+.fw_icon {
+  align-items: center;
+}
 .fw_icon i {
   font-size: 30px;
 }
@@ -2126,6 +2129,7 @@ body .wpb_content_element {
 }
 .woocommerce .woocommerce-tabs {
   margin-top: 32px;
+  width: 100%;
 }
 .woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
   background: white;

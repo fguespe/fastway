@@ -108,7 +108,7 @@ function fw_data( $atts ) {
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
     if($format=="isli" || $format=="isli_i"){
-        $first= '<li class="'.$iconclass.'  d-flex align-items-center '.$format.'" style="text-align:'.$text_align.';"> ';
+        $first= '<li class="'.$iconclass.'  d-flex '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $big="big";
         $small="small";

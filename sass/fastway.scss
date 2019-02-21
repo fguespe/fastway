@@ -540,6 +540,7 @@ color:var(--linkedin) !important;
 
 
 .fw_icon {
+  align-items: center;
   i{
     font-size:30px;
   }
@@ -2210,19 +2211,20 @@ body .wpb_content_element {
         }
     }
      .woocommerce-tabs{
-       margin-top: 32px;
-         ul.tabs li:not(.active){
+        margin-top: 32px;
+        width:100%;
+        ul.tabs li:not(.active){
              background:white;
              border:0px;
         }
-         ul.tabs {
+        ul.tabs {
              list-style: none;
              padding: 0 0 0 1em;
              margin: 0 0 1.618em;
              overflow: hidden;
              position: relative 
         }
-         ul.tabs li {
+        ul.tabs li {
              border: 1px solid #d3ced2;
              background-color: #ebe9eb;
              display: inline-block;

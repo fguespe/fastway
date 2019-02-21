@@ -23,7 +23,9 @@ function fw_div_close($atts = [], $content = null){
 
 add_shortcode('fw_single_container', 'fw_single_container');
 function fw_single_container($atts = [], $content = null){
-    echo '<div class="fw_single_product d-flex '.$atts['class'].' row">';
+    $class='';
+    if(isset($atts['class']))$class=$atts['class'];
+    echo '<div class="fw_single_product d-flex row '.$class.' ">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
@@ -246,7 +248,6 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
-$single_classes="  ";
 
 ?>
 
