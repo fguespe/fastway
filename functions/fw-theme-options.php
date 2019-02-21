@@ -428,13 +428,12 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_mobile_logo',
 	'label'       => __( 'Mobile Logo', 'fastway' ),
 	'description' => __( 'Replaces general logo on mobile.', 'fastway' ),
-	'section'     => 'section_general'
+	'section'     => 'section_mobile'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',

@@ -267,6 +267,39 @@ function fw_whatsappfooter(){
 
 
 
+if( !function_exists('fw_m_logo') ) {
+    add_shortcode('fw_m_logo', 'fw_m_logo');
+    function fw_m_logo( $type="" ){
+        
+        switch( $type ) {
+            case 'sticky':
+                break;
+            default:
+                $title = !empty(fw_theme_mod('logo-text'))? esc_attr(fw_theme_mod('logo-text')): get_bloginfo('name');
+                $logo_arg = array(
+                    'title' => esc_attr($title),
+                    'alt'   => esc_attr($title)
+                );
+
+                if( !empty( fw_theme_mod('fw_mobile_logo') ) && strlen(trim(fw_theme_mod('fw_mobile_logo'))) > 0 ){
+                    $logo_arg['src'] =  fw_theme_mod('fw_mobile_logo') ;
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
+                    $logo_arg['height'] = "auto";
+                } else {
+                    //Cargo logo default
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
+                    $logo_arg['width'] = fw_theme_mod('logo-width');
+                    $logo_arg['height'] = "auto";
+                }
+
+                //echo '<a class="logo">';
+                $devolver = '<a class="logo "  href="'.esc_attr(home_url()).'">';
+                $devolver .= fastway_getImage($logo_arg);
+                $devolver .=  '</a>';
+                return $devolver;
+        }
+    }
+}
 
 if( !function_exists('fw_logo') ) {
     add_shortcode('fw_logo', 'fw_logo');
