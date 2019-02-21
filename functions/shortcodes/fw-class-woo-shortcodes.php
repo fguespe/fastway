@@ -63,6 +63,7 @@ class fw_Woo_Shortcodes {
 			"is_biggest"	=> '0',
 			"auto_play"		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?true:false,
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -71,7 +72,6 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
-		
         $meta_query  = WC()->query->get_meta_query();
         $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
@@ -129,6 +129,7 @@ class fw_Woo_Shortcodes {
 			"border_color"	=> '',
 			"is_slider"		=> '1',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			"is_biggest"	=> 0,
 			"auto_play"		=> '0',
 			"excerpt_limit" => 10,
@@ -139,7 +140,7 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		),$atts);
-		
+		error_log($atts['autoplay']);
 		$args = array(
 			'post_type'				=> 'product',
 			'post_status'			=> 'publish',

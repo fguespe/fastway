@@ -29,9 +29,8 @@ endwhile;
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
             spaceBetween: 10,
-            loop: true,autoplay: {
-    delay: 5000,
-  },
+            loop: true,
+            autoplay: <?=$autoplay;?>,
 	        autoplayDisableOnInteraction: false,
             breakpoints: {
             // when window width is <= 320px
