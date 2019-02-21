@@ -140,7 +140,8 @@ class fw_Woo_Shortcodes {
 			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		),$atts);
-		error_log($atts['autoplay']);
+
+
 		$args = array(
 			'post_type'				=> 'product',
 			'post_status'			=> 'publish',
@@ -184,6 +185,7 @@ class fw_Woo_Shortcodes {
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
+		if(!$atts['autoplay'])$atts['autoplay']='false';
 		
 		if ( $products->have_posts() ) :
 			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );

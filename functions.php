@@ -7,7 +7,7 @@ function fw_theme_mod( $name ) {
         if(get_theme_mod( $name) === "light" || get_theme_mod( $name) === "fal")return "fal";
         else return 'fa';
     }
-    if(empty(get_theme_mod( $name) && $name=="fw_label_search"))set_theme_mod('fw_label_search','¿Que estas buscando?');
+    // if(empty(get_theme_mod( $name) && $name=="fw_label_search"))set_theme_mod('fw_label_search','¿Que estas buscando?');
     if(empty(get_theme_mod( $name) && $name=="fw_quickmenu_links"))set_theme_mod('fw_quickmenu_links','fb,youtube,whatsapp,ig,email,phone,address');
     return get_theme_mod( $name);
 }
