@@ -23,7 +23,7 @@ function fw_div_close($atts = [], $content = null){
 
 add_shortcode('fw_single_container', 'fw_single_container');
 function fw_single_container($atts = [], $content = null){
-    echo '<div class="fw_single_product d-flex '.$atts['class'].' ">';
+    echo '<div class="fw_single_product d-flex '.$atts['class'].' row">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }

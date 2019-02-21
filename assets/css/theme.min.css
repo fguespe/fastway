@@ -113,7 +113,18 @@
   padding-right: 3%;
 }
 .fw_single_product .summary {
-  flex: 1;
+  flex: 33%;
+}
+@media (max-width: 799px) {
+  .fw_single_product .gallery {
+    width: 100%;
+    padding: 0px;
+    display: block;
+  }
+  .fw_single_product .summary {
+    width: 100%;
+    display: block;
+  }
 }
 .fw_single_product .content-area {
   padding: 0px;
@@ -1275,6 +1286,11 @@ footer {
   margin-bottom: 10px;
 }
 
+@media (max-width: 799px) {
+  .woocommerce-breadcrumb {
+    display: none;
+  }
+}
 /*FIX SPACE*/
 /*MENU*/
 .menuhor li {
