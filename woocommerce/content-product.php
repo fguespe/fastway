@@ -65,11 +65,7 @@ function fw_loop_meta($atts = [], $content = null){
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
-add_shortcode('fw_echo', 'fw_echo');
-function fw_echo($atts = [], $content = null){
-    
-    echo stripslashes(htmlspecialchars_decode($content));
-}
+
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     global $product;

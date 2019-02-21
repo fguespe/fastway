@@ -7,10 +7,23 @@ function woo_remove_product_tabs( $tabs ) {
 }
 add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
 
+add_shortcode('fw_echo', 'fw_echo');
+function fw_echo($atts = [], $content = null){
+    echo stripslashes(htmlspecialchars_decode($content));
+}
+
+add_shortcode('fw_div_open', 'fw_div_open');
+function fw_div_open($atts = [], $content = null){
+    echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';
+}
+add_shortcode('fw_div_close', 'fw_div_close');
+function fw_div_close($atts = [], $content = null){
+    echo '</div>';
+}
 
 add_shortcode('fw_single_container', 'fw_single_container');
 function fw_single_container($atts = [], $content = null){
-    echo '<div class="container d-flex row">';
+    echo '<div class="fw_single_product d-flex '.$atts['class'].' ">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
@@ -233,10 +246,10 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
-$single_classes=" fw_single_product ";
+$single_classes="  ";
 
 ?>
-<div <?php post_class($single_classes); ?>>
+
 <!-- EL de bidcom -->
 <?php
 
