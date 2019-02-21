@@ -108,6 +108,16 @@
   /* rating */
   /*mercadoenvios*/
 }
+@media (min-width: 920px) {
+  .fw_single_product .summary.fixed {
+    position: fixed;
+    opacity: 1;
+    max-width: 336px;
+    right: 400px;
+    padding-top: 20px;
+    background-color: #fff;
+  }
+}
 .fw_single_product .gallery {
   width: 67%;
   padding-right: 3%;
