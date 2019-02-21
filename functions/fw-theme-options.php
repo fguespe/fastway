@@ -511,43 +511,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'typography',
-	'settings'    => 'opt-typography-header',
-	'label'       => __( 'Main Menu', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => array(
-		'font-family'    => 'Rubik',
-		'variant'        => 'regular',
-		'font-size'      => '16px',
-		'line-height'    => '20px',
-		'letter-spacing' => '0',
-		'color'     => 'black',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
-	),
-	'transport'   => 'auto',
-	'output'      => array(
-		array(
-			'element' => '.navbar-nav li > a',
-		),
-	),
-	'choices'  => array(
-		'variant' => array(
-			'regular',
-			'italic',
-			'700',
-			'200',
-			'300',
-			'400',
-			'500',
-			'600',
-			'bold',
-			'700italic' 
-		),
-	),
-) );
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1179,6 +1142,39 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'typography',
+	'settings'    => 'opt-typography-header',
+	'label'       => __( 'Main Navigation', 'fastway' ),
+	'section'     => 'section_typos',
+	'default'     => array(
+		'font-family'    => 'Rubik',
+		'variant'        => 'regular',
+		'font-size'      => '16px',
+		'line-height'    => '20px',
+		'color'     => 'black',
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.navbar-nav li > a',
+		),
+	),
+	'choices'  => array(
+		'variant' => array(
+			'regular',
+			'italic',
+			'700',
+			'200',
+			'300',
+			'400',
+			'500',
+			'600',
+			'bold',
+			'700italic' 
+		),
+	),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'typography',
@@ -1190,9 +1186,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '40px',
 		'line-height'    => '44px',
-		'letter-spacing' => '0',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -1227,9 +1220,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '32px',
 		'line-height'    => '36px',
-		'letter-spacing' => '0',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -1263,9 +1253,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '25px',
 		'line-height'    => '30px',
-		'letter-spacing' => '0',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
 		'color'     => 'black',
 	),
 	'transport'   => 'auto',
@@ -1299,10 +1286,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '24px',
 		'line-height'    => '28px',
-		'letter-spacing' => '0',
 		'color'     => 'black',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1335,10 +1319,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '16px',
 		'line-height'    => '20px',
-		'letter-spacing' => '0',
 		'color'     => 'black',
-		'text-transform' => 'none',
-		'text-align'     => 'left',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
