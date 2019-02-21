@@ -428,6 +428,14 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_mobile_logo',
+	'label'       => __( 'Mobile Logo', 'fastway' ),
+	'description' => __( 'Replaces general logo on mobile.', 'fastway' ),
+	'section'     => 'section_general'
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'logo-width-mobile',
@@ -1592,8 +1600,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_general',
-	'default'     => urlforimages()."/assets/img/logo.png",
-	'transport'=>'postMessage',
+	'default'     => urlforimages()."/assets/img/logo.png"
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
