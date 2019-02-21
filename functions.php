@@ -102,7 +102,7 @@ if(is_plugin_active('js_composer/js_composer.php')){
 if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions-arg.php';
-    require get_template_directory() . '/inc/woocommerce.php';
+    //require get_template_directory() . '/inc/woocommerce.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
@@ -321,5 +321,11 @@ function create_attributtes_from_categories( $product_id = 51 ){
         update_post_meta( $product_id, '_product_attributes', array_merge( $existing_data_attributes, $product_attributes ) );
     }
 }
+add_action( 'after_setup_theme', 'understrap_woocommerce_support' );
+if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
 
+	function understrap_woocommerce_support() {
+		add_theme_support( 'woocommerce' );
+	}
+}
 ?>
