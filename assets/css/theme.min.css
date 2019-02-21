@@ -485,6 +485,10 @@
 .fw_mega_menu ul {
   width: 100%;
 }
+.fw_mega_menu ul .container {
+  display: flex;
+  justify-content: space-between;
+}
 .fw_mega_menu li {
   position: static;
 }

@@ -480,9 +480,14 @@ color:var(--linkedin) !important;
     }
     
 }
+
 .fw_mega_menu {
     ul{
       width:100%;
+    }
+    ul .container{
+      display: flex;
+      justify-content:space-between;
     }
     li{
       position:static;
