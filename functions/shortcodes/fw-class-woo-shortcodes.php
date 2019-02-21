@@ -63,7 +63,7 @@ class fw_Woo_Shortcodes {
 			"is_biggest"	=> '0',
 			"auto_play"		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
-			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?true:false,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -185,7 +185,6 @@ class fw_Woo_Shortcodes {
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
-		if(!$atts['autoplay'])$atts['autoplay']='false';
 		
 		if ( $products->have_posts() ) :
 			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
@@ -208,6 +207,7 @@ class fw_Woo_Shortcodes {
 			'cats'			=> '',
 			'auto_play'		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			'orderby'		=> 'title',
@@ -324,6 +324,7 @@ class fw_Woo_Shortcodes {
 			"box_style"		=> '',
 			"head_style"	=> '',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			"border_color"	=> '',
@@ -440,6 +441,9 @@ class fw_Woo_Shortcodes {
 			'cats' 			=> '',
 			'terms' 			=> '',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		), $atts );
@@ -489,6 +493,8 @@ class fw_Woo_Shortcodes {
 			"excerpt_limit" => 10,
 
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		),$atts);

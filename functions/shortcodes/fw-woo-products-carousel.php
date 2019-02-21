@@ -8,6 +8,8 @@ $rand=generateRandomString(5);
 <div class="swiper-products-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
 <?php 
+if(!$autoplay)$autoplay='false';
+		
 while ( $products->have_posts() ) : 
     $products->the_post(); 
     echo '<div class="swiper-slide">';

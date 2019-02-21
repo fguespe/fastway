@@ -11,6 +11,8 @@ $rand=generateRandomString(5);
 <div class="swiper-wrapper clear-ul">
 
 <?php 
+if(!$autoplay)$autoplay='false';
+		
 global $fw_woo_cat;          
 foreach ($terms as $term) {
     echo '<div class="swiper-slide">';
@@ -34,9 +36,8 @@ foreach ($terms as $term) {
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
             spaceBetween: 10,
-            loop: true,autoplay: {
-    delay: 4000,
-  },
+            loop: true,
+            autoplay: <?=$autoplay;?>,
             breakpoints: {
             // when window width is <= 320px
                 900:    {slidesPerView: 2,slidesPerGroup:2},
