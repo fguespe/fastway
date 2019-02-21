@@ -1383,6 +1383,7 @@ footer .widget_nav_menu li a {
 }
 .woocommerce-shop .woocommerce-ordering, .woocommerce-shop .woocommerce-ordering select {
   max-width: 100%;
+  font-size: 12px !important;
 }
 .woocommerce-shop .woocommerce-breadcrumb a, .woocommerce-shop .woocommerce-breadcrumb, .woocommerce-shop .woocommerce-result-count {
   font-size: 12px !important;

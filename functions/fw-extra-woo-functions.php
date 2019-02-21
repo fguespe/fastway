@@ -1,4 +1,15 @@
 <?php
+
+
+add_action('fw_before_shop_sidebar','fw_default_filters');
+function fw_default_filters(){
+    global $wp_query;
+    $total=$wp_query->found_posts;
+    woocommerce_breadcrumb();
+    echo '<p class="woocommerce-result-count">'.$total." Resultados".'</p>';
+    woocommerce_catalog_ordering();
+    return;
+}
 function woo_loop_cat(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
 }

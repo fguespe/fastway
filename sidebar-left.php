@@ -18,6 +18,7 @@ if ( is_home() && ! is_front_page() ){
 
 ?>
 <div class="col-md-<?php echo $ratio;?> widget-area d-none d-md-block" id="left-sidebar" role="complementary">
+	<?php do_action('fw_before_shop_sidebar');?>
 	<?php dynamic_sidebar( $sidebarname ); ?>
 </div>
 <button class="navbar-toggler fw-header-icon toggler btn-bars-mobile-cats d-md-none" type="button" style="float:right;"><i class="<?=fw_theme_mod('fw_icons_style')?> fa-filter"></i> Filtrar</button>
