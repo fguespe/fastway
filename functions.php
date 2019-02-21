@@ -94,7 +94,7 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
-require get_template_directory() . '/functions/fw-widgets.php';
+//require get_template_directory() . '/functions/fw-widgets.php';
 
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
@@ -102,7 +102,6 @@ if(is_plugin_active('js_composer/js_composer.php')){
 if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions-arg.php';
-    //require get_template_directory() . '/inc/woocommerce.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
