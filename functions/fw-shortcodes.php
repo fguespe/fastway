@@ -25,10 +25,12 @@ function fw_data( $atts ) {
             'modal' =>  '',
             'format' =>  '',
             'only_text' =>  '',
+            /*
             //Depreceated
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
+                */
             'el_class' =>  '',
             'el_id' =>  '',
         ), $atts );
@@ -112,8 +114,10 @@ function fw_data( $atts ) {
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $big="big";
         $small="small";
-        if($format=="isli_i"){$big="small";$small="big";}
-        $first.=' <span class="text"> <'.$big.' style="color:'.$atts['text_color'].' ;">'.$value.'</'.$big.'> <'.$small.' style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</'.$small.'> </span></li>';
+        $valueb=$value;
+        $values=$atts['stext'];
+        if($format=="isli_i"){$big="small";$small="big";$valueb=$values;$values=$value;}
+        $first.=' <span class="text"> <'.$big.' style="color:'.$atts['text_color'].' ;">'.$valueb.'</'.$big.'> <'.$small.' style="color:'.$atts['text_color'].' ;">'.$values.'</'.$small.'> </span></li>';
     }else if($format=="iconbox"){
         $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
@@ -122,12 +126,14 @@ function fw_data( $atts ) {
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if($format=='iconsnext'){
-        $first.='<div id="'.$atts['el_id'].'" class="'.$iconclass.'">';
+        
+        $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
         foreach (explode(",", $atts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
             else if($icon==="ig")$icon="fab fa-instagram";
             else if($icon==="youtube")$icon="fab fa-youtube-square";
             else if($icon==="twitter")$icon="fab fa-twitter";
+            else if($icon==="whatsapp")$icon="fab fa-whatsapp";
             $link=fw_company_data($icon);
             
             $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';
