@@ -1636,14 +1636,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'maintainance-mode-img',
-	'label'       => __( 'Maintainance Mode Img', 'fastway' ),
-	'section'     => 'section_general',
-	'default'		=> urlforimages()."/assets/img/mantenimiento.png"
 
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'popup-img',
