@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_Column
  */
-$el_class = $el_id = $width = $parallax_speed_bg = $parallax_speed_video = $parallax = $parallax_image = $video_bg = $video_bg_url = $video_bg_parallax = $css = $offset = $css_animation = $fw_responsive = $fw_columns_responsive = $fw_columns_margin = '';
+$el_class = $el_id = $width = $parallax_speed_bg = $parallax_speed_video = $parallax = $parallax_image = $video_bg = $video_bg_url = $video_bg_parallax = $css = $offset = $css_animation = $fw_responsive =  $fw_is_flex = $fw_columns_responsive = $fw_columns_margin = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -31,6 +31,7 @@ $css_classes = array(
 	'wpb_column',
 	'vc_column_container',
 	$fw_responsive,
+	$fw_is_flex,
 	$fw_columns_responsive,
 	$fw_columns_margin,
 	$width,

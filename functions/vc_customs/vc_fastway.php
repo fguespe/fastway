@@ -1,15 +1,5 @@
 <?php
-vc_add_param("vc_row", array(
-    "type" => "dropdown",
-    "group" => "Fastway",
-    "class" => "",
-    "heading" => "Is Flex?",
-    "param_name" => "fw_responsive",
-    "value" => array(
-        "Select an option" => "",
-        "Flex" => "d-flex align-items center justify-content-between",
-    )
-));
+
 vc_add_param("vc_row", array(
     "type" => "dropdown",
     "group" => "Fastway",
@@ -107,6 +97,28 @@ vc_add_param("vc_column", array(
         "Select an option" => "",
         "Top" => "withtopmargin",
         "Bottom" => "withbottommargin",
+    )
+));
+vc_add_param("vc_column", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Is Flex?",
+    "param_name" => "fw_is_flex",
+    "value" => array(
+        "Select an option" => "",
+        "Flex" => "is_flex",
+    )
+));
+vc_add_param("vc_column_inner", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Is Flex?",
+    "param_name" => "fw_is_flex",
+    "value" => array(
+        "Select an option" => "",
+        "Flex" => "is_flex",
     )
 ));
 vc_add_param("vc_column_inner", array(
