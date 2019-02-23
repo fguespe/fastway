@@ -86,27 +86,21 @@ function fw_single_related(){
         endwhile; 
         echo'</div>
 
-    <div class="swiper-prev swiper-prod-prev"><i class="fa fa-angle-left"></i></div>
-    <div class="swiper-next swiper-prod-next"><i class="fa fa-angle-right"></i></div>
+    <div class="swiper-prev swiper-prodrel-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-prodrel-next"><i class="fa fa-angle-right"></i></div>
   </div>
 </div>
 <script>
-    var ProductSwiper = new Swiper(".swiper-related", {
-            //pagination: ".swiper-prod-rel-pagination",
-            nextButton: ".swiper-prod-next",
-            prevButton: ".swiper-prod-prev",
-            slidesPerView:6,
-            slidesPerGroup:6,
-            paginationClickable: true,
-            spaceBetween: 10,
-            loop: true,
-            breakpoints: {
-            // when window width is <= 320px
-                900:    {slidesPerView: 2,slidesPerGroup:2},
-                1000:   {slidesPerView: 3,slidesPerGroup:3},            
-                1200:    {slidesPerView: 4,slidesPerGroup:4}
-            }
-        });
+var ProductSwiper = new Swiper(".swiper-related", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: true,
+    navigation: {
+        nextEl: ".swiper-prodrel-next",
+        prevEl: ".swiper-prodrel-prev",
+    }
+});
 </script>';
 }
 
