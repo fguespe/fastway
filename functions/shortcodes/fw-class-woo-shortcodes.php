@@ -411,6 +411,83 @@ class fw_Woo_Shortcodes {
 			"category" 		=> '',
 			"brand" 		=> '',
 			"hide_free"		=> 0,
+			"slider"		=> 1,
+			"show_hidden"	=> 0
+		), $atts );
+		error_log($atts['slider']);
+		$ordering_args = WC()->query->get_catalog_ordering_args( $atts['orderby'], $atts['order'] );
+		$meta_query    = WC()->query->get_meta_query();
+
+		$args = array(
+			'post_type'				=> 'product',
+			'post_status' 			=> 'publish',
+			'ignore_sticky_posts'	=> 1,
+			'orderby' 				=> $ordering_args['orderby'],
+			'order' 				=> $ordering_args['order'],
+			'posts_per_page' 		=> $atts['per_page'],
+			'meta_query' 			=> $meta_query,
+			'tax_query' 			=> array(
+				array(
+					'taxonomy' 		=> 'brand',
+					'terms' 		=> array_map( 'sanitize_title', explode( ',', $atts['brand'] ) ),
+					'field' 		=> 'slug',
+					'operator' 		=> 'IN'
+				),
+				
+			)
+		);
+		
+		if($atts["category"]){
+			$args['tax_query'][] = array('relation'=> 'AND');
+			$args['tax_query'][] = array(
+				'taxonomy' 		=> 'product_cat',
+				'terms' 		=> array_map( 'sanitize_title', explode( ',', $atts['category'] ) ),
+				'field' 		=> 'slug',
+				'operator' 		=> 'IN'
+			);
+		}
+		
+		if ( isset( $ordering_args['meta_key'] ) ) {
+			$args['meta_key'] = $ordering_args['meta_key'];
+		}
+		ob_start();
+		
+		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
+
+		
+		if ( $products->have_posts() ) :
+			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
+		endif;
+		
+		wp_reset_postdata();
+		
+		
+		return ob_get_clean();
+	}
+	public static function vc_products_by_brand_loop( $atts ){
+
+		global $woocommerce_loop;
+		$atts = shortcode_atts( array(
+			"title" 		=> '',
+			"item_style"	=> 'grid',
+			"as_widget"		=> '0',
+			"box_style"		=> '',
+			"head_style"	=> '',
+			'uncategorized' => 	isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'slider' => 	isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' 		=> 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			"per_page"		=> 	isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> 	isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+			"border_color"	=> '',
+			"is_slider"		=> '1',
+			"is_biggest"	=> 0,
+			"auto_play"		=> '0',
+			"excerpt_limit" => 10,
+			"orderby"		=> 'date',
+			"order"			=> 'desc',
+			"category" 		=> '',
+			"brand" 		=> '',
+			"hide_free"		=> 0,
 			"show_hidden"	=> 0
 		), $atts );
 		
@@ -456,7 +533,17 @@ class fw_Woo_Shortcodes {
 
 		
 		if ( $products->have_posts() ) :
-			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
+			if($atts['slider']){
+			
+				self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
+			}else{
+				echo ' <ul class = "products columns-'.$atts['columns'].'">';		
+				while ( $products->have_posts() ) : 
+					$products->the_post(); 
+					wc_get_template_part( 'content','product' ); 
+				endwhile; 
+				echo '</ul>';
+			}
 		endif;
 		
 		wp_reset_postdata();

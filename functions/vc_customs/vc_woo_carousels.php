@@ -147,6 +147,13 @@ function vc_products_by_brand_carousel() {
                         'admin_label' => false,
                     ), 
                     array(
+                        'type' => 'checkbox',
+                        'heading' => __( 'Slider', 'fastway' ),
+                        'param_name' => 'slider',
+                        'std' => 'true',
+                        'admin_label' => false,
+                    ), 
+                    array(
                         'type' => 'textfield',
                         'heading' => __( 'Prods per row ', 'fastway' ),
                         'param_name' => 'prodsperrow',
