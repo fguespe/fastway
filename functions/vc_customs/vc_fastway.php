@@ -1,5 +1,15 @@
 <?php
-
+vc_add_param("vc_row", array(
+    "type" => "dropdown",
+    "group" => "Fastway",
+    "class" => "",
+    "heading" => "Is Flex?",
+    "param_name" => "fw_responsive",
+    "value" => array(
+        "Select an option" => "",
+        "Flex" => "d-flex align-items center justify-content-between",
+    )
+));
 vc_add_param("vc_row", array(
     "type" => "dropdown",
     "group" => "Fastway",
@@ -12,6 +22,7 @@ vc_add_param("vc_row", array(
         "Only on Mobile" => "d-md-none",
     )
 ));
+
 vc_add_param("vc_row", array(
     "type" => "dropdown",
     "group" => "Fastway",
