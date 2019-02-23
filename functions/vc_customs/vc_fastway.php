@@ -145,7 +145,8 @@ vc_add_param("vc_column_inner", array(
         "Bottom" => "withbottommargin",
     )
 ));
-vc_add_param("vc_column_inner", array(
+vc_add_param("vc_column_inner", 
+    array(
     "type" => "dropdown",
     "group" => "Fastway",
     "class" => "",
@@ -201,7 +202,7 @@ function fw_slider() {
                     "type" => 'checkbox',
                     "heading"     => "Autoplay ",
                     "param_name"  => "autoplay",
-                    'std' => 'true',
+                    'std' => 'false',
                 ),
                 array(
                     'type' => 'el_id',
@@ -234,10 +235,12 @@ function fw_slider_function( $atts, $content ) {
             'slides_mobile'      =>  '',
             'links_mobile'      =>  '',
             'cols'      =>  'cols',
-            'autoplay'      =>  'true',
+            'autoplay'  => 'false',
+            'loop'  => !$atts["autoplay"]?'false':'true',
         ), $atts );
     $cols=$atts['cols'];
     if(!is_numeric($cols))$cols=1;
+    if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);
     $claserespo=' d-none d-md-block ';
@@ -259,23 +262,22 @@ function fw_slider_function( $atts, $content ) {
         $return .= '</div></a></div>';    
         $cant++;
     }
+    $return .='</div>';
+    if($cant>1){
+        $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+        <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
+    }
     $return .='</div>
-    <div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
-    <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
-    </div>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
-        navigation: {
-            nextEl: ".swiper-fwslider-'.$rand.'-next",
-            prevEl: ".swiper-fwslider-'.$rand.'-prev",
-        },   
-        paginationClickable: true,
+        slidesPerView: 1,
         spaceBetween: 30,
-        centeredSlides: true,
-        loop: true,
-        autoplay:'.$atts['autoplay'].' ,
-        autoplayDisableOnInteraction: true,
-        slidesPerView: '.$cols.'
+        loop: '.$atts['loop'].',
+        autoplay: '.$atts['autoplay'].',
+        navigation: {
+          nextEl: ".swiper-fwslider-'.$rand.'-next",
+          prevEl: ".swiper-fwslider-'.$rand.'-prev",
+        }
     });
     </script>';
     if(!$ismobile)return $return;
@@ -297,23 +299,22 @@ function fw_slider_function( $atts, $content ) {
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
     }
+    $return .='</div>';
+    if($cant>1){
+        $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+        <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
+    }
     $return .='</div>
-    <div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
-    <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>
-    </div>
     <script>
     var swiper_mobile = new Swiper(".swiper-fwslider-'.$rand.'", {
-        navigation: {
-            nextEl: ".swiper-fwslider-'.$rand.'-next",
-            prevEl: ".swiper-fwslider-'.$rand.'-prev",
-        },   
-        paginationClickable: true,
+        slidesPerView: 1,
         spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: { delay: 4500, },
-        loop: true,
-        autoplayDisableOnInteraction: true,
-        slidesPerView: '.$cols.'
+        loop: '.$atts['loop'].',
+        autoplay: '.$atts['autoplay'].',
+        navigation: {
+          nextEl: ".swiper-fwslider-'.$rand.'-next",
+          prevEl: ".swiper-fwslider-'.$rand.'-prev",
+        }
     });
     </script>';
     

@@ -1436,6 +1436,13 @@ footer .widget_nav_menu li a {
   font-family: "Font Awesome 5 Pro" !important;
 }
 
+/*flex*/
+.is_flex .wpb_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*MEDIOS DE ENVIO Y PAGO*/
 .capsula-blanca {
   background-color: #fff;

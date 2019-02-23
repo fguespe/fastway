@@ -1492,7 +1492,13 @@ footer .widget_nav_menu li a {
 		
   }
 }
-/*MEDIOS DE ENVIO Y PAGO*/@at-root
+/*flex*/
+.is_flex .wpb_wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+/*MEDIOS DE ENVIO Y PAGO*/
 .capsula-blanca{
   background-color: #fff;
   padding: 10px 20px;
