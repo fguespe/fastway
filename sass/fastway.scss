@@ -1492,6 +1492,56 @@ footer .widget_nav_menu li a {
 		
   }
 }
+/*MEDIOS DE ENVIO Y PAGO*/@at-root
+.capsula-blanca{
+  background-color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #E2E2E2;
+  border-bottom-width:3px;
+  
+}
+.capsula-blanca h2,
+.capsula-blanca h3,
+.capsula-blanca div,
+.capsula-blanca i{
+text-align:center !important;
+width:100%;
+}
+
+.capsula-blanca i{
+font-size:50px !important;
+color:var(--main) !important;
+padding-bottom:15px;
+border-bottom:3px solid lightgrey
+
+}
+
+.capsula-blanca img.cupon{
+width:150px;
+display:block;
+margin:0 auto;
+}
+.capsula-blanca .btn{
+
+margin: 0 auto !important;
+display:block;
+width:40%;
+border:1px solid var(--main);
+}
+.capsula-blanca h2{
+font-size:22px;
+font-weight:600;
+margin-top:15px;
+}
+.capsula-blanca h3{
+font-size:16px;
+color:#666666;
+}
+.capsula-blanca div{
+font-size:14px;
+color:#666666;
+padding:20px;
+}
 /*SEARCH*/
  header i,
 header span,
