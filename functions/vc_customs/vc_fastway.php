@@ -224,6 +224,59 @@ function fw_slider() {
 
 add_action( 'vc_before_init', 'fw_slider' );
 
+function fw_slider() {
+    // Title
+    vc_map(
+        array(
+            'name' => __( 'FW Image' ),
+            'base' => 'fw_image',
+            'description' => __('FW Image', 'fastway'), 
+            'category' => __('Fastway', 'fastway'), 
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'params' => array(
+                array(
+                    "type"        => "attach_images",
+                    "heading"     => esc_html__( "Desktop Images", "fastway" ),
+                    "param_name"  => "image",
+                    "value"       => "",
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "param_name"  => "link",
+                ),
+                array(
+                    "type"        => "attach_images",
+                    "heading"     => esc_html__( "Mobile Images", "fastway" ),
+                    "param_name"  => "image_mobile",
+                    "value"       => "",
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "param_name"  => "link_mobile",
+                ),
+               
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
+
+            )
+        )
+    );
+    }
+
+add_action( 'vc_before_init', 'fw_slider' );
+
 
 
 function fw_slider_function( $atts, $content ) {
