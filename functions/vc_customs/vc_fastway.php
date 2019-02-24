@@ -160,6 +160,7 @@ vc_add_param("vc_column_inner",
     )
 ));
 
+add_action( 'vc_before_init', 'fw_slider' );
 function fw_slider() {
     // Title
     vc_map(
@@ -220,23 +221,23 @@ function fw_slider() {
             )
         )
     );
-    }
+}
 
-add_action( 'vc_before_init', 'fw_slider' );
+add_action( 'vc_before_init', 'fw_image' );
 
-function fw_slider() {
+function fw_image() {
     // Title
     vc_map(
         array(
             'name' => __( 'FW Image' ),
-            'base' => 'fw_image',
+            'base' => 'fw_image_function',
             'description' => __('FW Image', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
             'icon' => get_template_directory_uri().'/assets/img/favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Desktop Images", "fastway" ),
+                    "heading"     => esc_html__( "Image", "fastway" ),
                     "param_name"  => "image",
                     "value"       => "",
                 ),
@@ -247,14 +248,9 @@ function fw_slider() {
                 ),
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Mobile Images", "fastway" ),
+                    "heading"     => esc_html__( "Responsive Image", "fastway" ),
                     "param_name"  => "image_mobile",
                     "value"       => "",
-                ),
-                array(
-                    "type" => 'textfield',
-                    "heading"     => __("Desktop Links (separated with ,)"),
-                    "param_name"  => "link_mobile",
                 ),
                
                 array(
@@ -273,9 +269,8 @@ function fw_slider() {
             )
         )
     );
-    }
+}
 
-add_action( 'vc_before_init', 'fw_slider' );
 
 
 
@@ -374,6 +369,34 @@ function fw_slider_function( $atts, $content ) {
     return $return;
 }   
 add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
+
+
+
+function fw_image_function( $atts, $content ) {
+ 
+    $atts = shortcode_atts(
+        array(
+            'image'      =>  '',
+            'link'      =>  '',
+            'image_mobile'      =>  '',
+        ), $atts );
+        
+    //Desktop
+
+    $image = wp_get_attachment_image_src( $atts['image'], '' )[0];
+    $claserespo=' d-none d-md-block ';
+    $ismobile=!empty($atts['image_mobile']);
+    if(!$ismobile)$claserespo=' ';
+    $link = $atts['link'];
+    if($link)$return .= '<a href="'.$link.'" >';
+    $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+    if($link)$return .= '</a>';        
+    if(!$ismobile)return $return;
+    //Mobile
+
+    return $return;
+}   
+add_shortcode( 'fw_image_function', 'fw_image_function' ); 
 
 
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
