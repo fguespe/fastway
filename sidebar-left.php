@@ -25,6 +25,7 @@ if ( is_home() && ! is_front_page() ){
 <div class="sidebar-mobile-cats d-md-none">
    <div class=" sub-menu-mobile cats"> 
 	   <div class="container">
+	   <?php do_action('fw_before_shop_sidebar');?>
 		   <?php dynamic_sidebar( $sidebarname ); ?>
 		   </div>   
 	</div>      
