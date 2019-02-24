@@ -1417,9 +1417,13 @@ footer .widget_nav_menu li a {
     line-height:24px;
     font-weight:600;
     color:#444444;
+    font-weight: bold;
     
   }
-  .widget aside,.woocommerce-ordering{
+  .select2 span{
+    font-size: 12px !important;
+  }  
+  .widget-area aside,.woocommerce-ordering{
     margin-bottom:20px ;
   }
   .widget li{
@@ -2205,9 +2209,7 @@ body .wpb_content_element {
      .page-title {
          display: none;
     }
-     .widget-title, .widget-title span {
-         font-weight: bold;
-    }
+   
   
      .widget_shopping_cart_content ul.cart_list li a, ul.product_list_widget li a {
          font-weight: 700 !important;

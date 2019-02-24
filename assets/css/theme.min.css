@@ -1367,8 +1367,12 @@ footer .widget_nav_menu li a {
   line-height: 24px;
   font-weight: 600;
   color: #444444;
+  font-weight: bold;
 }
-.woocommerce-shop .widget aside, .woocommerce-shop .woocommerce-ordering {
+.woocommerce-shop .select2 span {
+  font-size: 12px !important;
+}
+.woocommerce-shop .widget-area aside, .woocommerce-shop .woocommerce-ordering {
   margin-bottom: 20px;
 }
 .woocommerce-shop .widget li {
@@ -2145,9 +2149,6 @@ body .wpb_content_element {
 }
 .woocommerce .page-title {
   display: none;
-}
-.woocommerce .widget-title, .woocommerce .widget-title span {
-  font-weight: bold;
 }
 .woocommerce .widget_shopping_cart_content ul.cart_list li a, .woocommerce ul.product_list_widget li a {
   font-weight: 700 !important;
