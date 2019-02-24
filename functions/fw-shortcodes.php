@@ -25,14 +25,14 @@ function fw_data( $atts ) {
             'modal' =>  '',
             'format' =>  '',
             'only_text' =>  '',
-            /*
+            
+            'el_class' =>  '',
+            'el_id' =>  '',
             //Depreceated
             'isli' =>  '',
             'isli_i' =>  '',
             'iconsnext' =>  '',
-                */
-            'el_class' =>  '',
-            'el_id' =>  '',
+                
         ), $atts );
 
     $atts['size']=16;$$atts['weight']='normal';
