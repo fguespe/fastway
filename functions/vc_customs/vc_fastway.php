@@ -243,7 +243,7 @@ function fw_image() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "heading"     => __("Link"),
                     "param_name"  => "link",
                 ),
                 array(
@@ -435,7 +435,8 @@ function vc_fw_shorts() {
             "name" => __("FW Icon", 'fastway'),
             'base' => 'fw_data',
             'description' => __('FW Icon', 'fastway'), 
-            'category' => __('Fastway', 'fastway'),   "controls" => "full",
+            'category' => __('Fastway Icons', 'fastway'),   
+            "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 "params" => array(
                 array(
@@ -536,6 +537,64 @@ function vc_fw_shorts() {
                     "param_name"  => "sblock",
                     "value"       => $static_block_args,
                     "std"         => "",
+                ),
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
+                  
+                
+                
+            )
+    ) );
+
+}
+
+add_action( 'vc_before_init', 'vc_social_icons' );//Prds de categoria
+function vc_bsocial_icons() {
+    vc_map( array(
+            "name" => __("FW Social Icons", 'fastway'),
+            'base' => 'fw_data',
+            'description' => __('FW Icon', 'fastway'), 
+            'category' => __('Fastway Icons', 'fastway'),   
+            "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                "params" => array(
+                array(
+                  "type" => 'textfield',
+                  "heading"     => __("Type"),
+                  "param_name"  => "type",
+                  'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
+                  or fa-icon fal or fa-icon',
+                  "admin_label" => true,
+                ),
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Alignment"),
+                    "param_name"  => "text_align",
+                    
+                    "value" => array(
+                        "Left" =>"left",
+                        "Center"=>"center",
+                        "Right"=>"right",
+                    ),
+                    "std" => 'left', //Default Red color
+                ),
+                array(
+                    "type" => "colorpicker",
+                    "class" => "",
+                    "heading" => __( "Icon color", "fastway" ),
+                    "param_name" => "icon_color",
+                    "value" => '', //Default Red color
+                    "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
                     'type' => 'el_id',

@@ -197,7 +197,7 @@ Kirki::add_section( 'section_woo_single', array(
 ) );
 
  
-//Blofg
+//Layouts
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
@@ -208,6 +208,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'container'   => __( 'Boxed', 'fastway' ),
 		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
+		'container-small'   => 'Small',
 	),
 	'default'     => 'container',
 ) );
@@ -237,6 +238,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'container-fluid'   => 'Wide',
 		'container-mid'   => 'Medium',
 		'container'   => 'Boxed',
+		'container-small'   => 'Small',
 	),
 ) );
 
@@ -265,6 +267,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'container'   => __( 'Boxed', 'fastway' ),
 		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
+		'container-small'   => 'Small',
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -306,6 +309,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'container'   => __( 'Boxed', 'fastway' ),
 		'container-mid'   => 'Medium',
 		'container-fluid' => __( 'Wide ', 'fastway' ),
+		'container-small'   => 'Small',
 	),
 ) );
 

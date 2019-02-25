@@ -1,4 +1,4 @@
-<?php
+1-<?php
 
 
 
@@ -40,7 +40,7 @@ function vc_category_carousel() {
                 'name' => __('Products by Category Carousel', 'fastway'),
                 'base' => 'fw_category_carousel',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => array(
                     array(
@@ -111,7 +111,7 @@ function vc_products_by_brand_carousel() {
                 'name' => __('Products by Brand Carousel', 'fastway'),
                 'base' => 'vc_products_by_brand_carousel',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => array(
                     array(
@@ -197,7 +197,7 @@ function vc_categories_carousel() {
                 'name' => __('Categories Carousel', 'fastway'),
                 'base' => 'fw_categories_carousel',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => array(
                     array(
@@ -266,7 +266,7 @@ function vc_featured_products() {
                 'name' => __('Featured Products Carousel', 'fastway'),
                 'base' => 'fw_featured_products',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => getwoocampos(),
             )
@@ -283,7 +283,7 @@ function vc_sale_products() {
                 'name' => __('Sale Products Carousel', 'fastway'),
                 'base' => 'fw_sale_products',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => getwoocampos(),
             )
@@ -300,7 +300,7 @@ function vc_bestselling_products() {
                 'name' => __('Best Selling Products Carousel', 'fastway'),
                 'base' => 'fw_bestselling_products',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => getwoocampos(),
             )
@@ -319,7 +319,7 @@ function vc_recent_products() {
                 'name' => __('Recent Products Carousel', 'fastway'),
                 'base' => 'fw_recent_products',
                 'description' => __('Carousel of products', 'fastway'), 
-                'category' => __('Fastway', 'fastway'),   
+                'category' => __('Fastway Products', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => getwoocampos(),
             )
