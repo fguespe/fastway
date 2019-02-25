@@ -562,7 +562,7 @@ add_action( 'vc_before_init', 'vc_social_icons' );//Prds de categoria
 function vc_social_icons() {
     vc_map( array(
             "name" => __("FW Social Icons", 'fastway'),
-            'base' => 'fw_data',
+            'base' => 'fw_social_icons',
             'description' => __('FW Social Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
@@ -579,7 +579,7 @@ function vc_social_icons() {
                 array(
                     "type" => 'dropdown',
                     "heading"     => __("Alignment"),
-                    "param_name"  => "text_align",
+                    "param_name"  => "icon_align",
                     
                     "value" => array(
                         "Left" =>"left",
@@ -587,6 +587,12 @@ function vc_social_icons() {
                         "Right"=>"right",
                     ),
                     "std" => 'left', //Default Red color
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("size"),
+                    "param_name"  => "icon_size",
+                    "std"  => "20",
                 ),
                 array(
                     "type" => "colorpicker",
