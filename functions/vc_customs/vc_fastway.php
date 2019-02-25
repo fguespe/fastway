@@ -559,11 +559,11 @@ function vc_fw_shorts() {
 }
 
 add_action( 'vc_before_init', 'vc_social_icons' );//Prds de categoria
-function vc_bsocial_icons() {
+function vc_social_icons() {
     vc_map( array(
             "name" => __("FW Social Icons", 'fastway'),
             'base' => 'fw_data',
-            'description' => __('FW Icon', 'fastway'), 
+            'description' => __('FW Social Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
