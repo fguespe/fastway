@@ -35,6 +35,7 @@ function fw_social_icons( $atts ) {
         else if($icon==="whatsapp")$icon="fab fa-whatsapp";
         else if($icon==="email")$icon=$icons_style." fa-envelope";
         else if($icon==="address")$icon=$icons_style." fa-map-marker-alt";
+        else if($icon==="phone")$icon=$icons_style." fa-phone";
         $link=fw_company_data($icon);
         
         $first.='<a target="_blank" class="link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
