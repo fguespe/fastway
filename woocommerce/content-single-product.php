@@ -29,6 +29,12 @@ function fw_single_container($atts = [], $content = null){
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
+add_shortcode('fw_single_meta', 'fw_single_meta');
+function fw_single_meta(){
+    global $product;
+    echo '<h1 class="product_title entry-title">'.$product->post->post_title.'</h1>';
+    if('yes' === get_option( 'woocommerce_enable_reviews'))echo '<div class="rating" >'.fw_getfastars($product->get_average_rating()).'<a href="#reviews">'.__('Reviews','woocommerce').' </a></div>';
+}
 add_shortcode('fw_single_title', 'fw_single_title');
 function fw_single_title(){
     global $product;
