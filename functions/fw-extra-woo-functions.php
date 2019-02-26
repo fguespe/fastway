@@ -345,7 +345,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
-//add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
+add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
 
 function fw_child_manage_woocommerce_styles() {
     //remove generator meta tag
@@ -381,7 +381,19 @@ function fw_child_manage_woocommerce_styles() {
     }
  
 }
+// Remove CSS and/or JS for Select2 used by WooCommerce, see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080.
 
+    add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
+
+    function wsis_dequeue_stylesandscripts_select2() {
+        if ( class_exists( 'woocommerce' ) ) {
+            wp_dequeue_style( 'selectWoo' );
+            wp_deregister_style( 'selectWoo' );
+    
+            wp_dequeue_script( 'selectWoo');
+            wp_deregister_script('selectWoo');
+        } 
+    }
 /**
  * Change a currency symbol
  */
