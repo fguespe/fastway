@@ -1,4 +1,12 @@
 <?php
+
+add_shortcode('fw_single_cf','fw_get_custom_field');
+function fw_get_custom_field($atts){
+    global $product;
+    $sku=get_post_meta($product->id,$atts['id'],true);
+    if(!empty($sku))echo $sku;
+}
+
 woocommerce_breadcrumb();
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
@@ -29,11 +37,10 @@ function fw_single_container($atts = [], $content = null){
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
+
 add_shortcode('fw_single_meta', 'fw_single_meta');
 function fw_single_meta(){
-    global $product;
-    echo '<h1 class="product_title entry-title">'.$product->post->post_title.'</h1>';
-    if('yes' === get_option( 'woocommerce_enable_reviews'))echo '<div class="rating" >'.fw_getfastars($product->get_average_rating()).'<a href="#reviews">'.__('Reviews','woocommerce').' </a></div>';
+    woocommerce_template_single_meta();
 }
 add_shortcode('fw_single_title', 'fw_single_title');
 function fw_single_title(){
@@ -98,7 +105,7 @@ function fw_single_related(){
 </div>
 <script>
 var ProductSwiper = new Swiper(".swiper-related", {
-    slidesPerView: 2,
+    slidesPerView: 6,
     spaceBetween: 10,
     loop: true,
     autoplay: true,
