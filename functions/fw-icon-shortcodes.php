@@ -26,7 +26,7 @@ function fw_social_icons( $atts ) {
 
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
-    $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].';>';
+    $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
     foreach (explode(",", $atts['type']) as $icon) {
         $type=$icon;
         if($type==="phone"){
