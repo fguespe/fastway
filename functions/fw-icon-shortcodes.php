@@ -28,6 +28,7 @@ function fw_social_icons( $atts ) {
 
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].';>';
     foreach (explode(",", $atts['type']) as $icon) {
+        $type=$icon;
         if($type==="phone"){
             $icon=$icons_style." fa-phone";
             $link=fw_company_data($type,true,$cant);
