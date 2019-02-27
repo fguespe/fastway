@@ -48,7 +48,8 @@ add_shortcode('fw_loop_cart', 'fw_loop_cart');
 function fw_loop_cart() {
     if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
     global $product;
-    echo sprintf( '<div class="add-to-cart-container"><a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="%s product_type_%s single_add_to_cart_button btn  btn-block %s"> %s</a></div>',
+    echo sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="%s product_type_%s single_add_to_cart_button btn  btn-block %s">
+    <i class="fas fa-spinner fa-spin" style="display:none;"></i> %s</a>',
             esc_url( $product->add_to_cart_url() ),
             esc_attr( $product->get_id() ),
             esc_attr( $product->get_sku() ),
