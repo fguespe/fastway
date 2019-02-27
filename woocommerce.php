@@ -12,15 +12,14 @@
 
 get_header();
 
-//$container   = fw_theme_mod('container-shop');
-$container="container";
+$container   = fw_theme_mod('container-shop');
+//$container="container";
 $datas = array(
 	'show_bcrumb'	=> 1,
 	'is_shop'		=> 1
 ); 
 $clase="";
 if(is_shop() || is_product_category())$clase="woocommerce-shop";
-
 ?>
 
 <div class="wrapper <?=$clase?>" id="woocommerce-wrapper">
