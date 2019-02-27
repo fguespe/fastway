@@ -28,18 +28,50 @@ function fw_social_icons( $atts ) {
 
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].';>';
     foreach (explode(",", $atts['type']) as $icon) {
-        if($icon==="fb")$icon="fab fa-facebook";
-        else if($icon==="ig")$icon="fab fa-instagram";
-        else if($icon==="youtube")$icon="fab fa-youtube-square";
-        else if($icon==="twitter")$icon="fab fa-twitter";
-        else if($icon==="whatsapp")$icon="fab fa-whatsapp";
-        else if($icon==="email")$icon=$icons_style." fa-envelope";
-        else if($icon==="address")$icon=$icons_style." fa-map-marker-alt";
-        else if($icon==="phone")$icon=$icons_style." fa-phone";
+        if($type==="phone"){
+            $icon=$icons_style." fa-phone";
+            $link=fw_company_data($type,true,$cant);
+            $value=fw_company_data($type,false,$cant);
+        }else if($type==="whatsapp"){
+            $icon="fab fa-whatsapp";
+            $link=fw_company_data($type,true,$cant);
+            $value=fw_company_data($type,false,$cant);
+            $icon_color="#0CBC47";
+        }else if($type==="name"){
+            $icon="";
+            $link='';
+            $value=fw_company_data($type,false,$cant);
+            $icon_color="";
+        }else if($type==="email"){
+            $icon=$icons_style." fa-envelope";
+            $link=fw_company_data($type,true,$cant);
+            $value=fw_company_data($type,false,$cant);
+        }else if($type==="fb"){
+            $icon="fab fa-facebook";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir al Facebook";
+            $icon_color="#3A5999";
+        }else if($type==="ig"){
+            $icon="fab fa-instagram";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir al Instagram";
+            $icon_color="#9A3CC3";
+        }else if($type==="youtube"){
+            $icon="fab fa-youtube-square";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir a Youtube";
+            $icon_color="#FF0400";
+        }else if($type==="address"){
+            $icon=$icons_style." fa-map-marker-alt";
+            $link=fw_company_data("googlemaps",true,$cant);
+            $value=fw_company_data("address",false,$cant);
+            $link=fw_company_data("address",true,$cant);
+            if(empty($link))fw_company_data("googlemaps",true,$cant);
+        }
         $link=fw_company_data($icon);
         
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
-        <i class="'.$icon.'" style="color:'.$atts['icon_color'].' !important;font-size:'.$atts['icon_size'].'px !important;">
+        <i class="'.$icon.'" style="color:'.$icon_color.' !important;font-size:'.$atts['icon_size'].'px !important;">
         </i>
         </a>';
     }
