@@ -38,7 +38,7 @@ function fw_social_icons( $atts ) {
         else if($icon==="phone")$icon=$icons_style." fa-phone";
         $link=fw_company_data($icon);
         
-        $first.='<a target="_blank" class="link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
+        $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
         <i class="'.$icon.'" style="color:'.$atts['icon_color'].' !important;font-size:'.$atts['icon_size'].' !important;">
         </i>
         </a>';
@@ -172,7 +172,7 @@ function fw_data( $atts ) {
     }else if(!empty($atts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
-    }else if($format=='iconsnext'){
+    }else if($format=='iconsnext'){//deprecetead
         
         $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
         foreach (explode(",", $atts['type']) as $icon) {
@@ -189,7 +189,7 @@ function fw_data( $atts ) {
         $first.="</div>";
     
     }else{
-        $first='<a target="_blank" class="'.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'">';
+        $first='<a target="_blank" class="fw_icon_link '.$iconclass.' '.$type.'" style="font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'">';
         if(!$atts["only_text"])$first.='<i class="'.$icon.'" style="color:'.$icon_color.' ;"></i>';
         $first.='  <span style="color:'.$atts['text_color'].' ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;">'.$value.'</span>';
         $first.='</a>';
@@ -197,12 +197,12 @@ function fw_data( $atts ) {
 
     if(!empty($atts['iframe'] )){
         $rand=generateRandomString();
-        $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox">'.$first;
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
     }
     
     if(!empty($atts['modal'] )){
-        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fancybox">'.$first;
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>";
     }
     

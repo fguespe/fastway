@@ -388,6 +388,53 @@ class fw_Woo_Shortcodes {
 		
 		return ob_get_clean();
 	}
+
+	
+	
+	public static function product_cats( $atts ){
+		$atts = shortcode_atts( array(
+			'title'			=> '',
+			'cats' 			=> '',
+			'terms' 			=> '',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+
+			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+		), $atts );
+		
+		if( strlen( trim( $atts['cats'] ) ) == 0 ) return;
+		
+		$cats = explode( ',', $atts['cats'] );
+	
+		$args = array(
+			'slug' => $cats,
+			'orderby'	=> 'slug',
+			'order'		=> 'ASC',
+		);
+
+		error_log('sd');
+		ob_start();
+		$cates=array();
+		foreach($cats as $cat){
+			error_log($cat);
+			$term=get_term_by('slug' , $cat,'product_cat');
+			if($atts["uncategorized"] && $term->count==0)continue;
+			
+			//error_log(json_encode($term));
+			array_push($cates,$term);
+			//$atts['terms'][]=  $term;
+		}
+		$atts['terms']=$cates;
+		if(!empty($atts['terms']))self::get_template( 'fw-woo-cats-carousel.php', $atts,$atts['terms']  );
+		
+		wp_reset_postdata();
+		
+		
+		return ob_get_clean();
+	}
+
 	public static function vc_products_by_brand_carousel( $atts ){
 
 		global $woocommerce_loop;
@@ -526,49 +573,6 @@ class fw_Woo_Shortcodes {
 	}
 	
 	
-	public static function product_cats( $atts ){
-		$atts = shortcode_atts( array(
-			'title'			=> '',
-			'cats' 			=> '',
-			'terms' 			=> '',
-			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
-
-			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
-
-			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
-			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
-		), $atts );
-		
-		if( strlen( trim( $atts['cats'] ) ) == 0 ) return;
-		
-		$cats = explode( ',', $atts['cats'] );
-	
-		$args = array(
-			'slug' => $cats,
-			'orderby'	=> 'slug',
-			'order'		=> 'ASC',
-		);
-
-		
-		ob_start();
-		$cates=array();
-		foreach($cats as $cat){
-			$term=get_term_by('slug' , $cat,'product_cat');
-			if($atts["uncategorized"] && $term->count==0)continue;
-			
-			//error_log(json_encode($term));
-			array_push($cates,$term);
-			//$atts['terms'][]=  $term;
-		}
-		$atts['terms']=$cates;
-		if(!empty($atts['terms']))self::get_template( 'fw-woo-cats-carousel.php', $atts,$atts['terms']  );
-		
-		wp_reset_postdata();
-		
-		
-		return ob_get_clean();
-	}
-
 	public static function best_selling_products( $atts ){
 		global $woocommerce_loop;
 		$atts = shortcode_atts(array(
