@@ -414,11 +414,9 @@ class fw_Woo_Shortcodes {
 			'order'		=> 'ASC',
 		);
 
-		error_log('sd');
 		ob_start();
 		$cates=array();
 		foreach($cats as $cat){
-			error_log($cat);
 			$term=get_term_by('slug' , $cat,'product_cat');
 			if($atts["uncategorized"] && $term->count==0)continue;
 			

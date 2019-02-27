@@ -5,7 +5,7 @@ function fw_social_icons( $atts ) {
         array(
             'type' => '',
             'icon_align' => '',
-            'icon_size' =>  '16',
+            'icon_size' =>  '',
             'icon_color' =>  '#000',
             'el_class' =>  '',
             'el_id' =>  '',
@@ -39,7 +39,7 @@ function fw_social_icons( $atts ) {
         $link=fw_company_data($icon);
         
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
-        <i class="'.$icon.'" style="color:'.$atts['icon_color'].' !important;font-size:'.$atts['icon_size'].' !important;">
+        <i class="'.$icon.'" style="color:'.$atts['icon_color'].' !important;font-size:'.$atts['icon_size'].'px !important;">
         </i>
         </a>';
     }
