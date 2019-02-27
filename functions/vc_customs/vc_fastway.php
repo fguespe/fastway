@@ -389,7 +389,7 @@ function fw_image_function( $atts, $content ) {
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
     if($link)$return .= '<a href="'.$link.'" >';
-    $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+    $return .= '<img src="'.$image.'" style="max-width:100%:height:auto;"/>';
     if($link)$return .= '</a>';        
     if(!$ismobile)return $return;
     //Mobile
