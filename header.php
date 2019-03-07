@@ -11,7 +11,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!-- APPLE -->
-    ç<meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="<?php echo fw_theme_mod('mobile-icon');?>">
