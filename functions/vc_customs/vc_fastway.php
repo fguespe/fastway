@@ -252,6 +252,12 @@ function fw_image() {
                     "param_name"  => "image_mobile",
                     "value"       => "",
                 ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Link"),
+                    "param_name"  => "link",
+                    "value"       => "100% auto",
+                ),
                
                 array(
                     'type' => 'el_id',
