@@ -346,6 +346,7 @@ function fw_slider_function( $atts, $content ) {
         $return .= '<a href="'.$link.'" ><div class="item">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
+        $cant++;
     }
     $return .='</div>';
     if($cant>1){
