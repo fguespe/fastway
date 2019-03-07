@@ -271,3 +271,10 @@ woo_single();
 
 ?>
 
+<script>
+//Fix fancybox
+jQuery( document ).ready(function( $ ) {
+   $.fancybox.defaults.hash = false;
+});
+</script>
+

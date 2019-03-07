@@ -40,7 +40,7 @@ if(fw_theme_mod("popup-mode")){
 </div>
 <script type="text/javascript">
 	jQuery(document).ready( function(jQuery) {
-		jQuery('#modalpopup').modal('show'); 
+    jQuery('#modalpopup').modal('show'); 
     });
 </script>
 <?php
