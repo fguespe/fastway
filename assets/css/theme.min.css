@@ -1375,6 +1375,7 @@ footer .widget_nav_menu li a {
     font-size: 12px;
     padding: 0px;
     line-height: 14px;
+    margin: 0px;
   }
 
   .fw_product_loop .meta {
