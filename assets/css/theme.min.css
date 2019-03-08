@@ -1379,7 +1379,7 @@ footer .widget_nav_menu li a {
 
   .fw_product_loop .meta {
     padding: 5px !important;
-    padding-top: 8px;
+    padding-top: 8px !important;
   }
 }
 /* Filters woo*/
