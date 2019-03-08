@@ -2010,7 +2010,7 @@ body .wpb_content_element {
 .logocheckout img{
   max-width:300px !important;
   }
-  /*Mi cuenta*/
+/*Mi cuenta*/
 .woocommerce-account {
 
   .woocommerce-MyAccount-navigation {
@@ -2024,7 +2024,9 @@ body .wpb_content_element {
   }}
 
 #customer_login{
-
+  .woocommerce-form-row label{
+      width:100% !important;
+  }
   form.checkout_coupon, form.login, form.register {
       border: 1px solid #d3ced2;
       padding: 20px;

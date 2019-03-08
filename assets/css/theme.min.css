@@ -1969,6 +1969,9 @@ body .wpb_content_element {
   padding: 20px;
 }
 
+#customer_login .woocommerce-form-row label {
+  width: 100% !important;
+}
 #customer_login form.checkout_coupon, #customer_login form.login, #customer_login form.register {
   border: 1px solid #d3ced2;
   padding: 20px;
