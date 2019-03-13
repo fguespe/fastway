@@ -1476,8 +1476,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_brand_code',
 	'label'       => __( ' Brand Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_brand',
-	'description'     => '[fw_brand_container][fw_tax_image][fw_tax_title][fw_tax_desc][/fw_brand_container]',
-	'default'     => '[fw_brand_container][fw_tax_image][fw_tax_title][/fw_brand_container]',
+	'description'     => '[fw_brand_container][fw_brand_image][fw_brand_title][fw_brand_desc][/fw_brand_container]',
+	'default'     => '[fw_brand_container][fw_brand_image][fw_brand_title][/fw_brand_container]',
 	'choices'     => array(
 		'language' => 'html',
 	),

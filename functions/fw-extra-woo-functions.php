@@ -17,20 +17,20 @@ function woo_loop_cat(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
 }
 
-add_shortcode('fw_tax_title', 'fw_cat_title');
+add_shortcode('fw_brand_title', 'fw_cat_title');
 add_shortcode('fw_cat_title', 'fw_cat_title');
 function fw_cat_title(){
     global $fw_woo_cat;
     return '<h4 class="title" >'.$fw_woo_cat->name.'</h4>';
 }
-add_shortcode('fw_tax_desc', 'fw_cat_desc');
+add_shortcode('fw_brand_desc', 'fw_cat_desc');
 add_shortcode('fw_cat_desc', 'fw_cat_desc');
 function fw_cat_desc(){
     global $fw_woo_cat;
     return '<span class="desc">'.$fw_woo_cat->description.'</span>';
 }
 
-add_shortcode('fw_tax_image', 'fw_cat_image');
+add_shortcode('fw_brand_image', 'fw_cat_image');
 add_shortcode('fw_cat_image', 'fw_cat_image');
 function fw_cat_image(){
     global $fw_woo_cat;
