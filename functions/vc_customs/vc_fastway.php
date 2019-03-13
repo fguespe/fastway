@@ -254,7 +254,7 @@ function fw_image() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Link"),
+                    "heading"     => __("Size"),
                     "param_name"  => "size",
                     "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'

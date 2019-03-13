@@ -42,6 +42,7 @@ class fw_Woo_Shortcodes {
 			'fw_recent_products'				=> __CLASS__ . '::recent_products',
 			'fw_category_carousel'				=> __CLASS__ . '::products_category',
 			'fw_categories_carousel'			=> __CLASS__ . '::product_cats',
+			'fw_brands_carousel'			=> __CLASS__ . '::product_brands_carousel',
 			'vc_products_by_brand_carousel'			=> __CLASS__ . '::vc_products_by_brand_carousel',
 		);
 	}
@@ -426,6 +427,42 @@ class fw_Woo_Shortcodes {
 		}
 		$atts['terms']=$cates;
 		if(!empty($atts['terms']))self::get_template( 'fw-woo-cats-carousel.php', $atts,$atts['terms']  );
+		
+		wp_reset_postdata();
+		
+		
+		return ob_get_clean();
+	}
+
+	public static function product_brands_carousel( $atts ){
+		$atts = shortcode_atts( array(
+			'title'			=> '',
+			'brands' 			=> '',
+			'terms' 			=> '',
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+
+		), $atts );
+		
+		if( strlen( trim( $atts['brands'] ) ) == 0 ) return;
+		
+		$brands = explode( ',', $atts['brands'] );
+	
+		$args = array(
+			'slug' => 	$brands,
+			'orderby'	=> 'slug',
+			'order'		=> 'ASC',
+		);
+
+		ob_start();
+		$marcas=array();
+		foreach($brands as $brand){
+			$term=get_term_by('slug' , $brand,'brand');
+			array_push($marcas,$term);
+		}
+		$atts['terms']=$marcas;
+		if(!empty($atts['terms']))self::get_template( 'fw-woo-brands-carousel.php', $atts,$atts['terms']  );
 		
 		wp_reset_postdata();
 		

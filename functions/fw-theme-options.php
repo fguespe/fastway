@@ -188,6 +188,12 @@ Kirki::add_section( 'section_woo_loop_cat', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+Kirki::add_section( 'section_woo_loop_brand', array(
+    'title'          => __( 'Brand Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
 
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
@@ -1452,6 +1458,38 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Everything goes inside .fw_cat_loop',
 	'default'     => '
 	.fw_cat_loop .title {
+		text-align: center;
+		font-size: 22px!important;
+		text-transform: uppercase;
+		background-color: #F5F5F5;
+		border-top: 3px solid var(--main);
+		padding: 10px;
+	}',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'woo_loop_brand_code',
+	'label'       => __( ' Brand Loop Code', 'fastway' ),
+	'section'     => 'section_woo_loop_brand',
+	'description'     => '[fw_brand_container][fw_tax_image][fw_tax_title][fw_tax_desc][/fw_brand_container]',
+	'default'     => '[fw_brand_container][fw_tax_image][fw_tax_title][/fw_brand_container]',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_loop_brand',
+	'label'       => __( 'CSS Brand Loop', 'fastway' ),
+	'section'     => 'section_woo_loop_brand',
+	'description' => 'Everything goes inside .fw_brand_loop',
+	'default'     => '
+	.fw_brand_loop .title {
 		text-align: center;
 		font-size: 22px!important;
 		text-transform: uppercase;
