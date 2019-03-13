@@ -266,8 +266,13 @@ color:var(--linkedin) !important;
     margin-bottom: 0px;
     text-align:center ;
   }
+  .summary .price{
+
+    display: block;
+  }
   .summary .fw_price{
     text-align:center;
+    display: block;
   }
   .summary .fw_price .tachado{
     text-align:center;
