@@ -5,7 +5,7 @@ function fw_social_icons( $atts ) {
         array(
             'type' => '',
             'icon_align' => '',
-            'icon_size' =>  '',
+            'icon_size' =>  12,
             'icon_color' =>  '#000',
             'el_class' =>  '',
             'el_id' =>  '',
