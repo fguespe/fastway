@@ -255,7 +255,7 @@ function fw_image() {
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Link"),
-                    "param_name"  => "link",
+                    "param_name"  => "size",
                     "value"       => "100% auto",
                 ),
                
@@ -386,18 +386,23 @@ function fw_image_function( $atts, $content ) {
             'image'      =>  '',
             'link'      =>  '',
             'image_mobile'      =>  '',
+            'size'      =>  '100% auto',
         ), $atts );
         
     //Desktop
+    $h=explode(' ',$atts['size'])[1];
+    $w=explode(' ',$atts['size'])[0];
 
     $image = wp_get_attachment_image_src( $atts['image'], '' )[0];
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['image_mobile']);
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
-    if($link)$return .= '<a href="'.$link.'" >';
-    $return .= '<img src="'.$image.'" style="max-width:100%:height:auto;"/>';
-    if($link)$return .= '</a>';        
+    if($link)$return .= '<a class="fw_image_container" style="text-align:center" href="'.$link.'" >';
+    else $return .= '<div class="fw_image_container" style="text-align:center" >';
+    $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';
+    if($link)$return .= '</a>';
+    else $return .= '</div>';        
     if(!$ismobile)return $return;
     //Mobile
 
