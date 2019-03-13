@@ -11,7 +11,7 @@ function fw_default_filters(){
     return;
 }
 function woo_loop_brand(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
 function woo_loop_cat(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
