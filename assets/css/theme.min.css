@@ -270,8 +270,12 @@
   margin-bottom: 0px;
   text-align: center;
 }
+.fw_single_product .summary .price {
+  display: block;
+}
 .fw_single_product .summary .fw_price {
   text-align: center;
+  display: block;
 }
 .fw_single_product .summary .fw_price .tachado {
   text-align: center;
