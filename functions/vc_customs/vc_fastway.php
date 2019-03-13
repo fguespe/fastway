@@ -257,6 +257,8 @@ function fw_image() {
                     "heading"     => __("Link"),
                     "param_name"  => "size",
                     "value"       => "100% auto",
+                    'description' => 'width height (100% 100% or auto auto)'
+    
                 ),
                
                 array(
