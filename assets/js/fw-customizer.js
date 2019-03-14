@@ -59,4 +59,10 @@ wp.customize( 'css_editor-logged_in', function( value ) {
     jQuery( '#css_editor-logged_in' ).text(newval );
   } );
 } );
+wp.customize( 'css_loop_brand', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_loop_brand' ).text(newval );
+  } );
+} );
 });
+

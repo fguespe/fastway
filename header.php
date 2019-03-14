@@ -33,6 +33,7 @@
     <style type="text/css" id="css_loop_cat"><?php echo fw_theme_mod('css_loop_cat')?></style>
     <style type="text/css" id="css_editor-single"><?php echo fw_theme_mod('css_editor-single')?></style>
     <style type="text/css" id="css_editor-mobile"><?php echo fw_theme_mod('css_editor-mobile')?></style>
+    <style type="text/css" id="css_loop_brand"><?php echo fw_theme_mod('css_loop_brand')?></style>
     <style type="text/css" id="css_editor-footer"><?php echo fw_theme_mod('css_editor-footer')?></style>
     <style ><?php echo fw_custom_css(); ?></style>
     <style type="text/css" id="css_editor-logged_in"><?php if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>

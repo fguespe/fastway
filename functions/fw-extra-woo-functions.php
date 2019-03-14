@@ -39,17 +39,17 @@ function fw_cat_image(){
     global $fw_woo_cat;
     $thumbnail_id = get_woocommerce_term_meta( $fw_woo_cat->term_id, 'thumbnail_id', true ); 
     $image = wp_get_attachment_url( $thumbnail_id ); 
-    return '<img src="'.$image.'" width="100%" height="auto"/>';
+    return '<div class="thumbnail"><img src="'.$image.'" width="100%" height="auto" class="thumbnail"/></div>';
 }
 
 
-add_shortcode('fw_brand_banner', 'fw_cat_image_banner');
-add_shortcode('fw_cat_banner', 'fw_cat_image_banner');
-function fw_cat_image(){
+add_shortcode('fw_brand_banner', 'fw_cat_banner');
+add_shortcode('fw_cat_banner', 'fw_cat_banner');
+function fw_cat_banner(){
     global $fw_woo_cat;
     $thumbnail_id = get_woocommerce_term_meta( $fw_woo_cat->term_id, 'banner_id', true ); 
     $image = wp_get_attachment_url( $thumbnail_id ); 
-    return '<img src="'.$image.'" width="100%" height="auto"/>';
+    return '<div class="banner"><img src="'.$image.'" width="100%" height="auto" /></div>';
 }
 
 add_shortcode('fw_cat_container', 'fw_cat_container');
