@@ -10,9 +10,11 @@ function fw_default_filters(){
     woocommerce_catalog_ordering();
     return;
 }
+
 function woo_loop_brand(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
+
 function woo_loop_cat(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
 }
@@ -23,6 +25,7 @@ function fw_cat_title(){
     global $fw_woo_cat;
     return '<h4 class="title" >'.$fw_woo_cat->name.'</h4>';
 }
+
 add_shortcode('fw_brand_desc', 'fw_cat_desc');
 add_shortcode('fw_cat_desc', 'fw_cat_desc');
 function fw_cat_desc(){
@@ -38,6 +41,17 @@ function fw_cat_image(){
     $image = wp_get_attachment_url( $thumbnail_id ); 
     return '<img src="'.$image.'" width="100%" height="auto"/>';
 }
+
+
+add_shortcode('fw_brand_banner', 'fw_cat_image_banner');
+add_shortcode('fw_cat_banner', 'fw_cat_image_banner');
+function fw_cat_image(){
+    global $fw_woo_cat;
+    $thumbnail_id = get_woocommerce_term_meta( $fw_woo_cat->term_id, 'banner_id', true ); 
+    $image = wp_get_attachment_url( $thumbnail_id ); 
+    return '<img src="'.$image.'" width="100%" height="auto"/>';
+}
+
 add_shortcode('fw_cat_container', 'fw_cat_container');
 function fw_cat_container($atts = [], $content = null){
     global $fw_woo_cat;
