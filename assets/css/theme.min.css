@@ -1388,7 +1388,8 @@ footer .widget_nav_menu li a {
   }
 }
 /* Filters woo*/
-.woocommerce-shop .widget h3.widget-title {
+.woocommerce-shop .widget h3.widget-title,
+.woocommerce-shop .widget h3.widget-title span {
   font-size: 16px;
   text-align: left;
   line-height: 24px;
@@ -1396,17 +1397,22 @@ footer .widget_nav_menu li a {
   color: #444444;
   font-weight: bold;
 }
+.woocommerce-shop .prdctfltr_woocommerce .prdctfltr_filter_title {
+  display: none;
+}
 .woocommerce-shop .select2 span {
   font-size: 12px !important;
 }
 .woocommerce-shop .widget-area aside, .woocommerce-shop .woocommerce-ordering {
   margin-bottom: 20px;
 }
-.woocommerce-shop .widget li {
+.woocommerce-shop .widget li,
+.woocommerce-shop .widget .prdctfltr_add_scroll {
   padding-left: 10px;
 }
 .woocommerce-shop .widget li a,
-.woocommerce-shop .widget li span {
+.woocommerce-shop .widget li span,
+.woocommerce-shop .widget .prdctfltr_add_scroll span {
   font-size: 13px;
   text-align: left;
   text-transform: lowercase !important;
