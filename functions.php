@@ -1,5 +1,7 @@
 <?php
 
+
+
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
     if($name=="fw_icons_style"){

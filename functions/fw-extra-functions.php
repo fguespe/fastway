@@ -514,6 +514,10 @@ add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
 
+add_filter('woocommerce_thankyou', 'woo_change_order_received_text', 10, 2 );
+function woo_change_order_received_text(  ) {
+    echo '<a href="/"><i class="fas fa-long-arrow-alt-left"></i> Volver a la pagina principal</a><br><br>';
+}
 
 
 
