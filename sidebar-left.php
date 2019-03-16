@@ -21,7 +21,7 @@ if ( is_home() && ! is_front_page() ){
 	<?php do_action('fw_before_shop_sidebar');?>
 	<?php dynamic_sidebar( $sidebarname ); ?>
 </div>
-<button class="fw-header-icon toggler btn-bars-mobile-cats d-md-none" type="button" style="float:right;"><i class="<?=fw_theme_mod('fw_icons_style')?> fa-filter"></i> Filtrar</button>
+<button class="fw-header-icon  btn-bars-mobile-cats d-md-none" type="button" style="float:right;"><i class="<?=fw_theme_mod('fw_icons_style')?> fa-filter"></i> Filtrar</button>
 <div class="sidebar-mobile-cats d-md-none">
    <div class=" sub-menu-mobile cats"> 
 	   <div class="container">
