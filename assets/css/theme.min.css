@@ -589,10 +589,6 @@
   visibility: visible;
 }
 
-header .navbar-toggler {
-  padding: 0px !important;
-}
-
 .menu-madre-mobile, .sidebar-mobile-cats {
   bottom: 0;
   font-size: 14px;
