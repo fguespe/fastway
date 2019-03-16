@@ -416,14 +416,14 @@ function fw_child_manage_woocommerce_styles() {
 add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
 
   function wsis_dequeue_stylesandscripts_select2() {
-      if(wp_is_mobile()){
+     // if(wp_is_mobile()){
         if ( class_exists( 'woocommerce' ) ) {
           wp_dequeue_style( 'selectWoo' );
           wp_deregister_style( 'selectWoo' );
   
           wp_dequeue_script( 'selectWoo');
           wp_deregister_script('selectWoo');
-        } 
+      //  } 
       }    
      
   }

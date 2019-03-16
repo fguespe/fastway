@@ -630,6 +630,7 @@
   font-size: 16px;
   float: right;
   margin: 10px;
+  padding: 10px !important;
   margin-left: auto;
 }
 
@@ -1452,6 +1453,7 @@ footer .widget_nav_menu li a {
 }
 .woocommerce-shop .woocommerce-breadcrumb a, .woocommerce-shop .woocommerce-breadcrumb, .woocommerce-shop .woocommerce-result-count {
   font-size: 12px !important;
+  margin-top: 20px;
 }
 .woocommerce-shop .content-area .woocommerce-result-count, .woocommerce-shop .content-area .woocommerce-ordering, .woocommerce-shop .content-area .term-description {
   display: none;
