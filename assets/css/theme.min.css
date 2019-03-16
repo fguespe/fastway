@@ -1188,12 +1188,6 @@ footer {
   padding: 0px !important;
 }
 
-/*TOGGLER MOBILE*/
-@media (max-width: 544px) {
-  .navbar-toggler {
-    padding: 0px !important;
-  }
-}
 /*
 @media (max-width: 799px) {
     .logo img{
