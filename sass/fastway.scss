@@ -464,6 +464,9 @@ color:var(--linkedin) !important;
   z-index:3000;
 }
 #fw_menu{
+    .dropdown.active{
+    background:white;
+    }
     position:relative;
     z-index: 1200;
     border-radius:0px !important;
