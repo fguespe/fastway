@@ -1790,11 +1790,12 @@ h3.heading-title {
   color: var(--main);
 }
 
+/*
 @media (max-width: 768px) {
   .prdctfltr-widget {
     display: none;
   }
-}
+}*/
 .prdctfltr_wc {
   margin: 0px !important;
 }
