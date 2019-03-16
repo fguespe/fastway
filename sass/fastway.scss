@@ -1506,12 +1506,17 @@ footer .widget_nav_menu li a {
 }
 
   .woocommerce-ordering,.woocommerce-ordering select{
-  max-width:100%;
+    max-width:100%;
     font-size:12px !important;
   }
+  @media (max-width: 799px) {
+    .woocommerce-result-count{
+      font-size:12px !important;
+      margin-top: 20px;
+    }
+  }
   .woocommerce-breadcrumb a, .woocommerce-breadcrumb,.woocommerce-result-count{
-    font-size:12px !important;
-    margin-top: 20px;
+		font-size:12px !important;
   }
   .content-area .woocommerce-result-count,.content-area .woocommerce-ordering, .content-area .term-description{
   display:none;
