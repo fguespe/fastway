@@ -239,7 +239,7 @@ function fw_data( $atts ) {
         $first.= "</a>";
     }
     
-    if(!empty($link) && ($format=="isli_i" || $format=="isli")){
+    if(!empty($link) && ($format=="isli_i" || $format=="isli" || $format = "iconbox")){
         $first='<a target="_blank" class="fw_icon_link" href="'.$link.'">'.$first;
         $first.= "</a>";
     }
