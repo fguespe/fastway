@@ -338,7 +338,6 @@ function fw_slider_function( $atts, $content ) {
     </script>';
     if(!$ismobile)return $return;
     //Mobile
-
     $rand=generateRandomString(5);
     $image_ids = explode(',',$atts['slides_mobile']);
     $links = explode(',',$atts['links_mobile']);
@@ -396,16 +395,19 @@ function fw_image_function( $atts, $content ) {
     $w=explode(' ',$atts['size'])[0];
 
     $image = wp_get_attachment_image_src( $atts['image'], '' )[0];
+    $image_mobile = wp_get_attachment_image_src( $atts['image_mobile'], '' )[0];
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['image_mobile']);
+
+    error_log('sd');
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
     if($link)$return .= '<a class="fw_image_container" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container" style="text-align:center" >';
-    $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';
+    $return .= '<img class="d-none d-md-block"  src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
+    if($ismobile)$return.= '<img class="d-md-none" src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
     if($link)$return .= '</a>';
-    else $return .= '</div>';        
-    if(!$ismobile)return $return;
+    else $return .= '</div>';  
     //Mobile
 
     return $return;
