@@ -413,7 +413,7 @@ function fw_child_manage_woocommerce_styles() {
  
 }
 // Remove CSS and/or JS for Select2 used by WooCommerce, see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080.
-add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
+//add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
 
   function wsis_dequeue_stylesandscripts_select2() {
      // if(wp_is_mobile()){
