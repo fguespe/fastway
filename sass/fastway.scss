@@ -1423,8 +1423,9 @@ footer .widget_nav_menu li a {
 }
 @media (max-width: 799px) {
   .fw_product_loop .product_title{
-      max-height:42px;
-      overflow:hidden;
+      max-height:30px !important;
+      overflow:hidden !important;
+      display: block;
       font-size:12px;
       padding:0px;
       line-height:14px;

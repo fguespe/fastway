@@ -37,7 +37,7 @@ global $product;
                         <div class="pull-left full-width border-box">
                            <div class="installments-container">
                               <h4 class="">
-                                 6  cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$cuotas6}</b>
+                                 6 cuotas <span class="text-uppercase">sin interés</span> de <b>$ {$cuotas6}</b>
                               </h4>
                               <div class="legal-info p-bottom-half">
                                  <span class="m-right-quarter"><span>CFT: </span><b>0,00%</b></span>
@@ -139,7 +139,7 @@ global $product;
                         <div class="pull-left full-width border-box">
                            <div class="installments-container">
                               <h4 class="">
-                                 6  cuotas <span class="text-uppercase">sin interés</span> de <b>$ $precio</b>
+                                 3 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $precio</b>
                               </h4>
                               <div class="legal-info p-bottom-half">
                                  <span class="m-right-quarter"><span>CFT: </span><b>0,00%</b></span>
