@@ -579,7 +579,7 @@
   top: 40;
   transition: opacity 0.2s ease-out 0s, visibility 0.3s ease-out 0s;
   visibility: hidden;
-  z-index: 3000;
+  z-index: 990;
 }
 
 .mobile-menu-overlay {
@@ -604,7 +604,7 @@ header .navbar-toggler {
   top: 0;
   transition: left 0.2s ease-out 0s;
   width: 80%;
-  z-index: 4000;
+  z-index: 1000;
 }
 .menu-madre-mobile a, .sidebar-mobile-cats a {
   color: #666 !important;
