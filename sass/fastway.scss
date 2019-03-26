@@ -1403,10 +1403,13 @@ footer .widget_nav_menu li a {
   margin-bottom:10px !important;
   .product_title{
 
-    line-height:20px;
     padding:5px;
     color:#444444 ;
+
     font-size:14px ;
+    line-height: 14px;
+    max-height: 48px; /* (Number of lines you want visible) * (line-height) */
+    
   } 
   .loading i{
   display:inline-block !important;
@@ -1423,13 +1426,15 @@ footer .widget_nav_menu li a {
 }
 @media (max-width: 799px) {
   .fw_product_loop .product_title{
-      max-height:30px !important;
       overflow:hidden !important;
       display: block;
       font-size:12px;
       padding:0px;
-      line-height:14px;
       margin: 0px;
+
+    font-size:14px ;
+    line-height: 16px;
+    height: 32px; /* (Number of lines you want visible) * (line-height) */
   }
   .fw_product_loop .meta {
       padding:5px !important;
