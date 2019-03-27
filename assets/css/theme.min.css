@@ -483,12 +483,12 @@
   display: block;
 }
 #fw_menu ul li:hover a {
-  color: #482979;
+  color: var(--main);
 }
 #fw_menu ul li:hover .link-madre {
   background-color: #fff;
   padding-bottom: 0px;
-  color: #224C71;
+  color: var(--main);
 }
 #fw_menu .ancho-sitio {
   padding: 0;
