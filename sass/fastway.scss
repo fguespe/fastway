@@ -477,12 +477,12 @@ color:var(--linkedin) !important;
         display: block;     
     }   
     ul li:hover a{
-        color: #482979;
+        color:var(--main);
     }
     ul li:hover .link-madre{
         background-color: #fff;
         padding-bottom: 0px;
-        color: #224C71;
+        color:var(--main);
     }   
     
     .ancho-sitio{
@@ -2445,7 +2445,9 @@ body .wpb_content_element {
              border-top: 1px solid rgba(0, 0, 0, .1);
         }
     }
-   
+    .screen-reader-text{
+      display: none;
+    }
      /*.screen-reader-text {
          clip: rect(1px,1px,1px,1px);
          height: 1px;

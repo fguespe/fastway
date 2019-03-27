@@ -2378,6 +2378,9 @@ body .wpb_content_element {
   font-weight: 700;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+.woocommerce .screen-reader-text {
+  display: none;
+}
 .woocommerce .quantity .qty {
   width: 3.631em;
   text-align: center;
