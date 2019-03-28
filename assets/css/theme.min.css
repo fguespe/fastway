@@ -1808,6 +1808,8 @@ h3.heading-title {
     display: none;
   }
 }*/
+/*BOTONES CART Y CHECKOUT*/
+.place-order button,
 .wc-proceed-to-checkout a {
   display: block !important;
   text-align: center;
@@ -1817,6 +1819,8 @@ h3.heading-title {
   margin-bottom: 20px;
   background: var(--main);
   color: white;
+  width: 100%;
+  border: 0px;
 }
 
 .prdctfltr_wc {

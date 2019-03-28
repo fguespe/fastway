@@ -1873,16 +1873,21 @@ h3.heading-title {
     display: none;
   }
 }*/
-.wc-proceed-to-checkout a{
-  display:block !important;
-  text-align:center;
-  text-transform:uppercase;
-  font-size:20px;
-  font-weight:600;
-  margin-bottom:20px;
-  background:var(--main);
-  color:white;
+/*BOTONES CART Y CHECKOUT*/
+.place-order button,
+.wc-proceed-to-checkout a {
+  display: block !important;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  background: var(--main);
+  color: white;
+  width:100%;
+  border:0px;
 }
+
 .prdctfltr_wc {
   margin: 0px !important;
 }
