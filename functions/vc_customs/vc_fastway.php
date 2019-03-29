@@ -402,12 +402,18 @@ function fw_image_function( $atts, $content ) {
     error_log('sd');
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
-    if($link)$return .= '<a class="fw_image_container" style="text-align:center" href="'.$link.'" >';
-    else $return .= '<div class="fw_image_container" style="text-align:center" >';
-    $return .= '<img class="d-none d-md-flex"  src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
-    if($ismobile)$return.= '<img class="d-md-none" src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
+    if($link)$return .= '<a class="fw_image_container d-none d-md-block" style="text-align:center" href="'.$link.'" >';
+    else $return .= '<div class="fw_image_container d-none d-md-block" style="text-align:center" >';
+    $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
     if($link)$return .= '</a>';
-    else $return .= '</div>';  
+    else $return .= '</div>'; 
+    if($ismobile){
+        if($link)$return .= '<a class="fw_image_container d-md-none" style="text-align:center" href="'.$link.'" >';
+        else $return .= '<div class="fw_image_container d-md-none" style="text-align:center" >';
+        $return .= '<img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
+        if($link)$return .= '</a>';
+        else $return .= '</div>'; 
+    }
     //Mobile
 
     return $return;
