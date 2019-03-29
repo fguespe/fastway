@@ -40,7 +40,7 @@ class fw_Woo_Shortcodes {
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
 			'fw_recent_products'				=> __CLASS__ . '::recent_products',
-			'fw_category_carousel'				=> __CLASS__ . '::products_category',
+			'fw_category_carousel'				=> __CLASS__ . '::vc_products_by_cat_carousel',
 			'fw_categories_carousel'			=> __CLASS__ . '::product_cats',
 			'fw_brands_carousel'			=> __CLASS__ . '::product_brands_carousel',
 			'vc_products_by_brand_carousel'			=> __CLASS__ . '::vc_products_by_brand_carousel',
@@ -95,6 +95,7 @@ class fw_Woo_Shortcodes {
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',
+			
 			'ignore_sticky_posts' => 1,
 			'posts_per_page'      => $atts['per_page'],
 			'orderby'             => $atts['orderby'],
@@ -317,7 +318,7 @@ class fw_Woo_Shortcodes {
 		return ob_get_clean();
 	}
 	
-	public static function products_category( $atts ){
+	public static function vc_products_by_cat_carousel( $atts ){
 		global $woocommerce_loop;
 		$atts = shortcode_atts( array(
 			"title" 		=> '',
@@ -375,11 +376,17 @@ class fw_Woo_Shortcodes {
 		if ( isset( $ordering_args['meta_key'] ) ) {
 			$args['meta_key'] = $ordering_args['meta_key'];
 		}
+		
+		
+		//Ocultar agotados
+		$args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
+		
+		
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
-		
+		error_log(print_r($products,true));
 		if ( $products->have_posts() ) :
 			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
 		endif;

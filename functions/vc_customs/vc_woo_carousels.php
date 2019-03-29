@@ -60,14 +60,6 @@ function vc_category_carousel() {
                          "admin_label" => true,
                         'value'=>fw_vc_get_posts("product_cat"),
                     ), 
-                    
-                    array(
-                        'type' => 'checkbox',
-                        'heading' => __( 'Hide Empty ', 'fastway' ),
-                        'param_name' => 'uncategorized',
-                        'std' => 'true',
-                        'admin_label' => false,
-                    ), 
                     array(
                         'type' => 'textfield',
                         'heading' => __( 'Prods per row ', 'fastway' ),
@@ -77,6 +69,15 @@ function vc_category_carousel() {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Max Quantiy', 'fastway' ),
+                        'param_name' => 'maxcant',
+                        'value' => '12',
+                        'std' => '12',
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ), 
                     array(
                         'type' => 'el_id',
                         'heading' => __( 'Element ID', 'js_composer' ),
@@ -88,7 +89,8 @@ function vc_category_carousel() {
                         'heading' => __( 'Extra class name', 'js_composer' ),
                         'param_name' => 'el_class',
                         'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
-                    ),   array(
+                    ),   
+                    array(
                         'type' => 'css_editor',
                         'heading' => __( 'CSS box', 'js_composer' ),
                         'param_name' => 'css',
@@ -141,7 +143,7 @@ function vc_products_by_brand_carousel() {
                     ), 
                     array(
                         'type' => 'checkbox',
-                        'heading' => __( 'Hide Empty ', 'fastway' ),
+                        'heading' => __( 'Hide Uncategorized ', 'fastway' ),
                         'param_name' => 'uncategorized',
                         'std' => 'true',
                         'admin_label' => false,
@@ -234,7 +236,7 @@ function vc_categories_carousel() {
                     ),
                     array(
                         'type' => 'checkbox',
-                        'heading' => __( 'Hide Empty ', 'fastway' ),
+                        'heading' => __( 'Hide Uncategorized ', 'fastway' ),
                         'param_name' => 'uncategorized',
                         'std' => 'true',
                         'admin_label' => false,
@@ -305,7 +307,7 @@ function vc_brands_carousel() {
                     ),
                     array(
                         'type' => 'checkbox',
-                        'heading' => __( 'Hide Empty ', 'fastway' ),
+                        'heading' => __( 'Hide Uncategorized ', 'fastway' ),
                         'param_name' => 'uncategorized',
                         'std' => 'true',
                         'admin_label' => false,
