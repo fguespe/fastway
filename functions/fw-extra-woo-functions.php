@@ -39,7 +39,7 @@ function fw_cat_image(){
     global $fw_woo_cat;
     $thumbnail_id = get_woocommerce_term_meta( $fw_woo_cat->term_id, 'thumbnail_id', true ); 
     $image = wp_get_attachment_url( $thumbnail_id ); 
-    return '<div class="thumbnail"><img src="'.$image.'" width="100%" height="auto" /></div>';
+    return '<div class="thumbnail"><div class="shadow-overlay"></div><img src="'.$image.'" width="100%" height="auto" /></div>';
 }
 
 
