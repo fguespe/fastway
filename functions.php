@@ -1,43 +1,5 @@
 <?php
 
-if($_GET['altoweb']=='woo_init'){
-    update_option('woocommerce_price_num_decimals','0');
-    update_option('woocommerce_currency','ARS');
-    update_option('woocommerce_default_country','AR:C');
-    update_option('woocommerce_cart_redirect_after_add','yes');
-    update_option('woocommerce_enable_ajax_add_to_cart','no');
-    update_option('shop_single_image_size','a:3:{s:5:"width";s:3:"500";s:6:"height";s:3:"500";s:4:"crop";i:1;}');
-    update_option('woocommerce_enable_myaccount_registration','yes');
-    update_option('woocommerce_enable_signup_and_login_from_checkout','yes');
-    update_option('woocommerce_enable_checkout_login_reminder','yes');
-    update_option('woocommerce_registration_generate_username','yes');
-    update_option('woocommerce_enable_shipping_calc','no');
-    update_option('woocommerce_ship_to_destination','billing_only');
-    update_option('woocommerce_registration_generate_password','yes');
-    //Calc envios
-    update_option('woocommerce_enable_shipping_calc','yes');
-    update_option('woocommerce_shipping_cost_requires_address','no');
-
-    //Para que no se cancelen los envios
-    update_option('woocommerce_hold_stock_minutes','');
-    echo 'EXITO!';
-    die();
-}else if($_GET['altoweb']=='img_init'){
-    set_theme_mod('ca-main-color', '#0C2E5C');
-    set_theme_mod('footer-copyright-text','<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Desarrollado por  <a href="https://www.altoweb.co" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/plugins/briziolabz-fw-plugin/assets/img/logo.png"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div></div>');
-    remove_theme_mod('css_editor-footer-copywright');
-    
-    //set_theme_mod('general-logo', urlforimages2()."/assets/img/logo.png");
-    set_theme_mod('mobile-icon', urlforimages2()."/assets/img/favi.png");
-    set_theme_mod('maintainance-mode-img', urlforimages2()."/assets/img/mantenimiento.png");
-    set_theme_mod('img-404', urlforimages2().'/assets/img/error.png' );
-    //set_theme_mod('ca-client-logo',urlforimages2()."/assets/img/logo.png" );
-    set_theme_mod('ca-dev-logo',urlforimages2()."/assets/img/logo.png");
-    set_theme_mod('ca-dev-favi',urlforimages2()."/assets/img/favi.png");
-    update_option('fw_briziolabz_defaultoptions','0');
-    echo 'EXITO!';
-    die();
-}
 
 function fw_theme_mod( $name ) {
     //global $my_theme_defaults;
