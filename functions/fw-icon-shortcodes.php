@@ -1,7 +1,7 @@
 <?php 
 add_shortcode('fw_social_icons', 'fw_social_icons', 10, 2);
 function fw_social_icons( $atts ) {
-    //Este pone iconos al lado del otro nada mas
+    //Este pone iconos
     $atts = shortcode_atts(
         array(
             'type' => '',
@@ -206,7 +206,7 @@ function fw_data( $atts ) {
     }else if(!empty($atts['sblock'])){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
-    }else if($format=='iconsnext'){//deprecetead, nuevo shortcode
+    }else if($format=='iconsnext'){//deprecetead
         
         $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
         foreach (explode(",", $atts['type']) as $icon) {
@@ -233,14 +233,16 @@ function fw_data( $atts ) {
         $rand=generateRandomString();
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
-    }else if(!empty($atts['modal'] )){
+    }
+    
+    if(!empty($atts['modal'] )){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>";
     }
     
-    if(!empty($link) && ($format=="isli_i" || $format=="isli" || $format = "iconbox")){
-        $first='<a target="_blank" class="fw_icon_link" href="'.$link.'">'.$first;
-        $first.= "</a>";
+    if(!empty($link) && ($format=="isli_i" || $format=="isli" || $format == "iconbox")){
+
+        $first='<a target="_blank" class="fw_icon_link" href="'.$link.'">'.$first."</a>";
     }
     
     return $first;
