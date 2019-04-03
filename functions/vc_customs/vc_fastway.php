@@ -399,7 +399,6 @@ function fw_image_function( $atts, $content ) {
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['image_mobile']);
 
-    error_log('sd');
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
     if($link)$return .= '<a class="fw_image_container d-none d-md-block" style="text-align:center" href="'.$link.'" >';
