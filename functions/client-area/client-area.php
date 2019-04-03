@@ -121,6 +121,13 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+//Aca empieza el plugin
+if(!fw_theme_mod('ca-switch'))return;
+
+
+
+
+
 include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){

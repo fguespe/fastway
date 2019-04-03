@@ -160,13 +160,12 @@ if(is_plugin_active('kirki/kirki.php')){
     require get_template_directory() . '/functions/fw-theme-options.php';
 }
 
-if(fw_theme_mod('ca-switch')){
-    require get_template_directory() . '/functions/client-area/client-area.php';
-    add_filter('woocommerce_shop_manager_editable_roles', function($roles) {
-        $roles[]='shop_manager';
-        return array_unique($roles);
-      });   
-}
+require get_template_directory() . '/functions/client-area/client-area.php';
+add_filter('woocommerce_shop_manager_editable_roles', function($roles) {
+    $roles[]='shop_manager';
+return array_unique($roles);
+});   
+
 add_action( 'init', 'fw_login_dev_logo', 999 );
 function fw_login_dev_logo(){
 
