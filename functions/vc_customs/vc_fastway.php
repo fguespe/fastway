@@ -676,18 +676,17 @@ function vc_only_icon() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("size"),
+                    "heading"     => __("Sie"),
                     "param_name"  => "icon_size",
+                    "std"  => "50",
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Color"),
+                    "param_name"  => "icon_color",
+                    "std"  => "var(--main)",
                 ),
 
-                array(
-                    "type" => "colorpicker",
-                    "class" => "",
-                    "heading" => __( "Icon color", "fastway" ),
-                    "param_name" => "icon_color",
-                    "value" => '', //Default Red color
-                    "description" => __( "Choose text color", "fastway" )
-                ),
                 array(
                     'type' => 'el_id',
                     'heading' => __( 'Element ID', 'js_composer' ),
