@@ -92,7 +92,7 @@ function fw_only_icon( $atts ) {
             'type' => '',
             'icon_align' => 'center',
             'icon_size' =>  '',
-            'icon_color' =>  '',
+            'icon_color' =>  'var(--main)',
             'el_class' =>  '',
             'el_id' =>  '',
             //Depreceated
