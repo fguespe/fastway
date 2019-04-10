@@ -1068,8 +1068,8 @@ Kirki::add_field( 'theme_config_id', array(
 	[altoweb_financiacion]
 	[/fw_single_summary]
 	[fw_single_tabs]
-	[fw_single_related]
-	[/fw_single_container]',
+	[/fw_single_container]
+	[fw_single_related]',
 	'choices'     => array(
 		'language' => 'html',
 	),

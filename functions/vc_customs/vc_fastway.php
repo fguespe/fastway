@@ -30,7 +30,7 @@ vc_add_param("vc_row", array(
     "type" => "dropdown",
     "group" => "Fastway",
     "class" => "",
-    "heading" => "Has a FW Slider In It?",
+    "heading" => "Has a FW Slider In It? (Only in full width no paddings row)",
     "param_name" => "fw_swiper",
     "value" => array(
         "Select an option" => "",
