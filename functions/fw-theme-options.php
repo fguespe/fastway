@@ -599,7 +599,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-header',
 	'label'       => __( 'CSS Header', 'fastway' ),
 	'section'     => 'section_header',
-	'description' => 'Examples: .fw_search_form',
+	'description' => 'Clases: .fw_header.top,  .fw_header.bottom,  .fw_header.middle,<br> Ids: #header (todo el hader), #fw_menu (agarra el main menu) ,<br>Elementos: .fw_search_form, .fw_logo',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1043,7 +1043,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor_shop',
 	'label'       => __( 'CSS Shop Page ', 'fastway' ),
 	'section'     => 'section_woo_shop',
-	'description' => 'Everything goes inside .woocommerce-shop',
+	'description' => 'Classes: .woocommerce-shop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1101,6 +1101,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-footer',
 	'label'       => __( 'CSS Footer', 'fastway' ),
+	'description' => 'Everything goes inside #footer',
 	'section'     => 'section_footer',
 	'default'     => '',
 	'transport'	=> 'postMessage',
@@ -1431,7 +1432,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-loop',
 	'label'       => __( 'CSS Product Loop', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description' => 'Everything goes inside .fw_product_loop',
+	'description' => 'Classes: .fw_product_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -1455,7 +1456,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_loop_cat',
 	'label'       => __( 'CSS Category Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_cat',
-	'description' => 'Everything goes inside .fw_cat_loop',
+	'description' => 'Classes: .fw_cat_loop',
 	'default'     => '
 	.fw_cat_loop .title {
 		text-align: center;
@@ -1487,7 +1488,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_loop_brand',
 	'label'       => __( 'CSS Brand Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_brand',
-	'description' => 'Everything goes inside .fw_brand_loop',
+	'description' => 'Classes: .fw_brand_loop',
 	'default'     => '
 	.fw_brand_loop .title {
 		text-align: center;
