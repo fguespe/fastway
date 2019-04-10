@@ -1387,8 +1387,8 @@ footer .widget_nav_menu li a {
     padding: 0px;
     margin: 0px;
     font-size: 14px !important;
-    line-height: 16px !important;
-    height: 32px !important;
+    line-height: 18px !important;
+    height: 34px !important;
     /* (Number of lines you want visible) * (line-height) */
   }
 
