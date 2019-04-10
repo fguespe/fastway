@@ -78,8 +78,9 @@ function fw_brand_container($atts = [], $content = null){
 function woocommerce_get_category_banner(){
   $term_id       =    get_queried_object_id();
   $banner_id = get_woocommerce_term_meta( $term_id, 'banner_id', true ); 
+  if(!$banner_id)return;
   $image = wp_get_attachment_url( $banner_id ); 
-  echo '<img src="'.$image.'" style="width:100%;heigth:auto;" />';
+  echo '<img class="category_banner" src="'.$image.'" style="width:100%;heigth:auto;" />';
 }
 
 
