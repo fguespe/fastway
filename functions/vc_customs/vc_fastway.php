@@ -453,7 +453,7 @@ function vc_fw_shorts() {
         "Select an option" => "",),$static_block_args);
 
     vc_map( array(
-            "name" => __("FW Icon", 'fastway'),
+            "name" => __("FW Data Icon", 'fastway'),
             'base' => 'fw_data',
             'description' => __('FW Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
@@ -465,7 +465,7 @@ function vc_fw_shorts() {
                   "heading"     => __("Type"),
                   "param_name"  => "type",
                   'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
-                  or fa-icon fal or fa-icon',
+                  or fa-icon ,fal fa-icon',
                   "admin_label" => true,
                 ),
                 array(
@@ -594,7 +594,7 @@ function vc_social_icons() {
                   "heading"     => __("Type"),
                   "param_name"  => "type",
                   'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
-                  or fa-icon fal or fa-icon',
+                  or fa-icon ,fal fa-icon',
                   "admin_label" => true,
                 ),
                 array(
@@ -615,6 +615,71 @@ function vc_social_icons() {
                     "param_name"  => "icon_size",
                     "std"  => "20",
                 ),
+                array(
+                    "type" => "colorpicker",
+                    "class" => "",
+                    "heading" => __( "Icon color", "fastway" ),
+                    "param_name" => "icon_color",
+                    "value" => '', //Default Red color
+                    "description" => __( "Choose text color", "fastway" )
+                ),
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
+                  
+                
+                
+            )
+    ) );
+
+}
+
+
+
+add_action( 'vc_before_init', 'vc_only_icon' );//Prds de categoria
+function vc_only_icon() {
+    vc_map( array(
+            "name" => __("FW Icon Only", 'fastway'),
+            'base' => 'fw_only_icon',
+            'description' => __('FW Icon Only', 'fastway'), 
+            'category' => __('Fastway Icons', 'fastway'),   
+            "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                "params" => array(
+                array(
+                  "type" => 'textfield',
+                  "heading"     => __("Type"),
+                  "param_name"  => "type",
+                  'description' => 'Font awesome explicit: fa-icon ,fal fa-icon',
+                  "admin_label" => true,
+                ),
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Alignment"),
+                    "param_name"  => "icon_align",
+                    
+                    "value" => array(
+                        "Left" =>"left",
+                        "Center"=>"center",
+                        "Right"=>"right",
+                    ),
+                    "std" => 'center', //Default Red color
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("size"),
+                    "param_name"  => "icon_size",
+                ),
+
                 array(
                     "type" => "colorpicker",
                     "class" => "",

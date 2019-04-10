@@ -84,6 +84,30 @@ function fw_social_icons( $atts ) {
 }
 
 
+add_shortcode('fw_only_icon', 'fw_only_icon', 10, 2);
+function fw_only_icon( $atts ) {
+    //Este pone iconos
+    $atts = shortcode_atts(
+        array(
+            'type' => '',
+            'icon_align' => 'center',
+            'icon_size' =>  '',
+            'icon_color' =>  '',
+            'el_class' =>  '',
+            'el_id' =>  '',
+            //Depreceated
+                
+    ), $atts );
+
+    $iconclass=" fw_icon ".$atts['el_class'].' ';
+    $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
+    $first.='<i class="'.$atts['type'].'" style="color:'.$atts['icon_color'].';font-size:'.$atts['icon_size'].'px !important;"></i>';
+    $first.="</div>";
+    
+    
+    return $first;
+}
+
 add_shortcode("fwi","fw_data",10,2);
 add_shortcode('fw_extras_short', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
