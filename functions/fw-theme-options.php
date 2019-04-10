@@ -1057,7 +1057,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Single Product Code', 'fastway' ),     
 	'section'     => 'section_woo_single',
 	'default'     => '[fw_single_container]
-	[fw_single_gallery] 
+	[fw_single_gallery]
 	[fw_single_summary]
 	[fw_single_title]
 	[fw_single_price]

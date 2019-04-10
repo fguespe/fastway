@@ -1429,15 +1429,14 @@ footer .widget_nav_menu li a {
 }
 @media (max-width: 799px) {
   .fw_product_loop .product_title{
-      overflow:hidden !important;
+      /*overflow:hidden !important;*/
       display: block;
-      font-size:12px;
       padding:0px;
       margin: 0px;
 
-    font-size:14px ;
-    line-height: 16px;
-    height: 32px; /* (Number of lines you want visible) * (line-height) */
+      font-size:14px !important;
+      line-height: 16px !important;
+      height: 32px; /* (Number of lines you want visible) * (line-height) */
   }
   .fw_product_loop .meta {
       padding:5px !important;
