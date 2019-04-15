@@ -71,8 +71,16 @@ padding:8px !important;
 }
 */
 </style>
+
 <header id="header">
 <?php 
+
+if(fw_theme_mod("maintainance-mode")){
+
+    echo '<div class="maintainance-notice"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
+
+}
+
 echo fw_header_html();
 echo fw_header_html_mobile();
 ?>
