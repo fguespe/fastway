@@ -194,8 +194,13 @@ function fw_data( $atts ) {
         if(empty($link))fw_company_data("googlemaps",true,$cant);
     }else{
         //Puso directo las clases
+        if( strpos( $type, 'fa-' ) === false) {
+            $type='fa-'.$type;
+        }
         $icon=$icons_style.' '.$type;
         $type='custom';
+       
+       
     }
     if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
 
