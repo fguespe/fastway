@@ -11,6 +11,24 @@ function fw_default_filters(){
     return;
 }
 
+add_shortcode('fw_loop_labels', 'fw_loop_labels');
+function fw_loop_labels($atts = [], $content = null){
+    $atts = shortcode_atts(array('type' => '','id'=>'' ), $atts );
+    global $product;
+    
+    if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
+        echo '<div class="envio-gratis-tag grupo-envio-6" title="Éste producto tiene envío Gratis"><i class="fal fa-shipping-fast"></i> Gratis</div>';
+    }
+}
+
+add_shortcode('fw_conditional', 'fw_conditional');
+function fw_conditional($atts = [], $content = null){
+    $atts = shortcode_atts(array('type' => '','id'=>'' ), $atts );
+    global $product;
+    if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
+       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    }
+}
 function woo_loop_brand(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
@@ -329,12 +347,6 @@ function fw_global_variation_price() {
     <?php
 }
 
-function envio_labels(){
-    global $product;
-    if($product->get_shipping_class()=="envio-gratis"){
-        echo '<div class="envio-gratis-tag grupo-envio-6" title="Éste producto tiene envío Gratis"><i class="fal fa-shipping-fast"></i> Gratis</div>';
-    }
-}
 
 function fw_price_html1($price,$product){
     if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return;

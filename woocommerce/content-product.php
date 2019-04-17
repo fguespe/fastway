@@ -62,10 +62,12 @@ function fw_loop_cart() {
 }
 add_shortcode('fw_loop_meta', 'fw_loop_meta');
 function fw_loop_meta($atts = [], $content = null){
+    $atts = shortcode_atts(array('type' => '' ), $atts );
     echo '<div class="meta">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
+
 
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
