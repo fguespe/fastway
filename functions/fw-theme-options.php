@@ -1758,10 +1758,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'gtagcheckout_id',
 	'label'    => __( ' Tag Manager Conversion ID (Checkout)', 'fastway' ),       
-	'section'     => 'section_general',
+	'section'     => 'section_woo',
 	'description' =>'refresh cache!'
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'thankyou_insert',
+	'label'    => __( 'Thank You Page Code', 'fastway' ),       
+	'section'     => 'section_woo',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header-insert',

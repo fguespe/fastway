@@ -729,7 +729,15 @@ function init_gtagmanager() {
     echo "\n" . $analytics;
 }
 if(!empty(fw_theme_mod('gtagcheckout_id')))add_action( 'woocommerce_thankyou', 'init_gtagcheckout' );
- 
+
+error_log(fw_theme_mod('thankyou_insert'));
+if(!empty(fw_theme_mod('thankyou_insert')))add_action( 'woocommerce_thankyou', 'bbloomer_conversion_tracking_thank_you_page' );
+function bbloomer_conversion_tracking_thank_you_page() {
+    error_log('jaja');
+    
+    echo fw_theme_mod('thankyou_insert');
+}
+
 function init_gtagcheckout() {
     
     $analytics = "<!-- Global site tag (gtag.js) - CHECKOUT -->
