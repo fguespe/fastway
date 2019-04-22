@@ -58,7 +58,7 @@ display:block !important;
          
       </div>
 
-      <h3 id=""><?php echo __('Payment mode','woocommerce')?></h3>
+      <h3 id=""><?php echo __('Payment method','woocommerce')?></h3>
       <div id="payment" class="woocommerce-checkout-payment">
         <?php do_action( 'woocommerce_checkout_order_review' ); ?>
       </div>
