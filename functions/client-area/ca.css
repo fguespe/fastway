@@ -395,7 +395,7 @@ display:none;
 display:none !important;
 
 }
-
+/*Estp qie carakp es? especificar pagina
 form#addtag div:nth-child(1),form#addtag div:nth-child(2),form#addtag div:nth-child(3){
 display:none !important;
 }
@@ -406,7 +406,7 @@ display:none !important;
 form#addtag div:nth-child(13),
 form#addtag div:nth-child(12){
 display:none !important;
-}
+}*/
 
 /*QUANTITY RULE*/
 .post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
