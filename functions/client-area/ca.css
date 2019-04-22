@@ -134,10 +134,10 @@ display:none !important;
 /*CORE*/
 
 #wpbody-content a {
-	color: var(--ca-main-color) !important;
+	color: var(--ca-main-color) ;
 }
 #wpbody-content a:hover {
-	color: var(--ca-main-color) !important;
+	color: var(--ca-main-color) ;
 }
 
 
