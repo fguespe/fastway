@@ -403,7 +403,7 @@ class fw_Woo_Shortcodes {
 			'title'			=> '',
 			'cats' 			=> '',
 			'terms' 			=> '',
-			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'hideempty' => isset($atts["hideempty"])&& !empty($atts["hideempty"])?false:true,
 
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 
@@ -425,7 +425,7 @@ class fw_Woo_Shortcodes {
 		$cates=array();
 		foreach($cats as $cat){
 			$term=get_term_by('slug' , $cat,'product_cat');
-			if($atts["uncategorized"] && $term->count==0)continue;
+			if($atts["hideempty"] && $term->count==0)continue;
 			
 			//error_log(json_encode($term));
 			array_push($cates,$term);

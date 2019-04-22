@@ -191,6 +191,10 @@ function vc_products_by_brand_carousel() {
 
 
 
+
+
+
+
 add_action( 'vc_before_init', 'vc_categories_carousel' );//Cates en general
 function vc_categories_carousel() {
 
@@ -236,11 +240,17 @@ function vc_categories_carousel() {
                     ),
                     array(
                         'type' => 'checkbox',
-                        'heading' => __( 'Hide Uncategorized ', 'fastway' ),
-                        'param_name' => 'uncategorized',
+                        'heading' => __( 'Hide Empty ', 'fastway' ),
+                        'param_name' => 'hideempty',
                         'std' => 'true',
                         'admin_label' => false,
                     ), 
+                    array(
+                        "type" => 'checkbox',
+                        "heading"     => "Autoplay ",
+                        "param_name"  => "autoplay",
+                        'std' => 'true',
+                    ),
                     array(
                         'type' => 'textfield',
                         'heading' => __( 'Extra class name', 'js_composer' ),

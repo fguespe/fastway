@@ -11,8 +11,8 @@ $rand=generateRandomString(5);
 <div class="swiper-wrapper clear-ul">
 
 <?php 
+//Si tiene las mismas columnas , no es slider.
 if(!$autoplay)$autoplay='false';
-		
 global $fw_woo_cat;          
 foreach ($terms as $term) {
     echo '<div class="swiper-slide">';
@@ -23,8 +23,10 @@ foreach ($terms as $term) {
 }
 ?>
 </div>
+<?php if($columns<count($terms)){ ?>
 <div class="swiper-prev swiper-cats-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-cats-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
+<?php } ?>
 </div>
  <script>
      var ProductSwiper = new Swiper('.swiper-cats-<?=$rand?>', {
