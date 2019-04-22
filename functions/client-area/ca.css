@@ -132,6 +132,16 @@ display:none !important;
 }
 
 /*CORE*/
+
+#wpbody-content a {
+	color: var(--ca-main-color) !important;
+}
+#wpbody-content a:hover {
+	color: var(--ca-main-color) !important;
+}
+
+
+
 .wp-core-ui .button-primary{
 	color:white !important;
 	background: var(--ca-main-color);
@@ -149,14 +159,6 @@ display:none !important;
 	color: black !important;
 	background: var(--ca-main-color);
 }
-
-#wpbody-content a {
-	color: var(--ca-main-color) !important;
-}
-#wpbody-content a:hover {
-	color: var(--ca-main-color) !important;
-}
-
 
 /*TOPBAR*/
 

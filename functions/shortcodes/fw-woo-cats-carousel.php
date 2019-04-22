@@ -23,10 +23,10 @@ foreach ($terms as $term) {
 }
 ?>
 </div>
-<?php if($columns<count($terms)){ ?>
+<?php //if($columns<count($terms)){ ?>
 <div class="swiper-prev swiper-cats-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-cats-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
-<?php } ?>
+<?php //} ?>
 </div>
  <script>
      var ProductSwiper = new Swiper('.swiper-cats-<?=$rand?>', {
