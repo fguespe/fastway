@@ -983,7 +983,14 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'checkout-msg',
-	'label'       => __( 'Check out message', 'fastway' ),
+	'label'       => __( 'Checkout message', 'fastway' ),
+	'description'=>'Display a messsage/notice before checkout',
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'order_email_msg',
+	'label'       => __( 'Order email message', 'fastway' ),
 	'description'=>'Display a messsage/notice before checkout',
 	'section'     => 'section_woo',
 ) );

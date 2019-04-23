@@ -479,8 +479,21 @@ function fw_otherwoo_options(){
     if(!empty(fw_theme_mod("checkout-msg"))){
         add_action( 'woocommerce_before_checkout_form', 'fw_before_paying_notice' );
     }
+    if(!empty(fw_theme_mod("order_email_msg"))){
+      add_action( 'woocommerce_email_before_order_table', 'fw_add_msg_to_order' );
+    }
+    
 
 }
+
+
+
+function fw_add_msg_to_order( $order, $sent_to_admin, $plain_text, $email ) {
+    if ( $email->id == 'customer_processing_order' ) {
+        echo '<h2 class="email-upsell-title">'.fw_theme_mod("order_email_msg").'</h2>';
+    }
+}
+
 
 function wc_remove_all_quantity_fields( $return, $product ){
     return true;
