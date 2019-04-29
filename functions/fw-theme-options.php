@@ -906,13 +906,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Only affecs main currecy. Leave empty for default.',
 	'section'     => 'section_woo',
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_conversion',
 	'label'    => __( 'Currency Conversion', 'fastway' ),
 	'description' => 'Usar punto para decimales, no la coma',
 	'section'     => 'section_woo',
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',
