@@ -1,5 +1,6 @@
 <?php
-if(fw_theme_mod('fw_currency_conversion')){
+
+if(fw_theme_mod('fw_currency_conversion') && !is_admin()){
     
   // Utility function to change the prices with a multiplier (number)
   function get_price_multiplier() {
