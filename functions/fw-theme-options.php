@@ -903,7 +903,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_symbol',
 	'label'    => __( 'Currency Symbol', 'fastway' ),
-	'descriptiom' => 'Only affecs main currecy. Leave empty for default.',
+	'description' => 'Only affecs main currecy. Leave empty for default.',
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_currency_conversion',
+	'label'    => __( 'Currency Conversion', 'fastway' ),
+	'description' => 'Usar punto para decimales, no la coma',
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
