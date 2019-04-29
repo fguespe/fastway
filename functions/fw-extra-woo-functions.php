@@ -4,6 +4,7 @@ function display_facebook_element()
 {
 	?>
     	<input type="text" name="fw_currency_conversion" id="fw_currency_conversion" value="<?php echo get_option('fw_currency_conversion'); ?>" />
+      <span> Usar punto para decimales, no la coma.</span>
     <?php
 }
 
