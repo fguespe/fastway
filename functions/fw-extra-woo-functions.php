@@ -558,7 +558,7 @@ function fw_otherwoo_options(){
         add_action( 'woocommerce_before_checkout_form', 'fw_before_paying_notice' );
     }
     if(!empty(fw_theme_mod("order_email_msg"))){
-      add_action( 'woocommerce_email_before_order_table', 'fw_add_msg_to_order' );
+      add_action( 'woocommerce_email_before_order_table', 'fw_add_msg_to_order', 20, 4 );
     }
     
 
