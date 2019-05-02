@@ -1887,6 +1887,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' 		=>	'¡Oferta!',
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_call_now',
+	'label'    => __( 'Sale Message', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'Llamar ahora!',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_consultar',
+	'label'    => __( 'Consultar Ahora', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'Consultar Ahora',
+) );
 
 
 

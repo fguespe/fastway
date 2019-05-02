@@ -90,11 +90,11 @@ echo fw_header_html_mobile();
         <div class="telefono-header t1 txt-16 text-left">      
           <?php 
           if(!empty(fw_company_data("phone"))){?>   
-          <a href="<?php echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> Llamar Ahora</a><br>
+          <a href="<?php echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
           <?php
           } 
           if(!empty(fw_company_data("whatsapp"))){?>
-          <a href="<?php echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> Consultar</a>
+          <a href="<?php echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_consultar')?></a>
           <?php } ?>
           
         </div>
