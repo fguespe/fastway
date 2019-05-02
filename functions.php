@@ -8,7 +8,7 @@ function fw_theme_mod( $name ) {
         else return 'fa';
     }
     // if(empty(get_theme_mod( $name) && $name=="fw_label_search"))set_theme_mod('fw_label_search','¿Que estas buscando?');
-    if(empty(get_theme_mod( $name) && $name=="fw_quickmenu_links"))set_theme_mod('fw_quickmenu_links','fb,youtube,whatsapp,ig,email,phone,address');
+    //if(empty(get_theme_mod( $name) && $name=="fw_quickmenu_links"))set_theme_mod('fw_quickmenu_links','fb,youtube,whatsapp,ig,email,phone,address');
     return get_theme_mod( $name);
 }
 function fw_getme_roles(){
