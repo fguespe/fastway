@@ -401,8 +401,8 @@ function fw_image_function( $atts, $content ) {
 
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
-    if($link)$return .= '<a class="fw_image_container d-none d-md-block" style="text-align:center" href="'.$link.'" >';
-    else $return .= '<div class="fw_image_container d-none d-md-block" style="text-align:center" >';
+    if($link)$return .= '<a class="fw_image_container '.$claserespo.'" style="text-align:center" href="'.$link.'" >';
+    else $return .= '<div class="fw_image_container '.$claserespo.'" style="text-align:center" >';
     $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
