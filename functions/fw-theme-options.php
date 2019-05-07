@@ -347,7 +347,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_general',
 	'default'     => '',
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'seo-keywords',
+	'label'       => __( 'Keywords', 'fastway' ),
+    'description' => 'Max 150 characters',
+	'section'     => 'section_general',
+	'default'     => '',
+) );
 /*HEAADER*/
 
 

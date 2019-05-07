@@ -11,6 +11,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <meta name="description" content="<?php echo fw_theme_mod('seo-desc');?>">
+    <meta name="keywords" content="<?php echo fw_theme_mod('seo-keywords');?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!-- APPLE -->
