@@ -85,7 +85,7 @@ if(fw_theme_mod("maintainance-mode")){
 echo fw_header_html();
 echo fw_header_html_mobile();
 ?>
-<div class="mobile-menu-overlay ">&nbsp;</div>
+<div class="mobile-menu-overlay d-md-none">&nbsp;</div>
 <div class="menu-madre-mobile">
         <div class="sub-menu-mobile"> 
         <div class="telefono-header t1 txt-16 text-left">      
