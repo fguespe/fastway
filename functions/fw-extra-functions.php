@@ -86,30 +86,6 @@ function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, 
     return $classes;
 }
 
-function fastway_get_stblock( $cats = array('all') ){
-    $res_args = array();
-
-    $meta_query = array();
-    
-    $args = array(
-        'post_type'         => 'fw_stblock',
-        'post_status'       => 'publish',
-        'posts_per_page'    => -1,
-        'orderby'           => 'title',
-        'order'             => 'ASC',
-        //'meta_query'        => $meta_query
-    );
-
-    $blocks = get_posts( $args );
-
-    foreach($blocks as $block) {
-        $slug = $block->post_name;
-
-        $res_args[$slug] = get_the_title($block->ID);
-    }
-    return $res_args;
-}
-
 function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
     if(!$iframe){
         $block=fw_StaticBlock::getSticBlockContent($id,true);

@@ -1,16 +1,35 @@
 <?php
 
-function fw_theme_mod( $name ) {
-    //global $my_theme_defaults;
-    if($name=="fw_icons_style"){
-        if(get_theme_mod( $name) === "solid" || get_theme_mod( $name) === "fas")return "fas";
-        if(get_theme_mod( $name) === "light" || get_theme_mod( $name) === "fal")return "fal";
-        else return 'fa';
+function fastway_get_stblock( $cats = array('all') ){
+    $res_args = array();
+
+    $meta_query = array();
+    
+    $args = array(
+        'post_type'         => 'fw_stblock',
+        'post_status'       => 'publish',
+        'posts_per_page'    => -1,
+        'orderby'           => 'title',
+        'order'             => 'ASC',
+        //'meta_query'        => $meta_query
+    );
+
+    $blocks = get_posts( $args );
+
+    foreach($blocks as $block) {
+        $slug = $block->post_name;
+
+        $res_args[$slug] = get_the_title($block->ID);
     }
-    // if(empty(get_theme_mod( $name) && $name=="fw_label_search"))set_theme_mod('fw_label_search','¿Que estas buscando?');
-    //if(empty(get_theme_mod( $name) && $name=="fw_quickmenu_links"))set_theme_mod('fw_quickmenu_links','fb,youtube,whatsapp,ig,email,phone,address');
-    return get_theme_mod( $name);
+    return $res_args;
 }
+
+
+if(is_plugin_active('kirki/kirki.php')){
+    require get_template_directory() . '/functions/fw-theme-options.php';
+}
+
+
 function fw_getme_roles(){
     if ( ! function_exists( 'get_editable_roles' ) ) {
         require_once ABSPATH . 'wp-admin/includes/user.php';
@@ -157,10 +176,6 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-
 }
 //require get_template_directory() . '/inc/kirki/kirki.php';
 */
-
-if(is_plugin_active('kirki/kirki.php')){
-    require get_template_directory() . '/functions/fw-theme-options.php';
-}
 
 if(is_plugin_active('kirki/kirki.php')){
     require get_template_directory() . '/functions/client-area/client-area.php';
