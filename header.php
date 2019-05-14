@@ -78,7 +78,7 @@ padding:8px !important;
 
 if(fw_theme_mod("maintainance-mode")){
 
-    echo '<div class="maintainance-notice"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
+    echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
 
 }
 
