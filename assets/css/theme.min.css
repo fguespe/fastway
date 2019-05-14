@@ -569,6 +569,11 @@
   margin-right: 10px;
 }
 
+.iconpagetop i {
+  font-size: 60px;
+  margin: 20px;
+}
+
 .mobile-menu-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
