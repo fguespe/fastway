@@ -1854,14 +1854,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'out-of-stock-text',
 	'label'    => __( 'Out of Stock Label', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>__( 'Sold', 'fastway' ),
+	'default'	=>__( 'Agotado', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-text',
 	'label'    => __( 'Add to cart Label', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>__( 'Buy', 'fastway' ),
+	'default'	=>__( 'Comprar', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
