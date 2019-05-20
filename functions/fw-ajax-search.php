@@ -15,7 +15,6 @@ function fw_product_search_where( $where, $query ) {
 		return $where;
 	}
   if( is_search() ) {
-    error_log('jaja');
     $query->set( 'category__not_in' , array( 'sin-categorizar' ) ); // Category ID
   }
 	global $wpdb;
@@ -41,7 +40,6 @@ if(fw_theme_mod('fw_ajax_search')){
     function ajax_search() {
       // Get search term from search field
       $search = sanitize_text_field( $_POST[ 'query' ] );
-      error_log($search);
       // Set up query using search string, limit to 8 results
       $meta_query  = WC()->query->get_meta_query();
       $meta_query[] = array(
@@ -51,9 +49,9 @@ if(fw_theme_mod('fw_ajax_search')){
           'compare' => '=',
       ));
       
-      error_log(print_r($meta_query,true));
       $tax_query   = WC()->query->get_tax_query();
-    // if($atts["uncategorized"]){
+
+      if(fw_theme_mod('fw_search_categorized_only')){
         $tax_query[] = array('relation'=> 'AND');
         $tax_query[] = array(
           'taxonomy' => 'product_cat',
@@ -61,7 +59,7 @@ if(fw_theme_mod('fw_ajax_search')){
           'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
           'operator' => 'NOT IN', // Excluded
         );
-    // }
+      }
       
       $query = new WP_Query(
         array(
@@ -156,7 +154,6 @@ if( !function_exists( 'fw_search_form' ) ) {
 
 
 //Oculto los sin categoria
-error_log(fw_theme_mod('fw_search_categorized_only'));
 
 if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
  

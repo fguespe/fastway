@@ -17,7 +17,6 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 
 add_shortcode('fw_echo', 'fw_echo');
 function fw_echo($atts = [], $content = null){
-    error_log('sdsd');
     echo stripslashes(htmlspecialchars_decode($content));
 }
 
