@@ -176,6 +176,12 @@ Kirki::add_section( 'section_woo_shop', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+Kirki::add_section( 'section_woo_search', array(
+    'title'          => __( 'Search Page', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
 Kirki::add_section( 'section_woo_loop', array(
     'title'          => __( 'Product Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -534,21 +540,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'top-header',
-	'label'       => __( 'Top Header', 'fastway' ),
-	'section'     => 'section_header',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	),
-	
-) );*/
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'mega_menu',
@@ -578,7 +569,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'mega_menu_overlay',
 	'label'       => __( 'Overlay', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -995,7 +986,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Checkout Minimal ', 'fastway' ),
 	'description'	=> 'Hides header and footer',
 	'section'     => 'section_woo',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    0  => __( 'Enable', 'fastway' ),
 	    1 => __( 'Disable', 'fastway' )
@@ -1169,7 +1160,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'FontAwesome Pro', 'fastway' ),
 	'description' => '*you have to purchase a pro licence and then add your domains.',
 	'section'     => 'section_typos',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    0  => __( 'Enable', 'fastway' ),
 	    1 => __( 'Disable', 'fastway' )
@@ -1702,7 +1693,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'whats-widget',
 	'label'       => __( 'Whatsapp Widget', 'fastway' ),
 	'section'     => 'section_general',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1801,6 +1792,52 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
+
+//Search
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_ajax_search',
+	'label'       => __( 'Ajax Search', 'fastway' ),
+	'section'     => 'section_woo_search',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_search_by_sku',
+	'label'       => __( 'Search by sku', 'fastway' ),
+	'section'     => 'section_woo_search',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_search_categorized_only',
+	'label'       => __( 'Exclude uncategorized', 'fastway' ),
+	'section'     => 'section_woo_search',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+
+
+
+
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header-insert',
