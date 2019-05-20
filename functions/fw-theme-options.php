@@ -1918,7 +1918,7 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
             $default_value = Kirki::$fields[ $field_id ]['default'];
           }
 		}
-		error_log('el default es: '.$field_id.' '.$default_value);
+		//error_log('el default es: '.$field_id.' '.$default_value);
         $value = get_theme_mod( $field_id, $default_value );
         return $value;
       }

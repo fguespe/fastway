@@ -1,10 +1,60 @@
 <?php
 
+function fw_product_search_join( $join, $query ) {
+	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) {
+		return $join;
+	}
+
+	global $wpdb;
+
+	$join .= " LEFT JOIN {$wpdb->postmeta} fw_post_meta ON {$wpdb->posts}.ID = fw_post_meta.post_id ";
+
+	return $join;
+}
+
+add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
+
+function fw_product_search_where( $where, $query ) {
+	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) {
+		return $where;
+	}
+
+	global $wpdb;
+
+	$where = preg_replace(
+		"/\(\s*{$wpdb->posts}.post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+		"({$wpdb->posts}.post_title LIKE $1) OR (fw_post_meta.meta_key = '_sku' AND fw_post_meta.meta_value LIKE $1)", $where );
+
+	return $where;
+}
+
+add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
+
 function ajax_search() {
   // Get search term from search field
   $search = sanitize_text_field( $_POST[ 'query' ] );
-  
+  error_log($search);
   // Set up query using search string, limit to 8 results
+  $meta_query  = WC()->query->get_meta_query();
+  $meta_query[] = array(
+    array(
+      'key' => '_sku',
+      'value' => $search,
+      'compare' => '=',
+  ));
+  
+  error_log(print_r($meta_query,true));
+  $tax_query   = WC()->query->get_tax_query();
+ // if($atts["uncategorized"]){
+    $tax_query[] = array('relation'=> 'AND');
+    $tax_query[] = array(
+      'taxonomy' => 'product_cat',
+      'field'    => 'slug', // Or 'name' or 'term_id'
+      'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
+      'operator' => 'NOT IN', // Excluded
+    );
+ // }
+  
   $query = new WP_Query(
     array(
       'posts_per_page' => 8,
@@ -16,8 +66,11 @@ function ajax_search() {
       //'order'               => $ordering_args['order'],
       'posts_per_page'      => 5,
       'suppress_filters'    => false,
+      'meta_query'          => $meta_query,
+      'tax_query'           => $tax_query,
     )
   );
+  //error_log(print_r($tax_query,true));
   
   $output = '';
   
@@ -89,5 +142,7 @@ if( !function_exists( 'fw_search_form' ) ) {
         return $devolver;
     }
 }
+
+
 
 ?>

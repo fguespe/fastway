@@ -87,7 +87,7 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria','uncategorized'),
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -159,7 +159,7 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria','uncategorized'),
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -243,7 +243,7 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria','uncategorized'),
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -367,7 +367,7 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria','uncategorized'),
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
@@ -651,7 +651,7 @@ class fw_Woo_Shortcodes {
 			$tax_query[] = array(
 				'taxonomy' => 'product_cat',
 				'field'    => 'slug', // Or 'name' or 'term_id'
-				'terms'    => array('sin-categoria','uncategorized'),
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
 				'operator' => 'NOT IN', // Excluded
 			);
 		}

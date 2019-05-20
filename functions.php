@@ -97,7 +97,6 @@ $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
 
 
-error_log(get_template_directory());
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/widgets.php';
