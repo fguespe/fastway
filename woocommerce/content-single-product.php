@@ -17,6 +17,7 @@ add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 
 
 add_shortcode('fw_echo', 'fw_echo');
 function fw_echo($atts = [], $content = null){
+    error_log('sdsd');
     echo stripslashes(htmlspecialchars_decode($content));
 }
 
@@ -62,7 +63,11 @@ function fw_single_price(){
 }
 add_shortcode('fw_summary_container', 'fw_summary_container');
 function fw_summary_container($atts = [], $content = null){
+    $class='';
+    if(isset($atts['class']))$class=$atts['class'];
+    echo '<div class="'.$class.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</div>';
 }
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart(){
@@ -79,7 +84,11 @@ function fw_single_tabs(){
 
 }
 add_shortcode('fw_single_related','fw_single_related');
-function fw_single_related(){
+function fw_single_related($atts){
+    $atts = shortcode_atts(array('cols' => 6 ), $atts );
+    $cols=$atts['cols'];
+
+
     echo '
 <div class="related" style="max-width: 1200px;">
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
@@ -112,7 +121,7 @@ function fw_single_related(){
 </div>
 <script>
 var ProductSwiper = new Swiper(".swiper-related", {
-    slidesPerView: 6,
+    slidesPerView: '.$cols.',
     spaceBetween: 10,
     loop: true,
     autoplay: true,

@@ -56,8 +56,9 @@ function woo_loop_code(){
 
 
 
-function display_facebook_element()
-{
+//Esto es para la pagina de opciones ,OJO, integrar altoweb.
+
+function display_currency_element(){
 	?>
     	<input type="text" name="fw_currency_conversion" id="fw_currency_conversion" value="<?php echo get_option('fw_currency_conversion'); ?>" />
       <span> Usar punto para decimales, no la coma.</span>
@@ -68,7 +69,7 @@ function display_theme_panel_fields()
 {
 	add_settings_section("section", "All Settings", null, "theme-options");
 	
-  add_settings_field("conversion_usd", "Conversion USD", "display_facebook_element", "theme-options", "section");
+  add_settings_field("conversion_usd", "Conversion USD", "display_currency_element", "theme-options", "section");
 
   register_setting("section", "fw_currency_conversion");
 }
@@ -97,11 +98,18 @@ function add_theme_menu_item()
 add_action("admin_menu", "add_theme_menu_item");
 
 
-if(get_option('fw_currency_conversion') && !is_admin()){
+
+
+
+
+
+
+if((get_option('fw_currency_conversion')  || get_option('fw_general_discount')) && !is_admin()){
     
   // Utility function to change the prices with a multiplier (number)
   function get_price_multiplier() {
-    $price=floatval(get_option('fw_currency_conversion'));
+    if(get_option('fw_currency_conversion'))$price+=floatval(get_option('fw_currency_conversion'));
+    if(get_option('fw_general_discount'))$price+=floatval(get_option('fw_general_discount'))/100;
     return $price; // x2 for testing
   }
 
@@ -132,6 +140,7 @@ if(get_option('fw_currency_conversion') && !is_admin()){
     return $hash;
   }
 }
+
 
 
 

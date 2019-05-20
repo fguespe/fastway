@@ -194,22 +194,10 @@ function fw_slider() {
                     "param_name"  => "links_mobile",
                 ),
                 array(
-                    "type" => 'textfield',
-                    "heading"     => __("Columns"),
-                    "param_name"  => "cols",
-                    'value' => '1',
-                ),
-                array(
                     "type" => 'checkbox',
                     "heading"     => "Autoplay ",
                     "param_name"  => "autoplay",
                     'std' => 'false',
-                ),
-                array(
-                    'type' => 'el_id',
-                    'heading' => __( 'Element ID', 'js_composer' ),
-                    'param_name' => 'el_id',
-                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
                 ),
                 array(
                     'type' => 'textfield',
@@ -262,12 +250,6 @@ function fw_image() {
                 ),
                
                 array(
-                    'type' => 'el_id',
-                    'heading' => __( 'Element ID', 'js_composer' ),
-                    'param_name' => 'el_id',
-                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
-                ),
-                array(
                     'type' => 'textfield',
                     'heading' => __( 'Extra class name', 'js_composer' ),
                     'param_name' => 'el_class',
@@ -290,12 +272,10 @@ function fw_slider_function( $atts, $content ) {
             'links_desktop'      =>  '',
             'slides_mobile'      =>  '',
             'links_mobile'      =>  '',
-            'cols'      =>  'cols',
             'autoplay'  => 'false',
+            'el_class'  => '',
             'loop'  => !$atts["autoplay"]?'false':'true',
         ), $atts );
-    $cols=$atts['cols'];
-    if(!is_numeric($cols))$cols=1;
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);
@@ -304,7 +284,7 @@ function fw_slider_function( $atts, $content ) {
     if(!$ismobile)$claserespo=' ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
-    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.'  over-hidden relative">
+    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative">
     <div class="swiper-wrapper clear-ul">';
     $cant=0;
     foreach( $image_ids as $image_id ){
@@ -380,6 +360,7 @@ add_shortcode( 'fw_slider_function', 'fw_slider_function' );
 
 
 
+add_shortcode( 'fw_image_function', 'fw_image_function' ); 
 function fw_image_function( $atts, $content ) {
  
     $atts = shortcode_atts(
@@ -387,6 +368,7 @@ function fw_image_function( $atts, $content ) {
             'image'      =>  '',
             'link'      =>  '',
             'image_mobile'      =>  '',
+            'el_class'  => '',
             'size'      =>  '100% auto',
         ), $atts );
         
@@ -401,14 +383,14 @@ function fw_image_function( $atts, $content ) {
 
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
-    if($link)$return .= '<a class="fw_image_container '.$claserespo.'" style="text-align:center" href="'.$link.'" >';
-    else $return .= '<div class="fw_image_container '.$claserespo.'" style="text-align:center" >';
+    if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
+    else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
     $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
-        if($link)$return .= '<a class="fw_image_container d-md-none" style="text-align:center" href="'.$link.'" >';
-        else $return .= '<div class="fw_image_container d-md-none" style="text-align:center" >';
+        if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
+        else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
         $return .= '<img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
@@ -417,7 +399,6 @@ function fw_image_function( $atts, $content ) {
 
     return $return;
 }   
-add_shortcode( 'fw_image_function', 'fw_image_function' ); 
 
 
 add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria

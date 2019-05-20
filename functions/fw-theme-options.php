@@ -913,6 +913,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Only affecs main currecy. Leave empty for default.',
 	'section'     => 'section_woo',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_general_discount',
+	'label'    => __( 'General % Discount', 'fastway' ),
+	'description' => 'Put the percentage to affect all product prices.',
+	'section'     => 'section_woo',
+) );
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
