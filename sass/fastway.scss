@@ -25,6 +25,15 @@
   margin-right: auto;
   margin-left: auto;
 }
+@media (max-width: 1500px) {
+  .fw_header .container,
+  .fw_header .container-mid{
+    padding-left:30px !important;
+    padding-right:30px !important;
+  }
+}
+
+  
 .fa-facebook-square,
 .fa-facebook{
 color:var(--facebok) !important;
