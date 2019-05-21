@@ -16,13 +16,11 @@ get_header();
             <li>Ayudate con el menú y buscá por categorías</li>
         </ul>
     </div>
+    <?php
+    if(is_plugin_active('woocommerce/woocommerce.php')){
+        do_shortcode('[fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]');
+    }
+    ?>
 </div>
 
-<?php 
-
-if(is_plugin_active('woocommerce/woocommerce.php')){
-do_shortcode('[fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]');
-}
-get_footer(); ?>
-<style>
-</style>
+<?php  get_footer(); ?>
