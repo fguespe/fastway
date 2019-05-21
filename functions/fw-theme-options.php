@@ -1728,7 +1728,7 @@ Kirki::add_field( 'theme_config_id', array(
 			</ul>
 		</div>
 	</div>
-		<div style="margin-top:40px;">
+		<div class="woo" style="margin-top:40px;">
 [fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]</div>
 </div>',
 	'choices'     => array(

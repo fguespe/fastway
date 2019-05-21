@@ -455,35 +455,35 @@ function fw_header_builder($atts = [], $content = null){
     $volver .='</div></div></div>';
     
     return $volver;
-  }
-  add_shortcode('fw_header', 'fw_header_builder');
+}
+add_shortcode('fw_header', 'fw_header_builder');
 
-  function fw_header_builder_mobile($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
-    if(!empty($atts['type']))$atts['id']=$atts['type'];
+function fw_header_builder_mobile($atts = [], $content = null){
+$atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
+if(!empty($atts['type']))$atts['id']=$atts['type'];
+
+$volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
+$volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+$volver .='</div>';
+
+return $volver;
+}
+add_shortcode('fw_m_header', 'fw_header_builder_mobile');
+
+
+function fw_header_html(){
     
-    $volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
-    $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-    $volver .='</div>';
-    
-    return $volver;
-  }
-  add_shortcode('fw_m_header', 'fw_header_builder_mobile');
-
-
-  function fw_header_html(){
-    if(fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+    if(is_plugin_active('woocommerce/woocommerce.php') && fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_header][fw_logo][/fw_header]')));
     }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
   }
   function fw_header_html_mobile(){
-    if(fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+    if(is_plugin_active('woocommerce/woocommerce.php') &&  fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_m_header][fw_logo][/fw_m_header]')));
     }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));
   }
-
 
 
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );

@@ -427,6 +427,8 @@ function fw_getfastars($average){
     $html.="</a>";
 	return $html;
 }
+
+
 // Function to add subscribe text to posts and pages
 function fw_pngcheckout_short() {
     $active1="";
