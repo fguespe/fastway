@@ -168,6 +168,22 @@ function so_20990199_product_query( $q ){
 
 }
 
+add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args');
+
+function custom_woocommerce_get_catalog_ordering_args( $args ) {
+    global $wp_query;
+        // Changed the $_SESSION to $_GET
+    if (isset($_GET['orderby'])) {
+       // switch ($_GET['orderby']) :
+           // case 'pa_pub-year' :
+                $args['order'] = 'ASC';
+                //$args['meta_key'] = 'pa_pub-year';
+                $args['orderby'] = 'title';
+           // break;
+        //endswitch;
+    }
+    return $args;
+}
 
 
 ?>
