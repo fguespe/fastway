@@ -23,7 +23,7 @@ function fw_container($atts = [], $content = null){
 add_shortcode('fw_short_desc', 'fw_short_desc');
 function fw_short_desc(){
     global $product;
-    echo get_the_excerpt( $product->id );
+    echo wpautop($product->post->post_excerpt) ;
 }
 
 
