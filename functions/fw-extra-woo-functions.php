@@ -1,6 +1,14 @@
 <?php
 
 /*LOOP FUNCTIONS*/
+add_shortcode('fw_container', 'fw_container');
+function fw_container($atts = [], $content = null){
+    $class='';
+    if(isset($atts['class']))$class=$atts['class'];
+    echo '<div class="'.$class.'">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</div>';
+}
 add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
