@@ -8,12 +8,20 @@ function fw_get_custom_field($atts){
     $sku=get_post_meta($product->id,$atts['id'],true);
     if(!empty($sku))echo $sku;
 }
-
+add_shortcode('fw_container', 'fw_container');
+function fw_container($atts = [], $content = null){
+    $class='';
+    if(isset($atts['class']))$class=$atts['class'];
+    echo '<div class=" '.$class.' ">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</div>';
+}
 add_shortcode('fw_short_desc', 'fw_short_desc');
 function fw_short_desc(){
     global $product;
     echo get_the_excerpt( $product->id );
 }
+
 
 add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
@@ -23,7 +31,7 @@ function fw_loop_image(){
 add_shortcode('fw_loop_title', 'fw_loop_title');
 function fw_loop_title(){
     global $product;
-    echo '<h2 class="product_title">'.$product->post->post_title.'</h2>';
+    echo '<h2 class="product_title">'.$product->post->post_tifw_conttle.'</h2>';
 }
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){

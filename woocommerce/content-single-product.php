@@ -1,12 +1,5 @@
 <?php
 
-add_shortcode('fw_single_cf','fw_get_custom_field');
-function fw_get_custom_field($atts){
-    global $product;
-    $sku=get_post_meta($product->id,$atts['id'],true);
-    if(!empty($sku))echo $sku;
-}
-
 woocommerce_breadcrumb();
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
@@ -20,11 +13,6 @@ function fw_echo($atts = [], $content = null){
     echo stripslashes(htmlspecialchars_decode($content));
 }
 
-add_shortcode('fw_short_desc', 'fw_short_desc');
-function fw_short_desc(){
-    global $product;
-    echo get_the_excerpt( $product->id );
-}
 add_shortcode('fw_div_open', 'fw_div_open');
 function fw_div_open($atts = [], $content = null){
     echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';
