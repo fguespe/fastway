@@ -1,7 +1,11 @@
 <?php
 
 /*LOOP FUNCTIONS*/
-
+add_shortcode('fw_loop_title', 'fw_loop_title');
+function fw_loop_title(){
+    global $product;
+    echo '<h2 class="product_title">'.$product->post->post_title.'</h2>';
+}
 add_shortcode('fw_single_cf','fw_get_custom_field');
 function fw_get_custom_field($atts){
     global $product;
@@ -28,11 +32,7 @@ function fw_loop_image(){
     global $product;
     echo woocommerce_get_product_thumbnail();
 }
-add_shortcode('fw_loop_title', 'fw_loop_title');
-function fw_loop_title(){
-    global $product;
-    echo '<h2 class="product_title">'.$product->post->post_tifw_conttle.'</h2>';
-}
+
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){
     global $product;
