@@ -25,8 +25,6 @@ function fw_short_desc(){
     global $product;
     echo get_the_excerpt( $product->id );
 }
-
-
 add_shortcode('fw_div_open', 'fw_div_open');
 function fw_div_open($atts = [], $content = null){
     echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';

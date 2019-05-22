@@ -1,6 +1,20 @@
 <?php
 
 /*LOOP FUNCTIONS*/
+
+add_shortcode('fw_single_cf','fw_get_custom_field');
+function fw_get_custom_field($atts){
+    global $product;
+    $sku=get_post_meta($product->id,$atts['id'],true);
+    if(!empty($sku))echo $sku;
+}
+
+add_shortcode('fw_short_desc', 'fw_short_desc');
+function fw_short_desc(){
+    global $product;
+    echo get_the_excerpt( $product->id );
+}
+
 add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
