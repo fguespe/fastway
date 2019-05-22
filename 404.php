@@ -1,8 +1,12 @@
 <?php 
 get_header(); 
 ?>
-<div class="container ">
-	<div class="content-detalle row " style="margin:0 auto;margin-top:40px;margin-bottom:40px;">
+<div class="wrapper" id="page-wrapper">
+
+<div class="container" id="content">
+
+    <div class="content-detalle row"  style="margin:0 auto;margin-top:40px;margin-bottom:40px;">
+
 		<div class="col-3">
             <i class="fal fa-debug" style="color:var(--main);font-size:200px;"></i>
         </div>
@@ -20,6 +24,8 @@ get_header();
             do_shortcode('[fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]');
         }
         ?>
+    </div>
+    </div>
 </div>
 
 <?php  get_footer(); ?>
