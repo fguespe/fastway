@@ -235,7 +235,7 @@ class WooTaxomizer {
 	</table>
 
 <?php 
-$varss="product_cat,".get_option('taxomizer_customtax');
+$varss="product_cat,brand,".get_option('taxomizer_customtax');
 foreach (explode(",",$varss) as $nombre ) {
 $titulo=$nombre;
 $nombre=strtolower($nombre);
@@ -273,8 +273,8 @@ if(empty($nombre))break;
 		$array=json_decode($_REQUEST['id']);
 		$elems=count($array);
 		$cuenta=(int)$_REQUEST['cuenta']*$elems;	
-		$nombre="product_cat";
-		$varss="product_cat,".get_option('taxomizer_customtax');
+		//$nombre="product_cat";
+		$varss="product_cat,brand,".get_option('taxomizer_customtax');
 		// Create the list of image IDs
 		$args     = array( 'post_type' => 'product' , 'posts_per_page'=>$elems,'offset'=>$cuenta);
 		$products = get_posts( $args ); 

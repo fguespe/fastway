@@ -51,6 +51,7 @@ function wootax_procesar_producto($prod,$catesmanuales,$tipo){
         }
         
         foreach ($cateaevaluar as $palabra) {//recorro todas las palabras
+          error_log($palabra);
           if(mb_strpos(wootax_formatear($titulo), wootax_formatear($palabra)) === false)continue;
           
           //SACO NEGATIVAS
@@ -182,7 +183,7 @@ function wootax_register_settings_taxomizer() {
   register_setting( 'taxomizer_options_group', 'taxomizer_customtax', 'myplugin_callback' );
 
 
-  $varss="product_cat,".get_option('taxomizer_customtax');
+  $varss="product_cat,brand,".get_option('taxomizer_customtax');
   foreach (explode(",",$varss) as $nombre ) {
   $nombre=strtolower($nombre);
   if(empty($nombre))break;
