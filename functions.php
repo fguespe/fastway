@@ -1,14 +1,5 @@
 <?php
-// Function to change email address
- 
-function wpb_sender_email( $original_email_address ) {
-    return 'avisos@altoweb.co';
-}
- 
-// Function to change sender name
-function wpb_sender_name( $original_email_from ) {
-    return 'Web';
-}
+
  
 // Hooking up our functions to WordPress filters 
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
@@ -107,9 +98,10 @@ $THEME_URI = get_template_directory_uri() . '/';
 $TEMPLATE_DIR=$THEME_DIR."templates/";
 $CHILDTEMPLATE_DIR=$CHILDTHEME_DIR."templates/";
 $TEMPLATE_URI=$THEME_URI."templates/";
-$THEME_IMG_URI= $THEME_URI . 'images/';
+$THEME_IMG_URI= $THEME_URI . 'assets/img/';
 $THEME_CSS_URI= $THEME_URI . 'css/';
 $THEME_JS_URI= $THEME_URI . 'js/';
+
 
 
 require get_template_directory() . '/inc/enqueue.php';
@@ -128,6 +120,7 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
+require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
 //require get_template_directory() . '/functions/fw-widgets.php';
 if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -137,6 +130,7 @@ if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
+    require get_template_directory() . '/functions/fw-config-page.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions-arg.php';
     if(is_plugin_active('js_composer/js_composer.php')){
@@ -348,4 +342,5 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
           die( 'Done!');
       } // end if "run" action
   });
+
 ?>
