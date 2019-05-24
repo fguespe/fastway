@@ -1424,6 +1424,9 @@ footer .widget_nav_menu li a {
   color: #444444;
   font-weight: bold;
 }
+.woocommerce-shop .prdctfltr_buttons {
+  display: none;
+}
 .woocommerce-shop .prdctfltr_woocommerce .prdctfltr_filter_title {
   display: none;
 }
