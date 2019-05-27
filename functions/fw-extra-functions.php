@@ -180,9 +180,27 @@ if( !function_exists( 'fw_menu' ) ) {
                                 $s_title=$s_submenu->title;
                                 $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
                                 //error_log("Pone:---------".$s_submenu->title);
-                            } 
+                                } 
                             }
                         
+                        }else if(!$megamenu && $isprimary){
+                            $s_parent = $submenu->ID;
+                            foreach( $menu_items as $s_submenu ) {
+                                if( $s_submenu->menu_item_parent == $s_parent ) {
+                                $s_url=$s_submenu->url;
+                                $s_title=$s_submenu->title;
+                          
+                                $menu_array[] = '<li class="dropdown-submenu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Submenu-1</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item">
+                                        <a href="#">Item-1</a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>';
+                                } 
+                            }
                         }
                         
                     }
