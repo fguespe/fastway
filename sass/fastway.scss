@@ -498,6 +498,7 @@ color:var(--linkedin) !important;
         padding: 0;
     }
 
+    
     .dropdown-menu {
         margin:0px !important;
         border-radius:0px !important;
@@ -511,6 +512,17 @@ color:var(--linkedin) !important;
         -moz-box-shadow:    0px -1px 2px 0px rgba(50, 50, 50, 0.15);
         box-shadow:         0px -1px 2px 0px rgba(50, 50, 50, 0.15);
     }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+    }
+        
     ul li .dropdown-menu  a{
         color: #444;
         padding: 3px 0 5px 0;

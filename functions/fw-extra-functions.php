@@ -169,38 +169,39 @@ if( !function_exists( 'fw_menu' ) ) {
                         $icon_classes=implode(' ',$icon_classes);
                         if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
                 
-                        
-                        $menu_array[] = '<li class="nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
+
+
+                        $childs=getChilds($submenu->ID,$menu_items);
                         //3er nivel
                         if($megamenu && $isprimary){
-                            $s_parent = $submenu->ID;
-                            foreach( $menu_items as $s_submenu ) {
-                                if( $s_submenu->menu_item_parent == $s_parent ) {
+                            $menu_array[] = '<li class="dropdown-submenu nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
+                            foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
                                 $s_title=$s_submenu->title;
                                 $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
-                                //error_log("Pone:---------".$s_submenu->title);
-                                } 
+                                
                             }
                         
                         }else if(!$megamenu && $isprimary){
-                            $s_parent = $submenu->ID;
-                            foreach( $menu_items as $s_submenu ) {
-                                if( $s_submenu->menu_item_parent == $s_parent ) {
+                            $laclase="";
+                            if(count($childs)>0)$laclase="dropdown-submenu";
+                            $menu_array[] = '<li class="'.$laclase.' nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a>';
+                            foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
                                 $s_title=$s_submenu->title;
-                          
-                                $menu_array[] = '<li class="dropdown-submenu">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Submenu-1</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item">
-                                        <a href="#">Item-1</a>
-                                    </li>
-                                   
-                                </ul>
-                            </li>';
-                                } 
+                            
+                                $menu_array[] = '
+                        <ul class="dropdown-menu second" style="display:none;">
+                            <li class="dropdown-item">
+                                <a href="#">Item-1</a>
+                            </li>
+                            
+                        </ul>';
+                                
                             }
+                            
+                            $menu_array[] = '</li>' ."\n";
+                            
                         }
                         
                     }
@@ -212,7 +213,7 @@ if( !function_exists( 'fw_menu' ) ) {
                     $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
                     $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
             
-                    $menu_list .= '<ul class="dropdown-menu">' ."\n";
+                    $menu_list .= '<ul class="dropdown-menu first">' ."\n";
                     if($megamenu)$menu_list .= '<div class="container row">';
                 
                     $menu_list .= implode( "\n", $menu_array );
@@ -237,7 +238,12 @@ if( !function_exists( 'fw_menu' ) ) {
         return $menu_list;
     }
 }
-
+function getChilds($parent,$menu_items){
+    $devolver=array();
+    foreach( $menu_items as $s_submenu ) 
+        if( $s_submenu->menu_item_parent == $parent ) array_push($devolver,$s_submenu);
+    return $devolver;
+}
 function fw_menu_vertical( $atts ) {
     $atts = shortcode_atts(array('id' => 'mobile' ), $atts );
     $id=$atts['id'];
@@ -314,7 +320,7 @@ function fw_menu_vertical( $atts ) {
                     $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
                     $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
              
-                    $menu_list .= '<ul class="dropdown-menu">' ."\n";
+                    $menu_list .= '<ul class="dropdown-menu first">' ."\n";
                     if($megamenu)$menu_list .= '<div class="row">';
                 
                     $menu_list .= implode( "\n", $menu_array );
