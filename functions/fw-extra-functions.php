@@ -186,20 +186,14 @@ if( !function_exists( 'fw_menu' ) ) {
                             $laclase="";
                             if(count($childs)>0)$laclase="dropdown-submenu";
                             $menu_array[] = '<li class="'.$laclase.' nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a>';
+                            if(count($childs)>0)$menu_array[] = '<ul class="dropdown-menu second" style="display:none;">';
                             foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
                                 $s_title=$s_submenu->title;
-                            
-                                $menu_array[] = '
-                        <ul class="dropdown-menu second" style="display:none;">
-                            <li class="dropdown-item">
-                                <a href="'.$s_url.'">'.$s_title.'</a>
-                            </li>
-                            
-                        </ul>';
+                                $menu_array[] = '<li class="dropdown-item"><a href="'.$s_url.'">'.$s_title.'</a></li>';
                                 
                             }
-                            
+                            if(count($childs)>0)$menu_array[] = '</ul>';
                             $menu_array[] = '</li>' ."\n";
                             
                         }
