@@ -9,6 +9,7 @@
   --linkedin:#0976b4;
   --twitter:#38A1F3;
 }
+
 .container-mid{
   max-width: 1600px;
   width: 100%;
@@ -479,9 +480,9 @@ color:var(--linkedin) !important;
     position:relative;
     z-index: 1200;
     border-radius:0px !important;
-    .dropdown-toggle::after{
+    /*.dropdown-toggle::after{
       display:none;
-    }
+    }*/
     ul li > a{
         display: block;     
     }   

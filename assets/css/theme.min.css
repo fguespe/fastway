@@ -479,12 +479,12 @@
   position: relative;
   z-index: 1200;
   border-radius: 0px !important;
+  /*.dropdown-toggle::after{
+    display:none;
+  }*/
 }
 #fw_menu .dropdown.active {
   background: white;
-}
-#fw_menu .dropdown-toggle::after {
-  display: none;
 }
 #fw_menu ul li > a {
   display: block;
