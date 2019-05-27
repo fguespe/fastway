@@ -193,7 +193,7 @@ if( !function_exists( 'fw_menu' ) ) {
                                 $menu_array[] = '
                         <ul class="dropdown-menu second" style="display:none;">
                             <li class="dropdown-item">
-                                <a href="#">Item-1</a>
+                                <a href="'.$s_url.'">'.$s_title.'</a>
                             </li>
                             
                         </ul>';
