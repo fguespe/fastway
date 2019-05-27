@@ -184,8 +184,12 @@ if( !function_exists( 'fw_menu' ) ) {
                         
                         }else if(!$megamenu && $isprimary){
                             $laclase="";
-                            if(count($childs)>0)$laclase="dropdown-submenu";
-                            $menu_array[] = '<li class="'.$laclase.' nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a>';
+                            $toggle="";
+                            if(count($childs)>0){
+                                $laclase="dropdown-submenu";
+                                $toggle='<span class="toggle"> > </span>';
+                            }
+                            $menu_array[] = '<li class="'.$laclase.' nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title .$toggle.'</a>';
                             if(count($childs)>0)$menu_array[] = '<ul class="dropdown-menu second" style="display:none;">';
                             foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
