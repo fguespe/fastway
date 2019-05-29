@@ -209,7 +209,7 @@ if( !function_exists( 'fw_menu' ) ) {
                 if( $bool == true && count( $menu_array ) > 0 ) {
                     
                     $menu_list .= '<li class="nav-item menu-item dropdown '.$classes.'">' ."\n";
-                    $menu_list .= '<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
+                    $menu_list .= '<a href="' . $url . '" class="dropdown-toggle nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
             
                     $menu_list .= '<ul class="dropdown-menu first">' ."\n";
                     if($megamenu)$menu_list .= '<div class="container row">';
