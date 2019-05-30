@@ -91,8 +91,10 @@ if(get_option('fw_currency_conversion')  && !is_admin()){
   // Simple, grouped and external products
   add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_get_regular_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_get_sale_price', 'custom_price', 99, 2 );
   // Variations
   add_filter('woocommerce_product_variation_get_regular_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   function custom_price( $price, $product ) {
     return intval($price * get_price_multiplier());
@@ -101,6 +103,7 @@ if(get_option('fw_currency_conversion')  && !is_admin()){
   // Variable (price range)
   add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
   add_filter('woocommerce_variation_prices_regular_price', 'custom_variable_price', 99, 3 );
+  add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
   function custom_variable_price( $price, $variation, $product ) {
     // Delete product cached price  (if needed)
     // wc_delete_product_transients($variation->get_id());
