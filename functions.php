@@ -340,15 +340,6 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
           
           die( 'Done!');
       } // end if "run" action
-  });
+});
 
-
-
-  /**
- * Notify admin when a new customer account is created
- */
-add_action( 'woocommerce_created_customer', 'woocommerce_created_customer_admin_notification' );
-function woocommerce_created_customer_admin_notification( $customer_id ) {
-  wp_send_new_user_notifications( $customer_id, 'admin' );
-}
 ?>
