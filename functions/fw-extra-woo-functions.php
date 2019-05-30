@@ -97,7 +97,7 @@ if(get_option('fw_currency_conversion')  && !is_admin()){
   add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   function custom_price( $price, $product ) {
-    return intval($price * get_price_multiplier());
+    if($price)return intval($price * get_price_multiplier());
   }
 
   // Variable (price range)
@@ -107,8 +107,9 @@ if(get_option('fw_currency_conversion')  && !is_admin()){
   function custom_variable_price( $price, $variation, $product ) {
     // Delete product cached price  (if needed)
     // wc_delete_product_transients($variation->get_id());
-
+    if($price){
     return intval($price * get_price_multiplier());
+    }
   }
 
   // Handling price caching (see explanations at the end)

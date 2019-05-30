@@ -132,7 +132,6 @@ if(is_plugin_active('js_composer/js_composer.php')){
 if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-config-page.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
-    require get_template_directory() . '/functions/fw-extra-woo-functions-arg.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
@@ -343,4 +342,13 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
       } // end if "run" action
   });
 
+
+
+  /**
+ * Notify admin when a new customer account is created
+ */
+add_action( 'woocommerce_created_customer', 'woocommerce_created_customer_admin_notification' );
+function woocommerce_created_customer_admin_notification( $customer_id ) {
+  wp_send_new_user_notifications( $customer_id, 'admin' );
+}
 ?>
