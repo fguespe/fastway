@@ -1160,7 +1160,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'FontAwesome Pro', 'fastway' ),
 	'description' => '*you have to purchase a pro licence and then add your domains.',
 	'section'     => 'section_typos',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    0  => __( 'Enable', 'fastway' ),
 	    1 => __( 'Disable', 'fastway' )
