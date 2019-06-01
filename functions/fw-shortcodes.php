@@ -88,7 +88,6 @@ function fw_whatsappfooter(){
         $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
 
     } 
-    error_log($whats);
     echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">Estamos<br>On-Line!</span>
