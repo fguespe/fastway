@@ -205,12 +205,12 @@ function fw_dashboard_widgets() {
         $idbs = str_replace( $idvar.'-', '', $id );
         $titulo=$instance[$idbs]['title'];
         $content=$instance[$idbs]['text'];
-        add_meta_box(
+       /* add_meta_box(
             'custom_help_widget'.$idbs, $titulo,
                 function ($arg) use ($content) {
                     echo html_entity_decode($content);
                 },
-            'dashboard','side','high');
+            'dashboard','side','high');*/
     }
 }
 add_action( 'init', 'fw_dashboard_widgets' );

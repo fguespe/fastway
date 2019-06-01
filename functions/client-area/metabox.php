@@ -1,7 +1,7 @@
 <?php
 //Adds custom items to menu
 function custom_add_menu_meta_box( $object ) {
-	add_meta_box( 'custom-menu-metabox', __( 'Fastway Client Area' ), 'custom_menu_meta_box', 'nav-menus', 'side', 'default' );
+	//add_meta_box( 'custom-menu-metabox', __( 'Fastway Client Area' ), 'custom_menu_meta_box', 'nav-menus', 'side', 'default' );
 	return $object;
 }
 add_filter( 'nav_menu_meta_box_object', 'custom_add_menu_meta_box', 10, 1);
