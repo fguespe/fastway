@@ -82,8 +82,14 @@ function fw_company_data($type, $link=false,$cant=1) {
 
 function fw_whatsappfooter(){
     if(!fw_theme_mod('whats-widget'))return;
- 
-    echo '<a href="'.fw_company_data('whatsapp',true).'" target="_blank" class="btn-wapp">
+    $whats=fw_company_data('whatsapp',true);
+    if(!empty(fw_company_data('whatsapp',true,2))){
+        //Si tiene 2 whatsapp
+        $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
+
+    } 
+    error_log($whats);
+    echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">Estamos<br>On-Line!</span>
         </a>';

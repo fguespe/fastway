@@ -342,4 +342,5 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
       } // end if "run" action
 });
 
+ 
 ?>

@@ -43,33 +43,60 @@ function wpb_sender_name( $original_email_from ) {
 
   /*COLUMNA MEDIA*/
 
-  add_filter( 'manage_media_columns', 'sk_media_columns_filesize' );
-  function sk_media_columns_filesize( $posts_columns ) {
-      $posts_columns['filesize'] = __( 'File Size', 'my-theme-text-domain' );
   
-      return $posts_columns;
+  // Ensure file size meta gets added to new uploads
+  function add_filesize_metadata_to_images($meta_id, $post_id, $meta_key, $meta_value) {
+    if('_wp_attachment_metadata' == $meta_key) {
+      $file = get_attached_file($post_id);
+      update_post_meta($post_id, 'filesize', filesize($file));
+    }
   }
-  add_action( 'manage_media_custom_column', 'sk_media_custom_column_filesize', 10, 2 );
-  function sk_media_custom_column_filesize( $column_name, $post_id ) {
-      if ( 'filesize' !== $column_name ) {
-          return;
+  add_action('added_post_meta', 'add_filesize_metadata_to_images', 10, 4);
+  // Add the column
+  function add_column_file_size($posts_columns) {
+    $posts_columns['filesize'] = __('File Size');
+    return $posts_columns;
+  }
+  add_filter('manage_media_columns', 'add_column_file_size');
+  // Populate the column
+  function add_column_value_file_size($column_name, $post_id) {
+    if('filesize' == $column_name) {
+      if(!get_post_meta($post_id, 'filesize', true)) {
+        $file      = get_attached_file($post_id);
+        $file_size = filesize($file);
+        update_post_meta($post_id, 'filesize', $file_size);
+      } else {
+        $file_size = get_post_meta($post_id, 'filesize', true);
       }
-  
-      $bytes = filesize( get_attached_file( $post_id ) );
-  
-      echo size_format( $bytes, 2 );
+      echo size_format($file_size, 2);
+    }
+    return false;
   }
-  
-  add_action( 'admin_print_styles-upload.php', 'sk_filesize_column_filesize' );
-  
-  function sk_filesize_column_filesize() {
-      echo
-      '<style>
-          .fixed .column-filesize {
-              width: 10%;
-          }
-      </style>';
+  add_action('manage_media_custom_column', 'add_column_value_file_size', 10, 2);
+  // Make column sortable
+  function add_column_sortable_file_size($columns) {
+    $columns['filesize'] = 'filesize';
+    return $columns;
   }
+  add_filter('manage_upload_sortable_columns', 'add_column_sortable_file_size');
+  // Column sorting logic (query modification)
+  function sortable_file_size_sorting_logic($query) {
+    global $pagenow;
+    if(is_admin() && 'upload.php' == $pagenow && $query->is_main_query() && !empty($_REQUEST['orderby']) && 'filesize' == $_REQUEST['orderby']) {
+      $query->set('order', 'ASC');
+      $query->set('orderby', 'meta_value_num');
+      $query->set('meta_key', 'filesize');
+      if('desc' == $_REQUEST['order']) {
+        $query->set('order', 'DSC');
+      }
+    }
+  }
+  add_action('pre_get_posts', 'sortable_file_size_sorting_logic');
+  
+  
+
+
+
 
 
   
