@@ -68,6 +68,7 @@ function fw_company_data($type, $link=false,$cant=1) {
     
     if($cant==0)$cant=1;
     $value=explode("|", $value)[$cant-1];
+    if(empty($value))return false;
     preg_match('#\((.*?)\)#', $value, $match);
     $link_en_parentesis= $match[1];
     if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
@@ -85,6 +86,7 @@ function fw_whatsappfooter(){
     $whats=fw_company_data('whatsapp',true);
     if(!empty(fw_company_data('whatsapp',true,2))){
         //Si tiene 2 whatsapp
+        error_log(fw_company_data('whatsapp',true,2));
         $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
 
     } 
