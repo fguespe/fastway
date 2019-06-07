@@ -23,6 +23,7 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
+    <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
 
 fw_whatsappfooter();

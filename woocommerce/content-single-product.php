@@ -93,7 +93,7 @@ function fw_single_related($atts){
         while ( $products->have_posts() ) : 
             //$contada++;
             $products->the_post(); 
-            echo '<div class="swiper-slide">';
+            echo '<div class="swiper-slide data-swiper-autoplay="'.$atts['slider_delay'].'">';
             wc_get_template_part( 'content', 'product' ); 
             echo ob_get_clean();
             echo '</div>';    

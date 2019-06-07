@@ -1840,7 +1840,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'header-insert',
+	'settings'    => 'fw_header_scripts',
 	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
 	'section'     => 'section_general',
 	'default'     => '',
@@ -1850,7 +1850,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'footer-insert',
+	'settings'    => 'fw_footer_scripts',
 	'label'    => __( 'Insert Scripts Footer', 'fastway' ),       
 	'section'     => 'section_general',
 	'default'     => '',

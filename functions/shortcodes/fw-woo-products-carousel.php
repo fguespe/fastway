@@ -12,7 +12,7 @@ if(!$autoplay)$autoplay='false';
 		
 while ( $products->have_posts() ) : 
     $products->the_post(); 
-    echo '<div class="swiper-slide">';
+    echo '<div class="swiper-slide data-swiper-autoplay="'.$slider_delay.'">';
     wc_get_template_part( 'content','product' ); 
     echo '</div>';    
 endwhile; 

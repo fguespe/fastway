@@ -201,6 +201,20 @@ function fw_slider() {
                 ),
                 array(
                     'type' => 'textfield',
+                    'heading' => __( 'Delay', 'js_composer' ),
+                    'param_name' => 'slider_delay',
+                    'description' => __( 'Delay in seconds', 'js_composer' ),
+                    'std' => '4000',
+                ),  
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Speed', 'js_composer' ),
+                    'param_name' => 'slider_speed',
+                    'description' => __( 'Speed in seconds, for transtitions', 'js_composer' ),
+                    'std' => '4',
+                ),  
+                array(
+                    'type' => 'textfield',
                     'heading' => __( 'Extra class name', 'js_composer' ),
                     'param_name' => 'el_class',
                     'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
@@ -272,6 +286,8 @@ function fw_slider_function( $atts, $content ) {
             'links_desktop'      =>  '',
             'slides_mobile'      =>  '',
             'links_mobile'      =>  '',
+            'slider_speed'  => '250',
+            'slider_delay'  => '4000',
             'autoplay'  => 'false',
             'el_class'  => '',
             'loop'  => !$atts["autoplay"]?'false':'true',
@@ -292,7 +308,7 @@ function fw_slider_function( $atts, $content ) {
         $link=$links[$cant];
         $image=$images[0];
         if(!$link)$link="#";
-        $return .= '<div class="swiper-slide">';
+        $return .= '<div class="swiper-slide" data-swiper-autoplay="'.$atts['slider_delay'].'">';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
@@ -310,6 +326,7 @@ function fw_slider_function( $atts, $content ) {
         spaceBetween: 30,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
+        speed:'.$atts['slider_speed'].',
         navigation: {
           nextEl: ".swiper-fwslider-'.$rand.'-next",
           prevEl: ".swiper-fwslider-'.$rand.'-prev",
@@ -329,7 +346,7 @@ function fw_slider_function( $atts, $content ) {
         $images = wp_get_attachment_image_src( $image_id, '' );
         $link=$links[$cant];
         $image=$images[0];
-        $return .= '<div class="swiper-slide">';
+        $return .= '<div class="swiper-slide data-swiper-autoplay="'.$atts['slider_delay'].'">';
         $return .= '<a href="'.$link.'" ><div class="item">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
@@ -347,6 +364,7 @@ function fw_slider_function( $atts, $content ) {
         spaceBetween: 30,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
+        speed:'.$atts['slider_speed'].',
         navigation: {
           nextEl: ".swiper-fwslider-'.$rand.'-next",
           prevEl: ".swiper-fwslider-'.$rand.'-prev",
