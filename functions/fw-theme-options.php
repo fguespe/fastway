@@ -857,7 +857,15 @@ Kirki::add_field( 'theme_config_id', array(
 					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
 					[/fw_m_header]',
 	'section'     => 'section_mobile',
-	'default'     => '[fw_m_header] [fw_logo][fw_m_menu][/fw_m_header]',
+	'default'     => '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0">
+	[fw_m_menu][fw_m_search_form id="3"]
+</div>
+<div class="col-6 row align-items-center justify-content-center">
+	[fw_logo]
+</div>
+<div class="col-3 row align-items-center justify-content-center">
+	[fw_shopping_cart]
+</div>[/fw_m_header]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1226,7 +1234,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'line-height'    => '44px',
 		'color'     => 'black',
 	),
-	'transport'   => 'auto',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(

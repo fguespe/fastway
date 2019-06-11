@@ -1197,7 +1197,9 @@ p:empty {
 .fw_header.mobile .bottom {
   background: var(--bottom-header);
 }
-
+.fw_header.mobile .fw-header-icon{
+  padding:0px !important;
+}
 
 .fw_header.middle {
   background: var(--middle-header);
