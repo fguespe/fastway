@@ -1695,6 +1695,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'whats-widget',
@@ -1705,6 +1706,19 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
+) );*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'whats-button',
+	'label'       => __( 'Whatsapp Widget', 'fastway' ),
+	'section'     => 'section_general',
+	'default'     => 'simple',
+	'choices'     => array(
+		'simple'   => __( 'Simple', 'fastway' ),
+		'random'   => 'Random',
+		'multi' => __( 'Multiple', 'fastway' ),
+	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(

@@ -2841,6 +2841,29 @@ body .wpb_content_element {
     transform: scale(1) rotate(0);
   }
 }
+.btn-wapp.second {
+  right: 20%;
+}
+
+@media (max-width: 799px) {
+  .btn-wapp.second {
+    bottom: 220px;
+    right: 0 !important;
+  }
+
+  .btn-wapp.multi i {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .btn-wapp.multi span {
+    display: block !important;
+    padding: 0px;
+    max-width: 60px;
+    font-size: 16px;
+  }
+}
 /*CUPON*/
 .woocommerce-form-coupon-toggle, .checkout_coupon {
   display: none;
