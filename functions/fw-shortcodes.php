@@ -85,6 +85,8 @@ function fw_whatsappfooter(){
     if(!fw_theme_mod('whats-widget'))return;
     $whats=fw_company_data('whatsapp',true);
     if(empty($whats))return;
+
+
     if(!empty(fw_company_data('whatsapp',true,2))){
         //Si tiene 2 whatsapp
         $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
@@ -93,6 +95,10 @@ function fw_whatsappfooter(){
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">Estamos<br>On-Line!</span>
         </a>';
+    echo '<a href="'.$whats.'" target="_blank" class="btn-wapp 2" style="right:20%;">
+        <i class="fab fa-whatsapp" style="color:white !important;"></i>
+        <span class="t5">Estamos<br>On-Line!</span>
+    </a>';
 }
 
 
