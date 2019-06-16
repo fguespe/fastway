@@ -4,10 +4,11 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 	function fw_scripts() {
 		$version=wp_get_theme("fastway")->get( 'Version' ) ;
 		wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-		if(fw_theme_mod('fa_pro'))wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.7.0/css/all.css');
-		else wp_enqueue_style( 'awesome-style', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+		//if(fw_theme_mod('fa_pro'))wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.7.0/css/all.css');
+		//else wp_enqueue_style( 'awesome-style', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 
 		wp_enqueue_script('jquery');
+		wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/cf0e255dde.js');
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ),$version , true);
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/js/swiper.min.js'  );

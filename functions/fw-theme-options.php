@@ -1162,6 +1162,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*TYPOGRAPHY*/
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fa_pro',
@@ -1173,7 +1174,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    0  => __( 'Enable', 'fastway' ),
 	    1 => __( 'Disable', 'fastway' )
 	)
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_icons_style',
