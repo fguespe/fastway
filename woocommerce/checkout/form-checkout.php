@@ -32,7 +32,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 ?>
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout vcv-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 <div class="mostrar" style="display:none;text-align:center;width:100%;">
   <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;"></i>
   <span>Estamos procesando su pedido...aguarde unos segundos.</span>
@@ -49,8 +49,8 @@ display:block !important;
 }
 </style>
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-    <div class="vcv-checkout-wrapper">
-      <div class="vcv-checkout-main" id="customer_details">
+    <div class="col-lg-7 col-sm-12">
+      <div class="fw_checkout-main" id="customer_details">
          <div class="woocommerce-billing-fields">
             <?php do_action( 'woocommerce_checkout_billing' ); ?>
             <?php do_action( 'woocommerce_checkout_shipping' ); ?>
@@ -58,10 +58,8 @@ display:block !important;
          
       </div>
 
-      <h3 id=""><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
-      <div id="payment" class="woocommerce-checkout-payment">
-        <?php do_action( 'woocommerce_checkout_order_review' ); ?>
-      </div>
+      
+      
       
       <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
@@ -74,24 +72,25 @@ display:block !important;
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 
-   <div class="vcv-side-summary" style="">
+   <div class="col-lg-5  col-sm-12" >
     <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
-    <div class="vcv-summary-box">
-        <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
+    <div class="fw_summary-box" style="background:white;">
+
+    <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
         <a href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a>
-        <div class="vcv-promo" style="display:none!important;">
+        <div class="fw_promo" style="display:none!important;">
           <button id="show-promo-form">
               Got promo code?
-              <span class="vcv-arrow">
+              <span class="fw_arrow">
                 <i class="fa fa-arrow-down" id="coupon" onclick="abrir()"></i>
               </span>
           </button>
           <script>
             function abrir(){
-              jQuery('.vcv-promo-content').toggle();
+              jQuery('.fw_promo-content').toggle();
             }
           </script>
-          <div class="vcv-promo-content" style="display:none;">
+          <div class="fw_promo-content" style="display:none;">
 
             <p class="form-row form-row-first">
               <input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'fastway' ); ?>" id="coupon_code" value="" />
@@ -110,8 +109,12 @@ display:block !important;
 
           </table>
         </div>
-        <div class="vcv-block-overlay"></div>
+        <div class="fw_block-overlay"></div>
     </div>
+    <h3 id="" class="mt20" style="margin-top:30px;"><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
+    <div id="payment" class="woocommerce-checkout-payment">
+        <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+      </div>
     <p class="description">
         <!-- El mejor precio garantizado -->
     </p>
