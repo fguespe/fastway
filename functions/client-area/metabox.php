@@ -1,7 +1,7 @@
 <?php
 //Adds custom items to menu
 function custom_add_menu_meta_box( $object ) {
-	//add_meta_box( 'custom-menu-metabox', __( 'Fastway Client Area' ), 'custom_menu_meta_box', 'nav-menus', 'side', 'default' );
+	add_meta_box( 'custom-menu-metabox', __( 'Fastway Client Area' ), 'custom_menu_meta_box', 'nav-menus', 'side', 'default' );
 	return $object;
 }
 add_filter( 'nav_menu_meta_box_object', 'custom_add_menu_meta_box', 10, 1);
@@ -20,20 +20,6 @@ function custom_menu_meta_box(){
 	}
 	/* set values to required item properties */
 	$items=array(
-		/*
-            array(__('Orders','fastway'),'credit-card','edit.php?post_type=shop_order'),
-            array(__('Reports','fastway'),'bar-chart','admin.php?page=wc-reports'),
-            array(__('Coupons','fastway'),'bullhorn','edit.php?post_type=shop_coupon'),
-            array(__('Blog','fastway'),'rss','edit.php'),
-            array(__('Products','fastway'),'shopping-cart','edit.php?post_type=product'),
-            array(__('Categories','fastway'),'tags','edit-tags.php?taxonomy=product_cat&post_type=product'),
-            array(__('Attributes','fastway'),'caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
-            array(__('Menus','fastway'),'bars','nav-menus.php'),
-            array(__('Users','fastway'),'users','users.php'),
-            array(__('Media','fastway'),'image','upload.php'),
-            array(__('Pages','fastway'),'document','edit.php?post_type=page'),
-            array(__('Comments','fastway'),'document','edit-comments.php'),
-            */
             array(__('Pedidos','fastway'),'credit-card','edit.php?post_type=shop_order'),
             array(__('Reportes','fastway'),'bar-chart','admin.php?page=wc-reports'),
             array(__('Cupones','fastway'),'bullhorn','edit.php?post_type=shop_coupon'),
