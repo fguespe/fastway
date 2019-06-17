@@ -19,9 +19,9 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
 function my_custom_dashboard_widgets() {
     global $wp_meta_boxes;
-    add_meta_box('custom_help_widget1', 'Soporte', 'custom_dashboard_help','dashboard','side','high');
-    if(get_option("ml_id"))add_meta_box('custom_help_widget2', 'Mercadolibre', 'custom_ml_help','dashboard','side','high');
-       wp_add_dashboard_widget('custom_help_widget', 'Soporte', 'custom_dashboard_help');
+  //  add_meta_box('custom_help_widget1', 'Soporte', 'custom_dashboard_help','dashboard','side','high');
+  //  if(get_option("ml_id"))add_meta_box('custom_help_widget2', 'Mercadolibre', 'custom_ml_help','dashboard','side','high');
+       //wp_add_dashboard_widget('custom_help_widget', 'Soporte', 'custom_dashboard_help');
 }
 
 function custom_dashboard_help() {
