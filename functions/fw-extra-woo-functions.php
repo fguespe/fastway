@@ -320,7 +320,7 @@ function addanotherrole($roles) {
 
 /*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
 function fw_allow_users_to_shopmanager() {
-    $role = get_role( 'shop_manager' );
+    /*$role = get_role( 'shop_manager' );
     $role->add_cap( 'edit_theme_options' ); 
     $role->add_cap( 'manage_options' ); 
     $role->add_cap( 'add_users' ); 
@@ -329,7 +329,7 @@ function fw_allow_users_to_shopmanager() {
     $role->add_cap( 'gravityforms_create_form' ); 
     $role->add_cap( 'gravityforms_edit_forms' ); 
     $role->add_cap( 'gravityforms_view_entries' ); 
-    $role->add_cap( 'gravityforms_user_registration'); 
+    $role->add_cap( 'gravityforms_user_registration'); */
 }
 add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 
