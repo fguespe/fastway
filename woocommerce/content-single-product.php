@@ -75,7 +75,7 @@ function fw_single_related($atts){
 
 
     echo '
-<div class="related" style="max-width: 1200px;">
+<div class="related" >
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
         
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
