@@ -4,10 +4,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
 	<meta name="mobile-web-app-capable" content="yes">
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <meta name="description" content="<?php echo fw_theme_mod('seo-desc');?>">
@@ -25,11 +22,13 @@
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <?php wp_head(); ?>
-    <!--
-    <style type="text/css" id="css_editor-general"><?php echo fw_theme_mod('css_editor-general')?></style>
-    <style type="text/css" id="css_editor-body"><?php echo fw_theme_mod('css_editor-body')?></style>
-    <style type="text/css" id="css_editor-widget"><?php echo fw_theme_mod('css_editor-header-headerwidget')?></style>
-    !-->
+
+    <!--SOCIAL MEDIA-->
+    <meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
+    <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
+    <meta property="og:image" content="<?php echo fw_theme_mod('social_media_image');?>">
+    <meta property="og:url" content="<?php echo 'https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <meta name="twitter:card" content="summary_large_image">
 
     <style type="text/css" id="css_editor-header"><?php echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor_shop"><?php echo fw_theme_mod('css_editor_shop')?></style>

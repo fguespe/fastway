@@ -463,7 +463,7 @@ function vc_fw_shorts() {
                   "type" => 'textfield',
                   "heading"     => __("Type"),
                   "param_name"  => "type",
-                  'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
+                  'description' => 'fb,twitter,youtube,whatsapp,ig,email,phone,address <br>
                   or fa-icon ,fal fa-icon',
                   "admin_label" => true,
                 ),
@@ -592,7 +592,7 @@ function vc_social_icons() {
                   "type" => 'textfield',
                   "heading"     => __("Type"),
                   "param_name"  => "type",
-                  'description' => 'fb,youtube,whatsapp,ig,email,phone,address <br>
+                  'description' => 'fb,twitter,youtube,whatsapp,ig,email,phone,address <br>
                   or fa-icon ,fal fa-icon',
                   "admin_label" => true,
                 ),

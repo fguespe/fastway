@@ -361,6 +361,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_general',
 	'default'     => '',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'social_media_image',
+	'label'       => __( 'Social Media Image', 'fastway' ),
+	'description' => 'Size: 1200x630 <= 1MB',
+	'section'     => 'section_general',
+) );
 /*HEAADER*/
 
 
@@ -510,7 +517,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_quickmenu_links',
 	'label'    	=> __( 'Mobile Menu Order', 'fastway' ),
-	'default' 	=>	'fb,youtube,whatsapp,ig,email,phone,address',
+	'default' 	=>	'fb,twitter,youtube,whatsapp,ig,email,phone,address',
 	'section'   => 'section_mobile',
 ) );
 Kirki::add_field( 'theme_config_id', array(
