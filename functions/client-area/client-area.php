@@ -39,7 +39,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => esc_attr__( 'Allowed Roles', 'fastway' ),
 	'description'=> 'REFRESH TO EDIT MENU IN CUSTOMIZER!',
 	'section'     => 'section_clientarea',
-	'choices'     => fw_getme_roles(),
+    'choices'     => fw_getme_roles(),
+	'default'     => 'shop-manager',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
