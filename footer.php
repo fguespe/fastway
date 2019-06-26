@@ -25,8 +25,7 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
 <script><?php echo $js;?></script>
     <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
-
-fw_whatsappfooter();
+if(fw_theme_mod('whats-button')!='none')fw_whatsappfooter();
 if(fw_theme_mod("popup-mode")){
 ?>
 

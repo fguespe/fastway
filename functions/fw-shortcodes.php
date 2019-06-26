@@ -82,7 +82,6 @@ function fw_company_data($type, $link=false,$cant=1) {
 }
 
 function fw_whatsappfooter(){
-    if(!fw_theme_mod('whats-button'))return;
     $whats=fw_company_data('whatsapp',true);
     if(empty($whats))return;
 

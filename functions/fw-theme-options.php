@@ -1723,9 +1723,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_general',
 	'default'     => 'simple',
 	'choices'     => array(
-		'simple'   => __( 'Simple', 'fastway' ),
-		'random'   => 'Random',
-		'multi' => __( 'Multiple', 'fastway' ),
+		'none'   	=> 	'Sacar',
+		'simple'   	=> 	'Simple',
+		'random'   	=> 	'Random',
+		'multi' 	=> 	'Multiple',
 	),
 ) );
 
