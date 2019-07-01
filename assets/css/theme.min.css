@@ -1392,6 +1392,7 @@ footer .widget_nav_menu li a {
   color: #444444;
   font-size: 14px;
   line-height: 14px;
+  overflow: hidden;
   max-height: 48px;
   /* (Number of lines you want visible) * (line-height) */
 }
