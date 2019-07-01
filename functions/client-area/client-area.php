@@ -132,6 +132,8 @@ if(!fw_theme_mod('ca-switch'))return;
 include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){
+    if(empty(fw_theme_mod('ca_roles')))return;
+
     $roles=fw_theme_mod('ca_roles');
     if(!empty($roles)){
         if(in_array(fw_get_current_user_role() , $roles) && !current_user_can('administrator')){
@@ -175,6 +177,7 @@ function fw_getmeroles_and_names(){
 add_action('init','fw_create_menus');
 
 function fw_create_menus(){
+    if(empty(fw_theme_mod('ca_roles')))return;
 
     $roles=fw_theme_mod('ca_roles');
     if(empty($roles))return;
