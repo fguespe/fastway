@@ -2443,6 +2443,9 @@ body .wpb_content_element {
   top: 1em;
   left: 1.5em;
 }
+.woocommerce .woocommerce-info a, .woocommerce .woocommerce-message a {
+  color: var(--second);
+}
 .woocommerce #reviews #comments ol.commentlist {
   margin: 0;
   width: 100%;
