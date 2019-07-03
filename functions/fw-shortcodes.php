@@ -103,6 +103,7 @@ function fw_whatsappfooter(){
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>
         </a>';
+        $whats=fw_company_data('whatsapp',true,2);
         $label=fw_company_data('whatsapp',false,2);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi second" style="right:20%;">
         <i class="fab fa-whatsapp" style="color:white !important;"></i>
