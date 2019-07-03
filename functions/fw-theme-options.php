@@ -40,6 +40,18 @@ Kirki::add_section( 'section_general', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_scripts', array(
+    'title'          => __( 'Scripts', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
+Kirki::add_section( 'section_seo', array(
+    'title'          => __( 'SEO', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_layouts', array(
     'title'          => __( 'Layouts', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -344,13 +356,36 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_seo',
+	'label'       => __( 'FW Meta Tags', 'fastway' ),
+	'section'     => 'section_seo',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_seo_social',
+	'label'       => __( 'FW Social Tags', 'fastway' ),
+	'section'     => 'section_seo',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'seo-desc',
 	'label'       => __( 'Meta Description', 'fastway' ),
     'description' => 'Max 150 characters',
-	'section'     => 'section_general',
+	'section'     => 'section_seo',
 	'default'     => '',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -358,7 +393,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'seo-keywords',
 	'label'       => __( 'Keywords', 'fastway' ),
     'description' => 'Max 150 characters',
-	'section'     => 'section_general',
+	'section'     => 'section_seo',
 	'default'     => '',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -366,7 +401,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'social_media_image',
 	'label'       => __( 'Social Media Image', 'fastway' ),
 	'description' => 'Size: 1200x630 <= 1MB',
-	'section'     => 'section_general',
+	'section'     => 'section_seo',
 ) );
 /*HEAADER*/
 
@@ -1767,14 +1802,43 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+/*SCRIPTS*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'analytics-id',
+	'label'    => __( 'Analyitics ID', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fbpixel_id',
+	'label'    => __( 'Facebook Pixel ID', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'gtagmanager_id',
+	'label'    => __( 'Google Tag Manager (Global)', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'gtagcheckout_id',
+	'label'    => __( ' Tag Manager Conversion ID (Checkout)', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'opt-ace-editor-js',
 	'label'       => __( 'JS Code', 'fastway' ),
 	'description'       => __( 'Paste your JS code here.', 'fastway' ),
-	'section'     => 'section_general',
+	'section'     => 'section_scripts',
 	'default'  => 'jQuery(document).ready(function(){
 		
 	});',
@@ -1784,33 +1848,29 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'analytics-id',
-	'label'    => __( 'Analyitics ID', 'fastway' ),       
-	'section'     => 'section_general',
-	'description' =>'refresh cache!'
+	'type'        => 'code',
+	'settings'    => 'fw_header_scripts',
+	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' => 'With the script tags',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fbpixel_id',
-	'label'    => __( 'Facebook Pixel ID', 'fastway' ),       
-	'section'     => 'section_general',
-	'description' =>'refresh cache!'
+	'type'        => 'code',
+	'settings'    => 'fw_footer_scripts',
+	'label'    => __( 'Insert Scripts Footer', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'gtagmanager_id',
-	'label'    => __( 'Google Tag Manager (Global)', 'fastway' ),       
-	'section'     => 'section_general',
-	'description' =>'refresh cache!'
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'gtagcheckout_id',
-	'label'    => __( ' Tag Manager Conversion ID (Checkout)', 'fastway' ),       
-	'section'     => 'section_woo',
-	'description' =>'refresh cache!'
-) );
+
+
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -1868,27 +1928,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_header_scripts',
-	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
-	'section'     => 'section_general',
-	'description' => 'With the script tags',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_footer_scripts',
-	'label'    => __( 'Insert Scripts Footer', 'fastway' ),       
-	'section'     => 'section_general',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-logged_in',

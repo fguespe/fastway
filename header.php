@@ -6,10 +6,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="mobile-web-app-capable" content="yes">
+
+
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
+    
+    <!-- SEO -->
+    <?php if(fw_theme_mod('fw_seo_social')){ ?>
     <meta name="description" content="<?php echo fw_theme_mod('seo-desc');?>">
     <meta name="keywords" content="<?php echo fw_theme_mod('seo-keywords');?>">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php } ?>
+	
+    <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!-- APPLE -->
     <meta name="format-detection" content="telephone=no">
@@ -21,15 +28,17 @@
     <link rel="apple-touch-startup-image" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <?php wp_head(); ?>
-
-    <!--SOCIAL MEDIA-->
-    <meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
+    <?php if(fw_theme_mod('fw_seo_social')){ ?>
+    <meta property="og:title" conten="<?php bloginfo( 'name' ); ?>">
     <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
     <meta property="og:image" content="<?php echo fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?php echo 'https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta name="twitter:card" content="summary_large_image">
+    <?php } ?>
+    <?php wp_head(); ?>
 
+    <!--SOCIAL MEDIA-->
+    
     <style type="text/css" id="css_editor-header"><?php echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor_shop"><?php echo fw_theme_mod('css_editor_shop')?></style>
     <style type="text/css" id="css_editor-loop"><?php echo fw_theme_mod('css_editor-loop')?></style>
