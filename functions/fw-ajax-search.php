@@ -42,12 +42,12 @@ if(fw_theme_mod('fw_ajax_search')){
       $search = sanitize_text_field( $_POST[ 'query' ] );
       // Set up query using search string, limit to 8 results
       $meta_query  = WC()->query->get_meta_query();
-      $meta_query[] = array(
+     /* $meta_query[] = array(
         array(
           'key' => '_sku',
           'value' => $search,
           'compare' => '=',
-      ));
+      ));*/
       
       $tax_query   = WC()->query->get_tax_query();
 
@@ -72,11 +72,11 @@ if(fw_theme_mod('fw_ajax_search')){
           //'order'               => $ordering_args['order'],
           'posts_per_page'      => 5,
           'suppress_filters'    => false,
-          'meta_query'          => $meta_query,
+        //  'meta_query'          => $meta_query,
           'tax_query'           => $tax_query,
         )
       );
-      //error_log(print_r($tax_query,true));
+      error_log(print_r($tax_query,true));
       
       $output = '';
       
