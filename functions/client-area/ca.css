@@ -364,6 +364,13 @@ display:none;
 .row-actions .edit_vc,#vc_navbar,#wp-admin-bar-view{
 	display:none ;
 }
+#vc_navbar .vc_navbar-header,
+#vc_navbar li{
+	display:none !important;
+}
+#vc_navbar .vc_show-mobile{
+	display:block !important;
+}
 /*VIUSAL EN PRODUCTOS*/
 .productos .edit_vc,.composer-switch{
 	display: none !important;
