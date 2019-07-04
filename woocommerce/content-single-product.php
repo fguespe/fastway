@@ -108,6 +108,7 @@ function fw_single_related($atts){
 var ProductSwiper = new Swiper(".swiper-related", {
     slidesPerView: '.$cols.',
     spaceBetween: 10,
+    touchRatio: 0 ,
     loop: true,
     autoplay: true,
     navigation: {
@@ -223,6 +224,7 @@ navigation: {
 },   
 paginationClickable: true,
 spaceBetween: 30,
+touchRatio: 0 ,
 centeredSlides: true,
 loop: '.$loop.',
 on: {

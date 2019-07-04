@@ -39,6 +39,7 @@ foreach ($terms as $term) {
             paginationClickable: true,
             spaceBetween: 10,
             loop: true,
+            touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,
             breakpoints: {
             // when window width is <= 320px

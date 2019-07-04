@@ -32,6 +32,7 @@ endwhile;
             paginationClickable: true,
             spaceBetween: 10,
             loop: true,
+            touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,
 	        autoplayDisableOnInteraction: false,
             breakpoints: {

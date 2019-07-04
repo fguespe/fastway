@@ -324,6 +324,7 @@ function fw_slider_function( $atts, $content ) {
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
         slidesPerView: 1,
         spaceBetween: 30,
+        touchRatio: 0 ,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
         speed:'.$atts['slider_speed'].',
@@ -362,6 +363,7 @@ function fw_slider_function( $atts, $content ) {
     var swiper_mobile = new Swiper(".swiper-fwslider-'.$rand.'", {
         slidesPerView: 1,
         spaceBetween: 30,
+        touchRatio: 0 ,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
         speed:'.$atts['slider_speed'].',
