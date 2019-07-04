@@ -1,6 +1,12 @@
 <?php
 
- 
+function check_user_role($role){
+	$user = wp_get_current_user();
+	if ( in_array( $role, (array) $user->roles ) ) {
+		return true;
+	}
+	return false;
+}
 // Hooking up our functions to WordPress filters 
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
 add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
