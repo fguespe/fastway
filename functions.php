@@ -5,6 +5,9 @@
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
 add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
 
+function fw_log($string){
+    error_log("fasway_ : ".$string);
+}
 
 function fastway_get_stblock( $cats = array('all') ){
     $res_args = array();
