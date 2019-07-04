@@ -360,10 +360,12 @@ display:none;
 .rocket_purge,#rocket_post_exclude{
 	display: none !important;
 }
-/*paginas visual editar fila
-.row-actions .edit_vc,#vc_navbar,#wp-admin-bar-view{
+/*paginas visual editar fila*/
+.row-actions .edit_vc,
+/*#vc_navbar,*/
+#wp-admin-bar-view{
 	display:none ;
-}*/
+}
 #vc_navbar .vc_navbar-header,
 #vc_navbar li{
 	display:none !important;
