@@ -107,7 +107,7 @@ if(get_option("fw_altoweb_mailconfig")){
      update_option("sendgrid_from_name",get_option("nubicommerce_desde_nombre"));
 
      //Mail woocommerce
-    update_option("woocommerce_email_header_image",get_option('plugin_clientarea_settings')['client_logo']);
+    update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
     update_option("woocommerce_email_footer_text","Powered by Altoweb");
     update_option("woocommerce_email_base_color",get_option('css_main_color'));
 
