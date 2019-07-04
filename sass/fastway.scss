@@ -3683,7 +3683,10 @@ body .wpb_content_element {
     .fw_checkout-wrapper .woocommerce-checkout-review-order-table{
     display:none !important;
     }
-
+    .pickup-location-field em{
+      margin-top:10px !important;
+      display:block
+    }
     form label,form .woocommerce-input-wrapper{
     display:block !important;
     width:100%;
