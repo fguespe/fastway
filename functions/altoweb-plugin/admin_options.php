@@ -30,6 +30,7 @@ function myplugin_register_settings() {
    add_option( 'nubicommerce_menu_whats', '');
    add_option( 'altoweb_defaultoptions', '0');
    add_option( 'fw_altoweb_defaultoptions', '0');
+   add_option( 'fw_altoweb_mailconfig', '0');
    add_option( 'nubicommerce_menu_dir', '');
    add_option( 'nubicommerce_menu_insta', '');
    add_option( 'nubicommerce_menu_fb', '');
@@ -71,6 +72,7 @@ function myplugin_register_settings() {
    register_setting( 'myplugin_options_group', 'taxomizerwpai', 'myplugin_callback' );
    register_setting( 'myplugin_options_group', 'altoweb_defaultoptions', 'myplugin_callback' );
    register_setting( 'myplugin_options_group', 'fw_altoweb_defaultoptions', 'myplugin_callback' );
+   register_setting( 'myplugin_options_group', 'fw_altoweb_mailconfig', 'myplugin_callback' );
    register_setting( 'myplugin_options_group', 'nubicommerce_modulo_enquiry', 'myplugin_callback' );
    register_setting( 'myplugin_options_group', 'nubicommerce_modulo_bulkterms', 'myplugin_callback' );
    register_setting( 'myplugin_options_group', 'nubicommerce_modulo_enquiry_loggin', 'myplugin_callback' );
@@ -160,6 +162,11 @@ text-align:left;
 <tr valign="top">
 <th scope="row"><label for="altoweb_defaultoptions">Reset Ecommerce Options</label></th>
 <td><input type="checkbox" id="altoweb_defaultoptions" name="altoweb_defaultoptions" value="1"<?php checked( 1 == get_option('altoweb_defaultoptions') ); ?> />
+</td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="fw_altoweb_mailconfig">FW Mail Config</label></th>
+<td><input type="checkbox" id="fw_altoweb_mailconfig" name="fw_altoweb_mailconfig" value="1"<?php checked( 1 == get_option('fw_altoweb_mailconfig') ); ?> />
 </td>
 </tr>
 <tr valign="top">
