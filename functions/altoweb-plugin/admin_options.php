@@ -164,11 +164,7 @@ text-align:left;
 <td><input type="checkbox" id="altoweb_defaultoptions" name="altoweb_defaultoptions" value="1"<?php checked( 1 == get_option('altoweb_defaultoptions') ); ?> />
 </td>
 </tr>
-<tr valign="top">
-<th scope="row"><label for="fw_altoweb_mailconfig">FW Mail Config</label></th>
-<td><input type="checkbox" id="fw_altoweb_mailconfig" name="fw_altoweb_mailconfig" value="1"<?php checked( 1 == get_option('fw_altoweb_mailconfig') ); ?> />
-</td>
-</tr>
+
 <tr valign="top">
 <th scope="row"><label for="fw_altoweb_defaultoptions">Load ALTOWEB Images</label></th>
 <td><input type="checkbox" id="fw_altoweb_defaultoptions" name="fw_altoweb_defaultoptions" value="1"<?php checked( 1 == get_option('fw_altoweb_defaultoptions') ); ?> />
@@ -223,7 +219,12 @@ text-align:left;
 <input type="checkbox" id="nubicommerce_modulo_500kb" name="nubicommerce_modulo_500kb" value="1"<?php checked( 1 == get_option('nubicommerce_modulo_500kb') ); ?> />
 </td>
 </tr>
-
+<tr valign="top">
+<th scope="row"><label for="fw_altoweb_mailconfig">Reset Woo Email Config</label></th>
+<td><input type="checkbox" id="fw_altoweb_mailconfig" name="fw_altoweb_mailconfig" value="1"<?php checked( 1 == get_option('fw_altoweb_mailconfig') ); ?> />
+*Sin esto chequeado, los cambios al mail no van a tomar efecto
+</td>
+</tr>
 <tr valign="top">
 <th scope="row"><label for="nubicommerce_desde_nombre">Desde Nombre</label></th>
 <td>
