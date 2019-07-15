@@ -28,7 +28,7 @@ function custom_dashboard_help() {
     echo '<p>Necesitas ayuda? Enviános un mail a <a href="mailto:soporte@altoweb.co" target="_blank">soporte@altoweb.co</a> para crear un ticket y que podamos responder tu consulta.</p><br><a href="mailto:soporte@altoweb.co" target="_blank">Crear ticket</a><br><br>' ;
 }
 function custom_ml_help() {
-    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize autlmaticamente podes acelerar el proceso:<br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.briziolabz.com/user.php?user='.get_option("ml_id").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.get_option("wpallimport_id").'&action=update" target="_blank">LINK</a>' ;
+    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize autlmaticamente podes acelerar el proceso:<br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.get_option("ml_id").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.get_option("wpallimport_id").'&action=update" target="_blank">LINK</a>' ;
 }
 
 
@@ -93,11 +93,41 @@ function after_xml_import_init_cate($import_id){
 
 
 
+error_log(get_option("nubicommerce_destinos_mail"));
+update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
+update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
+update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
+
+
+
+function orden_nueva( $recipients, $order ) {
+    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    error_log( $recipients);
+    return $recipients;
+}
+
+function email_orden_cancelada( $recipients, $order ) {
+    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    return $recipients;
+}
+
+function email_orden_fallida( $recipients, $order ) {
+    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    return $recipients;
+}
+add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
+add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
+add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
 
 //config mails
 if(get_option("fw_altoweb_mailconfig")){
-     update_option("woocommerce_product_enquiry_send_to",get_option("nubicommerce_destinos_mail"));
+   
+    update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
+    update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
+    update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
+    
+    update_option("woocommerce_product_enquiry_send_to",get_option("nubicommerce_destinos_mail"));
      update_option("woocommerce_stock_email_recipient",get_option("nubicommerce_destinos_mail"));
      
      update_option("sendgrid_from_email","avisos@altoweb.co");
@@ -106,30 +136,11 @@ if(get_option("fw_altoweb_mailconfig")){
      update_option("woocommerce_email_from_name",get_option("nubicommerce_desde_nombre"));
      update_option("sendgrid_from_name",get_option("nubicommerce_desde_nombre"));
 
+    
      //Mail woocommerce
     update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
     update_option("woocommerce_email_footer_text","Powered by Altoweb");
     update_option("woocommerce_email_base_color",get_option('css_main_color'));
-
-
-
-     function orden_nueva( $recipients, $order ) {
-         $recipients = ", ".get_option("nubicommerce_destinos_mail");
-         return $recipients;
-     }
-
-     function email_orden_cancelada( $recipients, $order ) {
-         $recipients = ", ".get_option("nubicommerce_destinos_mail");
-         return $recipients;
-     }
-
-     function email_orden_fallida( $recipients, $order ) {
-         $recipients = ", ".get_option("nubicommerce_destinos_mail");
-         return $recipients;
-     }
-     add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
-     add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
-     add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
 
     update_option('fw_altoweb_mailconfig','0');
