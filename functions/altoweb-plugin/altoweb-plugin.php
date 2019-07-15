@@ -19,16 +19,15 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
 function my_custom_dashboard_widgets() {
     global $wp_meta_boxes;
-  //  add_meta_box('custom_help_widget1', 'Soporte', 'custom_dashboard_help','dashboard','side','high');
-  //  if(get_option("ml_id"))add_meta_box('custom_help_widget2', 'Mercadolibre', 'custom_ml_help','dashboard','side','high');
-       //wp_add_dashboard_widget('custom_help_widget', 'Soporte', 'custom_dashboard_help');
+    if(get_option("ml_id"))wp_add_dashboard_widget('custom_help_widget1', 'Soporte', 'custom_ml_help');
+    wp_add_dashboard_widget('custom_help_widget2', 'Soporte', 'custom_dashboard_help');
 }
 
 function custom_dashboard_help() {
     echo '<p>Necesitas ayuda? Enviános un mail a <a href="mailto:soporte@altoweb.co" target="_blank">soporte@altoweb.co</a> para crear un ticket y que podamos responder tu consulta.</p><br><a href="mailto:soporte@altoweb.co" target="_blank">Crear ticket</a><br><br>' ;
 }
 function custom_ml_help() {
-    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize autlmaticamente podes acelerar el proceso:<br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.get_option("ml_id").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.get_option("wpallimport_id").'&action=update" target="_blank">LINK</a>' ;
+    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.get_option("ml_id").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.get_option("wpallimport_id").'&action=update" target="_blank">LINK</a>' ;
 }
 
 
@@ -140,7 +139,7 @@ if(get_option("fw_altoweb_mailconfig")){
      //Mail woocommerce
     update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
     update_option("woocommerce_email_footer_text","Powered by Altoweb");
-    update_option("woocommerce_email_base_color",get_option('css_main_color'));
+    update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
 
     update_option('fw_altoweb_mailconfig','0');
