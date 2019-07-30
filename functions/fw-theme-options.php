@@ -40,6 +40,12 @@ Kirki::add_section( 'section_general', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_popup', array(
+    'title'          => __( 'Popup', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_scripts', array(
     'title'          => __( 'Scripts', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1731,25 +1737,28 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'popup-mode',
 	'label'       => __( 'Popup', 'fastway' ),
-	'section'     => 'section_general',
+	'section'     => 'section_popup',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-/*
+
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'whats-widget',
-	'label'       => __( 'Whatsapp Widget', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );*/
+	'type'        => 'image',
+	'settings'    => 'popup-img',
+	'label'       => __( 'Popup Img', 'fastway' ),
+	'section'     => 'section_popup',
+
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'popup-link',
+	'label'    => __( 'Link', 'fastway' ),       
+	'section'     => 'section_popup',
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
@@ -1765,13 +1774,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'popup-img',
-	'label'       => __( 'Popup Img', 'fastway' ),
-	'section'     => 'section_general',
-
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => '404_code',

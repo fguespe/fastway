@@ -11,6 +11,7 @@
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
 $popup = fw_theme_mod('popup-img');
+$link = fw_theme_mod('popup-link');
 ?>
 
 <footer id="footer" class="">
@@ -30,10 +31,10 @@ if(fw_theme_mod("popup-mode")){
 ?>
 
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
-        <div class="modal-body">
-          	<img width="100%" src="<?php echo $popup;?>"/>
+        <div class="modal-body" style="padding:0px;">
+          	<a class="img" href="<?=$link?>"><img width="100%" src="<?php echo $popup;?>"/></a>
         </div>
     </div>
   </div>
