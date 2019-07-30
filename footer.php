@@ -31,7 +31,7 @@ if(fw_theme_mod("popup-mode") && is_front_page()){
 ?>
 
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered <?=fw_theme_mod('popup-size')?>">
     <div class="modal-content">
         <div class="modal-body" style="padding:0px;">
           	<a class="img" href="<?=$link?>"><img width="100%" src="<?php echo $popup;?>"/></a>
@@ -46,6 +46,7 @@ if(fw_theme_mod("popup-mode") && is_front_page()){
 </script>
 <?php
 }
+
 ?>
 </body>
 </html>
