@@ -27,11 +27,11 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
     <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
 if(fw_theme_mod('whats-button')!='none')fw_whatsappfooter();
-if(fw_theme_mod("popup-mode")){
+if(fw_theme_mod("popup-mode") && is_front_page()){
 ?>
 
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-body" style="padding:0px;">
           	<a class="img" href="<?=$link?>"><img width="100%" src="<?php echo $popup;?>"/></a>
