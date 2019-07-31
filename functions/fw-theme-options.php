@@ -1233,6 +1233,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'fa'   =>  'Regular',
 		'fas'  => 'Solid',
+		'fad'  => 'Duotone',
 		'fal'  => 'Light',
 	),
 ) );
