@@ -28,6 +28,7 @@ function quicklinks(){
         "youtube"=>array("fab fa-youtube"), 
         "whatsapp"=>array("fab fa-whatsapp"), 
         "ig"=>array("fab fa-instagram"), 
+        "linkedin"=>array("fab fa-linkedin"), 
         "email"=>array("fa fa-envelope"),  
         "phone"=>array("fa fa-phone"),  
         "address"=>array("fa fa-map-marker"), 
