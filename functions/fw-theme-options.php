@@ -1640,14 +1640,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',
 	'label'    => __( 'Company Email', 'fastway' ),
-    'description'     => __( '[fw_companyemail] [fw_extras_short type="email"]', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="email"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
 	'label'    => __( 'Company Facebook Url', 'fastway' ),
-    'description'     => __( '[fw_companyfb] [fw_extras_short type="fb"]', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="fb"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
@@ -1655,7 +1655,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
 	'label'    => __( 'Company Instagram Url', 'fastway' ),
-    'description'     => __( '[fw_companyig] [fw_extras_short type="ig"]', 'fastway' ),            
+    'description'     => __( '[fw_extras_short type="ig"]', 'fastway' ),            
+	'section'     => 'section_data',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companylk',
+	'label'    => __( 'Company Linkedin Url', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="linkedin"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 
@@ -1663,14 +1670,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
 	'label'    => __( 'Company Youtube Url', 'fastway' ),
-   	'description'     => __( '[fw_companyyoutube] [fw_extras_short type="youtube"]', 'fastway' ),
+   	'description'     => __( '[fw_extras_short type="youtube"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companytwitter',
 	'label'    => __( 'Company Twitter Url', 'fastway' ),
-   	'description'     => __( '[fw_companytwitter] [fw_extras_short type="twitter"]', 'fastway' ),
+   	'description'     => __( '[fw_extras_short type="twitter"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 /*Extras*/
