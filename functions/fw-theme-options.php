@@ -1658,9 +1658,10 @@ Kirki::add_field( 'theme_config_id', array(
     'description'     => __( '[fw_extras_short type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
+//Ohojo el. nombre importa! en settings
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'short-fw_companylk',
+	'settings'    => 'short-fw_companylinkedin',
 	'label'    => __( 'Company Linkedin Url', 'fastway' ),
     'description'     => __( '[fw_extras_short type="linkedin"]', 'fastway' ),            
 	'section'     => 'section_data',

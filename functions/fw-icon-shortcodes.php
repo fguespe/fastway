@@ -61,6 +61,7 @@ function fw_social_icons( $atts ) {
         }else if($type==="linkedin"){
             $icon="fab fa-linkedin";
             $link=fw_company_data($type,true,$cant);
+            error_log($link);
             $value="Ir al Linkedin";
             $icon_color="#2673B0";
         }else if($type==="youtube"){
