@@ -186,7 +186,7 @@ function fw_data( $atts ) {
         $link=fw_company_data($type,true,$cant);
         $value="Ir al Instagram";
         $icon_color="#9A3CC3";
-    }else if($type==="ig"){
+    }else if($type==="linkedin"){
         $icon="fab fa-linkedin";
         $link=fw_company_data($type,true,$cant);
         $value="Ir al Linkedin";
