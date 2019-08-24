@@ -1616,7 +1616,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="phone"] ', 'fastway' ),            
+    'description'     => __( '[fw_extras_short type="phone"]<br>*El tel: se pone solo ', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1658,7 +1658,7 @@ Kirki::add_field( 'theme_config_id', array(
     'description'     => __( '[fw_extras_short type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
-//Ohojo el. nombre importa! en settings
+//Ohojo el. nombre
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companylinkedin',

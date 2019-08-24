@@ -60,7 +60,6 @@ function fw_company_data($type, $link=false,$cant=1) {
     else if($type=="phone" && $link)$pre="tel:";
     else if($type==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$type);
-    
     //fix whatsapp +
     if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
 
@@ -79,6 +78,11 @@ function fw_company_data($type, $link=false,$cant=1) {
     }else if(empty($link_en_parentesis) && $link){
         $value=$pre.$value;
     }
+    /*fix doble tel*/
+    if( strpos( $value, 'tel:tel:' ) !== false) {
+        return "";
+    }
+    
     return $value;
 }
 
