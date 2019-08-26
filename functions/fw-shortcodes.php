@@ -78,9 +78,12 @@ function fw_company_data($type, $link=false,$cant=1) {
     }else if(empty($link_en_parentesis) && $link){
         $value=$pre.$value;
     }
-    /*fix doble tel*/
+
+    /*prevent dobles*/
     if( strpos( $value, 'tel:tel:' ) !== false) {
-        return "";
+        $value=str_replace('tel:tel:','tel:',$value);
+    }else if( strpos( $value, 'mailto:mailto:' ) !== false) {
+        $value=str_replace('mailto:mailto:','mailto:',$value);
     }
     
     return $value;
