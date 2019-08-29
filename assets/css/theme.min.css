@@ -567,12 +567,16 @@
   z-index: 1101;
 }
 
+.product-categories .current-cat a{
+  font-weight:bold !important;
+}
 .fw_icon {
   align-items: center;
 }
 .fw_icon i {
   font-size: 30px;
 }
+
 .fw_icon big {
   display: block;
   font-size: 20px !important;
