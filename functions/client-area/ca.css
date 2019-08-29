@@ -333,9 +333,25 @@ border-radius:0px;
 form#your-profile table:nth-child(6),form#your-profile h2:nth-child(11),form#your-profile h2:nth-child(5),form#your-profile table:nth-child(12){
 display:none !important;
 }
+/*activacioens */
 .usuarios .row-actions,.usuarios .page-title-action{
 	display: none !important;
 }
+.usuarios .users_page_gf-pending-activations .row-actions{
+	display:block !important;
+}
+.usuarios  .users_page_gf-pending-activations  .row-actions{
+	color: var(--main) !important;
+	left:0;
+}
+.users_page_gf-pending-activations .row-actions{
+	display:block !important;
+	}
+	.row-actions{
+	color: var(--main) !important;
+	left:0;
+	}
+
 .usuarios .export-users{
 	display: none !important;
 
