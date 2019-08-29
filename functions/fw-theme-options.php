@@ -973,6 +973,14 @@ Kirki::add_field( 'theme_config_id', array(
 		'hide' => __( 'Hide', 'fastway' ),
 	),
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'multicheck',
+	'settings'    => 'ca_roles_mayorista',
+	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
+	'section'     => 'section_woo',
+    'choices'     => fw_getme_roles(),
+	'default'     => '',
+) );
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

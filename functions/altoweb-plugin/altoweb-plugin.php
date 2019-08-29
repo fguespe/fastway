@@ -468,7 +468,7 @@ global $product;
                   <a class="nav-link active" id="mercadopago-tab" data-toggle="tab" href="#mercadopago" role="tab" aria-controls="mercadopago" aria-selected="true">MERCADOPAGO</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" id="todopago-tab" data-toggle="tab" href="#todopago" role="tab" aria-controls="todopago" aria-selected="false">TODOPAGO</a>
+                  <a class="nav-link" id="todopago-tab" data-toggle="tab" href="#todopago" role="tab" aria-controls="todopago" aria-selected="false" style="display:none;">TODOPAGO</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" id="banco-tab" data-toggle="tab" href="#banco" role="tab" aria-controls="banco" aria-selected="false">TRANSFERENCIA BANCARIA</a>

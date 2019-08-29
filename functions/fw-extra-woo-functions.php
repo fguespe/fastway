@@ -505,7 +505,7 @@ function fw_global_variation_price() {
 
 function fw_price_html1($price,$product){
     if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return;
-    
+
     $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -524,8 +524,17 @@ function fw_price_html1($price,$product){
         }
         $percentage=$maximumper;
     }else{
+        //fix para roles
+        
         $regular_price=$product->regular_price;
         $sale_price=$product->sale_price;
+        if (function_exists('get_product_prices') && 
+        in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
+     
+          $prica=get_product_prices($product->get_id());
+          $regular_price=$prica[fw_get_current_user_role()];
+          $sale_price=$prica['salePrice'][fw_get_current_user_role()];
+        }
         if(intval($regular_price) && intval($sale_price)){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
         }else{
