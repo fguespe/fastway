@@ -344,13 +344,7 @@ display:none !important;
 	color: var(--main) !important;
 	left:0;
 }
-.users_page_gf-pending-activations .row-actions{
-	display:block !important;
-	}
-	.row-actions{
-	color: var(--main) !important;
-	left:0;
-	}
+
 
 .usuarios .export-users{
 	display: none !important;
