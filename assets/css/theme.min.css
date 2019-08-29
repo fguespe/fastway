@@ -567,16 +567,12 @@
   z-index: 1101;
 }
 
-.product-categories .current-cat a{
-  font-weight:bold !important;
-}
 .fw_icon {
   align-items: center;
 }
 .fw_icon i {
   font-size: 30px;
 }
-
 .fw_icon big {
   display: block;
   font-size: 20px !important;
@@ -1431,6 +1427,9 @@ footer .widget_nav_menu li a {
   }
 }
 /* Filters woo*/
+.woocommerce-shop .product-categories .current-cat a {
+  font-weight: bold !important;
+}
 .woocommerce-shop .widget h3.widget-title,
 .woocommerce-shop .widget h3.widget-title span {
   font-size: 16px;
