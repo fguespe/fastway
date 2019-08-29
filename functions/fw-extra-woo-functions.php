@@ -532,8 +532,10 @@ function fw_price_html1($price,$product){
         in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
      
           $prica=get_product_prices($product->get_id());
-          $regular_price=$prica[fw_get_current_user_role()];
-          $sale_price=$prica['salePrice'][fw_get_current_user_role()];
+          if($prica[fw_get_current_user_role()]){//verifica el precio seteado
+            $sale_price=$prica['salePrice'][fw_get_current_user_role()];
+            $regular_price=$prica[fw_get_current_user_role()];
+          }
         }
         if(intval($regular_price) && intval($sale_price)){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  

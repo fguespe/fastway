@@ -981,18 +981,6 @@ Kirki::add_field( 'theme_config_id', array(
     'choices'     => fw_getme_roles(),
 	'default'     => '',
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'cart-steps',
-	'label'       => __( 'Cart/Checkout Steps ', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'checkout-minimal',
