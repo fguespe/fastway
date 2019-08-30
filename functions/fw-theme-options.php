@@ -974,6 +974,14 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca_extra_roles',
+	'label'       => __( 'Extra roles', 'fastway' ),
+	'description'	=>	'Roles en label y con ,',
+	'section'     => 'section_woo',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_mayorista',
 	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
@@ -981,6 +989,7 @@ Kirki::add_field( 'theme_config_id', array(
     'choices'     => fw_getme_roles(),
 	'default'     => '',
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'checkout-minimal',

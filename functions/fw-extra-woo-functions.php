@@ -78,6 +78,63 @@ function woo_loop_code(){
 
 
 
+if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_roles'))) {
+    
+    function fw_create_roles() {  
+        $roles=fw_theme_mod('ca_extra_roles');
+        $roles=explode(",",$roles);
+        foreach ($roles as $nombre) {
+            error_log($nombre);
+            //add the new user role
+            $field= str_replace(" ","_",strtolower($nombre));
+            add_role(
+                $field,
+                $nombre,
+                array(
+                    'read'         => true,
+                    'delete_posts' => false
+                )
+            );
+        }
+    
+    }
+    add_action('admin_init', 'fw_create_roles');
+
+    
+    add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
+    function wc_cost_product_field() {
+      $roles=fw_theme_mod('ca_roles_mayorista');
+      foreach ($roles as $rol) {
+        $field='precio_'.$rol;
+        error_log($field);
+        woocommerce_wp_text_input( array( 'id' => $field, 'class' => 'wc_input_price short', 'label' => __( ucfirst($rol), 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ) );
+      }
+    }
+    
+    add_action( 'save_post', 'wc_cost_save_product' );
+    function wc_cost_save_product( $product_id ) {
+
+        // stop the quick edit interferring as this will stop it saving properly, when a user uses quick edit feature
+        if (wp_verify_nonce($_POST['_inline_edit'], 'inlineeditnonce'))
+            return;
+
+        // If this is a auto save do nothing, we only save when update button is clicked
+      if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return;
+
+      $roles=fw_theme_mod('ca_roles_mayorista');
+      foreach ($roles as $rol) {
+        $field='precio_'.$rol;
+            
+        if ( isset( $_POST[$field] ) ) {
+          if ( is_numeric( $_POST[$field] ) )
+            update_post_meta( $product_id, $field, $_POST[$field] );
+        } else delete_post_meta( $product_id, $field );
+      }
+    }
+    
+
+}
 
 
 if(get_option('fw_currency_conversion')  && !is_admin()){
@@ -530,7 +587,8 @@ function fw_price_html1($price,$product){
         $sale_price=$product->sale_price;
         if (function_exists('get_product_prices') && 
         in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
-     
+          
+          //Festi
           $prica=get_product_prices($product->get_id());
           if($prica[fw_get_current_user_role()]){//verifica el precio seteado
             $sale_price=$prica['salePrice'][fw_get_current_user_role()];

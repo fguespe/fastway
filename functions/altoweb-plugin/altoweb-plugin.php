@@ -92,12 +92,6 @@ function after_xml_import_init_cate($import_id){
 
 
 
-error_log(get_option("nubicommerce_destinos_mail"));
-update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
-update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
-update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
-
-
 
 function orden_nueva( $recipients, $order ) {
     $recipients = ", ".get_option("nubicommerce_destinos_mail");
@@ -114,14 +108,14 @@ function email_orden_fallida( $recipients, $order ) {
     $recipients = ", ".get_option("nubicommerce_destinos_mail");
     return $recipients;
 }
-add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
-add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
-add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
-
-
 //config mails
 if(get_option("fw_altoweb_mailconfig")){
-   
+    
+    add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
+    add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
+    add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
+
+
     update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
     update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
     update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
