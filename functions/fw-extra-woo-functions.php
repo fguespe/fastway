@@ -594,7 +594,8 @@ function fw_price_html1($price,$product){
           }
           //Sin festi
         }else if(in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
-          $regular_price=get_post_meta($product->id,'precio_'.fw_get_current_user_role(),true);
+          $precio=get_post_meta($product->id,'precio_'.fw_get_current_user_role(),true);
+          if($precio)$regular_price=$precio;
         }
 
         if(intval($regular_price) && intval($sale_price)){
