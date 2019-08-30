@@ -84,7 +84,6 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
         $roles=fw_theme_mod('ca_extra_roles');
         $roles=explode(",",$roles);
         foreach ($roles as $nombre) {
-            error_log($nombre);
             //add the new user role
             $field= str_replace(" ","_",strtolower($nombre));
             add_role(
@@ -106,7 +105,6 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
       $roles=fw_theme_mod('ca_roles_mayorista');
       foreach ($roles as $rol) {
         $field='precio_'.$rol;
-        error_log($field);
         woocommerce_wp_text_input( array( 'id' => $field, 'class' => 'wc_input_price short', 'label' => __( ucfirst($rol), 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ) );
       }
     }
