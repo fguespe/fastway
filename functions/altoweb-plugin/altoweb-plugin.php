@@ -557,8 +557,8 @@ global $product;
                            </div>
                         </div>
                      </div>
-                     <div class="box-title">Tarjeta de débito y efectivo</div>
-                     <div class="box-container">
+                     <div class="box-title" class="debito">Tarjeta de débito y efectivo</div>
+                     <div class="box-container" class="debito">
                         <h4 class="">Débito</h4>
                         <div class="h6-xs m-bottom-half">
                            <span>Precio: </span><b> $ {$precio}</b>
