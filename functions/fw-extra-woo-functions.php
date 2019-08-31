@@ -557,6 +557,73 @@ function fw_global_variation_price() {
     <?php
 }
 
+/**
+ * Filter products by type
+ *
+ * @access public
+ * @return void
+ */
+function wpa104537_filter_products_by_featured_status() {
+
+     global $typenow, $wp_query;
+
+    if ($typenow=='product') :
+
+
+        // Featured/ Not Featured
+        $output .= "<select name='featured_status' id='dropdown_featured_status'>";
+        $output .= '<option value="">'.__( 'Estados', 'woocommerce' ).'</option>';
+
+        $output .="<option value='featured' ";
+        if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
+        $output .=">".__( 'Destacados', 'woocommerce' )."</option>";
+
+        $output .="<option value='normal' ";
+        if ( isset( $_GET['featured_status'] ) ) $output .= selected('normal', $_GET['featured_status'], false);
+        $output .=">".__( 'No destacados', 'woocommerce' )."</option>";
+
+        $output .="</select>";
+
+        echo $output;
+    endif;
+}
+
+add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
+
+/**
+ * Filter the products in admin based on options
+ *
+ * @access public
+ * @param mixed $query
+ * @return void
+ */
+function wpa104537_featured_products_admin_filter_query( $query ) {
+  global $typenow;
+
+  if ( $typenow == 'product' ) {
+
+      // Subtypes
+      if ( ! empty( $_GET['featured_status'] ) ) {
+          if ( $_GET['featured_status'] == 'featured' ) {
+              $query->query_vars['tax_query'][] = array(
+                  'taxonomy' => 'product_visibility',
+                  'field'    => 'slug',
+                  'terms'    => 'featured',
+              );
+          } elseif ( $_GET['featured_status'] == 'normal' ) {
+              $query->query_vars['tax_query'][] = array(
+                  'taxonomy' => 'product_visibility',
+                  'field'    => 'slug',
+                  'terms'    => 'featured',
+                  'operator' => 'NOT IN',
+              );
+          }
+      }
+
+  }
+
+}
+add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 
 function fw_price_html1($price,$product){
     if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return;
