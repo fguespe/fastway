@@ -652,15 +652,18 @@ function fw_price_html1($price,$product){
         $sale_price=$product->sale_price;
 
         //Festi
+
+        $roles=fw_theme_mod('ca_roles_mayorista');
+        $roles=explode(",",$roles);
         if (function_exists('get_product_prices') && 
-        in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
+        in_array(fw_get_current_user_role(),$roles)) {
           $prica=get_product_prices($product->get_id());
           if($prica[fw_get_current_user_role()]){//verifica el precio seteado
             $sale_price=$prica['salePrice'][fw_get_current_user_role()];
             $regular_price=$prica[fw_get_current_user_role()];
           }
           //Sin festi
-        }else if(in_array(fw_get_current_user_role(),fw_theme_mod('ca_roles_mayorista'))) {
+        }else if(in_array(fw_get_current_user_role(),$roles)) {
           $precio=get_post_meta($product->id,'precio_'.fw_get_current_user_role(),true);
           if($precio)$regular_price=$precio;
         }
