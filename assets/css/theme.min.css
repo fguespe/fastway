@@ -3526,7 +3526,7 @@ body .wpb_content_element {
   display: inline !important;
   margin-left: 5px;
 }
-.woocommerce-checkout #payment input[type=radio] {
+.woocommerce-checkout #payment li > input[type=radio] {
   display: none !important;
 }
 .woocommerce-checkout .wc_payment_methods {
