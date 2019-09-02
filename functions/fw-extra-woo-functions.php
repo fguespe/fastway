@@ -652,7 +652,7 @@ function fw_price_html1($price,$product){
         $sale_price=$product->sale_price;
 
         //Festi
-
+/*
         $roles=fw_theme_mod('ca_roles_mayorista');
         $roles=explode(",",$roles);
         if (function_exists('get_product_prices') && 
@@ -672,7 +672,7 @@ function fw_price_html1($price,$product){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
         }else{
             $percentage=0;
-        }
+        }*/
     }
     if($product->is_on_sale()){
     return '<span class="fw_price price1">
