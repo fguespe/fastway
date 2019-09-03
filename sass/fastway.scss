@@ -3709,8 +3709,11 @@ body .wpb_content_element {
     .payment_method_spyr_firstdata_gateway p,
     .payment_method_spyr_firstdata_gateway label,
     .payment_method_spyr_firstdata_gateway input{
-      padding:5px !important;
+      padding:0px !important;
       padding-left:10px !important;
+    }
+    .payment_method_spyr_firstdata_gateway input{
+      padding:5px;
     }
     .payment_method_spyr_firstdata_gateway label{
       border:0px !important;

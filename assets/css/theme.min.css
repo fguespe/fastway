@@ -3526,8 +3526,11 @@ body .wpb_content_element {
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway p,
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway label,
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway input {
-  padding: 5px !important;
+  padding: 0px !important;
   padding-left: 10px !important;
+}
+.woocommerce-checkout .payment_method_spyr_firstdata_gateway input {
+  padding: 5px;
 }
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway label {
   border: 0px !important;
