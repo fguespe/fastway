@@ -3705,9 +3705,14 @@ body .wpb_content_element {
 
 
 
+    /*espostnet*/
+    .payment_method_spyr_firstdata_gateway p,
+    .payment_method_spyr_firstdata_gateway label{
+      padding:0px !important;
+      padding-left:10px !important;
+    }
 
     #shipping_method label{
-
       display:inline!important;
       margin-left:5px;
     }

@@ -2879,6 +2879,7 @@ body .wpb_content_element {
 .woocommerce-checkout {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
+  /*espostnet*/
 }
 .woocommerce-checkout .select2-selection__clear {
   display: none;
@@ -3521,6 +3522,11 @@ body .wpb_content_element {
 }
 .woocommerce-checkout label, .woocommerce-checkout span {
   font-size: 14px !important;
+}
+.woocommerce-checkout .payment_method_spyr_firstdata_gateway p,
+.woocommerce-checkout .payment_method_spyr_firstdata_gateway label {
+  padding: 0px !important;
+  padding-left: 10px !important;
 }
 .woocommerce-checkout #shipping_method label {
   display: inline !important;
