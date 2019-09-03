@@ -82,7 +82,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
     
     function fw_create_roles() {  
         $roles=fw_theme_mod('ca_extra_roles');
-        $roles=explode(",",$roles);
+        if(is_string($is_string))$roles=explode(",",$roles);
         foreach ($roles as $nombre) {
             //add the new user role
             $field= str_replace(" ","_",strtolower($nombre));
@@ -654,7 +654,7 @@ function fw_price_html1($price,$product){
         //Festi
         if(!empty(fw_theme_mod('ca_roles_mayorista'))){
           $roles=fw_theme_mod('ca_roles_mayorista');
-          $roles=explode(",",$roles);
+          if(is_string($roles))$roles=explode(",",$roles);
           if (function_exists('get_product_prices') && 
           in_array(fw_get_current_user_role(),$roles)) {
             $prica=get_product_prices($product->get_id());
