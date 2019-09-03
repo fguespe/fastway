@@ -3530,7 +3530,7 @@ body .wpb_content_element {
   padding-left: 10px !important;
 }
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway input {
-  padding: 5px;
+  padding: 5px !important;
 }
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway label {
   border: 0px !important;
