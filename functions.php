@@ -1,5 +1,7 @@
 <?php
-
+if( !function_exists('is_plugin_active') ) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
 function check_user_role($role){
 	$user = wp_get_current_user();
 	if ( in_array( $role, (array) $user->roles ) ) {
@@ -131,9 +133,7 @@ require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
 //require get_template_directory() . '/functions/fw-widgets.php';
-if( !function_exists('is_plugin_active') ) {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-}
+
 
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';

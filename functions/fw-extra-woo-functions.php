@@ -82,7 +82,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
     
     function fw_create_roles() {  
         $roles=fw_theme_mod('ca_extra_roles');
-        if(is_string($is_string))$roles=explode(",",$roles);
+        $roles=explode(",",$roles);
         foreach ($roles as $nombre) {
             //add the new user role
             $field= str_replace(" ","_",strtolower($nombre));
