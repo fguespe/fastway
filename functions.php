@@ -2,6 +2,7 @@
 if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
+if(!is_plugin_active('kirki/kirki.php'))return;
 function check_user_role($role){
 	$user = wp_get_current_user();
 	if ( in_array( $role, (array) $user->roles ) ) {

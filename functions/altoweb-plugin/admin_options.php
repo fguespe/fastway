@@ -199,13 +199,14 @@ text-align:left;
 </td>
 </tr>
 
-
+<!--
 <tr valign="top">
 <th scope="row"><label for="nubicommerce_damelosroles">Roles Custom  </label></th>
 <td>
 <input type="text" id="nubicommerce_damelosroles" name="nubicommerce_damelosroles" value="<?php echo get_option('nubicommerce_damelosroles'); ?>" />
 </td>
 </tr>
+-->
 <tr valign="top">
 <th scope="row"><label for="nubicommerce_modulo_bulkterms">Bulk Terms </label></th>
 <td>
