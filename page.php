@@ -9,7 +9,7 @@
  *
  * @package understrap
  */
-
+if(!is_plugin_active('kirki/kirki.php'))return;
 get_header();
 
 

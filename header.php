@@ -1,4 +1,6 @@
-
+<?php
+if(!is_plugin_active('kirki/kirki.php'))return;
+?>
 <!DOCTYPE html>
 <html dir="ltr" <?php language_attributes(); ?>>
 <head>
