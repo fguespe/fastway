@@ -13,7 +13,6 @@ include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
 // These would go inside your admin_init hook
 
-// Function to change email address
  
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
@@ -31,14 +30,6 @@ function custom_ml_help() {
 }
 
 
-function wpb_sender_email( $original_email_address ) {
-    return 'avisos@altoweb.co';
-}
- 
-// Function to change sender name
-function wpb_sender_name( $original_email_from ) {
-    return 'Web';
-}
 
   /*COLUMNA MEDIA*/
 
@@ -91,54 +82,6 @@ function after_xml_import_init_cate($import_id){
 
 
 
-
-
-function orden_nueva( $recipients, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
-    error_log( $recipients);
-    return $recipients;
-}
-
-function email_orden_cancelada( $recipients, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
-    return $recipients;
-}
-
-function email_orden_fallida( $recipients, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
-    return $recipients;
-}
-//config mails
-if(get_option("fw_altoweb_mailconfig")){
-    
-    add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
-    add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
-    add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
-
-
-    update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
-    update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
-    update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
-    
-    update_option("woocommerce_product_enquiry_send_to",get_option("nubicommerce_destinos_mail"));
-     update_option("woocommerce_stock_email_recipient",get_option("nubicommerce_destinos_mail"));
-     
-     update_option("sendgrid_from_email","avisos@altoweb.co");
-     update_option("woocommerce_email_from_address","avisos@altoweb.co");
-     
-     update_option("woocommerce_email_from_name",get_option("nubicommerce_desde_nombre"));
-     update_option("sendgrid_from_name",get_option("nubicommerce_desde_nombre"));
-
-    
-     //Mail woocommerce
-    update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
-    update_option("woocommerce_email_footer_text","Powered by Altoweb");
-    update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
-
-
-    update_option('fw_altoweb_mailconfig','0');
-
-}
 
 if(get_option('altoweb_defaultoptions')){
     update_option('woocommerce_price_num_decimals','0');
@@ -197,106 +140,13 @@ function my_custom_checkout_field_display_admin_order_meta($order){
 }
 
 
-/*OJO
-
-add_filter( 'woocommerce_email_footer_text', 'footermail', 10, 1 ); 
-function footermail(){
-    return "Creado por <a href='https://www.altoweb.co' target='_self'>Altoweb</a>";
-}*/
-/*OJO
-if ( class_exists( 'WooCommerce' ))add_action( 'wp_footer', 'cart_update_qty_script' );
-function cart_update_qty_script() {
-    if (is_cart()) :
-    ?>
-    <script>
-        jQuery('div.woocommerce').on('change', '.qty', function(){
-           jQuery("[name='update_cart']").removeAttr('disabled');
-           jQuery("[name='update_cart']").trigger("click"); 
-        });
-    </script>
-    <?php
-    endif;
-}
-
-*/
-
-
 function remove_dashboard_meta2() {
     //Saca las ordenes de la network
     remove_meta_box( 'woocommerce_network_orders', 'dashboard', 'normal' );
 }
 add_action( 'admin_init', 'remove_dashboard_meta2' );
 
-//Emails
-function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
-    global $current_site;
-    $admin_email = "avisos@altoweb.co";
-    $from_name = get_option( 'nubicommerce_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
-        
-    $welcome_email = get_site_option( 'welcome_user_email' );
 
-    $user = new WP_User($user_id);
-
-    $welcome_email = apply_filters( 'update_welcome_user_email', $welcome_email, $user_id, $password, $meta);
-
-    // Get the current blog name
-    $message = sprintf( "Hola, \n\nSe ha creado tu contraseña. Estos son tus datos: \n\nUsuario: %s\n\nContraseña: %s\n\n " ,
-                $user->user_login, $password);
-
-   
-
-    $message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-  
-    $subject = "Datos de acceso";
-    wp_mail($user->user_email, $subject, $message, $message_headers);
-
-    return false; // make sure wpmu_welcome_user_notification() doesn't keep running
-}
-add_filter( 'wpmu_welcome_user_notification', 'bbg_wpmu_welcome_user_notification', 10, 3 );
-
-add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
-    function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') {
-        $sitename = get_bloginfo( 'name' );
-        $blog_id = get_current_blog_id();
-        // Send email with activation link.
-        $admin_email = "avisos@altoweb.co";
-        $from_name = get_option( 'nubicommerce_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
-        $message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-        $message = sprintf(
-            apply_filters( 'wpmu_signup_user_notification_email',
-                __( "Hi %s,\n\nThank you for registering with %s.\n\nTo activate your account, please click the following link:\n\n%s\n\nYou will then receive an email with your login details." ),
-                $user, $user_email, $key, $meta
-            ),
-            site_url( "wp-activate.php?key=$key" )
-
-
-        );
-        // TODO: Don't hard code activation link.
-        $subject = "Activar cuenta";
-        wp_mail($user_email, $subject, $message, $message_headers);
-
-        return false;
-    }
-    
-
-
-
-function whero_limit_image_size($file) {
-    // Calculate the image size in KB
-    $image_size = $file['size']/1024;
-
-    // File size limit in KB
-    $limit = 550;
-
-    // Check if it's an image
-    $is_image = strpos($file['type'], 'image');
-
-    if ( ( $image_size > $limit ) && ($is_image !== false) )
-            $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
-
-    return $file;
-
-}
 if(get_option("nubicommerce_modulo_500kb"))add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
 
 

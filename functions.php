@@ -2,6 +2,9 @@
 if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
+
+require get_template_directory() . '/functions/fw-emails.php';
+
 if(!is_plugin_active('kirki/kirki.php'))return;
 function check_user_role($role){
 	$user = wp_get_current_user();
@@ -10,9 +13,6 @@ function check_user_role($role){
 	}
 	return false;
 }
-// Hooking up our functions to WordPress filters 
-add_filter( 'wp_mail_from', 'wpb_sender_email' );
-add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
 
 function fw_log($string){
     error_log("fwlog_ : ".$string);
