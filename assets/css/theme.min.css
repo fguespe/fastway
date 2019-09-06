@@ -1439,6 +1439,9 @@ footer .widget_nav_menu li a {
   color: #444444;
   font-weight: bold;
 }
+.woocommerce-shop .prdctfltr_title_selected {
+  padding: 0px !important;
+}
 .woocommerce-shop .prdctfltr_title_selected span {
   font-size: 11px !important;
 }
