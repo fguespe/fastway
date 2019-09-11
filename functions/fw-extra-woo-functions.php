@@ -17,10 +17,10 @@ function fw_get_custom_field($atts){
 add_shortcode('fw_loop_cat', 'fw_loop_cat');
 function fw_loop_cat(){
     global $product;
-    echo '<span class="fw_loop_cat">'.getlinea($product->id).'</span>';
+    echo '<span class="fw_loop_cat">'.fw_getcat($product->id).'</span>';
 }
 
-function getlinea( $product_id ){//Esto es para los mails
+function fw_getcat( $product_id ){//Esto es para los mails
 
     $tax = 'product_cat';
 
