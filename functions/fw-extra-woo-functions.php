@@ -12,6 +12,31 @@ function fw_get_custom_field($atts){
     $sku=get_post_meta($product->id,$atts['id'],true);
     if(!empty($sku))echo $sku;
 }
+
+
+add_shortcode('fw_loop_cat', 'fw_loop_cat');
+function fw_loop_cat(){
+    global $product;
+    echo '<span class="fw_loop_cat">'.getlinea($product->id).'</span>';
+}
+
+function getlinea( $product_id ){//Esto es para los mails
+
+    $tax = 'product_cat';
+
+    $terms = wp_get_post_terms( $product_id, $tax);
+    if( $terms && ! is_wp_error( $terms )) {
+        foreach ($terms as $categoria) {
+            if($categoria->parent > 0){
+               // if($categoria->parent == 340){
+                    return $categoria->name;
+               // }
+            }
+        }
+    }
+
+    return $name;
+}
 add_shortcode('fw_container', 'fw_container');
 function fw_container($atts = [], $content = null){
     $class='';

@@ -3,9 +3,13 @@ if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
+if(!is_plugin_active('kirki/kirki.php'))return;
+
+if(is_plugin_active('kirki/kirki.php')){
+    require get_template_directory() . '/functions/fw-theme-options.php';
+}
 require get_template_directory() . '/functions/fw-emails.php';
 
-if(!is_plugin_active('kirki/kirki.php'))return;
 function check_user_role($role){
 	$user = wp_get_current_user();
 	if ( in_array( $role, (array) $user->roles ) ) {
@@ -43,9 +47,6 @@ function fastway_get_stblock( $cats = array('all') ){
 }
 
 
-if(is_plugin_active('kirki/kirki.php')){
-    require get_template_directory() . '/functions/fw-theme-options.php';
-}
 
 
 function fw_getme_roles(){

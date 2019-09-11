@@ -22,11 +22,11 @@ do_action( 'woocommerce_email_header', $email_heading, $email );
 ?>
 
 <p>Bienvenido a <?php echo esc_html( $blogname )?><br><br>
-Gracias por crear una cuenta en nuestra web. Tu nombre de usuario es<?php echo esc_html( $user_login ) ?><br>
+Gracias por crear una cuenta en nuestra web. Tu nombre de usuario es <strong><?php echo esc_html( $user_login ) ?></strong><br>
 Podés acceder a tu cuenta para ver pedidos, cambiar tu contraseña y más en: <br>
-<?php make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ); ?><br><br>
+<?php echo make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ); ?><br><br>
 <?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated ) : ?>
-Tu contraseña se generó automáticamente: <?php echo esc_html( $user_pass ); ?><br>
+Tu contraseña se generó automáticamente: <strong><?php echo esc_html( $user_pass ); ?><br></strong>
 <?php endif; ?>
 Pero podés cambiarla cuando quieras.<br><br>
 
