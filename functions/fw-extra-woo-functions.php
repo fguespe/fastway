@@ -29,7 +29,7 @@ function fw_getcat( $product_id ){//Esto es para los mails
         foreach ($terms as $categoria) {
             //if($categoria->parent > 0){
                // if($categoria->parent == 340){
-                    return $categoria->name;
+                    return "Cocina";//$categoria->name;
                // }
             //}
         }
