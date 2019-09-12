@@ -8,7 +8,7 @@ Author: Fabrizio Guespe
 Author URI: https://www.altoweb.co
 */
 include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
-//include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
+include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
 include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
 // These would go inside your admin_init hook

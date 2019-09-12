@@ -14,7 +14,6 @@ add_action('admin_menu', 'emr_menu');
 add_filter('attachment_fields_to_edit', 'enable_media_replace', 10, 2);
 add_filter('media_row_actions', 'add_media_action', 10, 2);
 
-add_shortcode('file_modified', 'emr_get_modified_date');
 
 /**
  * Register this file in WordPress so we can call it with a ?page= GET var.
@@ -92,11 +91,9 @@ function add_media_action( $actions, $post) {
 	return array_merge($actions,$newaction);
 }
 
-/**
- * Shorttag function to show the media file modification date/time.
- * @param array shorttag attributes
- * @return string content / replacement shorttag
- */
+/*
+
+
 function emr_get_modified_date($atts) {
 	$id=0;
 	$format= '';
@@ -124,9 +121,9 @@ function emr_get_modified_date($atts) {
 	}
 	
 	return false;
-}
+} 
 
-// Add Last replaced by EMR plugin in the media edit screen metabox - Thanks Jonas Lundman (http://wordpress.org/support/topic/add-filter-hook-suggestion-to)
+//add_shortcode('file_modified', 'emr_get_modified_date');
 function ua_admin_date_replaced_media_on_edit_media_screen() {
 	if( !function_exists( 'enable_media_replace' ) ) return;
 	global $post;
@@ -143,7 +140,7 @@ function ua_admin_date_replaced_media_on_edit_media_screen() {
 	</div>
 	<?php
 }
-add_action( 'attachment_submitbox_misc_actions', 'ua_admin_date_replaced_media_on_edit_media_screen', 91 );
+add_action( 'attachment_submitbox_misc_actions', 'ua_admin_date_replaced_media_on_edit_media_screen', 91 );*/
 
 
 ?>
