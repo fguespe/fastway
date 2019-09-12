@@ -687,9 +687,9 @@ function fw_price_html1($price,$product){
               $sale_price=$prica['salePrice'][fw_get_current_user_role()];
               $regular_price=$prica[fw_get_current_user_role()];
             }
-            //Sin festi
+            //custom fields
           }else if(in_array(fw_get_current_user_role(),$roles)) {
-            $precio=get_post_meta($product->id,'_precio_'.fw_get_current_user_role(),true);
+            $precio=get_post_meta($product->id,'_lista_'.fw_get_current_user_role(),true);
             if($precio)$regular_price=$precio;
           }
   
