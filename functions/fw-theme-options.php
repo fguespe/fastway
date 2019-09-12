@@ -981,6 +981,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'     => '',
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_mayorista',
@@ -989,7 +990,7 @@ Kirki::add_field( 'theme_config_id', array(
     'choices'     => fw_getme_roles(),
 	'default'     => '',
 ) );
-
+*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'checkout-minimal',

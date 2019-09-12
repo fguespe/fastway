@@ -124,7 +124,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
     }
     add_action('admin_init', 'fw_create_roles');
 
-    
+    /*Esto no sirve por que se usa advanced custom fields
     add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
     function wc_cost_product_field() {
       $roles=fw_theme_mod('ca_roles_mayorista');
@@ -155,7 +155,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
         } else delete_post_meta( $product_id, $field );
       }
     }
-    
+    */
 
 }
 
