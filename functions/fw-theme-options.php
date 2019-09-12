@@ -973,7 +973,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'hide' => __( 'Hide', 'fastway' ),
 	),
 ) );
-/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca_extra_roles',
@@ -989,7 +988,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
     'choices'     => fw_getme_roles(),
 	'default'     => '',
-) );*/
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
