@@ -129,7 +129,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
     function wc_cost_product_field() {
       $roles=fw_theme_mod('ca_roles_mayorista');
       foreach ($roles as $rol) {
-        $field='precio_'.$rol;
+        $field='_precio_'.$rol;
         woocommerce_wp_text_input( array( 'id' => $field, 'class' => 'wc_input_price short', 'label' => __( ucfirst($rol), 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ) );
       }
     }
@@ -147,7 +147,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_r
 
       $roles=fw_theme_mod('ca_roles_mayorista');
       foreach ($roles as $rol) {
-        $field='precio_'.$rol;
+        $field='_precio_'.$rol;
             
         if ( isset( $_POST[$field] ) ) {
           if ( is_numeric( $_POST[$field] ) )
@@ -689,7 +689,7 @@ function fw_price_html1($price,$product){
             }
             //Sin festi
           }else if(in_array(fw_get_current_user_role(),$roles)) {
-            $precio=get_post_meta($product->id,'precio_'.fw_get_current_user_role(),true);
+            $precio=get_post_meta($product->id,'_precio_'.fw_get_current_user_role(),true);
             if($precio)$regular_price=$precio;
           }
   
