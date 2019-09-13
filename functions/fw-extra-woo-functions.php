@@ -102,27 +102,30 @@ function woo_loop_code(){
 }
 
 
-
-if(!empty(fw_theme_mod('ca_roles_mayorista')) && !empty(fw_theme_mod('ca_extra_roles'))) {
+if(!empty(fw_theme_mod('ca_extra_roles'))) {
     
-    function fw_create_roles() {  
-        $roles=fw_theme_mod('ca_extra_roles');
-        $roles=explode(",",$roles);
-        foreach ($roles as $nombre) {
-            //add the new user role
-            $field= str_replace(" ","_",strtolower($nombre));
-            add_role(
-                $field,
-                $nombre,
-                array(
-                    'read'         => true,
-                    'delete_posts' => false
-                )
-            );
-        }
+  function fw_create_roles() {  
+      $roles=fw_theme_mod('ca_extra_roles');
+      $roles=explode(",",$roles);
+      foreach ($roles as $nombre) {
+          //add the new user role
+          $field= str_replace(" ","_",strtolower($nombre));
+          add_role(
+              $field,
+              $nombre,
+              array(
+                  'read'         => true,
+                  'delete_posts' => false
+              )
+          );
+      }
+  
+  }
+  add_action('admin_init', 'fw_create_roles');
+  
+}
+if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     
-    }
-    add_action('admin_init', 'fw_create_roles');
 
     /*Esto no sirve por que se usa advanced custom fields
     add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
