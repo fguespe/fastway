@@ -303,12 +303,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_general',
 	'default'     => urlforimages()."/assets/img/logo.png",
 	'transport'=>'postMessage',
-	'partial_refresh' => array(
-	    'kirki_hero_title' => array(
-	        'selector'        => '.logo',
-	        'render_callback' => 'fw_logo',
-	    ),
-	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1650,27 +1644,10 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'construction_code',
+	'settings'    => 'maintainance_code',
 	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<!doctype html>
-	<title>Site Maintenance</title>
-	<style>
-	  body { text-align: center; padding: 150px; }
-	  h1 { font-size: 50px; }
-	  body { font: 20px Helvetica, sans-serif; color: #333; }
-	  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-	  a { color: #dc8100; text-decoration: none; }
-	  a:hover { color: #333; text-decoration: none; }
-	</style>
-	
-	<article>
-		<h1>We&rsquo;ll be back soon!</h1>
-		<div>
-			<p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.will be back online shortly!</p>
-			<p>&mdash; [fw_data type="name"]</p>
-		</div>
-		</article>',
+	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="https://www.altoweb.co" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/logo.png"/></a></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),

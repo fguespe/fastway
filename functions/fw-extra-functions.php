@@ -430,7 +430,7 @@ add_action('login_head', 'fw_custom_loginui');
 function fw_maintenance_mode(){
     
     if(!current_user_can('administrator') ){
-        wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('construction_code')))));
+        wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
     }
 }
 

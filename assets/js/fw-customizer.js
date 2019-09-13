@@ -39,6 +39,12 @@ wp.customize( 'css_editor-loop', function( value ) {
     jQuery( '#css_editor-loop' ).text(newval );
   } );
 } );
+
+wp.customize( 'general-logo', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '.logo img' ).attr("src",newval);
+  } );
+} );
 wp.customize( 'css_editor-single', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-single' ).text(newval );
