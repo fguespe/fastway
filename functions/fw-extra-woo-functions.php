@@ -100,7 +100,6 @@ function fw_loop_container($atts = [], $content = null){
 function woo_loop_code(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
-/*
 
 if(!empty(fw_theme_mod('ca_extra_roles'))) {
     
@@ -124,16 +123,15 @@ if(!empty(fw_theme_mod('ca_extra_roles'))) {
   add_action('admin_init', 'fw_create_roles');
 
 }
-*/
-    /*
+
 if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     
-Esto no sirve por que se usa advanced custom fields
+//Esto no sirve por que se usa advanced custom fields
     add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
     function wc_cost_product_field() {
       $roles=fw_theme_mod('ca_roles_mayorista');
       foreach ($roles as $rol) {
-        $field='_precio_'.$rol;
+        $field='_lista_'.$rol;
         woocommerce_wp_text_input( array( 'id' => $field, 'class' => 'wc_input_price short', 'label' => __( ucfirst($rol), 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ) );
       }
     }
@@ -151,7 +149,7 @@ Esto no sirve por que se usa advanced custom fields
 
       $roles=fw_theme_mod('ca_roles_mayorista');
       foreach ($roles as $rol) {
-        $field='_precio_'.$rol;
+        $field='_lista_'.$rol;
             
         if ( isset( $_POST[$field] ) ) {
           if ( is_numeric( $_POST[$field] ) )
@@ -161,9 +159,6 @@ Esto no sirve por que se usa advanced custom fields
     }
 
 }
-
-
-    */
 if(get_option('fw_currency_conversion')  && !is_admin()){
     
   // Utility function to change the prices with a multiplier (number)
