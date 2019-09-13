@@ -158,6 +158,24 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
       }
     }
 }
+
+function myextension_shop_manager_role_edit_capabilities( $roles ) {
+  if(function_exists('fw_theme_mod')){
+    $roles=fw_theme_mod('ca_roles_mayorista');
+    if(is_string($roles))$roles=explode(",",$roles);
+    
+    foreach ($roles as $nombre) {
+      error_log($nombre);
+      $roles[]=strtolower($nombre);
+    }
+  }
+  $roles[]='shop_manager';
+  $roles[]='subscriber';
+  
+  return $roles;
+}
+add_filter( 'woocommerce_shop_manager_editable_roles', 'myextension_shop_manager_role_edit_capabilities' );
+
 if(get_option('fw_currency_conversion')  && !is_admin()){
     
   // Utility function to change the prices with a multiplier (number)
@@ -385,14 +403,6 @@ function fw_share_redes(){
     <i class="fab fa-twitter-square"></i>
     </a>
     </div>';
-}
-add_filter( 'woocommerce_shop_manager_editable_roles', 'addanotherrole' );
-function addanotherrole($roles) {
-    // add the additional role to the woocommerce allowed roles (customer)
-    $roles[] = 'subscriber'; 
-
-    // return roles array
-    return $roles; 
 }
 
 

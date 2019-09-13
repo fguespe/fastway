@@ -55,7 +55,7 @@ add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida',
 add_filter( 'wpmu_welcome_user_notification', 'bbg_wpmu_welcome_user_notification', 10, 3 );
 add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
 function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
-    error_log('jaa1');
+ 
     global $current_site;
     $admin_email = "avisos@altoweb.co";
     $from_name = get_option( 'nubicommerce_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
