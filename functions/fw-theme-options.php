@@ -972,10 +972,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca_extra_roles',
 	'label'       => __( 'Extra roles', 'fastway' ),
-	'description'	=>	'Roles en label y con ,',
+	'description'	=>	'Roles en label y con , | Esto crea roles sencillos para usar abajo',
 	'section'     => 'section_woo',
 	'default'     => '',
-	'descriptio' => 'Esto crea roles sencillos para usar abajo'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -985,7 +984,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
     'choices'     => fw_getme_roles(),
 	'default'     => '',
-	'descriptio' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol'
+	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
