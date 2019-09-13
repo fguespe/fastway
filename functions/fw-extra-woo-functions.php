@@ -157,6 +157,15 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
         } else delete_post_meta( $product_id, $field );
       }
     }
+    function myextension_shop_manager_role_edit_capabilities( $roles ) {
+      $roles=fw_theme_mod('ca_roles_mayorista');
+      foreach ($roles as $rol) {
+        $rol=strtolower($rol);
+        $roles[] = $rol;
+      }
+      return $roles;
+    }
+    add_filter( 'woocommerce_shop_manager_editable_roles', 'myextension_shop_manager_role_edit_capabilities' );
 
 }
 if(get_option('fw_currency_conversion')  && !is_admin()){
