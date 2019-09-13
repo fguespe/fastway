@@ -170,7 +170,7 @@ function myextension_shop_manager_role_edit_capabilities( $roles ) {
     }
   }
   $roles[]='shop_manager';
-  $roles[]='suscriber';
+  //$roles[]='suscriber';
   $roles[]='customer';
   
   return $roles;
