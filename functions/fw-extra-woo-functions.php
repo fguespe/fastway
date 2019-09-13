@@ -100,7 +100,7 @@ function fw_loop_container($atts = [], $content = null){
 function woo_loop_code(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
-
+/*
 
 if(!empty(fw_theme_mod('ca_extra_roles'))) {
     
@@ -124,7 +124,7 @@ if(!empty(fw_theme_mod('ca_extra_roles'))) {
   add_action('admin_init', 'fw_create_roles');
 
 }
-
+*/
     /*
 if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     

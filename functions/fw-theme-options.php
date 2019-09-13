@@ -967,6 +967,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'hide' => __( 'Hide', 'fastway' ),
 	),
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca_extra_roles',
@@ -974,7 +975,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'	=>	'Roles en label y con ,',
 	'section'     => 'section_woo',
 	'default'     => '',
-) );
+) );*/
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
