@@ -165,7 +165,7 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
     if(is_string($roles))$roles=explode(",",$roles);
     
     foreach ($roles as $nombre) {
-      error_log($nombre);
+      //error_log($nombre);
       $roles[]=strtolower($nombre);
     }
   }
