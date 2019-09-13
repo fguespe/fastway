@@ -159,7 +159,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     }
 }*/
 
-function myextension_shop_manager_role_edit_capabilities( $roles ) {
+function fw_shop_manager_role_edit_capabilities( $roles ) {
   if(function_exists('fw_theme_mod')){
     $roles=fw_theme_mod('ca_roles_mayorista');
     if(is_string($roles))$roles=explode(",",$roles);
@@ -175,7 +175,7 @@ function myextension_shop_manager_role_edit_capabilities( $roles ) {
   
   return $roles;
 }
-add_filter( 'woocommerce_shop_manager_editable_roles', 'myextension_shop_manager_role_edit_capabilities' );
+add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 
 if(get_option('fw_currency_conversion')  && !is_admin()){
     
