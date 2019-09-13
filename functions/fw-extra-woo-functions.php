@@ -170,7 +170,7 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
     }
   }
   $roles[]='shop_manager';
-  //$roles[]='suscriber';
+  $roles[]='subscriber';
   $roles[]='customer';
   
   return $roles;
