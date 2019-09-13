@@ -122,12 +122,13 @@ if(!empty(fw_theme_mod('ca_extra_roles'))) {
   
   }
   add_action('admin_init', 'fw_create_roles');
-  
+
 }
+
+    /*
 if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     
-
-    /*Esto no sirve por que se usa advanced custom fields
+Esto no sirve por que se usa advanced custom fields
     add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
     function wc_cost_product_field() {
       $roles=fw_theme_mod('ca_roles_mayorista');
@@ -158,11 +159,11 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
         } else delete_post_meta( $product_id, $field );
       }
     }
-    */
 
 }
 
 
+    */
 if(get_option('fw_currency_conversion')  && !is_admin()){
     
   // Utility function to change the prices with a multiplier (number)
