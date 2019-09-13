@@ -685,12 +685,12 @@ function fw_price_html1($price,$product){
         $regular_price=$product->regular_price;
         $sale_price=$product->sale_price;
 
-        //Festi
+        
         if(!empty(fw_theme_mod('ca_roles_mayorista'))){
           $roles=fw_theme_mod('ca_roles_mayorista');
           if(is_string($roles))$roles=explode(",",$roles);
-          if (function_exists('get_product_prices') && 
-          in_array(fw_get_current_user_role(),$roles)) {
+          //Festi
+          if (function_exists('get_product_prices') && in_array(fw_get_current_user_role(),$roles)) {
             $prica=get_product_prices($product->get_id());
             if($prica[fw_get_current_user_role()]){//verifica el precio seteado
               $sale_price=$prica['salePrice'][fw_get_current_user_role()];
