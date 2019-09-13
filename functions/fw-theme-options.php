@@ -981,10 +981,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_mayorista',
 	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
+	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol',
 	'section'     => 'section_woo',
     'choices'     => fw_getme_roles(),
-	'default'     => '',
-	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol'
+	'default'     => ''
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
