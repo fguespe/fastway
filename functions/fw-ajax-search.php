@@ -114,9 +114,6 @@ if(fw_theme_mod('fw_ajax_search')){
     add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
   
 }
-
-
-
 if( !function_exists( 'fw_search_form' ) ) {
     add_shortcode('fw_search_form', 'fw_search_form');
     function fw_search_form($atts){

@@ -1992,8 +1992,15 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
       }
       return false;
     }
-  }
+}
 
+add_shortcode('fwcf', 'fwcf');
+function fwcf($atts = [], $content = null){
+	/*trae a modo shortcode cualquier variable de fw*/
+	$atts = shortcode_atts(array('field' => '' ), $atts );
+	$custom=fw_theme_mod($atts['field']);
+	return $custom;
+}
 
 function my_customizer_styles() { ?>
 	<style>
