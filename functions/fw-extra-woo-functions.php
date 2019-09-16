@@ -691,7 +691,6 @@ function fw_price_html1($price,$product){
           
           //Festi
           if (function_exists('get_product_prices') && in_array(fw_get_current_user_role(),$roles)) {
-            error_log('entra en festi');
             $prica=get_product_prices($product->get_id());
             if($prica[fw_get_current_user_role()]){//verifica el precio seteado
               $sale_price=$prica['salePrice'][fw_get_current_user_role()];
@@ -699,11 +698,8 @@ function fw_price_html1($price,$product){
             }
             //custom fields
           }else if(in_array(fw_get_current_user_role(),$roles)) {
-            error_log('entra en festi2');
             $precio=get_post_meta($product->id,'_lista_'.fw_get_current_user_role(),true);
             if($precio)$regular_price=$precio;
-          }else{
-            error_log('festt');
           }
   
         }

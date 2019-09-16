@@ -1180,7 +1180,9 @@ body {
 footer {
   background: var(--footer);
 }
-
+#fw_footercopy  {
+  background: var(--copywright);
+}
 @media (max-width: 900px) {
   #fw_footercopy .izquierda {
     margin: 0 auto !important;

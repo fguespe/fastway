@@ -1215,7 +1215,9 @@ body {
 footer {
   background: var(--footer);
 }
-
+#fw_footercopy  {
+  background: var(--copywright);
+}
 
 
 @media (max-width:900px){
