@@ -684,13 +684,14 @@ function fw_price_html1($price,$product){
         
         $regular_price=$product->regular_price;
         $sale_price=$product->sale_price;
-
         
         if(!empty(fw_theme_mod('ca_roles_mayorista'))){
           $roles=fw_theme_mod('ca_roles_mayorista');
           if(is_string($roles))$roles=explode(",",$roles);
+          
           //Festi
           if (function_exists('get_product_prices') && in_array(fw_get_current_user_role(),$roles)) {
+            error_log('entra en festi');
             $prica=get_product_prices($product->get_id());
             if($prica[fw_get_current_user_role()]){//verifica el precio seteado
               $sale_price=$prica['salePrice'][fw_get_current_user_role()];
@@ -698,19 +699,24 @@ function fw_price_html1($price,$product){
             }
             //custom fields
           }else if(in_array(fw_get_current_user_role(),$roles)) {
+            error_log('entra en festi2');
             $precio=get_post_meta($product->id,'_lista_'.fw_get_current_user_role(),true);
             if($precio)$regular_price=$precio;
+          }else{
+            error_log('festt');
           }
   
-          if(intval($regular_price) && intval($sale_price)){
-            $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-          }else{
-              $percentage=0;
-          }
+        }
+
+        if(intval($regular_price) && intval($sale_price)){
+          $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+        }else{
+            $percentage=0;
         }
         
     }
     if($product->is_on_sale()){
+
     return '<span class="fw_price price1">
         <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
         <span class="tachado">
