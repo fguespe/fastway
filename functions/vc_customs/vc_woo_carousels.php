@@ -79,6 +79,18 @@ function vc_category_carousel() {
                         'weight' => 0,
                     ), 
                     array(
+                        "type" => 'checkbox',
+                        "heading"     => "Autoplay ",
+                        "param_name"  => "autoplay",
+                        'std' => 'true',
+                    ),
+                    array(
+                        "type" => 'checkbox',
+                        "heading"     => "Loop",
+                        "param_name"  => "loop",
+                        'std' => 'true',
+                    ),
+                    array(
                         'type' => 'el_id',
                         'heading' => __( 'Element ID', 'js_composer' ),
                         'param_name' => 'el_id',
@@ -451,6 +463,12 @@ function getwoocampos(){
             "type" => 'checkbox',
             "heading"     => "Autoplay ",
             "param_name"  => "autoplay",
+            'std' => 'true',
+        ),
+        array(
+            "type" => 'checkbox',
+            "heading"     => "Loop",
+            "param_name"  => "loop",
             'std' => 'true',
         ),
         

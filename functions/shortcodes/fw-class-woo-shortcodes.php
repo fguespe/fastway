@@ -66,6 +66,7 @@ class fw_Woo_Shortcodes {
 			"auto_play"		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -134,6 +135,7 @@ class fw_Woo_Shortcodes {
 			"auto_play"		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -197,6 +199,7 @@ class fw_Woo_Shortcodes {
 			'auto_play'		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			'orderby'		=> 'title',
@@ -314,6 +317,7 @@ class fw_Woo_Shortcodes {
 			"head_style"	=> '',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			"border_color"	=> '',
@@ -392,6 +396,7 @@ class fw_Woo_Shortcodes {
 			'hideempty' => isset($atts["hideempty"])&& !empty($atts["hideempty"])?false:true,
 
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -432,6 +437,7 @@ class fw_Woo_Shortcodes {
 			'brands' 			=> '',
 			'terms' 			=> '',
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 
@@ -617,6 +623,7 @@ class fw_Woo_Shortcodes {
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		),$atts);

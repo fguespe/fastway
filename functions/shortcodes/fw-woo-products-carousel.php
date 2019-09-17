@@ -9,8 +9,10 @@ $rand=generateRandomString(5);
 <div class="swiper-wrapper clear-ul">
 <?php 
 if(!$autoplay)$autoplay='false';
-		
+if(!$loop)$loop='false';
+$cant=0;		
 while ( $products->have_posts() ) : 
+    $cant++;
     $products->the_post(); 
     echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
     wc_get_template_part( 'content','product' ); 
@@ -18,8 +20,10 @@ while ( $products->have_posts() ) :
 endwhile; 
 ?>
 </div>
+<?php if($cant>$columns){?>
 <div class="swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
+<?php } ?>
 </div>
  <script>
      var ProductSwiper2 = new Swiper('.swiper-products-<?=$rand?>', {
@@ -31,7 +35,7 @@ endwhile;
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
             spaceBetween: 10,
-            loop: true,
+            loop: <?=$loop;?>,
             touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,
 	        autoplayDisableOnInteraction: false,
