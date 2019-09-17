@@ -161,7 +161,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
 
 function woocommerce_button_proceed_to_checkout() {
   $checkout_url = WC()->cart->get_checkout_url(); 
-  $label = fw_theme_mod('proceed-to-checkout-text');
+  $label = fw_theme_mod('proceed-tocheckout-text');
   echo '<a href="'.esc_url( wc_get_checkout_url() ).'" class="checkout-button button alt wc-forward">
   <i class="fad fa-lock" style="margin-right:10px !important;"></i> '.$label.' </a>';
 }
