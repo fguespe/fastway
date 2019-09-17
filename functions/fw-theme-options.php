@@ -2090,7 +2090,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'proceed-to-checkout-text',
-	'label'    => __( 'Finalizar compra', 'fastway' ),
+	'label'    => __( 'Comprar', 'fastway' ),
 	'section'     => 'section_labels',
 	'default'	=>'Finalizar compra',
 ) );

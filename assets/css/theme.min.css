@@ -3586,6 +3586,12 @@ body .wpb_content_element {
   font-size: 12px;
   /*border-left:1px solid grey !important;*/
 }
+.woocommerce-checkout .wc_payment_methods .input-radio {
+  float: right;
+  height: 50px;
+  margin-right: 10px !important;
+  background: grey !important;
+}
 .woocommerce-checkout #place_order {
   padding: 15px;
   background: var(--main);
