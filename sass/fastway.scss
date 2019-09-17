@@ -2131,7 +2131,17 @@ body .wpb_content_element {
       float: right;
       width: 68%;
       padding:20px;
-  }}
+  }
+  .woocommerce-MyAccount-content label{
+    display: block !important;
+    width:100% !important;
+  }
+  .woocommerce-MyAccount-content input{
+    display: block !important;
+    width:100% !important;
+  }
+    
+}
 
 #customer_login{
   .woocommerce-form-row label{
