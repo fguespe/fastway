@@ -18,6 +18,7 @@ function check_user_role($role){
 	return false;
 }
 
+
 function fw_log($string){
     error_log("fwlog_ : ".$string);
 }
@@ -124,6 +125,7 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/functions/fw-extra-functions.php';
 require get_template_directory() . '/functions/fw-shortcodes.php';
+require get_template_directory() . '/functions/fw-dashboard.php';
 require get_template_directory() . '/functions/fw-icon-shortcodes.php';
 //require get_template_directory() . '/demos/fw-democontent.php';
 //require get_template_directory() . '/demos/one-click-demo-import/one-click-demo-import.php';
@@ -141,7 +143,7 @@ if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
-    require get_template_directory() . '/functions/fw-config-page.php';
+    //require get_template_directory() . '/functions/fw-config-page.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';

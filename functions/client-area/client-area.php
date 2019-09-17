@@ -12,6 +12,40 @@ Kirki::add_section( 'section_clientarea', array(
 
 ) );
 
+/*WOO AREA*/
+Kirki::add_section( 'section_wooarea', array(
+    'title'          => __( 'Woocommerce', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_clientarea',
+
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_id_ml',
+	'label'       => __( 'ID Mercadolibre ', 'fastway' ),
+	'description'	=>	'Sirve para el dashboard help',
+	'section'     => 'section_wooarea',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_id_filesync',
+	'label'       => __( 'ID Excel', 'fastway' ),
+	'description'	=>	'Copiar esto en el menu de client area. Es para que el cliente reemplaze el excel de la importacion. upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id=ACA EL ID',
+	'section'     => 'section_wooarea',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_id_wpallimport',
+	'label'       => __( 'ID de la importación', 'fastway' ),
+	'description'	=>	'Luego de subir el file, lo reidije al id de importacion de wpallimport correspondiente.',
+	'section'     => 'section_wooarea',
+	'default'     => '',
+) );
+
 /*CLIENT AREA*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',

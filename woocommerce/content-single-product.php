@@ -57,7 +57,7 @@ function fw_summary_container($atts = [], $content = null){
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart(){
     global $product;
-    if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
+    if(fw_check_hide_purchases())return;
     woocommerce_template_single_add_to_cart();
 }
 

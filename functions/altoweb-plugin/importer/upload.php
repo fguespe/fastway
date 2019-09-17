@@ -186,8 +186,8 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 
 	if (in_array($filedata["ext"], array("jpg","png","pdf")))
 		$returnurl = get_bloginfo("wpurl")."/wp-admin/admin.php?page=exitofile";
-	else if($_POST["EXCEL"]!="false" && !empty(get_option('wpallimport_id')))
-		$returnurl = get_bloginfo("wpurl")."/wp-admin/admin.php?page=pmxi-admin-manage&id=".get_option('wpallimport_id')."&action=update";
+	else if($_POST["EXCEL"]!="false" && !empty(fw_theme_mod('fw_id_wpallimport')))
+		$returnurl = get_bloginfo("wpurl")."/wp-admin/admin.php?page=pmxi-admin-manage&id=".fw_theme_mod('fw_id_wpallimport')."&action=update";
 	// Execute hook actions - thanks rubious for the suggestion!
 	if (isset($new_guid)) { do_action("enable-media-replace-upload-done", ($new_guid ? $new_guid : $current_guid)); }
 	

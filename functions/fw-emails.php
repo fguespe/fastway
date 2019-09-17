@@ -34,12 +34,12 @@ if ( !function_exists('wp_new_user_notification') ) {
     }
 }
 function wpb_sender_email( $original_email_address ) {
-    return 'avisos@altoweb.co';
+    return fw_theme_mod('fw_general_from_email');
 }
  
 // Function to change sender name
 function wpb_sender_name( $original_email_from ) {
-    return 'Web';
+    return fw_theme_mod('fw_general_from_name');
 }
 
 
@@ -57,8 +57,8 @@ add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification',
 function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
  
     global $current_site;
-    $admin_email = "avisos@altoweb.co";
-    $from_name = get_option( 'nubicommerce_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
+    $admin_email = fw_theme_mod("fw_general_from_email");
+    $from_name = fw_theme_mod( 'fw_mail_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
         
     $welcome_email = get_site_option( 'welcome_user_email' );
 
@@ -80,12 +80,12 @@ function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
     return false; // make sure wpmu_welcome_user_notification() doesn't keep running
 }
 function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') {
-        error_log('jaa2');
-    $sitename = get_bloginfo( 'name' );
+    
+        $sitename = get_bloginfo( 'name' );
         $blog_id = get_current_blog_id();
         // Send email with activation link.
-        $admin_email = "avisos@altoweb.co";
-        $from_name = get_option( 'nubicommerce_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
+        $admin_email = fw_theme_mod("fw_general_from_email");
+        $from_name = get_option( 'fw_mail_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
         $message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
         $message = sprintf(
             apply_filters( 'wpmu_signup_user_notification_email',
@@ -114,7 +114,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
     $image_size = $file['size']/1024;
 
     // File size limit in KB
-    $limit = 550;
+    $limit = fw_theme_mod('fw_max_media_upload');
 
     // Check if it's an image
     $is_image = strpos($file['type'], 'image');
@@ -126,24 +126,20 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
 
 }
 //config mails
-if(get_option("fw_altoweb_mailconfig")){
+if(fw_theme_mod("fw_action_resetmails")){
     
-    //Admin general
-    //update_option("new_admin_email",get_option("nubicommerce_destinos_mail"));
+    update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
+    update_option("woocommerce_cancelled_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
+    update_option("woocommerce_failed_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
     
-
-    update_option("woocommerce_new_order_recipient",get_option("nubicommerce_destinos_mail"));
-    update_option("woocommerce_cancelled_order_recipient",get_option("nubicommerce_destinos_mail"));
-    update_option("woocommerce_failed_order_recipient",get_option("nubicommerce_destinos_mail"));
-    
-    update_option("woocommerce_product_enquiry_send_to",get_option("nubicommerce_destinos_mail"));
-    update_option("woocommerce_stock_email_recipient",get_option("nubicommerce_destinos_mail"));
+    update_option("woocommerce_product_enquiry_send_to",fw_theme_mod("fw_mail_desde_mails"));
+    update_option("woocommerce_stock_email_recipient",fw_theme_mod("fw_mail_desde_mails"));
      
-    update_option("sendgrid_from_email","avisos@altoweb.co");
-    update_option("woocommerce_email_from_address","avisos@altoweb.co");
+    update_option("sendgrid_from_email",fw_theme_mod("fw_general_from_email"));
+    update_option("woocommerce_email_from_address",fw_theme_mod("fw_general_from_email"));
      
-    update_option("woocommerce_email_from_name",get_option("nubicommerce_desde_nombre"));
-    update_option("sendgrid_from_name",get_option("nubicommerce_desde_nombre"));
+    update_option("woocommerce_email_from_name",fw_theme_mod("fw_mail_desde_nombre"));
+    update_option("sendgrid_from_name",fw_theme_mod("fw_mail_desde_nombre"));
 
     
      //Mail woocommerce
@@ -152,26 +148,26 @@ if(get_option("fw_altoweb_mailconfig")){
     update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
 
-    update_option('fw_altoweb_mailconfig','0');
+    set_theme_mod('fw_action_resetmails',false);
 
 }
 
 function change_stock_email_recipient( $recipient, $product ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 function orden_nueva( $recipient, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_cancelada( $recipient, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_fallida( $recipient, $order ) {
-    $recipients = ", ".get_option("nubicommerce_destinos_mail");
+    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 ?>

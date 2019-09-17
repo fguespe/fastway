@@ -46,6 +46,13 @@ Kirki::add_section( 'section_general', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
+Kirki::add_section( 'section_email', array(
+    'title'          => __( 'Email', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_popup', array(
     'title'          => __( 'Popup', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -123,6 +130,12 @@ Kirki::add_section( 'section_labels', array(
   
 ) );
 
+Kirki::add_section( 'section_actions', array(
+    'title'          => __( 'Actions', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 
 
 Kirki::add_panel( 'panel_fastwaywoo', array(
@@ -497,13 +510,100 @@ Kirki::add_field( 'theme_config_id', array(
 		
 	),
 ) );
+/*EMAIL*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_action_woosettings',
+	'label'       => __( 'Init Woocommerce', 'fastway' ),
+	'section'     => 'section_actions',
+	'description' => 'Activar, refrescar y recien ahi toma los cambios. Inicializa woocomerce con nuestros default settings.',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_action_resetmails',
+	'label'       => __( 'Reset Mails', 'fastway' ),
+	'section'     => 'section_actions',
+	'description' => 'Activar, refrescar y recien ahi toma los cambios. Lo que hace es refrescar todo lo que concierne a emails.',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_action_clientimages',
+	'label'       => __( 'Client Area Images', 'fastway' ),
+	'description' => 'Reinicia imagenes del client area con nuestro branding.',
+	'section'     => 'section_actions',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+
+
+
+
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
-	'settings'  => 'fw_quickmenu_links',
-	'label'    	=> __( 'Mobile Menu Order', 'fastway' ),
-	'default' 	=>	'fb,twitter,youtube,whatsapp,ig,email,phone,address',
-	'section'   => 'section_mobile',
+	'settings'  => 'fw_mail_desde_nombre',
+	'label'    	=> __( 'Nombre cliente para mails', 'fastway' ),
+	'description' 	=>	'Nombre con el cual les va a llegar a los clientes',
+	'section'   => 'section_email',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_mail_desde_mails',
+	'label'    	=> __( 'Email para recibir notificaciones', 'fastway' ),
+	'description' 	=>	' *A que mails se van a enviar todas las notificaciones, separar mails con "," comas.',
+	'section'   => 'section_email',
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_general_from_name',
+	'label'    	=> __( 'Desde donde', 'fastway' ),
+	'default' => 'Web',
+	'description' 	=>	'Nombre de donde salen las notificaciones. No modificar!',
+	'section'   => 'section_email',
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_general_from_email',
+	'label'    	=> __( 'Desde que mail', 'fastway' ),
+	'default' => 'avisos@altoweb.co',
+	'description' 	=>	'Email de donde salen las notificaciones. No modificar!',
+	'section'   => 'section_email',
+) );
+
+
+
+
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header_padding_mobile',
@@ -803,6 +903,26 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'opt-color-copyright',
+	'label'       => __( 'Copyright ', 'fastway' ),
+	'section'     => 'section_colors',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--copyright);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--copyright',
+		),
+	),
+) );
+
+
 /*MOBILE*/
 
 Kirki::add_field( 'theme_config_id', array(
@@ -875,7 +995,31 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_shop_state',
+	'label'       => __( 'Shop State', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'normal',
+	'choices'     => array(
+		'normal' => __( 'Normal', 'fastway' ),
+		'hidepurchases' => __( 'Compras Off', 'fastway' ),
+		'hideprices' => __( 'Precios Off', 'fastway' ),
+	),
+) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_cuit_required',
+	'label'       => __( 'CUIT Obligatorio ', 'fastway' ),
+	'description'	=> 'Pone el campo de cuit/dni obligatorio en el checkout',
+	'section'     => 'section_woo',
+	'default'     => 1,
+	'choices' => array(
+	    0  => __( 'Enable', 'fastway' ),
+	    1 => __( 'Disable', 'fastway' )
+	)
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -910,14 +1054,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Put the percentage to affect all product prices.',
 	'section'     => 'section_woo',
 ) );
-/*
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_conversion',
 	'label'    => __( 'Currency Conversion', 'fastway' ),
-	'description' => 'Usar punto para decimales, no la coma',
+	'description' => 'Al habilitar este campo, al cliente le va a aparecer un widget con un campo para poner la conversion en a la moneda local. Usar punto para decimales, no la coma',
 	'section'     => 'section_woo',
-) );*/
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',
@@ -1644,6 +1788,16 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'fw_max_media_upload',
+	'label'    => __( 'Max Media Size Upload (KB)', 'fastway' ),       
+	'section'     => 'section_general',
+	'default'	=>	500,
+	'description'=>'Tamaño maximo de KB permitido para que los clientes suban a media,asi los obligamos a subidas livianas.'
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'maintainance_code',
@@ -1993,7 +2147,22 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
         return $value;
       }
       return false;
-    }
+	}
+	if(!fw_theme_mod('fw_forceupdate_1')){
+		//Force update 1
+		set_theme_mod('fw_max_media_upload',get_option('nubicommerce_modulo_500kb'));
+		set_theme_mod('fw_mail_desde_nombre',get_option('nubicommerce_desde_nombre'));
+		set_theme_mod('fw_mail_desde_mails',get_option('nubicommerce_destinos_mail' ));
+		set_theme_mod('fw_cuit_required',get_option('cuit'));
+		set_theme_mod('fw_id_ml',get_option('ml_id'));
+		set_theme_mod('fw_id_filesync',get_option('excelfile_id'));
+		set_theme_mod('fw_id_wpallimport',get_option('wpallimport_id'));
+		//set_theme_mod('fw_action_woosettings',get_option('altoweb_defaultoptions'));
+		//set_theme_mod('fw_action_resetmails',get_option('fw_altoweb_mailconfig'));
+		//set_theme_mod('fw_action_clientimages',get_option('fw_altoweb_defaultoptions'));
+		set_theme_mod('fw_forceupdate_1',true);
+		error_log('se actualizo todo');
+	}
 }
 
 add_shortcode('fwcf', 'fwcf');

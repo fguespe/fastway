@@ -10,24 +10,12 @@ Author URI: https://www.altoweb.co
 include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
 include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
-include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
+//include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
 // These would go inside your admin_init hook
 
  
-add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
- 
-function my_custom_dashboard_widgets() {
-    global $wp_meta_boxes;
-    if(get_option("ml_id"))wp_add_dashboard_widget('custom_help_widget1', 'Soporte', 'custom_ml_help');
-    wp_add_dashboard_widget('custom_help_widget2', 'Soporte', 'custom_dashboard_help');
-}
 
-function custom_dashboard_help() {
-    echo '<p>Necesitas ayuda? Enviános un mail a <a href="mailto:soporte@altoweb.co" target="_blank">soporte@altoweb.co</a> para crear un ticket y que podamos responder tu consulta.</p><br><a href="mailto:soporte@altoweb.co" target="_blank">Crear ticket</a><br><br>' ;
-}
-function custom_ml_help() {
-    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.get_option("ml_id").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.get_option("wpallimport_id").'&action=update" target="_blank">LINK</a>' ;
-}
+
 
 
 
@@ -125,7 +113,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 function custom_override_checkout_fields( $fields ) {
      $fields['billing']['billing_dni'] = array(
         'label'     => __('DNI/CUIT', 'woocommerce'),
-    'required'  => get_option( 'cuit'),
+    'required'  => fw_theme_mod( 'fw_cuit_required'),
     'class'     => array('form-row-wide'),
     'clear'     => true
      );
@@ -147,19 +135,28 @@ function remove_dashboard_meta2() {
 add_action( 'admin_init', 'remove_dashboard_meta2' );
 
 
-if(get_option("nubicommerce_modulo_500kb"))add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
+if(get_option("fw_max_media_upload"))add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
 
 
 
 add_action('admin_menu', 'my_menu_pagess');
 function my_menu_pagess(){
-    add_menu_page('Altoweb', 'Altoweb', 'manage_options', 'my-menu', 'myplugin_options_page' );
-    //add_submenu_page('my-menu', 'Opciones', 'Moneda', 'manage_options', 'moneda','page_moneda');
     add_submenu_page('my-menu', 'Opciones', 'Exito', 'manage_options', 'exitofile', 'exitofile_page');
-
-
 }
 
+function exitofile_page(){
+   ?>
+   <div class="paginaopciones">
+   <style type="text/css">
+   .paginaopciones{
+   text-align:center;
+   }
+   </style>
+   <img src="<?php echo get_template_directory_uri().'/assets/img/exitofile.png';?>" width="600">
+   </div>
+   <?php
+   } 
+   
 
 
 function formatear($string){
