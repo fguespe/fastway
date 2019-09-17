@@ -2078,6 +2078,14 @@ body .wpb_content_element {
   width: 68%;
   padding: 20px;
 }
+.woocommerce-account .woocommerce-MyAccount-content label {
+  display: block !important;
+  width: 100% !important;
+}
+.woocommerce-account .woocommerce-MyAccount-content input {
+  display: block !important;
+  width: 100% !important;
+}
 
 #customer_login .woocommerce-form-row label {
   width: 100% !important;
