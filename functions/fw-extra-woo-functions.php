@@ -159,6 +159,13 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     }
 }*/
 
+function woocommerce_button_proceed_to_checkout() {
+  $checkout_url = WC()->cart->get_checkout_url(); 
+  $label = fw_theme_mod('proceed-to-checkout-text');
+  echo '<a href="'.esc_url( wc_get_checkout_url() ).'" class="checkout-button button alt wc-forward">
+  <i class="fad fa-lock" style="margin-right:10px !important;"></i> '.$label.' </a>';
+}
+ 
 function fw_shop_manager_role_edit_capabilities( $roles ) {
   if(function_exists('fw_theme_mod')){
     $roles=fw_theme_mod('ca_roles_mayorista');
