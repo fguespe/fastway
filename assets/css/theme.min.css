@@ -3574,6 +3574,7 @@ body .wpb_content_element {
   border-left: 1px solid grey !important;
   border-right: 1px solid grey !important;
   border-bottom: 1px solid grey !important;
+  /*Todas desplegadas*/
 }
 .woocommerce-checkout .wc_payment_methods li label {
   border-top: 1px solid grey;
@@ -3592,6 +3593,9 @@ body .wpb_content_element {
   height: 50px;
   margin-right: 10px !important;
   background: grey !important;
+}
+.woocommerce-checkout .wc_payment_methods .payment_box {
+  display: block !important;
 }
 .woocommerce-checkout #place_order {
   padding: 15px;
