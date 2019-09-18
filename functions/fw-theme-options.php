@@ -1685,7 +1685,7 @@ Kirki::add_field( 'theme_config_id', array(
 	<h4>1- SOLO VALOR</h4>
 	Se pone directo el valor y el shortcode va a mostrar algo asi <br>campo:1154999795<br>resultado:<a href="1154999795">1154999795</a> 
 	<h4>2- LABEL Y LINK DIFERENCIADOS</h4>
-	Se puede especificar los valores poniendo el valor del link entre parentesis para el whatsapp<br>campo:1154999795 (+541154999795) <br>resultado: <a href="+5491154999795">1154999795</a> 
+	Se puede especificar los valores poniendo el valor del link entre parentesis para el whatsapp<br>campo:1154999795 (541154999795) <br>resultado: <a href="+5491154999795">1154999795</a> 
 	<h4>3- MULTIPLES VALORES</h4>
 	Por ejemplo para poner 2 direcciones se puede separar con el simbolo "|" <br>
 	ej. Dire 1 (link gmaps) | Dire 2 (link gmaps)<br>
@@ -1703,7 +1703,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="whatsapp"] empezar con 549, sin el + [fw_extras_short type="whatsapp"]', 'fastway' ),
+    'description'     => __( '[fw_extras_short type="whatsapp"] empezar con 549, sin el + [fw_extras_short type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
                 
 	'section'     => 'section_data',
 ) );
