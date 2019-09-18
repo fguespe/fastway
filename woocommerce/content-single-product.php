@@ -89,19 +89,22 @@ function fw_single_related($atts){
         );
         // The Query
         $products = new WP_Query( $args );
-
+        $contada=0;
         while ( $products->have_posts() ) : 
-            //$contada++;
+            $contada++;
             $products->the_post(); 
             echo '<div class="swiper-slide data-swiper-autoplay="'.$atts['slider_delay'].'">';
             wc_get_template_part( 'content', 'product' ); 
             echo ob_get_clean();
             echo '</div>';    
         endwhile; 
-        echo'</div>
-
+        echo'</div>';
+    if($contada>$cols){
+    echo '
     <div class="swiper-prev swiper-prodrel-prev"><i class="fa fa-angle-left"></i></div>
     <div class="swiper-next swiper-prodrel-next"><i class="fa fa-angle-right"></i></div>
+    ';}
+    echo'
   </div>
 </div>
 <script>
@@ -109,7 +112,7 @@ var ProductSwiper = new Swiper(".swiper-related", {
     slidesPerView: '.$cols.',
     spaceBetween: 10,
     touchRatio: 0 ,
-    loop: true,
+    loop: false,
     autoplay: true,
     navigation: {
         nextEl: ".swiper-prodrel-next",

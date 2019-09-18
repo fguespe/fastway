@@ -91,6 +91,12 @@ function vc_category_carousel() {
                         'std' => 'true',
                     ),
                     array(
+                        "type" => 'checkbox',
+                        "heading"     => "Hide out of stock",
+                        "param_name"  => "hideoutofstock",
+                        'std' => 'true',
+                    ),
+                    array(
                         'type' => 'el_id',
                         'heading' => __( 'Element ID', 'js_composer' ),
                         'param_name' => 'el_id',
@@ -469,6 +475,12 @@ function getwoocampos(){
             "type" => 'checkbox',
             "heading"     => "Loop",
             "param_name"  => "loop",
+            'std' => 'true',
+        ),
+        array(
+            "type" => 'checkbox',
+            "heading"     => "Hide out of stock",
+            "param_name"  => "hideoutofstock",
             'std' => 'true',
         ),
         

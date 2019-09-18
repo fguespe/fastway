@@ -67,6 +67,7 @@ class fw_Woo_Shortcodes {
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'hideoutofstock' => isset($atts["hideoutofstock"])&& !empty($atts["hideoutofstock"])?'false':'true',
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -92,6 +93,7 @@ class fw_Woo_Shortcodes {
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
+		if($atts['hideoutofstock'])$args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
 
 		$args = array(
 			'post_type'           => 'product',
@@ -135,7 +137,9 @@ class fw_Woo_Shortcodes {
 			"auto_play"		=> '0',
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
-'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'hideoutofstock' => 	isset($atts["hideoutofstock"])&& !empty($atts["hideoutofstock"])?'false':'true',
+			
 			"excerpt_limit" => 10,
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
@@ -156,6 +160,7 @@ class fw_Woo_Shortcodes {
 			);
 		}
 
+		if($atts['hideoutofstock'])$args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',
@@ -200,6 +205,7 @@ class fw_Woo_Shortcodes {
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'hideoutofstock' => 	isset($atts["hideoutofstock"])&& !empty($atts["hideoutofstock"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 			'orderby'		=> 'title',
@@ -236,6 +242,9 @@ class fw_Woo_Shortcodes {
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
+
+		if($atts['hideoutofstock'])$args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
+
 		if( strlen(trim($atts['cats'])) > 0 ) {
 			$args['tax_query'] = array(
 				array(
@@ -267,6 +276,7 @@ class fw_Woo_Shortcodes {
 					'type'    => 'DECIMAL',
 				);
 			}
+			
 		} else {
 			//$args['meta_query'] = WC()->query->get_meta_query();
 			if( absint($atts['is_deal']) ) {
@@ -624,7 +634,8 @@ class fw_Woo_Shortcodes {
 			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
 
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
-'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'hideoutofstock' => 	isset($atts["hideoutofstock"])&& !empty($atts["hideoutofstock"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
 		),$atts);
@@ -649,6 +660,9 @@ class fw_Woo_Shortcodes {
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
+
+		if($atts['hideoutofstock'])$args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
+		
 		ob_start();
 		
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
