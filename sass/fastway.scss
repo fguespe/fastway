@@ -3799,6 +3799,12 @@ body .wpb_content_element {
     color:var(--main) !important;
     margin-right:5px;
   }
+  .woocommerce-checkout .payment_method_cheque label::before {
+    font-family: "Font Awesome 5 Pro" !important;
+    content: "\f873";
+    color: var(--main) !important;
+    margin-right: 5px;
+  }
   .payment_method_woo-mercado-pago-basic div a img,
   .payment_method_mercadoenvios-gateway div a img{
       width:100% !important;
