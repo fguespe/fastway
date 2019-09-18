@@ -3616,6 +3616,12 @@ body .wpb_content_element {
   color: var(--main) !important;
   margin-right: 5px;
 }
+.woocommerce-checkout #place_order::before {
+  font-family: "Font Awesome 5 Pro" !important;
+  content: "";
+  color: white;
+  margin-right: 5px !important;
+}
 .woocommerce-checkout .woocommerce-checkout .payment_method_cheque label::before {
   font-family: "Font Awesome 5 Pro" !important;
   content: "";

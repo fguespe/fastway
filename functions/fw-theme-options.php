@@ -2089,10 +2089,17 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'proceed-tocheckout-text',
+	'settings'    => 'proceed-to-checkout-text',
 	'label'    => __( 'Comprar', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>'Finalizar compra',
+	'default'	=>'Comprar',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'place-order-text',
+	'label'    => __( 'Completar compra', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'Completar compra',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(

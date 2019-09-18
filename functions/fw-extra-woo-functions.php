@@ -63,6 +63,8 @@ function fw_loop_price(){
     global $product;
     echo '<span class="price">'.fw_price_html1(null,$product).'</span>';
 }
+
+
 add_shortcode('fw_loop_cart', 'fw_loop_cart');
 function fw_loop_cart() {
     if(fw_check_hide_purchases())return;
@@ -161,9 +163,22 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
 
 function woocommerce_button_proceed_to_checkout() {
   $checkout_url = WC()->cart->get_checkout_url(); 
-  $label = fw_theme_mod('proceed-tocheckout-text');
+  $label = fw_theme_mod('proceed-to-checkout-text');
   echo '<a href="'.esc_url( wc_get_checkout_url() ).'" class="checkout-button button alt wc-forward">
   <i class="fad fa-lock" style="margin-right:10px !important;"></i> '.$label.' </a>';
+}
+
+/* Add to the functions.php file of your theme */
+
+add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' ); 
+
+function woo_custom_order_button_text() {
+  return " ".fw_theme_mod('place-order-text');
+
+}
+add_action( 'woocommerce_review_order_after_submit', 'bbloomer_privacy_message_below_checkout_button' );
+function bbloomer_privacy_message_below_checkout_button() {
+   echo '<p><small>'.fw_theme_mod('checkout-bottom-text').'</small></p>';
 }
  
 function fw_shop_manager_role_edit_capabilities( $roles ) {
