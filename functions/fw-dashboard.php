@@ -1,6 +1,6 @@
 <?php 
 
-add_action( 'wp_dashboard_setup', 'prefix_add_dashboard_widget' );
+if(is_admin())add_action( 'wp_dashboard_setup', 'prefix_add_dashboard_widget' );
 
 function prefix_add_dashboard_widget() {
     wp_add_dashboard_widget(
