@@ -2958,13 +2958,13 @@ body .wpb_content_element {
   flex-grow: 0;
   flex-shrink: 0;
 }
-.woocommerce-checkout .woocommerce ul.woocommerce-error {
+.woocommerce-checkout .woocommerce-error {
   padding: 1em 2em 1em 3.5em;
   margin: 0 0 2em;
   position: relative;
   background-color: #f7f6f7;
   color: #515151;
-  border-top: 3px solid #a46497;
+  border-top: 3px solid var(--main);
   list-style: none outside;
   width: auto;
   word-wrap: break-word;
