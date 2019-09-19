@@ -22,30 +22,9 @@ class Correios_Shipping_Ajax_Postcode {
 			
 		} else {
 
-			echo
-			'<table cellspacing="0"  class="shop_table shop_table_responsive">
-				<tbody>
-					<tr class="shipping">
-				 		<th>
-							Entrega						
-						</th>
-						<th>
-							Valor	 						
-						</th>
-				  	</tr>';
-
 			foreach ($shipping_response as $key => $shipping) {
-				
-				echo
-					'<tr class="shipping">	
-						<td>
-							'.$shipping->label.'  						
-						</td>
-						<td>
-							'.wc_price( $shipping->cost ).'  						
-						</td>
-					</tr>';
-				}
+				echo'<p>'.$shipping->label.' ('.wc_price( $shipping->cost ).')';
+			}
 
 			if( get_option('wscip_obs','*Este resultado é apenas uma estimativa para este produto. O valor final considerado, deverá ser o total do carrinho.') ):
 				echo "<tr><td colspan='2'>";

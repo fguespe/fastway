@@ -15,15 +15,8 @@ if ( ! class_exists( __CLASS__ ) ) {
 
 		public function __construct() {
 
-			if( isset( $_GET['page'] ) && $_GET['page'] == 'wc-settings' )
-				add_action( 'admin_notices', array( __CLASS__,'plugin_donate') );
-
 			add_action('wp', array($this,'init'));
 				
-			add_action('woocommerce_shipping_init', function(){
-
-				include_once dirname( __FILE__ ) . '/includes/woo-settings.class.php';					
-			});
 
 			include_once dirname( __FILE__ ) . '/includes/ajax-postcode.class.php';
 		}
@@ -37,15 +30,6 @@ if ( ! class_exists( __CLASS__ ) ) {
 				include_once dirname( __FILE__ ) . '/includes/shortcode.class.php';				
 			
 			endif;
-		}
-
-		public function plugin_donate() {
-
-			$class = 'notice notice-info is-dismissible to apply';
-
-			$message = __( 'Está gostando de utilizar a Calculadora de Frete na Página do Produto? Me ajude a continuar criando novas soluções fazendo uma doação. <a href="https://pag.ae/bdv16S9" target="_blank"><img style="vertical-align: middle;margin-left: 15px;" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/184x42-doar-roxo-assina.gif"></a>', '' );
-
-			printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ),  $message ); 
 		}
 
 		public function Woo_Shipping_dependecy_notice() {

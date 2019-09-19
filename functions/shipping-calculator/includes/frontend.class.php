@@ -18,7 +18,7 @@ class Correios_Shipping_Frontend_Site {
 
 		$product = wc_get_product( $post->ID );
 
-		if (!$product->needs_shipping() || get_option('woocommerce_calc_shipping') === 'no' )
+		if (!$product->needs_shipping() || fw_theme_mod('woocommerce_calc_shipping') === 'no' )
 	        return null;
 
 
