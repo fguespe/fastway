@@ -343,9 +343,10 @@ color:var(--linkedin) !important;
 		font-size: 13px;
 		font-weight: 100;
 	}
-	#btn_mp_calc_shipping {
+	.btn_mp_calc_shipping {
 		background-color: var(--main);
-		color: white;
+    color: white;
+    border:0px;
 	}
 	.summary .cart br {
 		display: none !important;

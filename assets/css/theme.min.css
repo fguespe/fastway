@@ -335,9 +335,10 @@
   font-size: 13px;
   font-weight: 100;
 }
-.fw_single_product #btn_mp_calc_shipping {
+.fw_single_product .btn_mp_calc_shipping {
   background-color: var(--main);
   color: white;
+  border: 0px;
 }
 .fw_single_product .summary .cart br {
   display: none !important;
