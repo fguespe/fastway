@@ -38,9 +38,6 @@ class WooTaxomizer {
 			return;
 		}
 
-		wp_enqueue_script( 'jquery-ui-progressbar' );
-
-		wp_enqueue_style( 'jquery-ui-regenthumbs', plugins_url( 'jquery-ui/redmond/jquery-ui-1.7.2.custom.css', __FILE__ ), array(), '1.7.2' );
 	}
 
 
