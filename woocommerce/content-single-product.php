@@ -13,19 +13,6 @@ function fw_echo($atts = [], $content = null){
     echo stripslashes(htmlspecialchars_decode($content));
 }
 
-add_shortcode('fw_shipping_calculator', 'fw_shipping_calculator');
-function fw_shipping_calculator($atts = [], $content = null){
-    global $product;
-    echo '
-<div id="shipping-calc">
-	<input type="tel" id="wscp-postcode" autocomplete="off"  name="wscp-postcode" class="input-text text" />
-	<input type="button" id="wscp-button" class="button wscp-button" value="Calcular" >
-	<input type="hidden" name="wscp-nonce" id="wscp-nonce" value="'.wp_create_nonce( "wscp-nonce" ).'">
-	<div id="wscp-response"></div>
-</div>';
-}
-
-
 add_shortcode('fw_div_open', 'fw_div_open');
 function fw_div_open($atts = [], $content = null){
     echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';

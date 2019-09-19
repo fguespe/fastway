@@ -22,7 +22,7 @@ class Correios_Shipping_Frontend_Site {
 	        return null;
 
 
-	    include_once dirname( __DIR__ ) . '/templates/frontend/site/html-calculator-fields.php'; 
+	    include_once dirname( __DIR__ ) . '/html-calculator-fields.php'; 
 
 	    return $content;
 
