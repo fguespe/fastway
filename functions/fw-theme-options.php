@@ -1158,6 +1158,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'=>'Display a messsage/notice before checkout',
 	'section'     => 'section_woo',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_show_only_free_shipping',
+	'label'       => __( 'Show only Free Shipping', 'fastway' ),
+	'section'     => 'section_woo',
+	'description' => 'Hides other options if free shipping is available',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'sold-alone',
