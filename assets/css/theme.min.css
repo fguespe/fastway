@@ -1542,6 +1542,16 @@ footer .widget_nav_menu li a {
   border-bottom-width: 3px;
 }
 
+.capsula-blanca .descarga {
+  border: 0px;
+  margin: 0 auto !important;
+  display: block !important;
+  text-align: center !important;
+  padding: 10px;
+  background: var(--main);
+  color: white;
+}
+
 .capsula-blanca h2,
 .capsula-blanca h3,
 .capsula-blanca div,
