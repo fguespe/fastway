@@ -1573,7 +1573,7 @@ add_filter( 'woocommerce_product_variation_get_width', 'xa_product_default_width
 if( ! function_exists('xa_product_default_width') ) {
 	function xa_product_default_width( $width) {
 
-		$default_width = 11;			// Provide default Width
+		$default_width = 10;			// Provide default Width
 		if( empty($width) ) {
 			return $default_width;
 		}
@@ -1590,7 +1590,7 @@ add_filter( 'woocommerce_product_variation_get_height', 'xa_product_default_heig
 if( ! function_exists('xa_product_default_height')) {
 	function xa_product_default_height( $height) {
 
-		$default_height = 12;			// Provide default Height
+		$default_height = 10;			// Provide default Height
 		if( empty($height) ) {
 			return $default_height;
 		}
@@ -1607,7 +1607,7 @@ add_filter( 'woocommerce_product_variation_get_weight', 'xa_product_default_weig
 if( ! function_exists('xa_product_default_weight') ) {
 	function xa_product_default_weight( $weight) {
 
-		$default_weight = 13;			// Provide default Weight
+		$default_weight = 0.4;			// Provide default Weight
 		if( empty($weight) ) {
 			return $default_weight;
 		}
