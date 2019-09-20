@@ -18,7 +18,7 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
         if($style==="link" || $style==="modal"){
           return <<<HTML
 <a class="fw-header-icon minicart"  href="$carturl" role="button">
-<i class="$istyle fa-cart-plus"></i> <span class="cant" style="display:none;">($cant)</span>
+<i class="$istyle fa-cart-plus"></i> <span class="cant">($cant)</span>
 </a>
 HTML;
         }/*else if($style==="popup"){
