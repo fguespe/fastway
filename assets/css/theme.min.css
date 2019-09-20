@@ -1363,6 +1363,33 @@ footer {
   text-align: center;
 }
 
+/*Iconos pagos*/
+#fw_iconospagos {
+  background: white;
+  padding: 15px;
+}
+
+#fw_iconospagos .fw_icon_bs_short i {
+  color: var(--main);
+}
+
+#fw_iconospagos .fw_icon_bs_short big {
+  font-size: 14px !important;
+}
+
+#fw_iconospagos .fw_icon_bs_short small {
+  font-size: 12px !important;
+  color: var(--main);
+}
+
+#fw_iconospagos .fw_icon_bs_short {
+  border-right: 1px solid #ccc;
+}
+
+#fw_iconospagos .wpb_column:last-child .fw_icon_bs_short {
+  border: 0px;
+}
+
 /*FOOTER STANDAR*/
 footer h2 {
   font-size: 25px;
