@@ -1240,7 +1240,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_show_calculator_shipping',
 	'label'       => __( 'Show Shipping Calculator', 'fastway' ),
 	'section'     => 'section_woo_single',
-	'description' => '',
+	'description' => 'Refrescar despues de activar',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
