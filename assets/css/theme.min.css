@@ -1696,6 +1696,7 @@ a:hover {
 }
 
 .minicart .cant {
+  display: inline !important;
   color: var(--main);
   float: right;
   font-size: 12px !important;
