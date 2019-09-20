@@ -18,7 +18,7 @@ class Correios_Shipping_Ajax_Postcode {
 
 		if( !is_array($shipping_response) ){
 
-			echo "<p>".( $shipping_response ? $shipping_response : 'No hay metodos de envios.' )."</p>";
+			echo "<small>".( $shipping_response ? $shipping_response : 'No hay metodos de envios.' )."</small>";
 			
 		} else {
 
