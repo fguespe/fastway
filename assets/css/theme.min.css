@@ -1698,9 +1698,9 @@ a:hover {
 .minicart .cant {
   color: var(--main);
   font-size: 12px !important;
-  top: -15px !important;
+  top: -20px !important;
   position: relative;
-  right: 5px !important;
+  right: 2px !important;
 }
 
 /*MINICARt

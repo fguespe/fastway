@@ -15,7 +15,7 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
         $carturl=wc_get_cart_url();
         $checkurl=wc_get_checkout_url();
         $istyle=fw_theme_mod("fw_icons_style");
-        if($cant>0)$cant='<span class="cant">'.$cant.'</span>';
+        if($cant>0)$cant='<span class="cant">('.$cant.')</span>';
         if($style==="link" || $style==="modal"){
           return <<<HTML
 <a class="fw-header-icon minicart"  href="$carturl" role="button">
