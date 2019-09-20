@@ -178,7 +178,7 @@ if( !function_exists( 'fw_menu' ) ) {
                             foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
                                 $s_title=$s_submenu->title;
-                                $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
+                                $menu_array[] = '<li class="nav-item hijo"><a class="nav-link " href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
                                 
                             }
                         
@@ -222,7 +222,9 @@ if( !function_exists( 'fw_menu' ) ) {
                 } else {
                     
                     $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
-                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title . '</a>' ."\n";
+                    $menushort=$menu_item->title;
+                    if($menushort=="[fw_account]")$menushort=fw_account_name();
+                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menushort . '</a>' ."\n";
                 }
                 
             }
@@ -235,6 +237,13 @@ if( !function_exists( 'fw_menu' ) ) {
         
         return $menu_list;
     }
+}
+function fw_account_name(){
+    global $current_user;
+    get_currentuserinfo();
+    error_log(is_user_logged_in());
+    if(is_user_logged_in())return $current_user->display_name;
+    return fw_theme_mod("fw_user_text");
 }
 function getChilds($parent,$menu_items){
     $devolver=array();
