@@ -1161,6 +1161,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_show_calculator_shipping',
+	'label'       => __( 'Show Shipping Calculator', 'fastway' ),
+	'section'     => 'section_woo_sinle',
+	'description' => '',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_show_only_free_shipping',
 	'label'       => __( 'Show only Free Shipping', 'fastway' ),
 	'section'     => 'section_woo',
