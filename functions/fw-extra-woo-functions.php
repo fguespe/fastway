@@ -1633,4 +1633,4 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
 	}
 	return ! empty( $free ) ? $free : $rates;
 }
-add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
+//add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
