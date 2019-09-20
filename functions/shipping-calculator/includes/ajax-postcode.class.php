@@ -18,7 +18,7 @@ class Correios_Shipping_Ajax_Postcode {
 
 		if( !is_array($shipping_response) ){
 
-			echo "<div class='woocommerce-message woocommerce-error'>".( $shipping_response ? $shipping_response : 'Nenhuma forma de entrega disponível.' )."</div>";
+			echo "<p>".( $shipping_response ? $shipping_response : 'No hay metodos de envios.' )."</div>";
 			
 		} else {
 
