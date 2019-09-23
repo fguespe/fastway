@@ -19,28 +19,22 @@ $container   = fw_theme_mod('container-main');
 			<main class="site-main" id="main">
 				<header class="page-header">
 
-		<h1 class="page-title"><?php wp_title(''); ?></h1>
+		<?php if(fw_theme_mod('fw_blog_title_switch')){ ?>
+		<?php echo '<h1 class="page-title">'.wp_title('').'</h1>'; ?></h1>
+		<?php } ?>
 
 	</header><!-- .page-header -->
 
 				<?php if ( have_posts() ) : ?>
 
-					<?php /* Start the Loop */ ?>
+					<?php 
+					if(fw_theme_mod('fw_blog_columns')==1){
+						echo fw_recentposts_ver(); 
+					}else{
 
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
-
-					<?php endwhile; ?>
-
+						echo fw_recentposts_hor(); 
+					}
+					?>
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>

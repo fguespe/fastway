@@ -138,15 +138,27 @@ Kirki::add_section( 'section_actions', array(
 ) );
 
 
-Kirki::add_panel( 'panel_fastwaywoo', array(
-
-    'title'       => __( 'Fastway Woocommerce', 'fastway' ),
-    //'description' => __( 'My panel description', 'fastway' ),
+Kirki::add_panel( 'panel_fastwayblog', array(
+    'title'       => __( 'Fastway Blog', 'fastway' ),
 ) );
 
+Kirki::add_panel( 'panel_fastwaywoo', array(
+    'title'       => __( 'Fastway Woocommerce', 'fastway' ),
+) );
+
+Kirki::add_section( 'section_blog_general', array(
+    'title'          => __( 'General', 'fastway' ),
+    'panel'          => 'panel_fastwayblog',
+
+) );
+
+Kirki::add_section( 'section_blog_page', array(
+    'title'          => __( 'Blog Page', 'fastway' ),
+    'panel'          => 'panel_fastwayblog',
+
+) );
 Kirki::add_section( 'section_woo', array(
     'title'          => __( 'General', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
 
 ) );
@@ -305,7 +317,83 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+/*BLOG*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_blog_title_switch',
+	'label'       => __( 'Blog title', 'fastway' ),
+	'section'     => 'section_blog_general',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'fw_blog_sidebar_ratio',
+	'label'       => __( 'Sidebar Width', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 2,
+	'choices'     => array(
+		'min'  => '2',
+		'max'  => '4',
+		'step' => '1',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'fw_blog_per_page',
+	'label'       => esc_attr__( 'News Per Page', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 40,
+	'choices'     => array(
+		'min'  => '4',
+		'max'  => '100',
+		'step' => '1',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'fw_blog_columns',
+	'label'       => esc_attr__( 'Columns', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 3,
+	'choices'     => array(
+		'min'  => '1',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor_blog',
+	'label'       => __( 'CSS Blog Page ', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'description' => 'Classes: .blog',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_show_calculator_shipping',
+	'label'       => __( 'Show Shipping Calculator', 'fastway' ),
+	'section'     => 'section_woo_single',
+	'description' => 'Refrescar despues de activar',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 
 //General
 Kirki::add_field( 'theme_config_id', array(
@@ -1223,6 +1311,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_shop',

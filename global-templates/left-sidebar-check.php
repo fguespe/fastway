@@ -13,8 +13,8 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 }
 if ( is_home() && ! is_front_page() ){
 	$sidebar_pos = fw_theme_mod('layout-blog');
-	$ratio=9;
-	$ratioboth=6;
+	$ratio=12-fw_theme_mod('fw_blog_sidebar_ratio');
+	$ratioboth=$ratio-fw_theme_mod("fw_blog_sidebar_ratio");
 }
 ?>
 

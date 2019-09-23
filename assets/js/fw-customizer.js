@@ -50,6 +50,11 @@ wp.customize( 'css_editor-single', function( value ) {
     jQuery( '#css_editor-single' ).text(newval );
   } );
 } );
+wp.customize( 'css_editor_blog', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_editor_blog' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor_shop', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor_shop' ).text(newval );

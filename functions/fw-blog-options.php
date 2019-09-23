@@ -7,12 +7,12 @@ add_filter( 'excerpt_length', 'fw_custom_excerpt_length', 999 );
     
 add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
 function fw_recentposts_hor() {
-    $rPosts = new WP_Query('showposts=3');
+    $rPosts = new WP_Query('showposts='.fw_theme_mod('fw_blog_per_page'));
     ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><?php 
     while ($rPosts->have_posts()){
-      $rPosts->the_post(); ?>
-    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
-    <?php $image_url = $image[0]; ?>
+      $rPosts->the_post(); 
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
+      $image_url = $image[0]; ?>
        <div class="fw_post hor" >
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
           <h4 class="title"><?php the_title();?></h4>
@@ -25,6 +25,7 @@ function fw_recentposts_hor() {
     <?php  wp_reset_query();
 }
 add_shortcode('fw_recentposts_hor', 'fw_recentposts_hor');
+
 
 function fw_recentposts_ver() {
     $rPosts = new WP_Query();

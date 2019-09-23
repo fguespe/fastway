@@ -41,7 +41,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 	 */
 	function understrap_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Main Right Sidebar', 'fastway' ),
+			'name'          => __( 'Blog Right Sidebar', 'fastway' ),
 			'id'            => 'right-sidebar',
 			'description'   => 'Right sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -51,7 +51,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Main Left Sidebar', 'fastway' ),
+			'name'          => __( 'Blog Left Sidebar', 'fastway' ),
 			'id'            => 'left-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
