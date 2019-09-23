@@ -74,7 +74,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'=> 'REFRESH TO EDIT MENU IN CUSTOMIZER!',
 	'section'     => 'section_clientarea',
     'choices'     => fw_getme_roles(),
-	'default'     => 'shop-manager',
+	'default'     => 'shop_manager',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
