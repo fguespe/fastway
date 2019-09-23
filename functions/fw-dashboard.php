@@ -82,7 +82,7 @@ function prefix_dashboard_widget() {
     }
     .fw_widget_dash .iralasopciones{
         background:#132E59;
-        color:white;
+        color:white !important;
         padding:5px;
         display:block;
         border:0px !important;
