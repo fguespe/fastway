@@ -71,7 +71,7 @@ function after_xml_import_init_cate($import_id){
 
 
 
-if(get_option('altoweb_defaultoptions')){
+if(fw_theme_mod('fw_action_woosettings')){
     update_option('woocommerce_price_num_decimals','0');
     update_option('woocommerce_currency','ARS');
     update_option('woocommerce_default_country','AR:C');
@@ -93,16 +93,16 @@ if(get_option('altoweb_defaultoptions')){
     update_option('woocommerce_hold_stock_minutes','');
     
     
-    update_option('altoweb_defaultoptions','0');
+    set_theme_mod('fw_action_woosettings','0');
 }
 
 
-if(get_option('fw_altoweb_defaultoptions')){
+if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
     set_theme_mod('mobile-icon', $THEME_IMG_URI."favi.png");
     set_theme_mod('ca-dev-logo',$THEME_IMG_URI."logo.png");
     set_theme_mod('ca-dev-favi',$THEME_IMG_URI."favi.png");
-    update_option('fw_altoweb_defaultoptions','0');
+    set_theme_mod('fw_action_clientimages',false);
 }
 
 

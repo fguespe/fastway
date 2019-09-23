@@ -2187,8 +2187,9 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
       }
       return false;
 	}
+	/*esto fue paral a migracion*/
 	if(!fw_theme_mod('fw_forceupdate_1')){
-		//Force update 1
+		//Force update 
 		set_theme_mod('fw_max_media_upload',get_option('nubicommerce_modulo_500kb'));
 		set_theme_mod('fw_mail_desde_nombre',get_option('nubicommerce_desde_nombre'));
 		set_theme_mod('fw_mail_desde_mails',get_option('nubicommerce_destinos_mail' ));
