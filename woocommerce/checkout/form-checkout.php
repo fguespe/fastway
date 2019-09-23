@@ -78,21 +78,21 @@ display:block !important;
 
     <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
         <a href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a>
-        <div class="fw_promo" style="display:none!important;">
-          <button id="show-promo-form">
+        <div class="fw_promo" style="">
+          <div id="show-promo-form">
               Got promo code?
               <span class="fw_arrow">
                 <i class="fa fa-arrow-down" id="coupon" onclick="abrir()"></i>
               </span>
-          </button>
+          </div>
           <script>
-            function abrir(){
+            function abrir(event){
               jQuery('.fw_promo-content').toggle();
             }
           </script>
           <div class="fw_promo-content" style="display:none;">
 
-            <p class="form-row form-row-first">
+            <span class="woocommerce-input-wrapper">
               <input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'fastway' ); ?>" id="coupon_code" value="" />
             </p>
 
@@ -105,9 +105,7 @@ display:block !important;
           </div>
         </div>
         <div id="order_review" class="woocommerce-checkout-review-order">
-          <table class="shop_table woocommerce-checkout-review-order-table">
-
-          </table>
+          <table class="shop_table woocommerce-checkout-review-order-table"></table>
         </div>
         <div class="fw_block-overlay"></div>
     </div>

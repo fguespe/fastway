@@ -3174,7 +3174,7 @@ body .wpb_content_element {
     margin-top: 7px;
   }
 
-  .fw_promo button {
+  .fw_promo > div  {
     width: 100%;
     padding: 5px 20px 5px 0;
     text-align: left;
@@ -3187,11 +3187,11 @@ body .wpb_content_element {
     font-weight: normal;
   }
 
-  .fw_promo button:hover {
+  .fw_promo > div:hover {
     color: #444;
   }
 
-  .fw_promo button:focus {
+  .fw_promo > div:focus {
     outline: none;
   }
 
