@@ -19,7 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 wc_print_notices();
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
@@ -65,7 +65,8 @@ display:block !important;
 
       <div id="order_review" class="woocommerce-checkout-review-order"></div>
 
-      <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+      <?php 
+      do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
    </div>
 
@@ -78,34 +79,30 @@ display:block !important;
 
     <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
         <a href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a>
-        <div class="fw_promo" style="">
-          <div id="show-promo-form">
-              Got promo code?
-              <span class="fw_arrow">
-                <i class="fa fa-arrow-down" id="coupon" onclick="abrir()"></i>
-              </span>
-          </div>
-          <script>
-            function abrir(event){
-              jQuery('.fw_promo-content').toggle();
-            }
-          </script>
-          <div class="fw_promo-content" style="display:none;">
-
-            <span class="woocommerce-input-wrapper">
-              <input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'fastway' ); ?>" id="coupon_code" value="" />
-            </p>
-
-            <p class="form-row form-row-last">
-              <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Aplicar Código', 'fastway' ); ?>" />
-            </p>
-
-              <div class="clear"></div>
-              </form>
+        </form>
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
+        <div class="fw_promo" >
+          <div id="show-promo-form" >
+              <?php echo esc_html__( 'Have a coupon?', 'woocommerce' )  ?>
+              <a class="fw_arrow showcoupon">
+                <i class="fa fa-arrow-down" id="coupon" ></i>
+              </a>
           </div>
         </div>
+        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+          <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
+          <p class="form-row form-row-first">
+            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
+            <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+          </p>
+          <div class="clear"></div>
+        </form>
+        <?php } ?>
+      
         <div id="order_review" class="woocommerce-checkout-review-order">
-          <table class="shop_table woocommerce-checkout-review-order-table"></table>
+          <table class="shop_table woocommerce-checkout-review-order-table">
+
+          </table>
         </div>
         <div class="fw_block-overlay"></div>
     </div>
