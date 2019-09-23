@@ -93,7 +93,7 @@ if(fw_theme_mod('fw_action_woosettings')){
     update_option('woocommerce_hold_stock_minutes','');
     
     
-    set_theme_mod('fw_action_woosettings','0');
+    set_theme_mod('fw_action_woosettings',false);
 }
 
 
