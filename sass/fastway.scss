@@ -3781,11 +3781,15 @@ body .wpb_content_element {
     color: white;
     margin-right: 5px !important;
   }
+  
   .woocommerce-checkout .payment_method_cheque label::before {
     font-family: "Font Awesome 5 Pro" !important;
     content: "\f873";
     color: var(--main) !important;
     margin-right: 5px;
+  }
+  ul li.payment_method_billetera{
+    display:none !important;
   }
   .payment_method_woo-mercado-pago-basic div a img,
   .payment_method_mercadoenvios-gateway div a img{
