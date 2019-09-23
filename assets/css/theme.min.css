@@ -3052,14 +3052,8 @@ body .wpb_content_element {
   font-size: 16px;
   font-weight: normal;
 }
-.woocommerce-checkout .fw_promo-content .text {
-  width: 80% !important;
-  display: inline !important;
-  margin: 0px !important;
-}
-.woocommerce-checkout .fw_promo-content .enviar {
-  width: 19% !important;
-  margin: 0px !important;
+.woocommerce-checkout .checkout_coupon > p {
+  font-size: 10px !important;
 }
 .woocommerce-checkout .fw_promo > div:hover {
   color: #444;
