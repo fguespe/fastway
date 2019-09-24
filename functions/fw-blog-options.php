@@ -8,19 +8,23 @@ add_filter( 'excerpt_length', 'fw_custom_excerpt_length', 999 );
 add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
 function fw_recentposts_grid() {
     $rPosts = new WP_Query('showposts='.fw_theme_mod('fw_blog_per_page'));
-    ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><?php 
+    if(fw_theme_mod('fw_blog_columns')==2)$clase="col-md-6";
+    if(fw_theme_mod('fw_blog_columns')==3)$clase="col-md-4";
+    else if(fw_theme_mod('fw_blog_columns')==4)$clase="col-md-3";
+    else if(fw_theme_mod('fw_blog_columns')==5)$clase="col-md-2";
+    ?><div class="fw_blog d-flex flex-wrap flex-row" ><?php 
     while ($rPosts->have_posts()){
       $rPosts->the_post(); 
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
       $image_url = $image[0]; ?>
+      <li class="fw_post <?php echo $clase;?> col-sm-6" >
       <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
-        <div class="fw_post hor" >
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
-          <h4 class="title"><a href=""><?php the_title();?></a></h4>
+          <h4 class="title"><?php the_title();?></h4>
           <p class="excerpt"><?php the_excerpt(); ?></p>
           <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
-        </div>
       </a>
+      </li>
     <?php }?>
     </div>
     <?php  wp_reset_query();

@@ -362,10 +362,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_blog_columns',
 	'label'       => esc_attr__( 'Columns', 'fastway' ),
 	'section'     => 'section_blog_page',
-	'default'     => 3,
+	'default'     => 4,
 	'choices'     => array(
-		'min'  => '1',
-		'max'  => '12',
+		'min'  => '3',
+		'max'  => '5',
 		'step' => '1',
 	),
 ) );

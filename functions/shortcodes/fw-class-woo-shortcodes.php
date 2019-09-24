@@ -36,6 +36,7 @@ class fw_Woo_Shortcodes {
 
 		return array(
 			'fw_featured_products'				=> __CLASS__ . '::featured_products',
+			'fw_blog_carousel'				=> __CLASS__ . '::blog_carousel',
 			'fw_sale_products'				=> __CLASS__ . '::sale_products',
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',
@@ -51,6 +52,69 @@ class fw_Woo_Shortcodes {
 		if( strlen($class) > 0 )
 			$classes[] = $class;
 		return $classes;
+	}
+	public static function blog_carousel( $atts ){
+		global $woocommerce_loop;
+		$atts = shortcode_atts( array(
+			"title" 		=> '',
+			"item_style"	=> 'grid',
+			"as_widget"		=> '0',
+			"box_style"		=> '',
+			"head_style"	=> '',
+			"border_color"	=> '',
+			"is_slider"		=> '1',
+			"is_biggest"	=> '0',
+			"auto_play"		=> '0',
+			'uncategorized' => isset($atts["uncategorized"])&& !empty($atts["uncategorized"])?false:true,
+			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
+			'loop' => 		isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'hideoutofstock' => isset($atts["hideoutofstock"])&& !empty($atts["hideoutofstock"])?'false':'true',
+			"excerpt_limit" => 10,
+			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
+			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+			"orderby"		=> 'date',
+			"order"			=> 'desc',
+			"hide_free"		=> 0,
+			"show_hidden"	=> 0
+		), $atts );
+        $meta_query  = WC()->query->get_meta_query();
+		$tax_query   = WC()->query->get_tax_query();
+		
+		if($atts["uncategorized"]){
+			$tax_query[] = array('relation'=> 'AND');
+			$tax_query[] = array(
+				'taxonomy' => 'post_cat',
+				'field'    => 'slug', // Or 'name' or 'term_id'
+				'terms'    => array('sin-categorizar','sin-categoria','uncategorized'),
+				'operator' => 'NOT IN', // Excluded
+			);
+		}
+		$args = array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			
+			'ignore_sticky_posts' => 1,
+			'posts_per_page'      => $atts['per_page'],
+			'orderby'             => $atts['orderby'],
+			'order'               => $atts['order'],
+            'meta_query'          => $meta_query,
+            'tax_query'           => $tax_query,
+		);
+
+		
+		
+		ob_start();
+
+		$posts = new WP_Query('showposts='.fw_theme_mod('fw_blog_per_page'));
+
+		if ( $posts->have_posts() ) :
+			self::get_template( 'fw-woo-posts-carousel.php', $atts, $posts );
+		endif;
+		
+		wp_reset_postdata();
+		
+		
+		return ob_get_clean();
 	}
 	public static function featured_products( $atts ){
 		global $woocommerce_loop;
