@@ -26,7 +26,9 @@ function fw_recentposts_grid() {
       </a>
       </li>
     <?php }?>
+    
     </div>
+    
     <?php  wp_reset_query();
 }
 add_shortcode('fw_recentposts_grid', 'fw_recentposts_grid');

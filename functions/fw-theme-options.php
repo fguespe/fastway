@@ -364,7 +364,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_blog_page',
 	'default'     => 4,
 	'choices'     => array(
-		'min'  => '3',
+		'min'  => '1',
 		'max'  => '5',
 		'step' => '1',
 	),
