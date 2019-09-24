@@ -767,17 +767,3 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
     return $defaults;
 }
 
-
-
-//add_action( 'vc_before_init', 'vc_before_init_actions' );
- 
-function vc_before_init_actions() {
-    require_once( get_template_directory().'/functions/vc_customs/vc_woo_carousel.php' ); 
-    //require_once( get_template_directory().'/functions/vc_customs/vc_sale_products.php' ); 
-    //require_once( get_template_directory().'/functions/vc_customs/vc_bestseller_products.php' ); 
-    //require_once( get_template_directory().'/functions/vc_customs/vc_toprated_products.php' ); 
-    //require_once( get_template_directory().'/functions/vc_customs/vc_recent_products.php' ); 
-}
-
-
-

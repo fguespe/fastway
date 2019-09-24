@@ -141,6 +141,7 @@ require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php
 
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
+    require get_template_directory() . '/functions/vc_customs/vc_blog.php';
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
     //require get_template_directory() . '/functions/fw-config-page.php';
