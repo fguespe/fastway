@@ -35,10 +35,6 @@ $container   = fw_theme_mod('container-main');
 						echo fw_recentposts_grid(); 
 					}
 					?>
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
 				<?php endif; ?>
 
 			</main><!-- #main -->

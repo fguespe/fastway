@@ -35,8 +35,7 @@ add_shortcode('fw_recentposts_grid', 'fw_recentposts_grid');
 
 
 function fw_recentposts_ver() {
-    $rPosts = new WP_Query();
-    $rPosts->query('showposts=3');
+    $rPosts = new WP_Query('post_per_page='.fw_theme_mod('fw_blog_per_page'));
     ?><div class="fw_news" ><?php
     while ($rPosts->have_posts()) { $rPosts->the_post(); ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
