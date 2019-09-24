@@ -19,6 +19,7 @@ function fw_loop_cat(){
     global $product;
     echo '<span class="fw_loop_cat">'.fw_getcat($product->id).'</span>';
 }
+
 add_shortcode('fw_cuotas', 'fw_cuotas');
 function fw_cuotas($atts){
   global $product;

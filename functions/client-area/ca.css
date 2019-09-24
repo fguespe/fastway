@@ -324,6 +324,10 @@ border-radius:0px;
 
 }
 
+/*ENVIRA*/
+.envira-header-temp,.envira-header,.error{
+	display:none !important;
+}
 
 /*PRICES BY USER ROLE*/
 .festi-user-role-prices-product-tab {
