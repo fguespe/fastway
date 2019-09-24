@@ -1586,12 +1586,18 @@ footer .widget_nav_menu li a {
 .capsula-blanca h2,
 .capsula-blanca h3,
 .capsula-blanca div,
-.capsula-blanca i {
+.capsula-blanca i,
+.capsula-blanca .img {
   text-align: center !important;
   width: 100%;
 }
 
-.capsula-blanca i {
+.capsula-blanca .img img {
+  width: 150px;
+}
+
+.capsula-blanca i,
+.capsula-blanca .img {
   font-size: 50px !important;
   color: var(--main) !important;
   padding-bottom: 15px;
