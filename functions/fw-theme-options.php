@@ -389,7 +389,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor_blog',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
 	'section'     => 'section_blog_general',
-	'description' => 'Classes: .blog',
+	'description' => 'Classes: .blog_page',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -453,7 +453,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor_blog_page',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
 	'section'     => 'section_blog_page',
-	'description' => 'Classes: .blog',
+	'description' => 'Classes: .post_page',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
