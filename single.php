@@ -28,9 +28,11 @@ $container   = fw_theme_mod('container-main');
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+					if(fw_theme_mod('fw_blog_comment_switch')){
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+					}
 					?>
 
 				<?php endwhile; // end of the loop. ?>

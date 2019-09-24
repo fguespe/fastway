@@ -151,9 +151,8 @@ Kirki::add_section( 'section_blog_general', array(
     'panel'          => 'panel_fastwayblog',
 
 ) );
-
 Kirki::add_section( 'section_blog_page', array(
-    'title'          => __( 'Blog Page', 'fastway' ),
+    'title'          => __( 'Post Page', 'fastway' ),
     'panel'          => 'panel_fastwayblog',
 
 ) );
@@ -318,7 +317,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*BLOG*/
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_blog_title_switch',
@@ -335,8 +333,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'fw_blog_sidebar_ratio',
 	'label'       => __( 'Sidebar Width', 'fastway' ),
-	'section'     => 'section_blog_page',
-	'default'     => 2,
+	'section'     => 'section_blog_general',
+	'default'     => 3,
 	'choices'     => array(
 		'min'  => '2',
 		'max'  => '4',
@@ -348,8 +346,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'fw_blog_per_page',
 	'label'       => esc_attr__( 'News Per Page', 'fastway' ),
-	'section'     => 'section_blog_page',
-	'default'     => 40,
+	'section'     => 'section_blog_general',
+	'default'     => 12,
 	'choices'     => array(
 		'min'  => '4',
 		'max'  => '100',
@@ -361,8 +359,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'fw_blog_columns',
 	'label'       => esc_attr__( 'Columns', 'fastway' ),
-	'section'     => 'section_blog_page',
-	'default'     => 4,
+	'section'     => 'section_blog_general',
+	'default'     => 3,
 	'choices'     => array(
 		'min'  => '1',
 		'max'  => '5',
@@ -374,8 +372,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_read_more',
-	'label'       => esc_attr__( 'Columns', 'fastway' ),
-	'section'     => 'section_blog_page',
+	'label'       => esc_attr__( 'Read more label', 'fastway' ),
+	'section'     => 'section_blog_general',
 	'description' => 'Si se deja vacio, no aparece',
 	'default'     => 'Leer más',
 	'choices'     => array(
@@ -390,6 +388,70 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_blog',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
+	'section'     => 'section_blog_general',
+	'description' => 'Classes: .blog',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
+/*BLOG PAGE*/
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_blog_date_switch',
+	'label'       => __( 'Date data', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_blog_author_switch',
+	'label'       => __( 'Author data', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_blog_featured_switch',
+	'label'       => __( 'Featured Image', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_blog_comment_switch',
+	'label'       => __( 'Comments', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor_blog_page',
+	'label'       => __( 'CSS Blog Page ', 'fastway' ),
 	'section'     => 'section_blog_page',
 	'description' => 'Classes: .blog',
 	'default'     => '',
@@ -398,6 +460,10 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_show_calculator_shipping',

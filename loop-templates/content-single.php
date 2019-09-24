@@ -13,7 +13,11 @@
 
 	</div><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php 
+	if(fw_theme_mod('fw_blog_featured_switch')){
+		echo get_the_post_thumbnail( $post->ID, 'large' );
+	}
+	?>
 
 	<div class="entry-content">
 
@@ -30,7 +34,11 @@
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+	<?php 
+	if(fw_theme_mod('fw_blog_footer_switch')){
+		understrap_entry_footer();
+	}
+	?>
 
 	</footer><!-- .entry-footer -->
 
