@@ -9,7 +9,7 @@ get_header();
 $container   = fw_theme_mod('container-main');
 ?>
 
-<div class="wrapper" id="single-wrapper">
+<div class="wrapper blog_page" id="single-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
