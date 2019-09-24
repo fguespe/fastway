@@ -19,7 +19,13 @@ function fw_loop_cat(){
     global $product;
     echo '<span class="fw_loop_cat">'.fw_getcat($product->id).'</span>';
 }
-
+add_shortcode('fw_cuotas', 'fw_cuotas');
+function fw_cuotas($atts){
+  global $product;
+	$cuotas=$atts['cant'];
+	$precio=round($product->get_price()/$cuotas);
+	echo '<span class="cuota_text"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
+}
 function fw_getcat( $product_id ){//Esto es para los mails
 
     $tax = 'product_cat';
