@@ -32,7 +32,7 @@ $container   = fw_theme_mod('container-main');
 						echo fw_recentposts_ver(); 
 					}else{
 
-						echo fw_recentposts_hor(); 
+						echo fw_recentposts_grid(); 
 					}
 					?>
 				<?php else : ?>

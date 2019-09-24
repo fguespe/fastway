@@ -370,6 +370,22 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_read_more',
+	'label'       => esc_attr__( 'Columns', 'fastway' ),
+	'section'     => 'section_blog_page',
+	'description' => 'Si se deja vacio, no aparece',
+	'default'     => 'Leer más',
+	'choices'     => array(
+		'min'  => '1',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_blog',
@@ -2305,16 +2321,16 @@ function fwcf($atts = [], $content = null){
 function my_customizer_styles() { ?>
 	<style>
 	.customize-control-kirki-multicheck ul {
-	  display: flex;
-	  flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.customize-control-kirki-multicheck ul li {
 	  	width: 100%;
 	}
-        #customize-control-sticky-menu ul li{
-width:33.3%;
-}
+	#customize-control-sticky-menu ul li{
+		width:33.3%;
+	}
 	.customize-control-kirki-multicheck ul li label {
 		  background: rgba(0, 0, 0, 0.1);
 		  border: 1px rgba(0, 0, 0, 0.1);

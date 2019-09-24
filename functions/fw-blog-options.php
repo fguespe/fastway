@@ -6,25 +6,26 @@ function fw_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'fw_custom_excerpt_length', 999 );
     
 add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
-function fw_recentposts_hor() {
+function fw_recentposts_grid() {
     $rPosts = new WP_Query('showposts='.fw_theme_mod('fw_blog_per_page'));
     ?><div class="fw_news d-flex flex-wrap flex-row justify-content-between" ><?php 
     while ($rPosts->have_posts()){
       $rPosts->the_post(); 
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
       $image_url = $image[0]; ?>
-       <div class="fw_post hor" >
+      <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
+        <div class="fw_post hor" >
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
-          <h4 class="title"><?php the_title();?></h4>
+          <h4 class="title"><a href=""><?php the_title();?></a></h4>
           <p class="excerpt"><?php the_excerpt(); ?></p>
-          <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
+          <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
         </div>
-        
+      </a>
     <?php }?>
     </div>
     <?php  wp_reset_query();
 }
-add_shortcode('fw_recentposts_hor', 'fw_recentposts_hor');
+add_shortcode('fw_recentposts_grid', 'fw_recentposts_grid');
 
 
 function fw_recentposts_ver() {
