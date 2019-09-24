@@ -121,14 +121,11 @@ $THEME_JS_URI= $THEME_URI . 'js/';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/class-staticblocks.php';
 require get_template_directory() . '/inc/widgets.php';
-//require get_template_directory() . '/inc/breadcrumb.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/functions/fw-extra-functions.php';
 require get_template_directory() . '/functions/fw-shortcodes.php';
 require get_template_directory() . '/functions/fw-dashboard.php';
 require get_template_directory() . '/functions/fw-icon-shortcodes.php';
-//require get_template_directory() . '/demos/fw-democontent.php';
-//require get_template_directory() . '/demos/one-click-demo-import/one-click-demo-import.php';
 require get_template_directory() . '/functions/fw-user-account.php';
 require get_template_directory() . '/functions/fw-blog-options.php';
 require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcodes.php' ;
@@ -136,15 +133,12 @@ require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.ph
 require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
-//require get_template_directory() . '/functions/fw-widgets.php';
-
 
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_blog.php';
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
-    //require get_template_directory() . '/functions/fw-config-page.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     if(fw_theme_mod('fw_show_calculator_shipping'))require get_template_directory() . '/functions/shipping-calculator/shipping-calculator.php';
     if(is_plugin_active('js_composer/js_composer.php')){

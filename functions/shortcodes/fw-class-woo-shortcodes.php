@@ -25,15 +25,9 @@ class fw_Woo_Shortcodes {
 		include( $located );
 	}
 	
-	public static function ajax_call(){
-		add_action( 'wp_ajax_nth_woo_get_product_by_cat' , array( __CLASS__, 'woo_get_product_by_cat' ) );
-		add_action( 'wp_ajax_nopriv_nth_woo_get_product_by_cat', array( __CLASS__, 'woo_get_product_by_cat' ) );
-	}
 	
 	public static function shortcodeArgs(){
 		
-		self::ajax_call();
-
 		return array(
 			'fw_featured_products'				=> __CLASS__ . '::featured_products',
 			'fw_blog_carousel'				=> __CLASS__ . '::blog_carousel',
@@ -55,6 +49,7 @@ class fw_Woo_Shortcodes {
 	}
 	public static function blog_carousel( $atts ){
 		global $woocommerce_loop;
+		error_log('jaja');
 		$atts = shortcode_atts( array(
 			"title" 		=> '',
 			"item_style"	=> 'grid',
