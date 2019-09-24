@@ -45,6 +45,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <style type="text/css" id="css_editor-header"><?php echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor_shop"><?php echo fw_theme_mod('css_editor_shop')?></style>
     <style type="text/css" id="css_editor_blog"><?php echo fw_theme_mod('css_editor_blog')?></style>
+    <style type="text/css" id="css_editor_blog_page"><?php echo fw_theme_mod('css_editor_blog_page')?></style>
     <style type="text/css" id="css_editor-loop"><?php echo fw_theme_mod('css_editor-loop')?></style>
     <style type="text/css" id="css_loop_cat"><?php echo fw_theme_mod('css_loop_cat')?></style>
     <style type="text/css" id="css_editor-single"><?php echo fw_theme_mod('css_editor-single')?></style>
