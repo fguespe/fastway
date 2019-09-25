@@ -60,7 +60,6 @@ add_filter( 'kirki/fonts/standard_fonts', 'tmu_custom_fonts', 20 );
 function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth=0 ) {
     // Loop through $classes array to find linkmod or icon classes.
     foreach ( $classes as $key => $class ) {
-        //error_log($class);
         // If any special classes are found, store the class in it's
         // holder array and and unset the item from $classes.
         if ( preg_match( '/^disabled|^sr-only/i', $class ) ) {
@@ -124,7 +123,6 @@ if( !function_exists( 'fw_menu' ) ) {
         $megamenu=fw_theme_mod("mega_menu");
         $cols="";
         if($megamenu && $isprimary)$cols=fw_theme_mod("mega_menu_cols");
-        //error_log(fw_theme_mod("mega_menu_cols"));
         $clasem="fwmenu1";
         $idmenu='';
         if($megamenu && $isprimary)$clasem="fw_mega_menu";
@@ -150,13 +148,10 @@ if( !function_exists( 'fw_menu' ) ) {
                 $first=false;
                 foreach( $menu_items as $submenu ) {
                 if( $submenu->menu_item_parent == $parent ) {
-                        //error_log($submenu->title." ".);
-                        //error_log($submenu->title);
                         if($submenu->attr_title==="init_col" && $megamenu && $isprimary){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
                             $menu_array[]='<div class="col-md-'.$cols.'">';
-                            //error_log("Abre-----".$submenu->title);
                         }
                         $bool = true;
                         $url=$submenu->url;
@@ -241,7 +236,6 @@ if( !function_exists( 'fw_menu' ) ) {
 function fw_account_name(){
     global $current_user;
     get_currentuserinfo();
-    error_log(is_user_logged_in());
     if(is_user_logged_in())return $current_user->display_name;
     return fw_theme_mod("fw_user_text");
 }

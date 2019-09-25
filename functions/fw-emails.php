@@ -30,7 +30,7 @@ if ( !function_exists('wp_new_user_notification') ) {
         $message .= __('Adios!');
 
         wp_mail($user_email, sprintf(__('[%s] Your username and password'), get_option('blogname')), $message);
-        error_log('jeeje');
+       
     }
 }
 function wpb_sender_email( $original_email_address ) {

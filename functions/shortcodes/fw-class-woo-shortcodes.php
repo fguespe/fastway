@@ -49,7 +49,6 @@ class fw_Woo_Shortcodes {
 	}
 	public static function blog_carousel( $atts ){
 		global $woocommerce_loop;
-		error_log('jaja');
 		$atts = shortcode_atts( array(
 			"title" 		=> '',
 			"item_style"	=> 'grid',

@@ -51,7 +51,6 @@ function wootax_procesar_producto($prod,$catesmanuales,$tipo){
         }
         
         foreach ($cateaevaluar as $palabra) {//recorro todas las palabras
-          //error_log($palabra);
           if(mb_strpos(wootax_formatear($titulo), wootax_formatear($palabra)) === false)continue;
           
           //SACO NEGATIVAS

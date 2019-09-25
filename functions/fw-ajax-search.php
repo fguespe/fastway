@@ -76,7 +76,6 @@ if(fw_theme_mod('fw_ajax_search')){
           'tax_query'           => $tax_query,
         )
       );
-  //    error_log(print_r($tax_query,true));
       
       $output = '';
       
