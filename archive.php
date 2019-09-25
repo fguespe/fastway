@@ -1,48 +1,40 @@
-<?php get_header(); ?>
-
 <?php
+get_header();
+
 $container   = fw_theme_mod('container-main');
 ?>
 
-<div class="wrapper" id="archive-wrapper">
 
+<div class="wrapper" id="index-wrapper">
+	
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+
+	
 
 		<div class="row">
 
-			<!-- Do the left sidebar check -->
+			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
+				<header class="page-header">
+
+		<?php if(fw_theme_mod('fw_blog_title_switch')){ ?>
+		<?php echo '<h1 class="page-title">'.wp_title('').'</h1>'; ?></h1>
+		<?php } ?>
+
+	</header><!-- .page-header -->
 
 				<?php if ( have_posts() ) : ?>
 
-					<header class="page-header">
-						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
+					<?php 
+					if(fw_theme_mod('fw_blog_columns')==1){
+						echo fw_recentposts_ver(); 
+					}else{
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
-
-					<?php endwhile; ?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
+						echo fw_recentposts_grid(); 
+					}
+					?>
 				<?php endif; ?>
 
 			</main><!-- #main -->
@@ -54,8 +46,9 @@ $container   = fw_theme_mod('container-main');
 
 		<!-- Do the right sidebar check -->
 		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+		
 
-	</div> <!-- .row -->
+	</div><!-- .row -->
 
 </div><!-- Container end -->
 

@@ -30,7 +30,7 @@ function fw_dash_conversion_handler(){
     if( !$widget_options = get_option( 'fw_currency_widget_options' ) )
         $widget_options = array( );
 
-        error_log(print_r($widget_options,true));
+       // error_log(print_r($widget_options,true));
     # process update
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_currency_widget_options'] ) ) {
         # minor validation
