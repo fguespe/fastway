@@ -1027,6 +1027,13 @@ ul {
 .fw_post img{
   max-height:189px !important;
 }
+@media (max-width: 799px) {
+
+  .fw_post img{
+    max-height:93px !important;
+  }
+  
+}
 .fw_post {
   margin-bottom: 60px;
   text-align:left !important;
@@ -1076,9 +1083,6 @@ ul {
         height: 40px;
     }
 
-    .widget-area .widget-title {
-        border-bottom: 1px solid black;
-    }
     .widget-area .widget ul li a {
         font-size: 14px;
         color: grey;

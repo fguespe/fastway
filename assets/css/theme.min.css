@@ -1011,6 +1011,11 @@ ul {
   max-height: 189px !important;
 }
 
+@media (max-width: 799px) {
+  .fw_post img {
+    max-height: 93px !important;
+  }
+}
 .fw_post {
   margin-bottom: 60px;
   text-align: left !important;
@@ -1056,9 +1061,6 @@ ul {
   width: 40px;
   border: 0px !important;
   height: 40px;
-}
-#index-wrapper .widget-area .widget-title, #single-wrapper .widget-area .widget-title {
-  border-bottom: 1px solid black;
 }
 #index-wrapper .widget-area .widget ul li a, #single-wrapper .widget-area .widget ul li a {
   font-size: 14px;

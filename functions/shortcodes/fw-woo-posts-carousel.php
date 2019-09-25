@@ -5,15 +5,15 @@ endif;
 
 $rand=generateRandomString(5);
 ?>
-<div class="swiper-products-<?=$rand?> over-hidden relative">
+<div id="<?=$rand?>" class="swiper-posts swiper-posts-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
 <?php 
 if(!$autoplay)$autoplay='false';
 if(!$loop)$loop='false';
 $cant=0;		
-while ($products->have_posts()){
+while ($posts->have_posts()){
     $cant++;
-    $products->the_post(); 
+    $posts->the_post(); 
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
     $image_url = $image[0]; ?>
 
@@ -34,15 +34,15 @@ while ($products->have_posts()){
 <?php if($cant>$columns){
     
 ?>
-<div class="swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
-<div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
+<div class="swiper-prev swiper-posts-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
+<div class="swiper-next swiper-posts-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
 <?php } ?>
 </div>
  <script>
-     var ProductSwiper2 = new Swiper('.swiper-products-<?=$rand?>', {
+     var postswiper2 = new Swiper('.swiper-posts-<?=$rand?>', {
             navigation: {
-                nextEl: '.swiper-products-<?=$rand?>-next',
-                prevEl: '.swiper-products-<?=$rand?>-prev',
+                nextEl: '.swiper-posts-<?=$rand?>-next',
+                prevEl: '.swiper-posts-<?=$rand?>-prev',
             }, 
             slidesPerView: <?=$columns?>,
             slidesPerGroup:<?=$columns?>,
