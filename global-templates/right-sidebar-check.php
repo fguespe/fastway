@@ -6,7 +6,7 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
   else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 }
 
-if ( (is_home() && ! is_front_page() ) ){
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_shop())){
   $sidebar_pos = fw_theme_mod('layout-blog');
 }
 ?>

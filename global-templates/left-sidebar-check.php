@@ -11,7 +11,9 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 		$ratioboth=$ratio-fw_theme_mod("sidebar-ratio");
 	}
 }
-if ( (is_home() && ! is_front_page() ) ){
+// if ( (is_home() && ! is_front_page() ) ) solo blog page
+// is_single
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_shop())){
 	$sidebar_pos = fw_theme_mod('layout-blog');
 	$ratio=12-fw_theme_mod('fw_blog_sidebar_ratio');
 	$ratioboth=$ratio-fw_theme_mod("fw_blog_sidebar_ratio");
