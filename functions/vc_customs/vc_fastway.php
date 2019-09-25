@@ -173,7 +173,7 @@ function fw_slider() {
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => "Imagen de Escritorio", "fastway" ),
+                    "heading"     => "Imagen de Escritorio",
                     "param_name"  => "slides_desktop",
                     'description' => __( '1600 de ancho recomendado', 'js_composer' ),
                     "value"       => "",
@@ -185,7 +185,7 @@ function fw_slider() {
                 ),
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Imagenes Mobile", "fastway" ),
+                    "heading"     => "Imagenes Mobile",
                     'description' => __( '600x275 recomendado', 'js_composer' ),
                     "param_name"  => "slides_mobile",
                     "value"       => "",
