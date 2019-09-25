@@ -1014,13 +1014,27 @@ ul {
 
 
 /*BLOG*/
+.fw_post p{
+  font-size:16px !important;
+  font-weight:400 !important;
+}
+
+.fw_post.vertical .foto img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.fw_post img{
+  max-height:189px !important;
+}
+.fw_post {
+  margin-bottom: 60px;
+  text-align:left !important;
+}
 #index-wrapper,#single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
-  .fw_post p{
-		font-size:16px !important;
-		font-weight:400 !important;
-}
+  
 .heading-title{
 	text-align:center;
 }
@@ -1028,9 +1042,6 @@ ul {
 		.fw_post .title{
 				height:40px;
 		}
-}
-.fw_post  img{
-		max-height:189px !important;
 }
 nav{
 		padding-top:20px;
@@ -1060,7 +1071,7 @@ background-color: transparent !important;
     padding: 0;
     width: 40px;
 		border:0px !important;
-height: 40px;
+    height: 40px;
 }
 
 .widget-area .widget-title {
@@ -1072,16 +1083,6 @@ height: 40px;
 }
 .widget-area .widget {
   margin-bottom: 50px;
-}
-.fw_post.vertical .foto img {
-  width: 100% !important;
-  height: auto !important;
-}
-.fw_post {
-  margin-bottom: 60px;
-}
-.fw_post{
-  text-align:left;
 }
 .page-title {
   margin-bottom: 60px;
