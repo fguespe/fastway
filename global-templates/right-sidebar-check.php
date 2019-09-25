@@ -6,8 +6,9 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
   else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 }
 
-if ( (is_home() && ! is_front_page() ) || is_archive())$sidebar_pos = fw_theme_mod('layout-blog');
-
+if ( (is_home() && ! is_front_page() ) || is_archive() || is_singular()){
+  $sidebar_pos = fw_theme_mod('layout-blog');
+}
 ?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>

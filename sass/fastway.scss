@@ -1014,40 +1014,34 @@ ul {
 
 
 /*BLOG*/
-#index-wrapper .widget-area .widget-title {
+#index-wrapper,#single-wrapper {
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+.widget-area .widget-title {
   border-bottom: 1px solid black;
 }
-
-#index-wrapper .widget-area .widget ul li a {
+.widget-area .widget ul li a {
   font-size: 14px;
   color: grey;
 }
-
-#index-wrapper .widget-area .widget {
+.widget-area .widget {
   margin-bottom: 50px;
 }
-
-#index-wrapper {
-  padding-top: 30px;
-  padding-bottom: 60px;
-}
-
-#index-wrapper .fw_post.vertical .foto img {
+.fw_post.vertical .foto img {
   width: 100% !important;
   height: auto !important;
 }
-
-#index-wrapper .fw_post {
+.fw_post {
   margin-bottom: 60px;
 }
 .fw_post{
   text-align:left;
 }
-
-#index-wrapper .page-title {
+.page-title {
   margin-bottom: 60px;
 }
-
+}
 
 /*SINGLE blog?*/
 
