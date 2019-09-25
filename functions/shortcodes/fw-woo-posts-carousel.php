@@ -11,9 +11,9 @@ $rand=generateRandomString(5);
 if(!$autoplay)$autoplay='false';
 if(!$loop)$loop='false';
 $cant=0;		
-while ($posts->have_posts()){
+while ($products->have_posts()){
     $cant++;
-    $posts->the_post(); 
+    $products->the_post(); 
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
     $image_url = $image[0]; ?>
 
