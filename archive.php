@@ -26,17 +26,18 @@ $container   = fw_theme_mod('container-main');
 	</header><!-- .page-header -->
 
 				<?php if ( have_posts() ) : ?>
-
-					<?php 
-					if(fw_theme_mod('fw_blog_columns')==1){
-						echo fw_recentposts_ver(); 
-					}else{
-
-						echo fw_recentposts_grid(); 
-					}
-					?>
-				<?php endif; ?>
-
+				<!-- .fw grid -->
+				<div class="fw_blog d-flex flex-wrap flex-row">
+				<?php
+					while ( have_posts() ) : the_post();
+						if(fw_theme_mod('fw_blog_columns')==1)get_template_part( 'loop-templates/content', '' );
+						else get_template_part( 'loop-templates/content', 'grid' );
+					endwhile; 
+					else : 
+						get_template_part( 'loop-templates/content', 'none' ); 
+					endif;?>
+				</div>
+				
 			</main><!-- #main -->
 
 			<!-- The pagination component -->

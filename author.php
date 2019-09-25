@@ -59,21 +59,18 @@ $container   = fw_theme_mod('container-main');
 
 					<!-- The Loop -->
 					<?php if ( have_posts() ) : ?>
-						<?php while ( have_posts() ) : the_post(); ?>
-							<li>
-								<a rel="bookmark" href="<?php the_permalink() ?>"
-								   title="<?php esc_html_e( 'Permanent Link:', 'fastway' ); ?> <?php the_title(); ?>">
-									<?php the_title(); ?></a>,
-								<?php understrap_posted_on(); ?> <?php esc_html_e( 'in',
-								'fastway' ); ?> <?php the_category( '&' ); ?>
-							</li>
-						<?php endwhile; ?>
-
-					<?php else : ?>
-
-						<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-					<?php endif; ?>
+					<!-- .fw grid -->
+							<div class="fw_blog d-flex flex-wrap flex-row">
+							<?php
+								while ( have_posts() ) : the_post();
+									if(fw_theme_mod('fw_blog_columns')==1)get_template_part( 'loop-templates/content', '' );
+									else get_template_part( 'loop-templates/content', 'grid' );
+								endwhile; 
+								else : 
+									get_template_part( 'loop-templates/content', 'none' ); 
+								endif;?>
+							</div>
+							
 
 					<!-- End Loop -->
 
