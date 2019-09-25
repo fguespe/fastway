@@ -1001,6 +1001,50 @@ ul {
   padding-top: 30px;
   padding-bottom: 60px;
 }
+#index-wrapper .fw_post p, #single-wrapper .fw_post p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+#index-wrapper .heading-title, #single-wrapper .heading-title {
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  #index-wrapper .fw_post .title, #single-wrapper .fw_post .title {
+    height: 40px;
+  }
+}
+#index-wrapper .fw_post img, #single-wrapper .fw_post img {
+  max-height: 189px !important;
+}
+#index-wrapper nav, #single-wrapper nav {
+  padding-top: 20px;
+  border-top: 1px solid #F6F6F6;
+}
+#index-wrapper .pagination, #single-wrapper .pagination {
+  margin: 0 auto;
+  width: 20% !important;
+  text-align: center !important;
+}
+#index-wrapper .page-item.active .page-link, #single-wrapper .page-item.active .page-link {
+  border: 2px solid #F6F6F6;
+  color: #666666;
+  background-color: transparent !important;
+}
+#index-wrapper .pagination .page-link, #single-wrapper .pagination .page-link {
+  border: 0px;
+  color: #666666;
+}
+#index-wrapper .pagination li, #single-wrapper .pagination li {
+  color: #666;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 36px;
+  margin: 0 2px;
+  padding: 0;
+  width: 40px;
+  border: 0px !important;
+  height: 40px;
+}
 #index-wrapper .widget-area .widget-title, #single-wrapper .widget-area .widget-title {
   border-bottom: 1px solid black;
 }

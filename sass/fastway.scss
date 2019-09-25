@@ -1017,6 +1017,51 @@ ul {
 #index-wrapper,#single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
+  .fw_post p{
+		font-size:16px !important;
+		font-weight:400 !important;
+}
+.heading-title{
+	text-align:center;
+}
+@media (min-width: 1024px) {
+		.fw_post .title{
+				height:40px;
+		}
+}
+.fw_post  img{
+		max-height:189px !important;
+}
+nav{
+		padding-top:20px;
+		border-top: 1px solid #F6F6F6;
+}
+.pagination {
+		margin:0 auto;
+		width:20% !important;
+		text-align:center !important;
+}
+.page-item.active .page-link {
+border: 2px solid #F6F6F6;
+    color: #666666 ;
+background-color: transparent !important;
+}
+
+.pagination .page-link{
+		border:0px;
+    color: #666666 ;
+}
+.pagination li {
+    color: #666;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 36px;
+    margin: 0 2px;
+    padding: 0;
+    width: 40px;
+		border:0px !important;
+height: 40px;
+}
 
 .widget-area .widget-title {
   border-bottom: 1px solid black;
