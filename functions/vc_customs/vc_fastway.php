@@ -223,6 +223,7 @@ function fw_slider() {
                 ),  
 
             )
+            
         )
     );
 }
