@@ -223,7 +223,7 @@ function fw_slider() {
                 ),  
 
             )
-            
+
         )
     );
 }
@@ -405,6 +405,8 @@ function fw_image_function( $atts, $content ) {
         array(
             'image'      =>  '',
             'link'      =>  '',
+            'title'      =>  '',
+            'subtitle'      =>  '',
             'image_mobile'      =>  '',
             'el_class'  => '',
             'size'      =>  '100% auto',
@@ -423,12 +425,14 @@ function fw_image_function( $atts, $content ) {
     $link = $atts['link'];
     if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
+    $return .= '<div class="title">'.$atts['title'].'</div>';
     $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
         if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
+        $return .= '<div class="title">'.$atts['title'].'</div>';
         $return .= '<img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
         if($link)$return .= '</a>';
         else $return .= '</div>'; 

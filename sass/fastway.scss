@@ -1611,6 +1611,19 @@ footer .widget_nav_menu li a {
 		
   }
 }
+/*fw image texts*/
+.fw_image_container .title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fw_image_container .subtitle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /*flex*/
 .is_flex .wpb_wrapper{
   display:flex;
