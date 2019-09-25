@@ -173,24 +173,26 @@ function fw_slider() {
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Desktop Images", "fastway" ),
+                    "heading"     => "Imagen de Escritorio", "fastway" ),
                     "param_name"  => "slides_desktop",
+                    'description' => __( '1600 de ancho recomendado', 'js_composer' ),
                     "value"       => "",
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "heading"     => __("Links (separados con ,)"),
                     "param_name"  => "links_desktop",
                 ),
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Mobile Images", "fastway" ),
+                    "heading"     => esc_html__( "Imagenes Mobile", "fastway" ),
+                    'description' => __( '600x275 recomendado', 'js_composer' ),
                     "param_name"  => "slides_mobile",
                     "value"       => "",
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Desktop Links (separated with ,)"),
+                    "heading"     => __("Links (separated with ,)"),
                     "param_name"  => "links_mobile",
                 ),
                 array(
@@ -239,7 +241,7 @@ function fw_image() {
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Image", "fastway" ),
+                    "heading"     => "Imagen normal", "fastway" ),
                     "param_name"  => "image",
                     "value"       => "",
                 ),
@@ -250,7 +252,8 @@ function fw_image() {
                 ),
                 array(
                     "type"        => "attach_images",
-                    "heading"     => esc_html__( "Responsive Image", "fastway" ),
+                    "heading"     => "Imagenes Mobile", "fastway" ),
+                    'description' => __( 'Sobre escribe la de desktop en mobile. Si no se pone, se muestra la de desktop', 'js_composer' ),
                     "param_name"  => "image_mobile",
                     "value"       => "",
                 ),
@@ -260,6 +263,20 @@ function fw_image() {
                     "param_name"  => "size",
                     "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'
+    
+                ),
+               
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Title"),
+                    "param_name"  => "title",
+    
+                ),
+               
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Sub Title"),
+                    "param_name"  => "subtitle",
     
                 ),
                
