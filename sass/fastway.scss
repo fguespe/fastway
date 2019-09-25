@@ -1031,67 +1031,67 @@ ul {
   margin-bottom: 60px;
   text-align:left !important;
 }
-#index-wrapper,#single-wrapper {
-  padding-top: 30px;
-  padding-bottom: 60px;
-  
-  
-.heading-title{
-	text-align:center;
-}
 @media (min-width: 1024px) {
-		.fw_post .title{
-				height:40px;
-		}
-}
-nav{
-		padding-top:20px;
-		border-top: 1px solid #F6F6F6;
-}
-.pagination {
-		margin:0 auto;
-		width:20% !important;
-		text-align:center !important;
-}
-.page-item.active .page-link {
-border: 2px solid #F6F6F6;
-    color: #666666 ;
-background-color: transparent !important;
+  .fw_post .title{
+      height:40px;
+  }
 }
 
-.pagination .page-link{
-		border:0px;
-    color: #666666 ;
-}
-.pagination li {
-    color: #666;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 36px;
-    margin: 0 2px;
-    padding: 0;
-    width: 40px;
-		border:0px !important;
-    height: 40px;
-}
 
-.widget-area .widget-title {
-  border-bottom: 1px solid black;
-}
-.widget-area .widget ul li a {
-  font-size: 14px;
-  color: grey;
-}
-.widget-area .widget {
-  margin-bottom: 50px;
-}
-.page-title {
-  margin-bottom: 60px;
-}
+
+#index-wrapper,#single-wrapper {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    .heading-title{
+      text-align:center;
+    }
+    nav{
+      padding-top:20px;
+      border-top: 1px solid #F6F6F6;
+    }
+    .pagination {
+      margin:0 auto;
+      width:20% !important;
+      text-align:center !important;
+    }
+    .page-item.active .page-link {
+      border: 2px solid #F6F6F6;
+      color: #666666 ;
+      background-color: transparent !important;
+    }
+
+    .pagination .page-link{
+        border:0px;
+        color: #666666 ;
+    }
+    .pagination li {
+        color: #666;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 36px;
+        margin: 0 2px;
+        padding: 0;
+        width: 40px;
+        border:0px !important;
+        height: 40px;
+    }
+
+    .widget-area .widget-title {
+        border-bottom: 1px solid black;
+    }
+    .widget-area .widget ul li a {
+        font-size: 14px;
+        color: grey;
+    }
+    .widget-area .widget {
+        margin-bottom: 50px;
+    }
+    .page-title {
+        margin-bottom: 60px;
+    }
 }
 
 /*SINGLE blog?*/
-
 #single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
@@ -1099,7 +1099,8 @@ background-color: transparent !important;
   .entry-header,.entry-header .entry-title {
     margin-bottom: 30px;
   }
-  .nav-previous a {
+  .nav-previous a ,
+  .nav-next a {
     color: grey;
     display: block !important;
     font-size:12px !important;

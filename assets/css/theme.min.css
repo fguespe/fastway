@@ -1016,17 +1016,17 @@ ul {
   text-align: left !important;
 }
 
+@media (min-width: 1024px) {
+  .fw_post .title {
+    height: 40px;
+  }
+}
 #index-wrapper, #single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
 }
 #index-wrapper .heading-title, #single-wrapper .heading-title {
   text-align: center;
-}
-@media (min-width: 1024px) {
-  #index-wrapper .fw_post .title, #single-wrapper .fw_post .title {
-    height: 40px;
-  }
 }
 #index-wrapper nav, #single-wrapper nav {
   padding-top: 20px;
@@ -1079,7 +1079,8 @@ ul {
 #single-wrapper .entry-header, #single-wrapper .entry-header .entry-title {
   margin-bottom: 30px;
 }
-#single-wrapper .nav-previous a {
+#single-wrapper .nav-previous a,
+#single-wrapper .nav-next a {
   color: grey;
   display: block !important;
   font-size: 12px !important;
