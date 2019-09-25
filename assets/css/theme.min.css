@@ -1558,6 +1558,23 @@ footer .widget_nav_menu li a {
   font-family: "Font Awesome 5 Pro" !important;
 }
 
+/*fw image texts*/
+.fw_image_container .texts {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fw_image_container .title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.fw_image_container .subtitle {
+  font-size: 20px;
+}
+
 /*flex*/
 .is_flex .wpb_wrapper {
   display: flex;
