@@ -241,7 +241,7 @@ function fw_image() {
             'params' => array(
                 array(
                     "type"        => "attach_images",
-                    "heading"     => "Imagen normal", "fastway" ),
+                    "heading"     => "Imagen normal",
                     "param_name"  => "image",
                     "value"       => "",
                 ),
@@ -252,7 +252,7 @@ function fw_image() {
                 ),
                 array(
                     "type"        => "attach_images",
-                    "heading"     => "Imagenes Mobile", "fastway" ),
+                    "heading"     => "Imagenes Mobile",
                     'description' => __( 'Sobre escribe la de desktop en mobile. Si no se pone, se muestra la de desktop', 'js_composer' ),
                     "param_name"  => "image_mobile",
                     "value"       => "",
