@@ -1076,24 +1076,18 @@ ul {
   padding-top: 30px;
   padding-bottom: 60px;
 }
-
-#single-wrapper .entry-header,
-.entry-header .entry-title {
+#single-wrapper .entry-header, #single-wrapper .entry-header .entry-title {
   margin-bottom: 30px;
 }
-
 #single-wrapper .nav-previous a {
-  font-size: 14px;
   color: grey;
   display: block !important;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  font-size: 12px !important;
+  margin: 0px !important;
 }
-
 #single-wrapper .comment-form-comment label {
   display: block !important;
 }
-
 #single-wrapper .entry-content {
   margin-top: 40px;
 }
