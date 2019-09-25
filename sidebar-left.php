@@ -12,7 +12,7 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 		$ratio=fw_theme_mod("sidebar-ratio");
 	}
 }
-if ( (is_home() && ! is_front_page() ) || is_archive() || is_singular()){
+if ( (is_home() && ! is_front_page() ) ){
 	$ratio=3;
 }
 
