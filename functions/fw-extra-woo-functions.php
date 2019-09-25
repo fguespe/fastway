@@ -35,10 +35,11 @@ function fw_getcat( $product_id ){//Esto es para los mails
     if( $terms && ! is_wp_error( $terms )) {
         foreach ($terms as $categoria) {
             //if($categoria->parent > 0){
-               // if($categoria->parent == 340){
-                    return "Cocina";//$categoria->name;
-               // }
-            //}
+              // if($categoria->parent == 340){
+              $nombre= $categoria->name;
+              if(!in_array($nombre,array('sin-categorizar','sin-categoria','uncategorized')))return $nombre;
+               
+           // }
         }
     }
 
