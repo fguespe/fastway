@@ -108,13 +108,12 @@ function fw_only_icon( $atts ) {
     $icons_style=fw_theme_mod("fw_icons_style");
 
     //Puso directo las clases
-    if( strpos( $type, 'fa-' ) === false) {
-        $type='fa-'.$type;
-    }
+    if( strpos( $type, 'fa-' ) === false)$type='fa-'.$type;
+    $type=$icons_style.' '.$type;
 
     $iconclass=" fw_icon ".$atts['el_class'].' ';
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
-    $first.='<i class="'.$atts['type'].'" style="color:'.$atts['icon_color'].';font-size:'.$atts['icon_size'].'px !important;"></i>';
+    $first.='<i class="'.$type.'" style="color:'.$atts['icon_color'].';font-size:'.$atts['icon_size'].'px !important;"></i>';
     $first.="</div>";
     
     
