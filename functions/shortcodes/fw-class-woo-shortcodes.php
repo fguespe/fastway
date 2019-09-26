@@ -30,7 +30,6 @@ class fw_Woo_Shortcodes {
 		
 		return array(
 			'fw_featured_products'				=> __CLASS__ . '::featured_products',
-			'fw_blog_carousel'				=> __CLASS__ . '::blog_carousel',
 			'fw_sale_products'				=> __CLASS__ . '::sale_products',
 			'fw_bestselling_products'				=> __CLASS__ . '::best_selling_products',
 			'fw_toprated_products'				=> __CLASS__ . '::top_rated_products',

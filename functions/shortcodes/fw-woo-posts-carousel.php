@@ -2,18 +2,15 @@
 if( strlen( $title ) > 0 ):
     echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
 endif;
-
 $rand=generateRandomString(5);
 ?>
 <div id="<?=$rand?>" class="swiper-posts swiper-posts-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
 <?php 
-if(!$autoplay)$autoplay='false';
-if(!$loop)$loop='false';
 $cant=0;		
-while ($products->have_posts()){
+while ($posts->have_posts()){
     $cant++;
-    $products->the_post(); 
+    $posts->the_post(); 
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
     $image_url = $image[0]; ?>
 
@@ -31,7 +28,7 @@ while ($products->have_posts()){
 
  }?>
 </div>
-<?php if($cant>$columns){
+<?php if($cant>$prodsperrow){
     
 ?>
 <div class="swiper-prev swiper-posts-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
@@ -44,8 +41,8 @@ while ($products->have_posts()){
                 nextEl: '.swiper-posts-<?=$rand?>-next',
                 prevEl: '.swiper-posts-<?=$rand?>-prev',
             }, 
-            slidesPerView: <?=$columns?>,
-            slidesPerGroup:<?=$columns?>,
+            slidesPerView: <?=$prodsperrow?>,
+            slidesPerGroup:<?=$prodsperrow?>,
             paginationClickable: true,
             spaceBetween: 10,
             loop: <?=$loop;?>,

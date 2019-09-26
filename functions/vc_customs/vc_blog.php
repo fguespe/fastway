@@ -20,6 +20,7 @@ function vc_blog_carousel() {
 
 
 function get_slider_fields_blog(){
+
     return array(
           array(
               'type' => 'textfield',
@@ -86,5 +87,46 @@ function get_slider_fields_blog(){
               'param_name' => 'css',
               'group' => __( 'Design Options', 'js_composer' ),
           ),
-  );
-  }
+    );
+}
+
+function get_blog_template( $template_name, $args = array(), $posts = null ){
+		
+		
+    
+    if ( $args && is_array( $args ) )extract( $args );
+    $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
+
+    ob_start();
+
+    if ( $posts->have_posts() ) :
+        echo  include( $located );
+    endif;
+
+    wp_reset_postdata();
+}
+
+
+
+function fw_blog_carousel( $atts, $content ) {
+    $rand=generateRandomString(5);
+    $atts = shortcode_atts(
+        array(
+            'loop'      =>  'false',
+            'slider_speed'  => '250',
+            'slider_delay'  => '4000',
+            'autoplay'  => 'false',
+            'maxcant' => '12',
+            'el_class'  => '',
+            'title'  => '',
+            'prodsperrow' => 4,
+        ), $atts );
+    //Desktop
+    
+    $posts = new WP_Query('showposts='.$atts['maxcant']);
+
+    get_blog_template('fw-woo-posts-carousel.php',$atts,$posts);
+		
+}   
+add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
+
