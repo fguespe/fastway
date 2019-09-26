@@ -49,11 +49,11 @@ Kirki::add_field( 'theme_config_id', array(
 /*CLIENT AREA*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
-	'settings'    => 'ca-client-logo',
+	'settings'    => 'ca-clientarea-logo',
 	'label'       => __( 'Login Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/logo.png",
+	'default'     => '',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

@@ -398,8 +398,11 @@ if(fw_theme_mod("maintainance-mode")){
 
 
 function fw_custom_loginui() {
+    $image=fw_theme_mod('general-logo');
+    if(fw_theme_mod('ca-clientarea-logo'))$image=fw_theme_mod('ca-clientarea-logo');
+
 echo '<style type="text/css">
-h1 a {background-image: url('.fw_theme_mod('ca-client-logo').') !important; }
+h1 a {background-image: url('.$image.') !important; }
 /*LOGIN*/
 #login h1 a{
     width:100%;
