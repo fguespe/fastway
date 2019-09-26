@@ -9,9 +9,11 @@ function fw_info_modal( $atts ) {
             'sblock' => '',
             'label' => '',
             'class' =>  '',
+            'color' =>  '',
+            'size' =>  '',
             'content' => '',
         ), $atts, 'fw_info_modal' );
-    $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</a>';
+    $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" style="color:'.$atts['color'].';font-size:'.$atts['size'].';" class="fancybox '.$atts['class'].'">'.$atts['label'].'</a>';
     //$first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</button>';
     $first.= ( fw_modal_block($rand,$atts['sblock']));
     return $first;
