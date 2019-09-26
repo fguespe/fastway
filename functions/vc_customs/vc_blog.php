@@ -91,18 +91,10 @@ function get_slider_fields_blog(){
 }
 
 function get_blog_template( $template_name, $args = array(), $posts = null ){
-		
-		
-    
     if ( $args && is_array( $args ) )extract( $args );
     $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
-
     ob_start();
-
-    if ( $posts->have_posts() ) :
-        echo  include( $located );
-    endif;
-
+    if ( $posts->have_posts() )include( $located );
     wp_reset_postdata();
 }
 
