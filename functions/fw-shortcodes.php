@@ -11,7 +11,8 @@ function fw_info_modal( $atts ) {
             'class' =>  '',
             'content' => '',
         ), $atts, 'fw_info_modal' );
-    $first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</button>';
+    $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</a>';
+    //$first='<button target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fancybox '.$atts['class'].'">'.$atts['label'].'</button>';
     $first.= ( fw_modal_block($rand,$atts['sblock']));
     return $first;
 }
