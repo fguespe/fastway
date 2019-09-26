@@ -328,7 +328,9 @@ border-radius:0px;
 .envira-header-temp,.envira-header,.error{
 	display:none !important;
 }
-
+.authordiv{
+	display: none;
+}
 /*PRICES BY USER ROLE*/
 .festi-user-role-prices-product-tab {
 	display: none !important;

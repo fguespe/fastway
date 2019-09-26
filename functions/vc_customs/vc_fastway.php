@@ -554,7 +554,7 @@ function vc_fw_shorts() {
 
                
                 array(
-                    "type" => "colorpicker",
+                    "type" => "textfield",
                     "class" => "",
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
@@ -562,7 +562,7 @@ function vc_fw_shorts() {
                     "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
-                    "type" => "colorpicker",
+                    "type" => "text",
                     "class" => "",
                     "heading" => __( "Text color", "fastway" ),
                     "param_name" => "text_color",
@@ -639,8 +639,7 @@ function vc_social_icons() {
                     "std"  => "20",
                 ),
                 array(
-                    "type" => "colorpicker",
-                    "class" => "",
+                    "type" => "textfield",
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
                     "value" => '', //Default Red color
@@ -682,7 +681,7 @@ function vc_only_icon() {
                   "type" => 'textfield',
                   "heading"     => __("Type"),
                   "param_name"  => "type",
-                  'description' => 'Font awesome explicit: fa-icon ,fal fa-icon',
+                  'description' => 'Font awesome icon name: https://fontawesome.com/icons',
                   "admin_label" => true,
                 ),
                 array(

@@ -7,7 +7,7 @@ function fw_social_icons( $atts ) {
             'type' => '',
             'icon_align' => '',
             'icon_size' =>  12,
-            'icon_color' =>  '#000',
+            'icon_color' =>  '',
             'el_class' =>  '',
             'el_id' =>  '',
             //Depreceated
@@ -76,9 +76,9 @@ function fw_social_icons( $atts ) {
             if(empty($link))fw_company_data("googlemaps",true,$cant);
         }
         //$link=fw_company_data($icon);
-        
+        if($atts['icon_color'])$icon_color=$atts['icon_color'];
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.($atts['icon_size']+20).'px ;margin-right:5px !important;" href="'.$link.'">
-        <i class="'.$icon.'" style="color:'.$icon_color.';font-size:'.$atts['icon_size'].'px !important;">
+        <i class="'.$icon.'" style="color:'.$icon_color.'!important;font-size:'.$atts['icon_size'].'px !important;">
         </i>
         </a>';
     }
@@ -103,6 +103,14 @@ function fw_only_icon( $atts ) {
             //Depreceated
                 
     ), $atts );
+
+    $type=$atts['type'];
+    $icons_style=fw_theme_mod("fw_icons_style");
+
+    //Puso directo las clases
+    if( strpos( $type, 'fa-' ) === false) {
+        $type='fa-'.$type;
+    }
 
     $iconclass=" fw_icon ".$atts['el_class'].' ';
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';

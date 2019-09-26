@@ -51,7 +51,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'ca-clientarea-logo',
 	'label'       => __( 'Login Logo', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
+	'description' => __( 'No hay necesidad de ponerlo ya que toma el logo general, si se pone algo lo sobreescribe.', 'fastway' ),
 	'section'     => 'section_clientarea',
 	'default'     => '',
 ) );
