@@ -342,12 +342,18 @@ color:var(--linkedin) !important;
 	.summary .col-md-12 b {
 		font-size: 13px;
 		font-weight: 100;
-	}
+  }
+  /*calculator*/
 	.btn_mp_calc_shipping {
 		background-color: var(--main);
     color: white;
     border:0px;
-	}
+  }
+  #wscp-response p,
+  #wscp-response span{
+  font-size:10px !important;
+  line-height:10px !important;
+  }
 	.summary .cart br {
 		display: none !important;
 	}

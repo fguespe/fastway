@@ -123,6 +123,7 @@
   /*titulo*/
   /* rating */
   /*mercadoenvios*/
+  /*calculator*/
 }
 @media (min-width: 920px) {
   .fw_single_product {
@@ -339,6 +340,11 @@
   background-color: var(--main);
   color: white;
   border: 0px;
+}
+.fw_single_product #wscp-response p,
+.fw_single_product #wscp-response span {
+  font-size: 10px !important;
+  line-height: 10px !important;
 }
 .fw_single_product .summary .cart br {
   display: none !important;
