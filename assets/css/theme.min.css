@@ -1039,8 +1039,12 @@ ul {
 }
 #index-wrapper .pagination, #single-wrapper .pagination {
   margin: 0 auto;
-  width: 20% !important;
   text-align: center !important;
+}
+@media (min-width: 799px) {
+  #index-wrapper .pagination, #single-wrapper .pagination {
+    width: 20% !important;
+  }
 }
 #index-wrapper .page-item.active .page-link, #single-wrapper .page-item.active .page-link {
   border: 2px solid #F6F6F6;

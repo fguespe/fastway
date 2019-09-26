@@ -1058,8 +1058,12 @@ ul {
     }
     .pagination {
       margin:0 auto;
-      width:20% !important;
       text-align:center !important;
+    }
+    @media (min-width: 799px) {
+      .pagination {
+        width:20% !important;
+      }
     }
     .page-item.active .page-link {
       border: 2px solid #F6F6F6;
