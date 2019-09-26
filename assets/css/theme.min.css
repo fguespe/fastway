@@ -341,6 +341,9 @@
   color: white;
   border: 0px;
 }
+.fw_single_product #wscp-response {
+  margin-top: 20px;
+}
 .fw_single_product #wscp-response p,
 .fw_single_product #wscp-response span {
   font-size: 10px !important;
