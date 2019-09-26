@@ -3,6 +3,10 @@
 $sidebarname='left-sidebar';
 $ratio=2;
 
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_product_category())){
+	$ratio=3;
+}
+
 if(is_plugin_active("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category()){
 		$sidebarname='s-'.$sidebarname;
@@ -11,9 +15,6 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 		$sidebarname='sp-'.$sidebarname;
 		$ratio=fw_theme_mod("sidebar-ratio");
 	}
-}
-if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_shop())){
-	$ratio=3;
 }
 
 ?>

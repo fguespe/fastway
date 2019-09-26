@@ -4,6 +4,10 @@ $sidebar_pos =fw_theme_mod('layout-main');
 $sidebarname='right-sidebar';
 $ratio=2;
 
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_product_category())){
+	$sidebar_pos = fw_theme_mod('layout-blog');
+	$ratio=3;
+}
 if(is_plugin_active("woocommerce/woocommerce.php")){
 	if(is_shop() || is_product_category()){
 		$sidebar_pos = fw_theme_mod('shop-layout');
@@ -12,10 +16,6 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 		$sidebar_pos = fw_theme_mod('product-page-layout');
 		$sidebarname='sp-'.$sidebarname;
 	}
-}
-if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_shop())){
-	$sidebar_pos = fw_theme_mod('layout-blog');
-	$ratio=3;
 }
 ?>
 
