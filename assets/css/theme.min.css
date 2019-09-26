@@ -2314,6 +2314,9 @@ body .wpb_content_element {
   .woocommerce-cart table.cart td.actions .coupon {
     width: 100% !important;
   }
+  .woocommerce-cart button[name=update_cart] {
+    display: none !important;
+  }
   .woocommerce-cart table.cart td.actions .coupon input {
     width: 60% !important;
     margin: 0px !important;

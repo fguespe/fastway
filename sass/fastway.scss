@@ -2383,6 +2383,9 @@ body .wpb_content_element {
         table.cart td.actions .coupon{
           width:100% !important;
         }
+        button[name='update_cart'] {
+          display: none !important;
+        }
         table.cart td.actions .coupon input{
           width:60% !important;
           margin:0px !important;
