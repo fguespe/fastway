@@ -1157,7 +1157,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Mobile App Icon', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_general',
-	'default'     => urlforimages()."/assets/img/favi.png",
+	'default'     => '',
+	//'default'     => urlforimages()."/assets/img/favi.png",
 ) );
 /*WOOCOMMERCE*/
 
