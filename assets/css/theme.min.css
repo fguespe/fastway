@@ -2310,6 +2310,23 @@ body .wpb_content_element {
 .woocommerce-cart table.cart td.actions .coupon label {
   display: none;
 }
+@media (max-width: 799px) {
+  .woocommerce-cart table.cart td.actions .coupon {
+    width: 100% !important;
+  }
+  .woocommerce-cart table.cart td.actions .coupon input {
+    width: 60% !important;
+    margin: 0px !important;
+    display: inline !important;
+    background: white !important;
+  }
+  .woocommerce-cart table.cart td.actions .coupon button {
+    width: 40% !important;
+    margin: 0px !important;
+    background: white !important;
+    border: 1px solid var(--main) !important;
+  }
+}
 @media (min-width: 799px) {
   .woocommerce-cart .cart-collaterals .cart_totals {
     float: right;
@@ -2580,7 +2597,21 @@ body .wpb_content_element {
   left: 1.5em;
 }
 .woocommerce .woocommerce-info a, .woocommerce .woocommerce-message a {
-  color: var(--second);
+  color: var(--main) !important;
+  font-size: 15px;
+}
+@media (max-width: 799px) {
+  .woocommerce .woocommerce-message {
+    font-size: 12px !important;
+    padding: 0px !important;
+  }
+  .woocommerce .woocommerce-message a {
+    display: block;
+    margin: 5px;
+  }
+  .woocommerce .woocommerce-message::before {
+    display: none !important;
+  }
 }
 .woocommerce #reviews #comments ol.commentlist {
   margin: 0;
