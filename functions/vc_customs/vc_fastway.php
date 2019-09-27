@@ -318,7 +318,7 @@ function fw_slider_function( $atts, $content ) {
     if(!$ismobile)$claserespo=' ';
     $links = explode(',',$atts['links_desktop']);
     $return = '
-    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative">
+    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative" >
     <div class="swiper-wrapper clear-ul">';
     $cant=0;
     foreach( $image_ids as $image_id ){
@@ -326,7 +326,7 @@ function fw_slider_function( $atts, $content ) {
         $link=$links[$cant];
         $image=$images[0];
         if(!$link)$link="#";
-        $return .= '<div class="swiper-slide" data-swiper-autoplay="'.$atts['slider_delay'].'">';
+        $return .= '<div class="swiper-slide" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
@@ -338,6 +338,11 @@ function fw_slider_function( $atts, $content ) {
         <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
     }
     $return .='</div>
+    <style>
+    .swiper-slide{
+        width: 100% !important;
+    }
+    </style>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
         slidesPerView: 1,
