@@ -118,7 +118,7 @@ echo fw_header_html_mobile();
         $bottommneu=fw_menu_vertical(array('id' => 'mobile_bottom' )); 
         if(!empty($bottommneu)){
             echo '<div class="separa-menu-mobile">&nbsp;</div>';
-            echo $bottommneu;
+            echo '<div class="mobile_bottom">'.$bottommneu.'</div>';
         }
         if(fw_theme_mod('fw-quicklinks'))quicklinks();?>
       </div>
