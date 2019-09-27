@@ -326,7 +326,7 @@ function fw_slider_function( $atts, $content ) {
         $link=$links[$cant];
         $image=$images[0];
         if(!$link)$link="#";
-        $return .= '<div class="swiper-slide" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
+        $return .= '<div class="swiper-slide fwslider" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
         $return .= '<a href="'.$link.'" ><div class="item product-category">';
         $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
         $return .= '</div></a></div>';    
@@ -339,7 +339,7 @@ function fw_slider_function( $atts, $content ) {
     }
     $return .='</div>
     <style>
-    .swiper-slide{
+    .swiper-slide.fwslider{
         width: 100% !important;
     }
     </style>
