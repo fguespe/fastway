@@ -1676,7 +1676,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
     $cols=2;
     echo '
 <div class="cross" >
-<h4 class="titulo">Quienes vieron este producto también compraron</h3>
+<h4 class="titulo">Sugerencias para vos</h3>
         
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
