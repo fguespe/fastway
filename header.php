@@ -55,6 +55,25 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <style ><?php echo fw_custom_css(); ?></style>
     <style type="text/css" id="css_editor-logged_in"><?php if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>
     <style type="text/css" id="css_editor-admin"><?php if(current_user_can("administrator"))echo fw_theme_mod('css_editor-admin')?></style>
+    <style>
+        /*FIX SHIPPING*/
+.cart_totals .shipping,
+.cart_totals .shipping p,
+.cart_totals .shipping a,
+.cart_totals .shipping span,
+.cart_totals .shipping input,
+.cart_totals .shipping label {
+  font-size: 12px !important;
+}
+
+.cart_totals .shipping-calculator-form .button {
+  background: var(--main) !important;
+  color: white !important;
+  border: 0px;
+  padding: 3px 10px 3px 10px !important;
+}
+
+</style>
     <?php echo fw_theme_mod('fw_header_scripts');?>
 </head>
 <body <?php body_class("page-".basename(get_permalink())); ?>>
