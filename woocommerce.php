@@ -57,3 +57,22 @@ if(is_shop() || is_product_category())$clase="woocommerce-shop";
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>
+
+<style>
+	/*FIX SHIPPING*/
+.cart_totals .shipping,
+.cart_totals .shipping p,
+.cart_totals .shipping a,
+.cart_totals .shipping span,
+.cart_totals .shipping input,
+.cart_totals .shipping label {
+  font-size: 12px !important;
+}
+
+.cart_totals .shipping-calculator-form .button {
+  background: var(--main) !important;
+  color: white !important;
+  border: 0px;
+  padding: 3px 10px 3px 10px !important;
+}
+</style>

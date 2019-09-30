@@ -2923,22 +2923,6 @@ body .wpb_content_element {
 	text-align: left
 }
 
-.cart_totals .shipping ,
-.cart_totals .shipping p,
-.cart_totals .shipping  a,
-.cart_totals .shipping span,
-.cart_totals .shipping input,
-.cart_totals .shipping label{
-font-size:12px !important;
-}
-
-.cart_totals .shipping-calculator-form .button{
-background:var(--main) !important;
-color:white !important;
-border:0px;
-padding:3px 10px 3px 10px !important;
-}
-
 .woocommerce-page.woocommerce-checkout form.login .form-row,
 .woocommerce.woocommerce-checkout form.login .form-row {
 	width: 100%;
@@ -3983,4 +3967,24 @@ padding:3px 10px 3px 10px !important;
 .col-1, .col-2{
 max-width:none !important;
 }
+}
+
+
+/*FIX SHIPPING*/
+
+
+.cart_totals .shipping ,
+.cart_totals .shipping p,
+.cart_totals .shipping  a,
+.cart_totals .shipping span,
+.cart_totals .shipping input,
+.cart_totals .shipping label{
+font-size:12px !important;
+}
+
+.cart_totals .shipping-calculator-form .button{
+background:var(--main) !important;
+color:white !important;
+border:0px;
+padding:3px 10px 3px 10px !important;
 }
