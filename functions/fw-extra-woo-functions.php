@@ -1661,14 +1661,6 @@ if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_r
 
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
 
-	/**
-	 * Output the cart cross-sells.
-	 *
-	 * @param  int    $limit (default: 2).
-	 * @param  int    $columns (default: 2).
-	 * @param  string $orderby (default: 'rand').
-	 * @param  string $order (default: 'desc').
-	 */
 	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
 		if ( is_checkout() ) {
 			return;
