@@ -82,10 +82,19 @@ function fw_single_related($atts){
     <div class="swiper-wrapper">';
 
         $myarray = wc_get_related_products($product->id,12);
-
+		$tax_query   = WC()->query->get_tax_query();
+		
+        $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug', // Or 'name' or 'term_id'
+            'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
+            'operator' => 'NOT IN', // Excluded
+        );
+        
         $args = array(
             'post_type' => 'product',
-            'post__in'      => $myarray
+            'post__in'      => $myarray,
+            'tax_query'           => $tax_query,
         );
         // The Query
         $products = new WP_Query( $args );
