@@ -1673,7 +1673,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
 		if ( is_checkout() ) {
 			return;
 		}
-    $cols=4;
+    $cols=2;
     echo '
 <div class="cross" >
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
