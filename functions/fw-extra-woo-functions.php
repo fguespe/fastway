@@ -1563,15 +1563,10 @@ wp_enqueue_media();
 add_action( 'admin_enqueue_scripts', 'load_wp_media_files3' );
 
 
-/**
- * Snippet to set default weight and Dimension if it's not set for any product.
- * Created at : 14 May 2018
- * Updated at : 16 May 2018
- * Xadapter Plugins : https://www.xadapter.com/shop/
- * Gist Link : https://gist.github.com/xadapter/4fb8dbfc6c025630558e43488775eb7d
- */
 
-// To set Default Length
+if(!is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
+//Default shipping salvo que este activo KIJAM, que ya se los pone.
+
 add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );
 add_filter( 'woocommerce_product_variation_get_length', 'xa_product_default_length' );	// For variable product variations
 
@@ -1637,6 +1632,7 @@ if( ! function_exists('xa_product_default_weight') ) {
 			return $weight;
 		}
 	}
+}
 }
 
 
