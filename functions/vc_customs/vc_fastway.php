@@ -339,15 +339,13 @@ function fw_slider_function( $atts, $content ) {
     }
     $return .='</div>
     <style>
-    .swiper-slide.fwslider{
-        width: 100% !important;
-    }
     </style>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 0,
         touchRatio: 0 ,
+        centeredSlides: true ,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
         speed:'.$atts['slider_speed'].',
