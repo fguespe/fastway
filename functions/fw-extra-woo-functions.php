@@ -1673,7 +1673,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
 		if ( is_checkout() ) {
 			return;
 		}
-    $cols=2;
+    $cols=3;
     echo '
 <div class="cross" >
 <h4 class="titulo">Sugerencias para vos</h3>
