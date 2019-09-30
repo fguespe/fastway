@@ -2348,6 +2348,17 @@ body .wpb_content_element {
     #reviews{
       display: none;
     }
+
+    .cross {
+      float: left;
+      width: 48%;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 799px) {
+      .cross {
+        width: 100%;
+      }
+    }
     .woocommerce-cart-form,.shop_table{
       background:white;
     }

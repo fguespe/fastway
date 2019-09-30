@@ -2276,6 +2276,19 @@ body .wpb_content_element {
     float: none !important;
   }
 }
+.woocommerce-cart #reviews {
+  display: none;
+}
+.woocommerce-cart .cross {
+  float: left;
+  width: 48%;
+  margin-bottom: 32px;
+}
+@media (max-width: 799px) {
+  .woocommerce-cart .cross {
+    width: 100%;
+  }
+}
 .woocommerce-cart .woocommerce-cart-form, .woocommerce-cart .shop_table {
   background: white;
 }

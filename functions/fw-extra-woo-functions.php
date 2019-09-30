@@ -1673,7 +1673,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
 		if ( is_checkout() ) {
 			return;
 		}
-    $cols=6;
+    $cols=4;
     echo '
 <div class="cross" >
 <h4 class="titulo">Quienes vieron este producto también compraron</h3>
@@ -1695,7 +1695,6 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
             $products->the_post(); 
             echo '<div class="swiper-slide data-swiper-autoplay="400">';
             wc_get_template_part( 'content', 'product' ); 
-            echo ob_get_clean();
             echo '</div>';    
         endwhile; 
         echo'</div>';
@@ -1719,7 +1718,6 @@ var ProductSwiper = new Swiper(".swiper-related", {
         prevEl: ".swiper-prodrel-prev",
     },
     breakpoints: {
-        // when window width is <= 320px
             900:    {slidesPerView: 2,slidesPerGroup:2},
             1000:   {slidesPerView: 3,slidesPerGroup:3},            
             1200:    {slidesPerView: 4,slidesPerGroup:4}
