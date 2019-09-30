@@ -1656,3 +1656,75 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
 	return ! empty( $free ) ? $free : $rates;
 }
 if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
+
+
+
+if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
+
+	/**
+	 * Output the cart cross-sells.
+	 *
+	 * @param  int    $limit (default: 2).
+	 * @param  int    $columns (default: 2).
+	 * @param  string $orderby (default: 'rand').
+	 * @param  string $order (default: 'desc').
+	 */
+	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
+		if ( is_checkout() ) {
+			return;
+		}
+    $cols=6;
+    echo '
+<div class="cross" >
+<h4 class="titulo">Quienes vieron este producto también compraron</h3>
+        
+  <div class="swiper-related over-hidden relative swiper-container-horizontal">
+    <div class="swiper-wrapper">';
+
+        $myarray = WC()->cart->get_cross_sells();;
+        
+        $args = array(
+          'post_type' => 'product',
+          'post__in'      => $myarray,
+        );
+        // The Query
+        $products = new WP_Query( $args );
+        $contada=0;
+        while ( $products->have_posts() ) : 
+            $contada++;
+            $products->the_post(); 
+            echo '<div class="swiper-slide data-swiper-autoplay="400">';
+            wc_get_template_part( 'content', 'product' ); 
+            echo ob_get_clean();
+            echo '</div>';    
+        endwhile; 
+        echo'</div>';
+    if($contada>$cols){
+    echo '
+    <div class="swiper-prev swiper-prodrel-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-prodrel-next"><i class="fa fa-angle-right"></i></div>
+    ';}
+    echo'
+  </div>
+</div>
+<script>
+var ProductSwiper = new Swiper(".swiper-related", {
+    slidesPerView: '.$cols.',
+    spaceBetween: 10,
+    touchRatio: 0 ,
+    loop: false,
+    autoplay: true,
+    navigation: {
+        nextEl: ".swiper-prodrel-next",
+        prevEl: ".swiper-prodrel-prev",
+    },
+    breakpoints: {
+        // when window width is <= 320px
+            900:    {slidesPerView: 2,slidesPerGroup:2},
+            1000:   {slidesPerView: 3,slidesPerGroup:3},            
+            1200:    {slidesPerView: 4,slidesPerGroup:4}
+        }
+});
+</script>';
+	}
+}

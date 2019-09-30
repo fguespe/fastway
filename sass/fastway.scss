@@ -2345,6 +2345,9 @@ body .wpb_content_element {
   }
 }
 .woocommerce-cart{
+    #reviews{
+      display: none;
+    }
     .woocommerce-cart-form,.shop_table{
       background:white;
     }
