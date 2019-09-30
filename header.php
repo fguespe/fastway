@@ -73,6 +73,24 @@ if(!is_plugin_active('kirki/kirki.php'))return;
   padding: 3px 10px 3px 10px !important;
 }
 
+
+.woocommerce-shipping-totals,
+.woocommerce-shipping-totals  p,
+.woocommerce-shipping-totals  a,
+.woocommerce-shipping-totals span,
+.woocommerce-shipping-totals input,
+.woocommerce-shipping-totals label {
+text-align:left !important;
+  font-size: 11px !important;
+}
+
+.woocommerce-shipping-totals .button {
+text-align:left !important;
+  background: var(--main) !important;
+  color: white !important;
+  border: 0px;
+  padding: 3px 10px 3px 10px !important;
+}
 </style>
     <?php echo fw_theme_mod('fw_header_scripts');?>
 </head>
