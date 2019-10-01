@@ -87,6 +87,7 @@ if(fw_theme_mod('fw_action_woosettings')){
     update_option('woocommerce_registration_generate_password','yes');
     //Calc envios
     update_option('woocommerce_enable_shipping_calc','yes');
+    update_option('woocommerce_enable_reviews','no');
     update_option('woocommerce_shipping_cost_requires_address','no');
 
     //Para que no se cancelen los envios
