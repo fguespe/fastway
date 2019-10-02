@@ -2923,12 +2923,6 @@ body .wpb_content_element {
 	text-align: left
 }
 
-.woocommerce-page.woocommerce-checkout form.login .form-row,
-.woocommerce.woocommerce-checkout form.login .form-row {
-	width: 100%;
-	float: none
-}
-
 .woocommerce #payment .terms,
 .woocommerce-page #payment .terms {
 	text-align: left;
@@ -3068,7 +3062,8 @@ body .wpb_content_element {
   display:none;
 }*/
 
-.woocommerce-checkout{
+.woocommerce-checkout,
+.woocommerce-account{
   .select2-selection__clear{
     display:none;
   }
@@ -3828,6 +3823,15 @@ body .wpb_content_element {
     display:block !important;
     width:100%;
     }
+    .woocommerce-form-login__submit{
+      background:var(--main);
+      color:white;
+      border:0px ;
+      padding:10px;
+      padding-left:15px;
+      padding-right:15px;
+    }
+    
     #ship-to-different-address{
       display:none;
     }
