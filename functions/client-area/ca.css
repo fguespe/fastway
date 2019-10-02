@@ -440,7 +440,7 @@ display:none !important;
 
 
 
-.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
+.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
 	display:none;
 }
 

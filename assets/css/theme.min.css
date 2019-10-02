@@ -3778,4 +3778,17 @@ body .wpb_content_element {
   max-width: none !important;
 }
 
+/*Memberships plugin*/
+/*TABLA CONTNT*/
+.membership-content-type, .membership-content-accessible {
+  display: none;
+}
+
+.woocommerce-MyAccount-navigation-link--my-membership-products,
+.woocommerce-MyAccount-navigation-link--my-membership-discounts,
+.woocommerce-MyAccount-navigation-link--my-membership-details,
+.woocommerce-MyAccount-navigation-link--my-membership-notes {
+  display: none !important;
+}
+
 /*# sourceMappingURL=theme.min.css.map */

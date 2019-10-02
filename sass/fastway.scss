@@ -3914,7 +3914,7 @@ body .wpb_content_element {
     margin-right: 5px !important;
   }
   
-  .woocommerce-checkout .payment_method_cheque label::before {
+  .fw_checkout .payment_method_cheque label::before {
     font-family: "Font Awesome 5 Pro" !important;
     content: "\f873";
     color: var(--main) !important;
@@ -3969,3 +3969,14 @@ max-width:none !important;
 }
 }
 
+/*Memberships plugin*/
+/*TABLA CONTNT*/
+.membership-content-type,.membership-content-accessible{
+  display:none;
+}
+.woocommerce-MyAccount-navigation-link--my-membership-products,
+.woocommerce-MyAccount-navigation-link--my-membership-discounts,
+.woocommerce-MyAccount-navigation-link--my-membership-details ,
+.woocommerce-MyAccount-navigation-link--my-membership-notes {
+  display:none !important;
+}
