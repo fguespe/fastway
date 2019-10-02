@@ -169,7 +169,7 @@ function fw_slider() {
             'base' => 'fw_slider_function',
             'description' => __('FW Slider', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_images",
@@ -238,7 +238,7 @@ function fw_image() {
             'base' => 'fw_image_function',
             'description' => __('FW Image', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_images",
@@ -456,7 +456,7 @@ function vc_statick_block() {
             'description' => __('FW Statick Block', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',            
                 "params" => array(
                 array(
                   "type"        => "dropdown",
@@ -484,7 +484,7 @@ function vc_fw_shorts() {
             'description' => __('FW Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',
@@ -613,7 +613,7 @@ function vc_social_icons() {
             'description' => __('FW Social Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',
@@ -678,7 +678,7 @@ function vc_only_icon() {
             'description' => __('FW Icon Only', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => '/wp-content/themes/fastway/assets/img/favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',

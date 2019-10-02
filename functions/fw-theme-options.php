@@ -1232,7 +1232,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Currency Conversion', 'fastway' ),
 	'description' => 'Al habilitar este campo, al cliente le va a aparecer un widget con un campo para poner la conversion en a la moneda local. Usar punto para decimales, no la coma',
 	'section'     => 'section_woo',
-) );
+) );/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',
@@ -1244,7 +1244,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'iconwt' => __( 'Icon With Text ', 'fastway' ),
 		'iconwu' => __( 'Icon With Username ', 'fastway' ),
 	),
-) );
+) );*/
 /*
 
 Kirki::add_field( 'theme_config_id', array(
