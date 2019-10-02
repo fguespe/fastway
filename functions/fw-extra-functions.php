@@ -218,7 +218,7 @@ if( !function_exists( 'fw_menu' ) ) {
                     
                     $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
                     $menushort=$menu_item->title;
-                    if($menushort=="[fw_account]")$menushort=fw_account_name();
+                    if(startsWith($menushort,"[") && endsWith($menushort,"]")) $menushort=do_shortcode($menushort);
                     $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menushort . '</a>' ."\n";
                 }
                 
@@ -233,12 +233,20 @@ if( !function_exists( 'fw_menu' ) ) {
         return $menu_list;
     }
 }
-function fw_account_name(){
-    global $current_user;
-    get_currentuserinfo();
-    if(is_user_logged_in())return $current_user->display_name;
-    return fw_theme_mod("fw_user_text");
-}
+// Function to check string starting 
+// with given substring 
+function startsWith ($string, $startString) { 
+    $len = strlen($startString); 
+    return (substr($string, 0, $len) === $startString); 
+} 
+function endsWith($string, $endString) { 
+    $len = strlen($endString); 
+    if ($len == 0) { 
+        return true; 
+    } 
+    return (substr($string, -$len) === $endString); 
+} 
+  
 function getChilds($parent,$menu_items){
     $devolver=array();
     foreach( $menu_items as $s_submenu ) 

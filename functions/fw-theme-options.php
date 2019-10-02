@@ -2303,6 +2303,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_user_text',
 	'label'    => __( 'Login Text', 'fastway' ),
+	'description' => '"username" para que tome el username si inicio',
 	'section'     => 'section_labels',
 	'default'	=>__( 'Ingresar', 'fastway' ),
 ) );

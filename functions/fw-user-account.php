@@ -1,19 +1,24 @@
 <?php
 
+//Esto va a al menu
+
 
 if( !function_exists( 'fw_user_account' ) ) {
-    
+    add_shortcode('fw_account', 'fw_account');
+    function fw_account(){
+      if(fw_theme_mod("fw_user_text")=='username'){
+        global $current_user;
+        get_currentuserinfo();
+        if(is_user_logged_in())return $current_user->display_name;
+      }
+      else return  fw_theme_mod("fw_user_text");
+    }
+  
     add_shortcode('fw_user_account', 'fw_user_account');
     function fw_user_account(){
-          $name="";
 
           $istyle=fw_theme_mod("fw_icons_style");
-          $current_user = wp_get_current_user();
-          if ( 0 != $current_user->ID && fw_theme_mod("fw_user_template")=="iconwu") {
-              $name=$current_user->user_login;
-          }else if(fw_theme_mod("fw_user_template")=="iconwt"){
-              $name=fw_theme_mod("fw_user_text");
-          }
+          $name=fw_account();
 
           if(!empty($name))$name="<span class='ingresar_text'>".$name."</span>";
           $url='';
