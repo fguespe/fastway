@@ -21,10 +21,6 @@ if( !function_exists( 'fw_user_account' ) ) {
           $type=$atts['type'];
           $text=$atts['text'];
           $name=!empty($text)?$text:fw_account();
-          error_log('el tipe es'.$type);
-          error_log('eje '.$text);
-          error_log('ejo '.fw_account());
-          
           $name="<span class='ingresar_text'>".$name."</span>";
 
           //0 only icon
@@ -34,8 +30,6 @@ if( !function_exists( 'fw_user_account' ) ) {
           if($type==0){
             $name='';
           }else if($type==1){
-            error_log('entra');
-            error_log( $name);
             $istyle=$name;
           }else if($type==2){
             $istyle='<i class="p3 '.fw_theme_mod("fw_icons_style").' fa-user-circle fa-stack-1x xfa-inverse">'.$name.'</i>';

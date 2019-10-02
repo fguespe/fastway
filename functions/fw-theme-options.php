@@ -26,13 +26,17 @@ Kirki::add_config( 'theme_config_id', array(
 	'option_type'   => 'theme_mod',
 ) );
 
+Kirki::add_panel( 'panel_fastwayinit', array(
+
+    'title'       => __( 'Fastway Init', 'fastway' ),
+    //'description' => __( 'My panel description', 'fastway' ),
+) );
 
 Kirki::add_panel( 'panel_fastway', array(
 
     'title'       => __( 'Fastway Settings', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
-
 
 Kirki::add_panel( 'panel_fastwaylayout', array(
 
@@ -74,26 +78,26 @@ Kirki::add_section( 'section_seo', array(
 Kirki::add_section( 'section_layouts', array(
     'title'          => __( 'Layouts', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
+    'panel'          => 'panel_fastwayinit',
 
 ) );
 Kirki::add_section( 'section_colors', array(
     'title'          => __( 'Color Scheme', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayinit',
 
 ) );
 
 Kirki::add_section( 'section_typos', array(
     'title'          => __( 'Typography', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayinit',
 
 ) );
 Kirki::add_section( 'section_data', array(
     'title'          => __( 'Company Data', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayinit',
 
 ) );
 
