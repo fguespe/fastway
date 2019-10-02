@@ -22,17 +22,18 @@ if( !function_exists( 'fw_user_account' ) ) {
           $text=$atts['text'];
           $name=!empty($text)?$text:fw_account();
           $name="<span class='ingresar_text'>".$name."</span>";
-
+          $iconstyle=fw_theme_mod("fw_icons_style");
+          $iconstyle='far';
           //0 only icon
           //1 only text
           //2 icon with text , also username
-          $istyle='<i class="'.fw_theme_mod("fw_icons_style").' fa-user-circle "></i>';
+          $istyle='<i class="'.$iconstyle.' fa-user-circle "></i>';
           if($type==0){
             $name='';
           }else if($type==1){
             $istyle=$name;
           }else if($type==2){
-            $istyle='<i class="'.fw_theme_mod("fw_icons_style").' fa-user-circle ">'.$name.'</i>';
+            $istyle='<i class="'.$iconstyle.' fa-user-circle ">'.$name.'</i>';
           }
 
           $url='';

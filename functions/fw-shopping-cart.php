@@ -97,7 +97,7 @@ function iconic_cart_count_fragments( $fragments ) {
     
     //$fragments['.header-cart-count'] = '<span class="header-cart-count u-badge u-badge-primary u-badge-pos rounded-circle">' . WC()->cart->get_cart_contents_count() . '</span>';
     $fragments['.header-cart-count-badge'] = '<span class="p1 header-cart-count-badge fa-stack has-badge" data-count="'.WC()->cart->get_cart_contents_count().'">
-    <i class="p3 '.fw_theme_mod("fw_icons_style").' fa-shopping-cart fa-stack-1x xfa-inverse" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
+    <i class="'.fw_theme_mod("fw_icons_style").' fa-shopping-carte" data-count="'.WC()->cart->get_cart_contents_count().'"></i> </span>';
 
     
     $fragments['.total-mini-cart'] = '<span class="d-block total-mini-cart">' . WC()->cart->get_cart_total() . '</span>';
