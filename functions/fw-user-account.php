@@ -26,13 +26,13 @@ if( !function_exists( 'fw_user_account' ) ) {
           //0 only icon
           //1 only text
           //2 icon with text , also username
-          $istyle='<i class="p3 '.fw_theme_mod("fw_icons_style").' fa-user-circle fa-stack-1x xfa-inverse"></i>';
+          $istyle='<i class="'.fw_theme_mod("fw_icons_style").' fa-user-circle "></i>';
           if($type==0){
             $name='';
           }else if($type==1){
             $istyle=$name;
           }else if($type==2){
-            $istyle='<i class="p3 '.fw_theme_mod("fw_icons_style").' fa-user-circle fa-stack-1x xfa-inverse">'.$name.'</i>';
+            $istyle='<i class="'.fw_theme_mod("fw_icons_style").' fa-user-circle ">'.$name.'</i>';
           }
 
           $url='';
