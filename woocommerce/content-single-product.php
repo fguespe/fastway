@@ -166,7 +166,8 @@ function fw_single_gallery(){
     global $product;
     $clasecant='vacio';
     $loop="true";
-    if(count($product->get_gallery_attachment_ids())>0)$clasecant='';
+    if(count($product->get_gallery_attachment_ids())>0)$clasecant='';//chequeo mas de una img
+    if (!empty(get_post_meta($product->id, '_fw_products_videos', true )) )$clasecant='';//O si tiene video
     if(!empty($clasecant)){
         $loop="false";
         
