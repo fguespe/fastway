@@ -16,14 +16,13 @@ if( !function_exists( 'fw_user_account' ) ) {
           $atts = wp_parse_args($atts, array(
               'type'   => 0,
               'text' => '',
-              'icon' => '',
           ));
           
           $type=$atts['type'];
           $text=$atts['text'];
           $name=!empty($text)?$text:fw_account();
           $name="<span class='ingresar_text'>".$name."</span>";
-          $iconstyle=$atts['icon']?$atts['icon']:fw_theme_mod("fw_icons_style");
+          $iconstyle='fas';
           //0 only icon
           //1 only text
           //2 icon with text , also username
