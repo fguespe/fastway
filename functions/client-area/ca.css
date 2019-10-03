@@ -328,7 +328,7 @@ border-radius:0px;
 .envira-header-temp,.envira-header,.error{
 	display:none !important;
 }
-.authordiv{
+.authordiv,.wc-memberships-post-memberships-data{
 	display: none;
 }
 /*PRICES BY USER ROLE*/
