@@ -45,13 +45,13 @@ class Correios_Shipping_Ajax_Postcode {
 	    $product = wc_get_product( sanitize_text_field( $request['product'] ) );
 	    
 	    if (!$product->needs_shipping() || get_option('woocommerce_calc_shipping') === 'no' )
-	        return 'Não foi possível calcular a entrega deste produto';
+	        return 'No fue posible calcular el envio';
 	    
 	    if( !$product->is_in_stock() )
-	    	return 'Não foi possível calcular a entrega deste produto, pois o mesmo não está disponível.';
+	    	return 'No fue posible calcular el envio, no tiene stock.';
 
 	    if( !WC_Validation::is_postcode( $request['postcode'], WC()->customer->get_shipping_country() ) )
-	    	return 'Por favor, insira um CEP válido.';
+	    	return 'Por favor, insira um CP válido.';
 
 	    $products = [$product];
 
