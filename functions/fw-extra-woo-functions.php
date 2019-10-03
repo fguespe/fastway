@@ -1651,7 +1651,7 @@ if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_r
 
 
 
-if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
+if ( ! function_exists( 'woocommerce_cross_sell_display' ) && 1==2 ) {
 
 	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
 		if ( is_checkout() ) {
