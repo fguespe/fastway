@@ -1109,6 +1109,14 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_quickmenu_links',
+	'label'       => __( 'Quicklinks', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default' => 'fb,youtube,whatsapp,ig,email,phone,address'
+) );
+
 
 
 
