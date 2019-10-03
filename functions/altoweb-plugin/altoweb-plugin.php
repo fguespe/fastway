@@ -106,6 +106,7 @@ if(fw_theme_mod('fw_action_woosettings')){
    set_theme_mod('fw_action_woosettings',false);
 }
 
+
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
