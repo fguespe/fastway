@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
-<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
 <form name="checkout" method="post" class=" fw_checkout" enctype="multipart/form-data">	
 		<div class="register-fields">
@@ -56,8 +55,6 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				<?php do_action( 'woocommerce_login_form_end' ); ?>
 		</div>
 </form>
-
-<?php endif; ?>
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
