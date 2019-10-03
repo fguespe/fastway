@@ -1,6 +1,6 @@
 <div class="row" id="shipping-calc">
 	<div class="col-md-12">
-	<b style="display:block;">Ingrese su codigo postal para calcular costo de envio:</b>
+	<b style="display:block;">Ingrese su codigo postal para calcular costo de envio a domicilio por correo:</b>
 	<i class="fad fa-shipping-fast" style="color:var(--second);"></i>
 	<input type="tel" id="wscp-postcode" autocomplete="off"  name="wscp-postcode" class="input-text text" style="width:70px" />
 	<input type="button" id="wscp-button" class="btn_mp_calc_shipping" value="Calcular" >
