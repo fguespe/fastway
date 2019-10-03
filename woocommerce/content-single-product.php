@@ -71,12 +71,11 @@ function fw_single_tabs(){
 add_shortcode('fw_single_related','fw_single_related');
 function fw_single_related($atts){
     $atts = shortcode_atts(array('cols' => 6 ), $atts );
-    $cols=$atts['cols'];
-
+    $cols=fw_theme_mod("related_columns");
 
     echo '
 <div class="related" >
-<h4 class="titulo">Quienes vieron este producto también compraron</h3>
+<h4 class="titulo">'.fw_theme_mod('fw_related_text').'</h3>
         
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';

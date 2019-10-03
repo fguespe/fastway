@@ -907,7 +907,7 @@ add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_arg
   function jk_related_products_args( $args ) {
     //error_log(fw_theme_mod("related_columns"));
     $args['posts_per_page'] = 4;//fw_theme_mod("related_columns"); // 4 related products
-    $args['columns'] = 4;//fw_theme_mod("related_columns"); // arranged in 2 columns
+    $args['columns'] = fw_theme_mod("related_columns");
     return $args;
 }
 // Change number or products per row to 3

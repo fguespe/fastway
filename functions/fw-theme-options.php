@@ -467,20 +467,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_show_calculator_shipping',
-	'label'       => __( 'Show Shipping Calculator', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'description' => 'Refrescar despues de activar',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
@@ -1435,6 +1421,20 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'related_columns',
+	'label'       => esc_attr__( 'Related Columns', 'fastway' ),
+	'section'     => 'section_woo_single',
+	'default'     => 6,
+	'choices'     => array(
+		'min'  => '3',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_single_code',
@@ -2322,6 +2322,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => '"username" para que tome el username si inicio',
 	'section'     => 'section_labels',
 	'default'	=>__( 'Ingresar', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_related_text',
+	'label'    => __( 'Titulo Relacionados', 'fastway' ),
+	'description' => 'Esto va en la pagina de single products',
+	'section'     => 'section_labels',
+	'default'	=>__( 'Quienes vieron este producto también compraron', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
