@@ -1191,8 +1191,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'     => 1,
 	'choices' => array(
-	    0  => __( 'Enable', 'fastway' ),
-	    1 => __( 'Disable', 'fastway' )
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_show_cross_sells',
+	'label'       => __( 'Cross Sells', 'fastway' ),
+	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
 
@@ -1315,7 +1327,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 1,
 	'choices' => array(
 	    0  => __( 'Enable', 'fastway' ),
-	    1 => __( 'Disable', 'fastway' )
+	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
 
@@ -1516,7 +1528,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 0,
 	'choices' => array(
 	    0  => __( 'Enable', 'fastway' ),
-	    1 => __( 'Disable', 'fastway' )
+	    1 => __( 'Enable', 'fastway' )
 	)
 ) );*/
 Kirki::add_field( 'theme_config_id', array(

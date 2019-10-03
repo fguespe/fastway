@@ -2826,17 +2826,6 @@ body .wpb_content_element {
     width: 100%;
   }
 
-  .woocommerce .cart-collaterals .cart_totals,
-.woocommerce .cart-collaterals .cross-sells,
-.woocommerce .cart-collaterals .shipping_calculator,
-.woocommerce-page .cart-collaterals .cart_totals,
-.woocommerce-page .cart-collaterals .cross-sells,
-.woocommerce-page .cart-collaterals .shipping_calculator {
-    width: 100%;
-    float: none;
-    text-align: left;
-  }
-
   .woocommerce #payment .terms,
 .woocommerce-page #payment .terms {
     text-align: left;
