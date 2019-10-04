@@ -192,15 +192,15 @@ function bbloomer_privacy_message_below_checkout_button() {
 
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
-
-	if ( is_admin() || current_user_can( 'shop_manager' )  || current_user_can( 'shop-manager' ) ){
-	      $myClass = ""; //or your name
-	} else if ( current_user_can( 'mayorista' )) {
-		$myClass = "mayorista"; //or your name
-	} else {
-	      $myClass = ""; //or your name
-	}
-    $classes[] = $myClass;
+    $roles=fw_theme_mod('ca_roles_css');
+    if(is_string($roles))$roles=explode(",",$roles);
+    
+    foreach ($roles as $nombre) {
+      error_log($nombre);
+      if ( current_user_can( strtolower($nombre) )) {
+        $myClass = strtolower($nombre); //or your name
+      }
+    }
      
     return $classes;
      
