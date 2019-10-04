@@ -106,21 +106,21 @@ if(fw_theme_mod('fw_action_woosettings')){
    set_theme_mod('fw_action_woosettings',false);
 }
 
-/*
+
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-   $opts['title']='Mercadopago';
-   $opts['description']='<a href="https://www.mercadopago.com.ar/promociones" target="_blank"><img src="/wp-content/themes/fastway/assets/img/mp.png" class="noborrar"></a>';
-   $opts['method']='redirect';
-   $opts['installment_paymentbutton_calculator']='no';
-   $opts['installment_product_calculator']='no';
-   $opts['shipping_product_calculator']='no';
+   //$opts['title']='Mercadopago';
+   $opts['description']='<a><img src="/wp-content/themes/fastway/assets/img/mp.png" class="noborrar"/></a>';
+   //$opts['method']='redirect';
+   //$opts['installment_paymentbutton_calculator']='no';
+   //$opts['installment_product_calculator']='no';
+   //$opts['shipping_product_calculator']='no';
 
-   //update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
+   update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
    //set_theme_mod('fw_show_calculator_shipping',true);
-}*/
+}
 
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
