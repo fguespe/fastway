@@ -9,7 +9,7 @@ function vc_blog_carousel() {
                 'base' => 'fw_blog_carousel',
                 'description' => __('FW Blog Carousel', 'fastway'), 
                 'category' => __('Fastway Blog', 'fastway'),   
-                'icon' => '/wp-content/themes/fastway/assets/img/favi.png',            
+                'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => get_slider_fields_blog(),
             )
 

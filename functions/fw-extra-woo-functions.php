@@ -690,7 +690,7 @@ function wpa104537_featured_products_admin_filter_query( $query ) {
 
 function fw_check_hide_purchases(){
   if(fw_theme_mod("fw_shop_state")=='hidepurchases' || fw_theme_mod("fw_shop_state")=='hideprices')return true;
-  if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return;
+  if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return true;
 
 }
 function fw_check_hide_prices(){
