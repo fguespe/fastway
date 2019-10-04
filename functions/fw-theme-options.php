@@ -863,7 +863,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-main',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#00A2DE',
+	'default'     => '#132E59',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -881,7 +881,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-second',
 	'label'       => __( 'Secondary Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#EFBA03',
+	'default'     => '#54AF67',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -904,7 +904,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-iconheader',
 	'label'       => __( 'Icons in Header', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#00A2DE',
+	'default'     => '#132E59',
 	'choices'     => array(
 		'alpha' => true,
 	),

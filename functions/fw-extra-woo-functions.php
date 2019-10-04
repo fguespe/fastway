@@ -1640,14 +1640,16 @@ if( ! function_exists('xa_product_default_weight') ) {
 function fw_hide_shipping_when_free_is_available( $rates ) {
 	$free = array();
 	foreach ( $rates as $rate_id => $rate ) {
+    error_log(print_r($rate,true));
 		if ( 'free_shipping' === $rate->method_id ) {
 			$free[ $rate_id ] = $rate;
-			break;
+		}else if ( 'mercadoenvios-shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
 		}
 	}
 	return ! empty( $free ) ? $free : $rates;
 }
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
+add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
 
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );

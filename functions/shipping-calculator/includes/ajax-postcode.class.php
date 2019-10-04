@@ -23,6 +23,7 @@ class Correios_Shipping_Ajax_Postcode {
 		} else {
 
 			foreach ($shipping_response as $key => $shipping) {
+				error_log(print_r($shipping,true));
 				echo'<p>'.$shipping->label.' ('.wc_price( $shipping->cost ).')';
 			}
 

@@ -456,7 +456,7 @@ function custom_redux_panel() {
 display:none;
 }
 .redux-group-menu i{
-color: #00A2DE;
+color: #132E59;
 }
 .redux-group-menu{
 background:white;
@@ -467,7 +467,7 @@ background:white;
 .redux-main .button-primary,
 .admin-color-fresh .redux-field-container .ui-buttonset .ui-state-active,
 .redux-main .redux-container-switch .cb-enable.selected{
-    background:#00A2DE !important;
+    background:#132E59 !important;
     border:0px !important;
     text-shadow:none !important;
     box-shadow:none !important;

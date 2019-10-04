@@ -106,7 +106,7 @@ if(fw_theme_mod('fw_action_woosettings')){
    set_theme_mod('fw_action_woosettings',false);
 }
 
-
+/*
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
@@ -117,10 +117,10 @@ if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
    $opts['installment_product_calculator']='no';
    $opts['shipping_product_calculator']='no';
 
-   update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
+   //update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
-   set_theme_mod('fw_show_calculator_shipping',true);
-}
+   //set_theme_mod('fw_show_calculator_shipping',true);
+}*/
 
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
