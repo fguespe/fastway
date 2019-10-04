@@ -1649,7 +1649,8 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
 	}
 	return ! empty( $free ) ? $free : $rates;
 }
-add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
+
+if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
 
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
