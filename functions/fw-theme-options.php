@@ -2093,6 +2093,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'popup-link',
 	'label'    => __( 'Link', 'fastway' ),       
 	'section'     => 'section_popup',
+	'description' => 'Dejar vacio si no hay link'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',

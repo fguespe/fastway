@@ -348,6 +348,7 @@
 .fw_single_product #wscp-response span {
   font-size: 10px !important;
   line-height: 10px !important;
+  margin-bottom: 8px !important;
 }
 .fw_single_product .summary .cart br {
   display: none !important;

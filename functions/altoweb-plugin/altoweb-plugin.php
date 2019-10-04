@@ -112,6 +112,9 @@ if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
    //$opts['title']='Mercadopago';
    $opts['description']='<a><img src="/wp-content/themes/fastway/assets/img/mp.png" class="noborrar"/></a>';
+   error_log(print_r($opts,true));
+   $opts['mp_redirect']='yes';
+   $opts['mp_completed']='yes';
    //$opts['method']='redirect';
    //$opts['installment_paymentbutton_calculator']='no';
    //$opts['installment_product_calculator']='no';
