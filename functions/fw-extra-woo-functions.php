@@ -188,7 +188,26 @@ add_action( 'woocommerce_review_order_after_submit', 'bbloomer_privacy_message_b
 function bbloomer_privacy_message_below_checkout_button() {
    echo '<p><small>'.fw_theme_mod('checkout-bottom-text').'</small></p>';
 }
- 
+
+
+add_filter( 'body_class','fw_role_body_classes' );
+function fw_role_body_classes( $classes ) {
+
+	if ( is_admin() || current_user_can( 'shop_manager' )  || current_user_can( 'shop-manager' ) ){
+	      $myClass = ""; //or your name
+	} else if ( current_user_can( 'mayorista' )) {
+		$myClass = "mayorista"; //or your name
+	} else {
+	      $myClass = ""; //or your name
+	}
+    $classes[] = $myClass;
+     
+    return $classes;
+     
+}
+
+
+
 function fw_shop_manager_role_edit_capabilities( $roles ) {
   if(function_exists('fw_theme_mod')){
     $roles=fw_theme_mod('ca_roles_mayorista');
@@ -205,6 +224,7 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
   
   return $roles;
 }
+
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 
 if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){

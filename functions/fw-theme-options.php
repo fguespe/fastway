@@ -203,6 +203,11 @@ Kirki::add_section( 'section_woo_single', array(
   
 ) );
 
+Kirki::add_section( 'section_woo_roles', array(
+    'title'          => __( 'Roles', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+
+) );
  
 //Layouts
 
@@ -1293,24 +1298,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'ca_extra_roles',
-	'label'       => __( 'Extra roles', 'fastway' ),
-	'description'	=>	'Roles en label y con , | Esto crea roles sencillos para usar abajo',
-	'section'     => 'section_woo',
-	'default'     => '',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'multicheck',
-	'settings'    => 'ca_roles_mayorista',
-	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
-	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol',
-	'section'     => 'section_woo',
-    'choices'     => fw_getme_roles(),
-	'default'     => ''
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1365,6 +1352,37 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca_extra_roles',
+	'label'       => __( 'Extra roles', 'fastway' ),
+	'description'	=>	'Nombre del rol, separados con ",".',
+	'section'     => 'section_woo_roles',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'multicheck',
+	'settings'    => 'ca_roles_mayorista',
+	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
+	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol',
+	'section'     => 'section_woo_roles',
+    'choices'     => fw_getme_roles(),
+	'default'     => ''
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'multicheck',
+	'settings'    => 'ca_roles_css',
+	'label'       => esc_attr__( 'CSS Roles', 'fastway' ),
+	'description' => 'Los roles activos se le agregara una clase del rol al body, depende en cual esten iniciado sesion.',
+	'section'     => 'section_woo_roles',
+    'choices'     => fw_getme_roles(),
+	'default'     => ''
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',

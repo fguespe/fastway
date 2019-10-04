@@ -41,6 +41,10 @@ function fw_single_title(){
     echo '<h1 class="product_title entry-title">'.$product->post->post_title.'</h1>';
     if('yes' === get_option( 'woocommerce_enable_reviews'))echo '<div class="rating" >'.fw_getfastars($product->get_average_rating()).'<a href="#reviews">'.__('Reviews','woocommerce').' </a></div>';
 }
+add_shortcode('jaja', 'jaja');
+function jaja(){
+    return 200;
+}
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
