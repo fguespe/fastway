@@ -63,7 +63,7 @@ function fw_short_desc(){
 add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
-    echo woocommerce_get_product_thumbnail();
+    echo '<div class="loopimg_container">'.woocommerce_get_product_thumbnail().'</div>';
 }
 
 add_shortcode('fw_loop_price', 'fw_loop_price');
