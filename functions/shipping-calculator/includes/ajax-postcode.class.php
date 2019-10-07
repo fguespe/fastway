@@ -23,8 +23,9 @@ class Correios_Shipping_Ajax_Postcode {
 		} else {
 
 			foreach ($shipping_response as $key => $shipping) {
+				
 				error_log(print_r($shipping,true));
-				echo'<p>'.$shipping->label.' ('.wc_price( $shipping->cost ).')';
+				echo'<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')';
 			}
 
 			if( get_option('wscip_obs','*Este resultado é apenas uma estimativa para este produto. O valor final considerado, deverá ser o total do carrinho.') ):
@@ -52,7 +53,7 @@ class Correios_Shipping_Ajax_Postcode {
 	    	return 'No fue posible calcular el envio, no tiene stock.';
 
 	    if( !WC_Validation::is_postcode( $request['postcode'], WC()->customer->get_shipping_country() ) )
-	    	return 'Por favor, insira um CP válido.';
+	    	return 'Por favor, ingresr un CP válido.';
 
 	    $products = [$product];
 
