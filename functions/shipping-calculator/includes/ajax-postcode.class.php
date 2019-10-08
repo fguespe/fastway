@@ -21,18 +21,22 @@ class Correios_Shipping_Ajax_Postcode {
 			echo "<small>".( $shipping_response ? $shipping_response : 'No hay metodos de envio disponibles.' )."</small>";
 			
 		} else {
-
+			$opts=get_option('woocommerce_mercadoenvios-shipping_settings');
+			$freeship=$opts['free_shipping_amount'];
+			
+			$product = wc_get_product( sanitize_text_field( $_POST['product'] ) );
+			//error_log(print_r($product));
+			
 			foreach ($shipping_response as $key => $shipping) {
 				
-				error_log(print_r($shipping,true));
-				echo'<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')';
+				//error_log(print_r($shipping,true));
+				
+				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
+				if($shipping->method_id=='mercadoenvios-shipping' && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
+
+				echo $impri;
 			}
 
-			if( get_option('wscip_obs','*Este resultado é apenas uma estimativa para este produto. O valor final considerado, deverá ser o total do carrinho.') ):
-				echo "<tr><td colspan='2'>";
-						echo get_option('wscip_obs');
-				echo "</td></tr>";
-			endif;
 
 			echo
 				'</tbody>
