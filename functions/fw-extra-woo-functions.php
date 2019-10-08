@@ -313,7 +313,7 @@ function fw_default_filters(){
 
 add_shortcode('fw_loop_labels', 'fw_loop_labels');
 function fw_loop_labels($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '','id'=>'' ), $atts );
+    $atts = shortcode_atts(array('type' => '','id'=>'','price'=>0 ), $atts );
     global $product;
     
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
