@@ -538,7 +538,7 @@ function fw_custom_css(){
     if(fw_theme_mod('responsive-typo')){
         $tipos=array("p","span","a","h4","h3","h2","h1");
         foreach ($tipos as $key) {    
-            if($key == "a" || $key == "div" || $key == "p" || $key == "span" )$nombre='opt-typography-body';
+            if($key == "a" || $key == "div" || $key == "p" || $key == "span" || $key == "li" )$nombre='opt-typography-body';
             else $nombre='opt-typography-'.$key;
             if(empty(fw_theme_mod($nombre)))continue;
             $font=fw_theme_mod($nombre);
