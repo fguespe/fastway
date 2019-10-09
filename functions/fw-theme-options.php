@@ -1764,6 +1764,9 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => 'body span',
 		),
+		array(
+			'element' => 'body li',
+		),
 		
 	),
 	'choices'  => array(
