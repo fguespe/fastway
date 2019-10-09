@@ -330,7 +330,7 @@ function fw_conditional($atts = [], $content = null){
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
        return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
-      echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> Gratis</div>';
+      return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }
 }
 function woo_loop_brand(){
