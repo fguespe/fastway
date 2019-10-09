@@ -343,6 +343,7 @@
 }
 .fw_single_product #wscp-response {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .fw_single_product #wscp-response p,
 .fw_single_product #wscp-response span {
@@ -363,6 +364,7 @@
 
 .envio-gratis-tag {
   position: absolute;
+  z-index: 5000 !important;
   height: 25px;
   width: auto;
   overflow: hidden;

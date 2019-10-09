@@ -375,6 +375,7 @@ color:var(--linkedin) !important;
 } 
 .envio-gratis-tag {
   position: absolute;
+  z-index:5000 !important;
   height: 25px;
   width: auto;
   overflow: hidden;
