@@ -325,7 +325,7 @@ function fw_loop_labels($atts = [], $content = null){
 
 add_shortcode('fw_conditional', 'fw_conditional');
 function fw_conditional($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '','id'=>'' ), $atts );
+  $atts = shortcode_atts(array('type' => '','id'=>'','price'=>0 ), $atts );
     global $product;
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
        return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
