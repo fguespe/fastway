@@ -212,7 +212,7 @@ function fw_getmeroles_and_names(){
 add_action('init','fw_create_menus');
 
 function fw_create_menus(){
-    if(empty(fw_theme_mod('ca_roles')))return;
+    if(fw_theme_mod('ca_roles')=='')return false;
     $roles=fw_theme_mod('ca_roles');if(gettype($roles)=='string')$roles=explode(',',$roles);
     $menues=array();
     foreach (fw_getmeroles_and_names() as $rol => $name) {
