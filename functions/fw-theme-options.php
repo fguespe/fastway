@@ -1983,7 +1983,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
-	'label'    => __( 'Company Facebook Url', 'fastway' ),
+	'label'    => __( 'Company Facebook', 'fastway' ),
     'description'     => __( '[fw_extras_short type="fb"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
@@ -1991,7 +1991,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
-	'label'    => __( 'Company Instagram Url', 'fastway' ),
+	'label'    => __( 'Company Instagram', 'fastway' ),
     'description'     => __( '[fw_extras_short type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
@@ -1999,7 +1999,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companylinkedin',
-	'label'    => __( 'Company Linkedin Url', 'fastway' ),
+	'label'    => __( 'Company Linkedin', 'fastway' ),
     'description'     => __( '[fw_extras_short type="linkedin"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
@@ -2007,7 +2007,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
-	'label'    => __( 'Company Youtube Url', 'fastway' ),
+	'label'    => __( 'Company Youtube', 'fastway' ),
    	'description'     => __( '[fw_extras_short type="youtube"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
