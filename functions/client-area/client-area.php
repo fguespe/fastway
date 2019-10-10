@@ -166,9 +166,9 @@ if(!fw_theme_mod('ca-switch'))return;
 include( plugin_dir_path( __FILE__ ) . 'metabox.php');
 
 function activarCA(){
-    if(empty(fw_theme_mod('ca_roles')))return;
-
-    $roles=fw_theme_mod('ca_roles');if(gettype($roles)=='string')$roles=explode(',',$roles);
+    if(fw_theme_mod('ca_roles')=='')return false;
+    $roles=fw_theme_mod('ca_roles');
+    if(gettype($roles)=='string')$roles=explode(',',$roles);
     if(!empty($roles)){
         if(in_array(fw_get_current_user_role() , $roles) && !current_user_can('administrator')){
             return true;
@@ -178,6 +178,7 @@ function activarCA(){
     if(in_array(wp_get_current_user()->user_login,$users)){
         return true;
     }
+    
     return false;
 }
 function fw_get_current_user_role() {
