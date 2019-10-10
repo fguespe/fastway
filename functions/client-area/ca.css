@@ -325,7 +325,7 @@ border-radius:0px;
 }
 
 /*ENVIRA*/
-.envira-header-temp,.envira-header,.error{
+.envira-header-temp,.envira-header,.error,#envira-gallery-code{
 	display:none !important;
 }
 .authordiv,.wc-memberships-post-memberships-data{
