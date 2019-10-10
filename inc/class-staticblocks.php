@@ -1,27 +1,5 @@
 <?php
-add_action( 'init', 'create_post_type');
-function create_post_type() {
-    $labels = array(
-    'name'               => _x( 'Games', 'general name of the post type' ),
-    'singular_name'      => _x( 'Game', 'name for one object of this post type' ),
-    'add_new'            => _x( 'Add New', 'game' ),
-    'add_new_item'       => __( 'Add New Game' ),
-    'edit_item'          => __( 'Edit Game' ),
-    'new_item'           => __( 'New Game' ),
-    'all_items'          => __( 'All Games' ),
-    'view_item'          => __( 'View Game' ),
-    'search_items'       => __( 'Search Game' ),
-   );
-   $args = array(
-     'labels' =>  $labels, // An array that defines the different labels assigned to the custom post type
-     'public' =>  true, // To show the custom post type on the WordPress dashboard
-     'supports' =>  array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ), // Adds support for comments, revesions, etc
-     'has_archive' =>  true, //Enables the custom post type archive at http://mysite.com/post-type/
-     'hierarchical' =>  true, //Enables the custom post type to have a hierarchy
-     'rewrite' => array( 'slug' =>  _x('game', 'URL slug')), //To be able to translate the custom post slug using WPML
-);
-register_post_type( 'game', $args );
-}
+
 if( !class_exists( 'fw_StaticBlock' ) ) {
 
 	class fw_StaticBlock{
