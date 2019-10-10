@@ -490,8 +490,9 @@ function vc_fw_shorts() {
                   "type" => 'textfield',
                   "heading"     => __("Type"),
                   "param_name"  => "type",
-                  'description' => 'fb,twitter,youtube,whatsapp,ig,email,phone,address <br>
-                  or fa-icon ,fal fa-icon',
+                  'description' => 'Variables: fbX,twitterX,youtubeX,whatsappX,igX,emailX,phoneX,addressX <br> 
+                  FA Class: or fa-icon ,fal fa-icon<br>
+                  ',
                   "admin_label" => true,
                 ),
                 array(
