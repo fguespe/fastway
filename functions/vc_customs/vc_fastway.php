@@ -446,14 +446,14 @@ function fw_image_function( $atts, $content ) {
 }   
 
 
-add_action( 'vc_before_init', 'vc_statick_block' );//Prds de categoria
-function vc_statick_block() {
+add_action( 'vc_before_init', 'vc_static_block' );//Prds de categoria
+function vc_static_block() {
 
     $static_block_args = fastway_get_stblock();
     vc_map( array(
             "name" => __("Static Block", 'fastway'),
             'base' => 'fw_shortcode_stblock',
-            'description' => __('FW Statick Block', 'fastway'), 
+            'description' => __('FW Static Block', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
