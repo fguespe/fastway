@@ -566,14 +566,6 @@ function vc_fw_shorts() {
                     "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
-                    "type" => "text",
-                    "class" => "",
-                    "heading" => __( "Text color", "fastway" ),
-                    "param_name" => "text_color",
-                    "value" => '', //Default Red color
-                    "description" => __( "Choose text color", "fastway" )
-                ),
-                array(
                     "type" => 'textfield',
                     "heading"     => __("iframe"),
                     "param_name"  => "iframe",
