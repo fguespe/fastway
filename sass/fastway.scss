@@ -2236,7 +2236,15 @@ body .wpb_content_element {
   }
 /*Mi cuenta*/
 .woocommerce-account {
-
+  .botonesaccount a{
+    border: 2px solid var(--main) !important;
+    margin-right:30px;
+    padding:10px;
+    font-weight:500;
+    font-size:20px;
+    color:var(--main) !important;
+  }
+    
   .woocommerce-MyAccount-navigation {
     float: left;
     width: 30%;

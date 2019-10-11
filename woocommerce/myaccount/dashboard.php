@@ -20,19 +20,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-// define the woocommerce_account_dashboard callback 
-function action_woocommerce_account_dashboard(  ) { 
-   echo 'pepe';
-}; 
-         
-// add the action 
-add_action( 'woocommerce_account_dashboard', 'action_woocommerce_account_dashboard', 10, 0 ); 
+
 ?>
 
 <h1>BIENVENIDO A <?php echo get_bloginfo('name');?></h1>
-<p><?php echo fw_theme_mod('fw_welcome_msg')?></p>
+<h4><?php echo fw_theme_mod('fw_welcome_msg')?></h4>
 
-<div class="d-flex align-items-center">
+<div class="botonesaccount d-flex align-items-center">
 <a href="">VER PRODUCTOS</a> <a href="">CERRAR SESIÓN</a> 
 </div>
 

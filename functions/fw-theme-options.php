@@ -1314,6 +1314,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
+	'settings'    => 'fw_welcome_msg',
+	'label'       => __( 'Welcome message', 'fastway' ),
+	'description'=>'Display a messsage on the my account page',
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
 	'settings'    => 'checkout-msg',
 	'label'       => __( 'Checkout message', 'fastway' ),
 	'description'=>'Display a messsage/notice before checkout',
