@@ -118,6 +118,10 @@
   /***** Pasador imagen detalle *****/
   /*si esta sin galeria*/
   /*PRECIO*/
+  /*
+  .summary  .single_variation_wrap .price {
+    display: none;
+  }/=*/
   /*btn medios*/
   /*boton compra*/
   /*titulo*/
@@ -297,9 +301,6 @@
   line-height: 13px;
   padding: 5px 0 0 5px;
   text-align: center;
-}
-.fw_single_product .summary .single_variation_wrap .price {
-  display: none;
 }
 .fw_single_product .summary .single_add_to_cart_button {
   background: var(--main);
