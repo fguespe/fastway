@@ -563,6 +563,14 @@ function vc_fw_shorts() {
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
                     "value" => '', //Default Red color
+                    "description" => __( "Choose icon color", "fastway" )
+                ),
+                array(
+                    "type" => "textfield",
+                    "class" => "",
+                    "heading" => __( "Text color", "fastway" ),
+                    "param_name" => "text_color",
+                    "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
                 ),
                 array(
