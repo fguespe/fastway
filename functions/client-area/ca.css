@@ -356,6 +356,9 @@ display:none !important;
 	display: none !important;
 
 }
+.usuarios .tablenav.top{
+	display:none !important;
+}
 #adduser{
 	display:none;
 }

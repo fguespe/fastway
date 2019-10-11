@@ -26,9 +26,6 @@ function fw_taxonomy_relation( $result, $product_id ) {
 add_filter( 'woocommerce_product_related_posts_relate_by_category', 'fw_taxonomy_relation', 10, 2 );
 add_filter( 'woocommerce_product_related_posts_relate_by_tag', 'fw_taxonomy_relation', 10, 2 );
 
-/**
- * Add related products selector to product edit screen
- */
 function fw_select_related_products() {
 	global $post, $woocommerce;
 	$product_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, '_related_ids', true ) ) );
