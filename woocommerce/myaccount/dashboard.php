@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<h1>BIENVENIDO A <?php echo get_bloginfo('name');?></h1>
+<h1 style="text-transform:uppercase;">BIENVENIDO A <?php echo get_bloginfo('name');?></h1>
 <h4><?php echo fw_theme_mod('fw_welcome_msg')?></h4>
 
 <div class="botonesaccount d-flex align-items-center">
