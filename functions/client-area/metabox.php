@@ -32,7 +32,9 @@ function custom_menu_meta_box(){
             array(__('Media','fastway'),'image','upload.php'),
             array(__('Paginas','fastway'),'file-text','edit.php?post_type=page'),
             array(__('Comentarios','fastway'),'comments','edit-comments.php'),
-        );
+            
+		);
+	if(fw_theme_mod('fw_id_filesync'))array_push($items, array(__('Importación','fastway'),'upload','upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync')));
 	$authors=array();
 	foreach ($items as $item) {
 		$author=(object)[];

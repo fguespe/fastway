@@ -27,12 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4><?php echo fw_theme_mod('fw_welcome_msg')?></h4>
 
 <div class="botonesaccount d-flex align-items-center">
-<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">VER PRODUCTOS</a> <a href="<?php echo wp_logout_url( home_url())?>">CERRAR SESIÓN</a> 
+<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">VER PRODUCTOS</a> 
+<a href="<?php echo wp_logout_url( home_url())?>">CERRAR SESIÓN</a> 
 </div>
 
 <?php
-	do_action( 'woocommerce_account_dashboard' );
+do_action( 'woocommerce_account_dashboard' );
 
-	do_action( 'woocommerce_before_my_account' );
+do_action( 'woocommerce_before_my_account' );
 
-	do_action( 'woocommerce_after_my_account' );
+do_action( 'woocommerce_after_my_account' );
