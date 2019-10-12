@@ -166,7 +166,7 @@ display:none !important;
 	 display: none !important
 }
 /*EXPORTAR IMPORTAR*/
- .wrap .page-title-action:nth-child(4), .wrap .page-title-action:nth-child(3){
+ /*.wrap .page-title-action:nth-child(4),*/ .wrap .page-title-action:nth-child(3){
 display:none;
 }
 #wp-admin-bar-updates,#wp-admin-bar-woffice_settings,#wp-admin-bar-tribe-events,#wp-admin-bar-bp-notifications,#wp-admin-bar-updraft_admin_node{
