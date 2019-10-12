@@ -142,9 +142,9 @@ display:none !important;
 
 
 
-.wp-core-ui .button-primary{
+.wp-core-ui .button-primary,.wc-actions .button {
 	color:white !important;
-	background: var(--ca-main-color);
+	background: var(--ca-main-color) !important;
 	border:0px !important;
 	border-radius:0px;
 	text-shadow:none !important;
