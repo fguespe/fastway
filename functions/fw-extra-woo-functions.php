@@ -21,11 +21,12 @@ function fw_loop_cat(){
 }
 
 add_shortcode('fw_cuotas', 'fw_cuotas');
-function fw_cuotas($atts){
+function fw_cuotas($atts = []){
+  $atts = shortcode_atts(array('class' => '' ,'cant' => 0 ), $atts );
   global $product;
 	$cuotas=$atts['cant'];
 	$precio=round($product->get_price()/$cuotas);
-	echo '<span class="cuota_text"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
+	echo '<span class="cuota_text '.$atts['cant'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
 function fw_getcat( $product_id ){//Esto es para los mails
 
