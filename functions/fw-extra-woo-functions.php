@@ -29,9 +29,7 @@ function fw_cuotas($atts = []){
 	echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
 function fw_getcat( $product_id ){//Esto es para los mails
-
     $tax = 'product_cat';
-
     $terms = wp_get_post_terms( $product_id, $tax);
     if( $terms && ! is_wp_error( $terms )) {
         foreach ($terms as $categoria) {

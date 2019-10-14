@@ -22,8 +22,6 @@ class Correios_Shipping_Ajax_Postcode {
 			
 		} else {
 			$opts=get_option('woocommerce_mercadoenvios-shipping_settings');
-			$freeship=$opts['free_shipping_amount'];
-			
 			$product = wc_get_product( sanitize_text_field( $_POST['product'] ) );
 			//error_log(print_r($product));
 			
@@ -32,7 +30,7 @@ class Correios_Shipping_Ajax_Postcode {
 				//error_log(print_r($shipping,true));
 				
 				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
-				if($shipping->method_id=='mercadoenvios-shipping' && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
+				if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 
 				echo $impri;
 			}
