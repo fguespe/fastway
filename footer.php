@@ -32,10 +32,8 @@ if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 #todopago-tab{
   display:none !important;
 }
-
 </style>
-
-<?php } ?>
+<?php } 
 if(fw_theme_mod("popup-mode") && is_front_page()){
 ?>
 
