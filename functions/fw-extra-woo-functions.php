@@ -196,9 +196,9 @@ function fw_role_body_classes( $classes ) {
     if(is_string($roles))$roles=explode(",",$roles);
     
     foreach ($roles as $nombre) {
-      error_log($nombre);
       if ( current_user_can( strtolower($nombre) )) {
-        $myClass = strtolower($nombre); //or your name
+        error_log($nombre);
+        $classes[]= strtolower($nombre); //or your name
       }
     }
      
@@ -323,6 +323,8 @@ function fw_conditional($atts = [], $content = null){
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
        return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
+      return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    }else if($atts['type']=='role' && check_user_role($atts['id'])){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }
 }
