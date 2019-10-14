@@ -26,7 +26,7 @@ function fw_cuotas($atts = []){
   global $product;
 	$cuotas=$atts['cant'];
 	$precio=round($product->get_price()/$cuotas);
-	echo '<span class="cuota_text '.$atts['cant'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
+	echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
 function fw_getcat( $product_id ){//Esto es para los mails
 
