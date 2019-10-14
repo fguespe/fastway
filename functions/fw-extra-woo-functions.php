@@ -196,8 +196,7 @@ function fw_role_body_classes( $classes ) {
     if(is_string($roles))$roles=explode(",",$roles);
     
     foreach ($roles as $nombre) {
-      if ( current_user_can( strtolower($nombre) )) {
-        error_log($nombre);
+      if ( check_user_role( strtolower($nombre) )) {
         $classes[]= strtolower($nombre); //or your name
       }
     }

@@ -12,7 +12,6 @@ require get_template_directory() . '/functions/fw-emails.php';
 
 function check_user_role($role){
     $user = wp_get_current_user();
-    error_log($user);
 	if ( in_array( $role, (array) $user->roles ) ) {
 		return true;
 	}
