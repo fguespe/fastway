@@ -27,8 +27,6 @@ class Correios_Shipping_Ajax_Postcode {
 			
 			foreach ($shipping_response as $key => $shipping) {
 				
-				//error_log(print_r($shipping,true));
-				
 				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
 				if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 
