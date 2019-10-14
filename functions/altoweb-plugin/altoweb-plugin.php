@@ -321,7 +321,10 @@ global $product;
   $precio=$product->price;
   $cuotas6=floor($precio/6);
   $cuotas3=floor($precio/3);
+  $cuotas12=floor($precio/12);
+  $cuotas18=floor($precio/18);
   $infopopup_cash=do_shortcode('[datos_efectivo_popup]');
+
   ob_start();
   do_shortcode('[datos_bancarios_popup]');
   $infopopup_banc=ob_get_contents();
@@ -453,23 +456,15 @@ global $product;
                </div>
                <div class="tab-pane fade" id="todopago" role="tabpanel" aria-labelledby="todopago-tab">
                   <div class="full-width pull-left">
-                     <div class="box-title">Tarjetas de crédito</div>
+                     <div class="box-title">Hacé tus compras en 3, 6, 12 o 18 cuotas con tarjeta de crédito, todos los días de la semana.</div>
                      <div class="box-container">
                         <div class="pull-left full-width border-box">
                            <div class="installments-container">
-                              <h4 class="">
-                                 3 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $precio</b>
-                              </h4>
-                              <div class="legal-info p-bottom-half">
-                                 <span class="m-right-quarter"><span>CFT: </span><b>0,00%</b></span>
-                                 <span class="m-right-quarter"><span>Total: </span><b>$ {$precio}</b></span>
-                                 <span class="m-right-quarter"><span>En 1 pago: </span><b>$ {$precio}</b></span>
-                              </div>
-                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" class="card-img card-img-medium">
-                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" class="card-img card-img-medium">
-                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" class="card-img card-img-medium">
-                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" class="card-img card-img-medium">
-                            <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png" class="card-img card-img-medium">
+                              <h4 class="">3 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas3</b></h4>
+                              <h4 class="">6 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas6</b></h4>
+                              <h4 class="">12 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas12</b></h4>
+                              <h4 class="">18 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas18</b></h4>
+                              <img src="https://todopago.com.ar/sites/todopago.com.ar/files/boton_192x55_ahora3y6.png" alt="" />
                            </div>
                         </div>
                      </div>

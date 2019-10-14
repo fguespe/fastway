@@ -29,9 +29,10 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
 if(fw_theme_mod('whats-button')!='none')fw_whatsappfooter();
 if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 <style>
+/*
 #todopago-tab{
   display:none !important;
-}
+}*/
 </style>
 <?php } 
 if(fw_theme_mod("popup-mode") && is_front_page()){
