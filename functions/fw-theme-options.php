@@ -1390,6 +1390,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => ''
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-roles',
+	'label'       => __( 'CSS For Roles ', 'fastway' ),
+	'section'     => 'section_woo_roles',
+	'description' => 'Classes: .role',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
@@ -1842,7 +1855,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_conditional][fw_loop_price][fw_loop_cart][/fw_loop_container]',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container]',
 	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]',
 	'choices'     => array(
 		'language' => 'html',

@@ -50,6 +50,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <style type="text/css" id="css_loop_cat"><?php echo fw_theme_mod('css_loop_cat')?></style>
     <style type="text/css" id="css_editor-single"><?php echo fw_theme_mod('css_editor-single')?></style>
     <style type="text/css" id="css_editor-mobile"><?php echo fw_theme_mod('css_editor-mobile')?></style>
+    <style type="text/css" id="css_editor-roles"><?php echo fw_theme_mod('css_editor-roles')?></style>
     <style type="text/css" id="css_loop_brand"><?php echo fw_theme_mod('css_loop_brand')?></style>
     <style type="text/css" id="css_editor-footer"><?php echo fw_theme_mod('css_editor-footer')?></style>
     <style ><?php echo fw_custom_css(); ?></style>
