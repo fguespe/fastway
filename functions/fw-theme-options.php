@@ -2434,22 +2434,15 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
       }
       return false;
 	}
-	/*esto fue paral a migracion
 	if(!fw_theme_mod('fw_forceupdate_1')){
 		//Force update 
-		set_theme_mod('fw_max_media_upload',get_option('nubicommerce_modulo_500kb'));
-		set_theme_mod('fw_mail_desde_nombre',get_option('nubicommerce_desde_nombre'));
-		set_theme_mod('fw_mail_desde_mails',get_option('nubicommerce_destinos_mail' ));
-		set_theme_mod('fw_cuit_required',get_option('cuit'));
-		set_theme_mod('fw_id_ml',get_option('ml_id'));
-		set_theme_mod('fw_id_filesync',get_option('excelfile_id'));
-		set_theme_mod('fw_id_wpallimport',get_option('wpallimport_id'));
-		//set_theme_mod('fw_action_woosettings',get_option('altoweb_defaultoptions'));
-		//set_theme_mod('fw_action_resetmails',get_option('fw_altoweb_mailconfig'));
-		//set_theme_mod('fw_action_clientimages',get_option('fw_altoweb_defaultoptions'));
+    update_option('woocommerce_allowed_countries','all');
+    update_option('woocommerce_ship_to_countries','all');
+    update_option('woocommerce_default_customer_address','geolocation');
+		
 		set_theme_mod('fw_forceupdate_1',true);
 		error_log('se actualizo todo');
-	}*/
+	}
 }
 
 add_shortcode('fwcf', 'fwcf');
