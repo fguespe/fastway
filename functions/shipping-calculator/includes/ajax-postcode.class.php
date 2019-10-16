@@ -26,7 +26,8 @@ class Correios_Shipping_Ajax_Postcode {
 			//error_log(print_r($product));
 			
 			foreach ($shipping_response as $key => $shipping) {
-				
+				//Saca los que no son mercadoenvios
+				if(!is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && $shipping->method_id!='mercadoenvios-shipping' )continue;
 				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
 				if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 

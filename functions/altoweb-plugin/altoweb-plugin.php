@@ -89,6 +89,10 @@ if(fw_theme_mod('fw_action_woosettings')){
     update_option('woocommerce_enable_shipping_calc','yes');
     update_option('woocommerce_enable_reviews','no');
     update_option('woocommerce_shipping_cost_requires_address','no');
+    //Envuios
+    update_option('woocommerce_allowed_countries','all');
+    update_option('woocommerce_ship_to_countries','all');
+    update_option('woocommerce_default_customer_address','geolocation');
 
     //Para que no se cancelen los envios
     update_option('woocommerce_hold_stock_minutes','');

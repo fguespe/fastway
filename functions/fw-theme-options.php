@@ -2434,7 +2434,7 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
       }
       return false;
 	}
-	/*esto fue paral a migracion*/
+	/*esto fue paral a migracion
 	if(!fw_theme_mod('fw_forceupdate_1')){
 		//Force update 
 		set_theme_mod('fw_max_media_upload',get_option('nubicommerce_modulo_500kb'));
@@ -2449,7 +2449,7 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
 		//set_theme_mod('fw_action_clientimages',get_option('fw_altoweb_defaultoptions'));
 		set_theme_mod('fw_forceupdate_1',true);
 		error_log('se actualizo todo');
-	}
+	}*/
 }
 
 add_shortcode('fwcf', 'fwcf');
