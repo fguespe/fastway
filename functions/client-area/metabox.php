@@ -35,6 +35,22 @@ function custom_menu_meta_box(){
             
 		);
 	if(fw_theme_mod('fw_id_filesync'))array_push($items, array(__('Importación','fastway'),'upload','upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync')));
+
+    $args = array(
+        'post_type'         => 'fw_stblock',
+        'post_status'       => 'publish',
+        'posts_per_page'    => -1,
+        'orderby'           => 'title',
+        'order'             => 'ASC',
+	);
+	
+    $blocks = get_posts( $args );
+    foreach($blocks as $block) {
+		count($block->post_name);
+		array_push($items, array(__('Block-'.$block->post_name,'fastway'),'edit','post.php?post='.$block->ID.'&action=edit'));
+	}
+	if(!empty($blocks))array_push($items, array(__('Bloques','fastway'),'edit','edit.php?post_type=fw_stblock'));
+
 	$authors=array();
 	foreach ($items as $item) {
 		$author=(object)[];

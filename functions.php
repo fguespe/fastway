@@ -41,7 +41,7 @@ function fastway_get_stblock( $cats = array('all') ){
 
     foreach($blocks as $block) {
         $slug = $block->post_name;
-
+        $res_args['id'] = $block->ID;
         $res_args[$slug] = get_the_title($block->ID);
     }
     return $res_args;
