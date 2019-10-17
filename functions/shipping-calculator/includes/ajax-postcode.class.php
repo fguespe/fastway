@@ -24,17 +24,19 @@ class Correios_Shipping_Ajax_Postcode {
 			$opts=get_option('woocommerce_mercadoenvios-shipping_settings');
 			$product = wc_get_product( sanitize_text_field( $_POST['product'] ) );
 			//error_log(print_r($product));
-			
+			$cant=0;
 			foreach ($shipping_response as $key => $shipping) {
 				//Saca los que no son mercadoenvios
-				if(!is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && $shipping->method_id!='mercadoenvios-shipping' )continue;
+				if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && fw_theme_mod("fw_only_mercadoenvios") && $shipping->method_id!='mercadoenvios-shipping' )continue;
+				
+				$cant++;
 				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
 				if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 
 				echo $impri;
 			}
-
-
+			if( $cant==0 )echo "<small>No hay metodos de envio disponibles</small>";
+				
 			echo
 				'</tbody>
 			</table>';
