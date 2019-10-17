@@ -1618,7 +1618,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '16px',
 		'line-height'    => '20px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1652,7 +1652,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '40px',
 		'line-height'    => '44px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1685,7 +1685,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '32px',
 		'line-height'    => '36px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1718,7 +1718,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '25px',
 		'line-height'    => '30px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1751,7 +1751,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '24px',
 		'line-height'    => '28px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -1784,7 +1784,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'variant'        => 'regular',
 		'font-size'      => '16px',
 		'line-height'    => '20px',
-		'color'     => 'black',
+		'color'     => '#000',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
