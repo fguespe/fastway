@@ -2440,8 +2440,8 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
     update_option('woocommerce_ship_to_countries','all');
     update_option('woocommerce_default_customer_address','geolocation');
 		
-		set_theme_mod('fw_forceupdate_1',true);
-		error_log('se actualizo todo');
+	set_theme_mod('fw_forceupdate_1',true);
+	error_log('se actualizo todo');
 	}
 }
 

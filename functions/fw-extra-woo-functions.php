@@ -24,8 +24,9 @@ add_shortcode('fw_cuotas', 'fw_cuotas');
 function fw_cuotas($atts = []){
   $atts = shortcode_atts(array('class' => '' ,'cant' => 0 ), $atts );
   global $product;
-	$cuotas=$atts['cant'];
-	$precio=round($product->get_price()/$cuotas);
+  $cuotas=floatval($atts['cant']);
+  $precio=floatval($product->get_price());
+	$precio=round($precio/$cuotas);
 	echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
 function fw_getcat( $product_id ){//Esto es para los mails
@@ -720,7 +721,7 @@ add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 
 function fw_price_html1($price,$product){
     if(fw_check_hide_prices()) return;
-
+    if(empty($product->get_price()))return '<span class="fw_price price1"><span class="precio">Consultar</span></span>';
     $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
@@ -780,7 +781,9 @@ function fw_price_html1($price,$product){
         </span>
         </span>';
     }else{
-        return '<span class="fw_price price1"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+      
+        $preciolabel=$symbol.$regular_price;
+        return '<span class="fw_price price1"><span class="precio">'.$preciolabel.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
     }      
 }
 
