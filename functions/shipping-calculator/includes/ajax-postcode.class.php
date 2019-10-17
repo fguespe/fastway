@@ -16,6 +16,10 @@ class Correios_Shipping_Ajax_Postcode {
 
 		$shipping_response = $this->get_product_shipping_estimate( $data );
 
+		$freeship=10000000;
+		if(!$opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];
+
+		
 		if( !is_array($shipping_response) ){
 
 			echo "<small>".( $shipping_response ? $shipping_response : 'No hay metodos de envio disponibles.' )."</small>";
