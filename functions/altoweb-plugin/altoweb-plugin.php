@@ -465,9 +465,9 @@ global $product;
                         <div class="pull-left full-width border-box">
                            <div class="installments-container">
                               <h4 class="">3 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas3</b></h4>
-                              <h4 class="">6 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas6</b></h4>
+                             <!-- <h4 class="">6 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas6</b></h4>
                               <h4 class="">12 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas12</b></h4>
-                              <h4 class="">18 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas18</b></h4>
+                              <h4 class="">18 cuotas <span class="text-uppercase">sin interés</span> de <b>$ $cuotas18</b></h4>-->
                               <img src="https://todopago.com.ar/sites/todopago.com.ar/files/boton_192x55_ahora3y6.png" alt="" />
                            </div>
                         </div>
