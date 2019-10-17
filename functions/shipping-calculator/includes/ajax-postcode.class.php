@@ -28,7 +28,7 @@ class Correios_Shipping_Ajax_Postcode {
 			//error_log(print_r($product));
 
 			$freeship=10000000;
-			if($opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];
+			if(!$opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];
 			
 			$cant=0;
 			foreach ($shipping_response as $key => $shipping) {
