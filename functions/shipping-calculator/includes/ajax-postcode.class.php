@@ -16,10 +16,8 @@ class Correios_Shipping_Ajax_Postcode {
 
 		$shipping_response = $this->get_product_shipping_estimate( $data );
 
-		$freeship=10000000;
-		if(!$opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];
 
-		
+
 		if( !is_array($shipping_response) ){
 
 			echo "<small>".( $shipping_response ? $shipping_response : 'No hay metodos de envio disponibles.' )."</small>";
@@ -28,6 +26,10 @@ class Correios_Shipping_Ajax_Postcode {
 			$opts=get_option('woocommerce_mercadoenvios-shipping_settings');
 			$product = wc_get_product( sanitize_text_field( $_POST['product'] ) );
 			//error_log(print_r($product));
+
+			$freeship=10000000;
+			if($opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];
+			
 			$cant=0;
 			foreach ($shipping_response as $key => $shipping) {
 				//Saca los que no son mercadoenvios
