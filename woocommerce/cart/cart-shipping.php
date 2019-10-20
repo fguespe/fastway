@@ -83,6 +83,12 @@ $calculator_text          = '';
 .woocommerce-checkout .woocommerce .fw_checkout table.shop_table tfoot td, .woocommerce-account .woocommerce .fw_checkout table.shop_table tfoot td{
 text-align:left;
 }
+@media (max-width: 799px) {
+
+	.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td{
+		text-align:left;
+	}
+}
 .woocommerce-shipping-totals{
 margin-bottom:20px ;
 margin-top:10px ;

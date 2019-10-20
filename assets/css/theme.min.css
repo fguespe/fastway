@@ -2732,13 +2732,13 @@ body .wpb_content_element {
 
   .woocommerce table.shop_table_responsive tr,
 .woocommerce-page table.shop_table_responsive tr {
-    display: block;
+    display: table;
   }
 
   .woocommerce table.shop_table_responsive tr td,
 .woocommerce-page table.shop_table_responsive tr td {
     display: block;
-    text-align: right !important;
+    text-align: left !important;
   }
 
   .woocommerce table.shop_table_responsive tr td.order-actions,
@@ -2748,7 +2748,6 @@ body .wpb_content_element {
 
   .woocommerce table.shop_table_responsive tr td::before,
 .woocommerce-page table.shop_table_responsive tr td::before {
-    content: attr(data-title) ": ";
     font-weight: 700;
     float: left;
   }
@@ -3059,13 +3058,6 @@ body .wpb_content_element {
   padding: 10px 25px 20px;
   border: 1px solid #ccc;
   border-radius: 3px;
-}
-@media (max-width: 799px) {
-
-  .woocommerce-checkout .fw_summary-box,
-.woocommerce-account .fw_summary-box {
-  padding: 5px ;
-}
 }
 .woocommerce-checkout .woocommerce-error,
 .woocommerce-account .woocommerce-error {
