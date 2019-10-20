@@ -1759,7 +1759,6 @@ function add_custom_fees( WC_Cart $cart ){
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
-    error_log(print_r($catespromo));
     if( $cart->cart_contents_count < $cuantos ) return;
 
     $items = $cart->get_cart();
@@ -1783,6 +1782,5 @@ function add_custom_fees( WC_Cart $cart ){
     if($menorprecio==100000000)return;
     //$discount = $cart->subtotal * 0.1;
     $discount=$menorprecio*-1/(100/$porcentage);
-    error_log("El menor precio es: ".$menorprecio." y el discount es: ".$discount);
-    $cart->add_fee( 'Promo: Comprando 3 llevas 2', $discount);
+    $cart->add_fee( 'Promo:', $discount);
 }
