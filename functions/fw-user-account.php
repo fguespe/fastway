@@ -21,7 +21,7 @@ if( !function_exists( 'fw_user_account' ) ) {
           $type=$atts['type'];
           $text=$atts['text'];
           $name=!empty($text)?$text:fw_account();
-          $name="<span class='ingresar_text d-none d-md-block'>".$name."</span>";
+          $name="<span class='ingresar_text d-sm-inline'>".$name."</span>";
           $iconstyle='fas';
           //0 only icon
           //1 only text
