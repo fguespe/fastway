@@ -74,9 +74,7 @@ display:block !important;
     <h3 id="" class="mt20" style="margin-top:30px;"><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
     
     <?php woocommerce_checkout_payment() ?>
-    <p class="description">
-        <!-- El mejor precio garantizado -->
-    </p>
+    <p class="description"><?=fw_theme_mod("fw_label_pre_checkout_message")?></p>
 </form>
 
 

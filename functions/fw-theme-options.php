@@ -2441,6 +2441,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels',
 	'default' 		=>	'Calcular costo de envio a domicilio',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_pre_checkout_message',
+	'label'    => __( 'Mensage antes del boton comprar', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'',
+) );
+
 
 if ( ! function_exists( 'fw_theme_mod' ) ) {
     function fw_theme_mod( $field_id, $default_value = '' ) {
