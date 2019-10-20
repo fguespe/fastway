@@ -36,7 +36,10 @@ class Correios_Shipping_Ajax_Postcode {
 				if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && fw_theme_mod("fw_only_mercadoenvios") && $shipping->method_id!='mercadoenvios-shipping' )continue;
 				
 				$cant++;
-				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.wc_price( $shipping->cost ).')</p>';
+				$precio=$shipping->cost;
+				if($precio==0)$precio="Sin cargo";
+				else $precio= wc_price( $shipping->cost );
+				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' ('.$precio.')</p>';
 				if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 
 				echo $impri;
