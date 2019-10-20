@@ -93,8 +93,8 @@ function fw_single_related($atts){
         
         $args = array(
             'post_type' => 'product',
-            'post__in'      => $myarray,
-            'tax_query'           => $tax_query,
+            'post__in'  => $myarray,
+            'tax_query' => $tax_query,
         );
         // The Query
         $products = new WP_Query( $args );
