@@ -2443,8 +2443,8 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_label_pre_checkout_message',
-	'label'    => __( 'Mensage antes del boton comprar', 'fastway' ),       
+	'settings'    => 'fw_label_debajo_checkout_message',
+	'label'    => __( 'Mensage debajo del boton comprar', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'',
 ) );
