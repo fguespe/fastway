@@ -354,27 +354,6 @@ function fw_menu_vertical( $atts ) {
 }
 
 
-function fw_vc_get_posts($typ) {
-    $args = array(
-    'taxonomy'   => $typ,
-    'number'     => $number,
-    'orderby'    => $orderby,
-    'order'      => $order,
-    'hide_empty' => $hide_empty,
-    'include'    => $ids
-    );
-    $product_categories = get_terms($args);
-    
-    $result = array();
-    foreach ( $product_categories as $post ) {
-
-        $jaja=array($post->name=>$post->slug);
-        $result=array_merge($result,$jaja);
-        
-    }
-    return $result;
-}
-
 function fw_getmsliders(){
     $res_args = array();
 
@@ -780,4 +759,5 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
     $defaults['delimiter'] = ' &gt; ';
     return $defaults;
 }
+
 

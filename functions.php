@@ -10,6 +10,29 @@ if(is_plugin_active('kirki/kirki.php')){
 }
 require get_template_directory() . '/functions/fw-emails.php';
 
+
+
+function fw_vc_get_posts($type) {
+    $args = array(
+    'taxonomy'   => $type,
+    'number'     => $number,
+    'orderby'    => $orderby,
+    'order'      => $order,
+    'hide_empty' => $hide_empty,
+    'include'    => $ids
+    );
+    $product_categories = get_terms($args);
+    
+    $result = array();
+    foreach ( $product_categories as $post ) {
+
+        $cat=array($post->name=>$post->slug);
+        $result=array_merge($result,$cat);
+        
+    }
+    return $result;
+}
+
 function check_user_role($role){
     $user = wp_get_current_user();
 	if ( in_array( $role, (array) $user->roles ) ) {

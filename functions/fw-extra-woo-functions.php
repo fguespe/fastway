@@ -828,24 +828,42 @@ function fw_child_manage_woocommerce_styles() {
     }
  
 }
+
+function get_categories_for_kirki() {
+  $args = array(
+  'taxonomy'   => 'product_cat',
+  'number'     => $number,
+  'orderby'    => $orderby,
+  'order'      => $order,
+  'hide_empty' => $hide_empty,
+  'include'    => $ids
+  );
+  $product_categories = get_terms($args);
+
+  $result = array();
+  foreach ( $product_categories as $post ) {
+      $result[$post->slug] = $post->name;
+      error_log("FGUESPE   ------".$post->slug);
+  }
+  return $result;
+}
+
 // Remove CSS and/or JS for Select2 used by WooCommerce, see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080.
 //add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
 
-  function wsis_dequeue_stylesandscripts_select2() {
-     // if(wp_is_mobile()){
-        if ( class_exists( 'woocommerce' ) ) {
-          wp_dequeue_style( 'selectWoo' );
-          wp_deregister_style( 'selectWoo' );
-  
-          wp_dequeue_script( 'selectWoo');
-          wp_deregister_script('selectWoo');
-      //  } 
-      }    
-     
-  }
-/**
- * Change a currency symbol
- */
+function wsis_dequeue_stylesandscripts_select2() {
+    // if(wp_is_mobile()){
+      if ( class_exists( 'woocommerce' ) ) {
+        wp_dequeue_style( 'selectWoo' );
+        wp_deregister_style( 'selectWoo' );
+
+        wp_dequeue_script( 'selectWoo');
+        wp_deregister_script('selectWoo');
+    //  } 
+    }    
+    
+}
+
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
@@ -1732,4 +1750,39 @@ var ProductSwiper = new Swiper(".swiper-related", {
 });
 </script>';
 	}
+}
+
+// Hook before calculate fees
+if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'add_custom_fees');
+
+function add_custom_fees( WC_Cart $cart ){
+    $cuantos=fw_theme_mod('fw_lili_discount_cant');
+    $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
+    $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
+    error_log(print_r($catespromo));
+    if( $cart->cart_contents_count < $cuantos ) return;
+
+    $items = $cart->get_cart();
+    $menorprecio=100000000;
+    $aplicardescuento=true;
+    foreach($items as $item => $values) { 
+        $product_id=$values['data']->get_id() ;
+        $product =  wc_get_product( $product_id );
+        //cates
+        $esdelapromo=false;
+        $terms = get_the_terms ( $product_id, 'product_cat' );
+        //acase fija si esta en la promo
+        foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
+        
+        if(!$esdelapromo)continue;
+        //Aca si es de la cate
+        $precio=$product->get_price();
+        if($menorprecio>$precio)$menorprecio=$precio;
+       
+    }
+    if($menorprecio==100000000)return;
+    //$discount = $cart->subtotal * 0.1;
+    $discount=$menorprecio*-1/(100/$porcentage);
+    error_log("El menor precio es: ".$menorprecio." y el discount es: ".$discount);
+    $cart->add_fee( 'Promo: Comprando 3 llevas 2', $discount);
 }
