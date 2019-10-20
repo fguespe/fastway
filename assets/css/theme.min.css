@@ -2746,6 +2746,7 @@ body .wpb_content_element {
     text-align: left !important;
   }
 
+  /*Para la cart contents de arriba*/
   .woocommerce table.woocommerce-cart-form__contents tr td,
 .woocommerce-page table.woocommerce-cart-form__contents tr td {
     display: block;
