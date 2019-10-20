@@ -322,7 +322,7 @@ function bancos_arg($translation, $text, $domain) {
 add_shortcode('altoweb_financiacion','getFinanciacion');
 function getFinanciacion(){
 global $product;
-  $precio=$product->price;
+  $precio=floatval($product->price);
   $cuotas6=floor($precio/6);
   $cuotas3=floor($precio/3);
   $cuotas12=floor($precio/12);

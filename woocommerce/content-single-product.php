@@ -71,6 +71,7 @@ function fw_single_tabs(){
 }
 add_shortcode('fw_single_related','fw_single_related');
 function fw_single_related($atts){
+    global $post;
     $atts = shortcode_atts(array('cols' => 6 ), $atts );
     $cols=fw_theme_mod("related_columns");
 
@@ -81,16 +82,19 @@ function fw_single_related($atts){
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        $myarray = wc_get_related_products($product->id,12);
+        
+        $crelated = get_post_meta( $post->ID, '_related_ids', true );
+        if(!empty($crelated))$myarray =$crelated;
+        else $myarray = wc_get_related_products($product->id,12);
+        
 		$tax_query   = WC()->query->get_tax_query();
-		
+        error_log(print_r($related,true));
         $tax_query[] = array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug', // Or 'name' or 'term_id'
             'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
             'operator' => 'NOT IN', // Excluded
         );
-        
         $args = array(
             'post_type' => 'product',
             'post__in'  => $myarray,
