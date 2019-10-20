@@ -1,20 +1,4 @@
 <?php
-/**
- * Checkout Form
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version 3.3.0
- */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -55,24 +39,9 @@ display:block !important;
             <?php do_action( 'woocommerce_checkout_billing' ); ?>
             <?php do_action( 'woocommerce_checkout_shipping' ); ?>
          </div>
-         
       </div>
-
-      
-      
-      
-      <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-      <div id="order_review" class="woocommerce-checkout-review-order"></div>
-
-      <?php 
-      do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
    </div>
-
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-
-
+  <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
    <div class="col-lg-5  col-sm-12" >
     <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
     <div class="fw_summary-box" style="background:white;">
@@ -99,17 +68,12 @@ display:block !important;
         </form>
         <?php } ?>
       
-        <div id="order_review" class="woocommerce-checkout-review-order">
-          <table class="shop_table woocommerce-checkout-review-order-table">
-
-          </table>
-        </div>
+        <?php woocommerce_order_review() ?>
         <div class="fw_block-overlay"></div>
     </div>
     <h3 id="" class="mt20" style="margin-top:30px;"><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
-    <div id="payment" class="woocommerce-checkout-payment">
-        <?php do_action( 'woocommerce_checkout_order_review' ); ?>
-      </div>
+    
+    <?php woocommerce_checkout_payment() ?>
     <p class="description">
         <!-- El mejor precio garantizado -->
     </p>
