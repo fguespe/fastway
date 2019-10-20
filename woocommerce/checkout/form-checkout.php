@@ -46,8 +46,8 @@ display:block !important;
     <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
     <div class="fw_summary-box" style="background:white;">
 
-    <h3 id=""><?php echo __('Order details','woocommerce')?></h3>
-        <a href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a>
+    <h3 ><?php echo __('Order details','woocommerce')?><a class="returncart" href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a></h3> 
+        
         </form>
         <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
         <div class="fw_promo" >

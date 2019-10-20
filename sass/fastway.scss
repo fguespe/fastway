@@ -3256,12 +3256,17 @@ body .wpb_content_element {
     position: relative;
     transition: color .2s ease-in-out;
     color: #666;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
+  }
+  .fw_promo > input  {
+    padding:2px;
+    font-size: 12px;
   }
   .checkout_coupon > p{
 
     font-size: 10px !important;
+    margin-bottom: 0px !important;
   }
   .fw_promo > div:hover {
     color: #444;

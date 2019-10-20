@@ -27,7 +27,6 @@ $calculator_text          = '';
 <tr class="tituloenvio">
 	<td width="100%" class=""><b>Seleccione un metodo de envío</b></td>
 </tr>
-
 <tr class="woocommerce-shipping-totals fw shipping" >
 	<td class="tablita" data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( $available_methods ) : ?>
@@ -87,11 +86,14 @@ text-align:left;
 .woocommerce-shipping-totals{
 margin-bottom:20px ;
 margin-top:10px ;
-display:block;
 }
 
 .tituloenvio{
 margin-top:10px ;
 display:block;
+}
+.returncart{
+ margin-left:10px;
+
 }
 </style>

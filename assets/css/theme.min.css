@@ -3060,6 +3060,13 @@ body .wpb_content_element {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+@media (max-width: 799px) {
+
+  .woocommerce-checkout .fw_summary-box,
+.woocommerce-account .fw_summary-box {
+  padding: 5px ;
+}
+}
 .woocommerce-checkout .woocommerce-error,
 .woocommerce-account .woocommerce-error {
   flex-basis: 100%;
@@ -3212,19 +3219,25 @@ body .wpb_content_element {
 .woocommerce-checkout .fw_promo > div,
 .woocommerce-account .fw_promo > div {
   width: 100%;
-  padding: 5px 20px 5px 0;
+  padding: 0px;
   text-align: left;
   background: transparent;
   border: 0;
   position: relative;
   transition: color 0.2s ease-in-out;
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
+}
+.woocommerce-checkout .fw_promo > input,
+.woocommerce-account .fw_promo > input {
+  padding: 2px;
+  font-size: 12px;
 }
 .woocommerce-checkout .checkout_coupon > p,
 .woocommerce-account .checkout_coupon > p {
   font-size: 10px !important;
+  margin-bottom: 0px !important;
 }
 .woocommerce-checkout .fw_promo > div:hover,
 .woocommerce-account .fw_promo > div:hover {
