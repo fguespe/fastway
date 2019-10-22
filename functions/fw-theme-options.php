@@ -2256,9 +2256,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'thankyou_insert',
@@ -2269,8 +2266,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_general_discount',

@@ -200,6 +200,13 @@ function fw_shortcode_stblock( $atts ) {
     return fw_StaticBlock::getSticBlockContent( $atts["slug"],true );
 }
 
+add_shortcode('fw_whats','fw_whats');
+function fw_whats( $atts ) {
+    $atts = shortcode_atts(array('num' => '' ), $atts );
+    $num=$atts['num'];
+    $num='<a href="https://api.whatsapp.com/send?text=Hola!, solos la nave, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
+    return $num;
+}
 
 add_shortcode('fw_m_menu','fw_m_menu');
 function fw_m_menu(){
