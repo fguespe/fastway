@@ -203,7 +203,11 @@ function fw_shortcode_stblock( $atts ) {
 add_shortcode('fw_whats','fw_whats');
 function fw_whats( $atts ) {
     $atts = shortcode_atts(array('num' => '' ), $atts );
+
     $num=$atts['num'];
+    $num=str_replace("+", "", $num);
+    $num=str_replace(" ", "", $num);
+    $num="549".$num;
     $num='<a href="https://api.whatsapp.com/send?text=Hola!, solos la nave, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
     return $num;
 }
