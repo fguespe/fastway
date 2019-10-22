@@ -199,7 +199,12 @@ function fw_shortcode_stblock( $atts ) {
     $atts = shortcode_atts(array('slug' => '' ), $atts );
     return fw_StaticBlock::getSticBlockContent( $atts["slug"],true );
 }
+function str_replace_first($from, $to, $content)
+{
+    $from = '/'.preg_quote($from, '/').'/';
 
+    return preg_replace($from, $to, $content, 1);
+}
 add_shortcode('fw_whats','fw_whats');
 function fw_whats( $atts ) {
     $atts = shortcode_atts(array('num' => '' ), $atts );
@@ -207,6 +212,8 @@ function fw_whats( $atts ) {
     $num=$atts['num'];
     $num=str_replace("+", "", $num);
     $num=str_replace(" ", "", $num);
+    if(substr( $num, 0, 2 ) === "15")$num=str_replace_first("15","11",$num);
+
     $num='<a href="https://api.whatsapp.com/send?text=Hola!, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
     return $num;
 }
