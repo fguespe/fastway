@@ -207,8 +207,7 @@ function fw_whats( $atts ) {
     $num=$atts['num'];
     $num=str_replace("+", "", $num);
     $num=str_replace(" ", "", $num);
-    $num="549".$num;
-    $num='<a href="https://api.whatsapp.com/send?text=Hola!, solos la nave, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
+    $num='<a href="https://api.whatsapp.com/send?text=Hola!, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
     return $num;
 }
 
