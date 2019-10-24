@@ -249,9 +249,6 @@ function fw_data( $atts ) {
         $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$atts['text_color'].';text-align:'.$text_align.';">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
-    }else if(!empty($atts['sblock'])){
-        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
-        $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if($format=='iconsnext'){//deprecetead
         
         $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
@@ -274,14 +271,15 @@ function fw_data( $atts ) {
         $first.='  <span style="color:'.$atts['text_color'].' ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;">'.$value.'</span>';
         $first.='</a>';
     }
-
-    if(!empty($atts['iframe'] )){
+    if(!empty($atts['sblock'])){
+        error_log("entra al sblock");
+        $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
+        $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
+    }else if(!empty($atts['iframe'] )){
         $rand=generateRandomString();
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
-    }
-    
-    if(!empty($atts['modal'] )){
+    }else if(!empty($atts['modal'] )){
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$first;
         $first.= "</a>";
     }

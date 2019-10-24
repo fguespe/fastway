@@ -232,6 +232,11 @@ add_action( 'vc_before_init', 'fw_image' );
 
 function fw_image() {
     // Title
+
+    $static_block_args = fastway_get_stblock();
+    $static_block_args=array_merge(array(
+        "Select an option" => "",),$static_block_args);
+        
     vc_map(
         array(
             'name' => __( 'FW Image' ),
@@ -281,6 +286,15 @@ function fw_image() {
     
                 ),
                
+                array(
+                    "type"        => "dropdown",
+                    "heading"     => __("Select Block"),
+                    "param_name"  => "sblock",
+                    "admin_label" => true,
+                    "value"       => $static_block_args,
+                    "std"         => " ",
+                    'description' => "Verificar fila del block este en Predeterminado de ancho"
+                ),
                 array(
                     'type' => 'textfield',
                     'heading' => __( 'Extra class name', 'js_composer' ),
@@ -408,6 +422,7 @@ function fw_image_function( $atts, $content ) {
         array(
             'image'      =>  '',
             'link'      =>  '',
+            'sblock'      =>  '',
             'title'      =>  '',
             'subtitle'      =>  '',
             'image_mobile'      =>  '',
@@ -440,8 +455,21 @@ function fw_image_function( $atts, $content ) {
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
     }
-    //Mobile
-
+    
+    //Implementar acciones
+    if(!empty($atts['sblock'])){
+        error_log("entra al sblock");
+        $return='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$return;
+        $return.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
+    }else if(!empty($atts['iframe'] )){
+        $rand=generateRandomString();
+        $return='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$return;
+        $return.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
+    }else if(!empty($atts['modal'] )){
+        $return='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$return;
+        $return.= "</a>";
+    }
+    
     return $return;
 }   
 
@@ -468,6 +496,7 @@ function vc_static_block() {
                   "admin_label" => true,
                   "value"       => $static_block_args,
                   "std"         => " ",
+                  'description' => "Verificar fila del block este en Predeterminado de ancho"
                 ),
             )
     ) );
@@ -586,8 +615,10 @@ function vc_fw_shorts() {
                     "type"        => "dropdown",
                     "heading"     => __("Select Block"),
                     "param_name"  => "sblock",
+                    "admin_label" => true,
                     "value"       => $static_block_args,
-                    "std"         => "",
+                    "std"         => " ",
+                    'description' => "Verificar fila del block este en Predeterminado de ancho"
                 ),
                 array(
                     'type' => 'el_id',
