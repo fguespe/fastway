@@ -450,6 +450,9 @@ add_action( 'vc_before_init', 'vc_static_block' );//Prds de categoria
 function vc_static_block() {
 
     $static_block_args = fastway_get_stblock();
+    $static_block_args=array_merge(array(
+        "Select an option" => "",),$static_block_args);
+
     vc_map( array(
             "name" => __("Static Block", 'fastway'),
             'base' => 'fw_shortcode_stblock',
