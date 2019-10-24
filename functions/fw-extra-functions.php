@@ -672,6 +672,26 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 endif;
 
 
+function init_fathom() {
+    
+    $analytics = '<!-- Fathom - simple website analytics - https://usefathom.com -->
+    <script>
+    (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+    (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement(\'script\'),
+    m=f.getElementsByTagName(\'script\')[0];
+    o.async=1; o.src=t; o.id=\'fathom-script\';
+    m.parentNode.insertBefore(o,m)
+    })(document, window, \'//cdn.usefathom.com/tracker.js\', \'fathom\');
+    fathom(\'set\', \'siteId\', \''.fw_theme_mod('fathom-id').'\');
+    fathom(\'trackPageview\');
+    </script>
+    <!-- / Fathom -->';
+
+    echo "\n" . $analytics;
+}
 function init_analytics() {
     
     $analytics = '<!-- Analyitics  Code -->
@@ -729,6 +749,7 @@ function init_gtagmanager() {
 }
 if(!empty(fw_theme_mod('gtagcheckout_id')))add_action( 'woocommerce_thankyou', 'init_gtagcheckout' );
 if(!empty(fw_theme_mod('analytics-id')))add_action('wp_head', 'init_analytics', 35);
+if(!empty(fw_theme_mod('fathom-id')))add_action('wp_head', 'init_fathom', 35);
 if(!empty(fw_theme_mod('fbpixel_id')))add_action('wp_head', 'init_fb', 35);
 if(!empty(fw_theme_mod('gtagmanager_id')))add_action('wp_head', 'init_gtagmanager', 35);
 if(!empty(fw_theme_mod('thankyou_insert')))add_action( 'woocommerce_thankyou', 'bbloomer_conversion_tracking_thank_you_page' );

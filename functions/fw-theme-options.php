@@ -744,6 +744,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    	=> __( 'Email para recibir notificaciones', 'fastway' ),
 	'description' 	=>	' *A que mails se van a enviar todas las notificaciones, separar mails con "," comas.',
 	'section'   => 'section_email',
+	'default' => ''
 ) );
 
 
@@ -2191,6 +2192,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 /*SCRIPTS*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fathom-id',
+	'label'    => __( 'Fathom ID', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
