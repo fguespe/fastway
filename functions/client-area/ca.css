@@ -78,7 +78,13 @@ display:none !important;
 background: none !important;
 }
 /*Optiones de Pantalla*/
-.cupones #screen-options-link-wrap,.altamayoristas #screen-options-link-wrap,.mnus #screen-options-link-wrap,.escritorio #screen-options-link-wrap,.slider #screen-options-link-wrap,.slider #screen-options-switch-view-wrap{
+.cupones #screen-options-link-wrap
+,.altamayoristas #screen-options-link-wrap
+,.mnus #screen-options-link-wrap
+,.escritorio #screen-options-link-wrap
+,.slider #screen-options-link-wrap
+,.usuarios #screen-options-link-wrap
+,.slider #screen-options-switch-view-wrap{
 	display: none !important;
 }
 /*MAS DEL MENU*/
