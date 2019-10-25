@@ -96,6 +96,8 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
 <div class="modal fade" id="$rand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog $size" role="document">
     <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  
       <div class="modal-body">
         $block
       </div>
