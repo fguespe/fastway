@@ -1959,6 +1959,15 @@ ul.product_list_widget li .star-rating {
 .modal-backdrop {
   position: relative !important;
 }*/
+.modal-content .close {
+  position: absolute !important;
+  display: block !important;
+  width: 10px !important;
+  float: right !important;
+  right: 10px !important;
+  z-index: 10 !important;
+}
+
 /*WOO*/
 h3.heading-title {
   margin-bottom: 20px;

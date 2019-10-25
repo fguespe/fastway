@@ -3,18 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-/**
- * Shortcode attributes
- * @var $atts
- * @var $el_class
- * @var $el_id
- * @var $width
- * @var $css
- * @var $offset
- * @var $content - shortcode content
- * Shortcode class
- * @var $this WPBakeryShortCode_VC_Column_Inner
- */
 $el_class = $width = $el_id = $css = $offset = $fw_responsive = $fw_columns_responsive = $fw_columns_margin = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
