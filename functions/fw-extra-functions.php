@@ -88,7 +88,7 @@ function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, 
 function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
     if(!$iframe){
         $block=fw_StaticBlock::getSticBlockContent($id,true);
-        $block=nl2br($block);
+        //$block=nl2br($block);
     }
     else $block='<iframe height="868" width="100%" frameBorder="0" title="Promociones bancarias" scrolling="no" src="'.$id.'" scrolling="no"></iframe>';
   return <<<HTML
