@@ -4006,3 +4006,38 @@ max-width:none !important;
 .woocommerce-MyAccount-navigation-link--my-membership-notes {
   display:none !important;
 }
+
+
+
+/********************* Cart Modal*/
+.row-item-cart .input-number{
+  margin-bottom:0px!important;
+}
+.img-cart{
+  max-width: 90%;
+}
+.row-item-cart{
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+}
+.row-item-cart:last-child{
+    border-bottom: 0;
+}
+
+.titulo-producto-cart{
+  font-size: 16px;
+  line-height: 20px;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+.titulo-producto-cart span{
+  display: block;
+  margin-top: 5px;
+  color: #777;
+}
+.delete-item-cart{
+  color:red;
+  display:block;
+  margin-top:8px;
+  font-size:14px;
+}

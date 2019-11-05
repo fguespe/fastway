@@ -59,9 +59,7 @@ function fw_single_cart(){
     global $product;
     if(fw_check_hide_purchases())return;
     if(empty($product->get_price()))return;
-    //woocommerce_template_single_add_to_cart();
-    do_action('woocommerce_template_loop_add_to_cart');
-
+    woocommerce_template_single_add_to_cart();
     do_action( 'woocommerce_before_add_to_cart_button' );
 }
 
