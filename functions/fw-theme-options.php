@@ -2460,7 +2460,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_whats_label',
-	'label'    => __( 'Button Label', 'fastway' ),  
+	'label'    => __( 'Whats Label', 'fastway' ),  
 	'description' => '[br] para new line',     
 	'section'     => 'section_labels',
 	'default' 		=>	'Estamos\nOn-Line!',
