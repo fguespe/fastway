@@ -102,9 +102,9 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 						<button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
 
 						<?php if(fw_theme_mod('fw_terms_required')){ ?>
-
 							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-								<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> <span><?php echo '<a href="'.wc_get_page_permalink( 'wp_page_for_privacy_policy' ).'">He leido y acepto los terminos y condiciones</a>' ?></span> <span class="required">*</span>
+								<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> 
+								<span><?php echo 'He leido y acepto los  <a target="_blank" href="'.get_privacy_policy_url().'">terminos y condiciones</a>' ?></span> <span class="required">*</span>
 							</label>
 							<input type="hidden" name="terms-field" value="1" />
 						<?php } ?>
