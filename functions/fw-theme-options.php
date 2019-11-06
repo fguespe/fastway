@@ -1190,6 +1190,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_terms_required',
+	'label'       => __( 'Terminos y condiciones', 'fastway' ),
+	'description'	=> 'Aparece el checkbox en el signup. recordar configurar la pagina en los ajustes de woo.',
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_cuit_required',
 	'label'       => __( 'CUIT Obligatorio ', 'fastway' ),
 	'description'	=> 'Pone el campo de cuit/dni obligatorio en el checkout',

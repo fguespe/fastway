@@ -163,6 +163,7 @@ if(is_plugin_active('js_composer/js_composer.php')){
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
+    require get_template_directory() . '/functions/fw-ajax-woo-functions.php';
     if(fw_theme_mod('fw_show_calculator_shipping'))require get_template_directory() . '/functions/shipping-calculator/shipping-calculator.php';
     if(is_plugin_active('js_composer/js_composer.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';

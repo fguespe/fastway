@@ -1,5 +1,15 @@
 <?php
 
+
+// Validate required term and conditions check box
+add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
+function terms_and_conditions_validation( $username, $email, $validation_errors ) {
+    if ( ! isset( $_POST['terms'] ) )
+        $validation_errors->add( 'terms_error', __( 'Flata aceptar los terminos y condiciones', 'woocommerce' ) );
+
+    return $validation_errors;
+}
+
 /*LOOP FUNCTIONS*/
 add_shortcode('fw_loop_title', 'fw_loop_title');
 function fw_loop_title(){
@@ -75,19 +85,17 @@ function fw_loop_price(){
 
 add_shortcode('fw_loop_cart', 'fw_loop_cart');
 function fw_loop_cart() {
-    if(fw_check_hide_purchases())return;
+  
     global $product;
-    echo sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="%s product_type_%s single_add_to_cart_button btn  btn-block %s">
-    <i class="fas fa-spinner fa-spin" style="display:none;"></i> %s</a>',
-            esc_url( $product->add_to_cart_url() ),
-            esc_attr( $product->get_id() ),
-            esc_attr( $product->get_sku() ),
-            esc_attr( isset( $quantity ) ? $quantity : 1 ),
-            $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-            esc_attr( $product->get_type() ),
-            $product->get_type() == 'simple' ? 'ajax_add_to_cart' : '',
-            esc_html( $product->add_to_cart_text() )
-        );
+    if(fw_check_hide_purchases())return;
+
+    $cant=isset( $quantity ) ? $quantity : 1;
+    $clase=$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '';
+    $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
+
+    
+    echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
+    class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
 }
 add_shortcode('fw_loop_meta', 'fw_loop_meta');
 function fw_loop_meta($atts = [], $content = null){
@@ -399,8 +407,6 @@ function woocommerce_get_category_banner(){
   $image = wp_get_attachment_url( $banner_id ); 
   echo '<img class="category_banner" src="'.$image.'" style="width:100%;heigth:auto;" />';
 }
-
-
 
 
 

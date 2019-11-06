@@ -100,6 +100,14 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 					<p class="form-row form-row-first validate-required" >
 						<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
 						<button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
+
+						<?php if(fw_theme_mod('fw_terms_required')){ ?>
+
+							<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+								<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> <span><?php printf( __( 'I&rsquo;ve read and accept the <a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms &amp; conditions</a>', 'woocommerce' ), esc_url( wc_get_page_permalink( 'terms' ) ) ); ?></span> <span class="required">*</span>
+							</label>
+							<input type="hidden" name="terms-field" value="1" />
+						<?php } ?>
 					</p>
 
 					<?php do_action( 'woocommerce_register_form_end' ); ?>
