@@ -2459,6 +2459,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_whats_label',
+	'label'    => __( 'Button Label', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'Estamos<br>On-Line!',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_search',
 	'label'    => __( 'Search Placeholder', 'fastway' ),       
 	'section'     => 'section_labels',

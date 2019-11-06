@@ -103,7 +103,7 @@ function fw_whatsappfooter(){
         } 
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
-            <span class="t5">Estamos<br>On-Line!</span>
+            <span class="t5">'.fw_theme_mod('fw_whats_label').'</span>
         </a>';
     }
     
