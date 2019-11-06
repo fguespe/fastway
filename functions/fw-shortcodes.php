@@ -101,9 +101,13 @@ function fw_whatsappfooter(){
             //Si tiene 2 whatsapp
             $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
         } 
+        $label=fw_theme_mod('fw_whats_label');
+        $label=str_replace("[br]","<br>",$label);
+
+         error_log($label);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
-            <span class="t5">'.fw_theme_mod('fw_whats_label').'</span>
+            <span class="t5">'.$label.'</span>
         </a>';
     }
     
