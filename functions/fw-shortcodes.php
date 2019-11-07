@@ -101,7 +101,7 @@ function fw_whatsappfooter(){
             //Si tiene 2 whatsapp
             $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
         } 
-        $label=fw_theme_mod('fw_whats_label');
+        $label=fw_theme_mod('fw_whats_btn_label');
         $label=str_replace("[br]","<br>",$label);
 
          error_log($label);
