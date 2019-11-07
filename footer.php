@@ -18,16 +18,16 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
     <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
 if(fw_theme_mod('whats-button')!='none')fw_whatsappfooter();
-if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){
-get_template_part( 'global-templates/modal_carrito' ); ?>
+if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 <style>
-
 #todopago-tab{
   display:none !important;
 }
 </style>
-
 <?php } 
+if(is_plugin_active('woocommerce/woocommerce.php')){
+  get_template_part( 'global-templates/modal_carrito' );
+} 
 if(fw_theme_mod("popup-mode") && is_front_page()){
 ?>
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
