@@ -2463,7 +2463,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Whats Label', 'fastway' ),  
 	'description' => '[br] para new line',     
 	'section'     => 'section_labels',
-	'default' 		=>	'Estamos[br]]On-Line!',
+	'default' 		=>	'Estamos[br]On-Line!',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
