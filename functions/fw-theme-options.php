@@ -2459,7 +2459,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_whats_btn_label',
+	'settings'    => 'fw_whats_btn',
 	'label'    => __( 'Whats Label', 'fastway' ),  
 	'description' => '[br] para new line',     
 	'section'     => 'section_labels',
