@@ -101,30 +101,12 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
         wp_mail($user_email, $subject, $message, $message_headers);
 
         return false;
-    }
+}
     
 
 
 
 
-
-
-    function whero_limit_image_size($file) {
-    // Calculate the image size in KB
-    $image_size = $file['size']/1024;
-
-    // File size limit in KB
-    $limit = fw_theme_mod('fw_max_media_upload');
-
-    // Check if it's an image
-    $is_image = strpos($file['type'], 'image');
-
-    if ( ( $image_size > $limit ) && ($is_image !== false) )
-            $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
-
-    return $file;
-
-}
 //config mails
 if(fw_theme_mod("fw_action_resetmails")){
     
