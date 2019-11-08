@@ -167,6 +167,7 @@ add_action( 'admin_init', 'remove_dashboard_meta2' );
 
 add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
 function whero_limit_image_size($file) {
+   if(is_admin())return $file;
    // Calculate the image size in KB
    $image_size = $file['size']/1024;
 
@@ -176,7 +177,8 @@ function whero_limit_image_size($file) {
    // Check if it's an image
    $is_image = strpos($file['type'], 'image');
 
-   if ( ( $image_size > $limit ) && ($is_image !== false) )$file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
+   if ( ( $image_size > $limit ) && ($is_image !== false) )
+      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
 
    return $file;
 
