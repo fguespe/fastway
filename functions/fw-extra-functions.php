@@ -409,6 +409,10 @@ button,a,input,textarea,.vc_row,ul,li,div{
 #loginform{
     border: 1px solid '.fw_theme_mod('ca-main-color').';
 }
+/*FIX TERMS*/
+.login .privacy-policy-page-link{
+	display:none !important;
+}
 #wp-submit{
     color: white;
     border:0px !important;

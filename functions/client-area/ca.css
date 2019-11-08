@@ -165,10 +165,7 @@ display:none !important;
 	color: black !important;
 	background: var(--ca-main-color);
 }
-/*FIX TERMS*/
-.login .privacy-policy-page-link{
-	display:none !important;
-}
+
 
 
 /*TOPBAR*/
