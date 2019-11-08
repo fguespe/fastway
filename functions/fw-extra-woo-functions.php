@@ -796,13 +796,12 @@ function fw_price_html1($price,$product){
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 
-function disable_shipping_calc_on_cart( $show_shipping ) {
-  if( is_cart() ) {
-      return false;
-  }
+function fw_disable_shipping_calc_on_cart( $show_shipping ) {
+  if( is_cart() ) return false;
+  
   return $show_shipping;
 }
-add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99 );
+add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'fw_disable_shipping_calc_on_cart', 99 );
 if(get_option('woocommerce_enable_shipping_calc'))update_option('woocommerce_enable_shipping_calc','no');
 
 /**
