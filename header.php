@@ -125,7 +125,7 @@ if(fw_theme_mod("maintainance-mode")){
     echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
 }
 if(fw_theme_mod("fw_general_message")){
-  echo "<div class='general_message'>".fw_theme_mod("fw_general_message")."</div>";
+  echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;">'.fw_theme_mod("fw_general_message").'"</div>';
 }
 
 echo fw_header_html();
