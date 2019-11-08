@@ -489,6 +489,13 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'fw_general_message',
+	'label'       => __( 'General message', 'fastway' ),
+	'description'=>'Display a messsage on the top bar for important notificacions',
+	'section'     => 'section_general',
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_seo',
 	'label'       => __( 'FW Meta Tags', 'fastway' ),
