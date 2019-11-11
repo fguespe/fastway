@@ -153,7 +153,6 @@ require get_template_directory() . '/functions/fw-user-account.php';
 require get_template_directory() . '/functions/fw-blog-options.php';
 require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcodes.php' ;
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
-require get_template_directory() . '/functions/fw-shopping-cart.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
 
