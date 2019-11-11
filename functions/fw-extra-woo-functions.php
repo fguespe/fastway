@@ -82,6 +82,13 @@ function fw_loop_price(){
     echo '<span class="price">'.fw_price_html1(null,$product).'</span>';
 }
 
+add_shortcode('fw_loop_meta', 'fw_loop_meta');
+function fw_loop_meta($atts = [], $content = null){
+    $atts = shortcode_atts(array('type' => '' ), $atts );
+    echo '<div class="meta">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</div>';
+}
 
 add_shortcode('fw_loop_cart', 'fw_loop_cart');
 function fw_loop_cart() {
@@ -97,14 +104,6 @@ function fw_loop_cart() {
     echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
     class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
 }
-add_shortcode('fw_loop_meta', 'fw_loop_meta');
-function fw_loop_meta($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '' ), $atts );
-    echo '<div class="meta">';
-    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-    echo '</div>';
-}
-
 
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){

@@ -74,12 +74,13 @@ function addCant(index,cart_item_key,sum){
 }
 function getUpdatedPriceCart(){
     jQuery.get(ajaxurl,
-    {'action': 'cart_get_subtotal',cart_item_key:cart_item_key}, 
-    function (msg) { 
-        toggleloading(index)
+    {'action': 'cart_get_subtotal'}, 
+    function (totals) { 
+        console.log(totals)
+        jQuery('#total').text(totals.subtotal)
     });
 }
-function updatecant(index,sum,unitprice){
+function updatecant(index,sum){
 
     let actual=parseInt(jQuery('#qty_'+index).val())
     let precio=parseInt(jQuery('#lineprice_'+index).data('price'))
@@ -90,7 +91,7 @@ function updatecant(index,sum,unitprice){
     jQuery('#qty_'+index).val(total)
     jQuery('#qtyx_'+index).text(total)
     jQuery('#lineprice_'+index).text(format)
-    jQuery('#total').text(format)
+    this.getUpdatedPriceCart();
 }
 function toggleloading(index){
     jQuery('#loadingshow_'+index).toggle();jQuery('#loadinghide_'+index).toggle();
