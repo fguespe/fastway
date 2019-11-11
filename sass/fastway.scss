@@ -305,6 +305,21 @@ color:var(--linkedin) !important;
 	/*btn medios*/
 	
 	/*boton compra*/
+	.fw_add_to_cart_button {
+		background: var(--main);
+		color: white;
+		border: 0px;
+		font-size: 20px;
+		font-weight: bold;
+		color: white;
+		padding: 20px;
+		margin: 0 auto ;
+		float: none ;
+		display: block;
+		margin: 0 auto ;
+		line-height: 5px ;
+		margin-bottom: 10px ;
+	}
 	.summary .single_add_to_cart_button {
 		background: var(--main);
 		color: white;
