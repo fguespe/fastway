@@ -111,11 +111,11 @@ function fw_get_js_cart(){
       $cant=$cart_item['quantity'];
       $precio=price_array($_product);
       $total_line=$precio*$cant;
-      $arr = array('nombre' => $nombre, 'precio'=> $price, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+      $arr = array('nombre' => $nombre, 'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
     }
 
-    $totales=array('cart' => $carta, 'total'=> WC()->cart->total, 'subtotal' => WC()->cart->subtotal, 'promo' => WC()->cart->subtotal-WC()->cart->total);
+    $totales=array('cart' => $carta, 'total'=> WC()->cart->total, 'subtotal' => WC()->cart->subtotal, 'promo' => WC()->cart->subtotal-WC()->cart->total,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
     echo json_encode($totales);
     exit();
 }

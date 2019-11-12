@@ -70,14 +70,16 @@ function populatecart(){
         let conv=datos['conversion']
         if(!conv)conv=1
 
+        let subtotal=datos['subtotal']*conv
+        let promo=datos['promo']*conv
+        let total=datos['total']*conv
 
         jQuery.each(datos['cart'], function (index, value) {
-            console.log('CONV',conv)
             let precio=value['precio']*conv
             let subtotal=value['subtotal']*conv
             let quantity=value['quantity']*conv
             let line_subtotal=value['line_subtotal']*conv
-            
+
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
@@ -97,10 +99,10 @@ function populatecart(){
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
-        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['subtotal']+'</span></span></div>'
+        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
         if(datos['promo']>0){
-            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+datos['promo']+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['total']+'</span></span></div>'
+            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+promo+'</span></span></div>'
+            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
         }
         jqe+='</div>'
         if(datos['subtotal']>0){
