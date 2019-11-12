@@ -23,14 +23,14 @@
 </div>
 <style>
 #modal_carrito .btn.seguir{
-background:var(--second);
-color:white;
-border:0px ;
+    background:var(--second);
+    color:white;
+    border:0px ;
 }
 #modal_carrito .btn.comprar{
-background:var(--main);
-color:white;
-border:0px ;
+    background:var(--main);
+    color:white;
+    border:0px ;
 }
 </style>
 <script>
