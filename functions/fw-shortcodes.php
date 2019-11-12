@@ -103,8 +103,6 @@ function fw_whatsappfooter(){
         } 
         $label=fw_theme_mod('fw_whats_btn');
         $label=str_replace("[br]","<br>",$label);
-
-         error_log($label);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>

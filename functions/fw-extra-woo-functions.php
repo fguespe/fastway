@@ -220,7 +220,6 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 
 if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
-    
   // Utility function to change the prices with a multiplier (number)
   function get_price_multiplier() {
     $price+=floatval(fw_theme_mod('fw_currency_conversion'));
