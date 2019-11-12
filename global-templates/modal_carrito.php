@@ -77,7 +77,7 @@ function populatecart(){
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']*conv
             let subtotal=value['subtotal']*conv
-            let quantity=value['quantity']*conv
+            let quantity=value['quantity']
             let line_subtotal=value['line_subtotal']*conv
 
             jqe+='<div class="row row-item-cart">'
