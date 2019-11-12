@@ -25,16 +25,6 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
   }
 }
 
-add_shortcode('fw_cart_ajax', 'fw_cart_ajax');
-function fw_cart_ajax() {
-    global $product;
-    if(fw_check_hide_purchases())return;
-    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
-    <i class="fad fa-cart-plus "></i>
-    <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
-    </button>';
-}
 
 add_action('wp_ajax_nopriv_cart_remove_item', 'cart_remove_item');
 add_action('wp_ajax_cart_remove_item', 'cart_remove_item');
