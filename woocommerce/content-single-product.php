@@ -54,14 +54,6 @@ function fw_summary_container($atts = [], $content = null){
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
 }
-add_shortcode('fw_single_cart', 'fw_single_cart');
-function fw_single_cart(){
-    global $product;
-    if(fw_check_hide_purchases())return;
-    if(empty($product->get_price()))return;
-    woocommerce_template_single_add_to_cart();
-    do_action( 'woocommerce_before_add_to_cart_button' );
-}
 
 add_shortcode('fw_single_tabs','fw_single_tabs');
 function fw_single_tabs(){
