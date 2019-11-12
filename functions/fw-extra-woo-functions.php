@@ -90,21 +90,6 @@ function fw_loop_meta($atts = [], $content = null){
     echo '</div>';
 }
 
-add_shortcode('fw_loop_cart', 'fw_loop_cart');
-function fw_loop_cart() {
-  
-    global $product;
-    if(fw_check_hide_purchases())return;
-
-    $cant=isset( $quantity ) ? $quantity : 1;
-    $clase=$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '';
-    $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
-
-    
-    echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
-    class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
-}
-
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     global $product;
