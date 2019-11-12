@@ -10,10 +10,10 @@
                 <div style="padding:1em;">
                     <div class="row">
                         <div class="col-6 text-left">
-                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
+                            <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
                         </div>
                         <div class="col-6 text-right">
-                            <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="t2 btn btn-primary">Comprar</a>
+                            <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
                         </div>
                     </div>
                 </div>
