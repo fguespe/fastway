@@ -21,8 +21,18 @@
         </div>
     </div>
 </div>
-
-
+<style>
+#modal_carrito .btn.seguir{
+background:var(--second);
+color:white;
+border:0px ;
+}
+#modal_carrito .btn.comprar{
+background:var(--main);
+color:white;
+border:0px ;
+}
+</style>
 <script>
 function addtocart(prod_id){
   jQuery('.fw_add_to_cart_button').addClass('loading')
