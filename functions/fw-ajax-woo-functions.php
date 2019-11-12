@@ -111,12 +111,7 @@ function fw_get_js_cart(){
       $cant=$cart_item['quantity'];
       $precio=price_array($_product);
       $total_line=$precio*$cant;
-      
-
-      $product_price= WC()->cart->get_product_price( $_product );
-      error_log("jaja".$product_price);
-
-      $arr = array('nombre' => $nombre, 'precio'=> $price, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line,'conversion'=>fw_theme_mod('fw_currency_conversion'));
+      $arr = array('nombre' => $nombre, 'precio'=> $price, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
       array_push($carta,$arr);
     }
 
@@ -137,7 +132,6 @@ function price_array($product){
     $price_arr = explode('|', $price);
     
     $price_arr = array_filter($price_arr);
-    //error_log(print_r($price_arr,true));
     return $price;
 }
 
