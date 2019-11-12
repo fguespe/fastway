@@ -109,8 +109,7 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $_product->get_name();
       $precio=price_array($_product);
-      error_log(print_r($precio,true));
-      $arr = array('nombre' => $nombre, 'price'=> json_encode($precio), 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $cart_item['line_subtotal']);
+      $arr = array('nombre' => $nombre, 'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $cart_item['line_subtotal']);
       array_push($carta,$arr);
     }
 
@@ -126,9 +125,12 @@ function price_array($product){
     $price = str_replace($del, '', $price);
     $price = str_replace('</del>', '|', $price);
     $price = str_replace('</ins>', '|', $price);
+    $price = str_replace('"', '', $price);
+    $price = str_replace(',', '', $price);
     $price_arr = explode('|', $price);
     $price_arr = array_filter($price_arr);
-    return $price_arr;
+    error_log(print_r($price_arr,true));
+    return $price;
 }
 
 ?>

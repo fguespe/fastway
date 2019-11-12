@@ -66,7 +66,7 @@ function populatecart(){
         let jqe=''
         datos=jQuery.parseJSON(datos)
         jQuery.each(datos['cart'], function (index, value) {
-            console.log(index,value)
+            let precio=parseInt(value['precio'])//jQuery.parseJSON(value['precio'])
             
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2"><img src="'+value['url']+'" class="img-cart"></div>'
@@ -82,8 +82,8 @@ function populatecart(){
             jqe+='<div class="item-restar col-2 col-md-1 text-right align-self-center"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
-            jqe+='<span id="qtyx_'+index+'">'+value['quantity']+'</span> x <span> $'+value['price']+' </span><br>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+value['price']+'"> $'+value['line_subtotal']+' </span>'
+            jqe+='<span id="qtyx_'+index+'">'+value['quantity']+'</span> x <span> $'+precio+' </span><br>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+value['line_subtotal']+' </span>'
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
