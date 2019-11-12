@@ -108,13 +108,27 @@ function fw_get_js_cart(){
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
       $image_url = $image[0];
       $nombre = $_product->get_name();
-      $arr = array('nombre' => $nombre, 'price'=> $_product->get_price(), 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $cart_item['line_subtotal']);
+      $precio=price_array($_product);
+      error_log(print_r($precio,true));
+      $arr = array('nombre' => $nombre, 'price'=> json_encode($precio), 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $cart_item['line_subtotal']);
       array_push($carta,$arr);
     }
 
     $totales=array('cart' => $carta, 'total'=> WC()->cart->total, 'subtotal' => WC()->cart->subtotal, 'promo' => WC()->cart->subtotal-WC()->cart->total);
     echo json_encode($totales);
     exit();
+}
+
+function price_array($product){
+    $price = $product->get_price_html();
+    error_log($price);
+    $del = array('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>', '</span>','<del>','<ins>');
+    $price = str_replace($del, '', $price);
+    $price = str_replace('</del>', '|', $price);
+    $price = str_replace('</ins>', '|', $price);
+    $price_arr = explode('|', $price);
+    $price_arr = array_filter($price_arr);
+    return $price_arr;
 }
 
 ?>
