@@ -34,55 +34,31 @@ function addtocart(prod_id){
   });
 }
 jQuery('#modal_carrito').on('show.bs.modal', function () {
-      populatecart();
-});
-jQuery('#modal_carrito').on('hidden.bs.modal', function () {
-    console.log('se cerro')
+    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
+    populatecart();
 });
 
-jQuery('#modal_carrito').on('hidden.bs.modal', function () {
-    console.log('se cerro')
-});
 function addCant(index,cart_item_key,sum){
-    toggleloading(index)
-    let actual=parseInt(jQuery('#qty_'+index).val())
-    let total=parseInt(actual+sum)
-    jQuery.get(ajaxurl,
-    {'action': 'sum_cart_qty',cart_item_key:cart_item_key,total:total}, 
-    function (msg) { 
-        toggleloading(index)
-        updatecant(index,sum)
-    });
-}
-function getUpdatedPriceCart(){
-    jQuery.get(ajaxurl,
-    {'action': 'cart_get_subtotal'}, 
-    function (totals) { 
-        jQuery('#total').text(totals.subtotal)
-    });
-}
-function updatecant(index,sum){
+    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
 
-    let actual=parseInt(jQuery('#qty_'+index).val())
-    let total=parseInt(actual+sum)
-    let precio=parseInt(jQuery('#lineprice_'+index).data('price'))
-    let lineprice=parseInt(total)*parseInt(precio)
-    let format='$' + parseFloat(lineprice, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
-    
-    jQuery('#qty_'+index).val(total)
-    jQuery('#qtyx_'+index).text(total)
-    jQuery('#lineprice_'+index).text(format)
-    this.getUpdatedPriceCart();
+    jQuery.get(ajaxurl,
+    {
+        'action': 'sum_cart_qty',
+        cart_item_key:cart_item_key,sum:sum
+    }, 
+    function (msg) { 
+        populatecart();
+    });
 }
+
 
 function populatecart(){
-    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     jQuery.get(ajaxurl,
     {'action': 'fw_get_js_cart'}, 
     function (datos) { 
         let jqe=''
-        let cart=jQuery.parseJSON(datos['cart'])
-        jQuery.each(cart, function (index, value) {
+        datos=jQuery.parseJSON(datos)
+        jQuery.each(datos['cart'], function (index, value) {
             console.log(index,value)
             
             jqe+='<div class="row row-item-cart">'
@@ -99,18 +75,22 @@ function populatecart(){
             jqe+='<div class="item-restar col-2 col-md-1 text-right align-self-center"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
-            jqe+='<span id="qtyx_'+index+'">'+value['quantity']+'</span> x <span> '+value['price']+' </span><br>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+value['price']+'"> '+value['line_subtotal']+' </span>'
+            jqe+='<span id="qtyx_'+index+'">'+value['quantity']+'</span> x <span> $'+value['price']+' </span><br>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+value['price']+'"> $'+value['line_subtotal']+' </span>'
             jqe+='</div></div>'
         });
-        
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
-        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
-        jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
-        jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
+        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['subtotal']+'</span></span></div>'
+        if(datos['promo']<0){
+            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+datos['promo']+'</span></span></div>'
+            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['total']+'</span></span></div>'
+        }
         jqe+='</div>'
-
-        jQuery('#modal_carrito .container').html(jqe);
+        if(datos['subtotal']>0){
+            jQuery('#modal_carrito .container').html(jqe);
+        }else{
+            jQuery('#modal_carrito .container').html('No hay produtos');
+        }
     });
 }
 function toggleloading(index){
