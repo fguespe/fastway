@@ -79,13 +79,13 @@ function populatecart(){
     jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     jQuery.get(ajaxurl,
     {'action': 'fw_get_js_cart'}, 
-    function (cart) { 
-        cart=jQuery.parseJSON(cart)
-        console.log(cart)
+    function (datos) { 
+        let jqe=''
+        let cart=jQuery.parseJSON(datos['cart'])
         jQuery.each(cart, function (index, value) {
             console.log(index,value)
             
-            let jqe='<div class="row row-item-cart">'
+            jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
             jqe+='<div class="titulo-producto-cart">'+value['nombre']+'</div>'
@@ -102,13 +102,15 @@ function populatecart(){
             jqe+='<span id="qtyx_'+index+'">'+value['quantity']+'</span> x <span> '+value['price']+' </span><br>'
             jqe+='<span id="lineprice_'+index+'" data-price="'+value['price']+'"> '+value['line_subtotal']+' </span>'
             jqe+='</div></div>'
-            jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
-            jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">Descuentos</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
-            jqe+='</div>'
-            jQuery('#modal_carrito .container').html(jqe);
         });
+        
+        jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
+        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
+        jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
+        jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">'+'sdsd'+'</span></span></div>'
+        jqe+='</div>'
+
+        jQuery('#modal_carrito .container').html(jqe);
     });
 }
 function toggleloading(index){

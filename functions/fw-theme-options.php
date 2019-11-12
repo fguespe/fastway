@@ -2296,7 +2296,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_general_discount',
-	'label'    => __( 'General % Discount', 'fastway' ),
+	'label'    => __( '1-General % Discount', 'fastway' ),
 	'description' => 'Porcentage de descuento a toda la tienda, se aplica a nivel producto',
 	'section'     => 'section_woo_discount',
 ) );
@@ -2304,7 +2304,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_lili_discount',
-	'label'       => __( 'Buy X Get Y ', 'fastway' ),
+	'label'       => __( '2-Lili Discount (Buy X Get X)', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'default'     => 0,
 	'description' => '(Se aplica al carrito), *refresh devuelta para ver los cambios',

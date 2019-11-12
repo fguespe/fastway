@@ -84,6 +84,7 @@ function fw_get_js_cart(){
       array_push($carta,$arr);
     }
 
+    $totales=array('cart' => $carta, 'total'=> WC()->cart->total, 'subtotal' => WC()->cart->subtotal, 'promo' => WC()->cart->subtotal-WC()->cart->total);
     echo json_encode($carta);
     exit();
 }
