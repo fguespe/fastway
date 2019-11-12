@@ -39,13 +39,10 @@ jQuery('#modal_carrito').on('show.bs.modal', function () {
 });
 
 function addCant(index,cart_item_key,sum){
+    let actual=parseInt(jQuery('#qty_'+index).val())
     jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
-
-    jQuery.get(ajaxurl,
-    {
-        'action': 'sum_cart_qty',
-        cart_item_key:cart_item_key,sum:sum
-    }, 
+    let total=parseInt(actual+sum)
+    jQuery.get(ajaxurl, { 'action': 'sum_cart_qty',cart_item_key:cart_item_key,total:total}, 
     function (msg) { 
         populatecart();
     });
@@ -69,7 +66,7 @@ function populatecart(){
             jqe+='<div class="row no-gutters item-cantidad " id="loadinghide_'+index+'">'
             jqe+='<div class="item-sumar col-2 col-md-1 text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',-1)" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'								
             jqe+='<div class="col-8 col-sm-5 col-md-2 text-center align-self-center">'
-            jqe+='<input disabled type="text" id="qty_'+index+'" name="quantity" class="form-control input-number" value="'+value['quantity']+'" min="1" max="100">'
+            jqe+='<input  type="text" id="qty_'+index+'" name="quantity" class="form-control input-number" value="'+value['quantity']+'" min="1" max="100">'
             jqe+='</div>'
             jqe+='<div class="item-restar col-2 col-md-1 text-right align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',1)"  class="txt-22"> <i class="fal fa-plus-circle"></i></a></div> '
             jqe+='<div class="item-restar col-2 col-md-1 text-right align-self-center"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
@@ -81,7 +78,7 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['subtotal']+'</span></span></div>'
-        if(datos['promo']<0){
+        if(datos['promo']>0){
             jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+datos['promo']+'</span></span></div>'
             jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+datos['total']+'</span></span></div>'
         }
