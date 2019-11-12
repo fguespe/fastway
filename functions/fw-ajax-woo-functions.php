@@ -40,7 +40,7 @@ add_action('wp_ajax_nopriv_cart_remove_item', 'cart_remove_item');
 add_action('wp_ajax_cart_remove_item', 'cart_remove_item');
 function cart_remove_item(){
   $key=$_GET['cart_item_key'];
-  WC()->cart->get_subtotal( )( $key );
+  WC()->cart->remove_cart_item($key );
   exit();
 }
 

@@ -100,17 +100,13 @@ function populatecart(){
         }
     });
 }
-function toggleloading(index){
-    jQuery('#loadingshow_'+index).toggle();jQuery('#loadinghide_'+index).toggle();
-    jQuery('#loadingshow_totals').toggle();jQuery('#loadinghide_totals').toggle();
-}
 
 function remove(index,cart_item_key){
-    toggleloading(index)
+    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     jQuery.get(ajaxurl,
     {'action': 'cart_remove_item',cart_item_key:cart_item_key}, 
     function (msg) { 
-        toggleloading(index)
+        populatecart();
     });
 }
 </script>
