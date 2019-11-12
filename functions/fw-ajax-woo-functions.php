@@ -98,6 +98,7 @@ function sum_cart_qty(){
   exit();
 }
 
+
 add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
 add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
 function fw_get_js_cart(){  
