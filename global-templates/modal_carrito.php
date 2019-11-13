@@ -34,6 +34,13 @@
 }
 </style>
 <script>
+
+jQuery( "#color" ).change(function() {
+  console.log(jQuery( "#color" ).val())
+  
+});
+
+
 function addtocart(prod_id){
   jQuery('.fw_add_to_cart_button').addClass('loading')
   jQuery.get(ajaxurl,

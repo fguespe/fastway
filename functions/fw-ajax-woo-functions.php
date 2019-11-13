@@ -36,11 +36,12 @@ function fw_cart_ajax() {
 	  if ( $product->is_type( 'variable' ) ) {
       $available_variations=$product->get_available_variations();
       $attributes=$product->get_variation_attributes();
-      $attribute_keys  = array_keys( $attributes );
-
+      $variations_json = wp_json_encode( $available_variations );
+      $variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
+      
       echo '<table class="variations" cellspacing="0"><tbody>';
-      foreach ( $attributes as $key) {
-        error_log($key);
+      error_log(print_r($attributes,true));
+      foreach ( $attributes as $name=>$options) {
         wc_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
       }
       echo '</tbody></table>';
@@ -127,7 +128,6 @@ function fw_get_js_cart(){
       $nombre = $_product->get_name();
       $cant=$cart_item['quantity'];
       $precio=price_array($_product);
-      error_log(print_r($precio,true));
       $precio=end($precio);
       $total_line=$precio*$cant;
       $arr = array('nombre' => $nombre, 'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
@@ -145,7 +145,6 @@ function fw_get_js_cart(){
 function price_array($product){
     
     $price = $product->get_price_html();
-    error_log($price);
     $del = array('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>', '</span>','<del>','<ins>');
     $price = str_replace($del, '', $price);
     $price = str_replace('</del>', '|', $price);
