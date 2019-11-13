@@ -27,11 +27,11 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
 
 
 function fw_product_is_purchasable($product){
-  echo '0';
+  //echo '0';
   //if(get_option('woocommerce_manage_stock')=='yes'){
     if(!$product->is_in_stock()  && !$product->backorders_allowed())return false;
  // }
-  echo '1';
+ // echo '1';
   if(empty($product->get_price()))return false;
   return true;
 }
