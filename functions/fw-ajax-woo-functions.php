@@ -24,9 +24,16 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
       }
   }
 }
-
+add_shortcode('fw_single_cart', 'fw_single_cart');
+function fw_single_cart(){
+    global $product;
+    if(fw_check_hide_purchases())return;
+    if(empty($product->get_price()))return;
+    woocommerce_template_single_add_to_cart();
+    do_action( 'woocommerce_before_add_to_cart_button' );
+}
 add_shortcode('fw_loop_cart', 'fw_cart_ajax');
-add_shortcode('fw_single_cart', 'fw_cart_ajax');
+//add_shortcode('fw_single_cart', 'fw_cart_ajax');
 add_shortcode('fw_cart_ajax', 'fw_cart_ajax');
 function fw_cart_ajax() {
     global $product;
