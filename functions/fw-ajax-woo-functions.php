@@ -59,7 +59,8 @@ function fw_loop_ajax() {
   }
 
 }
-add_shortcode('fw_cart_ajax', 'fw_cart_ajax');
+
+add_shortcode('fw_cart_ajax', 'fw_single_cart');
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart() {
     global $product;
