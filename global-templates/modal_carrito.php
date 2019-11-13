@@ -96,7 +96,7 @@ function populatecart(){
         let totals=datos['totals']
 
         let subtotal=totals['subtotal']*conv
-        let discount_total=totals['discount_total']*conv
+        let discount_total=totals['fee_total']*conv
         let total=totals['total']*conv
 
         console.log(datos)
