@@ -1782,5 +1782,6 @@ function add_custom_fees( WC_Cart $cart ){
     if($menorprecio==100000000)return;
     //$discount = $cart->subtotal * 0.1;
     $discount=$menorprecio*-1/(100/$porcentage);
-    $cart->add_fee( 'Promo:', $discount);
+    $coupons=$cart->get_applied_coupons();
+    if(empty($coupons))$cart->add_fee( 'Promo:', $discount);
 }

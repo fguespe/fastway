@@ -30,7 +30,22 @@ add_shortcode('fw_loop_cart', 'fw_cart_ajax');
 add_shortcode('fw_cart_ajax', 'fw_cart_ajax');
 function fw_cart_ajax() {
     global $product;
+    
     if(fw_check_hide_purchases())return;
+
+	  if ( $product->is_type( 'variable' ) ) {
+      $available_variations=$product->get_available_variations();
+      $attributes=$product->get_variation_attributes();
+      $attribute_keys  = array_keys( $attributes );
+
+      echo '<table class="variations" cellspacing="0"><tbody>';
+      foreach ( $attributes as $key) {
+        error_log($key);
+        wc_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
+      }
+      echo '</tbody></table>';
+    }
+	
     echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
@@ -94,6 +109,7 @@ function sum_cart_qty(){
   global $woocommerce;
   $key= $_GET['cart_item_key'];
   $total= $_GET['total'];
+
   WC()->cart->set_quantity( $key, $total );
   exit();
 }
@@ -117,8 +133,11 @@ function fw_get_js_cart(){
       $arr = array('nombre' => $nombre, 'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
     }
+    $total=WC()->cart->total;;
+    $subtotal=WC()->cart->subtotal;
+    $discount=floatval($subtotal)-floatval($total);
 
-    $totales=array('cart' => $carta, 'total'=> WC()->cart->total, 'subtotal' => WC()->cart->subtotal, 'promo' => WC()->cart->subtotal-WC()->cart->total,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+    $totales=array('cart' => $carta, 'total'=> $total, 'subtotal' => $subtotal, 'promo' => $discount,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
     echo json_encode($totales);
     exit();
 }
