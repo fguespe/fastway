@@ -57,7 +57,7 @@ function addtocart(prod_id){
         if(vars && vars[index])var_id=vars[index]['variation_id'];
         else{
             alert("Seleccionar una opcion")
-            
+            return;
         }
     }
     jQuery('.fw_add_to_cart_button').addClass('loading')
