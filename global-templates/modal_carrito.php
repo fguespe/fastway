@@ -51,16 +51,15 @@ jQuery( "#color" ).change(function() {
 
 function addtocart(prod_id){
     let var_id=0;
-    if(jQuery( ".fw_variations" )){
+    if(jQuery( ".fw_variations" ).length){
         let vars=jQuery( ".fw_variations" ).data( "product_variations" );
         let index=jQuery( "#color" ).prop('selectedIndex')-1
-        if(vars[index])var_id=vars[index]['variation_id'];
+        if(vars && vars[index])var_id=vars[index]['variation_id'];
         else{
             alert("Seleccionar una opcion")
             
         }
     }
-    console.log('var id es',var_id)
     jQuery('.fw_add_to_cart_button').addClass('loading')
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
