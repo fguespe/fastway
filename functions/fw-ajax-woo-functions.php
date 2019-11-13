@@ -58,6 +58,8 @@ function fw_cart_ajax() {
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
     </button>';
+
+    do_action( 'woocommerce_before_add_to_cart_button' );
 }
 
 /*

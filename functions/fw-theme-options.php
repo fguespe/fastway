@@ -2505,7 +2505,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_lalbe_calcular_costo_envio',
+	'settings'    => 'fw_label_calcular_costo_envio',
 	'label'    => __( 'Calcular envio', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'Calcular costo de envio a domicilio',
