@@ -131,11 +131,9 @@ function fw_get_js_cart(){
       $arr = array('nombre' => $nombre, 'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
     }
-    $total=WC()->cart->total;;
-    $subtotal=WC()->cart->subtotal;
-    $discount=floatval($subtotal)-floatval($total);
+    $totals=WC()->cart->get_totals();
 
-    $totales=array('cart' => $carta, 'total'=> $total, 'subtotal' => $subtotal, 'promo' => $discount,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+    $totales=array('cart' => $carta, 'totals'=> $totals,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
     echo json_encode($totales);
     exit();
 }

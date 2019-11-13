@@ -91,15 +91,16 @@ function populatecart(){
         datos=jQuery.parseJSON(datos)
         let jqe=''
         
-        console.log(datos)
         let conv=datos['conversion']
         if(!conv)conv=1
+        let totals=datos['totals']
 
-        let subtotal=datos['subtotal']*conv
-        let promo=datos['promo']*conv
-        let total=datos['total']*conv
+        let subtotal=totals['subtotal']*conv
+        let discount_total=totals['discount_total']*conv
+        let total=totals['total']*conv
 
         jQuery.each(datos['cart'], function (index, value) {
+            console.log(value)
             let precio=value['precio']*conv
             let subtotal=value['subtotal']*conv
             let quantity=value['quantity']
@@ -125,12 +126,12 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
-        if(datos['promo']>0){
-            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+promo+'</span></span></div>'
+        if(discount_total>0){
+            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+discount_total+'</span></span></div>'
             jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
         }
         jqe+='</div>'
-        if(datos['subtotal']>0){
+        if(subtotal>0){
             jQuery('#modal_carrito .container').html(jqe);
         }else{
             jQuery('#modal_carrito .container').html('No hay produtos');
