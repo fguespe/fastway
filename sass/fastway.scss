@@ -4041,8 +4041,13 @@ max-width:none !important;
 .row-item-cart .input-number{
   margin-bottom:0px!important;
 }
+@media (max-width: 799px) {
+  .img-cart{
+    width: 100%;
+  }
+}
 .img-cart{
-  max-width: 90%;
+  width: 90%;
 }
 .row-item-cart{
   border-bottom: 1px solid #ccc;

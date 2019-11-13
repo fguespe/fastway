@@ -104,7 +104,7 @@ function populatecart(){
             let line_subtotal=value['line_subtotal']*conv
 
             jqe+='<div class="row row-item-cart">'
-            jqe+='<div class="col-2" style="padding:0px !important;"><img src="'+value['url']+'" class="img-cart"></div>'
+            jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
             jqe+='<div class="titulo-producto-cart">'+value['nombre']+'</div>'
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'

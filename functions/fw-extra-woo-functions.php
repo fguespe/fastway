@@ -4,8 +4,8 @@
 // Validate required term and conditions check box
 add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
 function terms_and_conditions_validation( $username, $email, $validation_errors ) {
-    if ( ! isset( $_POST['terms'] ) )
-        $validation_errors->add( 'terms_error', __( 'Flata aceptar los terminos y condiciones', 'woocommerce' ) );
+    if ( ! isset( $_POST['terms'] ) && fw_theme_mod('fw_terms_required') )
+        $validation_errors->add( 'terms_error', __( 'Falta aceptar los terminos y condiciones', 'woocommerce' ) );
 
     return $validation_errors;
 }
