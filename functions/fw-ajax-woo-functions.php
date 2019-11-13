@@ -39,7 +39,8 @@ function fw_single_cart() {
       $variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
       echo '<div class="fw_variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
       foreach ( $attributes as $name=>$options) {
-       echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
+        echo '<span style="display:block;" class="atrtitle">'.$name.'</span>';
+        echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
       }
       echo '</div>';
     }
