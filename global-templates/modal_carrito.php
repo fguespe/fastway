@@ -40,7 +40,7 @@
 <script>
 
 jQuery( "#color" ).change(function() {
-    let vars=jQuery( ".variations" ).data( "product_variations" );
+    let vars=jQuery( ".fw_variations" ).data( "product_variations" );
     let index=jQuery( "#color" ).prop('selectedIndex')-1
     if(index>=0){
         let suffix=jQuery('#fwprice .precio .suffix').text()
@@ -51,8 +51,8 @@ jQuery( "#color" ).change(function() {
 
 function addtocart(prod_id){
     let var_id=0;
-    if(jQuery( ".variations" )){
-        let vars=jQuery( ".variations" ).data( "product_variations" );
+    if(jQuery( ".fw_variations" )){
+        let vars=jQuery( ".fw_variations" ).data( "product_variations" );
         let index=jQuery( "#color" ).prop('selectedIndex')-1
         if(vars[index])var_id=vars[index]['variation_id'];
         else{
