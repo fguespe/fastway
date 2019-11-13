@@ -53,13 +53,16 @@ function fw_cart_ajax() {
       echo '</div>';
     }
 	
+    echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+
+    do_action( 'woocommerce_before_add_to_cart_button' );
     echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
     </button>';
 
-    do_action( 'woocommerce_before_add_to_cart_button' );
+    do_action( 'woocommerce_after_add_to_cart_button' );
 }
 
 /*
