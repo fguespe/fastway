@@ -37,27 +37,54 @@
 <script>
 
 jQuery( ".fw_variations select" ).change(function() {
-    let vars=jQuery( ".fw_variations" ).data( "product_variations" );
-    let index=jQuery( ".fw_variations select" ).prop('selectedIndex')-1
-    if(index>=0){
-        let suffix=jQuery('#fwprice .precio .suffix').text()
-        jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vars[index]['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
-    }
+    let vara=getVariation()
+    let suffix=jQuery('#fwprice .precio .suffix').text()
+    jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
+    
 });
+function getVariation(){
+    let selects=jQuery( ".fw_variations select" )
+    let vars=jQuery( ".fw_variations" ).data( "product_variations" );
+    let indexes=[]
+    let elid=-1
+    selects.each(function( index ) {
+        indexes[jQuery(this).data('attribute_name')]=jQuery(this).val()
+    });
+    let vara=null
+    vars.forEach(function(element) {
+        let atr=element['attributes']
+        let names=Object.keys(indexes)
+        let esigual=true
+        console.log(indexes)
+        names.forEach(function(name) {
+            if(atr[name]!=indexes[name])esigual=false
+        })
+
+        console.log(esigual,element)
+        if(esigual) {
+            vara=element
+        }
+    });
+    return vara
+    
+}
 
 
 function addtocart(prod_id){
     let var_id=0;
+
     if(jQuery( ".fw_variations" ).length){
-        let vars=jQuery( ".fw_variations" ).data( "product_variations" );
-        let index=jQuery( ".fw_variations select" ).prop('selectedIndex')-1
-        if(vars && vars[index])var_id=vars[index]['variation_id'];
-        else{
+        var_id=getVariation()
+        if(!var_id){
             alert("Seleccionar una opcion")
             return;
+        }else{
+            var_id=var_id['variation_id']
         }
     }
     jQuery('.fw_add_to_cart_button').addClass('loading')
+    console.log('var_id',var_id)
+
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
     function (msg) { 

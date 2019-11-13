@@ -37,7 +37,6 @@ function fw_single_cart() {
       $attributes=$product->get_variation_attributes();
       $variations_json = wp_json_encode( $available_variations );
       $variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
-      
       echo '<div class="fw_variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
       foreach ( $attributes as $name=>$options) {
        echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
@@ -54,7 +53,7 @@ function fw_single_cart() {
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
     </button>';
 
-    do_action( 'woocommerce_after_add_to_cart_button' );
+    //do_action( 'woocommerce_after_add_to_cart_button' );
 }
 
 /*
