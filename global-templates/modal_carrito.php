@@ -99,8 +99,8 @@ function populatecart(){
         let discount_total=totals['discount_total']*conv
         let total=totals['total']*conv
 
+        console.log(datos)
         jQuery.each(datos['cart'], function (index, value) {
-            console.log(value)
             let precio=value['precio']*conv
             let subtotal=value['subtotal']*conv
             let quantity=value['quantity']
