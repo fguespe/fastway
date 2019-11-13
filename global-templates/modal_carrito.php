@@ -8,13 +8,10 @@
             <div class="modal-body mx-3">
                 <div class="container"></div>
                 <div style="padding:1em;">
-                    <div class="row">
-                        <div class="col-6 text-left">
-                            <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        </div>
-                        <div class="col-6 text-right">
-                            <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
-                        </div>
+                    <div class="row d-flex justify-content-between">
+                        <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
+                        <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
+                    
                     </div>
                 </div>
             </div>
