@@ -126,8 +126,8 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
-        if(discount_total>0){
-            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">-$'+discount_total+'</span></span></div>'
+        if(discount_total<0){
+            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+discount_total+'</span></span></div>'
             jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
         }
         jqe+='</div>'
