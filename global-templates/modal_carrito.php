@@ -39,9 +39,9 @@
 </style>
 <script>
 
-jQuery( "#color" ).change(function() {
+jQuery( ".fw_variations select" ).change(function() {
     let vars=jQuery( ".fw_variations" ).data( "product_variations" );
-    let index=jQuery( "#color" ).prop('selectedIndex')-1
+    let index=jQuery( ".fw_variations select" ).prop('selectedIndex')-1
     if(index>=0){
         let suffix=jQuery('#fwprice .precio .suffix').text()
         jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vars[index]['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
@@ -53,7 +53,7 @@ function addtocart(prod_id){
     let var_id=0;
     if(jQuery( ".fw_variations" ).length){
         let vars=jQuery( ".fw_variations" ).data( "product_variations" );
-        let index=jQuery( "#color" ).prop('selectedIndex')-1
+        let index=jQuery( ".fw_variations select" ).prop('selectedIndex')-1
         if(vars && vars[index])var_id=vars[index]['variation_id'];
         else{
             alert("Seleccionar una opcion")

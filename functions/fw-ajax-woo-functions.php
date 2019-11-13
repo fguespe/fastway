@@ -67,8 +67,6 @@ function fw_loop_cart() {
     $cant=isset( $quantity ) ? $quantity : 1;
     $clase=$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '';
     $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
-
-    
     echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
     class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
 }
