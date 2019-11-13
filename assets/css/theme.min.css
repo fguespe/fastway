@@ -4043,9 +4043,14 @@ body .wpb_content_element {
 }
 
 .img-cart {
-  max-width: 90%;
+  max-width: 70%;
 }
 
+@media (max-width: 799px) {
+  .img-cart {
+    width: 100%;
+  }
+}
 .row-item-cart {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
