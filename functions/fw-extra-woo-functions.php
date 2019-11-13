@@ -99,6 +99,26 @@ function fw_loop_container($atts = [], $content = null){
 
 }
 
+add_shortcode('fw_loop_ajax', 'fw_loop_ajax');
+function fw_loop_ajax() {
+  global $product;
+  if(fw_check_hide_purchases())return;
+
+  if ( $product->is_type( 'variable' ) ) {
+    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
+    <i class="fad fa-cart-plus "></i>
+    <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+    </button>';
+  }
+
+  echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button loop ">
+  <i class="fad fa-cart-plus "></i>
+  <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+  <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+  </button>';
+
+}
 function woo_loop_code(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
