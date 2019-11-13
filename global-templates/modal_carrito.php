@@ -32,23 +32,42 @@
     color:white;
     border:0px ;
 }
+.fw_variations{
+    text-align:center !important;
+    width:100% !important;
+}
 </style>
 <script>
 
 jQuery( "#color" ).change(function() {
-  console.log(jQuery( "#color" ).val())
-  
+    let vars=jQuery( ".variations" ).data( "product_variations" );
+    let index=jQuery( "#color" ).prop('selectedIndex')-1
+    if(index>=0){
+        let suffix=jQuery('#fwprice .precio .suffix').text()
+        jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vars[index]['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
+    }
 });
 
 
 function addtocart(prod_id){
-  jQuery('.fw_add_to_cart_button').addClass('loading')
-  jQuery.get(ajaxurl,
-  {'action': 'add_to_cart',id:prod_id}, 
-  function (msg) { 
-      jQuery('#modal_carrito').modal('show');
-      jQuery('.fw_add_to_cart_button').removeClass('loading')
-  });
+    let var_id=0;
+    if(jQuery( ".variations" )){
+        let vars=jQuery( ".variations" ).data( "product_variations" );
+        let index=jQuery( "#color" ).prop('selectedIndex')-1
+        if(vars[index])var_id=vars[index]['variation_id'];
+        else{
+            alert("Seleccionar una opcion")
+            
+        }
+    }
+    console.log('var id es',var_id)
+    jQuery('.fw_add_to_cart_button').addClass('loading')
+    jQuery.get(ajaxurl,
+    {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
+    function (msg) { 
+        jQuery('#modal_carrito').modal('show');
+        jQuery('.fw_add_to_cart_button').removeClass('loading')
+    });
 }
 jQuery('#modal_carrito').on('show.bs.modal', function () {
     jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
@@ -73,7 +92,7 @@ function populatecart(){
         datos=jQuery.parseJSON(datos)
         let jqe=''
         
-
+        console.log(datos)
         let conv=datos['conversion']
         if(!conv)conv=1
 
