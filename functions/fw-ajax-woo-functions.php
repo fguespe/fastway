@@ -27,13 +27,10 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
 
 
 function fw_product_is_purchasable($product){
-  echo '0';
-  if(!$product->is_in_stock())return false;
-  echo '1';
-  if(!$product->backorders_allowed())return false;
-  echo '2';
+  //if(get_option('woocommerce_manage_stock')=='yes'){
+    if(!$product->is_in_stock()  && !$product->backorders_allowed())return false;
+ // }
   if(empty($product->get_price()))return false;
-  echo '3';
   return true;
 }
 add_shortcode('fw_loop_ajax', 'fw_loop_ajax');
@@ -60,13 +57,15 @@ function fw_loop_ajax() {
 
 }
 
-add_shortcode('fw_cart_ajax', 'fw_single_cart');
+add_shortcode('fw_cart_ajax', 'fw_single_cart');//dejar!
 add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart() {
     global $product;
     if(fw_check_hide_purchases())return;
-    if(!fw_product_is_purchasable($product))return;
 
+    echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+    do_action( 'woocommerce_before_add_to_cart_button' );
+    if(!fw_product_is_purchasable($product))return;
 	  if ( $product->is_type( 'variable' ) ) {
       $available_variations=$product->get_available_variations();
       $attributes=$product->get_variation_attributes();
@@ -80,9 +79,7 @@ function fw_single_cart() {
       echo '</div>';
     }
 	
-    echo wc_get_stock_html( $product ); // WPCS: XSS ok.
 
-    do_action( 'woocommerce_before_add_to_cart_button' );
     echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
