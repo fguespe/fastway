@@ -66,10 +66,10 @@ function fw_loop_ajax() {
   if(!fw_product_is_purchasable($product))return;
 
   if ( $product->is_type( 'variable' ) ) {
-    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button loop">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+    <span>Ver opciones</span>
     </button>';
   }else{
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button loop ">
