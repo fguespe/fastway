@@ -23,8 +23,6 @@ function fw_single_cartt(){
 }
 */
 
-
-
 if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
 
@@ -50,16 +48,17 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
   }
 }
 
-
 function fw_product_is_purchasable($product){
   //echo '0';
   //if(get_option('woocommerce_manage_stock')=='yes'){
-    if(!$product->is_in_stock()  && !$product->backorders_allowed())return false;
+  if(!$product->is_in_stock()  && !$product->backorders_allowed())return false;
  // }
  // echo '1';
   if(empty($product->get_price()))return false;
   return true;
 }
+
+
 add_shortcode('fw_loop_ajax', 'fw_loop_ajax');
 function fw_loop_ajax() {
   global $product;

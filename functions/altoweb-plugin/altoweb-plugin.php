@@ -142,11 +142,11 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 // Our hooked in function - $fields is passed via the filter!
 function custom_override_checkout_fields( $fields ) {
      $fields['billing']['billing_dni'] = array(
-        'label'     => __('DNI/CUIT', 'woocommerce'),
-    'required'  => fw_theme_mod( 'fw_cuit_required'),
-    'class'     => array('form-row-wide'),
-    'clear'     => true
-     );
+      'label'     => fw_theme_mod( 'fw_cuit_label'),
+      'required'  => fw_theme_mod( 'fw_cuit_required'),
+      'class'     => array('form-row-wide'),
+      'clear'     => true
+      );
 
      return $fields;
 }

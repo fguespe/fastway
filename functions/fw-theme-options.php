@@ -383,6 +383,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_read_more',
@@ -390,11 +391,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_blog_general',
 	'description' => 'Si se deja vacio, no aparece',
 	'default'     => 'Leer más',
-	'choices'     => array(
-		'min'  => '1',
-		'max'  => '12',
-		'step' => '1',
-	),
 ) );
 
 
@@ -2441,6 +2437,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=>'Completar compra',
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_cuit_label',
+	'label'       => 'DNI/CUIT',
+	'section'     => 'section_labels',
+	'default'     => 'DNI/CUIT',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_user_text',
