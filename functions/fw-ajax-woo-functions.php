@@ -1,5 +1,30 @@
 <?php
 
+/*
+add_shortcode('fw_loop_cart', 'fw_loop_cart');
+function fw_loop_cart() {
+  
+    global $product;
+    if(fw_check_hide_purchases())return;
+
+    $cant=isset( $quantity ) ? $quantity : 1;
+    $clase=$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '';
+    $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
+    echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
+    class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
+}
+add_shortcode('fw_single_cart', 'fw_single_cartt');
+function fw_single_cartt(){
+    global $product;
+    if(fw_check_hide_purchases())return;
+    if(empty($product->get_price()))return;
+    woocommerce_template_single_add_to_cart();
+    do_action( 'woocommerce_before_add_to_cart_button' );
+}
+*/
+
+
+
 if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
 
@@ -84,13 +109,13 @@ function fw_single_cart() {
     }
 	
 
-    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
+    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
     </button>';
 
-    //do_action( 'woocommerce_after_add_to_cart_button' );
+    do_action( 'woocommerce_after_add_to_cart_button' );
 }
 
 add_action('wp_ajax_nopriv_cart_remove_item', 'cart_remove_item');
