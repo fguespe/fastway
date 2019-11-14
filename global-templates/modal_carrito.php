@@ -68,7 +68,9 @@ function getVariation(){
     return vara
     
 }
-
+function clickproduct(url,redirect){
+    location.href=url
+}
 
 function addtocart(prod_id){
     let var_id=0;
@@ -82,14 +84,14 @@ function addtocart(prod_id){
             var_id=var_id['variation_id']
         }
     }
-    jQuery('.fw_add_to_cart_button').addClass('loading')
+    jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
     console.log('var_id',var_id)
 
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
     function (msg) { 
         jQuery('#modal_carrito').modal('show');
-        jQuery('.fw_add_to_cart_button').removeClass('loading')
+        jQuery('#fw_add_to_cart_button_'+prod_id).removeClass('loading')
     });
 }
 jQuery('#modal_carrito').on('show.bs.modal', function () {

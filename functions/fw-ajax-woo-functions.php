@@ -66,15 +66,13 @@ function fw_loop_ajax() {
   if(!fw_product_is_purchasable($product))return;
 
   if ( $product->is_type( 'variable' ) ) {
-    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
     </button>';
   }else{
-
-
-    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button loop ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button loop ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
@@ -108,7 +106,7 @@ function fw_single_cart() {
     }
 	
 
-    echo '<button onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
