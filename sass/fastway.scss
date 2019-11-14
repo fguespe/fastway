@@ -316,7 +316,15 @@ color:var(--linkedin) !important;
 		margin: 0 auto ;
 		margin-bottom: 10px ;
   }
-
+  .fw_add_to_cart_button.loop{
+    background:none;
+    border:0px;
+    width:100%;
+    text-align:center;
+    background:var(--main);
+    color:white !important;
+  }
+  
   .fw_add_to_cart_button span,
   .fw_add_to_cart_button i{
     color: white;

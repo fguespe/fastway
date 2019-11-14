@@ -94,10 +94,9 @@ add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     $atts = shortcode_atts(array('href' => true ), $atts );
     global $product;
-    //if ( $atts['href'] === 'false' )$atts['href']=false;
-    if($atts['href'])echo '<a href="'.$product->get_permalink($product->id).'">';
+    echo '<a href="'.$product->get_permalink($product->id).'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-    if($atts['href'])echo '</a>';
+    echo '</a>';
 
 }
 
