@@ -1885,7 +1885,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container]',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_ajax]',
 	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]',
 	'choices'     => array(
 		'language' => 'html',
