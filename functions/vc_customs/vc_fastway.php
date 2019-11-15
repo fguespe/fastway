@@ -243,7 +243,7 @@ function fw_image() {
             'base' => 'fw_image_function',
             'description' => __('FW Image', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => wp_get_attachment_image_src(11938),
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_images",
