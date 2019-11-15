@@ -250,6 +250,7 @@ function fw_image() {
                     "heading"     => "Imagen normal",
                     "param_name"  => "image",
                     "value"       => "",
+                    "admin_label" => true,
                 ),
                 array(
                     "type" => 'textfield',
