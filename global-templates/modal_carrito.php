@@ -66,12 +66,12 @@ function getVariation(){
         let atr=element['attributes']
         let names=Object.keys(indexes)
         let esigual=true
-        console.log('indexes',indexes)
+        //console.log('indexes',indexes)
         names.forEach(function(name) {
             if(atr[name]!=indexes[name])esigual=false
         })
 
-        console.log(esigual,element)
+       // console.log(esigual,element)
         if(esigual) vara=element
     });
     return vara
@@ -94,7 +94,7 @@ function addtocart(prod_id){
         }
     }
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
-    console.log('var_id',var_id)
+   // console.log('var_id',var_id)
 
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
