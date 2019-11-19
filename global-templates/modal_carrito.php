@@ -42,9 +42,14 @@
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
     let suffix=jQuery('#fwprice .precio .suffix').text()
+    console.log(!vara['display_price'])return;
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
-    if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed'])jQuery('.fw_add_to_cart_button').prop("disabled",false)
-    else jQuery('.fw_add_to_cart_button').prop("disabled",true)
+    if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
+        jQuery('.fw_add_to_cart_button').prop("disabled",false)
+    }else {
+        console.log('invalida')
+        jQuery('.fw_add_to_cart_button').prop("disabled",true)
+    }
 });
 function getVariation(){
     let selects=jQuery( ".fw_variations select" )
