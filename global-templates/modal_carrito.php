@@ -41,8 +41,9 @@
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
+    if(!vara)return;
     let suffix=jQuery('#fwprice .precio .suffix').text()
-    console.log(!vara)return;
+    console.log(vara)
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
     if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
         jQuery('.fw_add_to_cart_button').prop("disabled",false)
