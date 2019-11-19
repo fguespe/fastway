@@ -33,6 +33,9 @@
     text-align:center !important;
     width:100% !important;
 }
+.fw_add_to_cart_button:disabled {
+  background: #ccc;
+}
 </style>
 <script>
 
@@ -40,7 +43,8 @@ jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
     let suffix=jQuery('#fwprice .precio .suffix').text()
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
-    
+    if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed'])jQuery('.fw_add_to_cart_button').prop("disabled",false)
+    else jQuery('.fw_add_to_cart_button').prop("disabled",true)
 });
 function getVariation(){
     let selects=jQuery( ".fw_variations select" )
@@ -55,15 +59,13 @@ function getVariation(){
         let atr=element['attributes']
         let names=Object.keys(indexes)
         let esigual=true
-        console.log(indexes)
+        console.log('indexes',indexes)
         names.forEach(function(name) {
             if(atr[name]!=indexes[name])esigual=false
         })
 
         console.log(esigual,element)
-        if(esigual) {
-            vara=element
-        }
+        if(esigual) vara=element
     });
     return vara
     

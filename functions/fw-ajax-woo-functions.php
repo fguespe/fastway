@@ -94,12 +94,14 @@ function fw_single_cart() {
     
 	  if ( $product->is_type( 'variable' ) ) {
       $available_variations=$product->get_available_variations();
+      if ( empty( $available_variations ) && false !== $available_variations ) return;
       $attributes=$product->get_variation_attributes();
       $variations_json = wp_json_encode( $available_variations );
       $variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
       echo '<div class="fw_variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
       foreach ( $attributes as $name=>$options) {
-        error_log(print_r($attributes,true));
+        $name=str_replace("pa_","",$name);
+        $name=ucfirst($name);
         echo '<span style="display:block;" class="atrtitle">'.$name.'</span>';
         echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
       }
@@ -107,7 +109,7 @@ function fw_single_cart() {
     }
 	
 
-    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'" disabled>
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
