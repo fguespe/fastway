@@ -41,7 +41,11 @@
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
-    if(!vara)return;
+    console.log(vara)
+    if(!vara){
+        jQuery('.fw_add_to_cart_button').prop("disabled",true)
+        return;
+    }
     let suffix=jQuery('#fwprice .precio .suffix').text()
     console.log(vara)
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
@@ -66,12 +70,10 @@ function getVariation(){
         let atr=element['attributes']
         let names=Object.keys(indexes)
         let esigual=true
-        //console.log('indexes',indexes)
         names.forEach(function(name) {
             if(atr[name]!=indexes[name])esigual=false
         })
 
-       // console.log(esigual,element)
         if(esigual) vara=element
     });
     return vara
