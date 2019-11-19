@@ -101,7 +101,7 @@ function fw_single_cart() {
       echo '<div class="fw_variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
       foreach ( $attributes as $name=>$options) {
         $label=str_replace("pa_","",$name);
-        //$label=ucfirst($name);
+        $label=ucfirst($label);
         echo '<span style="display:block;" class="atrtitle">'.$label.'</span>';
         echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
       }
