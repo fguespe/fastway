@@ -109,7 +109,7 @@ function fw_single_cart() {
     }
 	
 
-    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'" disabled>
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="addtocart('. $product->id.')" class="fw_add_to_cart_button" data-product_id="'.$product->id.'">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
