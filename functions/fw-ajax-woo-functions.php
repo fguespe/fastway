@@ -104,9 +104,8 @@ function fw_single_cart() {
       echo '<form class="variations_form cart" action="'.esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ).'" method="post" enctype="multipart/form-data" data-product_id="'.absint( $product->get_id() ).'" data-product_variations="'.$variations_attr.'">';
       echo '<table class="fw_variations variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
       foreach ( $attributes as $attribute_name=>$options) {
-        $label=str_replace("pa_","",$name);
-        $label=ucfirst($label);
-        echo '<tr><td class="label"><label for="'.esc_attr( sanitize_title( $attribute_name ) ).'">'.wc_attribute_label( $attribute_name ).'</label></td>';
+        $label=ucfirst(wc_attribute_label( $attribute_name ));
+        echo '<tr><td class="label"><label for="'.esc_attr( sanitize_title( $attribute_name ) ).'">'.$label.'</label></td>';
         echo '<td class="value">';
         wc_dropdown_variation_attribute_options( array(
           'options'   => $options,
