@@ -12,16 +12,17 @@ function fw_loop_cart() {
     $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
     echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
     class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
-}
-add_shortcode('fw_single_cart', 'fw_single_cartt');
-function fw_single_cartt(){
+}*/
+
+add_shortcode('fw_single_cart_old', 'fw_single_cart_old');
+function fw_single_cart_old(){
     global $product;
     if(fw_check_hide_purchases())return;
     if(empty($product->get_price()))return;
     woocommerce_template_single_add_to_cart();
     do_action( 'woocommerce_before_add_to_cart_button' );
 }
-*/
+
 
 if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
