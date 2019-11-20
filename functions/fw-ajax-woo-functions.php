@@ -94,19 +94,29 @@ function fw_single_cart() {
 
     
 	  if ( $product->is_type( 'variable' ) ) {
+      // Enqueue variation scripts.
+      wp_enqueue_script( 'wc-add-to-cart-variation' );
       $available_variations=$product->get_available_variations();
       if ( empty( $available_variations ) && false !== $available_variations ) return;
       $attributes=$product->get_variation_attributes();
       $variations_json = wp_json_encode( $available_variations );
       $variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
-      echo '<div class="fw_variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
-      foreach ( $attributes as $name=>$options) {
+      echo '<form class="variations_form cart" action="'.esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ).'" method="post" enctype="multipart/form-data" data-product_id="'.absint( $product->get_id() ).'" data-product_variations="'.$variations_attr.'">';
+      echo '<table class="fw_variations variations" cellspacing="0" data-product_variations="'.$variations_attr.'">';
+      foreach ( $attributes as $attribute_name=>$options) {
         $label=str_replace("pa_","",$name);
         $label=ucfirst($label);
-        echo '<span style="display:block;" class="atrtitle">'.$label.'</span>';
-        echo  fw_dropdown_variation_attribute_options( array('attribute' => $name,'product'   => $product) );
+        echo '<tr><td class="label"><label for="'.esc_attr( sanitize_title( $attribute_name ) ).'">'.wc_attribute_label( $attribute_name ).'</label></td>';
+        echo '<td class="value">';
+        wc_dropdown_variation_attribute_options( array(
+          'options'   => $options,
+          'attribute' => $attribute_name,
+          'product'   => $product,
+        ) );
+        echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+        echo '</td>';
       }
-      echo '</div>';
+      echo '</table></form>';
     }
 	
 
@@ -242,7 +252,7 @@ function fw_dropdown_variation_attribute_options( $args = array() ) {
   } 
 
   $html .= '</select>'; 
-  return $html;
-  //echo apply_filters( 'woocommerce_dropdown_variation_attribute_options_html', $html, $args ); 
+  //return $html;
+  return apply_filters( 'woocommerce_dropdown_variation_attribute_options_html', $html, $args ); 
 } 
 ?>
