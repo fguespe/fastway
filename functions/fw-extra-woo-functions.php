@@ -711,7 +711,7 @@ add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 
 function fw_price_html1($price,$product){
     if(fw_check_hide_prices()) return;
-    if(empty($product->get_price()))return '<span class="fw_price price1"><span class="precio">Consultar</span></span>';
+    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">Consultar</span></span></a>';
     $symbol=get_woocommerce_currency_symbol();
     if($product->product_type == 'variable'){
         $available_variations = $product->get_available_variations();                               
