@@ -105,7 +105,7 @@
 }
 
 .fw_add_to_cart_button {
-  background: var(--main);
+  background: var(--main) !important;
   padding: 10px;
   margin: 0 auto;
   border: 0px !important;
@@ -1077,11 +1077,13 @@ ul {
   text-align: left !important;
 }
 
+/*
 @media (min-width: 1024px) {
-  .fw_post .title {
-    height: 40px;
+  .fw_post .title{
+      height:40px;
   }
 }
+*/
 #index-wrapper, #single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
