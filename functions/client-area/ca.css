@@ -410,6 +410,13 @@ display:none;
 .productos .edit_vc,.composer-switch{
 	display: none !important;
 }*/
+.wpb_switch-to-composer,
+.wpb_switch-to-front-composer{
+color:white !important;
+}
+.wpb_switch-to-gutenberg{
+display:none !important;
+}
 #wp-excerpt-media-buttons a{
 	display: none !important;
 }
