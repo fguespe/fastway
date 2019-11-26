@@ -406,10 +406,10 @@ display:none;
 #vc_navbar .vc_show-mobile{
 	display:block !important;
 }
-/*VIUSAL EN PRODUCTOS*/
+/*VIUSAL EN PRODUCTOS
 .productos .edit_vc,.composer-switch{
 	display: none !important;
-}
+}*/
 #wp-excerpt-media-buttons a{
 	display: none !important;
 }
