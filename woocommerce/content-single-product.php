@@ -44,7 +44,7 @@ function fw_single_title(){
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
-    echo '<span id="fwprice" class="price">'.fw_price_html1(null,$product).'</span>';
+    echo '<span id="fwprice" class="price">'.fw_price_html1(null,$product,true).'</span>';
 }
 add_shortcode('fw_summary_container', 'fw_summary_container');
 function fw_summary_container($atts = [], $content = null){
