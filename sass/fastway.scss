@@ -1101,7 +1101,13 @@ ul {
 }
 */
 
-
+.sale_text{
+  position:absolute;
+  top:0px;
+  right:0px;
+  background:var(--main);
+  color:white;
+}
 #index-wrapper,#single-wrapper {
     padding-top: 30px;
     padding-bottom: 60px;

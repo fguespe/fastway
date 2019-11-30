@@ -28,6 +28,17 @@ function fw_loop_cat(){
     echo '<span class="fw_loop_cat">'.fw_getcat($product->id).'</span>';
 }
 
+add_shortcode('fw_sale', 'fw_sale');
+function fw_sale($atts = []){
+  $atts = shortcode_atts(array('class' => '','type' => 1  ), $atts );
+  global $product;
+  if(!$product->is_on_sale())return;
+  $sale= $product->get_sale_price();
+  $price= $product->get_regular_price();
+  if($atts['type']==1)$off=fw_theme_mod('fw_label_sale');
+  else if($atts['type'==2])$off=$price-$sale;
+	echo '<span class="sale_text '.$atts['class'].'">'.$off.'</span>';
+}
 add_shortcode('fw_cuotas', 'fw_cuotas');
 function fw_cuotas($atts = []){
   $atts = shortcode_atts(array('class' => '' ,'cant' => 0 ), $atts );
