@@ -114,7 +114,7 @@ function wootax_categoriaok($titulo, $cate){
 
 add_filter( 'manage_edit-product_columns', 'wootax_taxomizer_custom_shop_order_column',11);
 function wootax_taxomizer_custom_shop_order_column($columns){
-    foreach (explode(",",get_option('taxomizer_customtax')) as $nombre) 
+    foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) 
         if(!empty($nombre))$columns[strtolower($nombre)] =ucfirst($nombre).'s';
     return $columns;
 }
@@ -122,8 +122,8 @@ function wootax_taxomizer_custom_shop_order_column($columns){
 add_action( 'manage_product_posts_custom_column', 'wootax_taxomizer_product_column_offercode', 10, 2 );
 function wootax_taxomizer_product_column_offercode( $column, $postid ) {
     // agrego a la columna
-    if(empty(get_option('taxomizer_customtax')))return;
-    foreach (explode(",",get_option('taxomizer_customtax')) as $nombre) {
+    if(empty(fw_theme_mod('fw_extra_tax')))return;
+    foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) {
         if ( $column == strtolower($nombre) ) {
             foreach (get_the_terms( $postid, strtolower($nombre) ) as $jaj)$todojunto.=$jaj->name.",";
             echo rtrim($todojunto,",");
@@ -131,8 +131,8 @@ function wootax_taxomizer_product_column_offercode( $column, $postid ) {
     }}
 add_action('admin_bar_menu', 'wootax_taxomizer_custom_node_tax', 50);
 function wootax_taxomizer_custom_node_tax($wp_admin_bar){
-  if(empty(get_option('taxomizer_customtax')))return;
-  foreach (explode(",",get_option('taxomizer_customtax')) as $nombre) {
+  if(empty(fw_theme_mod('fw_extra_tax')))return;
+  foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) {
         $varnom=strtolower($nombre);
         $args = array(
                 'parent' => 'custom-node-otros',
@@ -147,8 +147,8 @@ function wootax_taxomizer_custom_node_tax($wp_admin_bar){
   }  }
 add_action( 'init', 'wootax_taxomizer_custom_taxonomy_Item' );
 function wootax_taxomizer_custom_taxonomy_Item()  {
-        if(empty(get_option('taxomizer_customtax')))return;
-        foreach (explode(",",get_option('taxomizer_customtax')) as $nombre ) {
+        if(empty(fw_theme_mod('fw_extra_tax')))return;
+        foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre ) {
             $nombre = ucfirst($nombre);
             $labels = array(
                 'name'                       => $nombre.'s',
@@ -178,11 +178,11 @@ function wootax_taxomizer_custom_taxonomy_Item()  {
 
 function wootax_register_settings_taxomizer() {
 
-  add_option( 'taxomizer_customtax', '');
-  register_setting( 'taxomizer_options_group', 'taxomizer_customtax', 'myplugin_callback' );
+  add_option( 'fw_extra_tax', '');
+  register_setting( 'taxomizer_options_group', 'fw_extra_tax', 'myplugin_callback' );
 
 
-  $varss="product_cat,brand,".get_option('taxomizer_customtax');
+  $varss="product_cat,brand,".fw_theme_mod('fw_extra_tax');
   foreach (explode(",",$varss) as $nombre ) {
   $nombre=strtolower($nombre);
   if(empty($nombre))break;

@@ -7,7 +7,7 @@ Version: 1.9
 Author: Fabrizio Guespe
 Author URI: https://www.altoweb.co
 */
-include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
+//include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
 include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
 //include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
@@ -54,7 +54,7 @@ include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 //Taxomizer
 if(get_option('taxomizerwpai'))add_action('pmxi_after_xml_import', 'after_xml_import_init_cate', 10, 1);
 function after_xml_import_init_cate($import_id){
-    $varss="product_cat,".get_option('taxomizer_customtax');
+    $varss="product_cat,".fw_theme_mod('fw_extra_tax');
     $args     = array( 'post_type' => 'product' , 'posts_per_page'=>-1, 'numberposts'=>-1);
     $products = get_posts( $args ); 
       

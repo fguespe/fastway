@@ -224,15 +224,15 @@ class WooTaxomizer {
 	<?php settings_fields( 'taxomizer_options_group' ); ?>
 	<table>
 	<tr valign="top">
-	<th scope="row"><label for="taxomizer_customtax">Custom Tax</label></th>
+	<th scope="row"><label for="fw_extra_tax">Custom Tax</label></th>
 	<td>
-	<input type="text" id="taxomizer_customtax" name="taxomizer_customtax"  value="<?php echo get_option('taxomizer_customtax'); ?>" placeholder="Marca, Color... etc (todo singular)" />
+	<input type="text" id="fw_extra_tax" name="fw_extra_tax"  value="<?php echo fw_theme_mod('fw_extra_tax'); ?>" placeholder="Marca, Color... etc (todo singular)" />
 	</td>
 	</tr>
 	</table>
 
 <?php 
-$varss="product_cat,brand,".get_option('taxomizer_customtax');
+$varss="product_cat,brand,".fw_theme_mod('fw_extra_tax');
 foreach (explode(",",$varss) as $nombre ) {
 $titulo=$nombre;
 $nombre=strtolower($nombre);
@@ -271,7 +271,7 @@ if(empty($nombre))break;
 		$elems=count($array);
 		$cuenta=(int)$_REQUEST['cuenta']*$elems;	
 		//$nombre="product_cat";
-		$varss="product_cat,brand,".get_option('taxomizer_customtax');
+		$varss="product_cat,brand,".fw_theme_mod('fw_extra_tax');
 		// Create the list of image IDs
 		$args     = array( 'post_type' => 'product' , 'posts_per_page'=>$elems,'offset'=>$cuenta);
 		$products = get_posts( $args ); 
