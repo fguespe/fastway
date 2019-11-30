@@ -56,21 +56,27 @@ display:none !important;
 	display: none !important;
 }
 /*MENU SUPERIOR*/
-/*
-.estiloiconomenu i:before{
+
+.estiloiconomenu i.fas:before{
 	font-family: "Font Awesome 5 Pro" !important;
+}
+.estiloiconomenu i.fab:before{
+	font-family: "Font Awesome 5 Brands" !important;
+}
+.estiloiconomenu i:before{
     color:var(--ca-icon-color) !important;
 	text-align:center !important;
 	line-height:25px !important;
 	font-size:18px !important;
 }
+
 .estiloiconomenu i:after{
 	font-family: "Font Awesome 5 Pro" !important;
     color: var(--ca-second-color)  !important;
 	text-align:center !important;
 	line-height:25px !important;
 	font-size:12px !important;
-}*/
+}
 .estiloiconomenu {
 	border-right:1px solid white !important;
 }
