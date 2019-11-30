@@ -1,6 +1,4 @@
 <?php
-
-
 // Validate required term and conditions check box
 add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
 function terms_and_conditions_validation( $username, $email, $validation_errors ) {
@@ -1674,8 +1672,6 @@ if( ! function_exists('xa_product_default_weight') ) {
 }
 }
 
-
-
 function fw_hide_shipping_when_free_is_available( $rates ) {
 	$free = array();
 	foreach ( $rates as $rate_id => $rate ) {
@@ -1706,7 +1702,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) && 1==2 ) {
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        $myarray = WC()->cart->get_cross_sells();;
+        $myarray = WC()->cart->get_cross_sells();
         
         $args = array(
           'post_type' => 'product',
