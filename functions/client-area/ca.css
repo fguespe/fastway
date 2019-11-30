@@ -55,7 +55,7 @@ display:none !important;
 #nth_page_config,#pageparentdiv{
 	display: none !important;
 }
-/*MENU SUPERIOR*/
+/*MENU SUPERIOR
 .estiloiconomenu i:before{
 	font-family: "Font Awesome 5 Pro" !important;
     color:var(--ca-icon-color) !important;
@@ -73,7 +73,7 @@ display:none !important;
 .estiloiconomenu {
 	border-right:1px solid white !important;
 }
-
+*/
 .titulo-:hover{
 background: none !important;
 }
