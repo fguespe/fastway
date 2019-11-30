@@ -268,7 +268,9 @@ function fw_remove_menu_pages() {
             /*Fix FA 4*/
             $fwi=$i->classes[0];
             if($fwi==="bar-chart"){$fwi="chart-bar";}
-            add_menu_page("fw-".$i->title, "<i class='fas fa-".$fwi."'></i> ".$i->title,'read',get_admin_url().$i->url);
+                
+            if( strpos($fwi, 'fa-' ) === false) $fwi='fas fa-'.$fwi;
+            add_menu_page("fw-".$i->title, "<i class='".$fwi."'></i> ".$i->title,'read',get_admin_url().$i->url);
         }
 
         
