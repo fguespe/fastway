@@ -55,7 +55,8 @@ display:none !important;
 #nth_page_config,#pageparentdiv{
 	display: none !important;
 }
-/*MENU SUPERIOR
+/*MENU SUPERIOR*/
+/*
 .estiloiconomenu i:before{
 	font-family: "Font Awesome 5 Pro" !important;
     color:var(--ca-icon-color) !important;
@@ -69,11 +70,11 @@ display:none !important;
 	text-align:center !important;
 	line-height:25px !important;
 	font-size:12px !important;
-}
+}*/
 .estiloiconomenu {
 	border-right:1px solid white !important;
 }
-*/
+
 .titulo-:hover{
 background: none !important;
 }
