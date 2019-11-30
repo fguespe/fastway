@@ -266,9 +266,9 @@ function fw_remove_menu_pages() {
         if(empty($menu_items))return;
         foreach( $menu_items as $i ) {
             /*Fix FA 4*/
-            $fwi=$i->classes[0];
+            $fwi=implode(" ",$i->classes);
+            if(!empty($i->classes[1]))
             if($fwi==="bar-chart"){$fwi="chart-bar";}
-                
             if( strpos($fwi, 'fa-' ) === false) $fwi='fas fa-'.$fwi;
             add_menu_page("fw-".$i->title, "<i class='".$fwi."'></i> ".$i->title,'read',get_admin_url().$i->url);
         }
@@ -302,11 +302,14 @@ function fw_menu_items($wp_admin_bar){
     $menu_items = wp_get_nav_menu_items($menu->term_id);
     if(!empty($menu_items)){
         foreach( $menu_items as $i ) {
-            $fwi=$i->classes[0];
+            $fwi=implode(" ",$i->classes);
+            if(!empty($i->classes[1]))
+            if($fwi==="bar-chart"){$fwi="chart-bar";}
+            if( strpos($fwi, 'fa-' ) === false) $fwi='fas fa-'.$fwi;
             if($fwi==="bar-chart"){$fwi="chart-bar";}
             $args = array(
                 'id' => 'custom-node-'.$i->ID,
-                'title' => "<i class='fas fa-".$fwi."'></i> ".$i->title,
+                'title' => "<i class='".$fwi."'></i> ".$i->title,
                 'href' => $i->url,
                 'meta' => array(
                     'class' => 'estiloiconomenu titulo-'.$i->slug
