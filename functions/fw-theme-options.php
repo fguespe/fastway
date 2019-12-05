@@ -355,8 +355,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
-if(fw_theme_mod('fw_blog_per_page')!=get_option('posts_per_page'))update_option('posts_per_page',fw_theme_mod('fw_blog_per_page'))
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'fw_blog_per_page',
