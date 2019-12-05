@@ -8,6 +8,7 @@ $rand=generateRandomString(5);
 <div class="swiper-wrapper clear-ul">
 <?php 
 $cant=0;		
+if(empty($loop))$loop='false';
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 

@@ -229,14 +229,11 @@ function fw_slider() {
 }
 
 add_action( 'vc_before_init', 'fw_image' );
-
 function fw_image() {
     // Title
 
     $static_block_args = fastway_get_stblock();
-    $static_block_args=array_merge(array(
-        "Select an option" => "",),$static_block_args);
-        
+    $static_block_args=array_merge(array("Select an option" => "",),$static_block_args);
     vc_map(
         array(
             'name' => __( 'FW Image' ),
@@ -269,23 +266,17 @@ function fw_image() {
                     "param_name"  => "size",
                     "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'
-    
                 ),
-               
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Title"),
                     "param_name"  => "title",
-    
                 ),
-               
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Sub Title"),
                     "param_name"  => "subtitle",
-    
                 ),
-               
                 array(
                     "type"        => "dropdown",
                     "heading"     => __("Select Block"),
@@ -306,10 +297,6 @@ function fw_image() {
         )
     );
 }
-
-
-
-
 function fw_slider_function( $atts, $content ) {
     $rand=generateRandomString(5);
     $atts = shortcode_atts(

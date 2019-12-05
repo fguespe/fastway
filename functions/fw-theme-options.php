@@ -355,6 +355,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
+if(fw_theme_mod('fw_blog_per_page')!=get_option('posts_per_page'))update_option('posts_per_page',fw_theme_mod('fw_blog_per_page'))
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
@@ -2430,7 +2431,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'add-to-cart-text',
 	'label'    => __( 'Add to cart Label', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>__( 'Comprar', 'fastway' ),
+	'default'	=>__( 'Agregar al carrito', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
