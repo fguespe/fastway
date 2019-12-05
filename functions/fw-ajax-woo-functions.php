@@ -1,7 +1,6 @@
 <?php
 
 /*
-add_shortcode('fw_loop_cart', 'fw_loop_cart');
 function fw_loop_cart() {
   
     global $product;
@@ -60,6 +59,7 @@ function fw_product_is_purchasable($product){
 }
 
 
+add_shortcode('fw_loop_cart', 'fw_loop_ajax');
 add_shortcode('fw_loop_ajax', 'fw_loop_ajax');
 function fw_loop_ajax() {
   global $product;
