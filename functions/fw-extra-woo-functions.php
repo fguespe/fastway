@@ -281,7 +281,7 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
       $terms = get_the_terms ( $product->id, 'product_cat' );
       $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories_ext'));
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=false;
-      if(!$esdelapromo)return $product->regular_price;
+      if(!$esdelapromo)return  $product->regular_price;
 
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_general_discount')/100));
@@ -785,17 +785,15 @@ function fw_price_html1($price,$product,$single=false){
         }
         
     }
-    if($product->is_on_sale()){
-
-    return '<span class="fw_price price1">
-        <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
-        <span class="tachado">
-            <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-            <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
-        </span>
-        </span>';
+    if($product->is_on_sale() && $sale_price!=$regular_price){
+        return '<span class="fw_price price1">
+            <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
+            <span class="tachado">
+                <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
+                <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
+            </span>
+            </span>';
     }else{
-      
         $preciolabel=$symbol.$regular_price;
         return '<span class="fw_price price1"><span class="precio">'.$preciolabel.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
     }      
