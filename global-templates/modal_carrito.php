@@ -135,7 +135,6 @@ function populatecart(){
         let subtotal=totals['subtotal']*conv
         let total=totals['total']*conv
         let discount_total=total-subtotal
-        console.log(datos['items'])
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']*conv

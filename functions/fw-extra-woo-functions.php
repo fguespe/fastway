@@ -269,10 +269,23 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
 
 
 if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
-  // Utility function to change the prices with a multiplier (number)
-  function get_price_multiplier() {
-    $price=floatval(1-(fw_theme_mod('fw_general_discount')/100));
-    return $price; // x2 for testing
+  function fw_general_discount($product){
+    if(fw_theme_mod('fw_general_discount_categories')){
+      $esdelapromo=false;
+      $terms = get_the_terms ( $product->id, 'product_cat' );
+      $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories'));
+      foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=true;
+      if(!$esdelapromo)return $product->regular_price;
+    }else if(fw_theme_mod('fw_general_discount_categories_ext')){
+      $esdelapromo=false;
+      $terms = get_the_terms ( $product->id, 'product_cat' );
+      $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories_ext'));
+      foreach ( $terms as $cat )if(!in_array($cat->slug,$catespromo))$esdelapromo=true;
+      if(!$esdelapromo)return $product->regular_price;
+
+    }
+    $multiplier=floatval(1-(fw_theme_mod('fw_general_discount')/100));
+    if($product->regular_price)return floatval($product->regular_price * $multiplier);
   }
 
   add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
@@ -280,13 +293,13 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
   add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   function custom_price( $price, $product ) {
-    if($product->regular_price)return floatval($product->regular_price * get_price_multiplier());
+    return fw_general_discount($product);
   }
 
   add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
   add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
   function custom_variable_price( $price, $variation, $product ) {
-    if($product->regular_price)return floatval($product->regular_price * get_price_multiplier());
+    return fw_general_discount($product);
   }
 
 }

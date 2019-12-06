@@ -2307,6 +2307,21 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_general_discount_categories',
+	'label'       => __( 'Categories', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Slugs separados con ","'
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_general_discount_categories_ext',
+	'label'       => __( 'Categories Exclude', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Slugs separados con ","'
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_lili_discount',
 	'label'       => __( '2-Lili Discount (Buy X Get X)', 'fastway' ),
@@ -2321,7 +2336,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_categories',
-	'label'       => __( 'Categories', 'fastway' ),
+	'label'       => __( 'Categories Include', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'description' => 'Slugs separados con ","'
 ) );
