@@ -1,18 +1,5 @@
 <?php
-
 /*
-function fw_loop_cart() {
-  
-    global $product;
-    if(fw_check_hide_purchases())return;
-
-    $cant=isset( $quantity ) ? $quantity : 1;
-    $clase=$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '';
-    $type=$product->get_type() == 'simple' ? 'ajax_add_to_cart' : '';
-    echo '<a href="'.$product->add_to_cart_url().'" data-quantity="'.$cant.'" 
-    class="%s product_type_%s single_add_to_cart_button btn btn-block '.$type.'">'. esc_html( $product->add_to_cart_text() ).'</a>';
-}*/
-
 add_shortcode('fw_single_cart_old', 'fw_single_cart_old');
 function fw_single_cart_old(){
     global $product;
@@ -21,7 +8,7 @@ function fw_single_cart_old(){
     woocommerce_template_single_add_to_cart();
     do_action( 'woocommerce_before_add_to_cart_button' );
 }
-
+*/
 
 if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
@@ -37,8 +24,7 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
       $carturl=wc_get_cart_url();
       $checkurl=wc_get_checkout_url();
       $istyle=fw_theme_mod("fw_icons_style");
-      if($cant>0)$cant='<span class="cant">('.$cant.')</span>';
-      else $cant='';
+      $cant='<span class="cant">('.$cant.')</span>';
       if($style==="link" || $style==="modal"){
       return '
       <a class="fw-header-icon minicart"  data-toggle="modal" data-target="#modal_carrito" role="button">
@@ -152,6 +138,18 @@ function fw_add_to_cart(){
   WC()->cart->add_to_cart( $id,1, $var_id);
   exit();
 }
+
+add_action('wp_ajax_nopriv_get_items_cant', 'get_items_cant');
+add_action('wp_ajax_get_items_cant', 'get_items_cant');
+function get_items_cant(){
+  global $woocommerce;
+  $key= $_GET['cart_item_key'];
+  $total= $_GET['total'];
+
+  WC()->cart->set_quantity( $key, $total );
+  exit();
+}
+
 add_action('wp_ajax_nopriv_sum_cart_qty', 'sum_cart_qty');
 add_action('wp_ajax_sum_cart_qty', 'sum_cart_qty');
 function sum_cart_qty(){
@@ -183,7 +181,7 @@ function fw_get_js_cart(){
     }
     $totals=WC()->cart->get_totals();
 
-    $totales=array('cart' => $carta, 'totals'=> $totals,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
     echo json_encode($totales);
     exit();
 }
