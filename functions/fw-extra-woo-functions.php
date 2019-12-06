@@ -277,10 +277,10 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=true;
       if(!$esdelapromo)return $product->regular_price;
     }else if(fw_theme_mod('fw_general_discount_categories_ext')){
-      $esdelapromo=false;
+      $esdelapromo=true;
       $terms = get_the_terms ( $product->id, 'product_cat' );
       $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories_ext'));
-      foreach ( $terms as $cat )if(!in_array($cat->slug,$catespromo))$esdelapromo=true;
+      foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=false;
       if(!$esdelapromo)return $product->regular_price;
 
     }
