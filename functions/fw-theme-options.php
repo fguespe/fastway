@@ -2338,7 +2338,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_lili_discount_categories',
 	'label'       => __( 'Categories Include', 'fastway' ),
 	'section'     => 'section_woo_discount',
-	'description' => 'Slugs separados con ","'
+	'description' => 'Slugs separados con ",", es uno o el otro'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',

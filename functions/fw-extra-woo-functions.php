@@ -791,7 +791,7 @@ function fw_price_html1($price,$product,$single=false){
         <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
         <span class="tachado">
             <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-            <span class="badge badge-success">'.$percentage.'% OFF</span>
+            <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
         </span>
         </span>';
     }else{
