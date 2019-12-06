@@ -285,7 +285,7 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
 
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_general_discount')/100));
-    if($product->regular_price)return floatval($product->regular_price * $multiplier);
+    if($product->regular_price)return round(floatval($product->regular_price * $multiplier));
   }
 
   add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
@@ -1780,13 +1780,14 @@ function add_custom_fees( WC_Cart $cart ){
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
     if( $cart->cart_contents_count < $cuantos ) return;
-
+    $cantqueespromo=0;
     $items = $cart->get_cart();
     $menorprecio=100000000;
     $aplicardescuento=true;
+
     foreach($items as $item => $values) { 
         $product_id=$values['data']->get_id() ;
-        $product =  wc_get_product( $product_id );
+        $product=wc_get_product( $product_id);
         //cates
         $esdelapromo=false;
         $terms = get_the_terms ( $product_id, 'product_cat' );
@@ -1794,14 +1795,17 @@ function add_custom_fees( WC_Cart $cart ){
         foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
         
         if(!$esdelapromo)continue;
+        $cantqueespromo++;
+
         //Aca si es de la cate
+
         $precio=$product->get_price();
         if($menorprecio>$precio)$menorprecio=$precio;
        
     }
     if($menorprecio==100000000)return;
     //$discount = $cart->subtotal * 0.1;
-    $discount=$menorprecio*-1/(100/$porcentage);
+    $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
     $coupons=$cart->get_applied_coupons();
     if(empty($coupons))$cart->add_fee( 'Promo:', $discount);
 }
