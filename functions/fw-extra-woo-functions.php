@@ -785,8 +785,6 @@ function fw_price_html1($price,$product,$single=false){
         }
         
     }
-    echo $sale_price;
-    echo $regular_price;
     if($product->is_on_sale() && $sale_price!=$regular_price){
         return '<span class="fw_price price1">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
