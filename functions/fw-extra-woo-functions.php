@@ -285,7 +285,7 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
 
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_general_discount')/100));
-    if($product->regular_price)return round(floatval($product->regular_price * $multiplier));
+    if($product->regular_price)return ceil(floatval($product->regular_price * $multiplier));
   }
 
   add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
@@ -1786,6 +1786,7 @@ function add_custom_fees( WC_Cart $cart ){
     $aplicardescuento=true;
 
     foreach($items as $item => $values) { 
+        error_log(print_r($values,true));
         $product_id=$values['data']->get_id() ;
         $product=wc_get_product( $product_id);
         //cates
@@ -1795,10 +1796,8 @@ function add_custom_fees( WC_Cart $cart ){
         foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
         
         if(!$esdelapromo)continue;
-        $cantqueespromo++;
-
+        $cantqueespromo+=$values['quantity'];
         //Aca si es de la cate
-
         $precio=$product->get_price();
         if($menorprecio>$precio)$menorprecio=$precio;
        
