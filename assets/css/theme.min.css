@@ -82,6 +82,10 @@
   border-color: var(--main);
 }
 
+.fw-medios.downlink small {
+  color: #00bcd4;
+}
+
 .fw-medios {
   display: block;
   text-decoration: none;
@@ -1084,6 +1088,14 @@ ul {
   }
 }
 */
+.sale_text {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: var(--main);
+  color: white;
+}
+
 #index-wrapper, #single-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
