@@ -116,6 +116,7 @@
             
     function obtenerSeleccionCombo(idCombo){
         var indice = document.getElementById(idCombo).selectedIndex;
+        console.log(document.getElementById(idCombo),indice)
         var resultado = document.getElementById(idCombo).options[indice].value;
         return resultado;
     }
