@@ -241,9 +241,21 @@ color:var(--linkedin) !important;
       font-size: 14px ;
     }
 }
+i.fad{
+  color:var(--second);
+}  
+.btn-main{
+  background-color: var(--main);
+  color:white;
+  border:0px !important;
+  margin:0 auto;
+}
 
 .btn-second{
-  background-color: var(--main);
+  background-color: var(--second);
+  color:white;
+  border:0px !important;
+  margin:0 auto;
 }
 
 .fw_add_to_cart_button {

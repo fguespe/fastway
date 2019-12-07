@@ -18,17 +18,17 @@
     </div>
 </div>
 <div id="modal_envio" class="modal fade addNewInputs show" role="dialog" aria-labelledby="modalAdd" aria-modal="true" style="" >
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body mx-3">
-                <div class="container">
                 <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+                <div class="row text-center"><i class="fad fa-shipping-fast mb10" style="color:var(--second);font-size:30px;margin:0 auto;"></i></div>
+                <div class="container">
                 <h4 class="modal-title text-center"><?=fw_theme_mod('fw_label_calcular_costo_envio')?></h4>
                 <div id="shipping-calc" class="text-center mt20 mb20">
-                    <i class="fad fa-shipping-fast" style="color:var(--second);font-size:30px;"></i>
                     <span class="text-center db mb10 mt10">Ingresa tu código postal</span>
                     <input type="tel" id="wscp-postcode" autocomplete="off"  name="wscp-postcode" class="text-center" style="" placeholder="Ej: 1804" />
-                    <button type="button" id="wscp-button" class="btn_mp_calc_shipping db mt20 mb20 pb5 pt5">
+                    <button type="button" id="wscp-button" class="btn btn-main btn_mp_calc_shipping db mt20 mb20 pb5 pt5">
                         <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
                         Calcular
                     </button>
@@ -44,44 +44,45 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body mx-3">
+                <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+                <div class="row text-center"><i class="fad fa-credit-card mb10" style="color:var(--second);font-size:30px;margin:0 auto;"></i></div>
                 <div class="container">
-                    <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title text-center"><?=fw_theme_mod('fw_label_calcular_costo_envio')?></h4>
+                    <h4 class="modal-title text-center mb10"><?=fw_theme_mod('fw_label_calcular_cuotas')?></h4>
                     <div class="row mt20">
-                        <div class="col-md-6 col-xs-12">
+                        <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Tarjeta</label><br>
-                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-second" id="forma" onchange="obtenerBancos();">
+                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-main" id="forma" onchange="obtenerBancos();">
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xs-12">
+                        <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Banco</label><br>
-                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-second" id="banco" onchange="obtenerCuotas();"></select>
+                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-main" id="banco" onchange="obtenerCuotas();"></select>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label class="control-label">Cuotas</label><br>
-                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-second" onchange="calcular();"></select>
+                                <label class="control-label">Cuotas</label>
+                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-main" onchange="calcular();"></select>
                             </div>
                         </div>
-                        <div class="col-md-10">
-                            <div class="row">
-                                <div class="col-md-6 text-center mt-2">
-                                    <label class="control-label btns"><b>Cuotas de:</b> <span id="cuota" class="b"></span></label>	
+                        <div class="col-md-12 align-bottom">
+                            <div class="row finales">
+                                <div class="col-md-6 text-center align-bottom">
+                                    <label class="control-label btns">Cuotas de: <span id="cuota" class="b"></span></label>	
                                 </div>
                                 <div class="col-md-6 text-center">									
-                                    <label class="control-label btns"><b>Total:</b> <span id="montofinal" class="b"></span></label>	
+                                    <label class="control-label btns">Total: <span id="montofinal" class="b"></span></label>	
                                 </div>	
                             </div>								
                         </div>
                     </div>
                     <div class="row mt20">
                             <div class="col-md-12 text-center">
-                                <a href="https://www.mercadopago.com.ar/cuotas" target="_blank" class="btn btn-sm">VER TODAS LAS PROMOCIONES<div class="ripple-container"></div></a><br>
-                                <img src="https://www.tiendanova.com.ar/images/tarjetas.jpg">
+                                <img width="300" src="/wp-content/themes/fastway/assets/img/mp.png"><br>
+                                <a href="https://www.mercadopago.com.ar/cuotas" target="_blank" class="text-center text-info" style="font-size:12px;boder-bottom">Ver todas las promociones</a>
                             </div>
                         </div>
                 </div>
@@ -335,19 +336,23 @@
   border:0px !important;
   border-bottom: 1px solid #eeeeee !important;
 }
-#wscp-button{
-  border:0px !important;
-  margin:0 auto;
-  background:var(--second);
-  color:white;
-}
 #wscp-response p,
 #wscp-response span{
   font-size:14px !important;
   line-height:16px !important;
   margin-bottom:10px !important;
 }
-  
+#modal_cuotas .finales{
+font-size:20px;
+line-height:60px !important;
+}
+#modal_cuotas .finales span{
+font-size:30px;
+line-height:60px !important;
+}
+#modal_cuotas select{
+color:white !important;
+}
 </style>
 <script>
 

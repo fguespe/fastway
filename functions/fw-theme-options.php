@@ -1532,9 +1532,8 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_price]
 	[fw_single_cart]
 	[fw_summary_container]
-	[fw_extras_short type="fa-shield-alt" isli="true" text="Compra Segura" stext="Garantía de Fabrica" el_class="fw-medios"]
-	[fw_extras_short type="fa-credit-card" isli="true" text="Ver cuotas y medios de pago" stext="(Ver promociones vigentes)" modal="modalMediosPago" el_class="fw-medios"]
-	[altoweb_financiacion]
+	[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]
+	[fw_data type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]
 	[/fw_single_summary]
 	[fw_single_tabs]
 	[/fw_single_container]
@@ -2529,6 +2528,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Consultar', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'Consultar',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_calcular_cuotas',
+	'label'    => __( 'Calcular envio', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'Calculador de cuotas',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
