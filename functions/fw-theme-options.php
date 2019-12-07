@@ -1478,6 +1478,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_show_calculator_shipping',
@@ -1490,7 +1491,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
+*/
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
 Kirki::add_field( 'theme_config_id', array(
