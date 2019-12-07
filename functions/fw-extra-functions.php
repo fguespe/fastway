@@ -90,7 +90,7 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
         $block=fw_StaticBlock::getSticBlockContent($id,true);
         //$block=nl2br($block);
     }
-    else $block='<iframe height="868" width="100%" frameBorder="0" title="Promociones bancarias" scrolling="no" src="'.$id.'" scrolling="no"></iframe>';
+    else $block='<iframe height="1000" width="100%" frameBorder="0" title="Promociones bancarias" scrolling="no" src="'.$id.'" scrolling="no"></iframe>';
   return <<<HTML
 <!-- Modal -->
 <div class="modal fade" id="$rand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

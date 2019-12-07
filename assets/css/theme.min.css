@@ -317,6 +317,10 @@
   display: inline-block !important;
 }
 
+#wscp-button.loading i.fa-spin {
+  display: inline-block !important;
+}
+
 .fw_add_to_cart_button.loop {
   background: none;
   border: 0px;

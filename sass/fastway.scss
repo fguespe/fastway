@@ -242,7 +242,9 @@ color:var(--linkedin) !important;
     }
 }
 
-
+.btn-second{
+  background-color: var(--main);
+}
 
 .fw_add_to_cart_button {
   background: var(--main) !important;
@@ -268,7 +270,10 @@ color:var(--linkedin) !important;
   display: none !important;;
 }
 .fw_add_to_cart_button.loading i.fa-spin{
-  display: inline-block !important;;
+  display: inline-block !important;
+}
+#wscp-button.loading i.fa-spin{
+  display: inline-block !important;
 }
 
 

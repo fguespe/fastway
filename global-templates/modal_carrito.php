@@ -11,7 +11,6 @@
                     <div class="row d-flex justify-content-between">
                         <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
                         <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
-                    
                     </div>
                 </div>
             </div>
@@ -29,7 +28,10 @@
                     <i class="fad fa-shipping-fast" style="color:var(--second);font-size:30px;"></i>
                     <span class="text-center db mb10 mt10">Ingresa tu código postal</span>
                     <input type="tel" id="wscp-postcode" autocomplete="off"  name="wscp-postcode" class="text-center" style="" placeholder="Ej: 1804" />
-                    <input type="button" id="wscp-button" class="btn_mp_calc_shipping db mt20 mb20 pb5 pt5" value="Calcular" >
+                    <button type="button" id="wscp-button" class="btn_mp_calc_shipping db mt20 mb20 pb5 pt5">
+                        <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+                        Calcular
+                    </button>
                     <input type="hidden" name="wscp-nonce" id="wscp-nonce" value="<?= wp_create_nonce( "wscp-nonce" ); ?>">
                     <div id="wscp-response"></div>
                 </div>
@@ -38,6 +40,275 @@
         </div>
     </div>
 </div>
+<div id="modal_cuotas" class="modal fade addNewInputs show" role="dialog" aria-labelledby="modalAdd" aria-modal="true" style="" >
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body mx-3">
+                <div class="container">
+                    <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title text-center"><?=fw_theme_mod('fw_label_calcular_costo_envio')?></h4>
+                    <div class="row mt20">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">Tarjeta</label><br>
+                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-second" id="forma" onchange="obtenerBancos();">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">Banco</label><br>
+                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-second" id="banco" onchange="obtenerCuotas();"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label">Cuotas</label><br>
+                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-second" onchange="calcular();"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-6 text-center mt-2">
+                                    <label class="control-label btns"><b>Cuotas de:</b> <span id="cuota" class="b"></span></label>	
+                                </div>
+                                <div class="col-md-6 text-center">									
+                                    <label class="control-label btns"><b>Total:</b> <span id="montofinal" class="b"></span></label>	
+                                </div>	
+                            </div>								
+                        </div>
+                    </div>
+                    <div class="row mt20">
+                            <div class="col-md-12 text-center">
+                                <a href="https://www.mercadopago.com.ar/cuotas" target="_blank" class="btn btn-sm">VER TODAS LAS PROMOCIONES<div class="ripple-container"></div></a><br>
+                                <img src="https://www.tiendanova.com.ar/images/tarjetas.jpg">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+<script type="text/javascript">
+    // Configurá tu Public Key
+    obtenerTarjetas();
+
+    function obtenerTarjetas(){
+
+        jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/", function( data ) {
+            jQuery.each( data, function( key, val ) {
+                if(val['payment_type_id']!='credit_card')return;
+
+                var o = new Option(val['name'],val['id']);
+                jQuery("#forma").append(o);
+            });
+            obtenerBancos();
+        });
+    }
+    
+            
+    function limpiarComboCuotas(){
+        document.getElementById('cuotas').innerHTML = ' <select id="cuotas" onchange="calcular();" style="width: 200px;"></select>';
+    }
+    
+            
+    function obtenerSeleccionCombo(idCombo){
+        var indice = document.getElementById(idCombo).selectedIndex;
+        var resultado = document.getElementById(idCombo).options[indice].value;
+        return resultado;
+    }
+    
+    function limpiarComboBancos(){
+        document.getElementById('banco').innerHTML = '<select id="banco" onchange="obtenerCuotas();" style="width: 200px;"></select>';
+    }
+    
+    function obtenerBancos(){
+        limpiarComboBancos();
+        var id = obtenerSeleccionCombo('forma');
+        var parametros = {};
+        jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/"+id, function( val ) {
+            var banco = val.card_issuer.name;
+            var id = val.card_issuer.id;
+            if(id==1 || id==3 || id==2 || id==1007 || id==5 || id==288 || id==692 || id==688 || id==4){
+                banco = 'Otros Bancos'; 
+            }
+
+            var o = new Option(banco,id);
+            jQuery("#banco").append(o);
+
+            var excepciones = val.exceptions_by_card_issuer;
+        
+            var tamanio = excepciones.length;                    
+            var i = 0;
+            var k = 1;
+            while(i<tamanio)
+                    {
+                        var banco = excepciones[i].card_issuer.name;
+                        var id = excepciones[i].card_issuer.id;
+                        var o = new Option(banco,id);
+                        jQuery("#banco").append(o);
+                        i++;
+            k++;
+            }
+            obtenerCuotas();
+        });
+    }
+
+    function obtenerCuotas(){
+        limpiarComboCuotas();
+        var id = obtenerSeleccionCombo('forma');
+        var banco = obtenerSeleccionCombo('banco');
+        var parametros = {};
+        jQuery.ajax({
+            data:  parametros,
+            url:   'https://api.mercadolibre.com/sites/MLA/payment_methods/'+id,
+            type:  'get',
+            dataType: "json",
+            beforeSend: function () {
+                //$("#resultado").html("Procesando, espere por favor...");
+            },
+            success:  function (response) {
+                ejecutorObtenerCuotas(banco,response);
+            }
+        });
+        
+    }
+
+    function ejecutorObtenerCuotas(idBanco,respuesta){                
+        var arregloTextos = respuesta;//JSON.parse(respuesta);
+        var x = 0;
+        var bancoObtenido = arregloTextos.card_issuer.id;
+        if(bancoObtenido == idBanco){
+            var opcionesPago = arregloTextos.payer_costs;
+            var tamanioOpciones = opcionesPago.length;
+            var k = 0;
+            while(k<tamanioOpciones){
+                var cuotas = opcionesPago[k].installments;
+                var rate = opcionesPago[k].installment_rate;
+                document.getElementById("cuotas").options[x] = new Option(cuotas,rate);
+                x++;
+                k++;
+            }
+        }
+        
+        var excepciones = arregloTextos.exceptions_by_card_issuer;
+        var tamanio = excepciones.length;                    
+        var i = 0;
+        while(i<tamanio)
+        {
+            var bancoObtenido = excepciones[i].card_issuer.id;
+            if(bancoObtenido == idBanco){
+                var opcionesPago = excepciones[i].payer_costs;
+                var tamanioOpciones = opcionesPago.length;
+                var k = 0;
+                while(k<tamanioOpciones){
+                    var cuotas = opcionesPago[k].installments;
+                    var rate = opcionesPago[k].installment_rate;
+                    document.getElementById("cuotas").options[x] = new Option(cuotas,rate);
+                    x++;
+                    k++;
+                }
+            }
+            i++;
+        }
+        obtenerPrecioProducto();
+    }
+        
+    function obtenerPrecioProducto(){
+            precioObtenido = jQuery(".fw_price").attr("data-precio");/*getParameter('id');*/
+            console.log("test: "+precioObtenido);
+            calcular();
+            /*guardarSeleccion();*/
+    }
+        
+    function obtenerClaveCombo(idCombo){
+        var indice = document.getElementById(idCombo).selectedIndex;
+        var resultado = document.getElementById(idCombo).options[indice].text;
+        return resultado;
+    }
+
+    function ejecutorObtenerPrecioProducto(){
+        var arregloTextos = JSON.parse(respuesta3);
+        precioObtenido = arregloTextos[0].precio;
+        calcular();
+    }
+        
+    function calcular(){
+        var rate = obtenerSeleccionCombo('cuotas');
+        console.log('rate: '+rate);
+        var montoFinal = 0;	
+        if(rate>0){
+            montoFinal = parseFloat(precioObtenido) + (parseFloat(rate) * parseFloat(precioObtenido)) / 100;
+        }else{
+            montoFinal = parseFloat(rate) + parseFloat(precioObtenido);
+        }
+        var cantCuotas = obtenerClaveCombo('cuotas');
+        var valorCuota = montoFinal / parseInt(cantCuotas);
+        document.getElementById('cuota').innerHTML = '$' + valorCuota.toFixed(2);
+        document.getElementById('montofinal').innerHTML = '$' + montoFinal.toFixed(2);
+    }
+
+        
+                      
+            
+
+    
+    // Consultá el recurso de installments
+    /*
+    Mercadopago.getInstallments({
+        "payment_method_id": "visa",
+        "bin": 433830,
+        "amount": 10000
+    }, showInstallments);*/
+
+    // Mostrá las cuotas
+    function showInstallments(status, response){
+        console.log(status,response)
+      var selectorInstallments = document.getElementById('installments'),
+          fragment = document.createDocumentFragment();
+      selectorInstallments.options.length = 0;
+      if (response.length > 0){
+        var option = new Option("Elija una cuota...", '-1'),
+            payerCosts = response[0].payer_costs;
+        fragment.appendChild(option);
+        for (var i = 0; i < payerCosts.length; i++) {
+            option = new Option(payerCosts[i].recommended_message || payerCosts[i].installments, payerCosts[i].installments);
+            var tax = payerCosts[i].labels;
+            if(tax.length > 0){
+              for (var l = 0; l < tax.length; l++) {
+                if (tax[l].indexOf('CFT_') !== -1){
+                  option.setAttribute('data-tax', tax[l]);
+                }
+              }
+            }
+            fragment.appendChild(option);
+        }
+        selectorInstallments.appendChild(fragment);
+        selectorInstallments.removeAttribute('disabled');
+      }
+      else {
+        console.log('Error: Could not get installments');
+      }
+    }
+/*
+    // Actualizá el resumen cuando el usuario elija las cuotas
+    document.getElementById('installments').onchange = function(){
+      var cur_i = this.options[this.selectedIndex].getAttribute('data-tax');
+      if(cur_i != null){
+        document.getElementById('total-financed').innerHTML = this.options[this.selectedIndex].text;
+        showTaxes(cur_i);
+      }
+    };
+    function showTaxes(tax){
+      var tax_split = tax.split('|');
+          var CFT = tax_split[0].replace('CFT_', ''),
+          TEA = tax_split[1].replace('TEA_', '');
+      document.getElementById('cft').innerHTML = CFT;
+      document.getElementById('tea').innerHTML = TEA;
+    }
+*/
+</script>
 <style>
 #modal_carrito .btn.seguir{
     background:var(--second);
@@ -182,11 +453,10 @@ function populatecart(){
             let subtotal=value['subtotal']*conv
             let quantity=value['quantity']
             let line_subtotal=value['line_subtotal']*conv
-
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
-            jqe+='<div class="titulo-producto-cart">'+value['nombre']+'</div>'
+            jqe+='<a target="_self" href="'+value['link']+'"><div class="titulo-producto-cart">'+value['nombre']+'</div></a>'
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'
             jqe+='<div class="row d-flex justify-content-left item-cantidad " id="loadinghide_'+index+'">'
             jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',-1)" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	

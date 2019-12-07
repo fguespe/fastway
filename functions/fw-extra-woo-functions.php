@@ -786,7 +786,7 @@ function fw_price_html1($price,$product,$single=false){
         
     }
     if($product->is_on_sale() && $sale_price!=$regular_price){
-        return '<span class="fw_price price1">
+        return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
             <span class="tachado">
                 <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
@@ -795,7 +795,7 @@ function fw_price_html1($price,$product,$single=false){
             </span>';
     }else{
         $preciolabel=$symbol.$regular_price;
-        return '<span class="fw_price price1"><span class="precio">'.$preciolabel.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+        return '<span class="fw_price price1" data-precio="'.$product->get_price().'"><span class="precio">'.$preciolabel.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
     }      
 }
 
