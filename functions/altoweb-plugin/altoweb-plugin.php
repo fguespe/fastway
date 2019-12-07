@@ -109,24 +109,6 @@ if(fw_theme_mod('fw_action_woosettings')){
    set_theme_mod('fw_action_woosettings',false);
 }
 
-/*
-if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-
-   $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-   //$opts['title']='Mercadopago';
-   $opts['description']='<a><img src="/wp-content/themes/fastway/assets/img/mp.png" class="noborrar"/></a>';
-   $opts['mp_redirect']='yes';
-   $opts['mp_completed']='yes';
-   //$opts['method']='redirect';
-   //$opts['installment_paymentbutton_calculator']='no';
-   //$opts['installment_product_calculator']='no';
-   //$opts['shipping_product_calculator']='no';
-
-   update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
-
-   //set_theme_mod('fw_show_calculator_shipping',true);
-}*/
-
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
     set_theme_mod('mobile-icon', $THEME_IMG_URI."favi.png");

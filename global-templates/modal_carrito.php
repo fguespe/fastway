@@ -21,13 +21,18 @@
 <div id="modal_envio" class="modal fade addNewInputs show" role="dialog" aria-labelledby="modalAdd" aria-modal="true" style="" >
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center t2">
-                <h4 class="modal-title text-center">Calcular costo de envío</h4>
-                <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
-            </div>
             <div class="modal-body mx-3">
                 <div class="container">
-                    <h2>Ingresa tu código postal</h2>
+                <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title text-center"><?=fw_theme_mod('fw_label_calcular_costo_envio')?></h4>
+                <div id="shipping-calc" class="text-center mt20 mb20">
+                    <i class="fad fa-shipping-fast" style="color:var(--second);font-size:30px;"></i>
+                    <span class="text-center db mb10 mt10">Ingresa tu código postal</span>
+                    <input type="tel" id="wscp-postcode" autocomplete="off"  name="wscp-postcode" class="text-center" style="" placeholder="Ej: 1804" />
+                    <input type="button" id="wscp-button" class="btn_mp_calc_shipping db mt20 mb20 pb5 pt5" value="Calcular" >
+                    <input type="hidden" name="wscp-nonce" id="wscp-nonce" value="<?= wp_create_nonce( "wscp-nonce" ); ?>">
+                    <div id="wscp-response"></div>
+                </div>
                 </div>
             </div>
         </div>
@@ -44,6 +49,7 @@
     color:white;
     border:0px ;
 }
+
 .fw_variations{
     text-align:center !important;
     width:100% !important;
@@ -51,6 +57,26 @@
 .fw_add_to_cart_button:disabled {
   background: #ccc;
 }
+
+/*MODAL ENVIO*/
+#wscp-postcode{
+  text-align: center;;
+  border:0px !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+#wscp-button{
+  border:0px !important;
+  margin:0 auto;
+  background:var(--second);
+  color:white;
+}
+#wscp-response p,
+#wscp-response span{
+  font-size:14px !important;
+  line-height:16px !important;
+  margin-bottom:10px !important;
+}
+  
 </style>
 <script>
 
