@@ -48,6 +48,12 @@
                 <div class="row text-center"><i class="fad fa-credit-card mb10" style="color:var(--second);font-size:30px;margin:0 auto;"></i></div>
                 <div class="container">
                     <h4 class="modal-title text-center mb10"><?=fw_theme_mod('fw_label_calcular_cuotas')?></h4>
+                    <?php if(is_plugin_active('Plugin-WooCommerce-master/index.php') && is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){ ?>
+                    <div class="tabus mt10 mb10"> 
+                    <button class="mercadopago btn btn-main">Mercadopago</button>
+                    <button class="mercadopago btn btn-main">Todopago</button>
+
+                    <?php } ?>
                     <div class="row mt20">
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">

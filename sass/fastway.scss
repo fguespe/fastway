@@ -75,11 +75,16 @@ color:var(--linkedin) !important;
 }
 .woocommerce-ResetPassword .btn{
   margin-right:20px;
-  border-color:var(--main);
-  
-  }
+  border-color:var(--main); 
+}
+.di{
+  display:inline !important;
+}
 .db{
   display:block !important;;
+}
+.dib{
+  display: inline-block !important;
 }
 .mt0 {
     margin-top: 0px !important;
