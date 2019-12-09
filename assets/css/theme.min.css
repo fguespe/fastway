@@ -82,8 +82,16 @@
   border-color: var(--main);
 }
 
+.di {
+  display: inline !important;
+}
+
 .db {
   display: block !important;
+}
+
+.dib {
+  display: inline-block !important;
 }
 
 .mt0 {
@@ -292,11 +300,19 @@ i.fad {
   color: var(--second);
 }
 
+.btn-main:hover {
+  color: white;
+}
+
 .btn-main {
   background-color: var(--main);
   color: white;
   border: 0px !important;
   margin: 0 auto;
+}
+
+.hid {
+  display: none;
 }
 
 .btn-second {

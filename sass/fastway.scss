@@ -248,6 +248,9 @@ color:var(--linkedin) !important;
 }
 i.fad{
   color:var(--second);
+}
+.btn-main:hover{
+  color:white;
 }  
 .btn-main{
   background-color: var(--main);
@@ -255,7 +258,9 @@ i.fad{
   border:0px !important;
   margin:0 auto;
 }
-
+.hid{
+  display:none;
+}
 .btn-second{
   background-color: var(--second);
   color:white;

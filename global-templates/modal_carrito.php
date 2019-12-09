@@ -49,12 +49,12 @@
                 <div class="container">
                     <h4 class="modal-title text-center mb10"><?=fw_theme_mod('fw_label_calcular_cuotas')?></h4>
                     <?php if(is_plugin_active('Plugin-WooCommerce-master/index.php') && is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){ ?>
-                    <div class="tabus mt10 mb10"> 
-                    <button class="mercadopago btn btn-main">Mercadopago</button>
-                    <button class="mercadopago btn btn-main">Todopago</button>
-
+                    <div class="d-flex justify-content-center tabus"> 
+                    <button class="mp btn active" onclick="toggle('mp')" >Mercadopago</button>
+                    <button class="tp btn" onclick="toggle('tp')" >Todopago</button>
+                    </div>
                     <?php } ?>
-                    <div class="row mt20">
+                    <div class="row mt20 mpshow">
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Tarjeta</label><br>
@@ -81,6 +81,30 @@
                                 </div>
                                 <div class="col-md-6 text-center">									
                                     <label class="control-label btns">Total: <span id="montofinal" class="b"></span></label>	
+                                </div>	
+                            </div>								
+                        </div>
+                    </div>
+                    <div class="row mt20 tpshow hid text-center">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Cuotas</label>
+                                <select id="cuotastp" class="dropdown-toggle bs-placeholder btn btn-main" onchange="calcular();">
+                                <?php 
+                                for($i = 1;$i<=fw_theme_mod( 'fw_cuotas_todopago' );$i++){
+                                    echo '<option value="'.$i.'">'.$i.'</option>';
+                                }
+                                ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-bottom">
+                            <div class="row finales">
+                                <div class="col-md-6 text-center align-bottom">
+                                    <label class="control-label btns">Cuotas de: <span id="cuotatp" class="b"></span></label>	
+                                </div>
+                                <div class="col-md-6 text-center">									
+                                    <label class="control-label btns">Total: <span id="montofinaltp" class="b"></span></label>	
                                 </div>	
                             </div>								
                         </div>
@@ -121,8 +145,9 @@
     
             
     function obtenerSeleccionCombo(idCombo){
+        console.log(jQuery('#cuotatp').is(":visible"));
+        if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
-        console.log(indice)
         var resultado = document.getElementById(idCombo).options[indice].value;
         return resultado;
     }
@@ -225,13 +250,12 @@
     }
         
     function obtenerPrecioProducto(){
-            precioObtenido = jQuery(".fw_price").attr("data-precio");/*getParameter('id');*/
-            console.log("test: "+precioObtenido);
+            precioObtenido = jQuery(".fw_price").attr("data-precio");
             calcular();
-            /*guardarSeleccion();*/
     }
         
     function obtenerClaveCombo(idCombo){
+        if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
         var resultado = document.getElementById(idCombo).options[indice].text;
         return resultado;
@@ -245,6 +269,7 @@
         
     function calcular(){
         var rate = obtenerSeleccionCombo('cuotas');
+
         console.log('rate: '+rate);
         var montoFinal = 0;	
         if(rate>0){
@@ -256,11 +281,41 @@
         var valorCuota = montoFinal / parseInt(cantCuotas);
         document.getElementById('cuota').innerHTML = '$' + valorCuota.toFixed(2);
         document.getElementById('montofinal').innerHTML = '$' + montoFinal.toFixed(2);
+        document.getElementById('cuotatp').innerHTML = '$' + valorCuota.toFixed(2);
+        document.getElementById('montofinaltp').innerHTML = '$' + montoFinal.toFixed(2);
     }
 
         
 </script>
 <style>
+.tabus .mp{
+    border-left:1px solid var(--main);
+    border-bottom:1px solid var(--main);
+    border-top:1px solid var(--main);
+    border-right:1px solid var(--main);
+    background:white;
+    border-radius:0px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+.tabus .tp{
+    border-left:1px solid var(--main);
+    border-bottom:1px solid var(--main);
+    border-top:1px solid var(--main);
+    border-right:1px solid var(--main);
+    background:white;
+    border-radius:0px;
+    border-left:0px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+.tabus .tp.active,
+.tabus .mp.active{  
+    color:white;
+    background: var(--main);
+}
 #modal_carrito .btn.seguir{
     background:var(--second);
     color:white;
@@ -305,6 +360,20 @@ color:white !important;
 }
 </style>
 <script>
+function toggle(quien){
+    if(quien=='mp'){
+        jQuery('.tabus .mp').addClass('active')
+        jQuery('.tabus .tp').removeClass('active')
+        jQuery('.tpshow').toggle()
+        jQuery('.mpshow').toggle()
+    }else{
+        jQuery('.tabus .tp').addClass('active')
+        jQuery('.tabus .mp').removeClass('active')
+        jQuery('.tpshow').toggle()
+        jQuery('.mpshow').toggle()
+
+    }
+}
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
