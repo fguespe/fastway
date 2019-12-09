@@ -157,6 +157,7 @@
     function obtenerBancos(){
         limpiarComboBancos();
         var id = obtenerSeleccionCombo('forma');
+        if(!id)id="visa"
         var parametros = {};
         jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/"+id, function( val ) {
             console.log("https://api.mercadolibre.com/sites/MLA/payment_methods/"+id,val)
@@ -268,8 +269,6 @@
         
     function calcular(){
         var rate = obtenerSeleccionCombo('cuotas');
-
-        console.log('rate: '+rate);
         var montoFinal = 0;	
         if(rate>0){
             montoFinal = parseFloat(precioObtenido) + (parseFloat(rate) * parseFloat(precioObtenido)) / 100;
@@ -376,19 +375,15 @@ function toggle(quien){
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
-    console.log(vara)
     if(!vara){
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
     let suffix=jQuery('#fwprice .precio .suffix').text()
-    console.log(vara)
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
     if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
-        console.log('valida')
         jQuery('.fw_add_to_cart_button').prop("disabled",false)
     }else {
-        console.log('invalida')
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
     }
 });
@@ -431,8 +426,6 @@ function addtocart(prod_id){
         }
     }
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
-   // console.log('var_id',var_id)
-
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
     function (msg) { 
