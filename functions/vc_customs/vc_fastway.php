@@ -445,7 +445,6 @@ function fw_image_function( $atts, $content ) {
     
     //Implementar acciones
     if(!empty($atts['sblock'])){
-        error_log("entra al sblock");
         $return='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$return;
         $return.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if(!empty($atts['iframe'] )){

@@ -60,28 +60,24 @@ function fw_single_tabs(){
     remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
     remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
     do_action( 'woocommerce_after_single_product_summary' );
-
 }
+
 add_shortcode('fw_single_related','fw_single_related');
 function fw_single_related($atts){
     global $post;
     $atts = shortcode_atts(array('cols' => 6 ), $atts );
     $cols=fw_theme_mod("related_columns");
-
     echo '
 <div class="related" >
 <h4 class="titulo">'.fw_theme_mod('fw_related_text').'</h3>
-        
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        
         $crelated = get_post_meta( $post->ID, '_related_ids', true );
         if(!empty($crelated))$myarray =$crelated;
         else $myarray = wc_get_related_products($product->id,12);
         
 		$tax_query   = WC()->query->get_tax_query();
-        error_log(print_r($related,true));
         $tax_query[] = array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug', // Or 'name' or 'term_id'

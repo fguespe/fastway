@@ -25,7 +25,6 @@ class Correios_Shipping_Ajax_Postcode {
 		} else {
 			$opts=get_option('woocommerce_mercadoenvios-shipping_settings');
 			$product = wc_get_product( sanitize_text_field( $_POST['product'] ) );
-			//error_log(print_r($product));
 
 			$freeship=10000000;
 			if(!$opts['shipping_free_shipping'])$freeship=$opts['free_shipping_amount'];

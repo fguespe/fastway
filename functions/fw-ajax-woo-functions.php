@@ -167,7 +167,6 @@ add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
 function fw_get_js_cart(){  
     $carta=array();
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-      error_log(print_r($cart_item,true));
       $_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
       $product_id = $cart_item['product_id'];
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
