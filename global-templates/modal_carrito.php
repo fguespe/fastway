@@ -122,6 +122,7 @@
 </div>
 <script type="text/javascript">
     // Configurá tu Public Key
+
     obtenerTarjetas();
 
     function obtenerTarjetas(){
@@ -157,7 +158,9 @@
     function obtenerBancos(){
         limpiarComboBancos();
         var id = obtenerSeleccionCombo('forma');
+        console.log('el id es',id)
         if(!id)id="visa"
+        console.log('el id es',id)
         var parametros = {};
         jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/"+id, function( val ) {
             console.log("https://api.mercadolibre.com/sites/MLA/payment_methods/"+id,val)
