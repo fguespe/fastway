@@ -159,7 +159,7 @@
 
     function obtenerCuotas(){
         limpiarComboCuotas();
-        /*
+        
         var id = obtenerSeleccionCombo('forma');
         var banco = obtenerSeleccionCombo('banco');
         var parametros = {};
@@ -174,7 +174,7 @@
             success:  function (response) {
                 ejecutorObtenerCuotas(banco,response);
             }
-        });*/
+        });
         
     }
 
