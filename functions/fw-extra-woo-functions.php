@@ -1736,9 +1736,11 @@ var ProductSwiper = new Swiper(".swiper-related", {
 }
 
 // Hook before calculate fees
-if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'add_custom_fees');
+if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 
-function add_custom_fees( WC_Cart $cart ){
+function fw_apply_lili_discount( WC_Cart $cart ){
+    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return false;
+
     //if(!empty($cart->get_applied_coupons()))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
@@ -1773,6 +1775,8 @@ function add_custom_fees( WC_Cart $cart ){
 
 if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
   function fw_general_discount($product){
+    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  $product->regular_price;
+  
     global $woocommerce;
     if(!empty($woocommerce->cart->get_applied_coupons()))return  $product->regular_price;
 
