@@ -1780,7 +1780,6 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
     global $woocommerce;
     if(!empty($woocommerce->cart->get_applied_coupons()))return  $product->regular_price;
 
-    error_log("es admin: ".check_user_role('administrator'));
 
     if(fw_theme_mod('fw_general_discount_categories')){
       $esdelapromo=false;
