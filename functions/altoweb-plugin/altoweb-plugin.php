@@ -473,7 +473,7 @@ global $product;
 
                   </div>
                </div>
-               <div class="tab-pane fade" id="banco" role="tabpanel" aria-labelledby="banco-tab">
+               <div class="tab-pane fade" id="bancotab" role="tabpanel" aria-labelledby="banco-tab">
                   <div class="box-container">
                      <p class="weight-strong m-bottom-half">Cuando termines la compra vas a ver la información de pago en relación a esta opción.</p>
                      <p>{$infopopup_banc}</p>

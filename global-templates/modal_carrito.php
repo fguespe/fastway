@@ -58,20 +58,20 @@
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Tarjeta</label><br>
-                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-main" id="forma">
+                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-main" id="forma" onchange="obtenerBancos();">
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Banco</label><br>
-                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-main" id="banco" ></select>
+                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-main" id="banco" onchange="obtenerCuotas();"></select>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label class="control-label">Cuotas</label>
-                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-main" ></select>
+                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-main" onchange="calcular();"></select>
                             </div>
                         </div>
                         <div class="col-md-12 align-bottom">
@@ -122,7 +122,6 @@
 </div>
 <script type="text/javascript">
     // Configurá tu Public Key
-
     obtenerTarjetas();
 
     function obtenerTarjetas(){
@@ -145,6 +144,7 @@
     
             
     function obtenerSeleccionCombo(idCombo){
+        console.log(jQuery('#cuotatp').is(":visible"));
         if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
         var resultado = document.getElementById(idCombo).options[indice].value;
@@ -268,6 +268,8 @@
         
     function calcular(){
         var rate = obtenerSeleccionCombo('cuotas');
+
+        console.log('rate: '+rate);
         var montoFinal = 0;	
         if(rate>0){
             montoFinal = parseFloat(precioObtenido) + (parseFloat(rate) * parseFloat(precioObtenido)) / 100;
@@ -374,15 +376,19 @@ function toggle(quien){
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
+    console.log(vara)
     if(!vara){
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
     let suffix=jQuery('#fwprice .precio .suffix').text()
+    console.log(vara)
     jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
     if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
+        console.log('valida')
         jQuery('.fw_add_to_cart_button').prop("disabled",false)
     }else {
+        console.log('invalida')
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
     }
 });
@@ -425,6 +431,8 @@ function addtocart(prod_id){
         }
     }
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
+   // console.log('var_id',var_id)
+
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
     function (msg) { 
