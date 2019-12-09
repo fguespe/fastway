@@ -58,20 +58,20 @@
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Tarjeta</label><br>
-                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-main" id="forma" onchange="obtenerBancos();">
+                                <select name="forma" class="dropdown-toggle bs-placeholder btn btn-main" id="forma">
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label">Banco</label><br>
-                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-main" id="banco" onchange="obtenerCuotas();"></select>
+                                <select name="banco" class="dropdown-toggle bs-placeholder btn btn-main" id="banco" ></select>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label class="control-label">Cuotas</label>
-                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-main" onchange="calcular();"></select>
+                                <select id="cuotas" class="dropdown-toggle bs-placeholder btn btn-main" ></select>
                             </div>
                         </div>
                         <div class="col-md-12 align-bottom">
