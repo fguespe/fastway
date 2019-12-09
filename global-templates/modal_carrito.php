@@ -158,12 +158,8 @@
     function obtenerBancos(){
         limpiarComboBancos();
         var id = obtenerSeleccionCombo('forma');
-        console.log('el id es',id)
-        if(!id)id="visa"
-        console.log('el id es',id)
         var parametros = {};
         jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/"+id, function( val ) {
-            console.log("https://api.mercadolibre.com/sites/MLA/payment_methods/"+id,val)
             var banco = val.card_issuer.name;
             var id = val.card_issuer.id;
             if(id==1 || id==3 || id==2 || id==1007 || id==5 || id==288 || id==692 || id==688 || id==4){
