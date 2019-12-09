@@ -120,7 +120,6 @@
         </div>
     </div>
 </div>
-<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
 <script type="text/javascript">
     // Configurá tu Public Key
     obtenerTarjetas();
@@ -145,7 +144,6 @@
     
             
     function obtenerSeleccionCombo(idCombo){
-        console.log(jQuery('#cuotatp').is(":visible"));
         if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
         var resultado = document.getElementById(idCombo).options[indice].value;
@@ -161,6 +159,7 @@
         var id = obtenerSeleccionCombo('forma');
         var parametros = {};
         jQuery.getJSON( "https://api.mercadolibre.com/sites/MLA/payment_methods/"+id, function( val ) {
+            console.log("https://api.mercadolibre.com/sites/MLA/payment_methods/"+id,val)
             var banco = val.card_issuer.name;
             var id = val.card_issuer.id;
             if(id==1 || id==3 || id==2 || id==1007 || id==5 || id==288 || id==692 || id==688 || id==4){
