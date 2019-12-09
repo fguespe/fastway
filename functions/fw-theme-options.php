@@ -1256,6 +1256,14 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_cuotas_todopago',
+	'label'    => __( 'Cuotas Todopago', 'fastway' ),
+	'description' => '',
+	'section'     => 'section_woo',
+	'default' => 6
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_currency_conversion',
 	'label'    => __( 'Currency Conversion', 'fastway' ),
 	'description' => 'Al habilitar este campo, al cliente le va a aparecer un widget con un campo para poner la conversion en a la moneda local. Usar punto para decimales, no la coma',

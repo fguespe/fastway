@@ -17,7 +17,51 @@ function prefix_add_dashboard_widget() {
             'fw_dash_conversion_handler'
         );
     }
+    if(is_plugin_active('Plugin-WooCommerce-master/index.php')){
+        wp_add_dashboard_widget(
+            'fw_todopago_widget', 
+            'Cuotas Todopago', 
+            'fw_todopago_dash', 
+            'fw_todopago_dash_handler'
+        );
+    }
 }
+function fw_todopago_dash(){
+    echo"<div class='fw_widget_dash'>
+    <label>Maximo cuotas sin interes: ".fw_theme_mod('fw_cuotas_todopago')."</label>
+    <a class=\"iralasopciones\" href=\"index.php?edit=fw_todopago_widget#fw_todopago_widget\">Cambiar</a>
+    </div>";
+}
+
+function fw_todopago_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_todopago_widget_options' ) )
+        $widget_options = array( );
+
+       // error_log(print_r($widget_options,true));
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_todopago_widget_options'] ) ) {
+        # minor validation
+         $variable=( $_POST['fw_todopago_widget_options']['max_cuotas'] );
+        $arra=get_option( 'woocommerce_todopago_settings' );
+        $arra['max_cuotas']=$variable;
+        update_option( 'woocommerce_todopago_settings', $arra );
+        set_theme_mod('fw_cuotas_todopago',$variable);
+    }
+
+    # set defaults  
+    if( !isset( $widget_options['fw_cuotas_todopago'] ) )
+        $widget_options['fw_cuotas_todopago'] = fw_theme_mod('fw_cuotas_todopago');
+
+    echo "
+    <div>
+        <label>Maximo cuotas sin interes</label>
+        <input type=\"text\" name=\"fw_todopago_widget_options[max_cuotas]\" id=\"max_cuotas\" value=\"".fw_theme_mod('fw_cuotas_todopago')."\">
+    </div>";
+}
+
+
 function fw_dash_conversion(){
     echo"<div class='fw_widget_dash'>
     <label>1 es igual a: ".fw_theme_mod('fw_currency_conversion')."</label>
