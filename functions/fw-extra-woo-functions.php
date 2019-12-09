@@ -1739,7 +1739,7 @@ var ProductSwiper = new Swiper(".swiper-related", {
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 
 function fw_apply_lili_discount( WC_Cart $cart ){
-    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return false;
+    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return;
 
     //if(!empty($cart->get_applied_coupons()))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
