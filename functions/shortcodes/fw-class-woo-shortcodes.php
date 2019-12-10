@@ -429,8 +429,6 @@ class fw_Woo_Shortcodes {
 				'operator' => 'NOT IN', // Excluded
 			);
 		}
-		
-		//error_log(json_encode($args['tax_query'],true));
 		if ( isset( $ordering_args['meta_key'] ) ) {
 			$args['meta_key'] = $ordering_args['meta_key'];
 		}
@@ -485,8 +483,6 @@ class fw_Woo_Shortcodes {
 		foreach($cats as $cat){
 			$term=get_term_by('slug' , $cat,'product_cat');
 			if($atts["hideempty"] && $term->count==0)continue;
-			
-			//error_log(json_encode($term));
 			array_push($cates,$term);
 			//$atts['terms'][]=  $term;
 		}
@@ -647,8 +643,7 @@ class fw_Woo_Shortcodes {
 		$all_categories = get_categories( $args );
 		foreach ($all_categories as $cat) {
 			if($cat->category_parent == 0) {
-				$category_id = $cat->term_id;  
-				//error_log(json_encode($cat));     
+				$category_id = $cat->term_id;     
 				echo '<br /><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a>';
 
 				$args2 = array(

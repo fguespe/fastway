@@ -38,8 +38,6 @@ function fw_todopago_dash_handler(){
 
     # get saved data
     if( !$widget_options = get_option( 'fw_todopago_widget_options' ) )$widget_options = array( );
-
-       // error_log(print_r($widget_options,true));
     # process update
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_todopago_widget_options'] ) ) {
         # minor validation
@@ -73,8 +71,6 @@ function fw_dash_conversion_handler(){
     # get saved data
     if( !$widget_options = get_option( 'fw_currency_widget_options' ) )
         $widget_options = array( );
-
-       // error_log(print_r($widget_options,true));
     # process update
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_currency_widget_options'] ) ) {
         # minor validation

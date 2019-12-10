@@ -286,13 +286,10 @@ function fw_menu_vertical( $atts ) {
                 $first=false;
                 foreach( $menu_items as $submenu ) {
                    if( $submenu->menu_item_parent == $parent ) {
-                        //error_log($submenu->title." ".);
-                        //error_log($submenu->title);
                         if($submenu->attr_title==="init_col" && $megamenu){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
                             $menu_array[]='<div class="col-md-'.$cols.'">';
-                            //error_log("Abre-----".$submenu->title);
                         }
                         $bool = true;
                         $url=$submenu->url;
@@ -315,7 +312,6 @@ function fw_menu_vertical( $atts ) {
                                   $s_url=$s_submenu->url;
                                   $s_title=$s_submenu->title;
                                   $menu_array[] = '<li class="nav-item hijo"><a class="nav-link" href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
-                                  //error_log("Pone:---------".$s_submenu->title);
                               } 
                             }
                            

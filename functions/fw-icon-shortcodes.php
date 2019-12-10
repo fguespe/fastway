@@ -275,7 +275,6 @@ function fw_data( $atts ) {
         $first.='</a>';
     }
     if(!empty($atts['sblock'])){
-        error_log("entra al sblock");
         $first='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$first;
         $first.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if(!empty($atts['iframe'] )){

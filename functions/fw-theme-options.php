@@ -1542,7 +1542,7 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_cart]
 	[fw_summary_container]
 	[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]
-	[fw_data type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]
+	[fw_data type="fad fa-credit-card" isli="true" text="Cuotas fijas" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]
 	[/fw_single_summary]
 	[fw_single_tabs]
 	[/fw_single_container]
@@ -2569,7 +2569,6 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
             $default_value = Kirki::$fields[ $field_id ]['default'];
           }
 		}
-		//error_log('el default es: '.$field_id.' '.$default_value);
         $value = get_theme_mod( $field_id, $default_value );
         return $value;
       }

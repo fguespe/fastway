@@ -37,7 +37,6 @@ function check_user_role($role){
     if($role=='administrator' && is_super_admin())return true;
     if($role=='guest' && empty((array) $user->roles ))return true;
     $user = wp_get_current_user();
-    error_log(print_r( $user ,true));
 	if ( in_array( $role, (array) $user->roles ) ) {
 		return true;
 	}
