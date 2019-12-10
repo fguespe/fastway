@@ -1740,8 +1740,6 @@ if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees'
 function fw_apply_lili_discount( WC_Cart $cart ){
     if(is_admin())return;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return;
-
-    //if(!empty($cart->get_applied_coupons()))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
@@ -1773,30 +1771,30 @@ function fw_apply_lili_discount( WC_Cart $cart ){
     $cart->add_fee( 'Promo:', $discount);
 }
 
-if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
-  function fw_general_discount($product){
-    if(is_admin())return;
+if(fw_theme_mod('fw_product_discount')){
+  function fw_product_discount($product){
+    if(is_admin())return  $product->regular_price;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  $product->regular_price;
   
     global $woocommerce;
     if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return  $product->regular_price;
 
 
-    if(fw_theme_mod('fw_general_discount_categories')){
+    if(fw_theme_mod('fw_product_discount_categories')){
       $esdelapromo=false;
       $terms = get_the_terms ( $product->id, 'product_cat' );
-      $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories'));
+      $catespromo=explode(",",fw_theme_mod('fw_product_discount_categories'));
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=true;
       if(!$esdelapromo)return $product->regular_price;
-    }else if(fw_theme_mod('fw_general_discount_categories_ext')){
+    }else if(fw_theme_mod('fw_product_discount_categories_ext')){
       $esdelapromo=true;
       $terms = get_the_terms ( $product->id, 'product_cat' );
-      $catespromo=explode(",",fw_theme_mod('fw_general_discount_categories_ext'));
+      $catespromo=explode(",",fw_theme_mod('fw_product_discount_categories_ext'));
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=false;
       if(!$esdelapromo)return  $product->regular_price;
 
     }
-    $multiplier=floatval(1-(fw_theme_mod('fw_general_discount')/100));
+    $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
     if($product->regular_price)return ceil(floatval($product->regular_price * $multiplier));
   }
 
@@ -1805,13 +1803,13 @@ if(fw_theme_mod('fw_general_discount')!='' /* && !is_admin()*/){
   add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   function custom_price( $price, $product ) {
-    return fw_general_discount($product);
+    return fw_product_discount($product);
   }
 
   add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
   add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
   function custom_variable_price( $price, $variation, $product ) {
-    return fw_general_discount($product);
+    return fw_product_discount($product);
   }
 
 }

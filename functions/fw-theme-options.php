@@ -2307,16 +2307,28 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_product_discount',
+	'label'       => __( '1-Product Discount', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,
+	'description' => 'Se aplica a los productos',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_general_discount',
-	'label'    => __( '1-General % Discount', 'fastway' ),
+	'settings'    => 'fw_product_discount_cant',
+	'label'    => __( '%', 'fastway' ),
 	'description' => 'Porcentage de descuento a toda la tienda, se aplica a nivel producto',
 	'section'     => 'section_woo_discount',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_general_discount_categories',
+	'settings'    => 'fw_product_discount_categories',
 	'label'       => __( 'Categories', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'description' => 'Slugs separados con ","'
@@ -2324,7 +2336,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_general_discount_categories_ext',
+	'settings'    => 'fw_product_discount_categories_ext',
 	'label'       => __( 'Categories Exclude', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'description' => 'Slugs separados con ","'
