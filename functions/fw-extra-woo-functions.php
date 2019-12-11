@@ -1772,12 +1772,13 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 }
 
 if(fw_theme_mod('fw_product_discount')){
-  function fw_product_discount($product){
-    if(is_admin())return  $product->regular_price;
-    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  $product->regular_price;
+  function fw_product_discount($price,$product){
+    if(is_admin())return  $price;
+    if($price)return $price;
+    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  $price;
   
     global $woocommerce;
-    if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return  $product->regular_price;
+    if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return  $price;
 
 
     if(fw_theme_mod('fw_product_discount_categories')){
@@ -1785,31 +1786,31 @@ if(fw_theme_mod('fw_product_discount')){
       $terms = get_the_terms ( $product->id, 'product_cat' );
       $catespromo=explode(",",fw_theme_mod('fw_product_discount_categories'));
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=true;
-      if(!$esdelapromo)return $product->regular_price;
+      if(!$esdelapromo)return  $price;
     }else if(fw_theme_mod('fw_product_discount_categories_ext')){
       $esdelapromo=true;
       $terms = get_the_terms ( $product->id, 'product_cat' );
       $catespromo=explode(",",fw_theme_mod('fw_product_discount_categories_ext'));
       foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=false;
-      if(!$esdelapromo)return  $product->regular_price;
+      if(!$esdelapromo)return  $price;
 
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
     if($product->regular_price)return ceil(floatval($product->regular_price * $multiplier));
   }
 
-  add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
+  //add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
+  //add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_get_sale_price', 'custom_price', 99, 2 );
   add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
   function custom_price( $price, $product ) {
-    return fw_product_discount($product);
+    return fw_product_discount($price,$product);
   }
 
-  add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
+  //add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
   add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
   function custom_variable_price( $price, $variation, $product ) {
-    return fw_product_discount($product);
+    return fw_product_discount($price,$product);
   }
 
 }
