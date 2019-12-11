@@ -227,45 +227,6 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
 
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 
-if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
-  // Utility function to change the prices with a multiplier (number)
-  function get_price_multiplier() {
-    $price+=floatval(fw_theme_mod('fw_currency_conversion'));
-    return $price; // x2 for testing
-  }
-
-  // Simple, grouped and external products
-  add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_get_regular_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_get_sale_price', 'custom_price', 99, 2 );
-  // Variations
-  add_filter('woocommerce_product_variation_get_regular_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
-  function custom_price( $price, $product ) {
-    if($price)return intval($price * get_price_multiplier());
-  }
-
-  // Variable (price range)
-  add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
-  add_filter('woocommerce_variation_prices_regular_price', 'custom_variable_price', 99, 3 );
-  add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
-  function custom_variable_price( $price, $variation, $product ) {
-    // Delete product cached price  (if needed)
-    // wc_delete_product_transients($variation->get_id());
-    if($price){
-    return intval($price * get_price_multiplier());
-    }
-  }
-
-  // Handling price caching (see explanations at the end)
-  add_filter( 'woocommerce_get_variation_prices_hash', 'add_price_multiplier_to_variation_prices_hash', 99, 1 );
-  function add_price_multiplier_to_variation_prices_hash( $hash ) {
-    $hash[] = get_price_multiplier();
-    return $hash;
-  }
-}
-
 
 
 
@@ -1807,10 +1768,51 @@ if(fw_theme_mod('fw_product_discount')){
     return fw_product_discount($price,$product);
   }
 
-  //add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
+  add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
+  add_filter('woocommerce_variation_prices_regular_price', 'custom_variable_price', 99, 3 );
   add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
   function custom_variable_price( $price, $variation, $product ) {
     return fw_product_discount($price,$product);
   }
 
+}
+
+
+if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
+  // Utility function to change the prices with a multiplier (number)
+  function get_price_multiplier() {
+    $price+=floatval(fw_theme_mod('fw_currency_conversion'));
+    return $price; // x2 for testing
+  }
+
+  // Simple, grouped and external products
+  add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_get_regular_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_get_sale_price', 'custom_price', 99, 2 );
+  // Variations
+  add_filter('woocommerce_product_variation_get_regular_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
+  add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
+  function custom_price( $price, $product ) {
+    if($price)return intval($price * get_price_multiplier());
+  }
+
+  // Variable (price range)
+  add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
+  add_filter('woocommerce_variation_prices_regular_price', 'custom_variable_price', 99, 3 );
+  add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
+  function custom_variable_price( $price, $variation, $product ) {
+    // Delete product cached price  (if needed)
+    // wc_delete_product_transients($variation->get_id());
+    if($price){
+    return intval($price * get_price_multiplier());
+    }
+  }
+
+  // Handling price caching (see explanations at the end)
+  add_filter( 'woocommerce_get_variation_prices_hash', 'add_price_multiplier_to_variation_prices_hash', 99, 1 );
+  function add_price_multiplier_to_variation_prices_hash( $hash ) {
+    $hash[] = get_price_multiplier();
+    return $hash;
+  }
 }
