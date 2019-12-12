@@ -108,6 +108,18 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
   }
 }
 
+add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
+function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
+  $slashed_price = $values['data']->get_price_html();
+  $is_on_sale = $values['data']->is_on_sale();
+  if ( $is_on_sale ) $price = $slashed_price;
+  return $price;
+}
+
+
+
+
+
 
 // Generating dynamically the product "regular price"
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
@@ -115,7 +127,6 @@ add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_r
 function custom_dynamic_regular_price( $regular_price, $product ) {
     if( empty($regular_price) || $regular_price == 0 ){
         return $product->get_price();
-
     }
     else
         return $regular_price;
@@ -132,15 +143,6 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     else
         return $sale_price;
 };
-
-
-add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
-function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
-  $slashed_price = $values['data']->get_price_html();
-  $is_on_sale = $values['data']->is_on_sale();
-  if ( $is_on_sale ) $price = $slashed_price;
-  return $price;
-}
 
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
@@ -172,12 +174,11 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         }
         // Get the default variation prices or if not set the variable product min prices
         $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
-        $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
+        $sale_price = isset($default_variaton) ? $default_variaton['display_price']*fw_product_discount_multiplier($product): $product->get_variation_sale_price( 'min', true );
     }else {
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
     }
-    
     $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
 
     if(fw_check_hide_prices()) return;
@@ -185,9 +186,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
     
     $symbol=get_woocommerce_currency_symbol();
-
-
-    if ( $regular_price !== $sale_price && $product->is_on_sale()) {
+    if ( $sale_price<$regular_price) {
         return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
             <span class="tachado">
@@ -212,5 +211,7 @@ function fw_single_price(){
     global $product;
     echo $product->get_price_html();
 }
+
+
 
 ?>
