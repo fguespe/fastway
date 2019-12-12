@@ -63,6 +63,12 @@ function fw_product_discount_multiplier($product){
         foreach ( $terms as $cat )if(in_array($cat->slug,$catespromo))$esdelapromo=false;
         if(!$esdelapromo)return 1;
 
+    }else if(fw_theme_mod('fw_product_discount_categories_ids_exc')){
+        $esdelapromo=true;
+        $arra=explode(",",fw_theme_mod('fw_product_discount_categories_ids_exc'));
+        if(in_array($product->id,$arra))$esdelapromo=false;
+        if(!$esdelapromo)return 1;
+
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
     return $multiplier;

@@ -2342,6 +2342,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Slugs separados con ","'
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_product_discount_categories_ids_exc',
+	'label'       => __( 'Exclude Products', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Slugs separados con ","'
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_lili_discount',
 	'label'       => __( '2-Lili Discount (Buy X Get X)', 'fastway' ),
