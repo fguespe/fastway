@@ -1,16 +1,6 @@
 <?php
 
 
-add_shortcode('fw_loop_price', 'fw_loop_price');
-function fw_loop_price(){
-    global $product;
-    echo $product->get_price_html();
-}
-add_shortcode('fw_single_price', 'fw_single_price');
-function fw_single_price(){
-    global $product;
-    echo $product->get_price_html();
-}
 // Hook before calculate fees
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 function fw_apply_lili_discount( WC_Cart $cart ){
@@ -212,5 +202,15 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 }
 
 
+add_shortcode('fw_loop_price', 'fw_loop_price');
+function fw_loop_price(){
+    global $product;
+    echo $product->get_price_html();
+}
+add_shortcode('fw_single_price', 'fw_single_price');
+function fw_single_price(){
+    global $product;
+    echo $product->get_price_html();
+}
 
 ?>
