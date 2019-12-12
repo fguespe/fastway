@@ -147,18 +147,20 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
 
     if(fw_check_hide_prices()) return;
-    if(empty($product->get_price()) && $single)return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
-    else if(empty($product->get_price()) && !$single) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
-
+    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
+    //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
+    
     $symbol=get_woocommerce_currency_symbol();
-    return '<span id="fwprice" class="price"><span class="fw_price price1" data-precio="'.$product->get_price().'">
-    <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
-    <span class="tachado">
-        <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-        <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
-    </span>
-    </span>
-    </span>';
+    $devolver= '<span id="fwprice" class="price"><span class="fw_price price1" data-precio="'.$product->get_price().'">
+    <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>';
+    if(!$sale_price>0){
+        $devolver.='<span class="tachado">
+                    <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
+                    <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
+                </span>';
+    }
+    $devolver.='</span></span>';
+    return $devolver;
 
 }
 
