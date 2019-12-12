@@ -162,7 +162,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 }
 
 
-
+/*
 function fw_price_html1($price,$product,$single=false){
     if(fw_check_hide_prices()) return;
     if(empty($product->get_price()) && $single)return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
@@ -231,7 +231,7 @@ function fw_price_html1($price,$product,$single=false){
     }      
 }
 
-
+*/
 
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){
