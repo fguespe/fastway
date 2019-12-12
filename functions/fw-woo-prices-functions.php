@@ -151,11 +151,12 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     else if(empty($product->get_price()) && !$single) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
 
     $symbol=get_woocommerce_currency_symbol();
-    return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
+    return '<span id="fwprice" class="price"><span class="fw_price price1" data-precio="'.$product->get_price().'">
     <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
     <span class="tachado">
         <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
         <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
+    </span>
     </span>
     </span>';
 
@@ -233,18 +234,6 @@ function fw_price_html1($price,$product,$single=false){
 
 */
 
-add_shortcode('fw_loop_price', 'fw_loop_price');
-function fw_loop_price(){
-    global $product;
-    echo $product->get_price_html();
-    //echo '<span class="price">'.fw_price_html1(null,$product).'</span>';
-}
-add_shortcode('fw_single_price', 'fw_single_price');
-function fw_single_price(){
-    global $product;
-    echo $product->get_price_html();
-    //echo '<span id="fwprice" class="price">'.fw_price_html1(null,$product,true).'</span>';
-}
 
 
 // Generating dynamically the product "regular price"
@@ -262,11 +251,23 @@ function custom_dynamic_regular_price( $regular_price, $product ) {
 add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
-    $rate = 0.5;
+    $rate = 1;
     if( empty($sale_price) || $sale_price == 0 )
         return $product->get_regular_price() * $rate;
     else
         return $sale_price;
 };
 
+
+
+add_shortcode('fw_loop_price', 'fw_loop_price');
+function fw_loop_price(){
+    global $product;
+    echo $product->get_price_html();
+}
+add_shortcode('fw_single_price', 'fw_single_price');
+function fw_single_price(){
+    global $product;
+    echo $product->get_price_html();
+}
 ?>
