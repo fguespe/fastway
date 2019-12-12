@@ -1,9 +1,18 @@
 <?php
 
 
+add_shortcode('fw_loop_price', 'fw_loop_price');
+function fw_loop_price(){
+    global $product;
+    echo $product->get_price_html();
+}
+add_shortcode('fw_single_price', 'fw_single_price');
+function fw_single_price(){
+    global $product;
+    echo $product->get_price_html();
+}
 // Hook before calculate fees
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
-
 function fw_apply_lili_discount( WC_Cart $cart ){
     if(is_admin())return;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return;
@@ -122,6 +131,7 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
     return $hash;
   }
 }
+
 /*
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
@@ -139,30 +149,6 @@ function fw_format_sale_price( $regular_price, $sale_price ) {
     return $price;
 }
 */
-
-add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
-function custom_dynamic_sale_price_html( $price_html, $product ) {
-    $sale_price= $product->sale_price;
-    $regular_price= $product->regular_price;
-    $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-
-    if(fw_check_hide_prices()) return;
-    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
-    //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
-    
-    $symbol=get_woocommerce_currency_symbol();
-    $devolver= '<span id="fwprice" class="price"><span class="fw_price price1" data-precio="'.$product->get_price().'">
-    <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>';
-    if(!$sale_price>0){
-        $devolver.='<span class="tachado">
-                    <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-                    <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
-                </span>';
-    }
-    $devolver.='</span></span>';
-    return $devolver;
-
-}
 
 
 /*
@@ -242,8 +228,10 @@ function fw_price_html1($price,$product,$single=false){
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 function custom_dynamic_regular_price( $regular_price, $product ) {
-    if( empty($regular_price) || $regular_price == 0 )
+    if( empty($regular_price) || $regular_price == 0 ){
         return $product->get_price();
+
+    }
     else
         return $regular_price;
 }
@@ -253,23 +241,72 @@ function custom_dynamic_regular_price( $regular_price, $product ) {
 add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
-    $rate = 1;
     if( empty($sale_price) || $sale_price == 0 )
-        return $product->get_regular_price() * $rate;
+        return $product->get_regular_price()*0.5;
     else
         return $sale_price;
 };
 
 
+// Displayed formatted regular price + sale price
+add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
+function custom_dynamic_sale_price_html( $price_html, $product ) {
+    if( $product->is_type('variable') ){
 
-add_shortcode('fw_loop_price', 'fw_loop_price');
-function fw_loop_price(){
-    global $product;
-    echo $product->get_price_html();
+        // Searching for the default variation
+        $default_attributes = $product->get_default_attributes();
+        // Loop through available variations
+        foreach($product->get_available_variations() as $variation){
+            $found = true; // Initializing
+            // Loop through variation attributes
+            foreach( $variation['attributes'] as $key => $value ){
+                $taxonomy = str_replace( 'attribute_', '', $key );
+                // Searching for a matching variation as default
+                if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
+                    $found = false;
+                    break;
+                }
+            }
+            // When it's found we set it and we stop the main loop
+            if( $found ) {
+                $default_variaton = $variation;
+                break;
+            } // If not we continue
+            else {
+                continue;
+            }
+        }
+        // Get the default variation prices or if not set the variable product min prices
+        $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
+        $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
+    }else {
+        $regular_price = $product->get_regular_price();
+        $sale_price    = $product->get_sale_price();
+    }
+    
+    $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+
+    if(fw_check_hide_prices()) return;
+    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
+    //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
+    
+    $symbol=get_woocommerce_currency_symbol();
+
+
+    if ( $regular_price !== $sale_price && $product->is_on_sale()) {
+        return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
+            <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
+            <span class="tachado">
+                <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
+                <span class="badge badge-success ofertita">'.$percentage.'% OFF</span>
+            </span>
+            </span>';
+    }else{
+        return '<span class="fw_price price1" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+    }      
+
 }
-add_shortcode('fw_single_price', 'fw_single_price');
-function fw_single_price(){
-    global $product;
-    echo $product->get_price_html();
-}
+
+
+
 ?>

@@ -174,7 +174,8 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $_product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=price_array($_product);
+      $html = $product->get_price_html();
+      $precio=price_array($html);
       $precio=end($precio);
       $total_line=$precio*$cant;
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
@@ -187,9 +188,8 @@ function fw_get_js_cart(){
     exit();
 }
 
-function price_array($product){
+function price_array($price){
     
-    $price = $product->get_price_html();
     $del = array('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>', '</span>','<del>','<ins>');
     $price = str_replace($del, '', $price);
     $price = str_replace('</del>', '|', $price);
