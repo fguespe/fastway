@@ -242,11 +242,19 @@ add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 1
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
     if( empty($sale_price) || $sale_price == 0 )
-        return $product->get_regular_price()*0.5;
+        return $product->get_regular_price();
     else
         return $sale_price;
 };
 
+
+add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
+function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
+  $slashed_price = $values['data']->get_price_html();
+  $is_on_sale = $values['data']->is_on_sale();
+  if ( $is_on_sale ) $price = $slashed_price;
+  return $price;
+}
 
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
