@@ -2346,7 +2346,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_product_discount_categories_ids_exc',
 	'label'       => __( 'Exclude Products', 'fastway' ),
 	'section'     => 'section_woo_discount',
-	'description' => 'Slugs separados con ","'
+	'description' => 'El id se obtiene editando el producto, desde la URL, donde dice post=XXXX. IDs separados con ","'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
