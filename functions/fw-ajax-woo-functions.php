@@ -112,6 +112,7 @@ function fw_single_cart() {
     </button>';
 
     do_action( 'woocommerce_after_add_to_cart_button' );
+
 }
 
 add_action('wp_ajax_nopriv_cart_remove_item', 'cart_remove_item');

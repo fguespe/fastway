@@ -166,6 +166,7 @@ if(is_plugin_active('js_composer/js_composer.php')){
 }
 if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
+    require get_template_directory() . '/functions/fw-woo-prices-functions.php';
     require get_template_directory() . '/functions/fw-ajax-woo-functions.php';
     require get_template_directory() . '/functions/shipping-calculator/shipping-calculator.php';
     if(is_plugin_active('js_composer/js_composer.php')){
