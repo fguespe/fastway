@@ -174,7 +174,7 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $_product->get_name();
       $cant=$cart_item['quantity'];
-      $html = $product->get_price_html();
+      $html = $_product->get_price_html();
       $precio=price_array($html);
       $precio=end($precio);
       $total_line=$precio*$cant;
