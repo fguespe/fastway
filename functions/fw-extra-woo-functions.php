@@ -410,19 +410,23 @@ if(fw_theme_mod('fw_min_purchase')>0 && fw_theme_mod('fw_min_purchase2')>0 ){
 
 
 // VERFW
+function pasa_filtro_rol($rolesstring){
 
+  if($rolesstring){
+    $estaenlosroles=false;
+    $roles=explode(',',$rolesstring);
+    foreach($rol as $roles)if(check_user_role($rol))$estaenlosroles=true;
+    if(!$estaenlosroles)return;
+  }
+}
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
+    if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
+
     $customer      = wp_get_current_user();
     $customer_id   = $customer->ID; // customer ID
     $customer_email = $customer->email; // customer email
 
-    if(fw_theme_mod('fw_min_purchase_roles')){
-      $estaenlosroles=false;
-      $roles=explode(',',fw_theme_mod('fw_min_purchase'));
-      foreach($rol as $roles)if(check_user_role($rol))$estaenlosroles=true;
-      if(!$estaenlosroles)return;
-    }
     // Get all orders for this customer_id
     $customer_orders = get_posts( array(
         'numberposts' => -1,

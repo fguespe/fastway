@@ -41,8 +41,8 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 function fw_product_discount_multiplier($product){
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
-    global $wp;
-    $url= add_query_arg( $wp->query_vars, home_url( $wp->request ) );
+    //global $wp;
+    //$url= add_query_arg( $wp->query_vars, home_url( $wp->request ) );
     //if(is_admin())return 1;
     if($price)return 1;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
