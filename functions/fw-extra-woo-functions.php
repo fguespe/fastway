@@ -418,6 +418,7 @@ function pasa_filtro_rol($rolesstring){
     foreach($rol as $roles)if(check_user_role($rol))$estaenlosroles=true;
     if(!$estaenlosroles)return;
   }
+  return true;
 }
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
