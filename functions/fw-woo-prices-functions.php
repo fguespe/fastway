@@ -234,12 +234,9 @@ add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
 add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
 function fw_get_js_cart(){  
     $carta=array();
-    WC()->cart->calculate_totals();
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
       $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
       $product_id = $cart_item['product_id'];
-      $product=wc_get_product($product_id);
-      error_log(print_r($product,true));
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
       $image_url = $image[0];
       $nombre = $product->get_name();

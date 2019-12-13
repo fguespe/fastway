@@ -425,7 +425,6 @@ function pasa_filtro_rol($rolesstring){
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
   if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
-  error_log('pASO!!!');
     $customer      = wp_get_current_user();
     $customer_id   = $customer->ID; // customer ID
     $customer_email = $customer->email; // customer email
