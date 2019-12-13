@@ -142,7 +142,6 @@ function custom_dynamic_regular_price( $regular_price, $product ) {
 
 
 // Generating dynamically the product "sale price"
-add_filter( 'woocommerce_product_get_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
