@@ -460,6 +460,7 @@ function populatecart(){
     jQuery.get(ajaxurl,
     {'action': 'fw_get_js_cart'}, 
     function (datos) { 
+        console.log(datos)
         datos=jQuery.parseJSON(datos)
         let jqe=''
         
