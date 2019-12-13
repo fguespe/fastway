@@ -2148,7 +2148,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'popup-mode',
+	'settings'    => 'fw_popup_mode',
+	'label'       => __( 'Popup', 'fastway' ),
+	'section'     => 'section_popup',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_popup_mode',
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
 	'default'     => 0,
@@ -2159,11 +2170,42 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_popup_form_mode',
+	'label'       => __( 'Form', 'fastway' ),
+	'section'     => 'section_popup',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_popup_html',
+	'label'       => __( 'HTML', 'fastway' ),
+	'section'     => 'section_popup',
+	'default'	=>'',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
-	'settings'    => 'popup-img',
+	'settings'    => 'fw_popup_img',
 	'label'       => __( 'Popup Img', 'fastway' ),
 	'section'     => 'section_popup',
 
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_pupup_form_id',
+	'label'    => __( 'Form ID', 'fastway' ),       
+	'section'     => 'section_popup',
+	'description' => 'Formulario para el modal'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
