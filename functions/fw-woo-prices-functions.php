@@ -130,7 +130,6 @@ function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
 
 // Generating dynamically the product "regular price"
 
-add_filter( 'woocommerce_product_get_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 function custom_dynamic_regular_price( $regular_price, $product ) {
