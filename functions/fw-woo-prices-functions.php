@@ -116,6 +116,7 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
 */
 
 function get_currency_conversion() {
+    if(is_admin())return 1;
     if(!fw_theme_mod('fw_currency_conversion'))return 1;
     $price=floatval(fw_theme_mod('fw_currency_conversion'));
     return $price; // x2 for testing
@@ -244,7 +245,7 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=$product->get_sale_price();
+      $precio=$product->get_price();
       $total_line=$precio*$cant;
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
