@@ -42,8 +42,6 @@ function fw_product_discount_multiplier($product){
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
-    if(is_admin()) return 1;
-    if($price)return 1;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
 
     global $woocommerce;
@@ -115,8 +113,8 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
 }
 */
 
-function get_currency_conversion() {
-    if(is_admin())return 1;
+function get_currency_conversion($iscartcalc=false) {
+    if(is_admin() && !$iscartcalc)return 1;
     if(!fw_theme_mod('fw_currency_conversion'))return 1;
     $price=floatval(fw_theme_mod('fw_currency_conversion'));
     return $price; // x2 for testing
@@ -165,6 +163,9 @@ function add_custom_price( $cart_object ) {
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
+    $symbol=get_woocommerce_currency_symbol();
+
+    
     if( $product->is_type('variable') ){
         // Searching for the default variation
         $default_attributes = $product->get_default_attributes();
@@ -192,7 +193,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         // Get the default variation prices or if not set the variable product min prices
         $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
-        $sale_price=$sale_price*fw_product_discount_multiplier($product);
+        $sale_price=$sale_price*fw_product_discount_multiplier($product)*get_currency_conversion();
         
     }else {
         $regular_price = $product->get_regular_price();
@@ -204,7 +205,6 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
     //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
     
-    $symbol=get_woocommerce_currency_symbol();
 
     if ( $sale_price<$regular_price) {
         return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
@@ -245,8 +245,9 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      error_log(print_r($cart_item,true));
-      $precio=$product->get_price();
+      error_log($precio);
+      $precio=$product->get_sale_price()*fw_product_discount_multiplier($product)*get_currency_conversion(true);
+      error_log($precio);
       $total_line=$precio*$cant;
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
