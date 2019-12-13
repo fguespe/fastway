@@ -35,12 +35,20 @@ if(fw_theme_mod("popup-mode") && is_front_page()){
         <div class="modal-body" style="padding:0px;">
           	<a class="img" href="<?=$link?>"><img width="100%" src="<?php echo $popup;?>"/></a>
         </div>
+        <div>
+        </div>
     </div>
   </div>
 </div>
 <script type="text/javascript">
 	jQuery(document).ready( function(jQuery) {
-    jQuery('#modalpopup').modal('show'); 
+    
+    setTimeout(function(){
+      if (jQuery.cookie('modal_shown') == null) {
+        jQuery.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+        jQuery('#modalpopup').modal('show');
+      }
+   }, 2000);
     });
 </script>
 <?php
