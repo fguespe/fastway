@@ -151,36 +151,12 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
         return $sale_price;
 };
 
-add_filter( 'woocommerce_add_cart_item', 'set_custom_cart_item_prices', 20, 2 );
-function set_custom_cart_item_prices( $cart_data, $cart_item_key ) {
-    // Price calculation
-    
-    $product=wc_get_product($cart_data['product_id']);
-    error_log(print_r($product,true));
-    $new_price = $product->get_sale_price();
-    error_log("new price es: ".$new_price);
-    $cart_data['data']->set_price( $new_price );
-    $cart_data['new_price'] = $new_price;
-
-    return $cart_data;
-}
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
-
 function add_custom_price( $cart_object ) {
-    $custom_price = 10; // This will be your custome price  
     foreach ( $cart_object->cart_contents as $key => $value ) {
-        $value['data']->set_price($custom_price);
+        $product=wc_get_product($value['product_id']);
+        $value['data']->set_price($product->get_sale_price());
     }
-}
-add_filter( 'woocommerce_get_cart_item_from_session', 'set_custom_cart_item_prices_from_session', 20, 3 );
-function set_custom_cart_item_prices_from_session( $session_data, $values, $key ) {
-    if ( ! isset( $session_data['new_price'] ) || empty ( $session_data['new_price'] ) )
-        return $session_data;
-
-    // Get the new calculated price and update cart session item price
-    $session_data['data']->set_price( $session_data['new_price'] );
-
-    return $session_data;
 }
 
 // Displayed formatted regular price + sale price
