@@ -1239,6 +1239,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Min Re-Purchase', 'fastway' ),
 	'section'     => 'section_woo',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_min_purchase_roles',
+	'label'    => __( 'Mins Roles', 'fastway' ),
+	'section'     => 'section_woo',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_price_suffix',

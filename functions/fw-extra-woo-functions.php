@@ -417,6 +417,12 @@ function fw_minimum_order_amount() {
     $customer_id   = $customer->ID; // customer ID
     $customer_email = $customer->email; // customer email
 
+    if(fw_theme_mod('fw_min_purchase_roles')){
+      $estaenlosroles=false;
+      $roles=explode(',',fw_theme_mod('fw_min_purchase'));
+      foreach($rol as $roles)if(check_user_role($rol))$estaenlosroles=true;
+      if(!$estaenlosroles)return;
+    }
     // Get all orders for this customer_id
     $customer_orders = get_posts( array(
         'numberposts' => -1,
