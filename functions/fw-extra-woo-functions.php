@@ -416,7 +416,7 @@ function pasa_filtro_rol($rolesstring){
     $estaenlosroles=false;
     $roles=explode(',',$rolesstring);
     foreach($rol as $roles)if(check_user_role($rol))$estaenlosroles=true;
-    if(!$estaenlosroles)return;
+    if(!$estaenlosroles)return false;
   }
   return true;
 }
