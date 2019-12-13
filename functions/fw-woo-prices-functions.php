@@ -38,16 +38,15 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 }
 
 
-function fw_product_discount_multiplier($product){
+function fw_product_discount_multiplier($product,$iscartcalc=false){
+    if(is_admin() && !$iscartcalc)return 1;
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
-
+    
     global $woocommerce;
     if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return 1;
-
-
     if(fw_theme_mod('fw_product_discount_categories')){
         $esdelapromo=false;
         $terms = get_the_terms ( $product->id, 'product_cat' );
@@ -72,46 +71,6 @@ function fw_product_discount_multiplier($product){
     return $multiplier;
 }
 
-/*
-if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
-  // Utility function to change the prices with a multiplier (number)
-  function get_currency_conversion() {
-    $price+=floatval(fw_theme_mod('fw_currency_conversion'));
-    return $price; // x2 for testing
-  }
-
-  // Simple, grouped and external products
-  add_filter('woocommerce_product_get_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_get_regular_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_get_sale_price', 'custom_price', 99, 2 );
-  // Variations
-  add_filter('woocommerce_product_variation_get_regular_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_variation_get_sale_price', 'custom_price', 99, 2 );
-  add_filter('woocommerce_product_variation_get_price', 'custom_price', 99, 2 );
-  function custom_price( $price, $product ) {
-    if($price)return intval($price * get_price_multiplier());
-  }
-
-  // Variable (price range)
-  add_filter('woocommerce_variation_prices_price', 'custom_variable_price', 99, 3 );
-  add_filter('woocommerce_variation_prices_regular_price', 'custom_variable_price', 99, 3 );
-  add_filter('woocommerce_variation_prices_sale_price', 'custom_variable_price', 99, 3 );
-  function custom_variable_price( $price, $variation, $product ) {
-    // Delete product cached price  (if needed)
-    // wc_delete_product_transients($variation->get_id());
-    if($price){
-    return intval($price * get_price_multiplier());
-    }
-  }
-
-  // Handling price caching (see explanations at the end)
-  add_filter( 'woocommerce_get_variation_prices_hash', 'add_price_multiplier_to_variation_prices_hash', 99, 1 );
-  function add_price_multiplier_to_variation_prices_hash( $hash ) {
-    $hash[] = get_price_multiplier();
-    return $hash;
-  }
-}
-*/
 
 function get_currency_conversion($iscartcalc=false) {
     if(is_admin() && !$iscartcalc)return 1;
@@ -245,9 +204,7 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      error_log($precio);
-      $precio=$product->get_sale_price()*fw_product_discount_multiplier($product)*get_currency_conversion(true);
-      error_log($precio);
+      $precio=$product->get_sale_price()*fw_product_discount_multiplier($product,true)*get_currency_conversion(true);
       $total_line=$precio*$cant;
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
