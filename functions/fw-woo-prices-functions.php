@@ -64,13 +64,11 @@ function fw_product_discount_multiplier($product){
         if(!$esdelapromo)return 1;
 
     }
-    
     if(fw_theme_mod('fw_product_discount_categories_ids_exc')){
         $esdelapromo=true;
         $arra=explode(",",fw_theme_mod('fw_product_discount_categories_ids_exc'));
         if(in_array($product->id,$arra))$esdelapromo=false;
         if(!$esdelapromo)return 1;
-
     }
     $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
     return $multiplier;
@@ -130,6 +128,7 @@ function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
 
 
 // Generating dynamically the product "regular price"
+
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 function custom_dynamic_regular_price( $regular_price, $product ) {
@@ -152,11 +151,42 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
         return $sale_price;
 };
 
+add_filter( 'woocommerce_add_cart_item', 'set_custom_cart_item_prices', 20, 2 );
+function set_custom_cart_item_prices( $cart_data, $cart_item_key ) {
+    // Price calculation
+    
+    $product=wc_get_product($cart_data['product_id']);
+    error_log(print_r($product,true));
+    $new_price = $product->get_sale_price();
+    error_log("new price es: ".$new_price);
+    $cart_data['data']->set_price( $new_price );
+    $cart_data['new_price'] = $new_price;
+
+    return $cart_data;
+}
+add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
+
+function add_custom_price( $cart_object ) {
+    $custom_price = 10; // This will be your custome price  
+    foreach ( $cart_object->cart_contents as $key => $value ) {
+        $value['data']->set_price($custom_price);
+    }
+}
+add_filter( 'woocommerce_get_cart_item_from_session', 'set_custom_cart_item_prices_from_session', 20, 3 );
+function set_custom_cart_item_prices_from_session( $session_data, $values, $key ) {
+    if ( ! isset( $session_data['new_price'] ) || empty ( $session_data['new_price'] ) )
+        return $session_data;
+
+    // Get the new calculated price and update cart session item price
+    $session_data['data']->set_price( $session_data['new_price'] );
+
+    return $session_data;
+}
+
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
     if( $product->is_type('variable') ){
-
         // Searching for the default variation
         $default_attributes = $product->get_default_attributes();
         // Loop through available variations
@@ -196,6 +226,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
     
     $symbol=get_woocommerce_currency_symbol();
+
     if ( $sale_price<$regular_price) {
         return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
@@ -219,9 +250,35 @@ function fw_loop_price(){
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
+    echo $product->get_price();
+    echo $product->get_sale_price();
     echo $product->get_price_html();
 }
 
 
+
+add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
+add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
+function fw_get_js_cart(){  
+    $carta=array();
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+      $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+      $product_id = $cart_item['product_id'];
+      
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
+      $image_url = $image[0];
+      $nombre = $product->get_name();
+      $cant=$cart_item['quantity'];
+      $precio=$product->get_price();
+      $total_line=$precio*$cant;
+      $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
+      array_push($carta,$arr);
+    }
+    $totals=WC()->cart->get_totals();
+
+    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+    echo json_encode($totales);
+    exit();
+}
 
 ?>
