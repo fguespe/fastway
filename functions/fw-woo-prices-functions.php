@@ -42,6 +42,7 @@ function fw_product_discount_multiplier($product){
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
+    if(is_admin()) return 1;
     if($price)return 1;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
 
@@ -73,10 +74,10 @@ function fw_product_discount_multiplier($product){
     return $multiplier;
 }
 
-
+/*
 if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
   // Utility function to change the prices with a multiplier (number)
-  function get_price_multiplier() {
+  function get_currency_conversion() {
     $price+=floatval(fw_theme_mod('fw_currency_conversion'));
     return $price; // x2 for testing
   }
@@ -112,6 +113,13 @@ if(fw_theme_mod('fw_currency_conversion')  && !is_admin()){
     return $hash;
   }
 }
+*/
+
+function get_currency_conversion() {
+    if(!fw_theme_mod('fw_currency_conversion'))return 1;
+    $price=floatval(fw_theme_mod('fw_currency_conversion'));
+    return $price; // x2 for testing
+}
 
 add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
 function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
@@ -121,21 +129,14 @@ function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
   return $price;
 }
 
-
-
-
-
-
 // Generating dynamically the product "regular price"
-
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 function custom_dynamic_regular_price( $regular_price, $product ) {
-    if( empty($regular_price) || $regular_price == 0 ){
-        return $product->get_price();
-    }
-    else
-        return $regular_price;
+    $devolver=$regular_price;
+    if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price();
+    $devolver=$devolver*get_currency_conversion();
+    return $devolver;
 }
 
 
@@ -144,10 +145,12 @@ add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 1
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
     $rate=fw_product_discount_multiplier($product);
-    if( empty($sale_price) || $sale_price == 0 )
-        return $product->get_regular_price()*$rate;
-    else
-        return $sale_price;
+    $devolver=$sale_price;
+    //Ya vien con la conversion
+    if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price()*$rate;
+    $devolver=$devolver*get_currency_conversion();
+    return $devolver;
+
 };
 
 
