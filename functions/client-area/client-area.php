@@ -258,7 +258,7 @@ add_action( 'init', 'fw_dashboard_widgets' );
 add_action( 'admin_menu', 'fw_remove_menu_pages' );
 function fw_remove_menu_pages() { 
     if (activarCA() ){
-        add_menu_page( 'escritorios', "<i class=' fa fa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
+        add_menu_page( 'escritorios', "<i class=' sfa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
         
         $locations = get_nav_menu_locations();
         $menu = get_term( $locations["clientarea-".get_is_role_or_name_before()], 'nav_menu' );
@@ -274,7 +274,7 @@ function fw_remove_menu_pages() {
         }
 
         
-        add_menu_page( 'salir', "<i class=' fa fa-sign-out'></i> ".'Salir', 'read', 'salir', 'fw_menu_salir_link');
+        add_menu_page( 'salir', "<i class=' fas fa-sign-out'></i> ".'Salir', 'read', 'salir', 'fw_menu_salir_link');
     }
 }
 /*
@@ -321,7 +321,7 @@ function fw_menu_items($wp_admin_bar){
 
     $args = array(
             'id' => 'custom-node-logout',
-            'title' => "<i class=' fa fa-sign-out'></i> ".'Logout',
+            'title' => "<i class=' fas fa-sign-out'></i> ".'Logout',
             'href' =>  wp_logout_url( home_url()),
             'meta' => array(
                 'class' => 'estiloiconomenu ab-top-secondary titulo-Logout'
