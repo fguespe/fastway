@@ -2271,6 +2271,7 @@ h3.heading-title {
 .woocommerce-account #page-wrapper,
 .woocommerce-checkout #page-wrapper {
   padding-top: 10px;
+  padding-bottom: 10px;
   background: var(--shop);
 }
 
