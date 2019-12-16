@@ -189,7 +189,7 @@ display:none;
 
 
  /*ADMIN BAR #wp-admin-bar-menu-toggle*/
-#wpadminbar,#adminmenumain{
+#wpadminbar,#adminmenumain,#adminmenu{
 	background-color: var(--ca-main-color);
 }
 @media (min-width: 782px) {
@@ -207,8 +207,7 @@ display:none;
 padding-left:0px !important;
 margin-left:5px !important;
 text-align:left !important;
-}
-#adminmenu,.wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before{
+}.wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before{
 background:#23282E !important;
 }
 #adminmenu{
@@ -291,7 +290,9 @@ display:none;
 
 
 /*MENUS*/
-
+.toplevel_page_woo-product-remover #toplevel_page_woo-product-remover{
+	display:none !important;
+}
 .menu-settings,.menus .nav-tab-wrapper{
 	display: none !important;
 }
