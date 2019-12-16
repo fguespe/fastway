@@ -290,7 +290,7 @@ display:none;
 
 
 /*MENUS*/
-.toplevel_page_woo-product-remover #toplevel_page_woo-product-remover{
+#toplevel_page_woo-product-remover{
 	display:none !important;
 }
 .menu-settings,.menus .nav-tab-wrapper{
