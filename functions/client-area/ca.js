@@ -56,5 +56,5 @@ iconosmenu();
 jQuery(document).ready( function(jQuery) {
 	jQuery('#wpb_visual_composer h2 span').html('ALTO WEB BUILDER');
 	var x = jQuery("img[src$='https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg']");
-	x.hide();
+	x.parent().parent().hide();
 });
