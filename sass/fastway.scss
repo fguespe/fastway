@@ -2265,7 +2265,11 @@ h3.heading-title {
 .prdctfltr_wc {
   margin: 0px !important;
 }
-#woocommerce-wrapper {
+
+#woocommerce-wrapper, 
+.woocommerce-cart #page-wrapper,
+.woocommerce-account #page-wrapper, 
+.woocommerce-checkout #page-wrapper{
   padding-top: 10px;
   background: var(--shop);
 }

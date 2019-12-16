@@ -1636,7 +1636,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_icons_style',
 	'label'       => 'Font Awesome Pro Styles',
 	'section'     => 'section_typos',
-	'default'     => 'fa',
+	'default'     => 'fad',
 	
 	'choices'     => array(
 		'fa'   =>  'Regular',
