@@ -1,9 +1,7 @@
 <?php
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
-
 ?>
-
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<?php do_action( 'fastway_footer_init' ); ?>
@@ -29,7 +27,7 @@ set_theme_mod('fw_popup_img',fw_theme_mod('popup-img'));
 if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modal_carrito' );
 if(fw_theme_mod("fw_popup_mode") && is_front_page()){
 ?>
-<!--
+
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered <?=fw_theme_mod('popup-size')?>">
     <div class="modal-content">
@@ -37,7 +35,7 @@ if(fw_theme_mod("fw_popup_mode") && is_front_page()){
         <div class="modal-body" style="padding:0px;">
             <?php if(fw_theme_mod('fw_popup_img')){?>
               <a class="img" href="<?=fw_theme_mod('popup-link')?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
-            <?php }if(fw_theme_mod('fw_popup_html')){ ?>
+            <?php }else if(fw_theme_mod('fw_popup_html')){ ?>
               <?php echo fw_theme_mod('fw_popup_html');?>
             <?php } ?>
             <?php if(fw_theme_mod('fw_pupup_form_id')){?>
@@ -46,7 +44,7 @@ if(fw_theme_mod("fw_popup_mode") && is_front_page()){
         </div>
     </div>
   </div>
-</div>-->
+</div>
 <style>
 #modalpopup .modal_form{
   padding-left:20px;
