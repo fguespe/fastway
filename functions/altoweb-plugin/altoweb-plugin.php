@@ -76,7 +76,8 @@ if(fw_theme_mod('fw_action_init_mayorista')){
    update_option('woocommerce_enable_checkout_login_reminder','no');
    update_option('woocommerce_enable_signup_and_login_from_checkout','no');
    update_option('woocommerce_enable_myaccount_registration','no');
-   
+   set_theme_mod('fw_prices_visibility','logged');
+   set_theme_mod('fw_purchases_visibility','logged');
    set_theme_mod('fw_action_init_mayorista',false);
 }
 
