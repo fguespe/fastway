@@ -247,6 +247,11 @@ function fw_image() {
                     "heading"     => "Imagen normal",
                     "param_name"  => "image",
                     "value"       => "",
+                    'dependency' => array(
+                        'element' => 'source',
+                        'value' => 'media_library',
+                    ),
+                    'admin_label' => true,
                 ),
                 array(
                     "type" => 'textfield',
@@ -281,7 +286,6 @@ function fw_image() {
                     "type"        => "dropdown",
                     "heading"     => __("Select Block"),
                     "param_name"  => "sblock",
-                    "admin_label" => true,
                     "value"       => $static_block_args,
                     "std"         => " ",
                     'description' => "Verificar fila del block este en Predeterminado de ancho"

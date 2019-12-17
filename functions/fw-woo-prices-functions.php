@@ -93,7 +93,7 @@ add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_r
 function custom_dynamic_regular_price( $regular_price, $product ) {
     $devolver=$regular_price;
     if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price();
-    $devolver=$devolver*get_currency_conversion();
+    $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 }
 
@@ -106,7 +106,7 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     $devolver=$sale_price;
     //Ya vien con la conversion
     if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price()*$rate;
-    $devolver=$devolver*get_currency_conversion();
+    $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
 };
