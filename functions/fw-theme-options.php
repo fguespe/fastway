@@ -699,6 +699,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_action_init_mayorista',
+	'label'       => __( 'Init Mayorista', 'fastway' ),
+	'section'     => 'section_actions',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_action_resetmails',
 	'label'       => __( 'Reset Mails', 'fastway' ),
 	'section'     => 'section_actions',

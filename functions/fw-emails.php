@@ -133,6 +133,11 @@ if(fw_theme_mod("fw_action_resetmails")){
     set_theme_mod('fw_action_resetmails',false);
 
 }
+update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
+update_option("woocommerce_email_footer_text","Powered by Altoweb");
+update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
+
+
 
 function change_stock_email_recipient( $recipient, $product ) {
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
