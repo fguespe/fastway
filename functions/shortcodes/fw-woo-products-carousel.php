@@ -22,8 +22,8 @@ endwhile;
 </div>
 <?php
 if($cant>=$columns){?>
-<div class="swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
-<div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
+<div class="swiper-arrows swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
+<div class="swiper-arrows swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
 <?php } ?>
 </div>
  <script>
