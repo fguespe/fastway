@@ -2578,20 +2578,17 @@ body .wpb_content_element {
     float: none !important;
   }
 }
-.ginput_container {
+.fw_lindo_form .ginput_container {
   border-bottom: 1px solid black;
 }
-
-.ginput_container input,
-.ginput_container textarea {
+.fw_lindo_form .ginput_container input,
+.fw_lindo_form .ginput_container textarea {
   border: 0px;
 }
-
-.fwhorform .ginput_container {
+.fw_lindo_form .fwhorform .ginput_container {
   border: none;
 }
-
-.gform_button {
+.fw_lindo_form .gform_button {
   background: var(--main);
   padding: 10px;
   width: 100% !important;
