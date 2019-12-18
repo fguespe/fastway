@@ -59,10 +59,10 @@ if(fw_theme_mod("fw_popup_mode") && is_front_page()){
 	jQuery(document).ready( function(jQuery) {
     
     setTimeout(function(){
-      //if (jQuery.cookie('modal_shown') == null) {
+      if (jQuery.cookie('modal_shown') == null) {
         jQuery.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
         jQuery('#modalpopup').modal('show');
-      //}
+      }
    }, 2000);
     });
 </script>

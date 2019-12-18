@@ -1737,6 +1737,9 @@ footer .widget_nav_menu li a {
 .fw_product_loop {
   margin-bottom: 10px !important;
 }
+.fw_product_loop a {
+  display: block;
+}
 .fw_product_loop .product_title {
   padding: 5px;
   color: #444444;

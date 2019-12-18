@@ -1722,6 +1722,9 @@ footer .widget_nav_menu li a {
 }
 .fw_product_loop{
   margin-bottom:10px !important;
+  a {
+    display:block;
+  }
   .product_title{
 
     padding:5px;
