@@ -42,6 +42,9 @@ display:none !important;
 .gf_dashboard_noforms_notice{
 	display:none !important;
 }
+#gf_user_pending_activation .updated{
+	display:block !important;
+}
 #gf_form_toolbar,#gform_settings_page_title,#form_switcher_arrow,.gf_admin_page_formid{
 display:none !important;
 }
