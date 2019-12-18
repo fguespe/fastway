@@ -1937,7 +1937,6 @@ footer .widget_nav_menu li a {
 .capsula-blanca .img {
   text-align: center !important;
   width: 100%;
-  color: black;
 }
 
 .capsula-blanca .img img {
@@ -1970,6 +1969,7 @@ footer .widget_nav_menu li a {
   font-size: 22px;
   font-weight: 600;
   margin-top: 15px;
+  color: black;
 }
 
 .capsula-blanca h3 {
@@ -2279,22 +2279,22 @@ h3.heading-title {
   margin: 0px !important;
 }
 
-/*
-#woocommerce-wrapper, 
+#woocommerce-wrapper,
 .woocommerce-cart #page-wrapper,
-.woocommerce-account #page-wrapper, 
+.woocommerce-account #page-wrapper,
 .woocommerce-checkout #page-wrapper,
 .page-contacto,
 .page-pagos,
 .page-envios,
 .medios-de-envio,
 .medios-de-pago,
-.page-sucursales{
-  background:white !important;
+.page-sucursales {
+  background: white !important;
   padding-top: 10px;
   padding-bottom: 10px;
   background: var(--shop);
-}*/
+}
+
 /*ul
 */
 /*fix imagenes*/
