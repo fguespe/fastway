@@ -33,7 +33,6 @@ function fw_todopago_dash(){
     </div>";
 }
 
-set_theme_mod('fw_max_media_upload',500);
 function fw_todopago_dash_handler(){
 
     # get saved data

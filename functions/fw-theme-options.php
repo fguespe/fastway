@@ -2120,7 +2120,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'fw_max_media_upload',
-	'label'    => __( 'Max Media Size Upload (KB)', 'fastway' ),       
+	'label'    => __( 'Max Media Size Upload (500KB)', 'fastway' ),       
 	'section'     => 'section_general',
 	'default'	=>	500,
 	'description'=>'Tamaño maximo de KB permitido para que los clientes suban a media,asi los obligamos a subidas livianas.'
