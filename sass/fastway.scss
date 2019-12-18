@@ -2529,6 +2529,7 @@ body .wpb_content_element {
   .ginput_container{
   margin:0px !important;
   }
+  
   .top_label li.gfield.gf_inline{ 
       width: 100% !important;
   }
@@ -2582,6 +2583,27 @@ body .wpb_content_element {
     }
   }
 }
+
+//.fwverform{
+
+.ginput_container{
+  border-bottom: 1px solid black;
+}
+.ginput_container input,
+.ginput_container textarea{
+  border:0px;
+}
+.gform_button {
+    background: var(--main);
+    padding: 10px;
+    width: 100%!important;
+    border: 0px;
+    color: white !important;
+    margin: 0 auto;
+}
+
+//}
+
 .woocommerce-cart{
     #reviews{
       display: none;
