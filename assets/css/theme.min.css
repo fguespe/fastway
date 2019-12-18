@@ -2585,6 +2585,10 @@ body .wpb_content_element {
   border: 0px;
 }
 
+.fwhorform .ginput_container {
+  border: none;
+}
+
 .gform_button {
   background: var(--main);
   padding: 10px;

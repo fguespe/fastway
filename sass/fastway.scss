@@ -2585,12 +2585,16 @@ body .wpb_content_element {
 }
 
 //.fwverform{
+  
 .ginput_container{
   border-bottom: 1px solid black;
 }
 .ginput_container input,
 .ginput_container textarea{
   border:0px;
+}
+.fwhorform .ginput_container{
+  border:none;
 }
 .gform_button {
     background: var(--main);
