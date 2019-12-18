@@ -2613,7 +2613,15 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_consultar',
+	'settings'    => 'fw_chat_whats',
+	'label'    => __( 'Consultar', 'fastway' ),       
+	'section'     => 'section_labels',
+	'default' 		=>	'Consultar',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_consultar_price',
 	'label'    => __( 'Consultar', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'Consultar',

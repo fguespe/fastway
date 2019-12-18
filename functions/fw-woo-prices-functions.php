@@ -161,8 +161,8 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
 
     if(fw_check_hide_prices()) return;
-    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span></a>';
-    //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar').'</span></span>';
+    if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar_price').'</span></span></a>';
+    //else if(empty($product->get_price())) return '<span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar_price').'</span></span>';
     
 
     if ( $sale_price<$regular_price) {
