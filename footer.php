@@ -32,8 +32,10 @@ if(fw_theme_mod("fw_popup_mode") && is_front_page()){
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="modal-body" style="padding:0px;">
-            <?php if(fw_theme_mod('fw_popup_img')){?>
-              <a class="img" href="<?=fw_theme_mod('popup-link')?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
+            <?php if(fw_theme_mod('fw_popup_img')){
+              $linkpop=fw_theme_mod('popup-link')?fw_theme_mod('popup-link'):'#';
+              ?>
+              <a class="img" href="<?=$linkpop?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
             <?php }else if(fw_theme_mod('fw_popup_html')){ ?>
               <?php echo fw_theme_mod('fw_popup_html');?>
             <?php } ?>

@@ -204,8 +204,8 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=$product->get_sale_price()*fw_product_discount_multiplier($product,true)*get_currency_conversion(true);
-      $total_line=$precio*$cant;
+      $precio=round($product->get_sale_price()*fw_product_discount_multiplier($product,true)*get_currency_conversion(true));
+      $total_line=round($precio*$cant);
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
     }
