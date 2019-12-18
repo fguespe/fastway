@@ -2281,19 +2281,12 @@ h3.heading-title {
 #woocommerce-wrapper, 
 .woocommerce-cart #page-wrapper,
 .woocommerce-account #page-wrapper, 
-.woocommerce-checkout #page-wrapper,
-.page-contacto,
-.page-pagos,
-.page-envios,
-.medios-de-envio,
-.medios-de-pago,
-.page-sucursales{
+.woocommerce-checkout #page-wrapper{ 
   background:white !important;
   padding-top: 10px;
   padding-bottom: 10px;
   background: var(--shop);
 }
-
  //*FIX PAGINATION*/
  /*ul
 */
