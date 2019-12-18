@@ -2280,7 +2280,13 @@ h3.heading-title {
 #woocommerce-wrapper, 
 .woocommerce-cart #page-wrapper,
 .woocommerce-account #page-wrapper, 
-.woocommerce-checkout #page-wrapper{
+.woocommerce-checkout #page-wrapper,
+.page-contacto,.page-pagos,
+.page-contacto,.page-envios,
+.page-contacto,.medios-de-envio,
+.page-contacto,.medios-de-pago,
+.page-sucursales{
+  background:white !important;
   padding-top: 10px;
   padding-bottom: 10px;
   background: var(--shop);
@@ -2606,6 +2612,7 @@ body .wpb_content_element {
 }
 
 //}
+
 
 .woocommerce-cart{
     #reviews{
