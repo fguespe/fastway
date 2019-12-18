@@ -2576,6 +2576,24 @@ body .wpb_content_element {
     float: none !important;
   }
 }
+.ginput_container {
+  border-bottom: 1px solid black;
+}
+
+.ginput_container input,
+.ginput_container textarea {
+  border: 0px;
+}
+
+.gform_button {
+  background: var(--main);
+  padding: 10px;
+  width: 100% !important;
+  border: 0px;
+  color: white !important;
+  margin: 0 auto;
+}
+
 .woocommerce-cart #reviews {
   display: none;
 }
