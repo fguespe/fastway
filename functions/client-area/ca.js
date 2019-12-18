@@ -54,7 +54,7 @@ iconosmenu();
 }
 
 jQuery(document).ready( function(jQuery) {
-	jQuery('#gf_user_pending_activate_link').text('Activar Usuario')
+	jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
 	jQuery('#wpb_visual_composer h2 span').html('ALTO WEB BUILDER');
 	var x = jQuery("img[src$='https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg']");
 	x.parent().parent().hide();
