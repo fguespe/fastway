@@ -10,7 +10,7 @@ $rand=generateRandomString(5);
 <?php 
 if(!$autoplay)$autoplay='false';
 if(!$loop)$loop='false';
-$cant=0;		
+$cant=1;		
 while ( $products->have_posts() ) : 
     $cant++;
     $products->the_post(); 
@@ -20,7 +20,8 @@ while ( $products->have_posts() ) :
 endwhile; 
 ?>
 </div>
-<?php if($cant>$columns){?>
+<?php
+if($cant>=$columns){?>
 <div class="swiper-prev swiper-products-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
 <div class="swiper-next swiper-products-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
 <?php } ?>
