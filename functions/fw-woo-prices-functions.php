@@ -152,7 +152,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         // Get the default variation prices or if not set the variable product min prices
         $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
-        $sale_price=$sale_price*fw_product_discount_multiplier($product)*get_currency_conversion();
+        $sale_price=round($sale_price*fw_product_discount_multiplier($product)*get_currency_conversion());
         
     }else {
         $regular_price = $product->get_regular_price();
