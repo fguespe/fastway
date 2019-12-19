@@ -927,7 +927,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-iconheader',
-	'label'       => __( 'Icons in Header', 'fastway' ),
+	'label'       => __( 'Icons', 'fastway' ),
 	'section'     => 'section_colors',
 	'default'     => '#132E59',
 	'choices'     => array(
