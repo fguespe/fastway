@@ -381,9 +381,9 @@ jQuery( ".fw_variations select" ).change(function() {
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
-    let suffix=jQuery('#fwprice .precio .suffix').text()
+    let suffix=jQuery('.summary .precio .suffix').text()
     console.log(vara)
-    jQuery('#fwprice .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
+    jQuery('.summary .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
     if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
         console.log('valida')
         jQuery('.fw_add_to_cart_button').prop("disabled",false)
