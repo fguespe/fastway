@@ -103,7 +103,6 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     return $devolver;
 
 }
-
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
 function add_custom_price( $cart_object ) {
     foreach ( $cart_object->cart_contents as $key => $value ) {
@@ -203,7 +202,6 @@ function fw_get_js_cart(){
     $carta=array();
     WC()->cart->calculate_totals();
 
-    //hago la conversion en front
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
       $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
       $product_id = $cart_item['product_id'];
@@ -211,10 +209,10 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=round($product->get_sale_price()*fw_product_discount_multiplier($product,true));
-      $total_line=round($precio*$cant);
-      error_log($total_line);
-      $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
+      $precio=round($product->get_regular_price()*fw_product_discount_multiplier($product,true));
+      $line_subtotal=round($precio*$cant);
+      error_log($line_subtotal);
+      $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $line_subtotal);
       array_push($carta,$arr);
     }
     $totals=WC()->cart->get_totals();
@@ -223,5 +221,6 @@ function fw_get_js_cart(){
     echo json_encode($totales);
     exit();
 }
+
 
 ?>
