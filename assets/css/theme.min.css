@@ -297,7 +297,7 @@
 }
 
 i.fad {
-  color: var(--second);
+  color: var(--icon-header);
 }
 
 .btn-main:hover {
