@@ -95,10 +95,9 @@ function custom_dynamic_regular_price( $regular_price, $product ) {
 add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
-    $rate=fw_product_discount_multiplier($product);
     $devolver=$sale_price;
     //Ya vien con la conversion
-    if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price()*$rate;
+    if( empty($devolver) || $devolver == 0 )$devolver=round($product->get_price()*fw_product_discount_multiplier($product));
     $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
