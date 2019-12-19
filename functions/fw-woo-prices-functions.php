@@ -104,15 +104,15 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
 
 }
 
-/*
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
 function add_custom_price( $cart_object ) {
     foreach ( $cart_object->cart_contents as $key => $value ) {
         $product=wc_get_product($value['product_id']);
-        $value['data']->set_price($product->get_regular_price());
+        $precio=$product->get_price();
+        $precio=$precio*get_currency_conversion();
+        $value['data']->set_price($precio);
     }
 }
-*/
 
 add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
 function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
@@ -201,6 +201,9 @@ add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
 add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
 function fw_get_js_cart(){  
     $carta=array();
+    WC()->cart->calculate_totals();
+
+    //hago la conversion en front
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
       $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
       $product_id = $cart_item['product_id'];
@@ -208,14 +211,15 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=round($product->get_sale_price()*fw_product_discount_multiplier($product,true)*get_currency_conversion(true));
+      $precio=round($product->get_sale_price()*fw_product_discount_multiplier($product,true));
       $total_line=round($precio*$cant);
+      error_log($total_line);
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $total_line);
       array_push($carta,$arr);
     }
     $totals=WC()->cart->get_totals();
 
-    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>floatval(fw_theme_mod('fw_currency_conversion')));
+    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>get_currency_conversion(true));
     echo json_encode($totales);
     exit();
 }

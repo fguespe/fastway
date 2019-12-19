@@ -461,21 +461,18 @@ function populatecart(){
     {'action': 'fw_get_js_cart'}, 
     function (datos) { 
         datos=jQuery.parseJSON(datos)
-        console.log(datos)
         let jqe=''
-        
-        let conv=datos['conversion']
-        conv=1
+        let conversion=datos['conversion']
         let totals=datos['totals']
-
-        let subtotal=totals['subtotal']*conv
-        let total=totals['total']*conv
+        let total=totals['total']*conversion
+        let subtotal=totals['subtotal']*conversion
         let discount_total=total-subtotal
+
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
-            let precio=value['precio']
+            let precio=value['precio']*conversion
             let quantity=value['quantity']
-            let line_subtotal=value['line_subtotal']*conv
+            let line_subtotal=value['line_subtotal']*conversion
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
