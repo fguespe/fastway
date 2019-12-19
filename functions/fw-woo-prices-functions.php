@@ -79,13 +79,6 @@ function get_currency_conversion($iscartcalc=false) {
     return $price; // x2 for testing
 }
 
-add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
-function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
-  $slashed_price = $values['data']->get_price_html();
-  $is_on_sale = $values['data']->is_on_sale();
-  if ( $is_on_sale ) $price = $slashed_price;
-  return $price;
-}
 
 // Generating dynamically the product "regular price"
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
@@ -109,16 +102,27 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
-};
+}
 
-
+/*
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
 function add_custom_price( $cart_object ) {
     foreach ( $cart_object->cart_contents as $key => $value ) {
         $product=wc_get_product($value['product_id']);
-        $value['data']->set_price($product->get_sale_price());
+        $value['data']->set_price($product->get_regular_price());
     }
 }
+*/
+
+add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
+function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
+  $slashed_price = $values['data']->get_price_html();
+  $is_on_sale = $values['data']->is_on_sale();
+  if ( $is_on_sale ) $price = $slashed_price;
+  return $price;
+}
+
+
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
