@@ -462,6 +462,7 @@ function populatecart(){
     function (datos) { 
         datos=jQuery.parseJSON(datos)
         let jqe=''
+        console.log(datos['totals'])
         let conversion=datos['conversion']
         let totals=datos['totals']
         let total=totals['total']*conversion

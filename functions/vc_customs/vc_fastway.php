@@ -434,15 +434,15 @@ function fw_image_function( $atts, $content ) {
     $link = $atts['link'];
     if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
-    $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
     $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
+    $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
         if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
-        $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
         $return .= '<img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
+        $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
     }

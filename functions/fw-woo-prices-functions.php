@@ -222,7 +222,6 @@ add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
 add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
 function fw_get_js_cart(){  
     $carta=array();
-    WC()->cart->calculate_totals();
 
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
       $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
@@ -231,7 +230,7 @@ function fw_get_js_cart(){
       $image_url = $image[0];
       $nombre = $product->get_name();
       $cant=$cart_item['quantity'];
-      $precio=round($product->get_regular_price()*fw_product_discount_multiplier($product,true));
+      $precio=round($product->get_sale_price());
       $line_subtotal=round($precio*$cant);
       error_log($line_subtotal);
       $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $line_subtotal);
