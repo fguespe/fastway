@@ -60,8 +60,12 @@ if(fw_theme_mod("fw_popup_mode") && is_front_page()){
     
     setTimeout(function(){
       if (jQuery.cookie('modal_shown') == null) {
+        console.log('no midal')
+
         jQuery.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
         jQuery('#modalpopup').modal('show');
+      }else{
+        console.log('no midal')
       }
    }, 2000);
     });
