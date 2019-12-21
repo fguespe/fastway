@@ -21,36 +21,6 @@ include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
   /*COLUMNA MEDIA*/
 
-  add_filter( 'manage_media_columns', 'sk_media_columns_filesize' );
-  function sk_media_columns_filesize( $posts_columns ) {
-      $posts_columns['filesize'] = __( 'File Size', 'my-theme-text-domain' );
-  
-      return $posts_columns;
-  }
-  add_action( 'manage_media_custom_column', 'sk_media_custom_column_filesize', 10, 2 );
-  function sk_media_custom_column_filesize( $column_name, $post_id ) {
-      if ( 'filesize' !== $column_name ) {
-          return;
-      }
-  
-      $bytes = filesize( get_attached_file( $post_id ) );
-  
-      echo size_format( $bytes, 2 );
-  }
-  
-  add_action( 'admin_print_styles-upload.php', 'sk_filesize_column_filesize' );
-  
-  function sk_filesize_column_filesize() {
-      echo
-      '<style>
-          .fixed .column-filesize {
-              width: 10%;
-          }
-      </style>';
-  }
-
-
-  
 //Taxomizer
 if(get_option('taxomizerwpai'))add_action('pmxi_after_xml_import', 'after_xml_import_init_cate', 10, 1);
 function after_xml_import_init_cate($import_id){
