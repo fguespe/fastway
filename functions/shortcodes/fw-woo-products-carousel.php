@@ -35,6 +35,8 @@ if($cant>=$columns){?>
             slidesPerView: <?=$columns?>,
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
+            preventClicks: false,
+            preventClicksPropagation: false,
             spaceBetween: 10,
             loop: <?=$loop;?>,
             touchRatio: 0 ,
