@@ -614,15 +614,8 @@ function wpa104537_filter_products_by_featured_status() {
 }
 
 add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
-
-/**
- * Filter the products in admin based on options
- *
- * @access public
- * @param mixed $query
- * @return void
- */
 function wpa104537_featured_products_admin_filter_query( $query ) {
+  if(!is_admin())return;
   global $typenow;
 
   if ( $typenow == 'product' ) {
@@ -648,15 +641,9 @@ function wpa104537_featured_products_admin_filter_query( $query ) {
   }
 
 }
-
 function fw_check_hide_purchases(){
   if(fw_theme_mod("fw_shop_state")=='hidepurchases' || fw_theme_mod("fw_shop_state")=='hideprices')return true;
   if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return true;
-
-}
-function fw_check_hide_prices(){
-  if(fw_theme_mod("fw_shop_state")=='hideprices')return true;
-  if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return true;
 
 }
 add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );

@@ -204,6 +204,11 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
 }
 
+function fw_check_hide_prices(){
+    if(fw_theme_mod("fw_shop_state")=='hideprices')return true;
+    if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return true;
+  
+  }
 
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){

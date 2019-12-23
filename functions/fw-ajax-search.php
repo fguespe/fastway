@@ -154,13 +154,15 @@ if( !function_exists( 'fw_search_form' ) ) {
 if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
  
 function so_20990199_product_query( $q ){
-  
-  $q->set( 'tax_query', array(array(
-    'taxonomy' => 'product_cat',
-    'field' => 'slug',
-    'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
-    'operator' => 'NOT IN'
-  )));
+  if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
+    
+    $q->set( 'tax_query', array(array(
+      'taxonomy' => 'product_cat',
+      'field' => 'slug',
+      'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
+      'operator' => 'NOT IN'
+    )));
+  }
 
 }
 
