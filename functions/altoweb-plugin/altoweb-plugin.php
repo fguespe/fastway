@@ -52,29 +52,29 @@ if(fw_theme_mod('fw_action_init_mayorista')){
 }
 
 if(fw_theme_mod('fw_action_woosettings')){
-    update_option('woocommerce_price_num_decimals','0');
-    update_option('woocommerce_currency','ARS');
-    update_option('woocommerce_default_country','AR:C');
-    update_option('woocommerce_cart_redirect_after_add','no');
-    update_option('woocommerce_enable_ajax_add_to_cart','no');
-    update_option('shop_single_image_size','a:3:{s:5:"width";s:3:"500";s:6:"height";s:3:"500";s:4:"crop";i:1;}');
-    update_option('woocommerce_enable_myaccount_registration','yes');
-    update_option('woocommerce_enable_signup_and_login_from_checkout','yes');
-    update_option('woocommerce_enable_checkout_login_reminder','yes');
-    update_option('woocommerce_registration_generate_username','yes');
-    update_option('woocommerce_ship_to_destination','billing_only');
-    update_option('woocommerce_registration_generate_password','yes');
-    //Calc envios
-    update_option('woocommerce_enable_shipping_calc','no');
-    update_option('woocommerce_enable_reviews','no');
-    update_option('woocommerce_shipping_cost_requires_address','no');
-    //Envuios
-    update_option('woocommerce_allowed_countries','all');
-    update_option('woocommerce_ship_to_countries','all');
-    update_option('woocommerce_default_customer_address','geolocation');
+   update_option('woocommerce_price_num_decimals','0');
+   update_option('woocommerce_currency','ARS');
+   update_option('woocommerce_default_country','AR:C');
+   update_option('woocommerce_cart_redirect_after_add','no');
+   update_option('woocommerce_enable_ajax_add_to_cart','no');
+   update_option('shop_single_image_size','a:3:{s:5:"width";s:3:"500";s:6:"height";s:3:"500";s:4:"crop";i:1;}');
+   update_option('woocommerce_enable_myaccount_registration','yes');
+   update_option('woocommerce_enable_signup_and_login_from_checkout','yes');
+   update_option('woocommerce_enable_checkout_login_reminder','yes');
+   update_option('woocommerce_registration_generate_username','yes');
+   update_option('woocommerce_ship_to_destination','billing_only');
+   update_option('woocommerce_registration_generate_password','yes');
+   //Calc envios
+   update_option('woocommerce_enable_shipping_calc','no');
+   update_option('woocommerce_enable_reviews','no');
+   update_option('woocommerce_shipping_cost_requires_address','no');
+   //Envuios
+   update_option('woocommerce_allowed_countries','all');
+   update_option('woocommerce_ship_to_countries','all');
+   update_option('woocommerce_default_customer_address','geolocation');
 
-    //Para que no se cancelen los envios
-    update_option('woocommerce_hold_stock_minutes','');
+   //Para que no se cancelen los envios
+   update_option('woocommerce_hold_stock_minutes','');
 
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
    $opts['title']='Mercadopago';
@@ -83,12 +83,24 @@ if(fw_theme_mod('fw_action_woosettings')){
    $opts['installment_paymentbutton_calculator']='no';
    $opts['installment_product_calculator']='no';
    $opts['shipping_product_calculator']='no';
+   $opts['gateway_mp_redirect']='yes';
 
    update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
    set_theme_mod('fw_action_woosettings',false);
 }
 
+$opts=get_option('woocommerce_mercadoenvios-gateway_settings');
+$opts['title']='Mercadopago';
+$opts['description']='<a href="https://www.mercadopago.com.ar/promociones" target="_blank"><img src="/wp-content/themes/fastway/assets/img/mp.png" class="noborrar"></a>';
+$opts['method']='redirect';
+$opts['installment_paymentbutton_calculator']='no';
+$opts['installment_product_calculator']='no';
+$opts['shipping_product_calculator']='no';
+$opts['gateway_mp_redirect']='yes';
+update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
+
+set_theme_mod('fw_action_woosettings',false);
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
     set_theme_mod('mobile-icon', $THEME_IMG_URI."favi.png");
@@ -99,6 +111,7 @@ if(fw_theme_mod('fw_action_clientimages')){
 
 
   
+
 // Hook in
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 // Our hooked in function - $fields is passed via the filter!
