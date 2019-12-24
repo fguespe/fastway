@@ -276,32 +276,25 @@
 
 .fw-medios {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start !important;
   text-decoration: none;
   padding: 2% 0 0% 2%;
   border-top: 1px solid #dfdfdf !important;
   margin-top: 10px;
-  
   color: #444;
 }
-
-
-
-i{
-  font-size:20px !important;;
-}
-.icon{
-  width:auto !important;
+.fw-medios i {
+  font-size: 20px;
 }
 .fw-medios big {
+  font-size: 18px;
   margin: 0px;
-  font-size: 18px !important;
-  line-height: 22px !important;
-  color: black !important;
+  line-height: 22px;
+  color: black;
   font-weight: 400 !important;
 }
 .fw-medios small {
-  color: grey !important;
+  color: grey;
   font-size: 14px;
 }
 

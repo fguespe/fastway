@@ -226,7 +226,7 @@ color:var(--linkedin) !important;
 
 .fw-medios {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start !important;
     text-decoration: none;
     padding: 2% 0 0% 2%;
     border-top: 1px solid #dfdfdf !important;
@@ -236,7 +236,7 @@ color:var(--linkedin) !important;
     i{
       font-size:20px;
     }
-    
+
     big {
     font-size: 18px;
     margin: 0px;
