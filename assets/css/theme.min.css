@@ -845,7 +845,7 @@ i.fad {
 }
 .fw_icon big {
   display: block;
-  font-size: 20px !important;
+  font-size: 20px;
   font-weight: 700;
   line-height: 17px;
 }
