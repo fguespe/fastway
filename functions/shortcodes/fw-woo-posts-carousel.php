@@ -45,6 +45,8 @@ while ($posts->have_posts()){
             slidesPerView: <?=$prodsperrow?>,
             slidesPerGroup:<?=$prodsperrow?>,
             paginationClickable: true,
+            preventClicks: false,
+            preventClicksPropagation: false,
             spaceBetween: 10,
             loop: <?=$loop;?>,
             touchRatio: 0 ,

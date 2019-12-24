@@ -1604,6 +1604,8 @@ var ProductSwiper = new Swiper(".swiper-related", {
     spaceBetween: 10,
     touchRatio: 0 ,
     loop: false,
+    preventClicks: false,
+    preventClicksPropagation: false,
     autoplay: true,
     navigation: {
         nextEl: ".swiper-prodrel-next",

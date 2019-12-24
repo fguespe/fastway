@@ -110,6 +110,8 @@ var ProductSwiper = new Swiper(".swiper-related", {
     spaceBetween: 10,
     touchRatio: 0 ,
     loop: false,
+    preventClicks: false,
+    preventClicksPropagation: false,
     autoplay: true,
     navigation: {
         nextEl: ".swiper-prodrel-next",
@@ -227,6 +229,8 @@ paginationClickable: true,
 spaceBetween: 30,
 touchRatio: 0 ,
 centeredSlides: true,
+preventClicks: false,
+preventClicksPropagation: false,
 loop: '.$loop.',
 on: {
    slideChange: function(){

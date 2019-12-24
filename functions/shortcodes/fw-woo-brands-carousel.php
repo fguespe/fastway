@@ -35,6 +35,8 @@ foreach ($terms as $term) {
             slidesPerView: <?=$columns?>,
             slidesPerGroup:<?=$columns?>,
             paginationClickable: true,
+            preventClicks: false,
+            preventClicksPropagation: false,
             spaceBetween: 10,
             loop: true,
             touchRatio: 0 ,
