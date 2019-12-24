@@ -334,7 +334,7 @@ global $product;
       <span class="text"> 
       <big>Pagá en hasta 12 cuotas</big> 
          <img style="display:block;" src="http://fwtest.fastway/wp-content/themes/fastway/assets/img/iconitopagos.png" width="97"/>
-      <small>Más información</small> 
+      <small style="color:#3483fa !important;">Más información</small> 
       </span>
    </li>
 </a>
