@@ -287,7 +287,6 @@
   width:auto !important;
 }
 .fw-medios i {
-  width: auto;
   font-size: 20px;
 }
 .fw-medios big {
@@ -298,7 +297,7 @@
   font-weight: 400 !important;
 }
 .fw-medios small {
-  color: grey;
+  color: grey !important;
   font-size: 14px;
 }
 
