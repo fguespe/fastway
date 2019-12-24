@@ -281,10 +281,14 @@
   padding: 2% 0 0% 2%;
   border-top: 1px solid #dfdfdf !important;
   margin-top: 10px;
+  
   color: #444;
 }
+
+
+
 i{
-  font-size:20px !important;
+  font-size:20px !important;;
 }
 .icon{
   width:auto !important;
