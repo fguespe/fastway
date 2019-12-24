@@ -281,21 +281,20 @@
   padding: 2% 0 0% 2%;
   border-top: 1px solid #dfdfdf !important;
   margin-top: 10px;
-  color: #444;
 }
 .fw-medios i {
   font-size: 20px !important;
 }
 .fw-medios big {
-  font-size: 18px;
   margin: 0px;
-  line-height: 22px;
-  color: black;
   font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  color: black !important;
 }
 .fw-medios small {
-  color: grey;
-  font-size: 14px;
+  font-size: 14px !important;
+  color: grey !important;
 }
 
 i.fad {

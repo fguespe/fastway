@@ -231,22 +231,20 @@ color:var(--linkedin) !important;
     padding: 2% 0 0% 2%;
     border-top: 1px solid #dfdfdf !important;
     margin-top: 10px ;
-    color: #444;
 
     i{
       font-size:20px !important;
     }
-
     big {
-    font-size: 18px;
-    margin: 0px;
-    line-height:22px;
-    color: black;
-    font-weight:400 !important;
+      margin: 0px;
+      font-weight:400 !important;
+      font-size:18px !important;
+      line-height:22px !important;
+      color:black !important;
     }
-    small{
-      color:grey;
-      font-size: 14px ;
+    small{  
+      font-size:14px !important;
+      color:grey !important;
     }
 }
 i.fad{
