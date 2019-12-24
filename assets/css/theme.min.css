@@ -284,7 +284,7 @@
   color: #444;
 }
 .fw-medios i {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 .fw-medios big {
   font-size: 18px;
