@@ -283,13 +283,17 @@
   margin-top: 10px;
   color: #444;
 }
+.icon{
+  width:auto !important;
+}
 .fw-medios i {
+  width: auto;
   font-size: 20px;
 }
 .fw-medios big {
-  font-size: 18px;
   margin: 0px;
-  line-height: 22px;
+  font-size: 18px !important;
+  line-height: 22px !important;
   color: black !important;
   font-weight: 400 !important;
 }
