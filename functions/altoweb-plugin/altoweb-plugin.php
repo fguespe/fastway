@@ -578,6 +578,14 @@ global $product;
                         <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/pagofacil@2x.png" class="card-img card-img-big">
                         <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/rapipago@2x.png" class="card-img card-img-big">
                         <div class="divider"></div>
+                        <h4 class="">Transferencia o deposito</h4>
+                        <div class="h6-xs m-bottom-half">
+                           <span>Precio: </span><b> $ {$precio}</b>
+                        </div>
+                        <span class="installments-card js-installments-flag-tab js-installments-cash-tab" data-type="dd" data-code="">
+          <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/link@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/link@2x.png" class="card-img card-img-big lazyloaded">
+        </span>
+                        <div class="divider"></div>
                      </div>
                   </div>
                </div>
