@@ -1,14 +1,4 @@
 <?php
-/*
-add_shortcode('fw_single_cart_old', 'fw_single_cart_old');
-function fw_single_cart_old(){
-    global $product;
-    if(fw_check_hide_purchases())return;
-    if(empty($product->get_price()))return;
-    woocommerce_template_single_add_to_cart();
-    do_action( 'woocommerce_before_add_to_cart_button' );
-}
-*/
 
 if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
@@ -163,6 +153,17 @@ function sum_cart_qty(){
 }
 
 
+add_action('wp_ajax_nopriv_get_variation_price', 'get_variation_price');
+add_action('wp_ajax_get_variation_price', 'get_variation_price');
+function get_variation_price(){
+  global $woocommerce;
+  $variation_id=$_GET['variation_id'];
+
+  $variable_product = wc_get_product($variation_id);
+  $price = $variable_product->get_price();
+  echo $price;
+  exit();
+}
 
 function price_array($product){
     

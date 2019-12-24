@@ -144,11 +144,9 @@
     
             
     function obtenerSeleccionCombo(idCombo){
-        console.log(jQuery('#cuotatp').is(":visible"));
         if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
-        var resultado = document.getElementById(idCombo).options[indice].value;
-        return resultado;
+        if(indice)return document.getElementById(idCombo).options[indice].value;
     }
     
     function limpiarComboBancos(){
@@ -376,19 +374,16 @@ function toggle(quien){
 
 jQuery( ".fw_variations select" ).change(function() {
     let vara=getVariation()
-    console.log(vara)
     if(!vara){
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
+    
     let suffix=jQuery('.summary .precio .suffix').text()
-    console.log(vara)
-    jQuery('.summary .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_price']+'<span class="suffix">'+suffix+'</span></span></span>');
+    jQuery('.summary .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_regular_price']+'<span class="suffix">'+suffix+'</span></span></span>');
     if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
-        console.log('valida')
         jQuery('.fw_add_to_cart_button').prop("disabled",false)
     }else {
-        console.log('invalida')
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
     }
 });
@@ -411,6 +406,11 @@ function getVariation(){
 
         if(esigual) vara=element
     });
+    jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
+    function (msg) { 
+        populatecart();
+    });
+}
     return vara
     
 }
