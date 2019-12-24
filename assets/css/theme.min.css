@@ -283,11 +283,11 @@
   margin-top: 10px;
   color: #444;
 }
+i{
+  font-size:20px;
+}
 .icon{
   width:auto !important;
-}
-.fw-medios i {
-  font-size: 20px;
 }
 .fw-medios big {
   margin: 0px;
