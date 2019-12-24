@@ -1649,7 +1649,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => 'Font Awesome Pro Styles',
 	'section'     => 'section_typos',
 	'default'     => 'fad',
-	
 	'choices'     => array(
 		'fa'   =>  'Regular',
 		'fas'  => 'Solid',
