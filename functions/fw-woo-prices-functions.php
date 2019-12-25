@@ -77,19 +77,13 @@ if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount'
     function add_custom_price( $cart_object ) {
         foreach ( $cart_object->cart_contents as $key => $value ) {
             $product=wc_get_product($value['product_id']);
+            if($value['variation_id'])$product=wc_get_product($value['variation_id']);
             $precio=$product->get_price();
             $precio=$precio*get_currency_conversion();
             $value['data']->set_price($precio);
         }
     }
 
-    add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
-    function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
-    $slashed_price = $values['data']->get_price_html();
-    $is_on_sale = $values['data']->is_on_sale();
-    if ( $is_on_sale ) $price = $slashed_price;
-    return $price;
-    }
 
 }else if(!fw_theme_mod('fw_currency_conversion') && fw_theme_mod('fw_product_discount')){
     
@@ -97,21 +91,24 @@ if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount'
     function add_custom_price( $cart_object ) {
         foreach ( $cart_object->cart_contents as $key => $value ) {
             $product=wc_get_product($value['product_id']);
+            if($value['variation_id'])$product=wc_get_product($value['variation_id']);
             $precio=$product->get_sale_price();
             $precio=$precio*get_currency_conversion();
             $value['data']->set_price($precio);
         }
     }
-    /*
-    add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
-    function fw_precio_item_carrito( $price, $values, $cart_item_key ) {
-    $slashed_price = $values['data']->get_price_html();
-    $is_on_sale = $values['data']->is_on_sale();
+}
+
+add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
+function fw_precio_item_carrito( $price, $value, $cart_item_key ) {
+    $product=wc_get_product($value['product_id']);
+    if($value['variation_id'])$product=wc_get_product($value['variation_id']);
+    $slashed_price = $product->get_price_html();
+    $is_on_sale = $product->is_on_sale();
     if ( $is_on_sale ) $price = $slashed_price;
     return $price;
-    }*/
-
 }
+
 function get_currency_conversion($iscartcalc=false) {
     if(is_admin() && !$iscartcalc)return 1;
     if(!fw_theme_mod('fw_currency_conversion'))return 1;
@@ -204,49 +201,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
 }
 
-function fw_check_hide_prices(){
-    if(fw_theme_mod("fw_shop_state")=='hideprices')return true;
-    if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return true;
-  
-  }
 
-add_shortcode('fw_loop_price', 'fw_loop_price');
-function fw_loop_price(){
-    global $product;
-    echo $product->get_price_html();
-}
-add_shortcode('fw_single_price', 'fw_single_price');
-function fw_single_price(){
-    global $product;
-    echo $product->get_price_html();
-}
-
-
-
-add_action('wp_ajax_nopriv_fw_get_js_cart', 'fw_get_js_cart');
-add_action('wp_ajax_fw_get_js_cart', 'fw_get_js_cart');
-function fw_get_js_cart(){  
-    $carta=array();
-
-    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-      $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-      $product_id = $cart_item['product_id'];
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
-      $image_url = $image[0];
-      $nombre = $product->get_name();
-      $cant=$cart_item['quantity'];
-      $precio=round($product->get_sale_price());
-      $line_subtotal=round($precio*$cant);
-      error_log($line_subtotal);
-      $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $line_subtotal);
-      array_push($carta,$arr);
-    }
-    $totals=WC()->cart->get_totals();
-
-    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>get_currency_conversion(true));
-    echo json_encode($totales);
-    exit();
-}
 
 
 ?>

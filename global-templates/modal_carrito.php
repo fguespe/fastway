@@ -406,11 +406,13 @@ function getVariation(){
 
         if(esigual) vara=element
     });
+    /*
     jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
     function (msg) { 
-        populatecart();
-    });
-}
+
+    jQuery('.summary .precio').html('jaja'+msg);
+
+    });*/
     return vara
     
 }
@@ -462,18 +464,17 @@ function populatecart(){
     function (datos) { 
         datos=jQuery.parseJSON(datos)
         let jqe=''
-        console.log(datos['totals'])
-        let conversion=datos['conversion']
         let totals=datos['totals']
-        let total=totals['total']*conversion
-        let subtotal=totals['subtotal']*conversion
+
+        let total=totals['total']
+        let subtotal=totals['subtotal']
         let discount_total=total-subtotal
 
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
-            let precio=value['precio']*conversion
+            let precio=value['precio']
             let quantity=value['quantity']
-            let line_subtotal=value['line_subtotal']*conversion
+            let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
@@ -486,8 +487,8 @@ function populatecart(){
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
-            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+precio+' </span><br>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+line_subtotal+' </span>'
+            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+precio/quantity+'</span><br>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio+' </span>'
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'

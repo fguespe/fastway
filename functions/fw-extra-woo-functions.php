@@ -14,6 +14,17 @@ function fw_loop_title(){
     global $product;
     echo '<h2 class="product_title">'.$product->post->post_title.'</h2>';
 }
+add_shortcode('fw_loop_price', 'fw_loop_price');
+function fw_loop_price(){
+    global $product;
+    echo $product->get_price_html();
+}
+add_shortcode('fw_single_price', 'fw_single_price');
+function fw_single_price(){
+    global $product;
+    echo $product->get_price_html();
+}
+
 add_shortcode('fw_single_cf','fw_get_custom_field');
 function fw_get_custom_field($atts){
     global $product;
@@ -643,11 +654,6 @@ function wpa104537_featured_products_admin_filter_query( $query ) {
   }
 
 }
-function fw_check_hide_purchases(){
-  if(fw_theme_mod("fw_shop_state")=='hidepurchases' || fw_theme_mod("fw_shop_state")=='hideprices')return true;
-  if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return true;
-
-}
 add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
@@ -746,6 +752,16 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
 function remove_product_description_heading() {
  return '';
+}
+function fw_check_hide_purchases(){
+    if(fw_theme_mod("fw_shop_state")=='hidepurchases' || fw_theme_mod("fw_shop_state")=='hideprices')return true;
+    if((fw_theme_mod("fw_purchases_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_purchases_visibility")==="hide")return true;
+  
+}
+function fw_check_hide_prices(){
+    if(fw_theme_mod("fw_shop_state")=='hideprices')return true;
+    if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return true;
+  
 }
 
 add_action( 'init', 'fw_otherwoo_options');
