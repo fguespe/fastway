@@ -22,6 +22,7 @@ function fw_loop_price(){
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
+
     echo $product->get_price_html();
 }
 

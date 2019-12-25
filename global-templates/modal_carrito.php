@@ -392,6 +392,7 @@ function getVariation(){
     let vars=jQuery( ".fw_variations" ).data( "product_variations" );
     let indexes=[]
     let elid=-1
+    
     selects.each(function( index ) {
         indexes[jQuery(this).data('attribute_name')]=jQuery(this).val()
     });
@@ -406,14 +407,14 @@ function getVariation(){
 
         if(esigual) vara=element
     });
-    /*
+    
     jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
     function (msg) { 
 
-    jQuery('.summary .precio').html('jaja'+msg);
-
-    });*/
+    jQuery('.summary .precio').html(msg)
+    });
     return vara
+    
     
 }
 function clickproduct(url,redirect){
@@ -460,7 +461,7 @@ function addCant(index,cart_item_key,sum){
 
 function populatecart(){
     jQuery.get(ajaxurl,
-    {'action': 'fw_get_js_cart'}, 
+    {'action': 'fw_get_minicart'}, 
     function (datos) { 
         datos=jQuery.parseJSON(datos)
         let jqe=''

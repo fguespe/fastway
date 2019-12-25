@@ -161,10 +161,10 @@ add_action('wp_ajax_get_variation_price', 'get_variation_price');
 function get_variation_price(){
   global $woocommerce;
   $variation_id=$_GET['variation_id'];
+  
+  $variable_product = wc_get_product(1102);
+  echo $variable_product->get_price_html();
 
-  $variable_product = wc_get_product($variation_id);
-  $price = $variable_product->get_price_html();
-  echo $price;
   exit();
 }
 
