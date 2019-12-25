@@ -1,10 +1,25 @@
 <?php
 
 
-// Hook before calculate fees
+function get_currency_conversion($iscartcalc=false) {
+    if(fw_is_admin())return 1;
+    if(!fw_theme_mod('fw_currency_conversion'))return 1;
+    $price=floatval(fw_theme_mod('fw_currency_conversion'));
+    return $price; // x2 for testing
+}
+
+
+
+function fw_is_admin(){
+    require_once(ABSPATH . 'wp-admin/includes/screen.php');
+    $screen = get_current_screen();
+    if ( $screen->parent_base == 'edit' ) return true;
+    return false;
+}
+
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 function fw_apply_lili_discount( WC_Cart $cart ){
-    //if(is_admin())return;
+    if(fw_is_admin())return;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
@@ -39,7 +54,7 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 
 
 function fw_product_discount_multiplier($product,$iscartcalc=false){
-    //if(is_admin() && !$iscartcalc)return 1;
+    if(fw_is_admin())return 1;
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
@@ -109,15 +124,8 @@ function fw_precio_item_carrito( $price, $value, $cart_item_key ) {
     return $price;
 }
 
-function get_currency_conversion($iscartcalc=false) {
-   // if(is_admin() && !$iscartcalc)return 1;
-    if(!fw_theme_mod('fw_currency_conversion'))return 1;
-    $price=floatval(fw_theme_mod('fw_currency_conversion'));
-    return $price; // x2 for testing
-}
 
 
-// Generating dynamically the product "regular price"
 add_filter( 'woocommerce_product_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_regular_price', 10, 2 );
 function custom_dynamic_regular_price( $regular_price, $product ) {
@@ -132,9 +140,10 @@ function custom_dynamic_regular_price( $regular_price, $product ) {
 add_filter( 'woocommerce_product_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 add_filter( 'woocommerce_product_variation_get_sale_price', 'custom_dynamic_sale_price', 10, 2 );
 function custom_dynamic_sale_price( $sale_price, $product ) {
-    $devolver=$sale_price;
-    //Ya vien con la conversion
-    if( empty($devolver) || $devolver == 0 )$devolver=round($product->get_price()*fw_product_discount_multiplier($product));
+    $devolver=$sale_price;;
+    $noteniasale=empty($devolver) || $devolver == 0;
+    if(fw_is_admin() && $noteniasale)return;
+    else if( $noteniasale )$devolver=round($product->get_price()*fw_product_discount_multiplier($product));
     $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
@@ -144,6 +153,7 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
+    if(fw_is_admin())return $price_html;
     $symbol=get_woocommerce_currency_symbol();
 
     
@@ -201,32 +211,6 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
 }
 
-
-/*
-add_action('wp_ajax_nopriv_fw_get_minicart', 'fw_get_minicart');
-add_action('wp_ajax_fw_get_minicart', 'fw_get_minicart');
-function fw_get_minicart(){  
-    $carta=array();
-    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-      $product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-      $product_id = $cart_item['product_id'];
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'featured-thumb' ); 
-      $image_url = $image[0];
-      $nombre = $product->get_name();
-      $cant=$cart_item['quantity'];
-      
-      $precio=round($product->get_sale_price());
-      $line_subtotal=round($precio*$cant);
-      error_log($line_subtotal);
-      $arr = array('nombre' => $nombre, 'link'=> get_permalink($product_id),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key, 'line_subtotal' => $line_subtotal);
-      array_push($carta,$arr);
-    }
-    $totals=WC()->cart->get_totals();
-
-    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'conversion'=>get_currency_conversion(true));
-    echo json_encode($totales);
-    exit();
-}*/
 
 
 

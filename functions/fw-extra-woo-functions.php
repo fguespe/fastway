@@ -655,7 +655,7 @@ function fw_filter_products_by_featured_status( $query ) {
   }
 
 }
-add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
+//add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 
