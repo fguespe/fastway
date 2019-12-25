@@ -883,24 +883,24 @@ header .navbar-toggler{
 	margin-left:auto;
 }
 .sub-menu-mobile{
-    background-color: #fff;
+  background-color: #fff;
+  background:rgba(0, 0, 0, .85);
+  bottom: 0;
+  left: -100%;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: left 0.2s ease-out 0s;
 
-    background:rgba(0, 0, 0, .85);
-    bottom: 0;
-    left: -100%;
-    overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: left 0.2s ease-out 0s;
-}
- a,span{
-    color: #333;
-    color:white;
-}
-.sub-menu-mobile .telefono-header{
-    color: #666;
-    padding: 15px 30px 0px 30px;
+  a,span{
+      color: #333;
+      color:white !important;
+  }
+  .telefono-header{
+      color: #666;
+      padding: 15px 30px 0px 30px;
+  }
 }
 .menu-madre-mobile.opened,
 .menu-madre-mobile.opened .sub-menu-mobile,
