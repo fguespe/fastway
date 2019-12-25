@@ -19,8 +19,8 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
       $cant='<span class="cant">('.$cant.')</span>';
       if($style==="link" || $style==="modal"){
       return '
-      <a class="fw-header-icon minicart"  href="'.$carturl.'" role="button">
-      <!--<a class="fw-header-icon minicart"  data-toggle="modal" data-target="#modal_carrito" role="button">-->
+      <!--<a class="fw-header-icon minicart"  href="'.$carturl.'" role="button">-->
+      <a class="fw-header-icon minicart"  data-toggle="modal" data-target="#modal_carrito" role="button">
       <i class="'.$istyle.' fa-cart-plus"></i>'.$cant.'
       </a>';
       }
@@ -161,10 +161,8 @@ add_action('wp_ajax_get_variation_price', 'get_variation_price');
 function get_variation_price(){
   global $woocommerce;
   $variation_id=$_GET['variation_id'];
-  
-  $variable_product = wc_get_product(1102);
+  $variable_product = wc_get_product($variation_id);
   echo $variable_product->get_price_html();
-
   exit();
 }
 

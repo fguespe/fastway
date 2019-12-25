@@ -627,8 +627,8 @@ function wpa104537_filter_products_by_featured_status() {
     endif;
 }
 
-add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
-function wpa104537_featured_products_admin_filter_query( $query ) {
+add_action('restrict_manage_posts', 'fw_filter_products_by_featured_status');
+function fw_filter_products_by_featured_status( $query ) {
   if(!is_admin())return;
   global $typenow;
 

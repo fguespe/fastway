@@ -373,19 +373,25 @@ function toggle(quien){
 }
 
 jQuery( ".fw_variations select" ).change(function() {
+
+    jQuery('.summary .fw_price').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     let vara=getVariation()
     if(!vara){
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
     
-    let suffix=jQuery('.summary .precio .suffix').text()
-    jQuery('.summary .precio').html('<span class="fw_price price1"><span class="precio">$'+vara['display_regular_price']+'<span class="suffix">'+suffix+'</span></span></span>');
-    if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
-        jQuery('.fw_add_to_cart_button').prop("disabled",false)
-    }else {
-        jQuery('.fw_add_to_cart_button').prop("disabled",true)
-    }
+    jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
+    function (msg) { 
+        jQuery('.summary .fw_price').html(msg)
+
+        if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
+            jQuery('.fw_add_to_cart_button').prop("disabled",false)
+        }else {
+            jQuery('.fw_add_to_cart_button').prop("disabled",true)
+        }
+    });
+    
 });
 function getVariation(){
     let selects=jQuery( ".fw_variations select" )
@@ -407,15 +413,7 @@ function getVariation(){
 
         if(esigual) vara=element
     });
-    
-    jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
-    function (msg) { 
-
-    jQuery('.summary .precio').html(msg)
-    });
     return vara
-    
-    
 }
 function clickproduct(url,redirect){
     location.href=url

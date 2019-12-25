@@ -4,7 +4,7 @@
 // Hook before calculate fees
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 function fw_apply_lili_discount( WC_Cart $cart ){
-    if(is_admin())return;
+    //if(is_admin())return;
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     $catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
@@ -39,7 +39,7 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 
 
 function fw_product_discount_multiplier($product,$iscartcalc=false){
-    if(is_admin() && !$iscartcalc)return 1;
+    //if(is_admin() && !$iscartcalc)return 1;
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
@@ -110,7 +110,7 @@ function fw_precio_item_carrito( $price, $value, $cart_item_key ) {
 }
 
 function get_currency_conversion($iscartcalc=false) {
-    if(is_admin() && !$iscartcalc)return 1;
+   // if(is_admin() && !$iscartcalc)return 1;
     if(!fw_theme_mod('fw_currency_conversion'))return 1;
     $price=floatval(fw_theme_mod('fw_currency_conversion'));
     return $price; // x2 for testing
