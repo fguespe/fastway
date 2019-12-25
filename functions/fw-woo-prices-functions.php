@@ -112,7 +112,21 @@ if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount'
             $value['data']->set_price($precio);
         }
     }
+}else if(fw_theme_mod('fw_currency_conversion') && fw_theme_mod('fw_product_discount')){
+    
+    add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
+    function add_custom_price( $cart_object ) {
+        foreach ( $cart_object->cart_contents as $key => $value ) {
+            $product=wc_get_product($value['product_id']);
+            if($value['variation_id'])$product=wc_get_product($value['variation_id']);
+            $precio=$product->get_sale_price();
+            $value['data']->set_price($precio);
+        }
+    }
 }
+
+
+
 
 add_filter( 'woocommerce_cart_item_price', 'fw_precio_item_carrito', 30, 3 );
 function fw_precio_item_carrito( $price, $value, $cart_item_key ) {
