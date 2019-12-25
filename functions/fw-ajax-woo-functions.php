@@ -2,6 +2,30 @@
 
 
 
+add_action('wp_ajax_nopriv_fw_get_minicart', 'fw_get_minicart');
+add_action('wp_ajax_fw_get_minicart', 'fw_get_minicart');
+function fw_get_minicart(){  
+    $carta=array();
+
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+
+        $product=wc_get_product($cart_item['product_id']);
+        if($cart_item['variation_id'])$product=wc_get_product($cart_item['variation_id']);
+    
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $cart_item['product_id'] ), 'featured-thumb' ); 
+        $image_url = $image[0];
+        $nombre = $product->get_name();
+        $cant=$cart_item['quantity'];
+        $precio= $cart_item['line_subtotal'];
+        $arr = array('nombre' => $nombre, 'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key);
+        array_push($carta,$arr);
+    }
+    $totals=WC()->cart->get_totals();
+
+    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count);
+    echo json_encode($totales);
+    exit();
+}
 
 
 if( !function_exists( 'fw_shopping_cart' ) ) {
