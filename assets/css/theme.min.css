@@ -933,7 +933,6 @@ header .navbar-toggler {
 
 .sub-menu-mobile {
   background-color: #fff;
-  background: rgba(0, 0, 0, 0.6);
   bottom: 0;
   left: -100%;
   overflow-y: auto;
@@ -944,7 +943,6 @@ header .navbar-toggler {
 }
 .sub-menu-mobile a, .sub-menu-mobile span {
   color: #333;
-  color: white !important;
 }
 .sub-menu-mobile .telefono-header {
   color: #666;
