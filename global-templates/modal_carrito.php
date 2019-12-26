@@ -419,7 +419,7 @@ function clickproduct(url,redirect){
     location.href=url
 }
 
-function addtocart(prod_id){
+function add_to_minicart(prod_id){
     let var_id=0;
 
     if(jQuery( ".fw_variations" ).length){
@@ -432,8 +432,7 @@ function addtocart(prod_id){
         }
     }
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
-   // console.log('var_id',var_id)
-
+    jQuery('.minicart').addClass('bouncing')
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
     function (msg) { 

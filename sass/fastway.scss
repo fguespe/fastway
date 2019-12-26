@@ -836,7 +836,7 @@ header .navbar-toggler{
   padding-right:0px !important;
 }
 
-.menu-madre-mobile,.sidebar-mobile-cats {
+.fw_menu_mobile,.sidebar-mobile-cats {
     bottom: 0;
     font-size: 14px;
     left: -80%;
@@ -897,19 +897,39 @@ header .navbar-toggler{
       color: #333;
       //color:white !important;
   }
+  
   .telefono-header{
       color: #666;
       padding: 15px 30px 0px 30px;
   }
 }
-.menu-madre-mobile.opened,
-.menu-madre-mobile.opened .sub-menu-mobile,
+.sub-menu-mobile.darkmode{
+  background:rgba(0, 0, 0, .85);
+  a,span{
+    color:white !important;
+  }
+}
+.minicart.bouncing{
+  display:inline-block;
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 20px, 0); }
+}
+@-webkit-keyframes bounce {
+  from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to   { -webkit-transform: translate3d(0, 20px, 0); transform: translate3d(0, 20px, 0); }
+}
+    
+.fw_menu_mobile.opened,
+.fw_menu_mobile.opened .sub-menu-mobile,
 .sidebar-mobile-cats.opened,
 .sidebar-mobile-cats.opened .sub-menu-mobile{
     left: 0;
-}
-.submenu-madre-mobile{
-    display: none;
 }
 .separa-menu-mobile{
     height: 20px;

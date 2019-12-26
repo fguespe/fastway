@@ -1112,6 +1112,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_mobile_dark_mode',
+	'label'       => __( 'Menu Dark Mode', 'fastway' ),
+	'description'       =>'Automatically adjusts font size to screen',
+	'section'     => 'section_mobile',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'responsive-typo',
 	'label'       => __( 'Responsive Typo ', 'fastway' ),
 	'description'       =>'Automatically adjusts font size to screen',

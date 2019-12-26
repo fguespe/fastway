@@ -130,10 +130,12 @@ if(fw_theme_mod("fw_general_message")){
 
 echo fw_header_html();
 echo fw_header_html_mobile();
+$clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-menu-mobile';
+
 ?>
 <div class="mobile-menu-overlay d-md-none">&nbsp;</div>
-<div class="menu-madre-mobile">
-        <div class="sub-menu-mobile"> 
+<div class="fw_menu_mobile">
+        <div class="<?=$clasesmenu?>"> 
         <div class="telefono-header t1 txt-16 text-left">      
           <?php 
           if(!empty(fw_company_data("phone"))){?>   
