@@ -90,7 +90,9 @@ text-align:left !important;
 </style>
     <?php echo fw_theme_mod('fw_header_scripts');?>
 </head>
-<body <?php body_class("page-".basename(get_permalink())); ?>>
+<?php
+$nombreurl=is_front_page()?'home':basename(get_permalink());?>
+<body <?php body_class("page-".$nombreurl); ?>>
 <style>
 /*
 centrar menu
