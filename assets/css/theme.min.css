@@ -896,6 +896,9 @@ header .navbar-toggler {
   width: 80%;
   z-index: 1000;
 }
+.fw_menu_mobile .dropdown-menu, .sidebar-mobile-cats .dropdown-menu {
+  background-color: transparent !important;
+}
 .fw_menu_mobile a, .sidebar-mobile-cats a {
   color: #666 !important;
   font-size: 14px !important;

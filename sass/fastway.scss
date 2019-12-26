@@ -845,7 +845,10 @@ header .navbar-toggler{
     transition: left 0.2s ease-out 0s;
     width: 80%;
     z-index: 1000;
+    .dropdown-menu{
 
+      background-color:  transparent !important;
+    }
     a{
         color: #666!important;
         font-size: 14px !important;
