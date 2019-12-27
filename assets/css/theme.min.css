@@ -1500,6 +1500,10 @@ p:empty {
   margin-top: 10px;
 }
 
+.darkmode .fw_quicklinks {
+  border-top: 1px solid white !important;
+}
+
 .fw_header.top {
   background: var(--top-header);
 }

@@ -30,7 +30,7 @@ class Correios_Shipping_Frontend_Site {
 
 	public function register_scripts() {
 
-		wp_register_script( 'wscp-js',  get_template_directory_uri() . '/assets/js/calculator.min.js');
+		//wp_register_script( 'wscp-js',  get_template_directory_uri() . '/assets/js/calculator.min.js');
 	    
 	    wp_enqueue_style('wscp-css');
 	    wp_enqueue_script('wscp-js');
