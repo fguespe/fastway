@@ -310,7 +310,7 @@ function bancos_arg($translation, $text, $domain) {
 //VERFW
 
 add_shortcode('altoweb_financiacion','getFinanciacion');
-//ee
+//eesss
 
 function getFinanciacion(){
 global $product;
