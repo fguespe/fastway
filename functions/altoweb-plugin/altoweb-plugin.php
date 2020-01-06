@@ -310,6 +310,8 @@ function bancos_arg($translation, $text, $domain) {
 //VERFW
 
 add_shortcode('altoweb_financiacion','getFinanciacion');
+//ee
+
 function getFinanciacion(){
 global $product;
   $precio=floatval($product->price);
