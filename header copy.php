@@ -135,64 +135,37 @@ echo fw_header_html_mobile();
 $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-menu-mobile';
 
 ?>
-</header>
-<nav id="mmenu" class=" darkmode">
-<div class="telefono-header t1 txt-16 text-left">      
-  <?php 
-      if(!empty(fw_company_data("phone"))){?>   
-      <a href="<?php echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
-      <?php
-      } 
-      if(!empty(fw_company_data("whatsapp"))){?>
-      <a href="<?php echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_chat_whats')?></a>
-      <?php } ?>
-      
-</div>
-<div class="separa-menu-mobile">&nbsp;</div>
+<div class="mobile-menu-overlay d-md-none">&nbsp;</div>
+<div class="fw_menu_mobile">
+        <div class="<?=$clasesmenu?>"> 
+        <div class="telefono-header t1 txt-16 text-left">      
+          <?php 
+          if(!empty(fw_company_data("phone"))){?>   
+          <a href="<?php echo fw_company_data("phone",true)?>" rel="nofollow" title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
+          <?php
+          } 
+          if(!empty(fw_company_data("whatsapp"))){?>
+          <a href="<?php echo fw_company_data("whatsapp",true)?>" rel="nofollow" title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_chat_whats')?></a>
+          <?php } ?>
+          
+        </div>
+        <div class="separa-menu-mobile">&nbsp;</div>
    
-  <ul>
-    <li class="Selected"><a href="#">Home</a></li>
-    <li><span>About us</span>
-      <ul>
-        <li><a href="#about/history">History</a></li>
-        <li><span>The team</span>
-          <ul>
-            <li><a href="#about/team/management">Management</a></li>
-            <li><a href="#about/team/sales">Sales</a></li>
-            <li><a href="#about/team/development">Development</a></li>
-          </ul>
-        </li>
-        <li><a href="#about/address">Our address</a></li>
-      </ul>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-				</nav>
-<script>
-			var menu = new MmenuLight(
-				document.querySelector( '#mmenu' ),
-				'all'
-			);
-
-			var navigator = menu.navigation({
-				// selectedClass: 'Selected',
-				// slidingSubmenus: true,
-				// theme: 'dark',
-				// title: 'Menu'
-			});
-
-			var drawer = menu.offcanvas({
-				// position: 'left'
-			});
-
-			//	Open the menu.
-			document.querySelector( 'a[href="#mmenu"]' )
-				.addEventListener( 'click', evnt => {
-					evnt.preventDefault();
-					drawer.open();
-				});
-
-		</script>
+        <?php 
+        echo fw_menu_vertical(array('id' => 'mobile' )); 
+        $bottommneu=fw_menu_vertical(array('id' => 'mobile_bottom' )); 
+        if(!empty($bottommneu)){
+            echo '<div class="separa-menu-mobile">&nbsp;</div>';
+            echo '<div class="mobile_bottom">'.$bottommneu.'</div>';
+        }
+        if(fw_theme_mod('fw-quicklinks'))quicklinks();?>
+      </div>
+    </div>
+    <div class="collapse" id="navbarsExample02">
+      <?php echo fw_search_form(3);?>
+    </div>
+</div>
+</header>
 <script >
 jQuery(window).on('load', function() {
     if(jQuery(document).height()>1400){

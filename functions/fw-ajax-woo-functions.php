@@ -32,6 +32,8 @@ if( !function_exists( 'fw_shopping_cart' ) ) {
   add_shortcode('fw_shopping_cart', 'fw_shopping_cart');
 
   function fw_shopping_cart($style = "link"){
+      if(fw_check_hide_purchases())return;
+      
       $style='link';
       if( !is_plugin_active('woocommerce/woocommerce.php') ) return;
       global $woocommerce;

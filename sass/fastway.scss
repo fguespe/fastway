@@ -906,6 +906,14 @@ header .navbar-toggler{
       padding: 15px 30px 0px 30px;
   }
 }
+.darkmode{
+  .mm-spn.mm-spn--light{
+    background:rgba(0, 0, 0, .85);
+    a,span{
+      color:white !important;
+    }
+  }
+}
 .sub-menu-mobile.darkmode{
   background:rgba(0, 0, 0, .85);
   a,span{
