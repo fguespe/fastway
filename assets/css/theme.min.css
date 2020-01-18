@@ -901,7 +901,6 @@ header .navbar-toggler {
   background: rgba(0, 0, 0, 0.96);
   width: 100%;
   visibility: hidden;
-  height: 100%;
 }
 
 .fw_menu_mobile .submenu-layer-1.opened,
