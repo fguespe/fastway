@@ -136,7 +136,7 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
 
 ?>
 <div class="mobile-menu-overlay d-md-none">&nbsp;</div>
-<div class="fw_menu_mobile opened">
+<div class="fw_menu_mobile ">
         <div class="<?=$clasesmenu?>"> 
         <div class="telefono-header t1 txt-16 text-left">      
           <?php 
