@@ -970,6 +970,10 @@ header .navbar-toggler {
   margin-left: auto;
 }
 
+.btn-bars-mobile-cats i.fad {
+  color: white;
+}
+
 .sub-menu-mobile {
   background-color: #fff;
   bottom: 0;

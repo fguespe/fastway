@@ -286,7 +286,6 @@ function fw_menu_vertical( $atts ) {
                 $first=false;
                 foreach( $menu_items as $submenu ) {
                    if( $submenu->menu_item_parent == $parent ) {
-                        //if($submenu->attr_title==="init_col")continue;
                         if($submenu->attr_title==="init_col" && $megamenu){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
@@ -380,11 +379,6 @@ function fw_menu_parent_count($menu_items,$parent_id){
         if( $menu_item_layer1->ID == $parent_id ){
             if($menu_item_layer1->menu_item_parent==0)return $cant;
             return $cant+1;
-            /*foreach( $menu_items as $menu_item_layer2 ){
-                if( $menu_item_layer2->ID == $menu_item_layer1->ID ){
-                    
-                } 
-            }*/
         } 
     }
     return $cant;
@@ -402,9 +396,10 @@ function fw_menu_mobilenew_submenu($menu_items,$parent_id){
     <div id="submenu_'.$parent_id.'" class="'.$clasem.' navbar-collapse py-0">
     <ul id="main-menu-mobile" class="navbar-nav ">'."\n";
     if($parent_id>0){
-        $menu_list.='<div class="categoria-menu-mobile">
-        <a href="#" class="menu-mobile-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><span class="current-layer-menu"></span>
-    </div>';
+        $menu_list.='
+        <div class="categoria-menu-mobile">
+            <a href="#" class="menu-mobile-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><span class="current-layer-menu"></span>
+        </div>';
     }
     if(empty($menu_items))return;
     foreach( $menu_items as $menu_item ) {
