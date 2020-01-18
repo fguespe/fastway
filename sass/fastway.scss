@@ -280,7 +280,18 @@ i.fad{
   margin: 0 auto ;
   margin-bottom: 10px ;
 }
-
+@media (max-width: 799px) {
+  .fw_add_to_cart_button.sticky{
+      position: fixed !important;
+      bottom:0px !important;
+      left:0px;
+      border-radius:0px;
+      z-index:20;
+      width:100%;
+      text-align:center;
+      margin:0 auto !important;
+  }
+}
 .fw_add_to_cart_button span,
 .fw_add_to_cart_button i{
   color: white;
@@ -849,6 +860,7 @@ header .navbar-toggler{
   background:rgba(0, 0, 0, .90);
   width:100%;
   visibility: hidden;
+  min-height: 100%;
 }
 .fw_menu_mobile .submenu-layer-1.opened,
 .fw_menu_mobile .submenu-layer-2.opened{

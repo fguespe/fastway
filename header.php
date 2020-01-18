@@ -183,15 +183,18 @@ jQuery('.submenu-layer-2 .menu-mobile-back').click(function(){
 jQuery(window).on('load', function() {
     if(jQuery(document).height()>1400){
         jQuery(window).scroll(function() {
-            var sticky = jQuery('header'),
+            var sticky = jQuery('header')
+            var sticky_addto = jQuery('.fw_single_product .fw_add_to_cart_button')
             scroll = jQuery(window).scrollTop();
             if (scroll >= 171) { 
                 sticky.addClass('fw_sticky_header'); 
+                sticky_addto.addClass('sticky'); 
                 jQuery('.fw_single_product .summary').addClass('fixed');
                 if(<?=fw_theme_mod('darklogo_sticky')?'true':'false'?>  && <?=!empty(fw_theme_mod('dark-logo'))?'true':'false'?>){
                     jQuery('.logo .fastway-image').attr('src','<?=fw_theme_mod('dark-logo')?>');
                 }
             }else{ 
+                sticky_addto.removeClass('sticky'); 
                 sticky.removeClass('fw_sticky_header');
                 jQuery('.fw_single_product .summary').removeClass('fixed');
                 if(<?=fw_theme_mod('darklogo_sticky')?'true':'false'?>){
