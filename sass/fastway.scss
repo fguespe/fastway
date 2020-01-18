@@ -835,20 +835,47 @@ height:100% !important;
 header .navbar-toggler{
   padding-right:0px !important;
 }
-.submenu-layer-0,
-.submenu-layer-1,
-.submenu-layer-2{
+.categoria-menu-mobile .menu-mobile-back i{
+  font-size: 22px;
+  display: inline-block;
+  color:white !important;
+  padding:20px;
+}
+.fw_menu_mobile .submenu-layer-1,
+.fw_menu_mobile .submenu-layer-2{
+  top:0px  !important;
+  position: absolute !important;
+  background:rgba(0, 0, 0, .90);
+  width:100%;
+  visibility: hidden;
+  height:100%;
+}
+.fw_menu_mobile .submenu-layer-1.opened,
+.fw_menu_mobile .submenu-layer-2.opened{
+  visibility: visible;
+} .fwmenu1 .menu-item a{
+    font-size: 12px;
+    padding: 12px 0px 14px 2px;
+    border-bottom: 1px solid #333;
+}
+
+.fw_menu_mobile .menu-item i {
+    float: right;
+    line-height: 20px;
+    font-size: 20px;
+    color: white !important;
+}
+.fw_menu_mobile,.sidebar-mobile-cats {
     bottom: 0;
     font-size: 14px;
     left: -80%;
     position: fixed;
     top: 0;
     transition: left 0.2s ease-out 0s;
-    width: 50%;
-    z-index: 4000;
-}
-.fw_menu_mobile,.sidebar-mobile-cats {
+    width: 80%;
+    z-index: 1000;
     .dropdown-menu{
+
       background-color:  transparent !important;
     }
     a{

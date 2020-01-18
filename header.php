@@ -177,36 +177,7 @@ jQuery('.submenu-layer-2 .menu-mobile-back').click(function(){
 });
 </script>
 <style>
-.categoria-menu-mobile .menu-mobile-back i{
-  font-size: 22px;
-  display: inline-block;
-  color:white !important;
-  padding:20px;
-}
-.fw_menu_mobile .submenu-layer-1,
-.fw_menu_mobile .submenu-layer-2{
-  top:0px  !important;
-  position: absolute !important;
-  background:rgba(0, 0, 0, .90);
-  width:100%;
-  visibility: hidden;
-  height:100%;
-}
-.fw_menu_mobile .submenu-layer-1.opened,
-.fw_menu_mobile .submenu-layer-2.opened{
-  visibility: visible;
-} .fwmenu1 .menu-item a{
-    font-size: 12px;
-    padding: 12px 0px 14px 2px;
-    border-bottom: 1px solid #333;
-}
 
-.fw_menu_mobile .menu-item i {
-    float: right;
-    line-height: 20px;
-    font-size: 20px;
-    color: white !important;
-}
 </style>
 <script >
 jQuery(window).on('load', function() {
