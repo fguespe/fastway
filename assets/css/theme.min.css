@@ -908,7 +908,7 @@ header .navbar-toggler {
   visibility: visible;
 }
 
-.fwmenu1 .menu-item a {
+.fw_menu_mobile .menu-item a {
   font-size: 12px;
   padding: 12px 0px 14px 2px;
   border-bottom: 1px solid #333;
