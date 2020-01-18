@@ -286,6 +286,7 @@ function fw_menu_vertical( $atts ) {
                 $first=false;
                 foreach( $menu_items as $submenu ) {
                    if( $submenu->menu_item_parent == $parent ) {
+                        //if($submenu->attr_title==="init_col")continue;
                         if($submenu->attr_title==="init_col" && $megamenu){
                             if($first)$menu_array[] ='</div>';
                             $first=true;
@@ -350,7 +351,92 @@ function fw_menu_vertical( $atts ) {
     return $menu_list;
 }
 
+function fw_menu_mobilenew( $atts ) {
+    $atts = shortcode_atts(array('id' => 'mobile' ), $atts );
+    $id=$atts['id'];
+    
+    if ( ($id) && ($locations = get_nav_menu_locations()) && isset($locations[$id]) ) {
+        $menu = get_term( $locations[$id], 'nav_menu' );
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        $yacreados=array();
 
+        foreach( $menu_items as $menu_item ) {
+            $padre=$menu_item->menu_item_parent;
+	        if ( !in_array($padre,$yacreados) ) {
+                $menu_list .= fw_menu_mobilenew_submenu($menu_items,$padre);
+                array_push($yacreados,$padre);
+            }
+        }
+        
+        
+    } 
+    return $menu_list;
+}
+
+function fw_menu_parent_count($menu_items,$parent_id){
+    if($parent_id==0)return 0;
+    $cant=1;
+    foreach( $menu_items as $menu_item_layer1 ){
+        if( $menu_item_layer1->ID == $parent_id ){
+            if($menu_item_layer1->menu_item_parent==0)return $cant;
+            return $cant+1;
+            /*foreach( $menu_items as $menu_item_layer2 ){
+                if( $menu_item_layer2->ID == $menu_item_layer1->ID ){
+                    
+                } 
+            }*/
+        } 
+    }
+    return $cant;
+}
+function fw_menu_children_count($menu_items,$parent_id){
+    $cant=0;
+    foreach( $menu_items as $menu_item )if( $menu_item->menu_item_parent == $parent_id ) $cant++;
+     return $cant;
+}
+function fw_menu_mobilenew_submenu($menu_items,$parent_id){
+    $cols="";
+    $clasem="fwmenu1";
+    $clasem.=' submenu-layer-'.fw_menu_parent_count($menu_items,$parent_id).' ';;
+    $menu_list  = '
+    <div id="submenu_'.$parent_id.'" class="'.$clasem.' navbar-collapse py-0">
+    <ul id="main-menu-mobile" class="navbar-nav ">'."\n";
+    if($parent_id>0){
+        $menu_list.='<div class="categoria-menu-mobile">
+        <a href="#" class="menu-mobile-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><span class="current-layer-menu"></span>
+    </div>';
+    }
+    if(empty($menu_items))return;
+    foreach( $menu_items as $menu_item ) {
+            if( $menu_item->menu_item_parent == $parent_id ) {
+                $parent = $menu_item->ID;
+                $linkmod_classes = array();
+                $icon_classes    = array();
+                $classes = seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes );
+                $classes=implode(' ',$classes);
+                $icon_classes=implode(' ',$icon_classes);
+                if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
+                
+
+                $nuevoitem="";
+                $first=false;
+
+                $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
+                    $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                    $menu_list.='<i class="far fa-chevron-right"></i>';
+                }else{
+                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                }
+                $menu_list .= '</a></li>';
+                 
+            }
+            // end <li>
+            
+        }
+        $menu_list .= '</ul></div>';
+        return $menu_list;
+}
 function fw_getmsliders(){
     $res_args = array();
 

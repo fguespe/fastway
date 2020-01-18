@@ -334,4 +334,5 @@ function add_filesize_metadata_to_images($meta_id, $post_id, $meta_key, $meta_va
   }
   add_action('pre_get_posts', 'sortable_file_size_sorting_logic');
 
+
 ?>

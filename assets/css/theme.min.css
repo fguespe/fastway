@@ -952,6 +952,14 @@ header .navbar-toggler {
   padding: 15px 30px 0px 30px;
 }
 
+.mm-ocd__content {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.mm-spn--light a, .mm-spn--light span {
+  color: white !important;
+}
+
 .sub-menu-mobile.darkmode {
   background: rgba(0, 0, 0, 0.85);
 }
@@ -1294,6 +1302,11 @@ ul {
 .dropdown-item.active,
 .dropdown-item:active {
   background: none !important;
+}
+
+.dropdown-item:hover {
+  background: transparent;
+  border-bottom: 1px solid white;
 }
 
 /*BLOG*/

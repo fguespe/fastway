@@ -906,14 +906,14 @@ header .navbar-toggler{
       padding: 15px 30px 0px 30px;
   }
 }
-.darkmode{
-  .mm-spn.mm-spn--light{
-    background:rgba(0, 0, 0, .85);
+.mm-ocd__content{
+  background:rgba(0, 0, 0, .85);
+}
+.mm-spn--light{
     a,span{
       color:white !important;
     }
   }
-}
 .sub-menu-mobile.darkmode{
   background:rgba(0, 0, 0, .85);
   a,span{
@@ -1258,7 +1258,10 @@ ul {
 .dropdown-item:active {
   background: none !important;
 }
-
+.dropdown-item:hover{
+  background:transparent;
+  border-bottom:1px solid white;
+}
 
 /*BLOG*/
 .fw_post p{
