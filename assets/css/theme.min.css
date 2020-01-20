@@ -699,11 +699,10 @@ i.fad {
   border: 1px solid var(--main) !important;
   margin: 0 auto;
   font-size: 12px;
-  padding: 0px;
-  line-height: 14px;
+  padding: 10px !important;
+  line-height: 14px !important;
   text-align: center;
   margin-bottom: 10px !important;
-  padding: 0px !important;
 }
 #modalpopup .gform_body {
   width: 100% !important;
