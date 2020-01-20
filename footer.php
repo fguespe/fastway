@@ -113,9 +113,7 @@ margin-top: 10px;
 
 </style>
 <script type="text/javascript">
-    console.log('jehe')
 	jQuery(document).ready( function(jQuery) {
-    console.log('jehe')
     let searchParams = new URLSearchParams(window.location.search)
     console.log(searchParams.has('testmodal'))
     setTimeout(function(){
