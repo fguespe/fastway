@@ -49,7 +49,7 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 	jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
     setTimeout(function(){
-      console.log(searchParams.has('testmodal'))
+      console.log('testmodal',searchParams.has('testmodal'))
       if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
       if (jQuery.cookie('modal_shown') == null) {
         console.log('no midal')
