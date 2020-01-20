@@ -2173,7 +2173,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_popup_mode',
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
-	'default'     => 'show',
+	'default'     => 'off',
 	'choices'     => array(
 		'off' => __( 'Disable', 'fastway' ),
 		'image' => __( 'Image', 'fastway' ),
