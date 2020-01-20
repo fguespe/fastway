@@ -671,6 +671,9 @@ i.fad {
   padding: 35px 0 0 0;
 }
 
+#modalpopup .gfield_required {
+  display: none !important;
+}
 #modalpopup .modal_form {
   padding: 0px;
   padding-left: 20px;
@@ -727,8 +730,7 @@ i.fad {
   display: block !important;
   margin: 0 auto !important;
   color: white !important;
-  background: #70BBA2;
-  /* var(--second);*/
+  background: #70BBA2 !important;
   margin-top: 10px;
   border-radius: 10px;
 }
