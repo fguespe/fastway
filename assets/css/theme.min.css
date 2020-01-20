@@ -704,6 +704,9 @@ i.fad {
   text-align: center;
   margin-bottom: 10px !important;
 }
+#modalpopup .ginput_container {
+  margin-top: 0px;
+}
 #modalpopup .gform_body {
   width: 100% !important;
 }
