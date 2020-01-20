@@ -84,9 +84,22 @@ if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
 #modalpopup .fwhorform .gform_body{
   width:100% !important;
 }
+#modalpopup .validation_message{
+  padding:0px !important;
+  text-align:center !important;
+}
 #modalpopup .gform_footer{
   width:100% !important;
   margin:0 auto !important;
+}
+#modalpopup .gform_footer img{
+  margin:0 auto !important;
+  text-align:center;
+}
+.gform_ajax_spinner{
+  display:block !important;
+margin: 0 auto !important;
+margin-top: 10px;
 }
 #modalpopup  .fwhorform .gform_footer input{
 	width: 60% !important;
@@ -100,16 +113,20 @@ if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
 
 </style>
 <script type="text/javascript">
+    console.log('jehe')
 	jQuery(document).ready( function(jQuery) {
-    
+    console.log('jehe')
+    let searchParams = new URLSearchParams(window.location.search)
+    console.log(searchParams.has('testmodal'))
     setTimeout(function(){
+      if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
       if (jQuery.cookie('modal_shown') == null) {
         console.log('no midal')
 
         jQuery.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
         jQuery('#modalpopup').modal('show');
       }else{
-        console.log('no midal')
+        console.log('no modal')
       }
    }, 2000);
     });
