@@ -93,34 +93,6 @@ text-align:left !important;
 <?php
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
 <body <?php body_class("page-".$nombreurl); ?>>
-<style>
-/*
-centrar menu
-.fw_header.bottom.desktop #fw_menu .navbar-nav{
-		margin:0 auto;
-}
-centrar logo o cualquier otro
-.logo{
-margin:0 auto !important;
-}
-
-
-.fw_header.bottom.desktop #fw_menu .navbar-nav > li > a{ 
-padding:8px !important;
-}
-.fw_header.bottom.desktop #fw_menu{
-		width:100%;
-}
-
-.fw_header.bottom.desktop #fw_menu .navbar-nav{
-  justify-content:space-around;
-}
-.fw-searchform.desktop{
-		width:50%;
-}
-*/
-</style>
-
 <header id="header">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
@@ -165,7 +137,8 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
     </div>
 </div>
 </header>
-<script>
+
+<script >
 function mostrar_submenu (id) {
   jQuery('#submenu_'+id).addClass('opened');
 }
@@ -175,11 +148,6 @@ jQuery('.submenu-layer-1 .menu-mobile-back').click(function(){
 jQuery('.submenu-layer-2 .menu-mobile-back').click(function(){
   jQuery('.submenu-layer-2').removeClass('opened');
 });
-</script>
-<style>
-
-</style>
-<script >
 jQuery(window).on('load', function() {
     if(jQuery(document).height()>1400){
         jQuery(window).scroll(function() {
