@@ -705,7 +705,7 @@ i.fad {
   margin-bottom: 10px !important;
   padding: 0px !important;
 }
-#modalpopup .fwhorform .gform_body {
+#modalpopup .gform_body {
   width: 100% !important;
 }
 #modalpopup .validation_message {
@@ -725,7 +725,7 @@ i.fad {
   margin: 0 auto !important;
   margin-top: 10px;
 }
-#modalpopup .fwhorform .gform_footer input {
+#modalpopup .gform_footer input {
   width: 60% !important;
   display: block !important;
   margin: 0 auto !important;
