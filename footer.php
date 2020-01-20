@@ -103,7 +103,6 @@ if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
 	jQuery(document).ready( function(jQuery) {
     
     setTimeout(function(){
-      jQuery('#modalpopup').modal('show');
       if (jQuery.cookie('modal_shown') == null) {
         console.log('no midal')
 
