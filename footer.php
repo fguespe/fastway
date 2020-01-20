@@ -23,18 +23,19 @@ if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 </style>
 <?php } 
 if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modal_carrito' );
-if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
+if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 ?>
+
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered <?=fw_theme_mod('popup-size')?>">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="modal-body" style="padding:0px;">
-            <?php if(fw_theme_mod('fw_popup_mode')=='image' && fw_theme_mod('fw_popup_img')){
+            <?php if(fw_theme_mod('fw_popup_type')=='image' && fw_theme_mod('fw_popup_img')){
               $linkpop=fw_theme_mod('popup-link')?fw_theme_mod('popup-link'):'#';
               ?>
               <a class="img" href="<?=$linkpop?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
-            <?php }else if(fw_theme_mod('fw_popup_mode')=='html' && fw_theme_mod('fw_popup_html')){ ?>
+            <?php }else if(fw_theme_mod('fw_popup_type')=='html' && fw_theme_mod('fw_popup_html')){ ?>
               <?php echo fw_theme_mod('fw_popup_html');?>
             <?php } ?>
             <?php if(fw_theme_mod('fw_popup_form_mode')){?>

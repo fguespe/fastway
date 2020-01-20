@@ -2170,7 +2170,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_popup_mode',
+	'settings'    => 'fw_popup_type',
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
 	'default'     => 'off',
