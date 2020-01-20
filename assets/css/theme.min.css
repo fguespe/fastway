@@ -692,6 +692,10 @@ i.fad {
   padding-right: 20px;
   padding-top: 10px;
 }
+#modalpopup .gform_confirmation_wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #modalpopup .gform_body ul,
 #modalpopup .gform_body ul li,
 #modalpopup .gform_wrapper {

@@ -25,7 +25,6 @@ if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modal_carrito' );
 if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
 ?>
-
 <div id="modalpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered <?=fw_theme_mod('popup-size')?>">
     <div class="modal-content">
