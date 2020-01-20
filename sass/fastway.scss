@@ -620,6 +620,69 @@ i.fad{
 .opiniones-visibles .btn-link{
   padding: 35px 0 0 0;
 }
+#modalpopup {
+  .modal_form {
+    padding:0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align:center;
+  }
+  h1,p.subtitle {
+    color:#686868;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+  
+  .gform_body ul,
+  .gform_body ul li{
+    width:100% !important;
+    padding:0px;
+  }
+  .gform_body input {
+    width: 60% !important;
+    display:block !important;
+    margin:0 auto !important;
+    border: 1px solid var(--main) !important;
+    margin:0 auto;
+    font-size:12px;
+    padding:0px;
+    line-height:14px;
+    text-align:center;
+    margin-bottom:10px!important;
+    padding: 0px !important;
+  }
+  .fwhorform .gform_body{
+    width:100% !important;
+  }
+  .validation_message{
+    padding:0px !important;
+    text-align:center !important;
+  }
+  .gform_footer{
+    width:100% !important;
+    margin:0 auto !important;
+  }
+  .gform_footer img{
+    margin:0 auto !important;
+    text-align:center;
+  }
+  .gform_ajax_spinner{
+    display:block !important;
+  margin: 0 auto !important;
+  margin-top: 10px;
+  }
+  .fwhorform .gform_footer input{
+    width: 60% !important;
+    display:block !important;
+    margin:0 auto !important;
+    color: white !important;
+    background: #70BBA2;/* var(--second);*/
+    margin-top:10px;
+    border-radius: 10px;
+  }
+}
 /***** Modal opiniones *****/
 .promedio-calificaciones {
   padding: 5px 0 20px 0;

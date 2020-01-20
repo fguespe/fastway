@@ -45,73 +45,6 @@ if(fw_theme_mod("fw_popup_mode")!='off' && is_front_page()){
     </div>
   </div>
 </div>
-<style>
-#modalpopup .modal_form {
-  padding:0px;
-	padding-left: 20px;
-	padding-right: 20px;
-  text-align:center;
-}
-
-
-#modalpopup h1,
-#modalpopup p.subtitle {
-  color:#686868;
-	text-align: center;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-}
-
-#modalpopup .gform_body ul,
-#modalpopup .gform_body ul li{
-  width:100% !important;
-  padding:0px;
-}
-#modalpopup .gform_body input {
-	width: 60% !important;
-  display:block !important;
-  margin:0 auto !important;
-	border: 1px solid var(--main) !important;
-  margin:0 auto;
-  font-size:12px;
-  padding:0px;
-  line-height:14px;
-  text-align:center;
-  margin-bottom:10px!important;
-	padding: 0px !important;
-}
-#modalpopup .fwhorform .gform_body{
-  width:100% !important;
-}
-#modalpopup .validation_message{
-  padding:0px !important;
-  text-align:center !important;
-}
-#modalpopup .gform_footer{
-  width:100% !important;
-  margin:0 auto !important;
-}
-#modalpopup .gform_footer img{
-  margin:0 auto !important;
-  text-align:center;
-}
-.gform_ajax_spinner{
-  display:block !important;
-margin: 0 auto !important;
-margin-top: 10px;
-}
-#modalpopup  .fwhorform .gform_footer input{
-	width: 60% !important;
-  display:block !important;
-  margin:0 auto !important;
-  color: white !important;
-	background: #70BBA2;/* var(--second);*/
-  margin-top:10px;
-  border-radius: 10px;
-}
-
-</style>
 <script type="text/javascript">
 	jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
@@ -129,9 +62,6 @@ margin-top: 10px;
    }, 2000);
     });
 </script>
-<?php
-}
-
-?>
+<?php } ?>
 </body>
 </html>
