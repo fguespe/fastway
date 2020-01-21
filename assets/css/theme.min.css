@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /*generales*/
+[tabindex] {
+  outline: none;
+}
+
 :root {
   --facebok:#4267B2;
   --pinterest:red;
