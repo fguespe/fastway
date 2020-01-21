@@ -3,7 +3,9 @@
 [tabindex] {
   outline: none;
 }
-
+.navbar .container{
+  align-items: flex-start;
+}
 :root{
   --facebok:#4267B2;
   --pinterest:red;
