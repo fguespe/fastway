@@ -2854,14 +2854,17 @@ body .wpb_content_element {
         .tabs{
           margin:0px !important;
           margin-bottom:10px !important;
-          }
-        .description_tab,ul.tabs::before{
+        }
+        .description_tab,
+        ul.tabs::before,
+        ul.tabs li::before,
+        ul.tabs li::after{
           border:0px !important;
         }
         .description_tab a{
           padding:0px !important;
           border-bottom:1px solid var(--main);
-          }
+        }
         #tab-description p{
           font-size:14px !important;
         }

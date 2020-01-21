@@ -2860,7 +2860,10 @@ body .wpb_content_element {
   margin: 0px !important;
   margin-bottom: 10px !important;
 }
-.woocommerce .woocommerce-tabs .description_tab, .woocommerce .woocommerce-tabs ul.tabs::before {
+.woocommerce .woocommerce-tabs .description_tab,
+.woocommerce .woocommerce-tabs ul.tabs::before,
+.woocommerce .woocommerce-tabs ul.tabs li::before,
+.woocommerce .woocommerce-tabs ul.tabs li::after {
   border: 0px !important;
 }
 .woocommerce .woocommerce-tabs .description_tab a {
