@@ -2851,6 +2851,20 @@ body .wpb_content_element {
      .woocommerce-tabs{
         margin-top: 32px;
         width:100%;
+        .tabs{
+          margin:0px !important;
+          margin-bottom:10px !important;
+          }
+        .description_tab,.woocommerce .woocommerce-tabs ul.tabs::before{
+          border:0px !important;
+          }
+        .description_tab a{
+          padding:0px !important;
+          border-bottom:1px solid var(--main);
+          }
+        #tab-description p{
+          font-size:14px !important;
+        }
         ul.tabs li:not(.active){
              background:white;
              border:0px;
