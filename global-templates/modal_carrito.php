@@ -431,6 +431,7 @@ function add_to_minicart(prod_id){
             var_id=var_id['variation_id']
         }
     }
+    console.log('#fw_add_to_cart_button_'+prod_id)
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
     jQuery('.minicart').addClass('bouncing')
     jQuery.get(ajaxurl,
