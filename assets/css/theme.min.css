@@ -2859,6 +2859,7 @@ body .wpb_content_element {
 .woocommerce .woocommerce-tabs .tabs {
   margin: 0px !important;
   margin-bottom: 10px !important;
+  padding-left: 0px !important;
 }
 .woocommerce .woocommerce-tabs .description_tab,
 .woocommerce .woocommerce-tabs ul.tabs::before,
