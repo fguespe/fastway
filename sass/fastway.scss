@@ -2858,14 +2858,18 @@ body .wpb_content_element {
         .description_tab,
         ul.tabs::before,
         ul.tabs li::before,
-        ul.tabs li::after{
+        ul.tabs li::after,
+        ul.tabs li{
           border:0px !important;
+        }
+        ul.tabs li{
+          font-size:16px;
         }
         .description_tab a{
           padding:0px !important;
           border-bottom:1px solid var(--main);
         }
-        #tab-description p{
+        .woocommerce-Tabs-panel p{
           font-size:14px !important;
         }
         ul.tabs li:not(.active){

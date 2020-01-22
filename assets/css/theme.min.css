@@ -2863,14 +2863,18 @@ body .wpb_content_element {
 .woocommerce .woocommerce-tabs .description_tab,
 .woocommerce .woocommerce-tabs ul.tabs::before,
 .woocommerce .woocommerce-tabs ul.tabs li::before,
-.woocommerce .woocommerce-tabs ul.tabs li::after {
+.woocommerce .woocommerce-tabs ul.tabs li::after,
+.woocommerce .woocommerce-tabs ul.tabs li {
   border: 0px !important;
+}
+.woocommerce .woocommerce-tabs ul.tabs li {
+  font-size: 16px;
 }
 .woocommerce .woocommerce-tabs .description_tab a {
   padding: 0px !important;
   border-bottom: 1px solid var(--main);
 }
-.woocommerce .woocommerce-tabs #tab-description p {
+.woocommerce .woocommerce-tabs .woocommerce-Tabs-panel p {
   font-size: 14px !important;
 }
 .woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
