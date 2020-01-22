@@ -2862,10 +2862,10 @@ body .wpb_content_element {
         ul.tabs li{
           border:0px !important;
         }
-        ul.tabs li{
+        ul.tabs li a{
           font-size:16px;
         }
-        .description_tab a{
+        .description_tab.active a{
           padding:0px !important;
           border-bottom:1px solid var(--main);
         }

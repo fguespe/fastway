@@ -2867,10 +2867,10 @@ body .wpb_content_element {
 .woocommerce .woocommerce-tabs ul.tabs li {
   border: 0px !important;
 }
-.woocommerce .woocommerce-tabs ul.tabs li {
+.woocommerce .woocommerce-tabs ul.tabs li a {
   font-size: 16px;
 }
-.woocommerce .woocommerce-tabs .description_tab a {
+.woocommerce .woocommerce-tabs .description_tab.active a {
   padding: 0px !important;
   border-bottom: 1px solid var(--main);
 }
