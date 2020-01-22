@@ -2870,7 +2870,7 @@ body .wpb_content_element {
 .woocommerce .woocommerce-tabs ul.tabs li a {
   font-size: 16px;
 }
-.woocommerce .woocommerce-tabs .description_tab.active a {
+.woocommerce .woocommerce-tabs ul.tabs li.active a {
   padding: 0px !important;
   border-bottom: 1px solid var(--main);
 }
