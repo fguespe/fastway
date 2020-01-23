@@ -313,7 +313,8 @@ add_shortcode('altoweb_financiacion','getFinanciacion');
 //eesss
 
 function getFinanciacion(){
-global $product;
+   global $product;
+   return '';
   $precio=floatval($product->price);
   $cuotas6=floor($precio/6);
   $cuotas3=floor($precio/3);
