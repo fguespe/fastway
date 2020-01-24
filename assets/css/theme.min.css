@@ -354,14 +354,16 @@ i.fad {
     text-align: center;
     margin: 0 auto !important;
   }
-  .fw_add_to_cart_button.sticky {
-		padding:30px;
-  }
-.fw_add_to_cart_button.sticky span,
-.fw_add_to_cart_button.sticky i{
-		font-size:30px ;
-}
 
+  .fw_add_to_cart_button.sticky {
+    padding: 30px;
+  }
+
+  .fw_add_to_cart_button.sticky span,
+.fw_add_to_cart_button.sticky i {
+    font-size: 30px;
+    line-height: 32px;
+  }
 }
 .fw_add_to_cart_button span,
 .fw_add_to_cart_button i {
@@ -627,6 +629,7 @@ i.fad {
 }
 .fw_single_product .rating {
   margin-bottom: 5px !important;
+  display: none !important;
 }
 .fw_single_product .summary .col-md-12 b {
   font-size: 13px;
