@@ -347,13 +347,6 @@ function fw_slider_function( $atts, $content ) {
     </style>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
-        // Enable lazy loading
-        lazy: {
-            //  tell swiper to load images before they appear
-            loadPrevNext: true,
-            // amount of images to load
-            loadPrevNextAmount: 2,
-        },
         slidesPerView: 1,
         spaceBetween: 0,
         touchRatio: 0 ,
@@ -369,7 +362,7 @@ function fw_slider_function( $atts, $content ) {
         }
     });
     </script>';
-    if(!$ismobile)return $return;
+    if(!$ismobile && !wp_is_mobile())return $return;
     //Mobile
     $rand=generateRandomString(5);
     $image_ids = explode(',',$atts['slides_mobile']);
@@ -396,13 +389,6 @@ function fw_slider_function( $atts, $content ) {
     $return .='</div>
     <script>
     var swiper_mobile = new Swiper(".swiper-fwslider-'.$rand.'", {
-        // Enable lazy loading
-        lazy: {
-            //  tell swiper to load images before they appear
-            loadPrevNext: true,
-            // amount of images to load
-            loadPrevNextAmount: 2,
-        },
         slidesPerView: 1,
         spaceBetween: 30,
         touchRatio: 0 ,

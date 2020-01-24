@@ -121,7 +121,7 @@
         </div>
     </div>
 </div>
-<?php } ?>
+
 <script type="text/javascript">
     // Configurá tu Public Key
     obtenerTarjetas();
@@ -152,7 +152,7 @@
     }
     
     function limpiarComboBancos(){
-        document.getElementById('banco').innerHTML = '<select id="banco" onchange="obtenerCuotas();" style="width: 200px;"></select>';
+        if(document.getElementById('banco'))document.getElementById('banco').innerHTML = '<select id="banco" onchange="obtenerCuotas();" style="width: 200px;"></select>';
     }
     
     function obtenerBancos(){
@@ -286,6 +286,7 @@
 
         
 </script>
+<?php } ?>
 <style>
 .tabus .mp{
     border-left:1px solid var(--main);
