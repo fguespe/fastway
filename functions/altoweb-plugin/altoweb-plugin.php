@@ -314,10 +314,10 @@ add_shortcode('altoweb_financiacion','getFinanciacion');
 
 function getFinanciacion(){
    global $product;
-   
+
   $return= <<<HTML
-  <a target="_blank" data-toggle="modal" data-target="#modal_tiendanube" class="fw_icon_link fancybox">
-   <li class=" fw_icon  fw-medios tiendanube d-flex isli" > 
+  <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
+   <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
    <span class="icon">
       <i class="fad fa-credit-card"></i>
       </span> 
@@ -328,7 +328,7 @@ function getFinanciacion(){
       </span>
    </li>
 </a>
-<div class="modal modal_tiendanube fade" id="modal_tiendanube" tabindex="-1" role="dialog" aria-labelledby="modal_tiendanubeTitle" aria-hidden="true">
+<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
