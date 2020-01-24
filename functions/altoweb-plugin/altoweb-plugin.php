@@ -325,7 +325,7 @@ function getFinanciacion(){
   do_shortcode('[datos_bancarios_popup]');
   $infopopup_banc=ob_get_contents();
   ob_end_flush();
-  return <<<HTML
+  $return= <<<HTML
   <a target="_blank" data-toggle="modal" data-target="#modal_tiendanube" class="fw_icon_link fancybox">
    <li class=" fw_icon  fw-medios tiendanube d-flex isli" > 
    <span class="icon">
@@ -351,9 +351,9 @@ function getFinanciacion(){
 </div>
 </div>
 HTML;
-   echo do_shortcode('[fw_extras_short type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]');
-   echo do_shortcode('[fw_extras_short type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]');
-
+   $return.=do_shortcode('[fw_extras_short type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]');
+   $return.= do_shortcode('[fw_extras_short type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]');
+   return $return;
 }
 
 

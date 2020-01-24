@@ -1574,6 +1574,7 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_summary_container]
 	[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]
 	[fw_data type="fad fa-credit-card" isli="true" text="Cuotas fijas" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]
+	[/fw_summary_container]
 	[/fw_single_summary]
 	[fw_single_tabs]
 	[/fw_single_container]
