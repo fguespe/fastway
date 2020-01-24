@@ -347,12 +347,67 @@ function fw_slider_function( $atts, $content ) {
     </style>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
+        // Enable lazy loading
+        lazy: {
+            //  tell swiper to load images before they appear
+            loadPrevNext: true,
+            // amount of images to load
+            loadPrevNextAmount: 2,
+        },
         slidesPerView: 1,
         spaceBetween: 0,
         touchRatio: 0 ,
         preventClicks: false,
         preventClicksPropagation: false,
         centeredSlides: true ,
+        loop: '.$atts['loop'].',
+        autoplay: '.$atts['autoplay'].',
+        speed:'.$atts['slider_speed'].',
+        navigation: {
+          nextEl: ".swiper-fwslider-'.$rand.'-next",
+          prevEl: ".swiper-fwslider-'.$rand.'-prev",
+        }
+    });
+    </script>';
+    if(!$ismobile)return $return;
+    //Mobile
+    $rand=generateRandomString(5);
+    $image_ids = explode(',',$atts['slides_mobile']);
+    $links = explode(',',$atts['links_mobile']);
+    $cant=0;
+    $return .= '
+    <div class="swiper-fwslider-'.$rand.' d-md-none   over-hidden relative">
+    <div class="swiper-wrapper clear-ul">';
+    foreach( $image_ids as $image_id ){
+        $images = wp_get_attachment_image_src( $image_id, '' );
+        $link=$links[$cant];
+        $image=$images[0];
+        $return .= '<div class="swiper-slide data-swiper-autoplay="'.$atts['slider_delay'].'">';
+        $return .= '<a href="'.$link.'" ><div class="item">';
+        $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+        $return .= '</div></a></div>';    
+        $cant++;
+    }
+    $return .='</div>';
+    if($cant>1){
+        $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+        <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
+    }
+    $return .='</div>
+    <script>
+    var swiper_mobile = new Swiper(".swiper-fwslider-'.$rand.'", {
+        // Enable lazy loading
+        lazy: {
+            //  tell swiper to load images before they appear
+            loadPrevNext: true,
+            // amount of images to load
+            loadPrevNextAmount: 2,
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        touchRatio: 0 ,
+        preventClicks: false,
+        preventClicksPropagation: false,
         loop: '.$atts['loop'].',
         autoplay: '.$atts['autoplay'].',
         speed:'.$atts['slider_speed'].',
