@@ -202,6 +202,13 @@ Kirki::add_section( 'section_woo_single', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+
+Kirki::add_section( 'section_woo_payments', array(
+    'title'          => __( 'Payments', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
 Kirki::add_section( 'section_woo_discount', array(
     'title'          => __( 'Discounts', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
@@ -1531,6 +1538,143 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 */
+/*PAYMENTS*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_1_on',
+	'label'    => __( 'Box 1', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_1_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => 'fad fa-credit-card',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_1_title',
+	'section'     => 'section_woo_payments',
+	'default'     => 'Mercadopago',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_1_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_2_on',
+	'label'    => __( 'Box 2', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_2_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => 'fad fa-credit-card',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_2_title',
+	'section'     => 'section_woo_payments',
+	'default'     => 'Efectivo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_2_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_3_on',
+	'label'    => __( 'Box 3', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_3_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => 'fad fa-credit-card',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_3_title',
+	'section'     => 'section_woo_payments',
+	'default'     => 'Depósito / Transferencia',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_3_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_4_on',
+	'label'    => __( 'Box 4', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_4_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => 'fad fa-credit-card',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_4_title',
+	'section'     => 'section_woo_payments',
+	'default'     => 'Cupon de pago',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_4_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
 Kirki::add_field( 'theme_config_id', array(
