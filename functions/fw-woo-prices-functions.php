@@ -157,7 +157,7 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     $devolver=$sale_price;
     $noteniasale=empty($devolver) || $devolver == 0;
     if(fw_is_admin() && $noteniasale)return;
-    else if( $noteniasale )$devolver=round($product->get_price()*fw_product_discount_multiplier($product));
+    else if( $noteniasale )$devolver=$product->get_price()*fw_product_discount_multiplier($product);
     $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
