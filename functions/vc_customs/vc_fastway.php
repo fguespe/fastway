@@ -321,6 +321,8 @@ function fw_slider_function( $atts, $content ) {
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['slides_mobile']);
     if(!$ismobile)$claserespo=' ';
+    $return='';
+    if(!wp_is_mobile()){
     $links = explode(',',$atts['links_desktop']);
     $return = '
     <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative" >
@@ -343,8 +345,6 @@ function fw_slider_function( $atts, $content ) {
         <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
     }
     $return .='</div>
-    <style>
-    </style>
     <script>
     var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
         slidesPerView: 1,
@@ -362,7 +362,7 @@ function fw_slider_function( $atts, $content ) {
         }
     });
     </script>';
-    error_log("ES mobile".wp_is_mobile());
+    }
     if(!$ismobile || !wp_is_mobile())return $return;
     //Mobile
     $rand=generateRandomString(5);
