@@ -314,17 +314,7 @@ add_shortcode('altoweb_financiacion','getFinanciacion');
 
 function getFinanciacion(){
    global $product;
-  $precio=floatval($product->price);
-  $cuotas6=floor($precio/6);
-  $cuotas3=floor($precio/3);
-  $cuotas12=floor($precio/12);
-  $cuotas18=floor($precio/18);
-  $infopopup_cash=do_shortcode('[datos_efectivo_popup]');
-
-  ob_start();
-  do_shortcode('[datos_bancarios_popup]');
-  $infopopup_banc=ob_get_contents();
-  ob_end_flush();
+   
   $return= <<<HTML
   <a target="_blank" data-toggle="modal" data-target="#modal_tiendanube" class="fw_icon_link fancybox">
    <li class=" fw_icon  fw-medios tiendanube d-flex isli" > 
