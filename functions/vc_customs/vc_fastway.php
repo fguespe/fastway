@@ -362,7 +362,8 @@ function fw_slider_function( $atts, $content ) {
         }
     });
     </script>';
-    if(!$ismobile && !wp_is_mobile())return $return;
+    error_log("ES mobile".wp_is_mobile());
+    if(!$ismobile || !wp_is_mobile())return $return;
     //Mobile
     $rand=generateRandomString(5);
     $image_ids = explode(',',$atts['slides_mobile']);

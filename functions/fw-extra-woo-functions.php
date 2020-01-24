@@ -433,7 +433,6 @@ function pasa_filtro_rol($rolesstring){
     if(!$estaenlosroles)return false;
 
   }
-  error_log('esoo');
   return true;
 }
 function fw_minimum_order_amount() {
