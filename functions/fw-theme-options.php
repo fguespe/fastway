@@ -202,7 +202,17 @@ Kirki::add_section( 'section_woo_single', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
-
+Kirki::add_section( 'section_woo_payments', array(
+    'title'          => __( 'Payment Methods', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
+Kirki::add_section( 'section_woo_shipping', array(
+    'title'          => __( 'Shipping Methods', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+) );
 Kirki::add_section( 'section_woo_payments', array(
     'title'          => __( 'Payments', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),

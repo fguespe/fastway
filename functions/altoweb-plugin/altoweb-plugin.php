@@ -348,13 +348,15 @@ HTML;
 
 add_shortcode('altoweb_pagos','altoweb_pagos');
 function altoweb_pagos(){
-   global $product;
-   $devuelve='';
-   if(fw_theme_mod('fw_payment_method_1_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_1_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_1_title').'</h2>'.fw_theme_mod('fw_payment_method_1_desc').'</div></div>';
-   if(fw_theme_mod('fw_payment_method_2_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_2_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_2_title').'</h2>'.fw_theme_mod('fw_payment_method_2_desc').'</div></div>';
-   if(fw_theme_mod('fw_payment_method_3_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_3_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_3_title').'</h2>'.fw_theme_mod('fw_payment_method_3_desc').'</div></div>';
-   if(fw_theme_mod('fw_payment_method_4_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_4_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_4_title').'</h2>'.fw_theme_mod('fw_payment_method_4_desc').'</div></div>';
-   return $devuelve;
+    $devuelve.='[vc_row][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center;">Medios de Pago</h2>[/vc_column_text][vc_empty_space][/vc_column][/vc_row]';
+    $devuelve.='<div class="row">';
+    if(fw_theme_mod('fw_payment_method_1_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_1_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_1_title').'</h2>'.fw_theme_mod('fw_payment_method_1_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_2_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_2_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_2_title').'</h2>'.fw_theme_mod('fw_payment_method_2_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_3_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_3_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_3_title').'</h2>'.fw_theme_mod('fw_payment_method_3_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_4_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_4_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_4_title').'</h2>'.fw_theme_mod('fw_payment_method_4_desc').'</div></div>';
+    $devuelve.='</div>';
+    $devuelve=do_shortcode($devuelve);
+    return $devuelve;
 }
 
 
