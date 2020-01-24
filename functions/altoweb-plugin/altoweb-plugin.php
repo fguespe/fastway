@@ -351,9 +351,9 @@ function getFinanciacion(){
 </div>
 </div>
 HTML;
-   do_shortcode('[fw_extras_short type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]');
-   do_shortcode('[fw_extras_short type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]');
-   
+   echo do_shortcode('[fw_extras_short type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios downlink"]');
+   echo do_shortcode('[fw_extras_short type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios downlink"]');
+
 }
 
 
