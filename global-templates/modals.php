@@ -17,6 +17,7 @@
         </div>
     </div>
 </div>
+<?php if(is_product()){?>
 <div id="modal_envio" class="modal fade addNewInputs show" role="dialog" aria-labelledby="modalAdd" aria-modal="true" style="" >
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -120,6 +121,7 @@
         </div>
     </div>
 </div>
+<?php } ?>
 <script type="text/javascript">
     // Configurá tu Public Key
     obtenerTarjetas();

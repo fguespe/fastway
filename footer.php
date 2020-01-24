@@ -22,7 +22,7 @@ if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 }
 </style>
 <?php } 
-if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modal_carrito' );
+if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modals' );
 if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 ?>
 
