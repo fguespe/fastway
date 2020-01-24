@@ -303,6 +303,7 @@ i.fad{
   .fw_add_to_cart_button.sticky span,
   .fw_add_to_cart_button.sticky i{
     font-size:30px;
+    line-height: 32px;
   }
 }
 .fw_add_to_cart_button span,
@@ -571,7 +572,8 @@ i.fad{
 	}
 	/* rating */
 	.rating {
-		margin-bottom: 5px !important;
+    margin-bottom: 5px !important;
+    display:none !important;
 	}
 	/*mercadoenvios*/
 	.summary .col-md-12 b {
