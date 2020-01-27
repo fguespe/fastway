@@ -1709,7 +1709,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_5_on',
 	'label'    => __( 'Box 5', 'fastway' ),     
 	'section'     => 'section_woo_payments',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1743,7 +1743,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_6_on',
 	'label'    => __( 'Box 6', 'fastway' ),     
 	'section'     => 'section_woo_payments',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1915,7 +1915,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shipping_method_5_on',
 	'label'    => __( 'Box 5', 'fastway' ),     
 	'section'     => 'section_woo_shippings',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1951,7 +1951,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shipping_method_6_on',
 	'label'    => __( 'Box 6', 'fastway' ),     
 	'section'     => 'section_woo_shippings',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
