@@ -2116,6 +2116,7 @@ footer .widget_nav_menu li a {
 
 /*MEDIOS DE ENVIO Y PAGO*/
 .capsula-blanca {
+  margin-top: 20px !important;
   background-color: #fff;
   padding: 10px 20px;
   border: 1px solid #E2E2E2;
@@ -2141,8 +2142,10 @@ footer .widget_nav_menu li a {
   width: 100%;
 }
 
-.capsula-blanca .img img {
-  width: 150px;
+.capsula-blanca img {
+  width: 60%;
+  margin: 0 auto !important;
+  display: block !important;
 }
 
 .capsula-blanca i,

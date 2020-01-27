@@ -305,16 +305,36 @@ function bancos_arg($translation, $text, $domain) {
 }
 
     
-
+// Utility function, to display BACS accounts details
+function get_bacs_account_details_html( $echo = true, $type = 'list' ) {
+    $devolver='';
+    $bacs_info  = get_option( 'woocommerce_bacs_accounts');
+    foreach ( $bacs_info as $account ) {
+        $account_name   = esc_attr( wp_unslash( $account['account_name'] ) );
+        $bank_name      = esc_attr( wp_unslash( $account['bank_name'] ) );
+        $account_number = esc_attr( $account['account_number'] );
+        $sort_code      = esc_attr( $account['sort_code'] );
+        $iban_code      = esc_attr( $account['iban'] );
+        $bic_code       = esc_attr( $account['bic'] );
+        $devolver.=$bank_name.'<br>';
+        $devolver.=$account_name.'<br>';
+        $devolver.=$account_number.'<br>';
+        $devolver.=$sort_code.'<br>';
+        $devolver.=$iban_code.'<br>';
+        $devolver.=$bic_code.'<br>';
+    }
+    return $devolver;
+}
 
 //VERFW
 
-add_shortcode('altoweb_financiacion','getFinanciacion');
-//eesss
-
-function getFinanciacion(){
-   global $product;
-
+add_shortcode('altoweb_bancos','altoweb_bancos');
+function altoweb_bancos(){
+    return get_bacs_account_details_html();
+}
+add_shortcode('altoweb_financiacion','altoweb_financiacion');
+function altoweb_financiacion(){
+    global $product;
   $return= <<<HTML
   <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
    <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
@@ -350,15 +370,24 @@ add_shortcode('altoweb_pagos','altoweb_pagos');
 function altoweb_pagos(){
     $devuelve.='[vc_row][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center;">Medios de Pago</h2>[/vc_column_text][vc_empty_space][/vc_column][/vc_row]';
     $devuelve.='<div class="row">';
-    if(fw_theme_mod('fw_payment_method_1_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_1_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_1_title').'</h2>'.fw_theme_mod('fw_payment_method_1_desc').'</div></div>';
-    if(fw_theme_mod('fw_payment_method_2_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_2_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_2_title').'</h2>'.fw_theme_mod('fw_payment_method_2_desc').'</div></div>';
-    if(fw_theme_mod('fw_payment_method_3_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_3_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_3_title').'</h2>'.fw_theme_mod('fw_payment_method_3_desc').'</div></div>';
-    if(fw_theme_mod('fw_payment_method_4_on'))$devuelve.= '<div class="col-6"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_4_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_4_title').'</h2>'.fw_theme_mod('fw_payment_method_4_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_1_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_1_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_1_title').'</h2>'.fw_theme_mod('fw_payment_method_1_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_2_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_2_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_2_title').'</h2>'.fw_theme_mod('fw_payment_method_2_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_3_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_3_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_3_title').'</h2>'.fw_theme_mod('fw_payment_method_3_desc').'</div></div>';
+    if(fw_theme_mod('fw_payment_method_4_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_4_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_payment_method_4_title').'</h2>'.fw_theme_mod('fw_payment_method_4_desc').'</div></div>';
     $devuelve.='</div>';
     $devuelve=do_shortcode($devuelve);
     return $devuelve;
 }
 
-
-
-
+add_shortcode('altoweb_envios','altoweb_envios');
+function altoweb_envios(){
+    $devuelve.='[vc_row][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center;">Medios de Pago</h2>[/vc_column_text][vc_empty_space][/vc_column][/vc_row]';
+    $devuelve.='<div class="row">';
+    if(fw_theme_mod('fw_shipping_method_1_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_1_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_shipping_method_1_title').'</h2>'.fw_theme_mod('fw_shipping_method_1_desc').'</div></div>';
+    if(fw_theme_mod('fw_shipping_method_2_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_2_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_shipping_method_2_title').'</h2>'.fw_theme_mod('fw_shipping_method_2_desc').'</div></div>';
+    if(fw_theme_mod('fw_shipping_method_3_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_3_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_shipping_method_3_title').'</h2>'.fw_theme_mod('fw_shipping_method_3_desc').'</div></div>';
+    if(fw_theme_mod('fw_shipping_method_4_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_4_icon').'"><span style="color: #fff;">.</span></i><h2>'.fw_theme_mod('fw_shipping_method_4_title').'</h2>'.fw_theme_mod('fw_shipping_method_4_desc').'</div></div>';
+    $devuelve.='</div>';
+    $devuelve=do_shortcode($devuelve);
+    return $devuelve;
+}

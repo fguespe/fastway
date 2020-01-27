@@ -1571,13 +1571,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_1_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Mercadopago',
+	'default'     => 'Tarjeta de Crédito',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_1_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '',
+	'default'     => '<h3>Pagá Online con MercadoPago</h3>
+	<a class="btn" target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">Ver promociones</a>
+	<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
+	   <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 <div class="modal-body">
+				<iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
+			 </div>
+		  </div>
+	   </div>
+	</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1599,7 +1610,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_2_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-credit-card',
+	'default'     => 'fad fa-hand-holding-usd',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1611,12 +1622,11 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_2_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '',
+	'default'     => '<div class="specs">Podés pagar al contado en nuestras sucursales.</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
 ) );
-
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1633,7 +1643,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_3_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-credit-card',
+	'default'     => 'fad fa-money-check-alt',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1645,7 +1655,18 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_3_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '',
+	'default'     => '<div class="specs">Puede demorar hasta 72hs hábiles en acreditarse.</div>
+	<a class="btn" target="_blank" data-toggle="modal" data-target="#modal_bancos" class="fw_icon_link fancybox">Ver datos</a>
+	<div class="modal modal_bancos fade" id="modal_bancos" aria-hidden="true">
+	   <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 <div class="modal-body">
+				[altoweb_bancos]
+			 </div>
+		  </div>
+	   </div>
+	</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1667,17 +1688,87 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_4_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-credit-card',
+	'default'     => 'fad fa-barcode-read',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_4_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Cupon de pago',
+	'default'     => 'Cupón de Pago',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_4_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '<img stclass="aligncenter" width="60%" src="/wp-content/themes/fastway/assets/img/cupones.png">
+	<div class="specs">Imprmí el cupón o copiá el código, vas a RapiPago, Pago Fácil, Provincia Net o Bapro Pago y listo!</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_5_on',
+	'label'    => __( 'Box 5', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_5_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_5_title',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_5_desc',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_6_on',
+	'label'    => __( 'Box 6', 'fastway' ),     
+	'section'     => 'section_woo_payments',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_6_icon',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_6_title',
+	'section'     => 'section_woo_payments',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_6_desc',
 	'section'     => 'section_woo_payments',
 	'default'     => '',
 	'choices'     => array(
