@@ -653,7 +653,7 @@ i.fad {
 
 .envio-gratis-tag {
   position: absolute;
-  z-index: 5000 !important;
+  /*z-index:2000 !important;*/
   height: 25px;
   width: auto;
   overflow: hidden;
@@ -1836,6 +1836,11 @@ footer {
     display: inline-block !important;
   }
 
+  .full_mobile {
+    width: 100% !important;
+    display: inline-block !important;
+  }
+
   .columnamobile li a {
     white-space: nowrap !important;
     overflow: hidden !important;
@@ -2753,6 +2758,10 @@ body .wpb_content_element {
 
 .shop_attributes p {
   margin: 0;
+}
+
+#modal_bancos {
+  text-transform: uppercase !important;
 }
 
 /*General Woocommerce*/
