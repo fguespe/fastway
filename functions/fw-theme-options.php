@@ -214,11 +214,6 @@ Kirki::add_section( 'section_woo_shippings', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
-Kirki::add_section( 'section_woo_shipping', array(
-    'title'          => __( 'Shipping Methods', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-) );
 Kirki::add_section( 'section_woo_discount', array(
     'title'          => __( 'Discounts', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
@@ -1840,7 +1835,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_shipping_method_2_desc',
 	'section'     => 'section_woo_shippings',
-	'default'     => '<div class="specs">Podés pagar al contado en nuestras sucursales.</div>',
+	'default'     => '<h3>Despachamos sin cargo</h3><div class="specs">Recibilo de 2 a 5 dias.</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1861,30 +1856,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_3_icon',
 	'section'     => 'section_woo_shippings',
-	'default'     => 'fad fa-money-check-alt',
+	'default'     => 'fad fa-shipping-fast',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_3_title',
 	'section'     => 'section_woo_shippings',
-	'default'     => 'Depósito / Transferencia',
+	'default'     => 'Envíos a todo el país',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_shipping_method_3_desc',
 	'section'     => 'section_woo_shippings',
-	'default'     => '<div class="specs">Puede demorar hasta 72hs hábiles en acreditarse.</div>
-	<a class="btn" target="_blank" data-toggle="modal" data-target="#modal_bancos" class="fw_icon_link fancybox">Ver datos</a>
-	<div class="modal modal_bancos fade" id="modal_bancos" aria-hidden="true">
-	   <div class="modal-dialog modal-lg" role="document">
-		  <div class="modal-content">
-			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			 <div class="modal-body">
-				[altoweb_bancos]
-			 </div>
-		  </div>
-	   </div>
-	</div>',
+	'default'     => '<h3>Consulta el costo con tu código postal en el producto a comprar.</h3><div class="specs">Despachamos dentro de las 24hs de realizada la compra. Recibilo de 2 a 5 dias.</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -1960,6 +1944,42 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_shipping_method_6_on',
+	'label'    => __( 'Box 6', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_method_6_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_method_6_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_shipping_method_6_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
 
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 
