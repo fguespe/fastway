@@ -1880,7 +1880,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shipping_method_4_on',
 	'label'    => __( 'Box 4', 'fastway' ),     
 	'section'     => 'section_woo_shippings',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1890,20 +1890,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_4_icon',
 	'section'     => 'section_woo_shippings',
-	'default'     => 'fad fa-barcode-read',
+	'default'     => 'fad fa-truck-container',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_4_title',
 	'section'     => 'section_woo_shippings',
-	'default'     => 'Cupón de Pago',
+	'default'     => 'Flete',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_shipping_method_4_desc',
 	'section'     => 'section_woo_shippings',
-	'default'     => '<img stclass="aligncenter" width="60%" src="/wp-content/themes/fastway/assets/img/cupones.png">
-	<div class="specs">Imprmí el cupón o copiá el código, vas a RapiPago, Pago Fácil, Provincia Net o Bapro Pago y listo!</div>',
+	'default'     => '<div class="specs">Fletes a todo el país.</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
