@@ -154,6 +154,7 @@ vc_add_param("vc_column_inner",
     "param_name" => "fw_columns_responsive",
     "value" => array(
         "Select an option" => "",
+        "100%" => "full_mobile",
         "50%" => "onehalf_mobile",
         "33%" => "onethird_mobile",
         "25%" => "onefourth_mobile",
