@@ -372,6 +372,7 @@ function altoweb_pagos(){
     $devuelve.='<div class="row">';
     for($i=1;$i<=6;$i++)if(fw_theme_mod('fw_payment_method_'.$i.'_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_payment_method_'.$i.'_icon').'"></i><h2>'.fw_theme_mod('fw_payment_method_'.$i.'_title').'</h2>'.fw_theme_mod('fw_payment_method_'.$i.'_desc').'</div></div>';
     $devuelve.='</div>';
+    $devuelve.='[vc_row][vc_column][vc_empty_space][/vc_column][/vc_row]';
     $devuelve=do_shortcode($devuelve);
     return $devuelve;
 }
@@ -382,6 +383,7 @@ function altoweb_envios(){
     $devuelve.='<div class="row">';
     for($i=1;$i<=6;$i++)if(fw_theme_mod('fw_shipping_method_'.$i.'_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_'.$i.'_icon').'"></i><h2>'.fw_theme_mod('fw_shipping_method_'.$i.'_title').'</h2>'.fw_theme_mod('fw_shipping_method_'.$i.'_desc').'</div></div>';
     $devuelve.='</div>';
+    $devuelve.='[vc_row][vc_column][vc_empty_space][/vc_column][/vc_row]';
     $devuelve=do_shortcode($devuelve);
     return $devuelve;
 }
