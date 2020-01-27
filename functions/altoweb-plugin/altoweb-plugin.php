@@ -379,7 +379,7 @@ function altoweb_pagos(){
 
 add_shortcode('altoweb_envios','altoweb_envios');
 function altoweb_envios(){
-    $devuelve.='[vc_row][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center;">Medios de Pago</h2>[/vc_column_text][vc_empty_space][/vc_column][/vc_row]';
+    $devuelve.='[vc_row][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center;">Medios de Envío</h2>[/vc_column_text][vc_empty_space][/vc_column][/vc_row]';
     $devuelve.='<div class="row">';
     for($i=1;$i<=6;$i++)if(fw_theme_mod('fw_shipping_method_'.$i.'_on'))$devuelve.= '<div class="col-md-6 col-12"><div class="capsula-blanca"><i class="'.fw_theme_mod('fw_shipping_method_'.$i.'_icon').'"></i><h2>'.fw_theme_mod('fw_shipping_method_'.$i.'_title').'</h2>'.fw_theme_mod('fw_shipping_method_'.$i.'_desc').'</div></div>';
     $devuelve.='</div>';
