@@ -1915,7 +1915,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shipping_method_5_on',
 	'label'    => __( 'Box 5', 'fastway' ),     
 	'section'     => 'section_woo_shippings',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -1926,19 +1926,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_5_icon',
 	'section'     => 'section_woo_shippings',
-	'default'     => '',
+	'default'     => 'fad fa-store',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_method_5_title',
 	'section'     => 'section_woo_shippings',
-	'default'     => '',
+	'default'     => 'Retiro en el local',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_shipping_method_5_desc',
 	'section'     => 'section_woo_shippings',
-	'default'     => '',
+	'default'     => '<div class="specs">Retiralo en nuestro local [fw_data type="address" only_text="true"]</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
