@@ -3383,7 +3383,7 @@ body .wpb_content_element {
 .woocommerce-checkout h3,
 .woocommerce-account h3 {
   text-align: left !important;
-  color: black !important;
+  color: var(--main);
   font-size: 20px;
 }
 .woocommerce-checkout form.fw_checkout,
@@ -3416,7 +3416,7 @@ body .wpb_content_element {
 }
 .woocommerce-checkout .fw_summary-box,
 .woocommerce-account .fw_summary-box {
-  background: #EBEBEB;
+  background: transparent;
   position: relative;
   padding: 10px 25px 20px;
   border: 1px solid #ccc;
