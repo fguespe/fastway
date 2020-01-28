@@ -298,12 +298,12 @@
   font-weight: 400 !important;
   font-size: 16px !important;
   line-height: 22px !important;
-  color: black;
+  color: black !important;
 }
 .fw-medios small {
   font-size: 14px !important;
   line-height: 19px !important;
-  color: grey ;
+  color: grey !important;
 }
 
 i.fad {
@@ -2934,7 +2934,7 @@ body .wpb_content_element {
   color: #6b6a6b;
 }
 .woocommerce .woocommerce-tabs ul.tabs li.active {
-  background: #fff;
+  background: transparent;
   z-index: 2;
   border-bottom-color: #fff;
 }
