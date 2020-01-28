@@ -894,9 +894,10 @@ i.fad{
     z-index: 1101;
 }
 
-
-
 .fw_icon {
+	display:flex;
+	align-items:center;
+	padding:2px;
   align-items: center;
   i{
     font-size:30px;
@@ -2271,7 +2272,7 @@ html {
   box-shadow: none !important;
 }
 .wrapper a {
-  color: var(--main);
+  color: blac;
 }
 
 a:hover {
