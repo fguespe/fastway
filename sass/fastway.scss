@@ -2688,6 +2688,10 @@ body .wpb_content_element {
         outline: 0;
     
     }
+    .woocommerce-cart-form button{
+      background:transparent;
+      color:var(--main);
+    }
     #content a.checkout-button {
       border:1px solid var(--main) !important;
       padding:10px;
