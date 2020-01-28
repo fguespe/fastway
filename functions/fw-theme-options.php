@@ -3136,7 +3136,7 @@ function fwcf($atts = [], $content = null){
 function my_customizer_styles() { ?>
 	<style>
 	.customize-control-kirki-multicheck ul {
-		display: flex;
+		display:flex;
 		flex-wrap: wrap;
 	}
 

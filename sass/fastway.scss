@@ -231,7 +231,7 @@ color:var(--linkedin) !important;
 }
 
 .fw-medios {
-    display: flex;
+    display:flex;
     align-items: flex-start !important;
     text-decoration: none;
     padding: 2% 0 0% 2%;
@@ -409,7 +409,7 @@ i.fad{
 	}
 	/*break column*/
 	#paginationIL {
-		display: flex !important;
+		display:flex !important;
 		flex-direction: column;
 		flex-wrap: wrap;
 		height: 400px ;
@@ -862,7 +862,7 @@ i.fad{
       width:100%;
     }
     ul .container{
-      display: flex;
+      display:flex;
       justify-content:space-between;
     }
     li{
@@ -895,9 +895,9 @@ i.fad{
 }
 
 .fw_icon {
-	display:flex;
+	/*display:flex;*/
 	align-items:center;
-	padding:2px;
+	/*padding:2px;*/
   align-items: center;
   i{
     font-size:30px;
@@ -1289,7 +1289,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
+  display:flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -1675,7 +1675,7 @@ footer {
 }
 .fw_header .codes .subcode{
   justify-content:space-between;
-  display: flex;
+  display:flex;
   align-items: center;
 }
 
@@ -3361,7 +3361,7 @@ body .wpb_content_element {
   form.fw_checkout {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display:flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     font-family: 'Lato', sans-serif;
@@ -3415,7 +3415,7 @@ body .wpb_content_element {
   .fw_checkout .woocommerce-billing-fields__field-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -3993,7 +3993,7 @@ body .wpb_content_element {
     .fw_billing-details-container li.fw_billing-detail {
       list-style-type: none;
       padding: 0;
-      display: flex;
+      display:flex;
       margin: 15px 0;
     }
 

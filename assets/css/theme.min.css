@@ -949,9 +949,9 @@ i.fad {
 }
 
 .fw_icon {
-  display: flex;
+  /*display:flex;*/
   align-items: center;
-  padding: 2px;
+  /*padding:2px;*/
   align-items: center;
 }
 .fw_icon i {
