@@ -121,8 +121,10 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
           <?php } ?>
           
         </div>
+        <?php if(!empty(fw_company_data("whatsapp")) || !empty(fw_company_data("phone"))){?>
         <div class="separa-menu-mobile">&nbsp;</div>
         <?php 
+        }
         echo fw_menu_mobilenew(array('id' => 'mobile' )); 
         $bottommneu=fw_menu_vertical(array('id' => 'mobile_bottom' )); 
         if(!empty($bottommneu)){
