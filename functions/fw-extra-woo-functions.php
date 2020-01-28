@@ -597,39 +597,45 @@ function fw_global_variation_price() {
 
 /**
  * Filter products by type
- *wpa104537_filter_products_by_featured_status
+ *
  * @access public
  * @return void
  */
-add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
 function wpa104537_filter_products_by_featured_status() {
 
-     global $typenow, $wp_query;
+  global $typenow, $wp_query;
 
-    if ($typenow=='product') :
+ if ($typenow=='product') :
 
 
-        // Featured/ Not Featured
-        $output .= "<select name='featured_status' id='dropdown_featured_status'>";
-        $output .= '<option value="">'.__( 'Estados', 'woocommerce' ).'</option>';
+     // Featured/ Not Featured
+     $output .= "<select name='featured_status' id='dropdown_featured_status'>";
+     $output .= '<option value="">'.__( 'Show All Featured Statuses', 'woocommerce' ).'</option>';
 
-        $output .="<option value='featured' ";
-        if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
-        $output .=">".__( 'Destacados', 'woocommerce' )."</option>";
+     $output .="<option value='featured' ";
+     if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
+     $output .=">".__( 'Featured', 'woocommerce' )."</option>";
 
-        $output .="<option value='normal' ";
-        if ( isset( $_GET['featured_status'] ) ) $output .= selected('normal', $_GET['featured_status'], false);
-        $output .=">".__( 'No destacados', 'woocommerce' )."</option>";
+     $output .="<option value='normal' ";
+     if ( isset( $_GET['featured_status'] ) ) $output .= selected('normal', $_GET['featured_status'], false);
+     $output .=">".__( 'Not Featured', 'woocommerce' )."</option>";
 
-        $output .="</select>";
+     $output .="</select>";
 
-        echo $output;
-    endif;
+     echo $output;
+ endif;
 }
 
-add_action('restrict_manage_posts', 'fw_filter_products_by_featured_status');
-function fw_filter_products_by_featured_status( $query ) {
-  if(!is_admin())return;
+add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
+
+/**
+ * Filter the products in admin based on options
+ *
+ * @access public
+ * @param mixed $query
+ * @return void
+ */
+function wpa104537_featured_products_admin_filter_query( $query ) {
   global $typenow;
 
   if ( $typenow == 'product' ) {
@@ -655,7 +661,13 @@ function fw_filter_products_by_featured_status( $query ) {
   }
 
 }
-//add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
+add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
+
+
+
+
+
+
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 
