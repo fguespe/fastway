@@ -44,7 +44,7 @@ display:block !important;
   <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
    <div class="col-lg-5  col-sm-12" >
     <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
-    <div class="fw_summary-box" style="background:white;">
+    <div class="fw_summary-box" >
 
     <h3 ><?php echo __('Order details','woocommerce')?><a class="returncart" href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a></h3> 
         
