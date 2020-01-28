@@ -2684,7 +2684,7 @@ body .wpb_content_element {
   }
 }
 .woocommerce-cart .woocommerce-cart-form, .woocommerce-cart .shop_table {
-  background: white;
+  background: transparent;
 }
 .woocommerce-cart #content table.cart td.actions button {
   line-height: 24px !important;
