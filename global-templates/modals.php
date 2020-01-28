@@ -10,7 +10,7 @@
                 <div style="padding:1em;">
                     <div class="row d-flex justify-content-between">
                         <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        <button rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</button>
+                        <a rel="nofollow" href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
                     </div>
                 </div>
             </div>
