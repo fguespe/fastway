@@ -2354,7 +2354,6 @@ h3.heading-title {
 .woocommerce-cart #page-wrapper,
 .woocommerce-account #page-wrapper,
 .woocommerce-checkout #page-wrapper {
-  background: white !important;
   padding-top: 10px;
   padding-bottom: 10px;
   background: var(--shop);
