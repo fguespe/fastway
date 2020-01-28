@@ -403,7 +403,7 @@ i.fad {
 }
 
 .fw_single_product {
-  background: #fff none repeat scroll 0 0;
+  background: var(--shop) none repeat scroll 0 0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
