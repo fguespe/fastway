@@ -614,11 +614,11 @@ function wpa104537_filter_products_by_featured_status() {
 
      $output .="<option value='featured' ";
      if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
-     $output .=">".__( 'Featured', 'woocommerce' )."</option>";
+     $output .=">".__( 'Destacados', 'woocommerce' )."</option>";
 
      $output .="<option value='normal' ";
      if ( isset( $_GET['featured_status'] ) ) $output .= selected('normal', $_GET['featured_status'], false);
-     $output .=">".__( 'Not Featured', 'woocommerce' )."</option>";
+     $output .=">".__( 'No Destacados', 'woocommerce' )."</option>";
 
      $output .="</select>";
 
