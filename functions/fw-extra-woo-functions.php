@@ -597,10 +597,11 @@ function fw_global_variation_price() {
 
 /**
  * Filter products by type
- *
+ *wpa104537_filter_products_by_featured_status
  * @access public
  * @return void
  */
+add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
 function wpa104537_filter_products_by_featured_status() {
 
      global $typenow, $wp_query;
