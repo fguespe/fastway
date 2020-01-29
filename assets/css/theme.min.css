@@ -2818,6 +2818,9 @@ body .wpb_content_element {
 .fw_body_dark_mode .fw_single_product .fw_add_to_cart_button.sticky {
   background: var(--body) !important;
 }
+.fw_body_dark_mode .fw_single_product .fw-medios big {
+  color: var(--main) !important;
+}
 
 /*General Woocommerce*/
 .woocommerce {
