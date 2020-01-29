@@ -2801,17 +2801,22 @@ body .wpb_content_element {
 		border: 1px solid var(--main);
 		color: var(--main);
   }
-  .fw_single_product .fw_add_to_cart_button{
-    background: transparent !important;
-    color:var(--main);
-    border: 1px solid var(--main) !important;
-  }
-
-  .fw_single_product .fw_add_to_cart_button.sticky{
-    background: var(--body) !important;
-  }
-  .fw_single_product .fw-medios big{
-    color:var(--main) !important;
+  .fw_single_product {
+    .fw_add_to_cart_button{
+      background: transparent !important;
+      color:var(--main);
+      border: 1px solid var(--main) !important;
+    }
+    .fw_single_product .fw_add_to_cart_button.sticky{
+      background: var(--body) !important;
+    }
+    .fw_single_product .fw-medios big{
+      color:var(--main) !important;
+    }
+    .summary .fw_price .badge{
+      background:var(--main);
+      color:var(--body);
+    }
   }
 }
 /*General Woocommerce*/
