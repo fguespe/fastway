@@ -277,7 +277,7 @@ i.fad{
 }
 
 .fw_add_to_cart_button {
-  background: var(--main) !important;
+  background: var(--main) /*!important*/;
   padding: 10px;
   margin: 0 auto ;
   border:0px !important;
@@ -2800,7 +2800,12 @@ body .wpb_content_element {
 		background: transparent;
 		border: 1px solid var(--main);
 		color: var(--main);
-	}
+  }
+  .fw_single_product .fw_add_to_cart_button{
+    background: transparent;
+    color:var(--main);
+    border: 1px solid var(--main);
+  }
 }
 /*General Woocommerce*/
 .woocommerce{
