@@ -2767,8 +2767,41 @@ body .wpb_content_element {
   background:var(--main);
   border:0px;
   color:white;
-  }
-  
+}
+.fw_body_dark_mode {
+	.place-order button,
+	.wc-proceed-to-checkout a,
+	.woocommerce-checkout #place_order,
+	.woocommerce-account #place_order {
+		background: transparent;
+		border: 1px solid var(--main);
+	}
+	/*minicart*/
+	.modal-content a,
+	.modal-content span,
+	.modal-content button,
+	.modal-content div,
+	.modal-content h4 {
+		color: black !important;
+	}
+	.modal-content .btn {
+		border: 1px solid black !important;
+	}
+	.woocommerce-checkout .woocommerce-form-login__submit,
+	.woocommerce-account .woocommerce-form-login__submit {
+		background: transparent;
+		border: 1px solid var(--main);
+	}
+	.capsula-blanca i,
+	.capsula-blanca .img {
+		color: black !important;
+	}
+	.gform_footer input[type=submit] {
+		background: transparent;
+		border: 1px solid var(--main);
+		color: var(--main);
+	}
+}
 /*General Woocommerce*/
 .woocommerce{
   /*margin-bottom: 10px;*/

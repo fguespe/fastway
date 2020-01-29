@@ -95,7 +95,7 @@ $classdarkmode='';
 if(fw_theme_mod('fw_body_dark_mode'))$classdarkmode='fw_body_dark_mode';
 error_log($classdarkmode);
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
-<body <?php body_class("page-".$nombreurl.' '.$clasesmenu.' '); ?>>
+<body <?php body_class("page-".$nombreurl.' '.$classdarkmode.' '); ?>>
 <header id="header">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
