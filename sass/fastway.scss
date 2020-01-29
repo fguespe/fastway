@@ -2797,7 +2797,13 @@ body .wpb_content_element {
 	.woocommerce-account .woocommerce-form-login__submit {
 		background: transparent;
 		border: 1px solid var(--main);
-	}
+  }
+  .capsula-blanca{
+    background:transparent;
+    i,h2,div{
+      color:var(--main) !important;
+    }
+  }
 	.gform_footer input[type=submit] {
 		background: transparent;
 		border: 1px solid var(--main);

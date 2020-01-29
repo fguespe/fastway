@@ -2807,6 +2807,12 @@ body .wpb_content_element {
   background: transparent;
   border: 1px solid var(--main);
 }
+.fw_body_dark_mode .capsula-blanca {
+  background: transparent;
+}
+.fw_body_dark_mode .capsula-blanca i, .fw_body_dark_mode .capsula-blanca h2, .fw_body_dark_mode .capsula-blanca div {
+  color: var(--main) !important;
+}
 .fw_body_dark_mode .gform_footer input[type=submit] {
   background: transparent;
   border: 1px solid var(--main);
