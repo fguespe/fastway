@@ -76,7 +76,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
 .woocommerce-shipping-totals span,
 .woocommerce-shipping-totals input,
 .woocommerce-shipping-totals label {
-text-align:left !important;
+  text-align:left !important;
   font-size: 11px !important;
 }
 
@@ -91,8 +91,11 @@ text-align:left !important;
     <?php echo fw_theme_mod('fw_header_scripts');?>
 </head>
 <?php
+$classdarkmode='';
+if(fw_theme_mod('fw_body_dark_mode'))$classdarkmode='fw_body_dark_mode';
+error_log($classdarkmode);
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
-<body <?php body_class("page-".$nombreurl); ?>>
+<body <?php body_class("page-".$nombreurl.' '.$clasesmenu.' '); ?>>
 <header id="header">
 <?php 
 if(fw_theme_mod("maintainance-mode")){

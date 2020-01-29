@@ -1120,6 +1120,18 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_body_dark_mode',
+	'label'       => __( 'Dark Mode Body', 'fastway' ),
+	'description'       =>'Black website',
+	'section'     => 'section_colors',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 /*MOBILE*/
 
 Kirki::add_field( 'theme_config_id', array(

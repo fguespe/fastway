@@ -2612,9 +2612,9 @@ body .wpb_content_element {
   color:black;
   }
   .gform_body{
-  width: 80%;
-  display: inline-block;
-  float: left;
+    width: 80%;
+    display: inline-block;
+    float: left;
   }
 
   .gform_wrapper .top_label li.gfield.gf_inline{
@@ -2762,6 +2762,13 @@ body .wpb_content_element {
 #modal_bancos{
   text-transform: uppercase !important;;
 }
+.gform_footer input[type=submit]{
+		
+  background:var(--main);
+  border:0px;
+  color:white;
+  }
+  
 /*General Woocommerce*/
 .woocommerce{
   /*margin-bottom: 10px;*/
