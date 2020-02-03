@@ -568,23 +568,24 @@ function vc_fw_shorts() {
                     "heading"     => 'Subtext',
                     "param_name"  => "stext",
                 ),
+                /*
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("size"),
+                    "heading"     => __("Text Size"),
                     "param_name"  => "size",
-                ),
+                ),*/
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("link"),
+                    "heading"     => __("Link"),
                     "param_name"  => "link",
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("cant"),
+                    "heading"     => __("Cant"),
                     "param_name"  => "cant",
                 ),
 
-               
+               /*
                 array(
                     "type" => "textfield",
                     "class" => "",
@@ -600,7 +601,7 @@ function vc_fw_shorts() {
                     "param_name" => "text_color",
                     "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
-                ),
+                ),*/
                 array(
                     "type" => 'textfield',
                     "heading"     => __("iframe"),
@@ -665,20 +666,20 @@ function vc_social_icons() {
                         "Right"=>"right",
                     ),
                     "std" => 'left', //Default Red color
-                ),
+                ),/*
                 array(
                     "type" => 'textfield',
                     "heading"     => __("size"),
                     "param_name"  => "icon_size",
                     "std"  => "20",
-                ),
+                ),*//*
                 array(
                     "type" => "textfield",
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
                     "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
-                ),
+                ),*/
                 array(
                     'type' => 'el_id',
                     'heading' => __( 'Element ID', 'js_composer' ),
@@ -729,20 +730,21 @@ function vc_only_icon() {
                         "Right"=>"right",
                     ),
                     "std" => 'center', //Default Red color
-                ),
+                ),/*
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Sie"),
                     "param_name"  => "icon_size",
                     "std"  => "50",
-                ),
+                ),*/
+                /*
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Color"),
                     "param_name"  => "icon_color",
                     "std"  => "var(--main)",
-                ),
-
+                ),*/
+                    
                 array(
                     'type' => 'el_id',
                     'heading' => __( 'Element ID', 'js_composer' ),
