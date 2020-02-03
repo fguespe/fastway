@@ -164,7 +164,7 @@ function change_notification_email( $notification, $form, $entry ) {
         $notification['to'] =fw_theme_mod("fw_mail_desde_mails");//;
     }
     error_log(print_r($notification,true));
-    return $notif;
+    return $notification;
 }
 
 ?>
