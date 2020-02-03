@@ -154,4 +154,15 @@ function email_orden_fallida( $recipient, $order ) {
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
+
+
+add_filter( 'gform_notification', 'change_notification_email', 10, 3 );
+function change_notification_email( $notification, $form, $entry ) {
+ 
+    if ( $notification['name'] == 'Admin Notification' && $notification['toType']=='email' ) {
+        $notification['to'] = fw_theme_mod("fw_mail_desde_mails");
+    }
+    return $notif;
+}
+
 ?>
