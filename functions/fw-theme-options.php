@@ -1585,7 +1585,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_1_desc',
 	'section'     => 'section_woo_payments',
 	'default'     => '<h3>Pagá Online con MercadoPago</h3>
-	<a class="btn" target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">Ver promociones</a>
+	<a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="btn fw_icon_link fancybox">Ver promociones</a>
 	<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
 	   <div class="modal-dialog modal-lg" role="document">
 		  <div class="modal-content">
@@ -1663,7 +1663,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_3_desc',
 	'section'     => 'section_woo_payments',
 	'default'     => '<div class="specs">Puede demorar hasta 72hs hábiles en acreditarse.</div>
-	<a class="btn" target="_blank" data-toggle="modal" data-target="#modal_bancos" class="fw_icon_link fancybox">Ver datos</a>
+	<a target="_blank" data-toggle="modal" data-target="#modal_bancos" class="btn fw_icon_link fancybox">Ver datos</a>
 	<div class="modal modal_bancos fade" id="modal_bancos" aria-hidden="true">
 	   <div class="modal-dialog modal-lg" role="document">
 		  <div class="modal-content">
