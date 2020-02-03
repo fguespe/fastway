@@ -159,11 +159,10 @@ function email_orden_fallida( $recipient, $order ) {
 add_filter( 'gform_notification', 'change_notification_email', 10, 3 );
 function change_notification_email( $notification, $form, $entry ) {
     $notification['from'] = 'avisos@altoweb.co';
-    $notification['fromName'] = 'Notificación WEB';
+    $notification['fromName'] = 'ALTOWEB';
     if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
         $notification['to'] =fw_theme_mod("fw_mail_desde_mails");//;
     }
-    error_log(print_r($notification,true));
     return $notification;
 }
 
