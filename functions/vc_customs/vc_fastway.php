@@ -666,20 +666,20 @@ function vc_social_icons() {
                         "Right"=>"right",
                     ),
                     "std" => 'left', //Default Red color
-                ),/*
+                ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("size"),
                     "param_name"  => "icon_size",
                     "std"  => "20",
-                ),*//*
+                ),
                 array(
                     "type" => "textfield",
                     "heading" => __( "Icon color", "fastway" ),
                     "param_name" => "icon_color",
                     "value" => '', //Default Red color
                     "description" => __( "Choose text color", "fastway" )
-                ),*/
+                ),
                 array(
                     'type' => 'el_id',
                     'heading' => __( 'Element ID', 'js_composer' ),
