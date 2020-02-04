@@ -435,6 +435,28 @@ function pasa_filtro_rol($rolesstring){
   }
   return true;
 }
+
+
+if(fw_theme_mod('fw_default_shipping_me') && is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
+  add_action( 'woocommerce_review_order_after_shipping', 'auto_select_free_shipping_by_default' );
+  function auto_select_free_shipping_by_default() {
+      if ( ! WC()->session->has_session() )
+          WC()->session->set_customer_session_cookie( true );
+
+      // Check if "free shipping" is already set
+      if ( strpos( WC()->session->get('chosen_shipping_methods')[0], 'mercadoenvios-shipping' ) !== false )
+          return;
+
+      // Loop through shipping methods
+      foreach( WC()->session->get('shipping_for_package_0')['rates'] as $key => $rate ){
+          if( $rate->method_id === 'mercadoenvios-shipping' ){
+              // Set "Free shipping" method
+              WC()->session->set( 'chosen_shipping_methods', array($rate->id) );
+              return;
+          }
+      }
+  }
+}
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
   if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
@@ -506,42 +528,6 @@ function fw_getfastars($average){
 }
 
 
-// Function to add subscribe text to posts and pages
-function fw_pngcheckout_short() {
-    $active1="";
-    $active2="";
-    $active3="";
-    $devuelvo="";
-    if(is_cart()){
-        $active1="active";
-    }else if( is_checkout() && !is_order_received_page() ) {
-
-        $active2="active";
-        if(fw_theme_mod("checkout-minimal"))$devuelvo .='<div class="logocheckout"><img src="'.fw_theme_mod('general-logo').'"/></div>';
-    
-    }else if( is_checkout() && is_order_received_page() ) {
-        
-        $active3="active";   
-        
-    }
-    if(fw_theme_mod("cart-steps")){
-    $devuelvo.='<ul class="pasoscheckout">
-              <li class="'.$active1.'"><a>MI COMPRA</a></li>
-              <li class="'.$active2.'"><a>PAGO Y ENVÍO</a></li>
-              <li class="'.$active3.'"><a>TERMINAR</a></li>
-            </ul>';
-    }
-
-    echo $devuelvo;
-
-}
-if(fw_theme_mod("cart-steps") || fw_theme_mod("checkout-minimal")){
-//add_action('woocommerce_before_cart', 'fw_pngcheckout_short');   
-//add_action('woocommerce_before_checkout_form', 'fw_pngcheckout_short',0); 
-if(fw_theme_mod("checkout-minimal")){
-//add_action( 'wp_head', 'add_chkstl_to_head' );
-} 
-}
 
 
 
