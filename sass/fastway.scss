@@ -1991,6 +1991,13 @@ footer .widget_nav_menu li a {
     font-weight: bold;
     
   }
+  @media (max-width: 799px) {
+
+    .widget h3.widget-title{
+      margin-top:10px;
+    }
+    
+  }
   .prdctfltr_title_selected{
     padding:0px !important;
   }
