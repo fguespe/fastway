@@ -1995,7 +1995,10 @@ footer .widget_nav_menu li a {
   .fw_icon_bs_short .icon i{
   color:var(--main);
   }
-
+  .text{
+    overflow: hidden;
+    white-space: nowrap;
+  }
   @media (min-width: 799px) {
 
     .fw_icon_bs_short{
