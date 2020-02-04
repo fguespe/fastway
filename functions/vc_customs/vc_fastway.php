@@ -323,7 +323,7 @@ function fw_slider_function( $atts, $content ) {
     $ismobile=!empty($atts['slides_mobile']);
     if(!$ismobile)$claserespo=' ';
     $return='';
-    if(!wp_is_mobile()){
+    if(!wp_is_mobile() || (!$ismobile && wp_is_mobile())){
     $links = explode(',',$atts['links_desktop']);
     $return = '
     <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative" >
@@ -405,7 +405,6 @@ function fw_slider_function( $atts, $content ) {
         }
     });
     </script>';
-    
     return $return;
 }   
 add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
