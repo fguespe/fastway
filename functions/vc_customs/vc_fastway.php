@@ -535,7 +535,7 @@ function vc_fw_shorts() {
                         "Solo Icono/s (Separar con ,)"=>"iconsnext",
                         "Icono arriba, texto abajo"=>"iconbox",
                     ),
-                    "std" => 'isli', //Default Red color
+                    "std" => '', //Default Red color
                 ),
                 array(
                     "type" => 'dropdown',
