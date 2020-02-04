@@ -2026,6 +2026,10 @@ footer .widget_nav_menu li a {
 .fw_home_icons .fw_icon_bs_short .icon i {
   color: var(--main);
 }
+.fw_home_icons .text {
+  overflow: hidden;
+  white-space: nowrap;
+}
 @media (min-width: 799px) {
   .fw_home_icons .fw_icon_bs_short {
     border-right: 1px solid #ccc;
