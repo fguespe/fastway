@@ -232,7 +232,8 @@ function fw_data( $atts ) {
     $only_text=false;
     if(($atts["only_text"]))$only_text=true;
     //format
-    if($atts["format"])$format=$atts["format"];
+    $format=$atts["format"];
+    if(!$format)$format="isli";
     else if($atts["isli"])$format="isli";
     else if($atts["isli_i"])$format="isli_i";
     else if($atts["iconsnext"])$format="iconsnext";

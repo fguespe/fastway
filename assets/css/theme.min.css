@@ -2009,6 +2009,45 @@ footer .widget_nav_menu li a {
     padding-top: 8px !important;
   }
 }
+.fw_home_icons {
+  border: 1px solid var(--main);
+  padding: 15px;
+}
+.fw_home_icons .fw_icon_bs_short big {
+  font-size: 14px !important;
+}
+.fw_home_icons .fw_icon_bs_short small {
+  font-size: 12px !important;
+  color: var(--main);
+}
+.fw_home_icons .wpb_column:last-child .fw_icon_bs_short {
+  border: 0px;
+}
+.fw_home_icons .fw_icon_bs_short .icon i {
+  color: var(--main);
+}
+@media (min-width: 799px) {
+  .fw_home_icons .fw_icon_bs_short {
+    border-right: 1px solid #ccc;
+  }
+}
+@media (max-width: 799px) {
+  .fw_home_icons {
+    padding: 10px;
+  }
+  .fw_home_icons .fw_icon_bs_short .icon i {
+    width: 40px !important;
+    text-align: center;
+  }
+  .fw_home_icons .fw_icon_bs_short {
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+  .fw_home_icons .vc_column-inner {
+    padding: 0px;
+  }
+}
+
 /* Filters woo*/
 .woocommerce-shop .product-categories .current-cat a {
   font-weight: bold !important;
