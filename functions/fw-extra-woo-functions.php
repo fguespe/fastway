@@ -457,25 +457,28 @@ if(fw_theme_mod('fw_default_shipping_me') && is_plugin_active('woocommerce-merca
       }
   }
 }
+function fw_get_customer_orders(){
+  $customer      = wp_get_current_user();
+  $customer_id   = $customer->ID; // customer ID
+  $customer_email = $customer->email; // customer email
+
+  // Get all orders for this customer_id
+  $customer_orders = get_posts( array(
+      'numberposts' => -1,
+      'meta_key'    => '_customer_user',
+      'meta_value'  => $customer_id,
+      'post_type'   => wc_get_order_types(),
+      'post_status' => array_keys( wc_get_order_statuses() ),
+  ) );
+    
+  return count($customer_orders);
+}
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
   if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
-    $customer      = wp_get_current_user();
-    $customer_id   = $customer->ID; // customer ID
-    $customer_email = $customer->email; // customer email
-
-    // Get all orders for this customer_id
-    $customer_orders = get_posts( array(
-        'numberposts' => -1,
-        'meta_key'    => '_customer_user',
-        'meta_value'  => $customer_id,
-        'post_type'   => wc_get_order_types(),
-        'post_status' => array_keys( wc_get_order_statuses() ),
-    ) );
+    
     $minimum = fw_theme_mod('fw_min_purchase');  
-    if(count($customer_orders)>0){
-        $minimum = fw_theme_mod('fw_min_purchase2');   
-    }
+    if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  
 
     if ( WC()->cart->cart_contents_total < $minimum ) {
 
@@ -596,7 +599,7 @@ function wpa104537_filter_products_by_featured_status() {
 
      // Featured/ Not Featured
      $output .= "<select name='featured_status' id='dropdown_featured_status'>";
-     $output .= '<option value="">'.__( 'Show All Featured Statuses', 'woocommerce' ).'</option>';
+     $output .= '<option value="">'.__( 'Filtrar Destacados', 'woocommerce' ).'</option>';
 
      $output .="<option value='featured' ";
      if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
@@ -1003,10 +1006,10 @@ function bbloomer_cart_refresh_update_qty() {
 function ess_custom_taxonomy_Item()  {
 
     $labels = array(
-        'name'                       => 'Brands',
+        'name'                       => 'Marcas',
         'singular_name'              => 'Brand',
-        'menu_name'                  => 'Brands',
-        'all_items'                  => 'All Brands',
+        'menu_name'                  => 'Marcas',
+        'all_items'                  => 'All Marcas',
         'parent_item'                => 'Parent Brand',
         'parent_item_colon'          => 'Parent Brand:',
         'new_item_name'              => 'New Brand Name',
@@ -1032,7 +1035,7 @@ function ess_custom_taxonomy_Item()  {
     
 }
     
-add_action( 'init', 'ess_custom_taxonomy_item', 0 );
+//add_action( 'init', 'ess_custom_taxonomy_item', 0 );
 
 
 

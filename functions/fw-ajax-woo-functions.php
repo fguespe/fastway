@@ -7,6 +7,10 @@ add_action('wp_ajax_fw_get_minicart', 'fw_get_minicart');
 function fw_get_minicart(){  
     $carta=array();
 
+    $minimum = fw_theme_mod('fw_min_purchase');  
+    if(fw_get_customer_orders()>0 && fw_theme_mod('fw_min_purchase2'))$minimum = fw_theme_mod('fw_min_purchase2');  
+   
+
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 
         $product=wc_get_product($cart_item['product_id']);
@@ -22,7 +26,7 @@ function fw_get_minicart(){
     }
     $totals=WC()->cart->get_totals();
 
-    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count);
+    $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'min'=>$minimum);
     echo json_encode($totales);
     exit();
 }

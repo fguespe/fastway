@@ -10,7 +10,7 @@
                 <div style="padding:1em;">
                     <div class="row d-flex justify-content-between">
                         <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        <a  href="<?=esc_url( wc_get_checkout_url() )?>" id="" class="btn comprar">Comprar</a>
+                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -374,7 +374,13 @@ function toggle(quien){
 
     }
 }
-
+function comprar(url){
+    let min=jQuery('#totals').data("min")
+    let total=jQuery('#totals').data("subtotal")
+    console.log(min,total)
+    if(total<min)alert("El total esta por debajo de la compra minima de $"+min);
+    else location.href=url
+}
 jQuery( ".fw_variations select" ).change(function() {
 
     let vara=getVariation()
@@ -468,9 +474,9 @@ function populatecart(){
         let totals=datos['totals']
 
         let total=totals['total']
+        let min=datos['min']
         let subtotal=totals['subtotal']
         let discount_total=total-subtotal
-
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']
@@ -483,7 +489,7 @@ function populatecart(){
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'
             jqe+='<div class="row d-flex justify-content-left item-cantidad " id="loadinghide_'+index+'">'
             jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',-1)" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
-            jqe+='<input  type="text" style="width:40px;text-align:center;margin-left:10px;margin-right:10px;" id="qty_'+index+'" name="quantity" class="input-number" value="'+value['quantity']+'" min="1" max="100">'
+            jqe+='<input disabled type="text" style="width:40px;text-align:center;margin-left:10px;margin-right:10px;" id="qty_'+index+'" name="quantity" class="input-number" value="'+value['quantity']+'" min="1" max="100">'
             jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',1)"  class="txt-22"> <i class="fal fa-plus-circle"></i></a></div> '
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
@@ -493,16 +499,16 @@ function populatecart(){
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
-        jqe+='<div class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
+        jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
         if(discount_total<0){
             jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+discount_total+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
+            jqe+='<div>TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
         }
         jqe+='</div>'
         if(subtotal>0){
             jQuery('#modal_carrito .container').html(jqe);
         }else{
-            jQuery('#modal_carrito .container').html('No hay produtos');
+            jQuery('#modal_carrito .container').html('No hay productos');
         }
     });
 }

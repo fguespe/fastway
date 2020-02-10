@@ -421,6 +421,14 @@ display:none;
 .productos .edit_vc,.composer-switch{
 	display: none !important;
 }*/
+/*BARRA DERECHA*/
+#side-sortables #tagsdiv-product_tag,
+#side-sortables #woocommerce-umf-box-product,
+#side-sortables #catalog-visibility,
+#side-sortables .misc-pub-curtime{
+	display: none ;
+}
+
 .wpb_switch-to-composer{
 	color:white !important;
 }
