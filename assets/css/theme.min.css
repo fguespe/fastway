@@ -46,6 +46,7 @@
 .fw_page_title {
   margin-top: 10px;
   margin-bottom: 20px;
+  text-align:center;
 }
 .fw_page_title .icon i {
   font-size: 40px !important;
