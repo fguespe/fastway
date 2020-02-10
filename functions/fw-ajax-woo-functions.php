@@ -74,7 +74,7 @@ function fw_loop_ajax() {
   global $product;
   if(fw_check_hide_purchases())return;
   if(!fw_product_is_purchasable($product))return;
-
+  echo $product->id;
   if ( $product->is_type( 'variable' ) ) {
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location:href='.$product->get_permalink($product->id).')" class="fw_add_to_cart_button loop">
     <i class="fad fa-eye "></i>

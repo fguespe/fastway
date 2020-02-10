@@ -313,8 +313,8 @@ function fw_slider_function( $atts, $content ) {
             'slider_speed'  => '250',
             'slider_delay'  => '4000',
             'autoplay'  => 'false',
-            'el_class'  => '',
-            'loop'  => !$atts["autoplay"]?'false':'true',
+            'loop'  => 'false',
+            'el_class'  => ''
         ), $atts );
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
