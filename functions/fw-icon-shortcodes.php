@@ -121,7 +121,7 @@ function fw_only_icon( $atts ) {
 }
 
 add_shortcode("fwi","fw_data",10,2);
-add_shortcode('fw_extras_short', 'fw_data', 10, 2);
+add_shortcode('fw_data', 'fw_data', 10, 2);
 add_shortcode('fw_data', 'fw_data', 10, 2);
 function fw_data( $atts ) {
     $atts = shortcode_atts(

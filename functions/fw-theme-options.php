@@ -871,7 +871,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Code', 'fastway' ),
 	'description' => '
 					[fw_header id="bottom,top,middle"]
-					[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_extras_short type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
+					[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_data type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
 					[/fw_header]',
 	'section'     => 'section_header',
 	'default'     => '[fw_header][fw_logo][fw_menu][/fw_header]',
@@ -2507,14 +2507,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyname',
 	'label'    => __( 'Company Name', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="name"]', 'fastway' ),
+    'description'     => __( '[fw_data type="name"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="whatsapp"] empezar con 549, sin el + [fw_extras_short type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
+    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
                 
 	'section'     => 'section_data',
 ) );
@@ -2522,14 +2522,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="phone"]<br>*El tel: se pone solo ', 'fastway' ),            
+    'description'     => __( '[fw_data type="phone"]<br>*El tel: se pone solo ', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyaddress',
 	'label'    => __( 'Company Address', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="address"] ', 'fastway' ),
+    'description'     => __( '[fw_data type="address"] ', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
@@ -2546,14 +2546,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyemail',
 	'label'    => __( 'Company Email', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="email"]', 'fastway' ),
+    'description'     => __( '[fw_data type="email"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyfb',
 	'label'    => __( 'Company Facebook', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="fb"]', 'fastway' ),
+    'description'     => __( '[fw_data type="fb"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 
@@ -2561,7 +2561,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyig',
 	'label'    => __( 'Company Instagram', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="ig"]', 'fastway' ),            
+    'description'     => __( '[fw_data type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 //Ohojo el. nombre
@@ -2569,7 +2569,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companylinkedin',
 	'label'    => __( 'Company Linkedin', 'fastway' ),
-    'description'     => __( '[fw_extras_short type="linkedin"]', 'fastway' ),            
+    'description'     => __( '[fw_data type="linkedin"]', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 
@@ -2577,14 +2577,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyyoutube',
 	'label'    => __( 'Company Youtube', 'fastway' ),
-   	'description'     => __( '[fw_extras_short type="youtube"]', 'fastway' ),
+   	'description'     => __( '[fw_data type="youtube"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companytwitter',
 	'label'    => __( 'Company Twitter Url', 'fastway' ),
-   	'description'     => __( '[fw_extras_short type="twitter"]', 'fastway' ),
+   	'description'     => __( '[fw_data type="twitter"]', 'fastway' ),
 	'section'     => 'section_data',
 ) );
 /*Extras*/
@@ -2762,14 +2762,14 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 /*SCRIPTS*/
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fathom-id',
 	'label'    => __( 'Fathom ID', 'fastway' ),       
 	'section'     => 'section_scripts',
 	'description' =>'refresh cache!'
-) );
+) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',

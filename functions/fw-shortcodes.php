@@ -96,7 +96,15 @@ function fw_whatsappfooter(){
     $whats=fw_company_data('whatsapp',true);
     if(empty($whats))return;
 
-    if(fw_theme_mod('whats-button')=='simple' || fw_theme_mod('whats-button')=='random'){
+    if(fw_theme_mod('whats-button')=='simple'){
+        
+        $label=fw_theme_mod('fw_whats_btn');
+        $label=str_replace("[br]","<br>",$label);
+        echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
+            <i class="fab fa-whatsapp" style="color:white !important;"></i>
+            <span class="t5">'.$label.'</span>
+        </a>';
+    }else if(fw_theme_mod('whats-button')=='random'){
         if(!empty(fw_company_data('whatsapp',true,2))){
             //Si tiene 2 whatsapp
             $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
@@ -107,10 +115,7 @@ function fw_whatsappfooter(){
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>
         </a>';
-    }
-    
-    
-    if(fw_theme_mod('whats-button')=='multi'){
+    }else if(fw_theme_mod('whats-button')=='multi'){
         $label=fw_company_data('whatsapp',false);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi first">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
