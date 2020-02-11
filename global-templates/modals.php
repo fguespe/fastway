@@ -377,9 +377,10 @@ function toggle(quien){
 function comprar(url){
     let min=jQuery('#totals').data("min")
     let total=jQuery('#totals').data("subtotal")
-    console.log(min,total)
+    console.log(min,total)/*
     if(total<min)alert("El total esta por debajo de la compra minima de $"+min);
-    else location.href=url
+    else location.href=url*/
+    location.href=url
 }
 jQuery( ".fw_variations select" ).change(function() {
 
