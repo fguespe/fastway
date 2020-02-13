@@ -763,6 +763,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    	=> __( 'Nombre cliente para mails', 'fastway' ),
 	'description' 	=>	'Nombre con el cual les va a llegar a los clientes',
 	'section'   => 'section_email',
+	'default' => 'Altoweb'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
@@ -2646,6 +2647,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
 	'default'     => 'off',
+	'description' => '?testmodal=yes para probarlo, sino se muestra una sola vez por dia.',
 	'choices'     => array(
 		'off' => __( 'Disable', 'fastway' ),
 		'image' => __( 'Image', 'fastway' ),
