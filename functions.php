@@ -12,6 +12,41 @@ require get_template_directory() . '/functions/fw-emails.php';
 
 
 
+add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');
+add_action('wp_ajax_register_visit', 'fw_register_visit');
+function fw_register_visit(){
+  $domain=$_SERVER['HTTP_HOST'];
+  $fecha=date('m/d/Y h:i:s a', time());
+  try{
+    global $wpdb;
+    $table = 'wp_altoweb_visits';
+    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'visit');
+    $format = array('%s','%s');
+    $wpdb->insert($table,$data,$format);
+    $my_id = $wpdb->insert_id;
+    
+  }catch (Exception $e) {
+    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
+  }
+}
+
+add_action('wp_ajax_nopriv_register_wp', 'fw_register_wp');
+add_action('wp_ajax_register_wp', 'fw_register_wp');
+function fw_register_wp(){
+  $domain=$_SERVER['HTTP_HOST'];
+  $fecha=date('m/d/Y h:i:s a', time());
+  try{
+    global $wpdb;
+    $table = 'wp_altoweb_visits';
+    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'wp');
+    $format = array('%s','%s');
+    $wpdb->insert($table,$data,$format);
+    $my_id = $wpdb->insert_id;
+    
+  }catch (Exception $e) {
+    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
+  }
+}
 function fw_vc_get_posts($type) {
     $args = array(
     'taxonomy'   => $type,

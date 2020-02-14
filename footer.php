@@ -59,7 +59,6 @@ jQuery(document).ready( function(jQuery) {
 });
 </script>
 <?php } ?>
-
 <script type="text/javascript">
 jQuery( ".btn-wapp" ).click(function() {
   jQuery.get(ajaxurl,{'action': 'register_wp'}, 
