@@ -753,7 +753,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
     }
 endif;
 
-
+/*
 function init_fathom() {
     
     $analytics = '<!-- Fathom - simple website analytics - https://usefathom.com -->
@@ -773,7 +773,7 @@ function init_fathom() {
     <!-- / Fathom -->';
 
     echo "\n" . $analytics;
-}
+}*/
 function init_analytics() {
     
     $analytics = '<!-- Analyitics  Code -->
