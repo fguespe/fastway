@@ -46,20 +46,32 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
   </div>
 </div>
 <script type="text/javascript">
-	jQuery(document).ready( function(jQuery) {
+jQuery( ".btn-wapp" ).click(function() {
+  jQuery.get(ajaxurl,{'action': 'register_wp'}, 
+      function (msg) { 
+        console.log('wp registrada')
+      });
+});
+jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
+    
+    if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
+      jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
+      jQuery.get(ajaxurl,{'action': 'register_visit'}, 
+      function (msg) { 
+        console.log('visita registrada')
+      });
+    }
+
     setTimeout(function(){
       console.log('testmodal',searchParams.has('testmodal'))
       if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
       if (jQuery.cookie('modal_shown') == null) {
-        console.log('no midal')
-        jQuery.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+        jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
         jQuery('#modalpopup').modal('show');
-      }else{
-        console.log('no modal')
       }
    }, 2000);
-    });
+});
 </script>
 <?php } ?>
 </body>
