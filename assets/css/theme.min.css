@@ -783,7 +783,8 @@ i.fad {
   margin: 0 auto !important;
   margin-top: 10px;
 }
-#modalpopup .gform_footer input {
+#modalpopup .gform_footer input,
+#modalpopup #calltoa {
   width: 60% !important;
   display: block !important;
   margin: 0 auto !important;
@@ -791,6 +792,31 @@ i.fad {
   background: #70BBA2 !important;
   margin-top: 10px;
   border-radius: 10px;
+}
+#modalpopup .subtitle, #modalpopup img {
+  margin-bottom: 20px;
+}
+#modalpopup #calltoa {
+  width: 50% !important;
+  display: block !important;
+  margin: 0 auto !important;
+  color: white !important;
+  background: var(--main) !important;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 10px;
+  border-radius: 50px !important;
+}
+#modalpopup h1 {
+  font-size: 28px !important;
+}
+#modalpopup p.subtitle {
+  margin-bottom: 20px !important;
+}
+#modalpopup .modal-body {
+  padding: 20px !important;
 }
 
 /***** Modal opiniones *****/
