@@ -1001,8 +1001,7 @@ function bbloomer_cart_refresh_update_qty() {
 
 
 
-/*brands*/
-// Register Custom Taxonomy
+/*brands*
 function ess_custom_taxonomy_Item()  {
 
     $labels = array(
@@ -1034,9 +1033,8 @@ function ess_custom_taxonomy_Item()  {
     register_taxonomy( 'brand', 'product', $args );
     
 }
-    
-//add_action( 'init', 'ess_custom_taxonomy_item', 0 );
-
+ add_action( 'init', 'ess_custom_taxonomy_item', 0 );
+   */
 
 
 if ( ! class_exists( 'BRAND_THUMB' ) ) {
