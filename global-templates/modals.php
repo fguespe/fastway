@@ -471,7 +471,6 @@ function populatecart(){
     {'action': 'fw_get_minicart'}, 
     function (datos) { 
         datos=jQuery.parseJSON(datos)
-        console.log(datos)
         let jqe=''
         let totals=datos['totals']
 

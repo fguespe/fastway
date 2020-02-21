@@ -4,7 +4,15 @@ $container   = fw_theme_mod('footer-width');
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
-		<?php if(!(is_checkout() && fw_theme_mod("checkout-minimal")))do_action( 'fastway_footer_init' ); ?>
+    <?php 
+    if(is_plugin_active("woocommerce/woocommerce.php")){
+      if(!(is_checkout() && fw_theme_mod("checkout-minimal"))){
+        do_action( 'fastway_footer_init' );
+      }
+    }else{
+      do_action( 'fastway_footer_init' );
+    }
+    ?>
 	</div>
 </footer>
 <?php 

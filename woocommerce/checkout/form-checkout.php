@@ -104,14 +104,6 @@ display:block !important;
         
         </form>
         <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
-        <div class="fw_promo" >
-          <div id="show-promo-form" >
-              <?php echo esc_html__( 'Have a coupon?', 'woocommerce' )  ?>
-              <a class="fw_arrow showcoupon">
-                <i class="fa fa-arrow-down" id="coupon" ></i>
-              </a>
-          </div>
-        </div>
         <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
           <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
           <p class="form-row form-row-first">
@@ -198,7 +190,7 @@ update_option('testing_new_checkout',true)
       </div>
       <?php if(!is_user_logged_in()){ ?>
       <div class="box-detail paso-cuenta uno" style="display:none;">
-          <h1><span class="icon-paso">3</span>Datos de contacto</h1>
+          <h1><span class="icon-paso">3</span>Tu cuenta</h1>
 					<input type="email" id="correo" name="billing_email" placeholder="Email">
 					<div class="login-btn">
 						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
@@ -208,8 +200,8 @@ update_option('testing_new_checkout',true)
       <div class="box-detail paso-cuenta dos" style="display: none;">
           <h1><span class="icon-paso">3</span>Ingresá a tu cuenta</h1>
 
-					<input type="email" id="correo_login" name="correo_login" placeholder="Email" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-					<input type="password" id="clave_login" name="clave_login" placeholder="Contraseña" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABKRJREFUWAnNl0tsVGUUxzvTTlslZUaCloZHY6BRFkp9sDBuqgINpaBp02dIDImwKDG6ICQ8jBYlhg0rxUBYEALTpulMgBlqOqHRDSikJkZdGG0CRqAGUuwDovQ1/s7NPTffnTu3zMxGvuT2vP7n8Z3vu+dOi4r+5xUoJH8sFquamZmpTqfTVeIfCARGQ6HQH83NzaP5xsu5gL6+vuVzc3NdJN1Kkhd8Ev1MMYni4uJjra2tt3wwLvUjCxgYGFg8Pj7+MV5dPOUub3/hX0zHIpFId0NDw6Q/jO4tZOzv76+Znp6+AOb5TBw7/YduWC2Hr4J/IhOD/GswGHy7vb39tyw2S+VbAC1/ZXZ29hKoiOE8RrIvaPE5WvyjoS8CX8sRvYPufYpZYtjGS0pKNoD/wdA5bNYCCLaMYMMEWq5IEn8ZDof3P6ql9pF9jp8cma6bFLGeIv5ShdISZUzKzqPIVnISp3l20caTJsaPtwvc3dPTIx06ziZkkyvY0FnoW5l+ng7guAWnpAI5w4MkP6yy0GQy+dTU1JToGm19sqKi4kBjY+PftmwRYn1ErEOq4+i2tLW1DagsNGgKNv+p6tj595nJxUbyOIF38AwipoSfnJyMqZ9SfD8jxlWV5+fnu5VX6iqgt7d3NcFeUiN0n8FbLEOoGkwdgY90dnbu7OjoeE94jG9wd1aZePRp5AOqw+9VMM+qLNRVABXKkLEWzn8S/FtbdAhnuVQE7LdVafBPq04pMYawO0OJ+6XHZkFcBQA0J1xKgyhlB0EChEWGX8RulsgjvOjEBu+5V+icWOSoFawuVwEordluG28oSCmXSs55SGSCHiXhmDzC25ghMHGbdwhJr6sAdpnyQl0FYIyoEX5CeYOuNHg/NhvGiUUxVgfV2VUAxjtqgPecp9oKoE4sNnbX9HcVgMH8nD5nAoWnKM/5ZmKyySRdq3pCmDncR4DxOwVC64eHh0OGLOcur1Vey46xUZ3IcVl5oa4OlJaWXgQwJwZyhUdGRjqE14VtSnk/mokhxnawiwUvsZmsX5u+rgKamprGMDoA5sKhRCLxpDowSpsJ8vpCj2AUPzg4uIiNfKIyNMkH6Z4hF3k+RgTYz6vVAEiKq2bsniZIC0nTtvMVMwBzoBT9tKkTHp8Ak1V8dTrOE+NgJs7VATESTH5WnVAgfHUqlXK6oHpJEI1G9zEZH/Du16leqHyS0UXBNKmeOMf5NvyislJPB8RAFz4g8IuwofLy8k319fUP1EEouw7L7mC3kUTO1nn3sb02MTFxFpsz87FfJuaH4pu5fF+reDz+DEfxkI44Q0ScSbyOpDGe1RqMBN08o+ha0L0JdeKi/6msrGwj98uZMeon1AGaSj+elr9LwK9IkO33n8cN7Hl2vp1N3PcYbUXOBbDz9bwV1/wCmXoS3+B128OPD/l2LLg8l9APXVlZKZfzfDY7ehlQv0PPQDez6zW5JJdYOXdAwHK2dGIv7GH4YtHJIvEOvvunLCHPPzl3QOLKTkl0hPbKaDUvlTU988xtwfMqQBPQ3m/4mf0yBVlDCSr/CRW0CipAMnGzb9XU1NSRvIX7kSgo++Pg9B8wltxxbHKPZgAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+					<input type="email" id="correo_login" name="correo_login" placeholder="Email" required="">
+					<input type="password" id="clave_login" name="clave_login" placeholder="Contraseña" required="" style="">
 
 					<div class="login-btn">
 						¿Aún no tenés cuenta?
@@ -220,7 +212,7 @@ update_option('testing_new_checkout',true)
       </div>
       <?php }?>
       <div class="box-detail paso-cuenta tres" style="display:none;">
-          <h1>Facturación  & Envío</h1>
+          <h1><span class="icon-paso">4</span>Tus datos</h1>
          
           <div class="woocommerce-billing-fields">
 
@@ -240,7 +232,21 @@ update_option('testing_new_checkout',true)
     </div>
             
     <div class="col-lg-4  col-sm-12 order-container" >
-        
+    </form>
+    
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
+        <div class="cupones ">
+        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+          <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
+          <p class="form-row form-row-first">
+            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
+            <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+          </p>
+          <div class="clear"></div>
+        </form>
+        </div>
+        <div class="totales">
+        <?php } ?>
         <?php woocommerce_order_review() ?>
 
         <div class="cart-form-actions">
@@ -272,6 +278,7 @@ update_option('testing_new_checkout',true)
             <?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
         </div>
 
+        </div>
     </div>
 
 
@@ -281,6 +288,9 @@ var paso = 1
 var shippingLabel=''
 var pagosLabel=''
 
+jQuery(document).ready( function(jQuery) {
+  jQuery('.checkout_coupon').show()
+})
 function editpaso(ppaso){
   let type=''
   if(ppaso==1){//shipping
@@ -411,7 +421,8 @@ function switchlogin(){
 .order-totals li span {
     display: inline-block;
     font-size: 14px;
-}.order-totals .cart-total {
+}
+.order-total {
     background: #f6f6f6;
     padding: 15px 10px;
     margin: 5px -10px 0;
@@ -531,7 +542,28 @@ border:0px;
 .btn-checkout:disabled{
     background:grey !important;
 }
-.box-detail .capsula,.order-container {
+.order-container .woocommerce-error,
+.order-container .woocommerce-message{
+  background:none;
+  font-size:10px;
+  border:1px solid  !important;
+  margin:0px !important;
+}
+.order-container{
+  padding:0px;
+}
+.order-container .cupones, .order-container .totales {
+    background:white;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+    padding:10px;
+    padding-bottom: 0;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom:20px;
+}
+.box-detail .capsula {
     background:white;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
@@ -539,6 +571,9 @@ border:0px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
     overflow: hidden;
+}
+.order-container .woocommerce-error{
+  background:none;
 }
 .box-detail .login-btn {
     width: 100%;
