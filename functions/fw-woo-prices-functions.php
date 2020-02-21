@@ -45,10 +45,6 @@ function fw_apply_lili_discount( WC_Cart $cart ){
         }else if(count($catespromo)==1){
             $esdelapromo=true;
         }
-        
-        fw_log(count($catespromo));
-
-        
         if(!$esdelapromo)continue;
         $cantqueespromo+=$values['quantity'];
         //Aca si es de la cate
