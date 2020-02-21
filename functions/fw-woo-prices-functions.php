@@ -33,11 +33,20 @@ function fw_apply_lili_discount( WC_Cart $cart ){
     foreach($items as $item => $values) { 
         $product_id=$values['data']->get_id() ;
         $product=wc_get_product( $product_id);
+
+
+
         //cates
         $esdelapromo=false;
-        $terms = get_the_terms ( $product_id, 'product_cat' );
-        //acase fija si esta en la promo
-        foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
+        if(count($catespromo)>0){
+            $terms = get_the_terms ( $product_id, 'product_cat' );
+            //acase fija si esta en la promo
+            foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
+        }if(count($catespromo)==0){
+            $esdelapromo=true;
+        }
+        
+
         
         if(!$esdelapromo)continue;
         $cantqueespromo+=$values['quantity'];

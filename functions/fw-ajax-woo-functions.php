@@ -2,6 +2,29 @@
 
 
 
+add_action('wp_ajax_nopriv_fw_cart_set_shipping', 'fw_cart_set_shipping');
+add_action('wp_ajax_fw_cart_set_shipping', 'fw_cart_set_shipping');
+function fw_cart_set_shipping(){  
+    $shipping_method_id=$_GET['shipping_method_id'];
+    WC()->session->set('chosen_shipping_methods', array($shipping_method_id));
+    WC()->cart->calculate_shipping();/*
+    WC()->cart->calculate_totals();
+    $totals=WC()->cart->get_totals();
+    echo json_encode($totals);*/
+    exit();
+}
+
+add_action('wp_ajax_nopriv_fw_get_cart_totals', 'fw_get_cart_totals');
+add_action('wp_ajax_fw_get_cart_totals', 'fw_get_cart_totals');
+function fw_get_cart_totals(){  
+    $shipping_method_id=$_GET['shipping_method_id'];
+    WC()->session->set('chosen_shipping_methods', array($shipping_method_id));
+    WC()->cart->calculate_shipping();
+    WC()->cart->calculate_totals();
+    $totals=WC()->cart->get_totals();
+    echo json_encode($totals);
+    exit();
+}
 add_action('wp_ajax_nopriv_fw_get_minicart', 'fw_get_minicart');
 add_action('wp_ajax_fw_get_minicart', 'fw_get_minicart');
 function fw_get_minicart(){  

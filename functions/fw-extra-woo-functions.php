@@ -189,7 +189,7 @@ function woocommerce_button_proceed_to_checkout() {
 add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' ); 
 
 function woo_custom_order_button_text() {
-  return " ".fw_theme_mod('place-order-text');
+  return " ".fw_theme_mod('fw_place_order_text');
 
 }
 add_action( 'woocommerce_review_order_after_submit', 'bbloomer_privacy_message_below_checkout_button' );
@@ -676,6 +676,9 @@ add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
 
 function fw_child_manage_woocommerce_styles() {
     //remove generator meta tag
+    wp_deregister_script('wc-checkout');
+    wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/assets/js/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
+
     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
     //first check that woo exists to prevent fatal errors
     if ( function_exists( 'is_woocommerce' ) ) {   

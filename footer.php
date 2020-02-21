@@ -4,7 +4,7 @@ $container   = fw_theme_mod('footer-width');
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
-		<?php do_action( 'fastway_footer_init' ); ?>
+		<?php if(!(is_checkout() && fw_theme_mod("checkout-minimal")))do_action( 'fastway_footer_init' ); ?>
 	</div>
 </footer>
 <?php 
@@ -49,7 +49,6 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
     setTimeout(function(){
-      console.log('testmodal',searchParams.has('testmodal'))
       if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
       if (jQuery.cookie('modal_shown') == null) {
         jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });

@@ -1388,7 +1388,20 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
+set_theme_mod('checkout-minimal',true);
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_sell_to_business',
+	'label'       => __( 'Checkout Minimal ', 'fastway' ),
+	'description'	=> 'Hides header and footer',
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'checkout-minimal',
@@ -1397,10 +1410,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'     => 1,
 	'choices' => array(
-	    0  => __( 'Enable', 'fastway' ),
+	    0  => __( 'Disable', 'fastway' ),
 	    1 => __( 'Enable', 'fastway' )
 	)
-) );
+) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
@@ -3023,10 +3036,10 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'place-order-text',
-	'label'    => __( 'Completar compra', 'fastway' ),
+	'settings'    => 'fw_place_order_text',
+	'label'    => __( 'Finalizar Compra', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>'Completar compra',
+	'default'	=>'Finalizar',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(

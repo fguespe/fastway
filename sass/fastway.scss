@@ -2056,7 +2056,7 @@ footer .widget_nav_menu li a {
 /* Filters woo*/
 
 .woocommerce-shop { 
-  .product-categories .current-cat a{
+  .product-categories .current-cat > a{
     font-weight:bold !important;
   }
   .widget h3.widget-title,

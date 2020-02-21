@@ -114,20 +114,6 @@ if(fw_theme_mod('fw_action_clientimages')){
 
   
 
-// Hook in
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
-// Our hooked in function - $fields is passed via the filter!
-function custom_override_checkout_fields( $fields ) {
-     $fields['billing']['billing_dni'] = array(
-      'label'     => fw_theme_mod( 'fw_cuit_label'),
-      'required'  => fw_theme_mod( 'fw_cuit_required'),
-      'class'     => array('form-row-wide'),
-      'clear'     => true
-      );
-
-     return $fields;
-}
-
 add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
 
 function my_custom_checkout_field_display_admin_order_meta($order){

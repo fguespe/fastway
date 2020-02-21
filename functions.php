@@ -11,7 +11,6 @@ if(is_plugin_active('kirki/kirki.php')){
 require get_template_directory() . '/functions/fw-emails.php';
 
 
-
 add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');
 add_action('wp_ajax_register_visit', 'fw_register_visit');
 function fw_register_visit(){
@@ -77,7 +76,6 @@ function check_user_role($role){
 	}
 	return false;
 }
-
 
 function fw_log($string){
     error_log("fwlog_ : ".$string);
