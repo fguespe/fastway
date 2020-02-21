@@ -24,7 +24,7 @@ $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
-if(isset($_GET["new"]) && $_GET["new"]==='yes'){ 
+if(get_option('testing_new_checkout')){ 
 ?>
 
 
@@ -32,25 +32,32 @@ if(isset($_GET["new"]) && $_GET["new"]==='yes'){
 	<td data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( $available_methods ) : ?>
 			<div id="shipping_method" class="woocommerce-shipping-methods">
-				<?php 
+			<?php foreach ( $available_methods as $method ) : 
 				
-					foreach ( $available_methods as $method ) : 
-					 
-							$titulo=$method->label;
-							$id=$method->method_id;
-							$instance=$method->instance_id;
-							$value=$id.':'.$instance;
-							$costo=$method->cost;
-							if($costo==0)$costo="GRATIS";
-							else $costo="$".$costo;?>
-							
-							<div class="capsula shipping" data-radio="shipping_method_0_<?=$id?><?=$instance?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
-								<?=$titulo?>
-								<small>Costo del envío: <?=$costo?></small> 
-								<small>Maximo 24/48hs</small>
-								<input type="radio" name="shipping_method[0]" id="shipping_method_0_<?=$id?><?=$instance?>" value="<?=$value?>" >
-								<span class="checkmark"></span>
-							</div>
+				$titulo=$method->label;
+				$id=$method->method_id;
+				$instance=$method->instance_id;
+				$value=$id.':'.$instance;
+				$costo=$method->cost;
+				if($costo==0)$costo="GRATIS";
+				else $costo="$".$costo;?>
+					<li class="capsula shipping" data-radio="shipping_method_0_<?=$id?><?=$instance?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
+						<?php
+						if ( 1 < count( $available_methods ) ) {
+							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
+						} else {
+							printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) ); // WPCS: XSS ok.
+						}?>
+						<label for="shipping_method_0_<?=$id?><?=$instance?>"><?=$titulo?></span></label>
+						<small>Costo del envío: <?=$costo?></small> 
+						<small>Maximo 24/48hs</small>
+
+						<input type="radio" name="shipping_method[0]" id="shipping_method_0_<?=$id?><?=$instance?>" value="<?=$value?>" >
+						<span class="checkmark"></span>
+						<?php
+						do_action( 'woocommerce_after_shipping_rate', $method, $index );
+						?>
+					</li>
 				<?php endforeach; ?>
 			</div>
 			<?php if ( is_cart() ) : ?>

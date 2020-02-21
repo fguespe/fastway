@@ -48,7 +48,7 @@ function fw_get_minicart(){
         array_push($carta,$arr);
     }
     $totals=WC()->cart->get_totals();
-
+    
     $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'min'=>$minimum);
     echo json_encode($totales);
     exit();

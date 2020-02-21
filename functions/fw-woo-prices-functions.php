@@ -45,6 +45,7 @@ function fw_apply_lili_discount( WC_Cart $cart ){
         }else if(count($catespromo)==1){
             $esdelapromo=true;
         }
+        
         if(!$esdelapromo)continue;
         $cantqueespromo+=$values['quantity'];
         //Aca si es de la cate
@@ -93,7 +94,7 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
 }
 
 if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount')){
-    
+    fw('entra a 1 ');
     add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
     function add_custom_price( $cart_object ) {
         foreach ( $cart_object->cart_contents as $key => $value ) {
@@ -108,6 +109,7 @@ if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount'
 
 }else if(!fw_theme_mod('fw_currency_conversion') && fw_theme_mod('fw_product_discount')){
     
+    fw('entra a 2 ');
     add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
     function add_custom_price( $cart_object ) {
         foreach ( $cart_object->cart_contents as $key => $value ) {
@@ -120,6 +122,7 @@ if(fw_theme_mod('fw_currency_conversion') && !fw_theme_mod('fw_product_discount'
     }
 }else if(fw_theme_mod('fw_currency_conversion') && fw_theme_mod('fw_product_discount')){
     
+    fw('entra a 3 ');
     add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
     function add_custom_price( $cart_object ) {
         foreach ( $cart_object->cart_contents as $key => $value ) {

@@ -77,6 +77,9 @@ function check_user_role($role){
 	return false;
 }
 
+function fw($string){
+  error_log("fwlog_ : ".$string);
+}
 function fw_log($string){
     error_log("fwlog_ : ".$string);
 }

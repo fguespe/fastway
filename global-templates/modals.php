@@ -471,13 +471,14 @@ function populatecart(){
     {'action': 'fw_get_minicart'}, 
     function (datos) { 
         datos=jQuery.parseJSON(datos)
+        console.log(datos)
         let jqe=''
         let totals=datos['totals']
 
         let total=totals['total']
         let min=datos['min']
         let subtotal=totals['subtotal']
-        let discount_total=total-subtotal
+        let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total'])
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']
@@ -501,6 +502,7 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
+        console.log(discount_total)
         if(discount_total<0){
             jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+discount_total+'</span></span></div>'
             jqe+='<div>TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'

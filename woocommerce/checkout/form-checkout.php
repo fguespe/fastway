@@ -174,13 +174,14 @@ update_option('testing_new_checkout',true)
 					</div>
       </div>
       <script>
-        jQuery('.capsula.shipping').on('click', function() {
-            var id = jQuery(this).data('radio')
+        jQuery('.capsula.shipping input').on('click', function() {
+            let capsula=jQuery(this).parent()
+            var id = capsula.data('radio')
             jQuery('#'+id).prop('checked', true);
-            let label=jQuery(this).data('label')+' '+jQuery(this).data('costo')
-            jQuery('.paso-shipping .box-step .subtitle').data('id',jQuery(this).data('value'))
+            let label=capsula.data('label')+' '+capsula.data('costo')
+            jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
             jQuery('.paso-shipping .box-step .subtitle').text(label)
-            set_shipping()
+            //set_shipping()
             if(paso==1)jQuery('.btn-checkout.continuar').prop('disabled', false);
         });
       </script>
@@ -329,42 +330,6 @@ function switchlogin(){
     jQuery('.paso-cuenta.uno').toggle()
     jQuery('.paso-cuenta.dos').toggle()
 }
-function set_shipping(){
-  let sm=jQuery('.paso-shipping .box-step .subtitle').data('id')
-
-  jQuery.get(ajaxurl,
-    {
-    'action': 'fw_cart_set_shipping',
-    'shipping_method_id': sm
-    }, 
-    function (datos) {
-      jQuery(document.body).trigger("update_checkout");
-    }
-  )
-}
-jQuery( document ).on( 'update_checkout', function(){
-  
-});
-/*
-jQuery( document ).on( 'update_checkout', function(){
-  let sm=jQuery('.paso-shipping .box-step .subtitle').data('id')
-  console.log('id',sm)
-
-  jQuery.get(ajaxurl,
-    {
-    'action': 'fw_get_cart_totals',
-    'shipping_method_id': sm
-    }, 
-    function (datos) { 
-        datos=jQuery.parseJSON(datos)
-        console.log(datos)
-        jQuery('#totales-subtotal').text('$'+datos['subtotal'])
-        jQuery('#totales-shipping').text('$'+datos['shipping_total'])
-        jQuery('#totales-descuento').text('$'+datos['discount_total'])
-        jQuery('#totales-total').text('$'+datos['total'])
-    })
-});
-*/
 
 </script>
 <style>
@@ -654,6 +619,13 @@ display:none !important;
 }
 .box-step{
   padding:10px !important;
+}
+table.shop_table{
+  border-top:0px !important;
+}
+
+.woocommerce-checkout #shipping_method label{
+	margin:0px !important;
 }
 </style>
 
