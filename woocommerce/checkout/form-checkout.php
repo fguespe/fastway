@@ -615,7 +615,6 @@ border:0px;
     font-size: 14px;
     color: #999;
     text-align: center;
-    margin: 15px 0;
 }
 .box-detail .login-btn a {
     display: inline-block;

@@ -4477,3 +4477,26 @@ max-width:none !important;
   margin-top:8px;
   font-size:14px;
 }
+
+.safe-box {    
+  width: 145px;
+  float: right;
+  padding-top: 3px;
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+
+  img {
+    max-width: 36px;
+    float: left;
+  }
+  p {
+    width: 105px;
+    text-align: left;
+    float: right;
+    padding: 1px 10px 0 4px;
+    margin: 0;
+    font-family: "Open sans", sans-serif;
+    font-size: 11px;
+  }
+}

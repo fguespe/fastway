@@ -170,13 +170,14 @@ if( !function_exists('fw_m_logo') ) {
 if( !function_exists('fw_compra_protegida') ) {
     add_shortcode('fw_compra_protegida', 'fw_compra_protegida');
     function fw_compra_protegida( $type="" ){
-        echo '<li class="text-right safe-box"> 
+        $devolver='';
+        /*
+        $devolver= '<li class="text-right safe-box"> 
         <img src="https://new-checkout.tiendanube.com/img/safe-shopping.svg" alt="Compra Segura">
-        <p>
-            <strong>Compra Segura</strong> 
-            100% Protegido
-        </p>
-    </li>';
+        <p><strong>Compra Segura</strong>
+        100% Protegido</p>
+    </li>';*/
+    return $devolver;
     }
 }
 if( !function_exists('fw_logo') ) {

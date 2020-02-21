@@ -2080,7 +2080,7 @@ footer .widget_nav_menu li a {
 }
 
 /* Filters woo*/
-.woocommerce-shop .product-categories .current-cat a {
+.woocommerce-shop .product-categories .current-cat > a {
   font-weight: bold !important;
 }
 .woocommerce-shop .widget h3.widget-title,
@@ -4552,6 +4552,28 @@ body .wpb_content_element {
   display: block;
   margin-top: 8px;
   font-size: 14px;
+}
+
+.safe-box {
+  width: 145px;
+  float: right;
+  padding-top: 3px;
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.safe-box img {
+  max-width: 36px;
+  float: left;
+}
+.safe-box p {
+  width: 105px;
+  text-align: left;
+  float: right;
+  padding: 1px 10px 0 4px;
+  margin: 0;
+  font-family: "Open sans", sans-serif;
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=theme.min.css.map */
