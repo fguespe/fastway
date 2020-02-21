@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 wc_print_notices();
 
-do_action( 'woocommerce_before_checkout_form', $checkout );
+
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
@@ -13,60 +13,9 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	return;
 }
 
-add_action( 'woocommerce_cart_calculate_fees','ts_add_discount', 20, 1 );
-function ts_add_discount( $cart_object ) {
-    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
-    // Mention the payment method e.g. cod, bacs, cheque or paypal
-    $payment_method = 'bacs';
-    // The percentage to apply
-    $percent = 2; // 2%
-    $cart_total = $cart_object->subtotal_ex_tax;
-    
-    $chosen_payment_method = WC()->session->get('chosen_payment_method');  //Get the selected payment method
-    if( $payment_method == $chosen_payment_method ){
-                
-                   $label_text = __( "PayPal Discount" );
-        
-                   // Calculating percentage
-                   $discount = number_format(($cart_total / 100) * $percent, 2);
-        
-                   // Adding the discount
-                   $cart_object->add_fee( $label_text, -$discount, false );
-    }
-}
-
-add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
-function fw_custom_override_checkout_fieldss( $fields ) {
-    $fields['billing']['billing_dni'] = array(
-      'label'     => fw_theme_mod( 'fw_cuit_label'),
-      'placeholder'     => fw_theme_mod( 'fw_cuit_label'),
-      'required'  => true,
-      'class'     => array('form-row-wide'),
-      'clear'     => true,
-      'priority' => 31
-    );
-
-    $fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
-    $fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
-    $fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
-    $fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
-    $fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
-    $fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
-    
-    //unset($fields['billing']['billing_email']);
-    //unset($fields['billing']['billing_country']);
-    unset($fields['billing']['billing_address_2']);
-    if(!fw_theme_mod('fw_sell_to_business')){
-      unset($fields['billing']['billing_company']);
-      unset($fields['billing']['billing_dni']);
-
-    }
-
-     return $fields;
-}
-
 
 if(!isset($_GET["new"]) || $_GET["new"]!=='yes'){
+do_action( 'woocommerce_before_checkout_form', $checkout );
 update_option('testing_new_checkout',false)
 ?>
 
@@ -130,7 +79,37 @@ display:block !important;
 
 <?php }else if(isset($_GET["new"]) && $_GET["new"]==='yes'){ 
   
-update_option('testing_new_checkout',true)
+update_option('testing_new_checkout',true);
+
+add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
+function fw_custom_override_checkout_fieldss( $fields ) {
+    $fields['billing']['billing_dni'] = array(
+      'label'     => fw_theme_mod( 'fw_cuit_label'),
+      'placeholder'     => fw_theme_mod( 'fw_cuit_label'),
+      'required'  => true,
+      'class'     => array('form-row-wide'),
+      'clear'     => true,
+      'priority' => 31
+    );
+
+    $fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
+    $fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
+    $fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
+    $fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
+    $fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
+    $fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
+    
+    unset($fields['billing']['billing_email']);
+    //unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_address_2']);
+    if(!fw_theme_mod('fw_sell_to_business')){
+      unset($fields['billing']['billing_company']);
+      unset($fields['billing']['billing_dni']);
+
+    }
+    return $fields;
+}
+
 ?>
 
   <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
@@ -191,7 +170,7 @@ update_option('testing_new_checkout',true)
       <?php if(!is_user_logged_in()){ ?>
       <div class="box-detail paso-cuenta uno" style="display:none;">
           <h1><span class="icon-paso">3</span>Tu cuenta</h1>
-					<input type="email" id="correo" name="billing_email" placeholder="Email">
+          <input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="" autocomplete="email username">
 					<div class="login-btn">
 						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
 					</div>
@@ -199,9 +178,14 @@ update_option('testing_new_checkout',true)
       </div>
       <div class="box-detail paso-cuenta dos" style="display: none;">
           <h1><span class="icon-paso">3</span>Ingresá a tu cuenta</h1>
-
-					<input type="email" id="correo_login" name="correo_login" placeholder="Email" required="">
-					<input type="password" id="clave_login" name="clave_login" placeholder="Contraseña" required="" style="">
+          <div id="login" action="login" method="post">
+            <input id="username" type="text" name="username" placeholder="Email o username">
+            <input id="password" type="password" name="password" placeholder="Contraseña">
+            <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
+            <p class="status"></p>
+            <input class="submit_button" type="button" value="Login" onclick="fw_login()" name="submit">
+            <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+        </div>
 
 					<div class="login-btn">
 						¿Aún no tenés cuenta?
@@ -288,9 +272,56 @@ var paso = 1
 var shippingLabel=''
 var pagosLabel=''
 
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+function fw_login(){
+    
+    jQuery.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url:ajaxurl,
+          data: { 
+              action: 'fw_ajax_login', //calls wp_ajax_nopriv_ajaxlogin
+              username: jQuery('div#login #username').val(), 
+              password: jQuery('div#login #password').val(), 
+              security: jQuery('div#login #security').val() },
+          success: function(data){
+            console.log(data)
+            if(data.loggedin){
+              nextpaso()
+            }else{
+              jQuery('div#login p.status').text(data.message);
+            }
+          }
+      });
+}
+
 jQuery(document).ready( function(jQuery) {
   jQuery('.checkout_coupon').show()
+  jQuery('#billing_email').on('input', function(e){
+    console.log('input');
+    let val=jQuery('#billing_email').val()
+    console.log(val)
+    if(isEmail(val) && paso==3){
+      jQuery('.btn-checkout.continuar').prop('disabled', false);
+    }else{
+      jQuery('.btn-checkout.continuar').prop('disabled', true);
+    }
+  })
+  // Show the login dialog box on click
+  jQuery('a#show_login').on('click', function(e){
+      jQuery('body').prepend('<div class="login_overlay"></div>');
+      jQuery('div#login').fadeIn(500);
+      jQuery('div.login_overlay, div#login a.close').on('click', function(){
+        jQuery('div.login_overlay').remove();
+        jQuery('div#login').hide();
+      });
+  });
 })
+
+
 function editpaso(ppaso){
   let type=''
   if(ppaso==1){//shipping
@@ -321,20 +352,22 @@ function nextpaso(){
     jQuery('.paso-pagos').show()
 
     fillNextStep('shipping')
-  }
-  if(paso==3){
+  }else if(paso==3){
     jQuery('.paso-cuenta.uno').show()
-    jQuery('.paso-cuenta.tres').show()
-    jQuery('.btn-checkout.continuar').hide()
-    jQuery('.btn-checkout.finalizar').show()
+    //jQuery('.paso-cuenta.tres').show()
+   // jQuery('.btn-checkout.continuar').hide()
+   // jQuery('.btn-checkout.finalizar').show()
 
     
     fillNextStep('pagos')
+  }else  if(paso==4){
+
+    jQuery('.paso-cuenta.tres').show()
+    jQuery('.btn-checkout.continuar').hide()
+    jQuery('.btn-checkout.finalizar').show()
   }
   jQuery('.btn-checkout.continuar').prop('disabled', true);
-  if(paso==4){
-
-  }
+ 
 }
 function switchlogin(){
     jQuery('.paso-cuenta.uno').toggle()
@@ -459,7 +492,7 @@ function switchlogin(){
 border:0px;
 }
 .box-detail {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -598,7 +631,8 @@ display:none !important;
 .box-detail input{
   margin:0px;
 }
-#billing_country_field,#billing_email {
+
+#billing_country_field {
   display: none;
 }
 .woocommerce-checkout .wc_payment_methods, .woocommerce-account .wc_payment_methods{
@@ -662,6 +696,10 @@ table.shop_table{
 .woocommerce-checkout #shipping_method label{
 	margin:0px !important;
 }
+div#login input{
+  width:48%;
+  display:inline-block !important;
+}
 </style>
 
 <?php
@@ -670,6 +708,7 @@ table.shop_table{
 
 
 <script>
+
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
