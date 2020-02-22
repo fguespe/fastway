@@ -33,15 +33,20 @@ if(get_option('testing_new_checkout')){
 		<?php if ( $available_methods ) : ?>
 			<div id="shipping_method" class="woocommerce-shipping-methods">
 			<?php foreach ( $available_methods as $method ) : 
-				
+				error_log(print_r($product,true));
 				$titulo=$method->label;
 				$id=$method->method_id;
+				$value=$method->id;
+				$value=str_replace(",","",$value);
 				$instance=$method->instance_id;
-				$value=$id.':'.$instance;
+
 				$costo=$method->cost;
 				if($costo==0)$costo="GRATIS";
-				else $costo="$".$costo;?>
-					<li class="capsula shipping" data-radio="shipping_method_0_<?=$id?><?=$instance?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
+				else $costo="$".$costo;
+
+				error_log()
+				?>
+					<li class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php
 						if ( 1 < count( $available_methods ) ) {
 							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
@@ -50,9 +55,10 @@ if(get_option('testing_new_checkout')){
 						}?>
 						<label for="shipping_method_0_<?=$id?><?=$instance?>"><?=$titulo?></span></label>
 						<small>Costo del envío: <?=$costo?></small> 
-						<small>Maximo 24/48hs</small>
-
+						<small></small>
+						<?php if($id!=='mercadoenvios-shipping'){ ?>
 						<input type="radio" name="shipping_method[0]" id="shipping_method_0_<?=$id?><?=$instance?>" value="<?=$value?>" >
+						<?php } ?>
 						<span class="checkmark"></span>
 						<?php
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );

@@ -8,9 +8,13 @@
             <div class="modal-body mx-3">
                 <div class="container"></div>
                 <div style="padding:1em;">
-                    <div class="row d-flex justify-content-between">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div>
                         <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar">Comprar</a>
+                        <a type="button" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" > Ir al carrito</a>
+                        </div>
+                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar">Comprar</button>
+
                     </div>
                 </div>
             </div>

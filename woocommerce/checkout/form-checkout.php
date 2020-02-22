@@ -6,7 +6,6 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_
 wc_print_notices();
 
 
-
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
 	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'fastway' ) );
@@ -14,73 +13,8 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 }
 
 
-if(!isset($_GET["new"]) || $_GET["new"]!=='yes'){
-do_action( 'woocommerce_before_checkout_form', $checkout );
-update_option('testing_new_checkout',false)
-?>
-
-<form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
-<div class="mostrar" style="display:none;text-align:center;width:100%;">
-  <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;"></i>
-  <span>Estamos procesando su pedido...aguarde unos segundos.</span>
-</div>
-<style>
-
-form.processing div:not(.mostrar){
-display:none;
-}
-
-form.processing .mostrar{
-display:block !important;
-
-}
-</style>
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-    <div class="col-lg-7 col-sm-12">
-      <div class="fw_checkout-main" id="customer_details">
-         <div class="woocommerce-billing-fields">
-            <?php do_action( 'woocommerce_checkout_billing' ); ?>
-            <?php do_action( 'woocommerce_checkout_shipping' ); ?>
-         </div>
-      </div>
-   </div>
-  <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-   <div class="col-lg-5  col-sm-12" >
-    <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
-    <div class="fw_summary-box">
-
-    <h3 ><?php echo __('Order details','woocommerce')?><a class="returncart" href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a></h3> 
-        
-        </form>
-        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
-        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-          <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
-          <p class="form-row form-row-first">
-            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
-            <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
-          </p>
-          <div class="clear"></div>
-        </form>
-        <?php } ?>
-      
-        <?php woocommerce_order_review() ?>
-        <div class="fw_block-overlay"></div>
-    </div>
-    <h3 id="" class="mt20" style="margin-top:30px;"><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
-    
-    <?php woocommerce_checkout_payment() ?>
-    <p class="description"><?=fw_theme_mod("fw_label_debajo_checkout_message")?></p>
-</form>
-
-
-<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-
-
-
-<?php }else if(isset($_GET["new"]) && $_GET["new"]==='yes'){ 
-  
+if(!(isset($_GET["old"]) && $_GET["old"]==='yes') && (  (isset($_GET["new"]) && $_GET["new"]==='yes')  ||    ($_SERVER['HTTP_HOST']==='fwtest.fastway' || $_SERVER['HTTP_HOST']==='demo1.ecomaltoweb.kinsta.cloud/') ) ){
 update_option('testing_new_checkout',true);
-
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
 function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['billing']['billing_dni'] = array(
@@ -98,7 +32,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
     $fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
     $fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
-    
+ 
+    error_log(print_r($fields,true));
     unset($fields['billing']['billing_email']);
     //unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_address_2']);
@@ -112,7 +47,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 ?>
 
-  <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
+<form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
     <div class="mostrar" style="display:none;text-align:center;width:100%;">
         <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
         <span>Estamos procesando su pedido...aguarde unos segundos.</span>
@@ -127,57 +62,17 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         }
     </style>
     <div class="col-lg-8 col-sm-12">
-    <div class="box-detail paso-shipping">
-          <h1><span class="icon-paso">1</span> ¿Cómo te entregamos la compra?</h1>
-
-      
-          <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
-
-          <?php wc_cart_totals_shipping_html(); ?>
-
-          <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
-
-          <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(1)">modificar</a>
-						<span class="icon"><i class="fa fa-check"></i></span>
-						<span class="title">¿Cómo te entregamos la compra?</span>
-						<span class="subtitle" data-id=""></span>					
-					</div>
-      </div>
-      <script>
-        jQuery('.capsula.shipping input').on('click', function() {
-            let capsula=jQuery(this).parent()
-            var id = capsula.data('radio')
-            jQuery('#'+id).prop('checked', true);
-            let label=capsula.data('label')+' '+capsula.data('costo')
-            jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
-            jQuery('.paso-shipping .box-step .subtitle').text(label)
-            //set_shipping()
-            if(paso==1)jQuery('.btn-checkout.continuar').prop('disabled', false);
-        });
-      </script>
-      <div class="box-detail paso-pagos" style="display:none;">
-          <h1><span class="icon-paso">2</span>¿Cómo vas a pagar?</h1>
-          <?php woocommerce_checkout_payment() ?>
-
-          <div class="capsula box-step" style="display:none;">
-            <a class="editar" onclick="editpaso(2)">modificar</a>
-            <span class="icon"><i class="fa fa-check"></i></span>
-            <span class="title">¿Cómo vas a pagar?</span>
-            <span class="subtitle" data-id=""></span>					
-          </div>
-      </div>
-      <?php if(!is_user_logged_in()){ ?>
-      <div class="box-detail paso-cuenta uno" style="display:none;">
-          <h1><span class="icon-paso">3</span>Tu cuenta</h1>
-          <input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="" autocomplete="email username">
+    <?php if(!is_user_logged_in()){ ?>
+      <div class="box-detail paso-cuenta uno" style="display:block;">
+          <h1><span class="icon-paso">1</span>Tu cuenta</h1>
+          <input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
 					<div class="login-btn">
 						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
 					</div>
 				  <div class="clear"></div>	
       </div>
       <div class="box-detail paso-cuenta dos" style="display: none;">
-          <h1><span class="icon-paso">3</span>Ingresá a tu cuenta</h1>
+          <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
           <div id="login" action="login" method="post">
             <input id="username" type="text" name="username" placeholder="Email o username">
             <input id="password" type="password" name="password" placeholder="Contraseña">
@@ -194,13 +89,19 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 				<div class="clear"></div>	
       </div>
-      <?php }?>
-      <div class="box-detail paso-cuenta tres" style="display:none;">
-          <h1><span class="icon-paso">4</span>Tus datos</h1>
-         
+      <?php }else{ ?>
+        <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
+      <?php } ?>
+      <div class="box-detail paso-cuenta tres" style="display:block;">
+          <?php if(!is_user_logged_in()){ ?>
+          <h1><span class="icon-paso">2</span>Tus datos</h1>
+          <?php }else{ ?>
+          <h1><span class="icon-paso">1</span>Tus datos</h1>
+          <?php } ?>
+          
           <div class="woocommerce-billing-fields">
 
-            <div class="woocommerce-billing-fields__field-wrapper">
+            <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
 
@@ -210,9 +111,56 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               ?>
             </div>
           </div>
-
+          
+          <div class="capsula box-step" style="display:none;">
+						<a class="editar" onclick="editpaso(1)">modificar</a>
+						<span class="icon"><i class="fa fa-check"></i></span>
+						<span class="title">Tus datos</span>
+						<span class="subtitle" data-id=""></span>					
+					</div> 
         
       </div>
+    <div class="box-detail paso-shipping" style="display:none;">
+          <h1><span class="icon-paso">2</span> ¿Cómo te entregamos la compra?</h1>
+
+      
+          <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+
+          <?php wc_cart_totals_shipping_html(); ?>
+
+          <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+
+          <div class="capsula box-step" style="display:none;">
+						<a class="editar" onclick="editpaso(2)">modificar</a>
+						<span class="icon"><i class="fa fa-check"></i></span>
+						<span class="title">¿Cómo te entregamos la compra?</span>
+						<span class="subtitle" data-id=""></span>					
+					</div>
+      </div>
+      <script>
+        jQuery('.capsula.shipping input').on('click', function() {
+            let capsula=jQuery(this).parent()
+            var id = capsula.data('radio')
+            jQuery('#'+id).prop('checked', true);
+            let label=capsula.data('label')+' '+capsula.data('costo')
+            jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
+            jQuery('.paso-shipping .box-step .subtitle').text(label)
+            //set_shipping()
+            if(paso==2)jQuery('.btn-checkout.continuar').prop('disabled', false);
+        });
+      </script>
+      <div class="box-detail paso-pagos" style="display:none;">
+          <h1><span class="icon-paso">3</span>¿Cómo vas a pagar?</h1>
+          <?php woocommerce_checkout_payment() ?>
+
+          <div class="capsula box-step" style="display:none;">
+            <a class="editar" onclick="editpaso(3)">modificar</a>
+            <span class="icon"><i class="fa fa-check"></i></span>
+            <span class="title">¿Cómo vas a pagar?</span>
+            <span class="subtitle" data-id=""></span>					
+          </div>
+      </div>
+      
     </div>
             
     <div class="col-lg-4  col-sm-12 order-container" >
@@ -237,7 +185,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
             <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
             <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
-            <button type="submit" class="btn-checkout finalizar" style="display:none"><?=fw_theme_mod('fw_place_order_text')?></button>
+            <button type="submit" class="btn-checkout finalizar" disabled style="display:none"><?=fw_theme_mod('fw_place_order_text')?></button>
 
         </div>
 
@@ -297,14 +245,34 @@ function fw_login(){
           }
       });
 }
+function verificarFields(){
+  var isValid=true
+  jQuery('#billing_form input').each(function(index,data) {
+    var element = jQuery(this);
+    if (element.val() == "") {
+        isValid = false;
+    }
+  });
+  if(isValid){
 
+    let mailing=jQuery('#billing_email').val()
+    console.log('jaa',mailing)
+    jQuery('.paso-cuenta .box-step .subtitle').text(mailing)
+  }
+  jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
+}
 jQuery(document).ready( function(jQuery) {
+
   jQuery('.checkout_coupon').show()
+  verificarFields();
+  jQuery('#billing_form input').on('input', function(e){
+    verificarFields()
+  });
+  
   jQuery('#billing_email').on('input', function(e){
     console.log('input');
     let val=jQuery('#billing_email').val()
-    console.log(val)
-    if(isEmail(val) && paso==3){
+    if(isEmail(val) && paso==1){
       jQuery('.btn-checkout.continuar').prop('disabled', false);
     }else{
       jQuery('.btn-checkout.continuar').prop('disabled', true);
@@ -325,15 +293,19 @@ jQuery(document).ready( function(jQuery) {
 function editpaso(ppaso){
   let type=''
   if(ppaso==1){//shipping
+    type='cuenta'
+    jQuery('.paso-shipping').hide()
+    jQuery('.paso-pagos').hide()
+    verificarFields()
+    paso=1
+  }else if(ppaso==2){//shipping
     type='shipping'
     jQuery('.paso-pagos').hide()
-    paso=1
-  }else if(ppaso==2){
-    type='pagos'
     paso=2
+  }else if(ppaso==3){
+    type='pagos'
+    paso=3
   }
-
-  jQuery('.paso-cuenta').hide()
   jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
   jQuery('.paso-'+type+' h1').show()
@@ -349,22 +321,20 @@ function nextpaso(){
   paso++
 
   if(paso==2){
-    jQuery('.paso-pagos').show()
+    jQuery('.paso-shipping').show()
 
-    fillNextStep('shipping')
+    fillNextStep('cuenta')
+
   }else if(paso==3){
-    jQuery('.paso-cuenta.uno').show()
-    //jQuery('.paso-cuenta.tres').show()
-   // jQuery('.btn-checkout.continuar').hide()
-   // jQuery('.btn-checkout.finalizar').show()
 
-    
-    fillNextStep('pagos')
-  }else  if(paso==4){
-
-    jQuery('.paso-cuenta.tres').show()
+    jQuery('.paso-pagos').show()
+    fillNextStep('shipping')
     jQuery('.btn-checkout.continuar').hide()
     jQuery('.btn-checkout.finalizar').show()
+
+  }else  if(paso==4){
+
+    //fillNextStep('pagos')
   }
   jQuery('.btn-checkout.continuar').prop('disabled', true);
  
@@ -512,7 +482,7 @@ border:0px;
     height: 32px;
     font-size: 20px;
     border-radius: 100%;
-    background: #39b54a;
+    background: var(--main);
     color: #fff;
     float: left;
     margin: 0 10px 0 0;
@@ -649,7 +619,7 @@ display:none !important;
 	width: 32px !important;
 	height: 32px !important;
 	border-radius: 100%;
-	border: 1px solid #39b54a;
+	border: 1px solid var(--main);
 	float: left;
 	margin: 0 10px 0 0;
 }
@@ -661,7 +631,7 @@ display:none !important;
 	line-height: 32px;
 	display: block;
 	font-size: 18px !important;
-	color: #39b54a;
+	color: var(--main);
 }
 
 .box-step .title {
@@ -700,6 +670,73 @@ div#login input{
   display:inline-block !important;
 }
 </style>
+<?php
+ }else if(isset($_GET["old"]) && $_GET["old"]==='yes')  { 
+  
+do_action( 'woocommerce_before_checkout_form', $checkout );
+update_option('testing_new_checkout',false)
+
+?>
+
+
+<form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<div class="mostrar" style="display:none;text-align:center;width:100%;">
+  <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;"></i>
+  <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+</div>
+<style>
+
+form.processing div:not(.mostrar){
+display:none;
+}
+
+form.processing .mostrar{
+display:block !important;
+
+}
+</style>
+		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+    <div class="col-lg-7 col-sm-12">
+      <div class="fw_checkout-main" id="customer_details">
+         <div class="woocommerce-billing-fields">
+            <?php do_action( 'woocommerce_checkout_billing' ); ?>
+            <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+         </div>
+      </div>
+   </div>
+  <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+   <div class="col-lg-5  col-sm-12" >
+    <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
+    <div class="fw_summary-box">
+
+    <h3 ><?php echo __('Order details','woocommerce')?><a class="returncart" href="<?=wc_get_cart_url()?>" style="font-size:12px;"><?php echo __('Return to cart','woocommerce')?></a></h3> 
+        
+        </form>
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
+        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+          <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
+          <p class="form-row form-row-first">
+            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
+            <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+          </p>
+          <div class="clear"></div>
+        </form>
+        <?php } ?>
+      
+        <?php woocommerce_order_review() ?>
+        <div class="fw_block-overlay"></div>
+    </div>
+    <h3 id="" class="mt20" style="margin-top:30px;"><?php echo 'Seleccione una forma de pago'//__('Payment method','woocommerce')?></h3>
+    
+    <?php woocommerce_checkout_payment() ?>
+    <p class="description"><?=fw_theme_mod("fw_label_debajo_checkout_message")?></p>
+</form>
+
+
+<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+
+
+
 
 <?php
 
