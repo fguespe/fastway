@@ -1392,8 +1392,8 @@ set_theme_mod('checkout-minimal',true);
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
-	'label'       => __( 'Checkout Minimal ', 'fastway' ),
-	'description'	=> 'Hides header and footer',
+	'label'       => __( 'Vender a empresas', 'fastway' ),
+	'description'	=> 'Pide cuit y nombre de empresa en los campos del checkout',
 	'section'     => 'section_woo',
 	'default'     => 0,
 	'choices' => array(

@@ -33,7 +33,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
     $fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
  
-    error_log(print_r($fields,true));
     unset($fields['billing']['billing_email']);
     //unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_address_2']);
@@ -257,9 +256,9 @@ function fw_login(){
             console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
-              //jQuery('#billing_email').val('#login #username')
-              //jQuery('.paso-cuenta.dos .box-step .subtitle').text(val)
-              //nextpaso()
+              jQuery('#billing_email').val(data.email)
+              jQuery('.paso-cuenta.dos .box-step .subtitle').text(data.email)
+              nextpaso()
               
             }else{
               jQuery('#login .status').html('<span style="color:red;" >Login incorrecto</span>') 

@@ -17,18 +17,19 @@ function fw_cart_set_shipping(){
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){
-  fw_log($_POST['security']);
-  $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
-  switch ( $result ) {
-    case 1:
-        fw_log('Nonce is less than 12 hours old');
-        break;
-    case 2:
-      fw_log( 'Nonce is between 12 and 24 hours old');
-        break;
-    default:
-    fw_log('Nonce is invalid' );
-        exit( 'Nonce is invalid' );
+  if(!isLocalhost()){
+    $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
+    switch ( $result ) {
+      case 1:
+          fw_log('Nonce is less than 12 hours old');
+          break;
+      case 2:
+        fw_log( 'Nonce is between 12 and 24 hours old');
+          break;
+      default:
+          fw_log('Nonce is invalid' );
+          exit( 'Nonce is invalid' );
+    }
   }
   // Nonce is checked, get the POST data and sign user on
   $info = array();
@@ -40,7 +41,7 @@ function fw_ajax_login(){
   if ( is_wp_error($user_signon) ){
       echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
   } else {
-      echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+      echo json_encode(array('loggedin'=>true,'email'=>$user_signon->user_email, 'message'=>__('Login successful, redirecting...')));
   }
 
   die();
