@@ -174,7 +174,7 @@ if( !function_exists('fw_compra_protegida') ) {
         if(get_option('testing_new_checkout')){
             $devolver= '
             <li class="text-right safe-box"> 
-                <img width="36" src="https://new-checkout.tiendanube.com/img/safe-shopping.svg" alt="Compra Segura">
+                <img width="36" src="/wp-content/themes/fastway/assets/img/safe-shopping.svg" alt="Compra Segura">
                 <p><strong>Compra Segura</strong>
                 100% Protegido</p>
             </li>';

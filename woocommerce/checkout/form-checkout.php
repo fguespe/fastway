@@ -552,6 +552,7 @@ border:0px;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+padding-bottom:15px !important;
 }
 .box-detail .capsula small {
     font-size: 14px;
