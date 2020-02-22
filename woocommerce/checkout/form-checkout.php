@@ -46,7 +46,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 }
 
 ?>
-
+<script>
+  var paso = 1
+</script>
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
     <div class="mostrar" style="display:none;text-align:center;width:100%;">
         <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
@@ -63,6 +65,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     </style>
     <div class="col-lg-8 col-sm-12">
     <?php if(!is_user_logged_in()){ ?>
+
       <div class="box-detail paso-cuenta uno" style="display:block;">
           <h1><span class="icon-paso">1</span>Tu cuenta</h1>
           <div><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
@@ -103,6 +106,10 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 				<div class="clear"></div>	
       </div>
       <?php }else{ ?>
+        <script>
+          paso = 2
+          console.log(paso)
+        </script>
         <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
       <?php } ?>
       <div class="box-detail paso-datos" style="display:<?=is_user_logged_in()?'block':'none';?>;">
@@ -228,7 +235,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 </form>
 <script>
-var paso = 1
 var shippingLabel=''
 var pagosLabel=''
 
