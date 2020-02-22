@@ -65,10 +65,17 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     <?php if(!is_user_logged_in()){ ?>
       <div class="box-detail paso-cuenta uno" style="display:block;">
           <h1><span class="icon-paso">1</span>Tu cuenta</h1>
-          <input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
+          <div><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
 					<div class="login-btn">
 						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
 					</div>
+
+          <div class="capsula box-step" style="display:none;">
+						<a class="editar" onclick="editpaso(1)">modificar</a>
+						<span class="icon"><i class="fa fa-check"></i></span>
+						<span class="title">Tu cuenta</span>
+						<span class="subtitle" data-id=""></span>					
+					</div> 
 				  <div class="clear"></div>	
       </div>
       <div class="box-detail paso-cuenta dos" style="display: none;">
@@ -82,17 +89,23 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
         </div>
 
-					<div class="login-btn">
-						¿Aún no tenés cuenta?
-						<a class="registro" onclick="switchlogin()">Regresar</a>
-					</div>
+        <div class="login-btn">
+          ¿Aún no tenés cuenta?
+          <a class="registro" onclick="switchlogin()">Regresar</a>
+        </div>
 
+        <div class="capsula box-step" style="display:none;">
+          <a class="editar" onclick="editpaso(1)">modificar</a>
+          <span class="icon"><i class="fa fa-check"></i></span>
+          <span class="title">Tus datos</span>
+          <span class="subtitle" data-id=""></span>					
+        </div> 
 				<div class="clear"></div>	
       </div>
       <?php }else{ ?>
         <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
       <?php } ?>
-      <div class="box-detail paso-cuenta tres" style="display:block;">
+      <div class="box-detail paso-datos" style="display:<?=is_user_logged_in()?'block':'none';?>;">
           <?php if(!is_user_logged_in()){ ?>
           <h1><span class="icon-paso">2</span>Tus datos</h1>
           <?php }else{ ?>
@@ -113,7 +126,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           </div>
           
           <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(1)">modificar</a>
+						<a class="editar" onclick="editpaso(2)">modificar</a>
 						<span class="icon"><i class="fa fa-check"></i></span>
 						<span class="title">Tus datos</span>
 						<span class="subtitle" data-id=""></span>					
@@ -131,7 +144,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 
           <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(2)">modificar</a>
+						<a class="editar" onclick="editpaso(3)">modificar</a>
 						<span class="icon"><i class="fa fa-check"></i></span>
 						<span class="title">¿Cómo te entregamos la compra?</span>
 						<span class="subtitle" data-id=""></span>					
@@ -145,8 +158,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             let label=capsula.data('label')+' '+capsula.data('costo')
             jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
             jQuery('.paso-shipping .box-step .subtitle').text(label)
-            //set_shipping()
-            if(paso==2)jQuery('.btn-checkout.continuar').prop('disabled', false);
+            if(paso==3)jQuery('.btn-checkout.continuar').prop('disabled', false);
         });
       </script>
       <div class="box-detail paso-pagos" style="display:none;">
@@ -154,7 +166,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <?php woocommerce_checkout_payment() ?>
 
           <div class="capsula box-step" style="display:none;">
-            <a class="editar" onclick="editpaso(3)">modificar</a>
+            <a class="editar" onclick="editpaso(4)">modificar</a>
             <span class="icon"><i class="fa fa-check"></i></span>
             <span class="title">¿Cómo vas a pagar?</span>
             <span class="subtitle" data-id=""></span>					
@@ -245,6 +257,10 @@ function fw_login(){
           }
       });
 }
+function verificarEmail(){
+  let isValid= isEmail(jQuery('#billing_email').val())
+  jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
+}
 function verificarFields(){
   var isValid=true
   jQuery('#billing_form input').each(function(index,data) {
@@ -254,10 +270,8 @@ function verificarFields(){
     }
   });
   if(isValid){
-
-    let mailing=jQuery('#billing_email').val()
-    console.log('jaa',mailing)
-    jQuery('.paso-cuenta .box-step .subtitle').text(mailing)
+    let mailing=jQuery('#billing_address_1').val()
+    jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
   jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
 }
@@ -270,10 +284,10 @@ jQuery(document).ready( function(jQuery) {
   });
   
   jQuery('#billing_email').on('input', function(e){
-    console.log('input');
     let val=jQuery('#billing_email').val()
     if(isEmail(val) && paso==1){
       jQuery('.btn-checkout.continuar').prop('disabled', false);
+      jQuery('.paso-cuenta .box-step .subtitle').text(val)
     }else{
       jQuery('.btn-checkout.continuar').prop('disabled', true);
     }
@@ -293,19 +307,31 @@ jQuery(document).ready( function(jQuery) {
 function editpaso(ppaso){
   let type=''
   if(ppaso==1){//shipping
-    type='cuenta'
-    jQuery('.paso-shipping').hide()
-    jQuery('.paso-pagos').hide()
+    resetStep('cuenta')
+    jQuery('.paso-cuenta.uno').show()
+    resetStep('datos')
+    resetStep('shipping')
+    resetStep('pagos')
+    verificarEmail()
     verificarFields()
     paso=1
   }else if(ppaso==2){//shipping
-    type='shipping'
-    jQuery('.paso-pagos').hide()
+    resetStep('datos')
+    jQuery('.paso-datos').show()
+    resetStep('shipping')
+    resetStep('pagos')
+    verificarFields()
     paso=2
   }else if(ppaso==3){
-    type='pagos'
+    resetStep('shipping')
+    jQuery('.paso-shipping').show()
+    resetStep('pagos')
     paso=3
   }
+}
+function resetStep(type){
+
+  jQuery('.paso-'+type).hide()
   jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
   jQuery('.paso-'+type+' h1').show()
@@ -319,22 +345,23 @@ function fillNextStep(type){
 }
 function nextpaso(){
   paso++
-
   if(paso==2){
-    jQuery('.paso-shipping').show()
-
     fillNextStep('cuenta')
+    jQuery('.paso-datos').show()
+
 
   }else if(paso==3){
+    fillNextStep('datos')
+    jQuery('.paso-shipping').show()
 
-    jQuery('.paso-pagos').show()
+
+  }else if(paso==4){
     fillNextStep('shipping')
+    jQuery('.paso-pagos').show()
     jQuery('.btn-checkout.continuar').hide()
+    jQuery('.btn-checkout.finalizar').prop('disabled', true);
     jQuery('.btn-checkout.finalizar').show()
 
-  }else  if(paso==4){
-
-    //fillNextStep('pagos')
   }
   jQuery('.btn-checkout.continuar').prop('disabled', true);
  
