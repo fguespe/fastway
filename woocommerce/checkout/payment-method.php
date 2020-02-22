@@ -37,6 +37,7 @@ jQuery('.capsula.payment input').on('click', function() {
 	if(paso==3)jQuery('.btn-checkout').prop('disabled', false);
 	let label=jQuery(this).parent().data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
+  	jQuery('.btn-checkout.finalizar').show()
   	jQuery('.btn-checkout.finalizar').prop('disabled', false);
 
 });

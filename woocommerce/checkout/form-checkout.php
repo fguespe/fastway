@@ -102,6 +102,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <span class="title">Tus datos</span>
           <span class="subtitle" data-id=""></span>					
         </div> 
+        <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
 				<div class="clear"></div>	
       </div>
       <?php }else{ ?>
@@ -135,7 +136,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 						<span class="icon"><i class="fa fa-check"></i></span>
 						<span class="title">Tus datos</span>
 						<span class="subtitle" data-id=""></span>					
-					</div> 
+          </div> 
+          <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+          <div class="clear"></div>	
         
       </div>
     <div class="box-detail paso-shipping" style="display:none;">
@@ -154,6 +157,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 						<span class="title">¿Cómo te entregamos la compra?</span>
 						<span class="subtitle" data-id=""></span>					
 					</div>
+          <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+          <div class="clear"></div>	
       </div>
       <script>
         jQuery('.capsula.shipping input').on('click', function() {
@@ -201,7 +206,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <div class="cart-form-actions">
 
             <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
             <button type="submit" class="btn-checkout finalizar" disabled style="display:none"><?=fw_theme_mod('fw_place_order_text')?></button>
 
         </div>
@@ -330,7 +334,7 @@ jQuery(document).ready( function(jQuery) {
 
 function editpaso(ppaso){
   let type=''
-  if(ppaso==1){//shipping
+  if(ppaso==1){//
     resetStep('cuenta')
     jQuery('.paso-cuenta.uno').show()
     resetStep('datos')
@@ -348,18 +352,19 @@ function editpaso(ppaso){
     paso=2
   }else if(ppaso==3){
     resetStep('shipping')
-    jQuery('.paso-shipping').show()
     resetStep('pagos')
+    jQuery('.paso-shipping').show()
     paso=3
   }
 }
 function resetStep(type){
 
   jQuery('.paso-'+type).hide()
-  jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
+  jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' h1').show()
-  jQuery('.btn-checkout.continuar').show()
+  jQuery('.paso-'+type+' button').show()
+  //jQuery('.btn-checkout.continuar').show()
   jQuery('.btn-checkout.finalizar').hide()
 
   unselect(type=='shipping'?'shipping_method[0]':'payment_method')
@@ -369,6 +374,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' .box-step').show()
   jQuery('.paso-'+type+' div:not(.box-step)').hide()
   jQuery('.paso-'+type+' h1').hide()
+  jQuery('.paso-'+type+' button').hide()
 }
 function nextpaso(){
   paso++
@@ -387,7 +393,7 @@ function nextpaso(){
     jQuery('.paso-pagos').show()
     jQuery('.btn-checkout.continuar').hide()
     jQuery('.btn-checkout.finalizar').prop('disabled', true);
-    jQuery('.btn-checkout.finalizar').show()
+    //jQuery('.btn-checkout.finalizar').show()
 
   }
   jQuery('.btn-checkout.continuar').prop('disabled', true);
@@ -500,7 +506,7 @@ function switchlogin(){
     font-size: 14px;
     color: #3483fa;
 }
-.cart-form-actions button {
+.btn-checkout {
     display: inline-block;
     float: right;
     padding: 0 25px;
@@ -513,7 +519,7 @@ function switchlogin(){
     border-radius: 3px;
     text-transform: uppercase;
     cursor: pointer;
-border:0px;
+    border:0px;
 }
 .box-detail {
     /*margin-bottom: 20px;*/
