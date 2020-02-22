@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if(get_option('testing_new_checkout')){ 
+if(fw_theme_mod('fw_new_checkout')){ 
 ?>
 
 <div class="capsula payment payment_method_<?php echo esc_attr( $gateway->id ); ?>" data-label="<?=$gateway->title?>">

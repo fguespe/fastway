@@ -1275,7 +1275,17 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_new_checkout',
+	'label'    => __( 'New Checkout', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+		'on'  => __( 'Enable', 'fastway' ),
+		'off' => __( 'Disable', 'fastway' )
+	)
+));
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',

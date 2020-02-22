@@ -36,7 +36,7 @@ if ( ! is_ajax() ) {
 		</ul>
 
 	<?php endif; ?>
-	<?php if(!get_option('testing_new_checkout')){ ?>
+	<?php if(!fw_theme_mod('fw_new_checkout')){ ?>
 	<div class="form-row place-order">
 		<noscript>
 			<?php

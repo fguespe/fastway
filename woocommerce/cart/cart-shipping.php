@@ -24,7 +24,7 @@ $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
-if(get_option('testing_new_checkout')){ 
+if(fw_theme_mod('fw_new_checkout')){ 
 ?>
 
 

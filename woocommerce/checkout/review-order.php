@@ -16,7 +16,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-if(!get_option('testing_new_checkout')){
+if(!fw_theme_mod('fw_new_checkout')){
 ?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
