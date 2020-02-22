@@ -289,11 +289,12 @@ jQuery(document).ready( function(jQuery) {
 
   //Cupones
   jQuery('.checkout_coupon').show()
-  unselect('shipping_method[0]V')
-  unselect('payment_method')
 
-  //Paso mi cuena y daots
+  //Resets
+  unselect('shipping_method[0]')
+  unselect('payment_method')
   verificarFields();
+
   jQuery('#billing_form input').on('input', function(e){
     verificarFields()
   });
