@@ -13,7 +13,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 }
 
 
-if(!(isset($_GET["old"]) && $_GET["old"]==='yes') && (  (isset($_GET["new"]) && $_GET["new"]==='yes')  ||    ($_SERVER['HTTP_HOST']==='fwtest.fastway' || $_SERVER['HTTP_HOST']==='demo1.ecomaltoweb.kinsta.cloud/') ) ){
+if(!(isset($_GET["old"]) && $_GET["old"]==='yes') && (  (isset($_GET["new"]) && $_GET["new"]==='yes')  ||    ($_SERVER['HTTP_HOST']==='fwtest.fastway' || $_SERVER['HTTP_HOST']==='demo1.ecomaltoweb.kinsta.clou') ) ){
 update_option('testing_new_checkout',true);
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
 function fw_custom_override_checkout_fieldss( $fields ) {
