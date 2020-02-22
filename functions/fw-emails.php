@@ -108,7 +108,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
 
 
 //config mails
-if(fw_theme_mod("fw_action_resetmails")){
+if(fw_theme_mod("fw_action_resetmails") || 1==1){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
     update_option("woocommerce_cancelled_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
@@ -134,10 +134,6 @@ if(fw_theme_mod("fw_action_resetmails")){
 
 }
 
-
-update_option("woocommerce_email_header_image",fw_theme_mod('general-logo') );
-update_option("woocommerce_email_footer_text","Powered by Altoweb");
-update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
 function change_stock_email_recipient( $recipient, $product ) {
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
