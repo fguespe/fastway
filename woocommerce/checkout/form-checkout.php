@@ -108,7 +108,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
       <?php }else{ ?>
         <script>
           paso = 2
-          console.log(paso)
         </script>
         <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
       <?php } ?>
@@ -281,14 +280,24 @@ function verificarFields(){
   }
   jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
 }
+function unselect(type){
+  jQuery('input:radio[name="'+type+'"]').each(function () { 
+    jQuery(this).prop('checked', false);
+  });
+}
 jQuery(document).ready( function(jQuery) {
 
+  //Cupones
   jQuery('.checkout_coupon').show()
+  
+
+  //Paso mi cuena y daots
   verificarFields();
   jQuery('#billing_form input').on('input', function(e){
     verificarFields()
   });
   
+  //Cuando el mail cambia
   jQuery('#billing_email').on('input', function(e){
     let val=jQuery('#billing_email').val()
     if(isEmail(val) && paso==1){
@@ -298,7 +307,8 @@ jQuery(document).ready( function(jQuery) {
       jQuery('.btn-checkout.continuar').prop('disabled', true);
     }
   })
-  // Show the login dialog box on click
+
+  // Login
   jQuery('a#show_login').on('click', function(e){
       jQuery('body').prepend('<div class="login_overlay"></div>');
       jQuery('div#login').fadeIn(500);
@@ -307,6 +317,8 @@ jQuery(document).ready( function(jQuery) {
         jQuery('div#login').hide();
       });
   });
+
+  
 })
 
 
@@ -343,7 +355,10 @@ function resetStep(type){
   jQuery('.paso-'+type+' h1').show()
   jQuery('.btn-checkout.continuar').show()
   jQuery('.btn-checkout.finalizar').hide()
+
+  unselect(type=='shipping'?'shipping_method[0]':'payment_method')
 }
+
 function fillNextStep(type){
   jQuery('.paso-'+type+' .box-step').show()
   jQuery('.paso-'+type+' div:not(.box-step)').hide()
@@ -597,7 +612,9 @@ border:0px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom:20px;
+}
+.order-container .cupones{
+  margin-bottom:20px;
 }
 .box-detail .capsula {
     background:white;
@@ -702,6 +719,17 @@ div#login input{
   width:48%;
   display:inline-block !important;
 }
+html, body {
+  height: 92%;
+}
+#page-wrapper {
+  min-height: 100%;
+  height: auto !important; /*min-height hack*/
+}
+footer{
+  display:none !important ;
+}
+
 </style>
 <?php
  }else if(isset($_GET["old"]) && $_GET["old"]==='yes')  { 
@@ -727,6 +755,8 @@ form.processing .mostrar{
 display:block !important;
 
 }
+
+
 </style>
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
     <div class="col-lg-7 col-sm-12">
