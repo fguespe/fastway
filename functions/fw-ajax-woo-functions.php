@@ -17,9 +17,19 @@ function fw_cart_set_shipping(){
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){
-  // First check the nonce, if it fails the function will break
-  check_ajax_referer( 'ajax-login-nonce', 'security' );
-
+  fw_log($_POST['security']);
+  $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
+  switch ( $result ) {
+    case 1:
+        fw_log('Nonce is less than 12 hours old');
+        break;
+    case 2:
+      fw_log( 'Nonce is between 12 and 24 hours old');
+        break;
+    default:
+    fw_log('Nonce is invalid' );
+        exit( 'Nonce is invalid' );
+  }
   // Nonce is checked, get the POST data and sign user on
   $info = array();
   $info['user_login'] = $_POST['username'];

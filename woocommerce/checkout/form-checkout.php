@@ -82,8 +82,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 				  <div class="clear"></div>	
       </div>
       <div class="box-detail paso-cuenta dos" style="display: none;">
-          <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
-          <div id="login" action="login" method="post">
+        <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
+        <div id="login" action="login" method="post">
             <input id="username" type="text" name="username" placeholder="Email o username">
             <input id="password" type="password" name="password" placeholder="Contraseña">
             <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
@@ -242,22 +242,27 @@ function isEmail(email) {
   return regex.test(email);
 }
 function fw_login(){
-    
+    console.log(jQuery('#login #username').val())
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
           url:ajaxurl,
           data: { 
               action: 'fw_ajax_login', //calls wp_ajax_nopriv_ajaxlogin
-              username: jQuery('div#login #username').val(), 
-              password: jQuery('div#login #password').val(), 
-              security: jQuery('div#login #security').val() },
+              username: jQuery('#login #username').val(), 
+              password: jQuery('#login #password').val(), 
+              security: jQuery('#login #security').val() 
+          },
           success: function(data){
             console.log(data)
-            if(data.loggedin){
-              nextpaso()
+            if(data && data.loggedin){
+              jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
+              //jQuery('#billing_email').val('#login #username')
+              //jQuery('.paso-cuenta.dos .box-step .subtitle').text(val)
+              //nextpaso()
+              
             }else{
-              jQuery('div#login p.status').text(data.message);
+              jQuery('#login .status').html('<span style="color:red;" >Login incorrecto</span>') 
             }
           }
       });
@@ -313,10 +318,10 @@ jQuery(document).ready( function(jQuery) {
   // Login
   jQuery('a#show_login').on('click', function(e){
       jQuery('body').prepend('<div class="login_overlay"></div>');
-      jQuery('div#login').fadeIn(500);
-      jQuery('div.login_overlay, div#login a.close').on('click', function(){
+      jQuery('#login').fadeIn(500);
+      jQuery('div.login_overlay, #login a.close').on('click', function(){
         jQuery('div.login_overlay').remove();
-        jQuery('div#login').hide();
+        jQuery('#login').hide();
       });
   });
 
@@ -718,7 +723,7 @@ table.shop_table{
 .woocommerce-checkout #shipping_method label{
 	margin:0px !important;
 }
-div#login input{
+#login input{
   width:48%;
   display:inline-block !important;
 }
