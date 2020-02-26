@@ -67,7 +67,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     <?php if(!is_user_logged_in()){ ?>
 
       <div class="box-detail paso-cuenta uno" style="display:block;">
-          <h1><span class="icon-paso">1</span>Tu cuenta</h1>
+          <h1><span class="icon-paso">1</span>Tu mail</h1>
           <div><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
 					<div class="login-btn">
 						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
