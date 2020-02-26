@@ -44,7 +44,6 @@ if(fw_theme_mod('fw_new_checkout')){
 				if($costo==0)$costo="GRATIS";
 				else $costo="$".$costo;
 
-				error_log()
 				?>
 					<li class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php

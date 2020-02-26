@@ -47,7 +47,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 ?>
 <script>
-  var paso = 1
+  var paso = 1;
 </script>
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
     <div class="mostrar" style="display:none;text-align:center;width:100%;">
@@ -79,6 +79,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 						<span class="title">Tu cuenta</span>
 						<span class="subtitle" data-id=""></span>					
 					</div> 
+         <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
 				  <div class="clear"></div>	
       </div>
       <div class="box-detail paso-cuenta dos" style="display: none;">

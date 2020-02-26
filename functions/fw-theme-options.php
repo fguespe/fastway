@@ -225,6 +225,12 @@ Kirki::add_section( 'section_woo_roles', array(
     'panel'          => 'panel_fastwaywoo',
 
 ) );
+Kirki::add_section( 'section_woo_checkout', array(
+    'title'          => __( 'Checkout ', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
  
 //Layouts
 
@@ -1275,17 +1281,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_new_checkout',
-	'label'    => __( 'New Checkout', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 0,
-	'choices' => array(
-		'on'  => __( 'Enable', 'fastway' ),
-		'off' => __( 'Disable', 'fastway' )
-	)
-));
 if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
@@ -1399,18 +1394,31 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 set_theme_mod('checkout-minimal',true);
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_new_checkout',
+	'label'    => __( 'New Checkout', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'     => 0,
+	'choices' => array(
+		'on'  => __( 'Enable', 'fastway' ),
+		'off' => __( 'Disable', 'fastway' )
+	)
+));
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
 	'label'       => __( 'Vender a empresas', 'fastway' ),
 	'description'	=> 'Pide cuit y nombre de empresa en los campos del checkout',
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
 	    0  => __( 'Disable', 'fastway' ),
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
+
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
