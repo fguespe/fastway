@@ -36,12 +36,12 @@ defined( 'ABSPATH' ) || exit;
 			</p>
 
 		<?php else : ?>
-
+			<div class="container" style="width:40%;">
 			<i class="fad fa-check-circle"></i>
 			<h2>Gracias por tu compra</h2>
 			<p>El pedido fue registrado con numero #<?=$order->get_order_number()?>, con metodo de pago <?=$order->get_payment_method_title()?> y envío
-			<h4> Te enviamos un mail a <?=$order->get_billing_email()?> con el detalle y las instrucciones de como seguir!</h4>
-
+			<span> Te enviamos un mail a <?=$order->get_billing_email()?> con el detalle y las instrucciones de como seguir!</span>
+			</div>
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
