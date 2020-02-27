@@ -325,6 +325,11 @@
     color:white;
     border:0px ;
 }
+#modal_carrito .btn.seguir{
+    background:white ;
+    border:1px solid var(--main) ;
+    color:var(--main);
+}
 #modal_carrito .iralcarrito{
     font-size:12px;;
     color:#0000EE !important;
