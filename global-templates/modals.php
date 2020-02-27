@@ -447,13 +447,13 @@ function add_to_minicart(prod_id){
     console.log('#fw_add_to_cart_button_'+prod_id)
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
     jQuery('.minicart').addClass('bouncing')
-
+    /*
     ga('send', {
         hitType: 'event',
         eventCategory: 'Ecommerce',
         eventAction: 'addtocart',
         eventLabel: 'Agregar al carrito'
-    });
+    });*/
         
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id}, 
