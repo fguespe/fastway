@@ -3538,7 +3538,7 @@ body .wpb_content_element {
 }
 .woocommerce-checkout h3,
 .woocommerce-account h3 {
-  text-align: left;
+  /*text-align: left ;*/
   color: var(--main);
   font-size: 20px;
 }
