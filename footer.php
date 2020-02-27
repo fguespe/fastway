@@ -68,6 +68,12 @@ jQuery(document).ready( function(jQuery) {
 <?php } ?>
 <script type="text/javascript">
 jQuery( ".btn-wapp" ).click(function() {
+  ga('send', {
+      hitType: 'event',
+      eventCategory: 'Contacto',
+      eventAction: 'whatsapp',
+      eventLabel: 'Whatsappp'
+  });
   jQuery.get(ajaxurl,{'action': 'register_wp'}, 
       function (msg) { 
         console.log('wp registrada')
@@ -77,6 +83,7 @@ jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
     if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
       jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
+      
       jQuery.get(ajaxurl,{'action': 'register_visit'}, 
       function (msg) { 
         console.log('visita registrada')
