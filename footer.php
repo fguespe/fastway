@@ -1,6 +1,8 @@
 <?php
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
+
+
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
