@@ -70,13 +70,9 @@ jQuery(document).ready( function(jQuery) {
 <?php } ?>
 <script type="text/javascript">
 jQuery( ".btn-wapp" ).click(function() {
-  /*
-  ga('send', {
-      hitType: 'event',
-      eventCategory: 'Contacto',
-      eventAction: 'whatsapp',
-      eventLabel: 'Whatsappp'
-  });*/
+  if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
+  
+
   jQuery.get(ajaxurl,{'action': 'register_wp'}, 
       function (msg) { 
         console.log('wp registrada')
