@@ -83,10 +83,7 @@ jQuery(document).ready( function(jQuery) {
     if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
       jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
       
-      jQuery.get(ajaxurl,{'action': 'register_visit'}, 
-      function (msg) { 
-        console.log('visita registrada')
-      });
+      jQuery.get(ajaxurl,{'action': 'register_visit'});
     }
 });
 </script>
