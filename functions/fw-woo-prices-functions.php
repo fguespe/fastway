@@ -152,7 +152,7 @@ add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_r
 function custom_dynamic_regular_price( $regular_price, $product ) {
     $devolver=$regular_price;
     if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price();
-    $devolver=round($devolver*get_currency_conversion());
+    $devolver=round(floatval($devolver)*floatval(get_currency_conversion()));
     return $devolver;
 }
 
@@ -164,7 +164,7 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     $devolver=$sale_price;
     $noteniasale=empty($devolver) || $devolver == 0;
     if(fw_is_admin() && $noteniasale)return;
-    else if( $noteniasale )$devolver=$product->get_price()*fw_product_discount_multiplier($product);
+    else if( $noteniasale )$devolver=floatval($product->get_price())*floatval(fw_product_discount_multiplier($product));
     $devolver=round($devolver*get_currency_conversion());
     return $devolver;
 
@@ -211,7 +211,10 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
     }
-    $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+    if($regular_price){
+
+        $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+    }
 
     if(fw_check_hide_prices()) return;
     if(empty($product->get_price()))return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar_price').'</span></span></a>';

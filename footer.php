@@ -73,10 +73,7 @@ jQuery( ".btn-wapp" ).click(function() {
   if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
   
 
-  jQuery.get(ajaxurl,{'action': 'register_wp'}, 
-      function (msg) { 
-        console.log('wp registrada')
-      });
+  jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)

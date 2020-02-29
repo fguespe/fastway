@@ -84,19 +84,19 @@ function fw_register_wp(){
 }
 function fw_vc_get_posts($type) {
     $args = array(
-    'taxonomy'   => $type,
+    'taxonomy'   => $type/*,
     'number'     => $number,
     'orderby'    => $orderby,
     'order'      => $order,
     'hide_empty' => $hide_empty,
-    'include'    => $ids
+    'include'    => $ids*/
     );
     $product_categories = get_terms($args);
     
     $result = array();
     foreach ( $product_categories as $post ) {
-
-        $cat=array($post->name=>$post->slug);
+        
+        $cat=array($post->name => $post->slug);
         $result=array_merge($result,$cat);
         
     }
