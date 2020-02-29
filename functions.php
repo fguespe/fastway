@@ -1,7 +1,7 @@
 <?php
 
 // Clean the up the image from wp_get_attachment_image()
-/*
+
 add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 {
     if( isset( $attr['sizes'] ) )
@@ -22,7 +22,7 @@ add_filter( 'wp_calculate_image_srcset', '__return_empty_array', PHP_INT_MAX );
 
 // Remove the reponsive stuff from the content
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
-*/
+
 
 
 if( !function_exists('is_plugin_active') ) {

@@ -37,10 +37,10 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php else : ?>
 			<div class="container" style="width:40%;">
-			<i class="fad fa-check-circle"></i>
-			<h2>Gracias por tu compra</h2>
-			<p>El pedido fue registrado con numero #<?=$order->get_order_number()?>, con metodo de pago <?=$order->get_payment_method_title()?> y envío
-			<span> Te enviamos un mail a <?=$order->get_billing_email()?> con el detalle y las instrucciones de como seguir!</span>
+				<i class="fad fa-check-circle"></i>
+				<h2>Gracias por tu compra</h2>
+				<p>El pedido fue registrado con número #<?=$order->get_order_number()?></p>
+				<span> Te enviamos un mail a <?=$order->get_billing_email()?> con el detalle y las instrucciones de como seguir.</span>
 			</div>
 		<?php endif; ?>
 
@@ -55,12 +55,12 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <style>
-	.woocommerce-order{
-text-align:center !important;
+.woocommerce-order{
+	text-align:center !important;
 }
 .woocommerce-order i{
-font-size:50px;
-color:green;
+	font-size:50px;
+	color:green;
 }
 }
 .woocommerce-order .woocommerce-checkout h3{
