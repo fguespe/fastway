@@ -3037,6 +3037,7 @@ body .wpb_content_element {
     }
    
      .woocommerce-tabs{
+       
         margin-top: 32px;
         width:100%;
         .tabs{
@@ -3044,11 +3045,16 @@ body .wpb_content_element {
           margin-bottom:10px !important;
           padding-left:0px !important;
         }
+        .woocommerce-Tabs-panel--additional_information h2{
+          display:none !important; 
+        }
         .description_tab,
         ul.tabs::before,
         ul.tabs li::before,
         ul.tabs li::after,
         ul.tabs li{
+          display:inline;
+          margin-right:20px;
           border:0px !important;
         }
         ul.tabs li a{
@@ -3435,6 +3441,8 @@ body .wpb_content_element {
   border-radius: 10px 10px 0 0;
   padding: 8px 1% 0 1%;
 }
+/*tabs/*/
+
 @media (max-width: 799px) {
 .btn-wapp{
       -webkit-border-radius: 10px 0px 0 10px;
