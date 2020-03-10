@@ -20,25 +20,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if(fw_theme_mod('fw_new_checkout')){ 
+
+	$value=$gateway->id;
 ?>
 
-<div class="capsula payment payment_method_<?php echo esc_attr( $gateway->id ); ?>" data-label="<?=$gateway->title?>">
-	<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>"  data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" />
-	<?=$gateway->title?>
-	<small><?=$gateway->description?></small> 
-	
-	<input type="radio" name="payment_method" value="<?=$gateway->id?>"  >
-	<span class="checkmark"></span>
+<div class="capsula payment payment_method_<?php echo esc_attr( $gateway->id ); ?>" data-radio="<?=$value?>" data-label="<?=$gateway->title?>">
+	<div class="contenedor">
+		<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>"   />
+		<?=$gateway->title?>
+		<small><?=$gateway->description?></small>
+		<input type="radio" name="payment_method" id="<?=$value?>" value="<?=$value?>" value="<?=$gateway->id?>"  >
+		<span class="checkmark"></span>
+	</div>
 </div>
 
 <script>
 
-jQuery('.capsula.payment input').on('click', function() {
+jQuery('.capsula.payment').on('click', function() {
 	if(paso==3)jQuery('.btn-checkout').prop('disabled', false);
-	let label=jQuery(this).parent().data('label')
+	let label=jQuery(this).data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
+	jQuery('.btn-checkout.continuar').prop('disabled', false);
+	/*
   	jQuery('.btn-checkout.finalizar').show()
-  	jQuery('.btn-checkout.finalizar').prop('disabled', false);
+  	jQuery('.btn-checkout.finalizar').prop('disabled', false);*/
 
 });
 

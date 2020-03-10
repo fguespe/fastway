@@ -333,6 +333,7 @@
 #modal_carrito .iralcarrito{
     font-size:12px;;
     color:#0000EE !important;
+    border:0px !important;
 }
 #modal_carrito .btn.comprar{
     background:var(--main);

@@ -69,62 +69,12 @@ jQuery( function( $ ) {
 				$payment_methods.eq(0).hide();
 			}
 
-			// If there was a previously selected method, check that one.
-			if ( wc_checkout_form.selectedPaymentMethod ) {
-				$( '#' + wc_checkout_form.selectedPaymentMethod ).prop( 'checked', true );
-			}
-
-            // If there are none selected, select the first.
-            /*
-			if ( 0 === $payment_methods.filter( ':checked' ).length ) {
-				$payment_methods.eq(0).prop( 'checked', true );
-			}
-*/
-			// Get name of new selected method.
-			var checkedPaymentMethod = $payment_methods.filter( ':checked' ).eq(0).prop( 'id' );
-
-			if ( $payment_methods.length > 1 ) {
-				// Hide open descriptions.
-				$( 'div.payment_box:not(".' + checkedPaymentMethod + '")' ).filter( ':visible' ).slideUp( 0 );
-			}
-
-			// Trigger click event for selected method
-			$payment_methods.filter( ':checked' ).eq(0).trigger( 'click' );
 		},
 		get_payment_method: function() {
 			return wc_checkout_form.$checkout_form.find( 'input[name="payment_method"]:checked' ).val();
 		},
 		payment_method_selected: function( e ) {
-			e.stopPropagation();
-
-			if ( $( '.payment_methods input.input-radio' ).length > 1 ) {
-				var target_payment_box = $( 'div.payment_box.' + $( this ).attr( 'ID' ) ),
-					is_checked         = $( this ).is( ':checked' );
-
-				if ( is_checked && ! target_payment_box.is( ':visible' ) ) {
-					$( 'div.payment_box' ).filter( ':visible' ).slideUp( 230 );
-
-					if ( is_checked ) {
-						target_payment_box.slideDown( 230 );
-					}
-				}
-			} else {
-				$( 'div.payment_box' ).show();
-			}
-
-			if ( $( this ).data( 'order_button_text' ) ) {
-				$( '#place_order' ).text( $( this ).data( 'order_button_text' ) );
-			} else {
-				$( '#place_order' ).text( $( '#place_order' ).data( 'value' ) );
-			}
-
-			var selectedPaymentMethod = $( '.woocommerce-checkout input[name="payment_method"]:checked' ).attr( 'id' );
-
-			if ( selectedPaymentMethod !== wc_checkout_form.selectedPaymentMethod ) {
-				$( document.body ).trigger( 'payment_method_selected' );
-			}
-
-			wc_checkout_form.selectedPaymentMethod = selectedPaymentMethod;
+			
 		},
 		toggle_create_account: function() {
 			$( 'div.create-account' ).hide();
@@ -197,9 +147,6 @@ jQuery( function( $ ) {
 					return $( this ).val() !== $billing.find( '#' + id ).val();
 				} );
 
-				if ( $differentFields.length > 0 ) {
-					$checkbox.prop( 'checked', true );
-				}
 			}
 
 			$( 'div.shipping_address' ).toggle( $checkbox.prop( 'checked' ) );
@@ -392,11 +339,6 @@ jQuery( function( $ ) {
 							$( key ).unblock();
 						} );
 						wc_checkout_form.fragments = data.fragments;
-					}
-
-					// Recheck the terms and conditions box, if needed
-					if ( termsCheckBoxChecked ) {
-						$( '#terms' ).prop( 'checked', true );
 					}
 
 					// Fill in the payment details if possible without overwriting data if set.

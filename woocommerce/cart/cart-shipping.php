@@ -33,7 +33,6 @@ if(fw_theme_mod('fw_new_checkout')){
 		<?php if ( $available_methods ) : ?>
 			<div id="shipping_method" class="woocommerce-shipping-methods">
 			<?php foreach ( $available_methods as $method ) : 
-				error_log(print_r($product,true));
 				$titulo=$method->label;
 				$id=$method->method_id;
 				$value=$method->id;
@@ -46,6 +45,7 @@ if(fw_theme_mod('fw_new_checkout')){
 
 				?>
 					<li class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
+						<div class="contenedor">
 						<?php
 						if ( 1 < count( $available_methods ) ) {
 							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
@@ -62,6 +62,7 @@ if(fw_theme_mod('fw_new_checkout')){
 						<?php
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );
 						?>
+						</div>
 					</li>
 				<?php endforeach; ?>
 			</div>

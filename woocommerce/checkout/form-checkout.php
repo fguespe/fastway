@@ -50,20 +50,13 @@ function fw_custom_override_checkout_fieldss( $fields ) {
   var paso = 1;
 </script>
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
-    <div class="mostrar" style="display:none;text-align:center;width:100%;">
-        <i class="fal fa-sync fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
-        <span>Estamos procesando su pedido...aguarde unos segundos.</span>
-    </div>
-    <style>
-        form.processing div:not(.mostrar) {
-            display: none;
-        }
-        
-        form.processing .mostrar {
-            display: block !important;
-        }
-    </style>
+
     <div class="col-lg-8 col-sm-12">
+
+      <div class="box-detail mostrar paso-loading" style="display:none;text-align:center;width:100%;"> 
+            <i class="fal fa-circle-notch fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
+            <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+      </div>
     <?php if(!is_user_logged_in()){ ?>
 
       <div class="box-detail paso-cuenta uno" style="display:block;">
@@ -111,6 +104,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <script>
           paso = 2
         </script>
+        <!--Campo uculot -->
         <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
       <?php } ?>
       <div class="box-detail paso-datos" style="display:<?=is_user_logged_in()?'block':'none';?>;">
@@ -143,52 +137,54 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <div class="clear"></div>	
         
       </div>
-    <div class="box-detail paso-shipping" style="display:none;">
-          <h1><span class="icon-paso">2</span> ¿Cómo te entregamos la compra?</h1>
+      <div class="box-detail paso-shipping" style="display:none;">
+            <h1><span class="icon-paso">2</span> ¿Cómo te entregamos la compra?</h1>
 
-      
-          <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+        
+            <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
 
-          <?php wc_cart_totals_shipping_html(); ?>
+            <?php wc_cart_totals_shipping_html(); ?>
 
-          <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+            <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 
-          <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(3)">modificar</a>
-						<span class="icon"><i class="fa fa-check"></i></span>
-						<span class="title">¿Cómo te entregamos la compra?</span>
-						<span class="subtitle" data-id=""></span>					
-					</div>
-          <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
-          <div class="clear"></div>	
+            <div class="capsula box-step" style="display:none;">
+              <a class="editar" onclick="editpaso(3)">modificar</a>
+              <span class="icon"><i class="fa fa-check"></i></span>
+              <span class="title">¿Cómo te entregamos la compra?</span>
+              <span class="subtitle" data-id=""></span>					
+            </div>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <div class="clear"></div>	
+        </div>
+        <script>
+          jQuery('.capsula.shipping ').on('click', function() {
+              let capsula=jQuery(this)
+              var id = capsula.data('radio')
+              jQuery('#'+id).prop('checked', true);
+              let label=capsula.data('label')+' '+capsula.data('costo')
+              jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
+              jQuery('.paso-shipping .box-step .subtitle').text(label)
+              if(paso==3)jQuery('.btn-checkout.continuar').prop('disabled', false);
+          });
+        </script>
+        <div class="box-detail paso-pagos" style="display:none;">
+            <h1><span class="icon-paso">3</span>¿Cómo vas a pagar?</h1>
+            <?php woocommerce_checkout_payment() ?>
+
+            <div class="capsula box-step" style="display:none;">
+              <a class="editar" onclick="editpaso(4)">modificar</a>
+              <span class="icon"><i class="fa fa-check"></i></span>
+              <span class="title">¿Cómo vas a pagar?</span>
+              <span class="subtitle" data-id=""></span>					
+            </div>
+
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+        </div>
+        
       </div>
-      <script>
-        jQuery('.capsula.shipping input').on('click', function() {
-            let capsula=jQuery(this).parent()
-            var id = capsula.data('radio')
-            jQuery('#'+id).prop('checked', true);
-            let label=capsula.data('label')+' '+capsula.data('costo')
-            jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
-            jQuery('.paso-shipping .box-step .subtitle').text(label)
-            if(paso==3)jQuery('.btn-checkout.continuar').prop('disabled', false);
-        });
-      </script>
-      <div class="box-detail paso-pagos" style="display:none;">
-          <h1><span class="icon-paso">3</span>¿Cómo vas a pagar?</h1>
-          <?php woocommerce_checkout_payment() ?>
-
-          <div class="capsula box-step" style="display:none;">
-            <a class="editar" onclick="editpaso(4)">modificar</a>
-            <span class="icon"><i class="fa fa-check"></i></span>
-            <span class="title">¿Cómo vas a pagar?</span>
-            <span class="subtitle" data-id=""></span>					
-          </div>
-      </div>
-      
-    </div>
             
     <div class="col-lg-4  col-sm-12 order-container" >
-    </form>
+      </form>
     
         <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
         <div class="cupones ">
@@ -196,7 +192,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
           <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
-            <button type="submit" class="button" name="apply_coupon" value="Aplicar"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+            <button type="submit" class="button" name="apply_coupon"   style="width:30%;">Aplicar</button>
           </p>
           <div class="clear"></div>
         </form>
@@ -368,8 +364,14 @@ function resetStep(type){
   jQuery('.paso-'+type+' button').show()
   //jQuery('.btn-checkout.continuar').show()
   jQuery('.btn-checkout.finalizar').hide()
-
-  unselect(type=='shipping'?'shipping_method[0]':'payment_method')
+  if(type=='shipping'){
+    unselect('shipping_method[0]')
+    unselect('payment_method')
+  }else if(type=='pagos'){
+    unselect('payment_method')
+  }
+    unselect('shipping_method[0]')
+    unselect('payment_method')
 }
 
 function fillNextStep(type){
@@ -393,9 +395,11 @@ function nextpaso(){
   }else if(paso==4){
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
-    jQuery('.btn-checkout.continuar').hide()
-    jQuery('.btn-checkout.finalizar').prop('disabled', true);
-    //jQuery('.btn-checkout.finalizar').show()
+
+  }else if(paso==5){
+    fillNextStep('pagos')
+    jQuery('.btn-checkout.finalizar').prop('disabled', false);
+    jQuery('.btn-checkout.finalizar').show()
 
   }
   jQuery('.btn-checkout.continuar').prop('disabled', true);
@@ -744,7 +748,13 @@ html, body {
 footer{
   display:none !important ;
 }
+form.processing .col-lg-8 div:not(.mostrar) {
+            display: none;
+}
 
+form.processing .col-lg-8  .mostrar {
+    display: block !important;
+}
 </style>
 <?php
  }else { 
@@ -794,7 +804,7 @@ display:block !important;
           <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
           <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
-            <button type="submit" class="button" name="apply_coupon" value="Aplicar"  style="width:30%;"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+            <button type="submit" class="button" name="apply_coupon"   style="width:30%;">Aplicar</button>
           </p>
           <div class="clear"></div>
         </form>
