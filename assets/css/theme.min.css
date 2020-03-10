@@ -3046,11 +3046,16 @@ body .wpb_content_element {
   margin-bottom: 10px !important;
   padding-left: 0px !important;
 }
+.woocommerce .woocommerce-tabs .woocommerce-Tabs-panel--additional_information h2 {
+  display: none !important;
+}
 .woocommerce .woocommerce-tabs .description_tab,
 .woocommerce .woocommerce-tabs ul.tabs::before,
 .woocommerce .woocommerce-tabs ul.tabs li::before,
 .woocommerce .woocommerce-tabs ul.tabs li::after,
 .woocommerce .woocommerce-tabs ul.tabs li {
+  display: inline;
+  margin-right: 20px;
   border: 0px !important;
 }
 .woocommerce .woocommerce-tabs ul.tabs li a {
@@ -3419,6 +3424,7 @@ body .wpb_content_element {
   padding: 8px 1% 0 1%;
 }
 
+/*tabs/*/
 @media (max-width: 799px) {
   .btn-wapp {
     -webkit-border-radius: 10px 0px 0 10px;
@@ -3518,6 +3524,17 @@ body .wpb_content_element {
 .woocommerce-form-coupon-toggle,.checkout_coupon{
   display:none;
 }*/
+.fw_boton {
+  display: block;
+  width: 115px;
+  background: var(--main);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
+}
+
 .woocommerce-checkout,
 .woocommerce-account {
   /* var compliance radio buttons */
