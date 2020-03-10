@@ -230,16 +230,6 @@ add_action('admin_head-nav-menus.php', 'custom_remove');
 
 
 
-add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
-function woo_rename_tabs( $tabs ) {
-    global $product;
-    if (  $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) 
-        $tabs['additional_information']['title'] = __( 'Especificaciones' );  
-
-    return $tabs;
-
-}
-
 
 
 
