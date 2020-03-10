@@ -50,12 +50,14 @@ function fw_custom_override_checkout_fieldss( $fields ) {
   var paso = 1;
 </script>
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
-
+    
     <div class="col-lg-8 col-sm-12">
 
       <div class="box-detail mostrar paso-loading" style="display:none;text-align:center;width:100%;"> 
-            <i class="fal fa-circle-notch fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
-            <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+            <div class="capsula box-step">
+              <i class="fal fa-circle-notch fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
+              <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+            </div>
       </div>
     <?php if(!is_user_logged_in()){ ?>
 
@@ -157,8 +159,10 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             <div class="clear"></div>	
         </div>
         <script>
-          jQuery('.capsula.shipping ').on('click', function() {
+          jQuery('li.capsula.shipping').on('click', function() {
               let capsula=jQuery(this)
+              //reset active
+              jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
               var id = capsula.data('radio')
               jQuery('#'+id).prop('checked', true);
               let label=capsula.data('label')+' '+capsula.data('costo')

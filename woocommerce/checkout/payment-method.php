@@ -39,6 +39,8 @@ if(fw_theme_mod('fw_new_checkout')){
 jQuery('.capsula.payment').on('click', function() {
 	if(paso==3)jQuery('.btn-checkout').prop('disabled', false);
 	let label=jQuery(this).data('label')
+	jQuery('.capsula.payment').removeClass("active");jQuery(this).addClass('active');
+
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
 	jQuery('.btn-checkout.continuar').prop('disabled', false);
 	/*
