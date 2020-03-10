@@ -753,16 +753,6 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
     return $currency_symbol;
 }
 
-add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
-function woo_rename_tabs( $tabs ) {
-    global $product;
-    if (  $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) 
-        $tabs['additional_information']['title'] = __( 'Especificaciones' );  
-
-    return $tabs;
-
-}
-
 
 add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
 function remove_product_description_heading() {
@@ -1049,16 +1039,6 @@ function ess_custom_taxonomy_Item()  {
  add_action( 'init', 'ess_custom_taxonomy_item', 0 );
    */
 
-
-add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
-function woo_rename_tabs( $tabs ) {
-    global $product;
-    if (  $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) 
-        $tabs['additional_information']['title'] = __( 'Especificaciones' );  
-
-    return $tabs;
-
-}
 
 if ( ! class_exists( 'BRAND_THUMB' ) ) {
 
