@@ -512,3 +512,6 @@ cuidado con el update notice y el error de create user
 	height:0px !important;
 	display:none !important;
 }
+.composer-switch{
+	display: none !important;
+}
