@@ -51,6 +51,7 @@
 .fw_page_title .icon i {
   font-size: 40px !important;
   margin-bottom: 5px;
+  color: var(--main);
 }
 .fw_page_title .text big {
   font-size: 24px !important;
