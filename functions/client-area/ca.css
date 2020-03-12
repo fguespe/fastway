@@ -507,4 +507,8 @@ cuidado con el update notice y el error de create user
 	
 
 
-
+/*nuevo woo*/
+.woocommerce-layout{
+	height:0px !important;
+	display:none !important;
+}
