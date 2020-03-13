@@ -395,6 +395,7 @@ function resetStep(type){
 
 function fillNextStep(type){
   jQuery('.paso-'+type+' .box-step').show()
+  jQuery('.paso-'+type+' .box-step').addClass('efecto')
   jQuery('.paso-'+type+' div:not(.box-step)').hide()
   jQuery('.paso-'+type+' h1').hide()
   jQuery('.paso-'+type+' button').hide()
