@@ -155,21 +155,32 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               <span class="title">¿Cómo te entregamos la compra?</span>
               <span class="subtitle" data-id=""></span>					
             </div>
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar shipping" disabled>Continuar</button>
             <div class="clear"></div>	
         </div>
         <script>
-          jQuery('li.capsula.shipping').on('click', function() {
+          jQuery('li.capsula.shipping').on('click', function(e) {
+              if (e.target !== this) return;
               let capsula=jQuery(this)
-              //reset active
-              jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
-              var id = capsula.data('radio')
-              jQuery('#'+id).prop('checked', true);
-              let label=capsula.data('label')+' '+capsula.data('costo')
-              jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
-              jQuery('.paso-shipping .box-step .subtitle').text(label)
-              if(paso==3)jQuery('.btn-checkout.continuar').prop('disabled', false);
+              capsula.find('input:radio').click()
+              seleccionarEnvio(capsula)
           });
+          jQuery('li.capsula.shipping input').on('click', function(e) {
+              if (e.target !== this) return;
+              seleccionarEnvio(jQuery(this).parent())
+          });
+          function seleccionarEnvio(capsula){
+            jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
+            let label=capsula.data('label')+' '+capsula.data('costo')
+            jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
+            jQuery('.paso-shipping .box-step .subtitle').text(label)
+
+            console.log(jQuery("input[name='shipping_method[0]']").is(':checked'),paso)
+            if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
+              jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
+              jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
+            }
+          }
         </script>
         <div class="box-detail paso-pagos" style="display:none;">
             <h1><span class="icon-paso">3</span>¿Cómo vas a pagar?</h1>
@@ -182,7 +193,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               <span class="subtitle" data-id=""></span>					
             </div>
 
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar pagos" disabled>Continuar</button>
         </div>
         
       </div>
@@ -193,7 +204,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
         <div class="cupones ">
         <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-          <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
           <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
             <button type="submit" class="button" name="apply_coupon"   style="width:30%;">Aplicar</button>
@@ -294,6 +304,7 @@ function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
     jQuery(this).prop('checked', false);
   });
+  jQuery('.btn-checkout.continuar').prop('disabled', true);
 }
 jQuery(document).ready( function(jQuery) {
 
@@ -357,6 +368,10 @@ function editpaso(ppaso){
     resetStep('pagos')
     jQuery('.paso-shipping').show()
     paso=3
+  }else if(ppaso==4){
+    resetStep('pagos')
+    jQuery('.paso-pagos').show()
+    paso=4
   }
 }
 function resetStep(type){

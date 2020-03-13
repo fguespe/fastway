@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
 				<i class="fad fa-check-circle"></i>
 				<h2>Gracias por tu compra</h2>
 				<p>El pedido fue registrado con número #<?=$order->get_order_number()?></p>
-				<span> Te enviamos un mail a <?=$order->get_billing_email()?> con el detalle y las instrucciones de como seguir.</span>
+				<span> Te enviamos un mail a <b><?=$order->get_billing_email()?></b> con el detalle y las instrucciones de como seguir.</span>
 			</div>
 		<?php endif; ?>
 

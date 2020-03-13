@@ -3027,9 +3027,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'in-stock-text',
-	'label'    => __( 'In Stock Label', 'fastway' ),
+	'label'    => 'Producto existente',
 	'section'     => 'section_labels',
-	'default'	=>__( 'In Stock', 'fastway' ),
+	'default'	=>'En Stock',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',

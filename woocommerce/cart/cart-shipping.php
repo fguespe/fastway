@@ -44,25 +44,22 @@ if(fw_theme_mod('fw_new_checkout')){
 				else $costo="$".$costo;
 
 				?>
-					<li class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
-						<div class="contenedor">
+					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php
 						if ( 1 < count( $available_methods ) ) {
 							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
 						} else {
 							printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) ); // WPCS: XSS ok.
 						}?>
+						<span class="checkmark"></span>
 						<label for="shipping_method_0_<?=$id?><?=$instance?>"><?=$titulo?></span></label>
 						<small>Costo del envío: <?=$costo?></small> 
 						<small></small>
 						<?php if($id!=='mercadoenvios-shipping'){ ?>
-						<input type="radio" name="shipping_method[0]" id="shipping_method_0_<?=$id?><?=$instance?>" value="<?=$value?>" >
 						<?php } ?>
-						<span class="checkmark"></span>
 						<?php
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );
 						?>
-						</div>
 					</li>
 				<?php endforeach; ?>
 			</div>
