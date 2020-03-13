@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 			</p>
 
 		<?php else : ?>
-			<div class="container" style="width:40%;">
+			<div class="container" style="width:100%;">
 				<i class="fad fa-check-circle"></i>
 				<h2>Gracias por tu compra</h2>
 				<p>El pedido fue registrado con número #<?=$order->get_order_number()?></p>

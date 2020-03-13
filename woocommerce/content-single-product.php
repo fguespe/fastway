@@ -4,7 +4,7 @@ woocommerce_breadcrumb();
 add_filter( 'woocommerce_product_tabs', 'fw_remove_product_tabs', 98 );
 function fw_remove_product_tabs( $tabs ) {
     unset( $tabs['reviews'] );  // Removes the reviews tab
-    //unset( $tabs['additional_information'] ); 
+    unset( $tabs['additional_information'] ); 
     return $tabs;
 }
 add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
