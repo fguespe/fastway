@@ -11,11 +11,20 @@
                     <div class="row d-flex justify-content-between align-items-center">
                         <div>
                         <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        <a type="button" class="btn iralcarrito" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" > Ir al carrito</a>
+                        <a type="button" class="iralcarrito" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" > Ir al carrito</a>
                         </div>
                         <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar">Comprar</button>
-
                     </div>
+                    <style>
+                    @media (max-width: 799px) {
+                        #modal_carrito .iralcarrito{
+                            margin-bottom:40px !important;
+                        }
+                        #modal_carrito .btn.comprar{
+                            width:100% !important;
+                        }
+                    }
+                    </style>
                 </div>
             </div>
         </div>
