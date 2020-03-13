@@ -379,6 +379,7 @@ function resetStep(type){
   jQuery('.paso-'+type).hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
   jQuery('.paso-'+type+' .box-step').hide()
+  jQuery('.paso-'+type+' .box-step').removeClass('efecto')
   jQuery('.paso-'+type+' h1').show()
   jQuery('.paso-'+type+' button').show()
   //jQuery('.btn-checkout.continuar').show()
