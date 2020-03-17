@@ -8,7 +8,7 @@ Author: Fabrizio Guespe
 Author URI: https://www.altoweb.co
 */
 
-include( plugin_dir_path( __FILE__ ) . 'categorizacion.php');
+if(!empty(fw_theme_mod('fw_extra_tax')))include( plugin_dir_path( __FILE__ ) . 'categorizacion.php');
 
 class WooTaxomizer {
 	public $menu_id;
