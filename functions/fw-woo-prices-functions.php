@@ -67,6 +67,7 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
     //is admin
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
     //Si ya tiene discount, volver
+    if($product->sale_price!=$product->regular_price)return 1;
     
     global $woocommerce;
     if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return 1;
