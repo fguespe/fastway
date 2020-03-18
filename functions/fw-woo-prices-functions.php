@@ -66,6 +66,7 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
     if(!fw_theme_mod('fw_product_discount_cant'))return 1;
     //is admin
     if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
+    //Si ya tiene discount, volver
     
     global $woocommerce;
     if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return 1;
@@ -89,6 +90,7 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
         if(in_array($product->id,$arra))$esdelapromo=false;
         if(!$esdelapromo)return 1;
     }
+
     $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
     return $multiplier;
 }

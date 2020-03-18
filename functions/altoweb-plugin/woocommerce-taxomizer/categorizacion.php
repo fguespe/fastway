@@ -105,13 +105,6 @@ function wootax_categoriaok($titulo, $cate){
     return false;
 }
 
-
-
-
-
-
-
-
 add_filter( 'manage_edit-product_columns', 'wootax_taxomizer_custom_shop_order_column',11);
 function wootax_taxomizer_custom_shop_order_column($columns){
     foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) 

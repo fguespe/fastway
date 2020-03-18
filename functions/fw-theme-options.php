@@ -2690,7 +2690,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
 	'default'     => 'off',
-	'description' => '?testmodal=yes para probarlo, sino se muestra una sola vez por dia.',
+	'description' => '<a href="/?testmodal=yes" target="_blank">s</a>  para probarlo, sino se muestra una sola vez por dia.',
 	'choices'     => array(
 		'off' => __( 'Disable', 'fastway' ),
 		'image' => __( 'Image', 'fastway' ),
