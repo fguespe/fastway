@@ -211,7 +211,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
             error_log('jaja'.$regular_price.' '.$sale_price.' '.fw_product_discount_multiplier($product));
             $sale_price=$regular_price*fw_product_discount_multiplier($product);
         }
-        //$sale_price=round($sale_price*fw_product_discount_multiplier($product)*get_currency_conversion());
+        $sale_price=round($sale_price*get_currency_conversion());
         
     }else {
         $regular_price = $product->get_regular_price();
