@@ -165,6 +165,12 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               capsula.find('input:radio').click()
               seleccionarEnvio(capsula)
           });
+          jQuery('li.capsula.shipping small').on('click', function(e) {
+              if (e.target !== this) return;
+              let capsula=jQuery(this).parent()
+              capsula.find('input:radio').click()
+              seleccionarEnvio(capsula)
+          });
           jQuery('li.capsula.shipping span').on('click', function(e) {
               if (e.target !== this) return;
               let capsula=jQuery(this).parent()
