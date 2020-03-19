@@ -3704,7 +3704,7 @@ body .wpb_content_element {
 }
 .fw_checkout .box-detail .capsula.shipping.active,
 .fw_checkout .box-detail .capsula.payment.active {
-  border-left: 5px solid #3483fa !important;
+  border-left: 5px solid var(--main) !important;
 }
 .fw_checkout .box-detail .capsula.shipping input,
 .fw_checkout .box-detail .capsula.payment input {
