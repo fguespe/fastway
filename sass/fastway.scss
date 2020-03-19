@@ -3528,6 +3528,7 @@ body .wpb_content_element {
 /* Checkout */
 
 .woocommerce-order {
+
 	padding: 40px 0 80px;
 	min-height: calc(100vh - 111px) !important;
 	display: flex;
@@ -3557,17 +3558,15 @@ body .wpb_content_element {
 
 .safe-box {
 	background: #aac67c;
-	    padding: 3px 0 !important;
-}
-
-.safe-box p {
+  padding: 3px 0 !important;
+  p {
 	 color: #286f38;
    font-weight: 600;
 	line-height: 1.5;
-}
-
-.safe-box strong {
-	color: #286f38;
+  }
+  strong {
+    color: #286f38;
+  }
 }
 
 .box-detail .login-btn a {
