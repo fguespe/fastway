@@ -3527,6 +3527,29 @@ body .wpb_content_element {
 
 /* Checkout */
 .fw_checkout{
+  
+  #overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    opacity: .5;
+  }
+  .mp_pago{
+    padding:0px !important;
+    margin-top:10px;
+    padding-left:0px !important;
+    text-align: left !important;
+    img {
+        height: 18px;
+        margin-right: 5px;
+    }
+  }
+  
 
   .box-detail .woocommerce-billing-fields, .woocommerce div#login{
     background: #fff !important;
@@ -4112,7 +4135,7 @@ body .wpb_content_element {
       padding: 0;
     }
   }
-  }
+}
   
 .fw_boton{
     display: block;

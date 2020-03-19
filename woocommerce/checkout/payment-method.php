@@ -37,17 +37,38 @@ jQuery('.capsula.payment').on('click', function(e) {
 	if (e.target !== this) return;
 	let capsula=jQuery(this)
 	capsula.find('input:radio').click()
-	seleccionarPago(jQuery(this))
+	seleccionarPago(capsula)
 });
 
+jQuery('.capsula.payment span').on('click', function(e) {
+	if (e.target !== this) return;
+	let capsula=jQuery(this).parent()
+	capsula.find('input:radio').click()
+	seleccionarPago(capsula)
+});
+
+jQuery('.capsula.payment .mp_pago').on('click', function(e) {
+	if (e.target !== this) return;
+	console.log('click1')
+	let capsula=jQuery(this).parent().parent()
+	capsula.find('input:radio').click()
+	seleccionarPago(capsula)
+});
+jQuery('.capsula.payment img').on('click', function(e) {
+	if (e.target !== this) return;
+	let capsula=jQuery(this).parent().parent().parent()
+	capsula.find('input:radio').click()
+	seleccionarPago(capsula)
+});
 jQuery('.capsula.payment input').on('click', function(e) {
 	if (e.target !== this) return;
-	seleccionarPago(jQuery(this).parent())
+	let capsula=jQuery(this).parent()
+	seleccionarPago(capsula)
 	
 });
 function seleccionarPago(capsula){
 
-	jQuery('.capsula.payment').removeClass("active");capsula.addClass('active');
+	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
 

@@ -165,6 +165,12 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               capsula.find('input:radio').click()
               seleccionarEnvio(capsula)
           });
+          jQuery('li.capsula.shipping span').on('click', function(e) {
+              if (e.target !== this) return;
+              let capsula=jQuery(this).parent()
+              capsula.find('input:radio').click()
+              seleccionarEnvio(capsula)
+          });
           jQuery('li.capsula.shipping input').on('click', function(e) {
               if (e.target !== this) return;
               seleccionarEnvio(jQuery(this).parent())
@@ -212,14 +218,16 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         </form>
         </div>
         <div class="totales">
+        <div id="overlay"></div>
         <?php } ?>
         <?php woocommerce_order_review() ?>
 
         <div class="cart-form-actions">
 
             <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
-            <button type="submit" class="btn-checkout finalizar" disabled style="display:none"><?=fw_theme_mod('fw_place_order_text')?></button>
-
+            <button type="submit" class="btn-checkout finalizar" disabled style="display:none">
+              <?=fw_theme_mod('fw_place_order_text')?>
+            </button>
         </div>
 
 
@@ -769,12 +777,23 @@ html, body {
 footer{
   display:none !important ;
 }
-form.processing .col-lg-8 div:not(.mostrar) {
-            display: none;
+form.processing .box-detail{
+  display:none !important;
 }
-
-form.processing .col-lg-8  .mostrar {
-    display: block !important;
+form.processing  #overlay {
+  display: block !important;
+}
+form.processing  .paso-loading {
+  display: block !important;
+}
+.processing .finalizar{
+  display:block !important;
+  background: gray;
+  color: gray;
+  pointer-events: none;
+}
+.processing .finalizar:focus{ 
+  pointer-events: none !important;
 }
 </style>
 <?php
