@@ -3601,6 +3601,7 @@ body .wpb_content_element {
 	text-transform: uppercase;
 	font-weight: 600;
 }
+
 .fw_checkout{
   
   
@@ -4198,6 +4199,23 @@ body .wpb_content_element {
   }
 }
   
+.fw_checkout {
+  .box-detail h1 .icon-paso,
+  .checkout_coupon button,
+  .box-detail .capsula input:checked ~ .checkmark,
+  .btn-checkout{
+    border-color:var(--main) !important;
+    background:var(--main) !important;
+  }
+  .box-detail .capsula input:checked ~ .checkmark,
+  .box-detail .capsula.shipping.active{
+    border-color:var(--main) !important;
+  }
+  .fa-check{
+    color:var(--main) !important;
+  }
+}
+
 .fw_boton{
     display: block;
     width: 115px;
