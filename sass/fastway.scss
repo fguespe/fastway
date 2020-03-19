@@ -3555,20 +3555,33 @@ body .wpb_content_element {
 	line-height: 1.5;
 	color: #666 !important;
 }
-
 .safe-box {
-	background: #aac67c;
+  background: #aac67c;
   padding: 3px 0 !important;
+  width: 145px;
+  float: right;
+  padding-top: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  img {
+    max-width: 36px;
+    float: left;
+  }
   p {
-	 color: #286f38;
-   font-weight: 600;
-	line-height: 1.5;
+    color: #286f38;
+    font-weight: 500;
+    line-height: 1.5;
+    width: 105px;
+    text-align: left;
+    float: right;
+    padding: 1px 10px 0 4px;
+    margin: 0;
+    font-size: 11px;
   }
   strong {
-    color: #286f38;
+    color: #286f38 ;
   }
 }
-
 .box-detail .login-btn a {
 	margin: 0 10px;
 	font-size: 14px !important;
@@ -3904,21 +3917,6 @@ body .wpb_content_element {
     font-size: 16px !important;
     line-height: 1.5;
     color: #666 !important;
-  }
-  
-  .safe-box {
-    background: #aac67c;
-        padding: 3px 0 !important;
-  }
-  
-  .safe-box p {
-     color: #286f38;
-     font-weight: 600;
-    line-height: 1.5;
-  }
-  
-  .safe-box strong {
-    color: #286f38;
   }
   
   .box-detail .login-btn a {
@@ -5175,27 +5173,4 @@ max-width:none !important;
   display:block;
   margin-top:8px;
   font-size:14px;
-}
-
-.safe-box {    
-  width: 145px;
-  float: right;
-  padding-top: 3px;
-  background-color: #ddd;
-  border-radius: 3px;
-  overflow: hidden;
-
-  img {
-    max-width: 36px;
-    float: left;
-  }
-  p {
-    width: 105px;
-    text-align: left;
-    float: right;
-    padding: 1px 10px 0 4px;
-    margin: 0;
-    font-family: "Open sans", sans-serif;
-    font-size: 11px;
-  }
 }
