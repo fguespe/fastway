@@ -549,7 +549,7 @@ function switchlogin(){
     height: 40px;
     font-size: 14px;
     font-weight: 700;
-    background: var(--main);
+    background: #3483fa;
     color: #fff;
     border-radius: 3px;
     text-transform: uppercase;

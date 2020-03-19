@@ -810,7 +810,7 @@ i.fad{
 }
 
 .rating{
-  /*color: var(--main);*/
+  /*color: #3483fa;*/
   color:#FFB400;
   font-size: 14px;
   a {
@@ -3591,7 +3591,7 @@ body .wpb_content_element {
     font-size: 14px;
     display: inline-block;
     margin: 10px 0;
-    color: var(--main);
+    color: #3483fa;
 }
 
 #login .submit_button {
@@ -3667,7 +3667,7 @@ body .wpb_content_element {
   }
   
   .box-detail h1 .icon-paso {
-    background-color: var(--main) !important /* color var */;
+    background-color: #3483fa !important /* color var */;
     line-height: 32px;
     font-weight: 700;
   }
@@ -3707,7 +3707,7 @@ body .wpb_content_element {
   
   .box-detail .capsula.shipping.active,
   .box-detail .capsula.payment.active {
-    border-left: 5px solid var(--main) !important;
+    border-left: 5px solid #3483fa !important;
   }
   
   
@@ -3779,8 +3779,8 @@ body .wpb_content_element {
   }
   
   .box-detail .capsula input:checked ~ .checkmark {
-    background-color: var(--main); /* color var */
-    border-color:var(--main); /* color var */
+    background-color: #2196F3; /* color var */
+    border-color: #2196F3; /* color var */
   }
   
   .btn-checkout {
@@ -3850,7 +3850,7 @@ body .wpb_content_element {
   }
   
   .checkout_coupon button {
-    background:var(--main);
+    background: #2196F3;
     border: none;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -3928,7 +3928,7 @@ body .wpb_content_element {
       font-size: 14px;
       display: inline-block;
       margin: 10px 0;
-      color: var(--main);
+      color: #3483fa;
   }
   
   #login .submit_button {
