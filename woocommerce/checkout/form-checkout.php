@@ -765,6 +765,9 @@ form.processing  .paso-loading {
 .processing .finalizar:focus{ 
   pointer-events: none !important;
 }
+[data-radio="billetera"] {
+    display:none !important;
+}
 </style>
 <?php
  }else { 
