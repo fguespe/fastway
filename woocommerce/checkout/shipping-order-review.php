@@ -14,20 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 jQuery('li.capsula.shipping').on('click', function(e) {
 	if (e.target !== this) return;
 	let capsula=jQuery(this)
-	console.log('entra1')
 	capsula.find('input:radio').click()
 	seleccionarEnvio(capsula)
 });
 jQuery('li.capsula.shipping span').on('click', function(e) {
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent()
-	console.log('entra2')
 	capsula.find('input:radio').click()
 	seleccionarEnvio(capsula)
 });
 jQuery('li.capsula.shipping input').on('click', function(e) {
 	if (e.target !== this) return;
-	console.log('entra3')
 	seleccionarEnvio(jQuery(this).parent())
 });
 function seleccionarEnvio(capsula){

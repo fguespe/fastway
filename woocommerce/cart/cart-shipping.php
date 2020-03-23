@@ -49,9 +49,8 @@ if(fw_theme_mod('fw_new_checkout')){
 						printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
 						?>
 						<span class="checkmark"></span>
-						<label for="shipping_method_0_<?=$id?><?=$instance?>"><?=$titulo?></span></label>
+						<label for="shipping_method_0_<?=$id?><?=$instance?>" class="title"><?=$titulo?></span></label>
 						<small>Costo del envío: <?=$costo?></small> 
-						<small></small>
 						<?php if($id!=='mercadoenvios-shipping'){ ?>
 						<?php } ?>
 						<?php

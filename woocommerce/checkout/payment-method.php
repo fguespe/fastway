@@ -27,7 +27,7 @@ if(fw_theme_mod('fw_new_checkout')){
 <li class="capsula payment" data-radio="<?=$value?>" data-label="<?=$gateway->title?>">
 	<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>"   />
 	<span class="checkmark"></span>
-	<?=$gateway->title?>
+	<span class="title"><?=$gateway->title?></span>
 	<small><?=$gateway->description?></small>
 </li>
 

@@ -768,6 +768,36 @@ form.processing  .paso-loading {
 [data-radio="billetera"] {
     display:none !important;
 }
+
+[data-radio="todopago"] input{
+float:left !important;
+}
+[data-radio="todopago"] img{
+float:right;
+}
+.fw_checkout #shipping_method li .title{
+  font-size:16px !important;
+  display:inline-block !important;
+}
+/*ee*/
+
+.fw-woocommerce-shipping-totals{
+font-size:0px;
+}
+.lpp-shipping-package-wrapper{
+width:100% !important;
+margin:0px !important;
+padding:0px !important;
+}
+.woocommerce-shipping-contents{
+  display:none;
+}
+.box-step .subtitle{
+max-width:85% !important;
+}
+.pickup-location-lookup-area-field{
+display:none !important;
+}
 </style>
 <?php
  }else { 
@@ -848,9 +878,9 @@ display:block !important;
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
+
 jQuery( document ).on( 'updated_cart_totals', function(){
   updateEnvioGratisME();
-  updateflete();
 });
 function checkpostalCode(){
   if(jQuery('#billing_postcode').length && !jQuery('#billing_postcode').val()){
@@ -860,15 +890,12 @@ function checkpostalCode(){
 }
 jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
-  //Actualizo todo pago
-  updateflete();
-
-  jQuery('li.payment_method_todopago label').html('Todo pago <img src="https://todopago.com.ar/sites/todopago.com.ar/files/boton_192x55_ahora3y6.png" alt="" />')
-  /*
-  setTimeout( function() {
-    //checkpostalCode();
-  }, 3000 );*/
+  let litp=jQuery(document).find(`[data-radio="todopago"]`)
+  let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
+  if(!litp.find('img.imgtp').length)jQuery('#payment_method_todopago').after(img)
   
+  litp.find(`small`).text('Procesado por todopago')
+  litp.find('.title').text('Tarjeta de crédito y débito')
 });
 function updateflete(){
 
@@ -889,7 +916,7 @@ function updateflete(){
 
 function updateEnvioGratisME(){
     //Cambio el label a mercadoenvios gratis
-    let dias=['(2-4 días)','(1-3 días)','(3-5 días)'];
+    let dias=['(2-4 días)','(1-3 días)','(3-5 días)','(6-8 días)'];
     let tipos=["Envío Gratis",'Normal a domicilio'];
     for(let j in tipos){
       let label=tipos[j];
@@ -901,7 +928,7 @@ function updateEnvioGratisME(){
           element.text('Envio Gratis Por Correo A Domicilio '+freecuando+'');
           element.addClass('mercadoenvios-shipping free');
         }else if(element && label==tipos[1]){  
-          element.html('Correo a domicilio '+freecuando+' \n*Pagando con mercadopago');
+          element.html('<span class="title">Correo a domicilio'+freecuando+'</span><small style="display:inline;"> * Pagando con mercadopago</small>');
           element.addClass('mercadoenvios-shipping ');
           
         }

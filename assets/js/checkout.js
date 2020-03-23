@@ -291,6 +291,8 @@ jQuery( function( $ ) {
 				data.shipping_method = shipping_methods;
 			}
 
+			/*ALTOWEB*/
+  			jQuery('.btn-checkout.continuar').prop('disabled', true);
 			$( '.woocommerce-checkout-payment, .woocommerce-checkout-review-order-table' ).block({
 				message: null,
 				overlayCSS: {
@@ -383,6 +385,9 @@ jQuery( function( $ ) {
 
 					// Fire updated_checkout event.
 					$( document.body ).trigger( 'updated_checkout', [ data ] );
+
+					/*ALTOWEB*/
+					$('.btn-checkout.continuar').prop('disabled', false);
 				}
 
 			});
