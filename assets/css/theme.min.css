@@ -4097,18 +4097,18 @@ body .wpb_content_element {
   }
 }
 
-.fw_checkout .box-detail h1 .icon-paso,
-.fw_checkout .checkout_coupon button,
-.fw_checkout .box-detail .capsula input:checked ~ .checkmark,
-.fw_checkout .btn-checkout {
+fw_checkout .fw_checkout .box-detail h1 .icon-paso,
+fw_checkout .fw_checkout .checkout_coupon button,
+fw_checkout .fw_checkout .box-detail .capsula input:checked ~ .checkmark,
+fw_checkout .fw_checkout .btn-checkout {
   border-color: var(--checkout) !important;
   background: var(--checkout) !important;
 }
-.fw_checkout .box-detail .capsula input:checked ~ .checkmark,
-.fw_checkout .box-detail .capsula.shipping.active {
+fw_checkout .fw_checkout .box-detail .capsula input:checked ~ .checkmark,
+fw_checkout .fw_checkout .box-detail .capsula.shipping.active {
   border-color: var(--checkout) !important;
 }
-.fw_checkout .fa-check {
+fw_checkout .fw_checkout .fa-check {
   color: var(--checkout) !important;
 }
 
