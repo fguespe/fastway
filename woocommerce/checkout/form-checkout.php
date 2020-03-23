@@ -935,7 +935,7 @@ function updateEnvioGratisME(){
           element.text('Envio Gratis Por Correo A Domicilio '+freecuando+'');
           element.addClass('mercadoenvios-shipping free');
         }else if(element && label==tipos[1]){  
-          element.html('<span class="title">Correo a domicilio'+freecuando+'</span><small style="display:inline;"> * Pagando con mercadopago</small>');
+          element.html('<span class="title">Correo a domicilio '+freecuando+'</span><small style="display:inline;"> * Pagando con mercadopago</small>');
           element.addClass('mercadoenvios-shipping ');
           
         }
