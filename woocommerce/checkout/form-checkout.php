@@ -267,6 +267,8 @@ function verificarFields(){
     var element = jQuery(this);
     if (element.val() == "") {
         isValid = false;
+        console.log(isValid)
+        element.css('border', '1px solid red');
     }
   });
   if(isValid){
