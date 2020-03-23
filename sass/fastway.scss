@@ -5114,7 +5114,9 @@ body .wpb_content_element {
   
 }
 
+
 .woocommerce-order {
+  display:block;
   .woocommerce-order-details,
   .woocommerce-customer-details,
   .woocommerce-customer-details .col-1,
@@ -5191,4 +5193,13 @@ max-width:none !important;
   display:block;
   margin-top:8px;
   font-size:14px;
+}
+
+.woocommerce-bacs-bank-details {
+  margin-top:30px;
+  h2,h3,div,li{
+    font-size:14px !important;
+    margin:0 auto !important;
+    text-transform:uppercase;
+  }
 }

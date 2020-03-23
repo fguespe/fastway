@@ -5080,6 +5080,9 @@ body .wpb_content_element {
   margin-right: 5px;
 }
 
+.woocommerce-order {
+  display: block;
+}
 .woocommerce-order .woocommerce-order-details,
 .woocommerce-order .woocommerce-customer-details,
 .woocommerce-order .woocommerce-customer-details .col-1,
@@ -5157,6 +5160,15 @@ body .wpb_content_element {
   display: block;
   margin-top: 8px;
   font-size: 14px;
+}
+
+.woocommerce-bacs-bank-details {
+  margin-top: 30px;
+}
+.woocommerce-bacs-bank-details h2, .woocommerce-bacs-bank-details h3, .woocommerce-bacs-bank-details div, .woocommerce-bacs-bank-details li {
+  font-size: 14px !important;
+  margin: 0 auto !important;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=theme.min.css.map */

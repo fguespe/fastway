@@ -36,12 +36,13 @@ defined( 'ABSPATH' ) || exit;
 			</p>
 
 		<?php else : ?>
-			<div class="container" style="width:100%;">
+			<section class="container pagoexitoso" style="width:100%;">
 				<i class="fad fa-check-circle"></i>
 				<h2>Gracias por tu compra</h2>
 				<p>El pedido fue registrado con número #<?=$order->get_order_number()?></p>
 				<span> Te enviamos un mail a <b><?=$order->get_billing_email()?></b> con el detalle y las instrucciones de como seguir.</span>
-			</div>
+				<a class="seguir" href="/">Seguir comprando</a>
+			</section>
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
@@ -55,6 +56,8 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <style>
+
+
 .woocommerce-order{
 	text-align:center !important;
 }
@@ -62,10 +65,16 @@ defined( 'ABSPATH' ) || exit;
 	font-size:50px;
 	color:green;
 }
-}
-.woocommerce-order .woocommerce-checkout h3{
-text-align:center !important;
-display:block !important;
-}
 
+.woocommerce-order .woocommerce-checkout h3{
+	text-align:center !important;
+	display:block !important;
+}
+.pagoexitoso a{
+	font-size:14px !important;
+	display:block !important;
+	color: #5BB956 !important;
+	margin-top:20px;
+	text-decoration:underline;
+}
 </style>
