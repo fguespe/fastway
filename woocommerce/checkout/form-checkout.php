@@ -267,8 +267,10 @@ function verificarFields(){
     var element = jQuery(this);
     if (element.val() == "") {
         isValid = false;
-        console.log(isValid)
-        element.css('border', '1px solid red');
+        element.addClass('enrojo')
+    }else{
+
+      element.removeClass('enrojo')
     }
   });
   if(isValid){
@@ -800,11 +802,14 @@ max-width:85% !important;
 .pickup-location-lookup-area-field{
 display:none !important;
 }
+.enrojo{
+  border:1px solid red !important;
+}
 </style>
 <?php
  }else { 
   
-do_action( 'woocommerce_before_checkout_form', $checkout );
+  do_action( 'woocommerce_before_checkout_form', $checkout );
 
 ?>
 

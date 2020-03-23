@@ -3657,7 +3657,7 @@ body .wpb_content_element {
 .fw_checkout .woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__arrow, .fw_checkout .woocommerce-account .select2-container--default .select2-selection--single .select2-selection__arrow {
   line-height: 46px !important;
   height: 46px !important;
-  border-color: #ddd !important;
+  border-color: #ddd;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -4101,15 +4101,15 @@ body .wpb_content_element {
 .fw_checkout .checkout_coupon button,
 .fw_checkout .box-detail .capsula input:checked ~ .checkmark,
 .fw_checkout .btn-checkout {
-  border-color: var(--main) !important;
-  background: var(--main) !important;
+  border-color: var(--checkout) !important;
+  background: var(--checkout) !important;
 }
 .fw_checkout .box-detail .capsula input:checked ~ .checkmark,
 .fw_checkout .box-detail .capsula.shipping.active {
-  border-color: var(--main) !important;
+  border-color: var(--checkout) !important;
 }
 .fw_checkout .fa-check {
-  color: var(--main) !important;
+  color: var(--checkout) !important;
 }
 
 .fw_boton {

@@ -1419,6 +1419,24 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_opt_color_checkout',
+	'label'       => __( 'Main Color', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'     => 'var(--main)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--checkout);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--checkout',
+		),
+	),
+) );
 /*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
