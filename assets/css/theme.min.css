@@ -3635,7 +3635,8 @@ body .wpb_content_element {
   height: 18px;
   margin-right: 5px;
 }
-.fw_checkout .box-detail .woocommerce-billing-fields, .fw_checkout .woocommerce div#login {
+.fw_checkout .box-detail .woocommerce-billing-fields,
+.fw_checkout div#login {
   background: #fff !important;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);

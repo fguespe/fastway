@@ -3628,7 +3628,8 @@ body .wpb_content_element {
   }
   
 
-  .box-detail .woocommerce-billing-fields, .woocommerce div#login{
+  .box-detail .woocommerce-billing-fields, 
+  div#login{
     background: #fff !important;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
       box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);

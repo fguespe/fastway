@@ -48,8 +48,16 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 ?>
 <script>
+  var logged=false;
   var paso = 1;
 </script>
+<?php if(is_user_logged_in()){ ?>
+<script>
+  paso=2
+  logged=true
+</script>
+<?php } ?>
+
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
     
     <div class="col-lg-8 col-sm-12">
@@ -60,63 +68,49 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               <span>Estamos procesando su pedido...aguarde unos segundos.</span>
             </div>
       </div>
-    <?php if(!is_user_logged_in()){ ?>
+        
+      <div class="box-detail paso-cuenta" >
+        <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
+            <h1><span class="icon-paso">1</span>Tu cuenta</h1>
+            <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
+            <div class="login-btn">
+              ¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
+            </div>
+              
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <div class="clear"></div>	
 
-      <div class="box-detail paso-cuenta uno" style="display:block;">
-          <h1><span class="icon-paso">1</span>Tu mail</h1>
-          <div><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
-					<div class="login-btn">
-						¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
-					</div>
-
-          <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(1)">modificar</a>
-						<span class="icon"><i class="fa fa-check"></i></span>
-						<span class="title">Tu cuenta</span>
-						<span class="subtitle" data-id=""></span>					
-					</div> 
-         <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
-				  <div class="clear"></div>	
-      </div>
-      <div class="box-detail paso-cuenta dos" style="display: none;">
-        <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
-        <div id="login" action="login" method="post">
-            <input id="username" type="text" name="username" placeholder="Email o username">
-            <input id="password" type="password" name="password" placeholder="Contraseña">
-            <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
-            <p class="status"></p>
-            <input class="submit_button" type="button" value="Login" onclick="fw_login()" name="submit">
-            <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
         </div>
+        <div class="dos" style="display:none">
+            <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
+            <div id="login" action="login" method="post">
+                <input id="username" type="text" name="username" placeholder="Email o username">
+                <input id="password" type="password" name="password" placeholder="Contraseña">
+                <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
+                <p class="status"></p>
+                <input class="submit_button" type="button" value="Login" onclick="fw_login()" name="submit">
+                <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+            </div>
 
-        <div class="login-btn">
-          ¿Aún no tenés cuenta?
-          <a class="registro" onclick="switchlogin()">Regresar</a>
+            <div class="login-btn">¿Aún no tenés cuenta? <a class="registro" onclick="switchlogin()">Regresar</a></div>
+            
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <div class="clear"></div>	
         </div>
-
-        <div class="capsula box-step" style="display:none;">
-          <a class="editar" onclick="editpaso(1)">modificar</a>
-          <span class="icon"><i class="fa fa-check"></i></span>
-          <span class="title">Tus datos</span>
-          <span class="subtitle" data-id=""></span>					
+        <div class="capsula box-step" style="display: <?=!is_user_logged_in()?'none':'block'?>">
+            <?php if(!is_user_logged_in()){ ?>
+            <a class="editar" onclick="editpaso(1)">modificar</a>
+            <?php }else{ ?>
+            <a class="editar" href="<?=wp_logout_url(wc_get_checkout_url() )?>">Cerrar sesión</a>
+            <?php } ?> 
+            <span class="icon"><i class="fa fa-check"></i></span>
+            <span class="title">Tus datos</span>
+            <span class="subtitle" data-id=""><?=is_user_logged_in()?wp_get_current_user()->user_email:''?></span>	
         </div> 
-        <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
-				<div class="clear"></div>	
       </div>
-      <?php }else{ ?>
-        <script>
-          paso = 2
-        </script>
-        <!--Campo uculot -->
-        <input type="email" hidden class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username">
-      <?php } ?>
+
       <div class="box-detail paso-datos" style="display:<?=is_user_logged_in()?'block':'none';?>;">
-          <?php if(!is_user_logged_in()){ ?>
           <h1><span class="icon-paso">2</span>Tus datos</h1>
-          <?php }else{ ?>
-          <h1><span class="icon-paso">1</span>Tus datos</h1>
-          <?php } ?>
-          
           <div class="woocommerce-billing-fields">
 
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
@@ -248,7 +242,7 @@ function fw_login(){
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               jQuery('#billing_email').val(data.email)
-              jQuery('.paso-cuenta.dos .box-step .subtitle').text(data.email)
+              jQuery('.paso-cuenta .dos .box-step .subtitle').text(data.email)
               nextpaso()
               
             }else{
@@ -295,6 +289,7 @@ jQuery(document).ready( function(jQuery) {
   unselect('shipping_method[0]')
   unselect('payment_method')
   verificarFields();
+  verificarEmail();
 
   jQuery('#billing_form input').on('input', function(e){
     verificarFields()
@@ -329,12 +324,13 @@ function editpaso(ppaso){
   let type=''
   if(ppaso==1){//
     resetStep('cuenta')
-    jQuery('.paso-cuenta.uno').show()
+    jQuery('.paso-cuenta').show()
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
+
     verificarEmail()
-    verificarFields()
+    //verificarFields()
     paso=1
   }else if(ppaso==2){//shipping
     resetStep('datos')
@@ -345,8 +341,8 @@ function editpaso(ppaso){
     paso=2
   }else if(ppaso==3){
     resetStep('shipping')
-    resetStep('pagos')
     jQuery('.paso-shipping').show()
+    resetStep('pagos')
     paso=3
   }else if(ppaso==4){
     resetStep('pagos')
@@ -358,6 +354,9 @@ function resetStep(type){
 
   jQuery('.paso-'+type).hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
+  
+  jQuery('.paso-'+type+' .dos').hide()//Nunca se da porq e otro cierra sesion
+
   jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' .box-step').removeClass('efecto')
   jQuery('.paso-'+type+' h1').show()
@@ -375,6 +374,7 @@ function resetStep(type){
 }
 
 function fillNextStep(type){
+  console.log('.paso-'+type+' .box-step')
   jQuery('.paso-'+type+' .box-step').show()
   jQuery('.paso-'+type+' .box-step').addClass('efecto')
   jQuery('.paso-'+type+' div:not(.box-step)').hide()
@@ -386,18 +386,20 @@ function nextpaso(){
   if(paso==2){
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
-
+    verificarFields();
 
   }else if(paso==3){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
+    jQuery('.btn-checkout.continuar').prop('disabled', true);
 
 
 
   }else if(paso==4){
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
+  jQuery('.btn-checkout.continuar').prop('disabled', true);
 
   }else if(paso==5){
     fillNextStep('pagos')
@@ -405,12 +407,11 @@ function nextpaso(){
     jQuery('.btn-checkout.finalizar').show()
 
   }
-  jQuery('.btn-checkout.continuar').prop('disabled', true);
  
 }
 function switchlogin(){
-    jQuery('.paso-cuenta.uno').toggle()
-    jQuery('.paso-cuenta.dos').toggle()
+    jQuery('.paso-cuenta .uno').toggle()
+    jQuery('.paso-cuenta .dos').toggle()
 }
 
 </script>
@@ -868,16 +869,8 @@ display:block !important;
     <?php woocommerce_checkout_payment() ?>
     <p class="description"><?=fw_theme_mod("fw_label_debajo_checkout_message")?></p>
 </form>
-
-
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-
-
-
-
-<?php
-
-} ?>
+<?php } ?>
 
 
 <script>
