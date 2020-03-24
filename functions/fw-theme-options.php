@@ -1393,7 +1393,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-set_theme_mod('fw_new_checkout',true);
+//set_theme_mod('fw_new_checkout',true);
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

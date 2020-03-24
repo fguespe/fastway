@@ -14,6 +14,12 @@ function fw_cart_set_shipping(){
     exit();
 }
 
+add_action('wp_ajax_nopriv_fw_ajax_logout', 'fw_ajax_logout');
+add_action('wp_ajax_fw_ajax_logout', 'fw_ajax_logout');
+function fw_ajax_logout(){
+  wp_logout();
+  die();
+}
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){

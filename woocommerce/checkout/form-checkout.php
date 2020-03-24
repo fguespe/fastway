@@ -73,9 +73,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
             <h1><span class="icon-paso">1</span>Tu cuenta</h1>
             <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
-            <div class="login-btn">
+          <!--  <div class="login-btn">
               ¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
-            </div>
+            </div>-->
               
             <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
             <div class="clear"></div>	
@@ -101,10 +101,10 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             <?php if(!is_user_logged_in()){ ?>
             <a class="editar" onclick="editpaso(1)">modificar</a>
             <?php }else{ ?>
-            <a class="editar" href="<?=wp_logout_url(wc_get_checkout_url() )?>">Cerrar sesión</a>
+            <!--<a class="editar cerrar" onclick="fw_logout()">Cerrar sesión</a>-->
             <?php } ?> 
             <span class="icon"><i class="fa fa-check"></i></span>
-            <span class="title">Tus datos</span>
+            <span class="title">Tu cuenta</span>
             <span class="subtitle" data-id=""><?=is_user_logged_in()?wp_get_current_user()->user_email:''?></span>	
         </div> 
       </div>
@@ -225,8 +225,22 @@ function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
+function fw_logout(){
+    jQuery.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url:ajaxurl,
+          data: { 
+              action: 'fw_ajax_logout'
+          },
+          success: function(data){
+            console.log(data)
+            logged=false
+            editpaso(1)
+          }
+      });
+}
 function fw_login(){
-    console.log(jQuery('#login #username').val())
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
@@ -242,7 +256,9 @@ function fw_login(){
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               jQuery('#billing_email').val(data.email)
-              jQuery('.paso-cuenta .dos .box-step .subtitle').text(data.email)
+              jQuery('.paso-cuenta .box-step .subtitle').text(data.email)
+              jQuery('.paso-cuenta .box-step .editar').hide()
+              jQuery('.paso-cuenta .box-step .cerrar').show()
               nextpaso()
               
             }else{
@@ -870,7 +886,8 @@ display:block !important;
     <p class="description"><?=fw_theme_mod("fw_label_debajo_checkout_message")?></p>
 </form>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-<?php } ?>
+<?php } 
+?>
 
 
 <script>
