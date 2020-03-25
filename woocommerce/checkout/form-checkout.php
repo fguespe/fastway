@@ -73,9 +73,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
             <h1><span class="icon-paso">1</span>Tu cuenta</h1>
             <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
-          <!--  <div class="login-btn">
+            <div class="login-btn">
               ¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
-            </div>-->
+            </div>
               
             <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
             <div class="clear"></div>	
@@ -89,7 +89,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
                 <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
                 <p class="status"></p>
                 <input class="submit_button" type="button" value="Login" onclick="fw_login()" name="submit">
-                <?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+                <div class="submit_button loading" style="display:none;"><i class='fas fa-circle-notch fa-spin'></i></div>
+                <?php wp_nonce_field( 'update-order-review', 'security'); ?>
+                
             </div>
 
             <div class="login-btn">¿Aún no tenés cuenta? <a class="registro" onclick="switchlogin()">Regresar</a></div>
@@ -98,11 +100,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             <div class="clear"></div>	
         </div>
         <div class="capsula box-step" style="display: <?=!is_user_logged_in()?'none':'block'?>">
-            <?php if(!is_user_logged_in()){ ?>
-            <a class="editar" onclick="editpaso(1)">modificar</a>
-            <?php }else{ ?>
-            <!--<a class="editar cerrar" onclick="fw_logout()">Cerrar sesión</a>-->
-            <?php } ?> 
+            <a class="editar" style="display:<?=is_user_logged_in()?'none':'block'?>" onclick="editpaso(1)">modificar</a>
+            <a class="editar cerrar" style="display:<?=!is_user_logged_in()?'none':'block'?>"  onclick="fw_logout()">Cerrar sesión</a>
             <span class="icon"><i class="fa fa-check"></i></span>
             <span class="title">Tu cuenta</span>
             <span class="subtitle" data-id=""><?=is_user_logged_in()?wp_get_current_user()->user_email:''?></span>	
@@ -226,6 +225,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 function fw_logout(){
+    confirm("Se perderaán los datos del carrito. Desea continuar?");
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
@@ -234,13 +234,14 @@ function fw_logout(){
               action: 'fw_ajax_logout'
           },
           success: function(data){
-            console.log(data)
-            logged=false
-            editpaso(1)
+            window.location.reload()
+            //editpaso(1)
           }
       });
 }
 function fw_login(){
+    jQuery('.submit_button').hide()
+    jQuery('.submit_button.loading').show()
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
@@ -252,16 +253,17 @@ function fw_login(){
               security: jQuery('#login #security').val() 
           },
           success: function(data){
-            console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
-              jQuery('#billing_email').val(data.email)
+              window.location.reload()
+              /*jQuery('#billing_email').val(data.email)
               jQuery('.paso-cuenta .box-step .subtitle').text(data.email)
               jQuery('.paso-cuenta .box-step .editar').hide()
               jQuery('.paso-cuenta .box-step .cerrar').show()
-              nextpaso()
+              nextpaso()*/
               
             }else{
+              jQuery('.submit_button').show()
               jQuery('#login .status').html('<span style="color:red;" >Login incorrecto</span>') 
             }
           }
@@ -472,6 +474,15 @@ function switchlogin(){
     min-height: 1px;
     position: relative;
     display: block;
+}
+.submit_button.loading{
+    width: 48%;
+    border-radius:3px;
+    text-align:center;
+    font-size:14px;
+    line-height:46px;
+    display:block;
+    display:none;  
 }
 .table .product-info .name {
     line-height: 16px;
@@ -756,7 +767,7 @@ table.shop_table{
 }
 #login input{
   width:48%;
-  display:inline-block !important;
+  display:inline-block;
 }
 html, body {
   height: 92%;
