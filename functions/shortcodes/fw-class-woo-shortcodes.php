@@ -235,11 +235,9 @@ class fw_Woo_Shortcodes {
 		ob_start();
 		$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $args, $atts ) );
 
-		if ( $products->have_posts() ) :
+		if ( $products->have_posts() ) 
 			self::get_template( 'fw-woo-products-carousel.php', $atts, $products );
-		else:
-			return fw_Woo_Shortcodes::recent_products($atts);
-		endif;
+		
 		
 		wp_reset_postdata();
 		
