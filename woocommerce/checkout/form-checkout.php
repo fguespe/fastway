@@ -225,7 +225,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 function fw_logout(){
-    confirm("Se perderaán los datos del carrito. Desea continuar?");
+    confirm("Se perderán los datos del carrito. Desea continuar?");
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
