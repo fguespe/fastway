@@ -63,6 +63,7 @@ if(fw_theme_mod('fw_action_woosettings')){
    update_option('woocommerce_enable_myaccount_registration','yes');
    update_option('woocommerce_enable_signup_and_login_from_checkout','yes');
    update_option('woocommerce_enable_checkout_login_reminder','yes');
+   update_option('woocommerce_hide_out_of_stock_items','yes');
    update_option('woocommerce_registration_generate_username','yes');
    update_option('woocommerce_ship_to_destination','billing_only');
    update_option('woocommerce_registration_generate_password','yes');
