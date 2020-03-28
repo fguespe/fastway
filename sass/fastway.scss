@@ -4214,7 +4214,12 @@ body .wpb_content_element {
   }
   .fa-check{
     color:var(--checkout) !important;
+  }  
+  .box-detail .capsula.shipping.active,
+  .box-detail .capsula.payment.active {
+    border-left: 5px solid var(--checkout) !important;
   }
+  
 
 }
 
