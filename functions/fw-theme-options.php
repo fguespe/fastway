@@ -1473,7 +1473,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'ePosnet Descripción', 'fastway' ),
 	'description'=>'Display a messsage on the my account page',
 	'section'     => 'section_woo_checkout',
-	'default' => 'Procesado por e-posnet'
+	'default' => 'Paga en 3 SIN INTERÉS. Procesado por e-Posnet'
 ) );
 
 
