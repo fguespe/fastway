@@ -929,14 +929,14 @@ function setEposnet(){
   let label='<?=fw_theme_mod('fw_checkout_todopago_label')?>'
   let desc='<?=fw_theme_mod('fw_checkout_todopago_desc')?>'
   if(label)litp.find('.title').text(label)
-  if(desc)litp.find('small').text('<?=fw_theme_mod('fw_checkout_todopago_desc')?>')
+  if(desc)litp.find('small').text(desc)
 }
 function setTodopago(){
   let litp=jQuery(document).find(`[data-radio="spyr_firstdata_gateway"]`)
   let label='<?=fw_theme_mod('fw_checkout_eposnet_label')?>'
   let desc='<?=fw_theme_mod('fw_checkout_eposnet_desc')?>'
   if(label)litp.find('.title').text(label)
-  if(desc)litp.find('small').text('<?=fw_theme_mod('fw_checkout_eposnet_desc')?>')
+  if(desc)litp.find('small').text(desc)
 }
 function updateflete(){
 
