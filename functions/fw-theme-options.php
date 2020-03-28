@@ -1437,19 +1437,46 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
-/*
+
+/*tp*/
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'checkout-minimal',
-	'label'       => __( 'Checkout Minimal ', 'fastway' ),
-	'description'	=> 'Hides header and footer',
-	'section'     => 'section_woo',
-	'default'     => 1,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
-) );*/
+	'type'        => 'text',
+	'settings'    => 'fw_checkout_todopago_label',
+	'label'       => __( 'Label Todo Pago', 'fastway' ),
+	'description'	=>	'Nombre del rol, separados con ",".',
+	'section'     => 'section_woo_checkout',
+	'default'     => 'Tarjeta de crédito y débito',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'fw_checkout_todopago_desc',
+	'label'       => __( 'Todo Pago Descripcion', 'fastway' ),
+	'description'=>'Display a messsage on the my account page',
+	'section'     => 'section_woo_checkout',
+	'default' => 'Procesado por todopago'
+) );
+
+/*tp*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_checkout_eposnet_label',
+	'label'       => __( 'Label Todo Pago', 'fastway' ),
+	'description'	=>	'Nombre del rol, separados con ",".',
+	'section'     => 'section_woo_checkout',
+	'default'     => 'Tarjeta de crédito y débito',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'fw_checkout_eposnet_desc',
+	'label'       => __( 'Todo Pago Descripcion', 'fastway' ),
+	'description'=>'Display a messsage on the my account page',
+	'section'     => 'section_woo_checkout',
+	'default' => 'Procesado por e-posnet'
+) );
+
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',

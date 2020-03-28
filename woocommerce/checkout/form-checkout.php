@@ -903,6 +903,7 @@ display:block !important;
 
 <script>
 
+
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
@@ -921,9 +922,10 @@ jQuery(document).on( 'updated_checkout', function(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
   let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
   if(!litp.find('img.imgtp').length)jQuery('#payment_method_todopago').after(img)
-  
-  litp.find(`small`).text('Procesado por todopago')
-  litp.find('.title').text('Tarjeta de crédito y débito')
+  let label='<?=fw_theme_mod('fw_checkout_todopago_label')?>'
+  let desc='<?=fw_theme_mod('fw_checkout_todopago_desc')?>'
+  if(label)litp.find('.title').text()
+  if(desc)litp.find('small').text('<?=fw_theme_mod('fw_checkout_todopago_desc')?>')
 });
 function updateflete(){
 

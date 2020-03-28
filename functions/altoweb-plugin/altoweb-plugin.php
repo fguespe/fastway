@@ -111,7 +111,7 @@ if(fw_theme_mod('fw_action_woosettings')){
 $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
 $opts['title']='Tarjeta de crédito y débito';
 $opts['description']='Procesado por mercadopago
-<div class="mp_pago d-flex">
+<div class="mp_pago">
     <img alt="visa" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/visa.svg">
     <img alt="mastercard" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/mastercard.svg">
     <img alt="amex" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/amex.svg">
