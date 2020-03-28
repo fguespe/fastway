@@ -919,14 +919,25 @@ function checkpostalCode(){
 }
 jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
+  setTodopago()
+  setEposnet()
+});
+function setEposnet(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
   let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
   if(!litp.find('img.imgtp').length)jQuery('#payment_method_todopago').after(img)
   let label='<?=fw_theme_mod('fw_checkout_todopago_label')?>'
   let desc='<?=fw_theme_mod('fw_checkout_todopago_desc')?>'
-  if(label)litp.find('.title').text()
+  if(label)litp.find('.title').text(label)
   if(desc)litp.find('small').text('<?=fw_theme_mod('fw_checkout_todopago_desc')?>')
-});
+}
+function setTodopago(){
+  let litp=jQuery(document).find(`[data-radio="spyr_firstdata_gateway"]`)
+  let label='<?=fw_theme_mod('fw_checkout_eposnet_label')?>'
+  let desc='<?=fw_theme_mod('fw_checkout_eposnet_desc')?>'
+  if(label)litp.find('.title').text(label)
+  if(desc)litp.find('small').text('<?=fw_theme_mod('fw_checkout_eposnet_desc')?>')
+}
 function updateflete(){
 
   let buscar="label:contains('Radio de 10km (Canning)')"
