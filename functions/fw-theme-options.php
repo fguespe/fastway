@@ -146,10 +146,11 @@ Kirki::add_panel( 'panel_fastwayblog', array(
     'title'       => __( 'Fastway Blog', 'fastway' ),
 ) );
 
-Kirki::add_panel( 'panel_fastwaywoo', array(
-    'title'       => __( 'Fastway Woocommerce', 'fastway' ),
-) );
-
+if(is_plugin_active('woocommerce/woocommerce.php')){
+	Kirki::add_panel( 'panel_fastwaywoo', array(
+		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
+	) );
+}
 Kirki::add_section( 'section_blog_general', array(
     'title'          => __( 'General', 'fastway' ),
     'panel'          => 'panel_fastwayblog',
