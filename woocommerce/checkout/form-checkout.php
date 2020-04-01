@@ -26,12 +26,12 @@ function fw_custom_override_checkout_fieldss( $fields ) {
       'priority' => 31
     );
 
-    $fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
-    $fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
-    $fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
-    $fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
-    $fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
-    $fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
+    if($fields['billing']['billing_first_name'])$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
+    if($fields['billing']['billing_last_name'])$fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
+    if($fields['billing']['billing_company'])$fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
+    if($fields['billing']['billing_phone'])$fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
+    if($fields['billing']['billing_city'])$fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
+    if($fields['billing']['billing_postcode'])$fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
  
     unset($fields['billing']['billing_email']);
     //unset($fields['billing']['billing_country']);
