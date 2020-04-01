@@ -10,7 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wc_cart_totals_shipping_html(); ?>
 	<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 </div>
+
 <script>
+
+if(ocultoship){
+    jQuery('.shipping-total').hide()
+    ocultoship= false
+}
 jQuery('li.capsula.shipping').on('click', function(e) {
 	if (e.target !== this) return;
 	let capsula=jQuery(this)
@@ -28,6 +34,9 @@ jQuery('li.capsula.shipping input').on('click', function(e) {
 	seleccionarEnvio(jQuery(this).parent())
 });
 function seleccionarEnvio(capsula){
+	
+	jQuery('.shipping-total').show()
+	
 	jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')+' '+capsula.data('costo')
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))

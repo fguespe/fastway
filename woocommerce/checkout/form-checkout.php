@@ -807,12 +807,12 @@ float:left !important;
 [data-radio="todopago"] img{
 float:right;
 }
-.fw_checkout #shipping_method li .title{
+.fw_checkout #shipping_method li .title,
+.fw_checkout #payment li .title{
   font-size:16px !important;
   display:inline-block !important;
 }
 /*ee*/
-
 .fw-woocommerce-shipping-totals{
 font-size:0px;
 }
@@ -903,6 +903,7 @@ display:block !important;
 
 <script>
 
+var ocultoship=true
 
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
@@ -917,10 +918,12 @@ function checkpostalCode(){
     jQuery('#billing_postcode').val(msg)
   }
 }
+var ocultoship=true
 jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
+
 });
 function setEposnet(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
