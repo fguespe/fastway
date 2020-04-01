@@ -170,15 +170,12 @@ if( !function_exists('fw_m_logo') ) {
 if( !function_exists('fw_compra_protegida') ) {
     add_shortcode('fw_compra_protegida', 'fw_compra_protegida');
     function fw_compra_protegida( $type="" ){
-        $devolver='';
-        if(fw_theme_mod('fw_new_checkout')){
-            $devolver= '
-            <li class="text-right safe-box"> 
-                <img width="36" src="/wp-content/themes/fastway/assets/img/safe-shopping.svg" alt="Compra Segura">
-                <p><strong>Compra Segura</strong>
-                100% Protegido</p>
-            </li>';
-        }
+        $devolver= '
+        <li class="text-right safe-box"> 
+            <img width="36" src="/wp-content/themes/fastway/assets/img/safe-shopping.svg" alt="Compra Segura">
+            <p><strong>Compra Segura</strong>
+            100% Protegido</p>
+        </li>';
        
         return $devolver;
     }
