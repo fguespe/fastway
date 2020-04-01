@@ -166,7 +166,7 @@ if(!fw_theme_mod('fw_new_checkout')){
 			</tr>
 		<?php endforeach; ?>
 
-		<tr class="shipping-total">
+		<tr class="shipping-total" style="display:none;">
 				<th>Envío</th>
 				<td><?=WC()->cart->get_cart_shipping_total()?></td>
 		</tr>

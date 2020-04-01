@@ -902,9 +902,7 @@ display:block !important;
 
 
 <script>
-
-var ocultoship=true
-
+var envioSeleccionado=false
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
@@ -918,11 +916,12 @@ function checkpostalCode(){
     jQuery('#billing_postcode').val(msg)
   }
 }
-var ocultoship=true
 jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
+
+	if(envioSeleccionado)jQuery('.shipping-total').attr("style", "display: table-row; !important")
 
 });
 function setEposnet(){
