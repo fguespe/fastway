@@ -29,6 +29,7 @@ jQuery('li.capsula.shipping input').on('click', function(e) {
 	if (e.target !== this) return;
 	seleccionarEnvio(jQuery(this).parent())
 });
+
 function seleccionarEnvio(capsula){
 	
 	envioSeleccionado=true
