@@ -657,7 +657,8 @@ function switchlogin(){
   border:1px solid  !important;
   margin:0px !important;
 }
-.woocommerce-input-wrapper.terms a,.woocommerce-input-wrapper.terms {
+.woocommerce-input-wrapper.terms a,
+.woocommerce-input-wrapper.terms {
 font-size:12px !important;
 }
 .order-container{
