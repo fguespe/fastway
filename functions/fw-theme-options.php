@@ -1260,18 +1260,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_cuit_required',
-	'label'       => __( 'CUIT Obligatorio ', 'fastway' ),
-	'description'	=> 'Pone el campo de cuit/dni obligatorio en el checkout',
-	'section'     => 'section_woo',
-	'default'     => 1,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
 	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
