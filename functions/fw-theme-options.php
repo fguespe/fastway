@@ -2477,13 +2477,14 @@ Kirki::add_field( 'theme_config_id', array(
 
 /*LOOP*/
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_ajax]',
-	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_btn type="ajax/link"]',
+	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container][fw_loop_btn]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -2803,7 +2804,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_general',
 	'default'     => 'simple',
 	'choices'     => array(
-		'none'   	=> 	'Sacar',
+		'none'   	=> 	'None',
 		'simple'   	=> 	'Simple',
 		'random'   	=> 	'Random',
 		'multi' 	=> 	'Multiple',

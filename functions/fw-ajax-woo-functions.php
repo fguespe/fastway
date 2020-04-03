@@ -130,20 +130,31 @@ function fw_product_is_purchasable($product){
 }
 
 
-add_shortcode('fw_loop_cart', 'fw_loop_ajax');
-add_shortcode('fw_loop_ajax', 'fw_loop_ajax');
-function fw_loop_ajax() {
+add_shortcode('fw_loop_cart', 'fw_loop_btn');
+add_shortcode('fw_loop_ajax', 'fw_loop_btn');
+add_shortcode('fw_loop_btn', 'fw_loop_btn');
+function fw_loop_btn( $atts ) {
+  $atts = shortcode_atts(array('type' => 'ajax' ), $atts );
+  $type=$atts['type'];
+
   global $product;
   if(fw_check_hide_purchases())return;
   if(!fw_product_is_purchasable($product))return;
   if ( $product->is_type( 'variable' ) ) {
-    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location:href='.$product->get_permalink($product->id).')" class="fw_add_to_cart_button loop">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
     <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>Ver opciones</span>
     </button>';
-  }else{
+  }else if($type=='ajax'){
+    echo $type;
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop ">
+    <i class="fad fa-cart-plus "></i>
+    <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+    </button>';
+  }else{
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'. esc_html( $product->add_to_cart_text() ).'</span>
