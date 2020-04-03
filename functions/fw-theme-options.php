@@ -3087,6 +3087,13 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'add-to-cart-link-text',
+	'label'    => __( 'Ver detalle', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'Ver detalle', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'add-to-cart-text',
 	'label'    => __( 'Add to cart Label', 'fastway' ),
 	'section'     => 'section_labels',
@@ -3095,7 +3102,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'proceed-to-checkout-text',
-	'label'    => __( 'Comprar', 'fastway' ),
+	'label'    => __( 'Boton al checkout', 'fastway' ),
 	'section'     => 'section_labels',
 	'default'	=>'Comprar',
 ) );

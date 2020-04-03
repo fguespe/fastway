@@ -144,20 +144,19 @@ function fw_loop_btn( $atts ) {
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
     <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>Ver opciones</span>
+    <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
     </button>';
   }else if($type=='ajax'){
-    echo $type;
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+    <span>'.fw_theme_mod('add-to-cart-text').'</span>
     </button>';
   }else{
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
+    <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
     </button>';
   }
 
