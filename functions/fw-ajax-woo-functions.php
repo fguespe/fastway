@@ -154,7 +154,7 @@ function fw_loop_btn( $atts ) {
     </button>';
   }else{
     echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.' ">
-    <i class="fad fa-cart-plus "></i>
+    <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
     </button>';
