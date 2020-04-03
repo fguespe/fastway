@@ -225,7 +225,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     
 
     if ( $sale_price<$regular_price) {
-        return '<span class="fw_price price1" data-precio="'.$product->get_price().'">
+        return '<span class="fw_price price1 sale" data-precio="'.$product->get_price().'">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
             <span class="tachado">
                 <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
@@ -233,7 +233,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
             </span>
             </span>';
     }else{
-        return '<span class="fw_price price1" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+        return '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
     }      
 
 }
