@@ -3088,14 +3088,14 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-link-text',
-	'label'    => __( 'Ver detalle', 'fastway' ),
+	'label'    => __( 'Ver detalle (Loop)', 'fastway' ),
 	'section'     => 'section_labels',
 	'default'	=>__( 'Ver detalle', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-text',
-	'label'    => __( 'Add to cart Label', 'fastway' ),
+	'label'    => __( 'Add to cart (Loop)', 'fastway' ),
 	'section'     => 'section_labels',
 	'default'	=>__( 'Agregar al carrito', 'fastway' ),
 ) );
