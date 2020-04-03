@@ -141,19 +141,19 @@ function fw_loop_btn( $atts ) {
   if(fw_check_hide_purchases())return;
   if(!fw_product_is_purchasable($product))return;
   if ( $product->is_type( 'variable' ) ) {
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.'">
     <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
     </button>';
   }else if($type=='ajax'){
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop '.$type.'">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-text').'</span>
     </button>';
   }else{
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.' ">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
