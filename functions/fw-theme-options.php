@@ -2117,6 +2117,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_single_code',
 	'label'    => __( 'Single Product Code', 'fastway' ),     
 	'section'     => 'section_woo_single',
+	'description'     => '[fw_single_container]
+	[fw_single_gallery]
+	[fw_single_summary]
+	[fw_single_title]
+	[fw_single_price]
+	[fw_single_cart]
+	[fw_short_desc]
+	[altoweb_financiacion]
+	[/fw_single_summary]
+	[fw_single_tabs]
+	[/fw_single_container]
+	[fw_single_related]',
+	
 	'default'     => '[fw_single_container]
 	[fw_single_gallery]
 	[fw_single_summary]
