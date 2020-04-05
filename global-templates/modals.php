@@ -91,10 +91,10 @@
                         <div class="col-md-12 align-bottom">
                             <div class="row finales">
                                 <div class="col-md-6 text-center align-bottom">
-                                    <label class="control-label btns">Cuotas de: <span id="cuota" class="b"></span></label>	
+                                    <label class="control-label btns">Cuotas de: <span id="cuota" class="b">0</span></label>	
                                 </div>
                                 <div class="col-md-6 text-center">									
-                                    <label class="control-label btns">Total: <span id="montofinal" class="b"></span></label>	
+                                    <label class="control-label btns">Total: <span id="montofinal" class="b">0</span></label>	
                                 </div>	
                             </div>								
                         </div>
@@ -161,7 +161,9 @@
     function obtenerSeleccionCombo(idCombo){
         if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
-        if(indice)return document.getElementById(idCombo).options[indice].value;
+        console.log(idCombo,indice)
+
+        if(indice>=0)return document.getElementById(idCombo).options[indice].value;
     }
     
     function limpiarComboBancos(){
@@ -282,15 +284,16 @@
     function calcular(){
         var rate = obtenerSeleccionCombo('cuotas');
 
-        console.log('rate: '+rate);
         var montoFinal = 0;	
         if(rate>0){
             montoFinal = parseFloat(precioObtenido) + (parseFloat(rate) * parseFloat(precioObtenido)) / 100;
         }else{
             montoFinal = parseFloat(rate) + parseFloat(precioObtenido);
         }
+
         var cantCuotas = obtenerClaveCombo('cuotas');
         var valorCuota = montoFinal / parseInt(cantCuotas);
+
         document.getElementById('cuota').innerHTML = '$' + valorCuota.toFixed(2);
         document.getElementById('montofinal').innerHTML = '$' + montoFinal.toFixed(2);
         document.getElementById('cuotatp').innerHTML = '$' + valorCuota.toFixed(2);
