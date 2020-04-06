@@ -274,6 +274,16 @@ function fw_image() {
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Text Type"),
+                    "param_name"  => "text_type",
+                    "value" => array(
+                        "Encima de la imagen" => "floating",
+                        "Abajo de la imagen" =>""  ,
+                    ),
+                    "std" => 'floating', //Default Red color
+                ),
+                array(
                     "type" => 'textfield',
                     "heading"     => __("Title"),
                     "param_name"  => "title",
@@ -419,6 +429,7 @@ function fw_image_function( $atts, $content ) {
             'image'      =>  '',
             'link'      =>  '',
             'sblock'      =>  '',
+            'text_type'      =>  'floating',
             'title'      =>  '',
             'subtitle'      =>  '',
             'image_mobile'      =>  '',
@@ -440,14 +451,14 @@ function fw_image_function( $atts, $content ) {
     if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
     $return .= '<img src="'.$image.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
-    $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
+    if($atts['title'])$return .= '<div class="texts '.$atts['text_type'].'"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
         if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
         $return .= '<img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/>';   
-        $return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
+        if($atts['title'])$return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
     }
