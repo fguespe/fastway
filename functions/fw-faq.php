@@ -1,7 +1,7 @@
 <?php 
-add_action( 'init', 'bookworm_blog_cpt' );
+add_action( 'init', 'fw_faq_create' );
 
-function bookworm_blog_cpt() {
+function fw_faq_create() {
 
     register_post_type( 'fw_faq',array(
       'description'           => __('FAQ Articles','pressapps-accordion-faq'),
