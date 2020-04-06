@@ -174,7 +174,7 @@ function whero_limit_image_size($file) {
    $is_image = strpos($file['type'], 'image');
 
    if ( ( $image_size > $limit ) && ($is_image !== false) )
-      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
+      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido. te recomendamos usar un compresor de imagenes como <a href="https://tinypng.com/">tinypng</a>';
 
    return $file;
 
