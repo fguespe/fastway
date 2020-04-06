@@ -2145,12 +2145,16 @@ footer .widget_nav_menu li a {
 .woocommerce-shop .widget li a,
 .woocommerce-shop .widget li span,
 .woocommerce-shop .widget .prdctfltr_add_scroll span {
+  display: block !important;
   font-size: 13px;
   text-align: left;
   text-transform: capitalize;
   line-height: 20px;
   font-weight: 400;
   color: #444444;
+}
+.woocommerce-shop .widget li a:first-letter {
+  text-transform: uppercase !important;
 }
 .woocommerce-shop .widget_layered_nav_filters a {
   background-color: #fff;

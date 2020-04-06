@@ -2125,6 +2125,7 @@ footer .widget_nav_menu li a {
   .widget li a,
   .widget li  span,
   .widget .prdctfltr_add_scroll span{	
+    display: block !important;
     font-size:13px;
     text-align:left;
     text-transform: capitalize;
@@ -2132,6 +2133,9 @@ footer .widget_nav_menu li a {
     font-weight:400;
     color:#444444;
     
+  }
+  .widget li a:first-letter{
+    text-transform:uppercase !important;
   }
   .widget_layered_nav_filters a {
     background-color: #fff;
