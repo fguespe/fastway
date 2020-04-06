@@ -5005,9 +5005,11 @@ body .wpb_content_element {
       margin-top:10px !important;
       display:block
     }
+    form label{
+      display: none !important;
+    }
     form label,form .woocommerce-input-wrapper{
-    display:block !important;
-    width:100%;
+      width:100%;
     }
     .woocommerce-form-login__submit{
       background:var(--main);
