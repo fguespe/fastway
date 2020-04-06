@@ -72,8 +72,7 @@ if( !function_exists( 'fw_faqs' ) ) {
     );
     $devolver='<div class="pressapps_faq_accordion">';
     foreach($pressapps_terms as $cate){
-        $devolver.= '<div class="pafa-accordion-cat"> 
-        <h2>'.$cate->name.'</h2>';
+        $devolver.= '<div class="pafa-accordion-cat"><h2>'.$cate->name.'</h2>';
         
         $qs = get_posts( array_merge( $qry_args,
 					array('tax_query'     =>
@@ -91,7 +90,7 @@ if( !function_exists( 'fw_faqs' ) ) {
               <h3 class="pafa-accordion-q pafa-accordion-open">
               <span style="background-color:#D0802E; border-radius: 0px; ?>;"><i class="fa fa-plus" style="color: #ffffff"></i>
               </span>'.$preg->post_title.'</h3>
-              <div class="pafa-accordion-a" style="display: block;">
+              <div class="pafa-accordion-a" style="display: none;">
                   <p>'.$preg->post_content.'</p>
               </div>
           </div>';

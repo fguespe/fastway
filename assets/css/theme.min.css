@@ -44,7 +44,7 @@
   }
 }
 .fw_page_title {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -3070,7 +3070,7 @@ body .wpb_content_element {
   border-bottom: 1px solid var(--main);
 }
 .woocommerce .woocommerce-tabs .woocommerce-Tabs-panel p {
-  font-size: 14px !important;
+  font-size: 15px !important;
   word-break: break-all;
 }
 .woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
@@ -4111,6 +4111,10 @@ body .wpb_content_element {
 }
 .fw_checkout .fa-check {
   color: var(--checkout) !important;
+}
+.fw_checkout .box-detail .capsula.shipping.active,
+.fw_checkout .box-detail .capsula.payment.active {
+  border-left: 5px solid var(--checkout) !important;
 }
 
 .fw_boton {
@@ -5170,6 +5174,41 @@ body .wpb_content_element {
   font-size: 14px !important;
   margin: 0 auto !important;
   text-transform: uppercase;
+}
+
+.pafa-accordion-cat,
+.pafa-block-cat {
+  margin-top: 40px;
+}
+
+.pafa-icon .pafa-block-q span,
+.pafa-icon .pafa-accordion-q span {
+  margin-right: 15px;
+}
+
+.pafa-list .pafa-list-cat {
+  margin: 1.6em 0 0;
+}
+
+.pafa-list .pafa-list-q {
+  margin: 1.2em 0 0;
+}
+
+.pafa-accordion .pafa-accordion-q {
+  cursor: pointer;
+  margin: 30px 0 0 55px;
+}
+
+.pafa-accordion .pafa-accordion-q span {
+  display: inline-block;
+  line-height: 1;
+  padding: 10px;
+  margin-left: -55px;
+}
+
+.pafa-accordion .pafa-accordion-a {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /*# sourceMappingURL=theme.min.css.map */
