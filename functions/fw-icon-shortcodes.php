@@ -58,6 +58,11 @@ function fw_social_icons( $atts ) {
             $link=fw_company_data($type,true,$cant);
             $value="Ir al Instagram";
             $icon_color="#9A3CC3";
+        }else if($type==="twitter"){
+            $icon="fab fa-twitter";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir al Twitter";
+            $icon_color="#52ABE0";
         }else if($type==="linkedin"){
             $icon="fab fa-linkedin";
             $link=fw_company_data($type,true,$cant);
