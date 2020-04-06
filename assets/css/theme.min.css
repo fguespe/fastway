@@ -62,6 +62,17 @@
   line-height: 14px !important;
 }
 
+.home #header.fw_floating {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.home #header.fw_floating .fw_header.middle {
+  background: transparent;
+}
+
 .fa-facebook-square,
 .fa-facebook {
   color: var(--facebok) !important;

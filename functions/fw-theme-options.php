@@ -571,6 +571,19 @@ Kirki::add_field( 'theme_config_id', array(
 		'fw_header.bottom' => __( 'Bottom', 'fastway' ),
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_floating_trans_header',
+	'label'       => __( 'Floating Transparent', 'fastway' ),
+	'section'     => 'section_header',
+	'description' => 'Solo funciona en la pagina principal.',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header-padding',

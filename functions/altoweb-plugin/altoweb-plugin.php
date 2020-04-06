@@ -174,7 +174,7 @@ function whero_limit_image_size($file) {
    $is_image = strpos($file['type'], 'image');
 
    if ( ( $image_size > $limit ) && ($is_image !== false) )
-      $file['error'] = fw_theme_mod('fw_max_media_upload').'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
+      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido.';
 
    return $file;
 

@@ -95,7 +95,7 @@ $classdarkmode='';
 if(fw_theme_mod('fw_body_dark_mode'))$classdarkmode='fw_body_dark_mode';
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
 <body <?php body_class("page-".$nombreurl.' '.$classdarkmode.' '); ?>>
-<header id="header">
+<header id="header" class="<?=fw_theme_mod('fw_floating_trans_header')?'fw_floating':''?>">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
     echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
