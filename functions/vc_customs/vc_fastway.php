@@ -567,12 +567,6 @@ function vc_fw_shorts() {
                     "heading"     => 'Subtext',
                     "param_name"  => "stext",
                 ),
-                /*
-                array(
-                    "type" => 'textfield',
-                    "heading"     => __("Text Size"),
-                    "param_name"  => "size",
-                ),*/
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Link"),
@@ -583,24 +577,6 @@ function vc_fw_shorts() {
                     "heading"     => __("Cant"),
                     "param_name"  => "cant",
                 ),
-
-               /*
-                array(
-                    "type" => "textfield",
-                    "class" => "",
-                    "heading" => __( "Icon color", "fastway" ),
-                    "param_name" => "icon_color",
-                    "value" => '', //Default Red color
-                    "description" => __( "Choose icon color", "fastway" )
-                ),
-                array(
-                    "type" => "textfield",
-                    "class" => "",
-                    "heading" => __( "Text color", "fastway" ),
-                    "param_name" => "text_color",
-                    "value" => '', //Default Red color
-                    "description" => __( "Choose text color", "fastway" )
-                ),*/
                 array(
                     "type" => 'textfield',
                     "heading"     => __("iframe"),
@@ -626,7 +602,7 @@ function vc_fw_shorts() {
                     'type' => 'textfield',
                     'heading' => __( 'Extra class name', 'js_composer' ),
                     'param_name' => 'el_class',
-                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                    'description' =>  'fw_page_title para los titulos de pagina' ,
                 ),  
                   
                 
