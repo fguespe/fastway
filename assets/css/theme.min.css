@@ -2147,7 +2147,7 @@ footer .widget_nav_menu li a {
 .woocommerce-shop .widget .prdctfltr_add_scroll span {
   font-size: 13px;
   text-align: left;
-  text-transform: lowercase !important;
+  text-transform: capitalize;
   line-height: 20px;
   font-weight: 400;
   color: #444444;
@@ -4954,10 +4954,13 @@ body .wpb_content_element {
   margin-top: 10px !important;
   display: block;
 }
+.woocommerce-checkout form label,
+.woocommerce-account form label {
+  display: none !important;
+}
 .woocommerce-checkout form label, .woocommerce-checkout form .woocommerce-input-wrapper,
 .woocommerce-account form label,
 .woocommerce-account form .woocommerce-input-wrapper {
-  display: block !important;
   width: 100%;
 }
 .woocommerce-checkout .woocommerce-form-login__submit,
