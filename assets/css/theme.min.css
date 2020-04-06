@@ -5189,7 +5189,6 @@ body .wpb_content_element {
 .pafa-list .pafa-list-cat {
   margin: 1.6em 0 0;
 }
-
 .pafa-list .pafa-list-q {
   margin: 1.2em 0 0;
 }
@@ -5198,14 +5197,12 @@ body .wpb_content_element {
   cursor: pointer;
   margin: 30px 0 0 55px;
 }
-
 .pafa-accordion .pafa-accordion-q span {
   display: inline-block;
   line-height: 1;
   padding: 10px;
   margin-left: -55px;
 }
-
 .pafa-accordion .pafa-accordion-a {
   padding-top: 15px;
   padding-bottom: 15px;
