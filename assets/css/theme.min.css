@@ -2148,7 +2148,7 @@ footer .widget_nav_menu li a {
   display: block !important;
   font-size: 13px;
   text-align: left;
-  text-transform: capitalize;
+  text-transform: lowercase !important;
   line-height: 20px;
   font-weight: 400;
   color: #444444;
