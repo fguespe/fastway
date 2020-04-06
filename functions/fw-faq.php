@@ -88,7 +88,7 @@ if( !function_exists( 'fw_faqs' ) ) {
         foreach($qs as $preg){
           $devolver.='<div class="pafa-accordion pafa-icon">
               <h3 class="pafa-accordion-q pafa-accordion-open">
-              <span style="background-color:#D0802E; border-radius: 0px; ?>;"><i class="fa fa-plus" style="color: #ffffff"></i>
+              <span style="background-color:var(--main); border-radius: 0px; ?>;"><i class="fa fa-plus" style="color: #ffffff"></i>
               </span>'.$preg->post_title.'</h3>
               <div class="pafa-accordion-a" style="display: none;">
                   <p>'.$preg->post_content.'</p>
