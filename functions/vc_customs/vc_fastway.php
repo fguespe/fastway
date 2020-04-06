@@ -244,7 +244,7 @@ function fw_image() {
             'icon' => get_template_directory_uri().'/assets/img/favi.png',  
             'params' => array(
                 array(
-                    "type"        => "attach_images",
+                    "type"        => "attach_image",
                     "heading"     => "Imagen normal",
                     "param_name"  => "image",
                     "value"       => "",
@@ -260,7 +260,7 @@ function fw_image() {
                     "param_name"  => "link",
                 ),
                 array(
-                    "type"        => "attach_images",
+                    "type"        => "attach_image",
                     "heading"     => "Imagenes Mobile",
                     'description' => __( 'Sobre escribe la de desktop en mobile. Si no se pone, se muestra la de desktop', 'js_composer' ),
                     "param_name"  => "image_mobile",

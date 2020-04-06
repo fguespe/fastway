@@ -26,4 +26,4 @@ if(is_plugin_active("woocommerce/woocommerce.php")){
 	<?php endif; ?>
 <?php dynamic_sidebar( $sidebarname ); ?>
 
-</div><!-- #secondary -->
+</div>
