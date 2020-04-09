@@ -115,11 +115,11 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
         <div class="telefono-header t1 txt-16 text-left">      
           <?php 
           if(!empty(fw_company_data("phone"))){?>   
-          <a href="<?php echo fw_company_data("phone",true)?>"  title="Llamar" class="btn" style="color:white !important;background:#307BFF;font-size:20px !important;"><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
+          <a href="<?php echo fw_company_data("phone",true)?>"  title="Llamar" class="btn fb" style=""><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
           <?php
           } 
           if(!empty(fw_company_data("whatsapp"))){?>
-          <a href="<?php echo fw_company_data("whatsapp",true)?>"  title="WhatsApp" class="btn" style="color:white !important;font-size:20px !important;background:#2AD348 !important;"><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_chat_whats')?></a>
+          <a href="<?php echo fw_company_data("whatsapp",true)?>"  title="WhatsApp" class="btn wp" style=""><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_chat_whats')?></a>
           <?php } ?>
           
         </div>
@@ -141,6 +141,19 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
     </div>
 </div>
 </header>
+<style>
+.telefono-header .btn{
+  color:white !important;
+  font-size:20px !important;
+}
+.telefono-header .btn.wp{
+background:#25d366;
+}
+.telefono-header .btn.fb{
+background:#307BFF;
+}
+
+</style>
 
 <script >
 function mostrar_submenu (id) {
