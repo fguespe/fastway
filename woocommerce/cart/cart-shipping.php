@@ -20,7 +20,7 @@
 defined( 'ABSPATH' ) || exit;
 
 //REset shipping
-$method='';
+$method='shipping_method_0_local_pickup_plus:0';
 foreach ( WC()->shipping->get_packages() as $key => $package ) {
   foreach($package['rates'] as $rate_id => $rate ){
       if($rate->cost==0)$method= $rate->method_id.':'.$rate->instance_id;
@@ -29,7 +29,6 @@ foreach ( WC()->shipping->get_packages() as $key => $package ) {
 echo "jaja";
 echo $method;
 WC()->session->set('chosen_shipping_methods',[$method]);
-WC()->session->set('chosen_shipping_methods',['shipping_method_0_local_pickup_plus:0']);
 
 
 
