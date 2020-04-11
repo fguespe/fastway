@@ -20,15 +20,16 @@
 defined( 'ABSPATH' ) || exit;
 
 //REset shipping
-$method='shipping_method_0_local_pickup_plus:0';
+//REset shipping
+
+$method='local_pickup_plus';//EE
 foreach ( WC()->shipping->get_packages() as $key => $package ) {
   foreach($package['rates'] as $rate_id => $rate ){
-      if($rate->cost==0)$method= $rate->method_id.':'.$rate->instance_id;
+      if($rate->cost==0)$method=$rate->id;
   }
 }
-echo "jaja";
-echo $method;
 WC()->session->set('chosen_shipping_methods',[$method]);
+
 
 
 
