@@ -2,7 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 wc_print_notices();
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
@@ -10,6 +9,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'fastway' ) );
 	return;
 }
+
 
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
 function fw_custom_override_checkout_fieldss( $fields ) {
@@ -299,6 +299,7 @@ function verificarFields(){
   jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
 }
 function unselect(type){
+  console.log(type)
   jQuery('input:radio[name="'+type+'"]').each(function () { 
     jQuery(this).prop('checked', false);
     jQuery(this).parent().removeClass('active')

@@ -19,6 +19,7 @@ function fw_loop_price(){
     global $product;
     echo $product->get_price_html();
 }
+
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
@@ -1672,3 +1673,14 @@ function websites_depot_order_fragments_split_shipping($order_fragments) {
 function websites_depot_woocommerce_order_review_shipping_split( $deprecated = false ) {
 	wc_get_template( 'checkout/shipping-order-review.php', array( 'checkout' => WC()->checkout() ) );
 }
+
+function my_text_strings( $translated_text, $text, $domain ) {
+  switch ( $translated_text ) {
+    case '¡GRATIS!' :
+      $translated_text = fw_theme_mod('fw_shipping_free_label');
+      break;
+  }
+  return $translated_text;
+}
+add_filter( 'gettext', 'my_text_strings', 20, 3 );
+

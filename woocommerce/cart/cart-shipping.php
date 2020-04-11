@@ -19,6 +19,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
+//REset shipping
+$method='';
+foreach ( WC()->shipping->get_packages() as $key => $package ) {
+  foreach($package['rates'] as $rate_id => $rate ){
+      if($rate->cost==0)$method= $rate->method_id.':'.$rate->instance_id;
+  }
+}
+WC()->session->set('chosen_shipping_methods',[$method]);
+
+
+
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
@@ -36,11 +47,11 @@ $calculator_text          = '';
 				$instance=$method->instance_id;
 
 				$costo=$method->cost;
-				if($costo==0)$costo="GRATIS";
+				if($costo==0)$costo=fw_theme_mod('fw_shipping_free_label');
 				else $costo="$".$costo;
-
-				?>
-					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
+				$active=checked( $method->id, $chosen_method, false )?"active":""
+				?>	
+					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping <?=$active;?>" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php
 						printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
 						?>

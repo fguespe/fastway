@@ -1,7 +1,7 @@
 <?php
 
 
-
+/*
 add_action('wp_ajax_nopriv_fw_cart_set_shipping', 'fw_cart_set_shipping');
 add_action('wp_ajax_fw_cart_set_shipping', 'fw_cart_set_shipping');
 function fw_cart_set_shipping(){  
@@ -10,9 +10,9 @@ function fw_cart_set_shipping(){
     WC()->cart->calculate_shipping();/*
     WC()->cart->calculate_totals();
     $totals=WC()->cart->get_totals();
-    echo json_encode($totals);*/
+    echo json_encode($totals);
     exit();
-}
+}*/
 
 add_action('wp_ajax_nopriv_fw_ajax_logout', 'fw_ajax_logout');
 add_action('wp_ajax_fw_ajax_logout', 'fw_ajax_logout');
@@ -141,19 +141,19 @@ function fw_loop_btn( $atts ) {
   if(fw_check_hide_purchases())return;
   if(!fw_product_is_purchasable($product))return;
   if ( $product->is_type( 'variable' ) ) {
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.'">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.'">
     <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-link-text').'</span>
     </button>';
   }else if($type=='ajax'){
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop '.$type.'">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="add_to_minicart('. $product->id.')" class="fw_add_to_cart_button loop '.$type.'">
     <i class="fad fa-cart-plus "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-text').'</span>
     </button>';
   }else{
-    echo '<button id="fw_add_to_cart_button_'.$product->id.' '.$type.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.' ">
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.' ">
     <i class="fad fa-eye "></i>
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-link-text').'</span>

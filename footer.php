@@ -1,8 +1,6 @@
 <?php
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
-
-
 ?>
 <footer id="footer" class="">
 	<div class="<?php echo esc_attr( $container ); ?>">
@@ -71,8 +69,6 @@ jQuery(document).ready( function(jQuery) {
 <script type="text/javascript">
 jQuery( ".btn-wapp" ).click(function() {
   if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
-  
-
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {

@@ -115,7 +115,6 @@ function wootax_taxomizer_custom_shop_order_column($columns){
 add_action( 'manage_product_posts_custom_column', 'wootax_taxomizer_product_column_offercode', 10, 2 );
 function wootax_taxomizer_product_column_offercode( $column, $postid ) {
     // agrego a la columna
-    error_log(fw_theme_mod('fw_extra_tax'));
     foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) {
         if ( $column == strtolower($nombre) ) {
             $arrra=get_the_terms( $postid, strtolower($nombre));

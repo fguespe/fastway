@@ -3132,6 +3132,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels',
 	'default'	=>'Comprar',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_free_label',
+	'label'    => __( 'Envío gratis/0', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'Sin costo',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_place_order_text',

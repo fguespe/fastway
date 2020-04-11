@@ -71,7 +71,7 @@ defined( 'ABSPATH' ) || exit;
 			</tr>
 		<?php endforeach; ?>
 
-		<tr class="shipping-total" style="display:none;">
+		<tr class="shipping-total" style="display:;">
 				<th>Envío</th>
 				<td><?=WC()->cart->get_cart_shipping_total()?></td>
 		</tr>
