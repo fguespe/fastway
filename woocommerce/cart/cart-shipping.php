@@ -26,7 +26,10 @@ foreach ( WC()->shipping->get_packages() as $key => $package ) {
       if($rate->cost==0)$method= $rate->method_id.':'.$rate->instance_id;
   }
 }
+echo "jaja";
+echo $method;
 WC()->session->set('chosen_shipping_methods',[$method]);
+WC()->session->set('chosen_shipping_methods',['shipping_method_0_local_pickup_plus:0']);
 
 
 
