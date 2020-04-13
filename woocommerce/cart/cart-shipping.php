@@ -55,9 +55,7 @@ $calculator_text          = '';
 				$active=checked( $method->id, $chosen_method, false )?"active":""
 				?>	
 					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping <?=$active;?>" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
-						<?php
-						printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
-						?>
+						<?php printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) );?>
 						<span class="checkmark"></span>
 						<label for="shipping_method_0_<?=$id?><?=$instance?>" class="title"><?=$titulo?></span></label>
 						<small>Costo del envío: <?=$costo?></small> 

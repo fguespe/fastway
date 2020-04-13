@@ -645,7 +645,7 @@ function switchlogin(){
 }
 
 #woocommerce-wrapper, .woocommerce-cart #page-wrapper, .woocommerce-account #page-wrapper, .woocommerce-checkout #page-wrapper,.box-detail{
-    background:#ECECEC !important;
+    background:#ECECEC;
     border:0px !important;
 }
 .btn-checkout:disabled{
