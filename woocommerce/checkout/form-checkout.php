@@ -840,6 +840,42 @@ display:none !important;
 .enrojo{
   border:1px solid red !important;
 }
+.payment_method_offline_cc .extras > p,
+.payment_method_offline_cc .extras > .test_mode_msg{
+	display:none;
+}
+.payment_method_offline_cc .extras{
+  margin-top:10px;
+}
+.payment_method_offline_cc .extras p{
+padding:0px !important;
+}
+.payment_method_offline_cc .extras .form-row{
+  padding:2px;
+}
+@media (min-width: 799px) {
+
+  .payment_method_offline_cc .extras .form-row:nth-child(1){
+width:60%;
+display:inline-block;
+}
+.payment_method_offline_cc .extras .form-row:nth-child(2){
+width:20%;
+display:inline-block;
+}
+.payment_method_offline_cc .extras .form-row:nth-child(3){
+width:20%;
+display:inline-block;
+}
+
+  
+}
+@media (max-width: 799px) {
+
+  .payment_method_todopago img{
+    display:none;
+  }
+}
 
 </style>
 
