@@ -22,13 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 $value=$gateway->id;
 ?>
 
-<li class="capsula payment" data-radio="<?=$value?>" data-label="<?=$gateway->title?>">
+<li class="capsula payment wc_payment_method payment_method_<?php echo esc_attr( $gateway->id ); ?>" data-radio="<?=$value?>" data-label="<?=$gateway->title?>">
 	<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>"   />
 	<span class="checkmark"></span>
 	<span class="title"><?=$gateway->title?></span>
 	<small><?=$gateway->description?></small>
-</li>
 
+	<?php if ( $gateway->has_fields() ) : ?>
+		<div class="extras" >
+			<?php $gateway->payment_fields(); ?>
+		</div>
+	<?php endif; ?>
+</li>
 <script>
 
 jQuery('li.capsula.payment').on('click', function(e) {

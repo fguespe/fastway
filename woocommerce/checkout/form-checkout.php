@@ -614,7 +614,7 @@ function switchlogin(){
     display: block;
     padding: 4px 0 0 0;
 }
-.box-detail  .capsula input {
+.box-detail  .capsula > input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -840,6 +840,7 @@ display:none !important;
 .enrojo{
   border:1px solid red !important;
 }
+
 </style>
 
 
