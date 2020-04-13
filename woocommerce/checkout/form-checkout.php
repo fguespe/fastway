@@ -567,8 +567,6 @@ function switchlogin(){
     border:0px;
 }
 .box-detail {
-    /*margin-bottom: 20px;*/
-    background: #fff;
     border: 1px solid #ddd;
     border-radius: 3px;
     padding: 15px;
@@ -644,7 +642,7 @@ function switchlogin(){
     background-color: #2196F3;
 }
 
-#woocommerce-wrapper, .woocommerce-cart #page-wrapper, .woocommerce-account #page-wrapper, .woocommerce-checkout #page-wrapper,.box-detail{
+#woocommerce-wrapper, .woocommerce-cart #page-wrapper, .woocommerce-account #page-wrapper, .woocommerce-checkout #page-wrapper{
     background:#ECECEC;
     border:0px !important;
 }
