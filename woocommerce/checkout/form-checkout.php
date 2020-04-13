@@ -567,7 +567,7 @@ function switchlogin(){
     border:0px;
 }
 .box-detail {
-    border: 1px solid #ddd;
+    border:0px !important;
     border-radius: 3px;
     padding: 15px;
     position: relative;
