@@ -282,7 +282,7 @@ function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
     $new_terms = array();
     if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_product_category() ) ) {
         foreach ( $terms as $key => $term ) {
-              if ( ! in_array( $term->slug, array( 'sin-categorizar' ) ) ) {
+              if (  ( ! in_array( $term->slug, array( 'sin-categorizar' ) ) && ! in_array( $term->slug, array( 'sin-categoria' ) ) )) {
                 $new_terms[] = $term;
               }
         }
