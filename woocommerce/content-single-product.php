@@ -137,12 +137,14 @@ var ProductSwiper = new Swiper(".swiper-related", {
 add_shortcode('fw_single_qty', 'fw_single_qty');
 function fw_single_qty(){
     global $product;
-    echo fw_theme_mod('fw_qty_selector_label');
+
+    echo '<div class="fw_stock_input">'.fw_theme_mod('fw_qty_selector_label');
     woocommerce_quantity_input( array(
         'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
         'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
         'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
     ) );
+    echo '</div>';
 }
 
 add_shortcode('fw_single_share', 'fw_single_share');
