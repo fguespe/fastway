@@ -530,7 +530,14 @@ i.fad{
 		.detalle-imagenListado #imagenListado img {
 			width: 100%;
 			position: relative;
-		}
+    }
+    #imagenListado img{
+          
+        margin-top:0px !important;
+    }
+      
+  }
+    
 	}
   /*PRECIO*/
   .summary .precio {
