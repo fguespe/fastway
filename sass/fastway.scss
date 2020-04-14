@@ -2474,7 +2474,7 @@ h3.heading-title {
 }
 @media (max-width: 799px) {
   #woocommerce-wrapper, .woocommerce-cart-form{
-    margin-top:0px;
+    margin-top:0px !important;
   }
 }
  //*FIX PAGINATION*/
@@ -2499,7 +2499,7 @@ h3.heading-title {
          margin:0 2.9% 2.992em 0;
          padding:0;
          position:relative;
-         width:22.05%;
+         width:22.82%;
          margin-left:0 
     }
      ul.products li.first,.woocommerce-page ul.products li.first{
