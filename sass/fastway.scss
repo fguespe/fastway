@@ -469,11 +469,14 @@ i.fad{
 	.vacio .detalle-imagenListado .swiper-next,
 	.vacio .detalle-imagenListado .swiper-prev {
 		display: none;
-	}
-	.detalle-imagenListado #imagenListado a {
-		width: 100%;
-		height: 100%;
-	}
+  }
+  @media (min-width: 799px) {
+
+    .detalle-imagenListado #imagenListado a {
+      width: 100%;
+      height: 100%;
+    }
+  }
 	.detalle-imagenListado #imagenListado img {
 		max-width: 100%;
 		position: absolute;
@@ -533,6 +536,7 @@ i.fad{
     }
     #imagenListado img{
       margin-top:0px !important;
+      margin-bottom:0px !important;
     }
     
 	}

@@ -536,9 +536,11 @@ i.fad {
 .fw_single_product .vacio .detalle-imagenListado .swiper-prev {
   display: none;
 }
-.fw_single_product .detalle-imagenListado #imagenListado a {
-  width: 100%;
-  height: 100%;
+@media (min-width: 799px) {
+  .fw_single_product .detalle-imagenListado #imagenListado a {
+    width: 100%;
+    height: 100%;
+  }
 }
 .fw_single_product .detalle-imagenListado #imagenListado img {
   max-width: 100%;
@@ -599,6 +601,7 @@ i.fad {
   }
   .fw_single_product #imagenListado img {
     margin-top: 0px !important;
+    margin-bottom: 0px !important;
   }
 }
 .fw_single_product .summary .precio {
