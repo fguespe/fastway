@@ -2482,6 +2482,11 @@ h3.heading-title {
   background: var(--shop);
 }
 
+@media (max-width: 799px) {
+  #woocommerce-wrapper, .woocommerce-cart-form {
+    margin-top: 0px;
+  }
+}
 /*ul
 */
 /*fix imagenes*/
