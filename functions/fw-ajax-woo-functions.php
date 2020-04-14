@@ -230,7 +230,8 @@ function fw_add_to_cart(){
   global $woocommerce;
   $id= $_GET['id'];
   $var_id= $_GET['var_id'];
-  WC()->cart->add_to_cart( $id,1, $var_id);
+  $qty= $_GET['qty'];
+  WC()->cart->add_to_cart( $id,$qty, $var_id);
   exit();
 }
 

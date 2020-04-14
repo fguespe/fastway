@@ -3113,6 +3113,13 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_qty_selector_label',
+	'label'    => __( 'Selector stock', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>__( 'Seleccionar cantidad', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'add-to-cart-link-text',
 	'label'    => __( 'Ver detalle (Loop)', 'fastway' ),
 	'section'     => 'section_labels',
