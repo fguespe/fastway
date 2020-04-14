@@ -312,7 +312,7 @@
   color: #00bcd4;
 }
 
-.fw-medios {
+.fw_single_product .fw_icon {
   display: flex;
   align-items: flex-start !important;
   text-decoration: none;
@@ -320,17 +320,17 @@
   border-top: 1px solid #dfdfdf !important;
   margin-top: 10px;
 }
-.fw-medios i {
+.fw_single_product .fw_icon i {
   font-size: 20px !important;
 }
-.fw-medios big {
+.fw_single_product .fw_icon big {
   margin: 0px;
   font-weight: 400 !important;
   font-size: 16px !important;
   line-height: 22px !important;
   color: black !important;
 }
-.fw-medios small {
+.fw_single_product .fw_icon small {
   font-size: 14px !important;
   line-height: 19px !important;
   color: grey !important;
@@ -2948,7 +2948,7 @@ body .wpb_content_element {
 .fw_body_dark_mode .fw_single_product .fw_add_to_cart_button.sticky {
   background: var(--body) !important;
 }
-.fw_body_dark_mode .fw_single_product .fw-medios big {
+.fw_body_dark_mode .fw_single_product .fw_icon big {
   color: var(--main) !important;
 }
 .fw_body_dark_mode .fw_single_product .summary .fw_price .badge {
