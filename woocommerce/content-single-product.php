@@ -133,16 +133,16 @@ var ProductSwiper = new Swiper(".swiper-related", {
 </script>';
 }
 
-/*
-add_shortcode('fw_single_quantity', 'fw_single_quantity');
-function fw_single_quantity(){
+
+add_shortcode('fw_single_qty', 'fw_single_qty');
+function fw_single_qty(){
     global $product;
     woocommerce_quantity_input( array(
         'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
         'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
         'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
     ) );
-}*/
+}
 
 add_shortcode('fw_single_share', 'fw_single_share');
 function fw_single_share(){
