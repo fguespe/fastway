@@ -259,13 +259,13 @@ color:var(--linkedin) !important;
 		color:#00bcd4;;
 }
 
-.fw-medios {
+.fw_single_product .fw_icon{
     display:flex;
     align-items: flex-start !important;
     text-decoration: none;
     padding: 2% 0 0% 2%;
     border-top: 1px solid #dfdfdf !important;
-    margin-top: 10px ;
+    margin-top: 10px;
 
     i{
       font-size:20px !important;
@@ -2953,7 +2953,7 @@ body .wpb_content_element {
     .fw_add_to_cart_button.sticky{
       background: var(--body) !important;
     }
-    .fw-medios big{
+    .fw_icon big{
       color:var(--main) !important;
     }
     .summary .fw_price .badge{
