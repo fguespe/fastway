@@ -275,6 +275,22 @@ function wc_ninja_remove_password_strength() {
 }
 add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
 */
+/** Remove categories from shop and other pages
+ * in Woocommerce
+ */
+function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
+    $new_terms = array();
+    if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && is_shop() ) {
+        foreach ( $terms as $key => $term ) {
+              if ( ! in_array( $term->slug, array( 'sin-categorizar' ) ) ) {
+                $new_terms[] = $term;
+              }
+        }
+        $terms = $new_terms;
+    }
+    return $terms;
+}
+add_filter( 'get_terms', 'fw_hide_selected_terms', 10, 3 );
 
 add_filter( 'get_terms_args', 'checklist_args', 10, 2 );
 function checklist_args( $args, $taxonomies ){
