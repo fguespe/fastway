@@ -280,7 +280,7 @@ add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
  */
 function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
     $new_terms = array();
-    if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && is_shop() ) {
+    if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_product_category() ) ) {
         foreach ( $terms as $key => $term ) {
               if ( ! in_array( $term->slug, array( 'sin-categorizar' ) ) ) {
                 $new_terms[] = $term;
