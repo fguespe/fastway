@@ -3636,6 +3636,12 @@ body .wpb_content_element {
   font-weight: 600;
 }
 
+.cart-form-desc p {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic !important;
+}
+
 .fw_checkout {
   /* ANIMATIONS */
   /*.box-detail .woocommerce-billing-fields {
@@ -3645,11 +3651,6 @@ body .wpb_content_element {
     animation-duration: 1s;
   }*/
   /* MOBILE BREAKPOINTS */
-}
-.fw_checkout .cart-form-desc p {
-  text-align: center;
-  font-size: 12px;
-  font-style: italic !important;
 }
 .fw_checkout #overlay {
   display: none;
