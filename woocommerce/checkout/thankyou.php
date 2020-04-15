@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 			</section>
 		<?php endif; ?>
 
-        <div class="cart-form-desc">
+        <div class="cart-form-desc" style="font-size:12px;">
            <p><?=fw_theme_mod('checkout-msg')?></p>
         </div>
 		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>

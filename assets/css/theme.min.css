@@ -3646,6 +3646,11 @@ body .wpb_content_element {
   }*/
   /* MOBILE BREAKPOINTS */
 }
+.fw_checkout .cart-form-desc p {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic !important;
+}
 .fw_checkout #overlay {
   display: none;
   position: absolute;

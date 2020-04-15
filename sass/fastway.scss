@@ -3638,7 +3638,11 @@ body .wpb_content_element {
 
 .fw_checkout{
   
-  
+  .cart-form-desc p{
+    text-align:center;
+    font-size:12px ;
+    font-style:italic !important;
+  }
   #overlay {
     display: none;
     position: absolute;

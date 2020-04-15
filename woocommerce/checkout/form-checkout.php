@@ -752,11 +752,7 @@ font-size:12px !important;
 	margin: 0 0 5px 0;
 	font-weight: 400;
 }
-.cart-form-desc p{
-  text-align:center;
-  font-size:12px ;
-  font-style:italic !important;
-}
+
 
 .box-step .subtitle {
 	display: block;
