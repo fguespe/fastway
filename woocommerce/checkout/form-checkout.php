@@ -840,9 +840,13 @@ display:none !important;
 .enrojo{
   border:1px solid red !important;
 }
-.payment_method_offline_cc .extras > p,
-.payment_method_offline_cc .extras > .test_mode_msg{
+.payment_method_offline_cc .extras > p{
 	display:none;
+}
+
+.payment_method_offline_cc .extras > .test_mode_msg{
+  font-size:12px;
+  text-align:center;
 }
 .payment_method_offline_cc .extras{
   margin-top:10px;
