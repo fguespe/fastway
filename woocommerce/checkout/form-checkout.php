@@ -193,12 +193,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             </button>
         </div>
 
-        <div class="cart-form-actions">
-
-            <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
-            <button type="submit" class="btn-checkout finalizar" disabled style="display:none">
-              <?=fw_theme_mod('fw_place_order_text')?>
-            </button>
+        <div class="cart-form-desc">
+           <p><?=fw_theme_mod('checkout-msg')?></p>
         </div>
 
 
@@ -755,6 +751,11 @@ font-size:12px !important;
 	color: #333;
 	margin: 0 0 5px 0;
 	font-weight: 400;
+}
+.cart-form-desc p{
+  text-align:center;
+  font-size:12px ;
+  font-style:italic !important;
 }
 
 .box-step .subtitle {
