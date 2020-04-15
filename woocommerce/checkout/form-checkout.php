@@ -899,7 +899,8 @@ jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
-
+  jQuery('.test_mode_msg').text('* La cantidad exacta de KG puede variar, así como el monto cobrado. Serán notificados al momento de la entrega.')
+  
 	if(envioSeleccionado)jQuery('.shipping-total').attr("style", "display: table-row; !important")
 
 });
