@@ -193,6 +193,14 @@ function fw_custom_override_checkout_fieldss( $fields ) {
             </button>
         </div>
 
+        <div class="cart-form-actions">
+
+            <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
+            <button type="submit" class="btn-checkout finalizar" disabled style="display:none">
+              <?=fw_theme_mod('fw_place_order_text')?>
+            </button>
+        </div>
+
 
         <div class="row place-order"> 
             <noscript>
@@ -840,13 +848,9 @@ display:none !important;
 .enrojo{
   border:1px solid red !important;
 }
-.payment_method_offline_cc .extras > p{
-	display:none;
-}
-
+.payment_method_offline_cc .extras > p,
 .payment_method_offline_cc .extras > .test_mode_msg{
-  font-size:12px;
-  text-align:center;
+	display:none;
 }
 .payment_method_offline_cc .extras{
   margin-top:10px;
