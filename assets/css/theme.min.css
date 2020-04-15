@@ -525,6 +525,12 @@ i.fad {
   height: 400px;
   width: 80%;
 }
+@media (max-width: 320px) {
+  .fw_single_product #imagenListado,
+.fw_single_product #paginationIL {
+    height: 330px !important;
+  }
+}
 .fw_single_product #mainNextIL, .fw_single_product #mainPrevIL {
   z-index: 999;
 }
@@ -3097,7 +3103,7 @@ body .wpb_content_element {
 }
 .woocommerce .woocommerce-tabs .woocommerce-Tabs-panel p {
   font-size: 15px !important;
-  word-break: break-all;
+  word-break: normal;
 }
 .woocommerce .woocommerce-tabs ul.tabs li:not(.active) {
   background: white;
