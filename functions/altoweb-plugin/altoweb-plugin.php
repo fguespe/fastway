@@ -80,7 +80,7 @@ if(fw_theme_mod('fw_action_woosettings')){
    update_option('woocommerce_hold_stock_minutes','');
 
    $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-   $opts['title']='Tarjeta de crédito y débito';
+   $opts['title']='Mercadopago';
    $opts['description']='Procesado por mercadopago
     <div class="mp_pago d-flex">
         <img alt="visa" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/visa.svg">
@@ -109,27 +109,7 @@ if(fw_theme_mod('fw_action_woosettings')){
 }
 
 $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-$opts['title']='Tarjeta de crédito y débito';
-$opts['description']='Procesado por mercadopago
-<div class="mp_pago">
-    <img alt="visa" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/visa.svg">
-    <img alt="mastercard" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/mastercard.svg">
-    <img alt="amex" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/amex.svg">
-    <img alt="dinersclub" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/dinersclub.svg">
-    <img alt="cabal" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/cabal.svg">
-    <img alt="argencard" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/argencard.svg">
-    <img alt="tarjeta-naranja" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/tarjeta-naranja.svg">
-    <img alt="nativa" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/nativa.svg">
-    <img alt="tarjeta-shopping" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/tarjeta-shopping.svg">
-    <img alt="cencosud" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/cencosud.svg">
-    <img alt="cabaldebit" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/cabaldebit.svg">
-    <img alt="visadebit" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/visadebit.svg">
-    <img alt="maestro" src="https://d1zxmlch3z83cq.cloudfront.net/production/1.6.20/_next/server/static/img/brands/maestro.svg">
-</div>';
-$opts['method']='redirect';
-$opts['installment_paymentbutton_calculator']='no';
-$opts['installment_product_calculator']='no';
-$opts['shipping_product_calculator']='no';
+$opts['title']='Mercadopago';
 update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
 
