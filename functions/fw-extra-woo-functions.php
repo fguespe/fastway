@@ -58,8 +58,8 @@ function fw_cuotas($atts = []){
   global $product;
   $cuotas=floatval($atts['cant']);
   $precio=floatval($product->get_price());
-	$precio=round($precio/$cuotas);
-	echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
+  $precio=round($precio/$cuotas);
+  if($precio>=0)echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
 function fw_getcat( $product_id ){//Esto es para los mails
     $tax = 'product_cat';
