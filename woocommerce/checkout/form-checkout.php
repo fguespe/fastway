@@ -883,21 +883,15 @@ display:inline-block;
     display:none;
   }
 }
+
 .woocommerce-remove-coupon{
-position:relative !important;
+  margin-right:-20px !important;
 }
 </style>
 
 
 <script>
-jQuery('.checkout_coupon').on("hide", function() { 
-    console.log("browser page has been hidden");
-});
 
-/*
-jQuery( document ).on( 'applied_coupon_in_checkout', function(){
-  jQuery( ".checkout_coupon" ).show()
-});*/
 var envioSeleccionado=false
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
