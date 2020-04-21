@@ -923,8 +923,6 @@ function fw_video_tab( $tabs ) {
   return $tabs; 
 }
 
-//video
-// Display Fields
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
 function woocommerce_product_custom_fields(){
     global $woocommerce, $post;
@@ -940,6 +938,7 @@ function woocommerce_product_custom_fields(){
     echo '</div>';
 
 }
+
 // Save Fields
 add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_fields_save');
 function woocommerce_product_custom_fields_save($post_id){

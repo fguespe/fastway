@@ -85,7 +85,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
                 <input id="password" type="password" name="password" placeholder="Contraseña">
                 <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
                 <p class="status"></p>
-                <input class="submit_button" type="button" value="Login" onclick="fw_login()" name="submit">
+                <input class="submit_button boton" type="button" value="Login" onclick="fw_login()" name="submit">
                 <div class="submit_button loading" style="display:none;"><i class='fas fa-circle-notch fa-spin'></i></div>
                 <?php wp_nonce_field( 'update-order-review', 'security'); ?>
                 
@@ -239,7 +239,8 @@ function fw_logout(){
       });
 }
 function fw_login(){
-    jQuery('.submit_button').hide()
+    if(!jQuery('#login #username').val() || !jQuery('#login #password').val())return
+    jQuery('.submit_button.boton').hide()
     jQuery('.submit_button.loading').show()
     jQuery.ajax({
           type: 'POST',
@@ -262,7 +263,8 @@ function fw_login(){
               nextpaso()*/
               
             }else{
-              jQuery('.submit_button').show()
+              jQuery('.submit_button.boton').show()
+              jQuery('.submit_button.loading').hide()
               jQuery('#login .status').html('<span style="color:red;" >Login incorrecto</span>') 
             }
           }
@@ -881,16 +883,25 @@ display:inline-block;
     display:none;
   }
 }
-
+.woocommerce-remove-coupon{
+position:relative !important;
+}
 </style>
 
 
 <script>
+jQuery('.checkout_coupon').on("hide", function() { 
+    console.log("browser page has been hidden");
+});
+
+/*
+jQuery( document ).on( 'applied_coupon_in_checkout', function(){
+  jQuery( ".checkout_coupon" ).show()
+});*/
 var envioSeleccionado=false
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
-
 jQuery( document ).on( 'updated_cart_totals', function(){
   updateEnvioGratisME();
 });

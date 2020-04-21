@@ -588,7 +588,7 @@ jQuery( function( $ ) {
 
 					if ( code ) {
 						$form.before( code );
-						$form.slideUp();
+						//ALTOWEB $form.slideUp();
 
 						$( document.body ).trigger( 'applied_coupon_in_checkout', [ data.coupon_code ] );
 						$( document.body ).trigger( 'update_checkout', { update_shipping_method: false } );
