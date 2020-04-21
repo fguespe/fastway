@@ -263,6 +263,12 @@ function vc_categories_carousel() {
                     ), 
                     array(
                         "type" => 'checkbox',
+                        "heading"     => "Loop",
+                        "param_name"  => "loop",
+                        'std' => 'true',
+                    ),
+                    array(
+                        "type" => 'checkbox',
                         "heading"     => "Autoplay ",
                         "param_name"  => "autoplay",
                         'std' => 'true',
