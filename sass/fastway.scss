@@ -5270,6 +5270,13 @@ max-width:none !important;
 }
 
 .pafa-accordion {
+  .cuadro_suma{
+    background-color:var(--second); 
+    border-radius: 0px;
+  }
+  p{
+    text-align: left;
+  }
   .pafa-accordion-q {
     cursor: pointer;
     margin: 30px 0 0 55px
