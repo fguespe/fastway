@@ -72,7 +72,8 @@ if( !function_exists( 'fw_faqs' ) ) {
     );
     $devolver='<div class="pressapps_faq_accordion">';
     foreach($pressapps_terms as $cate){
-        $devolver.= '<div class="pafa-accordion-cat"><h2>'.$cate->name.'</h2>';
+        $devolver.= '<div class="pafa-accordion-cat">
+        <h2 class="cat_title">'.$cate->name.'</h2>';
         
         $qs = get_posts( array_merge( $qry_args,
 					array('tax_query'     =>
