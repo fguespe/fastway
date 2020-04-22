@@ -70,9 +70,9 @@ if( !function_exists( 'fw_faqs' ) ) {
         'order'     => 'ASC'
       )
     );
-    $devolver='<div class="pressapps_faq_accordion">';
+    $devolver='<div class="fw_faqs">';
     foreach($pressapps_terms as $cate){
-        $devolver.= '<div class="pafa-accordion-cat">
+        $devolver.= '<div class="fw_faqscat">
         <h2 class="cat_title">'.$cate->name.'</h2>';
         
         $qs = get_posts( array_merge( $qry_args,
@@ -88,10 +88,10 @@ if( !function_exists( 'fw_faqs' ) ) {
         ));
         foreach($qs as $preg){
           $devolver.='<div class="pafa-accordion pafa-icon">
-              <h3 class="pafa-accordion-q pafa-accordion-open">
+              <h3 class="fw_faqsq fw_faqsopen">
               <span class="cuadro_suma"><i class="fa fa-plus" style="color: #ffffff"></i>
               </span>'.$preg->post_title.'</h3>
-              <div class="pafa-accordion-a" style="display: none;">
+              <div class="fw_faqsa" style="display: none;">
                   <p>'.$preg->post_content.'</p>
               </div>
           </div>';
