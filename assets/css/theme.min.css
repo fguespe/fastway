@@ -5234,6 +5234,13 @@ body .wpb_content_element {
   margin: 1.2em 0 0;
 }
 
+.pafa-accordion .cuadro_suma {
+  background-color: var(--second);
+  border-radius: 0px;
+}
+.pafa-accordion p {
+  text-align: left;
+}
 .pafa-accordion .pafa-accordion-q {
   cursor: pointer;
   margin: 30px 0 0 55px;
