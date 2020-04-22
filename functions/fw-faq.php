@@ -70,6 +70,7 @@ if( !function_exists( 'fw_faqs' ) ) {
         'order'     => 'ASC'
       )
     );
+    
     $devolver='<div class="fw_faqs">';
     foreach($pressapps_terms as $cate){
         $devolver.= '<div class="pafa-accordion-cat">
