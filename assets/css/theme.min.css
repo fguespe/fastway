@@ -5218,7 +5218,7 @@ body .wpb_content_element {
 }
 
 .pafa-icon .pafa-block-q span,
-.pafa-icon .fw_faqsq span {
+.pafa-icon .fw_faqs-q span {
   margin-right: 15px;
 }
 
@@ -5237,17 +5237,17 @@ body .wpb_content_element {
   font-weight: 300 !important;
   text-align: left;
 }
-.pafa-accordion .fw_faqsq {
+.pafa-accordion .fw_faqs-q {
   cursor: pointer;
   margin: 30px 0 0 55px;
 }
-.pafa-accordion .fw_faqsq span {
+.pafa-accordion .fw_faqs-q span {
   display: inline-block;
   line-height: 1;
   padding: 10px;
   margin-left: -55px;
 }
-.pafa-accordion .fw_faqsa {
+.pafa-accordion .fw_faqs-a {
   padding-top: 15px;
   padding-bottom: 15px;
 }
