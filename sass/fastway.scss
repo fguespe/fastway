@@ -5251,7 +5251,7 @@ max-width:none !important;
 }
 
 .pafa-icon .pafa-block-q span,
-.pafa-icon .fw_faqs-q span {
+.pafa-icon .pafa-accordion-q span {
 	margin-right: 15px
 }
 
@@ -5273,17 +5273,17 @@ max-width:none !important;
     font-weight:300 !important;
     text-align: left;
   }
-  .fw_faqs-q {
+  .pafa-accordion-q {
     cursor: pointer;
     margin: 30px 0 0 55px
   }
-  .fw_faqs-q span {
+  .pafa-accordion-q span {
     display: inline-block;
     line-height: 1;
     padding: 10px;
     margin-left: -55px
   }
-  .fw_faqs-a {
+  .pafa-accordion-a {
     padding-top: 15px;
     padding-bottom: 15px
   }
