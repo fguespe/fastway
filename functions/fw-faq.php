@@ -55,7 +55,7 @@ function fw_faq_create() {
 if( !function_exists( 'fw_faqs' ) ) {
   add_shortcode('fw_faqs', 'fw_faqs');
   function fw_faqs(){
-    
+    //jaja
     $qry_args= array(  
       'post_type'     =>'fw_faq',
       'numberposts'   => -1,
@@ -70,7 +70,7 @@ if( !function_exists( 'fw_faqs' ) ) {
         'order'     => 'ASC'
       )
     );
-    
+
     $devolver='<div class="fw_faqs">';
     foreach($pressapps_terms as $cate){
         $devolver.= '<div class="pafa-accordion-cat">
