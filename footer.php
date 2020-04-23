@@ -70,17 +70,17 @@ jQuery(document).ready( function(jQuery) {
 function check_ga() {
   if (typeof ga === 'function') {
     console.log('Loaded :'+ ga);
+    return true
   } else {
     console.log('Not loaded');
     setTimeout(check_ga,500);
   }
 }
-check_ga();
 jQuery( ".btn-wapp" ).click(function() {
-  /*if(check_ga()){
+  if(window.ga){
     console.log('evento ga sent' );
     ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
-  }*/
+  }
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {

@@ -753,28 +753,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
     }
 endif;
 
-/*
-function init_fathom() {
-    
-    $analytics = '<!-- Fathom - simple website analytics - https://usefathom.com -->
-    <script>
-    (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-    (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement(\'script\'),
-    m=f.getElementsByTagName(\'script\')[0];
-    o.async=1; o.src=t; o.id=\'fathom-script\';
-    m.parentNode.insertBefore(o,m)
-    })(document, window, \'//cdn.usefathom.com/tracker.js\', \'fathom\');
-    fathom(\'set\', \'siteId\', \''.fw_theme_mod('fathom-id').'\');
-    fathom(\'trackPageview\');
-    </script>
-    <!-- / Fathom -->';
-
-    echo "\n" . $analytics;
-}*/
-function init_analytics() {
+function init_analytics_old() {
     
     $analytics = '<!-- Analyitics  Code -->
     <script type="text/javascript">
@@ -788,8 +767,24 @@ function init_analytics() {
                       ga.src = (\'https:\' == document.location.protocol ? \'https://\' : \'http://\') + \'stats.g.doubleclick.net/dc.js\';
                     var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);
                   })();
-
+                                
                 </script>';
+
+    echo "\n" . $analytics;
+}
+
+function init_analytics() {
+    
+    $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111121490-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+
+        gtag("config", \''.fw_theme_mod('analytics-id').'\');
+        </script>
+    ';
 
     echo "\n" . $analytics;
 }
