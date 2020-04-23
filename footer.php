@@ -76,12 +76,11 @@ function check_ga() {
   }
 }
 check_ga();
-
 jQuery( ".btn-wapp" ).click(function() {
-  if(check_ga()){
+  /*if(check_ga()){
     console.log('evento ga sent' );
     ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
-  }
+  }*/
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
