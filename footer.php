@@ -67,8 +67,18 @@ jQuery(document).ready( function(jQuery) {
 </script>
 <?php } ?>
 <script type="text/javascript">
+function check_ga() {
+  if (typeof ga === 'function') {
+    console.log('Loaded :'+ ga);
+  } else {
+    console.log('Not loaded');
+    setTimeout(check_ga,500);
+  }
+}
+check_ga();
+
 jQuery( ".btn-wapp" ).click(function() {
-  if(window.ga){
+  if(check_ga()){
     console.log('evento ga sent' );
     ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
   }
