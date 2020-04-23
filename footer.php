@@ -78,7 +78,7 @@ function check_ga() {
 }
 jQuery( ".btn-wapp" ).click(function() {
   if(window.ga){
-    console.log('evento ga sent' );
+    console.log('eventAction:whatsapp' );
     ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
   }
   jQuery.get(ajaxurl,{'action': 'register_wp'});
