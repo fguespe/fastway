@@ -1283,19 +1283,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
-if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_default_shipping_me',
-		'label'    => __( 'Default Shipping Mercadoenvios', 'fastway' ),
-		'section'     => 'section_woo',
-		'default'     => 0,
-		'choices' => array(
-			'on'  => __( 'Enable', 'fastway' ),
-			'off' => __( 'Disable', 'fastway' )
-		)
-	));
-}
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase',
@@ -1505,18 +1493,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_show_only_free_shipping',
-	'label'       => __( 'Show only Free Shipping', 'fastway' ),
-	'section'     => 'section_woo',
-	'description' => 'Hides other options if free shipping is available',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
 	'settings'    => 'sold-alone',
 	'label'       => __( 'Sold Individually', 'fastway' ),
 	'section'     => 'section_woo',
@@ -1538,14 +1514,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_hide_cates',
-	'label'       => __( 'Hide cates', 'fastway' ),
-	'description'	=>	'Categorias a ocultar de la tienda',
-	'section'     => 'section_woo',
-	'default'     => 'sin-categorizar',
-) );
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1629,6 +1597,15 @@ Kirki::add_field( 'theme_config_id', array(
 		'max'  => '12',
 		'step' => '1',
 	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_hide_cates',
+	'label'       => __( 'Hide cates', 'fastway' ),
+	'description'	=>	'Categorias a ocultar de la tienda',
+	'section'     => 'section_woo_shop',
+	'default'     => 'sin-categorizar',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1889,6 +1866,48 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_show_only_free_shipping',
+	'label'       => __( 'Show only Free Shipping', 'fastway' ),
+	'section'     => 'section_woo_shippings',
+	'description' => 'Hides other options if free shipping is available',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_default_shipping_me',
+		'label'    => __( 'Default Shipping Mercadoenvios', 'fastway' ),
+		'section'     => 'section_woo_shippings',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	));
+}
+
+
+if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_only_mercadoenvios',
+		'label'       => __( 'Calculate Only Mercadoenvios', 'fastway' ),
+		'section'     => 'section_woo_shippings',
+		'description' => 'Refrescar despues de activar',
+		'default'     => 1,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+	}
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_shipping_method_1_on',
 	'label'    => __( 'Box 1', 'fastway' ),     
 	'section'     => 'section_woo_shippings',
@@ -2093,22 +2112,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_only_mercadoenvios',
-	'label'       => __( 'Calculate Only Mercadoenvios', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'description' => 'Refrescar despues de activar',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
