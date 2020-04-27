@@ -260,9 +260,12 @@ add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
  */
 function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
     $new_terms = array();
+    $ocultar=explode(",",fw_theme_mod('fw_hide_cates'));
+
     if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_product_category() ) ) {
         foreach ( $terms as $key => $term ) {
-              if (  ( ! in_array( $term->slug, array( 'sin-categorizar' ) ) && ! in_array( $term->slug, array( 'sin-categoria' ) ) )) {
+
+              if (  ( ! in_array( $term->slug, $ocultar ) )) {
                 $new_terms[] = $term;
               }
         }

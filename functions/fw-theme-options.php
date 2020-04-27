@@ -1540,6 +1540,16 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_hide_cates',
+	'label'       => __( 'Hide cates', 'fastway' ),
+	'description'	=>	'Categorias a ocultar de la tienda',
+	'section'     => 'section_woo',
+	'default'     => '',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_extra_tax',
 	'label'       => __( 'Extra Taxonomias', 'fastway' ),
 	'description'	=>	'Nombres de taxonomias (genero,otros)',
