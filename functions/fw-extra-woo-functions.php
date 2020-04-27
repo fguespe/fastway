@@ -1683,17 +1683,19 @@ function my_text_strings( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'my_text_strings', 20, 3 );
 
+add_filter( 'woocommerce_shipping_instance_form_fields_local_pickup', 'add_extra_fields_in_flat_rate', 10, 1);
 add_filter( 'woocommerce_shipping_instance_form_fields_flat_rate', 'add_extra_fields_in_flat_rate', 10, 1);
+add_filter( 'woocommerce_shipping_instance_form_fields_free_shipping', 'add_extra_fields_in_flat_rate', 10, 1);
 function add_extra_fields_in_flat_rate($settings){
     $counter = 0;
     $arr = array();
     foreach ($settings as $key => $value) {
         if($key=='cost' && $counter==0){
             $arr[$key] = $value; 
-            $arr['shipping_extra_field'] = array(
-                'title'         => __( 'Shipping Extra Field', 'woocommerce' ), 
+            $arr['fw_shipping_desc'] = array(
+                'title'         => __( 'Descripción', 'woocommerce' ), 
                 'type'             => 'text', 
-                'placeholder'    => 'shipping',
+                'placeholder'    => '',
                 'description'    => ''
             ); 
             $counter++; 
