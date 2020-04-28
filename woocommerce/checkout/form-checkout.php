@@ -305,7 +305,6 @@ function verificarFields(){
   jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
 }
 function unselect(type){
-  console.log(type)
   jQuery('input:radio[name="'+type+'"]').each(function () { 
     jQuery(this).prop('checked', false);
     jQuery(this).parent().removeClass('active')
@@ -313,7 +312,7 @@ function unselect(type){
   jQuery('.btn-checkout.continuar').prop('disabled', true);
 }
 jQuery(document).ready( function(jQuery) {
-
+  updateEnvioGratisME();
   //Cupones
   jQuery('.checkout_coupon').show()
 
