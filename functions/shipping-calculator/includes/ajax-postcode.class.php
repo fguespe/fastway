@@ -32,7 +32,7 @@ class Correios_Shipping_Ajax_Postcode {
 			$cant=0;
 			foreach ($shipping_response as $key => $shipping) {
 				//Saca los que no son mercadoenvios
-				if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && fw_theme_mod("fw_only_mercadoenvios") && $shipping->method_id!='mercadoenvios-shipping' )continue;
+				if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php') && /*fw_theme_mod("fw_only_mercadoenvios") &&*/ $shipping->method_id!='mercadoenvios-shipping' )continue;
 				
 				$cant++;
 				$precio=$shipping->cost;
