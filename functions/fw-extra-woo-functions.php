@@ -1577,25 +1577,25 @@ if( ! function_exists('xa_product_default_weight') ) {
 
 function fw_hide_shipping_when_free_is_available( $rates ) {
   $free = array();
-  $rate_id=null;
-
+  $entro=false;
+  error_log('recalculando shipping rates');//solo en calculos de carrito
   $opts=get_option('woocommerce_mercadoenvios-shipping_settings');
 
 	foreach ( $rates as $rate_id => $rate ) {
-		if ( 'free_shipping' === $rate->method_id ) {
-			if(!$rate_id){
+		if ( 'free_shipping' == $rate->method_id ) {
+      if(!$entro){
         $free[ $rate_id ] = $rate;
-        $rate_id=true;
-      }
-		}else if ( 'mercadoenvios-shipping' === $rate->method_id && $opts['shipping_free_shipping']) {
+        $entro=true;
+     }
+    }else if ( 'mercadoenvios-shipping' === $rate->method_id && $opts['shipping_free_shipping']) {
 			$free[ $rate_id ] = $rate;
 		}
-	}
+  }
+  
 	return ! empty( $free ) ? $free : $rates;
 }
 
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available', 100 );
-
+if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' );
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) && 1==2 ) {
