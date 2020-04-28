@@ -951,10 +951,11 @@ function updateEnvioGratisME(){
     let tipos=['Envió Estándar'];
     for(let j in tipos){
       let label=tipos[j];
+        console.log('jeje',tipos)
       for(let i in dias){
         let freecuando=dias[i]
         let buscar="label:contains('"+label+" "+freecuando+"')"
-        console.log(buscar)
+        console.log('jeje',buscar)
         var element =jQuery(buscar);
         if(element && label==tipos[0]){  
           element.text('Envio Gratis Por Correo A Domicilio '+freecuando+'');
