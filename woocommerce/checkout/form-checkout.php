@@ -312,7 +312,6 @@ function unselect(type){
   jQuery('.btn-checkout.continuar').prop('disabled', true);
 }
 jQuery(document).ready( function(jQuery) {
-  updateEnvioGratisME();
   //Cupones
   jQuery('.checkout_coupon').show()
 
@@ -951,11 +950,9 @@ function updateEnvioGratisME(){
     let tipos=['Envió Estándar'];
     for(let j in tipos){
       let label=tipos[j];
-        console.log('jeje',label)
       for(let i in dias){
         let freecuando=dias[i]
         let buscar="label:contains('"+label+" "+freecuando+"')"
-        console.log('jeje',buscar)
         var element =jQuery(buscar);
         if(element && label==tipos[0]){  
           element.text('Envio Gratis Por Correo A Domicilio '+freecuando+'');
