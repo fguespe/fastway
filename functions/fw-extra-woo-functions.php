@@ -1587,7 +1587,7 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
         $free[ $rate_id ] = $rate;
         $entro=true;
      }
-    }else if ( 'mercadoenvios-shipping' === $rate->method_id && $opts['shipping_free_shipping']) {
+    }else if ( 'mercadoenvios-shipping' === $rate->method_id) {
 			$free[ $rate_id ] = $rate;
 		}
   }
