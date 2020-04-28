@@ -1578,9 +1578,9 @@ if( ! function_exists('xa_product_default_weight') ) {
 function fw_hide_shipping_when_free_is_available( $rates ) {
   $free = array();
   $rate_id=null;
-  $mefree=fa;
-  $opts=get_option('woocommerce_mercadoenvios-shipping_settings');
   
+  $opts=get_option('woocommerce_mercadoenvios-shipping_settings');
+
 	foreach ( $rates as $rate_id => $rate ) {
 		if ( 'free_shipping' === $rate->method_id ) {
 			if(!$rate_id)$free[ $rate_id ] = $rate;
