@@ -1605,7 +1605,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Hide cates', 'fastway' ),
 	'description'	=>	'Categorias a ocultar de la tienda',
 	'section'     => 'section_woo_shop',
-	'default'     => 'sin-categorizar',
+	'default'     => 'sin-categorizar,sin-categoria',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
