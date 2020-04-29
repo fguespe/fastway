@@ -3307,7 +3307,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_cuotas',
-	'label'    => __( 'Calcular envio', 'fastway' ),       
+	'label'    => __( 'Calcular cuotas', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'Calculador de cuotas',
 ) );
