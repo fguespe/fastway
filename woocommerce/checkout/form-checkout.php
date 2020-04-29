@@ -187,7 +187,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
         <div class="cart-form-actions">
 
-            <a href="<?=wc_get_cart_url()?>">Comprar más productos</a>
+            <a href="<?=wc_get_cart_url()?>"><?=fw_theme_mod('fw_label_agregar_mas')?></a>
             <button type="submit" class="btn-checkout finalizar" disabled style="display:none">
               <?=fw_theme_mod('fw_place_order_text')?>
             </button>

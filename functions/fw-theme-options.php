@@ -3197,6 +3197,28 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=>'Finalizar',
 ) );
 
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_agregar_mas',
+	'label'    => __( 'Agregar mas productos', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'Agregar más productos',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_ir_carrito',
+	'label'    => __( 'Ir al carrito', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'Ir al carrito',
+) );
+
+
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuit_label',

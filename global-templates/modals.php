@@ -10,10 +10,10 @@
                 <div style="padding:1em;">
                     <div class="row d-flex justify-content-between align-items-center">
                         <div>
-                        <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">Agregar más productos</button>
-                        <a type="button" class="iralcarrito" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" > Ir al carrito</a>
+                        <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close"><?=fw_theme_mod('fw_label_agregar_mas')?></button>
+                        <a type="button" class="iralcarrito" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" ><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
-                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar">Comprar</button>
+                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
                     </div>
                     <style>
                     @media (max-width: 799px) {
