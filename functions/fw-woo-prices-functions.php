@@ -222,7 +222,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     if(fw_check_hide_prices()) return;
     if(empty($product->get_price())){
         
-        return '<button type="button" id="fw_add_to_cart_button_'.$product->id.'"  onclick="location.href=\'/contacto\'" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
+        return '<button type="button"  onclick="location.href=\'/contacto\'" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
         <i class="fad fa-life-ring"></i>
         <span>'. fw_theme_mod('fw_consultar_price').'</span>
         </button>';
