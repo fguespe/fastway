@@ -2963,52 +2963,52 @@ body .wpb_content_element {
 }
 
 @media (min-width: 799px) {
-  .fw_single_product.layout2 .desc {
+  .layout2 .fw_single_product .desc {
     font-size: 12px;
     float: left;
     width: 100%;
     margin-bottom: 30px;
   }
-  .fw_single_product.layout2 p,
-.fw_single_product.layout2 span,
-.fw_single_product.layout2 button {
+  .layout2 .fw_single_product p,
+.layout2 .fw_single_product span,
+.layout2 .fw_single_product button {
     text-align: left !important;
   }
-  .fw_single_product.layout2 button {
+  .layout2 .fw_single_product button {
     float: left;
     display: block !important;
   }
-  .fw_single_product.layout2 .badge {
+  .layout2 .fw_single_product .badge {
     background: var(--main);
   }
-  .fw_single_product.layout2 .gallery {
+  .layout2 .fw_single_product .gallery {
     width: 50%;
   }
-  .fw_single_product.layout2 #imagenListado img {
+  .layout2 .fw_single_product #imagenListado img {
     width: 100%;
     height: auto !important;
   }
-  .fw_single_product.layout2 #imagenListado {
+  .layout2 .fw_single_product #imagenListado {
     height: 500px !important;
   }
 }
-.fw_single_product.layout2 .fw_stock_input {
+.layout2 .fw_single_product .fw_stock_input {
   margin-bottom: 20px;
   margin-top: 0px;
 }
-.fw_single_product.layout2 .stock {
+.layout2 .fw_single_product .stock {
   display: none;
 }
-.fw_single_product.layout2 .fw-medios.envio {
+.layout2 .fw_single_product .fw-medios.envio {
   display: none !important;
 }
-.fw_single_product.layout2 .fw_price.kilo span {
+.layout2 .fw_single_product .fw_price.kilo span {
   font-size: 25px !important;
 }
-.fw_single_product.layout2 .fw_price.kilo span .suffix {
+.layout2 .fw_single_product .fw_price.kilo span .suffix {
   font-size: 12px !important;
 }
-.fw_single_product.layout2 .cuota_text {
+.layout2 .fw_single_product .cuota_text {
   display: block;
   margin-top: 20px !important;
   margin-bottom: 10px !important;
