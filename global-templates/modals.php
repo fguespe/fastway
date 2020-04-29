@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header text-center t2">
-                <h4 class="modal-title text-center">Mi Carrito</h4>
+                <h4 class="modal-title text-center"><?=fw_theme_mod('fw_label_mi_pedido')?></h4>
                 <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body mx-3">
