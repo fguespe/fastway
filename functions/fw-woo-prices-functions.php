@@ -227,7 +227,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         <span>'. fw_theme_mod('fw_consultar_price').'</span>
         </button>';
 
-        return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar_price').'</span></span></a>';
+        //return '<a href="'.fw_company_data("email",true,$num).'"><span class="fw_price price1"><span class="precio">'.fw_theme_mod('fw_consultar_price').'</span></span></a>';
     }
 
     if ( $sale_price<$regular_price) {
