@@ -2968,6 +2968,63 @@ body .wpb_content_element {
     }
   }
 }
+
+.fw_single_product.layout2{
+	@media (min-width: 799px) {
+			.desc{
+					font-size:12px;
+					float:left;
+					width:100%;
+					margin-bottom:30px;
+			}
+			p,
+			span,
+			button{
+					text-align:left !important;
+			}
+			button{
+					float:left;
+					display:block !important;
+			}
+			.badge{
+					background:var(--main);
+			}
+
+			.gallery {
+					width: 50%;
+			}
+			#imagenListado img{
+					width:100%;
+					height:auto !important;
+			}
+			#imagenListado{
+				height:500px !important;
+			}
+	}
+
+	.fw_stock_input{
+			margin-bottom:20px;
+			margin-top:0px;
+	}
+
+	.stock{
+			display:none;
+	}
+	.fw-medios.envio{
+			display:none !important;
+	}
+	.fw_price.kilo span{
+			font-size:25px !important;
+	}
+	.fw_price.kilo span .suffix{
+			font-size:12px !important;
+	}
+	.cuota_text{
+			display:block;
+			margin-top:20px !important;
+			margin-bottom:10px !important
+	}
+}
 /*General Woocommerce*/
 .woocommerce{
   /*margin-bottom: 10px;*/

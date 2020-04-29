@@ -2131,6 +2131,17 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_single_product_layout',
+	'label'       => __( 'Layout', 'fastway' ),
+	'section'     => 'section_woo_single',
+	'default'     => 'layout1',
+	'choices'     => array(
+		'layout1'   	=> 	'Default',
+		'layout2'   	=> 	'50/50'
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
 	'label'       => __( 'Pestaña espeficiaciones (medidas)', 'fastway' ),

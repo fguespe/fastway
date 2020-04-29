@@ -199,6 +199,22 @@ function bbloomer_privacy_message_below_checkout_button() {
    echo '<p><small>'.fw_theme_mod('checkout-bottom-text').'</small></p>';
 }
 
+add_filter( 'body_class','fw_single_product_clasess' );
+function fw_single_product_clasess( $classes ) {
+  if ( is_product() ) {
+
+      global $post;
+      $terms = get_the_terms( $post->ID, 'product_cat' );
+      foreach ($terms as $term) {
+          $product_cat_id = $term->term_id;
+          $classes[] = 'product-in-cat-' . $product_cat_id;    
+      }
+  }
+  $classes[]=fw_theme_mod('fw_single_product_layout');
+  
+
+  return $classes;
+}
 
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {

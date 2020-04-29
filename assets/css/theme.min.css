@@ -2962,6 +2962,58 @@ body .wpb_content_element {
   color: var(--body);
 }
 
+@media (min-width: 799px) {
+  .fw_single_product.layout2 .desc {
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .fw_single_product.layout2 p,
+.fw_single_product.layout2 span,
+.fw_single_product.layout2 button {
+    text-align: left !important;
+  }
+  .fw_single_product.layout2 button {
+    float: left;
+    display: block !important;
+  }
+  .fw_single_product.layout2 .badge {
+    background: var(--main);
+  }
+  .fw_single_product.layout2 .gallery {
+    width: 50%;
+  }
+  .fw_single_product.layout2 #imagenListado img {
+    width: 100%;
+    height: auto !important;
+  }
+  .fw_single_product.layout2 #imagenListado {
+    height: 500px !important;
+  }
+}
+.fw_single_product.layout2 .fw_stock_input {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+.fw_single_product.layout2 .stock {
+  display: none;
+}
+.fw_single_product.layout2 .fw-medios.envio {
+  display: none !important;
+}
+.fw_single_product.layout2 .fw_price.kilo span {
+  font-size: 25px !important;
+}
+.fw_single_product.layout2 .fw_price.kilo span .suffix {
+  font-size: 12px !important;
+}
+.fw_single_product.layout2 .cuota_text {
+  display: block;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+}
+
 /*General Woocommerce*/
 .woocommerce {
   /*margin-bottom: 10px;*/
