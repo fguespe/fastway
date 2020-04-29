@@ -86,10 +86,9 @@ function fw_container($atts = [], $content = null){
     echo '</div>';
 }
 add_shortcode('fw_short_desc', 'fw_short_desc');
-add_shortcode('fw_short_desc', 'fw_short_desc');
 function fw_short_desc(){
     global $product;
-    echo wpautop($product->post->post_excerpt) ;
+    echo '<div class="desc"">'.wpautop($product->post->post_excerpt).'</div>';
 }
 
 
