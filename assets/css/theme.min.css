@@ -48,6 +48,9 @@
   margin-bottom: 20px;
   text-align: center;
 }
+.fw_page_title .icon {
+  margin: 0px;
+}
 .fw_page_title .icon i {
   font-size: 40px !important;
   margin-bottom: 5px;
@@ -1540,6 +1543,11 @@ ul {
 .fw_post p {
   font-size: 16px !important;
   font-weight: 400 !important;
+}
+
+.single-post img {
+  max-width: 100% !important;
+  height: auto;
 }
 
 .fw_post.vertical .foto img {
