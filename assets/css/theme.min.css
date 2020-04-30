@@ -2991,9 +2991,6 @@ body .wpb_content_element {
     width: 100%;
     height: auto !important;
   }
-  .layout2 .fw_single_product #imagenListado {
-    height: 500px !important;
-  }
 }
 .layout2 .fw_single_product .fw_stock_input {
   margin-bottom: 20px;
