@@ -402,6 +402,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_read_more',
@@ -411,13 +412,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'Leer más',
 ) );
 
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_blog',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
 	'section'     => 'section_blog_general',
-	'description' => 'Classes: .blog_page',
+	'description' => 'Classes: .blog',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
