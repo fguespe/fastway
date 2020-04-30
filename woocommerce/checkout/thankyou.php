@@ -38,9 +38,9 @@ defined( 'ABSPATH' ) || exit;
 		<?php else : ?>
 			<section class="container pagoexitoso" style="width:100%;">
 				<i class="fad fa-check-circle"></i>
-				<h2>Gracias por tu compra</h2>
-				<p>El pedido fue registrado con número #<?=$order->get_order_number()?></p>
-				<span> Te enviamos un mail a <b><?=$order->get_billing_email()?></b> con el detalle y las instrucciones de como seguir.</span>
+				<h2><?=fw_theme_mod('fw_label_checkout_thank_1')?></h2>
+				<p><?=fw_theme_mod('fw_label_checkout_thank_2')?> #<?=$order->get_order_number()?></p>
+				<span> <?=fw_theme_mod('fw_label_checkout_thank_3')?> <b><?=$order->get_billing_email()?></b> <?=fw_theme_mod('fw_label_checkout_thank_4')?></span>
 				<a class="seguir" href="/">Seguir comprando</a>
 			</section>
 		<?php endif; ?>

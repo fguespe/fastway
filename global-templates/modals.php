@@ -466,9 +466,7 @@ function add_to_minicart(prod_id){
     
     if(window.ga){
         console.log('eventAction:addtocart' );
-        gtag('event', 'click', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'})
         gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-        ga( 'send', 'event', 'addtocart', 'addtocart', 'addtocart' );
     }
   
     let qty=1
@@ -540,7 +538,7 @@ function populatecart(){
         if(subtotal>0){
             jQuery('#modal_carrito .container').html(jqe);
         }else{
-            jQuery('#modal_carrito .container').html('No hay productos');
+            jQuery('#modal_carrito .container').html('<?=fw_theme_mod('fw_label_no_hay')?>');
         }
     });
 }
