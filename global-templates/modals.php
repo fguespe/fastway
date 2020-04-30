@@ -468,11 +468,7 @@ function add_to_minicart(prod_id){
         console.log('eventAction:addtocart' );
         gtag('event', 'click', {'event_category' : 'button','event_label' : 'contact form'})
         gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-        ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'},
-            'hitCallback' : function () {
-                alert("Event received");
-            }
-        );
+       
     }
   
     let qty=1
