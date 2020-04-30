@@ -1658,8 +1658,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'fw_welcome_msg',

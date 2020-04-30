@@ -38,11 +38,12 @@ defined( 'ABSPATH' ) || exit;
 		<?php else : ?>
 			<section class="container pagoexitoso" style="width:100%;">
 				<i class="fad fa-check-circle"></i>
-				<h2><?=fw_theme_mod('fw_label_checkout_thank_1')?></h2>
-				<p><?=fw_theme_mod('fw_label_checkout_thank_2')?> #<?=$order->get_order_number()?></p>
-				<span> <?=fw_theme_mod('fw_label_checkout_thank_3')?> <b><?=$order->get_billing_email()?></b> <?=fw_theme_mod('fw_label_checkout_thank_4')?></span>
-				<a class="seguir" href="/">Seguir comprando</a>
+				<h2><?=fw_theme_mod('fw_label_checkout_thank_0')?></h2>
+				<p><?=fw_theme_mod('fw_label_checkout_thank_1')?> #<?=$order->get_order_number()?></p>
+				<span><?=fw_theme_mod('fw_label_checkout_thank_2')?> <b><?=$order->get_billing_email()?></b> <?=fw_theme_mod('fw_label_checkout_thank_3')?></span>
+				<a class="seguir" href="/"><?=fw_theme_mod('fw_label_checkout_thank_4')?></a>
 			</section>
+			
 		<?php endif; ?>
 
         <div class="cart-form-desc" style="font-size:12px;">
@@ -52,7 +53,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php else : ?>
 
-		<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), null ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+		<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), null );?></p>
 
 	<?php endif; ?>
 
