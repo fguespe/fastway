@@ -161,8 +161,6 @@
     function obtenerSeleccionCombo(idCombo){
         if(jQuery('#cuotatp').is(":visible"))idCombo+='tp'
         var indice = document.getElementById(idCombo).selectedIndex;
-        console.log(idCombo,indice)
-
         if(indice>=0)return document.getElementById(idCombo).options[indice].value;
     }
     
@@ -403,9 +401,6 @@ function toggle(quien){
 function comprar(url){
     let min=jQuery('#totals').data("min")
     let total=jQuery('#totals').data("subtotal")
-    console.log(min,total)/*
-    if(total<min)alert("El total esta por debajo de la compra minima de $"+min);
-    else location.href=url*/
     location.href=url
 }
 jQuery( ".fw_variations select" ).change(function() {
@@ -466,7 +461,6 @@ function add_to_minicart(prod_id){
             var_id=var_id['variation_id']
         }
     }
-    console.log('#fw_add_to_cart_button_'+prod_id)
     jQuery('#fw_add_to_cart_button_'+prod_id).addClass('loading')
     jQuery('.minicart').addClass('bouncing')
     
@@ -474,7 +468,7 @@ function add_to_minicart(prod_id){
         console.log('eventAction:addtocart' );
         gtag('event', 'click', {'event_category' : 'button','event_label' : 'contact form'})
         gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-        ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito',
+        ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'},
             'hitCallback' : function () {
                 alert("Event received");
             }
@@ -542,7 +536,6 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
-        console.log(discount_total)
         if(discount_total<0){
             jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+discount_total+'</span></span></div>'
             jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
