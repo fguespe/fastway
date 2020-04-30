@@ -466,7 +466,7 @@ function add_to_minicart(prod_id){
     
     if(window.ga){
         console.log('eventAction:addtocart' );
-        gtag('event', 'click', {'event_category' : 'button','event_label' : 'contact form'})
+        gtag('event', 'click', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'})
         gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
        
     }
