@@ -416,23 +416,6 @@ function fw_share_redes(){
     </div>';
 }
 
-
-/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function fw_allow_users_to_shopmanager() {
-    /*$role = get_role( 'shop_manager' );
-    $role->add_cap( 'edit_theme_options' ); 
-    $role->add_cap( 'manage_options' ); 
-    $role->add_cap( 'add_users' ); 
-    $role->add_cap( 'create_users' ); 
-    $role->add_cap( 'edit_users' ); 
-    $role->add_cap( 'gravityforms_create_form' ); 
-    $role->add_cap( 'gravityforms_edit_forms' ); 
-    $role->add_cap( 'gravityforms_view_entries' ); 
-    $role->add_cap( 'gravityforms_user_registration'); */
-}
-add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
-
-
 if(fw_theme_mod('fw_min_purchase')>0 && fw_theme_mod('fw_min_purchase2')>0 ){
     add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
     add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
