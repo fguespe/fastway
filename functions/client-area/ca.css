@@ -515,3 +515,7 @@ cuidado con el update notice y el error de create user
 .composer-switch,.vc_ui-help-block.vc_welcome-visible-e{
 	display: none !important;
 }
+
+.post-type-page .tablenav,.post-type-page .page-title-action{
+	display:none;
+}
