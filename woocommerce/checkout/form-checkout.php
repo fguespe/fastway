@@ -62,51 +62,50 @@ function fw_custom_override_checkout_fieldss( $fields ) {
       <div class="box-detail mostrar paso-loading" style="display:none;text-align:center;width:100%;"> 
             <div class="capsula ">
               <i class="fal fa-circle-notch fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
-              <span>Estamos procesando su pedido...aguarde unos segundos.</span>
+              <span><?=fw_theme_mod('fw_label_checkout_loading')?></span>
             </div>
       </div>
         
       <div class="box-detail paso-cuenta" >
         <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
-            <h1><span class="icon-paso">1</span>Tu cuenta</h1>
+            <h1><span class="icon-paso">1</span><?=fw_theme_mod('fw_label_checkout_1')?></h1>
             <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
             <div class="login-btn">
-              ¿Ya tenés una cuenta?<a class="login" onclick="switchlogin()">Iniciar sesión</a>	
+            <?=fw_theme_mod('fw_label_checkout_already')?><a class="login" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_init')?></a>	
             </div>
               
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
             <div class="clear"></div>	
 
         </div>
         <div class="dos" style="display:none">
-            <h1><span class="icon-paso">1</span>Ingresá a tu cuenta</h1>
+            <h1><span class="icon-paso">1</span><?=fw_theme_mod('fw_label_checkout_enter')?></h1>
             <div id="login" action="login" method="post">
                 <input id="username" type="text" name="username" placeholder="Email o username">
                 <input id="password" type="password" name="password" placeholder="Contraseña">
-                <a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste tu constraseña?</a>
+                <a class="lost" href="<?php echo wp_lostpassword_url(); ?>"><?=fw_theme_mod('fw_label_checkout_forgot')?></a>
                 <p class="status"></p>
                 <input class="submit_button boton" type="button" value="Login" onclick="fw_login()" name="submit">
                 <div class="submit_button loading" style="display:none;"><i class='fas fa-circle-notch fa-spin'></i></div>
                 <?php wp_nonce_field( 'update-order-review', 'security'); ?>
-                
             </div>
 
-            <div class="login-btn">¿Aún no tenés cuenta? <a class="registro" onclick="switchlogin()">Regresar</a></div>
+            <div class="login-btn"><?=fw_theme_mod('fw_label_checkout_already_not')?> <a class="registro" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_back')?></a></div>
             
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
             <div class="clear"></div>	
         </div>
         <div class="capsula box-step" style="display: <?=!is_user_logged_in()?'none':'block'?>">
-            <a class="editar" style="display:<?=is_user_logged_in()?'none':'block'?>" onclick="editpaso(1)">modificar</a>
-            <a class="editar cerrar" style="display:<?=!is_user_logged_in()?'none':'block'?>"  onclick="fw_logout()">Cerrar sesión</a>
+            <a class="editar" style="display:<?=is_user_logged_in()?'none':'block'?>" onclick="editpaso(1)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
+            <a class="editar cerrar" style="display:<?=!is_user_logged_in()?'none':'block'?>"  onclick="fw_logout()"><?=fw_theme_mod('fw_label_checkout_close')?></a>
             <span class="icon"><i class="fa fa-check"></i></span>
-            <span class="title">Tu cuenta</span>
+            <span class="title"><?=fw_theme_mod('fw_label_checkout_1')?></span>
             <span class="subtitle" data-id=""><?=is_user_logged_in()?wp_get_current_user()->user_email:''?></span>	
         </div> 
       </div>
 
       <div class="box-detail paso-datos" style="display:<?=is_user_logged_in()?'block':'none';?>;">
-          <h1><span class="icon-paso">2</span>Tus datos</h1>
+          <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_2')?></h1>
           <div class="woocommerce-billing-fields">
 
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
@@ -129,15 +128,15 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <div class="capsula box-step" style="display:none;">
 						<a class="editar" onclick="editpaso(2)">modificar</a>
 						<span class="icon"><i class="fa fa-check"></i></span>
-						<span class="title">Tus datos</span>
+						<span class="title"><?=fw_theme_mod('fw_label_checkout_2')?></span>
 						<span class="subtitle" data-id=""></span>					
           </div> 
-          <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled>Continuar</button>
+          <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
           <div class="clear"></div>	
         
       </div>
       <div class="box-detail paso-shipping" style="display:none;">
-            <h1><span class="icon-paso">2</span> ¿Cómo te entregamos la compra?</h1>
+            <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?></h1>
             <?php wc_get_template(	'checkout/shipping-order-review.php'); ?>
 
             <div class="capsula box-step" style="display:none;">
@@ -146,13 +145,13 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               <span class="title">¿Cómo te entregamos la compra?</span>
               <span class="subtitle" data-id=""></span>					
             </div>
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar shipping" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar shipping" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
             <div class="clear"></div>	
         </div>
         
        
         <div class="box-detail paso-pagos" style="display:none;">
-            <h1><span class="icon-paso">3</span>¿Cómo vas a pagar?</h1>
+            <h1><span class="icon-paso">3</span><?=fw_theme_mod('fw_label_checkout_4')?></h1>
             <?php woocommerce_checkout_payment() ?>
 
             <div class="capsula box-step" style="display:none;">
@@ -162,7 +161,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               <span class="subtitle" data-id=""></span>					
             </div>
 
-            <button type="button" onclick="nextpaso()" class="btn-checkout continuar pagos" disabled>Continuar</button>
+            <button type="button" onclick="nextpaso()" class="btn-checkout continuar pagos" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
         </div>
         
       </div>
@@ -175,7 +174,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
           <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
-            <button type="submit" class="button" name="apply_coupon"   style="width:30%;">Aplicar</button>
+            <button type="submit" class="button" name="apply_coupon"   style="width:30%;"><?=fw_theme_mod('fw_label_checkout_aplicar')?></button>
           </p>
           <div class="clear"></div>
         </form>

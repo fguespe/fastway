@@ -1467,19 +1467,142 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'checkout-msg',
+	'label'       => __( 'Checkout message', 'fastway' ),
+	'description'=>'Display a messsage/notice before checkout',
+	'section'     => 'section_woo_checkout',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_continuar',
+	'label'    => __( 'Continuar', 'fastway' ),       
+	'section'     => 'section_woo_checkout',
+	'default' 		=>	'Continuar',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_aplicar',
+	'label'    => __( 'Aplicar', 'fastway' ),       
+	'section'     => 'section_woo_checkout',
+	'default' 		=>	'Aplicar',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_agregar_mas',
+	'label'    => __( 'Agregar mas productos', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=>'Agregar más productos',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_1',
+	'label'    => __( 'Tu cuenta', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=>'Tu cuenta',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_2',
+	'label'    => __( 'Tus datos', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=>'Tus datos',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_3',
+	'label'    => __( '¿Cómo te entregamos la compra?', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=>'¿Cómo te entregamos la compra?',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_4',
+	'label'    => __( '¿Cómo vas a pagar?', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> '¿Cómo vas a pagar?',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_init',
+	'label'    => __( 'Iniciar sesión', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Iniciar sesión',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_close',
+	'label'    => __( 'Cerrar sesión', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Cerrar sesión',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_loading',
+	'label'    => __( 'Loading...', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Estamos procesando su pedido...aguarde unos segundos.',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_enter',
+	'label'    => __( 'Ingresá a tu cuenta', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Ingresá a tu cuenta',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_already',
+	'label'    => __( '¿Ya tenés una cuenta?', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> '¿Ya tenés una cuenta?',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_forgot',
+	'label'    => __( '¿Olvidaste tu constraseña?', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> '¿Olvidaste tu constraseña?',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_change',
+	'label'    => __( 'modificar', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'modificar',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_already_not',
+	'label'    => __( '¿Aún no tenés cuenta?', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> '¿Aún no tenés cuenta?',
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'fw_welcome_msg',
 	'label'       => __( 'Welcome message', 'fastway' ),
 	'description'=>'Display a messsage on the my account page',
-	'section'     => 'section_woo',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
-	'settings'    => 'checkout-msg',
-	'label'       => __( 'Checkout message', 'fastway' ),
-	'description'=>'Display a messsage/notice before checkout',
 	'section'     => 'section_woo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -3182,6 +3305,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=>'Comprar',
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_free_label',
@@ -3198,14 +3322,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_agregar_mas',
-	'label'    => __( 'Agregar mas productos', 'fastway' ),
-	'section'     => 'section_labels',
-	'default'	=>'Agregar más productos',
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
