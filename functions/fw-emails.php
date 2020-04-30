@@ -168,7 +168,7 @@ function change_notification_email( $notification, $form, $entry ) {
 // The email function hooked that display the text
 add_action( 'woocommerce_email_order_details', 'fw_display_applied_coupons', 10, 4 );
 function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email ) {
-
+    $coupon_codes=[];
     // Only for admins and when there at least 1 coupon in the order
     if ( ! $sent_to_admin && count($order->get_items('coupon') ) == 0 ) return;
 
