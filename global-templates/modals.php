@@ -472,7 +472,7 @@ function add_to_minicart(prod_id){
             'hitCallback' : function () {
                 alert("Event received");
             }
-        });
+        );
     }
   
     let qty=1
