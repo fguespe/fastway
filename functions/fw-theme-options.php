@@ -1610,11 +1610,10 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_0',
-	'label'    => __( 'Seguir comprando', 'fastway' ),
+	'label'    => __( 'Gracias por tu compra', 'fastway' ),
 	'section'     => 'section_woo_checkout',
-	'default'	=> 'Seguir comprando',
+	'default'	=> 'Gracias por tu compra',
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_1',
@@ -1642,14 +1641,6 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_4',
-	'label'    => __( 'Gracias por tu compra', 'fastway' ),
-	'section'     => 'section_woo_checkout',
-	'default'	=> 'Gracias por tu compra',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_checkout_thank_5',
 	'label'    => __( 'Seguir comprando', 'fastway' ),
 	'section'     => 'section_woo_checkout',
 	'default'	=> 'Seguir comprando',
