@@ -1549,6 +1549,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=> 'Cerrar sesión',
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_loading',
