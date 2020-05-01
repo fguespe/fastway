@@ -4409,10 +4409,13 @@ body .wpb_content_element {
   .woocommerce form.fw_checkout .form-row {
     flex-basis: 47%;
   }
-  .woocommerce-checkout .form-row.w100,
-  #billing_address_1_field, #billing_address_2_field {
-    /*Solo le mando fix a 2 campos*/
-    flex-basis: 100%;
+  .woocommerce-checkout {
+    .form-row.w100,
+    #billing_address_1_field, 
+    #billing_address_2_field {
+      /*Solo le mando fix a 2 campos*/
+      flex-basis: 100%;
+    }
   }
 
   .woocommerce form.fw_checkout .form-row .input-text,
