@@ -2107,6 +2107,10 @@ footer .widget_nav_menu li a {
 }
 
 /* Filters woo*/
+.woocommerce-shop .widget-area .widget ul li a,
+.woocommerce-shop .widget-area .widget ul li span {
+  display: inline-block !important;
+}
 .woocommerce-shop .product-categories .current-cat > a {
   font-weight: bold !important;
 }
