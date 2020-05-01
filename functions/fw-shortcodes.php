@@ -172,9 +172,9 @@ if( !function_exists('fw_compra_protegida') ) {
     function fw_compra_protegida( $type="" ){
         $devolver= '
         <li class="text-right safe-box"> 
-            <img width="36" src="/wp-content/themes/fastway/assets/img/safe-shopping.svg" alt="Compra Segura">
-            <p><strong>Compra Segura</strong>
-            100% Protegido</p>
+            <img width="36" src="/wp-content/themes/fastway/assets/img/safe-shopping.svg">
+            <p><strong>'.fw_theme_mod('fw_label_checkout_checkout_verde_1').'</strong>
+            '.fw_theme_mod('fw_label_checkout_checkout_verde_2').'</p>
         </li>';
        
         return $devolver;
