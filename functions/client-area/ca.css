@@ -409,6 +409,7 @@ display:none;
 }
 /*paginas visual editar fila*/
 .row-actions .edit_vc,
+.row-actions .capabilities,
 /*#vc_navbar,*/
 #wp-admin-bar-view{
 	display:none ;
