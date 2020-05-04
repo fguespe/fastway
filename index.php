@@ -9,8 +9,12 @@ $container   = fw_theme_mod('container-main');
 	
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-	
-
+	<?php 
+	if(fw_theme_mod('blog-stblock')){
+		echo '<div class="row"><div class="container">';
+		fw_StaticBlock::getSticBlockContent( fw_theme_mod('blog-stblock') );
+		echo '</div></div>';
+	}?>
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
@@ -24,9 +28,6 @@ $container   = fw_theme_mod('container-main');
 		<?php } ?>
 
 	</header><!-- .page-header -->
-				<?php
-				fw_StaticBlock::getSticBlockContent( fw_theme_mod('blog-stblock') );
-				?>
 				<?php if ( have_posts() ) : ?>
 				<!-- .fw grid -->
 				<div class="fw_blog d-flex flex-wrap flex-row">
