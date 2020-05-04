@@ -200,7 +200,7 @@ function fw_slider() {
                     "type" => 'checkbox',
                     "heading"     => "Autoplay ",
                     "param_name"  => "autoplay",
-                    'std' => 'false',
+                    'std' => 'true',
                 ),
                 array(
                     "type" => 'checkbox',
@@ -329,7 +329,7 @@ function fw_slider_function( $atts, $content ) {
             'slider_speed'  => '250',
             'slider_delay'  => '4000',
             'autoplay'  => 'false',
-            'loop'  => 'false',
+            'loop'  => 'true',
             'el_class'  => ''
         ), $atts );
     if(!$atts['autoplay'])$atts['autoplay']='false';
