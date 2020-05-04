@@ -4223,7 +4223,7 @@ body .wpb_content_element {
 }
 
 .footernewsletter label {
-  display: none;
+  display: none !important;
 }
 .footernewsletter .gform_body {
   width: 34% !important;
