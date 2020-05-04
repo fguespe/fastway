@@ -203,6 +203,12 @@ function fw_slider() {
                     'std' => 'false',
                 ),
                 array(
+                    "type" => 'checkbox',
+                    "heading"     => "Loop",
+                    "param_name"  => "loop",
+                    'std' => 'false',
+                ),
+                array(
                     'type' => 'textfield',
                     'heading' => __( 'Delay', 'js_composer' ),
                     'param_name' => 'slider_delay',
