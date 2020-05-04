@@ -4407,6 +4407,8 @@ body .wpb_content_element {
     display:flex !important;
     align-items:center !important;
   }
+
+  
   .woocommerce form.fw_checkout .form-row {
     flex-basis: 47%;
   }
@@ -5097,7 +5099,7 @@ body .wpb_content_element {
       margin-top:10px !important;
       display:block
     }
-    form label{
+    form label:not(.checkbox) {
       display: none !important;
     }
     form label,form .woocommerce-input-wrapper{

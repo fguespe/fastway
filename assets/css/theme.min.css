@@ -4308,6 +4308,15 @@ body .wpb_content_element {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.woocommerce-checkout .woocommerce-input-wrapper .input-checkbox,
+.woocommerce-account .woocommerce-input-wrapper .input-checkbox {
+  width: 10% !important;
+}
+.woocommerce-checkout .woocommerce-input-wrapper .checkbox,
+.woocommerce-account .woocommerce-input-wrapper .checkbox {
+  display: flex !important;
+  align-items: center !important;
+}
 .woocommerce-checkout .woocommerce form.fw_checkout .form-row,
 .woocommerce-account .woocommerce form.fw_checkout .form-row {
   flex-basis: 47%;
@@ -5041,10 +5050,9 @@ body .wpb_content_element {
   display: block;
 }
 .woocommerce-checkout form label:not(.checkbox),
-.woocommerce-account form label {
+.woocommerce-account form label:not(.checkbox) {
   display: none !important;
 }
-
 .woocommerce-checkout form label, .woocommerce-checkout form .woocommerce-input-wrapper,
 .woocommerce-account form label,
 .woocommerce-account form .woocommerce-input-wrapper {
