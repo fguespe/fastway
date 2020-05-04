@@ -361,6 +361,14 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'blog-stblock',
+	'label'       => __( 'Static Block', 'fastway' ),
+	'section'     => 'section_blog_general',
+	'choices'     => $static_block_args,
+	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
@@ -424,6 +432,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
 
 /*BLOG PAGE*/
 

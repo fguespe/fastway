@@ -24,7 +24,9 @@ $container   = fw_theme_mod('container-main');
 		<?php } ?>
 
 	</header><!-- .page-header -->
-
+				<?php
+				fw_StaticBlock::getSticBlockContent( fw_theme_mod('blog-stblock') );
+				?>
 				<?php if ( have_posts() ) : ?>
 				<!-- .fw grid -->
 				<div class="fw_blog d-flex flex-wrap flex-row">
