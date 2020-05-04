@@ -4330,7 +4330,9 @@ body .wpb_content_element {
     font-weight: bold;
 }
 .footernewsletter{
-  
+  label{
+    display: none;
+  }
   .gform_body {
     width: 34% !important;
     display: inline-block ;
