@@ -4329,6 +4329,37 @@ body .wpb_content_element {
     color: white !important;
     font-weight: bold;
 }
+.footernewsletter{
+  
+  .gform_body {
+    width: 34% !important;
+    display: inline-block ;
+  }
+  .gform_footer {
+    display: inline-block ;
+    width: 50% !important;
+    padding: 0px;
+    margin: 0px;
+  }
+  .gform_body input{
+  width:95% !important;
+  }
+  .ginput_container{
+  margin:0px !important;
+  }
+  .gform_footer input {
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    line-height: 38px;
+    width: 100%;
+    background-color: var(--main);
+    border: 0px;
+    color: white;
+  }
+
+} 
+
 .woocommerce-checkout,
 .woocommerce-account{
   .select2-selection__clear{
@@ -4408,7 +4439,7 @@ body .wpb_content_element {
     align-items:center !important;
   }
 
-  
+
   .woocommerce form.fw_checkout .form-row {
     flex-basis: 47%;
   }
