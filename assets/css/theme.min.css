@@ -4222,6 +4222,33 @@ body .wpb_content_element {
   font-weight: bold;
 }
 
+.footernewsletter .gform_body {
+  width: 34% !important;
+  display: inline-block;
+}
+.footernewsletter .gform_footer {
+  display: inline-block;
+  width: 50% !important;
+  padding: 0px;
+  margin: 0px;
+}
+.footernewsletter .gform_body input {
+  width: 95% !important;
+}
+.footernewsletter .ginput_container {
+  margin: 0px !important;
+}
+.footernewsletter .gform_footer input {
+  padding: 0px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  line-height: 38px;
+  width: 100%;
+  background-color: var(--main);
+  border: 0px;
+  color: white;
+}
+
 .woocommerce-checkout,
 .woocommerce-account {
   /* var compliance radio buttons */
