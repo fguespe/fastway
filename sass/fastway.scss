@@ -4317,7 +4317,6 @@ body .wpb_content_element {
     border-left: 5px solid var(--checkout) !important;
   }
   
-
 }
 
 .fw_boton{
@@ -4370,7 +4369,6 @@ body .wpb_content_element {
     margin-left: 50px;
     align-self: start;
   }
-
   .fw_summary-box {
     background:transparent;
     position: relative;
@@ -4384,7 +4382,6 @@ body .wpb_content_element {
     flex-grow: 0;
     flex-shrink: 0;
   }
-
   .woocommerce-error {
     padding: 1em 2em 1em 3.5em;
     margin: 0 0 2em;
@@ -4396,7 +4393,6 @@ body .wpb_content_element {
     width: auto;
     word-wrap: break-word;
   }
-
   .fw_checkout .woocommerce-billing-fields__field-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4404,11 +4400,17 @@ body .wpb_content_element {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
-
+  .woocommerce-input-wrapper .input-checkbox{
+    width:10% !important;
+  }
+  .woocommerce-input-wrapper .checkbox{
+    display:flex !important;
+    align-items:center !important;
+  }
   .woocommerce form.fw_checkout .form-row {
     flex-basis: 47%;
   }
+
   .woocommerce-checkout {
     .form-row.w100,
     #billing_address_1_field, 

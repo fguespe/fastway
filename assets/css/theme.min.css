@@ -5040,10 +5040,11 @@ body .wpb_content_element {
   margin-top: 10px !important;
   display: block;
 }
-.woocommerce-checkout form label,
+.woocommerce-checkout form label:not(.checkbox),
 .woocommerce-account form label {
   display: none !important;
 }
+
 .woocommerce-checkout form label, .woocommerce-checkout form .woocommerce-input-wrapper,
 .woocommerce-account form label,
 .woocommerce-account form .woocommerce-input-wrapper {
