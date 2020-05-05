@@ -1545,13 +1545,19 @@ ul {
   font-weight: 400 !important;
 }
 
+.single-post h1, .single-post h2, .single-post h3, .single-post h4, .single-post h5, .single-post h6 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .single-post img {
   max-width: 100% !important;
   height: auto;
 }
 
-.fw_post.vertical .foto img {
-  width: 100% !important;
+.fw_post .foto img {
+  margin: 0 auto !important;
+  display: block;
+  width: auto !important;
   height: auto !important;
 }
 
@@ -4226,12 +4232,10 @@ body .wpb_content_element {
   display: none !important;
 }
 .footernewsletter .gform_body {
-  width: 34% !important;
   display: inline-block;
 }
 .footernewsletter .gform_footer {
   display: inline-block;
-  width: 50% !important;
   padding: 0px;
   margin: 0px;
 }
