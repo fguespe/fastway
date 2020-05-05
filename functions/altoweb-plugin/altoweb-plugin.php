@@ -143,6 +143,7 @@ add_action( 'admin_init', 'remove_dashboard_meta2' );
 
 add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
 function whero_limit_image_size($file) {
+    if(is_super_admin())return $file;
    //if(is_admin())return $file;
    // Calculate the image size in KB
    $image_size = $file['size']/1024;
