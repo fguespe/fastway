@@ -10,7 +10,7 @@ $image_url = $image[0];
 ?>
 <li class="fw_post <?php echo $clase;?> col-sm-6"  id="post-<?php the_ID(); ?>">
     <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
-        <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
+        <div class="foto"><img src="<?php echo $image_url; ?>" /></div>
         <h4 class="title"><?php  the_title();?></h4>
         <p class="excerpt 4"><?php the_excerpt(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>

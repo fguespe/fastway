@@ -42,7 +42,7 @@ function fw_recentposts_ver() {
     <?php $image_url = $image[0]; ?>
        <div class="fw_post ver d-flex flex-row" >
           <div class="col-3 foto">
-                <img src="<?php echo $image_url; ?>" width="100%"/>
+                <img src="<?php echo $image_url; ?>" />
           </div>
           <div class="col-9">
             <h4 class="title"><?php  the_title();?></h4>
