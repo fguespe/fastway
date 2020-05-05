@@ -4,8 +4,8 @@
                 <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
           </div>
           <div class="col-xs-12 col-sm-9">
-              <h4 class="title"><?php the_title();?></h4>
-              <p class="excerpt"><?php the_excerpt(); ?></p>
+              <h4 class="title"><?php echo get_the_title();?></h4>
+              <p class="excerpt"><?php  echo get_the_excerpt(); ?></p>
               <a href="<?php echo get_permalink()?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
