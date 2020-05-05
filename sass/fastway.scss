@@ -1487,9 +1487,16 @@ ul {
   font-size:16px !important;
   font-weight:400 !important;
 }
-.single-post img{
-  max-width:100% !important;
-  height:auto;
+
+.single-post{
+  h1,h2,h3,h4,h5,h6{
+    margin-top:20px;
+    margin-bottom:20px;
+  } 
+  img{
+    max-width:100% !important;
+    height:auto;
+  }
 }
 
 .fw_post.vertical .foto img {
