@@ -142,49 +142,6 @@ if(!empty(fw_theme_mod('ca_extra_roles'))) {
 
 }
 
-if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
-    
-//Esto no sirve por que se usa advanced custom fields
-    add_action( 'woocommerce_product_options_pricing', 'wc_cost_product_field' );
-    function wc_cost_product_field() {
-      $roles=fw_theme_mod('ca_roles_mayorista');
-      foreach ($roles as $rol) {
-        $field='_lista_'.$rol;
-        woocommerce_wp_text_input( array( 'id' => $field, 'class' => 'wc_input_price short', 'label' => __( ucfirst($rol), 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ) );
-      }
-    }
-    
-    add_action( 'save_post', 'wc_cost_save_product' );
-    function wc_cost_save_product( $product_id ) {
-
-        // stop the quick edit interferring as this will stop it saving properly, when a user uses quick edit feature
-        if (wp_verify_nonce($_POST['_inline_edit'], 'inlineeditnonce'))
-            return;
-
-        // If this is a auto save do nothing, we only save when update button is clicked
-      if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-        return;
-
-      $roles=fw_theme_mod('ca_roles_mayorista');
-      foreach ($roles as $rol) {
-        $field='_lista_'.$rol;
-            
-        if ( isset( $_POST[$field] ) ) {
-          if ( is_numeric( $_POST[$field] ) )
-            update_post_meta( $product_id, $field, $_POST[$field] );
-        } else delete_post_meta( $product_id, $field );
-      }
-    }
-}
-
-function woocommerce_button_proceed_to_checkout() {
-  $checkout_url = WC()->cart->get_checkout_url(); 
-  $label = fw_theme_mod('proceed-to-checkout-text');
-  echo '<a href="'.esc_url( wc_get_checkout_url() ).'" class="checkout-button button alt wc-forward">
-  <i class="fad fa-lock" style="margin-right:10px !important;"></i> '.$label.' </a>';
-}
-
-/* Add to the functions.php file of your theme */
 
 add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' ); 
 
@@ -233,7 +190,7 @@ function fw_role_body_classes( $classes ) {
 
 function fw_shop_manager_role_edit_capabilities( $roles ) {
   if(function_exists('fw_theme_mod')){
-    $roles=fw_theme_mod('ca_roles_mayorista');
+    $roles=fw_theme_mod('ca_extra_roles');
     if(is_string($roles))$roles=explode(",",$roles);
     
     foreach ($roles as $nombre) {

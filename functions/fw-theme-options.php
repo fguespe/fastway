@@ -1706,14 +1706,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'ca_extra_roles',
-	'label'       => __( 'Extra roles', 'fastway' ),
-	'description'	=>	'Nombre del rol, separados con ",".',
-	'section'     => 'section_woo_roles',
-	'default'     => '',
-) );
+
 
 
 
@@ -1726,7 +1719,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'ca_extra_roles',
+	'label'       => __( 'Extra roles', 'fastway' ),
+	'description'	=>	'Nombre del rol, separados con ",".',
+	'section'     => 'section_woo_roles',
+	'default'     => '',
+) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_mayorista',
@@ -1735,7 +1736,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_roles',
     'choices'     => fw_getme_roles(),
 	'default'     => ''
-) );
+) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
