@@ -19,8 +19,8 @@ while ($posts->have_posts()){
     <li class="fw_post">
     <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
         <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
-        <h4 class="title"><?php echo get_the_title();?></h4>
-        <p class="excerpt 4"><?php  echo get_the_excerpt(); ?></p>
+        <h4 class="title"><?php  the_title();?></h4>
+        <p class="excerpt 4"><?php the_excerpt(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
     </a>
     </li>
