@@ -36,7 +36,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
       unset($fields['billing']['billing_dni']);
-
     }
     return $fields;
 }
@@ -946,17 +945,17 @@ function updateEnvioGratisME(){
     //Cambio el label a mercadoenvios gratis
     console.log('jiji')
     let dias=['(2-4 días)','(1-3 días)','(3-5 días)','(6-8 días)','(5-7 días)'];
-    let tipos=['Envió Estándar'];
+    let tipos=['Envió Estándar','Envió Gratis'];
     for(let j in tipos){
       let label=tipos[j];
       for(let i in dias){
         let freecuando=dias[i]
         let buscar="label:contains('"+label+" "+freecuando+"')"
         var element =jQuery(buscar);
-        if(element && label==tipos[0]){  
+        if(element && label==tipos[1]){  
           element.text('Envio Gratis Por Correo A Domicilio '+freecuando+'');
           element.addClass('mercadoenvios-shipping free');
-        }else if(element && label==tipos[1]){  
+        }else if(element && label==tipos[0]){  
           element.html('<span class="title">Correo a domicilio '+freecuando+'</span><small style="display:inline;"> * Pagando con mercadopago</small>');
           element.addClass('mercadoenvios-shipping ');
           
