@@ -24,7 +24,7 @@ $container   = fw_theme_mod('container-main');
 				<header class="page-header">
 
 		<?php if(fw_theme_mod('fw_blog_title_switch')){ ?>
-		<?php echo '<h1 class="page-title">'.wp_title('').'</h1>'; ?></h1>
+		<?php echo '<h1 class="page-title">'. get_the_title( get_option('page_for_posts', true) ).'</h1>'; ?>
 		<?php } ?>
 
 	</header><!-- .page-header -->
