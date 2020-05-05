@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 
 <form name="checkout" method="post" class=" fw_checkout" enctype="multipart/form-data">	
-		<div class="register-fields">
+		<div class="register-fields" style="width:100%;">
 			<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 			<div class="woocommerce-billing-fields__field-wrapper">
 				<?php do_action( 'woocommerce_login_form_start' ); ?>
