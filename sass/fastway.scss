@@ -1500,7 +1500,9 @@ ul {
 }
 
 .fw_post.vertical .foto img {
-  width: 100% !important;
+  margin:0 auto !important;
+  display:block;
+  width:auto !important;
   height: auto !important;
 }
 
