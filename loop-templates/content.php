@@ -5,7 +5,7 @@
           </div>
           <div class="col-xs-12 col-sm-9">
               <h4 class="title"><?php echo get_the_title();?></h4>
-              <p class="excerpt"><?php  echo get_the_excerpt(); ?></p>
+              <p class="excerpt 2"><?php  echo get_the_excerpt(); ?></p>
               <a href="<?php echo get_permalink()?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
