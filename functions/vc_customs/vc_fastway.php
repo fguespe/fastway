@@ -285,7 +285,7 @@ function fw_image() {
                     "param_name"  => "text_type",
                     "value" => array(
                         "Encima de la imagen" => "floating",
-                        "Abajo de la imagen" =>""  ,
+                        "Abajo de la imagen" =>"below"  ,
                     ),
                     "std" => 'floating', //Default Red color
                 ),
