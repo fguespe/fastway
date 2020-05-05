@@ -141,7 +141,7 @@ if(!empty(fw_theme_mod('ca_extra_roles'))) {
   add_action('admin_init', 'fw_create_roles');
 
 }
-/*
+
 if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
     
 //Esto no sirve por que se usa advanced custom fields
@@ -175,7 +175,7 @@ if(!empty(fw_theme_mod('ca_roles_mayorista'))) {
         } else delete_post_meta( $product_id, $field );
       }
     }
-}*/
+}
 
 function woocommerce_button_proceed_to_checkout() {
   $checkout_url = WC()->cart->get_checkout_url(); 
