@@ -2415,7 +2415,7 @@ html {
 
 @media (max-width: 799px) {
   .vc_empty_space {
-    max-height: 20px;
+    max-height: 40px;
   }
 }
 /*FIX >BOOTSTRAP COLOR*/
@@ -4347,6 +4347,7 @@ body .wpb_content_element {
     display: inline-block ;
   }
   .gform_footer {
+    width: auto;
     display: inline-block ;
     padding: 0px;
     margin: 0px;
