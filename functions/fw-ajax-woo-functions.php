@@ -152,6 +152,13 @@ function fw_loop_btn( $atts ) {
     <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
     <span>'.fw_theme_mod('add-to-cart-text').'</span>
     </button>';
+  }else if($type=='link' && fw_theme_mod('sold-alone')){
+    $addtocart_url =esc_url(wc_get_checkout_url().'?add-to-cart='.$product->get_id());
+    echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$addtocart_url.'\'" class="fw_add_to_cart_button loop '.$type.'">
+    <i class="fad fa-cart-plus "></i>
+    <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+    <span>'.fw_theme_mod('add-to-cart-text').'</span>
+    </button>';
   }else{
     echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$product->get_permalink($product->id).'\'" class="fw_add_to_cart_button loop '.$type.' ">
     <i class="fad fa-eye "></i>
@@ -198,12 +205,21 @@ function fw_single_cart() {
       echo '</table></form>';
     }
 	
+    if(fw_theme_mod('sold-alone')){
+      $addtocart_url =esc_url(wc_get_checkout_url().'?add-to-cart='.$product->get_id());
+      echo '<button id="fw_add_to_cart_button_'.$product->id.'" onclick="location.href=\''.$addtocart_url.'\'" class="btn fw_add_to_cart_button  data-product_id="'.$product->id.'">
+      <i class="fad fa-cart-plus "></i>
+      <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+      <span>'.fw_theme_mod('add-to-cart-text').'</span>
+      </button>';
+    }else{
+      echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="add_to_minicart('. $product->id.')" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
+      <i class="fad fa-cart-plus "></i>
+      <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+      <span>'.fw_theme_mod('add-to-cart-text').'</span>
+      </button>';
 
-    echo '<button id="fw_add_to_cart_button_'.$product->id.'"  onclick="add_to_minicart('. $product->id.')" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
-    <i class="fad fa-cart-plus "></i>
-    <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-    <span>'. esc_html( $product->add_to_cart_text() ).'</span>
-    </button>';
+    }
 
     do_action( 'woocommerce_after_add_to_cart_button' );
 

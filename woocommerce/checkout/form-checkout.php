@@ -125,7 +125,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           </div>
           
           <div class="capsula box-step" style="display:none;">
-						<a class="editar" onclick="editpaso(2)">modificar</a>
+						<a class="editar" onclick="editpaso(2)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
 						<span class="icon"><i class="fa fa-check"></i></span>
 						<span class="title"><?=fw_theme_mod('fw_label_checkout_2')?></span>
 						<span class="subtitle" data-id=""></span>					
@@ -134,29 +134,32 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           <div class="clear"></div>	
         
       </div>
+      
+      <?php if(get_option('woocommerce_ship_to_countries')!='disabled'){  ?>
       <div class="box-detail paso-shipping" style="display:none;">
             <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?></h1>
             <?php wc_get_template(	'checkout/shipping-order-review.php'); ?>
 
             <div class="capsula box-step" style="display:none;">
-              <a class="editar" onclick="editpaso(3)">modificar</a>
+              <a class="editar" onclick="editpaso(3)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
               <span class="icon"><i class="fa fa-check"></i></span>
-              <span class="title">¿Cómo te entregamos la compra?</span>
+              <span class="title"><?=fw_theme_mod('fw_label_checkout_3')?></span>
               <span class="subtitle" data-id=""></span>					
             </div>
             <button type="button" onclick="nextpaso()" class="btn-checkout continuar shipping" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
             <div class="clear"></div>	
-        </div>
+      </div>
+      <?php } ?>
         
        
-        <div class="box-detail paso-pagos" style="display:none;">
+      <div class="box-detail paso-pagos" style="display:none;">
             <h1><span class="icon-paso">3</span><?=fw_theme_mod('fw_label_checkout_4')?></h1>
             <?php woocommerce_checkout_payment() ?>
 
             <div class="capsula box-step" style="display:none;">
-              <a class="editar" onclick="editpaso(4)">modificar</a>
+              <a class="editar" onclick="editpaso(4)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
               <span class="icon"><i class="fa fa-check"></i></span>
-              <span class="title">¿Cómo vas a pagar?</span>
+              <span class="title"><?=fw_theme_mod('fw_label_checkout_4')?></span>
               <span class="subtitle" data-id=""></span>					
             </div>
 
@@ -422,12 +425,15 @@ function nextpaso(){
     jQuery('.paso-shipping').show()
     jQuery('.btn-checkout.continuar').prop('disabled', true);
 
+    if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){
+      nextpaso()
+    }
 
 
   }else if(paso==4){
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
-  jQuery('.btn-checkout.continuar').prop('disabled', true);
+    jQuery('.btn-checkout.continuar').prop('disabled', true);
 
   }else if(paso==5){
     fillNextStep('pagos')

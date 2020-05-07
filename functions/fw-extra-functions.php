@@ -814,13 +814,13 @@ function init_fb() {
 function init_gtagmanager() {
     
     $analytics = "<!-- Global site tag (gtag.js) - Google Ads:  -->
-    <script async src='https://www.googletagmanager.com/gtag/js?id=AW-".fw_theme_mod("gtagmanager_id")."'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=".fw_theme_mod("gtagmanager_id")."'></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', 'AW-".fw_theme_mod("gtagmanager_id")."');
+      gtag('config', '".fw_theme_mod("gtagmanager_id")."');
     </script>";
     echo "\n" . $analytics;
 }
