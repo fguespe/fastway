@@ -114,7 +114,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               foreach ( $fields as $key => $field ) {
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
               }
-w
+
               if(fw_theme_mod('fw_terms_required')){
               ?>
               <span class="woocommerce-input-wrapper terms">
