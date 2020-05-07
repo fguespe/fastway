@@ -82,12 +82,11 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 	
 });
 function seleccionarPago(capsula){
-	console.log(capsula)
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
 
-	console.log(jQuery("input[name='payment_method']").is(':checked'),paso)
+	//console.log(jQuery("input[name='payment_method']").is(':checked'),paso)
 	if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}

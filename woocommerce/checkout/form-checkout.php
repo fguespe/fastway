@@ -970,7 +970,6 @@ function updateflete(){
 
 function updateEnvioGratisME(){
     //Cambio el label a mercadoenvios gratis
-    console.log('jiji')
     let dias=['(2-4 días)','(1-3 días)','(3-5 días)','(6-8 días)','(5-7 días)'];
     let tipos=['Envió Estándar','Envió Gratis'];
     for(let j in tipos){
