@@ -8,7 +8,7 @@ if(fw_theme_mod('fw_blog_columns')==2)$clase="col-md-6";
 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
 $image_url = $image[0];
 ?>
-<li class="fw_post <?php echo $clase;?> col-sm-6"  id="post-<?php the_ID(); ?>">
+<li class="fw_post_loop <?php echo $clase;?> col-sm-6"  id="post-<?php the_ID(); ?>">
     <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
         <div class="foto"><img src="<?php echo $image_url; ?>" /></div>
         <h4 class="title"><?php  the_title();?></h4>

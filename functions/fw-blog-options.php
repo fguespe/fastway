@@ -17,7 +17,7 @@ function fw_recentposts_grid() {
       $rPosts->the_post(); 
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
       $image_url = $image[0]; ?>
-      <li class="fw_post <?php echo $clase;?> col-sm-6" >
+      <li class="fw_post_loop <?php echo $clase;?> col-sm-6" >
       <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
           <div class="foto"><img src="<?php echo $image_url; ?>" width="100%"/></div>
         <h4 class="title"><?php  the_title();?></h4>
@@ -40,7 +40,7 @@ function fw_recentposts_ver() {
     while ($rPosts->have_posts()) { $rPosts->the_post(); ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
     <?php $image_url = $image[0]; ?>
-       <div class="fw_post ver d-flex flex-row" >
+       <div class="fw_post_loop ver d-flex flex-row" >
           <div class="col-3 foto">
                 <img src="<?php echo $image_url; ?>" />
           </div>

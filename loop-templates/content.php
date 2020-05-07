@@ -1,5 +1,5 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<div class="fw_post vertical row d-flex flex-row" >
+	<div class="fw_post_loop vertical row d-flex flex-row" >
           <div class="col-xs-12 col-sm-3 foto">
                 <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
           </div>
