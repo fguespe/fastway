@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-wc_print_notices();
+
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
@@ -880,7 +880,6 @@ display:inline-block;
   
 }
 @media (max-width: 799px) {
-
   .payment_method_todopago img{
     display:none;
   }
@@ -888,6 +887,28 @@ display:inline-block;
 
 .woocommerce-remove-coupon{
   margin-right:-20px !important;
+}
+.woocommerce-notices-wrapper{
+padding-left:30px;
+display:flex;
+width:100%;
+margin:0 auto;
+}
+.woocommerce-notices-wrapper ul  a{
+float: right !important;
+}
+.woocommerce-notices-wrapper ul  a,
+.woocommerce-notices-wrapper ,
+.woocommerce-notices-wrapper ul li{
+font-size:12px;
+}
+.woocommerce-notices-wrapper ul{
+background:white !important;
+border:0px !important;
+}
+.woocommerce-notices-wrapper ul a{
+color:var(--main) !important;
+border-bottom:1px solid ;
 }
 </style>
 
