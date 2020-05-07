@@ -59,7 +59,6 @@ jQuery('li.capsula.payment span').on('click', function(e) {
 
 jQuery('li.capsula.payment .mp_pago').on('click', function(e) {
 	if (e.target !== this) return;
-	console.log('click1')
 	let capsula=jQuery(this).parent().parent()
 	capsula.find('input:radio').click()
 	seleccionarPago(capsula)
@@ -77,7 +76,7 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 	
 });
 function seleccionarPago(capsula){
-
+	console.log(capsula)
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)

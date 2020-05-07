@@ -1392,19 +1392,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-//set_theme_mod('fw_new_checkout',true);
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_new_checkout',
-	'label'    => __( 'New Checkout', 'fastway' ),
-	'section'     => 'section_woo_checkout',
-	'default'     => 0,
-	'choices' => array(
-		'on'  => __( 'Enable', 'fastway' ),
-		'off' => __( 'Disable', 'fastway' )
-	)
-));
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
