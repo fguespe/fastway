@@ -1609,6 +1609,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_back',
+	'label'    => __( 'Volver', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Volver',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_already_not',
 	'label'    => __( '¿Aún no tenés cuenta?', 'fastway' ),
 	'section'     => 'section_woo_checkout',
