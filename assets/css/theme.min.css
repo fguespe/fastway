@@ -2020,7 +2020,7 @@ footer .widget_nav_menu li a {
   text-align: left !important;
 }
 .fw_post_loop .loopimg_container {
-  height: 200px;
+  height: 150px;
 }
 .fw_post_loop img {
   object-fit: contain;
