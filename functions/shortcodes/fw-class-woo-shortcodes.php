@@ -461,6 +461,8 @@ class fw_Woo_Shortcodes {
 
 			'autoplay' => 	isset($atts["autoplay"])&& !empty($atts["autoplay"])?'false':'true',
 			'loop' => 	isset($atts["loop"])&& !empty($atts["loop"])?'false':'true',
+			'slider_delay' => 	isset($atts["slider_delay"])&& !empty($atts["slider_delay"])?$atts["slider_delay"]:4000,
+			'slider_speed' => 	isset($atts["slider_delay"])&& !empty($atts["slider_speed"])?$atts["slider_speed"]:4,
 
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
