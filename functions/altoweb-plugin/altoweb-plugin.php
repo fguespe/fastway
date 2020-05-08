@@ -108,10 +108,19 @@ if(fw_theme_mod('fw_action_woosettings')){
    set_theme_mod('fw_action_woosettings',false);
 }
 
+
+
 $opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-$opts['title']='Mercadopago';
+$opts['mp_completed']='off';
 update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
+
+$arra=get_option( 'woocommerce_todopago_settings' );
+error_log(print_r($arra,true));
+$arra['estado_inicio']='wc-pending';
+$arra['estado_offline']='wc-pending';
+$arra['estado_aprobacion']='wc-processing';
+update_option( 'woocommerce_todopago_settings', $arra );
 
 
 set_theme_mod('fw_action_woosettings',false);
