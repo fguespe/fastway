@@ -1401,6 +1401,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_sell_dni',
+	'label'       => __( 'DNI Obligatorio', 'fastway' ),
+	'description'	=> 'Pide dni',
+	'section'     => 'section_woo_checkout',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
 	'label'       => __( 'Vender a empresas', 'fastway' ),
 	'description'	=> 'Pide cuit y nombre de empresa en los campos del checkout',

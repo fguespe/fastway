@@ -13,7 +13,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
 function fw_custom_override_checkout_fieldss( $fields ) {
-    $fields['billing']['billing_dni'] = array(
+    $fields['billing']['billing_cuit'] = array(
       'label'     => fw_theme_mod( 'fw_cuit_label'),
       'placeholder'     => fw_theme_mod( 'fw_cuit_label'),
       'required'  => true,
@@ -21,7 +21,16 @@ function fw_custom_override_checkout_fieldss( $fields ) {
       'clear'     => true,
       'priority' => 31
     );
-
+    
+    if(fw_theme_mod('fw_sell_dni')){
+      $fields['billing']['billing_dni'] = array(
+        'label'     => fw_theme_mod( 'fw_cuit_label'),
+        'placeholder' => fw_theme_mod( 'fw_cuit_label'),
+        'required'  => true,
+        'class'     => array('form-row-wide'),
+        'clear'     => true
+      );
+    }
 
     if($fields['billing']['billing_first_name'])$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
     if($fields['billing']['billing_last_name'])$fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
@@ -35,7 +44,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     unset($fields['billing']['billing_address_2']);
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
-      unset($fields['billing']['billing_dni']);
+      unset($fields['billing']['billing_cuit']);
     }
     return $fields;
 }

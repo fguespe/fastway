@@ -116,7 +116,6 @@ update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
 
 
 $arra=get_option( 'woocommerce_todopago_settings' );
-error_log(print_r($arra,true));
 $arra['estado_inicio']='wc-pending';
 $arra['estado_offline']='wc-pending';
 $arra['estado_aprobacion']='wc-processing';
