@@ -910,6 +910,11 @@ border:0px !important;
 color:var(--main) !important;
 border-bottom:1px solid ;
 }
+/*
+.firstdata-credit-card input{
+  display: inline !important;
+  width: 10px !important;
+}*/
 </style>
 
 

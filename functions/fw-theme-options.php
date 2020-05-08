@@ -826,6 +826,13 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw-email-logo',
+	'label'       => __( 'Email Logo', 'fastway' ),
+	'description' => 'Por default es el de la web',
+	'section'     => 'section_email',
+) );
 
 
 
