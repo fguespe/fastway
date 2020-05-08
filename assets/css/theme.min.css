@@ -2005,7 +2005,6 @@ footer .widget_nav_menu li a {
 .fw_product_loop img, .fw_post_loop img {
   width: 100%;
   height: auto;
-  max-height: 189px !important;
 }
 .fw_product_loop .precio-anterior del,
 .fw_product_loop .precio-anterior, .fw_post_loop .precio-anterior del,
