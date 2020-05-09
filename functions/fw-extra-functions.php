@@ -755,14 +755,22 @@ endif;
 
 function init_analytics() {
     
-    $analytics = "<!-- Google Analytics -->
+   /* $analytics = "<!-- Google Analytics -->
     <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', '".fw_theme_mod('analytics-id')."', 'auto');
     ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->";
+    <!-- End Google Analytics -->";*/
+    $analytics= "<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=".fw_theme_mod('analytics-id')."'></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '".fw_theme_mod('analytics-id')."');
+    </script>";
 
     echo "\n" . $analytics;
 }
