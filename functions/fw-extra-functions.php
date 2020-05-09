@@ -753,11 +753,11 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
     }
 endif;
 
-function init_analytics_old() {
+function init_analytics() {
     
     $analytics = '<!-- Analyitics  Code -->
     <script type="text/javascript">
-
+            
                   var _gaq = _gaq || [];
                   _gaq.push([\'_setAccount\', \''.fw_theme_mod('analytics-id').'\']);
                   _gaq.push([\'_trackPageview\']);
@@ -773,21 +773,7 @@ function init_analytics_old() {
     echo "\n" . $analytics;
 }
 
-function init_analytics() {
-    
-    $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111121490-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag("js", new Date());
 
-        gtag("config", \''.fw_theme_mod('analytics-id').'\');
-        </script>
-    ';
-
-    echo "\n" . $analytics;
-}
 function init_fb() {
     
     $analytics = "<!-- Facebook Pixel Code -->
@@ -816,11 +802,11 @@ function init_gtagmanager() {
     $analytics = "<!-- Global site tag (gtag.js) - Google Ads:  -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=".fw_theme_mod("gtagmanager_id")."'></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', '".fw_theme_mod("gtagmanager_id")."');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','".fw_theme_mod("gtagmanager_id")."');
     </script>";
     echo "\n" . $analytics;
 }
