@@ -755,20 +755,14 @@ endif;
 
 function init_analytics() {
     
-    $analytics = '<!-- Analyitics  Code -->
-    <script type="text/javascript">
-            
-                  var _gaq = _gaq || [];
-                  _gaq.push([\'_setAccount\', \''.fw_theme_mod('analytics-id').'\']);
-                  _gaq.push([\'_trackPageview\']);
-
-                  (function() {
-                    var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;
-                      ga.src = (\'https:\' == document.location.protocol ? \'https://\' : \'http://\') + \'stats.g.doubleclick.net/dc.js\';
-                    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);
-                  })();
-                                
-                </script>';
+    $analytics = "<!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', '".fw_theme_mod('analytics-id')."', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->";
 
     echo "\n" . $analytics;
 }
