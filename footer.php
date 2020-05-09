@@ -15,6 +15,7 @@ $container   = fw_theme_mod('footer-width');
     ?>
 	</div>
 </footer>
+
 <?php 
 if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('footer-copyright-text'))));?>
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
@@ -66,6 +67,7 @@ jQuery(document).ready( function(jQuery) {
 });
 </script>
 <?php } ?>
+
 <script type="text/javascript">
 function check_ga() {
   if (typeof ga === 'function') {
@@ -92,7 +94,6 @@ jQuery(document).ready( function(jQuery) {
     }
 });
 </script>
-</style>
 </body>
 </html>
 

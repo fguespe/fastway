@@ -808,12 +808,10 @@ function init_gtagmanager() {
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','".fw_theme_mod("gtagmanager_id")."');</script>
     <!-- End Google Tag Manager -->";
-    
     echo "\n" . $analytics;
 }
 if(!empty(fw_theme_mod('gtagcheckout_id')))add_action( 'woocommerce_thankyou', 'init_gtagcheckout' );
 if(!empty(fw_theme_mod('analytics-id')))add_action('wp_head', 'init_analytics', 35);
-//if(!empty(fw_theme_mod('fathom-id')))add_action('wp_head', 'init_fathom', 35);
 if(!empty(fw_theme_mod('fbpixel_id')))add_action('wp_head', 'init_fb', 35);
 if(!empty(fw_theme_mod('gtagmanager_id')))add_action('wp_head', 'init_gtagmanager', 35);
 if(!empty(fw_theme_mod('thankyou_insert')))add_action( 'woocommerce_thankyou', 'bbloomer_conversion_tracking_thank_you_page' );
