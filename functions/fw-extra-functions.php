@@ -799,15 +799,14 @@ function init_fb() {
 }
 function init_gtagmanager() {
     
-    $analytics = "<!-- Global site tag (gtag.js) - Google Ads:  -->
-    <script async src='https://www.googletagmanager.com/gtag/js?id=".fw_theme_mod("gtagmanager_id")."'></script>
-    <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','".fw_theme_mod("gtagmanager_id")."');
-    </script>";
+    $analytics = "<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','".fw_theme_mod("gtagmanager_id")."');</script>
+    <!-- End Google Tag Manager -->";
+    
     echo "\n" . $analytics;
 }
 if(!empty(fw_theme_mod('gtagcheckout_id')))add_action( 'woocommerce_thankyou', 'init_gtagcheckout' );

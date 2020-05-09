@@ -95,6 +95,11 @@ $classdarkmode='';
 if(fw_theme_mod('fw_body_dark_mode'))$classdarkmode='fw_body_dark_mode';
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
 <body <?php body_class("page-".$nombreurl.' '.$classdarkmode.' '); ?>>
+<?php 
+if(fw_theme_mod("gtagmanager_id")){ ?>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?=fw_theme_mod("gtagmanager_id")?>"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<?php }  ?>
 <header id="header" class="<?=fw_theme_mod('fw_floating_trans_header')?'fw_floating':''?>">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
