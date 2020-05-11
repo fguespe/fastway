@@ -416,38 +416,10 @@ cuidado con el update notice y el error de create user
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*activacioens 
-.usuarios .row-actions,.usuarios .page-title-action{
+/*USUARIOS*/
+.usuarios .page-title-action{
 	display: none !important;
-}*/
+}
 .usuarios .row-actions .capabilities{
 	display: none !important;
 }
