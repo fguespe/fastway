@@ -427,8 +427,8 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' h1').hide()
   jQuery('.paso-'+type+' button').hide()
 }
-function sacar1(estado,log){
-    console.log(log)
+function sacar1(estado,msg){
+    console.log('jere',msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
