@@ -282,7 +282,8 @@ function fw_login(){
 }
 function verificarEmail(){
   let isValid= isEmail(jQuery('#billing_email').val())
-  jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
+  
+  sacar1(!isValid,3)
 }
 function verificarFields(){
   var isValid=true
@@ -311,9 +312,12 @@ function verificarFields(){
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
-
+  
   console.log('disabled', !isValid)
-  jQuery('.btn-checkout.continuar').prop('disabled', false);
+
+  sacar1(!isValid,4)
+
+  
 
 }
 function unselect(type){
@@ -321,7 +325,7 @@ function unselect(type){
     jQuery(this).prop('checked', false);
     jQuery(this).parent().removeClass('active')
   });
-  jQuery('.btn-checkout.continuar').prop('disabled', true);
+  sacar1(true,5)
 }
 jQuery(document).ready( function(jQuery) {
   //Cupones
@@ -341,10 +345,10 @@ jQuery(document).ready( function(jQuery) {
   jQuery('#billing_email').on('input', function(e){
     let val=jQuery('#billing_email').val()
     if(isEmail(val) && paso==1){
-      jQuery('.btn-checkout.continuar').prop('disabled', false);
+      sacar1(false,6)
       jQuery('.paso-cuenta .box-step .subtitle').text(val)
     }else{
-      jQuery('.btn-checkout.continuar').prop('disabled', true);
+      sacar1(false,7)
     }
   })
 
@@ -423,6 +427,10 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' h1').hide()
   jQuery('.paso-'+type+' button').hide()
 }
+function sacar1(estado,log){
+    console.log(log)
+    jQuery('.btn-checkout.continuar').prop('disabled', estado);
+}
 function nextpaso(){
   paso++
   if(paso==2){
@@ -434,7 +442,7 @@ function nextpaso(){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
-    jQuery('.btn-checkout.continuar').prop('disabled', true);
+    sacar1(true,1)
 
     if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){
       nextpaso()
@@ -444,7 +452,7 @@ function nextpaso(){
   }else if(paso==4){
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
-    jQuery('.btn-checkout.continuar').prop('disabled', true);
+    sacar1(true,2)
 
   }else if(paso==5){
     fillNextStep('pagos')
