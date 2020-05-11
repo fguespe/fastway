@@ -448,6 +448,9 @@ cuidado con el update notice y el error de create user
 .usuarios .row-actions,.usuarios .page-title-action{
 	display: none !important;
 }*/
+.usuarios .row-actions .capabilities{
+	display: none !important;
+}
 .usuarios h2#add-existing-user,
 .usuarios h2#create-new-user,
 .usuarios .wrap > p ,
