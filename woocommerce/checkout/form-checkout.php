@@ -311,9 +311,9 @@ function verificarFields(){
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
-  
+
   console.log('disabled', !isValid)
-  jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
+  jQuery('.btn-checkout.continuar').prop('disabled', false);
 
 }
 function unselect(type){
