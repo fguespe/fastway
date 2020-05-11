@@ -428,7 +428,7 @@ function fillNextStep(type){
 function sacar1(estado,msg){
     console.log(msg,estado)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
-    jQuery('.btn-checkout.continuar').prop('disabled', false);
+    jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
   paso++
