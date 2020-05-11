@@ -286,6 +286,7 @@ function verificarEmail(){
 }
 function verificarFields(){
   var isValid=true
+  console.log('verifica field')
   jQuery('#billing_form input').each(function(index,data) {
     var element = jQuery(this);
     if (element.val() == "") {
@@ -310,9 +311,10 @@ function verificarFields(){
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
-  if(jQuery('#billing_address_1'))
+  
   console.log('disabled', !isValid)
   jQuery('.btn-checkout.continuar').prop('disabled', !isValid);
+
 }
 function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
