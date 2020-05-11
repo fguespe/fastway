@@ -52,6 +52,7 @@ add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
 //Emails
+/*
 add_filter( 'wpmu_welcome_user_notification', 'bbg_wpmu_welcome_user_notification', 10, 3 );
 add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
 function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
@@ -103,7 +104,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
         return false;
 }
     
-
+*/
 
 
 
