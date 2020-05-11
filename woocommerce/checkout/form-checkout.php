@@ -313,8 +313,6 @@ function verificarFields(){
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
   
-  console.log('disabled', !isValid)
-
   sacar1(!isValid,4)
 
   
@@ -428,7 +426,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    console.log('jere',msg)
+    console.log(msg,estado)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
