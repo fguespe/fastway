@@ -317,53 +317,143 @@ display:none;
 #wp-content-media-buttons a{
 	display:none;
 }
+
 /*CLASE ENVIOS
 #shipping_product_data div:nth-child(2){
 	display:none !important;
 }*/
 
-/*PESTAÑAS*/
-.nth_custom_tab_options,.wcwl_waitlist_tab{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BARRA DERECHA*/
+#side-sortables #tagsdiv-product_tag,
+#side-sortables #woocommerce-umf-box-product,
+#side-sortables #catalog-visibility,
+#side-sortables .misc-pub-curtime{
+	display: none ;
+}
+
+.wpb_switch-to-composer{
+	color:white !important;
+}
+.wpb_switch-to-gutenberg,
+.wpb_switch-to-front-composer{
 	display:none !important;
 }
-
-/*ICONITO VIDEO*/
-#woocommerce-product-data ul.product_data_tabs li.nth_videos_tab a:before{
-	content: "\f1c8" !important;
-	font-family: "Font Awesome 5 Pro" !important;
-
-}
-/*DESACTIVAR PESTANIA CONSULTA*/
-.woocommerce_disable_product_enquiry_field{
-	display: none;
-}
-/*BOTON NUEVO*/
-.wrap .page-title-action:hover{
-background:white;
-border: none;
-border-radius:0px;
-
-}
-
-/*ENVIRA*/
-.envira-header-temp,.envira-header,.error,#envira-gallery-code{
-	display:none !important;
-}
-.authordiv,.wc-memberships-post-memberships-data{
-	display: none;
-}
-/*PRICES BY USER ROLE*/
-.festi-user-role-prices-product-tab {
+#wp-excerpt-media-buttons a{
 	display: none !important;
 }
-/*USUARIOS*/
-form#your-profile table:nth-child(6),form#your-profile h2:nth-child(11),form#your-profile h2:nth-child(5),form#your-profile table:nth-child(12){
-display:none !important;
+/*REVIEW PRO*/
+#tagsdiv-product_review_qualifier{
+	display: none !important;
 }
+/*DESCARGAS*/
+
+
+._wc_product_documents_title_field,._wc_product_documents_display_field{
+	display: none !important;
+}
+
+/*UP SELLS*/
+#linked_product_data div:nth-child(1) p:nth-child(1){
+	display:none;
+}
+
+
+/*DESCRIPCION (TEXTAREA) QUE NO SE USA*/
+.categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
+	display:none;
+}
+
+.categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
+display:none !important;
+
+}
+
+.post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
+	display: none;
+}
+.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
+	display:none;
+}
+
+/*MENSAJE ERROR
+cuidado con el update notice y el error de create user
+.error{
+	display: none !important;
+}
+.usuarios .error{
+	display: block !important;
+}
+.fade,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
+	display:none;
+}
+.notice-success{
+	display:block!important;
+}*/
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*activacioens 
 .usuarios .row-actions,.usuarios .page-title-action{
 	display: none !important;
 }*/
+.usuarios h2#add-existing-user,
+.usuarios h2#create-new-user,
+.usuarios .wrap > p ,
+.usuarios .wrap > p{
+display:none !important;
+}
 .usuarios .users_page_gf-pending-activations .row-actions{
 	display:block !important;
 }
@@ -388,135 +478,5 @@ display:none !important;
 	display:none !important;
 }
 #adduser{
-	display:none;
-}
-/*YOAST SEO*/
-.wpseo-tab-video-container,.wpseo-metabox-buy-premium{
-display:none !important;
-}
-.yoast-seo-score{
-display:none;
-}
-
-/**FOOTER*/
-
-#footer-upgrade{
-	display:none;
-}
-/*ROCKET*/
-.rocket_purge,#rocket_post_exclude{
-	display: none !important;
-}
-/*paginas visual editar fila*/
-.row-actions .edit_vc,
-.row-actions .capabilities,
-/*#vc_navbar,*/
-#wp-admin-bar-view{
-	display:none ;
-}
-#vc_navbar .vc_navbar-header,
-#vc_navbar li{
-	display:none !important;
-}
-#vc_navbar .vc_show-mobile{
-	display:block !important;
-}
-/*VIUSAL EN PRODUCTOS
-.productos .edit_vc,.composer-switch{
-	display: none !important;
-}*/
-/*BARRA DERECHA*/
-#side-sortables #tagsdiv-product_tag,
-#side-sortables #woocommerce-umf-box-product,
-#side-sortables #catalog-visibility,
-#side-sortables .misc-pub-curtime{
-	display: none ;
-}
-
-.wpb_switch-to-composer{
-	color:white !important;
-}
-.wpb_switch-to-gutenberg,
-.wpb_switch-to-front-composer{
-	display:none !important;
-}
-#wp-excerpt-media-buttons a{
-	display: none !important;
-}
-/*REVIEW PRO*/
-#tagsdiv-product_review_qualifier{
-	display: none !important;
-}
-/*DESCARGAS*/
-._wc_product_documents_title_field,._wc_product_documents_display_field{
-	display: none !important;
-}
-
-/*UP SELLS*/
-#linked_product_data div:nth-child(1) p:nth-child(1){
-	display:none;
-}
-
-
-/*DESCRIPCION (TEXTAREA) QUE NO SE USA*/
-.categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
-	display:none;
-}
-
-.categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
-display:none !important;
-
-}
-/*Estp qie carakp es? especificar pagina
-form#addtag div:nth-child(1),form#addtag div:nth-child(2),form#addtag div:nth-child(3){
-display:none !important;
-}
-form#addtag div:nth-child(11) label,form#addtag div:nth-child(11) hr,form#addtag div:nth-child(11) p{
-display:none !important;
-}
-
-form#addtag div:nth-child(13),
-form#addtag div:nth-child(12){
-display:none !important;
-}*/
-
-/*QUANTITY RULE*/
-.post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
-	display: none;
-}
-
-
-
-.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
-	display:none;
-}
-
-/*MENSAJE ERROR
-cuidado con el update notice y el error de create user
-.error{
-	display: none !important;
-}
-.usuarios .error{
-	display: block !important;
-}
-.fade,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta{
-	display:none;
-}
-.notice-success{
-	display:block!important;
-}*/
-	
-
-
-/*nuevo woo*/
-.woocommerce-layout{
-	height:0px !important;
-	display:none !important;
-}
-.composer-switch,.vc_ui-help-block.vc_welcome-visible-e{
-	display: none !important;
-}
-
-.post-type-page .tablenav,.post-type-page .page-title-action{
 	display:none;
 }

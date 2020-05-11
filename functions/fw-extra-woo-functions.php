@@ -1646,3 +1646,34 @@ function add_extra_fields_in_flat_rate($settings){
     }
     return $arr; 
 } 
+
+
+
+
+/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
+function fw_allow_users_to_shopmanager() {
+  /*supuestamente funciona*/
+  /*$role = get_role( 'shop_manager' );
+  $role->add_cap( 'edit_theme_options' ); 
+  $role->add_cap( 'manage_options' ); 
+  $role->add_cap( 'add_users' ); 
+  $role->add_cap( 'create_users' ); 
+  $role->add_cap( 'edit_users' ); 
+  $role->add_cap( 'gravityforms_create_form' ); 
+  $role->add_cap( 'gravityforms_edit_forms' ); 
+  $role->add_cap( 'gravityforms_view_entries' ); 
+  $role->add_cap( 'gravityforms_user_registration'); */
+}
+//add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
+
+
+function fw_editable_roles( $roles ) {
+  $roles=fw_theme_mod('ca_roles_css');
+  if(is_string($roles))$roles=explode(",",$roles);
+  
+  foreach ($roles as $nombre) {
+    $roles[] = $nombre;
+  }
+  return $roles;
+}
+add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 

@@ -329,9 +329,10 @@ function fw_slider_function( $atts, $content ) {
             'slider_speed'  => '250',
             'slider_delay'  => '4000',
             'autoplay'  => 'false',
-            'loop'  => 'true',
+            'loop'  => 'false',
             'el_class'  => ''
         ), $atts );
+    if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
     $image_ids = explode(',',$atts['slides_desktop']);

@@ -1755,7 +1755,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_css',
 	'label'       => esc_attr__( 'CSS Roles', 'fastway' ),
-	'description' => 'Los roles activos se le agregara una clase del rol al body, depende en cual esten iniciado sesion.',
+	'description' => 'Los roles activos se le agregara una clase del rol al body, depende en cual esten iniciado sesion, tambien se volveran editables para el shop_manager.',
 	'section'     => 'section_woo_roles',
     'choices'     => fw_getme_roles(),
 	'default'     => ''

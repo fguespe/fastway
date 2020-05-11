@@ -415,25 +415,6 @@ add_action('pre_get_posts', 'sortable_file_size_sorting_logic');
 
 
 
-
-/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function fw_allow_users_to_shopmanager() {
-  /*$role = get_role( 'shop_manager' );
-  $role->add_cap( 'edit_theme_options' ); 
-  $role->add_cap( 'manage_options' ); 
-  $role->add_cap( 'add_users' ); 
-  $role->add_cap( 'create_users' ); 
-  $role->add_cap( 'edit_users' ); 
-  $role->add_cap( 'gravityforms_create_form' ); 
-  $role->add_cap( 'gravityforms_edit_forms' ); 
-  $role->add_cap( 'gravityforms_view_entries' ); 
-  $role->add_cap( 'gravityforms_user_registration'); */
-}
-add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
-
-
-
-
 function mc_admin_users_caps( $caps, $cap, $user_id, $args ){
  
   foreach( $caps as $key => $capability ){
@@ -459,6 +440,7 @@ function mc_admin_users_caps( $caps, $cap, $user_id, $args ){
   return $caps;
 }
 add_filter( 'map_meta_cap', 'mc_admin_users_caps', 1, 4 );
+
 remove_all_filters( 'enable_edit_any_user_configuration' );
 add_filter( 'enable_edit_any_user_configuration', '__return_true');
 
@@ -483,6 +465,7 @@ function mc_edit_permission_check() {
 
 }
 add_filter( 'admin_head', 'mc_edit_permission_check', 1, 4 );
+
 
 
 ?>
