@@ -429,6 +429,9 @@ cuidado con el update notice y el error de create user
 .woocommerce-embed-page #screen-meta, .woocommerce-embed-page #screen-meta-links{
 	top:0px !important;
 }
+.woocommerce-embed-page .woocommerce-layout__primary{
+	padding:0px !important;
+}
 /*USUARIOS*/
 .usuarios .page-title-action{
 	display: none !important;
