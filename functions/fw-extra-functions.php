@@ -606,7 +606,6 @@ function fw_custom_css(){
             $size=str_replace("px", "", $font['font-size']);
             $height=str_replace("px", "", $font['line-height']);
             $resized=round($size*0.7);
-            error_log('asas',$resized);
             if($resized<16)$resized=16;
             $css.= "body ".$key."{";
             $css.= "font-size: calc(".$resized."px + (".$size." - ".$resized.") * ((100vw - 300px) / (1600 - 300))); ";
