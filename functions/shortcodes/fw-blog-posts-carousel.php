@@ -19,7 +19,7 @@ while ($posts->have_posts()){
     <li class="fw_post_loop">
     <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
         <div class="loopimg_container"><img src="<?php echo $image_url; ?>" /></div>
-        <h4 class="product_title"><?php  the_title();?></h4>
+        <h2 class="product_title"><?php  the_title();?></h4>
         <p class="excerpt 4"><?php the_excerpt(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
     </a>
