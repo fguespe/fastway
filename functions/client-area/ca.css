@@ -427,7 +427,7 @@ cuidado con el update notice y el error de create user
 	display:none !important;
 }
 .woocommerce-embed-page #screen-meta, .woocommerce-embed-page #screen-meta-links{
-	top:0px;
+	top:0px !important;
 }
 /*USUARIOS*/
 .usuarios .page-title-action{
