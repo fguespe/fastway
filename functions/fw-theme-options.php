@@ -1186,6 +1186,14 @@ Kirki::add_field( 'theme_config_id', array(
                 
 	'section'     => 'section_whatsapp',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_whats_btn',
+	'label'    => __( 'Whats Label', 'fastway' ),  
+	'description' => '[br] para new line',     
+	'section'     => 'section_whatsapp',
+	'default' 		=>	'Estamos[br]On-Line!',
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -3482,14 +3490,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Share Message', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_whats_btn',
-	'label'    => __( 'Whats Label', 'fastway' ),  
-	'description' => '[br] para new line',     
-	'section'     => 'section_labels',
-	'default' 		=>	'Estamos[br]On-Line!',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
