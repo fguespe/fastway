@@ -57,6 +57,12 @@ Kirki::add_section( 'section_email', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_whatsapp', array(
+    'title'          => __( 'Whatsapp', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_popup', array(
     'title'          => __( 'Popup', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1169,6 +1175,39 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+/*WHATSAPP*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companywhatsapp',
+	'label'    => __( 'Company Whatsapp', 'fastway' ),
+    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
+                
+	'section'     => 'section_whatsapp',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_chat_whats',
+	'label'    => __( 'Button Menu Whatsapp', 'fastway' ),       
+	'section'     => 'section_whatsapp',
+	'default' 		=>	'Consultar',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'whats-button',
+	'label'       => __( 'Whatsapp Widget', 'fastway' ),
+	'section'     => 'section_whatsapp',
+	'default'     => 'simple',
+	'choices'     => array(
+		'none'   	=> 	'None',
+		'simple'   	=> 	'Simple',
+		'random'   	=> 	'Random',
+		'multi' 	=> 	'Multiple',
+	),
+) );
+
 /*MOBILE*/
 
 Kirki::add_field( 'theme_config_id', array(
@@ -2874,14 +2913,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'short-fw_companywhatsapp',
-	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
-                
-	'section'     => 'section_data',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
     'description'     => __( '[fw_data type="phone"]<br>*El tel: se pone solo ', 'fastway' ),            
@@ -3080,19 +3111,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'modal-md',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'whats-button',
-	'label'       => __( 'Whatsapp Widget', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => 'simple',
-	'choices'     => array(
-		'none'   	=> 	'None',
-		'simple'   	=> 	'Simple',
-		'random'   	=> 	'Random',
-		'multi' 	=> 	'Multiple',
-	),
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -3496,13 +3514,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Llamar ahora', 'fastway' ),       
 	'section'     => 'section_labels',
 	'default' 		=>	'Llamar ahora',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_chat_whats',
-	'label'    => __( 'Button Menu Whatsapp', 'fastway' ),       
-	'section'     => 'section_labels',
-	'default' 		=>	'Consultar',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
