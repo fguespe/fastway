@@ -605,7 +605,7 @@ function fw_custom_css(){
             $font=fw_theme_mod($nombre);
             $size=str_replace("px", "", $font['font-size']);
             $height=str_replace("px", "", $font['line-height']);
-            $resized=round($size*0.7);
+            $resized=16;//round($size*0.7);
             $css.= "body ".$key."{";
             $css.= "font-size: calc(".$resized."px + (".$size." - ".$resized.") * ((100vw - 300px) / (1600 - 300))); ";
             $css.= "line-height: calc(".($resized+4)."px + (".$height." - ".($resized+4).") * ((100vw - 300px) / (1600 - 300))); ";
