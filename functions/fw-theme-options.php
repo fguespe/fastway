@@ -552,7 +552,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Por default es el de la web',
 	'section'     => 'section_images',
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'mobile-icon',
+	'label'       => __( 'Mobile App Icon', 'fastway' ),
+	'section'     => 'section_images',
+	'default'     => '',
+) );
 
 
 
@@ -1317,16 +1323,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'mobile-icon',
-	'label'       => __( 'Mobile App Icon', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => '',
-	//'default'     => urlforimages()."/assets/img/favi.png",
-) );
-/*WOOCOMMERCE*/
 
 
 

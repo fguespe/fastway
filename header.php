@@ -26,6 +26,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="<?php echo fw_theme_mod('fw_favicon');?>">
     <link rel="apple-touch-icon" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <!--loading -->
