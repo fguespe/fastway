@@ -416,6 +416,12 @@ cuidado con el update notice y el error de create user
 }*/
 	
 
+
+/*productos*/
+.productos .composer-switch{
+	display: none !important;;
+}
+
 /*NUEVO WOO*/
 #woocommerce-embedded-root{
 	display:none !important;
