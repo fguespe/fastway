@@ -113,6 +113,8 @@ function fw_blog_carousel( $atts, $content ) {
             'title'  => '',
             'prodsperrow' => 4,
         ), $atts );
+    if(!$atts['loop'])$atts['loop']='false';
+    if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
     
     ob_start();

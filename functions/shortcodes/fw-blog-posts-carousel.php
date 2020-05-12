@@ -7,8 +7,9 @@ $rand=generateRandomString(5);
 <div id="<?=$rand?>" class="swiper-posts swiper-posts-<?=$rand?> over-hidden relative">
 <div class="swiper-wrapper clear-ul">
 <?php 
-$cant=0;		
-if(empty($loop))$loop='false';
+if(!$autoplay)$autoplay='false';
+if(!$loop)$loop='false';
+$cant=1;		
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
@@ -25,15 +26,11 @@ while ($posts->have_posts()){
     </a>
     </li>
     </div>
-  <?php
-
- }?>
+<?php } ?>
 </div>
-<?php if($cant>$prodsperrow){
-    
-?>
-<div class="swiper-prev swiper-posts-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
-<div class="swiper-next swiper-posts-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
+<?php if($cant>=$prodsperrow){?>
+<div class="swiper-arrows swiper-prev swiper-posts-<?=$rand?>-prev"><i class="fa fa-angle-left"></i></div>
+<div class="swiper-arrows swiper-next swiper-posts-<?=$rand?>-next"><i class="fa fa-angle-right"></i></div>
 <?php } ?>
 </div>
  <script>
