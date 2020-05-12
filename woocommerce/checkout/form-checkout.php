@@ -53,6 +53,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 ?>
 <script>
+if(!wc_tokenization_form_params)wc_tokenization_form_params=null
+
   var logged=false;
   var paso = 1;
 </script>
@@ -418,7 +420,6 @@ function resetStep(type){
 }
 
 function fillNextStep(type){
-  console.log('.paso-'+type+' .box-step')
   jQuery('.paso-'+type+' .box-step').show()
   jQuery('.paso-'+type+' .box-step').addClass('efecto')
   jQuery('.paso-'+type+' div:not(.box-step)').hide()
