@@ -418,7 +418,7 @@ cuidado con el update notice y el error de create user
 
 
 /*productos*/
-.productos .composer-switch{
+.post-type-product .composer-switch{
 	display: none !important;;
 }
 
