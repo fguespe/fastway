@@ -126,7 +126,6 @@ if( !function_exists( 'fw_search_form' ) ) {
         $_placeholder=fw_theme_mod('fw_label_search');
         $class="input-group fw_search_form fw-searchform desktop";
         if($id==3)$class="search-form-mobile";
-        
 
         $devolver= 
         '<form id="form_'.esc_attr($rand_id).'" class="'.$class.'" method="get" action="'.esc_url( home_url( '/' ) ).'">
