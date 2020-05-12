@@ -138,9 +138,9 @@ if( !function_exists( 'fw_search_form' ) ) {
         if ( defined( 'ICL_LANGUAGE_CODE' ) ){
           $devolver.='<input type="hidden" name="lang" value="'.(ICL_LANGUAGE_CODE).'" />';
         }else if ( $id==0 || $id==2){
-          $devolver.='<button type="button" class="">Buscar</button>';
+          $devolver.='<button type="submit" class="">Buscar</button>';
         }else if ( $id==1){
-          $devolver.='<button type="button" class=""><i class="'.fw_theme_mod('fw_icons_style').' fa-search"></i></button>';
+          $devolver.='<button type="submit" class=""><i class="'.fw_theme_mod('fw_icons_style').' fa-search"></i></button>';
         }
         $devolver.='</div></form>';
         return $devolver;
