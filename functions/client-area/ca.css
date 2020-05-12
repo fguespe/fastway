@@ -420,6 +420,9 @@ cuidado con el update notice y el error de create user
 #woocommerce-embedded-root{
 	display:none !important;
 }
+.woocommerce-embed-page #screen-meta, .woocommerce-embed-page #screen-meta-links{
+	top:0px;
+}
 /*USUARIOS*/
 .usuarios .page-title-action{
 	display: none !important;
