@@ -360,6 +360,9 @@ display:none;
 .wpb_switch-to-front-composer{
 	display:none !important;
 }
+.row-actions .edit_vc{
+	display: none !important;
+}
 #wp-excerpt-media-buttons a{
 	display: none !important;
 }
