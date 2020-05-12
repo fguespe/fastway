@@ -115,9 +115,11 @@ function fw_blog_carousel( $atts, $content ) {
         ), $atts );
     //Desktop
     
+    ob_start();
     $posts = new WP_Query('showposts='.$atts['maxcant']);
-
     get_blog_template('fw-woo-posts-carousel.php',$atts,$posts);
+		
+    return ob_get_clean();
 		
 }   
 add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
