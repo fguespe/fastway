@@ -2023,7 +2023,7 @@ footer .widget_nav_menu li a {
 }
 @media (max-width: 799px) {
   .fw_post_loop .loopimg_container {
-    height: 150px;
+    height: 120px;
   }
 }
 .fw_post_loop .loopimg_container img {

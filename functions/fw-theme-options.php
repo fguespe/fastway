@@ -57,6 +57,13 @@ Kirki::add_section( 'section_email', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
+Kirki::add_section( 'section_images', array(
+    'title'          => __( 'Images', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_whatsapp', array(
     'title'          => __( 'Whatsapp', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -504,18 +511,52 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+/*IMAGES*/
 
-
-//General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'general-logo',
 	'label'       => __( 'Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_general',
+	'section'     => 'section_images',
 	'default'     => urlforimages()."/assets/img/logo.png",
 	'transport'=>'postMessage',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_favicon',
+	'label'       => __( 'Favicon', 'fastway' ),
+	'description' => 'reemplaza site identity',
+	'section'     => 'section_images',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'dark-logo',
+	'label'       => __( 'Dark Logo', 'fastway' ),
+	//'description' => __( 'Description Here.', 'fastway' ),
+	'section'     => 'section_images',
+	'default'     => urlforimages()."/assets/img/logo.png"
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_mobile_logo',
+	'label'       => __( 'Mobile Logo', 'fastway' ),
+	'description' => __( 'Replaces general logo on mobile.', 'fastway' ),
+	'section'     => 'section_images'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw-email-logo',
+	'label'       => __( 'Email Logo', 'fastway' ),
+	'description' => 'Por default es el de la web',
+	'section'     => 'section_images',
+) );
+
+
+
+
+//General
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
@@ -675,13 +716,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'fw_mobile_logo',
-	'label'       => __( 'Mobile Logo', 'fastway' ),
-	'description' => __( 'Replaces general logo on mobile.', 'fastway' ),
-	'section'     => 'section_mobile'
-) );
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'logo-width-mobile',
 	'label'       => __( 'Mobile Logo Width', 'fastway' ),
@@ -830,16 +864,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' 	=>	'Email de donde salen las notificaciones. No modificar!',
 	'section'   => 'section_email',
 ) );
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'fw-email-logo',
-	'label'       => __( 'Email Logo', 'fastway' ),
-	'description' => 'Por default es el de la web',
-	'section'     => 'section_email',
-) );
-
 
 
 
@@ -3020,14 +3044,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 //General
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'dark-logo',
-	'label'       => __( 'Dark Logo', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_general',
-	'default'     => urlforimages()."/assets/img/logo.png"
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'darklogo_sticky',
