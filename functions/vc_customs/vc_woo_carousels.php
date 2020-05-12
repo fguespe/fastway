@@ -273,12 +273,11 @@ function vc_categories_carousel() {
                         "param_name"  => "autoplay",
                         'std' => 'true',
                     ),
-
                     array(
                         'type' => 'textfield',
                         'heading' => __( 'Delay', 'js_composer' ),
                         'param_name' => 'slider_delay',
-                        'description' => __( 'Delay in seconds', 'js_composer' ),
+                        'description' => __( 'Delay in miliseconds', 'js_composer' ),
                         'std' => '4000',
                     ),  
                     array(

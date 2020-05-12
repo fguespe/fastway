@@ -212,7 +212,7 @@ function fw_slider() {
                     'type' => 'textfield',
                     'heading' => __( 'Delay', 'js_composer' ),
                     'param_name' => 'slider_delay',
-                    'description' => __( 'Delay in seconds', 'js_composer' ),
+                    'description' => __( 'Delay in miliseconds', 'js_composer' ),
                     'std' => '4000',
                 ),  
                 array(
@@ -328,7 +328,7 @@ function fw_slider_function( $atts, $content ) {
             'links_mobile'      =>  '',
             'slider_speed'  => '250',
             'slider_delay'  => '4000',
-            'autoplay'  => 'false',
+            'autoplay'  => 'true',
             'loop'  => 'false',
             'el_class'  => ''
         ), $atts );
