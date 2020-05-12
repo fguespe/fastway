@@ -1993,6 +1993,10 @@ footer .widget_nav_menu li a {
 
   .loopimg_container{
     height:200px;
+    @media (max-width: 799px) {
+      height:150px;
+      
+    }
     img{
       object-fit: contain;
       height:100%;

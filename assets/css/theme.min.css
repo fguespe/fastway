@@ -2021,6 +2021,11 @@ footer .widget_nav_menu li a {
 .fw_post_loop .loopimg_container {
   height: 200px;
 }
+@media (max-width: 799px) {
+  .fw_post_loop .loopimg_container {
+    height: 150px;
+  }
+}
 .fw_post_loop .loopimg_container img {
   object-fit: contain;
   height: 100%;
