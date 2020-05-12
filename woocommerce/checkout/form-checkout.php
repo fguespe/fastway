@@ -53,7 +53,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 ?>
 <script>
-if(!wc_tokenization_form_params)wc_tokenization_form_params=null
+  if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
   var logged=false;
   var paso = 1;
