@@ -48,13 +48,15 @@ $calculator_text          = '';
 				$value=$method->id;
 				$value=str_replace(",","",$value);
 				$instance=$method->instance_id;
-				error_log(print_r($method,true));
+				
 				$desc=get_option('woocommerce_flat_rate_'.$instance.'_settings')['fw_shipping_desc'];
 				$costo=$method->cost;
-				if($costo==0)$costo=fw_theme_mod('fw_shipping_free_label');
+				if($costo==0 && $id=='free_shipping')$costo=fw_theme_mod('fw_shipping_free_label');
+				if($costo==0)$costo='A cargo del cliente';
 				else $costo="$".$costo;
 				$active=checked( $method->id, $chosen_method, false )?"active":""
 				?>	
+				<?=print_r($method,true);?>
 					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping <?=$active;?>" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) );?>
 						<span class="checkmark"></span>
