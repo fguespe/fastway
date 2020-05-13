@@ -48,9 +48,8 @@ $calculator_text          = '';
 				$value=$method->id;
 				$value=str_replace(",","",$value);
 				$instance=$method->instance_id;
-
+				error_log(print_r($method,true));
 				$desc=get_option('woocommerce_flat_rate_'.$instance.'_settings')['fw_shipping_desc'];
-				$route_number    = $free_shipping['route_number'];
 				$costo=$method->cost;
 				if($costo==0)$costo=fw_theme_mod('fw_shipping_free_label');
 				else $costo="$".$costo;

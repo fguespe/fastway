@@ -245,6 +245,8 @@ function fw_if($atts = [], $content = null){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='logged' && is_user_logged_in()){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    }else if($atts['type']=='unlogged' && !is_user_logged_in()){
+      return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }
 }
 function woo_loop_brand(){
