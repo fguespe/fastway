@@ -959,7 +959,7 @@ jQuery(document).on( 'updated_checkout', function(){
 	if(envioSeleccionado)jQuery('.shipping-total').attr("style", "display: table-row; !important")
 
 });
-function setEposnet(){
+function setTodopago(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
   let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
   if(!litp.find('img.imgtp').length)jQuery('#payment_method_todopago').after(img)
@@ -968,7 +968,7 @@ function setEposnet(){
   if(label)litp.find('.title').text(label)
   if(desc)litp.find('small').text(desc)
 }
-function setTodopago(){
+function setEposnet(){
   let litp=jQuery(document).find(`[data-radio="spyr_firstdata_gateway"]`)
   let label='<?=fw_theme_mod('fw_checkout_eposnet_label')?>'
   let desc='<?=fw_theme_mod('fw_checkout_eposnet_desc')?>'
