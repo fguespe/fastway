@@ -1544,7 +1544,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'ePosnet Descripción', 'fastway' ),
 	'description'=>'Display a messsage on the my account page',
 	'section'     => 'section_woo_checkout',
-	'default' => 'Paga en 3 CUOATAS SIN INTERÉS. Procesado por e-Posnet'
+	'default' => 'Paga en 3 CUOTAS SIN INTERÉS. Procesado por e-Posnet'
 ) );
 
 
