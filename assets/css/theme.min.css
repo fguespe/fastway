@@ -612,6 +612,10 @@ i.fad {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
   }
+  .fw_single_product .detalle-imagenListado #imagenListado img {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 .fw_single_product .summary .precio {
   line-height: 45px;
