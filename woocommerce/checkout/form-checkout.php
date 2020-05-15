@@ -963,8 +963,8 @@ jQuery(document).on( 'updated_checkout', function(){
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
-	if(envioSeleccionado)jQuery('.shipping-total').attr("style", "display: table-row; !important")
-
+	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
+  else jQuery('.shipping-total').attr("style", "display: none")
 });
 function setTodopago(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
