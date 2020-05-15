@@ -1347,14 +1347,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'select',
-	'settings'    => 'fw_shop_stblock_header',
-	'label'       => __( 'Shop Page Header Section', 'fastway' ),
-	'section'     => 'section_woo',
-	'choices'     => $static_block_args,
-	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
-) );
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',
 	'label'       => __( 'Terminos y condiciones', 'fastway' ),
@@ -1918,6 +1910,14 @@ Kirki::add_field( 'theme_config_id', array(
 		'max'  => '12',
 		'step' => '1',
 	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'fw_shop_stblock_header',
+	'label'       => __( 'Shop Page Header Section', 'fastway' ),
+	'section'     => 'section_woo_shop',
+	'choices'     => $static_block_args,
+	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
