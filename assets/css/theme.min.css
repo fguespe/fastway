@@ -1901,6 +1901,10 @@ footer {
   height: 100% !important;
 }
 
+.site-main .woocommerce-breadcrumb {
+  display: none;
+}
+
 /*bread single*/
 .woocommerce-breadcrumb, .woocommerce-breadcrumb a {
   font-size: 13px;
