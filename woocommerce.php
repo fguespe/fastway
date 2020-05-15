@@ -25,6 +25,12 @@ if(is_shop() || is_product_category())$clase="woocommerce-shop";
 <div class="wrapper <?=$clase?>" id="woocommerce-wrapper">
 	<?php if(is_product())do_action( 'fw_breadcrumb', $datas );?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+
+		<?php if(fw_theme_mod('fw_shop_stblock_header')){
+			echo '<div class="row"><div class="container">';
+			fw_StaticBlock::getSticBlockContent( fw_theme_mod('fw_shop_stblock_header') );
+			echo '</div></div>';
+		}?>
 		<div class="row">
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 			<main class="site-main" id="main">

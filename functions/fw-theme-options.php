@@ -182,8 +182,7 @@ Kirki::add_section( 'section_woo', array(
 Kirki::add_section( 'section_woo_shop', array(
     'title'          => __( 'Shop Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-  
+    'panel'          => 'panel_fastwaywoo',x
 ) );
 Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
@@ -383,7 +382,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'blog-stblock',
-	'label'       => __( 'Static Block', 'fastway' ),
+	'label'       => __( 'Blog Page Header Section', 'fastway' ),
 	'section'     => 'section_blog_general',
 	'choices'     => $static_block_args,
 	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
@@ -1347,6 +1346,14 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'select',
+	'settings'    => 'fw_shop_stblock_header',
+	'label'       => __( 'Shop Page Header Section', 'fastway' ),
+	'section'     => 'section_woo',
+	'choices'     => $static_block_args,
+	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',

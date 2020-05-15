@@ -9,8 +9,7 @@ $container   = fw_theme_mod('container-main');
 	
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-	<?php 
-	if(fw_theme_mod('blog-stblock')){
+	<?php if(fw_theme_mod('blog-stblock')){
 		echo '<div class="row"><div class="container">';
 		fw_StaticBlock::getSticBlockContent( fw_theme_mod('blog-stblock') );
 		echo '</div></div>';
