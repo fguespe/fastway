@@ -26,7 +26,7 @@ if(is_shop() || is_product_category())$clase="woocommerce-shop";
 	<?php if(is_product())do_action( 'fw_breadcrumb', $datas );?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<?php if(fw_theme_mod('fw_shop_stblock_header')){
+		<?php if(is_shop() && fw_theme_mod('fw_shop_stblock_header')){
 			echo '<div class="row"><div class="container">';
 			fw_StaticBlock::getSticBlockContent( fw_theme_mod('fw_shop_stblock_header') );
 			echo '</div></div>';
