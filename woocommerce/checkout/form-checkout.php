@@ -946,7 +946,7 @@ border-bottom:1px solid ;
 
 <script>
 
-var envioSeleccionado=false
+var envioSeleccionado=0
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
