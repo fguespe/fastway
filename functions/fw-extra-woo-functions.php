@@ -761,7 +761,6 @@ function fw_before_paying_notice() {
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 
 function fw_custom_get_availability( $availability, $_product ) { // Change Out of Stock Text 
-    
     if ( $_product->is_in_stock() )$availability['availability'] = fw_theme_mod("in-stock-text");
     if( $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
     if ( !$_product->is_in_stock() )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
