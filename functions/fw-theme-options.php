@@ -239,6 +239,12 @@ Kirki::add_section( 'section_woo_roles', array(
     'panel'          => 'panel_fastwaywoo',
 
 ) );
+Kirki::add_section( 'section_woo_email', array(
+    'title'          => __( 'Emails ', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+  
+) );
 Kirki::add_section( 'section_woo_checkout', array(
     'title'          => __( 'Checkout ', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1759,14 +1765,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'fw_welcome_msg',
 	'label'       => __( 'Welcome message', 'fastway' ),
-	'description'=>'Display a messsage on the my account page',
-	'section'     => 'section_woo',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
-	'settings'    => 'order_email_msg',
-	'label'       => __( 'Order email message', 'fastway' ),
-	'description'=>'Display a messsage/notice before checkout',
+	'description'=> 'Display a messsage on the my account page',
 	'section'     => 'section_woo',
 ) );
 
@@ -1797,6 +1796,32 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 	'default'     => '',
 ) );
+/*EMAILS*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_neworder_email_header',
+	'label'       => __( 'Header nuevo pedido', 'fastway' ),
+	'description'=>	'Agregar alguna info de encabezado en el primer mail de nuevo pedido (customer_processing_order). For more info <a href="https://businessbloomer.com/woocommerce-visual-hook-guide-emails/">Hooks</a> y revisar los snippets de vonder',
+	'section'     => 'section_woo_email',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_neworder_email_footer',
+	'label'       => __( 'Footer', 'fastway' ),
+	'description'=>	'Agregar un footer generico a todos los mails.',
+	'section'     => 'section_woo_email',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
