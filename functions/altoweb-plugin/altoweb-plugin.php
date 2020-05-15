@@ -305,6 +305,10 @@ add_filter('gettext', 'bancos_arg', 10, 3);
 function bancos_arg($translation, $text, $domain) {
     if ($domain == 'woocommerce') {
         switch ($text) {
+            case 'Sort code':
+                $translation = 'ALIAS';
+                break;
+    
             case 'IBAN':
                 $translation = 'CUIT';
                 break;
@@ -316,6 +320,10 @@ function bancos_arg($translation, $text, $domain) {
             case 'BIC':
                 $translation = 'CBU';
                 break;
+
+    
+
+                
         }
     }
 
