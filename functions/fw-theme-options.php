@@ -1797,7 +1797,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 /*EMAILS*/
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_neworder_email_header',
@@ -1818,7 +1818,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'language' => 'html',
 	),
-) );
+) );*/
 
 
 
