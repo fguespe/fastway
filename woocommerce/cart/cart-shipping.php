@@ -52,7 +52,7 @@ $calculator_text          = '';
 				$desc=get_option('woocommerce_flat_rate_'.$instance.'_settings')['fw_shipping_desc'];
 				$costo=$method->cost;
 				if($costo==0  && $id=='flat_rate')$costo='A cargo del cliente';
-				if($costo==0 /*&& $id=='free_shipping'*/)$costo=fw_theme_mod('fw_shipping_free_label');
+				else if($costo==0  && $id=='free_shipping')$costo=fw_theme_mod('fw_shipping_free_label');
 				else $costo="$".$costo;
 				$active=checked( $method->id, $chosen_method, false )?"active":""
 				?>	
