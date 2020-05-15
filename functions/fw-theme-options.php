@@ -182,7 +182,7 @@ Kirki::add_section( 'section_woo', array(
 Kirki::add_section( 'section_woo_shop', array(
     'title'          => __( 'Shop Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',x
+    'panel'          => 'panel_fastwaywoo',
 ) );
 Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
@@ -3437,6 +3437,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => 'Producto existente',
 	'section'     => 'section_labels',
 	'default'	=>'En Stock',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_backorder_text',
+	'label'    => 'Reservar producto',
+	'section'     => 'section_labels',
+	'default'	=>'Reservar',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
