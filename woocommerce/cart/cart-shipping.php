@@ -53,7 +53,7 @@ $calculator_text          = '';
 				$costo=$method->cost;
 				if($costo==0  && $id=='flat_rate')$costo='A cargo del cliente';
 				else if($costo==0  && $id=='free_shipping')$costo=fw_theme_mod('fw_shipping_free_label');
-				else $costo="$".$costo;
+				else $costo="$".$id;
 				$active=checked( $method->id, $chosen_method, false )?"active":""
 				?>	
 					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping <?=$active;?>" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$costo?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
