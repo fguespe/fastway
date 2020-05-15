@@ -32,7 +32,7 @@ jQuery('li.capsula.shipping input').on('click', function(e) {
 
 function seleccionarEnvio(capsula){
 	
-	envioSeleccionado=true
+	envioSeleccionado=capsula.data('costo')
 	jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')+' '+capsula.data('costo')
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
