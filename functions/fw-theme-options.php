@@ -1563,6 +1563,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'fw_order_notes_placeholder',
+	'label'       => __( 'Comentarios adicionales (placeholder)', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default' 		=>	'Comentarios adicionales',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_continuar',
 	'label'    => __( 'Continuar', 'fastway' ),       
@@ -1797,7 +1805,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 /*EMAILS*/
-/*
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_neworder_email_header',
@@ -1818,7 +1826,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'language' => 'html',
 	),
-) );*/
+) );
 
 
 

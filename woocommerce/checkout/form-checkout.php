@@ -31,6 +31,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
         'clear'     => true
       );
     }
+    $fields['order']['order_comments']['class'][]='w100';
+    $fields['order']['order_comments']['placeholder']=fw_theme_mod('fw_order_notes_placeholder');
 
     if($fields['billing']['billing_first_name'])$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
     if($fields['billing']['billing_last_name'])$fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
@@ -125,6 +127,11 @@ function fw_custom_override_checkout_fieldss( $fields ) {
               foreach ( $fields as $key => $field ) {
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
               }
+              $fields = $checkout->get_checkout_fields( 'order' );
+              foreach ( $fields as $key => $field ) {
+                woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+              }
+
 
               if(fw_theme_mod('fw_terms_required')){
               ?>
