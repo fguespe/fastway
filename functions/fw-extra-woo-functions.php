@@ -733,15 +733,15 @@ function fw_otherwoo_options(){
     }*/
     
 }
-
+/*
 function fw_add_footer_to_email( $order, $sent_to_admin, $plain_text, $email ) {
   echo fw_theme_mod("fw_neworder_email_footer");
 }
-/*
+*/
 function fw_add_header_to_order( $order, $sent_to_admin, $plain_text, $email ) {
     if ( $email->id == 'customer_processing_order' ) echo fw_theme_mod("fw_neworder_email_header");
 }
-*/
+
 
 function wc_remove_all_quantity_fields( $return, $product ){
     return true;
