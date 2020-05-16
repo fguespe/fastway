@@ -295,37 +295,35 @@ function verificarEmail(){
   sacar1(!isValid,3)
 }
 function verificarFields(){
-  var isValid=true
-  console.log('verifica field')
+  var disable=false
+
   jQuery('#billing_form input').each(function(index,data) {
     var element = jQuery(this);
-    if (element.val() == "") {
-        isValid = false;
-        element.addClass('enrojo')
+    let req=element.parent().parent().hasClass('validate-required')
+    //if(element.parent().parent().hasClass('validate-required'))element.parent().append('ja')
+    if (req && element.val() == "") {
+      disable = true;
+      element.addClass('enrojo')
     }else{
-
       element.removeClass('enrojo')
     }
   });
+  console.log(disable)
   jQuery('#billing_form input[type="checkbox"]').each(function(index,data) {
     var element = jQuery(this);
-    if (element.prop("checked") == false){
-        isValid = false;
-        //element.parent().addClass('enrojo')
+    if (element.prop('required') &&  element.prop("checked") == false){
+      disable = true;
+        element.parent().addClass('enrojo')
     }else{
-      //element.parent().removeClass('enrojo')
+        element.parent().removeClass('enrojo')
     }
   });
-  if(isValid){
+  if(disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
-  
-  sacar1(!isValid,4)
-
-  
-
+  sacar1(disable,4)
 }
 function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
@@ -407,9 +405,7 @@ function resetStep(type){
 
   jQuery('.paso-'+type).hide()
   jQuery('.paso-'+type+' div:not(.box-step)').show()
-  
   jQuery('.paso-'+type+' .dos').hide()//Nunca se da porq e otro cierra sesion
-
   jQuery('.paso-'+type+' .box-step').hide()
   jQuery('.paso-'+type+' .box-step').removeClass('efecto')
   jQuery('.paso-'+type+' h1').show()
@@ -434,8 +430,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    console.log(msg,estado)
-    jQuery('.btn-checkout.continuar').prop('disabled', estado);
+    console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
