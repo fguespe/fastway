@@ -290,9 +290,15 @@ function fw_login(){
       });
 }
 function verificarEmail(){
-  let isValid= isEmail(jQuery('#billing_email').val())
-  
-  sacar1(!isValid,3)
+  let email=jQuery('#billing_email').val()
+  let disable= !isEmail(email)
+  if(disable){
+    jQuery('#billing_email').addClass('enrojo')
+  }else{
+    jQuery('.paso-cuenta .box-step .subtitle').text(email)
+    jQuery('#billing_email').removeClass('enrojo')
+  }
+  sacar1(disable,8)
 }
 function verificarFields(){
   var disable=false
@@ -308,7 +314,6 @@ function verificarFields(){
       element.removeClass('enrojo')
     }
   });
-  console.log(disable)
   jQuery('#billing_form input[type="checkbox"]').each(function(index,data) {
     var element = jQuery(this);
     if (element.prop('required') &&  element.prop("checked") == false){
@@ -318,7 +323,7 @@ function verificarFields(){
         element.parent().removeClass('enrojo')
     }
   });
-  if(disable){
+  if(!disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
@@ -342,20 +347,14 @@ jQuery(document).ready( function(jQuery) {
   verificarEmail();
   verificarFields();
 
+  jQuery('#billing_email').on('input', function(e){
+    verificarEmail();
+  })
+
   jQuery('#billing_form input').on('input', function(e){
     verificarFields()
   })
   
-  //Cuando el mail cambia
-  jQuery('#billing_email').on('input', function(e){
-    let val=jQuery('#billing_email').val()
-    if(isEmail(val) && paso==1){
-      sacar1(false,6)
-      jQuery('.paso-cuenta .box-step .subtitle').text(val)
-    }else{
-      sacar1(false,7)
-    }
-  })
 
   // Login
   jQuery('a#show_login').on('click', function(e){
@@ -430,8 +429,8 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
+    console.log(estado,msg)
 }
 function nextpaso(){
   paso++
