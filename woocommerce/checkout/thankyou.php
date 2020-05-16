@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 				<span><?=fw_theme_mod('fw_label_checkout_thank_2')?> <b><?=$order->get_billing_email()?></b> <?=fw_theme_mod('fw_label_checkout_thank_3')?></span>
 
 				<p class="mt20"><p><?=fw_theme_mod('checkout-msg')?></p>
-				<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?><!--por si hay algo intersante para haer en el futuro....->
+				<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?><!--por si hay algo intersante para haer en el futuro....-->
 
 				<a class="seguir" href="/"><?=fw_theme_mod('fw_label_checkout_thank_4')?></a>
 			</section>
