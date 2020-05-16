@@ -42,8 +42,8 @@ defined( 'ABSPATH' ) || exit;
 				<p><?=fw_theme_mod('fw_label_checkout_thank_1')?> #<?=$order->get_order_number()?></p>
 				<span><?=fw_theme_mod('fw_label_checkout_thank_2')?> <b><?=$order->get_billing_email()?></b> <?=fw_theme_mod('fw_label_checkout_thank_3')?></span>
 
-				<div class="cart-form-desc" style="font-size:12px;"><p><?=fw_theme_mod('checkout-msg')?></p></div>
-				<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+				<span ckass="mt20"><p><?=fw_theme_mod('checkout-msg')?></span>
+				<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?><!--por si hay algo intersante para haer en el futuro....->
 
 				<a class="seguir" href="/"><?=fw_theme_mod('fw_label_checkout_thank_4')?></a>
 			</section>
