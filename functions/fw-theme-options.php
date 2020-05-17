@@ -3015,6 +3015,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Company Facebook', 'fastway' ),
     'description'     => __( '[fw_data type="fb"]', 'fastway' ),
 	'section'     => 'section_data',
+	'default'     => 'Facebook (#)'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -3023,6 +3024,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Company Instagram', 'fastway' ),
     'description'     => __( '[fw_data type="ig"]', 'fastway' ),            
 	'section'     => 'section_data',
+	'default'     => 'Instagram (#)'
 ) );
 //Ohojo el. nombre
 Kirki::add_field( 'theme_config_id', array(
@@ -3031,6 +3033,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Company Linkedin', 'fastway' ),
     'description'     => __( '[fw_data type="linkedin"]', 'fastway' ),            
 	'section'     => 'section_data',
+	'default'     => 'Linkedin (#)'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -3039,6 +3042,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Company Youtube', 'fastway' ),
    	'description'     => __( '[fw_data type="youtube"]', 'fastway' ),
 	'section'     => 'section_data',
+	'default'     => 'Youtube (#)'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -3046,6 +3050,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Company Twitter Url', 'fastway' ),
    	'description'     => __( '[fw_data type="twitter"]', 'fastway' ),
 	'section'     => 'section_data',
+	'default'     => 'Twitter (#)'
 ) );
 /*Extras*/
 Kirki::add_field( 'theme_config_id', array(

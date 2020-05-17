@@ -65,7 +65,7 @@ function fw_company_data($type, $link=false,$cant=1) {
     $value=fw_theme_mod('short-fw_company'.$type);
     //fix whatsapp +
     if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
-
+        
     if(empty($value))return "";
     
     
@@ -74,7 +74,9 @@ function fw_company_data($type, $link=false,$cant=1) {
     if(empty($value))return false;
     preg_match('#\((.*?)\)#', $value, $match);
     $link_en_parentesis= $match[1];
-    if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
+    if($link_en_parentesis=='#'){//Si hay link en parentesis
+        return "";
+    }else if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
         $value=$pre.str_replace("(".$link_en_parentesis.")","",$value);
     }else if(!empty($link_en_parentesis) && $link){
         $value=$pre.$link_en_parentesis;
