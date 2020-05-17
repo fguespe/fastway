@@ -10,8 +10,14 @@
                 <div style="padding:1em;">
                     <div class="row d-flex justify-content-between align-items-center">
                         <div>
-                        <button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close"><?=fw_theme_mod('fw_label_agregar_mas')?></button>
-                        <a type="button" class="iralcarrito" onclick="comprar('<?=esc_url( wc_get_cart_url() )?>')" ><?=fw_theme_mod('fw_label_ir_carrito')?></a>
+                        <?php 
+                        if(fw_theme_mod('fw_seguircomprando_url')!='/'){
+                            echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
+                        }else{
+                            echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
+                        }?>
+                        
+                        <a type="button" class="iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" hrerf="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
                         <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
                     </div>
