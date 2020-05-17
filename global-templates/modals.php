@@ -11,15 +11,15 @@
                     <div class="row d-flex justify-content-between align-items-center">
                         <div>
                         <?php 
-                        if(fw_theme_mod('fw_seguircomprando_url')!='/'){
+                        if(fw_theme_mod('fw_seguircomprando_url')=='/'){
                             echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
                         }else{
-                            echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
+                            echo '<a href="'.fw_theme_mod('fw_seguircomprando_url').'" class="btn seguir" >'.fw_theme_mod('fw_label_agregar_mas').'</a>';
                         }?>
                         
-                        <a type="button" class="iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" hrerf="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
+                        <a type="button" class="btn seguir iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
-                        <button type="button" onclick="comprar('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
+                        <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
                     </div>
                     <style>
                     @media (max-width: 799px) {
@@ -404,10 +404,12 @@ function toggle(quien){
 
     }
 }
-function comprar(url){
-    let min=jQuery('#totals').data("min")
-    let total=jQuery('#totals').data("subtotal")
-    location.href=url
+function ir_al_checkout(url){
+    let min='<?=fw_theme_mod('fw_min_purchase')?>';
+    let total='<?=WC()->cart->cart_contents_total?>';
+    console.log(min,total,min<=total)
+    if(parseInt(min)<=parseInt(total))location.href=url
+    else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
 }
 jQuery( ".fw_variations select" ).change(function() {
 

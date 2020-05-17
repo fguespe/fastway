@@ -380,7 +380,6 @@ if(fw_theme_mod('fw_min_purchase')>0 && fw_theme_mod('fw_min_purchase2')>0 ){
 }
 
 
-
 // VERFW
 function pasa_filtro_rol($rolesstring){
 
