@@ -407,7 +407,7 @@ function toggle(quien){
 function ir_al_checkout(url){
     let min='<?=fw_theme_mod('fw_min_purchase')?>';
     let total='<?=WC()->cart->cart_contents_total?>';
-    console.log(min,total,min<=total)
+    console.log('v1',min,total,min<=total)
     if(!min)location.href=url
     else if(min && parseInt(min)<=parseInt(total))location.href=url
     else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');

@@ -531,7 +531,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_favicon',
 	'label'       => __( 'Favicon', 'fastway' ),
-	'description' => 'reemplaza site identity',
+	'description' => 'dejar vacio, sino, reemplaza site identity',
+	'section'     => 'section_images',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'social_media_image',
+	'label'       => __( 'Social Media Image', 'fastway' ),
+	'description' => 'Size: 1200x630 <= 1MB',
 	'section'     => 'section_images',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -615,13 +623,6 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => 'Max 150 characters',
 	'section'     => 'section_seo',
 	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'social_media_image',
-	'label'       => __( 'Social Media Image', 'fastway' ),
-	'description' => 'Size: 1200x630 <= 1MB',
-	'section'     => 'section_seo',
 ) );
 /*HEAADER*/
 
@@ -3216,14 +3217,15 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 /*SCRIPTS*/
-/*
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fathom-id',
-	'label'    => __( 'Fathom ID', 'fastway' ),       
+	'settings'    => 'fw_site_verification',
+	'label'    => __( 'Google Site Verif. ID', 'fastway' ),       
 	'section'     => 'section_scripts',
 	'description' =>'refresh cache!'
-) );*/
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',

@@ -11,12 +11,13 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <?php if(fw_theme_mod('fw_seo_social') && !is_plugin_active('wordpress-seo/wp-seo.php')){ ?>
     <!-- FW SEO -->
-    <meta name="description" content="<?php echo fw_theme_mod('seo-desc');?>">
-    <meta name="keywords" content="<?php echo fw_theme_mod('seo-keywords');?>">
-    <meta property="og:title" conten="<?php bloginfo( 'name' ); ?>">
-    <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
-    <meta property="og:image" content="<?php echo fw_theme_mod('social_media_image');?>">
-    <meta property="og:url" content="<?php echo 'https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <meta name="description" content="<?=fw_theme_mod('seo-desc');?>">
+    <meta name="keywords" content="<?=fw_theme_mod('seo-keywords');?>">
+    <meta property="og:title" conten="<?=bloginfo( 'name' ); ?>">
+    <meta property="og:description" content="<?=bloginfo( 'description' ); ?>">
+    <meta property="og:image" content="<?=fw_theme_mod('social_media_image');?>">
+    <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
     <meta name="twitter:card" content="summary_large_image">
     <?php } ?>
 	
