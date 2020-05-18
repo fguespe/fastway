@@ -3549,7 +3549,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Login Text', 'fastway' ),
 	'description' => '"username" para que tome el username si inicio',
 	'section'     => 'section_labels',
-	'default'	=>__( 'Ingresar', 'fastway' ),
+	'default'	=> 'Ingresar'
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_user_myaccount',
+	'label'    => __( 'Mi Cuenta ', 'fastway' ),
+	'description' => 'Lo que aparece cuando inicia sesión',
+	'section'     => 'section_labels',
+	'default'	=> 'Mi Cuenta'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
