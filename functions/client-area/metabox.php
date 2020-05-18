@@ -51,7 +51,7 @@ function custom_menu_meta_box(){
 		array_push($items, array(__('Block-'.$block->post_name,'fastway'),'edit','post.php?post='.$block->ID.'&action=edit'));
 	}
 	if(!empty($blocks))array_push($items, array(__('Bloques','fastway'),'edit','edit.php?post_type=fw_stblock'));
-
+	if(is_plugin_active('facebook-for-woocommerce/facebook-for-woocommerce.php'))array_push($items, array(__('Facebook','fastway'),'facebook','admin.php?page=wc-settings&tab=integration&section=facebookcommerce'));
 	$authors=array();
 	foreach ($items as $item) {
 		$author=(object)[];
