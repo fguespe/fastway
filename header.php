@@ -18,7 +18,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <meta property="og:image" content="<?=fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
-    <meta name="twitter:cardz" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <?php } ?>
 	
     <link rel="profile" href="http://gmpg.org/xfn/11">
