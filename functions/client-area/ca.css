@@ -13,7 +13,9 @@ body{
 #wpseo-dashboard-overview{
 	display: none;
 }
-
+.woocommerce-card{
+	display:none;
+}
 /*ICONOS*/
 
 .faviconizq,
