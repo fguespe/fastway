@@ -883,11 +883,21 @@ border:0px !important;
 color:var(--main) !important;
 border-bottom:1px solid ;
 }
+#stripe-payment-data p{
+display:none !important;
+}
+#stripe-payment-data {
+padding-top:20px !important;
+}
+.order-total.recurring-total{
+  display:none;
+}
 /*
 .firstdata-credit-card input{
   display: inline !important;
   width: 10px !important;
 }*/
+
 </style>
 
 
