@@ -3035,8 +3035,8 @@ body .wpb_content_element {
 }
 .layout2 .fw_single_product .cuota_text {
   display: block;
-  margin-top: 20px !important;
-  margin-bottom: 10px !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /*General Woocommerce*/
