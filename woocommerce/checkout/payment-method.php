@@ -29,7 +29,7 @@ $value=$gateway->id;
 	<small><?=$gateway->description?></small>
 
 	<?php if ( $gateway->has_fields() ) : ?>
-		<div class="extras" >
+		<div class="extras" style="display:none;" >
 			<?php $gateway->payment_fields(); ?>
 		</div>
 	<?php endif; ?>
@@ -82,6 +82,10 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 	
 });
 function seleccionarPago(capsula){
+	console.log(capsula.find('.extras').attr('class'))
+	//capsula.find('.extras').toggle();
+	capsula.find('.extras').show();
+
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)

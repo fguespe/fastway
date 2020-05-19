@@ -336,7 +336,12 @@ jQuery( function( $ ) {
 					if ( data && data.fragments ) {
 						$.each( data.fragments, function ( key, value ) {
 							if ( ! wc_checkout_form.fragments || wc_checkout_form.fragments[ key ] !== value ) {
-								$( key ).replaceWith( value );
+								console.log(key)
+								try{
+									$( key ).replaceWith( value );
+								}catch(e){
+									console.log(e)
+								}
 							}
 							$( key ).unblock();
 						} );

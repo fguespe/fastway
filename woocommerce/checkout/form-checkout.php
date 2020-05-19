@@ -3,56 +3,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
-// If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
 	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'fastway' ) );
 	return;
 }
-
-
-add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
-function fw_custom_override_checkout_fieldss( $fields ) {
-    $fields['billing']['billing_cuit'] = array(
-      'label'     => fw_theme_mod( 'fw_cuit_label'),
-      'placeholder'     => fw_theme_mod( 'fw_cuit_label'),
-      'required'  => true,
-      'class'     => array('form-row-wide'),
-      'clear'     => true,
-      'priority' => 31
-    );
-    
-    if(fw_theme_mod('fw_sell_dni')){
-      $fields['billing']['billing_dni'] = array(
-        'label'     => fw_theme_mod( 'fw_cuit_label'),
-        'placeholder' => fw_theme_mod( 'fw_cuit_label'),
-        'required'  => true,
-        'class'     => array('form-row-wide'),
-        'clear'     => true
-      );
-    }
-    $fields['order']['order_comments']['class'][]='w100';
-    $fields['order']['order_comments']['placeholder']=fw_theme_mod('fw_order_notes_placeholder');
-
-    if($fields['billing']['billing_first_name'])$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
-    if($fields['billing']['billing_last_name'])$fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
-    if($fields['billing']['billing_company'])$fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
-    if($fields['billing']['billing_phone'])$fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
-    if($fields['billing']['billing_city'])$fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
-    if($fields['billing']['billing_postcode'])$fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
- 
-    unset($fields['billing']['billing_email']);
-    //unset($fields['billing']['billing_country']);
-    unset($fields['billing']['billing_address_2']);
-    if(!fw_theme_mod('fw_sell_to_business')){
-      unset($fields['billing']['billing_company']);
-      unset($fields['billing']['billing_cuit']);
-    }
-    return $fields;
-}
-
-
-
 ?>
 <script>
   if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
@@ -68,16 +22,13 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 <?php } ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout fw_checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" novalidate="novalidate">
-    
     <div class="col-lg-8 col-sm-12">
-
       <div class="box-detail mostrar paso-loading" style="display:none;text-align:center;width:100%;"> 
             <div class="capsula ">
               <i class="fal fa-circle-notch fa-spin" style="color:var(--main);width:100%;font-size:80px !important;margin-bottom:50px;" aria-hidden="true"></i>
               <span><?=fw_theme_mod('fw_label_checkout_loading')?></span>
             </div>
       </div>
-        
       <div class="box-detail paso-cuenta" >
         <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
             <h1><span class="icon-paso">1</span><?=fw_theme_mod('fw_label_checkout_1')?></h1>
@@ -300,13 +251,15 @@ function verificarEmail(){
   }
   sacar1(disable,8)
 }
-function verificarFields(){
+function verificarFields(first=false){
   var disable=false
 
   jQuery('#billing_form input').each(function(index,data) {
     var element = jQuery(this);
     let req=element.parent().parent().hasClass('validate-required')
-    //if(element.parent().parent().hasClass('validate-required'))element.parent().append('ja')
+
+    if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
+    else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
     if (req && element.val() == "") {
       disable = true;
       element.addClass('enrojo')
@@ -340,12 +293,12 @@ function unselect(type){
 jQuery(document).ready( function(jQuery) {
   //Cupones
   jQuery('.checkout_coupon').show()
-
+  
   //Resets
   unselect('shipping_method[0]')
   unselect('payment_method')
   verificarEmail();
-  verificarFields();
+  verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
     verificarEmail();
@@ -430,7 +383,7 @@ function fillNextStep(type){
 }
 function sacar1(estado,msg){
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
-    console.log(estado,msg)
+    //console.log(estado,msg)
 }
 function nextpaso(){
   paso++
