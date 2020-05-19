@@ -43,10 +43,10 @@ function wpb_sender_name( $original_email_from ) {
 }
 
 
-
-add_filter( 'woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
-add_filter( 'woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
-add_filter( 'woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
+//add_filter('woocommerce_email_recipient_customer_processing_order','change_stock_email_recipient',10,2);
+add_filter('woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
+add_filter('woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
+add_filter('woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
 add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
 add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
@@ -137,20 +137,24 @@ if(fw_theme_mod("fw_action_resetmails") || 1==1){
 
 
 function change_stock_email_recipient( $recipient, $product ) {
+    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 function orden_nueva( $recipient, $order ) {
+    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_cancelada( $recipient, $order ) {
+    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_fallida( $recipient, $order ) {
+    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
