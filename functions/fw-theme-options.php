@@ -163,6 +163,11 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
 	Kirki::add_panel( 'panel_fastwaywoo', array(
 		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
 	) );
+	if(is_super_admin()){
+		Kirki::add_panel( 'panel_fastwaywoo_beta', array(
+			'title'       => __( 'Multitienda (BETA)', 'fastway' ),
+		) );
+	}
 }
 Kirki::add_section( 'section_blog_general', array(
     'title'          => __( 'General', 'fastway' ),
@@ -179,11 +184,17 @@ Kirki::add_section( 'section_woo', array(
     'panel'          => 'panel_fastwaywoo',
 
 ) );
+
+
+
+
 Kirki::add_section( 'section_woo_shop', array(
     'title'          => __( 'Shop Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
 ) );
+
+
 Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -227,11 +238,18 @@ Kirki::add_section( 'section_woo_shippings', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+
+Kirki::add_section( 'section_woo_beta', array(
+    'title'          => __( 'General', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo_beta',
+
+) );
 Kirki::add_section( 'section_woo_discount', array(
     'title'          => __( 'Discounts', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
+    'panel'          => 'panel_fastwaywoo_beta',
   
 ) );
+
 
 Kirki::add_section( 'section_woo_roles', array(
     'title'          => __( 'Roles', 'fastway' ),
@@ -1359,6 +1377,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_show_cross_sells',
@@ -1372,24 +1391,38 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_is_multitienda',
+	'label'       => __( 'Multitienda', 'fastway' ),
+	'description'	=> 'Tiene mas de una lista de precios',
+	'section'     => 'section_woo_beta',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase',
 	'label'    => __( 'Min Purchase', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_beta',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase2',
 	'label'    => __( 'Min Re-Purchase', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_beta',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase_roles',
 	'label'    => __( 'Mins Roles', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_beta',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1406,14 +1439,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_cuotas_todopago',
-	'label'    => __( 'Cuotas Todopago', 'fastway' ),
-	'description' => '',
-	'section'     => 'section_woo',
-	'default' => 6
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_conversion',
@@ -1525,6 +1550,16 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*tp*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_cuotas_todopago',
+	'label'    => __( 'Cuotas Todopago', 'fastway' ),
+	'description' => '',
+	'section'     => 'section_woo',
+	'default' => 6
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_checkout_todopago_label',
@@ -1849,15 +1884,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 /*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'multicheck',
-	'settings'    => 'ca_roles_mayorista',
-	'label'       => esc_attr__( 'Lista de precios', 'fastway' ),
-	'description' => 'Al estar activos aca, y teniendo el field ya creado con custom fields, se le da permiso al shop manager para que los asigne, y tambien se habilitan los precios para cada rol',
-	'section'     => 'section_woo_roles',
-    'choices'     => fw_getme_roles(),
-	'default'     => ''
-) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
@@ -1868,13 +1894,14 @@ Kirki::add_field( 'theme_config_id', array(
     'choices'     => fw_getme_roles(),
 	'default'     => ''
 ) );
+*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-roles',
 	'label'       => __( 'CSS For Roles ', 'fastway' ),
 	'section'     => 'section_woo_roles',
-	'description' => 'Classes: .role',
+	'description' => 'Todos los roles tienen su clase puesta en el body, por ej: .mayorista',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -2882,7 +2909,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_btn type="ajax/link"]',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_cuotas cant="X"]fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_btn type="ajax/link"]',
 	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container][fw_loop_btn]',
 	'choices'     => array(
 		'language' => 'html',

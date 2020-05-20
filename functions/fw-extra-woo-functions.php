@@ -171,14 +171,15 @@ function fw_single_product_clasess( $classes ) {
   return $classes;
 }
 
+
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
-    $roles=fw_theme_mod('ca_roles_css');
+    $roles=fw_getme_roles();
     if(is_string($roles))$roles=explode(",",$roles);
     
-    foreach ($roles as $nombre) {
-      if ( check_user_role( strtolower($nombre) )) {
-        $classes[]= strtolower($nombre); //or your name
+    foreach ($roles as $key => $nombre) {
+      if ( check_user_role( strtolower($key) )) {
+        $classes[]= strtolower($key); //or your name
       }
     }
      
@@ -410,9 +411,32 @@ function fw_get_customer_orders(){
     
   return count($customer_orders);
 }
+function has_min_purchase(){
+  if(empty(fw_theme_mod('fw_min_purchase')))return false;
+  $arr=explode("|", fw_theme_mod('fw_min_purchase'));
+   print_r($arr);
+  if(empty($arr)){
+    
+  }
+  //preg_match('#\((.*?)\)#', $value, $match);
+  /*
+  $link_en_parentesis= $match[1];
+  if($link_en_parentesis=='#'){//Si hay link en parentesis
+      return "";
+  }else if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
+      $value=$pre.str_replace("(".$link_en_parentesis.")","",$value);
+  }else if(!empty($link_en_parentesis) && $link){
+      $value=$pre.$link_en_parentesis;
+  }else if(empty($link_en_parentesis) && $link){
+      $value=$pre.$value;
+  }
+*/
+ // if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
+}
 function fw_minimum_order_amount() {
     // Set this variable to specify a minimum order value
-  if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
+    echo "JWJA";
+    if(!has_min_purchase())return;
     
     $minimum = fw_theme_mod('fw_min_purchase');  
     if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  
@@ -1672,11 +1696,11 @@ function fw_allow_users_to_shopmanager() {
 
 
 function fw_editable_roles( $roles ) {
-  $roles=fw_theme_mod('ca_roles_css');
+  $roles=fw_getme_roles();
   if(is_string($roles))$roles=explode(",",$roles);
   
-  foreach ($roles as $nombre) {
-    $roles[] = $nombre;
+  foreach ($roles as $key => $nombre) {
+    $roles[] = $key;
   }
   return $roles;
 }
