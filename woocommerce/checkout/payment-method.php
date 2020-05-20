@@ -83,8 +83,8 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 });
 function seleccionarPago(capsula){
 	
-	jQuery('.extras').hide();
-	jQuery('.extras').toggle();
+	jQuery('li.capsula.payment.extras').hide();
+	jQuery('li.capsula.payment.active .extras').toggle();
 	//jQuery('.capsula.payment:not(.active) .extras').hide(); anda mal
 
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
