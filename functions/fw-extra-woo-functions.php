@@ -1694,10 +1694,12 @@ function fw_role_body_classes( $classes ) {
 }
 
 function fw_editable_roles( $roles ) {
-  $roles=fw_get_all_roles();
-  if(is_string($roles))$roles=explode(",",$roles);
+  $arr=fw_get_all_roles();
+  if(is_string($arr))$arr=explode(",",$arr);
   
-  foreach ($roles as $key => $nombre) {
+  foreach ($arr as $key => $nombre) {
+    if($key=='administrator' || empty($key)  || empty($nombre))continue;
+    
     $roles[] = $key;
   }
   error_log(print_r($roles,true));
