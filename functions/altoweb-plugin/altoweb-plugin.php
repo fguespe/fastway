@@ -110,19 +110,6 @@ if(fw_theme_mod('fw_action_woosettings')){
 }
 
 
-
-$opts=get_option('woocommerce_mercadoenvios-gateway_settings');
-$opts['mp_completed']='off';
-update_option('woocommerce_mercadoenvios-gateway_settings',$opts);
-
-
-$arra=get_option( 'woocommerce_todopago_settings' );
-$arra['estado_inicio']='wc-pending';
-$arra['estado_offline']='wc-pending';
-$arra['estado_aprobacion']='wc-processing';
-update_option( 'woocommerce_todopago_settings', $arra );
-
-
 set_theme_mod('fw_action_woosettings',false);
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');

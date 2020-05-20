@@ -407,21 +407,23 @@ function toggle(quien){
 
 
 function ir_al_checkout(url){
-    location.href=url
-    /*
-    let pasa_filtro_rol='<?=pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles'))?>';
-    if(!pasa_filtro_rol)return
+
+    let pasa_filtro_rol='<?=has_min_purchase()?>';
+    console.log('pasa_filtro_rol',pasa_filtro_rol)
+    if(!pasa_filtro_rol)return location.href=url
     
 
     let min=jQuery('#totals').data("min")
     let total=jQuery('#totals').data("subtotal")
+    
     console.log('v1',min,total,min<=total)
+    
     if(!min)min='<?=fw_theme_mod('fw_min_purchase')?>';
     if(!total)total=Number((jQuery('.cart-subtotal td span').text()).replace(/[^0-9.-]+/g,""));
     console.log('v2',min,total,min<=total)
     if(!min)location.href=url
     else if(min && parseInt(min)<=parseInt(total))location.href=url
-    else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');*/
+    else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
 }
 
 jQuery( ".fw_variations select" ).change(function() {

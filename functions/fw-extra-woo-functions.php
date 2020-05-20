@@ -23,7 +23,6 @@ function fw_loop_price(){
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
     global $product;
-
     echo $product->get_price_html();
 }
 
@@ -375,10 +374,7 @@ function fw_share_redes(){
     </div>';
 }
 
-if(fw_theme_mod('fw_min_purchase')>0 && fw_theme_mod('fw_min_purchase2')>0 ){
-    add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
-    add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
-}
+
 
 
 // VERFW
@@ -411,34 +407,35 @@ function fw_get_customer_orders(){
     
   return count($customer_orders);
 }
+add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
+add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
+
 function has_min_purchase(){
   if(empty(fw_theme_mod('fw_min_purchase')))return false;
   $arr=explode("|", fw_theme_mod('fw_min_purchase'));
-   print_r($arr);
-  if(empty($arr)){
-    
+  if(empty($arr))return;
+  
+
+  foreach($arr as $cant){
+    if(empty($cant))continue;
+    preg_match('#\((.*?)\)#', $cant, $match);
+    $rol=$match[1];
+    fw($rol);
+    if(empty($rol))return true;
+    else return pasa_filtro_rol($rol);
+
   }
-  //preg_match('#\((.*?)\)#', $value, $match);
-  /*
-  $link_en_parentesis= $match[1];
-  if($link_en_parentesis=='#'){//Si hay link en parentesis
-      return "";
-  }else if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
-      $value=$pre.str_replace("(".$link_en_parentesis.")","",$value);
-  }else if(!empty($link_en_parentesis) && $link){
-      $value=$pre.$link_en_parentesis;
-  }else if(empty($link_en_parentesis) && $link){
-      $value=$pre.$value;
-  }
-*/
- // if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
+
+ 
 }
 function fw_minimum_order_amount() {
-   // if(!has_min_purchase())return;
-    // Set this variable to specify a minimum order value
-    if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
-    
-    
+    if(!has_min_purchase()){
+      fw('pasa');
+      return;
+    }else{
+      fw('no entra');
+    }
+
     $minimum = fw_theme_mod('fw_min_purchase');  
     if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  
 

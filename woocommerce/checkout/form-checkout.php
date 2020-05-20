@@ -387,7 +387,6 @@ function fillNextStep(type){
 }
 function sacar1(estado,msg){
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
-    //console.log(estado,msg)
 }
 function nextpaso(){
   paso++
@@ -402,7 +401,8 @@ function nextpaso(){
     jQuery('.paso-shipping').show()
     sacar1(true,1)
 
-    if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){
+    if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){//sin envios
+      jQuery(document.body).trigger("update_checkout"); 
       nextpaso()
     }
 
@@ -922,12 +922,14 @@ function checkpostalCode(){
 }
 
 jQuery(document).on( 'updated_checkout', function(){
+  console.log('entra')
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
 });
+
 function setTodopago(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
   let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
@@ -952,7 +954,6 @@ function setEposnet(){
   ccheckbox.each(function(i, checkbox){
       var str= ccheckbox.eq(i).val();
       var sm= llabels.eq(i).text();
-      console.log(sm)
     sselect.append(jQuery('<option>').val(str).text(sm) );
   });
   let input1=jQuery('<input id="_installmentpaymet" type="hidden" name="_fullpaymet" value="multiplepayment">')

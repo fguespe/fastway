@@ -118,6 +118,9 @@ function check_user_role($role){
 function fw($string){
   error_log("fwlog_ : ".$string);
 }
+function fwa($string){
+    error_log(print_r($string,true));
+}
 function fw_log($string){
     error_log("fwlog_ : ".$string);
 }
