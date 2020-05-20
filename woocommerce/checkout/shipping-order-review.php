@@ -31,9 +31,12 @@ jQuery('li.capsula.shipping input').on('click', function(e) {
 });
 
 function seleccionarEnvio(capsula){
-	jQuery('.capsula.shipping .extras').attr('style','display: none');
-	jQuery('.capsula.shipping.active .extras').attr('style','display: block !important');
+//	jQuery('.capsula.shipping .extras').attr('style','display: none');//
+//	jQuery('.capsula.shipping.active .extras').attr('style','display: block !important');
 	
+	jQuery('.extras').hide();
+	jQuery('.extras').toggle();
+
 	envioSeleccionado=capsula.data('costo')
 	jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
 	let label=capsula.data('label')+' '+capsula.data('costo')
