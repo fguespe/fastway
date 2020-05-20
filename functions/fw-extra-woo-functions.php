@@ -377,20 +377,6 @@ function fw_share_redes(){
 
 
 
-// VERFW
-function pasa_filtro_rol($rolesstring){
-
-  if($rolesstring){
-    $estaenlosroles=false;
-    $roles=explode(',',$rolesstring);
-    foreach($roles as $rol)if(check_user_role($rol))$estaenlosroles=true;
-    if(!$estaenlosroles)return false;
-
-  }
-  return true;
-}
-
-
 function fw_get_customer_orders(){
   $customer      = wp_get_current_user();
   $customer_id   = $customer->ID; // customer ID
@@ -407,8 +393,24 @@ function fw_get_customer_orders(){
     
   return count($customer_orders);
 }
+
+
 add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
 add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
+
+// VERFW
+function pasa_filtro_rol($rolesstring){
+
+  if($rolesstring){
+    $estaenlosroles=false;
+    $roles=explode(',',$rolesstring);
+    foreach($roles as $rol)if(check_user_role($rol))$estaenlosroles=true;
+    if(!$estaenlosroles)return false;
+
+  }
+  return true;
+}
+
 
 function has_min_purchase(){
   if(empty(fw_theme_mod('fw_min_purchase')))return false;
@@ -1687,7 +1689,7 @@ function fw_editable_roles( $roles ) {
   $roles=fw_getme_roles();
   if(is_string($roles))$roles=explode(",",$roles);
   
-  foreach ($roles as $key => $nombre) {
+  foreach ($roles as $nombre) {
     $roles[] = $key;
   }
   return $roles;
