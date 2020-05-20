@@ -918,7 +918,6 @@ function checkpostalCode(){
 }
 
 jQuery(document).on( 'updated_checkout', function(){
-  alert('jah')
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
