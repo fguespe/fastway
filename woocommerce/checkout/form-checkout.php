@@ -291,6 +291,10 @@ function unselect(type){
   sacar1(true,5)
 }
 jQuery(document).ready( function(jQuery) {
+
+
+	jQuery('.extras_shipping').hide();
+	jQuery('.extras_payment').hide();
   //Cupones
   jQuery('.checkout_coupon').show()
   

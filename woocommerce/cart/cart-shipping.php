@@ -64,7 +64,7 @@ $calculator_text          = '';
 						<?=$desc?'<small>'.$desc.'</small>':'';?> 
 						<small>Costo del envío: <?=$costo?></small> 
 						<?php /*if($id!=='mercadoenvios-shipping'){  }*/ ?>
-						<div class="extras" style="display:none;"><?php do_action( 'woocommerce_after_shipping_rate', $method, $index );?></div>
+						<div class="extras_shipping" ><?php do_action( 'woocommerce_after_shipping_rate', $method, $index );?></div>
 					</li>
 				<?php endforeach; ?>
 			</div>
