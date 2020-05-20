@@ -942,7 +942,6 @@ function setEposnet(){
 
   var ccheckbox = jQuery('#installment_itemdiv input[type=radio]');
   var llabels = jQuery('#installment_itemdiv span');
-  console.log(ccheckbox)
   var sselect = jQuery('<select id="_multiplepayment" name="_multiplepayment"></select>'); 
   sselect.attr('name',ccheckbox.attr('name'));
       
