@@ -434,9 +434,10 @@ function has_min_purchase(){
  // if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
 }
 function fw_minimum_order_amount() {
+   // if(!has_min_purchase())return;
     // Set this variable to specify a minimum order value
-    echo "JWJA";
-    if(!has_min_purchase())return;
+    if(!pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles')))return;
+    
     
     $minimum = fw_theme_mod('fw_min_purchase');  
     if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  

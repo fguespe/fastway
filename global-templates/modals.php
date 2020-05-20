@@ -407,7 +407,8 @@ function toggle(quien){
 
 
 function ir_al_checkout(url){
-    
+    location.href=url
+    /*
     let pasa_filtro_rol='<?=pasa_filtro_rol(fw_theme_mod('fw_min_purchase_roles'))?>';
     if(!pasa_filtro_rol)return
     
@@ -420,7 +421,7 @@ function ir_al_checkout(url){
     console.log('v2',min,total,min<=total)
     if(!min)location.href=url
     else if(min && parseInt(min)<=parseInt(total))location.href=url
-    else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
+    else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');*/
 }
 
 jQuery( ".fw_variations select" ).change(function() {
