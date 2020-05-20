@@ -39,7 +39,7 @@ function seleccionarEnvio(capsula){
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 
 
-	jQuery('li.capsula.shipping.extras').hide();
+	//jQuery('li.capsula.shipping.extras').hide();
 	jQuery('li.capsula.shipping.active .extras').show();
 
 	
