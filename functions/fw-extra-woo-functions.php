@@ -407,8 +407,8 @@ function fw_get_customer_orders(){
     
   return count($customer_orders);
 }
-//add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
-//add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
+add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
+add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
 
 function has_min_purchase(){
   if(empty(fw_theme_mod('fw_min_purchase')))return false;
@@ -423,12 +423,8 @@ function has_min_purchase(){
   }
 }
 function fw_minimum_order_amount() {
-    if(!has_min_purchase()){
-      fw('pasa');
-      return;
-    }else{
-      fw('no entra');
-    }
+    if(!has_min_purchase())return;
+    
 
     $minimum = fw_theme_mod('fw_min_purchase');  
     if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  

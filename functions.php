@@ -115,13 +115,13 @@ function check_user_role($role){
 }
 
 function fw($string){
-  error_log("fwlog_ : ".$string);
+  //error_log("fwlog_ : ".$string);
 }
 function fwa($string){
-    error_log(print_r($string,true));
+    //error_log(print_r($string,true));
 }
 function fw_log($string){
-    error_log("fwlog_ : ".$string);
+    //error_log("fwlog_ : ".$string);
 }
 
 if(fw_theme_mod('fw_blog_per_page')!=get_option('posts_per_page'))update_option('posts_per_page',fw_theme_mod('fw_blog_per_page'));
