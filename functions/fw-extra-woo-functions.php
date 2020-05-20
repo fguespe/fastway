@@ -1690,7 +1690,7 @@ function fw_editable_roles( $roles ) {
   if(is_string($roles))$roles=explode(",",$roles);
   
   foreach ($roles as $nombre) {
-    $roles[] = $key;
+    $roles[] = $nombre;
   }
   return $roles;
 }
