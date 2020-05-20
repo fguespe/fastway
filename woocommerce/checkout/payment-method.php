@@ -29,7 +29,7 @@ $value=$gateway->id;
 	<small><?=$gateway->description?></small>
 
 	<?php if ( $gateway->has_fields() ) : ?>
-		<div class="extras_payment" >
+		<div class="extras extras_payment" >
 			<?php $gateway->payment_fields(); ?>
 		</div>
 	<?php endif; ?>
