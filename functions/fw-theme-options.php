@@ -3317,7 +3317,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_product_discount_cant',
 	'label'    => __( '%', 'fastway' ),
-	'description' => 'Porcentage de descuento a toda la tienda, se aplica a nivel producto',
+	'description' => 'Porcentage de descuento a toda la tienda, se aplica a nivel producto, no aplica a los que ya tienen descuento',
 	'section'     => 'section_woo_discount',
 ) );
 

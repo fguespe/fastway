@@ -57,7 +57,7 @@ function fw_cuotas($atts = []){
   $atts = shortcode_atts(array('class' => '' ,'cant' => 0 ), $atts );
   global $product;
   $cuotas=floatval($atts['cant']);
-  $precio=floatval($product->get_price());
+  $precio=floatval($product->get_sale_price());
   $precio=round($precio/$cuotas);
   if($precio>0)echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }

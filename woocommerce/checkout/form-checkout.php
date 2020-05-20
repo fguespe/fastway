@@ -916,7 +916,9 @@ function checkpostalCode(){
     jQuery('#billing_postcode').val(msg)
   }
 }
+
 jQuery(document).on( 'updated_checkout', function(){
+  alert('jah')
   updateEnvioGratisME();
   setTodopago()
   setEposnet()
@@ -938,6 +940,23 @@ function setEposnet(){
   let desc='<?=fw_theme_mod('fw_checkout_eposnet_desc')?>'
   if(label)litp.find('.title').text(label)
   if(desc)litp.find('small').text(desc)
+
+  var ccheckbox = jQuery('#installment_itemdiv input[type=radio]');
+  var llabels = jQuery('#installment_itemdiv span');
+  console.log(ccheckbox)
+  var sselect = jQuery('<select id="_multiplepayment" name="_multiplepayment"></select>'); 
+  sselect.attr('name',ccheckbox.attr('name'));
+      
+  ccheckbox.each(function(i, checkbox){
+      var str= ccheckbox.eq(i).val();
+      var sm= llabels.eq(i).text();
+      console.log(sm)
+    sselect.append(jQuery('<option>').val(str).text(sm) );
+  });
+  let input1=jQuery('<input id="_installmentpaymet" type="hidden" name="_fullpaymet" value="multiplepayment">')
+  jQuery('#_installmentpaymet').prop("checked", true);
+  jQuery('.payment_method_spyr_firstdata_gateway .extras').replaceWith(sselect)
+
 }
 function updateflete(){
 
