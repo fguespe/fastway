@@ -34,7 +34,6 @@ function seleccionarEnvio(capsula){
 //	jQuery('.capsula.shipping .extras').attr('style','display: none');//
 //	jQuery('.capsula.shipping.active .extras').attr('style','display: block !important');
 	
-	jQuery('li.capsula.shipping.extras').hide();
 	jQuery('li.capsula.shipping.active .extras').toggle();
 
 	envioSeleccionado=capsula.data('costo')
