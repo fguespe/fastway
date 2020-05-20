@@ -83,7 +83,6 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 });
 function seleccionarPago(capsula){
 	console.log(capsula.find('.extras').attr('class'))
-	//capsula.find('.extras').toggle();
 	capsula.find('.extras').show();
 
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
