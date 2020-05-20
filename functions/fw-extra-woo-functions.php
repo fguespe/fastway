@@ -407,26 +407,20 @@ function fw_get_customer_orders(){
     
   return count($customer_orders);
 }
-add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
-add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
+//add_action( 'woocommerce_checkout_process', 'fw_minimum_order_amount' );
+//add_action( 'woocommerce_before_cart' , 'fw_minimum_order_amount' );         
 
 function has_min_purchase(){
   if(empty(fw_theme_mod('fw_min_purchase')))return false;
   $arr=explode("|", fw_theme_mod('fw_min_purchase'));
   if(empty($arr))return;
-  
-
   foreach($arr as $cant){
     if(empty($cant))continue;
     preg_match('#\((.*?)\)#', $cant, $match);
     $rol=$match[1];
-    fw($rol);
     if(empty($rol))return true;
     else return pasa_filtro_rol($rol);
-
   }
-
- 
 }
 function fw_minimum_order_amount() {
     if(!has_min_purchase()){

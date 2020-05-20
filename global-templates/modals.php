@@ -407,7 +407,6 @@ function toggle(quien){
 
 
 function ir_al_checkout(url){
-
     let pasa_filtro_rol='<?=has_min_purchase()?>';
     console.log('pasa_filtro_rol',pasa_filtro_rol)
     if(!pasa_filtro_rol)return location.href=url

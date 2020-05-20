@@ -25,7 +25,6 @@ remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
 function remove_extra_image_sizes() {
   foreach ( get_intermediate_image_sizes() as $size ) {
-      fw_log($size);
       if ( !in_array( $size, array( 'thumbnail', 'medium', 'large' ) ) ) {
           remove_image_size( $size );
       }
