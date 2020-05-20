@@ -40,7 +40,7 @@ function seleccionarEnvio(capsula){
 
 
 	jQuery('li.capsula.shipping.extras').hide();
-	jQuery('li.capsula.shipping.active .extras').toggle();
+	jQuery('li.capsula.shipping.active .extras').show();
 
 	
 	let label=capsula.data('label')+' '+capsula.data('costo')

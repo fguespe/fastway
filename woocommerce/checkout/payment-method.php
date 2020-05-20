@@ -83,11 +83,13 @@ jQuery('li.capsula.payment input').on('click', function(e) {
 });
 function seleccionarPago(capsula){
 	
-	jQuery('li.capsula.payment.extras').hide();
-	jQuery('li.capsula.payment.active .extras').toggle();
-	//jQuery('.capsula.payment:not(.active) .extras').hide(); anda mal
 
 	jQuery('li.capsula.payment').removeClass("active");capsula.addClass('active');
+
+
+	jQuery('li.capsula.payment.extras').hide();
+	jQuery('li.capsula.payment.active .extras').show();
+
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
 
