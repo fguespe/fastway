@@ -34,10 +34,15 @@ function seleccionarEnvio(capsula){
 //	jQuery('.capsula.shipping .extras').attr('style','display: none');//
 //	jQuery('.capsula.shipping.active .extras').attr('style','display: block !important');
 	
-	jQuery('li.capsula.shipping.active .extras').toggle();
 
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
+
+
+	jQuery('li.capsula.shipping.extras').hide();
+	jQuery('li.capsula.shipping.active .extras').toggle();
+
+	
 	let label=capsula.data('label')+' '+capsula.data('costo')
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
 	jQuery('.paso-shipping .box-step .subtitle').text(label)
