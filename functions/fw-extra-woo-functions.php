@@ -1670,26 +1670,37 @@ function fw_allow_users_to_shopmanager() {
 //add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 
 
+function fw_get_all_roles() {
+
+  global $wp_roles;
+  
+  if ( ! isset( $wp_roles ) )
+      $wp_roles = new WP_Roles();
+  
+  return $wp_roles->get_names();
+  }
+
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
-    $roles=fw_theme_mod('ca_roles_css');
+    $roles=fw_get_all_roles();
     if(is_string($roles))$roles=explode(",",$roles);
     
-    foreach ($roles as $nombre) {
-      if ( check_user_role( strtolower($nombre) )) {
-        $classes[]= strtolower($nombre); //or your name
+    foreach ($roles as $key=>$nombre) {
+      if ( check_user_role( strtolower($key) )) {
+        $classes[]= strtolower($key); //or your name
       }
     }
     return $classes;
 }
 
 function fw_editable_roles( $roles ) {
-  $roles=fw_theme_mod('ca_roles_css');
+  $roles=fw_get_all_roles();
   if(is_string($roles))$roles=explode(",",$roles);
   
-  foreach ($roles as $nombre) {
-    $roles[] = $nombre;
+  foreach ($roles as $key => $nombre) {
+    $roles[] = $key;
   }
+  error_log(print_r($roles,true));
   return $roles;
 }
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
