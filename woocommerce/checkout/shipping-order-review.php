@@ -31,7 +31,8 @@ jQuery('li.capsula.shipping input').on('click', function(e) {
 });
 
 function seleccionarEnvio(capsula){
-	jQuery('.capsula.shipping.active').show();
+	jQuery('.capsula.shipping .extras').hide();
+	jQuery('.capsula.shipping.active .extras').show();
 	
 	envioSeleccionado=capsula.data('costo')
 	jQuery('.capsula.shipping').removeClass("active");capsula.addClass('active');
