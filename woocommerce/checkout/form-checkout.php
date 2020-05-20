@@ -954,7 +954,7 @@ function setEposnet(){
   });
   let input1=jQuery('<input id="_installmentpaymet" type="hidden" name="_fullpaymet" value="multiplepayment">')
   jQuery('#_installmentpaymet').prop("checked", true);
-  jQuery('.payment_method_spyr_firstdata_gateway .extras').replaceWith(sselect)
+  jQuery('.payment_method_spyr_firstdata_gateway .extras').html(sselect)
 
 }
 function updateflete(){
