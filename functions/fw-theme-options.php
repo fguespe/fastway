@@ -1883,7 +1883,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_roles',
 	'default'     => '',
 ) );
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
 	'settings'    => 'ca_roles_css',
@@ -1893,7 +1893,7 @@ Kirki::add_field( 'theme_config_id', array(
     'choices'     => fw_getme_roles(),
 	'default'     => ''
 ) );
-
+*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
