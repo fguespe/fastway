@@ -1687,6 +1687,7 @@ function fw_allow_users_to_shopmanager() {
 
 function fw_editable_roles( $roles ) {
   $roles=fw_getme_roles();
+  error_log(print_r($roles,true));
   if(is_string($roles))$roles=explode(",",$roles);
   
   foreach ($roles as $nombre) {
@@ -1694,7 +1695,7 @@ function fw_editable_roles( $roles ) {
   }
   return $roles;
 }
-add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
+//add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
 
 
 
