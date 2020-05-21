@@ -14,7 +14,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <meta name="description" content="<?=fw_theme_mod('seo-desc');?>">
     <meta name="keywords" content="<?=fw_theme_mod('seo-keywords');?>">
     <meta property="og:title" conten="<?=bloginfo( 'name' ); ?>">
-    <meta property="og:description" content="<?=bloginfo( 'description' ); ?>">
+    <meta property="og:description" content="<?=fw_theme_mod('seo-desc');?>">
     <meta property="og:image" content="<?=fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">

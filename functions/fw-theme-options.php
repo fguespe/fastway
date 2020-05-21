@@ -166,6 +166,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
 	if(is_super_admin()){
 		Kirki::add_panel( 'panel_fastwaywoo_beta', array(
 			'title'       => __( 'Multitienda (BETA)', 'fastway' ),
+			'panel'          => 'panel_fastwaywoo',
 		) );
 	}
 }
@@ -1409,6 +1410,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase',
 	'label'    => __( 'Min Purchase', 'fastway' ),
+	'description' => strtolower(implode(fw_get_all_roles(),", ")),
 	'section'     => 'section_woo_beta',
 ) );
 Kirki::add_field( 'theme_config_id', array(

@@ -152,7 +152,19 @@ function fastway_get_stblock( $cats = array('all') ){
 
 
 
+function fw_get_all_roles() {
 
+  global $wp_roles;
+  
+  if ( ! isset( $wp_roles ) )
+      $wp_roles = new WP_Roles();
+  
+  return $wp_roles->get_names();
+}
+function fw_get_all_roles_string(){
+  $roles=fw_get_all_roles();
+  return strtolower(implode(fw_get_all_roles(),", "));
+}
 function fw_getme_roles(){
     if ( ! function_exists( 'get_editable_roles' ) ) {
         require_once ABSPATH . 'wp-admin/includes/user.php';

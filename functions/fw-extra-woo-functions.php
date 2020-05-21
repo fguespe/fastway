@@ -1670,15 +1670,6 @@ function fw_allow_users_to_shopmanager() {
 //add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 
 
-function fw_get_all_roles() {
-
-  global $wp_roles;
-  
-  if ( ! isset( $wp_roles ) )
-      $wp_roles = new WP_Roles();
-  
-  return $wp_roles->get_names();
-  }
 
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
@@ -1702,7 +1693,6 @@ function fw_editable_roles( $roles ) {
     
     $roles[] = $key;
   }
-  error_log(print_r($roles,true));
   return $roles;
 }
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
