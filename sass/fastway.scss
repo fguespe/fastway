@@ -5437,5 +5437,9 @@ dt.variation-fw_extra{
   display:none !important;
 }
 .variation-fw_extra p{
-  color:red !important;
-}
+  color:red ;
+  font-weight: 300;
+  font-size:12px ;
+  text-decoration: underline ;
+  font-style: italic ;
+  }

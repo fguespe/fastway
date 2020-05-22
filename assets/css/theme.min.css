@@ -5393,7 +5393,11 @@ dt.variation-fw_extra {
 }
 
 .variation-fw_extra p {
-  color: red !important;
+  color: red;
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: underline;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=theme.min.css.map */
