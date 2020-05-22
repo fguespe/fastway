@@ -5099,8 +5099,8 @@ body .wpb_content_element {
   margin-top: 10px !important;
   display: block;
 }
-.woocommerce-checkout form label:not(.checkbox),
-.woocommerce-account form label:not(.checkbox) {
+.woocommerce-checkout .woocommerce-billing-fields label:not(.checkbox),
+.woocommerce-account .woocommerce-billing-fields label:not(.checkbox) {
   display: none !important;
 }
 .woocommerce-checkout form label, .woocommerce-checkout form .woocommerce-input-wrapper,
@@ -5398,6 +5398,12 @@ dt.variation-fw_extra {
   font-size: 12px;
   text-decoration: underline;
   font-style: italic;
+}
+
+/*POSTNET*/
+.woocommerce-SavedPaymentMethods li label {
+  color: black !important;
+  display: inline !important;
 }
 
 /*# sourceMappingURL=theme.min.css.map */

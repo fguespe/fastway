@@ -99,7 +99,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
         );
         // TODO: Don't hard code activation link.
         $subject = "Activar cuenta";
-        wp_mail($user_email, $subject, $message, $message_headers);
+        wp_mail($user_email, $subject, $message, $messabge_headers);
 
         return false;
 }
@@ -137,24 +137,20 @@ if(fw_theme_mod("fw_action_resetmails") || 1==1){
 
 
 function change_stock_email_recipient( $recipient, $product ) {
-    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 function orden_nueva( $recipient, $order ) {
-    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_cancelada( $recipient, $order ) {
-    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }
 
 function email_orden_fallida( $recipient, $order ) {
-    if(is_super_admin())return null;
     $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
     return $recipients;
 }

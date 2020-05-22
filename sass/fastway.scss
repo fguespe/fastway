@@ -5157,7 +5157,7 @@ body .wpb_content_element {
       margin-top:10px !important;
       display:block
     }
-    form label:not(.checkbox) {
+    .woocommerce-billing-fields label:not(.checkbox) {
       display: none !important;
     }
     form label,form .woocommerce-input-wrapper{
@@ -5443,3 +5443,8 @@ dt.variation-fw_extra{
   text-decoration: underline ;
   font-style: italic ;
   }
+  /*POSTNET*/
+  .woocommerce-SavedPaymentMethods li label{
+    color:black !important;
+    display: inline !important;
+    }
