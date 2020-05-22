@@ -533,6 +533,7 @@ function populatecart(){
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']
             let quantity=value['quantity']
+            let extra=value['extra']
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
@@ -547,7 +548,8 @@ function populatecart(){
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
             jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+precio/quantity+'</span><br>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio+' </span>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio+' </span><br>'
+            jqe+='<span class="variation-fw_extra"><p>'+extra+'</p></span>'
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'

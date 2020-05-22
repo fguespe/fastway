@@ -5387,4 +5387,13 @@ a[x-apple-data-detectors] {
   line-height: inherit !important;
 }
 
+/*FW EXTRA*/
+dt.variation-fw_extra {
+  display: none !important;
+}
+
+.variation-fw_extra p {
+  color: red !important;
+}
+
 /*# sourceMappingURL=theme.min.css.map */

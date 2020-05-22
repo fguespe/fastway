@@ -1737,4 +1737,3 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     }
     return $fields;
 }
-

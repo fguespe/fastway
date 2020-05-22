@@ -64,6 +64,18 @@ function fw_get_cart_totals(){
     echo json_encode($totals);
     exit();
 }
+
+function fw_get_item_data( $item_data, $cart_item_data ) {
+  if(!function_exists('fw_extra_line_info'))return $item_data;
+  $item_data[] = array(
+    'key' => 'fw_extra',
+    'value' => fw_extra_line_info($cart_item_data['product_id'])
+  );
+  return $item_data;
+ }
+ add_filter( 'woocommerce_get_item_data', 'fw_get_item_data', 10, 2 );
+ 
+ 
 add_action('wp_ajax_nopriv_fw_get_minicart', 'fw_get_minicart');
 add_action('wp_ajax_fw_get_minicart', 'fw_get_minicart');
 function fw_get_minicart(){  
@@ -74,18 +86,18 @@ function fw_get_minicart(){
    
 
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-
         $product=wc_get_product($cart_item['product_id']);
         if($cart_item['variation_id'])$product=wc_get_product($cart_item['variation_id']);
-    
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $cart_item['product_id'] ), 'featured-thumb' ); 
         $image_url = $image[0];
         $nombre = $product->get_name();
         $cant=$cart_item['quantity'];
+        $extra=function_exists('fw_extra_line_info')?fw_extra_line_info($cart_item['product_id']):'';
         $precio= $cart_item['line_subtotal'];
-        $arr = array('nombre' => $nombre, 'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cart_item['quantity'], 'url' => $image_url, 'cart_item_key' => $cart_item_key);
+        $arr = array('nombre' => $nombre,'extra' => $extra,'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cant, 'url' => $image_url, 'cart_item_key' => $cart_item_key);
         array_push($carta,$arr);
     }
+
     $totals=WC()->cart->get_totals();
     
     $totales=array('cart' => $carta, 'totals'=> $totals,'items'=>WC()->cart->cart_contents_count,'min'=>$fw_min_purchase);
