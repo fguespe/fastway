@@ -549,7 +549,7 @@ function populatecart(){
             jqe+='</div><div class="col-4 precio-cart text-right">'
             jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+precio/quantity+'</span><br>'
             jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio+' </span><br>'
-            jqe+='<span class="variation-fw_extra"><p>'+extra+'</p></span>'
+            if(extra)jqe+='<span class="variation-fw_extra"><p>'+extra+'</p></span>'
             jqe+='</div></div>'
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
