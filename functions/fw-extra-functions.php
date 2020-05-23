@@ -569,13 +569,13 @@ add_shortcode('fw_m_header', 'fw_header_builder_mobile');
 
 function fw_header_html(){
     
-    if(is_plugin_active('woocommerce/woocommerce.php') && fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+    if(is_plugin_active('woocommerce/woocommerce.php') && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_header][fw_logo][fw_compra_protegida][/fw_header]')));
     }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_code'))));
   }
   function fw_header_html_mobile(){
-    if(is_plugin_active('woocommerce/woocommerce.php') &&  fw_theme_mod("checkout-minimal") && is_checkout()/* && !is_order_received_page()*/){
+    if(is_plugin_active('woocommerce/woocommerce.php') && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_m_header][fw_logo][/fw_m_header]')));
     }
     return do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('header_mobile_code'))));

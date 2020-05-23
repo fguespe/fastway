@@ -102,15 +102,16 @@ function fw_vc_get_posts($type) {
     return $result;
 }
 function isLocalhost(){
-  return $_SERVER['HTTP_HOST']==='fwtest.fastway';
+  error_log($_SERVER['HTTP_HOST']);
+  return $_SERVER['HTTP_HOST']==='fastway';
 }
 function check_user_role($role){
     if($role=='administrator' && is_super_admin())return true;
     if($role=='guest' && empty((array) $user->roles ))return true;
     $user = wp_get_current_user();
-	if ( in_array( $role, (array) $user->roles ) ) {
-		return true;
-	}
+    if ( in_array( $role, (array) $user->roles ) ) {
+      return true;
+    }
 	return false;
 }
 

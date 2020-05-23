@@ -43,10 +43,10 @@ function wpb_sender_name( $original_email_from ) {
 }
 
 
-//add_filter('woocommerce_email_recipient_customer_processing_order','change_stock_email_recipient',10,2);
-add_filter('woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
-add_filter('woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
-add_filter('woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
+
+add_filter( 'woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
+add_filter( 'woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
+add_filter( 'woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
 add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
 add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
@@ -54,7 +54,6 @@ add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida',
 //Emails
 
 add_filter( 'wpmu_welcome_user_notification', 'bbg_wpmu_welcome_user_notification', 10, 3 );
-add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
 function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
  
     global $current_site;
@@ -80,6 +79,7 @@ function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
 
     return false; // make sure wpmu_welcome_user_notification() doesn't keep running
 }
+add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
 function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') {
     
         $sitename = get_bloginfo( 'name' );
@@ -99,7 +99,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
         );
         // TODO: Don't hard code activation link.
         $subject = "Activar cuenta";
-        wp_mail($user_email, $subject, $message, $messabge_headers);
+        wp_mail($user_email, $subject, $message, $message_headers);
 
         return false;
 }

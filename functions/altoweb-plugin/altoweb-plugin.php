@@ -51,6 +51,8 @@ if(fw_theme_mod('fw_action_init_mayorista')){
    set_theme_mod('fw_action_init_mayorista',false);
 }
 
+update_option('woocommerce_enable_guest_checkout','no');
+
 if(fw_theme_mod('fw_action_woosettings')){
    update_option('woocommerce_price_num_decimals','0');
    update_option('woocommerce_currency','ARS');
@@ -62,7 +64,7 @@ if(fw_theme_mod('fw_action_woosettings')){
    update_option('shop_single_image_size','a:3:{s:5:"width";s:3:"500";s:6:"height";s:3:"500";s:4:"crop";i:1;}');
    update_option('woocommerce_enable_myaccount_registration','yes');
    update_option('woocommerce_enable_signup_and_login_from_checkout','yes');
-   update_option('woocommerce_enable_guest_checkout','yes');
+   update_option('woocommerce_enable_guest_checkout','no');
    update_option('woocommerce_enable_checkout_login_reminder','yes');
    update_option('woocommerce_hide_out_of_stock_items','yes');
    update_option('woocommerce_registration_generate_username','yes');

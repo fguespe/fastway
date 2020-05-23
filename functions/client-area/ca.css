@@ -383,7 +383,10 @@ display:none;
 #linked_product_data div:nth-child(1) p:nth-child(1){
 	display:none;
 }
-
+/*IG */
+.sbi_notice{
+	display: none !important;;
+}
 
 /*DESCRIPCION (TEXTAREA) QUE NO SE USA*/
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{

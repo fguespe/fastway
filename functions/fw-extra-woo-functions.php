@@ -1728,7 +1728,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if($fields['billing']['billing_city'])$fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
     if($fields['billing']['billing_postcode'])$fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
  
-    unset($fields['billing']['billing_email']);
+
+    //unset($fields['billing']['billing_email']);
     //unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_address_2']);
     if(!fw_theme_mod('fw_sell_to_business')){

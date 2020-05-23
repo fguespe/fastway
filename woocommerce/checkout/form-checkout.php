@@ -33,6 +33,12 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
         <div class="uno" style="display: <?=is_user_logged_in()?'none':'block'?>">
             <h1><span class="icon-paso">1</span><?=fw_theme_mod('fw_label_checkout_1')?></h1>
             <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
+            <?php
+              $fields = $checkout->get_checkout_fields( 'account' );
+              foreach ( $fields as $key => $field ) {
+                woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+              }
+              ?>
             <div class="login-btn">
             <?=fw_theme_mod('fw_label_checkout_already')?><a class="login" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_init')?></a>	
             </div>
@@ -223,15 +229,10 @@ function fw_login(){
               security: jQuery('#login #security').val() 
           },
           success: function(data){
+            console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               window.location.reload()
-              /*jQuery('#billing_email').val(data.email)
-              jQuery('.paso-cuenta .box-step .subtitle').text(data.email)
-              jQuery('.paso-cuenta .box-step .editar').hide()
-              jQuery('.paso-cuenta .box-step .cerrar').show()
-              nextpaso()*/
-              
             }else{
               jQuery('.submit_button.boton').show()
               jQuery('.submit_button.loading').hide()
@@ -247,6 +248,7 @@ function verificarEmail(){
     jQuery('#billing_email').addClass('enrojo')
   }else{
     jQuery('.paso-cuenta .box-step .subtitle').text(email)
+    jQuery('#billing_form #billing_email').val(email);
     jQuery('#billing_email').removeClass('enrojo')
   }
   sacar1(disable,8)
@@ -306,6 +308,7 @@ jQuery(document).ready( function(jQuery) {
 
   jQuery('#billing_email').on('input', function(e){
     verificarEmail();
+
   })
 
   jQuery('#billing_form input').on('input', function(e){
@@ -896,6 +899,25 @@ padding-top:20px !important;
 .order-total.recurring-total{
   display:none;
 }
+#billing_form #billing_email,
+#billing_form #account_password{
+display:none;
+}
+#account_password_field >label{
+display:none;
+}
+#account_password_field input{
+margin-top:20px
+}
+.woocommerce-password-hint{
+display:none !important;
+}
+.woocommerce-password-strength{
+font-size:10px !important;
+color: orange;
+display:none !important;
+}
+
 /*
 .firstdata-credit-card input{
   display: inline !important;
