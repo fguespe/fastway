@@ -48,7 +48,6 @@ function seleccionarEnvio(capsula){
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
 	jQuery('.paso-shipping .box-step .subtitle').text(label)
 
-	console.log(jQuery("input[name='shipping_method[0]']").is(':checked'),paso)
 	if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
 		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);

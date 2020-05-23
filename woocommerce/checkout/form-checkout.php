@@ -229,7 +229,6 @@ function fw_login(){
               security: jQuery('#login #security').val() 
           },
           success: function(data){
-            console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               window.location.reload()
@@ -303,6 +302,7 @@ jQuery(document).ready( function(jQuery) {
   //Resets
   unselect('shipping_method[0]')
   unselect('payment_method')
+
   verificarEmail();
   verificarFields(true);
 
@@ -409,12 +409,22 @@ function nextpaso(){
       nextpaso()
     }
 
-
   }else if(paso==4){
+    console.log('pasa',jQuery('#pickup-location-field-for-0').length)
+    if(jQuery('select[name="_shipping_method_pickup_location_id[0]"').length>0){
+      let sucnumber=jQuery('select[name="_shipping_method_pickup_location_id[0]"').val()
+      if(!sucnumber){
+        alert('Falta seleccionar sucursal')
+        paso--
+        return
+      }
+    }
+
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
     sacar1(true,2)
 
+    
   }else if(paso==5){
     fillNextStep('pagos')
     jQuery('.btn-checkout.finalizar').prop('disabled', false);
@@ -944,7 +954,6 @@ function checkpostalCode(){
 }
 
 jQuery(document).on( 'updated_checkout', function(){
-  console.log('entra')
   updateEnvioGratisME();
   setTodopago()
   setEposnet()

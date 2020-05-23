@@ -1597,7 +1597,7 @@ var ProductSwiper = new Swiper(".swiper-related", {
 	}
 }
 
-// hook into the fragments in AJAX and add our new table to the group
+/*
 add_filter('woocommerce_update_order_review_fragments', 'websites_depot_order_fragments_split_shipping', 10, 1);
 
 function websites_depot_order_fragments_split_shipping($order_fragments) {
@@ -1615,7 +1615,7 @@ function websites_depot_order_fragments_split_shipping($order_fragments) {
 // We'll get the template that just has the shipping options that we need for the new table
 function websites_depot_woocommerce_order_review_shipping_split( $deprecated = false ) {
 	wc_get_template( 'checkout/shipping-order-review.php', array( 'checkout' => WC()->checkout() ) );
-}
+}*/
 
 function my_text_strings( $translated_text, $text, $domain ) {
   switch ( $translated_text ) {

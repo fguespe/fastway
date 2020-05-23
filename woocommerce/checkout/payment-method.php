@@ -23,7 +23,7 @@ $value=$gateway->id;
 <script>
 
 jQuery('li.capsula.payment').on('click', function(e) {
-	console.log('c11')
+	//console.log('c11')
 	if (e.target !== this) return;
 	let capsula=jQuery(this)
 	capsula.find('input:radio').click()
@@ -31,7 +31,7 @@ jQuery('li.capsula.payment').on('click', function(e) {
 });
 
 jQuery('li.capsula.payment small').on('click', function(e) {
-	console.log('c12')
+	//console.log('c12')
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent()
 	capsula.find('input:radio').click()
@@ -39,7 +39,7 @@ jQuery('li.capsula.payment small').on('click', function(e) {
 });
 
 jQuery('li.capsula.payment span').on('click', function(e) {
-	console.log('c13')
+	//console.log('c13')
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent()
 	capsula.find('input:radio').click()
@@ -47,21 +47,21 @@ jQuery('li.capsula.payment span').on('click', function(e) {
 });
 
 jQuery('li.capsula.payment .mp_pago').on('click', function(e) {
-	console.log('c14')
+	//console.log('c14')
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent().parent()
 	capsula.find('input:radio').click()
 	seleccionarPago(capsula)
 });
 jQuery('li.capsula.payment img').on('click', function(e) {
-	console.log('c15')
+	//console.log('c15')
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent().parent().parent()
 	capsula.find('input:radio').click()
 	seleccionarPago(capsula)
 });
 jQuery('li.capsula.payment input').on('click', function(e) {
-	console.log('c16')
+	//console.log('c16')
 	if (e.target !== this) return;
 	let capsula=jQuery(this).parent()
 	seleccionarPago(capsula)
