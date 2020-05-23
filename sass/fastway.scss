@@ -5444,6 +5444,9 @@ dt.variation-fw_extra{
   font-style: italic ;
   }
   /*POSTNET*/
+  .woocommerce-SavedPaymentMethods{
+    display: none;
+  }
   .woocommerce-SavedPaymentMethods li label{
     color:black !important;
     display: inline !important;
