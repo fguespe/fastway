@@ -4276,7 +4276,8 @@ body .wpb_content_element {
 .woocommerce-account {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
-  /*espostnet*/
+  /*epostnet*/
+  /*POSTNET*/
   /*
   #payment li > input[type="radio"]{
     display:none !important;
@@ -5152,6 +5153,15 @@ body .wpb_content_element {
   display: inline !important;
   margin-left: 5px;
 }
+.woocommerce-checkout #wc-offline_cc-cc-form label,
+.woocommerce-account #wc-offline_cc-cc-form label {
+  /*OFFLINE CRDCARD*/
+  display: none;
+}
+.woocommerce-checkout .woocommerce-SavedPaymentMethods,
+.woocommerce-account .woocommerce-SavedPaymentMethods {
+  display: none;
+}
 .woocommerce-checkout .wc_payment_methods,
 .woocommerce-account .wc_payment_methods {
   background: transparent;
@@ -5398,11 +5408,6 @@ dt.variation-fw_extra {
   font-size: 12px;
   text-decoration: underline;
   font-style: italic;
-}
-
-/*POSTNET*/
-.woocommerce-SavedPaymentMethods {
-  display: none;
 }
 
 .woocommerce-SavedPaymentMethods li label {

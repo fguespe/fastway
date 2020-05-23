@@ -5182,7 +5182,7 @@ body .wpb_content_element {
 
 
 
-    /*espostnet*/
+    /*epostnet*/
     .payment_method_spyr_firstdata_gateway .extras p{
       display:none;
     }
@@ -5202,6 +5202,14 @@ body .wpb_content_element {
       display:inline!important;
       margin-left:5px;
     }
+    /*POSTNET*/
+    #wc-offline_cc-cc-form label{/*OFFLINE CRDCARD*/
+      display:none 
+    }
+    .woocommerce-SavedPaymentMethods{
+        display: none;
+    }
+    
     /*
     #payment li > input[type="radio"]{
       display:none !important;
@@ -5443,10 +5451,7 @@ dt.variation-fw_extra{
   text-decoration: underline ;
   font-style: italic ;
   }
-  /*POSTNET*/
-.woocommerce-SavedPaymentMethods{
-    display: none;
-}
+  
 .woocommerce-SavedPaymentMethods li label{
   color:black !important;
   display: inline !important;
