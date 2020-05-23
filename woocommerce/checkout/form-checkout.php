@@ -418,17 +418,15 @@ function nextpaso(){
         return
       }
     }
-
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
     sacar1(true,2)
-
     
   }else if(paso==5){
     if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
-      let pepe=jQuery('form.ElementsApp').attr('class')
-      console.log(pepe)
-      
+      let p=jQuery('iframe[name="__privateStripeFrame6"]').contents().attr('class')
+      console.log(p)
+
       let pusolataj=jQuery('form.ElementsApp').hasClass('is-complete')
       if(!pusolataj){
         alert('Falta ingresar datos de tarjeta')
