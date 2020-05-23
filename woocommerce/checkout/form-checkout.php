@@ -426,7 +426,10 @@ function nextpaso(){
     
   }else if(paso==5){
     if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
-      let pusolataj=jQuery('.ElementsApp').hasClass('is-complete')
+      let pepe=jQuery('form.ElementsApp').attr('class')
+      console.log(pepe)
+      
+      let pusolataj=jQuery('form.ElementsApp').hasClass('is-complete')
       if(!pusolataj){
         alert('Falta ingresar datos de tarjeta')
         paso--
