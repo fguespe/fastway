@@ -412,10 +412,11 @@ function nextpaso(){
   }else if(paso==4){
     if(jQuery('select[name="_shipping_method_pickup_location_id[0]"').length>0){//si esta activo local pickups
       let sucnumber=jQuery('select[name="_shipping_method_pickup_location_id[0]"').val()
+      console.log(sucnumber)
       if(!sucnumber){
-        alert('Falta seleccionar sucursal')
+        /*alert('Falta seleccionar sucursal')
         paso--
-        return
+        return*/
       }
     }
 
