@@ -425,6 +425,15 @@ function nextpaso(){
 
     
   }else if(paso==5){
+    if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
+      let pusolataj=jQuery('.ElementsApp').hasClass('is-complete')
+      if(!pusolataj){
+        alert('Falta ingresar datos de tarjeta')
+        paso--
+        return
+      }
+    }
+
     fillNextStep('pagos')
     jQuery('.btn-checkout.finalizar').prop('disabled', false);
     jQuery('.btn-checkout.finalizar').show()
