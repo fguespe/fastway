@@ -896,14 +896,17 @@ background:white !important;
 border:0px !important;
 }
 .woocommerce-notices-wrapper ul a{
-color:var(--main) !important;
-border-bottom:1px solid ;
+  color:var(--main) !important;
+  border-bottom:1px solid ;
 }
 #stripe-payment-data p{
-display:none !important;
+  display:none !important;
 }
 #stripe-payment-data {
-padding-top:20px !important;
+  padding-top:20px !important;
+}
+#stripe-payment-data #wc-stripe-cc-form label{
+display:none
 }
 .order-total.recurring-total{
   display:none;
