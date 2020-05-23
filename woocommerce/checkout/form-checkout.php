@@ -908,8 +908,7 @@ padding-top:20px !important;
 .order-total.recurring-total{
   display:none;
 }
-#billing_form #billing_email,
-#billing_form #account_password{
+#billing_form #billing_email_field{
 display:none;
 }
 #account_password_field >label{
