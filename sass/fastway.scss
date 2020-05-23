@@ -5212,8 +5212,8 @@ body .wpb_content_element {
         border-right:1px solid grey !important;
         border-bottom:1px solid grey !important;
         li label{
-          border-top:1px solid grey ;
-          border-bottom:0px solid grey ;
+         /* border-top:1px solid grey ;*/
+          border:0px ;
           font-size:16px !important;
           padding:15px;
           margin:0px;
@@ -5444,10 +5444,10 @@ dt.variation-fw_extra{
   font-style: italic ;
   }
   /*POSTNET*/
-  .woocommerce-SavedPaymentMethods{
+.woocommerce-SavedPaymentMethods{
     display: none;
+}
+.woocommerce-SavedPaymentMethods li label{
+  color:black !important;
+  display: inline !important;
   }
-  .woocommerce-SavedPaymentMethods li label{
-    color:black !important;
-    display: inline !important;
-    }
