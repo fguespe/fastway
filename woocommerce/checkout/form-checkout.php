@@ -423,7 +423,7 @@ function nextpaso(){
     sacar1(true,2)
     
   }else if(paso==5){
-    if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
+   /* if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
       let p=jQuery('iframe[name="__privateStripeFrame6"]').contents().attr('class')
       console.log(p)
 
@@ -433,7 +433,7 @@ function nextpaso(){
         paso--
         return
       }
-    }
+    }*/
 
     fillNextStep('pagos')
     jQuery('.btn-checkout.finalizar').prop('disabled', false);
@@ -918,6 +918,9 @@ border:0px !important;
 #stripe-payment-data #wc-stripe-cc-form label{
 display:none
 }
+.stripe-card-group,.wc-stripe-elements-field, .StripeElement{
+  width: 100% !important;
+}
 .order-total.recurring-total{
   display:none;
 }
@@ -954,9 +957,10 @@ var envioSeleccionado=0
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
+/*
 jQuery( document ).on( 'updated_cart_totals', function(){
   updateEnvioGratisME();
-});
+});*/
 function checkpostalCode(){
   if(jQuery('#billing_postcode').length && !jQuery('#billing_postcode').val()){
     var msg = window.prompt("Complete su código postal para poder calcular su envío", "");
@@ -965,7 +969,7 @@ function checkpostalCode(){
 }
 
 jQuery(document).on( 'updated_checkout', function(){
-  updateEnvioGratisME();
+  //updateEnvioGratisME();
   setTodopago()
   setEposnet()
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
