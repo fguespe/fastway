@@ -42,6 +42,7 @@ if(empty($result)) {
 }
 
 
+
 $filas=array();
 $sql="select * from wp_blogs";
 $result=mysqli_query($con,$sql);
