@@ -13,11 +13,11 @@ else {
     $host=explode('-',gethostname())[1];
     $pass="";
     /*
-    http://ecomaltoweb.kinsta.cloud/wp-content/themes/fastway/stats/
-    http://altoweb.kinsta.cloud/wp-content/themes/fastway/stats/
-    http://ecom2.kinsta.cloud/wp-content/themes/fastway/stats/
-    http://ecom3.kinsta.cloud/wp-content/themes/fastway/stats/
-    http://insti2.kinsta.cloud/wp-content/themes/fastway/stats/
+    http://ecomaltoweb.kinsta.cloud/wp-content/themes/fastway/stats.php
+    http://altoweb.kinsta.cloud/wp-content/themes/fastway/stats.php
+    http://ecom2.kinsta.cloud/wp-content/themes/fastway/stats.php
+    http://ecom3.kinsta.cloud/wp-content/themes/fastway/stats.php
+    http://insti2.kinsta.cloud/wp-content/themes/fastway/stats.php
     */
     if($host=='ecomaltoweb')$pass="AzTqSBeLgPxjaeT";
     else if($host=='altoweb')$pass="kByecetGFisPWnS";
@@ -89,7 +89,7 @@ while($row = $result->fetch_assoc()) {
     array_push($filas, array($id,$name,$sum,$cantsales,$productos_cant,$consu,$cant));
 }
 
-$fp = fopen("../../../../stats.csv", 'w') or die("Can't create file");
+$fp = fopen("../../../stats.csv", 'w') or die("Can't create file");
 foreach ($filas as $fields) { fputcsv($fp, $fields);}
 fclose($fp);
 
