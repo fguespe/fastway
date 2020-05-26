@@ -92,4 +92,5 @@ while($row = $result->fetch_assoc()) {
 $fp = fopen("../../../stats.csv", 'w') or die("Can't create file");
 foreach ($filas as $fields) { fputcsv($fp, $fields);}
 fclose($fp);
+echo "Exito!";
 
