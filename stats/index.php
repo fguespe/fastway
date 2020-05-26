@@ -26,11 +26,6 @@ else {
     else if($host=='insti2')$pass="PzpevImJBia4PnJ";
     $con=mysqli_connect('localhost', $host, $pass, $host);
 }
-$filas=array();
-$sql="select * from wp_blogs";
-$result=mysqli_query($con,$sql);
-$fila=array("id","name","facturacion","ventas","productos","consultas","cant_users","visitas","wp");
-array_push($filas, $fila);
 
 $query = "SELECT * FROM wp_altoweb_visits";
 $result = mysqli_query($con, $query);
@@ -45,6 +40,13 @@ if(empty($result)) {
         ) ENGINE=InnoDB AUTO_INCREMENT=181786 DEFAULT CHARSET=utf8;";
     $result = mysqli_query($con, $query);
 }
+
+
+$filas=array();
+$sql="select * from wp_blogs";
+$result=mysqli_query($con,$sql);
+$fila=array("id","name","facturacion","ventas","productos","consultas","cant_users","visitas","wp");
+array_push($filas, $fila);
 
 while($row = $result->fetch_assoc()) {
     $name=str_replace('www.','',$row['domain']);
