@@ -7,9 +7,10 @@ header("Pragma: no-cache");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 if($_SERVER['HTTP_HOST']==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
 else {
-    $host=explode(gethostname());
+    $host=explode('-',gethostname());
     $pass="";
     if($host=='ecomaltoweb')$pass="AzTqSBeLgPxjaeT";
     else if($host=='altoweb')$pass="kByecetGFisPWnS";
