@@ -17,8 +17,6 @@ else {
     else if($host=='ecom2')$pass="iYOIxmdkxXnuJb4";
     else if($host=='ecom3')$pass="zulinVXs3DLo2Nh";
     else if($host=='insti2')$pass="PzpevImJBia4PnJ";
-    echo $host;
-    echo $pass;
     $con=mysqli_connect('localhost', $host, $pass, $host);
 }
 $filas=array();
