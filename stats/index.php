@@ -12,6 +12,13 @@ if($host==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
 else {
     $host=explode('-',gethostname())[1];
     $pass="";
+    /*
+    http://ecomaltoweb.kinsta.cloud/wp-content/themes/fastway/stats/
+    http://altoweb.kinsta.cloud/wp-content/themes/fastway/stats/
+    http://ecom2.kinsta.cloud/wp-content/themes/fastway/stats/
+    http://ecom3.kinsta.cloud/wp-content/themes/fastway/stats/
+    http://insti2.kinsta.cloud/wp-content/themes/fastway/stats/
+    */
     if($host=='ecomaltoweb')$pass="AzTqSBeLgPxjaeT";
     else if($host=='altoweb')$pass="kByecetGFisPWnS";
     else if($host=='ecom2')$pass="iYOIxmdkxXnuJb4";
