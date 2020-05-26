@@ -79,7 +79,7 @@ while($row = $result->fetch_assoc()) {
             p.ID
         order by p.post_date desc
           ) ventas';
-          
+
     $ventas=mysqli_query($con,$sql);
     if($ventas){
         foreach($ventas as $fact){
@@ -109,7 +109,7 @@ while($row = $result->fetch_assoc()) {
     $sql="select count(*) cant,site ,dominio,type from wp_altoweb_visits where type='wp' and site=".$id." AND STR_TO_DATE(fecha,'%c/%e/%Y %r') BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() group by dominio,type order by count(*)  desc";
     $wps=mysqli_query($con,$sql);
     if($wps)foreach($wps as $fact) $cant_wps=floor($fact['cant']);
-
+    echo $id.' '.$name.' '.$sum.' '.$cant_sales.' '.$cant_productos.' '.$cant_mails.' '.$cant_users.' '.$cant_visits.' '.$cant_wps.'<br>';
     array_push($filas, array($id,$name,$sum,$cant_sales,$cant_productos,$cant_mails,$cant_users,$cant_visits,$cant_wps));
 }
 
