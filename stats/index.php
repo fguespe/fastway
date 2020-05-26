@@ -80,7 +80,7 @@ while($row = $result->fetch_assoc()) {
     array_push($filas, array($id,$name,$sum,$cantsales,$productos_cant,$consu,$cant));
 }
 
-$fp = fopen("../../../../".$host.".csv", 'w') or die("Can't create file");
+$fp = fopen("../../../../stats.csv", 'w') or die("Can't create file");
 foreach ($filas as $fields) { fputcsv($fp, $fields);}
 fclose($fp);
 
