@@ -83,6 +83,7 @@ while($row = $result->fetch_assoc()) {
     $ventas=mysqli_query($con,$sql);
     if($ventas){
         foreach($ventas as $fact){
+            if(!$fact['promedio'])$fact['promedio']=0;
             $sum="$".$fact['promedio'];
             $cant_sales=$fact['cant'];
         }
