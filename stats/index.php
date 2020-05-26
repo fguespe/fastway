@@ -22,8 +22,22 @@ else {
 $filas=array();
 $sql="select * from wp_blogs";
 $result=mysqli_query($con,$sql);
-$fila=array("id","name","facturacion","ventas","productos","consultas","cant_users");
+$fila=array("id","name","facturacion","ventas","productos","consultas","cant_users","visitas","wp");
 array_push($filas, $fila);
+
+$query = "SELECT * FROM wp_altoweb_visits";
+$result = mysqli_query($con, $query);
+if(empty($result)) {
+    $query = "CREATE TABLE `wp_altoweb_visits` (
+        `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `site` int(10) DEFAULT NULL,
+        `fecha` varchar(430) DEFAULT NULL,
+        `dominio` varchar(200) DEFAULT NULL,
+        `type` varchar(20) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=181786 DEFAULT CHARSET=utf8;";
+    $result = mysqli_query($con, $query);
+}
 
 while($row = $result->fetch_assoc()) {
     $name=str_replace('www.','',$row['domain']);
@@ -52,6 +66,16 @@ while($row = $result->fetch_assoc()) {
     $sql='select ROUND(count(*)/'.$prom.') consus from wp_'.$id.'_gf_entry where period_diff(date_format(now(), "%Y%m"), date_format(date_created, "%Y%m"))<=30';
     $consultas=mysqli_query($con,$sql);
     if($consultas)foreach($consultas as $fact) $consu=$fact['consus'];
+
+
+    $sql="select count(*) cant,site ,dominio,type from wp_altoweb_visits where type='visit' and site=".$id." AND STR_TO_DATE(fecha,'%c/%e/%Y %r') BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() group by dominio,type order by count(*)  desc";
+    $result=mysqli_query($con,$sql);
+    while ($row=mysqli_fetch_array($result,MYSQLI_ASSOC)) $visitas=floor($row['cant']);
+
+    $sql="select count(*) cant,site ,dominio,type from wp_altoweb_visits where type='wp' and site=".$id." AND STR_TO_DATE(fecha,'%c/%e/%Y %r') BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() group by dominio,type order by count(*)  desc";
+    $result=mysqli_query($con,$sql);
+    while ($row=mysqli_fetch_array($result,MYSQLI_ASSOC)) $wps=floor($row['cant']);
+
 
     array_push($filas, array($id,$name,$sum,$cantsales,$productos_cant,$consu,$cant));
 }
