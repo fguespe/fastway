@@ -7,8 +7,8 @@ header("Pragma: no-cache");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-if($_SERVER['HTTP_HOST']==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
+$host=$_SERVER['HTTP_HOST'];
+if($host==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
 else {
     $host=explode('-',gethostname())[1];
     $pass="";
@@ -17,7 +17,8 @@ else {
     else if($host=='ecom2')$pass="iYOIxmdkxXnuJb4";
     else if($host=='ecom3')$pass="zulinVXs3DLo2Nh";
     else if($host=='insti2')$pass="PzpevImJBia4PnJ";
-
+    echo $host;
+    echo $pass;
     $con=mysqli_connect('localhost', $host, $pass, $host);
 }
 $filas=array();
@@ -57,7 +58,7 @@ while($row = $result->fetch_assoc()) {
     array_push($filas, array($id,$name,$sum,$cantsales,$productos_cant,$consu,$cant));
 }
 
-$fp = fopen(dirname(__FILE__)."/stats.csv", 'w') or die("Can't create file");
+$fp = fopen(__DIR__."/".$host.".csv", 'w') or die("Can't create file");
 foreach ($filas as $fields) { fputcsv($fp, $fields);}
 fclose($fp);
 
