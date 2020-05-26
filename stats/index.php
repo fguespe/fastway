@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 if($_SERVER['HTTP_HOST']==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
 else {
-    $host=explode('-',gethostname());
+    $host=explode('-',gethostname())[1];
     $pass="";
     if($host=='ecomaltoweb')$pass="AzTqSBeLgPxjaeT";
     else if($host=='altoweb')$pass="kByecetGFisPWnS";
