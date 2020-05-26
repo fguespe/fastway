@@ -51,7 +51,7 @@ while($row = $result->fetch_assoc()) {
     $cant_users=mysqli_query($con,$sql);
     if($cant_users)foreach($cant_users as $fact) $cant=$fact['users'];
 
-    $sql='select ROUND(count(*)/'.$prom.') consus from wp_'.$id.'_gf_entry where period_diff(date_format(now(), "%Y%m"), date_format(date_created, "%Y%m"))<='.$prom.'';
+    $sql='select ROUND(count(*)/'.$prom.') consus from wp_'.$id.'_gf_entry where period_diff(date_format(now(), "%Y%m"), date_format(date_created, "%Y%m"))<=30';
     $consultas=mysqli_query($con,$sql);
     if($consultas)foreach($consultas as $fact) $consu=$fact['consus'];
 
