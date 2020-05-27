@@ -44,7 +44,7 @@ if(empty($result)) {
 
 
 $filas=array();
-$fila=array("id","name","facturacion","ventas","productos","consultas","cant_users","visitas","wp");
+$fila=array("id","name","ingresos","ventas","productos","consultas","usuarios","visitas","wp");
 array_push($filas, $fila);
 
 
