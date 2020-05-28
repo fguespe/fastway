@@ -28,9 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="botonesaccount d-flex align-items-center">
 	<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">VER PRODUCTOS</a> 
-	<?php if(is_user_logged_in()){?>
+	<!--<?php// if(is_user_logged_in()){?>
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
-	<?php } ?>
+	<?php// } ?>-->
 </div>
 
 <?php

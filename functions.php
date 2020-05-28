@@ -1,7 +1,5 @@
 <?php
 
-// Clean the up the image from wp_get_attachment_image()
-
 add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 {
     if( isset( $attr['sizes'] ) )
