@@ -18,7 +18,6 @@ function fw_is_admin(){
 }
 
 function filter_woocommerce_coupon_is_valid( $true, $instance ) { 
-    error_log('jaja'.check_user_role('guest'));
     if((check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return $true;
     else return false;
 }; 
