@@ -17,6 +17,14 @@ function fw_is_admin(){
     return false;
 }
 
+function filter_woocommerce_coupon_is_valid( $true, $instance ) { 
+    error_log('jaja'.check_user_role('guest'));
+    if((check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return $true;
+    else return false;
+}; 
+
+add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 2 ); 
+
 if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
 function fw_apply_lili_discount( WC_Cart $cart ){
     if(fw_is_admin())return;

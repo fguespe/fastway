@@ -104,9 +104,9 @@ function isLocalhost(){
   return $_SERVER['HTTP_HOST']==='fastway';
 }
 function check_user_role($role){
+    $user = wp_get_current_user();
     if($role=='administrator' && is_super_admin())return true;
     if($role=='guest' && empty((array) $user->roles ))return true;
-    $user = wp_get_current_user();
     if ( in_array( $role, (array) $user->roles ) ) {
       return true;
     }
