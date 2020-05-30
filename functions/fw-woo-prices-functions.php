@@ -8,8 +8,6 @@ function get_currency_conversion($iscartcalc=false) {
     return $price; // x2 for testing
 }
 
-
-
 function fw_is_admin(){
     require_once(ABSPATH . 'wp-admin/includes/screen.php');
     $screen = get_current_screen();

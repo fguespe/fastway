@@ -757,11 +757,13 @@ function fw_before_paying_notice() {
 
 //Stock labels
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
-
-function fw_custom_get_availability( $availability, $_product ) { // Change Out of Stock Text 
-    if ( $_product->is_in_stock() )$availability['availability'] = fw_theme_mod("in-stock-text");
-    if( !$_product->is_in_stock() && $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
-    if ( !$_product->is_in_stock() )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
+function fw_custom_get_availability( $availability, $_product ) {
+    $instock=$_product->get_stock_quantity()>0;
+    error_log("q: ".!$instock.$_product->backorders_allowed());
+    //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
+    if ( $instock )$availability['availability'] = fw_theme_mod("in-stock-text");
+    else if( !$instock && $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
+    else if ( !$instock )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
     return $availability; 
 }
 
@@ -1535,8 +1537,8 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
 if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' );
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-if ( ! function_exists( 'woocommerce_cross_sell_display' ) && 1==2 ) {
-
+if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
+  
 	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
 		if ( is_checkout() ) {
 			return;
