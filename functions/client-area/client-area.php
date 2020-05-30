@@ -401,8 +401,21 @@ function fw_custom_remove_optionspages() {
 
     }
 }
+
 add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
 
+function custom_admin_js() {
+    if(!fw_is_admin() || check_user_role('administrator'))return;
+
+    echo '<script>
+	window.fwSettings={
+	"widget_id":36000000453
+	};
+	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+</script>';
+echo "<script type='text/javascript' src='https://widget.freshworks.com/widgets/36000000453.js' async defer></script>";
+}
+add_action('admin_footer', 'custom_admin_js');
 
 /**
  * Add all Gravity Forms capabilities to Editor role.
