@@ -420,7 +420,10 @@ cuidado con el update notice y el error de create user
 	display:block!important;
 }*/
 	
-
+/*media*/
+.media-modal{
+	width:90%
+}
 
 /*productos*/
 .post-type-product .composer-switch{
