@@ -422,7 +422,7 @@ cuidado con el update notice y el error de create user
 	
 /*media*/
 .media-modal{
-	width:90%
+	width:80% !important;
 }
 
 /*productos*/
