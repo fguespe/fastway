@@ -485,6 +485,11 @@ function fw_remove_footer_admin(){
         
 }
 
+function my_footer_shh() {
+    remove_filter( 'update_footer', 'core_update_footer' ); 
+}
+
+add_action( 'admin_menu', 'my_footer_shh' );
 
 add_action( 'init', 'fw_init_adminbar', 999 );
 function fw_init_adminbar(){
