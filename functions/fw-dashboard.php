@@ -65,7 +65,7 @@ function fw_widget_cupones_dash_handler(){
     if( 'POST' == $_SERVER['REQUEST_METHOD']/* && isset( $_POST['fw_widget_cupones_options'] )*/) {
         $ess='no';
         if($_POST['fw_widget_cupones_options']) $ess='yes';
-        
+
         update_option( 'woocommerce_enable_coupons',  $ess);
     }
     
@@ -121,11 +121,12 @@ function fw_widget_lili_discount_dash_handler(){
         <label>Estado <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
         <label>Categorias  <input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
         <label>Cantidad minima <input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
-        <label>Descuento al mas barato <input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
+        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
         <small>Instrucciones:<br>
         1) Se deben ingresar los slugs de las categorías, se pueden consultar en la url de la tienda, o en la sección  <a href='edit-tags.php?taxonomy=product_cat&post_type=product'>categorías</a> (separados con ','). <br> 
         2) Dejar vacío para aplicar a toda la tienda<br> 
         3) Cantidad minima seria por ejemplo 3 para 3x2 y 2 para 2x1</small>
+        4) El descuento siempre aplica solo al mas barato.
         </div><br>";
 }
 
