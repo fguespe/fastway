@@ -47,13 +47,13 @@ function fw_apply_lili_discount( WC_Cart $cart ){
 
         //cates
         $esdelapromo=false;
-        if(count($catespromo)>1){
-            $terms = get_the_terms ( $product_id, 'product_cat' );
-            //acase fija si esta en la promo
-            foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
-        }else if(count($catespromo)==1){
-            $esdelapromo=true;
-        }
+        //if(count($catespromo)>1){
+        $terms = get_the_terms ( $product_id, 'product_cat' );
+        //acase fija si esta en la promo
+        foreach ( $terms as $cat ) if(in_array($cat->slug,$catespromo))$esdelapromo=true;
+        //}else if(count($catespromo)==1){
+        //    $esdelapromo=true;
+        //}
         
         if(!$esdelapromo)continue;
         $cantqueespromo+=$values['quantity'];
