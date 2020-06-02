@@ -25,6 +25,14 @@ function prefix_add_dashboard_widget() {
             'fw_widget_lili_discount_dash_handler'
         );
     }
+    if(fw_theme_mod('fw_widget_desc_prods')){
+        wp_add_dashboard_widget(
+            'fw_widget_desc_prods', 
+            'Descuento productos', 
+            'fw_widget_desc_prods_dash', 
+            'fw_widget_desc_prods_dash_handler'
+        );
+    }
     if(fw_theme_mod('fw_widget_cupones')){
         wp_add_dashboard_widget(
             'fw_widget_cupones', 
@@ -78,6 +86,45 @@ function fw_widget_cupones_dash_handler(){
     </div><br>";
 }
 
+
+
+function fw_widget_desc_prods_dash(){
+
+    $estado=fw_theme_mod('fw_product_discount')?"Activo":"Inactivo";
+    $color=$estado=='Activo'?'green':'red';
+    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+
+    $porcentage=floatval(fw_theme_mod('fw_product_discount_percentage'));
+
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Estado: $estado</label><br>
+        <label>Descuento(%): $porcentage </label><br>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_desc_prods#fw_widget_desc_prods">Cambiar</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_desc_prods_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_desc_prods' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_desc_prods'] ) ) {
+        //Logica save
+        set_theme_mod('fw_product_discount',$_POST['fw_widget_desc_prods']['estado']);
+        set_theme_mod('fw_product_discount_percentage',$_POST['fw_widget_desc_prods']['percentage']);
+    }
+
+    $estado=fw_theme_mod('fw_product_discount')?true:false;
+    $estado=$estado?"checked=\"".$estado."\"":"";
+    echo "
+    <div>
+        <label>Estado <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
+        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
+        </div><br>";
+}
 
 
 function fw_widget_lili_discount_dash(){

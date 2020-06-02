@@ -15,72 +15,17 @@ function fw_is_admin(){
     return false;
 }
 
-function esMultitienda(){
-    if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
-    return false;
-}
 
-function filter_woocommerce_coupon_is_valid( $true, $instance ) { 
-    if(esMultitienda()) return false;
-    return $true;
-}
 
-add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 2 ); 
-if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
-function fw_apply_lili_discount( WC_Cart $cart ){
-    if(fw_is_admin())return;
-    if(esMultitienda()) return;
-    if (!empty($cart->applied_coupons))return;
-    $cuantos=fw_theme_mod('fw_lili_discount_cant');
-    if( $cart->cart_contents_count < $cuantos ) return;
-    
-
-    $catespromo=array();
-    $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
-
-    if(fw_theme_mod('fw_lili_discount_categories'))$catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
-    
-    $cantqueespromo=0;
-    $items = $cart->get_cart();
-    $menorprecio=100000000;
-    $aplicardescuento=true;
-
-    foreach($items as $item => $values) { 
-        $product_id=$values['data']->get_id() ;
-        $product=wc_get_product( $product_id);
-
-        //cates
-        $esdelapromo=false;
-        $terms = get_the_terms ( $product_id, 'product_cat' );
-        if(count($catespromo)>0){
-            foreach ( $terms as $cat ) {
-                if(in_array($cat->slug,$catespromo))$esdelapromo=true;
-            }
-        }else{
-            $esdelapromo=true;
-        }
-        
-        if(!$esdelapromo)continue;
-        $cantqueespromo+=$values['quantity'];
-        //Aca si es de la cate
-        $precio=$product->get_price();
-        if($menorprecio>$precio)$menorprecio=$precio;
-    }
-    error_log("menor precio".$menorprecio);
-    if($menorprecio==100000000)return;
-    //$discount = $cart->subtotal * 0.1;
-    $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
-    $cart->add_fee( 'Promo:', $discount);
-}
 
 
 function fw_product_discount_multiplier($product,$iscartcalc=false){
+    global $woocommerce;
     if(fw_is_admin())return 1;
+    if(esMultitienda()) return 1;
+    if (!empty($woocommerce->$cart->applied_coupons))return 1;
     if(!fw_theme_mod('fw_product_discount'))return 1;
-    if(!fw_theme_mod('fw_product_discount_cant'))return 1;
-    //is admin
-    if(!(check_user_role('administrator') || check_user_role('customer') || check_user_role('subscriber') || check_user_role('guest') ) ) return  1;
-    //Si ya tiene discount, volver
+    if(!fw_theme_mod('fw_product_discount_percentage'))return 1;
     
     global $woocommerce;
     if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return 1;
@@ -105,7 +50,7 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
         if(!$esdelapromo)return 1;
     }
 
-    $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_cant')/100));
+    $multiplier=floatval(1-(fw_theme_mod('fw_product_discount_percentage')/100));
     return $multiplier;
 }
 

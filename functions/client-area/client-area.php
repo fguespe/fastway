@@ -56,6 +56,17 @@ Kirki::add_field( 'theme_config_id', array(
 /*CLIENT AREA WIDGETS*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_widget_desc_prods',
+	'label'       => __( 'Descuento productos', 'fastway' ),
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_widget_cupones',
 	'label'       => __( 'Cupones', 'fastway' ),
 	'section'     => 'section_clientwidgets',

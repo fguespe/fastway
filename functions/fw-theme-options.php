@@ -3332,10 +3332,10 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_product_discount',
-	'label'       => __( '1-Product Discount', 'fastway' ),
+	'label'       => __( 'Descuento Tienda', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'default'     => 0,
-	'description' => 'Se aplica a los productos',
+	'description' => 'Se aplica a todos los productos',
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -3343,7 +3343,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_product_discount_cant',
+	'settings'    => 'fw_product_discount_percentage',
 	'label'    => __( '%', 'fastway' ),
 	'description' => 'Porcentage de descuento a toda la tienda, se aplica a nivel producto, no aplica a los que ya tienen descuento',
 	'section'     => 'section_woo_discount',
