@@ -292,7 +292,9 @@ function checklist_args( $args, $taxonomies ){
 /*GENERICOS*/
 add_filter('gettext', 'bancos_arg', 10, 3);
 function bancos_arg($translation, $text, $domain) {
-    if ($domain == 'woocommerce') {
+    error_log(get_locale());
+
+    if ($domain == 'woocommerce' && get_locale()=='es_ES') {
         switch ($text) {
             case 'Sort code':
                 $translation = 'ALIAS';
