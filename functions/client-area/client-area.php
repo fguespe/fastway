@@ -405,14 +405,24 @@ function fw_custom_remove_optionspages() {
 add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
 
 function custom_admin_js() {
-    if(check_user_role('administrator'))return;
+    //if(check_user_role('administrator'))return;
+    $nombre=fw_theme_mod('fw_mail_desde_nombre');
+    $mail=explode(",",fw_theme_mod('fw_mail_desde_mails'))[0];
     echo '<script>
 	window.fwSettings={
 	"widget_id":36000000453
 	};
 	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+    </script>
+    <script type="text/javascript" src="https://widget.freshworks.com/widgets/36000000453.js" async defer></script>
+    <script>
+        FreshworksWidget("identify", "ticketForm", {
+            name: "'.$nombre.'",
+            email: "'.$mail.'",
+        });
+
     </script>';
-    echo "<script type='text/javascript' src='https://widget.freshworks.com/widgets/36000000453.js' async defer></script>";
+
 }
 add_action('admin_footer', 'custom_admin_js');
 

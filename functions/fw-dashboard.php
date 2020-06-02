@@ -187,11 +187,14 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  function my_custom_dashboard_widgets() {
      global $wp_meta_boxes;
      if(fw_theme_mod("fw_id_ml"))wp_add_dashboard_widget('custom_help_widget1', 'Soporte', 'custom_ml_help');
-     wp_add_dashboard_widget('custom_help_widget2', 'Soporte', 'custom_dashboard_help');
+     wp_add_dashboard_widget('custom_help_widget2', '¿Necesitas ayuda?', 'custom_dashboard_help');
  }
  
  function custom_dashboard_help() {
-     echo '<p>Necesitas ayuda? Enviános un ticket desde nuestro portal o desde el widget de ayuda abajo a la derecha en esta pantalla.</p><br><a href="https://altoweb.freshdesk.com/support/tickets/new" target="_blank">Crear ticket</a><br><br>' ;
+     echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
+        <br><br>Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a></p>
+        Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>
+        ' ;
  }
  function custom_ml_help() {
      echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">LINK</a>' ;
