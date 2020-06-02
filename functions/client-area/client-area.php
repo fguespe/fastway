@@ -11,6 +11,13 @@ Kirki::add_section( 'section_clientarea', array(
     'panel'          => 'panel_clientarea',
 
 ) );
+Kirki::add_section( 'section_clientwidgets', array(
+    'title'          => __( 'Widgets', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_clientarea',
+
+) );
+
 
 /*WOO AREA*/
 Kirki::add_section( 'section_wooarea', array(
@@ -46,7 +53,46 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+/*CLIENT AREA WIDGETS*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_cupones',
+	'label'       => __( 'Cupones', 'fastway' ),
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_lili_discount',
+	'label'       => __( 'Lili Discount', 'fastway' ),
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_cuotas_tp',
+	'label'       => __( 'Cuotas Todopago', 'fastway' ),
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
 /*CLIENT AREA*/
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'ca-clientarea-logo',

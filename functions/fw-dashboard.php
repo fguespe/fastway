@@ -17,23 +17,131 @@ function prefix_add_dashboard_widget() {
             'fw_dash_conversion_handler'
         );
     }
-    if(is_plugin_active('Plugin-WooCommerce-master/index.php')){
+    if(fw_theme_mod('fw_widget_lili_discount')){
         wp_add_dashboard_widget(
-            'fw_todopago_widget', 
+            'fw_widget_lili_discount', 
+            'Lili Discount', 
+            'fw_widget_lili_discount_dash', 
+            'fw_widget_lili_discount_dash_handler'
+        );
+    }
+    if(fw_theme_mod('fw_widget_cupones')){
+        wp_add_dashboard_widget(
+            'fw_widget_cupones', 
+            'Cupones', 
+            'fw_widget_cupones_dash', 
+            'fw_widget_cupones_dash_handler'
+        );
+    }
+    if(fw_theme_mod('fw_widget_cuotas_tp')){
+        wp_add_dashboard_widget(
+            'fw_widget_cuotas_tp', 
             'Cuotas Todopago', 
-            'fw_todopago_dash', 
-            'fw_todopago_dash_handler'
+            'fw_widget_cuotas_tp_dash', 
+            'fw_widget_cuotas_tp_dash_handler'
         );
     }
 }
-function fw_todopago_dash(){
-    echo"<div class='fw_widget_dash'>
-    <label>Maximo cuotas sin interes: ".fw_theme_mod('fw_cuotas_todopago')."</label>
-    <a class=\"iralasopciones\" href=\"index.php?edit=fw_todopago_widget#fw_todopago_widget\">Cambiar</a>
-    </div>";
+
+function fw_widget_cupones_dash(){
+    $estado=get_option('woocommerce_enable_coupons')==='yes'?"Activo":"Inactivo";
+    $color=$estado=='Activo'?'green':'red';
+    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Estado: $estado</label><br>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cupones#fw_widget_cupones">Cambiar</a>
+    </div>
+HTML;
 }
 
-function fw_todopago_dash_handler(){
+
+function fw_widget_cupones_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_cupones_options' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD']/* && isset( $_POST['fw_widget_cupones_options'] )*/) {
+        $ess='no';
+        if($_POST['fw_widget_cupones_options']) $ess='yes';
+        
+        update_option( 'woocommerce_enable_coupons',  $ess);
+    }
+    
+    $estado=get_option('woocommerce_enable_coupons')==='yes'?true:false;
+    $estado=$estado?"checked=\"".$estado."\"":"";
+
+    echo "
+    <div>
+        <label>Estado <input type=\"checkbox\" name=\"fw_widget_cupones_options[estado]\" id=\"estado\" ".$estado." ></label><br>
+    </div><br>";
+}
+
+
+
+function fw_widget_lili_discount_dash(){
+    $cates =fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):'Toda la tienda';
+    $cant=fw_theme_mod('fw_lili_discount_cant');
+    $cant=$cant."x".($cant-1);
+    $estado=fw_theme_mod('fw_lili_discount')?"Activo":"Inactivo";
+    $color=$estado=='Activo'?'green':'red';
+    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+
+    $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Estado: $estado</label><br>
+        <label>Aplica a: $cates</label><br>
+        <label>Descuento: $porcentage % al mas barato</label><br>
+        <label>Cantidad: $cant</label>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">Cambiar</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_lili_discount_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_lili_discount_options' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_lili_discount_options'] ) ) {
+        //Logica save
+        set_theme_mod('fw_lili_discount',$_POST['fw_widget_lili_discount_options']['estado']);
+        set_theme_mod('fw_lili_discount_categories',$_POST['fw_widget_lili_discount_options']['categories']);
+        set_theme_mod('fw_lili_discount_cant',$_POST['fw_widget_lili_discount_options']['cant']);
+        set_theme_mod('fw_lili_discount_percentage',$_POST['fw_widget_lili_discount_options']['percentage']);
+    }
+
+    $estado=fw_theme_mod('fw_lili_discount')?true:false;
+    $estado=$estado?"checked=\"".$estado."\"":"";
+    echo "
+    <div>
+        <label>Estado <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
+        <label>Categorias  <input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
+        <label>Cantidad minima <input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
+        <label>Descuento al mas barato <input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
+        <small>Instrucciones:<br>
+        1) Se deben ingresar los slugs de las categorías, se pueden consultar en la url de la tienda, o en la sección  <a href='edit-tags.php?taxonomy=product_cat&post_type=product'>categorías</a> (separados con ','). <br> 
+        2) Dejar vacío para aplicar a toda la tienda<br> 
+        3) Cantidad minima seria por ejemplo 3 para 3x2 y 2 para 2x1</small>
+        </div><br>";
+}
+
+
+function fw_widget_cuotas_tp_dash(){
+    $cuotas =fw_theme_mod('fw_cuotas_todopago');
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Maximo cuotas sin interes: $cuotas</label>
+        <a class="iralasopciones" href="index.php?edit=fw_todopago_widget#fw_todopago_widget">Cambiar</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_cuotas_tp_dash_handler(){
 
     # get saved data
     if( !$widget_options = get_option( 'fw_todopago_widget_options' ) )$widget_options = array( );

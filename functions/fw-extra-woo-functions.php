@@ -759,7 +759,6 @@ function fw_before_paying_notice() {
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
     $instock=$_product->get_stock_quantity()>0;
-    error_log("q: ".!$instock.$_product->backorders_allowed());
     //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
     if ( $instock )$availability['availability'] = fw_theme_mod("in-stock-text");
     else if( !$instock && $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
