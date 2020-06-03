@@ -56,7 +56,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
                 <p class="status"></p>
                 <input class="submit_button boton" type="button" value="Login" onclick="fw_login()" name="submit">
                 <div class="submit_button loading" style="display:none;"><i class='fas fa-circle-notch fa-spin'></i></div>
-                <?php wp_nonce_field( 'update-order-review', 'security'); ?>
+                <?php wp_nonce_field( 'ajax-login-nonce', 'security'); ?>
             </div>
 
             <div class="login-btn"><?=fw_theme_mod('fw_label_checkout_already_not')?> <a class="registro" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_back')?></a></div>
