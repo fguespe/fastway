@@ -1805,6 +1805,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_costos_envio',
+	'label'    => __( 'Costos del envío', 'fastway' ),
+	'section'     => 'section_woo_checkout',
+	'default'	=> 'Costos del envío',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_checkout_verde_2',
 	'label'    => __( '100% Protegido', 'fastway' ),
 	'section'     => 'section_woo_checkout',
