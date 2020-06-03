@@ -3,12 +3,15 @@
 if(is_admin())add_action( 'wp_dashboard_setup', 'prefix_add_dashboard_widget' );
 
 function prefix_add_dashboard_widget() {
-    wp_add_dashboard_widget(
-        'my_dashboard_widget', 
-        'Estado del sitio', 
-        'prefix_dashboard_widget', 
-        'prefix_dashboard_widget_handle'
-    );
+   
+    if(fw_theme_mod('fw_widget_estado')){
+        wp_add_dashboard_widget(
+            'fw_widget_estado', 
+            'Estado del sitio', 
+            'fw_widget_estado_dash', 
+            'fw_widget_estado_dash_handler'
+        );
+    }
     if(fw_theme_mod('fw_currency_conversion')){
         wp_add_dashboard_widget(
             'fw_currency_widget', 
@@ -247,9 +250,9 @@ function fw_dash_conversion_handler(){
 }
 
 
-function prefix_dashboard_widget() {
+function fw_widget_estado_dash() {
     # get saved data
-    if( !$widget_options = get_option( 'my_dashboard_widget_options' ) ) $widget_options = array( );
+    if( !$widget_options = get_option( 'fw_widget_estado_options' ) ) $widget_options = array( );
 
 
     $estado=$widget_options['estados'];
@@ -289,19 +292,19 @@ function prefix_dashboard_widget() {
     </style>   
     <div class='fw_widget_dash'>
     <div>$output</div>
-    <a class='iralasopciones' href=\"index.php?edit=my_dashboard_widget#my_dashboard_widget\">Cambiar</a>
+    <a class='iralasopciones' href=\"index.php?edit=fw_widget_estado#fw_widget_estado\">Cambiar</a>
     </div>";
     }
 
-function prefix_dashboard_widget_handle()
+function fw_widget_estado_dash_handler()
 {
     # get saved data
-    if( !$widget_options = get_option( 'my_dashboard_widget_options' ) )
+    if( !$widget_options = get_option( 'fw_widget_estado_options' ) )
         $widget_options = array( );
     # process update
-    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['my_dashboard_widget_options'] ) ) {
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_estado_options'] ) ) {
          # minor validation
-         $widget_options['estados'] = ( $_POST['my_dashboard_widget_options']['estados'] );
+         $widget_options['estados'] = ( $_POST['fw_widget_estado_options']['estados'] );
          # save update
          $estado=$widget_options['estados'];
         if($estado=='normal'){
@@ -317,7 +320,7 @@ function prefix_dashboard_widget_handle()
             set_theme_mod('maintainance-mode',false);
             set_theme_mod('fw_shop_state','hideprices');
         }
-        update_option( 'my_dashboard_widget_options', $widget_options );
+        update_option( 'fw_widget_estado_options', $widget_options );
     }
 
     # set defaults  
@@ -327,7 +330,7 @@ function prefix_dashboard_widget_handle()
     echo "
       <div class='feature_post_class_wrap'>
         <label>Estados</label>
-         <select name=\"my_dashboard_widget_options[estados]\" id=\"estados\">
+         <select name=\"fw_widget_estado_options[estados]\" id=\"estados\">
          <option value>-Estado-</option> 
             <option value=\"normal\">Normal</option> 
             <option value=\"maintainance\" >Mantenimiento</option>
