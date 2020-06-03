@@ -2918,6 +2918,13 @@ body .wpb_content_element {
           border:1px solid var(--main) !important;
         }
     }
+    .cart_totals{
+        margin-top:40px;
+    }
+    .cart_totals h2{
+        font-size:25px;
+        line-height:25px;
+    } 
     @media (min-width: 799px) {
       .cart-collaterals .cart_totals{
               float: right;
