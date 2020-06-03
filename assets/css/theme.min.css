@@ -2882,13 +2882,16 @@ body .wpb_content_element {
   float: right;
 }
 .woocommerce-cart #content table.cart td.actions .input-text {
-  width: 80px;
+  width: 150px;
   line-height: 24px;
 }
 .woocommerce-cart table.cart td.actions .coupon label {
   display: none;
 }
 @media (max-width: 799px) {
+  .woocommerce-cart #content table.cart td.actions .input-text {
+    width: 80px;
+  }
   .woocommerce-cart table.cart td.actions .coupon {
     width: 100% !important;
   }

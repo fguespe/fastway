@@ -2887,7 +2887,7 @@ body .wpb_content_element {
        float: right;
     }
     #content table.cart td.actions .input-text{
-        width: 80px;
+        width: 150px ;
         line-height:24px;
     }
     
@@ -2895,6 +2895,10 @@ body .wpb_content_element {
          display: none;
     }
     @media (max-width: 799px) {
+        #content table.cart td.actions .input-text{
+            width: 80px ;
+        }
+      
         table.cart td.actions .coupon{
           width:100% !important;
         }
