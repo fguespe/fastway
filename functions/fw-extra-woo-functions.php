@@ -765,6 +765,7 @@ function fw_before_paying_notice() {
 //Stock labels
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
+    if(get_option('woocommerce_manage_stock')==='no')return "";
     $instock=$_product->get_stock_quantity()>0;
     //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
     if ( $instock )$availability['availability'] = fw_theme_mod("in-stock-text");
