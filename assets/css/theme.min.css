@@ -27,6 +27,16 @@
   margin-left: auto;
 }
 
+@media (max-width: 799px) {
+  .hide_mobile {
+    display: none;
+  }
+}
+@media (min-width: 799px) {
+  .hide_desktop {
+    display: none;
+  }
+}
 .container-small {
   max-width: 1000px;
   width: 100%;
