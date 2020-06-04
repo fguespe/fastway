@@ -425,7 +425,7 @@ cuidado con el update notice y el error de create user
 
 
 /*productos*/
-.post-type-product .composer-switch{
+.composer-switch{
 	display: none !important;;
 }
 
