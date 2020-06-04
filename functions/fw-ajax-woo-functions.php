@@ -23,10 +23,7 @@ function fw_ajax_logout(){
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){
-  error_log(print_r('jeje',true));
-  //if(isLocalhost()) exit( 'Nonce is invalid' );
   $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
-  error_log(print_r('jeje2',true));
   switch ( $result ) {
     case 1:
         fw_log('Nonce is less than 12 hours old');
@@ -40,18 +37,14 @@ function fw_ajax_login(){
   }
   // Nonce is checked, get the POST data and sign user on
   $info = array();
-  error_log(print_r('jeje',true));
   $info['user_login'] = $_POST['username'];
   $info['user_password'] = $_POST['password'];
   $info['remember'] = true;
-  error_log(print_r('jeje3',true));
 
   $user_signon = wp_signon( $info, false );
   if ( is_wp_error($user_signon) ){
-    error_log(print_r('error_log(print_r($product,true));',true));
       echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
   } else {
-    error_log(print_r('sd',true));
       echo json_encode(array('loggedin'=>true,'email'=>$user_signon->user_email, 'message'=>__('Login successful, redirecting...')));
   }
   die();
