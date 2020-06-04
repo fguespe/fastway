@@ -429,7 +429,9 @@ cuidado con el update notice y el error de create user
 	display: none !important;;
 }
 
-
+.misc-pub-visibility{
+	display: none !important;
+}
 /*NUEVO WOO*/
 #woocommerce-embedded-root{
 	display:none !important;
