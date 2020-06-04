@@ -3560,6 +3560,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_mi_pedido',
@@ -3595,6 +3596,23 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels',
 	'default'	=> 'Mi Cuenta'
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_bienvenido',
+	'label'    => __( 'BIENVENIDO A', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'BIENVENIDO A',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_ver_productos',
+	'label'    => __( 'VER PRODUCTOS', 'fastway' ),
+	'section'     => 'section_labels',
+	'default'	=>'VER PRODUCTOS',
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_related_text',

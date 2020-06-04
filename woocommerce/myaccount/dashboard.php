@@ -23,11 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<h1 style="text-transform:uppercase;">BIENVENIDO A <?php echo get_bloginfo('name');?></h1>
+<h1 style="text-transform:uppercase;"><?=fw_theme_mod('fw_label_bienvenido');?> <?php echo get_bloginfo('name');?></h1>
 <h4><?php echo fw_theme_mod('fw_welcome_msg')?></h4>
 
 <div class="botonesaccount d-flex align-items-center">
-	<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">VER PRODUCTOS</a> 
+	<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?=fw_theme_mod('fw_label_ver_productos');?></a> 
 	<!--<?php// if(is_user_logged_in()){?>
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
 	<?php// } ?>-->
