@@ -2229,6 +2229,18 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_only_mercadoenvios',
+	'label'       => __( 'Calculate Only Mercadoenvios', 'fastway' ),
+	'section'     => 'section_woo_shippings',
+	'description' => 'Refrescar despues de activar',
+	'default'     => 1,
+	'choices' => array(
+		'on'  => __( 'Enable', 'fastway' ),
+		'off' => __( 'Disable', 'fastway' )
+	)
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -2276,18 +2288,6 @@ if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
 			'off' => __( 'Disable', 'fastway' )
 		)
 	));
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_only_mercadoenvios',
-		'label'       => __( 'Calculate Only Mercadoenvios', 'fastway' ),
-		'section'     => 'section_woo_shippings',
-		'description' => 'Refrescar despues de activar',
-		'default'     => 1,
-		'choices' => array(
-			'on'  => __( 'Enable', 'fastway' ),
-			'off' => __( 'Disable', 'fastway' )
-		)
-	) );
 }
 */
 Kirki::add_field( 'theme_config_id', array(
