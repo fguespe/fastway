@@ -193,7 +193,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Developer Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/logo.png",
+	'default'     => urlforimages()."/assets/img/logo.svg",
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',

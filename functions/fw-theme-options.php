@@ -543,7 +543,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/logo.png",
+	'default'     => urlforimages()."/assets/img/logo.svg",
 	'transport'=>'postMessage',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -567,7 +567,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/logo.png"
+	'default'     => urlforimages()."/assets/img/logo.svg"
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -3124,7 +3124,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'maintainance_code',
 	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="https://www.altoweb.co" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/logo.png"/></a></div>',
+	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="https://www.altoweb.co" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/logo.svg"/></a></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),

@@ -155,7 +155,7 @@ if( !function_exists('fw_m_logo') ) {
                     $logo_arg['height'] = "auto";
                 } else {
                     //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.svg" );
                     $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = "auto";
                 }
@@ -202,7 +202,7 @@ if( !function_exists('fw_logo') ) {
                     $logo_arg['height'] = "auto";
                 } else {
                     //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.png" );
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.svg" );
                     $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = "auto";
                 }

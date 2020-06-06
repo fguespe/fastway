@@ -42,10 +42,11 @@ function after_xml_import_init_cate($import_id){
 
 if(fw_theme_mod('fw_action_init_mayorista')){
 
-   //update_option('woocommerce_enable_guest_checkout','no');
-   //update_option('woocommerce_enable_checkout_login_reminder','no');
-   //update_option('woocommerce_enable_signup_and_login_from_checkout','no');
-   //update_option('woocommerce_enable_myaccount_registration','no');
+   update_option('woocommerce_enable_guest_checkout','no');
+   update_option('woocommerce_enable_checkout_login_reminder','no');
+   update_option('woocommerce_enable_signup_and_login_from_checkout','no');
+   update_option('woocommerce_enable_myaccount_registration','no');
+   
    set_theme_mod('fw_prices_visibility','logged');
    set_theme_mod('fw_purchases_visibility','logged');
    set_theme_mod('fw_action_init_mayorista',false);
@@ -127,7 +128,7 @@ if(fw_theme_mod('fw_action_clientimages')){
 add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
 function my_custom_checkout_field_display_admin_order_meta($order){
     $dato=get_post_meta( $order->get_id(), '_billing_dni', true );
-    if(!empty($dato))echo '<p><strong>'.__('DNI/CUIT').':</strong> ' . get_post_meta( $order->get_id(), '_billing_dni', true ) . '</p>';
+    if(!empty($dato))echo '<p><strong>'.__('DNI/CUIT').':</strong> ' . $dato . '</p>';
 }
 
 

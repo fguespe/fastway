@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_email_header', $email_heading, $email ); 
-
+if(get_locale()=='es_ES'){
 ?>
 
 <p>Bienvenido a <?php echo esc_html( $blogname )?><br><br>
@@ -32,7 +32,23 @@ Pero podés cambiarla cuando quieras.<br><br>
 
 ¡Te esperamos! ;-)</p>
 
+<?php
 
+}else{ ?>
+
+<p>Welcome to <?php echo esc_html( $blogname )?><br><br>
+Thank you for signing up. Your user name is <strong><?php echo esc_html( $user_login ) ?></strong><br>
+Podés acceder a tu cuenta para ver pedidos, cambiar tu contraseña y más en: <br>
+<?php echo make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ); ?><br><br>
+<?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated ) : ?>
+Tu contraseña se generó automáticamente: <strong><?php echo esc_html( $user_pass ); ?><br></strong>
+<?php endif; ?>
+Pero podés cambiarla cuando quieras.<br><br>
+
+¡Te esperamos! ;-)</p>
+
+
+<?php } ?>
 <?php
 if ( $additional_content ) {
 	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
