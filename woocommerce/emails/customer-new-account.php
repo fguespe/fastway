@@ -45,7 +45,7 @@ Your password was automatically generated: <strong><?php echo esc_html( $user_pa
 <?php endif; ?>
 You can change it whenever you want.<br><br>
 
-Thank you for choosing us.</p>
+Thank you for choosing <?php echo esc_html( $blogname )?>.</p>
 <?php
 }
 
