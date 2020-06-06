@@ -24,7 +24,7 @@ wc_print_notices(); ?>
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-	<p><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Perdiste tu contraseńa? Por favor ingresá tu nombre de usuario o email y recibirás un link para reiniciarla.', 'fastway' ) ); ?></p>
+	<p><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Perdiste tu contraseńa? Por favor ingresá tu nombre de usuario o email y recibirás un link para reiniciarla.', 'woocommerce' ) ); ?></p>
 
 	<p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
 		<label for="user_login"><?php _e( 'Usuario o email', 'fastway' ); ?></label>
