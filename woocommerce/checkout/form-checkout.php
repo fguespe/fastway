@@ -209,6 +209,7 @@ function fw_logout(){
               action: 'fw_ajax_logout'
           },
           success: function(data){
+            console.log('data',data)
             window.location.reload()
             //editpaso(1)
           }
@@ -229,6 +230,7 @@ function fw_login(){
               security: jQuery('#login #security').val() 
           },
           success: function(data){
+            console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               window.location.reload()
@@ -249,6 +251,18 @@ function verificarEmail(){
     jQuery('.paso-cuenta .box-step .subtitle').text(email)
     jQuery('#billing_form #billing_email').val(email);
     jQuery('#billing_email').removeClass('enrojo')
+  }
+  let pass=jQuery('#account_password').length
+  if(pass){
+    console.log('campo pass existe')
+    disable=!jQuery('#account_password').val() || jQuery('#account_password').val().length<6
+    if(disable){
+      console.log('campo pass esta completado')
+      jQuery('#account_password').addClass('enrojo')
+    }else{
+      console.log('campo pass esta vacio')
+      jQuery('#account_password').removeClass('enrojo')
+    }
   }
   sacar1(disable,8)
 }
@@ -308,7 +322,9 @@ jQuery(document).ready( function(jQuery) {
 
   jQuery('#billing_email').on('input', function(e){
     verificarEmail();
-
+  })
+  jQuery('#account_password').on('input', function(e){
+    verificarEmail();
   })
 
   jQuery('#billing_form input').on('input', function(e){

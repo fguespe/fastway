@@ -1750,8 +1750,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
 
 
-//add_action('woocommerce_checkout_order_processed', 'enroll_student', 10, 1);
-//add_action('woocommerce_thankyou', 'enroll_student', 10, 1);
+add_action('woocommerce_checkout_order_processed', 'enroll_student', 10, 1);
+add_action('woocommerce_thankyou', 'enroll_student', 10, 1);
 function enroll_student( $order_id ) {
     if ( ! $order_id )return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
@@ -1771,7 +1771,6 @@ function enroll_student( $order_id ) {
 
     // Getting an instance of the order object
     $order = wc_get_order( $order_id );
-
     foreach ( $order->get_items() as $item_id => $item ) {
 
         if( $item['variation_id'] > 0 )$product_id = $item['variation_id']; // variable product

@@ -27,13 +27,11 @@ function fw_ajax_login(){
   switch ( $result ) {
     case 1:
         fw_log('Nonce is less than 12 hours old');
-        break;
     case 2:
       fw_log( 'Nonce is between 12 and 24 hours old');
-        break;
     default:
-        fw_log('Nonce is invalid' );
-        exit( 'Nonce is invalid' );
+      echo json_encode(array('loggedin'=>false, 'message'=>__('Error unknown')));
+      die();
   }
   // Nonce is checked, get the POST data and sign user on
   $info = array();
