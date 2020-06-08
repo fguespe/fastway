@@ -446,7 +446,7 @@ jQuery(document).ready( function(jQuery) {
         });
         
     });
-}
+});
 
 function getVariation(){
     let selects=jQuery( ".fw_variations select" )
