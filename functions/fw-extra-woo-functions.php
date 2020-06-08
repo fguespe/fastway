@@ -1748,3 +1748,55 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     return $fields;
 }
 
+
+
+add_action('woocommerce_checkout_order_processed', 'enroll_student', 10, 1);
+add_action('woocommerce_thankyou', 'enroll_student', 10, 1);
+function enroll_student( $order_id ) {
+    if ( ! $order_id )return;
+    $usuario=getconfig(fw_theme_mod('fw_id_ml'));
+
+    $iduser=trim($usuario['iduser']);
+    $access_token= trim($usuario['access_token']);
+    $refresh_token = trim($usuario['refresh_token']);
+    $appId=fw_theme_mod('fw_ml_appid');
+    $secretKey=fw_theme_mod('fw_ml_appsecret');
+
+    $meli = new Meli($appId, $secretKey,$access_token,$refresh_token);
+    $nuevos=$meli->refreshAccessToken();
+    $access_token=$nuevos['body']->access_token;
+    $refresh_token=$nuevos['body']->refresh_token;
+    if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
+    
+
+    // Getting an instance of the order object
+    $order = wc_get_order( $order_id );
+
+    foreach ( $order->get_items() as $item_id => $item ) {
+
+        if( $item['variation_id'] > 0 )$product_id = $item['variation_id']; // variable product
+        else  $product_id = $item['product_id']; // simple product
+
+        $product = wc_get_product( $product_id );
+        $sku=$product->get_sku();
+
+        if(strpos( $sku, 'MLA' ) !== false){
+
+          error_log($sku);
+
+          $item = array(
+            "available_quantity" => 0,
+            "variations" => array(
+              array(
+                "id"=>57614473935,
+                "price"=>40000,
+                "available_quantity"=>0  
+              )
+            )
+          );
+          $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
+          error_log(print_r($result,true));
+        }
+
+    }
+}

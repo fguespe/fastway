@@ -70,6 +70,13 @@ Kirki::add_section( 'section_whatsapp', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
+Kirki::add_section( 'section_meli', array(
+    'title'          => __( 'Mercadolibre', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 Kirki::add_section( 'section_popup', array(
     'title'          => __( 'Popup', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -794,6 +801,53 @@ Kirki::add_field( 'theme_config_id', array(
 		
 	),
 ) );
+/*MELI*/
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_ml_on',
+	'label'       => __( 'Activar', 'fastway' ),
+	'section'     => 'section_meli',
+	'description' => 'Esto activa la integracio a la api de ml',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_id_ml',
+	'label'       => __( 'ID Mercadolibre ', 'fastway' ),
+	'description'	=>	'Sirve tambien para el dashboard help',
+	'section'     => 'section_meli',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_ml_appid',
+	'label'       => __( 'App Id ', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_meli',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_ml_appsecret',
+	'label'       => __( 'App Secret ', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_meli',
+	'default'     => '',
+) );
+
+
+
+
 /*EMAIL*/
 
 Kirki::add_field( 'theme_config_id', array(

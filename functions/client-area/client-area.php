@@ -18,22 +18,16 @@ Kirki::add_section( 'section_clientwidgets', array(
 
 ) );
 
+/*MELI*/
+
 
 /*WOO AREA*/
+
 Kirki::add_section( 'section_wooarea', array(
     'title'          => __( 'Woocommerce', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_clientarea',
 
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_id_ml',
-	'label'       => __( 'ID Mercadolibre ', 'fastway' ),
-	'description'	=>	'Sirve para el dashboard help',
-	'section'     => 'section_wooarea',
-	'default'     => '',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
