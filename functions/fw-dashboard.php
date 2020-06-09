@@ -355,6 +355,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
  function custom_dashboard_help() {
      echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
+        <br><small>*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R</small>
         <br><br>Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a></p>
         Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>
         ' ;
