@@ -93,6 +93,7 @@ function fw_widget_cupones_dash_handler(){
 
 function fw_widget_desc_prods_dash(){
 
+    $cates =fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):'Toda la tienda';
     $estado=fw_theme_mod('fw_product_discount')?"Activo":"Inactivo";
     $color=$estado=='Activo'?'green':'red';
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
@@ -102,6 +103,7 @@ function fw_widget_desc_prods_dash(){
     echo <<<HTML
     <div class='fw_widget_dash'>
         <label>Estado: $estado</label><br>
+        <label>Aplica a: $cates</label><br>
         <label>Descuento(%): $porcentage </label><br>
         <a class="iralasopciones" href="index.php?edit=fw_widget_desc_prods#fw_widget_desc_prods">Cambiar</a>
     </div>
@@ -118,6 +120,7 @@ function fw_widget_desc_prods_dash_handler(){
         //Logica save
         set_theme_mod('fw_product_discount',$_POST['fw_widget_desc_prods']['estado']);
         set_theme_mod('fw_product_discount_percentage',$_POST['fw_widget_desc_prods']['percentage']);
+        set_theme_mod('fw_product_discount_categories',$_POST['fw_widget_desc_prods']['categories']);
     }
 
     $estado=fw_theme_mod('fw_product_discount')?true:false;
@@ -125,6 +128,7 @@ function fw_widget_desc_prods_dash_handler(){
     echo "
     <div>
         <label>Estado <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
+        <label>Categorias: <input type=\"text\" name=\"fw_widget_desc_prods[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_product_discount_categories')."\"><br>
         <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
         </div><br>";
 }
@@ -168,10 +172,10 @@ function fw_widget_lili_discount_dash_handler(){
     $estado=$estado?"checked=\"".$estado."\"":"";
     echo "
     <div>
-        <label>Estado <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
-        <label>Categorias  <input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
-        <label>Cantidad minima <input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
-        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
+        <label>Estado: <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
+        <label>Categorias: <input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
+        <label>Cantidad minima: <input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
+        <label>Descuento (%):<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
         <small>Instrucciones:<br>
         1) Se deben ingresar los slugs de las categorías, se pueden consultar en la url de la tienda, o en la sección  <a href='edit-tags.php?taxonomy=product_cat&post_type=product'>categorías</a> (separados con ','). <br> 
         2) Dejar vacío para aplicar a toda la tienda<br> 
