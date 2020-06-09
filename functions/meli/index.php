@@ -5,7 +5,7 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);
 require_once($path."/wp-load.php");
 $appId = fw_theme_mod('fw_ml_appid');//fw_theme_mod('fw_ml_appid');;//mlsync
 $secretKey = fw_theme_mod('fw_ml_appsecret');
-echo "App Id:".$appId;
+echo "App Id:".$appId.'<br>';
 echo "secretKey:".$secretKey;
 
 $redirectURI = 'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/';
