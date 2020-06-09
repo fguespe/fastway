@@ -1,8 +1,6 @@
 <?php
 
-
 //add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
-//add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     if(!fw_theme_mod('fw_ml_on'))return;
@@ -54,7 +52,10 @@ function fw_ml_update_stock( $order_id ) {
             );
           }
           $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
-          error_log($result['httpCode']);
+   
+          if($result['httpCode']==200)error_log($result['httpCode'].": Se actualizo el prod/var con id".$sku.' a stock '.$stock);
+          else error_log($result['httpCode'].": Hubo un error al actualizar id".$sku.' a stock '.$stock);
+          
         }
 
     }
