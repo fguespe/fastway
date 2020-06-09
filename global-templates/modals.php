@@ -425,16 +425,15 @@ function ir_al_checkout(url){
     else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
 }
 
-jQuery(document).ready( function(jQuery) {
-    jQuery( ".fw_variations select" ).change(function() {
+jQuery( ".fw_variations select" ).change(function() {
 
-        let vara=getVariation()
-        if(!vara){
-            jQuery('.fw_add_to_cart_button').prop("disabled",true)
-            return;
-        }
-        jQuery('.summary .fw_price').html('<i class="fas fa-circle-notch fa-spin" ></i>');
-        jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
+    let vara=getVariation()
+    if(!vara){
+        jQuery('.fw_add_to_cart_button').prop("disabled",true)
+        return;
+    }
+    jQuery('.summary .fw_price').html('<i class="fas fa-circle-notch fa-spin" ></i>');
+    jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
         function (msg) { 
             jQuery('.summary .fw_price').html(msg)
 
@@ -443,9 +442,8 @@ jQuery(document).ready( function(jQuery) {
             }else {
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
             }
-        });
-        
-    });
+        }
+    );
 });
 
 function getVariation(){
