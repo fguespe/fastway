@@ -1,8 +1,8 @@
 <?php
 
 
-add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
-add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+//add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
+//add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     if(!fw_theme_mod('fw_ml_on'))return;
