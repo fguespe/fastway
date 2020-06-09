@@ -3,9 +3,11 @@ session_start();
 
 $path = preg_replace('/wp-content.*$/','',__DIR__);
 require_once($path."/wp-load.php");
+$appId = fw_theme_mod('fw_ml_appid');//fw_theme_mod('fw_ml_appid');;//mlsync
+$secretKey = fw_theme_mod('fw_ml_appsecret');
+echo "App Id:".$appId;
+echo "secretKey:".$secretKey;
 
-$appId = '4248182772258143';//fw_theme_mod('fw_ml_appid');;//mlsync
-$secretKey = '2C9wN7PCUbhHwUcEtAjHP1ujMZMD8roJ';//fw_theme_mod('fw_ml_appsecret');
 $redirectURI = 'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/';
 $siteId = 'MLA';
 
