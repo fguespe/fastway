@@ -1,6 +1,8 @@
 <?php
 
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 /*
 add_action('wp_ajax_nopriv_fw_cart_set_shipping', 'fw_cart_set_shipping');
 add_action('wp_ajax_fw_cart_set_shipping', 'fw_cart_set_shipping');
@@ -17,29 +19,29 @@ function fw_cart_set_shipping(){
 add_action('wp_ajax_nopriv_fw_ajax_logout', 'fw_ajax_logout');
 add_action('wp_ajax_fw_ajax_logout', 'fw_ajax_logout');
 function fw_ajax_logout(){
+  check_ajax_referer( 'ajax-logout-nonce', 'ajaxsecurity' );
+  wp_clear_auth_cookie();
   wp_logout();
-  die();
+  ob_clean(); // probably overkill for this, but good habit
+  echo 'adios!!';
+  wp_die();
 }
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){
-  $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
-  switch ( $result ) {
-    case 1:
-        fw_log('Nonce is less than 12 hours old');
-    case 2:
-      fw_log( 'Nonce is between 12 and 24 hours old');
-    default:
-      echo json_encode(array('loggedin'=>false, 'message'=>__('Error unknown')));
-      die();
-  }
-  // Nonce is checked, get the POST data and sign user on
+  error_log($_POST['security']);
+  if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'woocommerce-login' ) ) {
+    error_log('Sorry, your nonce did not verify.') ;
+    //exit;
+  } else {
+    // process form data
+  } 
   $info = array();
   $info['user_login'] = $_POST['username'];
   $info['user_password'] = $_POST['password'];
   $info['remember'] = true;
-
   $user_signon = wp_signon( $info, false );
+  error_log(print_r($user_signon,true));
   if ( is_wp_error($user_signon) ){
       echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
   } else {

@@ -56,7 +56,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
                 <p class="status"></p>
                 <input class="submit_button boton" type="button" value="Login" onclick="fw_login()" name="submit">
                 <div class="submit_button loading" style="display:none;"><i class='fas fa-circle-notch fa-spin'></i></div>
-                <?php wp_nonce_field( 'ajax-login-nonce', 'security'); ?>
+                <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
             </div>
 
             <div class="login-btn"><?=fw_theme_mod('fw_label_checkout_already_not')?> <a class="registro" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_back')?></a></div>
@@ -219,6 +219,7 @@ function fw_login(){
     if(!jQuery('#login #username').val() || !jQuery('#login #password').val())return
     jQuery('.submit_button.boton').hide()
     jQuery('.submit_button.loading').show()
+    console.log('sectu',jQuery('#login #woocommerce-login-nonce').val())
     jQuery.ajax({
           type: 'POST',
           dataType: 'json',
@@ -227,7 +228,7 @@ function fw_login(){
               action: 'fw_ajax_login', //calls wp_ajax_nopriv_ajaxlogin
               username: jQuery('#login #username').val(), 
               password: jQuery('#login #password').val(), 
-              security: jQuery('#login #security').val() 
+              security: jQuery('#login #woocommerce-login-nonce').val() 
           },
           success: function(data){
             console.log(data)

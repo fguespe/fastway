@@ -15,7 +15,6 @@ function saveconfig($iduser,$access_token,$refresh_token){
 }
 
 
-
 function getconfig($iduser){
 	$vars=get_option('fw_ml_app_'.$iduser,$vars);
 	return $vars;
