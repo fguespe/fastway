@@ -265,6 +265,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
     if(fw_theme_mod('fw_ml_on')){
       require get_template_directory() . '/functions/meli/meli.php';
       require get_template_directory() . '/functions/meli/functiones.php';
+      require get_template_directory() . '/functions/fw-ml.php';
     }
 
 }
