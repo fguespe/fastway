@@ -1,7 +1,9 @@
 <?php
 
-//add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
-/*
+if(fw_theme_mod('fw_ml_stock_web_a_ml')){
+  add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
+  if(isLocalhost())add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+}
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     if(!fw_theme_mod('fw_ml_on'))return;
@@ -22,6 +24,7 @@ function fw_ml_update_stock( $order_id ) {
 
     // Getting an instance of the order object
     $order = wc_get_order( $order_id );
+    
     foreach ( $order->get_items() as $item_id => $item ) {
         
         if( $item['variation_id'] > 0 )$product_id = $item['variation_id']; // variable product
@@ -35,6 +38,8 @@ function fw_ml_update_stock( $order_id ) {
           $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
           $vars=$prod['body']->variations;
           if(count($vars)>0){
+            $note=$sku.' - es un prod variable' ;
+            $order->add_order_note( $note);
             error_log('es un prod variable');
             foreach($vars as $var){
               $item = array(
@@ -47,18 +52,22 @@ function fw_ml_update_stock( $order_id ) {
               );
             }
           }else{
-            error_log('es un prod simple');
+            $note=$sku.' - es un prod simple' ;
+            $order->add_order_note( $note);
+
             $item = array(
               "available_quantity"=>$stock
             );
           }
           $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
-   
-          if($result['httpCode']==200)error_log($result['httpCode'].": Se actualizo el prod/var con id".$sku.' a stock '.$stock);
-          else error_log($result['httpCode'].": Hubo un error al actualizar id".$sku.' a stock '.$stock);
+          
+          if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock;
+          else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
+          error_log($note);
+          $order->add_order_note( $note );
+          
           
         }
 
     }
 }
-*/
