@@ -126,7 +126,7 @@ if(fw_theme_mod("fw_action_resetmails")){
 
     
      //Mail woocommerce
-    update_option("woocommerce_email_header_image",fw_theme_mod('fw-email-logo')?fw_theme_mod('fw-email-logo'):fw_theme_mod('genera-logo') );
+    update_option("woocommerce_email_header_image",fw_theme_mod('fw-email-logo')?fw_theme_mod('fw-email-logo'):fw_theme_mod('general-logo') );
     update_option("woocommerce_email_footer_text","Powered by Altoweb");
     update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
