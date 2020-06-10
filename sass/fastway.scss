@@ -4491,7 +4491,11 @@ body .wpb_content_element {
     justify-content: space-between;
   }
   .woocommerce-input-wrapper .input-checkbox{
-    width:10% !important;
+    width:15px !important;
+    margin-right: 10px;
+  }
+  .woocommerce-input-wrapper .fw_terms,.woocommerce-input-wrapper .fw_terms a{
+    font-size:12px !important;
   }
   .woocommerce-input-wrapper .checkbox{
     display:flex !important;

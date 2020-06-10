@@ -80,7 +80,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
-
+              
               foreach ( $fields as $key => $field ) {
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
               }
@@ -89,16 +89,18 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
               }
 
-
               if(fw_theme_mod('fw_terms_required')){
+                $ja='<span class="fw_terms" >'.fw_theme_mod('fw_label_terms_acepto').'<a style="color:#4D96EC" target="_blank" href="'.esc_url( get_permalink( wc_terms_and_conditions_page_id() )).'"> '.fw_theme_mod('fw_label_terms_name').'</a></span>  ';
+                woocommerce_form_field( 'custom_checkbox', array(
+                    'type'          => 'checkbox',
+                    'label'         => $ja,
+                    'class'  =>      ['w100'],
+                    'required'  => true,
+                ), $checkout->get_value( 'custom_checkbox' ));
+              }
               ?>
-              <span class="woocommerce-input-wrapper terms">
-                <input type="checkbox" class="terms" style="width:auto;height:auto!important;" required name="terms" > Acepto los <a style="color:#4D96EC" target="_blank" href="<?=esc_url( get_permalink( wc_terms_and_conditions_page_id() ) )?>">Términos y condiciones</a>
-              </span>
-              <?php } ?>
             </div>
           </div>
-          
           <div class="capsula box-step" style="display:none;">
 						<a class="editar" onclick="editpaso(2)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
 						<span class="icon"><i class="fa fa-check"></i></span>

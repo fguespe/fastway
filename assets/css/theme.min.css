@@ -4388,7 +4388,13 @@ body .wpb_content_element {
 }
 .woocommerce-checkout .woocommerce-input-wrapper .input-checkbox,
 .woocommerce-account .woocommerce-input-wrapper .input-checkbox {
-  width: 10% !important;
+  width: 15px !important;
+  margin-right: 10px;
+}
+.woocommerce-checkout .woocommerce-input-wrapper .fw_terms, .woocommerce-checkout .woocommerce-input-wrapper .fw_terms a,
+.woocommerce-account .woocommerce-input-wrapper .fw_terms,
+.woocommerce-account .woocommerce-input-wrapper .fw_terms a {
+  font-size: 12px !important;
 }
 .woocommerce-checkout .woocommerce-input-wrapper .checkbox,
 .woocommerce-account .woocommerce-input-wrapper .checkbox {
