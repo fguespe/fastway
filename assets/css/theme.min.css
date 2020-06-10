@@ -128,6 +128,13 @@
   border-color: var(--main);
 }
 
+.fw_variations label, .fw_variations td {
+  float: left;
+}
+.fw_variations label {
+  margin-right: 20px;
+}
+
 .woocommerce-ResetPassword .btn {
   margin-right: 20px;
   border-color: var(--main);

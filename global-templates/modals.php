@@ -361,6 +361,7 @@
     text-align:center !important;
     width:100% !important;
 }
+
 .fw_add_to_cart_button:disabled {
   background: #ccc;
 }
