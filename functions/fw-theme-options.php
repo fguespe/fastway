@@ -3605,6 +3605,14 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 /*LABELS*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_seleccionar_opcion',
+	'label'    => 'Seleccionar opción',
+	'description'    => 'El alert que aparece cuando no hay prod variable seleccionado',
+	'section'     => 'section_labels_products',
+	'default'	=>'Seleccionar opción',
+));
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
