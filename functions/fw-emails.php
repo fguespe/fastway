@@ -182,7 +182,7 @@ function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email
         echo '<p>'.__( 'Código ').$coupon_code.'<p>';
     } 
     // For multiple coupons
-    else {
+    else if(count($coupon_codes) >1) {
         $coupon_codes = implode( ', ', $coupon_codes);
         echo '<p>'.__( 'Códigos: ').$coupon_codes.'<p>';
     }
