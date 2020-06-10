@@ -479,7 +479,7 @@ function add_to_minicart(prod_id){
     if(jQuery( ".fw_variations" ).length){
         var_id=getVariation()
         if(!var_id){
-            alert("Seleccionar una opcion")
+            alert('<?=fw_theme_mod('fw_label_seleccionar_opcion')?>')
             return;
         }else{
             var_id=var_id['variation_id']

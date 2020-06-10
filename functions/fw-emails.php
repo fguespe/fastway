@@ -109,7 +109,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
 
 
 //config mails
-if(fw_theme_mod("fw_action_resetmails") || 1==1){
+if(fw_theme_mod("fw_action_resetmails")){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
     update_option("woocommerce_cancelled_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
