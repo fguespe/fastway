@@ -1135,7 +1135,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_ml_on',
 	'label'       => __( 'Activar', 'fastway' ),
 	'section'     => 'section_meli',
-	'description' => 'Pasarle el link al cliente: <a href="'.'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/'.'">LINK</a>',
+	'description' => 'Pasarle el link al cliente: <a href="'.'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/'.'">LINK</a><br>'.json_encode(get_option('fw_ml_app_'.get_theme_mod('fw_id_ml'),$vars)),
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
