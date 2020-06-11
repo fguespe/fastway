@@ -48,15 +48,27 @@ function fw_get_cart_totals(){
     exit();
 }
 
+
+
+add_filter( 'woocommerce_get_item_data', 'fw_get_item_data', 10, 2 );
 function fw_get_item_data( $item_data, $cart_item_data ) {
-  if(!function_exists('fw_extra_line_info'))return $item_data;
-  $item_data[] = array(
-    'key' => 'fw_extra',
-    'value' => fw_extra_line_info($cart_item_data['product_id'])
-  );
+  $product=wc_get_product($cart_item_data['product_id']);
+  if($cart_item['variation_id'])$product=wc_get_product($cart_item['variation_id']);
+  
+  if(function_exists('fw_extra_line_info')){
+    $item_data[] = array(
+      'key' => 'fw_extra',
+      'value' => fw_extra_line_info($product->id)
+    );
+  }
+  if($product->stock_status=='onbackorder'){
+    $item_data[] = array(
+      'key'     => "Estado",
+      'value'   => fw_theme_mod('fw_backorder_text')
+    );
+  }
   return $item_data;
  }
- add_filter( 'woocommerce_get_item_data', 'fw_get_item_data', 10, 2 );
  
  
 add_action('wp_ajax_nopriv_fw_get_minicart', 'fw_get_minicart');
@@ -76,8 +88,9 @@ function fw_get_minicart(){
         $nombre = $product->get_name();
         $cant=$cart_item['quantity'];
         $extra=function_exists('fw_extra_line_info')?fw_extra_line_info($cart_item['product_id']):'';
+        $stock_status=$product->stock_status=='onbackorder'?fw_theme_mod('fw_backorder_text'):'';
         $precio= $cart_item['line_subtotal'];
-        $arr = array('nombre' => $nombre,'extra' => $extra,'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cant, 'url' => $image_url, 'cart_item_key' => $cart_item_key);
+        $arr = array('nombre' => $nombre,'extra' => $extra,'stock_status'=>$stock_status,'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cant, 'url' => $image_url, 'cart_item_key' => $cart_item_key);
         array_push($carta,$arr);
     }
 

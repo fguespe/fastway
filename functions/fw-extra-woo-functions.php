@@ -775,6 +775,7 @@ function fw_custom_get_availability( $availability, $_product ) {
 }
 
 
+
 //Ekpty cart
 add_action( 'init', 'woocommerce_clear_cart_url' );
 function woocommerce_clear_cart_url() {
@@ -1747,3 +1748,5 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     }
     return $fields;
 }
+
+

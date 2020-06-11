@@ -5435,12 +5435,20 @@ dt.variation-fw_extra {
   display: none !important;
 }
 
+dt.variation-fw_extra.stock {
+  display: block;
+}
+
 .variation-fw_extra p {
   color: red;
   font-weight: 300;
   font-size: 12px;
   text-decoration: underline;
   font-style: italic;
+}
+
+.variation-fw_extra.stock p {
+  color: black;
 }
 
 .woocommerce-SavedPaymentMethods li label {
