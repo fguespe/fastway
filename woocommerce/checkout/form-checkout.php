@@ -184,9 +184,12 @@ var paso = 1;
         </div>
         <?php 
     $haybacks=false;
-    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-      $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-      if($_product->get_stock_status()=='onbackorder')$haybacks=true;
+    
+    if(get_option('woocommerce_manage_stock')==='yes'){
+      foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+        if($_product->get_stock_status()=='onbackorder')$haybacks=true;
+      }
     }
     if($haybacks){ 
       ?>
