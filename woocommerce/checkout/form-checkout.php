@@ -271,8 +271,11 @@ function verificarEmail(){
       console.log('campo pass esta bien')
       jQuery('#account_password').removeClass('enrojo')
     }
+    sacar1(!p_valid || !e_valid,8)
+  }else{
+    sacar1(!e_valid ,8)
   }
-  sacar1(!p_valid || !e_valid,8)
+  
 }
 function verificarFields(first=false){
   var disable=false
