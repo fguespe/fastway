@@ -9,10 +9,18 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 }
 ?>
 <script>
-  if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
+jQuery(document).ready(function() {
+  jQuery(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
-  var logged=false;
-  var paso = 1;
+var logged=false;
+var paso = 1;
 </script>
 <?php if(is_user_logged_in()){ ?>
 <script>
@@ -243,8 +251,8 @@ function fw_login(){
 }
 function verificarEmail(){
   let email=jQuery('#billing_email').val()
-  let disable= !isEmail(email)
-  if(disable){
+  let e_valid= isEmail(email)
+  if(!e_valid){
     jQuery('#billing_email').addClass('enrojo')
   }else{
     jQuery('.paso-cuenta .box-step .subtitle').text(email)
@@ -252,18 +260,19 @@ function verificarEmail(){
     jQuery('#billing_email').removeClass('enrojo')
   }
   let pass=jQuery('#account_password').length
+  let p_valid=false
   if(pass){
     console.log('campo pass existe')
-    disable=!jQuery('#account_password').val() || jQuery('#account_password').val().length<6
-    if(disable){
-      console.log('campo pass esta completado')
+    p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
+    if(!p_valid){
+      console.log('campo pass esta mal')
       jQuery('#account_password').addClass('enrojo')
     }else{
-      console.log('campo pass esta vacio')
+      console.log('campo pass esta bien')
       jQuery('#account_password').removeClass('enrojo')
     }
   }
-  sacar1(disable,8)
+  sacar1(!p_valid || !e_valid,8)
 }
 function verificarFields(first=false){
   var disable=false

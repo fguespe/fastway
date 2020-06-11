@@ -1127,9 +1127,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 /*MELI*/
-
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_ml_on',
