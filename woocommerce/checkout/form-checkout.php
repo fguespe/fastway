@@ -182,9 +182,19 @@ var paso = 1;
         <div class="cart-form-desc">
            <p><?=fw_theme_mod('checkout-msg')?></p>
         </div>
-
-
-        <div class="row place-order"> 
+        <?php 
+    $haybacks=false;
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+      $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+      if($_product->get_stock_status()=='onbackorder')$haybacks=true;
+    }
+    if($haybacks){ 
+      ?>
+        <div class="cart-form-desc">
+           <p>Hay productos de tu carrito de los cuales no contamos en inventario actualmente. Mediante el pago estas realizando una reserva de los mismos y nos comunicaremos con vos ni bien lo tengamos en stock.</p>
+        </div>
+     <?php } ?>
+     <div class="row place-order"> 
             <noscript>
               <?php
               printf( esc_html__( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ), '<em>', '</em>' );
