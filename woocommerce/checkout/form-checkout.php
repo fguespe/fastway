@@ -435,6 +435,7 @@ function nextpaso(){
   paso++
   if(paso==2){
     console.log(paso)
+    jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
     verificarFields();
