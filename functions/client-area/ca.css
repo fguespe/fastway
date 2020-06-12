@@ -428,7 +428,13 @@ cuidado con el update notice y el error de create user
 .vc_navbar,.composer-switch{
 	display: none !important;;
 }
-
+.envios .subsubsub{
+	display:none;
+}
+.envios > .wc-shipping-zone-settings tr:nth-child(1),
+.envios > .wc-shipping-zone-settings tr:nth-child(2){
+	display:none !important;
+}
 .misc-pub-visibility{
 	display: none !important;
 }
