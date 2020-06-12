@@ -99,12 +99,12 @@ var paso = 1;
 
               if(fw_theme_mod('fw_terms_required')){
                 $ja='<span class="fw_terms" >'.fw_theme_mod('fw_label_terms_acepto').'<a style="color:#4D96EC" target="_blank" href="'.esc_url( get_permalink( wc_terms_and_conditions_page_id() )).'"> '.fw_theme_mod('fw_label_terms_name').'</a></span>  ';
-                woocommerce_form_field( 'custom_checkbox', array(
+                woocommerce_form_field( 'fw_terms_checkbox', array(
                     'type'          => 'checkbox',
                     'label'         => $ja,
                     'class'  =>      ['w100'],
                     'required'  => true,
-                ), $checkout->get_value( 'custom_checkbox' ));
+                ), $checkout->get_value( 'fw_terms_checkbox' ));
               }
               ?>
             </div>
@@ -250,7 +250,6 @@ function fw_login(){
               security: jQuery('#login #security').val() 
           },
           success: function(data){
-            console.log(data)
             if(data && data.loggedin){
               jQuery('#login .status').html('<span style="color:green;" >Login exitoso!</span>') 
               window.location.reload()
@@ -275,13 +274,13 @@ function verificarEmail(){
   let pass=jQuery('#account_password').length
   let p_valid=false
   if(pass){
-    console.log('campo pass existe')
+    //console.log('campo pass existe')
     p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
     if(!p_valid){
-      console.log('campo pass esta mal')
+      //console.log('campo pass esta mal')
       jQuery('#account_password').addClass('enrojo')
     }else{
-      console.log('campo pass esta bien')
+      //console.log('campo pass esta bien')
       jQuery('#account_password').removeClass('enrojo')
     }
     sacar1(!p_valid || !e_valid,8)
@@ -295,24 +294,21 @@ function verificarFields(first=false){
 
   jQuery('#billing_form input').each(function(index,data) {
     var element = jQuery(this);
-    let req=element.parent().parent().hasClass('validate-required')
+    let type=element.attr('type')
+    let req=type!='checkbox'?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
 
+    //rellena
     if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
-    if (req && element.val() == "") {
+
+    if (req && type!='checkbox' && element.val() == "") {
+      disable = true;
+      element.addClass('enrojo')
+    }else if (req && type=='checkbox' && !element.is(":checked")) {
       disable = true;
       element.addClass('enrojo')
     }else{
       element.removeClass('enrojo')
-    }
-  });
-  jQuery('#billing_form input[type="checkbox"]').each(function(index,data) {
-    var element = jQuery(this);
-    if (element.prop('required') &&  element.prop("checked") == false){
-      disable = true;
-        element.parent().addClass('enrojo')
-    }else{
-        element.parent().removeClass('enrojo')
     }
   });
   if(!disable){
@@ -429,6 +425,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
+    console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
@@ -997,10 +994,12 @@ var envioSeleccionado=0
 jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
   jQuery(document.body).trigger("update_checkout");
 });
+
 /*
 jQuery( document ).on( 'updated_cart_totals', function(){
   updateEnvioGratisME();
 });*/
+
 function checkpostalCode(){
   if(jQuery('#billing_postcode').length && !jQuery('#billing_postcode').val()){
     var msg = window.prompt("Complete su código postal para poder calcular su envío", "");
@@ -1008,10 +1007,10 @@ function checkpostalCode(){
   }
 }
 
-jQuery(document).on( 'updated_checkout', function(){
+jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
-  setTodopago()
-  setEposnet()
+  setTodopago();
+  setEposnet();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
 });
@@ -1080,8 +1079,6 @@ function updateEnvioGratisME(){
         }else if(element && label==tipos[0]){  
           element.html('<span class="title">Correo a domicilio '+freecuando+'</span><small style="display:inline;"> * Pagando con mercadopago</small>');
           element.addClass('mercadoenvios-shipping ');
-          
-
         }
       }
     }

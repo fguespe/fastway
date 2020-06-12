@@ -1895,6 +1895,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',
@@ -1920,6 +1921,18 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_shipping_groups',
+	'label'       => __( 'Shipping Groups', 'fastway' ),
+	'description'	=> 'Agrupa las sucursales de retiro unicamente',
+	'section'     => 'section_woo_checkout',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_opt_color_checkout',

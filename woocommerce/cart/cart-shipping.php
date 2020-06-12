@@ -31,14 +31,13 @@ foreach ( WC()->shipping->get_packages() as $key => $package ) {
 WC()->session->set('chosen_shipping_methods',[$method]);
 
 
-
-
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 ?>
 <tr class="woocommerce-shipping-totals shipping">
+	<a class="shipping_volver" style="display:none;" ><i class="fad fa-chevron-left"></i> Volver </a>
 	<td data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( $available_methods ) : ?>
 			<div id="shipping_method" class="woocommerce-shipping-methods">
@@ -57,7 +56,7 @@ $calculator_text          = '';
 				else $costo="$".$costo;
 				$active=checked( $method->id, $chosen_method, false )?"active":""
 				?>	
-					<li for="shipping_method_0_<?=$id?><?=$instance?>" class="capsula shipping <?=$active;?>" data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$method->cost?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
+					<li class="capsula shipping <?=$active?> <?=$id?>" for="shipping_method_0_<?=$id?><?=$instance?>"  data-radio="shipping_method_0_<?=$value?>" data-costo="<?=$method->cost?>" data-label="<?=$titulo?>" data-value="<?=$value?>" >
 						<?php printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) );?>
 						<span class="checkmark"></span>
 						<label for="shipping_method_0_<?=$id?><?=$instance?>" class="title"><?=$titulo?></span> <?=$desc?'<small class="desc">'.$desc.'</small>':'';?> </label>
