@@ -1750,3 +1750,13 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 }
 
 
+
+if(fw_theme_mod('fw_is_multitienda'))add_action( 'admin_notices', 'sample_admin_notice__error' );
+function sample_admin_notice__error() {
+  $class = 'notice notice-error';
+  $message1 = "ATENCÍON: MULTITIENDA";
+  $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
+  $message3="Esta tienda tiene activado el plugin Prices by User Role y tiene algunas incompatiblidades como:
+  Nuestro descuento general de producto no funciona, tiene que ir acompañado por el Dynamic Discounts";
+  printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
+}
