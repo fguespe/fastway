@@ -274,7 +274,7 @@ function verificarEmail(){
   let pass=jQuery('#account_password').length
   let p_valid=false
   if(pass){
-    //console.log('campo pass existe')
+    console.log('campo pass existe')
     p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
     if(!p_valid){
       //console.log('campo pass esta mal')
@@ -283,8 +283,9 @@ function verificarEmail(){
       //console.log('campo pass esta bien')
       jQuery('#account_password').removeClass('enrojo')
     }
-    sacar1(!p_valid || !e_valid,8)
+    sacar1(!e_valid || !p_valid,8)
   }else{
+    console.log('campo pass NO existe',e_valid)
     sacar1(!e_valid ,8)
   }
   
@@ -300,7 +301,7 @@ function verificarFields(first=false){
     //rellena
     if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
-    console.log(req,type,element.val() == "")
+  
     if (req && type!='checkbox' && element.val() == "") {
       disable = true;
       element.addClass('enrojo')
@@ -342,6 +343,7 @@ jQuery(document).ready( function(jQuery) {
   verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
+    console.log('jeeje')
     verificarEmail();
   })
   jQuery('#account_password').on('input', function(e){
@@ -432,6 +434,7 @@ function sacar1(estado,msg){
 function nextpaso(){
   paso++
   if(paso==2){
+    console.log(paso)
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
     verificarFields();

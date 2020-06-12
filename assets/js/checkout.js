@@ -392,7 +392,7 @@ jQuery( function( $ ) {
 					$( document.body ).trigger( 'updated_checkout', [ data ] );
 
 					/*ALTOWEB*/
-					verificarFields()
+					verificarEmail()
 				}
 
 			});
