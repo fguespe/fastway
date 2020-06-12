@@ -300,7 +300,7 @@ function verificarFields(first=false){
     //rellena
     if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
-
+    console.log(req,type,element.val() == "")
     if (req && type!='checkbox' && element.val() == "") {
       disable = true;
       element.addClass('enrojo')
@@ -311,6 +311,7 @@ function verificarFields(first=false){
       element.removeClass('enrojo')
     }
   });
+
   if(!disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
@@ -425,7 +426,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    console.log(estado,msg)
+    //console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
