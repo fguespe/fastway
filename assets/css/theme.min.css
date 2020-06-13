@@ -4426,6 +4426,12 @@ body .wpb_content_element {
   /*Solo le mando fix a 2 campos*/
   flex-basis: 100% !important;
 }
+.woocommerce-checkout .woocommerce-checkout p#billing_country_field,
+.woocommerce-checkout .woocommerce-checkout p#billing_country_state,
+.woocommerce-account .woocommerce-checkout p#billing_country_field,
+.woocommerce-account .woocommerce-checkout p#billing_country_state {
+  margin-bottom: 30px;
+}
 .woocommerce-checkout .woocommerce form.fw_checkout .form-row .input-text,
 .woocommerce-checkout .woocommerce-page form.fw_checkout .form-row .input-text,
 .woocommerce-checkout .select2-container--default .select2-search--dropdown .select2-search__field,

@@ -4525,6 +4525,10 @@ body .wpb_content_element {
       /*Solo le mando fix a 2 campos*/
       flex-basis: 100% !important;
     }
+    p#billing_country_field,
+    p#billing_country_state{
+      margin-bottom:30px;
+    }
   }
 
   .woocommerce form.fw_checkout .form-row .input-text,
