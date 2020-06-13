@@ -1729,7 +1729,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['order']['order_comments']['placeholder']=fw_theme_mod('fw_order_notes_placeholder');
 
     if($fields['billing']['billing_first_name'])$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
-    if($fields['billing']['billing_first_name'])$fields['billing']['billing_country']['placeholder'] = $fields['billing']['billing_country']['label'];
+    if($fields['billing']['billing_country'])$fields['billing']['billing_country']['placeholder'] = $fields['billing']['billing_country']['label'];
     if($fields['billing']['billing_last_name'])$fields['billing']['billing_last_name']['placeholder'] =$fields['billing']['billing_last_name']['label'];
     if($fields['billing']['billing_company'])$fields['billing']['billing_company']['placeholder'] = $fields['billing']['billing_company']['label'] ;
     if($fields['billing']['billing_phone'])$fields['billing']['billing_phone']['placeholder'] = $fields['billing']['billing_phone']['label'];
