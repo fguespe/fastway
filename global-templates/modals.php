@@ -472,7 +472,17 @@ function getVariation(){
 function clickproduct(url,redirect){
     location.href=url
 }
-
+function add_to_minicart_table(prod_id,var_id,bundle){
+    jQuery('.var_'+var_id).addClass('loading')
+    let qty=1
+    if(jQuery('.quantity #'+var_id).val())qty=jQuery('.quantity #'+var_id).val()
+    jQuery.get(ajaxurl,
+    {'action': 'add_to_cart',id:prod_id,var_id:var_id,qty:qty*bundle}, 
+    function (msg) { 
+        jQuery('#modal_carrito').modal('show');
+        jQuery('.var_'+var_id).removeClass('loading')
+    });
+}
 function add_to_minicart(prod_id){
     let var_id=0;
 
@@ -530,7 +540,7 @@ function populatecart(){
         let total=totals['total']
         let min=datos['min']
         let subtotal=totals['subtotal']
-        let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total'])
+        let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total']).toFixed(2);
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']
@@ -550,8 +560,8 @@ function populatecart(){
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
-            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+precio/quantity+'</span><br>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio+' </span><br>'
+            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+parseFloat(precio/quantity).toFixed(2)+'</span><br>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+precio.toFixed(2)+' </span><br>'
             if(extra)jqe+='<span class="variation-fw_extra"><p>'+extra+'</p></span>'
             if(stock_status)jqe+='<span class="variation-fw_extra stock"><p>'+stock_status+'</p></span>'
             jqe+='</div></div>'
@@ -560,7 +570,7 @@ function populatecart(){
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
         if(discount_total<0){
             jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+discount_total+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+total+'</span></span></div>'
+            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(total).toFixed(2)+'</span></span></div>'
         }
         jqe+='</div>'
         if(subtotal>0){

@@ -605,6 +605,19 @@ Kirki::add_field( 'theme_config_id', array(
 //Layouts
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'fw_general_ratio',
+	'label'       => __( 'Default border radius', 'fastway' ),
+	'section'     => 'section_layouts',
+	'default'     => 0,
+	'choices'     => array(
+		'min'  => '0',
+		'max'  => '10',
+		'step' => '1',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'header-width',
 	'label'       => __( 'Header Width', 'fastway' ),
@@ -3677,6 +3690,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Add to cart (Loop)', 'fastway' ),
 	'section'     => 'section_labels_products',
 	'default'	=>__( 'Agregar al carrito', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_vaciar_carrito',
+	'label'    => __( 'Vaciar carrito', 'fastway' ),
+	'section'     => 'section_labels_cart',
+	'default'	=>'Vaciar carrito',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',

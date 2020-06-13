@@ -560,6 +560,15 @@ function wpa104537_filter_products_by_featured_status() {
 
 add_action('restrict_manage_posts', 'wpa104537_filter_products_by_featured_status');
 
+
+add_action( 'init', 'woocommerce_clear_cart_url' );
+function woocommerce_clear_cart_url() {
+  global $woocommerce;
+
+    if (isset( $_GET['empty-cart'] ) ) { 
+        $woocommerce->cart->empty_cart(); 
+    }
+}
 /**
  * Filter the products in admin based on options
  *
@@ -774,22 +783,10 @@ function fw_custom_get_availability( $availability, $_product ) {
     return $availability; 
 }
 
-
-
-//Ekpty cart
-add_action( 'init', 'woocommerce_clear_cart_url' );
-function woocommerce_clear_cart_url() {
-  global $woocommerce;
-  
-    if ( isset( $_GET['empty-cart'] ) ) { 
-        $woocommerce->cart->empty_cart(); 
-    }
-}
-/*
 add_action('woocommerce_cart_coupon', 'themeprefix_back_to_store');
 function themeprefix_back_to_store() { 
-echo '<button class="button" onclick="location.href=\''.wc_get_page_permalink( "cart" ).'?empty-cart=yes\''.'">'."Vaciar carrito".'</button>';
-}*/
+echo '<a class="btn" style="border-radius:0px;" onclick="window.location.search += \'&empty-cart=si\''.'">'.fw_theme_mod('fw_label_vaciar_carrito').'</a>';
+}
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
