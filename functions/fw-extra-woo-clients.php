@@ -10,6 +10,16 @@ function hans_table(){
     // Loop through available variations.
     $tabla= '
     <style>
+    .fw_tabla_variaciones td{
+      text-transform: capitalize !important; !important;
+    }
+    .fw_tabla_variaciones{
+      float:left;
+      width:100%;
+    }
+    .fw_add_to_cart_button_table i{
+      color:black
+    }
     .fw_tabla_variaciones #myTab{
       margin-top:20px;
     }
