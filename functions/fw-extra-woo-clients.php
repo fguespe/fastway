@@ -129,6 +129,16 @@ function hans_table(){
         line-height:8px !important;
         text-align:center !important;
       }
+      .fw_tabla_variaciones .nav-item {
+        border-top: 1px solid #d3ced2;
+        border-left: 1px solid #d3ced2;
+      }
+      .fw_tabla_variaciones .nav-item.last{
+        border-right: 1px solid #d3ced2;
+      }
+      .fw_tabla_variaciones .nav-item{
+        width:25%
+      }
     </style>';
     
 
@@ -144,7 +154,7 @@ function hans_table(){
       <li class="nav-item">
       <a class="nav-link" id="bundle10-tab" data-toggle="tab" href="#bundle10" role="tab" aria-controls="bundle10" aria-selected="false">Bundle 10<small>Get 5 FREE</small></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item last">
       <a class="nav-link" id="bundle20-tab" data-toggle="tab" href="#bundle20" role="tab" aria-controls="bundle20" aria-selected="false">Bundle 20<small>Get 13 FREE</small></a>
       </li>
     </ul>

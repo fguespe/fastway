@@ -1737,7 +1737,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
  
 
     //unset($fields['billing']['billing_email']);
-    //unset($fields['billing']['billing_country']);
+    if(get_locale()=='es_ES')unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_address_2']);
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);

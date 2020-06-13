@@ -757,9 +757,6 @@ font-size:12px !important;
   margin:0px;
 }
 
-#billing_country_field {
-  display: none;
-}
 .woocommerce-checkout .wc_payment_methods, .woocommerce-account .wc_payment_methods{
     border:0px !important;
 }
