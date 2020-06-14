@@ -4530,7 +4530,9 @@ body .wpb_content_element {
       margin-bottom:30px;
     }
   }
-
+  #billing_country_field.hide{
+    display: none;
+  }
   .woocommerce form.fw_checkout .form-row .input-text,
   .woocommerce-page form.fw_checkout .form-row .input-text,
   .select2-container--default .select2-search--dropdown .select2-search__field {
