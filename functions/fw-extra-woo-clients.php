@@ -13,6 +13,19 @@ function hans_table(){
     .fw_tabla_variaciones td{
       text-transform: capitalize !important; !important;
     }
+    .nav-item{
+      margin-right:1px;
+      }
+      .fw_tabla_variaciones .nav-item{
+      width:24.5% !important;
+      }
+      .fw_tabla_variaciones .nav-item{
+      border-right:1px solid #d3ced2;
+      }
+      .vc_tta-tab a{
+      background:white !important;
+      border-radius:1px !important;
+      }
     .fw_tabla_variaciones{
       float:left;
       width:100%;

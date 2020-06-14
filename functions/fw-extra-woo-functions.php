@@ -1758,3 +1758,4 @@ function sample_admin_notice__error() {
   Nuestro descuento general de producto no funciona, tiene que ir acompañado por el Dynamic Discounts";
   printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
 }
+
