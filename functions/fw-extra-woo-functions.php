@@ -1737,7 +1737,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if($fields['billing']['billing_country'])$fields['billing']['billing_country']['placeholder'] = $fields['billing']['billing_country']['label'];
 
     
-    if(get_local()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
+    if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
     
     unset($fields['billing']['billing_address_2']);
     if(!fw_theme_mod('fw_sell_to_business')){
