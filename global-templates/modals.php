@@ -537,11 +537,12 @@ function populatecart(){
         let jqe=''
         let totals=datos['totals']
         console.log('totals',totals)
-        let total=totals['total']
+        let shipping_total=totals['shipping_total']
         let min=datos['min']
-        let subtotal=totals['subtotal']
+        let subtotal=parseFloat(totals['subtotal']-shipping_total)
+        let total=parseFloat(totals['total']-shipping_total)
         let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total']);
-    
+
         jQuery('.minicart .cant').text('('+datos['items']+')')
         jQuery.each(datos['cart'], function (index, value) {
             let precio=value['precio']
