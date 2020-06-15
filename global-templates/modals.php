@@ -540,7 +540,7 @@ function populatecart(){
         let shipping_total=totals['shipping_total']
         let min=datos['min']
         let subtotal=parseFloat(totals['subtotal'])
-        let total=parseFloat(totals['total'])
+        let total=parseFloat(totals['cart_contents_total'])
         let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total']);
 
         jQuery('.minicart .cant').text('('+datos['items']+')')
