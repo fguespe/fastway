@@ -1705,7 +1705,7 @@ function fw_editable_roles( $roles ) {
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
 
 
-add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss' );
+add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss',10 );
 function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['billing']['billing_cuit'] = array(
       'label'     => fw_theme_mod( 'fw_cuit_label'),
