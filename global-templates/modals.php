@@ -536,7 +536,7 @@ function populatecart(){
         datos=jQuery.parseJSON(datos)
         let jqe=''
         let totals=datos['totals']
-
+        console.log('totals',totals)
         let total=totals['total']
         let min=datos['min']
         let subtotal=totals['subtotal']
