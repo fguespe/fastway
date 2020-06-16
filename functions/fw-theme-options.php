@@ -585,21 +585,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_checkout',
 	'default'	=> 'Compra Segura',
 ) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_envio',
-	'label'    => __( 'Envío', 'fastway' ),
-	'section'     => 'section_labels_checkout',
-	'default'	=> 'Envío',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_costos_envio',
-	'label'    => __( 'Costos del envío', 'fastway' ),
-	'section'     => 'section_labels_checkout',
-	'default'	=> 'Costos del envío',
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_checkout_verde_2',
@@ -3720,6 +3705,21 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Envío gratis/0', 'fastway' ),
 	'section'     => 'section_labels_shipping',
 	'default'	=>'Sin costo',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_envio',
+	'label'    => __( 'Envío', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Envío',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_costos_envio',
+	'label'    => __( 'Costos del envío', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Costos del envío',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
