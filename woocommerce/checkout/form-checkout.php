@@ -580,8 +580,9 @@ jQuery('.shipping_volver').on('click', function(e) {
 jQuery(document).ready(function(e) {
 	let shippingGroups='<?=fw_theme_mod('fw_shipping_groups');?>';
 	if(shippingGroups){
+    console.log(shippingGroups,'shippingGroups activado')
 		jQuery('.woocommerce-shipping-methods li.local_pickup').hide()
-	    if(!jQuery('.capsula.shipping.group').length)jQuery('.woocommerce-shipping-methods').prepend('<li class="capsula shipping group"><input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method"><label for="shipping_method_0_local_pickup2" class="title">Retirar en nuestras sucursales</label><small class="costo">Ver opciones</small></li>');
+    if(!jQuery('.capsula.shipping.group').length)jQuery('.woocommerce-shipping-methods').prepend('<li class="capsula shipping group"><input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method"><label for="shipping_method_0_local_pickup2" class="title">Retirar en nuestras sucursales</label><small class="costo">Ver opciones</small></li>');
 	}
 });
 jQuery(document).on('click', function(e) {
@@ -629,7 +630,7 @@ function seleccionarPago(capsula){
 function seleccionarEnvio(capsula){
 
   jQuery(document.body).trigger("update_checkout");
-  
+
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 

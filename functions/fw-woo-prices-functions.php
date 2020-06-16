@@ -27,8 +27,6 @@ function fw_product_discount_multiplier($product,$iscartcalc=false){
     if(!fw_theme_mod('fw_product_discount'))return 1;
     if(!fw_theme_mod('fw_product_discount_percentage'))return 1;
     
-    global $woocommerce;
-    if($woocommerce->cart && !empty($woocommerce->cart->get_applied_coupons()))return 1;
     if(fw_theme_mod('fw_product_discount_categories')){
         $esdelapromo=false;
         $terms = get_the_terms ( $product->id, 'product_cat' );
