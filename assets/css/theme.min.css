@@ -5960,5 +5960,21 @@ dt.variation-fw_extra.stock {
 .fw_checkout .box-detail .capsula.shipping.group {
   padding-left: 20px !important;
 }
+.fw_checkout .paso-shipping.groupping .shipping_volver,
+.fw_checkout .paso-shipping.groupping .woocommerce-shipping-methods li.local_pickup {
+  display: none !important;
+}
+.fw_checkout .paso-shipping.groupping .woocommerce-shipping-methods li.group,
+.fw_checkout .paso-shipping.groupping .woocommerce-shipping-methods li:not(.local_pickup) {
+  display: block !important;
+}
+.fw_checkout .paso-shipping.groupping.inside .shipping_volver,
+.fw_checkout .paso-shipping.groupping.inside .woocommerce-shipping-methods li.local_pickup {
+  display: block !important;
+}
+.fw_checkout .paso-shipping.groupping.inside .woocommerce-shipping-methods li.group,
+.fw_checkout .paso-shipping.groupping.inside .woocommerce-shipping-methods li:not(.local_pickup) {
+  display: none !important;
+}
 
 /*# sourceMappingURL=theme.min.css.map */

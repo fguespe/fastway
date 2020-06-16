@@ -497,6 +497,7 @@ jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
   setEposnet();
+  shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
 });
@@ -570,32 +571,21 @@ function updateEnvioGratisME(){
     }
 }*/
 
-jQuery('.shipping_volver').on('click', function(e) {
-    jQuery('.shipping_volver').hide()
-    jQuery('.woocommerce-shipping-methods li.group').show()
-    jQuery('.woocommerce-shipping-methods li.local_pickup').hide()
-    jQuery('.woocommerce-shipping-methods li:not(.local_pickup)').show()
-});
-
-jQuery(document).ready(function(e) {
-	let shippingGroups='<?=fw_theme_mod('fw_shipping_groups');?>';
+function shippingGroups(){
+  let shippingGroups='<?=fw_theme_mod('fw_shipping_groups');?>';
 	if(shippingGroups){
-    console.log(shippingGroups,'shippingGroups activado')
+    jQuery('.paso-shipping').addClass('groupping')
 		jQuery('.woocommerce-shipping-methods li.local_pickup').hide()
     if(!jQuery('.capsula.shipping.group').length)jQuery('.woocommerce-shipping-methods').prepend('<li class="capsula shipping group"><input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method"><label for="shipping_method_0_local_pickup2" class="title">Retirar en nuestras sucursales</label><small class="costo">Ver opciones</small></li>');
 	}
-});
+}
 jQuery(document).on('click', function(e) {
 	var target = jQuery( event.target );
 	if(!target.is( "li" ))target=target.parent()
 	if(!target.is( "li" ))return;
 	
 	if(target.is( "li" ) && target.hasClass( "shipping" ) && target.hasClass( "group" )){
-		console.log('entra-shipping-group')
-		jQuery('.woocommerce-shipping-methods li.group').hide()
-		jQuery('.woocommerce-shipping-methods li.local_pickup').show()
-		jQuery('.shipping_volver').show()
-		jQuery('.woocommerce-shipping-methods li:not(.local_pickup)').hide()
+    jQuery('.paso-shipping').addClass('inside')
 		e.preventDefault()
 	}else if(target.is( "li" ) && target.hasClass( "shipping" )){
 		console.log('entra-shipping')
@@ -612,7 +602,7 @@ function seleccionarPago(capsula){
 	
 
   jQuery(document.body).trigger("update_checkout");
-
+  shippingGroups()
 	jQuery('li.capsula.payment').removeClass("active");
 	capsula.addClass('active');
 
@@ -630,7 +620,8 @@ function seleccionarPago(capsula){
 function seleccionarEnvio(capsula){
 
   jQuery(document.body).trigger("update_checkout");
-
+  shippingGroups()
+  
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 
