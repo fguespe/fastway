@@ -1957,6 +1957,25 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_opt_color_checkout_back',
+	'label'       => __( 'Background Color', 'fastway' ),
+	'section'     => 'section_woo_',
+	'default'     => '#ECECEC',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'#ECECEC',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--checkout_back',
+		),
+	),
+) );
+
 /*tp*/
 
 Kirki::add_field( 'theme_config_id', array(
