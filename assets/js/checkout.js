@@ -336,7 +336,7 @@ jQuery( function( $ ) {
 					if ( data && data.fragments ) {
 						$.each( data.fragments, function ( key, value ) {
 							if ( ! wc_checkout_form.fragments || wc_checkout_form.fragments[ key ] !== value ) {
-								console.log(key)
+								//console.log(key)
 								try{
 									$( key ).replaceWith( value );
 								}catch(e){

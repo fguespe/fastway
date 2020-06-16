@@ -1613,6 +1613,25 @@ ul {
 
 
 
+.woocommerce-order{
+	text-align:center !important;
+}
+.woocommerce-order i{
+	font-size:50px;
+	color:green;
+}
+
+.woocommerce-order .woocommerce-checkout h3{
+	text-align:center !important;
+	display:block !important;
+}
+.pagoexitoso a{
+	font-size:14px !important;
+	display:block !important;
+	color: #5BB956 !important;
+	margin-top:20px;
+	text-decoration:underline;
+}
 
 /*TOP MARGIN*/
 
@@ -3814,9 +3833,14 @@ body .wpb_content_element {
 
 .woocommerce-checkout,
 .woocommerce-account{
+  #page-wrapper{
+    background:var(--checkout_back);
+    border:0px !important;
+  }
   .select2-selection__clear{
     display:none;
   }
+
   .fw_checkout .select2-container--default .select2-selection--single .select2-selection__rendered {
       line-height: 36px !important;
   }
@@ -4644,16 +4668,8 @@ body .wpb_content_element {
     .woocommerce-SavedPaymentMethods{
         display: none;
     }
-    
-    /*
-    #payment li > input[type="radio"]{
-      display:none !important;
-    }*/
     .wc_payment_methods{
-        background:transparent;
-        border-left:1px solid grey !important;
-        border-right:1px solid grey !important;
-        border-bottom:1px solid grey !important;
+
         li label{
          /* border-top:1px solid grey ;*/
           border:0px ;
@@ -4900,7 +4916,26 @@ dt.variation-fw_extra.stock{
 
 
 
-
+.woocommerce-checkout{
+  form.processing .box-detail{
+    display:none !important;
+  }
+  form.processing  #overlay {
+    display: block !important;
+  }
+  form.processing  .paso-loading {
+    display: block !important;
+  }
+  .processing .finalizar{
+    display:block !important;
+    background: gray;
+    color: gray;
+    pointer-events: none;
+  }
+  .processing .finalizar:focus{ 
+    pointer-events: none !important;
+  }
+}
 
 .fw_checkout{
       
@@ -5230,24 +5265,6 @@ dt.variation-fw_extra.stock{
     }
     footer{
     display:none !important ;
-    }
-    form.processing .box-detail{
-    display:none !important;
-    }
-    form.processing  #overlay {
-    display: block !important;
-    }
-    form.processing  .paso-loading {
-    display: block !important;
-    }
-    .processing .finalizar{
-    display:block !important;
-    background: gray;
-    color: gray;
-    pointer-events: none;
-    }
-    .processing .finalizar:focus{ 
-    pointer-events: none !important;
     }
     [data-radio="billetera"] {
       display:none !important;

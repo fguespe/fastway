@@ -59,27 +59,3 @@ defined( 'ABSPATH' ) || exit;
 	<?php endif; ?>
 
 </div>
-
-<style>
-
-
-.woocommerce-order{
-	text-align:center !important;
-}
-.woocommerce-order i{
-	font-size:50px;
-	color:green;
-}
-
-.woocommerce-order .woocommerce-checkout h3{
-	text-align:center !important;
-	display:block !important;
-}
-.pagoexitoso a{
-	font-size:14px !important;
-	display:block !important;
-	color: #5BB956 !important;
-	margin-top:20px;
-	text-decoration:underline;
-}
-</style>

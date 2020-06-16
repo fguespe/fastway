@@ -1099,7 +1099,6 @@ if ( ! class_exists( 'BRAND_THUMB' ) ) {
              _custom_media = true;
              wp.media.editor.send.attachment = function(props, attachment){
                if ( _custom_media ) {
-                 console.log(attachment.url)
                  jQuery('#thumbnail_id').val(attachment.id);
                  jQuery('#brand-thumb-wrapper').html('<img class="custom_media_image" src="" style="margin:0;padding:0;max-height:100px;float:none;" />');
                  var thumb='#'

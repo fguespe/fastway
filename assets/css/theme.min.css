@@ -1658,6 +1658,28 @@ ul {
   margin-top: 40px;
 }
 
+.woocommerce-order {
+  text-align: center !important;
+}
+
+.woocommerce-order i {
+  font-size: 50px;
+  color: green;
+}
+
+.woocommerce-order .woocommerce-checkout h3 {
+  text-align: center !important;
+  display: block !important;
+}
+
+.pagoexitoso a {
+  font-size: 14px !important;
+  display: block !important;
+  color: #5BB956 !important;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
 /*TOP MARGIN*/
 @media (max-width: 799px) {
   .withtopmargin {
@@ -3804,10 +3826,11 @@ body .wpb_content_element {
   /*   payment with creditcard box    */
   /*epostnet*/
   /*POSTNET*/
-  /*
-  #payment li > input[type="radio"]{
-    display:none !important;
-  }*/
+}
+.woocommerce-checkout #page-wrapper,
+.woocommerce-account #page-wrapper {
+  background: var(--checkout_back);
+  border: 0px !important;
 }
 .woocommerce-checkout .select2-selection__clear,
 .woocommerce-account .select2-selection__clear {
@@ -4706,10 +4729,6 @@ body .wpb_content_element {
 }
 .woocommerce-checkout .wc_payment_methods,
 .woocommerce-account .wc_payment_methods {
-  background: transparent;
-  border-left: 1px solid grey !important;
-  border-right: 1px solid grey !important;
-  border-bottom: 1px solid grey !important;
   /*Todas desplegadas*/
 }
 .woocommerce-checkout .wc_payment_methods li label,
@@ -4963,6 +4982,25 @@ dt.variation-fw_extra.stock {
 .woocommerce-SavedPaymentMethods li label {
   color: black !important;
   display: inline !important;
+}
+
+.woocommerce-checkout form.processing .box-detail {
+  display: none !important;
+}
+.woocommerce-checkout form.processing #overlay {
+  display: block !important;
+}
+.woocommerce-checkout form.processing .paso-loading {
+  display: block !important;
+}
+.woocommerce-checkout .processing .finalizar {
+  display: block !important;
+  background: gray;
+  color: gray;
+  pointer-events: none;
+}
+.woocommerce-checkout .processing .finalizar:focus {
+  pointer-events: none !important;
 }
 
 .fw_checkout {
@@ -5291,24 +5329,6 @@ dt.variation-fw_extra.stock {
 }
 .fw_checkout footer {
   display: none !important;
-}
-.fw_checkout form.processing .box-detail {
-  display: none !important;
-}
-.fw_checkout form.processing #overlay {
-  display: block !important;
-}
-.fw_checkout form.processing .paso-loading {
-  display: block !important;
-}
-.fw_checkout .processing .finalizar {
-  display: block !important;
-  background: gray;
-  color: gray;
-  pointer-events: none;
-}
-.fw_checkout .processing .finalizar:focus {
-  pointer-events: none !important;
 }
 .fw_checkout [data-radio=billetera] {
   display: none !important;

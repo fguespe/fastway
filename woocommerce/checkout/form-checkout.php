@@ -275,18 +275,15 @@ function verificarEmail(){
   let pass=jQuery('#account_password').length
   let p_valid=false
   if(pass){
-    console.log('campo pass existe')
     p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
     if(!p_valid){
-      //console.log('campo pass esta mal')
       jQuery('#account_password').addClass('enrojo')
     }else{
-      //console.log('campo pass esta bien')
       jQuery('#account_password').removeClass('enrojo')
     }
     sacar1(!e_valid || !p_valid,8)
   }else{
-    console.log('campo pass NO existe',e_valid)
+    //console.log('campo pass NO existe',e_valid)
     sacar1(!e_valid ,8)
   }
   
@@ -344,7 +341,6 @@ jQuery(document).ready( function(jQuery) {
   verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
-    console.log('jeeje')
     verificarEmail();
   })
   jQuery('#account_password').on('input', function(e){
@@ -435,7 +431,6 @@ function sacar1(estado,msg){
 function nextpaso(){
   paso++
   if(paso==2){
-    console.log(paso)
     jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
@@ -443,7 +438,6 @@ function nextpaso(){
 
   }else if(paso==3){
     fillNextStep('datos')
-    jQuery(document.body).trigger("update_checkout"); 
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
     sacar1(true,1)
@@ -492,11 +486,6 @@ function switchlogin(){
 }
 
 var envioSeleccionado=0
-
-jQuery('form.checkout' ).on( 'change', 'input[name^="payment_method"]', function() {
-  jQuery(document.body).trigger("update_checkout");
-});
-
 function checkpostalCode(){
   if(jQuery('#billing_postcode').length && !jQuery('#billing_postcode').val()){
     var msg = window.prompt("Complete su código postal para poder calcular su envío", "");
@@ -601,17 +590,18 @@ jQuery(document).on('click', function(e) {
 	if(!target.is( "li" ))return;
 	
 	if(target.is( "li" ) && target.hasClass( "shipping" ) && target.hasClass( "group" )){
+		console.log('entra-shipping-group')
 		jQuery('.woocommerce-shipping-methods li.group').hide()
 		jQuery('.woocommerce-shipping-methods li.local_pickup').show()
 		jQuery('.shipping_volver').show()
 		jQuery('.woocommerce-shipping-methods li:not(.local_pickup)').hide()
 		e.preventDefault()
 	}else if(target.is( "li" ) && target.hasClass( "shipping" )){
-		console.log('entra')
+		console.log('entra-shipping')
 		target.find('input:radio').prop("checked", true);
 		seleccionarEnvio(target)
 	}else if(target.is( "li" ) && target.hasClass( "payment" )){
-		console.log('entra')
+		console.log('entra-payment')
 		target.find('input:radio').prop("checked", true);
 		seleccionarPago(target)
 	}
@@ -619,6 +609,8 @@ jQuery(document).on('click', function(e) {
 
 function seleccionarPago(capsula){
 	
+
+  jQuery(document.body).trigger("update_checkout");
 
 	jQuery('li.capsula.payment').removeClass("active");
 	capsula.addClass('active');
@@ -629,8 +621,6 @@ function seleccionarPago(capsula){
 
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
-
-	//console.log(jQuery("input[name='payment_method']").is(':checked'),paso)
 	if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}
@@ -638,6 +628,8 @@ function seleccionarPago(capsula){
 
 function seleccionarEnvio(capsula){
 
+  jQuery(document.body).trigger("update_checkout");
+  
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 
