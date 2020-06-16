@@ -588,6 +588,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_envio',
+	'label'    => __( 'Envío', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=> 'Envío',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_costos_envio',
 	'label'    => __( 'Costos del envío', 'fastway' ),
 	'section'     => 'section_labels_checkout',

@@ -1604,25 +1604,18 @@ var ProductSwiper = new Swiper(".swiper-related", {
 	}
 }
 
-/*
-add_filter('woocommerce_update_order_review_fragments', 'websites_depot_order_fragments_split_shipping', 10, 1);
-
-function websites_depot_order_fragments_split_shipping($order_fragments) {
-
+//Esto actualiza los envios en el checkout, NO TOCAR!!!
+add_filter('woocommerce_update_order_review_fragments', 'actualizar_fragmento_envios', 10, 1);
+function actualizar_fragmento_envios($order_fragments) {
 	ob_start();
-	websites_depot_woocommerce_order_review_shipping_split();
-	$websites_depot_woocommerce_order_review_shipping_split = ob_get_clean();
-
-	$order_fragments['.fw-woocommerce-shipping-totals'] = $websites_depot_woocommerce_order_review_shipping_split;
-
+	actualizar_fragmento_envios_split();
+	$actualizar_fragmento_envios_split = ob_get_clean();
+	$order_fragments['.fw-woocommerce-shipping-totals'] = $actualizar_fragmento_envios_split;
 	return $order_fragments;
-
 }
-
-// We'll get the template that just has the shipping options that we need for the new table
-function websites_depot_woocommerce_order_review_shipping_split( $deprecated = false ) {
+function actualizar_fragmento_envios_split( $deprecated = false ) {
 	wc_get_template( 'checkout/shipping-order-review.php', array( 'checkout' => WC()->checkout() ) );
-}*/
+}
 
 function my_text_strings( $translated_text, $text, $domain ) {
   switch ( $translated_text ) {

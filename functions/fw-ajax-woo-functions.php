@@ -61,7 +61,7 @@ function fw_get_item_data( $item_data, $cart_item_data ) {
       'value' => fw_extra_line_info($product->id)
     );
   }
-  if($product->stock_status=='onbackorder'){
+  if($product->get_stock_status()=='onbackorder'){
     $item_data[] = array(
       'key'     => "Estado",
       'value'   => fw_theme_mod('fw_backorder_text')
@@ -88,7 +88,7 @@ function fw_get_minicart(){
         $nombre = $product->get_name();
         $cant=$cart_item['quantity'];
         $extra=function_exists('fw_extra_line_info')?fw_extra_line_info($cart_item['product_id']):'';
-        $stock_status=$product->stock_status=='onbackorder'?fw_theme_mod('fw_backorder_text'):'';
+        $stock_status=$product->get_stock_status()=='onbackorder'?fw_theme_mod('fw_backorder_text'):'';
         $precio= $cart_item['line_subtotal'];
         $arr = array('nombre' => $nombre,'extra' => $extra,'stock_status'=>$stock_status,'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cant, 'url' => $image_url, 'cart_item_key' => $cart_item_key);
         array_push($carta,$arr);

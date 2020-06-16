@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endforeach; ?>
 
 		<tr class="shipping-total" style="display:none;">
-				<th>Envío</th>
+				<th><?=fw_theme_mod('fw_label_envio');?></th>
 				<td><?=WC()->cart->get_cart_shipping_total()?></td>
 		</tr>
 
