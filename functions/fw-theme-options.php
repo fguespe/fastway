@@ -217,12 +217,6 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
 	Kirki::add_panel( 'panel_fastwaywoo', array(
 		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
 	) );
-	if(is_super_admin()){
-		Kirki::add_panel( 'panel_fastwaywoo_beta', array(
-			'title'       => __( 'Multitienda (BETA)', 'fastway' ),
-			'panel'          => 'panel_fastwaywoo',
-		) );
-	}
 }
 Kirki::add_section( 'section_blog_general', array(
     'title'          => __( 'General', 'fastway' ),
@@ -294,14 +288,9 @@ Kirki::add_section( 'section_woo_shippings', array(
   
 ) );
 
-Kirki::add_section( 'section_woo_beta', array(
-    'title'          => __( 'General', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo_beta',
-
-) );
 Kirki::add_section( 'section_woo_discount', array(
     'title'          => __( 'Discounts', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo_beta',
+    'panel'          => 'panel_fastwaywoo',
   
 ) );
 
@@ -1744,6 +1733,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_is_multitienda',
+	'label'       => __( 'Multitienda', 'fastway' ),
+	'description'	=> 'Tiene mas de una lista de precios',
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
@@ -1756,6 +1757,21 @@ Kirki::add_field( 'theme_config_id', array(
 		'hidepurchases' => __( 'Compras Off', 'fastway' ),
 		'hideprices' => __( 'Precios Off', 'fastway' ),
 	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_min_purchase',
+	'label'    => __( 'Min Purchase', 'fastway' ),
+	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
+	'section'     => 'section_woo',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_min_purchase2',
+	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
+	'label'    => __( 'Min Re-Purchase', 'fastway' ),
+	'section'     => 'section_woo',
 ) );
 
 
@@ -1773,39 +1789,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_is_multitienda',
-	'label'       => __( 'Multitienda', 'fastway' ),
-	'description'	=> 'Tiene mas de una lista de precios',
-	'section'     => 'section_woo_beta',
-	'default'     => 0,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
-) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_min_purchase',
-	'label'    => __( 'Min Purchase', 'fastway' ),
-	'description' => strtolower(implode(fw_get_all_roles(),", ")),
-	'section'     => 'section_woo_beta',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_min_purchase2',
-	'label'    => __( 'Min Re-Purchase', 'fastway' ),
-	'section'     => 'section_woo_beta',
-) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_min_purchase_roles',
-	'label'    => __( 'Mins Roles', 'fastway' ),
-	'section'     => 'section_woo_beta',
-) );*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_price_suffix',
@@ -1942,12 +1926,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_opt_color_checkout',
 	'label'       => __( 'Main Color', 'fastway' ),
-	'section'     => 'section_woo_checkout',
+	'section'     => 'section_colors',
 	'default'     => 'var(--main)',
 	'choices'     => array(
 		'alpha' => true,
 	),
-	'description'=>'var(--checkout);',
+	'description'=>'var(--checkout); (por default toma el color primario (--main)',
 	'transport'   => 'auto',
 	'output' => array(
 		array(
@@ -1961,7 +1945,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_opt_color_checkout_back',
 	'label'       => __( 'Background Color', 'fastway' ),
-	'section'     => 'section_woo_',
+	'section'     => 'section_colors',
 	'default'     => '#ECECEC',
 	'choices'     => array(
 		'alpha' => true,
