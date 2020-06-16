@@ -3719,6 +3719,20 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_shipping_grouptitle',
+	'label'    => __( 'Retirar en una de nuestras sucursales', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Retirar en una de nuestras sucursales',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_shipping_groupdesc',
+	'label'    => __( 'Ver opciones', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Ver opciones',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_costos_envio',
 	'label'    => __( 'Costos del envío', 'fastway' ),
 	'section'     => 'section_labels_shipping',
