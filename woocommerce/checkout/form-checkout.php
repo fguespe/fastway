@@ -513,7 +513,9 @@ jQuery(document).on('updated_checkout', function(){
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
 
-
+  //Verificar all!
+  verificarEmail();
+  verificarFields();
   if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}else if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
