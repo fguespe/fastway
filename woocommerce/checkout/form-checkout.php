@@ -425,18 +425,19 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    //console.log(estado,msg)
+    console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
   paso++
   if(paso==2){
-    jQuery(document.body).trigger("update_checkout"); 
+    //jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
     verificarFields();
 
   }else if(paso==3){
+    //jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
@@ -624,6 +625,7 @@ function seleccionarEnvio(capsula){
   jQuery(document.body).trigger("update_checkout");
   shippingGroups()
   
+  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled',false))
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 
@@ -636,7 +638,8 @@ function seleccionarEnvio(capsula){
 
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
 	jQuery('.paso-shipping .box-step .subtitle').text(label)
-console.log(paso,jQuery("input[name='shipping_method[0]']").is(':checked'))
+  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled'))
+  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled',false))
 	if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
     console.log('entra1')
 		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
