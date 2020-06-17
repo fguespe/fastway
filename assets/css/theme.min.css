@@ -4709,14 +4709,19 @@ body .wpb_content_element {
 }
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway input,
 .woocommerce-account .payment_method_spyr_firstdata_gateway input {
-  width: 10px;
-  height: 10px;
+  width: 10px !important;
   height: 10px !important;
   padding: 5px !important;
 }
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway label,
 .woocommerce-account .payment_method_spyr_firstdata_gateway label {
   border: 0px !important;
+}
+.woocommerce-checkout .fw_checkout .box-detail .payment_method_spyr_firstdata_gateway input,
+.woocommerce-account .fw_checkout .box-detail .payment_method_spyr_firstdata_gateway input {
+  width: 10px;
+  height: 10px;
+  height: 10px !important;
 }
 .woocommerce-checkout #shipping_method label,
 .woocommerce-account #shipping_method label {

@@ -4656,14 +4656,15 @@ body .wpb_content_element {
       padding-left:10px !important;
     }
     .payment_method_spyr_firstdata_gateway input{
-      width:10px;
-      height:10px;
+      width:10px !important;
       height:10px !important;
       padding:5px !important;
     }
     .payment_method_spyr_firstdata_gateway label{
       border:0px !important;
     }
+    .fw_checkout .box-detail .payment_method_spyr_firstdata_gateway  input{ width:10px;height:10px;height:10px !important;}
+
     #shipping_method label{
       display:inline!important;
       margin-left:5px;
