@@ -391,7 +391,6 @@ jQuery( function( $ ) {
 					// Fire updated_checkout event.
 					$( document.body ).trigger( 'updated_checkout', [ data ] );
 
-					/*ALTOWEB*/
 				}
 
 			});

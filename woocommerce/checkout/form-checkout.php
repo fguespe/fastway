@@ -508,7 +508,7 @@ function checkpostalCode(){
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
-  //setEposnet();
+  //setEpostnet();
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
@@ -533,7 +533,7 @@ function setTodopago(){
   if(label)litp.find('.title').text(label)
   if(desc)litp.find('small').text(desc)
 }
-function setEposnet(){
+function setEpostnet(){
   let litp=jQuery(document).find(`[data-radio="spyr_firstdata_gateway"]`)
   let label='<?=fw_theme_mod('fw_checkout_eposnet_label')?>'
   let desc='<?=fw_theme_mod('fw_checkout_eposnet_desc')?>'

@@ -3824,8 +3824,27 @@ body .wpb_content_element {
 .woocommerce-account {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
-  /*epostnet*/
-  /*POSTNET*/
+  /*postnet*/
+  /*
+  .payment_method_spyr_firstdata_gateway .extras p{
+    display:none;
+  }
+  .woocommerce-SavedPaymentMethods{
+      display: none;
+  }
+
+  .payment_method_spyr_firstdata_gateway p,
+  .payment_method_spyr_firstdata_gateway label,
+  .payment_method_spyr_firstdata_gateway input{
+    padding:0px !important;
+    padding-left:10px !important;
+  }
+  .payment_method_spyr_firstdata_gateway input{
+    padding:5px !important;
+  }
+  .payment_method_spyr_firstdata_gateway label{
+    border:0px !important;
+  }*/
 }
 .woocommerce-checkout #page-wrapper,
 .woocommerce-account #page-wrapper {
@@ -4692,27 +4711,6 @@ body .wpb_content_element {
 .woocommerce-account span {
   font-size: 14px !important;
 }
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway .extras p,
-.woocommerce-account .payment_method_spyr_firstdata_gateway .extras p {
-  display: none;
-}
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway p,
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway label,
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway input,
-.woocommerce-account .payment_method_spyr_firstdata_gateway p,
-.woocommerce-account .payment_method_spyr_firstdata_gateway label,
-.woocommerce-account .payment_method_spyr_firstdata_gateway input {
-  padding: 0px !important;
-  padding-left: 10px !important;
-}
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway input,
-.woocommerce-account .payment_method_spyr_firstdata_gateway input {
-  padding: 5px !important;
-}
-.woocommerce-checkout .payment_method_spyr_firstdata_gateway label,
-.woocommerce-account .payment_method_spyr_firstdata_gateway label {
-  border: 0px !important;
-}
 .woocommerce-checkout #shipping_method label,
 .woocommerce-account #shipping_method label {
   display: inline !important;
@@ -4721,10 +4719,6 @@ body .wpb_content_element {
 .woocommerce-checkout #wc-offline_cc-cc-form label,
 .woocommerce-account #wc-offline_cc-cc-form label {
   /*OFFLINE CRDCARD*/
-  display: none;
-}
-.woocommerce-checkout .woocommerce-SavedPaymentMethods,
-.woocommerce-account .woocommerce-SavedPaymentMethods {
   display: none;
 }
 .woocommerce-checkout .wc_payment_methods,

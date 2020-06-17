@@ -4641,10 +4641,14 @@ body .wpb_content_element {
 
 
 
-    /*epostnet*/
+    /*postnet*//*
     .payment_method_spyr_firstdata_gateway .extras p{
       display:none;
     }
+    .woocommerce-SavedPaymentMethods{
+        display: none;
+    }
+
     .payment_method_spyr_firstdata_gateway p,
     .payment_method_spyr_firstdata_gateway label,
     .payment_method_spyr_firstdata_gateway input{
@@ -4656,17 +4660,14 @@ body .wpb_content_element {
     }
     .payment_method_spyr_firstdata_gateway label{
       border:0px !important;
-    }
+    }*/
     #shipping_method label{
       display:inline!important;
       margin-left:5px;
     }
-    /*POSTNET*/
+
     #wc-offline_cc-cc-form label{/*OFFLINE CRDCARD*/
       display:none 
-    }
-    .woocommerce-SavedPaymentMethods{
-        display: none;
     }
     .wc_payment_methods{
 
