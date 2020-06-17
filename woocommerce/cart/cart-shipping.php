@@ -20,15 +20,15 @@
 defined( 'ABSPATH' ) || exit;
 
 //REset shipping
-//REset shipping
-
+//REset shipping NO TOCAR!
+/*
 $method='local_pickup_plus';//EE
 foreach ( WC()->shipping->get_packages() as $key => $package ) {
   foreach($package['rates'] as $rate_id => $rate ){
       if($rate->cost==0)$method=$rate->id;
   }
 }
-WC()->session->set('chosen_shipping_methods',[$method]);
+WC()->session->set('chosen_shipping_methods',[$method]);*/
 
 
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );

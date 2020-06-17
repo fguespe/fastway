@@ -2407,42 +2407,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-/*
-
-if(fw_theme_mod('fw_default_shipping_me') && is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-  add_action( 'woocommerce_review_order_after_shipping', 'auto_select_free_shipping_by_default' );
-  function auto_select_free_shipping_by_default() {
-      if ( ! WC()->session->has_session() )
-          WC()->session->set_customer_session_cookie( true );
-
-      // Check if "free shipping" is already set
-      if ( strpos( WC()->session->get('chosen_shipping_methods')[0], 'mercadoenvios-shipping' ) !== false )
-          return;
-
-      // Loop through shipping methods
-      foreach( WC()->session->get('shipping_for_package_0')['rates'] as $key => $rate ){
-          if( $rate->method_id === 'mercadoenvios-shipping' ){
-              // Set "Free shipping" method
-              WC()->session->set( 'chosen_shipping_methods', array($rate->id) );
-              return;
-          }
-      }
-  }
-}
-if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_default_shipping_me',
-		'label'    => __( 'Default Shipping Mercadoenvios', 'fastway' ),
-		'section'     => 'section_woo_shippings',
-		'default'     => 0,
-		'choices' => array(
-			'on'  => __( 'Enable', 'fastway' ),
-			'off' => __( 'Disable', 'fastway' )
-		)
-	));
-}
-*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_method_1_on',
