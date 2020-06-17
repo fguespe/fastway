@@ -4647,7 +4647,7 @@ body .wpb_content_element {
     }
     .woocommerce-SavedPaymentMethods{
         display: none;
-    }
+    }*/
 
     .payment_method_spyr_firstdata_gateway p,
     .payment_method_spyr_firstdata_gateway label,
@@ -4656,11 +4656,14 @@ body .wpb_content_element {
       padding-left:10px !important;
     }
     .payment_method_spyr_firstdata_gateway input{
+      width:10px;
+      height:10px;
+      height:10px !important;
       padding:5px !important;
     }
     .payment_method_spyr_firstdata_gateway label{
       border:0px !important;
-    }*/
+    }
     #shipping_method label{
       display:inline!important;
       margin-left:5px;
