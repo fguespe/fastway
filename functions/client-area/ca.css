@@ -379,6 +379,10 @@ display:none;
 ._wc_product_documents_title_field,._wc_product_documents_display_field{
 	display: none !important;
 }
+/*OCULTAR ENVIOS SHIPPING*/
+.order_data_column_container .order_data_column:nth-child(3) .address,.order_data_column_container .order_data_column:nth-child(3) h3{
+	display:none
+}
 
 /*UP SELLS*/
 #linked_product_data div:nth-child(1) p:nth-child(1){
