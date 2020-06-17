@@ -4698,6 +4698,10 @@ body .wpb_content_element {
 .woocommerce-account span {
   font-size: 14px !important;
 }
+.woocommerce-checkout .payment_method_spyr_firstdata_gateway .extras > p,
+.woocommerce-account .payment_method_spyr_firstdata_gateway .extras > p {
+  display: none !important;
+}
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway p,
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway label,
 .woocommerce-checkout .payment_method_spyr_firstdata_gateway input,

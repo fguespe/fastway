@@ -4648,6 +4648,7 @@ body .wpb_content_element {
     .woocommerce-SavedPaymentMethods{
         display: none;
     }*/
+    .payment_method_spyr_firstdata_gateway  .extras > p{ display:none !important;}
 
     .payment_method_spyr_firstdata_gateway p,
     .payment_method_spyr_firstdata_gateway label,
