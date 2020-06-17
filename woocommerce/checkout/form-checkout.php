@@ -270,7 +270,8 @@ function fw_login(){
           }
       });
 }
-function verificarEmail(){
+function verificarEmail(num){
+  console.log('num',num)
   let email=jQuery('#billing_email').val()
   let e_valid= isEmail(email)
   if(!e_valid){
@@ -293,7 +294,7 @@ function verificarEmail(){
     sacar1(!e_valid || !p_valid,8)
   }else{
     console.log('campo pass NO existe',e_valid)
-    sacar1(!e_valid ,8)
+    sacar1(!e_valid ,9)
   }
   
 }
@@ -346,17 +347,18 @@ jQuery(document).ready( function(jQuery) {
   unselect('shipping_method[0]')
   unselect('payment_method')
 
-  verificarEmail();
+  verificarEmail(2);
   verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
-    verificarEmail();
+    verificarEmail(3);
   })
   jQuery('#account_password').on('input', function(e){
-    verificarEmail();
+    verificarEmail(4);
   })
 
   jQuery('#billing_form input').on('input', function(e){
+    console.log('entra aca')
     verificarFields()
   })
   
@@ -384,7 +386,7 @@ function editpaso(ppaso){
     resetStep('shipping')
     resetStep('pagos')
 
-    verificarEmail()
+    verificarEmail(1)
     //verificarFields()
     paso=1
   }else if(ppaso==2){//shipping
@@ -510,6 +512,15 @@ jQuery(document).on('updated_checkout', function(){
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
+
+  
+  if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
+		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
+	}else if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
+    console.log('entra1')
+		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
+		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
+	}
 });
 
 function setTodopago(){
@@ -624,9 +635,7 @@ function seleccionarPago(capsula){
 
 	let label=capsula.data('label')
 	jQuery('.paso-pagos .box-step .subtitle').text(label)
-	if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
-		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
-	}
+	
 }
 
 function seleccionarEnvio(capsula){
@@ -634,7 +643,6 @@ function seleccionarEnvio(capsula){
   jQuery(document.body).trigger("update_checkout");
   shippingGroups()
   
-  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled',false))
 	envioSeleccionado=capsula.data('costo')
 	jQuery('li.capsula.shipping').removeClass("active");capsula.addClass('active');
 
@@ -647,15 +655,7 @@ function seleccionarEnvio(capsula){
 
 	jQuery('.paso-shipping .box-step .subtitle').data('id',capsula.data('value'))
 	jQuery('.paso-shipping .box-step .subtitle').text(label)
-  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled'))
-  console.log(jQuery('.btn-checkout.continuar.shipping').prop('disabled',false))
-	if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
-    console.log('entra1')
-		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
-		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
-	}else{
-    console.log('entra2')
-  }
+	
 }
 
 
