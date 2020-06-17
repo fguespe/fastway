@@ -43,6 +43,15 @@ var paso = 1;
             <h1><span class="icon-paso">1</span><?=fw_theme_mod('fw_label_checkout_1')?></h1>
             <div class="cajamail"><input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Ingresá un email valido" value="<?=wp_get_current_user()->user_email?>" autocomplete="email username"></div>
             <?php
+              if(is_user_logged_in()){
+                add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $fields ) {
+     unset($fields['account']['account_password']);
+     unset($fields['account']['account_password-2']);
+
+     return $fields;
+}
+              }
               $fields = $checkout->get_checkout_fields( 'account' );
               foreach ( $fields as $key => $field ) {
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
