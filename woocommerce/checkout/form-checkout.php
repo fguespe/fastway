@@ -508,16 +508,15 @@ function checkpostalCode(){
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
-  setEposnet();
+  //setEposnet();
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
   else jQuery('.shipping-total').attr("style", "display: none")
 
-  
+
   if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}else if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
-    console.log('entra1')
 		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}
