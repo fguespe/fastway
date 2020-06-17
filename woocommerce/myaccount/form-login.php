@@ -79,6 +79,26 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 						<label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 						<span class="woocommerce-input-wrapper">
 							<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" />
+						</span>
+					</p>
+					<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+					<p class="form-row form-row-first validate-required">
+						<label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+						<span class="woocommerce-input-wrapper">
+							<input class="input-text" type="password" name="password" id="reg_password" autocomplete="new-password" />
+						</span>
+					</p>
+					<?php else : ?>
+
+					<span><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></span>
+
+					<?php endif; ?>
+							
+							<!--
+					<p class="form-row form-row-first validate-required">
+						<label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+						<span class="woocommerce-input-wrapper">
+							<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" />
 							<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 								<p class="">
@@ -92,7 +112,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 							<?php endif; ?>
 						</span>
-					</p>
+					</p>-->
 
 			</div>
 			<div class="woocommerce-billing-fields__field-wrapper">
