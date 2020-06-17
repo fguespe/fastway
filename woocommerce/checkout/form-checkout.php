@@ -275,6 +275,7 @@ function verificarEmail(){
   let pass=jQuery('#account_password').length
   let p_valid=false
   if(pass){
+    console.log('campo pass SI existe',e_valid)
     p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
     if(!p_valid){
       jQuery('#account_password').addClass('enrojo')
@@ -283,7 +284,7 @@ function verificarEmail(){
     }
     sacar1(!e_valid || !p_valid,8)
   }else{
-    //console.log('campo pass NO existe',e_valid)
+    console.log('campo pass NO existe',e_valid)
     sacar1(!e_valid ,8)
   }
   
