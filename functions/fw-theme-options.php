@@ -190,16 +190,11 @@ Kirki::add_section( 'section_labels_shipping', array(
     'panel'          => 'panel_fastway_labels',
   
 ) );
-
-
-
 Kirki::add_section( 'section_labels_checkout', array(
     'title'          => __( 'Checkout', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway_labels',
-  
 ) );
-
 
 Kirki::add_section( 'section_labels_thankyou', array(
     'title'          => __( 'Thank you page', 'fastway' ),
@@ -251,7 +246,6 @@ Kirki::add_section( 'section_woo_shop', array(
     'panel'          => 'panel_fastwaywoo',
 ) );
 
-
 Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -301,6 +295,14 @@ Kirki::add_section( 'section_woo_discount', array(
     'panel'          => 'panel_fastwaywoo',
   
 ) );
+
+
+Kirki::add_section( 'section_woo_cart', array(
+    'title'          => __( 'Cart ', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+) );
+
 
 
 Kirki::add_section( 'section_woo_roles', array(
@@ -1773,23 +1775,36 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_min_purchase',
 	'label'    => __( 'Min Purchase', 'fastway' ),
 	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_cart',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase2',
 	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
 	'label'    => __( 'Min Re-Purchase', 'fastway' ),
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_cart',
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_show_attr_summary',
+	'label'       => __( 'Attr Summary Minicart', 'fastway' ),
+	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
+	'section'     => 'section_woo_cart',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
 	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
-	'section'     => 'section_woo',
+	'section'     => 'section_woo_cart',
 	'default'     => 0,
 	'choices' => array(
 	    0  => __( 'Disable', 'fastway' ),

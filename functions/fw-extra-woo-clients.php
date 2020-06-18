@@ -1,5 +1,6 @@
 <?php
 
+
 add_shortcode('hans_table','hans_table');
 function hans_table(){
   global $product;
@@ -10,9 +11,7 @@ function hans_table(){
     // Loop through available variations.
     $tabla= '
     <style>
-    .fw_tabla_variaciones td{
-      text-transform: capitalize !important; !important;
-    }
+	
     .nav-item{
       margin-right:1px;
       }
@@ -26,12 +25,15 @@ function hans_table(){
       background:white !important;
       border-radius:1px !important;
       }
+    .fw_tabla_variaciones td{
+      text-transform: capitalize !important; !important;
+    }
+	.fw_add_to_cart_button_table i{
+color:black
+}
     .fw_tabla_variaciones{
       float:left;
       width:100%;
-    }
-    .fw_add_to_cart_button_table i{
-      color:black
     }
     .fw_tabla_variaciones #myTab{
       margin-top:20px;
@@ -147,7 +149,7 @@ function hans_table(){
         text-align:center;
         }
       .fw_tabla_variaciones small{
-        font-size:8px;
+        font-size:10px;
         display:block;
         line-height:8px !important;
         text-align:center !important;
@@ -171,24 +173,23 @@ function hans_table(){
         <a class="nav-link active" id="unit-tab" data-toggle="tab" href="#unit" role="tab" aria-controls="unit" aria-selected="true">Unit<small>Purchase</small></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="bundle5-tab" data-toggle="tab" href="#bundle5" role="tab" aria-controls="bundle5" aria-selected="false">Bundle 5<small>Get 1 FREE</small></a>
+        <a class="nav-link" id="b5-tab" data-toggle="tab" href="#b5" role="tab" aria-controls="b5" aria-selected="false">Bundle 5<small>Get 1 FREE</small></a>
         
       </li>
       <li class="nav-item">
-      <a class="nav-link" id="bundle10-tab" data-toggle="tab" href="#bundle10" role="tab" aria-controls="bundle10" aria-selected="false">Bundle 10<small>Get 5 FREE</small></a>
+      <a class="nav-link" id="b10-tab" data-toggle="tab" href="#b10" role="tab" aria-controls="b10" aria-selected="false">Bundle 10<small>Get 5 FREE</small></a>
       </li>
       <li class="nav-item last">
-      <a class="nav-link" id="bundle20-tab" data-toggle="tab" href="#bundle20" role="tab" aria-controls="bundle20" aria-selected="false">Bundle 20<small>Get 13 FREE</small></a>
+      <a class="nav-link" id="b20-tab" data-toggle="tab" href="#b20" role="tab" aria-controls="b20" aria-selected="false">Bundle 20<small>Get 13 FREE</small></a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">';
 
-    $tpos=array('unit'=>'Unit','bundle5'=>'Bundles','bundle10'=>'Bundles','bundle20'=>'Bundles');
-
+    $tpos=array('unit'=>'Unit','b5'=>'Bundle 5','b10'=>'Bundle 10','b20'=>'Bundle 20');
+      
     foreach($tpos as $key_type => $type_name){
       $firsopen="";
       if($key_type=='unit')$firsopen="fade show active";
-
       $tabla.='
       <div class="tab-pane '.$firsopen.'" id="'.$key_type.'" role="tabpanel" aria-labelledby="'.$key_type.'-tab">
       <table class="fw_variations_table" style="width:100%">
@@ -203,37 +204,49 @@ function hans_table(){
         $tabla.='<th>Qty</th>
         <th width="8">Buy</th>
       </tr>
-      </thead><tbody>';
+      </thead>
+	  <tbody>';
 
       foreach($product->get_available_variations() as $variation){
+        if($variation['attributes']['attribute_pa_package']!=$key_type)continue;
+        error_log('entra2');
         $tabla .= '<tr>';
-        
-        foreach( $variation['attributes'] as $key => $value ){
-          $tabla .= '<td>'.$value .'</td>';
-        }
-        //$tabla .= '<td>'.$variation['attributes']['attribute_size'] .'</td>';
+        $tabla .= '<td>'.$variation['attributes']['attribute_pa_form'].'</td>';
+        $tabla .= '<td>'.$variation['attributes']['attribute_pa_size'].'</td>';
 
-        $id=$variation['variation_id'];
+        $volume=$variation['attributes']['attribute_pa_form'];
+        if($volume=='chip')$volume='850~1500um';
+        if($volume=='powder')$volume='250~850um';
+        if($volume=='putty')$volume='200~850um';
+
+
+        $id_var=$variation['variation_id'];
+
         $bundle=1;
-        if(strpos($key_type,'5')!==false)$bundle=6;
-        if(strpos($key_type,'10')!==false)$bundle=15;
-        if(strpos($key_type,'20')!==false)$bundle=33;
+		  
+        if($key_type=='b5'){
+          $bundle=6;
+        }else if($key_type=='b10'){
+          $bundle=15;
+        }else if($key_type=='b20'){
+          $bundle=33;
+        }
+		  
 
-        $volume=$key_type=='chip'?'850~1500um':'250~850um';
         $tabla.='
-        <td>'.$volume.'</td>
-        <td>'.$variation['sku'].'</td>
-        <td>$'.$variation['display_price'].'</td>';
-        if($key_type!='unit')$tabla.='<th id="bundle_'. $id.'">'.$bundle.'</th>';
-        $tabla.='
-        <td><div class="quantity buttons_added">
-        <input type="button" value="-" class="minus"><input id="'.$id.'" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-      </div></td>
-        <td ><button id="fw_add_to_cart_button_'.$id.'"  onclick="add_to_minicart_table('.$product->id.','. $id.','.$bundle.')" class=" btn fw_add_to_cart_button_table var_'.$id.'" data-product_id="'.$id.'">
-        <i class="fad fa-cart-plus "></i>
-        <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
-        </button></td>
-      </tr>';
+          <td>'.$volume.'</td>
+          <td>'.$variation['sku'].'</td>
+          <td>$'.$variation['display_price'].'</td>';
+          if($key_type!='unit')$tabla.='<th>'.$bundle.'</th>';
+          $tabla.='
+          <td><div class="quantity buttons_added">
+          <input type="button" value="-" class="minus"><input id="'.$id_var.'" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+          </div></td>
+          <td ><button id="fw_add_to_cart_button_'.$id_var.'"  onclick="add_to_minicart_table('.$product->id.','. $id_var.')" class=" btn fw_add_to_cart_button_table var_'.$id_var.'" data-product_id="'.$product->id.'">
+          <i class="fad fa-cart-plus "></i>
+          <i class="fas fa-circle-notch fa-spin" style="display:none"></i>
+          </button></td>
+        </tr>';
       }
       $tabla .= '</tbody></table></div>';
     }
@@ -242,4 +255,3 @@ function hans_table(){
   return $tabla;
 }
 
-?>

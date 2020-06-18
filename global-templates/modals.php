@@ -472,12 +472,12 @@ function getVariation(){
 function clickproduct(url,redirect){
     location.href=url
 }
-function add_to_minicart_table(prod_id,var_id,bundle){
+function add_to_minicart_table(prod_id,var_id){
     jQuery('.var_'+var_id).addClass('loading')
     let qty=1
     if(jQuery('.quantity #'+var_id).val())qty=jQuery('.quantity #'+var_id).val()
     jQuery.get(ajaxurl,
-    {'action': 'add_to_cart',id:prod_id,var_id:var_id,qty:qty*bundle}, 
+    {'action': 'add_to_cart',id:prod_id,var_id:var_id,qty:qty}, 
     function (msg) { 
         jQuery('#modal_carrito').modal('show');
         jQuery('.var_'+var_id).removeClass('loading')

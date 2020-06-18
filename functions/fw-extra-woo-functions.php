@@ -46,6 +46,8 @@ function fw_loop_cat(){
     global $product;
     echo '<span class="fw_loop_cat">'.fw_getcat($product->id).'</span>';
 }
+//Sacael limite de 2 variaciones
+add_filter( 'woocommerce_product_variation_title_include_attributes', '__return_true' );
 
 add_shortcode('fw_sale', 'fw_sale');
 function fw_sale($atts = []){
