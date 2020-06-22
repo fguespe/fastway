@@ -83,7 +83,7 @@ function fw_get_minicart(){
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
         $product=wc_get_product($cart_item['product_id']);
         if($cart_item['variation_id'])$product=wc_get_product($cart_item['variation_id']);
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $cart_item['product_id'] ), 'featured-thumb' ); 
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $cart_item['product_id'] ), 'medium' ); 
         $image_url = $image[0];
         $nombre = $product->get_name();
         $cant=$cart_item['quantity'];

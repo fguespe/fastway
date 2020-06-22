@@ -5,7 +5,7 @@ else if(fw_theme_mod('fw_blog_columns')==3)$clase="col-md-4";
 else if(fw_theme_mod('fw_blog_columns')==4)$clase="col-md-3";
 else if(fw_theme_mod('fw_blog_columns')==5)$clase="col-md-2";
 if(fw_theme_mod('fw_blog_columns')==2)$clase="col-md-6";
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
 $image_url = $image[0];
 ?>
 <li class="fw_post_loop <?php echo $clase;?> col-sm-6"  id="post-<?php the_ID(); ?>">

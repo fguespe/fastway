@@ -13,7 +13,7 @@ $cant=1;
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
     $image_url = $image[0]; ?>
 
     <div class="swiper-slide" data-swiper-autoplay="<?php echo $slider_delay?>">

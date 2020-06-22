@@ -5,7 +5,8 @@ function fw_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'fw_custom_excerpt_length', 999 );
     
-add_image_size( 'featured-thumb', 300, 200, true ); // (cropped)
+//add_image_size( 'medium', 300, 200, true ); // (cropped)
+
 function fw_recentposts_grid() {
     $rPosts = new WP_Query('showposts='.fw_theme_mod('fw_blog_per_page'));
     if(fw_theme_mod('fw_blog_columns')==2)$clase="col-md-6";
@@ -15,7 +16,7 @@ function fw_recentposts_grid() {
     ?><div class="fw_blog d-flex flex-wrap flex-row" ><?php 
     while ($rPosts->have_posts()){
       $rPosts->the_post(); 
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); 
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
       $image_url = $image[0]; ?>
       <li class="fw_post_loop <?php echo $clase;?> col-sm-6" >
       <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
@@ -38,7 +39,7 @@ function fw_recentposts_ver() {
     $rPosts = new WP_Query('post_per_page='.fw_theme_mod('fw_blog_per_page'));
     ?><div class="fw_news" ><?php
     while ($rPosts->have_posts()) { $rPosts->the_post(); ?>
-    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumb' ); ?>
+    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); ?>
     <?php $image_url = $image[0]; ?>
        <div class="fw_post_loop ver d-flex flex-row" >
           <div class="col-3 foto">

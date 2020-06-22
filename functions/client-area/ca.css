@@ -409,7 +409,10 @@ display:none !important;
 .update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
 	display:none;
 }
-
+/*ORDER CUSTOM FIELDS*/
+#postcustom,#woocommerce-order-downloads{
+	display: none !important;;
+}
 /*MENSAJE ERROR
 cuidado con el update notice y el error de create user
 .error{
