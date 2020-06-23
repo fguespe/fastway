@@ -31,6 +31,8 @@ if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 }
 </style>
 <?php } 
+
+set_theme_mod('fw_popup_link',fw_theme_mod('popup-link'));
 if(is_plugin_active('woocommerce/woocommerce.php'))get_template_part( 'global-templates/modals' );
 if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 ?>
@@ -41,7 +43,7 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="modal-body" style="padding:0px;">
             <?php if(fw_theme_mod('fw_popup_type')=='image' && fw_theme_mod('fw_popup_img')){
-              $linkpop=fw_theme_mod('popup-link')?fw_theme_mod('popup-link'):'#';
+              $linkpop=fw_theme_mod('fw_popup_link')?fw_theme_mod('fw_popup_link'):'#';
               ?>
               <a class="img" href="<?=$linkpop?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
             <?php }else if(fw_theme_mod('fw_popup_type')=='html' && fw_theme_mod('fw_popup_html')){ ?>
@@ -63,6 +65,7 @@ jQuery(document).ready( function(jQuery) {
         jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
         jQuery('#modalpopup').modal('show');
       }
+      jQuery('#modalpopup').modal('show');
    }, 2000);
 });
 </script>

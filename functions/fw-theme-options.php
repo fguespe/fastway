@@ -3323,7 +3323,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'popup-link',
+	'settings'    => 'fw_popup_link',
 	'label'    => __( 'Link', 'fastway' ),       
 	'section'     => 'section_popup',
 	'description' => 'Dejar vacio si no hay link'
@@ -3334,7 +3334,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_popup_form_mode',
 	'label'       => __( 'Form', 'fastway' ),
 	'section'     => 'section_popup',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -3346,7 +3346,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_pupup_form_id',
 	'label'    => __( 'Form ID', 'fastway' ),       
 	'section'     => 'section_popup',
-	'description' => 'Formulario para el modal'
+	'description' => 'Formulario para el modal',
+	'default' => 5
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',

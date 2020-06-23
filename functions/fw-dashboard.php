@@ -36,6 +36,14 @@ function prefix_add_dashboard_widget() {
             'fw_widget_desc_prods_dash_handler'
         );
     }
+    if(fw_theme_mod('fw_widget_popup')){
+        wp_add_dashboard_widget(
+            'fw_widget_popup', 
+            'Popup', 
+            'fw_widget_popup_dash', 
+            'fw_widget_popup_dash_handler'
+        );
+    }
     if(fw_theme_mod('fw_widget_cupones')){
         wp_add_dashboard_widget(
             'fw_widget_cupones', 
@@ -53,6 +61,63 @@ function prefix_add_dashboard_widget() {
         );
     }
 }
+
+
+function fw_widget_popup_dash(){
+    $estado=fw_theme_mod('fw_popup_type');
+    $color=$estado=='off'?'red':'green';
+    if($estado!='off') $estado=($estado=='html')?'Newsletter':'Imagen';
+    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Estado: $estado</label><br>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_popup#fw_widget_popup">Cambiar</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_popup_dash_handler(){
+    if( !$widget_options = get_option( 'fw_widget_popup_options' ) )$widget_options = array( );
+
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_popup_options'] ) ) {
+
+        $estado = ( $_POST['fw_widget_popup_options']['estados'] );
+        $widget_options['urlimg'] = ( $_POST['fw_widget_popup_options']['urlimg'] );
+        $widget_options['link'] = ( $_POST['fw_widget_popup_options']['link'] );
+
+        if($estado=='html')set_theme_mod('fw_popup_form_mode',true);
+        else set_theme_mod('fw_popup_form_mode',false);
+
+        set_theme_mod('fw_popup_type',$estado);
+        set_theme_mod('fw_popup_img',$widget_options['urlimg']);
+        set_theme_mod('fw_popup_link',$widget_options['link']);
+        
+    }
+
+    if( !isset( $widget_options['estados'] ) )$widget_options['estados'] = '';
+
+    echo "
+      <div class='feature_post_class_wrap'>
+        <label>Tipo</label>
+         <select name=\"fw_widget_popup_options[estados]\" id=\"estados\">
+            <option value=\"off\">Desactivado</option> 
+            <option value=\"image\">Imagen</option>
+            <option value=\"html\">Newsletter</option>
+         </select><br>
+
+        <label>URL img: <input type=\"text\" name=\"fw_widget_popup_options[urlimg]\" id=\"urlimg\" value=\"".fw_theme_mod('fw_popup_img')."\"><br>
+        <small>*Copiar la url de la imagen subida previamente a la <a target=\"_blank\" href=\"/wp-admin/upload.php\">galería</a>. Tambien se puede copiar la url de un GIF greado y subido a giphy.</small><br>
+        <label>Link destino: <input type=\"text\" name=\"fw_widget_popup_options[link]\" id=\"link\" value=\"".fw_theme_mod('fw_popup_link')."\"><br>
+        <small>*Dejar vacío si no redirige a ningun lado</small><br><br>
+      </div>";
+}
+
+
+
+
+
 
 function fw_widget_cupones_dash(){
     $estado=get_option('woocommerce_enable_coupons')==='yes'?"Activo":"Inactivo";
