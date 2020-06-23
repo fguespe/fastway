@@ -65,7 +65,6 @@ jQuery(document).ready( function(jQuery) {
         jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
         jQuery('#modalpopup').modal('show');
       }
-      jQuery('#modalpopup').modal('show');
    }, 2000);
 });
 </script>
