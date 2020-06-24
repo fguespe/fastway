@@ -93,7 +93,7 @@ function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') 
                 __( "Hi %s,\n\nThank you for registering with %s.\n\nTo activate your account, please click the following link:\n\n%s\n\nYou will then receive an email with your login details." ),
                 $user, $user_email, $key, $meta
             ),
-            site_url( "wp-activate.php?key=$key" )
+            site_url( "wp-activate.php?key=".$key )
 
 
         );

@@ -18,36 +18,25 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_email_header', $email_heading, $email ); 
-if(get_locale()=='es_ES'){
+
+add_filter('woocommerce_email_subject_customer_new_account', 'woocommerce_email_subject_customer_new_account', 1, 2);
+function woocommerce_email_subject_customer_new_account( $subject, $order ) {
+    return get_option('fw_email_subject_customer_new_account');
+}
+$html =get_option('fw_email_content_customer_new_account');
+
+$emailValues = array(
+    'blogname' => $blogname,
+    'user_name' => esc_html( $user_login ),
+    'user_pass' => esc_html( $user_pass) ,
+    'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) )
+);
+
+foreach ($emailValues as $key => $value) {
+    $html = str_replace("{{". $key . "}}", $value, $html);
+}
+echo wp_kses_post( wpautop( wptexturize($html)));
+
+
 ?>
 
-<p>Bienvenido a <?php echo esc_html( $blogname )?><br><br>
-Gracias por crear una cuenta en nuestra web. Tu nombre de usuario es <strong><?php echo esc_html( $user_login ) ?></strong><br>
-Podés acceder a tu cuenta para ver pedidos, cambiar tu contraseña y más en: <br>
-<?php echo make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ); ?><br><br>
-<?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated ) : ?>
-Tu contraseña se generó automáticamente: <strong><?php echo esc_html( $user_pass ); ?><br></strong>
-<?php endif; ?>
-Pero podés cambiarla cuando quieras.<br><br>
-
-¡Te esperamos! ;-)</p>
-
-<?php
-
-}else{ ?>
-
-<p>Welcome to <?php echo esc_html( $blogname )?><br><br>
-Thank you for signing up. Your user name is <strong><?php echo esc_html( $user_login ) ?></strong><br>
-You can access your account to checkout orders, change passwords and more: <br>
-<?php echo make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ); ?><br><br>
-<?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated ) : ?>
-Your password was automatically generated: <strong><?php echo esc_html( $user_pass ); ?><br></strong>
-<?php endif; ?>
-You can change it whenever you want.<br><br>
-
-Thank you for choosing <?php echo esc_html( $blogname )?>.</p>
-<?php
-}
-
-if ( $additional_content )echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
-do_action( 'woocommerce_email_footer', $email );
