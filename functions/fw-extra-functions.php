@@ -592,6 +592,30 @@ function woo_change_order_received_text(  ) {
 }
 
 
+//generate username for gravity forms
+add_filter( 'gform_username', 'fw_auto_username', 10, 4 );
+function fw_auto_username( $username, $feed, $form, $entry ) {
+    $username=str_replace(' ', '', $username);
+	//$username = strtolower( rgar( $entry, '2.3' ) . rgar( $entry, '2.6' ) );
+	$username = sanitize_user( current( explode( '@', $username ) ), true );
+	
+	if ( empty( $username ) ) {
+		return $username;
+	}
+	
+	if ( ! function_exists( 'username_exists' ) ) {
+		require_once( ABSPATH . WPINC . '/registration.php' );
+    }
+	if ( username_exists( $username ) ) {
+		$i = 2;
+		while ( username_exists( $username . $i ) ) {
+			$i++;
+		}
+		$username = $username . $i;
+	};
+	
+	return $username;
+}
 
 function fw_custom_css(){
     $css="";

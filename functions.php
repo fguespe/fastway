@@ -42,7 +42,7 @@ if(is_plugin_active('kirki/kirki.php')){
     require get_template_directory() . '/functions/fw-theme-options.php';
 }
 require get_template_directory() . '/functions/fw-emails.php';
-//require get_template_directory() . '/functions/fw-email-settings.php';
+require get_template_directory() . '/functions/fw-email-settings.php';
 
 
 add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');

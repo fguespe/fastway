@@ -906,7 +906,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_images',
 	'default'     => urlforimages()."/assets/img/logo.svg"
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_mobile_logo',
