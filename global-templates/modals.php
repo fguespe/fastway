@@ -7,8 +7,8 @@
             </div>
             <div class="modal-body mx-3">
                 <div class="container"><!--aca carga el cpotent--></div>
-                <div class="mt20">
-                        <div class="d-flex justify-content-between align-items-center mb20 botonescarrito">
+                <div class="row mt20">
+                        <div class="col-lg-6 col-md-12 d-flex align-items-center botonescarrito">
                         <?php 
                         if(fw_theme_mod('fw_seguircomprando_url')=='/'){
                             echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
@@ -17,15 +17,21 @@
                         }?>
                         <a  class="btn seguir iralcarrito" style="padding-right:0px;color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
-                        <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
+                        <div class="col-lg-6 col-md-12 d-flex ">
+                            <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
+                        </div>
                     </div>
                     <style>
                     @media (max-width: 799px) {
+                        .botonescarrito{
+                            justify-content:space-between;
+                        }
                         .botonescarrito a,
                         .botonescarrito button{
                             padding:2px
                         }.botonescarrito{
-                            width:100%
+                            width:100%;
+                            margin-bottom:20px;
                         }
                         #modal_carrito .btn.comprar{
                             width:100% !important;
