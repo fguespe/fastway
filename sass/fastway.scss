@@ -4946,6 +4946,9 @@ dt.variation-fw_extra.stock{
   }
 }
 
+.woocommerce-checkout footer{
+  display:none !important ;
+}
 .fw_checkout{
       
     .order-detail h1 {
@@ -5271,9 +5274,6 @@ dt.variation-fw_extra.stock{
     #login input{
     width:48%;
     display:inline-block;
-    }
-    footer{
-    display:none !important ;
     }
     [data-radio="billetera"] {
       display:none !important;

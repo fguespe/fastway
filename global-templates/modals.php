@@ -17,7 +17,7 @@
                             echo '<a href="'.fw_theme_mod('fw_seguircomprando_url').'" class="btn seguir" >'.fw_theme_mod('fw_label_agregar_mas').'</a>';
                         }?>
                         
-                        <a type="button" class="btn seguir iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
+                        <a  class="btn seguir iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
                         <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
                     </div>
