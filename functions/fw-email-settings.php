@@ -103,7 +103,7 @@ add_option( 'fw_email_content_gf_activated', 'You\'re account is almost ready,
 
 To activate your account, please click the following link:
 
-{{activation_url}}
+{activation_url}
 
 After you activate, you will receive *another email* with your login.
 
@@ -154,9 +154,85 @@ $order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_numbe
 
 ?>
 <div>
+
+<style>
+
+/* Style the tab */
+.tab {
+margin-top:20px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 0px;
+  border: 0px solid #ccc;
+  border-top: none;
+}
+</style>
+<script>
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 <?php screen_icon(); ?>
 <form method="post" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
+<div class="tab">
+  <button type="button" class="tablinks active" onclick="openCity(event, 'London')">Order Emails</button>
+  <?php
+if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
+?>
+  <button type="button" class="tablinks" onclick="openCity(event, 'Paris')">Wholesale</button>
+<?php } ?>
+  <button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Other</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent" style="display:block;">
+
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New Account', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.', 'woocommerce' );?></small>
@@ -218,9 +294,10 @@ $content = get_option('fw_email_content_customer_reset_password');
 wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-<?php
-if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
-?>
+</div>
+
+<div id="Paris" class="tabcontent">
+
 <div class="tipomail">
 <h3 class="titulo">User Pending</h3>
 <small>Sent after the user completes the wholesale form</small>
@@ -241,6 +318,9 @@ $content = get_option('fw_email_content_gf_activated');
 wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
+</div>
+
+<div id="Tokyo" class="tabcontent">
 
 <div class="tipomail">
 <h3 class="titulo">Thank you page</h3>
@@ -251,9 +331,10 @@ $content = get_option('fw_email_content_thankyou');
 wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-<?php 
-}
-?>
+</div>
+
+
+
 <?php submit_button(); ?>
 </form>
 </div>
