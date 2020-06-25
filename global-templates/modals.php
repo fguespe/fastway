@@ -6,10 +6,9 @@
                 <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body mx-3">
-                <div class="container"></div>
-                <div style="padding:1em;">
-                    <div class="row ">
-                        <div class="d-flex justify-content-around align-items-center mb20 botonescarrito">
+                <div class="container"><!--aca carga el cpotent--></div>
+                <div class="mt20">
+                        <div class="d-flex justify-content-between align-items-center mb20 botonescarrito">
                         <?php 
                         if(fw_theme_mod('fw_seguircomprando_url')=='/'){
                             echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
@@ -33,7 +32,6 @@
                         }
                     }
                     </style>
-                </div>
             </div>
         </div>
     </div>
