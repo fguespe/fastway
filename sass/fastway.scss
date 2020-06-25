@@ -3,6 +3,9 @@
 [tabindex] {
   outline: none;
 }
+body .entry-content li{
+	list-style-type: square;
+}
 button:focus{
   outline:0 !important;
   box-shadow:none !important;
