@@ -1932,11 +1932,25 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
 	'label'       => __( 'Vender a empresas', 'fastway' ),
 	'description'	=> 'Pide cuit y nombre de empresa en los campos del checkout',
+	'section'     => 'section_woo_checkout',
+	'default'     => 0,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_checkout_field_address_2',
+	'label'       => __( 'Campo altura y piso', 'fastway' ),
+	'description'	=> 'Agrega un campo para hacer altura y piso obligatorio',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(

@@ -1742,7 +1742,9 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['shipping']['shipping_country']['priority']=81;
     if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
     
-    unset($fields['billing']['billing_address_2']);
+    if(!fw_theme_mod('fw_checkout_field_address_2')){
+      unset($fields['billing']['billing_address_2']);
+    }
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
       unset($fields['billing']['billing_cuit']);
