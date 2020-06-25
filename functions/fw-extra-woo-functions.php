@@ -1729,8 +1729,17 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if($fields['billing']['billing_city'])$fields['billing']['billing_city']['placeholder'] = $fields['billing']['billing_city']['label'];
     if($fields['billing']['billing_postcode'])$fields['billing']['billing_postcode']['placeholder'] = $fields['billing']['billing_postcode']['label'];
     if($fields['billing']['billing_country'])$fields['billing']['billing_country']['placeholder'] = $fields['billing']['billing_country']['label'];
+      
+    //Shipping
 
-    
+    if($fields['shipping']['shipping_first_name'])$fields['shipping']['shipping_first_name']['placeholder'] = $fields['shipping']['shipping_first_name']['label'];
+    if($fields['shipping']['shipping_last_name'])$fields['shipping']['shipping_last_name']['placeholder'] =$fields['shipping']['shipping_last_name']['label'];
+    if($fields['shipping']['shipping_city'])$fields['shipping']['shipping_city']['placeholder'] = $fields['shipping']['shipping_city']['label'];
+    if($fields['shipping']['shipping_postcode'])$fields['shipping']['shipping_postcode']['placeholder'] = $fields['shipping']['shipping_postcode']['label'];
+    unset($fields['shipping']['shipping_company']);
+    $fields['shipping']['shipping_postcode']['priority']=10;
+    $fields['shipping']['shipping_state']['priority']=80;
+    $fields['shipping']['shipping_country']['priority']=81;
     if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
     
     unset($fields['billing']['billing_address_2']);

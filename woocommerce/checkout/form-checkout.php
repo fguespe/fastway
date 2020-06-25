@@ -97,7 +97,6 @@ var paso = 1;
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
-              
               foreach ( $fields as $key => $field ) {
                 woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
               }
@@ -117,6 +116,20 @@ var paso = 1;
               }
               ?>
             </div>
+            <?php
+            if(fw_theme_mod('fw_shipping_fields')){
+            ?>
+            <h3>Shipping Address</h3>
+            <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
+              <?php
+                $fields = $checkout->get_checkout_fields( 'shipping' );
+                
+                foreach ( $fields as $key => $field ) {
+                  woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+                }
+                ?>
+            </div>
+            <?php } ?>
           </div>
           <div class="capsula box-step" style="display:none;">
 						<a class="editar" onclick="editpaso(2)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
@@ -128,6 +141,7 @@ var paso = 1;
           <div class="clear"></div>	
         
       </div>
+      
       
       <?php if(get_option('woocommerce_ship_to_countries')!='disabled'){  ?>
       <div class="box-detail paso-shipping" style="display:none;">

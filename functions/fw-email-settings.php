@@ -82,12 +82,51 @@ Recibiste un nuevo pedido de: {{customer_name}}
 
 
 
+add_option( 'fw_email_subject_admin_new_order', 'Nuevo Pedido {{order_number}}');
+add_option( 'fw_email_content_admin_new_order', '
+Recibimos tu solicitud
+
+Estaremos evaluandola a fin de determinar
+');
+
+
+
+add_option( 'fw_email_subject_gf_pending', 'Nueva Solicitud');
+add_option( 'fw_email_content_gf_pending', 'Recibimos tu solicitud. 
+
+Estaremos evaluando tu solicitud y te avisaremos cuando te demos de alta.
+');
+
+
+add_option( 'fw_email_subject_gf_activated', 'Solicitud Aceptada');
+add_option( 'fw_email_content_gf_activated', 'You\'re account is almost ready, 
+
+To activate your account, please click the following link:
+
+{{activation_url}}
+
+After you activate, you will receive *another email* with your login.
+
+Best
+');
+
+add_option( 'fw_email_content_thankyou', '
+<h2>Gracias por tu compra</h2>
+
+<p>El pedido fue registrado con número {{order_number}}</p>
+
+<span>Te enviamos un mail a <b>{{email}}</b> con el detalle y las instrucciones de como seguir.</span>
+');
+
+
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_processing_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_completed_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_on_hold_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_reset_password', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_admin_new_order', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_subject_gf_pending', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_subject_gf_activated', 'myplugin_callback' );
 
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_new_account', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_processing_order', 'myplugin_callback' );
@@ -95,6 +134,9 @@ register_setting( 'fw_email_options_group', 'fw_email_content_customer_completed
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_on_hold_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_reset_password', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_admin_new_order', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_gf_pending', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_gf_activated', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_thankyou', 'myplugin_callback' );
 
 }
 
@@ -176,6 +218,42 @@ $content = get_option('fw_email_content_customer_reset_password');
 wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
+<?php
+if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
+?>
+<div class="tipomail">
+<h3 class="titulo">User Pending</h3>
+<small>Sent after the user completes the wholesale form</small>
+<input type="text" class="w100" id="fw_email_subject_gf_pending" name="fw_email_subject_gf_pending" value="<?php echo get_option('fw_email_subject_gf_pending'); ?>" /><br>
+
+<?php
+$content = get_option('fw_email_content_gf_pending');
+wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+<div class="tipomail">
+<h3 class="titulo">Activation</h3>
+<small>Sent after the user is approved internally and a link for generating a password is sent to him</small>
+<input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo get_option('fw_email_subject_gf_activated'); ?>" /><br>
+<small>Variables:{user:user_login} {activation_url}</small>
+<?php
+$content = get_option('fw_email_content_gf_activated');
+wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+
+<div class="tipomail">
+<h3 class="titulo">Thank you page</h3>
+<small>Texto que aparece luego de la pagina de compra</small>
+<small>Variables: {{email}}</small>
+<?php
+$content = get_option('fw_email_content_thankyou');
+wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+<?php 
+}
+?>
 <?php submit_button(); ?>
 </form>
 </div>
@@ -202,7 +280,7 @@ function fw_parse_subject($tipo,$order){
     foreach ($emailValues as $key => $value) $subject = str_replace("{{". $key . "}}", $value, $subject);
     return $subject;
 }
-function fw_parse_mail($tipo,$order, $sent_to_admin, $plain_text,$email_heading,$email){
+function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
     do_action( 'woocommerce_email_header', $email_heading, $email ); 
     $emailValues = fw_get_email_variables($order, $sent_to_admin, $plain_text, $email);
 
@@ -243,6 +321,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
 
     return array(
         'blogname' => $blogname,
+        'email' => '<a href="mailto:'.fw_theme_mod('fw_mail_desde_mails').'">'.fw_theme_mod('fw_mail_desde_mails').'</a>',
         'order_number' => '#'.$order->get_order_number(),
         'customer_name' => $order->billing_first_name ,
         'shipping_method_title' => $shipping_method_title,
@@ -289,7 +368,20 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
     return fw_parse_subject('admin_new_order',$order);
 }
 
+add_filter( 'gform_notification', 'change_autoresponder_email', 10, 3 );
+function change_autoresponder_email( $notification, $form, $entry ) {
+    error_log(print_r($notification,true));
 
+    if ( $notification['name'] == 'User Pending' ) {
+        $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_pending'))));
+        $notification['subject'] =  get_option('fw_email_subject_gf_pending');
+    }else if ( $notification['name'] == 'User Activation' ) {
+        $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_activated'))));
+        $notification['subject'] =  get_option('fw_email_subject_gf_activated');
+    }
+ 
+    return $notification;
+}
 
 function conditionals($template,$data) {
 $conditionals=array();
