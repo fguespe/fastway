@@ -8,7 +8,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email );
 $html =get_option('fw_email_content_customer_new_account');
 
 $emailValues = array(
-    'blogname' => $blogname,
+    'blogname' => get_bloginfo( 'name' ),
     'user_name' => esc_html( $user_login ),
     'user_pass' => esc_html( $user_pass) ,
     'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) )

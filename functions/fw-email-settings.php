@@ -401,7 +401,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
     if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' )$role='minorista';
 
     return array(
-        'blogname' => $blogname,
+        'blogname' => get_bloginfo( 'name' ),
         'email' => '<a href="mailto:'.fw_theme_mod('fw_mail_desde_mails').'">'.fw_theme_mod('fw_mail_desde_mails').'</a>',
         'order_number' => '#'.$order->get_order_number(),
         'customer_name' => $order->billing_first_name ,

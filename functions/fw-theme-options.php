@@ -2436,7 +2436,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Show only Free Shipping', 'fastway' ),
 	'section'     => 'section_woo_shippings',
 	'description' => 'Hides other options if free shipping is available',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
