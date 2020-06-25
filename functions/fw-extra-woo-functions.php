@@ -1763,7 +1763,6 @@ function change_default_checkout_country() {
 add_filter('woocommerce_default_address_fields', 'fw_wc_override_address_fields',11);
 function fw_wc_override_address_fields( $fields ) {
   $fields['address_2']['placeholder'] = fw_theme_mod('fw_shipping_address_2_label');
-  $fields['country']['placeholder'] = 'Country';
 	return $fields;
 }
 
