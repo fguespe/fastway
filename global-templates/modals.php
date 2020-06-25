@@ -9,23 +9,20 @@
                 <div class="container"></div>
                 <div style="padding:1em;">
                     <div class="row d-flex justify-content-between align-items-center">
-                        <div>
+                        <div class="row d-flex justify-content-between align-items-center mb20">
                         <?php 
                         if(fw_theme_mod('fw_seguircomprando_url')=='/'){
                             echo '<button type="button" class="btn seguir" data-dismiss="modal" aria-label="Close">'.fw_theme_mod('fw_label_agregar_mas').'</button>';
                         }else{
                             echo '<a href="'.fw_theme_mod('fw_seguircomprando_url').'" class="btn seguir" >'.fw_theme_mod('fw_label_agregar_mas').'</a>';
                         }?>
-                        
                         <a  class="btn seguir iralcarrito" style="color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
                         <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar"><?=fw_theme_mod('fw_place_order_text')?></button>
                     </div>
                     <style>
                     @media (max-width: 799px) {
-                        #modal_carrito .iralcarrito{
-                            margin-bottom:40px !important;
-                        }
+                        
                         #modal_carrito .btn.comprar{
                             width:100% !important;
                         }
