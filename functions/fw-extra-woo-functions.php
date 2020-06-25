@@ -1761,6 +1761,12 @@ function fw_wc_override_address_fields( $fields ) {
 	return $fields;
 }
 
+add_filter( 'default_checkout_country', 'change_default_checkout_country' ,30);
+function change_default_checkout_country() {
+  $ja=explode(':',get_option('woocommerce_default_country'))[0];
+  return $ja;
+}
+
 if(fw_theme_mod('fw_is_multitienda'))add_action( 'admin_notices', 'sample_admin_notice__error' );
 function sample_admin_notice__error() {
   $class = 'notice notice-error';
