@@ -4,12 +4,8 @@
   outline: none;
 }
 
-body .entry-content li {
+body .wpb_text_column li {
   list-style-type: square;
-}
-
-body .products li {
-  list-style-type: none;
 }
 
 button:focus {
