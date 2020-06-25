@@ -1736,15 +1736,16 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if($fields['shipping']['shipping_last_name'])$fields['shipping']['shipping_last_name']['placeholder'] =$fields['shipping']['shipping_last_name']['label'];
     if($fields['shipping']['shipping_city'])$fields['shipping']['shipping_city']['placeholder'] = $fields['shipping']['shipping_city']['label'];
     if($fields['shipping']['shipping_postcode'])$fields['shipping']['shipping_postcode']['placeholder'] = $fields['shipping']['shipping_postcode']['label'];
+    if($fields['billing']['billing_address_2'])$fields['billing']['billing_address_2']['placeholder'] = fw_theme_mod('fw_shipping_address_2_label');
+
     unset($fields['shipping']['shipping_company']);
     $fields['shipping']['shipping_postcode']['priority']=10;
     $fields['shipping']['shipping_state']['priority']=80;
     $fields['shipping']['shipping_country']['priority']=81;
     if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
+
+    if(!fw_theme_mod('fw_checkout_field_address_2'))unset($fields['billing']['billing_address_2']);
     
-    if(!fw_theme_mod('fw_checkout_field_address_2')){
-      unset($fields['billing']['billing_address_2']);
-    }
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
       unset($fields['billing']['billing_cuit']);
@@ -1752,7 +1753,12 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     return $fields;
 }
 
+add_filter('woocommerce_default_address_fields', 'fw_wc_override_address_fields',11);
+function fw_wc_override_address_fields( $fields ) {
+  $fields['address_2']['placeholder'] = fw_theme_mod('fw_shipping_address_2_label');
 
+	return $fields;
+}
 
 if(fw_theme_mod('fw_is_multitienda'))add_action( 'admin_notices', 'sample_admin_notice__error' );
 function sample_admin_notice__error() {

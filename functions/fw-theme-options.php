@@ -1949,8 +1949,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_checkout_field_address_2',
-	'label'       => __( 'Campo altura y piso', 'fastway' ),
-	'description'	=> 'Agrega un campo para hacer altura y piso obligatorio',
+	'label'       => __( 'Extra campo dirección', 'fastway' ),
+	'description'	=> 'Agrega un campo extra que puede ser para altura, piso, etapa, lote, etc. (modificar en labels)',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -3723,6 +3723,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_shipping',
 	'default'	=>'Sin costo',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_address_2_label',
+	'label'    => __( 'Extra Campo dirección', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=>'Piso y Departamento',
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
