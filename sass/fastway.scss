@@ -6,6 +6,9 @@
 body .entry-content li{
 	list-style-type: square;
 }
+body .products li{
+	list-style-type: none;
+}
 button:focus{
   outline:0 !important;
   box-shadow:none !important;
