@@ -21,6 +21,7 @@
                             <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
                         </div>
                     </div>
+                    
                     <style>
                     @media (max-width: 799px) {
                         .botonescarrito{
