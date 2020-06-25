@@ -455,14 +455,14 @@ function fw_image_function( $atts, $content ) {
 
     if(!$ismobile)$claserespo=' ';
     $link = $atts['link'];
-    if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" target="_blank" style="text-align:center" href="'.$link.'" >';
+    if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" target="" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
     $return .= '<div class="imagen"><img src="'.$image.'" style="max-width:100%;width:'.$w.';height:'.$h.';"/></div>';   
     if($atts['title'])$return .= '<div class="texts '.$atts['text_type'].'"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
-        if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" target="_blank" style="text-align:center" href="'.$link.'" >';
+        if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" target="" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
         $return .= '<div class="imagen"><img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/></div>';   
         if($atts['title'])$return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
@@ -472,14 +472,14 @@ function fw_image_function( $atts, $content ) {
     
     //Implementar acciones
     if(!empty($atts['sblock'])){
-        $return='<a target="_blank" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$return;
+        $return='<a target="" data-toggle="modal" data-target="#'.$atts['sblock'].'" class="fancybox">'.$return;
         $return.= "</a>".fw_modal_block($atts['sblock'],$atts['sblock']);
     }else if(!empty($atts['iframe'] )){
         $rand=generateRandomString();
-        $return='<a target="_blank" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$return;
+        $return='<a target="" data-toggle="modal" data-target="#'.$rand.'" class="fw_icon_link fancybox">'.$return;
         $return.= "</a>".fw_modal_block($rand,$atts['iframe'],true);
     }else if(!empty($atts['modal'] )){
-        $return='<a target="_blank" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$return;
+        $return='<a target="" data-toggle="modal" data-target="#'.$atts['modal'].'" class="fw_icon_link fancybox">'.$return;
         $return.= "</a>";
     }
     
