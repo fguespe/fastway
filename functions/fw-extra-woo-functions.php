@@ -1755,12 +1755,11 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     }
     return $fields;
 }
-/*
 add_filter( 'default_checkout_country', 'change_default_checkout_country' ,30);
 function change_default_checkout_country() {
   $ja=explode(':',get_option('woocommerce_default_country'))[0];
   return $ja;
-}*/
+}
 add_filter('woocommerce_default_address_fields', 'fw_wc_override_address_fields',11);
 function fw_wc_override_address_fields( $fields ) {
   $fields['address_2']['placeholder'] = fw_theme_mod('fw_shipping_address_2_label');
