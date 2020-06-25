@@ -1740,8 +1740,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
     unset($fields['shipping']['shipping_company']);
     $fields['shipping']['shipping_postcode']['priority']=10;
+    $fields['shipping']['shipping_country']['priority']=79;
     $fields['shipping']['shipping_state']['priority']=80;
-    $fields['shipping']['shipping_country']['priority']=81;
     if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
 
     if(!fw_theme_mod('fw_checkout_field_address_2')){
