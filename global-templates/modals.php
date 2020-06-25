@@ -23,10 +23,11 @@
                     <style>
                     @media (max-width: 799px) {
                         .botonescarrito a,
-.botonescarrito button{
-padding:0px
-}.botonescarrito{
-width:100%}
+                        .botonescarrito button{
+                            padding:2px
+                        }.botonescarrito{
+                            width:100%
+                        }
                         #modal_carrito .btn.comprar{
                             width:100% !important;
                         }
