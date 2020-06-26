@@ -1742,6 +1742,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     $fields['shipping']['shipping_postcode']['priority']=10;
     $fields['shipping']['shipping_country']['priority']=79;
     $fields['shipping']['shipping_state']['priority']=80;
+
+
     if(get_locale()=='es_ES')$fields['billing']['billing_country']['class'][]='hide';
 
     if(!fw_theme_mod('fw_checkout_field_address_2')){
@@ -1758,6 +1760,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 add_filter('woocommerce_default_address_fields', 'fw_wc_override_address_fields',11);
 function fw_wc_override_address_fields( $fields ) {
   $fields['address_2']['placeholder'] = fw_theme_mod('fw_shipping_address_2_label');
+
 	return $fields;
 }
 
