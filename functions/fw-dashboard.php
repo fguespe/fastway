@@ -169,9 +169,7 @@ function fw_widget_desc_prods_dash(){
     <div class='fw_widget_dash'>
         <label>Estado: $estado</label><br>
         <label>Aplica a: $cates</label><br>
-        <small>*Dejar vacío para que aplique a toda la tienda</small><br><br>
-        <label>Descuento(%): $porcentage </label><br><br>
-        <small>Para mas información: <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000234206">click aquí</a><br><br>
+        <label>Descuento(%): $porcentage </label>
         <a class="iralasopciones" href="index.php?edit=fw_widget_desc_prods#fw_widget_desc_prods">Cambiar</a>
     </div>
 HTML;
@@ -196,7 +194,9 @@ function fw_widget_desc_prods_dash_handler(){
     <div>
         <label>Estado <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
         <label>Categorias: <input type=\"text\" name=\"fw_widget_desc_prods[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_product_discount_categories')."\"><br>
+        <small>*Dejar vacío para que aplique a toda la tienda</small><br>
         <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" placewholder=\"Ej: 20\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
+        <small>Para mas información: <a href=\"https://altoweb.freshdesk.com/a/solutions/articles/36000234206\">click aquí</a><br>
         </div><br>";
 }
 
