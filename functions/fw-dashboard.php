@@ -196,8 +196,8 @@ function fw_widget_desc_prods_dash_handler(){
     <div>
         <label>Estado <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
         <label>Categorias: <input type=\"text\" name=\"fw_widget_desc_prods[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_product_discount_categories')."\"><br>
-        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" placeholder=\"Ej: 20\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
-        </div><br>"
+        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" placewholder=\"Ej: 20\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
+        </div><br>";
 }
 
 
