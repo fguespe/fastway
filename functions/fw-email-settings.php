@@ -157,7 +157,7 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 
 function myplugin_options_page(){
-$order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}}</small>';
+$order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}}  {{shipping_tracking_url}}</small>';
 
 ?>
 <div>
@@ -265,7 +265,7 @@ wp_editor( $content, 'fw_email_content_customer_processing_order', $settings = a
 <h3 class="titulo"><?=__( 'Completed order', 'woocommerce' )?></h3>
 <small><?=__( 'Order complete emails are sent to customers when their orders are marked completed and usually indicate that their orders have been shipped.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_completed_order" name="fw_email_subject_customer_completed_order" value="<?php echo get_option('fw_email_subject_customer_completed_order'); ?>" /><br>
-<?=$order_variables?>
+<?=$order_variables ?>
 <?php
 $content = get_option('fw_email_content_customer_completed_order');
 wp_editor( $content, 'fw_email_content_customer_completed_order', $settings = array('textarea_rows'=> '10') );
@@ -420,8 +420,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'blogname' => get_bloginfo( 'name' ),
         'email' => '<a href="mailto:'.fw_theme_mod('fw_mail_desde_mails').'">'.fw_theme_mod('fw_mail_desde_mails').'</a>',
         'order_number' => '#'.$order->get_order_number(),
-        'tracking_url' => $order->get_meta('_tracking_url') ,
-        'shipping_tracking_url' => $shipping_method_title,
+        'shipping_tracking_url' => $order->get_meta('_tracking_url') ,
         'shipping_method_title' => $shipping_method_title,
         'shipping_method_type' => $shipping_method_type,
         'shipping_method_id' => $shipping_method_id,
