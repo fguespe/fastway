@@ -110,6 +110,12 @@ After you activate, you will receive *another email* with your login.
 Best
 ');
 
+add_option( 'fw_email_content_confirmation_wholesale_form', '&nbsp;
+<p style="text-align: center;">¡Gracias por contactar con nosotros!</p>
+<p style="text-align: center;">Nos pondremos en contacto contigo muy pronto.</p>
+&nbsp;');
+
+
 add_option( 'fw_email_content_thankyou', '
 <h2>Gracias por tu compra</h2>
 
@@ -137,6 +143,7 @@ register_setting( 'fw_email_options_group', 'fw_email_content_admin_new_order', 
 register_setting( 'fw_email_options_group', 'fw_email_content_gf_pending', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_gf_activated', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_thankyou', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_confirmation_wholesale_form', 'myplugin_callback' );
 
 }
 
@@ -221,17 +228,18 @@ function openCity(evt, cityName) {
 <form method="post" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
 <div class="tab">
-  <button type="button" class="tablinks active" onclick="openCity(event, 'London')">Order Emails</button>
+  <button type="button" class="tablinks active" onclick="openCity(event, 'customer_emails')">Order Emails</button>
   <?php
 if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 ?>
-  <button type="button" class="tablinks" onclick="openCity(event, 'Paris')">Wholesale</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'wholesale')">Wholesale</button>
 <?php } ?>
-  <button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Other</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'admin_emails')">Admin Emails</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'other')">Other</button>
 </div>
 
 <!-- Tab content -->
-<div id="London" class="tabcontent" style="display:block;">
+<div id="customer_emails" class="tabcontent" style="display:block;">
 
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New Account', 'woocommerce' )?></h3>
@@ -273,16 +281,6 @@ $content = get_option('fw_email_content_customer_on_hold_order');
 wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-<div class="tipomail">
-<h3 class="titulo"><?=__( 'New order', 'woocommerce' )?></h3>
-<small><?=__( 'New order emails are sent to chosen recipient(s) when a new order is received.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_admin_new_order" name="fw_email_subject_admin_new_order" value="<?php echo get_option('fw_email_subject_admin_new_order'); ?>" /><br>
-<?=$order_variables?>
-<?php
-$content = get_option('fw_email_content_admin_new_order');
-wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('textarea_rows'=> '10') );
-?>
-</div>
 
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
@@ -296,13 +294,19 @@ wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = arr
 </div>
 </div>
 
-<div id="Paris" class="tabcontent">
-
+<div id="wholesale" class="tabcontent">
+<div class="tipomail">
+<h3 class="titulo">Form Confirmation Page</h3>
+<small>The message that is presented after completing the form</small>
+<?php
+$content = get_option('fw_email_content_confirmation_wholesale_form');
+wp_editor( $content, 'fw_email_content_confirmation_wholesale_form', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
 <div class="tipomail">
 <h3 class="titulo">User Pending</h3>
 <small>Sent after the user completes the wholesale form</small>
 <input type="text" class="w100" id="fw_email_subject_gf_pending" name="fw_email_subject_gf_pending" value="<?php echo get_option('fw_email_subject_gf_pending'); ?>" /><br>
-
 <?php
 $content = get_option('fw_email_content_gf_pending');
 wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_rows'=> '10') );
@@ -319,9 +323,21 @@ wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textare
 ?>
 </div>
 </div>
-
-<div id="Tokyo" class="tabcontent">
-
+<div id="admin_emails" class="tabcontent">
+<!--NEW ORDER ADMIN -->
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'New order', 'woocommerce' )?></h3>
+<small><?=__( 'New order emails are sent to chosen recipient(s) when a new order is received.', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_admin_new_order" name="fw_email_subject_admin_new_order" value="<?php echo get_option('fw_email_subject_admin_new_order'); ?>" /><br>
+<?=$order_variables?>
+<?php
+$content = get_option('fw_email_content_admin_new_order');
+wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+</div>
+<div id="other" class="tabcontent">
+<!--THANK YOU PAGE-->
 <div class="tipomail">
 <h3 class="titulo">Thank you page</h3>
 <small>Texto que aparece luego de la pagina de compra</small>
@@ -404,7 +420,8 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'blogname' => get_bloginfo( 'name' ),
         'email' => '<a href="mailto:'.fw_theme_mod('fw_mail_desde_mails').'">'.fw_theme_mod('fw_mail_desde_mails').'</a>',
         'order_number' => '#'.$order->get_order_number(),
-        'customer_name' => $order->billing_first_name ,
+        'tracking_url' => $order->get_meta('_tracking_url') ,
+        'shipping_tracking_url' => $shipping_method_title,
         'shipping_method_title' => $shipping_method_title,
         'shipping_method_type' => $shipping_method_type,
         'shipping_method_id' => $shipping_method_id,
@@ -417,8 +434,10 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'customer_details' => $customer_details
     );
 }
-
-
+add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_confirmation_wholesale_form');
+function fw_email_content_confirmation_wholesale_form(){
+  return get_option('fw_email_content_confirmation_wholesale_form');
+}   
 
 add_filter('woocommerce_email_subject_customer_reset_password', 'woocommerce_email_subject_customer_reset_password', 1, 2);
 function woocommerce_email_subject_customer_reset_password( $subject, $order ) {

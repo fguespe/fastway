@@ -30,35 +30,6 @@ function fw_auto_username( $username, $feed, $form, $entry ) {
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
 add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
 
-// Redefine user notification function
-if ( !function_exists('wp_new_user_notification') ) {
-    function wp_new_user_notification( $user_id, $plaintext_pass = '' ) {
-        $user = new WP_User($user_id);
-
-        $user_login = stripslashes($user->user_login);
-        $user_email = stripslashes($user->user_email);
-
-        $message  = sprintf(__('Nuevo registro en tu web %s:'), get_option('blogname')) . "\r\n\r\n";
-        $message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
-        $message .= sprintf(__('E-mail: %s'), $user_email) . "\r\n";
-
-        @wp_mail(get_option('admin_email'), sprintf(__('[%s] Nuevo Registro'), get_option('blogname')), $message);
-
-        if ( empty($plaintext_pass) )
-            return;
-
-        $message  = __('Hi there,') . "\r\n\r\n";
-        $message .= sprintf(__("Bienvenido a %s! Así podes entrar:"), get_option('blogname')) . "\r\n\r\n";
-        $message .= wp_login_url() . "\r\n";
-        $message .= sprintf(__('Nombre de usuario: %s'), $user_login) . "\r\n";
-        $message .= sprintf(__('Contraseña: %s'), $plaintext_pass) . "\r\n\r\n";
-        $message .= sprintf(__('Si tenes alguna consulta, por favor, escribinos: %s.'), get_option('admin_email')) . "\r\n\r\n";
-        $message .= __('Adios!');
-
-        wp_mail($user_email, sprintf(__('[%s] Tu información de acceso'), get_option('blogname')), $message);
-       
-    }
-}
 function wpb_sender_email( $original_email_address ) {
     return fw_theme_mod('fw_general_from_email');
 }
@@ -78,57 +49,22 @@ add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
 //Emails
-add_filter( 'wpmu_welcome_user_notification', 'bbg_wpmu_welcome_user_notification', 10, 3 );
-function bbg_wpmu_welcome_user_notification($user_id, $password, $meta = '') {
- 
-    global $current_site;
-    $admin_email = fw_theme_mod("fw_general_from_email");
-    $from_name = fw_theme_mod( 'fw_mail_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
-        
-    $welcome_email = get_site_option( 'welcome_user_email' );
+add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 
-    $user = new WP_User($user_id);
+function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
 
-    $welcome_email = apply_filters( 'update_welcome_user_email', $welcome_email, $user_id, $password, $meta);
+    $message = sprintf(__( "Welcome to %s! Here's how to log in:" ), $blogname ) . "\r\n";
+    $message .= wp_login_url() . "\r\n";
+    $message .= sprintf(__( 'Usernames: %s' ), $user->user_login ) . "\r\n";
+    $message .= sprintf(__( 'Password: %s' ), $user->user_pass ) . "\r\n\r\n";
+    $message .= sprintf(__( 'If you have any problems, please contact me at %s.'), get_option( 'admin_email' ) ) . "\r\n";
+    $message .= __('Adios!');
 
-    // Get the current blog name
-    $message = sprintf( "Hola, \n\nSe ha creado tu contraseña. Estos son tus datos: \n\nUsuario: %s\n\nContraseña: %s\n\n " ,
-                $user->user_login, $password);
+    $wp_new_user_notification_email['message'] = $message;
 
-   
+    return $wp_new_user_notification_email;
 
-    $message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-  
-    $subject = "Datos de acceso";
-    wp_mail($user->user_email, $subject, $message, $message_headers);
-
-    return false; // make sure wpmu_welcome_user_notification() doesn't keep running
 }
-add_filter( 'wpmu_signup_user_notification', 'kc_wpmu_signup_user_notification', 10, 4 );
-function kc_wpmu_signup_user_notification($user, $user_email, $key, $meta = '') {
-    
-        $sitename = get_bloginfo( 'name' );
-        $blog_id = get_current_blog_id();
-        // Send email with activation link.
-        $admin_email = fw_theme_mod("fw_general_from_email");
-        $from_name = get_option( 'fw_mail_desde_nombre' ) == '' ? $sitename : esc_html( get_option( 'blogname' ) );
-        $message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
-        $message = sprintf(
-            apply_filters( 'wpmu_signup_user_notification_email',
-                __( "Hi %s,\n\nThank you for registering with %s.\n\nTo activate your account, please click the following link:\n\n%s\n\nYou will then receive an email with your login details." ),
-                $user, $user_email, $key, $meta
-            ),
-            site_url( "wp-activate.php?key=$key" )
-
-
-        );
-        // TODO: Don't hard code activation link.
-        $subject = "Activar cuenta";
-        wp_mail($user_email, $subject, $message, $message_headers);
-
-        return false;
-}
-    
 
 
 
