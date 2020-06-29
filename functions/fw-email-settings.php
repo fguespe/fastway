@@ -157,7 +157,7 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 
 function myplugin_options_page(){
-$order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}}  {{shipping_tracking_url}}</small>';
+$order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>';
 
 ?>
 <div>
