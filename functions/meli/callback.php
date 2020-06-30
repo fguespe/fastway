@@ -28,12 +28,14 @@ if($notifications){
     $order=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
 
     $items=$order['body']->order_items;
-	
+    print_r($order,true);
     foreach ($items as $key) {
       $item=$key->item;
       $variation_id=$item->variation_id;
       $item_id=$item->id;
-      echo $item_id;
+      $quantity=$key->quantity;
+      $prod=wc_get_product_id_by_sku($item_id);
+
     }
       
 
