@@ -5743,6 +5743,9 @@ dt.variation-fw_extra.stock {
   margin: 0 10px;
   font-size: 14px !important;
 }
+.fw_checkout .box-detail .login-btn a.login {
+  font-size: 16px !important;
+}
 .fw_checkout .box-detail .lost {
   font-size: 14px;
   display: inline-block;

@@ -5,31 +5,16 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.
 header("HTTP/1.1 200 OK");
 
 $notifications=file_get_contents("php://input");
-function wc_get_product_id_by_variation_sku($sku) {
-  $args = array(
-      'post_type'  => 'product_variation',
-      'meta_query' => array(
-          array(
-              'key'   => '_sku',
-              'value' => $sku,
-          )
-      )
-  );
-  // Get the posts for the sku
-  $posts = get_posts( $args);
-  if ($posts) {
-      return $posts[0]->post_parent;
-  } else {
-      return false;
-  }
-}
-
+error_log('entra_callback');
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
+
+    error_log('ebtra!');
 
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
-
+    error_log('Se recibio la order: '.$order_id);
     //Init
+    
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
