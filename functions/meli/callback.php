@@ -53,6 +53,8 @@ if($notifications){
       $quantity=$key->quantity;
       echo $variation_id;
       $var= wc_get_product_id_by_variation_sku($variation_id);
+      error_log("fguespe");
+      echo "fguespe1";
       echo $var->ID;
     }
       
