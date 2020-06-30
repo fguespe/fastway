@@ -34,8 +34,9 @@ if($notifications){
       $variation_id=$item->variation_id;
       $item_id=$item->id;
       $quantity=$key->quantity;
+
+      echo $item_id;
       $prod=wc_get_product_id_by_sku($item_id);
-      echo $prod->get_sku();
     }
       
 
