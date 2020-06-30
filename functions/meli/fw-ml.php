@@ -6,9 +6,9 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
 }
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
+
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
-
     $iduser=trim($usuario['iduser']);
     $access_token= trim($usuario['access_token']);
     $refresh_token = trim($usuario['refresh_token']);
@@ -21,6 +21,9 @@ function fw_ml_update_stock( $order_id ) {
     $refresh_token=$nuevos['body']->refresh_token;
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
     
+
+
+    $prod=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
 
     // Getting an instance of the order object
     $order = wc_get_order( $order_id );
