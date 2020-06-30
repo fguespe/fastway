@@ -24,6 +24,7 @@ function wc_get_product_id_by_variation_sku($sku) {
   }
 }
 
+
 if($notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
@@ -51,11 +52,13 @@ if($notifications){
       $variation_id=$item->variation_id;
       $item_id=$item->id;
       $quantity=$key->quantity;
-      echo $variation_id;
-      $var= wc_get_product_id_by_variation_sku($variation_id);
-      error_log("fguespe");
-      echo "fguespe1";
-      echo $var->ID;
+
+      $prod_id= wc_get_product_id_by_sku($variation_id);
+      $variation = wc_get_product($prod_id);
+      
+      $variation->set_stock($quantity);
+      if($stock==0)$variation->set_stock_status('outofstock');
+      $variation->save();   
     }
       
 
