@@ -1185,6 +1185,19 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_ml_stock_ml_a_web',
+	'label'       => __( 'Descontar stock ml->web', 'fastway' ),
+	'section'     => 'section_meli',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
 /*EMAIL*/
 
 Kirki::add_field( 'theme_config_id', array(
