@@ -5,6 +5,24 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.
 header("HTTP/1.1 200 OK");
 
 $notifications=file_get_contents("php://input");
+function wc_get_product_id_by_variation_sku($sku) {
+  $args = array(
+      'post_type'  => 'product_variation',
+      'meta_query' => array(
+          array(
+              'key'   => '_sku',
+              'value' => $sku,
+          )
+      )
+  );
+  // Get the posts for the sku
+  $posts = get_posts( $args);
+  if ($posts) {
+      return $posts[0]->post_parent;
+  } else {
+      return false;
+  }
+}
 
 if($notifications){
     $obj = json_decode($notifications, true);
@@ -35,8 +53,8 @@ if($notifications){
       $item_id=$item->id;
       $quantity=$key->quantity;
 
-      echo $item_id;
-      $prod=wc_get_product_id_by_sku($item_id);
+      $var= wc_get_product_id_by_variation_sku($variation_id);
+      error_log(print_r($var,true));
     }
       
 
