@@ -55,9 +55,9 @@ if($notifications){
 
       $prod_id= wc_get_product_id_by_sku($variation_id);
       $variation = wc_get_product($prod_id);
-      
-      $variation->set_stock($quantity);
-      if($stock==0)$variation->set_stock_status('outofstock');
+
+      $variation->set_stock_quantity($variation->get_stock_quantity()+$quantity);
+      if($quantity==0)$variation->set_stock_status('outofstock');
       $variation->save();   
     }
       
