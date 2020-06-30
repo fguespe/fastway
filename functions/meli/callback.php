@@ -5,16 +5,13 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.
 header("HTTP/1.1 200 OK");
 
 $notifications=file_get_contents("php://input");
-error_log('entra_callback');
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
-
-    error_log('ebtra!');
 
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
-    error_log('Se recibio la order: '.$order_id);
-    //Init
+    error_log('Se recibio de ml la order : '.$order_id);
     
+    //Init
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
