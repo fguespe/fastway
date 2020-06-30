@@ -33,9 +33,9 @@ if($notifications){
     foreach ($items as $key) {
       $variation_id=$key->item->variation_id;
       $item_id=$key->item->id;
-      echo $item_id.'\n';
+      echo $item_id.'\n<br>';
 
-      echo $variation_id.'\n';
+      echo $variation_id.'\n<br>';
     }
       
 
