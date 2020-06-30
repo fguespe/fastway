@@ -59,6 +59,7 @@ if($notifications){
       $variation->set_stock_quantity($variation->get_stock_quantity()-$quantity);
       if($quantity==0)$variation->set_stock_status('outofstock');
       $variation->save();   
+      echo $variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
 
     }
       
