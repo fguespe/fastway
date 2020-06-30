@@ -8,7 +8,6 @@ $notifications=file_get_contents("php://input");
 
 if($notifications){
     $obj = json_decode($notifications, true);
-    echo $obj['resource'];
     $order_id=explode("/",$obj['resource'])[2]; 
 
     //Init
@@ -31,11 +30,10 @@ if($notifications){
     $items=$order['body']->order_items;
 	
     foreach ($items as $key) {
-      $variation_id=$key->item->variation_id;
-      $item_id=$key->item->id;
-      echo $item_id.'\n<br>';
-
-      echo $variation_id.'\n<br>';
+      $item=$key->item;
+      $variation_id=$item->variation_id;
+      $item_id=$item->id;
+      echo $item_id;
     }
       
 
