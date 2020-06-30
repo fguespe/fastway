@@ -46,15 +46,14 @@ if($notifications){
     $order=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
 
     $items=$order['body']->order_items;
-    echo json_encode($order);
     foreach ($items as $key) {
       $item=$key->item;
       $variation_id=$item->variation_id;
       $item_id=$item->id;
       $quantity=$key->quantity;
-
+      echo $variation_id;
       $var= wc_get_product_id_by_variation_sku($variation_id);
-      error_log(print_r($var,true));
+      echo $var->get_sku();
     }
       
 
