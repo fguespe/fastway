@@ -28,7 +28,7 @@ if($notifications){
     $order=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
 
     $items=$order['body']->order_items;
-    print_r($order,true);
+    echo json_encode($order,true);
     foreach ($items as $key) {
       $item=$key->item;
       $variation_id=$item->variation_id;
