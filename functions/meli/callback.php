@@ -53,7 +53,7 @@ if($notifications){
       $quantity=$key->quantity;
       echo $variation_id;
       $var= wc_get_product_id_by_variation_sku($variation_id);
-      echo $var->get_sku();
+      print_r($var,true);
     }
       
 
