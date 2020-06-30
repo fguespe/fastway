@@ -773,6 +773,61 @@ function fw_before_paying_notice() {
     wc_print_notice(fw_theme_mod("checkout-msg"), 'error' );
 }
 
+add_action( 'restrict_manage_posts', 'shop_order_user_role_filter' );
+function shop_order_user_role_filter() {
+
+	global $typenow, $wp_query;
+
+	if ( in_array( $typenow, wc_get_order_types( 'order-meta-boxes' ) ) ) :
+		$user_role	= '';
+
+		// Get all user roles
+		$user_roles = array();
+		foreach ( get_editable_roles() as $key => $values ) :
+			$user_roles[ $key ] = $values['name'];
+		endforeach;
+
+		// Set a selected user role
+		if ( ! empty( $_GET['_user_role'] ) ) {
+			$user_role	= sanitize_text_field( $_GET['_user_role'] );
+		}
+
+		// Display drop down
+		?><select name='_user_role'>
+			<option value=''><?php _e( 'Select a user role', 'woocommerce' ); ?></option><?php
+			foreach ( $user_roles as $key => $value ) :
+				?><option <?php selected( $user_role, $key ); ?> value='<?php echo $key; ?>'><?php echo $value; ?></option><?php
+			endforeach;
+		?></select><?php
+	endif;
+
+
+}
+
+
+add_filter( 'pre_get_posts', 'shop_order_user_role_posts_where' );
+function shop_order_user_role_posts_where( $query ) {
+
+	if ( ! $query->is_main_query() || ! isset( $_GET['_user_role'] ) ) {
+		return;
+	}
+
+	$ids    = get_users( array( 'role' => sanitize_text_field( $_GET['_user_role'] ), 'fields' => 'ID' ) );
+	$ids    = array_map( 'absint', $ids );
+
+	$query->set( 'meta_query', array(
+		array(
+			'key' => '_customer_user',
+			'compare' => 'IN',
+			'value' => $ids,
+		)
+	) );
+
+	if ( empty( $ids ) ) {
+		$query->set( 'posts_per_page', 0 );
+	}
+
+}
 //Stock labels
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
