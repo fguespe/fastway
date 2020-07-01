@@ -228,7 +228,8 @@ function openCity(evt, cityName) {
 <form method="post" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
 <div class="tab">
-  <button type="button" class="tablinks active" onclick="openCity(event, 'customer_emails')">Order Emails</button>
+  <button type="button" class="tablinks active" onclick="openCity(event, 'account_emails')">Account Emails</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'customer_emails')">Order Emails</button>
   <?php
 if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 ?>
@@ -239,8 +240,7 @@ if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 </div>
 
 <!-- Tab content -->
-<div id="customer_emails" class="tabcontent" style="display:block;">
-
+<div id="account_emails" class="tabcontent" style="display:block;">
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New Account', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.', 'woocommerce' );?></small>
@@ -251,6 +251,19 @@ $content = get_option('fw_email_content_customer_new_account');
 wp_editor( $content, 'fw_email_content_customer_new_account', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
+<small><?=__( 'Customer "reset password" emails are sent when customers reset their passwords.', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_customer_reset_password" name="fw_email_subject_customer_reset_password" value="<?php echo get_option('fw_email_subject_customer_reset_password'); ?>" /><br>
+<small>Variables: {{blogname}} {{user_name}} {{user_pass}} {{myaccount}} {{reset_link}}</small><br>
+<?php
+$content = get_option('fw_email_content_customer_reset_password');
+wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+
+</div>
+<div id="customer_emails" class="tabcontent">
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Processing order', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after payment.', 'woocommerce' );?></small>
@@ -282,16 +295,6 @@ wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = arra
 ?>
 </div>
 
-<div class="tipomail">
-<h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
-<small><?=__( 'Customer "reset password" emails are sent when customers reset their passwords.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_reset_password" name="fw_email_subject_customer_reset_password" value="<?php echo get_option('fw_email_subject_customer_reset_password'); ?>" /><br>
-<?=$order_variables?>
-<?php
-$content = get_option('fw_email_content_customer_reset_password');
-wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = array('textarea_rows'=> '10') );
-?>
-</div>
 </div>
 
 <div id="wholesale" class="tabcontent">
