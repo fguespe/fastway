@@ -125,6 +125,9 @@ add_option( 'fw_email_content_thankyou', '
 ');
 
 
+add_option( 'fw_email_content_product_summary', '');
+
+
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_processing_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_subject_customer_completed_order', 'myplugin_callback' );
@@ -144,6 +147,7 @@ register_setting( 'fw_email_options_group', 'fw_email_content_gf_pending', 'mypl
 register_setting( 'fw_email_options_group', 'fw_email_content_gf_activated', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_thankyou', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_confirmation_wholesale_form', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_product_summary', 'myplugin_callback' );
 
 }
 
@@ -351,6 +355,16 @@ wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_ro
 ?>
 </div>
 </div>
+<div class="tipomail">
+<h3 class="titulo">Product info</h3>
+<small>Texto informativo aparece en cada producto, debajo del boton de compra</small>
+<small></small>
+<?php
+$content = get_option('fw_email_content_product_summary');
+wp_editor( $content, 'fw_email_content_product_summary', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+</div>
 
 
 
@@ -418,6 +432,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
     $roles = ( array ) $the_user->roles;
     $role=$roles[0];
     if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' )$role='minorista';
+    $customer_name=$order->billing_first_name.' '.$order->billing_last_name;
 
     return array(
         'blogname' => get_bloginfo( 'name' ),
@@ -433,6 +448,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'role' => $role,
         'real_role' => $roles[0],
         'order_meta' => $order_meta,
+        'customer_name' => $customer_name,
         'customer_details' => $customer_details
     );
 }
