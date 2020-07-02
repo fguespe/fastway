@@ -40,6 +40,10 @@ function fw_get_custom_field($atts){
     if(!empty($sku))echo $sku;
 }
 
+add_shortcode('fw_customer_product_summary', 'fw_customer_product_summary');
+function fw_customer_product_summary(){
+    echo wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_product_summary'))));
+}
 
 add_shortcode('fw_loop_cat', 'fw_loop_cat');
 function fw_loop_cat(){
