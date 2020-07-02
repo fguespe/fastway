@@ -117,6 +117,18 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_cuotas_general',
+	'label'       => __( 'Cuotas General', 'fastway' ),
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
 /*CLIENT AREA*/
 
 

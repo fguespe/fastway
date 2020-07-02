@@ -1800,19 +1800,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_show_attr_summary',
-	'label'       => __( 'Attr Summary Minicart', 'fastway' ),
-	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
-	'section'     => 'section_woo_cart',
-	'default'     => 0,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
 	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
@@ -2033,6 +2020,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => 6
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_cuotas_general',
+	'label'    => __( 'Cuotas General', 'fastway' ),
+	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
+	'section'     => 'section_woo',
+	'default' => 6
+) );
 
 
 
@@ -2068,7 +2063,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_extra_tax',
 	'label'       => __( 'Extra Taxonomias', 'fastway' ),
-	'description'	=>	'Nombres de taxonomias (genero,otros)',
+	'description'	=>	'Nombres de taxonomias. En singular y minuscula Ej: (marca,genero)',
 	'section'     => 'section_woo',
 	'default'     => '',
 ) );
@@ -3096,7 +3091,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_code',
 	'label'       => __( ' Product Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop',
-	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_cuotas cant="X"]fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_btn type="ajax/link"]',
+	'description'     => '[fw_loop_container][fw_loop_image][fw_short_desc][fw_loop_title][fw_if][fw_cuotas cant="X/general"][fw_loop_price][fw_loop_cart][/fw_loop_container][fw_loop_btn type="ajax/link"]',
 	'default'     => '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container][fw_loop_btn]',
 	'choices'     => array(
 		'language' => 'html',

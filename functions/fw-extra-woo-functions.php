@@ -64,6 +64,7 @@ add_shortcode('fw_cuotas', 'fw_cuotas');
 function fw_cuotas($atts = []){
   $atts = shortcode_atts(array('class' => '' ,'cant' => 0 ), $atts );
   global $product;
+  if($atts['cant']=='general')$atts['cant']=fw_theme_mod('fw_cuotas_general');
   $cuotas=floatval($atts['cant']);
   $precio=floatval($product->get_sale_price());
   $precio=round($precio/$cuotas);

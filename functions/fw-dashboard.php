@@ -60,6 +60,14 @@ function prefix_add_dashboard_widget() {
             'fw_widget_cuotas_tp_dash_handler'
         );
     }
+    if(fw_theme_mod('fw_widget_cuotas_general')){
+        wp_add_dashboard_widget(
+            'fw_widget_cuotas_general', 
+            'Cuotas General', 
+            'fw_widget_cuotas_general_dash', 
+            'fw_widget_cuotas_general_dash_handler'
+        );
+    }
 }
 
 
@@ -287,6 +295,51 @@ function fw_widget_cuotas_tp_dash_handler(){
         <input type=\"text\" name=\"fw_todopago_widget_options[max_cuotas]\" id=\"max_cuotas\" value=\"".fw_theme_mod('fw_cuotas_todopago')."\">
     </div>";
 }
+
+
+
+function fw_widget_cuotas_general_dash(){
+    $cuotas =fw_theme_mod('fw_cuotas_general');
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Cuotas sin interes: $cuotas</label>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_general#fw_tofw_widget_cuotas_generaldopago_widget">Cambiar</a>
+    </div>
+HTML;
+}
+
+add_shortcode('fw_cuotas_general','fw_cuotas_general');
+function fw_cuotas_general(){
+    return fw_theme_mod('fw_cuotas_general');
+}
+function fw_widget_cuotas_general_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_cuotas_general_options' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_cuotas_general_options'] ) ) {
+        # minor validation
+        $cuotas=( $_POST['fw_widget_cuotas_general_options']['cuotas'] );
+        set_theme_mod('fw_cuotas_general',$cuotas);
+    }
+
+    # set defaults  
+    if( !isset( $widget_options['fw_cuotas_general'] ) )
+        $widget_options['fw_cuotas_general'] = fw_theme_mod('fw_cuotas_general');
+
+    echo "
+    <div>
+        <label>Cuotas sin interes</label>
+        <input type=\"text\" name=\"fw_widget_cuotas_general_options[cuotas]\" id=\"cuotas\" value=\"".fw_theme_mod('fw_cuotas_general')."\">
+    </div>";
+}
+
+
+
+
+
+
+
 
 
 function fw_dash_conversion(){
