@@ -354,7 +354,6 @@ $content = get_option('fw_email_content_thankyou');
 wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-</div>
 <div class="tipomail">
 <h3 class="titulo">Product info</h3>
 <small>Texto informativo aparece en cada producto, debajo del boton de compra</small>
