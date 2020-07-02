@@ -161,7 +161,7 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 
 function myplugin_options_page(){
-$order_variables='<small>Variables: {{blogname}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>';
+$order_variables='<small>Variables: {{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>';
 
 ?>
 <div>
@@ -447,6 +447,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'role' => $role,
         'real_role' => $roles[0],
         'order_meta' => $order_meta,
+        'customer_email' => $order->billing_email,
         'customer_name' => $customer_name,
         'customer_details' => $customer_details
     );
