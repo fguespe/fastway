@@ -348,7 +348,7 @@ wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('text
 <div class="tipomail">
 <h3 class="titulo">Thank you page</h3>
 <small>Texto que aparece luego de la pagina de compra</small>
-<small>Variables: {{email}}</small>
+<?=$order_variables?>
 <?php
 $content = get_option('fw_email_content_thankyou');
 wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
