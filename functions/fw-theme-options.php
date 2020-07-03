@@ -1655,6 +1655,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_share_message',
+	'label'    => __( 'Share Message', 'fastway' ),       
+	'section'     => 'section_whatsapp',
+	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_chat_whats',
 	'label'    => __( 'Button Menu Whatsapp', 'fastway' ),       
 	'section'     => 'section_whatsapp',
@@ -3850,13 +3857,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Esto va en la pagina de single products',
 	'section'     => 'section_labels_products',
 	'default'	=>__( 'Quienes vieron este producto también compraron', 'fastway' ),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_share_message',
-	'label'    => __( 'Share Message', 'fastway' ),       
-	'section'     => 'section_labels',
-	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
