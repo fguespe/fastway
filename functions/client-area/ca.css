@@ -398,6 +398,9 @@ display:none;
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
 	display:none;
 }
+.escritorio .error{
+	display:none;
+}
 
 .categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
 display:none !important;
@@ -428,6 +431,14 @@ cuidado con el update notice y el error de create user
 .notice-success{
 	display:block!important;
 }*/
+
+/*ENVIRA*/
+.post-type-envira .error,
+.post-type-envira .envira-header,
+.post-type-envira .page-title-action,
+.post-type-envira h1{
+display:none !important;
+}
 	
 /*media*/
 
