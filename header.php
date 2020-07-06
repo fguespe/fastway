@@ -158,6 +158,12 @@ background:#25d366;
 .telefono-header .btn.fb{
 background:#307BFF;
 }
+
+a.bluelink{    
+		color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
 </style>
 
 <script >
