@@ -257,6 +257,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     if(isLocalhost())require get_template_directory() . '/functions/fw-extra-woo-clients.php';
     require get_template_directory() . '/functions/fw-woo-prices-functions.php';
+    require get_template_directory() . '/functions/fw-change-requests.php';
     require get_template_directory() . '/functions/fw-woo-marketing.php';
     require get_template_directory() . '/functions/fw-ajax-woo-functions.php';
     require get_template_directory() . '/functions/shipping-calculator/shipping-calculator.php';

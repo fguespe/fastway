@@ -15,7 +15,12 @@ Kirki::add_section( 'section_clientwidgets', array(
     'title'          => __( 'Widgets', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_clientarea',
+) );
 
+Kirki::add_section( 'section_client_admin', array(
+    'title'          => __( 'Admin', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_clientarea',
 ) );
 
 /*MELI*/
@@ -45,6 +50,18 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'	=>	'Luego de subir el file, lo reidije al id de importacion de wpallimport correspondiente.',
 	'section'     => 'section_wooarea',
 	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_client_admin_columnarol',
+	'label'       => __( 'Columna Rol En Pedidos', 'fastway' ),
+	'section'     => 'section_client_admin',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
 ) );
 
 /*CLIENT AREA WIDGETS*/
@@ -96,7 +113,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_lili_discount',
-	'label'       => __( 'Lili Discount', 'fastway' ),
+	'label'       => __( 'Lili Discount (CR)', 'fastway' ),
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,
 	'choices' => array(

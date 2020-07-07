@@ -744,16 +744,16 @@ function fw_otherwoo_options(){
     if(!empty(fw_theme_mod("checkout-msg"))){
         add_action( 'woocommerce_before_checkout_form', 'fw_before_paying_notice' );
     }
-
+    /*
     if(!empty(fw_theme_mod("fw_neworder_email_header"))){
       add_action( 'woocommerce_email_before_order_table', 'fw_add_header_to_order', 20, 4 );
     }
     if(!empty(fw_theme_mod("fw_neworder_email_footer"))){
       add_action( 'woocommerce_email_footer', 'fw_add_footer_to_email', 20, 4 );
-    }
+    }*/
     
 }
-
+/*
 function fw_add_footer_to_email( $email ) {
   echo fw_theme_mod("fw_neworder_email_footer");
 }
@@ -761,7 +761,7 @@ function fw_add_footer_to_email( $email ) {
 function fw_add_header_to_order( $order, $sent_to_admin, $plain_text, $email ) {
     if(esMultitienda()) return;
     if ( $email->id == 'customer_processing_order' ) echo fw_theme_mod("fw_neworder_email_header");
-}
+}*/
 
 
 function wc_remove_all_quantity_fields( $return, $product ){
