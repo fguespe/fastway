@@ -146,6 +146,14 @@ Kirki::add_section( 'section_footer', array(
 
 ) );
 
+Kirki::add_section( 'section_forms', array(
+    'title'          => __( 'Forms', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
+
+
 Kirki::add_section( 'section_blog', array(
     'title'          => __( 'Blog', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -221,6 +229,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
 		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
 	) );
 }
+
 Kirki::add_section( 'section_blog_general', array(
     'title'          => __( 'General', 'fastway' ),
     'panel'          => 'panel_fastwayblog',
@@ -872,6 +881,18 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-forms',
+	'label'       => __( 'CSS Forms', 'fastway' ),
+	'section'     => 'section_forms',
+	'description' => 'Css de los gravity forms',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 /*IMAGES*/
 
 Kirki::add_field( 'theme_config_id', array(
