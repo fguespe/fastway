@@ -398,7 +398,8 @@ display:none;
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
 	display:none;
 }
-.escritorio .error{
+.escritorio .error,
+.escritorio .updated{
 	display:none;
 }
 
