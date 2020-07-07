@@ -837,7 +837,7 @@ function shop_order_user_role_posts_where( $query ) {
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
     if(get_option('woocommerce_manage_stock')==='no')return "";
-    if ( $product->is_type( 'variable' ) ) return "";
+    if ( $_product->is_type( 'variable' ) ) return "";
     $instock=$_product->get_stock_quantity()>0;
     //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
     if ( $instock )$availability['availability'] = fw_theme_mod("in-stock-text");
