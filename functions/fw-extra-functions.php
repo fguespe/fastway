@@ -8,8 +8,7 @@ function loadnoimgs($phpprefix,$usesame=false){
     $dires=array();
     array_push($dires,new DirectoryIterator($TEMPLATE_DIR .$lavar));
     $path=$CHILDTEMPLATE_DIR .$lavar;
-    if(is_dir($path))array_push($dires,new DirectoryIterator($path));    
-    
+    if(is_dir($path))array_push($dires,new DirectoryIterator($path)); 
     $miarray=array();
     if($usesame)$miarray[0]= "Use same as desktop";
     foreach($dires as $dir){
@@ -33,29 +32,6 @@ function loadnoimgs($phpprefix,$usesame=false){
     return $miarray;
 }
 
-/*
-function tmu_custom_fonts( $standard_fonts ){
- 
-    $my_custom_fonts = array();
-    
-    $my_custom_fonts['kitten'] = array(
-       'label' => 'kitten',
-       'variants' => array('regular'),
-       'stack' => 'kitten, sans-serif',
-    );
-    
-    $my_custom_fonts['font2'] = array(
-       'label' => 'Another Font',
-       'variants' => array('regular','italic','700','700italic'),
-       'stack' => 'anotherfont, sans-serif',
-    );
-    
-    return array_merge_recursive( $my_custom_fonts, $standard_fonts );
-    
-}
-add_filter( 'kirki/fonts/standard_fonts', 'tmu_custom_fonts', 20 );
-
-   */
 
 function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth=0 ) {
     // Loop through $classes array to find linkmod or icon classes.
@@ -555,20 +531,17 @@ function fw_header_builder($atts = [], $content = null){
 add_shortcode('fw_header', 'fw_header_builder');
 
 function fw_header_builder_mobile($atts = [], $content = null){
-$atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
-if(!empty($atts['type']))$atts['id']=$atts['type'];
+    $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
+    if(!empty($atts['type']))$atts['id']=$atts['type'];
 
-$volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
-$volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-$volver .='</div>';
+    $volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
+    $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    $volver .='</div>';
 
-return $volver;
+    return $volver;
 }
 add_shortcode('fw_m_header', 'fw_header_builder_mobile');
-
-
 function fw_header_html(){
-    
     if(is_plugin_active('woocommerce/woocommerce.php') && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_header][fw_logo][fw_compra_protegida][/fw_header]')));
     }
@@ -585,11 +558,6 @@ function fw_header_html(){
 add_action( 'fastway_footer_init', 'fastway_footer_block', 10 );
 add_action( 'fastway_singleblock_init', 'fastway_singleblock_block', 10 );
 
-
-add_filter('woocommerce_thankyou', 'woo_change_order_received_text', 10, 2 );
-function woo_change_order_received_text(  ) {
-    echo '<a href="/"><i class="fas fa-long-arrow-alt-left"></i> Volver a la pagina principal</a><br><br>';
-}
 
 
 function fw_custom_css(){

@@ -54,7 +54,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_client_admin_columnarol',
+	'settings'    => 'woocommerce_thankyou',
 	'label'       => __( 'Columna Rol En Pedidos', 'fastway' ),
 	'section'     => 'section_client_admin',
 	'default'     => 0,

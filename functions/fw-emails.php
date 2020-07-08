@@ -68,6 +68,11 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
 
 
 
+function sp_reply_to($args) {
+    $args['headers'] = array('Reply-To: '.fw_theme_mod('fw_mail_desde_nombre').' <'.fw_theme_mod('fw_mail_desde_mails').'>');
+    return $args;
+}
+add_filter ( 'wp_mail', 'sp_reply_to');
 
 //config mails
 if(fw_theme_mod("fw_action_resetmails")){
