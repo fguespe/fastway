@@ -47,24 +47,6 @@ add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
 add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
-//Emails
-add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
-
-function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
-
-    $message = sprintf(__( "Welcome to %s! Here's how to log in:" ), $blogname ) . "\r\n";
-    $message .= wp_login_url() . "\r\n";
-    $message .= sprintf(__( 'Usernames: %s' ), $user->user_login ) . "\r\n";
-    $message .= sprintf(__( 'Password: %s' ), $user->user_pass ) . "\r\n\r\n";
-    $message .= sprintf(__( 'If you have any problems, please contact me at %s.'), get_option( 'admin_email' ) ) . "\r\n";
-    $message .= __('Adios!');
-
-    $wp_new_user_notification_email['message'] = $message;
-
-    return $wp_new_user_notification_email;
-
-}
-
 /*
 if(isLocalhost()){
     //On plugin activation schedule our daily database backup 
@@ -111,6 +93,18 @@ function getMailQueEnvia(){
 $fix=get_option('fw_email_content_thankyou');
 $fix=str_replace("{{email}}","{{customer_email}}",$fix);
 update_option('fw_email_content_thankyou',$fix);
+if(get_locale()=='es_ES'){
+    
+    update_option( 'fw_email_content_confirmation_wholesale_form', '¡Gracias por contactar con nosotros! 
+
+    Nos pondremos en contacto contigo muy pronto.
+    ');
+
+    update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
+
+    Para activarla entra al siguiente link: {activation_url}');
+
+}
 
 set_theme_mod('fw_general_from_name','');
 set_theme_mod('fw_general_from_email','');
@@ -163,16 +157,6 @@ function email_orden_fallida( $recipient, $order ) {
     return $recipients;
 }
 
-
-add_filter( 'gform_notification', 'change_notification_email', 10, 3 );
-function change_notification_email( $notification, $form, $entry ) {
-    $notification['from'] = 'avisos@altoweb.co';
-    $notification['fromName'] = 'ALTOWEB';
-    if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
-        $notification['to'] =fw_theme_mod("fw_mail_desde_mails");//;
-    }
-    return $notification;
-}
 
 // The email function hooked that display the text
 add_action( 'woocommerce_email_order_details', 'fw_display_applied_coupons', 10, 4 );

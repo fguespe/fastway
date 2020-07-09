@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php echo fw_parse_mail('thankyou',$order);?>
 				
 				<?php 
-				if(isLocalhost())do_action( 'woocommerce_thankyou',$order->get_id());
+				do_action( 'woocommerce_thankyou',$order->get_id());
 				do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?><!--por si hay algo intersante para haer en el futuro....-->
 
 				<a class="seguir" href="<?=fw_theme_mod('fw_seguircomprando_url')?>"><?=fw_theme_mod('fw_label_checkout_thank_4')?></a>
