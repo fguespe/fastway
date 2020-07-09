@@ -393,7 +393,8 @@ function fw_parse_mail_accounts($tipo,$emailValues){
   $html=get_option('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
-  return $html;//wp_kses_post( wpautop( wptexturize($html)));
+  //return $html;//
+  return wp_kses_post( wpautop( wptexturize($html)));
 
 }
 function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
@@ -480,13 +481,6 @@ function woocommerce_email_subject_customer_reset_password( $subject, $order ) {
 
 add_filter('woocommerce_email_subject_customer_new_account', 'woocommerce_email_subject_customer_new_account', 1, 2);
 function woocommerce_email_subject_customer_new_account( $subject, $order ) {
-  global $woocommerce;
-  $emailValues = array(
-    'blogname' => get_bloginfo( 'name' ),
-    'user_name' => esc_html( $user_login ),
-    'user_pass' => esc_html( $user_pass),
-    'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) )
-  );
   return fw_parse_subject('customer_new_account',get_account_variables_for_templates());
 }
 //ORDERs
@@ -519,9 +513,10 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 //Emails
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
-
+    
     $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
     $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
+    $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
     return $wp_new_user_notification_email;
 }
 
