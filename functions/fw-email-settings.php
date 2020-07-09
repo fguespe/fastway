@@ -393,7 +393,6 @@ function fw_parse_mail_accounts($tipo,$emailValues){
   $html=get_option('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
-  //return $html;//
   return wp_kses_post( wpautop( wptexturize($html)));
 
 }
@@ -465,7 +464,8 @@ function get_account_variables_for_templates($user=null){
   $key ='';
   if($user){
     $key = get_password_reset_key( $user );
-   
+    $user_login=$user->user_login;
+    $user_pass=$user->user_pass;
   }
   
   $emailValues = array(
