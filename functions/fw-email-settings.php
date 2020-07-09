@@ -459,8 +459,8 @@ add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_c
 function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
-function get_account_variables_for_templates($key=null){
-  global $woocommerce;
+function get_account_variables_for_templates($user){
+  //global $woocommerce;
 
   // Generate a new key
   $key = get_password_reset_key( $user );
@@ -522,7 +522,7 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
 
-    $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates());
+    $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
     $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
     return $wp_new_user_notification_email;
 }
