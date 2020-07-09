@@ -107,7 +107,7 @@ Estaremos evaluando tu solicitud y te avisaremos cuando te demos de alta.
 add_option( 'fw_email_subject_gf_activated', 'Solicitud Aceptada');
 add_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 
-Para activarla entra al siguiente link: {activation_url}');
+Para activarla entra al siguiente link: {{activation_url}}');
 
 
 
@@ -388,13 +388,24 @@ function fw_parse_subject($tipo,$emailValues){
     foreach ($emailValues as $key => $value) $subject = str_replace("{{". $key . "}}", $value, $subject);
     return $subject;
 }
-function fw_parse_mail($tipo,$emailValues, $email){
-    do_action( 'woocommerce_email_header', $email_heading, $email ); 
-    $html=get_option('fw_email_content_'.$tipo);
-    $html=conditionals($html,$emailValues);
-    foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
-    echo wp_kses_post( wpautop( wptexturize($html)));
+
+function fw_parse_mail_accounts($tipo,$emailValues){
+  $html=get_option('fw_email_content_'.$tipo);
+  $html=conditionals($html,$emailValues);
+  foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
+  return wp_kses_post( wpautop( wptexturize($html)));
+
 }
+function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
+  do_action( 'woocommerce_email_header', $email_heading, $email ); 
+  $emailValues = fw_get_email_variables($order, $sent_to_admin, $plain_text, $email);
+
+  $html=get_option('fw_email_content_'.$tipo);
+  $html=conditionals($html,$emailValues);
+  foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
+  echo wp_kses_post( wpautop( wptexturize($html)));
+}
+
 function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false, $email=false){
 
     if($sent_to_admin || $plain_text || $email){
@@ -448,16 +459,25 @@ add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_c
 function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
+function get_account_variables_for_templates($key=null){
+  global $woocommerce;
+
+  // Generate a new key
+  $key = get_password_reset_key( $user );
+
+  $emailValues = array(
+    'blogname' => get_bloginfo( 'name' ),
+    'user_name' => esc_html( $user_login ),
+    'user_pass' => esc_html( $user_pass),
+    'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ),
+    'activation_url'=> network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') 
+  );
+  return $emailValues;
+}
 
 add_filter('woocommerce_email_subject_customer_reset_password', 'woocommerce_email_subject_customer_reset_password', 1, 2);
 function woocommerce_email_subject_customer_reset_password( $subject, $order ) {
-    global $woocommerce;
-    $emailValues = array(
-      'blogname' => get_bloginfo( 'name' ),
-      'user_name' => esc_html( $user_login ),
-      'user_pass' => esc_html( $user_pass)
-    );
-    return fw_parse_subject('customer_reset_password',$emailValues);
+    return fw_parse_subject('customer_reset_password',get_account_variables_for_templates());
 }
 
 add_filter('woocommerce_email_subject_customer_new_account', 'woocommerce_email_subject_customer_new_account', 1, 2);
@@ -469,7 +489,7 @@ function woocommerce_email_subject_customer_new_account( $subject, $order ) {
     'user_pass' => esc_html( $user_pass),
     'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) )
   );
-  return fw_parse_subject('customer_new_account',$emailValues);
+  return fw_parse_subject('customer_new_account',get_account_variables_for_templates());
 }
 //ORDERs
 add_filter('woocommerce_email_subject_customer_completed_order', 'woocommerce_email_subject_customer_completed_order', 1, 2);
@@ -501,7 +521,8 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 //Emails
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
-    $wp_new_user_notification_email['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_activated'))));
+
+    $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates());
     $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
     return $wp_new_user_notification_email;
 }

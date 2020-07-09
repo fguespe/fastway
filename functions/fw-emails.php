@@ -102,7 +102,7 @@ if(get_locale()=='es_ES'){
 
     update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 
-    Para activarla entra al siguiente link: {activation_url}');
+    Para activarla entra al siguiente link: {{activation_url}}');
 
 }
 
