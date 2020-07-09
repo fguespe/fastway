@@ -393,7 +393,7 @@ function fw_parse_mail_accounts($tipo,$emailValues){
   $html=get_option('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
-  return wp_kses_post( wpautop( wptexturize($html)));
+  return $html;//wp_kses_post( wpautop( wptexturize($html)));
 
 }
 function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
@@ -460,9 +460,6 @@ function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
 function get_account_variables_for_templates($user){
-  //global $woocommerce;
-
-  // Generate a new key
   $key = get_password_reset_key( $user );
   error_log($key);
   $emailValues = array(
