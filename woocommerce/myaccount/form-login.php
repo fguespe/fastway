@@ -90,7 +90,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 					</p>
 					<?php else : ?>
 
-					<span><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></span>
+					<label><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></label>
 
 					<?php endif; ?>
 							
