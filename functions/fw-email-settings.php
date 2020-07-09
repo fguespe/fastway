@@ -471,6 +471,8 @@ function get_account_variables_for_templates($user=null){
     'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ),
     'activation_url'=> network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') 
   );
+  error_log(print_r($user,true));
+  error_log(print_r($emailValues,true));
   return $emailValues;
 }
 
