@@ -66,13 +66,40 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
 
 }
 
+/*
+if(isLocalhost()){
+    //On plugin activation schedule our daily database backup 
+    register_activation_hook( __FILE__, 'wi_create_daily_backup_schedule' );
+    function wi_create_daily_backup_schedule(){
+    //Use wp_next_scheduled to check if the event is already scheduled
+    $timestamp = wp_next_scheduled( 'wi_create_daily_backup' );
 
+    //If $timestamp == false schedule daily backups since it hasn't been done previously
+    if( $timestamp == false ){
+        //Schedule the event for right now, then to repeat daily using the hook 'wi_create_daily_backup'
+        wp_schedule_event( time(), 'daily', 'wi_create_daily_backup' );
+    }
+    }
 
-function sp_reply_to($args) {
-    $args['headers'] = array('Reply-To: '.fw_theme_mod('fw_mail_desde_nombre').' <'.fw_theme_mod('fw_mail_desde_mails').'>');
-    return $args;
-}
-add_filter ( 'wp_mail', 'sp_reply_to');
+    //Hook our function , wi_create_backup(), into the action wi_create_daily_backup
+    add_action( 'wi_create_daily_backup', 'wi_create_backup' );
+    function wi_create_backup(){
+        $prod = wc_get_product(14);
+        $prod->set_stock(20);
+        error_log('se desconto stock a 20');
+    }
+
+    register_activation_hook( __FILE__, 'my_activation' );
+    function my_activation() {
+        wp_schedule_event( time(), 'hourly', 'my_hourly_event' );
+    }
+    add_action( 'my_hourly_event', 'do_this_hourly' );
+    function do_this_hourly() {
+        $prod = wc_get_product(14);
+        $prod->set_stock(20);
+        error_log('se desconto stock a 20');
+    }
+}*/
 
 //config mails
 if(fw_theme_mod("fw_action_resetmails")){
@@ -153,5 +180,13 @@ function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email
         echo '<p>'.__( 'Códigos: ').$coupon_codes.'<p>';
     }
 }
-
+/*
+function sp_reply_to($args) {
+    error_log(print_r($args,true));
+    error_log($args['event']);
+    if($args['headers']['event']!='form_submission')$args['headers'] = array('Reply-To: '.fw_theme_mod('fw_mail_desde_nombre').' <'.fw_theme_mod('fw_mail_desde_mails').'>');
+    return $args;
+}
+add_filter ( 'wp_mail', 'sp_reply_to');
+*/
 ?>

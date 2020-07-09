@@ -488,7 +488,6 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 
 add_filter( 'gform_notification', 'change_autoresponder_email', 10, 3 );
 function change_autoresponder_email( $notification, $form, $entry ) {
-    error_log(print_r($notification,true));
 
     if ( $notification['name'] == 'User Pending' ) {
         $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_pending'))));
@@ -536,7 +535,6 @@ eval("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE 
 
 error_log("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
 } else {
-error_log('jaja');
 // Looks like a if 'variable' conditional, let's make sure the variable is set
 
 /*if (isset($data->$cond_str)) {
