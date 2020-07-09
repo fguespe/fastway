@@ -459,9 +459,10 @@ add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_c
 function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
-function get_account_variables_for_templates($user){
-  $key = get_password_reset_key( $user );
-  error_log($key);
+function get_account_variables_for_templates($user=null){
+  $key ='';
+  if($user)$key = get_password_reset_key( $user );
+  
   $emailValues = array(
     'blogname' => get_bloginfo( 'name' ),
     'user_name' => esc_html( $user_login ),
