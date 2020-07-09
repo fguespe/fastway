@@ -461,8 +461,12 @@ function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
 function get_account_variables_for_templates($user=null){
+  global $woocommerce;
   $key ='';
-  if($user)$key = get_password_reset_key( $user );
+  if($user){
+    $key = get_password_reset_key( $user );
+   
+  }
   
   $emailValues = array(
     'blogname' => get_bloginfo( 'name' ),
