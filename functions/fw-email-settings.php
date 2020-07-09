@@ -3,7 +3,8 @@ function myplugin_register_settings() {
 add_option( 'fw_email_subject_customer_new_account', 'Tu cuenta esta lista');
 add_option( 'fw_email_content_customer_new_account', 'Bienvenido a {{blogname}}
 
-Gracias por crear una cuenta en nuestra web. Tu nombre de usuario es {{user_name}}
+Gracias por crear una cuenta en nuestra web. 
+Tu nombre de usuario es {{user_name}}
 Podés acceder a tu cuenta para ver pedidos, cambiar tu contraseña y más en: {{myaccount}}
 
 Tu contraseña se generó automáticamente: <strong>{{user_pass}}</strong>
@@ -499,9 +500,8 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 
 //Emails
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
-
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
-    $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_subject_gf_activated'))));
+    $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_activated'))));
     $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
     return $wp_new_user_notification_email;
 
@@ -516,9 +516,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     }else if ( $notification['name'] == 'User Activation' ) {
         $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_activated'))));
         $notification['subject'] =  get_option('fw_email_subject_gf_activated');
-    }
-
-    if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
+    }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
       $notification['to'] =fw_theme_mod("fw_mail_desde_mails");
     }
     return $notification;
