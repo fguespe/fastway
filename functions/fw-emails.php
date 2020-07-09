@@ -28,15 +28,14 @@ function fw_auto_username( $username, $feed, $form, $entry ) {
 
 // Hooking up our functions to WordPress filters 
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
-add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
-
 function wpb_sender_email( $original_email_address ) {
-    return fw_theme_mod('fw_general_from_email');
+    return getMailQueEnvia();
 }
  
 // Function to change sender name
+add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
 function wpb_sender_name( $original_email_from ) {
-    return fw_theme_mod('fw_general_from_name');
+    return getMailQueEnvia();
 }
 
 
@@ -102,6 +101,12 @@ if(isLocalhost()){
 }*/
 
 //config mails
+function getMailQueEnvia(){
+    if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
+        return explode(",",fw_theme_mod("fw_mail_desde_mails"))[0];
+    }else return fw_theme_mod("fw_mail_desde_mails");
+}
+set_theme_mod('fw_action_resetmails',true);
 if(fw_theme_mod("fw_action_resetmails")){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
@@ -111,8 +116,8 @@ if(fw_theme_mod("fw_action_resetmails")){
     update_option("woocommerce_product_enquiry_send_to",fw_theme_mod("fw_mail_desde_mails"));
     update_option("woocommerce_stock_email_recipient",fw_theme_mod("fw_mail_desde_mails"));
      
-    update_option("sendgrid_from_email",fw_theme_mod("fw_general_from_email"));
-    update_option("woocommerce_email_from_address",fw_theme_mod("fw_general_from_email"));
+    update_option("sendgrid_from_email",getMailQueEnvia());
+    update_option("woocommerce_email_from_address",getMailQueEnvia());
      
     update_option("woocommerce_email_from_name",fw_theme_mod("fw_mail_desde_nombre"));
     update_option("sendgrid_from_name",fw_theme_mod("fw_mail_desde_nombre"));
@@ -180,13 +185,4 @@ function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email
         echo '<p>'.__( 'Códigos: ').$coupon_codes.'<p>';
     }
 }
-/*
-function sp_reply_to($args) {
-    error_log(print_r($args,true));
-    error_log($args['event']);
-    if($args['headers']['event']!='form_submission')$args['headers'] = array('Reply-To: '.fw_theme_mod('fw_mail_desde_nombre').' <'.fw_theme_mod('fw_mail_desde_mails').'>');
-    return $args;
-}
-add_filter ( 'wp_mail', 'sp_reply_to');
-*/
 ?>

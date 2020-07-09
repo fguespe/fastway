@@ -1299,8 +1299,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_general_from_name',
 	'label'    	=> __( 'Desde donde', 'fastway' ),
-	'default' => 'Web',
-	'description' 	=>	'Nombre de donde salen las notificaciones. No modificar!',
+	'default' => '',
+	'description' 	=>	'Nombre de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre.)',
 	'section'   => 'section_email',
 ) );
 
@@ -1310,8 +1310,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_general_from_email',
 	'label'    	=> __( 'Desde que mail', 'fastway' ),
-	'default' => 'avisos@altoweb.co',
-	'description' 	=>	'Email de donde salen las notificaciones. No modificar!',
+	'default' => '',
+	'description' 	=>	'Email de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre, el primero si hay varios con ,)',
 	'section'   => 'section_email',
 ) );
 
