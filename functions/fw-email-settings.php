@@ -1,5 +1,4 @@
 <?php
-
 function myplugin_register_settings() {
 add_option( 'fw_email_subject_customer_new_account', 'Tu cuenta esta lista');
 add_option( 'fw_email_content_customer_new_account', 'Bienvenido a {{blogname}}

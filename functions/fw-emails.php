@@ -106,7 +106,14 @@ function getMailQueEnvia(){
         return explode(",",fw_theme_mod("fw_mail_desde_mails"))[0];
     }else return fw_theme_mod("fw_mail_desde_mails");
 }
+
+$fix=get_option('fw_email_content_thankyou');
+$fix=str_replace("{{email}}","{{customer_email}}",$fix);
+update_option('fw_email_content_thankyou',$fix);
+
 set_theme_mod('fw_action_resetmails',true);
+
+
 if(fw_theme_mod("fw_action_resetmails")){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
