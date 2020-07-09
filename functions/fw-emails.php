@@ -103,7 +103,7 @@ if(get_locale()=='es_ES'){
 
     update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 
-    Para activarla entra al siguiente link: {{activation_url}}');
+    Para activarla entra al siguiente link: <a href="{{activation_url}}">LINK</a>');
 
 }
 
@@ -111,7 +111,12 @@ set_theme_mod('fw_general_from_name','');
 set_theme_mod('fw_general_from_email','');
 set_theme_mod('fw_action_resetmails',true);*/
 
+if(get_locale()=='es_ES'){
+    update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 
+    Para activarla entra al siguiente link: <a href="{{activation_url}}">LINK</a>');
+
+}
 if(fw_theme_mod("fw_action_resetmails")){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
