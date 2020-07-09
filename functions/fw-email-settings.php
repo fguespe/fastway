@@ -120,7 +120,7 @@ add_option( 'fw_email_content_thankyou', '
 
 <p>El pedido fue registrado con número {{order_number}}</p>
 
-<span>Te enviamos un mail a <b>{{email}}</b> con el detalle y las instrucciones de como seguir.</span>
+<span>Te enviamos un mail a <b>{{customer_email}}</b> con el detalle y las instrucciones de como seguir.</span>
 ');
 
 
