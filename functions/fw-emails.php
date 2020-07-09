@@ -90,6 +90,7 @@ function getMailQueEnvia(){
 }
 
 //Fixes mails
+/*
 $fix=get_option('fw_email_content_thankyou');
 $fix=str_replace("{{email}}","{{customer_email}}",$fix);
 update_option('fw_email_content_thankyou',$fix);
@@ -108,7 +109,7 @@ if(get_locale()=='es_ES'){
 
 set_theme_mod('fw_general_from_name','');
 set_theme_mod('fw_general_from_email','');
-set_theme_mod('fw_action_resetmails',true);
+set_theme_mod('fw_action_resetmails',true);*/
 
 
 if(fw_theme_mod("fw_action_resetmails")){
