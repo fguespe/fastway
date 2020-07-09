@@ -30,7 +30,6 @@ wc_print_notices(); ?>
 		<label for="user_login"><?php _e( 'Usuario o email', 'woocommerce' ); ?></label>
 		<input class="woocommerce-Input woocommerce-Input--text input-text form-control" type="text" name="user_login" id="user_login" />
 	</p>
-
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_lostpassword_form' ); ?>
