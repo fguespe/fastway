@@ -464,13 +464,13 @@ function get_account_variables_for_templates($key=null){
 
   // Generate a new key
   $key = get_password_reset_key( $user );
-
+  error_log($key);
   $emailValues = array(
     'blogname' => get_bloginfo( 'name' ),
     'user_name' => esc_html( $user_login ),
     'user_pass' => esc_html( $user_pass),
     'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ),
-    'activation_url'=> network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') 
+    'activation_url'=> network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') 
   );
   return $emailValues;
 }
