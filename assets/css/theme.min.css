@@ -4019,6 +4019,10 @@ body .wpb_content_element {
 .woocommerce-account .fw_promo-content .input-text:focus {
   outline: none;
 }
+.woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__rendered,
+.woocommerce-account .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: 0px !important;
+}
 .woocommerce-checkout .fw_checkout .select2-container .select2-selection--single,
 .woocommerce-account .fw_checkout .select2-container .select2-selection--single {
   height: 37px;
