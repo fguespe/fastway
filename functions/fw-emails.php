@@ -35,7 +35,7 @@ function wpb_sender_email( $original_email_address ) {
 // Function to change sender name
 add_filter( 'wp_mail_from_name', 'wpb_sender_name' );
 function wpb_sender_name( $original_email_from ) {
-    return getMailQueEnvia();
+    return getNombreQueEnvia();
 }
 
 
@@ -83,12 +83,18 @@ if(isLocalhost()){
 }*/
 
 //config mails
+
 function getMailQueEnvia(){
-    if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
+    if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");
+    else if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
         return explode(",",fw_theme_mod("fw_mail_desde_mails"))[0];
     }else return fw_theme_mod("fw_mail_desde_mails");
 }
 
+function getNombreQueEnvia(){
+    if(fw_theme_mod("fw_general_from_name"))return fw_theme_mod("fw_general_from_name");
+    else return fw_theme_mod("fw_mail_desde_nombre");
+}
 //Fixes mails
 /*
 $fix=get_option('fw_email_content_thankyou');
@@ -107,16 +113,16 @@ if(get_locale()=='es_ES'){
 
 }
 
-set_theme_mod('fw_general_from_name','');
-set_theme_mod('fw_general_from_email','');
-set_theme_mod('fw_action_resetmails',true);*/
-
 if(get_locale()=='es_ES'){
     update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 
     Para activarla entra al siguiente link: <a href="{{activation_url}}">LINK</a>');
 
 }
+set_theme_mod('fw_general_from_name','');
+set_theme_mod('fw_general_from_email','');
+set_theme_mod('fw_action_resetmails',true);*/
+
 if(fw_theme_mod("fw_action_resetmails")){
     
     update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
@@ -129,8 +135,8 @@ if(fw_theme_mod("fw_action_resetmails")){
     update_option("sendgrid_from_email",getMailQueEnvia());
     update_option("woocommerce_email_from_address",getMailQueEnvia());
      
-    update_option("woocommerce_email_from_name",fw_theme_mod("fw_mail_desde_nombre"));
-    update_option("sendgrid_from_name",fw_theme_mod("fw_mail_desde_nombre"));
+    update_option("woocommerce_email_from_name",getNombreQueEnvia());
+    update_option("sendgrid_from_name",getNombreQueEnvia());
 
     
      //Mail woocommerce

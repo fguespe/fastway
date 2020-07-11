@@ -225,7 +225,7 @@ function openCity(evt, cityName) {
 }
 </script>
 <?php screen_icon(); ?>
-<form method="post" action="options.php">
+<form method="post" class="wrap" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
 <div class="tab">
   <button type="button" class="tablinks active" onclick="openCity(event, 'account_emails')">Account Emails</button>
@@ -251,6 +251,7 @@ $content = get_option('fw_email_content_customer_new_account');
 wp_editor( $content, 'fw_email_content_customer_new_account', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
+
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "reset password" emails are sent when customers reset their passwords.', 'woocommerce' );?></small>
@@ -262,6 +263,16 @@ wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = arr
 ?>
 </div>
 
+<div class="tipomail">
+<h3 class="titulo">Activation</h3>
+<small>Sent after the user is approved internally and a link for generating a password is sent to him</small>
+<input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo get_option('fw_email_subject_gf_activated'); ?>" /><br>
+<small>Variables:{user:user_login} {activation_url}</small>
+<?php
+$content = get_option('fw_email_content_gf_activated');
+wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
 </div>
 <div id="customer_emails" class="tabcontent">
 <div class="tipomail">
@@ -313,16 +324,6 @@ wp_editor( $content, 'fw_email_content_confirmation_wholesale_form', $settings =
 <?php
 $content = get_option('fw_email_content_gf_pending');
 wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_rows'=> '10') );
-?>
-</div>
-<div class="tipomail">
-<h3 class="titulo">Activation</h3>
-<small>Sent after the user is approved internally and a link for generating a password is sent to him</small>
-<input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo get_option('fw_email_subject_gf_activated'); ?>" /><br>
-<small>Variables:{user:user_login} {activation_url}</small>
-<?php
-$content = get_option('fw_email_content_gf_activated');
-wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 </div>
@@ -406,6 +407,7 @@ function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$em
   echo wp_kses_post( wpautop( wptexturize($html)));
 }
 
+
 function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false, $email=false){
 
     if($sent_to_admin || $plain_text || $email){
@@ -459,24 +461,24 @@ add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_c
 function fw_email_content_confirmation_wholesale_form(){
   return get_option('fw_email_content_confirmation_wholesale_form');
 }   
-function get_account_variables_for_templates($user=null){
+function get_account_variables_for_templates($user=null,$u_login=null,$key=null){
   global $woocommerce;
-  $key ='';
   if($user){
     $key = get_password_reset_key( $user );
+    $activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
     $user_login=$user->user_login;
     $user_pass=$user->user_pass;
+  }else{//activation por wpmu
+    $activation_url=site_url( "wp-activate.php?key=$key" );
+    if(!$user_login && $u_login)$user_login=$u_login;
   }
-  
   $emailValues = array(
-    'blogname' => get_bloginfo( 'name' ),
-    'user_name' => esc_html( $user_login ),
+    'blogname' => get_bloginfo('name'),
+    'user_name' => esc_html( $user_login),
     'user_pass' => esc_html( $user_pass),
-    'myaccount' => make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ),
-    'activation_url'=> network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') 
+    'myaccount' => make_clickable( esc_url( wc_get_page_permalink('myaccount'))),
+    'activation_url'=> $activation_url
   );
-  error_log(print_r($user,true));
-  error_log(print_r($emailValues,true));
   return $emailValues;
 }
 
@@ -517,6 +519,7 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 
 
 //Emails
+//Este se manda para los aprovaciones del formulario
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
     
@@ -526,7 +529,33 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
     return $wp_new_user_notification_email;
 }
 
-
+//Este se manda creando un nuevo usuario desde el admin
+add_filter( 'wpmu_signup_user_notification', 'edit_user_notification_email2', 10, 4 );
+function edit_user_notification_email2($user_login, $user_email, $key, $meta = '') {
+        $wp_new_user_notification_email=[];
+        $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates(null,$user_login,$key));
+        $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
+        $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
+        //$wp_new_user_notification_email['headers'] = array('From: "'.getNombreQueEnvia().'" <'.getMailQueEnvia().'>','Content-Type: text/html; charset=UTF-8');
+        error_log(print_r($wp_new_user_notification_email,true));
+        wp_mail($user_email, $wp_new_user_notification_email['subject'], $wp_new_user_notification_email['message'], $wp_new_user_notification_email['headers']);
+        return false;
+}
+    
+//Este se manda creando un nuevo usuario desde el admin y dps de activar la cuenta
+add_filter( 'wpmu_welcome_user_notification', 'edit_user_notification_email3', 10, 3 );
+function edit_user_notification_email3($user_id, $password, $meta = '') {
+        $user = new WP_User($user_id);
+        $user->user_pass=$password;
+        $wp_new_user_notification_email=[];
+        //$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
+        $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('customer_new_account',get_account_variables_for_templates($user));
+        $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_customer_new_account');
+        $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
+        //$wp_new_user_notification_email['headers'] = array('From: "'.getNombreQueEnvia().'" <'.getMailQueEnvia().'>','Content-Type: text/html; charset=UTF-8');
+        wp_mail($user->user_email, $wp_new_user_notification_email['subject'], $wp_new_user_notification_email['message'], $wp_new_user_notification_email['headers']);
+        return false;
+}
 
 add_filter( 'gform_notification', 'change_autoresponder_email', 10, 3 );
 function change_autoresponder_email( $notification, $form, $entry ) {

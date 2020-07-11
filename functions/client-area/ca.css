@@ -262,9 +262,6 @@ margin-left:0px !important;
 	padding: 0px !important;
 
 }
-#vc_license-activation-notice,.update-nag{
-	display: none;
-}
 .wrap{
 	margin: 10px 20px 0 20px;
 }
@@ -393,7 +390,10 @@ display:none;
 .sbi_notice{
 	display: none !important;;
 }
-
+/*GRAVITY*/
+#entry_form #poststuff #post-body #notes{
+	display:none !important;
+}
 /*DESCRIPCION (TEXTAREA) QUE NO SE USA*/
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
 	display:none;
@@ -411,8 +411,12 @@ display:none !important;
 .post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
 	display: none;
 }
-.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
+/*MENSAJITOS*/
+#vc_license-activation-notice,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
 	display:none;
+}
+.usuarios .notice{
+	display: block !important;
 }
 /*ORDER CUSTOM FIELDS*/
 #postcustom,#woocommerce-order-downloads{
@@ -468,9 +472,12 @@ display:none !important;
 .woocommerce-embed-page .woocommerce-layout__primary{
 	padding:0px !important;
 }
-/*USUARIOS*/
+/*USUARIOS
 .usuarios .page-title-action{
 	display: none !important;
+}*/
+.usuarios form .form-table:nth-child(6){
+	display:none !important;
 }
 .usuarios .row-actions .capabilities{
 	display: none !important;

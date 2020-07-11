@@ -657,8 +657,7 @@ function fw_custom_admincss() {
 //Mobile?
 
 function fw_admin_css_ui() {
-    if (activarCA() )
-        add_action('admin_head', 'fw_custom_admincss');
+    add_action('admin_head', 'fw_custom_admincss');
 }
 add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 
