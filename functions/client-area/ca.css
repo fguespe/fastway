@@ -419,7 +419,7 @@ display:none !important;
 	display: block !important;
 }
 .user-new-php .notice:not(.mostrar){
-	display: block !important;
+	display: none !important;
 }
 /*ORDER CUSTOM FIELDS*/
 #postcustom,#woocommerce-order-downloads{
