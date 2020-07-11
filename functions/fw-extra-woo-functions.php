@@ -1833,7 +1833,7 @@ function change_default_checkout_country() {
 
 if(fw_theme_mod('fw_is_multitienda'))add_action( 'admin_notices', 'sample_admin_notice__error' );
 function sample_admin_notice__error() {
-  $class = 'notice notice-error';
+  $class = 'notice mostrar';
   $message1 = "ATENCÍON: MULTITIENDA";
   $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
   $message3="Esta tienda tiene activado el plugin Prices by User Role y tiene algunas incompatiblidades como:

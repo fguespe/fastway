@@ -415,7 +415,10 @@ display:none !important;
 #vc_license-activation-notice,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
 	display:none;
 }
-.usuarios .notice{
+.user-new-php .notice{
+	display: block !important;
+}
+.user-new-php .notice:not(.mostrar){
 	display: block !important;
 }
 /*ORDER CUSTOM FIELDS*/
