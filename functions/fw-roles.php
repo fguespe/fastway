@@ -146,7 +146,6 @@ function hide_adminstrator_editable_roles( $roles ){
     unset( $roles['administrator'] );
     unset( $roles['subscriber'] );
     unset( $roles['contributor'] );
-}
     return $roles;
 }
 if(!empty(fw_theme_mod('ca_extra_roles'))) {
