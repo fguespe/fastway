@@ -1,6 +1,25 @@
 <?php
 
 
+
+/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
+function fw_allow_users_to_shopmanager() {
+  /*supuestamente funciona*/
+  $role = get_role( 'shop_manager' );
+  $role->add_cap( 'edit_theme_options' ); 
+  $role->add_cap( 'manage_options' ); 
+  $role->add_cap( 'add_users' ); 
+  $role->add_cap( 'edit_dashboard' ); 
+  $role->add_cap( 'create_users' ); 
+  $role->add_cap( 'edit_users' ); 
+  $role->add_cap( 'gravityforms_create_form' ); 
+  $role->add_cap( 'gravityforms_edit_forms' ); 
+  $role->add_cap( 'gravityforms_view_entries' ); 
+  $role->add_cap( 'gravityforms_user_registration');
+}
+add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
+
+
 function esMultitienda(){
     if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
     return false;
@@ -1715,23 +1734,6 @@ function add_extra_fields_in_flat_rate($settings){
 
 
 
-/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function fw_allow_users_to_shopmanager() {
-  /*supuestamente funciona*/
-  /*$role = get_role( 'shop_manager' );
-  $role->add_cap( 'edit_theme_options' ); 
-  $role->add_cap( 'manage_options' ); 
-  $role->add_cap( 'add_users' ); 
-  $role->add_cap( 'create_users' ); 
-  $role->add_cap( 'edit_users' ); 
-  $role->add_cap( 'gravityforms_create_form' ); 
-  $role->add_cap( 'gravityforms_edit_forms' ); 
-  $role->add_cap( 'gravityforms_view_entries' ); 
-  $role->add_cap( 'gravityforms_user_registration'); */
-}
-//add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
-
-
 
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
@@ -1840,7 +1842,7 @@ function sample_admin_notice__error() {
   Dynamic Discounts product pricing no funciona, osea solo se pueden hacer descuentos generales al total del carrito, no por items separados.";
   printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
 
-  $class = 'usuarios tuto';
+  $class = 'usuarios notice tuto';
   $message1 = "INFO: CREACIÓN DE USUARIOS";
   $message2="Si esta activo el checkbox de no enviar el correo electronico, entonces creamos la cuenta , y luego vamos a usuarios si queremos editar la contraseña.";
   $message3="Si por el otro lado, tildamos el checkbox, entonces se le manda al mail un correo de activación con un link para que genere su password.";

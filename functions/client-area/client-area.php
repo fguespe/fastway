@@ -529,13 +529,8 @@ function custom_admin_js() {
 }
 add_action('admin_footer', 'custom_admin_js');
 
-/**
- * Add all Gravity Forms capabilities to Editor role.
- * Runs during plugin activation.
- * 
- * @access public
- * @return void
- */
+
+/*
 function activate_pluginname() {
   
   $role = get_role( 'editor' );
@@ -544,13 +539,6 @@ function activate_pluginname() {
 // Register our activation hook
 register_activation_hook( __FILE__, 'activate_pluginname' );
 
-/**
- * Remove Gravity Forms capabilities from Editor role.
- * Runs during plugin deactivation.
- * 
- * @access public
- * @return void
- */
 function deactivate_pluginname() {
  
  $role = get_role( 'editor' );
@@ -558,8 +546,6 @@ function deactivate_pluginname() {
 }
 // Register our de-activation hook
 register_deactivation_hook( __FILE__, 'deactivate_pluginname' );
-
-/*
 
 function fw_redirect_after_login( $redirect_to, $request, $user ){
     // is there a user ?
@@ -579,17 +565,6 @@ function fw_redirect_after_login( $redirect_to, $request, $user ){
 add_filter( 'login_redirect', 'fw_redirect_after_login', 10, 3 );   
 */
 
-
-
-/*
-*
-*
-*
-******FIN CLIENT AREA
-*
-*
-*
-*/
 
 
 function fw_remove_footer_admin(){
