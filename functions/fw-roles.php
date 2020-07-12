@@ -117,9 +117,6 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
     return $roles;
 }
 
-
-
-
 add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 function fw_allow_users_to_shopmanager() {
     /*supuestamente funciona*/
@@ -139,8 +136,7 @@ function fw_allow_users_to_shopmanager() {
 // Remove Administrator role from roles list
 add_action( 'editable_roles' , 'hide_adminstrator_editable_roles' );
 function hide_adminstrator_editable_roles( $roles ){
-
-    if(fw_get_current_user_role()=='administrator' && is_super_admin())return $roles;
+    if(fw_get_current_user_role()=='administrator')return $roles;
     unset( $roles['editor'] );
     unset( $roles['author'] );
     unset( $roles['administrator'] );
