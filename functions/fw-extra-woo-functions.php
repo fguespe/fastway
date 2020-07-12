@@ -2,24 +2,6 @@
 
 
 
-/*PARA QUE EL SHOP MANAGER EDITE EL MENU*/
-function fw_allow_users_to_shopmanager() {
-  /*supuestamente funciona*/
-  $role = get_role( 'shop_manager' );
-  $role->add_cap( 'edit_theme_options' ); 
-  $role->add_cap( 'manage_options' ); 
-  $role->add_cap( 'add_users' ); 
-  $role->add_cap( 'edit_dashboard' ); 
-  $role->add_cap( 'create_users' ); 
-  $role->add_cap( 'edit_users' ); 
-  $role->add_cap( 'gravityforms_create_form' ); 
-  $role->add_cap( 'gravityforms_edit_forms' ); 
-  $role->add_cap( 'gravityforms_view_entries' ); 
-  $role->add_cap( 'gravityforms_user_registration');
-}
-add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
-
-
 function esMultitienda(){
     if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
     return false;
@@ -151,28 +133,8 @@ function woo_loop_code(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
 }
 
-if(!empty(fw_theme_mod('ca_extra_roles'))) {
-    
-  function fw_create_roles() {  
-      $roles=fw_theme_mod('ca_extra_roles');
-      $roles=explode(",",$roles);
-      foreach ($roles as $nombre) {
-          //add the new user role
-          $field= str_replace(" ","_",strtolower($nombre));
-          add_role(
-              $field,
-              $nombre,
-              array(
-                  'read'         => true,
-                  'delete_posts' => false
-              )
-          );
-      }
-  
-  }
-  add_action('admin_init', 'fw_create_roles');
 
-}
+
 
 
 add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' ); 
@@ -204,25 +166,6 @@ function fw_single_product_clasess( $classes ) {
 }
 
 
-
-
-function fw_shop_manager_role_edit_capabilities( $roles ) {
-  if(function_exists('fw_theme_mod')){
-    $roles=fw_theme_mod('ca_extra_roles');
-    if(is_string($roles))$roles=explode(",",$roles);
-    
-    foreach ($roles as $nombre) {
-      $roles[]=strtolower($nombre);
-    }
-  }
-  $roles[]='shop_manager';
-  $roles[]='subscriber';
-  $roles[]='customer';
-  
-  return $roles;
-}
-
-add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 
 
 
@@ -1733,33 +1676,6 @@ function add_extra_fields_in_flat_rate($settings){
 
 
 
-
-
-add_filter( 'body_class','fw_role_body_classes' );
-function fw_role_body_classes( $classes ) {
-    $roles=fw_get_all_roles();
-    if(is_string($roles))$roles=explode(",",$roles);
-    
-    foreach ($roles as $key=>$nombre) {
-      if ( check_user_role( strtolower($key) )) {
-        $classes[]= strtolower($key); //or your name
-      }
-    }
-    return $classes;
-}
-
-function fw_editable_roles( $roles ) {
-  $arr=fw_get_all_roles();
-  if(is_string($arr))$arr=explode(",",$arr);
-  
-  foreach ($arr as $key => $nombre) {
-    if($key=='administrator' || empty($key)  || empty($nombre))continue;
-    
-    $roles[] = $key;
-  }
-  return $roles;
-}
-add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
 
 
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss',10 );

@@ -1,5 +1,29 @@
 <?php
 
+if ( ! function_exists( 'fw_theme_mod' ) ) {
+  function fw_theme_mod( $field_id, $default_value = '' ) {
+    if ( $field_id ) {
+      if ( !$default_value ) {
+        if ( class_exists( 'Kirki' ) && isset( Kirki::$fields[ $field_id ] ) && isset( Kirki::$fields[ $field_id ]['default'] ) ) {
+          $default_value = Kirki::$fields[ $field_id ]['default'];
+        }
+      }
+      $value = get_theme_mod( $field_id, $default_value );
+      return $value;
+    }
+    return false;
+  }
+  if(!fw_theme_mod('fw_forceupdate_1')){
+    //Force update 
+    update_option('woocommerce_allowed_countries','all');
+    update_option('woocommerce_ship_to_countries','all');
+    update_option('woocommerce_default_customer_address','geolocation');
+    
+    set_theme_mod('fw_forceupdate_1',true);
+  }
+}
+
+require get_template_directory() . '/functions/fw-roles.php';
 add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 {
     if( isset( $attr['sizes'] ) )
@@ -41,8 +65,8 @@ if(!is_plugin_active('kirki/kirki.php'))return;
 if(is_plugin_active('kirki/kirki.php')){
     require get_template_directory() . '/functions/fw-theme-options.php';
 }
-require get_template_directory() . '/functions/fw-emails.php';
-require get_template_directory() . '/functions/fw-email-settings.php';
+require get_template_directory() . '/functions/emails/fw-emails.php';
+require get_template_directory() . '/functions/emails/fw-email-settings-page.php';
 
 
 add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');
@@ -104,15 +128,6 @@ function isLocalhost(){
   error_log($_SERVER['HTTP_HOST']);
   return $_SERVER['HTTP_HOST']==='fastway';
 }
-function check_user_role($role){
-    $user = wp_get_current_user();
-    if($role=='administrator' && is_super_admin())return true;
-    if($role=='guest' && empty((array) $user->roles ))return true;
-    if ( in_array( $role, (array) $user->roles ) ) {
-      return true;
-    }
-	return false;
-}
 
 function fw($string){
   fw_log($string);
@@ -151,35 +166,6 @@ function fastway_get_stblock( $cats = array('all') ){
 }
 
 
-
-function fw_get_all_roles() {
-
-  global $wp_roles;
-  
-  if ( ! isset( $wp_roles ) )
-      $wp_roles = new WP_Roles();
-  
-  return $wp_roles->get_names();
-}
-function fw_get_all_roles_string(){
-  $roles=fw_get_all_roles();
-  return strtolower(implode(fw_get_all_roles(),", "));
-}
-function fw_getme_roles(){
-    if ( ! function_exists( 'get_editable_roles' ) ) {
-        require_once ABSPATH . 'wp-admin/includes/user.php';
-    }
-    $editable_roles = get_editable_roles();
-    $roles=array();
-    foreach ($editable_roles as $role => $details) {
-        $rol = esc_attr($role);
-        if($rol=='administrator')continue;
-        $name = translate_user_role($details['name']);
-        $roles=array_merge($roles,array($rol => $name));
-       
-    }
-    return $roles;
-}
 
 
 //remove_filter( 'the_content', 'wpautop' );

@@ -284,36 +284,9 @@ function activarCA(){
     
     return false;
 }
-function fw_get_current_user_role() {
-  if( is_user_logged_in() ) {
-    $user = wp_get_current_user();
-    $role = ( array ) $user->roles;
-    return $role[0];
-  } else {
-    return false;
-  }
- }
- function get_is_role_or_name_before(){
-    $users=explode(",", fw_theme_mod('ca_users'));
-    if(in_array(wp_get_current_user()->user_login,$users)){
-        return wp_get_current_user()->user_login;
-
-    }
-    return fw_get_current_user_role();
- }
 
 
-
-function fw_getmeroles_and_names(){
-    $usuarios=explode(",", fw_theme_mod('ca_users'));
-    $devolver=fw_getme_roles();
-    foreach ($usuarios as $key) {
-        $devolver=array_merge($devolver,array($key=>$key));
-    }
-    return $devolver;
-}
 add_action('init','fw_create_menus');
-
 function fw_create_menus(){
     if(fw_theme_mod('ca_roles')=='')return false;
     $roles=fw_theme_mod('ca_roles');if(gettype($roles)=='string')$roles=explode(',',$roles);

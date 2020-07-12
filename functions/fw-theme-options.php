@@ -3906,29 +3906,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-if ( ! function_exists( 'fw_theme_mod' ) ) {
-    function fw_theme_mod( $field_id, $default_value = '' ) {
-      if ( $field_id ) {
-        if ( !$default_value ) {
-          if ( class_exists( 'Kirki' ) && isset( Kirki::$fields[ $field_id ] ) && isset( Kirki::$fields[ $field_id ]['default'] ) ) {
-            $default_value = Kirki::$fields[ $field_id ]['default'];
-          }
-		}
-        $value = get_theme_mod( $field_id, $default_value );
-        return $value;
-      }
-      return false;
-	}
-	if(!fw_theme_mod('fw_forceupdate_1')){
-		//Force update 
-    update_option('woocommerce_allowed_countries','all');
-    update_option('woocommerce_ship_to_countries','all');
-    update_option('woocommerce_default_customer_address','geolocation');
-		
-	set_theme_mod('fw_forceupdate_1',true);
-	}
-}
-
 add_shortcode('fwcf', 'fwcf');
 function fwcf($atts = [], $content = null){
 	/*trae a modo shortcode cualquier variable de fw*/
