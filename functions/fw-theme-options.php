@@ -470,6 +470,14 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_desc',
+	'label'    => __( 'Seleccioná el botón que corresponda.', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=> 'Seleccioná el botón que corresponda.',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_init',
 	'label'    => __( 'Iniciar sesión', 'fastway' ),
 	'section'     => 'section_labels_checkout',

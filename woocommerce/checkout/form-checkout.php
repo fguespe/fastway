@@ -147,7 +147,9 @@ var paso = 1;
       
       <?php if(get_option('woocommerce_ship_to_countries')!='disabled'){  ?>
       <div class="box-detail paso-shipping" style="display:none;">
-            <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?></h1>
+            <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?>
+            <small><?=fw_theme_mod('fw_label_checkout_desc')?></small></h1>
+            
             <?php wc_get_template(	'checkout/shipping-order-review.php'); ?>
 
             <div class="capsula box-step" style="display:none;">
@@ -163,7 +165,9 @@ var paso = 1;
         
        
       <div class="box-detail paso-pagos" style="display:none;">
-            <h1><span class="icon-paso">3</span><?=fw_theme_mod('fw_label_checkout_4')?></h1>
+            <h1><span class="icon-paso">3</span><?=fw_theme_mod('fw_label_checkout_4')?>
+            <small><?=fw_theme_mod('fw_label_checkout_desc')?></small></h1>
+            
             <?php woocommerce_checkout_payment() ?>
 
             <div class="capsula box-step" style="display:none;">

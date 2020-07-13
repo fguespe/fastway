@@ -5465,6 +5465,11 @@ dt.variation-fw_extra.stock {
   font-size: 24px !important;
   margin: 32px 0 !important;
 }
+.fw_checkout .box-detail h1 small {
+  display: block;
+  font-size: 13px !important;
+  margin-left: 50px !important;
+}
 .fw_checkout .box-detail h1 .icon-paso {
   background-color: #3483fa !important;
   line-height: 32px;
