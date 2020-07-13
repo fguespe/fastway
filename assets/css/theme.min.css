@@ -3836,6 +3836,32 @@ body .wpb_content_element {
   .woocommerce-SavedPaymentMethods{
       display: none;
   }*/
+  /*
+  .payment_method_bacs label::before{
+    font-family:'Font Awesome 5 Pro' !important;
+    content:'\f53d';
+    color:var(--main) !important;
+    margin-right:5px;
+  }
+  .payment_method_cod label::before{
+    font-family:'Font Awesome 5 Pro' !important;
+    content:'\f0d6';
+    color:var(--main) !important;
+    margin-right:5px;
+  }
+  #place_order::before{
+    font-family: "Font Awesome 5 Pro" !important;
+    content: "\f00c";
+    color: white;
+    margin-right: 5px !important;
+  }
+
+  .fw_checkout .payment_method_cheque label::before {
+    font-family: "Font Awesome 5 Pro" !important;
+    content: "\f873";
+    color: var(--main) !important;
+    margin-right: 5px;
+  }*/
 }
 .woocommerce-checkout #page-wrapper,
 .woocommerce-account #page-wrapper {
@@ -4754,34 +4780,6 @@ body .wpb_content_element {
   color: white;
   margin-top: 30px;
   font-size: 25px;
-}
-.woocommerce-checkout .payment_method_bacs label::before,
-.woocommerce-account .payment_method_bacs label::before {
-  font-family: "Font Awesome 5 Pro" !important;
-  content: "";
-  color: var(--main) !important;
-  margin-right: 5px;
-}
-.woocommerce-checkout .payment_method_cod label::before,
-.woocommerce-account .payment_method_cod label::before {
-  font-family: "Font Awesome 5 Pro" !important;
-  content: "";
-  color: var(--main) !important;
-  margin-right: 5px;
-}
-.woocommerce-checkout #place_order::before,
-.woocommerce-account #place_order::before {
-  font-family: "Font Awesome 5 Pro" !important;
-  content: "";
-  color: white;
-  margin-right: 5px !important;
-}
-.woocommerce-checkout .fw_checkout .payment_method_cheque label::before,
-.woocommerce-account .fw_checkout .payment_method_cheque label::before {
-  font-family: "Font Awesome 5 Pro" !important;
-  content: "";
-  color: var(--main) !important;
-  margin-right: 5px;
 }
 .woocommerce-checkout ul li.payment_method_billetera,
 .woocommerce-account ul li.payment_method_billetera {

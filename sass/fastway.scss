@@ -4681,13 +4681,13 @@ body .wpb_content_element {
     #wc-offline_cc-cc-form label{/*OFFLINE CRDCARD*/
       display:none 
     }
-    #place_order{
+  #place_order{
       padding:15px;
       background: var(--main);
       color:white;
       margin-top:30px;
       font-size:25px
-    }
+  }/*
   .payment_method_bacs label::before{
     font-family:'Font Awesome 5 Pro' !important;
     content:'\f53d';
@@ -4712,7 +4712,7 @@ body .wpb_content_element {
     content: "\f873";
     color: var(--main) !important;
     margin-right: 5px;
-  }
+  }*/
   ul li.payment_method_billetera{
     display:none !important;
   }
