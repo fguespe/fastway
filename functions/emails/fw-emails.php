@@ -1,31 +1,6 @@
 <?php
 
 
-//generate username for gravity forms
-add_filter( 'gform_username', 'fw_auto_username', 10, 4 );
-function fw_auto_username( $username, $feed, $form, $entry ) {
-    $username=str_replace(' ', '', $username);
-	//$username = strtolower( rgar( $entry, '2.3' ) . rgar( $entry, '2.6' ) );
-	$username = sanitize_user( current( explode( '@', $username ) ), true );
-	
-	if ( empty( $username ) ) {
-		return $username;
-	}
-	
-	if ( ! function_exists( 'username_exists' ) ) {
-		require_once( ABSPATH . WPINC . '/registration.php' );
-    }
-	if ( username_exists( $username ) ) {
-		$i = 2;
-		while ( username_exists( $username . $i ) ) {
-			$i++;
-		}
-		$username = $username . $i;
-	};
-	
-	return $username;
-}
-
 // Hooking up our functions to WordPress filters 
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
 function wpb_sender_email( $original_email_address ) {
@@ -275,10 +250,10 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
   global $woocommerce;
   if($user){
     $key = get_password_reset_key( $user );
-    $activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
     $user_login=$user->user_login;
     $user_pass=$user->user_pass;
-  }else{//activation por wpmu
+    $activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
+  }else if($key){//activation por wpmu
     $activation_url=site_url( "wp-activate.php?key=$key" );
     if(!$user_login && $u_login)$user_login=$u_login;
   }
@@ -329,25 +304,38 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
 
 
 //Emails
-//Este se manda para los aprovaciones del formulario
-add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
-function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
+
+add_filter( 'gform_notification', 'change_autoresponder_email',10,3);
+function change_autoresponder_email( $notification, $form, $entry ) {
+    $user_email=$entry[$notification['to']];
+    $user=get_user_by( 'email', $user_email);
     
-    $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
-    $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
-    $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
-    return $wp_new_user_notification_email;
+    if ( $notification['event']=='gfur_user_activation' ||  $notification['name'] == 'User Pending' || $notification['name'] == 'Alta Mayorista' ) {
+        $notification['subject'] = fw_parse_subject('gf_pending',get_account_variables_for_templates($user));
+        $notification['message'] =  fw_parse_mail_accounts('gf_pending',get_account_variables_for_templates($user));
+    }else if ( $notification['event']=='gfur_user_activated' ||  $notification['name'] == 'User Activation' ) {
+        $notification['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates($user));
+        $notification['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
+    }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
+        $notification['to'] =fw_theme_mod("fw_mail_desde_mails");
+    }
+    return $notification;
+}
+function was_form_signup($key){
+    global $wpdb;
+    $signup = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key ) );
+
+    return strpos($signup->meta, 'entry_id') !== false;
 }
 
 //Este se manda creando un nuevo usuario desde el admin
 add_filter( 'wpmu_signup_user_notification', 'edit_user_notification_email2', 10, 4 );
 function edit_user_notification_email2($user_login, $user_email, $key, $meta = '') {
+        if(was_form_signup($key))return false;
         $wp_new_user_notification_email=[];
+        $wp_new_user_notification_email['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates());
         $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates(null,$user_login,$key));
-        $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_gf_activated');
         $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
-        //$wp_new_user_notification_email['headers'] = array('From: "'.getNombreQueEnvia().'" <'.getMailQueEnvia().'>','Content-Type: text/html; charset=UTF-8');
-        error_log(print_r($wp_new_user_notification_email,true));
         wp_mail($user_email, $wp_new_user_notification_email['subject'], $wp_new_user_notification_email['message'], $wp_new_user_notification_email['headers']);
         return false;
 }
@@ -358,29 +346,24 @@ function edit_user_notification_email3($user_id, $password, $meta = '') {
         $user = new WP_User($user_id);
         $user->user_pass=$password;
         $wp_new_user_notification_email=[];
-        //$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
+        $wp_new_user_notification_email['subject'] = fw_parse_subject('customer_new_account',get_account_variables_for_templates());
         $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('customer_new_account',get_account_variables_for_templates($user));
-        $wp_new_user_notification_email['subject'] = get_option('fw_email_subject_customer_new_account');
         $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
-        //$wp_new_user_notification_email['headers'] = array('From: "'.getNombreQueEnvia().'" <'.getMailQueEnvia().'>','Content-Type: text/html; charset=UTF-8');
         wp_mail($user->user_email, $wp_new_user_notification_email['subject'], $wp_new_user_notification_email['message'], $wp_new_user_notification_email['headers']);
         return false;
 }
 
-add_filter( 'gform_notification', 'change_autoresponder_email', 10, 3 );
-function change_autoresponder_email( $notification, $form, $entry ) {
 
-    if ( $notification['name'] == 'User Pending' ) {
-        $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_pending'))));
-        $notification['subject'] =  get_option('fw_email_subject_gf_pending');
-    }else if ( $notification['name'] == 'User Activation' ) {
-        $notification['message'] =  wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_gf_activated'))));
-        $notification['subject'] =  get_option('fw_email_subject_gf_activated');
-    }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
-      $notification['to'] =fw_theme_mod("fw_mail_desde_mails");
-    }
-    return $notification;
+//Este se manda para los aprovaciones del formulario
+add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
+function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
+    $wp_new_user_notification_email['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates());
+    $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
+    $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
+    return $wp_new_user_notification_email;
 }
+
+
 
 function conditionals($template,$data) {
 $conditionals=array();

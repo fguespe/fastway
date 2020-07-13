@@ -60,6 +60,31 @@ function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, 
 
     return $classes;
 }
+//generate username for gravity forms
+add_filter( 'gform_username', 'fw_auto_username', 10, 4 );
+function fw_auto_username( $username, $feed, $form, $entry ) {
+    $username=str_replace(' ', '', $username);
+	//$username = strtolower( rgar( $entry, '2.3' ) . rgar( $entry, '2.6' ) );
+	$username = sanitize_user( current( explode( '@', $username ) ), true );
+	
+	if ( empty( $username ) ) {
+		return $username;
+	}
+	
+	if ( ! function_exists( 'username_exists' ) ) {
+		require_once( ABSPATH . WPINC . '/registration.php' );
+    }
+	if ( username_exists( $username ) ) {
+		$i = 2;
+		while ( username_exists( $username . $i ) ) {
+			$i++;
+		}
+		$username = $username . $i;
+	};
+	
+	return $username;
+}
+
 
 function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
     if(!$iframe){

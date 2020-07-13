@@ -110,8 +110,6 @@ add_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
 Para activarla entra al siguiente link: {{activation_url}}');
 
 
-
-
 add_option( 'fw_email_content_thankyou', '
 <h2>Gracias por tu compra</h2>
 

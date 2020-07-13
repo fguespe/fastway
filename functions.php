@@ -125,7 +125,6 @@ function fw_vc_get_posts($type) {
     return $result;
 }
 function isLocalhost(){
-  error_log($_SERVER['HTTP_HOST']);
   return $_SERVER['HTTP_HOST']==='fastway';
 }
 
@@ -293,16 +292,6 @@ register_nav_menus( array(
     'mobile_bottom' => __( 'Bottom Mobile Menu', 'fastway' ),
 ) );
 
-/*
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
-}
-global $redux_demo;
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/functions/fw-theme-options.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/functions/fw-theme-options.php' );
-}
-//require get_template_directory() . '/inc/kirki/kirki.php';
-*/
 
 if(is_plugin_active('kirki/kirki.php')){
     require get_template_directory() . '/functions/client-area/client-area.php';  
