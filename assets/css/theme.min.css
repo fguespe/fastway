@@ -4736,7 +4736,9 @@ body .wpb_content_element {
   height: 10px !important;
 }
 .woocommerce-checkout #shipping_method label,
-.woocommerce-account #shipping_method label {
+.woocommerce-checkout #payment label,
+.woocommerce-account #shipping_method label,
+.woocommerce-account #payment label {
   display: inline !important;
   margin-left: 5px;
 }
@@ -5342,7 +5344,8 @@ dt.variation-fw_extra.stock {
 .fw_checkout table.shop_table {
   border-top: 0px !important;
 }
-.fw_checkout #shipping_method label {
+.fw_checkout #shipping_method label,
+.fw_checkout #payment label {
   margin: 0px !important;
 }
 .fw_checkout #login input {
@@ -5586,6 +5589,7 @@ dt.variation-fw_extra.stock {
 }
 .fw_checkout .box-step .title,
 .fw_checkout #shipping_method label,
+.fw_checkout #payment label,
 .fw_checkout .box-detail .capsula.payment {
   font-size: 16px !important;
   margin-top: 5px;

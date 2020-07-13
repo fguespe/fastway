@@ -4672,7 +4672,8 @@ body .wpb_content_element {
     }
     .fw_checkout .box-detail .payment_method_spyr_firstdata_gateway  input{ width:10px;height:10px;height:10px !important;}
 
-    #shipping_method label{
+    #shipping_method label,
+    #payment label{
       display:inline!important;
       margin-left:5px;
     }
@@ -5271,7 +5272,8 @@ dt.variation-fw_extra.stock{
     table.shop_table{
     border-top:0px !important;
     }
-    #shipping_method label{
+    #shipping_method label,
+    #payment label{
     margin:0px !important;
     }
     #login input{
@@ -5543,6 +5545,7 @@ dt.variation-fw_extra.stock{
   
   .box-step .title,
   #shipping_method label,
+  #payment label,
   .box-detail .capsula.payment {
     font-size: 16px !important;
     margin-top: 5px;
