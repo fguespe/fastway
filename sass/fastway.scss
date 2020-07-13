@@ -4681,31 +4681,6 @@ body .wpb_content_element {
     #wc-offline_cc-cc-form label{/*OFFLINE CRDCARD*/
       display:none 
     }
-    .wc_payment_methods{
-
-        li label{
-         /* border-top:1px solid grey ;*/
-          border:0px ;
-          font-size:16px !important;
-          padding:15px;
-          margin:0px;
-        }
-        li p{
-          padding:15px;
-          font-size: 12px;
-          /*border-left:1px solid grey !important;*/
-        }
-        .input-radio{
-          float:right;
-          height:50px;
-          margin-right:10px !important;
-          background:grey !important;
-        }
-        /*Todas desplegadas*/
-        .payment_box{
-          display:block !important;
-        }
-    }
     #place_order{
       padding:15px;
       background: var(--main);

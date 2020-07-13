@@ -4747,35 +4747,6 @@ body .wpb_content_element {
   /*OFFLINE CRDCARD*/
   display: none;
 }
-.woocommerce-checkout .wc_payment_methods,
-.woocommerce-account .wc_payment_methods {
-  /*Todas desplegadas*/
-}
-.woocommerce-checkout .wc_payment_methods li label,
-.woocommerce-account .wc_payment_methods li label {
-  /* border-top:1px solid grey ;*/
-  border: 0px;
-  font-size: 16px !important;
-  padding: 15px;
-  margin: 0px;
-}
-.woocommerce-checkout .wc_payment_methods li p,
-.woocommerce-account .wc_payment_methods li p {
-  padding: 15px;
-  font-size: 12px;
-  /*border-left:1px solid grey !important;*/
-}
-.woocommerce-checkout .wc_payment_methods .input-radio,
-.woocommerce-account .wc_payment_methods .input-radio {
-  float: right;
-  height: 50px;
-  margin-right: 10px !important;
-  background: grey !important;
-}
-.woocommerce-checkout .wc_payment_methods .payment_box,
-.woocommerce-account .wc_payment_methods .payment_box {
-  display: block !important;
-}
 .woocommerce-checkout #place_order,
 .woocommerce-account #place_order {
   padding: 15px;
