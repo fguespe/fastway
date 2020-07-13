@@ -475,6 +475,9 @@ display:none !important;
 .woocommerce-embed-page .woocommerce-layout__primary{
 	padding:0px !important;
 }
+.woocommerce-layout{
+	padding:0px !important;
+}
 /*USUARIOS
 .usuarios .page-title-action{
 	display: none !important;
