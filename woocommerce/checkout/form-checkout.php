@@ -141,10 +141,7 @@ var paso = 1;
           </div> 
           <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
           <div class="clear"></div>	
-        
       </div>
-      
-      
       <?php if(get_option('woocommerce_ship_to_countries')!='disabled'){  ?>
       <div class="box-detail paso-shipping" style="display:none;">
             <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?>
