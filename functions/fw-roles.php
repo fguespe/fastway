@@ -136,6 +136,7 @@ function fw_allow_users_to_shopmanager() {
 // Remove Administrator role from roles list
 add_action( 'editable_roles' , 'hide_adminstrator_editable_roles' );
 function hide_adminstrator_editable_roles( $roles ){
+    if(is_admin())echo fw_get_current_user_role();
     if(fw_get_current_user_role()=='administrator')return $roles;
     unset( $roles['editor'] );
     unset( $roles['author'] );
