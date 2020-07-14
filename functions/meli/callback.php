@@ -4,8 +4,6 @@ header("HTTP/1.1 200 OK");
 
 session_start();
 
-if(!get_option('ml_array_orders'))update_option('ml_array_orders',array());
-$orders_used=get_option('ml_array_orders');
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
@@ -13,6 +11,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
 
+    if(!get_option('ml_array_orders'))update_option('ml_array_orders',array());
+    $orders_used=get_option('ml_array_orders');
     error_log('Se recibio de ml la order : '.$order_id);
     error_log(print_r($orders_used,true));
 
