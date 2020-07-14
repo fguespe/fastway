@@ -3,7 +3,6 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.
 header("HTTP/1.1 200 OK");
 
 
-session_start();
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
@@ -12,6 +11,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
     $nombre_array='ml_array_orders_'.date("m");
+
+    error_log( "jaja");
+    sleep ( rand ( 2, 4));
+    error_log( "jaja");
 
     if(!get_option($nombre_array))update_option($nombre_array,array());
     $orders_used=get_option($nombre_array);
