@@ -4,7 +4,6 @@ header("HTTP/1.1 200 OK");
 
 
 session_start();
-if(!$_SESSION['orders'])$_SESSION['orders']=array();
 
 
 if(!fw_theme_mod('fw_ml_on'))return;
@@ -16,8 +15,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     error_log('Se recibio de ml la order : '.$order_id);
     error_log(print_r($_SESSION['orders'],true));
 
-    if(!in_array($order_id,$_SESSION['orders']))array_push($_SESSION['orders'],$order_id);
-    else if(in_array($order_id,$_SESSION['orders'])){
+    if(!isset($_SESSION['orders'][$order_id]))$_SESSION['orders'][$order_id]=true;
+    else if(isset($_SESSION['orders'][$order_id])){
       error_log("Repetido: ".$order_id);
       return;
     }
