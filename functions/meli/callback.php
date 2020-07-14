@@ -1,10 +1,11 @@
 <?php
+$path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
+header("HTTP/1.1 200 OK");
 
 
 session_start();
-$path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
-header("HTTP/1.1 200 OK");
 if(!$_SESSION['orders'])$_SESSION['orders']=array();
+
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
