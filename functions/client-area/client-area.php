@@ -146,6 +146,31 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_mensaje_barra',
+    'label'       => __( 'Mensaje General', 'fastway' ),
+    'description' => 'Barra roja que va a arriba',
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_mensaje_sec',
+	'label'       => __( 'Mensaje Secundario ', 'fastway' ),
+    'description' => 'Puede ser usado en distintos lugares.(como elementos)',
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 /*CLIENT AREA*/
 
 

@@ -956,13 +956,6 @@ Kirki::add_field( 'theme_config_id', array(
 //General
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
-	'settings'    => 'fw_general_message',
-	'label'       => __( 'General message', 'fastway' ),
-	'description'=>'Display a messsage on the top bar for important notificacions',
-	'section'     => 'section_general',
-) );
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_seo',
 	'label'       => __( 'FW Meta Tags', 'fastway' ),
@@ -2045,8 +2038,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago',
 	'label'    => __( 'Cuotas Todopago', 'fastway' ),
+	'section'     => 'section_editable',
 	'description' => '',
-	'section'     => 'section_woo',
 	'default' => 6
 ) );
 
@@ -2055,8 +2048,26 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_cuotas_general',
 	'label'    => __( 'Cuotas General', 'fastway' ),
 	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
-	'section'     => 'section_woo',
+	
+	'section'     => 'section_editable',
 	'default' => 6
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_general_message',
+	'label'       => __( 'General message', 'fastway' ),
+	'description'=>'Display a messsage on the top bar for important notificacions',
+	'section'     => 'section_editable',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_mensaje_sec',
+	'label'       => __( 'Secondary message', 'fastway' ),
+	'description'=>'Display a messsage on the top bar for important notificacions',
+	'section'     => 'section_editable',
 ) );
 
 

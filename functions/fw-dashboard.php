@@ -68,6 +68,22 @@ function prefix_add_dashboard_widget() {
             'fw_widget_cuotas_general_dash_handler'
         );
     }
+    if(fw_theme_mod('fw_widget_mensaje_barra')){
+        wp_add_dashboard_widget(
+            'fw_widget_mensaje_barra', 
+            'Mensaje importante', 
+            'fw_widget_mensaje_barra_dash', 
+            'fw_widget_mensaje_barra_dash_handler'
+        );
+    }
+    if(fw_theme_mod('fw_widget_mensaje_sec')){
+        wp_add_dashboard_widget(
+            'fw_widget_mensaje_sec', 
+            'Mensaje secundario', 
+            'fw_widget_mensaje_sec_dash', 
+            'fw_widget_mensaje_sec_dash_handler'
+        );
+    }
 }
 
 
@@ -298,20 +314,20 @@ function fw_widget_cuotas_tp_dash_handler(){
 
 
 
+add_shortcode('fw_cuotas_general','fw_cuotas_general');
+function fw_cuotas_general(){
+    return fw_theme_mod('fw_cuotas_general');
+}
 function fw_widget_cuotas_general_dash(){
     $cuotas =fw_theme_mod('fw_cuotas_general');
     echo <<<HTML
     <div class='fw_widget_dash'>
         <label>Cuotas sin interes: $cuotas</label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_general#fw_tofw_widget_cuotas_generaldopago_widget">Cambiar</a>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_general#fw_widget_cuotas_general">Cambiar</a>
     </div>
 HTML;
 }
 
-add_shortcode('fw_cuotas_general','fw_cuotas_general');
-function fw_cuotas_general(){
-    return fw_theme_mod('fw_cuotas_general');
-}
 function fw_widget_cuotas_general_dash_handler(){
 
     # get saved data
@@ -333,6 +349,111 @@ function fw_widget_cuotas_general_dash_handler(){
         <input type=\"text\" name=\"fw_widget_cuotas_general_options[cuotas]\" id=\"cuotas\" value=\"".fw_theme_mod('fw_cuotas_general')."\">
     </div>";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+add_shortcode('fw_mensaje_barra','fw_mensaje_barra');
+function fw_mensaje_barra(){
+    return fw_theme_mod('fw_general_message');
+}
+function fw_widget_mensaje_barra_dash(){
+    $mensaje =fw_theme_mod('fw_general_message');
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Mensaje: $mensaje</label><br>
+        <small>*Esto pondra una barra llamativa arriba de la tienda comunicando el mensaje</small>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_barra#fw_widget_mensaje_barra">Cambiar</a>
+    </div>
+HTML;
+}
+
+function fw_widget_mensaje_barra_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_mensaje_barra_options' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_mensaje_barra_options'] ) ) {
+        # minor validation
+        $mensaje=( $_POST['fw_widget_mensaje_barra_options']['mensaje'] );
+        set_theme_mod('fw_general_message',$mensaje);
+    }
+
+    if( !isset( $widget_options['fw_general_message'] ) )$widget_options['fw_general_message'] = fw_theme_mod('fw_general_message');
+
+    echo "
+    <div>
+        <label>Mensaje</label>
+        <input type=\"text\" name=\"fw_widget_mensaje_barra_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_general_message')."\">
+    </div>";
+}
+
+
+
+
+
+add_shortcode('fw_mensaje_sec','fw_mensaje_sec');
+function fw_mensaje_sec(){
+    return fw_theme_mod('fw_mensaje_sec');
+}
+function fw_widget_mensaje_sec_dash(){
+    $mensaje =fw_theme_mod('fw_mensaje_sec');
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>Mensaje: $mensaje</label>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_sec#fw_widget_mensaje_sec">Cambiar</a>
+    </div>
+HTML;
+}
+
+function fw_widget_mensaje_sec_dash_handler(){
+
+    # get saved data
+    if( !$widget_options = get_option( 'fw_widget_mensaje_sec_options' ) )$widget_options = array( );
+    # process update
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_mensaje_sec_options'] ) ) {
+        # minor validation
+        $mensaje=( $_POST['fw_widget_mensaje_sec_options']['mensaje'] );
+        set_theme_mod('fw_mensaje_sec',$mensaje);
+    }
+
+    # set defaults  
+    if( !isset( $widget_options['fw_mensaje_sec'] ) )
+        $widget_options['fw_mensaje_sec'] = fw_theme_mod('fw_mensaje_sec');
+
+    echo "
+    <div>
+        <label>Mensaje</label>
+        <input type=\"text\" name=\"fw_widget_mensaje_sec_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_mensaje_sec')."\">
+    </div>";
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
