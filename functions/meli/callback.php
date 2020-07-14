@@ -11,7 +11,7 @@ $notifications=file_get_contents("php://input");
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
-    $nombrearray='ml_array_orders_'.date("m");
+    $nombre_array='ml_array_orders_'.date("m");
 
     if(!get_option($nombre_array))update_option($nombre_array,array());
     $orders_used=get_option($nombre_array);
