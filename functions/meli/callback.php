@@ -4,16 +4,17 @@ header("HTTP/1.1 200 OK");
 
 
 session_start();
-
+sleep ( rand ( 2, 4));
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
+    $nombrearray='ml_array_orders_'.date("m");
 
-    if(!get_option('ml_array_orders_'.date("m")))update_option('ml_array_orders_'.date("m"),array());
-    $orders_used=get_option('ml_array_orders_'.date("m"));
+    if(!get_option($nombre_array))update_option($nombre_array,array());
+    $orders_used=get_option($nombre_array);
     
     if(!isset($orders_used[$order_id]))$orders_used[$order_id]=true;
     else if(isset($orders_used[$order_id])){
@@ -56,6 +57,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $log= "LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
     
       error_log($log);
-      update_option('ml_array_orders_'.date("m"),$orders_used);
+      update_option($nombre_array,$orders_used);
     }
 }
