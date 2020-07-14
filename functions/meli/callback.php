@@ -21,6 +21,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       return;
     }
 
+    error_log(print_r($_SESSION['orders'],true));
+
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
