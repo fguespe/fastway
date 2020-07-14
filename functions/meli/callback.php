@@ -4,11 +4,11 @@ header("HTTP/1.1 200 OK");
 
 
 session_start();
-sleep ( rand ( 2, 4));
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
+
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
     $nombre_array='ml_array_orders_'.date("m");

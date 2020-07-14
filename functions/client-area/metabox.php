@@ -33,7 +33,7 @@ function custom_menu_meta_box(){
             array(__('Media','fastway'),'image','upload.php'),
             array(__('Paginas','fastway'),'file-text','edit.php?post_type=page'),
             array(__('Comentarios','fastway'),'comments','edit-comments.php'),
-            array(__('Envíos','fastway'),'shipping-fast','admin.php?page=wc-settings&tab=shipping&zone_id=1'),
+            array(__('Envíos','fastway'),'shipping-fast','admin.php?page=wc-settings&tab=shipping'),
             array(__('Pagos','fastway'),'credit-card','admin.php?page=wc-settings&tab=checkout'),
             array(__('Comentarios','fastway'),'comments','edit-comments.php'),
             array(__('FAQ','fastway'),'question','edit.php?post_type=fw_faq'),
