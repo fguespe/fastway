@@ -4,6 +4,8 @@ header("HTTP/1.1 200 OK");
 
 session_start();
 
+if(!get_option('ml_array_orders'))update_option('ml_array_orders',array());
+$orders_used=get_option('ml_array_orders');
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
@@ -12,15 +14,15 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $order_id=explode("/",$obj['resource'])[2]; 
 
     error_log('Se recibio de ml la order : '.$order_id);
-    error_log(print_r($_SESSION['ml_orders'],true));
+    error_log(print_r($orders_used,true));
 
-    if(!isset($_SESSION['ml_orders'][$order_id]))$_SESSION['ml_orders'][$order_id]=true;
-    else if(isset($_SESSION['ml_orders'][$order_id])){
+    if(!isset($orders_used[$order_id]))$orders_used[$order_id]=true;
+    else if(isset($orders_used[$order_id])){
       error_log("Repetido: ".$order_id);
       return;
     }
 
-    error_log(print_r($_SESSION['ml_orders'],true));
+    error_log(print_r($orders_used,true));
 
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
