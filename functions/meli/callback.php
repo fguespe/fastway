@@ -2,7 +2,6 @@
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
 
-
 session_start();
 
 
@@ -13,15 +12,15 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $order_id=explode("/",$obj['resource'])[2]; 
 
     error_log('Se recibio de ml la order : '.$order_id);
-    error_log(print_r($_SESSION['orders'],true));
+    error_log(print_r($_SESSION['ml_orders'],true));
 
-    if(!isset($_SESSION['orders'][$order_id]))$_SESSION['orders'][$order_id]=true;
-    else if(isset($_SESSION['orders'][$order_id])){
+    if(!isset($_SESSION['ml_orders'][$order_id]))$_SESSION['ml_orders'][$order_id]=true;
+    else if(isset($_SESSION['ml_orders'][$order_id])){
       error_log("Repetido: ".$order_id);
       return;
     }
 
-    error_log(print_r($_SESSION['orders'],true));
+    error_log(print_r($_SESSION['ml_orders'],true));
 
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
