@@ -612,14 +612,12 @@ function updateEnvioGratisME(){
 
 function shippingGroups(){
   let shippingGroups='<?=fw_theme_mod('fw_shipping_groups');?>';
-	if(shippingGroups){
+	if(shippingGroups jQuery('.woocommerce-shipping-methods li.local_pickup').length>1){
     let topLabel='<?=fw_theme_mod('fw_label_shipping_grouptitle');?>';
     let descLabel='<?=fw_theme_mod('fw_label_shipping_groupdesc');?>';
     jQuery('.paso-shipping').addClass('groupping')
-    if(jQuery('.woocommerce-shipping-methods li.local_pickup').length>0){
-      jQuery('.woocommerce-shipping-methods li.local_pickup').hide()
-      if(!jQuery('.capsula.shipping.group').length)jQuery('.woocommerce-shipping-methods').prepend('<li class="capsula shipping group"><input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method"><label for="shipping_method_0_local_pickup2" class="title">'+topLabel+'</label><small class="costo">'+descLabel+'</small></li>');
-    }
+    jQuery('.woocommerce-shipping-methods li.local_pickup').hide()
+    if(!jQuery('.capsula.shipping.group').length)jQuery('.woocommerce-shipping-methods').prepend('<li class="capsula shipping group"><input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method"><label for="shipping_method_0_local_pickup2" class="title">'+topLabel+'</label><small class="costo">'+descLabel+'</small></li>');
 	}
 }
 jQuery(document).on('click', function(e) {
