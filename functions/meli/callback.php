@@ -24,7 +24,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     }
 
     error_log(print_r($orders_used,true));
-    update_option('ml_array_orders',$orders_used);
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
@@ -59,5 +58,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $log= "LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
       echo $log;
       error_log($log);
+      update_option('ml_array_orders',$orders_used);
     }
 }
