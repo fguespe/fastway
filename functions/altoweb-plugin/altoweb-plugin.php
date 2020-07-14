@@ -241,18 +241,6 @@ function custom_remove() {
 add_action('admin_head-nav-menus.php', 'custom_remove');
 
 
-function fw_admin_css_all() {
-    echo '<style type="text/css">
-    .media-modal{
-        width:80% !important;
-    }
-    </style>';
-}
-add_action('admin_head', 'fw_admin_css_all');
-
-
-
-
 
 
 /*

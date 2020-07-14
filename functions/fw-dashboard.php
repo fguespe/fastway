@@ -589,11 +589,24 @@ function fw_widget_estado_dash_handler()
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
  function my_custom_dashboard_widgets() {
+    if(get_locale()!='es_ES')return;
      global $wp_meta_boxes;
      if(fw_theme_mod("fw_id_ml"))wp_add_dashboard_widget('custom_help_widget1', 'Soporte', 'custom_ml_help');
-     wp_add_dashboard_widget('custom_help_widget2', '¿Necesitas ayuda?', 'custom_dashboard_help');
+     wp_add_dashboard_widget('custom_dashboard_help', '¿Necesitas ayuda?', 'custom_dashboard_help');
+     wp_add_dashboard_widget('fw_ajustes_generales', 'Ajustes Generales', 'fw_ajustes_generales');
  }
  
+ function fw_ajustes_generales() {
+    echo '
+    <p>
+    <span>Metodos de envío:  <a href="admin.php?page=wc-settings&tab=shipping" class="btn"  >Configurar</a></span><br><br>
+    <span>Metodos de Pago:  <a href="admin.php?page=wc-settings&tab=checkout" class="btn"  >Configurar</a></span><br><br>
+    <span>Menues del sitio:  <a href="nav-menus.php" class="btn"  >Configurar</a></span><br><br>
+    <span>Mails y textos:  <a href="options-general.php?page=myplugin" class="btn"  >Configurar</a></span><br><br>
+    <span>Exportar formularios:  <a href="admin.php?page=gf_export" class="btn"  >Configurar</a></span><br><br>
+    <span>Exportar usuarios/pedidos:  <a href="admin.php?page=wc_customer_order_csv_export" class="btn"  >Configurar</a></span><br><br>
+    </p>' ;
+}
  function custom_dashboard_help() {
      echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
         <br><small>*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R</small>

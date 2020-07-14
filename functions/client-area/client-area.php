@@ -99,6 +99,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_estado',
@@ -152,7 +153,7 @@ Kirki::add_field( 'theme_config_id', array(
     'label'       => __( 'Mensaje General', 'fastway' ),
     'description' => 'Barra roja que va a arriba [fw_mensaje_barra]',
 	'section'     => 'section_clientwidgets',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -615,6 +616,12 @@ function fw_custom_admincss() {
     echo '<style type="text/css">
     .media-modal{
         width:80% !important;
+    }
+    .ocultar{
+        display:none;
+    }
+    .user-new-php .notice{
+        display: block !important;
     }
     :root{
         --ca-main-color: '.fw_theme_mod('ca-main-color').';

@@ -47,6 +47,9 @@ display:none !important;
 #gf_user_pending_activation .updated{
 	display:block !important;
 }
+#gform_tabs,#gform_tab_group .textleft,#gform_tab_group .hr-divider{/*Exportar*/
+	display:none;
+}
 #gf_form_toolbar,#gform_settings_page_title,#form_switcher_arrow,.gf_admin_page_formid{
 display:none !important;
 }
@@ -188,10 +191,6 @@ display:none !important;
 #wp-admin-bar-WPML_ALS,#wp-admin-bar-site-name,#wp-admin-bar-kinsta-cache,#wp-admin-bar-gform-forms,#wp-admin-bar-my-account,#wp-admin-bar-itsec_admin_bar_menu,#wp-admin-bar-my-sites,#wp-admin-bar-wp-rocket,#wp-admin-bar-archive,#wp-admin-bar-wp-logo,#wp-admin-bar-comments,#wp-admin-bar-new-content,#wp-admin-bar-wpseo-menu{
 	 display: none !important
 }
-/*EXPORTAR IMPORTAR*/
- /*.wrap .page-title-action:nth-child(4),*/ .wrap .page-title-action:nth-child(3){
-display:none;
-}
 #wp-admin-bar-updates,#wp-admin-bar-woffice_settings,#wp-admin-bar-tribe-events,#wp-admin-bar-bp-notifications,#wp-admin-bar-updraft_admin_node{
 	display: none !important;
 }
@@ -330,6 +329,14 @@ display:none;
 
 
 
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr{
+	display:none !important;
+}
+	
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr:nth-child(1){
+	display:block !important;
+}
+
 
 
 
@@ -415,11 +422,9 @@ display:none !important;
 #vc_license-activation-notice,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
 	display:none;
 }
-.user-new-php .notice{
-	display: block !important;
-}
-.user-new-php .notice:not(.mostrar){
-	display: none !important;
+.error.admin,
+.notice.admin{
+	display: none;;
 }
 /*ORDER CUSTOM FIELDS*/
 #postcustom,#woocommerce-order-downloads{
@@ -450,11 +455,16 @@ display:none !important;
 	
 /*media*/
 
+/*export*/
 
 /*productos*/
 .vc_navbar,.composer-switch{
 	display: none !important;;
 }
+.wc-shipping-zone-worldwide,.envios .page-title-action{
+	display: none !important;
+}
+.envios .clear,
 .envios .subsubsub{
 	display:none;
 }
