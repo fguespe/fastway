@@ -150,7 +150,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_mensaje_barra',
     'label'       => __( 'Mensaje General', 'fastway' ),
-    'description' => 'Barra roja que va a arriba',
+    'description' => 'Barra roja que va a arriba [fw_mensaje_barra]',
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,
 	'choices' => array(
@@ -163,7 +163,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_mensaje_sec',
 	'label'       => __( 'Mensaje Secundario ', 'fastway' ),
-    'description' => 'Puede ser usado en distintos lugares.(como elementos)',
+    'description' => 'Puede ser usado en distintos lugares.(como elementos) [fw_mensaje_sec]',
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,
 	'choices' => array(

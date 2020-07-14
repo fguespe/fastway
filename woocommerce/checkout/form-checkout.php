@@ -612,7 +612,7 @@ function updateEnvioGratisME(){
 
 function shippingGroups(){
   let shippingGroups='<?=fw_theme_mod('fw_shipping_groups');?>';
-	if(shippingGroups jQuery('.woocommerce-shipping-methods li.local_pickup').length>1){
+	if(shippingGroups && jQuery('.woocommerce-shipping-methods li.local_pickup').length>1){
     let topLabel='<?=fw_theme_mod('fw_label_shipping_grouptitle');?>';
     let descLabel='<?=fw_theme_mod('fw_label_shipping_groupdesc');?>';
     jQuery('.paso-shipping').addClass('groupping')
