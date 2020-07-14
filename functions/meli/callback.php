@@ -2,6 +2,7 @@
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
 
+
 session_start();
 
 
@@ -11,19 +12,16 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
 
-    if(!get_option('ml_array_orders'))update_option('ml_array_orders',array());
-    $orders_used=get_option('ml_array_orders');
+    if(!get_option('ml_array_orders_'.date("m")))update_option('ml_array_orders_'.date("m"),array());
+    $orders_used=get_option('ml_array_orders_'.date("m"));
     
-    error_log('Se recibio de ml la order v1: '.$order_id);
-    error_log(print_r($orders_used,true));
-
     if(!isset($orders_used[$order_id]))$orders_used[$order_id]=true;
     else if(isset($orders_used[$order_id])){
       error_log("Repetido: ".$order_id);
       return;
     }
+    error_log('Se recibio de ml la order v1: '.$order_id);
 
-    error_log(print_r($orders_used,true));
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
@@ -56,8 +54,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $variation->save();   
       
       $log= "LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
-      echo $log;
+    
       error_log($log);
-      update_option('ml_array_orders',$orders_used);
+      update_option('ml_array_orders_'.date("m"),$orders_used);
     }
 }
