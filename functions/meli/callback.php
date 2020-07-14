@@ -13,6 +13,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
     if(!get_option('ml_array_orders'))update_option('ml_array_orders',array());
     $orders_used=get_option('ml_array_orders');
+    
     error_log('Se recibio de ml la order : '.$order_id);
     error_log(print_r($orders_used,true));
 
@@ -23,7 +24,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     }
 
     error_log(print_r($orders_used,true));
-
+    update_option('ml_array_orders',$orders_used);
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
