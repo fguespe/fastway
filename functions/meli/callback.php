@@ -11,12 +11,15 @@ $notifications=file_get_contents("php://input");
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
+
+    error_log('Se recibio de ml la order : '.$order_id);
+    error_log(print_r($_SESSION['orders'],true));
+
     if(!in_array($order_id,$_SESSION['orders']))array_push($_SESSION['orders'],$order_id);
-    else {
-      echo "Already processed: ".$order_id;
+    else if(in_array($order_id,$_SESSION['orders'])){
+      error_log("Repetido: ".$order_id);
       return;
     }
-    error_log('Se recibio de ml la order : '.$order_id);
 
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
@@ -40,7 +43,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $quantity=$key->quantity;
 
       $prod_id= wc_get_product_id_by_sku($variation_id);
+      if(!$prod_id)continue;
       $variation = wc_get_product($prod_id);
+      if(!$variation)continue;
+      
 
       $variation->set_stock($variation->get_stock_quantity()-$quantity);
       if($quantity==0)$variation->set_stock_status('outofstock');
