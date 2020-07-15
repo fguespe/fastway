@@ -624,10 +624,9 @@ add_action( 'admin_init', 'set_dashboard_meta_order' );
 function set_dashboard_meta_order() {
   $id = get_current_user_id(); //we need to know who we're updating
   $meta_value = array(
-    'normal'  => 'fw_ajustes_generales', //first key/value pair from the above serialized array
-    'side'    => 'custom_dashboard_help', //second key/value pair from the above serialized array
-    'column3' => 'fw_widget_estado', //third key/value pair from the above serialized array
-    'column4' => 'fw_widget_popup', //last key/value pair from the above serialized array
+    'normal'  => 'woocommerce_dashboard_status,fw_ajustes_generales', //first key/value pair from the above serialized array
+    'side' => 'custom_dashboard_help,fw_widget_estado,fw_widget_popup,fw_widget_mensaje_barra,fw_widget_mensaje_sec', //third key/value pair from the above serialized array
+    'column3' => 'rg_forms_dashboard,fw_widget_desc_prods,fw_widget_cupones', //last key/value pair from the above serialized array
   );
   update_user_meta( $id, 'meta-box-order_dashboard', $meta_value ); //update the user meta with the user's ID, the meta_key meta-box-order_dashboard, and the new meta_value
 }
