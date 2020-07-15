@@ -160,9 +160,11 @@ background:#25d366;
 background:#307BFF;
 }
 
-a.bluelink{    
+a.bluelink,
+a.link,
+a.linkazul{    
 		color: #007bff;
-    text-decoration: none;
+	  text-decoration:underline;
     background-color: transparent;
 }
 </style>
