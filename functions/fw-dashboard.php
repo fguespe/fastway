@@ -86,7 +86,6 @@ function prefix_add_dashboard_widget() {
     }
 }
 
-
 function fw_widget_popup_dash(){
     $estado=fw_theme_mod('fw_popup_type');
     $color=$estado=='off'?'red':'green';
@@ -591,7 +590,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  function my_custom_dashboard_widgets() {
     if(get_locale()!='es_ES')return;
      global $wp_meta_boxes;
-     if(fw_theme_mod("fw_id_ml"))wp_add_dashboard_widget('custom_help_widget1', 'Soporte', 'custom_ml_help');
+     if(fw_theme_mod("fw_id_ml"))wp_add_dashboard_widget('custom_help_widget1', 'Mercadolibre', 'custom_ml_help');
      wp_add_dashboard_widget('custom_dashboard_help', '¿Necesitas ayuda?', 'custom_dashboard_help');
      wp_add_dashboard_widget('fw_ajustes_generales', 'Ajustes Generales', 'fw_ajustes_generales');
  }
@@ -619,4 +618,17 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  }
  
  
+
+
+add_action( 'admin_init', 'set_dashboard_meta_order' );
+function set_dashboard_meta_order() {
+  $id = get_current_user_id(); //we need to know who we're updating
+  $meta_value = array(
+    'normal'  => 'fw_ajustes_generales', //first key/value pair from the above serialized array
+    'side'    => 'custom_dashboard_help', //second key/value pair from the above serialized array
+    'column3' => 'fw_widget_estado', //third key/value pair from the above serialized array
+    'column4' => 'fw_widget_popup', //last key/value pair from the above serialized array
+  );
+  update_user_meta( $id, 'meta-box-order_dashboard', $meta_value ); //update the user meta with the user's ID, the meta_key meta-box-order_dashboard, and the new meta_value
+}
  
