@@ -407,7 +407,7 @@ display:none;
 .is-dismissible,
 .error,
 .updated{
-	display:none;
+	display:none !important;
 }
 
 .categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
