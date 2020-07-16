@@ -2258,6 +2258,17 @@ footer .widget_nav_menu li a {
   padding-left: 5px;
   padding-right: 5px;
 }
+.woocommerce-shop .widget_layered_nav_filters a:after {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  padding-left: 5px;
+}
+.woocommerce-shop .widget .woocommerce-widget-layered-nav-list a:before {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  padding-right: 5px;
+  display: inline-block !important;
+}
 .woocommerce-shop .woocommerce-widget-layered-nav-list .chosen a {
   font-weight: bold !important;
 }
