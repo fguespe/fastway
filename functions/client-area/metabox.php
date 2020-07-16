@@ -23,21 +23,19 @@ function custom_menu_meta_box(){
             array(__('Pedidos','fastway'),'credit-card','edit.php?post_type=shop_order'),
             array(__('Reportes','fastway'),'bar-chart','admin.php?page=wc-reports'),
             array(__('Cupones','fastway'),'bullhorn','edit.php?post_type=shop_coupon'),
-            array(__('Config','fastway'),'cogs','options-general.php?page=myplugin'),
             array(__('Blog','fastway'),'rss','edit.php'),
             array(__('Productos','fastway'),'shopping-cart','edit.php?post_type=product'),
             array(__('Categorias','fastway'),'tags','edit-tags.php?taxonomy=product_cat&post_type=product'),
             array(__('Atributos','fastway'),'caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
-            array(__('Menus','fastway'),'bars','nav-menus.php'),
             array(__('Usuarios','fastway'),'users','users.php'),
             array(__('Media','fastway'),'image','upload.php'),
             array(__('Paginas','fastway'),'file-text','edit.php?post_type=page'),
-            array(__('Comentarios','fastway'),'comments','edit-comments.php'),
+            array(__('Comentarios','fastway'),'comments','edit-comments.php'),/*
+            array(__('Config','fastway'),'cogs','options-general.php?page=myplugin'),
+            array(__('Menus','fastway'),'bars','nav-menus.php'),
             array(__('Envíos','fastway'),'shipping-fast','admin.php?page=wc-settings&tab=shipping'),
             array(__('Pagos','fastway'),'credit-card','admin.php?page=wc-settings&tab=checkout'),
-            array(__('Comentarios','fastway'),'comments','edit-comments.php'),
-            array(__('FAQ','fastway'),'question','edit.php?post_type=fw_faq'),
-            
+            array(__('FAQ','fastway'),'question','edit.php?post_type=fw_faq'),*/
 		);
 	if(fw_theme_mod('fw_id_filesync'))array_push($items, array(__('Importación','fastway'),'upload','upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync')));
 
