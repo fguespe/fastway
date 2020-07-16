@@ -43,19 +43,6 @@ function fw_role_body_classes( $classes ) {
     return $classes;
 }
 
-function fw_editable_roles( $roles ) {
-  $arr=fw_get_all_roles();
-  if(is_string($arr))$arr=explode(",",$arr);
-  
-  foreach ($arr as $key => $nombre) {
-    if($key=='administrator' || empty($key)  || empty($nombre))continue;
-    
-    $roles[] = $key;
-  }
-  return $roles;
-}
-add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
-
 
 
 function check_user_role($role){
@@ -99,9 +86,22 @@ function fw_get_all_roles() {
   
 
 
+  function fw_editable_roles( $roles ) {
+    $arr=fw_get_all_roles();
+    if(is_string($arr))$arr=explode(",",$arr);
+    foreach ($arr as $key => $nombre) {
+      if($key=='administrator' || empty($key)  || empty($nombre))continue;
+      $roles[] = $key;
+    }
+    return $roles;
+  }
+  add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
+  
+  /*
   
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
 function fw_shop_manager_role_edit_capabilities( $roles ) {
+    error_log(print_r($roles,true));
     if(function_exists('fw_theme_mod')){
       $roles=fw_theme_mod('ca_extra_roles');
       if(is_string($roles))$roles=explode(",",$roles);
@@ -115,7 +115,8 @@ function fw_shop_manager_role_edit_capabilities( $roles ) {
     $roles[]='customer';
     
     return $roles;
-}
+}*/
+
 
 add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 function fw_allow_users_to_shopmanager() {
