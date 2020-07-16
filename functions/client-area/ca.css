@@ -6,7 +6,8 @@ body{
 
 .is-dismissible,
 .error,
-.updated{
+.updated,
+.js-wc-plugin-framework-admin-notice{
 	display:none !important;
 }
 
