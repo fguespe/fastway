@@ -620,7 +620,7 @@ function fw_custom_admincss() {
     .ocultar{
         display:none;
     }
-    .user-new-php .notice{
+    .user-new-php usuarios.notice{
         display: block !important;
     }
     :root{
