@@ -2,6 +2,14 @@
 body{
 	background: var(--ca-background-color) !important;
 }
+/*ALERTAS*/
+
+.is-dismissible,
+.error,
+.updated{
+	display:none !important;
+}
+
 
 #welcome-panel{
 	display:none !important;
@@ -403,11 +411,6 @@ display:none;
 /*DESCRIPCION (TEXTAREA) QUE NO SE USA*/
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
 	display:none;
-}
-.is-dismissible,
-.error,
-.updated{
-	display:none !important;
 }
 
 .categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
