@@ -404,10 +404,10 @@ display:none;
 .categorias .term-description-wrap,.atributos .term-description-wrap,.escritorio .term-description-wrap,.etiquetas .term-description-wrap{
 	display:none;
 }
-.escritorio .is-dismissible,
-.escritorio .error,
-.escritorio .updated{
-	display:none !important;
+.is-dismissible,
+.error,
+.updated{
+	display:none;
 }
 
 .categorias .term-thumbnail-wrap,.categorias #wc_catalog_restrictions{
