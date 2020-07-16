@@ -2243,17 +2243,9 @@ footer .widget_nav_menu li a {
 
 		padding-right:5px;
 }
-.widget_layered_nav_filters a:after{
-		content:"\f00d";
-		font-family:'Font Awesome 5 Pro';
-		padding-left:5px;
-}
 
-.widget .woocommerce-widget-layered-nav-list a:before{
-		content:"\f0c8";
-		font-family:'Font Awesome 5 Pro';
-		padding-right:5px;
-		display:inline-block !important;
+.woocommerce-widget-layered-nav-list .chosen a{
+	font-weight: bold !important;
 }
 
   .woocommerce-ordering,.woocommerce-ordering select{
