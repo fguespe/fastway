@@ -1389,7 +1389,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Header Code', 'fastway' ),
 	'description' => '
 					[fw_header id="bottom,top,middle"]
-					[fw_logo][fw_menu][fw_user_account][fw_search_form id="1"][fw_data type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
+					[fw_logo][fw_menu id="XXX/empty for main"][fw_user_account][fw_search_form id="1"][fw_data type="phone" isli="true" stext="Atencion Telefonica"][fw_shopping_cart]
 					[/fw_header]',
 	'section'     => 'section_header',
 	'default'     => '[fw_header][fw_logo][fw_menu][/fw_header]',
