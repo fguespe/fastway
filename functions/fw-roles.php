@@ -4,7 +4,7 @@ function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();
     $roles = ( array ) $user->roles;
-    error_log(print_r($roles,true));
+    //error_log(print_r($roles,true));
     return $roles[0];
   } else {
     return false;
@@ -139,10 +139,10 @@ function hide_adminstrator_editable_roles( $roles ){
   unset( $roles['author'] );
   unset( $roles['subscriber'] );
   unset( $roles['contributor'] );
-  
+
   $role=fw_get_current_user_role();
 
-  error_log(wp_get_current_user()->user_login." - ".$role.'('.is_super_admin().')');
+  //error_log(wp_get_current_user()->user_login." - ".$role.'('.is_super_admin().')');
   $username=wp_get_current_user()->user_login;
   if($role=='administrator' ||  is_super_admin() || $username=='webaltoweb')return $roles;
   
