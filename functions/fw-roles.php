@@ -137,8 +137,8 @@ function hide_adminstrator_editable_roles( $roles ){
   $role=fw_get_current_user_role();
 
   error_log(wp_get_current_user()->user_login." - ".$role.'('.is_super_admin().')');
-  
-  if(is_super_admin())return $roles;
+
+  if($role=='administrator' && is_super_admin())return $roles;
   unset( $roles['editor'] );
   unset( $roles['author'] );
   unset( $roles['administrator'] );
