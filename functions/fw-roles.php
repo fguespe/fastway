@@ -135,8 +135,7 @@ function fw_allow_users_to_shopmanager() {
 add_action( 'editable_roles' , 'hide_adminstrator_editable_roles' );
 function hide_adminstrator_editable_roles( $roles ){
   $role=fw_get_current_user_role();
-  error_log($role.' '.is_super_admin());
-  if($role=='administrator' && is_super_admin())return $roles;
+  if($role=='administrator' || is_super_admin())return $roles;
   unset( $roles['editor'] );
   unset( $roles['author'] );
   unset( $roles['administrator'] );
