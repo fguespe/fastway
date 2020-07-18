@@ -155,13 +155,33 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 
 function myplugin_options_page(){
-$order_variables='<small>Variables: {{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>';
-
+  
+$customer_emails_vars.='
+<b>Variables:</b>
+<br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>
+<br><b>Metodos de pago:</b>
+<br><small>';
+foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
+    if( $gateway->enabled == 'yes' ) {
+        $customer_emails_vars.=$gateway->title.'('.$gateway->id.') - ';
+    }
+}
+$customer_emails_vars.='</small><br><b>Roles:</b>
+<br><small>';
+$roles=array();
+foreach ( get_editable_roles() as $role => $value ) {
+  if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' )$role='minorista';
+  if(!in_array($role,$roles))array_push($roles,$role);
+}
+$customer_emails_vars.=implode(' ',$roles).'</small>';
 ?>
 <div>
 
 <style>
-
+.valinfo{
+  background:white !important;
+  padding:5px;
+}
 /* Style the tab */
 .tab {
 margin-top:20px;
@@ -273,11 +293,14 @@ wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textare
 </div>
 </div>
 <div id="customer_emails" class="tabcontent">
+<div class="valinfo">
+<?=$customer_emails_vars;?>
+</div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Processing order', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after payment.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_processing_order" name="fw_email_subject_customer_processing_order" value="<?php echo get_option('fw_email_subject_customer_processing_order'); ?>" /><br>
-<?=$order_variables;?>
+
 <?php
 $content = get_option('fw_email_content_customer_processing_order');
 wp_editor( $content, 'fw_email_content_customer_processing_order', $settings = array('textarea_rows'=> '10') );
@@ -287,7 +310,7 @@ wp_editor( $content, 'fw_email_content_customer_processing_order', $settings = a
 <h3 class="titulo"><?=__( 'Completed order', 'woocommerce' )?></h3>
 <small><?=__( 'Order complete emails are sent to customers when their orders are marked completed and usually indicate that their orders have been shipped.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_completed_order" name="fw_email_subject_customer_completed_order" value="<?php echo get_option('fw_email_subject_customer_completed_order'); ?>" /><br>
-<?=$order_variables ?>
+
 <?php
 $content = get_option('fw_email_content_customer_completed_order');
 wp_editor( $content, 'fw_email_content_customer_completed_order', $settings = array('textarea_rows'=> '10') );
@@ -297,7 +320,7 @@ wp_editor( $content, 'fw_email_content_customer_completed_order', $settings = ar
 <h3 class="titulo"><?=__( 'Order on-hold', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after an order is placed on_hold.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_on_hold_order" name="fw_email_subject_customer_on_hold_order" value="<?php echo get_option('fw_email_subject_customer_on_hold_order'); ?>" /><br>
-<?=$order_variables?>
+
 <?php
 $content = get_option('fw_email_content_customer_on_hold_order');
 wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = array('textarea_rows'=> '10') );
@@ -331,7 +354,7 @@ wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_
 <h3 class="titulo"><?=__( 'New order', 'woocommerce' )?></h3>
 <small><?=__( 'New order emails are sent to chosen recipient(s) when a new order is received.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_admin_new_order" name="fw_email_subject_admin_new_order" value="<?php echo get_option('fw_email_subject_admin_new_order'); ?>" /><br>
-<?=$order_variables?>
+
 <?php
 $content = get_option('fw_email_content_admin_new_order');
 wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('textarea_rows'=> '10') );
@@ -343,7 +366,7 @@ wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('text
 <div class="tipomail">
 <h3 class="titulo">Thank you page</h3>
 <small>Texto que aparece luego de la pagina de compra</small>
-<?=$order_variables?>
+
 <?php
 $content = get_option('fw_email_content_thankyou');
 wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
