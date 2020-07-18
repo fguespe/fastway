@@ -596,7 +596,7 @@ if (activarCA()  ) {
 function wpdocs_enqueue_custom_admin_style() {
     //wp_enqueue_style( 'awesome-style', 'https://pro.fontawesome.com/releases/v5.5.0/css/all.css');
     wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/cf0e255dde.js');
-    wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css');
+    wp_enqueue_style('ca-style', get_template_directory_uri() . '/functions/client-area/ca.css', array(), '1.0' );    
     wp_enqueue_script('cajs-style', get_template_directory_uri() . '/functions/client-area/ca.js');
     
 }
