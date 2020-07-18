@@ -333,28 +333,20 @@ display:none;
 
 
 
+
 #wc_customer_order_exported_by_orders,#wc_customer_order_exported_by_customers{
 	display: none;
 }
 
-.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr{
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr,
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(9) tr{
 	display:none !important;
 }
 	
-.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr:nth-child(1){
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(6) tr:nth-child(1),
+.woocommerce_page_wc_customer_order_csv_export table:nth-child(9) tr:nth-child(1){
 	display:block !important;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
