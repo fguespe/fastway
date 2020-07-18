@@ -349,6 +349,7 @@ wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_
 </div>
 </div>
 <div id="admin_emails" class="tabcontent">
+<?=$customer_emails_vars;?>
 <!--NEW ORDER ADMIN -->
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New order', 'woocommerce' )?></h3>
