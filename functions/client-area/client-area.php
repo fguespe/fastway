@@ -622,6 +622,9 @@ function fw_custom_admincss() {
     .user-new-php usuarios.notice{
         display: block !important;
     }
+    .vc_license-activation-notice{
+        display:none !important;
+    }
     :root{
         --ca-main-color: '.fw_theme_mod('ca-main-color').';
         --ca-second-color: #F9FAFA;
