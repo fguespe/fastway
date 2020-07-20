@@ -157,8 +157,9 @@ add_action('admin_menu', 'myplugin_register_options_page');
 function myplugin_options_page(){
   
 $customer_emails_vars.='
+<a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Ir al Tutorial</a>
 <b>Variables:</b>
-<br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{payment_method_title}} </small>
+<br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
 <br><b>Metodos de pago:</b>
 <br><small>';
 foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
