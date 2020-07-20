@@ -164,7 +164,7 @@ $customer_emails_vars.='
 <br><small>';
 foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
     if( $gateway->enabled == 'yes' ) {
-        $customer_emails_vars.=$gateway->title.'('.$gateway->id.') - ';
+        $customer_emails_vars.=$gateway->title.'(id:'.$gateway->id.') - ';
     }
 }
 $customer_emails_vars.='</small><br><b>Roles:</b>
