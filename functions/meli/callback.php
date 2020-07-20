@@ -12,9 +12,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $order_id=explode("/",$obj['resource'])[2]; 
     $nombre_array='ml_array_orders_'.date("m");
 
-    error_log( "jaja");
     sleep ( rand ( 2, 4));
-    error_log( "jaja");
 
     if(!get_option($nombre_array))update_option($nombre_array,array());
     $orders_used=get_option($nombre_array);

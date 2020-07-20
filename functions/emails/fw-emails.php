@@ -1,5 +1,23 @@
 <?php
 
+function getMailQueEnvia(){
+    if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");
+    else if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
+        return explode(",",fw_theme_mod("fw_mail_desde_mails"))[0];
+    }else if(!empty(fw_theme_mod("fw_mail_desde_mails"))){
+        return fw_theme_mod("fw_mail_desde_mails");
+    }else if(count(explode(",",fw_theme_mod("short-fw_companyemail")))>1){
+        return explode(",",fw_theme_mod("short-fw_companyemail"))[0];
+    }else if(!empty(fw_theme_mod("short-fw_companyemail"))){
+        return fw_theme_mod("short-fw_companyemail");
+    }else return "pruebas+faltaponerunmail@altoweb.co";
+}
+
+function getNombreQueEnvia(){
+if(fw_theme_mod("fw_general_from_name"))return fw_theme_mod("fw_general_from_name");
+else if(fw_theme_mod("fw_mail_desde_nombre"))return fw_theme_mod("fw_mail_desde_nombre");
+else return get_bloginfo( 'name' );
+}
 
 // Hooking up our functions to WordPress filters 
 add_filter( 'wp_mail_from', 'wpb_sender_email' );
@@ -22,90 +40,14 @@ add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
 add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
 add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
 
-/*
-if(isLocalhost()){
-    //On plugin activation schedule our daily database backup 
-    register_activation_hook( __FILE__, 'wi_create_daily_backup_schedule' );
-    function wi_create_daily_backup_schedule(){
-    //Use wp_next_scheduled to check if the event is already scheduled
-    $timestamp = wp_next_scheduled( 'wi_create_daily_backup' );
-
-    //If $timestamp == false schedule daily backups since it hasn't been done previously
-    if( $timestamp == false ){
-        //Schedule the event for right now, then to repeat daily using the hook 'wi_create_daily_backup'
-        wp_schedule_event( time(), 'daily', 'wi_create_daily_backup' );
-    }
-    }
-
-    //Hook our function , wi_create_backup(), into the action wi_create_daily_backup
-    add_action( 'wi_create_daily_backup', 'wi_create_backup' );
-    function wi_create_backup(){
-        $prod = wc_get_product(14);
-        $prod->set_stock(20);
-        error_log('se desconto stock a 20');
-    }
-
-    register_activation_hook( __FILE__, 'my_activation' );
-    function my_activation() {
-        wp_schedule_event( time(), 'hourly', 'my_hourly_event' );
-    }
-    add_action( 'my_hourly_event', 'do_this_hourly' );
-    function do_this_hourly() {
-        $prod = wc_get_product(14);
-        $prod->set_stock(20);
-        error_log('se desconto stock a 20');
-    }
-}*/
-
-//config mails
-
-function getMailQueEnvia(){
-    if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");
-    else if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
-        return explode(",",fw_theme_mod("fw_mail_desde_mails"))[0];
-    }else return fw_theme_mod("fw_mail_desde_mails");
-}
-
-function getNombreQueEnvia(){
-    if(fw_theme_mod("fw_general_from_name"))return fw_theme_mod("fw_general_from_name");
-    else return fw_theme_mod("fw_mail_desde_nombre");
-}
-//Fixes mails
-/*
-$fix=get_option('fw_email_content_thankyou');
-$fix=str_replace("{{email}}","{{customer_email}}",$fix);
-update_option('fw_email_content_thankyou',$fix);
-if(get_locale()=='es_ES'){
-    
-    update_option( 'fw_email_content_confirmation_wholesale_form', '¡Gracias por contactar con nosotros! 
-
-    Nos pondremos en contacto contigo muy pronto.
-    ');
-
-    update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
-
-    Para activarla entra al siguiente link: <a href="{{activation_url}}">LINK</a>');
-
-}
-
-if(get_locale()=='es_ES'){
-    update_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
-
-    Para activarla entra al siguiente link: <a href="{{activation_url}}">LINK</a>');
-
-}
-set_theme_mod('fw_general_from_name','');
-set_theme_mod('fw_general_from_email','');
-set_theme_mod('fw_action_resetmails',true);*/
-
 if(fw_theme_mod("fw_action_resetmails")){
     
-    update_option("woocommerce_new_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
-    update_option("woocommerce_cancelled_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
-    update_option("woocommerce_failed_order_recipient",fw_theme_mod("fw_mail_desde_mails"));
+    update_option("woocommerce_new_order_recipient",getMailQueEnvia());
+    update_option("woocommerce_cancelled_order_recipient",getMailQueEnvia());
+    update_option("woocommerce_failed_order_recipient",getMailQueEnvia());
     
-    update_option("woocommerce_product_enquiry_send_to",fw_theme_mod("fw_mail_desde_mails"));
-    update_option("woocommerce_stock_email_recipient",fw_theme_mod("fw_mail_desde_mails"));
+    update_option("woocommerce_product_enquiry_send_to",getMailQueEnvia());
+    update_option("woocommerce_stock_email_recipient",fw_theme_mod()());
      
     update_option("sendgrid_from_email",getMailQueEnvia());
     update_option("woocommerce_email_from_address",getMailQueEnvia());
@@ -126,21 +68,21 @@ if(fw_theme_mod("fw_action_resetmails")){
 
 
 function change_stock_email_recipient( $recipient, $product ) {
-    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
+    $recipients = ", ".getMailQueEnvia();
     return $recipients;
 }
 function orden_nueva( $recipient, $order ) {
-    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
+    $recipients = ", ".getMailQueEnvia();
     return $recipients;
 }
 
 function email_orden_cancelada( $recipient, $order ) {
-    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
+    $recipients = ", ".getMailQueEnvia();
     return $recipients;
 }
 
 function email_orden_fallida( $recipient, $order ) {
-    $recipients = ", ".fw_theme_mod("fw_mail_desde_mails");
+    $recipients = ", ".getMailQueEnvia();
     return $recipients;
 }
 
@@ -225,7 +167,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
 
     return array(
         'blogname' => get_bloginfo( 'name' ),
-        'email' => '<a href="mailto:'.fw_theme_mod('fw_mail_desde_mails').'">'.fw_theme_mod('fw_mail_desde_mails').'</a>',
+        'email' => '<a href="mailto:'.getMailQueEnvia().'">'.getMailQueEnvia().'</a>',
         'order_number' => '#'.$order->get_order_number(),
         'shipping_tracking_url' => '<a target="_blank" href="'.$order->get_meta('_tracking_url').'">'.$order->get_meta('_tracking_url').'</a>' ,
         'shipping_method_title' => $shipping_method_title,
@@ -317,7 +259,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
         $notification['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates($user));
         $notification['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
     }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
-        $notification['to'] =fw_theme_mod("fw_mail_desde_mails");
+        $notification['to'] = getMailQueEnvia();
     }
     return $notification;
 }

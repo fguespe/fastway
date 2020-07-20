@@ -1275,15 +1275,29 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'custom',
+	'settings'    => 'my_setting_2',
+	'label'       => __( 'INFO', 'textdomain' ),
+	'section'     => 'section_email',
+	'default'     => '<div style="padding: 10px;background-color: #fff; color:black; border: 1px solid #1E73BE;">
+	<h4>VALORES DEFAULT</h4>
+	Fijarse que ya hay valores puestos basados en el titulo del sitio y el company data.Si no son diferentes, dejarlos asi vacios. Sino al poner un valor lo va a priorizar.
+	</div>',
+	'priority'    => 10,
+) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_mail_desde_nombre',
-	'label'    	=> __( 'Nombre cliente para mails', 'fastway' ),
+	'label'    	=> __( 'Nombre que aparece para mails', 'fastway' ),
 	'description' 	=>	'Nombre con el cual les va a llegar a los clientes',
 	'section'   => 'section_email',
-	'default' => 'Altoweb'
+	'default' => 'Altoweb',
+	'input_attrs' => array(
+		'placeholder' => get_bloginfo( 'name' )
+	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
@@ -1291,7 +1305,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    	=> __( 'Email para recibir notificaciones', 'fastway' ),
 	'description' 	=>	' *A que mails se van a enviar todas las notificaciones, separar mails con "," comas.',
 	'section'   => 'section_email',
-	'default' => ''
+	'default' => '',
+	'input_attrs' => array(
+		'placeholder' => getMailQueEnvia()
+	)
 ) );
 
 
@@ -1303,6 +1320,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => '',
 	'description' 	=>	'Nombre de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre.)',
 	'section'   => 'section_email',
+	'input_attrs' => array(
+		'placeholder' => get_bloginfo( 'name' )
+	)
 ) );
 
 
@@ -1314,6 +1334,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => '',
 	'description' 	=>	'Email de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre, el primero si hay varios con ,)',
 	'section'   => 'section_email',
+	'input_attrs' => array(
+		'placeholder' => getMailQueEnvia()
+	)
 ) );
 
 

@@ -595,8 +595,6 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  }
  
  function fw_ajustes_generales() {
-
-    error_log('jaja1');
     echo '
     <p>
     <span>Mails y textos:  <a href="options-general.php?page=myplugin" class="btn"  >Configurar</a></span><br><br>
@@ -623,7 +621,6 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 
 add_action( 'admin_init', 'set_dashboard_meta_order' );
 function set_dashboard_meta_order() {
-    error_log('jaja');
   $id = get_current_user_id(); //we need to know who we're updating
   $meta_value = array(
     'normal'  => 'woocommerce_dashboard_status,fw_ajustes_generales', //first key/value pair from the above serialized array

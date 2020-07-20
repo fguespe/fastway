@@ -55,7 +55,6 @@ function fw_faq_create() {
 if( !function_exists( 'fw_faqs' ) ) {
   add_shortcode('fw_faqs', 'fw_faqs');
   function fw_faqs(){
-    //jaja -m "new";git push;
     
     $qry_args= array(  
       'post_type'     =>'fw_faq',
