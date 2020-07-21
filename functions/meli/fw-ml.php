@@ -3,12 +3,64 @@
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
   add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+  slm_test_prod('MLA803117761');
+}
+
+function slm_test_prod($prod_id){
+  
+    $usuario=getconfig(fw_theme_mod('fw_id_ml'));
+    $iduser=trim($usuario['iduser']);
+    $access_token= trim($usuario['access_token']);
+    $refresh_token = trim($usuario['refresh_token']);
+    $appId=fw_theme_mod('fw_ml_appid');
+    $secretKey=fw_theme_mod('fw_ml_appsecret');
+
+    $meli = new Meli($appId, $secretKey,$access_token,$refresh_token);
+    $nuevos=$meli->refreshAccessToken();
+    $access_token=$nuevos['body']->access_token;
+    $refresh_token=$nuevos['body']->refresh_token;
+    if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
+    
+
+    $prod_id= wc_get_product_id_by_sku($variation_id);
+    if(!$prod_id)return;
+    $product = wc_get_product($prod_id);
+    if(!$product)return;
+
+    
+    $stock=$product->get_stock_quantity();
+    if($stock<0)$stock=0;
+    $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
+    $vars=$prod['body']->variations;
+    if(count($vars)>0){
+      $note=$sku.' - es un prod variable' ;
+      $order->add_order_note( $note);
+      error_log('es un prod variable');
+      foreach($vars as $var){
+        $item = array(
+          "variations" => array(
+            array(
+              "id"=>$var->id,
+              "available_quantity"=>$stock
+            )
+          )
+        );
+      }
+    }else{
+      $note=$sku.' - es un prod simple' ;
+      $order->add_order_note( $note);
+
+      $item = array(
+        "available_quantity"=>$stock
+      );
+    }
+    $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
+
+    error_log(print_r($result,true));
 }
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
-    
-    $referral_done = get_post_meta( $order_id, '_ml_done', true￼ );
-    if(!empty($referral_done￼) )return;
+    if(!empty(get_post_meta( $order_id, '_ml_done', true￼ )) )return;
 
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
@@ -24,11 +76,6 @@ function fw_ml_update_stock( $order_id ) {
     $refresh_token=$nuevos['body']->refresh_token;
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
     
-
-
-    $prod=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
-
-    // Getting an instance of the order object
     $order = wc_get_order( $order_id );
     
     foreach ( $order->get_items() as $item_id => $item ) {
@@ -38,8 +85,9 @@ function fw_ml_update_stock( $order_id ) {
 
         $product = wc_get_product( $product_id );
         $sku=$product->get_sku(); 
-        $stock=$product->get_stock_quantity();
         if(strpos( $sku, 'MLA' ) !== false){
+          $stock=$product->get_stock_quantity();
+          if($stock<0)$stock=0;
           $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
           $vars=$prod['body']->variations;
           if(count($vars)>0){
@@ -70,6 +118,7 @@ function fw_ml_update_stock( $order_id ) {
           else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
           error_log($note);
           $order->add_order_note( $note );
+
           ## HERE you Create/update your custom post meta data to avoid repetition
           update_post_meta( $order_id, '_ml_done', 'yes' );
           
