@@ -36,7 +36,6 @@ function slm_test_prod($sku){
     $vars=$prod['body']->variations;
     if(count($vars)>0){
       $note=$sku.' - es un prod variable' ;
-      $order->add_order_note( $note);
       error_log('es un prod variable');
       foreach($vars as $var){
         $item = array(
@@ -50,7 +49,6 @@ function slm_test_prod($sku){
       }
     }else{
       $note=$sku.' - es un prod simple' ;
-      $order->add_order_note( $note);
 
       $item = array(
         "available_quantity"=>$stock
