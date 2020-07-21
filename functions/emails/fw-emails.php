@@ -1,7 +1,7 @@
 <?php
 
 function getMailQueRecibe(){
-    if(fw_theme_mod("fw_mail_desde_mails"))return fw_theme_mod("fw_mail_desde_mails");
+    if(!empty(fw_theme_mod("fw_mail_desde_mails")))return fw_theme_mod("fw_mail_desde_mails");
     else getMailQueRecibe();
 }
 function getMailQueEnvia(){
