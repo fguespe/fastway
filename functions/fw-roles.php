@@ -1,5 +1,8 @@
 <?php
 
+if ( ! function_exists( 'get_editable_roles' ) ) {
+  require_once ABSPATH . 'wp-admin/includes/user.php';
+}
 function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();
@@ -18,7 +21,15 @@ function get_is_role_or_name_before(){
   }
   return fw_get_current_user_role();
 }
-  
+function get_role_body_classes(){
+  $rolesclases='';
+  foreach ( get_editable_roles() as $role => $value ) {
+    if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
+    $rolesclases.=','.$role;
+  }
+  return $rolesclases;
+
+}
 function fw_getmeroles_and_names(){
       $usuarios=explode(",", fw_theme_mod('ca_users'));
       $devolver=fw_getme_roles();
@@ -78,9 +89,6 @@ function fw_get_all_roles() {
     return strtolower(implode(fw_get_all_roles(),", "));
   }
   function fw_getme_roles(){
-      if ( ! function_exists( 'get_editable_roles' ) ) {
-          require_once ABSPATH . 'wp-admin/includes/user.php';
-      }
       $editable_roles = get_editable_roles();
       $roles=array();
       foreach ($editable_roles as $role => $details) {

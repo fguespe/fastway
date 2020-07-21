@@ -25,8 +25,8 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
 
 require get_template_directory() . '/functions/emails/fw-emails.php';
 require get_template_directory() . '/functions/emails/fw-email-settings-page.php';
-
 require get_template_directory() . '/functions/fw-roles.php';
+
 add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 {
     if( isset( $attr['sizes'] ) )
@@ -64,10 +64,8 @@ if( !function_exists('is_plugin_active') ) {
 }
 
 if(!is_plugin_active('kirki/kirki.php'))return;
+if(is_plugin_active('kirki/kirki.php'))require get_template_directory() . '/functions/fw-theme-options.php';
 
-if(is_plugin_active('kirki/kirki.php')){
-    require get_template_directory() . '/functions/fw-theme-options.php';
-}
 
 
 add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');

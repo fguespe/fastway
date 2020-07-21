@@ -2161,7 +2161,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-roles',
 	'label'       => __( 'CSS For Roles ', 'fastway' ),
 	'section'     => 'section_woo_roles',
-	'description' => 'Todos los roles tienen su clase puesta en el body, por ej: .mayorista',
+	'description' => 'Todos los roles tienen su clase puesta en el body, por ej: .mayorista'.get_role_body_classes(),
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
