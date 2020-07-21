@@ -23,8 +23,10 @@ function slm_test_prod($sku){
 
     error_log("fguespe".$sku);
     $prod_id= wc_get_product_id_by_sku($sku);
+    error_log("prod_id".$prod_id);
     if(!$prod_id)return;
     $product = wc_get_product($prod_id);
+    error_log(print_r($product,true));
     if(!$product)return;
 
     
