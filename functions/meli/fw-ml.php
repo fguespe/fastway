@@ -22,11 +22,11 @@ function slm_test_prod($sku){
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
     
 
-    error_log("fguespe".$sku);
     $prod_id= wc_get_product_id_by_sku($sku);
     if(!$prod_id)return;
     $product = wc_get_product($prod_id);
     if(!$product)return;
+    error_log("fguespe".$sku);
 
     
     $stock=$product->get_stock_quantity();
