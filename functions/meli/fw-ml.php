@@ -7,7 +7,7 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
 slm_test_prod('MLA803117761');
   
 function slm_test_prod($sku){
-    error_log($sku);
+    error_log("fguespe".$sku);
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
     $access_token= trim($usuario['access_token']);
@@ -22,6 +22,7 @@ function slm_test_prod($sku){
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
     
 
+    error_log("fguespe".$sku);
     $prod_id= wc_get_product_id_by_sku($sku);
     if(!$prod_id)return;
     $product = wc_get_product($prod_id);
@@ -30,6 +31,7 @@ function slm_test_prod($sku){
     
     $stock=$product->get_stock_quantity();
     if($stock<0)$stock=0;
+    error_log("fguespe".$stock);
     $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
     $vars=$prod['body']->variations;
     if(count($vars)>0){
