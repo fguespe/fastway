@@ -1,5 +1,9 @@
 <?php
 
+function getMailQueRecibe(){
+    if(fw_theme_mod("fw_mail_desde_mails"))return fw_theme_mod("fw_mail_desde_mails");
+    else getMailQueRecibe();
+}
 function getMailQueEnvia(){
     if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");
     else if(count(explode(",",fw_theme_mod("fw_mail_desde_mails")))>1){
@@ -42,16 +46,15 @@ add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida',
 
 if(fw_theme_mod("fw_action_resetmails")){
     
-    update_option("woocommerce_new_order_recipient",getMailQueEnvia());
-    update_option("woocommerce_cancelled_order_recipient",getMailQueEnvia());
-    update_option("woocommerce_failed_order_recipient",getMailQueEnvia());
+    update_option("woocommerce_new_order_recipient",getMailQueRecibe());
+    update_option("woocommerce_cancelled_order_recipient",getMailQueRecibe());
+    update_option("woocommerce_failed_order_recipient",getMailQueRecibe());
     
-    update_option("woocommerce_product_enquiry_send_to",getMailQueEnvia());
-    update_option("woocommerce_stock_email_recipient",fw_theme_mod()());
+    update_option("woocommerce_product_enquiry_send_to",getMailQueRecibe());
+    update_option("woocommerce_stock_email_recipient",getMailQueRecibe());
      
     update_option("sendgrid_from_email",getMailQueEnvia());
     update_option("woocommerce_email_from_address",getMailQueEnvia());
-     
     update_option("woocommerce_email_from_name",getNombreQueEnvia());
     update_option("sendgrid_from_name",getNombreQueEnvia());
 
@@ -68,21 +71,21 @@ if(fw_theme_mod("fw_action_resetmails")){
 
 
 function change_stock_email_recipient( $recipient, $product ) {
-    $recipients = ", ".getMailQueEnvia();
+    $recipients = ", ".getMailQueRecibe();
     return $recipients;
 }
 function orden_nueva( $recipient, $order ) {
-    $recipients = ", ".getMailQueEnvia();
+    $recipients = ", ".getMailQueRecibe();
     return $recipients;
 }
 
 function email_orden_cancelada( $recipient, $order ) {
-    $recipients = ", ".getMailQueEnvia();
+    $recipients = ", ".getMailQueRecibe();
     return $recipients;
 }
 
 function email_orden_fallida( $recipient, $order ) {
-    $recipients = ", ".getMailQueEnvia();
+    $recipients = ", ".getMailQueRecibe();
     return $recipients;
 }
 
@@ -259,7 +262,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
         $notification['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates($user));
         $notification['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
     }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador') && $notification['toType']=='email' ) {
-        $notification['to'] = getMailQueEnvia();
+        $notification['to'] = getMailQueRecibe();
     }
     return $notification;
 }
