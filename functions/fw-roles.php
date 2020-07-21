@@ -22,12 +22,12 @@ function get_is_role_or_name_before(){
   return fw_get_current_user_role();
 }
 function get_role_body_classes(){
-  $rolesclases='';
+  $roles=array();
   foreach ( get_editable_roles() as $role => $value ) {
     if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
-    $rolesclases.=','.$role;
+    if(!in_array($role,$roles))array_push($roles,$role);
   }
-  return $rolesclases;
+  return implode(",",$roles);
 
 }
 function fw_getmeroles_and_names(){
