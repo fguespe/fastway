@@ -30,6 +30,17 @@ function fw_getmeroles_and_names(){
 
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
+    
+    $the_user = wp_get_current_user(); // 54 is a user ID
+    $roles = ( array ) $the_user->roles;
+    $role=$roles[0];
+    $classes[]=$role;
+    if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == ''){
+      $role='minorista';
+      $classes[]=$role;
+    }
+
+    /*
     $roles=fw_get_all_roles();
     if(is_string($roles))$roles=explode(",",$roles);
     
@@ -37,7 +48,7 @@ function fw_role_body_classes( $classes ) {
       if ( check_user_role( strtolower($key) )) {
         $classes[]= strtolower($key); //or your name
       }
-    }
+    }*/
     return $classes;
 }
 

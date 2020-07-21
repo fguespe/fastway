@@ -165,7 +165,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
     $the_user = get_user_by( 'id', $order->get_customer_id() ); // 54 is a user ID
     $roles = ( array ) $the_user->roles;
     $role=$roles[0];
-    if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' )$role='minorista';
+    if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest'  || $role == '' )$role='minorista';
     $customer_name=$order->billing_first_name.' '.$order->billing_last_name;
 
     return array(

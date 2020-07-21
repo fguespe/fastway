@@ -171,7 +171,7 @@ $customer_emails_vars.='</small><br><b>Roles:</b>
 <br><small>';
 $roles=array();
 foreach ( get_editable_roles() as $role => $value ) {
-  if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' )$role='minorista';
+  if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
   if(!in_array($role,$roles))array_push($roles,$role);
 }
 $customer_emails_vars.=implode(' ',$roles).'</small>';

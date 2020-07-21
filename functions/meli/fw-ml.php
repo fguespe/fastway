@@ -37,7 +37,6 @@ function fw_ml_update_stock( $order_id ) {
         $sku=$product->get_sku(); 
         $stock=$product->get_stock_quantity();
         if(strpos( $sku, 'MLA' ) !== false){
-
           $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
           $vars=$prod['body']->variations;
           if(count($vars)>0){
