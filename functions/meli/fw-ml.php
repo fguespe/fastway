@@ -21,17 +21,7 @@ function slm_test_prod($sku){
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
     
 
-    error_log("fguespe".$sku);
-    $prod_id= wc_get_product_id_by_sku($sku);
-    error_log("prod_id".$prod_id);
-    if(!$prod_id)return;
-    $product = wc_get_product($prod_id);
-    error_log(print_r($product,true));
-    if(!$product)return;
-
-    
-    $stock=$product->get_stock_quantity();
-    if($stock<0)$stock=0;
+    $stock=0;
     error_log("fguespe".$stock);
     $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
     $vars=$prod['body']->variations;
