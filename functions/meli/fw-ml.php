@@ -6,6 +6,9 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
 }
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
+    
+    $referral_done = get_post_meta( $order_id, '_ml_done', true￼ );
+    if(!empty($referral_done￼) )return;
 
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
@@ -67,6 +70,8 @@ function fw_ml_update_stock( $order_id ) {
           else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
           error_log($note);
           $order->add_order_note( $note );
+          ## HERE you Create/update your custom post meta data to avoid repetition
+          update_post_meta( $order_id, '_ml_done', 'yes' );
           
           
         }
