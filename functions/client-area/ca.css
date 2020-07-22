@@ -454,6 +454,9 @@ display:none !important;
 /*export*/
 
 /*productos*/
+.productos .page-title-action:nth-child(3){
+	display:none
+}
 .vc_navbar,.composer-switch{
 	display: none !important;;
 }

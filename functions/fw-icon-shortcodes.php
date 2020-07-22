@@ -51,7 +51,6 @@ function fw_social_icons( $atts ) {
             $value=fw_company_data($type,false,$cant);
         }else if($type=="fb"){
             $icon="fab fa-facebook";
-
             $link=fw_company_data($type,true,$cant);
             $value="Ir al Facebook";
             $icon_color="#3A5999";
@@ -83,8 +82,6 @@ function fw_social_icons( $atts ) {
             if(empty($link))fw_company_data("googlemaps",true,$cant);
         }
 
-        error_log($link);
-        error_log($link);
         //$link=fw_company_data($icon);
         if($atts['icon_color'])$icon_color=$atts['icon_color'];
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.( (int)$atts['icon_size']+20).'px ;margin-right:5px;" href="'.$link.'">
