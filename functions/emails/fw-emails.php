@@ -376,7 +376,7 @@ function conditionals($template,$data) {
                             if($cond_all[13]=='OR')$result=$result || $result4;
                             if($cond_all[13]=='AND')$result=$result && $result4;
 
-                            throw new Exception('División por cero.');
+                            //throw new Exception('División por cero.');
                         }else if(count($cond) == 6) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
@@ -413,7 +413,7 @@ function conditionals($template,$data) {
                             if($cond_all[9]=='OR')$result=$result || $result3;
                             if($cond_all[9]=='AND')$result=$result && $result3;
 
-                            throw new Exception('División por cero.');
+                            //throw new Exception('División por cero.');
                         }else if(count($cond) == 4) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
@@ -438,7 +438,6 @@ function conditionals($template,$data) {
                             if($cond_all[5]=='OR')$result=$result1 || $result2;
                             if($cond_all[5]=='AND')$result=$result1 && $result2;
 
-                            throw new Exception('División por cero.');
                         }else if(count($cond) == 2) {
                             // Get condition
                             preg_match("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
