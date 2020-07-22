@@ -311,84 +311,193 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
 
 
 function conditionals($template,$data) {
-$conditionals=array();
+    $conditionals=array();
+    //https://gist.github.com/nathanpitman/3721008
+    if (preg_match_all('#'.'{{'.'if (.+)'.'}}'.'(.+)'.'{{'.'/if'.'}}'.'#sU', $template, $conditionals, PREG_SET_ORDER)) {
 
-if (preg_match_all('#'.'{{'.'if (.+)'.'}}'.'(.+)'.'{{'.'/if'.'}}'.'#sU', $template, $conditionals, PREG_SET_ORDER)) {
+        if(count($conditionals) > 0) {
 
-if(count($conditionals) > 0) {
+            foreach($conditionals AS $condition) {
 
-foreach($conditionals AS $condition) {
+                $raw_code = (isset($condition[0])) ? $condition[0] : FALSE;
+                $cond_str = (isset($condition[1])) ? $condition[1] : FALSE;
+                $insert = (isset($condition[2])) ? $condition[2] : '';
 
-$raw_code = (isset($condition[0])) ? $condition[0] : FALSE;
-$cond_str = (isset($condition[1])) ? $condition[1] : FALSE;
-$insert = (isset($condition[2])) ? $condition[2] : '';
+                if(!preg_match('/('.'{{'.'|'.'}}'.')/', $cond_str, $problem_cond)) {
+                    // If the the conditional statment is formated right, lets procoess it!
+                    if(!empty($raw_code) OR $cond_str != FALSE OR !empty($insert)) {
+                        // Get the two values
+                        $cond = preg_split("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str);
+                        // Do we have a valid if statment?
 
-if(!preg_match('/('.'{{'.'|'.'}}'.')/', $cond_str, $problem_cond)) {
-// If the the conditional statment is formated right, lets procoess it!
-if(!empty($raw_code) OR $cond_str != FALSE OR !empty($insert)) {
-// Get the two values
-$cond = preg_split("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str);
-
-// Do we have a valid if statment?
-if(count($cond) == 2) {
+                        if(count($cond) == 8) {
+                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
+                            $cond_m=$cond_m[0];
+                            array_push($cond, $cond_m[0]);
+                            array_push($cond, $cond_m[1]);
+                            array_push($cond, $cond_m[2]);
+                            array_push($cond, $cond_m[3]);
+                            array_push($cond, $cond_m[4]);
+                            array_push($cond, $cond_m[5]);
+                            array_push($cond, $cond_m[6]);
+                            
+                            // Remove quotes - they cause to many problems! 
+                            $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
+                            $cond[1]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[1])));
+                            $cond[2]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[2])));
+                            $cond[3]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[3])));
+                            $cond[4]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[4])));
+                            $cond[5]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[5])));
+                            $cond[6]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[6])));
+                            $cond[7]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[7])));
+                            $cond[8]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[8])));
+                            $cond[9]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[9])));
+                            $cond[10]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[10])));
+                            $cond[11]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[11])));
+                            $cond[12]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[12])));
+                            $cond[13]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[13])));
+                            $cond[14]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[14])));
  
-// Get condition
-preg_match("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
-array_push($cond, $cond_m[0]);
 
-// Remove quotes - they cause to many problems! 
-$cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
-$cond[1]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[1])));
+                            eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            eval("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[12]." \"".$cond[5]."\") ? TRUE : FALSE;");
+                            eval("\$result4 = (\"".$data[$cond[6]]."\" ".$cond[14]." \"".$cond[7]."\") ? TRUE : FALSE;");
 
-// Test condition
-eval("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[12]." \"".$cond[5]."\") ? TRUE : FALSE;");
+                            error_log("\$result4 = (\"".$data[$cond[6]]."\" ".$cond[14]." \"".$cond[7]."\") ? TRUE : FALSE;");
 
-error_log("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
-} else {
-// Looks like a if 'variable' conditional, let's make sure the variable is set
+                            if($cond_all[9]=='OR')$result=$result1 || $result2;
+                            if($cond_all[9]=='AND')$result=$result1 && $result2;
+                            if($cond_all[11]=='OR')$result=$result || $result3;
+                            if($cond_all[11]=='AND')$result=$result && $result3;
+                            if($cond_all[13]=='OR')$result=$result || $result4;
+                            if($cond_all[13]=='AND')$result=$result && $result4;
 
-/*if (isset($data->$cond_str)) {
-// Check the variable isn't empty...
-if (!empty($data->$cond_str)) {
-// This adds support for using {if var}then this{/if}
-$result = TRUE;
-} else {
- $result = FALSE;
-}
-} else {
-$result = FALSE;
-}*/
+                            throw new Exception('División por cero.');
+                        }else if(count($cond) == 6) {
+                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
+                            $cond_m=$cond_m[0];
+                            array_push($cond, $cond_m[0]);
+                            array_push($cond, $cond_m[1]);
+                            array_push($cond, $cond_m[2]);
+                            array_push($cond, $cond_m[3]);
+                            array_push($cond, $cond_m[4]);
+                            
+                            // Remove quotes - they cause to many problems! 
+                            $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
+                            $cond[1]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[1])));
+                            $cond[2]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[2])));
+                            $cond[3]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[3])));
+                            $cond[4]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[4])));
+                            $cond[5]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[5])));
+                            $cond[6]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[6])));
+                            $cond[7]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[7])));
+                            $cond[8]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[8])));
+                            $cond[9]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[9])));
+                            $cond[10]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[10])));
 
-//$result = (isset($data->$cond_str)) ? TRUE : FALSE;
+                            //error_log(print_r($cond,true));   
 
-}
-}
+                            eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[6]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            eval("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
+                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[6]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
 
-// If the condition is TRUE then show the text block
-$insert = preg_split('#'.'{{'.'else'.'}}'.'#sU', $insert);
-if($result == TRUE)
-{
-$template = str_replace($raw_code, $insert[0], $template);
-} else {
-// Do we have an else statment?
-if(is_array($insert))
-{
-$insert = (isset($insert[1])) ? $insert[1] : '';
-$template = str_replace($raw_code, $insert, $template);
-} else {
-$template = str_replace($raw_code, '', $template);
-}
-}
-} elseif(!$show_errors) {
-// Remove any if statments we can't process
-$template = str_replace($raw_code, '', $template);
-}
- 
-}
+                            if($cond_all[7]=='OR')$result=$result1 || $result2;
+                            if($cond_all[7]=='AND')$result=$result1 && $result2;
+                            if($cond_all[9]=='OR')$result=$result || $result3;
+                            if($cond_all[9]=='AND')$result=$result && $result3;
 
-}
-}
-return $template;
+                            throw new Exception('División por cero.');
+                        }else if(count($cond) == 4) {
+                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
+                            $cond_m=$cond_m[0];
+                            array_push($cond, $cond_m[0]);
+                            array_push($cond, $cond_m[1]);
+                            array_push($cond, $cond_m[2]);
+                            
+                            // Remove quotes - they cause to many problems! 
+                            $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
+                            $cond[1]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[1])));
+                            $cond[2]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[2])));
+                            $cond[3]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[3])));
+                            $cond[4]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[4])));
+
+                            //error_log(print_r($cond,true));   
+
+                            eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[4]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[6]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[4]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[6]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            
+                            if($cond_all[5]=='OR')$result=$result1 || $result2;
+                            if($cond_all[5]=='AND')$result=$result1 && $result2;
+
+                            throw new Exception('División por cero.');
+                        }else if(count($cond) == 2) {
+                            // Get condition
+                            preg_match("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
+                            array_push($cond, $cond_m[0]);
+
+                            // Remove quotes - they cause to many problems! 
+                            $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
+                            $cond[1]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[1])));
+
+                            // Test condition
+                            eval("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
+
+                            error_log("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                        } else {
+
+                            //aca solo entra si no hay comparacion
+                            // Looks like a if 'variable' conditional, let's make sure the variable is set
+                            
+                            if (isset($data->$cond_str)) {
+                                // Check the variable isn't empty...
+                                if (!empty($data->$cond_str)) {
+                                    // This adds support for using {if var}then this{/if}
+                                    $result = TRUE;
+                                } else {
+                                    $result = FALSE;
+                                }
+                            } else {
+                                $result = FALSE;
+                            }
+
+                            $result = (isset($data->$cond_str)) ? TRUE : FALSE;
+
+                        }
+                    }
+
+                    // If the condition is TRUE then show the text block
+                    $insert = preg_split('#'.'{{'.'else'.'}}'.'#sU', $insert);
+                    if($result == TRUE){
+                        $template = str_replace($raw_code, $insert[0], $template);
+                    } else {
+                        // Do we have an else statment?
+                        if(is_array($insert)){
+                            $insert = (isset($insert[1])) ? $insert[1] : '';
+                            $template = str_replace($raw_code, $insert, $template);
+                        } else {
+                            $template = str_replace($raw_code, '', $template);
+                        }
+                    }
+
+                } elseif(!$show_errors) {
+                    // Remove any if statments we can't process
+                    $template = str_replace($raw_code, '', $template);
+                }
+            
+            }
+
+        }
+    }
+    return $template;
 }
 
 ?>
