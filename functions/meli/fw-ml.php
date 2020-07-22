@@ -6,8 +6,8 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
 }
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
-    if(!empty(get_post_meta( $order_id, '_ml_done', true￼ )) )return;
-
+    if(get_post_meta( $order_id, '_ml_done' )=='yes' )return;
+    
     if(!fw_theme_mod('fw_ml_on'))return;
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
