@@ -2,7 +2,7 @@
 
 function getMailQueRecibe(){
     if(!empty(fw_theme_mod("fw_mail_desde_mails")))return fw_theme_mod("fw_mail_desde_mails");
-    else getMailQueRecibe();
+    else getMailQueEnvia();
 }
 function getMailQueEnvia(){
     if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");

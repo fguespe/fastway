@@ -1,51 +1,10 @@
 <?php
 
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
+  error_log('entra');
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
   //add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
-}/*
-function slm_test_prod($sku){
-    $usuario=getconfig(fw_theme_mod('fw_id_ml'));
-    $iduser=trim($usuario['iduser']);
-    $access_token= trim($usuario['access_token']);
-    $refresh_token = trim($usuario['refresh_token']);
-    $appId=fw_theme_mod('fw_ml_appid');
-    $secretKey=fw_theme_mod('fw_ml_appsecret');
-
-    $meli = new Meli($appId, $secretKey,$access_token,$refresh_token);
-    $nuevos=$meli->refreshAccessToken();
-    $access_token=$nuevos['body']->access_token;
-    $refresh_token=$nuevos['body']->refresh_token;
-    if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
-    
-
-    $stock=0;
-    $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
-    $vars=$prod['body']->variations;
-    if(count($vars)>0){
-      $note=$sku.' - es un prod variable' ;
-      error_log($note);
-      foreach($vars as $var){
-        $item = array(
-          "variations" => array(
-            array(
-              "id"=>$var->id,
-              "available_quantity"=>$stock
-            )
-          )
-        );
-      }
-    }else{
-      $note=$sku.' - es un prod simple' ;
-      error_log($note);
-      $item = array(
-        "available_quantity"=>$stock
-      );
-    }
-    $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
-
-    error_log(print_r($result,true));
-}*/
+}
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     if(!empty(get_post_meta( $order_id, '_ml_done', true￼ )) )return;
@@ -63,7 +22,7 @@ function fw_ml_update_stock( $order_id ) {
     $access_token=$nuevos['body']->access_token;
     $refresh_token=$nuevos['body']->refresh_token;
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
-    error_log($refresh_token)
+    
     $order = wc_get_order( $order_id );
     
     foreach ( $order->get_items() as $item_id => $item ) {
