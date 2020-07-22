@@ -2,8 +2,8 @@
 
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
-  add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
-}
+  //add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+}/*
 function slm_test_prod($sku){
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
@@ -45,7 +45,7 @@ function slm_test_prod($sku){
     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
 
     error_log(print_r($result,true));
-}
+}*/
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     if(!empty(get_post_meta( $order_id, '_ml_done', true￼ )) )return;
@@ -63,7 +63,7 @@ function fw_ml_update_stock( $order_id ) {
     $access_token=$nuevos['body']->access_token;
     $refresh_token=$nuevos['body']->refresh_token;
     if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
-    
+    error_log($refresh_token)
     $order = wc_get_order( $order_id );
     
     foreach ( $order->get_items() as $item_id => $item ) {
