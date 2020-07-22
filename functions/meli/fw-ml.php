@@ -4,8 +4,6 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
   add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 }
-slm_test_prod('MLA803117761');
-  
 function slm_test_prod($sku){
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
@@ -26,7 +24,7 @@ function slm_test_prod($sku){
     $vars=$prod['body']->variations;
     if(count($vars)>0){
       $note=$sku.' - es un prod variable' ;
-      error_log('es un prod variable');
+      error_log($note);
       foreach($vars as $var){
         $item = array(
           "variations" => array(
@@ -82,8 +80,8 @@ function fw_ml_update_stock( $order_id ) {
           $vars=$prod['body']->variations;
           if(count($vars)>0){
             $note=$sku.' - es un prod variable' ;
+            error_log($note);
             $order->add_order_note( $note);
-            error_log('es un prod variable');
             foreach($vars as $var){
               $item = array(
                 "variations" => array(
@@ -96,6 +94,7 @@ function fw_ml_update_stock( $order_id ) {
             }
           }else{
             $note=$sku.' - es un prod simple' ;
+            error_log($note);
             $order->add_order_note( $note);
 
             $item = array(
