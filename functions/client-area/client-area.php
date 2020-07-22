@@ -529,40 +529,6 @@ function custom_admin_js() {
 add_action('admin_footer', 'custom_admin_js');
 
 
-/*
-function activate_pluginname() {
-  
-  $role = get_role( 'editor' );
-  $role->add_cap( 'gform_full_access' );
-}
-// Register our activation hook
-register_activation_hook( __FILE__, 'activate_pluginname' );
-
-function deactivate_pluginname() {
- 
- $role = get_role( 'editor' );
- $role->remove_cap( 'gform_full_access' );
-}
-// Register our de-activation hook
-register_deactivation_hook( __FILE__, 'deactivate_pluginname' );
-
-function fw_redirect_after_login( $redirect_to, $request, $user ){
-    // is there a user ?
-    
-     if ( ! is_wp_error( $user ) ) {
-        // do redirects on successful login
-        if ( !$user->has_cap( 'administrator' ) && $user->has_cap( 'calendario' ) ) {
-            return admin_url('admin.php?page=bookly-calendar' );
-        } else {
-            return admin_url();
-        }
-    } else {
-        // display errors, basically
-        return $redirect_to;
-    } 
-}
-add_filter( 'login_redirect', 'fw_redirect_after_login', 10, 3 );   
-*/
 
 
 

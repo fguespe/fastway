@@ -19,17 +19,18 @@ function fw_social_icons( $atts ) {
     $value="";
     $cant=1;
     $num=0;
-    $char=substr($type, -1);
-    if(intval($char)){
-        $type=str_replace($char,"",$type);
-        $cant=intval($char);
-    }
 
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
-
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
     foreach (explode(",", $atts['type']) as $icon) {
         $type=$icon;
+
+        $char=substr($type, -1);
+        if(intval($char)){
+            $type=str_replace($char,"",$type);
+            $cant=intval($char);
+        }
+        if($atts['cant'])$cant=intval($atts['cant']);
         if($type==="phone"){
             $icon=$icons_style." fa-phone";
             $link=fw_company_data($type,true,$cant);
@@ -48,8 +49,9 @@ function fw_social_icons( $atts ) {
             $icon=$icons_style." fa-envelope";
             $link=fw_company_data($type,true,$cant);
             $value=fw_company_data($type,false,$cant);
-        }else if($type==="fb"){
+        }else if($type=="fb"){
             $icon="fab fa-facebook";
+
             $link=fw_company_data($type,true,$cant);
             $value="Ir al Facebook";
             $icon_color="#3A5999";
@@ -80,6 +82,9 @@ function fw_social_icons( $atts ) {
             $link=fw_company_data("address",true,$cant);
             if(empty($link))fw_company_data("googlemaps",true,$cant);
         }
+
+        error_log($link);
+        error_log($link);
         //$link=fw_company_data($icon);
         if($atts['icon_color'])$icon_color=$atts['icon_color'];
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.( (int)$atts['icon_size']+20).'px ;margin-right:5px;" href="'.$link.'">
@@ -170,6 +175,7 @@ function fw_data( $atts ) {
         $atts['cant']=$char;
     }
     if($atts['cant'])$cant=intval($atts['cant']);
+    
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
         $link=fw_company_data($type,true,$cant);

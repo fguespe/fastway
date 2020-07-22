@@ -192,69 +192,6 @@ function formatear($string){
 
 
 
-// remove metas
-function remove_dashboard_meta() {
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
-        //Dashboard
-        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
-        remove_meta_box( 'email_log_dashboard_widget', 'dashboard', 'normal' );
-        
-        //remove_meta_box( 'woocommerce_dashboard_status', 'dashboard', 'normal' );
-        remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
-        remove_meta_box( 'custom_help_widget', 'dashboard', 'normal' );
-        remove_meta_box( 'sendgrid_statistics_widget', 'dashboard', 'normal' );
-        remove_meta_box( 'redux_dashboard_widget', 'dashboard', 'normal' );
-        remove_meta_box( 'wp_welcome_panel', 'dashboard', 'normal' );
-         
-        //Menus
-        remove_meta_box( 'add-nth_gallery_cat', 'nav-menus', 'side' );
-        
-    }
-}
-add_action( 'admin_init', 'remove_dashboard_meta' ); 
-
-//Client area? VERFW
-function custom_remove() {      
-    if (current_user_can('shop_manager') && !current_user_can('administrator')){
-        remove_meta_box('nav-menu-theme-locations', 'nav-menus', 'side'); 
-        remove_meta_box('add-post', 'nav-menus', 'side'); 
-        remove_meta_box('add-category', 'nav-menus', 'side'); 
-        remove_meta_box('add-product-category', 'nav-menus', 'side'); 
-        remove_meta_box('add-nth_gallery_cat', 'nav-menus', 'side'); 
-        remove_meta_box('add-post-type-product', 'nav-menus', 'side'); 
-        remove_meta_box('add-post-type-nth_stblock', 'nav-menus', 'side'); 
-        remove_meta_box('add-post-type-portfolio', 'nav-menus', 'side'); 
-        remove_meta_box('add-post-type-nth_gallery', 'nav-menus', 'side'); 
-        remove_meta_box('add-post_tag', 'nav-menus', 'side'); 
-        remove_meta_box('add-post_format', 'nav-menus', 'side'); 
-        remove_meta_box('add-product_tag', 'nav-menus', 'side'); 
-        remove_meta_box('add-portfolio_cat', 'nav-menus', 'side'); 
-        remove_meta_box('add-portfolio_tag', 'nav-menus', 'side'); 
-        remove_meta_box('add-nth_gallery_cat', 'nav-menus', 'side');
-        remove_meta_box('woocommerce_endpoints_nav_link', 'nav-menus', 'side'); 
-        remove_meta_box('add-post-type-post', 'nav-menus', 'side'); 
-    }
-}
-add_action('admin_head-nav-menus.php', 'custom_remove');
-
-
-
-
-/*
-
-function wc_ninja_remove_password_strength() {
-    if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
-        wp_dequeue_script( 'wc-password-strength-meter' );
-    }
-}
-add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
-*/
-/** Remove categories from shop and other pages
- * in Woocommerce
- */
 function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
     $new_terms = array();
     $ocultar=explode(",",fw_theme_mod('fw_hide_cates'));
