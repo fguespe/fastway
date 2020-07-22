@@ -22,7 +22,6 @@ function slm_test_prod($sku){
     
 
     $stock=0;
-    error_log("fguespe".$stock);
     $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
     $vars=$prod['body']->variations;
     if(count($vars)>0){
@@ -40,7 +39,7 @@ function slm_test_prod($sku){
       }
     }else{
       $note=$sku.' - es un prod simple' ;
-
+      error_log($note);
       $item = array(
         "available_quantity"=>$stock
       );
