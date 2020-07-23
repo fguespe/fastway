@@ -608,18 +608,19 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 }
 function fw_actualizar_precios() {
     if(!empty(fw_theme_mod('fw_id_wpallexport')))echo '<span>Exportar precios actualizados <a href="/wp-admin/admin.php?page=pmxe-admin-manage&id='.fw_theme_mod("fw_id_wpallexport").'&action=update" target="_blank">Exportar</a></span><br><br>';
-    if(!empty(fw_theme_mod('fw_id_wpallimport')))echo '<span>Importar precios actualizados <a href="upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync').'" target="_blank">Importar</a></span><br>' ;
+    if(!empty(fw_theme_mod('fw_id_wpallimport')))echo '<span>Importar precios actualizados <a href="/wp-admin/upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync').'" target="_blank">Importar</a></span><br><br>' ;
+    echo '<span style="color:red">IMPORTANTE: No modificar las columnas ni los titulos de columnas, ante cualquier duda consultar a soporte.</span><br>';
 }
- function custom_dashboard_help() {
-     echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
-        <br><small>*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R</small>
-        <br><br>Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a></p>
-        Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>
-        ' ;
- }
- function custom_ml_help() {
-     echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">LINK</a>' ;
- }
+function custom_dashboard_help() {
+    echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
+    <br><small>*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R</small>
+    <br><br>Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a></p>
+    Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>
+    ' ;
+}
+function custom_ml_help() {
+    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">LINK</a>' ;
+}
  
  
 
