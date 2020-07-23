@@ -157,7 +157,7 @@ add_action('admin_menu', 'myplugin_register_options_page');
 function myplugin_options_page(){
   
 $customer_emails_vars.='
-<a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Ir al Tutorial</a><br>
+<a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Documentación</a><br>
 <b>Variables:</b>
 <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
 <br><b>Metodos de pago:</b>
@@ -258,6 +258,7 @@ if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
   <button type="button" class="tablinks" onclick="openCity(event, 'other')">Other</button>
 </div>
 
+<div class="valinfo"><?=$customer_emails_vars;?></div>
 <!-- Tab content -->
 <div id="account_emails" class="tabcontent" style="display:block;">
 <div class="tipomail">
@@ -294,9 +295,6 @@ wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textare
 </div>
 </div>
 <div id="customer_emails" class="tabcontent">
-<div class="valinfo">
-<?=$customer_emails_vars;?>
-</div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Processing order', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after payment.', 'woocommerce' );?></small>

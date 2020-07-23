@@ -333,13 +333,13 @@ function conditionals($template,$data) {
                         if(count($cond) == 8) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
-                            array_push($cond, $cond_m[0]);
-                            array_push($cond, $cond_m[1]);
-                            array_push($cond, $cond_m[2]);
-                            array_push($cond, $cond_m[3]);
-                            array_push($cond, $cond_m[4]);
-                            array_push($cond, $cond_m[5]);
-                            array_push($cond, $cond_m[6]);
+                            array_push($cond, ($cond_m[0]));
+                            array_push($cond, ($cond_m[1]));
+                            array_push($cond, ($cond_m[2]));
+                            array_push($cond, ($cond_m[3]));
+                            array_push($cond, ($cond_m[4]));
+                            array_push($cond, ($cond_m[5]));
+                            array_push($cond, ($cond_m[6]));
                             
                             // Remove quotes - they cause to many problems! 
                             $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
@@ -358,33 +358,32 @@ function conditionals($template,$data) {
                             $cond[13]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[13])));
                             $cond[14]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[14])));
  
+                            error_log(print_r($cond,true));   
 
                             eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
                             eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");
                             eval("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[12]." \"".$cond[5]."\") ? TRUE : FALSE;");
                             eval("\$result4 = (\"".$data[$cond[6]]."\" ".$cond[14]." \"".$cond[7]."\") ? TRUE : FALSE;");
 
-                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
-                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");
-                            error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[12]." \"".$cond[5]."\") ? TRUE : FALSE;");
-                            error_log("\$result4 = (\"".$data[$cond[6]]."\" ".$cond[14]." \"".$cond[7]."\") ? TRUE : FALSE;");
+                            
+                            if($cond[9]=='OR')$cond[9]="||";
+                            if($cond[9]=='AND')$cond[9]="&&";
+                            if($cond[11]=='OR')$cond[11]="||";
+                            if($cond[11]=='AND')$cond[11]="&&";
+                            if($cond[13]=='OR')$cond[13]="||";
+                            if($cond[13]=='AND')$cond[13]="&&";
 
-                            if($cond[9]=='OR')$result=$result1 || $result2;
-                            if($cond[9]=='AND')$result=$result1 && $result2;
-                            if($cond[11]=='OR')$result=$result || $result3;
-                            if($cond[11]=='AND')$result=$result && $result3;
-                            if($cond[13]=='OR')$result=$result || $result4;
-                            if($cond[13]=='AND')$result=$result && $result4;
+                            eval("\$result = \$result1 ".$cond[9]." \$result2 ".$cond[11]." \$result3 ".$cond[13]." \$result4;");
+                            error_log("\$result = \$result1 ".$cond[9]." \$result2 ".$cond[11]." \$result3 ".$cond[13]." \$result4;");
 
-                            //throw new Exception('División por cero.');
                         }else if(count($cond) == 6) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
-                            array_push($cond, $cond_m[0]);
-                            array_push($cond, $cond_m[1]);
-                            array_push($cond, $cond_m[2]);
-                            array_push($cond, $cond_m[3]);
-                            array_push($cond, $cond_m[4]);
+                            array_push($cond, ($cond_m[0]));
+                            array_push($cond, ($cond_m[1]));
+                            array_push($cond, ($cond_m[2]));
+                            array_push($cond, ($cond_m[3]));
+                            array_push($cond, ($cond_m[4]));
                             
                             // Remove quotes - they cause to many problems! 
                             $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
@@ -408,21 +407,22 @@ function conditionals($template,$data) {
                             error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
                             error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
 
-                            error_log('result1: '.$result1);
-                            error_log('result2: '.$result2);
-                            error_log('result3: '.$result3);
 
-                            if($cond[7]=='OR')$result=$result1 || $result3;
-                            if($cond[7]=='AND')$result=$result1 && $result3;
-                            if($cond[9]=='OR')$result=$result || $result3;
-                            if($cond[9]=='AND')$result=$result && $result3;
+                            if($cond[7]=='OR')$cond[7]="||";
+                            if($cond[7]=='AND')$cond[7]="&&";
+                            if($cond[9]=='OR')$cond[9]="||";
+                            if($cond[9]=='AND')$cond[9]="&&";
+
+                            eval("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
+                            error_log("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
                             
+
                         }else if(count($cond) == 4) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
-                            array_push($cond, $cond_m[0]);
-                            array_push($cond, $cond_m[1]);
-                            array_push($cond, $cond_m[2]);
+                            array_push($cond, ($cond_m[0]));
+                            array_push($cond, ($cond_m[1]));
+                            array_push($cond, ($cond_m[2]));
                             
                             // Remove quotes - they cause to many problems! 
                             $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
@@ -435,16 +435,14 @@ function conditionals($template,$data) {
 
                             eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[4]." \"".$cond[1]."\") ? TRUE : FALSE;");
                             eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[6]." \"".$cond[3]."\") ? TRUE : FALSE;");
-                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[4]." \"".$cond[1]."\") ? TRUE : FALSE;");
-                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[6]." \"".$cond[3]."\") ? TRUE : FALSE;");
-                            
+
                             if($cond[5]=='OR')$result=$result1 || $result2;
                             if($cond[5]=='AND')$result=$result1 && $result2;
 
                         }else if(count($cond) == 2) {
                             // Get condition
                             preg_match("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
-                            array_push($cond, $cond_m[0]);
+                            array_push($cond, strtolower($cond_m[0]));
 
                             // Remove quotes - they cause to many problems! 
                             $cond[0]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[0]))); 
@@ -453,7 +451,7 @@ function conditionals($template,$data) {
                             // Test condition
                             eval("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
 
-                            error_log("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            //error_log("\$result = (\"".$data[$cond[0]]."\" ".$cond[2]." \"".$cond[1]."\") ? TRUE : FALSE;");
                         } else {
 
                             //aca solo entra si no hay comparacion
