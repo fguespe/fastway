@@ -623,8 +623,8 @@ function fw_actualizar_precios() {
  
  
 
-
-add_action( 'admin_init', 'set_dashboard_meta_order' );
+//Eso acomoda de lugar los widgets
+//add_action( 'admin_init', 'set_dashboard_meta_order' );
 function set_dashboard_meta_order() {
   $id = get_current_user_id(); //we need to know who we're updating
   $meta_value = array(
