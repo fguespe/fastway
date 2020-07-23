@@ -175,7 +175,6 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
-
     if(fw_check_hide_prices()) return;
     if(empty($product->get_price())){
         if(is_product()){
@@ -206,8 +205,36 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
 
 
+function my_woo_custom_price_field() {
+    $roles=fw_theme_mod('ca_extra_roles');
+    $roles=explode(",",$roles);
 
+    foreach ($roles as $rol) {
+        woocommerce_wp_text_input(  array(
+            'id' => '_price_'.$rol,
+            'label' => __( 'Price '.$rol, 'textdomain' ),
+            'data_type' => 'price' //Let WooCommerce formats our field as price field
+        ) );
+    }
+}
 
+function misha_save_fields( $id, $post ){
+    $roles=fw_theme_mod('ca_extra_roles');
+    $roles=explode(",",$roles);
+    foreach ($roles as $rol) {
+        update_post_meta( $id, '_price_'.$rol, $_POST['_price_'.$rol] );
+    }
+}
 
-
+if(isLocalhost()){
+    add_action( 'woocommerce_product_options_pricing', 'my_woo_custom_price_field' );
+    add_action( 'woocommerce_process_product_meta', 'misha_save_fields', 10, 2 );
+    add_filter( 'woocommerce_product_get_price', 'pr_reseller_price', 10, 2 );
+    add_filter( 'woocommerce_product_variation_get_price', 'pr_reseller_price', 10, 2 );
+    add_filter( 'woocommerce_product_get_regular_price', 'pr_reseller_price', 10, 2 );
+    add_filter( 'woocommerce_product_get_sale_price', 'pr_reseller_price', 10, 2 );
+    function pr_reseller_price(){
+        return 2;
+    }
+}
 ?>

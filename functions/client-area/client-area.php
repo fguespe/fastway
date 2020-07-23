@@ -53,6 +53,15 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_id_wpallexport',
+	'label'       => __( 'ID de la exportacion', 'fastway' ),
+	'description'	=>	'Luego de subir el file, lo reidije al id de importacion de wpallimport correspondiente.',
+	'section'     => 'section_wooarea',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'woocommerce_thankyou',
 	'label'       => __( 'Columna Rol En Pedidos', 'fastway' ),

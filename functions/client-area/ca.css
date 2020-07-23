@@ -449,8 +449,25 @@ cuidado con el update notice y el error de create user
 display:none !important;
 }
 	
-/*media*/
+/*wp all export*/
 
+.wpallexport-plugin .wpallexport-wrapper{
+	width:100% ;
+}
+
+.wpallexport-section,
+.wpallexport-submit-buttons .rad3,
+.wpallexport-created-by,
+.wpallexport-header .wpallexport-logo,
+.wpallexport-header .wpallexport-title,
+.wpallexport-header .wpallexport-links,
+#export_finished h2,
+#export_finished #download-details,
+#export_finished .success-tabs,
+#export_finished button:nth-child(2),
+#tab1-content div:not(.input){
+	display:none !important;
+}
 /*export*/
 
 /*productos*/

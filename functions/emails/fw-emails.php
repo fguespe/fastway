@@ -331,7 +331,7 @@ function conditionals($template,$data) {
                         // Do we have a valid if statment?
                         error_log(count($cond) );
                         if(count($cond) == 8) {
-                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
+                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
                             array_push($cond, $cond_m[0]);
                             array_push($cond, $cond_m[1]);
@@ -378,7 +378,7 @@ function conditionals($template,$data) {
 
                             //throw new Exception('División por cero.');
                         }else if(count($cond) == 6) {
-                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
+                            preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
                             array_push($cond, $cond_m[0]);
                             array_push($cond, $cond_m[1]);

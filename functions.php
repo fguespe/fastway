@@ -223,7 +223,6 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/functions/fw-extra-functions.php';
 require get_template_directory() . '/functions/fw-shortcodes.php';
-require get_template_directory() . '/functions/fw-dashboard.php';
 require get_template_directory() . '/functions/fw-icon-shortcodes.php';
 require get_template_directory() . '/functions/fw-user-account.php';
 require get_template_directory() . '/functions/fw-blog-options.php';
@@ -293,6 +292,7 @@ register_nav_menus( array(
 
 
 if(is_plugin_active('kirki/kirki.php')){
+    require get_template_directory() . '/functions/client-area/fw-dashboard.php';
     require get_template_directory() . '/functions/client-area/client-area.php';  
 }
 add_action( 'init', 'fw_login_dev_logo', 999 );
