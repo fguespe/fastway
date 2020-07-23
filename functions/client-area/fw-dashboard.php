@@ -609,7 +609,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 function fw_actualizar_precios() {
     if(!empty(fw_theme_mod('fw_id_wpallexport')))echo '<span>Exportar precios actualizados <a href="/wp-admin/admin.php?page=pmxe-admin-manage&id='.fw_theme_mod("fw_id_wpallexport").'&action=update" target="_blank">Exportar</a></span><br><br>';
     if(!empty(fw_theme_mod('fw_id_wpallimport')))echo '<span>Importar precios actualizados <a href="/wp-admin/upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync').'" target="_blank">Importar</a></span><br><br>' ;
-    echo '<span style="color:red">IMPORTANTE: No modificar las columnas ni los titulos de columnas, ante cualquier duda consultar a soporte.</span><br>';
+    echo '<span style="color:red">IMPORTANTE: No modificar las columnas ni los titulos de columnas o puede perderse información. Ante cualquier duda por favor consultar a soporte.</span><br>';
 }
 function custom_dashboard_help() {
     echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
