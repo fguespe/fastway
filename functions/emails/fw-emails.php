@@ -13,7 +13,6 @@ function getMailQueEnvia(){
     }else if(count(explode(",",fw_theme_mod("short-fw_companyemail")))>1){
         return explode(",",fw_theme_mod("short-fw_companyemail"))[0];
     }else if(!empty(fw_theme_mod("short-fw_companyemail"))){
-        error_log(fw_theme_mod("short-fw_companyemail"));
         return fw_theme_mod("short-fw_companyemail");
     }else {
         return "pruebas+faltaponerunmail@altoweb.co";
@@ -73,7 +72,6 @@ if(fw_theme_mod("fw_action_resetmails")){
 }
 
 
-error_log("eget".getMailQueRecibe());
 function change_stock_email_recipient( $recipient, $product ) {
     return getMailQueRecibe();
 }
