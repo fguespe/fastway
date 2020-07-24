@@ -39,9 +39,9 @@ function wpb_sender_name( $original_email_from ) {
 
 
 
-add_filter( 'woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
-add_filter( 'woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
-add_filter( 'woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
+add_filter('woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
+add_filter('woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
+add_filter('woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
 add_filter('woocommerce_email_recipient_new_order', 'change_stock_email_recipient', 1, 2);
 add_filter('woocommerce_email_recipient_failed_order', 'change_stock_email_recipient', 1, 2);
 add_filter('woocommerce_email_recipient_cancelled_order', 'change_stock_email_recipient', 1, 2);
