@@ -603,7 +603,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
     <span>Metodos de Pago:  <a href="admin.php?page=wc-settings&tab=checkout" class="btn"  >Configurar</a></span><br><br>
     <span>Exportar formularios:  <a href="admin.php?page=gf_export" class="btn"  >Ir a exportar</a></span><br><br>
     <span>Exportar usuarios/pedidos:  <a href="admin.php?page=wc_customer_order_csv_export" class="btn"  >Ir a exportar</a></span><br><br>
-    <span>Menues del sitio:  <a href="nav-menus.php" class="btn"  >Configurar</a></span><br><br>
+    <span>Menús del sitio:  <a href="nav-menus.php" class="btn"  >Configurar</a></span><br><br>
     <span>Mails Enviados:  <a href="/wp-admin/admin.php?page=email-log" class="btn"  >Ver registros</a></span><br><br>
     </p>' ;
 }
