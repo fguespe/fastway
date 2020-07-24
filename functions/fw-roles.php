@@ -141,6 +141,7 @@ function fw_allow_users_to_shopmanager() {
     $role = get_role( 'shop_manager' );
     $role->add_cap( 'edit_theme_options' ); 
     $role->add_cap( 'manage_options' ); 
+    $role->add_cap( 'manage_email_logs' ); 
     $role->add_cap( 'add_users' ); 
     $role->add_cap( 'edit_dashboard' ); 
     $role->add_cap( 'create_users' ); 

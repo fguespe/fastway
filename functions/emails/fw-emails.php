@@ -2,7 +2,7 @@
 
 function getMailQueRecibe(){
     if(!empty(fw_theme_mod("fw_mail_desde_mails")))return fw_theme_mod("fw_mail_desde_mails");
-    else getMailQueEnvia();
+    else return getMailQueEnvia();
 }
 function getMailQueEnvia(){
     if(fw_theme_mod("fw_general_from_email"))return fw_theme_mod("fw_general_from_email");
@@ -13,8 +13,11 @@ function getMailQueEnvia(){
     }else if(count(explode(",",fw_theme_mod("short-fw_companyemail")))>1){
         return explode(",",fw_theme_mod("short-fw_companyemail"))[0];
     }else if(!empty(fw_theme_mod("short-fw_companyemail"))){
+        error_log(fw_theme_mod("short-fw_companyemail"));
         return fw_theme_mod("short-fw_companyemail");
-    }else return "pruebas+faltaponerunmail@altoweb.co";
+    }else {
+        return "pruebas+faltaponerunmail@altoweb.co";
+    }
 }
 
 function getNombreQueEnvia(){
@@ -40,9 +43,9 @@ function wpb_sender_name( $original_email_from ) {
 add_filter( 'woocommerce_email_recipient_backorder', 'change_stock_email_recipient', 10, 2 ); // For Backorders notification
 add_filter( 'woocommerce_email_recipient_low_stock', 'change_stock_email_recipient', 10, 2 ); // For Low stock notification
 add_filter( 'woocommerce_email_recipient_no_stock', 'change_stock_email_recipient', 10, 2 ); // For No stock notification
-add_filter('woocommerce_email_recipient_new_order', 'orden_nueva', 1, 2);
-add_filter('woocommerce_email_recipient_failed_order', 'email_orden_cancelada', 1, 2);
-add_filter('woocommerce_email_recipient_cancelled_order', 'email_orden_fallida', 1, 2);
+add_filter('woocommerce_email_recipient_new_order', 'change_stock_email_recipient', 1, 2);
+add_filter('woocommerce_email_recipient_failed_order', 'change_stock_email_recipient', 1, 2);
+add_filter('woocommerce_email_recipient_cancelled_order', 'change_stock_email_recipient', 1, 2);
 
 if(fw_theme_mod("fw_action_resetmails")){
     
@@ -70,23 +73,9 @@ if(fw_theme_mod("fw_action_resetmails")){
 }
 
 
+error_log("eget".getMailQueRecibe());
 function change_stock_email_recipient( $recipient, $product ) {
-    $recipients = ", ".getMailQueRecibe();
-    return $recipients;
-}
-function orden_nueva( $recipient, $order ) {
-    $recipients = ", ".getMailQueRecibe();
-    return $recipients;
-}
-
-function email_orden_cancelada( $recipient, $order ) {
-    $recipients = ", ".getMailQueRecibe();
-    return $recipients;
-}
-
-function email_orden_fallida( $recipient, $order ) {
-    $recipients = ", ".getMailQueRecibe();
-    return $recipients;
+    return getMailQueRecibe();
 }
 
 
