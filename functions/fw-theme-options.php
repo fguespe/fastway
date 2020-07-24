@@ -2140,7 +2140,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca_extra_roles',
 	'label'       => __( 'Extra roles', 'fastway' ),
-	'description'	=>	'Nombre del rol, separados con ",".',
+	'description'	=>	'Nombre del rol, sin espacios, minuscula y separados con ",". Ej: mayorista',
 	'section'     => 'section_woo_roles',
 	'default'     => '',
 ) );
