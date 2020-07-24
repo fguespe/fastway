@@ -415,7 +415,7 @@ function conditionals($template,$data) {
 
                             eval("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
                             error_log("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
-                            
+                            error_log($result);
 
                         }else if(count($cond) == 4) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);
