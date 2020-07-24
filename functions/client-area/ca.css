@@ -440,7 +440,7 @@ cuidado con el update notice y el error de create user
 .notice-success{
 	display:block!important;
 }*/
-.el-pro-msg{
+#el-pro-msg{
 	display: none !important;
 }
 /*ENVIRA*/
