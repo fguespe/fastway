@@ -455,7 +455,9 @@ cuidado con el update notice y el error de create user
 .envira-albums-settings{
 display:none !important;
 }
-
+#wp-admin-bar-view{
+	display: none !important;
+}
 #authordiv{
 	display: none !important;
 }
