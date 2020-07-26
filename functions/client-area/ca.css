@@ -444,10 +444,13 @@ cuidado con el update notice y el error de create user
 	display: none !important;
 }
 /*ENVIRA*/
+.envira-intro,
 .post-type-envira .error,
-.post-type-envira .envira-header,
+.post-type-envira_album .error,
+#envira-header,
 .post-type-envira .page-title-action,
-.post-type-envira h1{
+.post-type-envira_album .page-title-action
+h1{
 display:none !important;
 }
 	
