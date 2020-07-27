@@ -12,7 +12,6 @@ if(fw_theme_mod('fw_client_admin_columnarol')){
   add_action('manage_posts_custom_column', 'add_column_data', 20, 2);
   function add_column_data($column_key, $order_id) {
       if ('customer_role' != $column_key)return;
-      
       $customer = new WC_Order( $order_id );
       if($customer->user_id != ''){
               $user = new WP_User( $customer->user_id );
@@ -25,3 +24,32 @@ if(fw_theme_mod('fw_client_admin_columnarol')){
       }
   }
 }
+
+
+if(fw_theme_mod('fw_crear_cuenta_a_sendy')){
+  function fw_crear_cuenta_a_sendy( $user_id ) {
+    $user    = get_userdata( $user_id );
+    $email   = $user->user_email;
+
+    $post_url = 'http://app.albertmail.com.ar/subscribe';
+    $body = array('email' => $email,'list' => fw_theme_mod('fw_crear_cuenta_a_sendy'));
+    $request = new WP_Http();
+    $response = $request->post($post_url, array('body' => $body));
+    
+  }
+  add_action('user_register', 'fw_crear_cuenta_a_sendy');
+}
+
+/*
+add_action('gform_after_submission', 'post_to_third_party', 10, 2);
+function post_to_third_party($entry, $form) {
+    error_log(print_r($form,true));
+    $post_url = 'http://app.albertmail.com.ar/subscribe';
+    $body = array(
+        'email' => $entry['4'],
+        'list' => 'mDYPUij8vdt4gLZzsrv7aw'
+        );
+    $request = new WP_Http();
+    $response = $request->post($post_url, array('body' => $body));
+}
+*/

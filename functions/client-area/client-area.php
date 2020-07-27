@@ -18,7 +18,7 @@ Kirki::add_section( 'section_clientwidgets', array(
 ) );
 
 Kirki::add_section( 'section_client_admin', array(
-    'title'          => __( 'Admin', 'fastway' ),
+    'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_clientarea',
 ) );
@@ -71,6 +71,14 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_crear_cuenta_a_sendy',
+	'label'       => __( 'Mandar cuenta a sendy', 'fastway' ),
+	'section'     => 'section_client_admin',
+	'default'     => '',
 ) );
 
 /*CLIENT AREA WIDGETS*/
