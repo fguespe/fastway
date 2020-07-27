@@ -16,7 +16,7 @@ if(fw_theme_mod('fw_client_admin_columnarol')){
       if($customer->user_id != ''){
               $user = new WP_User( $customer->user_id );
               if ( !empty( $user->roles ) && is_array( $user->roles ) ) {
-                $roles = ( array ) $the_user->roles;
+                $roles = ( array ) $user->roles;
                 $role=$roles[0];
                 if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest'  || $role == '' )$role='minorista';
                 echo $role;
