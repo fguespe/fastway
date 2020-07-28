@@ -43,7 +43,8 @@ if(fw_theme_mod('fw_crear_cuenta_a_sendy')){
 /*
 add_action('gform_after_submission', 'post_to_third_party', 10, 2);
 function post_to_third_party($entry, $form) {
-    error_log(print_r($form,true));
+    error_log($entry['form_id']);
+
     $post_url = 'http://app.albertmail.com.ar/subscribe';
     $body = array(
         'email' => $entry['4'],
@@ -51,5 +52,4 @@ function post_to_third_party($entry, $form) {
         );
     $request = new WP_Http();
     $response = $request->post($post_url, array('body' => $body));
-}
-*/
+}*/

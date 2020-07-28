@@ -2,11 +2,11 @@
 
 Kirki::add_panel( 'panel_clientarea', array(
 
-    'title'       => __( 'Fastway Client Area', 'fastway' ),
+    'title'       => __( 'Altoweb Clients', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 Kirki::add_section( 'section_clientarea', array(
-    'title'          => __( 'General', 'fastway' ),
+    'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_clientarea',
 
