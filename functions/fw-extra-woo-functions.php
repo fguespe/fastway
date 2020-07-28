@@ -73,8 +73,8 @@ function fw_cuotas($atts = []){
   $cuotas=floatval($atts['cant']);
   $precio=floatval($product->get_sale_price());
   if( $product->is_type('variable') ){
-    $precio = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
-    $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
+    $precio = $product->get_variation_regular_price( 'min', true );
+    $sale_price = $product->get_variation_sale_price( 'min', true );
     if($sale_price>0)$precio= $sale_price;
   }
 
