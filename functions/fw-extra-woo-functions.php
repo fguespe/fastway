@@ -72,9 +72,10 @@ function fw_cuotas($atts = []){
   if($atts['cant']=='general')$atts['cant']=fw_theme_mod('fw_cuotas_general');
   $cuotas=floatval($atts['cant']);
   $precio=floatval($product->get_sale_price());
+  
   if( $product->is_type('variable') ){
-    $precio = $product->get_variation_regular_price( 'min', true );
-    $sale_price = $product->get_variation_sale_price( 'min', true );
+    $precio = floatval($product->get_variation_regular_price( 'min', true ));
+    $sale_price = floatval($product->get_variation_sale_price( 'min', true ));
     if($sale_price>0)$precio= $sale_price;
   }
 
