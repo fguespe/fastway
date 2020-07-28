@@ -172,7 +172,6 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         $sale_price    = $product->get_sale_price();
     }
     if($regular_price){
-
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
     if(fw_check_hide_prices()) return;
