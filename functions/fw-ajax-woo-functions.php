@@ -136,7 +136,7 @@ function fw_product_is_purchasable($product){
       $variation_ids = $product->get_children();
       foreach( $variation_ids as $variation_id ){
           $variation = wc_get_product($variation_id);
-          if( $variation->is_in_stock() )
+          if($variation && $variation->is_in_stock() )
               $count_in_stock++;
       }
   }
