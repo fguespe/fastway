@@ -383,6 +383,15 @@ function pasa_filtro_rol($rolesstring){
   return true;
 }
 
+add_shortcode('min_purchase','get_min_purchase');
+function get_min_purchase(){
+  return fw_theme_mod('fw_min_purchase'); 
+}
+add_shortcode('min_repurchase','get_min_repurchase');
+function get_min_repurchase(){
+  return fw_theme_mod('fw_min_repurchase2'); 
+}
+
 
 function has_min_purchase(){
   if(empty(fw_theme_mod('fw_min_purchase')))return false;
