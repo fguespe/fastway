@@ -14,7 +14,7 @@ if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees'
 function fw_apply_lili_discount( WC_Cart $cart ){
     if(fw_is_admin())return;
     if(esMultitienda()) return;
-    if (!empty($cart->applied_coupons))return;
+    if (!empty($cart->applied_coupons) && !fw_theme_mod('fw_lili_discount_cupones'))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     if( $cart->cart_contents_count < $cuantos ) return;
     

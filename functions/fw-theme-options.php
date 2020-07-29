@@ -3624,6 +3624,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Si hay que comprar 3 para recibir uno gratis, entonces poner 3.'
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_lili_discount_cupones',
+	'label'       => __( 'Admite cupones', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_percentage',
 	'label'       => __( 'Porcentage en numeros', 'fastway' ),

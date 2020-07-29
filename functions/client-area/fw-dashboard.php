@@ -230,6 +230,7 @@ function fw_widget_lili_discount_dash(){
     $cant=$cant."x".($cant-1);
     $estado=fw_theme_mod('fw_lili_discount')?"Activo":"Inactivo";
     $color=$estado=='Activo'?'green':'red';
+    $cupones=fw_theme_mod('fw_lili_discount_cupones')?"Si":"No";
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
 
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
@@ -237,6 +238,7 @@ function fw_widget_lili_discount_dash(){
     <div class='fw_widget_dash'>
         <label>Estado: $estado</label><br>
         <label>Aplica a: $cates</label><br>
+        <label>Admite cupones: $cupones</label><br>
         <label>Descuento: $porcentage % al mas barato</label><br>
         <label>Cantidad: $cant</label>
         <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">Cambiar</a>
@@ -256,6 +258,7 @@ function fw_widget_lili_discount_dash_handler(){
         set_theme_mod('fw_lili_discount_categories',$_POST['fw_widget_lili_discount_options']['categories']);
         set_theme_mod('fw_lili_discount_cant',$_POST['fw_widget_lili_discount_options']['cant']);
         set_theme_mod('fw_lili_discount_percentage',$_POST['fw_widget_lili_discount_options']['percentage']);
+        set_theme_mod('fw_lili_discount_cupones',$_POST['fw_widget_lili_discount_options']['cupones']);
     }
 
     $estado=fw_theme_mod('fw_lili_discount')?true:false;
@@ -264,6 +267,7 @@ function fw_widget_lili_discount_dash_handler(){
     <div>
         <label>Estado: <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
         <label>Categorias: <input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
+        <label>Cupones: <input type=\"checkbox\" name=\"fw_widget_lili_discount_options[cupones]\" id=\"cupones\" ".fw_theme_mod('fw_lili_discount_cupones')." ></label><br>
         <label>Cantidad minima: <input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
         <label>Descuento (%):<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
         <small>Instrucciones:<br>
