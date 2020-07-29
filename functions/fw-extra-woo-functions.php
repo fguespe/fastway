@@ -389,7 +389,7 @@ function get_min_purchase(){
 }
 add_shortcode('min_repurchase','get_min_repurchase');
 function get_min_repurchase(){
-  return fw_theme_mod('fw_min_repurchase2'); 
+  return fw_theme_mod('fw_min_purchase2'); 
 }
 
 
