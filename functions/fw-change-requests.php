@@ -73,7 +73,7 @@ if(fw_theme_mod('fw_forms_a_sendy')){
         error_log('MAIL EXISTE'.$email);
         break;
       }
-      if($form_id==$entry['form_id'])sendtoSendy($sendy_list,$email);
+      else if($form_id==$entry['form_id'])sendtoSendy($sendy_list,$email);
     }
   }
 }
