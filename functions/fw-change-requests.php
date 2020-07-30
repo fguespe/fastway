@@ -30,26 +30,50 @@ if(fw_theme_mod('fw_crear_cuenta_a_sendy')){
   function fw_crear_cuenta_a_sendy( $user_id ) {
     $user    = get_userdata( $user_id );
     $email   = $user->user_email;
+    $sendy_list=fw_theme_mod('fw_crear_cuenta_a_sendy');
 
-    $post_url = 'http://app.albertmail.com.ar/subscribe';
-    $body = array('email' => $email,'list' => fw_theme_mod('fw_crear_cuenta_a_sendy'));
-    $request = new WP_Http();
-    $response = $request->post($post_url, array('body' => $body));
-    
+    sendtoSendy($sendy_list,$email);
   }
   add_action('user_register', 'fw_crear_cuenta_a_sendy');
 }
 
-/*
-add_action('gform_after_submission', 'post_to_third_party', 10, 2);
-function post_to_third_party($entry, $form) {
-    error_log($entry['form_id']);
+function sendtoSendy($sendy_list,$email){
+  error_log('sendy_list:'.$sendy_list);
+  error_log('email:'.$email);
+	$your_installation_url = 'http://app.albertmail.com.ar';
+	$api_key = 'JUu2WMpouY4wjSFvc2SF'; //Can be retrieved from your Sendy's main settings
+	//Subscribe
+	$postdata = http_build_query(
+	    array(
+        'email' => $email,
+        'list' => $sendy_list,
+        'api_key' => $api_key,
+        'boolean' => 'true'
+	    )
+	);
+	$opts = array('http' => array('method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata));
+	$context  = stream_context_create($opts);
+	$result = file_get_contents($your_installation_url.'/subscribe', false, $context);
+}
 
-    $post_url = 'http://app.albertmail.com.ar/subscribe';
-    $body = array(
-        'email' => $entry['4'],
-        'list' => 'mDYPUij8vdt4gLZzsrv7aw'
-        );
-    $request = new WP_Http();
-    $response = $request->post($post_url, array('body' => $body));
-}*/
+
+
+if(fw_theme_mod('fw_forms_a_sendy')){
+  add_action('gform_after_submission', 'post_to_third_party', 10, 2);
+  function post_to_third_party($entry, $form) {
+    $integraciones=explode("|",fw_theme_mod('fw_forms_a_sendy'));
+    foreach ($integraciones as $forma){
+      $formm=explode(",",$forma);
+      $form_id=$formm[0];
+      $field_number=$formm[1];
+      $sendy_list=$formm[2];
+      $email=$entry[$field_number];
+
+      if(fw_theme_mod('fw_crear_cuenta_a_sendy') && email_exists($email)){
+        error_log('MAIL EXISTE'.$email);
+        break;
+      }
+      if($form_id==$entry['form_id'])sendtoSendy($sendy_list,$email);
+    }
+  }
+}

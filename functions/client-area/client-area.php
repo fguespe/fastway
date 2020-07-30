@@ -17,12 +17,13 @@ Kirki::add_section( 'section_clientwidgets', array(
     'panel'          => 'panel_clientarea',
 ) );
 
+if(is_webaltoweb()){
 Kirki::add_section( 'section_client_admin', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_clientarea',
 ) );
-
+}
 /*MELI*/
 
 
@@ -81,6 +82,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_forms_a_sendy',
+	'label'       => __( 'Mandar forms a sendy', 'fastway' ),
+	'section'     => 'section_client_admin',
+    'default'     => '',
+    'description' => 'form_id,field_number,sendy_list|form_id,field_number,sendy_list|'
+) );
+
 /*CLIENT AREA WIDGETS*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -128,17 +138,19 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_widget_lili_discount',
-	'label'       => __( 'Lili Discount (CR)', 'fastway' ),
-	'section'     => 'section_clientwidgets',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
+if(is_webaltoweb()){
+    Kirki::add_field( 'theme_config_id', array(
+        'type'        => 'switch',
+        'settings'    => 'fw_widget_lili_discount',
+        'label'       => __( 'Lili Discount (CR)', 'fastway' ),
+        'section'     => 'section_clientwidgets',
+        'default'     => 0,
+        'choices' => array(
+            'on'  => __( 'Enable', 'fastway' ),
+            'off' => __( 'Disable', 'fastway' )
+        )
+    ) );
+}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

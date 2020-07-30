@@ -3,6 +3,11 @@
 if ( ! function_exists( 'get_editable_roles' ) ) {
   require_once ABSPATH . 'wp-admin/includes/user.php';
 }
+
+function is_webaltoweb(){
+  if(wp_get_current_user()->user_login=='webaltoweb' && is_super_admin())return true;
+  return false;
+}
 function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();

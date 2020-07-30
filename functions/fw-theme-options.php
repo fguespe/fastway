@@ -1189,29 +1189,30 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_ml_stock_web_a_ml',
-	'label'       => __( 'Descontar stock web->ml', 'fastway' ),
-	'section'     => 'section_meli',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_ml_stock_ml_a_web',
-	'label'       => __( 'Descontar stock ml->web', 'fastway' ),
-	'section'     => 'section_meli',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
+if(is_webaltoweb()){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_ml_stock_web_a_ml',
+		'label'       => __( 'Descontar stock web->ml (CR)', 'fastway' ),
+		'section'     => 'section_meli',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_ml_stock_ml_a_web',
+		'label'       => __( 'Descontar stock ml->web (CR)', 'fastway' ),
+		'section'     => 'section_meli',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+}
 
 
 /*EMAIL*/
@@ -1953,6 +1954,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+if(is_webaltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_fields',
@@ -1965,6 +1967,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
+}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -2005,6 +2008,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+if(is_webaltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_groups',
@@ -2017,6 +2021,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    1 => __( 'Enable', 'fastway' )
 	)
 ) );
+	}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_opt_color_checkout',

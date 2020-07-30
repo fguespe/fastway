@@ -81,7 +81,6 @@ function fw_cuotas($atts = []){
     if($sale_price>0)$precio= $sale_price;
   }
 
-  error_log('sale con'.$precio);
   
   $precio=round($precio/$cuotas);
   if($precio>0)echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
