@@ -61,7 +61,7 @@ function sendtoSendy($sendy_list,$email){
 if(fw_theme_mod('fw_forms_a_sendy')){
   add_action('gform_after_submission', 'post_to_third_party', 10, 2);
   function post_to_third_party($entry, $form) {
-    $integraciones=explode("|",fw_theme_mod('fw_forms_a_sendy'));
+    $integraciones=explode("|",trim(fw_theme_mod('fw_forms_a_sendy')));
     foreach ($integraciones as $forma){
       $formm=explode(",",$forma);
       $form_id=$formm[0];
