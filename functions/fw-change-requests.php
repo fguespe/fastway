@@ -69,10 +69,7 @@ if(fw_theme_mod('fw_forms_a_sendy')){
       $sendy_list=$formm[2];
       $email=$entry[$field_number];
 
-      if(fw_theme_mod('fw_crear_cuenta_a_sendy') && email_exists($email)){
-        error_log('MAIL EXISTE'.$email);
-        break;
-      }
+      if(fw_theme_mod('fw_crear_cuenta_a_sendy') && email_exists($email))continue;
       else if($form_id==$entry['form_id'])sendtoSendy($sendy_list,$email);
     }
   }
