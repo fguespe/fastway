@@ -26,9 +26,9 @@ Kirki::add_config( 'theme_config_id', array(
 	'option_type'   => 'theme_mod',
 ) );
 
-Kirki::add_panel( 'panel_fastwayinit', array(
+Kirki::add_panel( 'panel_fastwaystyle', array(
 
-    'title'       => __( 'Fastway Init', 'fastway' ),
+    'title'       => __( 'Fastway Styling', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
@@ -103,26 +103,26 @@ Kirki::add_section( 'section_seo', array(
 Kirki::add_section( 'section_layouts', array(
     'title'          => __( 'Layouts', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwayinit',
+    'panel'          => 'panel_fastwaystyle',
+
+) );
+Kirki::add_section( 'section_buttons', array(
+    'title'          => __( 'Buttons', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaystyle',
 
 ) );
 Kirki::add_section( 'section_colors', array(
     'title'          => __( 'Color Scheme', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwayinit',
+    'panel'          => 'panel_fastwaystyle',
 
 ) );
 
 Kirki::add_section( 'section_typos', array(
     'title'          => __( 'Typography', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwayinit',
-
-) );
-Kirki::add_section( 'section_data', array(
-    'title'          => __( 'Company Data', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwayinit',
+    'panel'          => 'panel_fastwaystyle',
 
 ) );
 
@@ -1434,6 +1434,96 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+/*BUTTONS*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_primary_b_color',
+	'label'       => __( 'Primary background color', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => 'var(--main)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--primary-background);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--primary-background',
+		),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_primary_color',
+	'label'       => __( 'Primary color', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--primary-color);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--primary-color',
+		),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_primary_b_color_hover',
+	'label'       => __( 'Primary background color (hover)', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--primary-background-hover);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--primary-background-hover',
+		),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_primary_color_hover',
+	'label'       => __( 'Primary color (hover) ', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => 'var(--man)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--primary-color-hover);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--primary-color-hover',
+		),
+	),
+) );
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*COLOR SCHEME*/

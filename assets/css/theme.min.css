@@ -3788,14 +3788,36 @@ body .wpb_content_element {
 }
 
 .fw_boton {
-  display: block;
-  width: 115px;
-  background: var(--main);
-  padding: 10px;
   text-align: center;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+  padding: 12px 30px;
   border-radius: 5px;
-  color: white !important;
-  font-weight: bold;
+  font-size: 16px;
+}
+
+a, button {
+  transition: all 0.4s ease;
+}
+
+.fw_boton.primary {
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+}
+
+.fw_boton.primary:hover {
+  background-color: var(--primary-background-hover);
+  color: var(--primary-color-hover);
+}
+
+.fw_boton.secondary:hover {
+  background-color: var(--secondary-background-hover);
+  color: var(--secondary-color-hover);
+}
+
+.fw_boton.secondary {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
 }
 
 .footernewsletter label {

@@ -5,6 +5,13 @@ Kirki::add_panel( 'panel_clientarea', array(
     'title'       => __( 'Altoweb Clients', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
+
+Kirki::add_section( 'section_data', array(
+    'title'          => __( 'Company Data', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_clientarea',
+
+) );
 Kirki::add_section( 'section_clientarea', array(
     'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
