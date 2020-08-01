@@ -1481,7 +1481,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_button_primary_b_color_hover',
 	'label'       => __( 'Primary background color (hover)', 'fastway' ),
 	'section'     => 'section_buttons',
-	'default'     => '#fff',
+	'default'     => 'var(--second)',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -1501,7 +1501,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_button_primary_color_hover',
 	'label'       => __( 'Primary color (hover) ', 'fastway' ),
 	'section'     => 'section_buttons',
-	'default'     => 'var(--man)',
+	'default'     => '#fff',
 	'choices'     => array(
 		'alpha' => true,
 	),

@@ -96,32 +96,36 @@ function fw_social_icons( $atts ) {
 }
 
 
-add_shortcode('fw_only_icon', 'fw_only_icon', 10, 2);
-function fw_only_icon( $atts ) {
+add_shortcode('fw_btn', 'fw_btn');
+function fw_btn( $atts ) {
     //Este pone iconos
     $atts = shortcode_atts(
         array(
-            'type' => '',
+            'icon' => '',
+            'btn_type'=> 'primary',
             'icon_align' => 'center',
-            'icon_size' =>  '',
-            'icon_color' =>  'var(--main)',
+            'text' =>  '',
+            'link' =>  '',
             'el_class' =>  '',
             'el_id' =>  '',
             //Depreceated
                 
     ), $atts );
 
-    $type=$atts['type'];
-    $icons_style=fw_theme_mod("fw_icons_style");
+    $btn_type=$atts['btn_type'];
+    $type=$atts['icon'];
+    $text=$atts['text'];
 
-    //Puso directo las clases
+    //FA
+    $icons_style=fw_theme_mod("fw_icons_style");
     if( strpos( $type, 'fa-' ) === false)$type='fa-'.$type;
     $type=$icons_style.' '.$type;
 
-    $iconclass=" fw_icon ".$atts['el_class'].' ';
-    $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
-    $first.='<i class="'.$type.'" style="color:'.$atts['icon_color'].';font-size:'.$atts['icon_size'].'px !important;"></i>';
-    $first.="</div>";
+
+    $iconclass=" fw_btn ".$btn_type." ".$atts['el_class'].' ';
+    $first.='<a id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
+    $first.='<i class="'.$type.'" ></i> '.$text;
+    $first.="</a>";
     
     
     return $first;

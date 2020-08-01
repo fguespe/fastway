@@ -3797,7 +3797,8 @@ body .wpb_content_element {
 }
 
 
-.fw_boton{
+.fw_btn{
+    display:inline-block;
     text-align: center;
     background-color: var(--primary-background);
     color: var(--primary-color);
@@ -3808,19 +3809,27 @@ body .wpb_content_element {
 a, button {
   transition: all .4s ease;
 }
-.fw_boton.primary {
+.fw_btn.primary  {
   background-color: var(--primary-background);
   color: var(--primary-color);
 } 
-.fw_boton.primary:hover {
+.fw_btn.primary i{
+  color: var(--primary-color);
+}
+.fw_btn.primary:hover {
   background-color: var(--primary-background-hover);
   color: var(--primary-color-hover);
 } 
-.fw_boton.secondary {
+.fw_btn.secondary {
   background-color: var(--secondary-background);
   color: var(--secondary-color);
 } 
-.fw_boton.secondary:hover {
+
+.fw_btn.secondary i{
+  color: var(--secondary-color);
+  
+}
+.fw_btn.secondary:hover {
   background-color: var(--secondary-background-hover);
   color: var(--secondary-color-hover);
 }

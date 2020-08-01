@@ -705,6 +705,79 @@ function vc_social_icons() {
 }
 
 
+add_action( 'vc_before_init', 'vc_fw_button' );//Prds de categoria
+function vc_fw_button() {
+    vc_map( array(
+            "name" => __("FW Button", 'fastway'),
+            'base' => 'fw_btn',
+            'description' => __('FW Button', 'fastway'), 
+            'category' => __('Fastway Buttons', 'fastway'),   
+            "controls" => "full",
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                "params" => array(
+
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Icon"),
+                    "param_name"  => "icon",
+                    'description' => 'Font awesome icon name: https://fontawesome.com/icons',
+                    "admin_label" => true,
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Text"),
+                    "param_name"  => "text",
+                    "admin_label" => true,
+                ),
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Type"),
+                    "param_name"  => "btn_type",
+                    
+                    "value" => array(
+                        "Primary" =>"primary",
+                        "Secondary"=>"secondary"
+                    ),
+                    "std" => 'primary', 
+                ),
+                   
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Alignment"),
+                    "param_name"  => "icon_align",
+                    
+                    "value" => array(
+                        "Left" =>"left",
+                        "Center"=>"center",
+                        "Right"=>"right",
+                    ),
+                    "std" => 'center', //Default Red color
+                ),
+                    
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Link"),
+                    "param_name"  => "link",
+                ),
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),  
+                  
+                
+                
+            )
+    ) );
+
+}
 
 add_action( 'vc_before_init', 'vc_only_icon' );//Prds de categoria
 function vc_only_icon() {
