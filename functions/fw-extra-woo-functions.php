@@ -1,6 +1,18 @@
 <?php
 
 
+function parser_mayorista($valu='a:1:{s:9:"mayorista";s:6:"0";}'){
+  $data=json_decode($value);
+  $number=$data->mayorista;
+  error_log('entra');
+  if(empty($number) && $value[0]=='a' && $value[1]==':'){
+    preg_match_all('/"([^"]+)"/', $value, $m);
+    $number=json_encode($m[0][1]);
+    $number=preg_replace("/[^0-9.]/", "", $number);
+  }
+  return $number;
+}
+
 
 function esMultitienda(){
     if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
