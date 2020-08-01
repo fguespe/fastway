@@ -1436,6 +1436,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*BUTTONS*/
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_button_primary_b_color',
@@ -1514,6 +1515,87 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_secondary_b_color',
+	'label'       => __( 'Secondary background color', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => 'var(--main)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--secondary-background);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--secondary-background',
+		),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_secondary_color',
+	'label'       => __( 'Secondary color', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--secondary-color);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--secondary-color',
+		),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_secondary_b_color_hover',
+	'label'       => __( 'Secondary background color (hover)', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => '#fff',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--secondary-background-hover);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--secondary-background-hover',
+		),
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'fw_button_secondary_color_hover',
+	'label'       => __( 'Secondary color (hover) ', 'fastway' ),
+	'section'     => 'section_buttons',
+	'default'     => 'var(--man)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'description'=>'var(--secondary-color-hover);',
+	'transport'   => 'auto',
+	'output' => array(
+		array(
+			'element'  => ':root',
+			'property' => '--secondary-color-hover',
+		),
+	),
+) );
 
 
 

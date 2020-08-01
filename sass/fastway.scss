@@ -3816,14 +3816,14 @@ a, button {
   background-color: var(--primary-background-hover);
   color: var(--primary-color-hover);
 } 
-.fw_boton.secondary:hover {
-  background-color: var(--secondary-background-hover);
-  color: var(--secondary-color-hover);
-}
 .fw_boton.secondary {
   background-color: var(--secondary-background);
   color: var(--secondary-color);
 } 
+.fw_boton.secondary:hover {
+  background-color: var(--secondary-background-hover);
+  color: var(--secondary-color-hover);
+}
 
 
 
