@@ -37,10 +37,11 @@ function fw_ml_update_stock( $order_id ) {
           error_log('stock:'.$stock);
           $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
           $vars=$prod['body']->variations;
+          $permalink=$prod['body']->permalink;
           if(count($vars)>0){
             $note=$sku.' - es un prod variable' ;
             error_log($note);
-            $order->add_order_note( $note);
+            $order->add_order_note($note);
             foreach($vars as $var){
               $item = array(
                 "variations" => array(
@@ -56,15 +57,13 @@ function fw_ml_update_stock( $order_id ) {
             error_log($note);
             $order->add_order_note( $note);
 
-            $item = array(
-              "available_quantity"=>$stock
-            );
+            $item = array("available_quantity"=>$stock);
           }
           $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
           
           if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock;
           else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
-          error_log($note);
+          $note.='\n'+$permalink;
           $order->add_order_note( $note );
 
           ## HERE you Create/update your custom post meta data to avoid repetition

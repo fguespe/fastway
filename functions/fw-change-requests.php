@@ -38,8 +38,8 @@ if(fw_theme_mod('fw_crear_cuenta_a_sendy')){
 }
 
 function sendtoSendy($sendy_list,$email){
-  error_log('sendy_list:'.$sendy_list);
-  error_log('email:'.$email);
+  //error_log('sendy_list:'.$sendy_list);
+  //error_log('email:'.$email);
 	$your_installation_url = 'http://app.albertmail.com.ar';
 	$api_key = 'JUu2WMpouY4wjSFvc2SF'; //Can be retrieved from your Sendy's main settings
 	//Subscribe
