@@ -1,7 +1,7 @@
 <?php
 
 
-function parser_mayorista($valu='a:1:{s:9:"mayorista";s:6:"0";}'){
+function parser_mayorista($value){
   $data=json_decode($value);
   $number=$data->mayorista;
   error_log('entra');
