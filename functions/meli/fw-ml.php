@@ -63,7 +63,7 @@ function fw_ml_update_stock( $order_id ) {
           
           if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock;
           else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
-          $note.='\n'+$permalink;
+          $note.='\n'.$permalink;
           $order->add_order_note( $note );
 
           ## HERE you Create/update your custom post meta data to avoid repetition
