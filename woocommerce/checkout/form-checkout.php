@@ -99,7 +99,10 @@ var paso = 1;
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
               foreach ( $fields as $key => $field ) {
-                woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+                $valor=$checkout->get_value( $key );
+                error_log($field['type']);
+                if($field['type']=='checkbox')$valor=false;
+                woocommerce_form_field( $key, $field, $valor );
               }
               ?>
             </div>
@@ -596,7 +599,10 @@ if(jQuery('input#billing_regalo_checkbox').length>0){
           jQuery('#billing_regalo_dire_field').removeClass('d-none');
           jQuery('#billing_regalo_mensaje_field').removeClass('d-none');
       } else {
-          jQuery('#billing_regalo_nombre_field').addClass('d-none'); jQuery('#billing_regalo_tel_field').addClass('d-none');  jQuery('#billing_regalo_dire_field').addClass('d-none');   jQuery('#billing_regalo_mensaje_field').addClass('d-none');  
+          jQuery('#billing_regalo_nombre_field').addClass('d-none'); 
+          jQuery('#billing_regalo_tel_field').addClass('d-none');  
+          jQuery('#billing_regalo_dire_field').addClass('d-none');  
+          jQuery('#billing_regalo_mensaje_field').addClass('d-none');  
       }
         
     });

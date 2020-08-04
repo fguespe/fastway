@@ -97,6 +97,7 @@ function fw_gift_fields_admin($order){
       <p><strong>Dirección</strong> ' . $r4 . '</p>
       <p><strong>Mensaje</strong> ' . $r5 . '</p>
       </div>';
+
     }
 }
 
