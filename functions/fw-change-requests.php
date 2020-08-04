@@ -74,3 +74,69 @@ if(fw_theme_mod('fw_forms_a_sendy')){
     }
   }
 }
+
+
+if(fw_theme_mod('fw_gift_fields')){
+  add_filter( 'woocommerce_checkout_fields' , 'fw_campo_regalo' );
+  add_action( 'woocommerce_admin_order_data_after_shipping_address', 'fw_gift_fields_admin', 10, 1 );
+}
+
+function fw_gift_fields_admin($order){
+	//Agregar _ adelante
+    $r1=get_post_meta( $order->get_id(), '_billing_regalo_checkbox', true );
+    if($r1){
+      $r2=get_post_meta( $order->get_id(), '_billing_regalo_nombre', true );
+      $r3=get_post_meta( $order->get_id(), '_billing_regalo_tel', true );
+      $r4=get_post_meta( $order->get_id(), '_billing_regalo_dire', true );
+      $r5=get_post_meta( $order->get_id(), '_billing_regalo_mensaje', true );
+      error_log(print_r($r5,true));
+      echo '<div class="regalo" style="border:1px solid pink;padding:10px;">
+      <p><strong style="color:pink !important;">PARA REGALO</strong></p>
+      <p><strong>Nombre</strong> ' . $r2 . '</p>
+      <p><strong>Telefono</strong> ' . $r3 . '</p>
+      <p><strong>Dirección</strong> ' . $r4 . '</p>
+      <p><strong>Mensaje</strong> ' . $r5 . '</p>
+      </div>';
+    }
+}
+
+function fw_campo_regalo( $fields ) { 
+
+  $fields['billing']['billing_regalo_checkbox'] = array(
+      'type'      => 'checkbox',
+      'label'     => __('Es para regalo?', 'woocommerce'),
+      'class'     => array('form-row-wide w100 '),
+      'clear'     => true,
+    'priority' 	=> 260
+  );   
+      
+  $fields['billing']['billing_regalo_nombre'] = array(
+      'placeholder'   => _x('Nombre completo', 'placeholder', 'woocommerce'),
+      'class'     => array('form-row-wide d-none'),
+      'clear'     => true
+  );
+
+  $fields['billing']['billing_regalo_tel'] = array(
+      'placeholder'   => _x('Telefono', 'placeholder', 'woocommerce'),
+      'class'     => array('form-row-wide d-none'),
+      'clear'     => true
+  );
+    
+  $fields['billing']['billing_regalo_dire'] = array(
+      'placeholder'   =>_x('Dirección', 'placeholder', 'woocommerce'),
+      'class'     => array('form-row-wide d-none w100'),
+      'clear'     => true
+  );
+    
+  $fields['billing']['billing_regalo_mensaje'] = array(
+      'placeholder'   => _x('Dejale un mensaje en el regalo!', 'placeholder', 'woocommerce'),
+      'class'     => array('form-row-wide d-none w100'),
+      'clear'     => true
+  );
+
+	
+  return $fields;
+  
+}
+
+

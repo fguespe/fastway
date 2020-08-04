@@ -2141,6 +2141,20 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 }
 
+if(is_webaltoweb()){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_gift_fields',
+		'label'       => __( 'Campos Regalo (CR)', 'fastway' ),
+		'description'	=> 'Campos adicionales de envío.',
+		'section'     => 'section_woo_checkout',
+		'default'     => 0,
+		'choices' => array(
+			0  => __( 'Disable', 'fastway' ),
+			1 => __( 'Enable', 'fastway' )
+		)
+	) );
+	}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',

@@ -588,6 +588,22 @@ function updateflete(){
   }
 }
 
+if(jQuery('input#billing_regalo_checkbox').length>0){
+    jQuery('input#billing_regalo_checkbox').change(function(){
+      if (this.checked) {
+          jQuery('#billing_regalo_nombre_field').removeClass('d-none');
+          jQuery('#billing_regalo_tel_field').removeClass('d-none'); 
+          jQuery('#billing_regalo_dire_field').removeClass('d-none');
+          jQuery('#billing_regalo_mensaje_field').removeClass('d-none');
+      } else {
+          jQuery('#billing_regalo_nombre_field').addClass('d-none'); jQuery('#billing_regalo_tel_field').addClass('d-none');  jQuery('#billing_regalo_dire_field').addClass('d-none');   jQuery('#billing_regalo_mensaje_field').addClass('d-none');  
+      }
+        
+    });
+}
+     
+
+
 /*
 function updateEnvioGratisME(){
     //Cambio el label a mercadoenvios gratis
