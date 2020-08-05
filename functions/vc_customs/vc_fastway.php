@@ -753,7 +753,16 @@ function vc_fw_button() {
                     ),
                     "std" => 'center', //Default Red color
                 ),
-                    
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Link Type"),
+                    "param_name"  => "link_type",
+                    "value" => array(
+                        "Misma ventana" => "_self",
+                        "Nueva pestaña" =>"_blank" ,
+                    ),
+                    "std" => '_self', //Default Red color
+                ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Link"),

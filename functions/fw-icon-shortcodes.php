@@ -106,6 +106,7 @@ function fw_btn( $atts ) {
             'icon_align' => 'center',
             'text' =>  '',
             'link' =>  '',
+            'link_type'      =>  '_self',
             'el_class' =>  '',
             'el_id' =>  '',
             //Depreceated
@@ -114,6 +115,8 @@ function fw_btn( $atts ) {
 
     $btn_type=$atts['btn_type'];
     $type=$atts['icon'];
+    $link=$atts['link'];
+    $link_type=$atts['link_type'];
     $text=$atts['text'];
 
     //FA
@@ -123,7 +126,7 @@ function fw_btn( $atts ) {
 
 
     $iconclass=" fw_btn ".$btn_type." ".$atts['el_class'].' ';
-    $first.='<a id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
+    $first.='<a href="'.$link.'" target="'.$link_type.'" id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
     $first.='<i class="'.$type.'" ></i> '.$text;
     $first.="</a>";
     
