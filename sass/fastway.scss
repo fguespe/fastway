@@ -3795,7 +3795,11 @@ body .wpb_content_element {
   font-size:12px ;
   font-style:italic !important;
 }
-
+.order-again a{
+  color: var(--main) !important;
+  border: 1px solid var(--main);
+  padding:8px;
+}
 
 .fw_btn{
     display:inline-block;
