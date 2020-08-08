@@ -296,11 +296,11 @@ display:none;
     width: 100% !important;
 }
 
-/*
-.woo-nav-tab-wrapper{
+
+body:not(.woocommerce_page_wc-facebook) .woo-nav-tab-wrapper{
 	display:none;
 }
-*/
+
 
 
 
