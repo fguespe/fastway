@@ -94,7 +94,6 @@ function fw_add_email_order_meta_regalo( $order, $sent_to_admin, $plain_text ){
   $r4=get_post_meta( $order->get_id(), '_billing_regalo_dire', true );
   $r5=get_post_meta( $order->get_id(), '_billing_regalo_mensaje', true );
  
- 
 	if ( $plain_text === false ) {
 		$r2=get_post_meta( $order->get_id(), '_billing_regalo_nombre', true );
     $r3=get_post_meta( $order->get_id(), '_billing_regalo_tel', true );
@@ -118,14 +117,13 @@ function fw_gift_fields_admin($order){
       $r3=get_post_meta( $order->get_id(), '_billing_regalo_tel', true );
       $r4=get_post_meta( $order->get_id(), '_billing_regalo_dire', true );
       $r5=get_post_meta( $order->get_id(), '_billing_regalo_mensaje', true );
-      echo '<div class="regalo" style="border:1px solid pink;padding:10px;">
+      echo '<div class="regalo" style="border:1px solid pink;padding:10px;margin-bottom:10px;">
       <p><strong style="color:pink !important;">PARA REGALO</strong></p>
       <p><strong>Nombre</strong> ' . $r2 . '</p>
       <p><strong>Telefono</strong> ' . $r3 . '</p>
       <p><strong>Dirección</strong> ' . $r4 . '</p>
       <p><strong>Mensaje</strong> ' . $r5 . '</p>
       </div>';
-
     }
 }
 
@@ -136,7 +134,7 @@ function fw_campo_regalo( $fields ) {
       'label'     => __('Es para regalo?', 'woocommerce'),
       'class'     => array('form-row-wide w100 '),
       'clear'     => true,
-    'priority' 	=> 260
+      'priority' 	=> 260
   );   
       
   $fields['billing']['billing_regalo_nombre'] = array(
@@ -162,8 +160,6 @@ function fw_campo_regalo( $fields ) {
       'class'     => array('form-row-wide d-none w100'),
       'clear'     => true
   );
-
-	
   return $fields;
   
 }
