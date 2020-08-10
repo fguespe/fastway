@@ -541,7 +541,6 @@ function fw_custom_remove_optionspages() {
 }
 
 add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
-
 function custom_admin_js() {
     //if(check_user_role('administrator'))return;
     $nombre=fw_theme_mod('fw_mail_desde_nombre');

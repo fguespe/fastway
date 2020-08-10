@@ -2687,6 +2687,19 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_define_shipping_default',
+	'label'       => __( 'Default shipping paramaters', 'fastway' ),
+	'section'     => 'section_woo_shippings',
+	'description' => 'Pone default width, height y weight a todos los productos.',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_show_only_free_shipping',
 	'label'       => __( 'Show only Free Shipping', 'fastway' ),
 	'section'     => 'section_woo_shippings',

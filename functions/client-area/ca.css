@@ -277,15 +277,14 @@ margin-left:0px !important;
 
 
 /*WPALLIMPORT*/
-.wpallimport-logo,.wpallimport-title,.wpallimport-links,.wpallimport-section,.wpallimport-created-by,.confirm a,.wpallimport-complete-success,#import_finished a
-{
+.wpallimport-logo,.wpallimport-title,.wpallimport-links,.wpallimport-section,.wpallimport-created-by,.confirm a,.wpallimport-complete-success,#import_finished a{
 	display:none !important;
 }
 .wpallimport-ready-to-go h4{
 	visibility: hidden !important;
 }
 form.confirm{
-display:none;
+	display:none;
 }
 .wpallimport-content-section form{
 	display:block !important;
@@ -296,12 +295,9 @@ display:none;
     width: 100% !important;
 }
 
-
 body:not(.woocommerce_page_wc-facebook) .woo-nav-tab-wrapper{
 	display:none;
 }
-
-
 
 
 /*MENUS*/

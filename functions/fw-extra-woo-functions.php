@@ -1470,75 +1470,71 @@ add_action( 'admin_enqueue_scripts', 'load_wp_media_files3' );
 
 
 
-if(!is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php')){
-//Default shipping salvo que este activo KIJAM, que ya se los pone.
+if(fw_theme_mod('fw_define_shipping_default')){
+  //Default shipping salvo que este activo KIJAM, que ya se los pone.
+  add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );
+  add_filter( 'woocommerce_product_variation_get_length', 'xa_product_default_length' );	// For variable product variations
 
-add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );
-add_filter( 'woocommerce_product_variation_get_length', 'xa_product_default_length' );	// For variable product variations
+  if( ! function_exists('xa_product_default_length') ) {
+    function xa_product_default_length( $length) {
 
-if( ! function_exists('xa_product_default_length') ) {
-	function xa_product_default_length( $length) {
+      $default_length = 20;			// Provide default Length
+      if( empty($length) ) {
+        return $default_length;
+      }
+      else {
+        return $length;
+      }
+    }
+  }
 
-		$default_length = 20;			// Provide default Length
-		if( empty($length) ) {
-			return $default_length;
-		}
-		else {
-			return $length;
-		}
-	}
-}
+  // To set Default Width
+  add_filter( 'woocommerce_product_get_width', 'xa_product_default_width');
+  add_filter( 'woocommerce_product_variation_get_width', 'xa_product_default_width' );	// For variable product variations
+  if( ! function_exists('xa_product_default_width') ) {
+    function xa_product_default_width( $width) {
 
-// To set Default Width
-add_filter( 'woocommerce_product_get_width', 'xa_product_default_width');
-add_filter( 'woocommerce_product_variation_get_width', 'xa_product_default_width' );	// For variable product variations
+      $default_width = 20;			// Provide default Width
+      if( empty($width) ) {
+        return $default_width;
+      }
+      else {
+        return $width;
+      }
+    }
+  }
 
-if( ! function_exists('xa_product_default_width') ) {
-	function xa_product_default_width( $width) {
+  // To set Default Height
+  add_filter( 'woocommerce_product_get_height', 'xa_product_default_height');
+  add_filter( 'woocommerce_product_variation_get_height', 'xa_product_default_height' );	// For variable product variations
+  if( ! function_exists('xa_product_default_height')) {
+    function xa_product_default_height( $height) {
 
-		$default_width = 20;			// Provide default Width
-		if( empty($width) ) {
-			return $default_width;
-		}
-		else {
-			return $width;
-		}
-	}
-}
+      $default_height = 20;			// Provide default Height
+      if( empty($height) ) {
+        return $default_height;
+      }
+      else {
+        return $height;
+      }
+    }
+  }
 
-// To set Default Height
-add_filter( 'woocommerce_product_get_height', 'xa_product_default_height');
-add_filter( 'woocommerce_product_variation_get_height', 'xa_product_default_height' );	// For variable product variations
-
-if( ! function_exists('xa_product_default_height')) {
-	function xa_product_default_height( $height) {
-
-		$default_height = 20;			// Provide default Height
-		if( empty($height) ) {
-			return $default_height;
-		}
-		else {
-			return $height;
-		}
-	}
-}
-
-// To set Default Weight
-add_filter( 'woocommerce_product_get_weight', 'xa_product_default_weight' );
-add_filter( 'woocommerce_product_variation_get_weight', 'xa_product_default_weight' );	// For variable product variations
-
-if( ! function_exists('xa_product_default_weight') ) {
-	function xa_product_default_weight( $weight) {
-
-		$default_weight = 0.2;			// Provide default Weight
-		if( empty($weight) ) {
-			return $default_weight;
-		}
-		else {
-			return $weight;
-		}
-	}
-}
+  // To set Default Weight
+  add_filter( 'woocommerce_product_get_weight', 'xa_product_default_weight' );
+  add_filter( 'woocommerce_product_variation_get_weight', 'xa_product_default_weight' );	// For variable product variations
+  if( ! function_exists('xa_product_default_weight') ) {
+    function xa_product_default_weight( $weight) {
+      $default_weight = 0.2;			// Provide default Weight
+      if( empty($weight) ) {
+        return $default_weight;
+      }
+      else {
+        return $weight;
+      }
+    }
+  }
+  
 }
 
 function fw_hide_shipping_when_free_is_available( $rates ) {
