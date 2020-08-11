@@ -237,7 +237,9 @@ if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_blog.php';
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
 }
+
 if(is_plugin_active('woocommerce/woocommerce.php')){
+    require get_template_directory() . '/functions/fw-mayoristas.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     if(isLocalhost())require get_template_directory() . '/functions/fw-extra-woo-clients.php';
     require get_template_directory() . '/functions/fw-woo-prices-functions.php';

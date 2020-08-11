@@ -2,6 +2,7 @@
   
 
 
+
 function wootax_categorizacon_array($valor){
   $devuelvo=array();
   $filas=explode("\n", trim($valor));
@@ -123,7 +124,8 @@ function wootax_taxomizer_product_column_offercode( $column, $postid ) {
             }
             echo rtrim($todojunto,",");
         }    
-    }}
+    }
+}
 add_action('admin_bar_menu', 'wootax_taxomizer_custom_node_tax', 50);
 function wootax_taxomizer_custom_node_tax($wp_admin_bar){
   foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre) {

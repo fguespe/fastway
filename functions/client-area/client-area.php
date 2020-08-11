@@ -69,6 +69,18 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => '',
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_client_admin_columnaprecio',
+	'label'       => __( 'Columna Precio Mayorista', 'fastway' ),
+	'section'     => 'section_client_admin',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_client_admin_columnarol',
