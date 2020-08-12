@@ -40,7 +40,7 @@ if(fw_theme_mod('fw_client_admin_columnaprecio')){
     $nuevas=[];
     foreach($columns as $key => $value){
       $nuevas[$key]=$value;
-      if($key=='price')$nuevas[strtolower($nombre)]=ucfirst($nombre).'s';
+      if($key=='price')$nuevas[strtolower($nombre)]=ucfirst($nombre);
     }
     return $nuevas;
   }
