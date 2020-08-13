@@ -53,7 +53,7 @@ if(fw_theme_mod('fw_client_admin_columnaprecio')){
       if ( $column == strtolower($nombre) ) {
         $valor=get_post_meta( $postid, 'festiUserRolePrices', true );
         if(is_super_admin()){
-          echo $valor;
+          echo print_r($valor);
         }else{
           echo '$'.parser_mayorista($valor);
         }
