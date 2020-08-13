@@ -48,16 +48,10 @@ if(fw_theme_mod('fw_client_admin_columnaprecio')){
   add_action( 'manage_product_posts_custom_column', 'manage_product_posts_custom_mayorista_set', 10, 2 );
   function manage_product_posts_custom_mayorista_set( $column, $postid ) {
       $nombre='Mayorista';
-      
       $product = wc_get_product( $postid );
       if ( $column == strtolower($nombre) ) {
         $valor=get_post_meta( $postid, 'festiUserRolePrices', true );
-        if(is_super_admin()){
-          echo json_encode($valor);
-        }else{
-          echo '$'.parser_mayorista($valor);
-        }
-        
+        echo '$'.parser_mayorista($valor);
       }
   }
 }
