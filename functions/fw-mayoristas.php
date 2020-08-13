@@ -1,6 +1,6 @@
 <?php
 
-function parser_mayorista($value='{"mayorista":"1241.1"}'){
+function parser_mayorista($value){
   //'a:1:{s:9:"mayorista";s:6:"943.64";}'
   $value=json_encode($value);
   $data=json_decode($value);
