@@ -3,9 +3,9 @@
 
 function parser_mayorista($value){
   //'a:1:{s:9:"mayorista";s:6:"943.64";}'
-  $value=json_encode($value);
-  $value=json_decode($value);
-  
+  if(is_array($value)){
+    $value=json_encode($value);
+  }
   $data=json_decode($value);
   $number=$data->mayorista;
   if(empty($number) && $value[0]=='a' && $value[1]==':'){
