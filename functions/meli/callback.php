@@ -10,6 +10,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
     $obj = json_decode($notifications, true);
     $order_id=explode("/",$obj['resource'])[2]; 
+    error_log(get_bloginfo( 'name' ).' - Se recibio de ml la order v1: '.$order_id);
     $nombre_array='ml_array_orders_'.date("m");
 
     sleep ( rand ( 2, 4));
@@ -22,7 +23,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       error_log("Repetido: ".$order_id);
       return;
     }
-    error_log(get_bloginfo( 'name' ).' - Se recibio de ml la order v1: '.$order_id);
+    error_log(get_bloginfo( 'name' ).' - Se procesara la orden: '.$order_id);
 
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
