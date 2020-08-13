@@ -225,6 +225,7 @@ function misha_save_fields( $id, $post ){
     }
 }
 
+/*
 if(isLocalhost()){
     add_action( 'woocommerce_product_options_pricing', 'my_woo_custom_price_field' );
     add_action( 'woocommerce_process_product_meta', 'misha_save_fields', 10, 2 );
@@ -235,5 +236,5 @@ if(isLocalhost()){
     function pr_reseller_price(){
         return 2;
     }
-}
+}*/
 ?>
