@@ -22,7 +22,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       error_log("Repetido: ".$order_id);
       return;
     }
-    error_log('Se recibio de ml la order v1: '.$order_id);
+    error_log(get_bloginfo( 'name' ).' - Se recibio de ml la order v1: '.$order_id);
 
     //Init
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
@@ -55,7 +55,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       if($quantity==0)$variation->set_stock_status('outofstock');
       $variation->save();   
       
-      $log= "LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
+      $log=get_bloginfo( 'name' )."-LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
     
       error_log($log);
       update_option($nombre_array,$orders_used);
