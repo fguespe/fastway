@@ -133,7 +133,8 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
 // Displayed formatted regular price + sale price
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
-    if(fw_is_admin())return $price_html;
+    if(fw_is_admin()) return $price_html;
+    if(esMultitienda()) return $price_html;
     $symbol=get_woocommerce_currency_symbol();
 
     
@@ -224,7 +225,6 @@ function misha_save_fields( $id, $post ){
         update_post_meta( $id, '_price_'.$rol, $_POST['_price_'.$rol] );
     }
 }
-
 /*
 if(isLocalhost()){
     add_action( 'woocommerce_product_options_pricing', 'my_woo_custom_price_field' );
