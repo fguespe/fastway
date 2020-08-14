@@ -45,18 +45,22 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $variation_id=$item->variation_id;
       $item_id=$item->id;
       $quantity=$key->quantity;
-
+      $price=$key->price;
+      
       $prod_id= wc_get_product_id_by_sku($variation_id);
       if(!$prod_id)continue;
       $variation = wc_get_product($prod_id);
       if(!$variation)continue;
       
+      $quantity=$variation->get_stock_quantity()-$quantity;
+      $variation->set_stock($quantity);
+      $variation->set_price($price);
 
-      $variation->set_stock($variation->get_stock_quantity()-$quantity);
       if($quantity==0)$variation->set_stock_status('outofstock');
+
       $variation->save();   
       
-      $log=get_bloginfo( 'name' )."-LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity();
+      $log=get_bloginfo( 'name' )."-LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price;
     
       error_log($log);
       update_option($nombre_array,$orders_used);
