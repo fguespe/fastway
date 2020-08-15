@@ -134,50 +134,51 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
 add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 2 );
 function custom_dynamic_sale_price_html( $price_html, $product ) {
     if(fw_is_admin()) return $price_html;
-    if(esMultitienda()) return $price_html;
     $symbol=get_woocommerce_currency_symbol();
+    if(esMultitienda()) {
+        $regular_price=$product->get_price();
+        return  '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+    }
 
-    if(!esMultitienda()){
-        if( $product->is_type('variable') ){
-            // Searching for the default variation
-            $default_attributes = $product->get_default_attributes();
-            // Loop through available variations
-            foreach($product->get_available_variations() as $variation){
-                $found = true; // Initializing
-                // Loop through variation attributes
-                foreach( $variation['attributes'] as $key => $value ){
-                    $taxonomy = str_replace( 'attribute_', '', $key );
-                    // Searching for a matching variation as default
-                    if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
-                        $found = false;
-                        break;
-                    }
-                }
-                // When it's found we set it and we stop the main loop
-                if( $found ) {
-                    $default_variaton = $variation;
+    
+    if( $product->is_type('variable') ){
+        // Searching for the default variation
+        $default_attributes = $product->get_default_attributes();
+        // Loop through available variations
+        foreach($product->get_available_variations() as $variation){
+            $found = true; // Initializing
+            // Loop through variation attributes
+            foreach( $variation['attributes'] as $key => $value ){
+                $taxonomy = str_replace( 'attribute_', '', $key );
+                // Searching for a matching variation as default
+                if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
+                    $found = false;
                     break;
-                } // If not we continue
-                else {
-                    continue;
                 }
             }
-            // Get the default variation prices or if not set the variable product min prices
-            $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
-            $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
-            if(!$sale_price || $sale_price==$regular_price)$sale_price=$regular_price*fw_product_discount_multiplier($product);
-            $sale_price=round($sale_price*get_currency_conversion());
-            
-        }else {
-            $regular_price = $product->get_regular_price();
-            $sale_price    = $product->get_sale_price();
+            // When it's found we set it and we stop the main loop
+            if( $found ) {
+                $default_variaton = $variation;
+                break;
+            } // If not we continue
+            else {
+                continue;
+            }
         }
-        if($regular_price){
-            $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
-        }
-        if(fw_check_hide_prices()) return;
+        // Get the default variation prices or if not set the variable product min prices
+        $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
+        $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
+        if(!$sale_price || $sale_price==$regular_price)$sale_price=$regular_price*fw_product_discount_multiplier($product);
+        $sale_price=round($sale_price*get_currency_conversion());
+        
+    }else {
+        $regular_price = $product->get_regular_price();
+        $sale_price    = $product->get_sale_price();
     }
-    
+    if($regular_price){
+        $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+    }
+    if(fw_check_hide_prices()) return;
     if(empty($product->get_price())){
         if(is_product()){
             return '<button type="button"  onclick="location.href=\'/contacto\'" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
