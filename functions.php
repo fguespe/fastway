@@ -24,6 +24,7 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
   }
 }
 
+update_option( 'rwl_page', 'login' );
 require get_template_directory() . '/functions/emails/fw-emails.php';
 require get_template_directory() . '/functions/emails/fw-email-settings-page.php';
 require get_template_directory() . '/functions/fw-roles.php';
