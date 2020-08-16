@@ -2013,20 +2013,36 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
+.fw_product_loop,.fw_post_loop{
+  margin-bottom:10px !important;
+  a {
+    display:block;
+  }
+  .product_title{
 
-.fw_product_loop {
+    padding:5px;
+    color:#444444 ;
 
+    font-size:14px ;
+    line-height: 14px;
+    overflow:hidden;
+    max-height: 48px; /* (Number of lines you want visible) * (line-height) */
+    
+  } 
+  .loading i{
+  display:inline-block !important;
+  }
+  img{
+    width:100%;
+    height:auto;   
+  }
   .precio-anterior del,
   .precio-anterior{
     color:lightgray;
     font-weight:200 ;
   }
-  a {
-    display:block;
-  }
-  .loading i{
-  display:inline-block !important;
-  }
+}
+.fw_product_loop{
   .loopimg_container{
     height:200px;
     @media (max-width: 799px) {
@@ -2037,32 +2053,7 @@ footer .widget_nav_menu li a {
       height:100%;
     }
   }
-  .product_title{
-    overflow:hidden !important;
-    display: block;
-		padding:0px;
-		margin: 0px;
-		font-size:12px ;
-		line-height: 16px ;
-		height: 34px !important; 
-  }
-  @media (max-width: 799px) {
-    .product_title{
-        display: block;
-        padding:0px;
-        margin: 0px;
-
-        font-size:14px !important;
-        line-height: 18px !important;
-        height: 34px !important; /* (Number of lines you want visible) * (line-height) */
-    }
-    .fw_product_loop .meta {
-        padding:5px !important;
-        padding-top:8px !important;
-    }
-  }
 }
-
 /*BLOG*/
 .fw_post_loop{
   margin-bottom: 60px;
