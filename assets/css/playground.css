@@ -278,3 +278,40 @@ display: inline-block;
     font-size: 24px;
 }
 }
+
+
+
+/*LOOP4*/
+.loop4 .fw_product_loop {
+    border: solid 1px #ddd;
+    margin: 10px !important;
+}
+.loop4 .fw_product_loop .product_title{
+    text-align:center;
+}
+.loop4 .fw_product_loop .desc p {
+    font-size: 13px;
+    line-height: 1.2;
+}
+.loop4 .fw_product_loop .fw_price {
+    display: block;
+    text-align:center;
+    margin-bottom: 10px !important;
+}
+.loop4 .fw_product_loop .precio {
+    font-weight: 600;
+    display: block;
+}
+
+.loop4 .fw_product_loop .fw_add_to_cart_button {
+    background: var(--second) !important;
+    border-radius: 50px;
+    max-width:80%;
+}
+
+@media(max-width: 480px) {
+    .loop4 .fw_product_loop {
+        padding: 10px 10px 5px !important;
+        margin: 0px !important;
+    }
+}
