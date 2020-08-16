@@ -2073,23 +2073,23 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-.fw_post_loop {
+.fw_post_loop, .fw_product_loop {
   margin-bottom: 60px;
   text-align: left !important;
 }
-.fw_post_loop .loopimg_container {
+.fw_post_loop .loopimg_container, .fw_product_loop .loopimg_container {
   height: 200px;
 }
 @media (max-width: 799px) {
-  .fw_post_loop .loopimg_container {
+  .fw_post_loop .loopimg_container, .fw_product_loop .loopimg_container {
     height: 120px;
   }
 }
-.fw_post_loop .loopimg_container img {
+.fw_post_loop .loopimg_container img, .fw_product_loop .loopimg_container img {
   object-fit: contain;
   height: 100%;
 }
-.fw_post_loop .product_title {
+.fw_post_loop .product_title, .fw_product_loop .product_title {
   padding: 5px;
   color: #444444;
   font-size: 20px;
@@ -2098,10 +2098,10 @@ footer .widget_nav_menu li a {
   max-height: 54px;
   /* (Number of lines you want visible) * (line-height+4) */
 }
-.fw_post_loop .vermas {
+.fw_post_loop .vermas, .fw_product_loop .vermas {
   color: var(--main) !important;
 }
-.fw_post_loop p {
+.fw_post_loop p, .fw_product_loop p {
   opacity: 0.7;
   line-height: 1.4;
   font-size: 16px !important;
@@ -3785,6 +3785,12 @@ body .wpb_content_element {
   text-align: center;
   font-size: 12px;
   font-style: italic !important;
+}
+
+.order-again a {
+  color: var(--main) !important;
+  border: 1px solid var(--main);
+  padding: 8px;
 }
 
 .fw_btn {
