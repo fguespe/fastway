@@ -218,38 +218,36 @@ display: inline-block;
     
     
 
-
-
 /* ICONOS PAGOS */
-#iconospagos.iconos1 {
+#fw_iconos_home.iconos1 {
 	padding: 0 100px;
 	border-bottom: solid 1px #ddd;
 }
 
-#iconospagos.iconos1 .vc_column-inner {
+#fw_iconos_home.iconos1 .vc_column-inner {
 	padding: 20px 0px;
 	border-right: solid 1px #ddd;
 }
-#iconospagos.iconos1 .noborder .vc_column-inner {
+#fw_iconos_home.iconos1 .noborder .vc_column-inner {
 	border: none;
 }
 
-#iconospagos.iconos1 .fw_icon {
+#fw_iconos_home.iconos1 .fw_icon {
 	margin: 10px 0;
 }
 
-#iconospagos.iconos1 i {
+#fw_iconos_home.iconos1 i {
 	color: var(--second);
 	margin-bottom: 10px;
 }
 
-#iconospagos.iconos1  big {
+#fw_iconos_home.iconos1  big {
 	font-size: 15px;
 	font-weight: 600;
 }
 
 
-#iconospagos.iconos1 small {
+#fw_iconos_home.iconos1 small {
 	color: var(--second);
 	font-weight: 400;
 	font-size: 12px;
@@ -257,28 +255,72 @@ display: inline-block;
 }
 
 @media(max-width: 799px) {
-	#iconospagos.iconos1 {
+	#fw_iconos_home.iconos1 {
     border-bottom: none;
 }
-	#iconospagos.iconos1 .vc_column-inner {
+	#fw_iconos_home.iconos1 .vc_column-inner {
     padding: 10px 0px;
 		border-bottom: solid 1px #ddd !Important;
 }
 	
-	#iconospagos.iconos1 .no_border_on_mobile .vc_column-inner{
+	#fw_iconos_home.iconos1 .no_border_on_mobile .vc_column-inner{
 		border-right: none !important;
 	}
-	#iconospagos.iconos1 big {
+	#fw_iconos_home.iconos1 big {
     font-size: 13px;
 }
-	#iconospagos.iconos1 small {
+	#fw_iconos_home.iconos1 small {
     font-size: 11px;
 }
-	#iconospagos.iconos1 i {
+	#fw_iconos_home.iconos1 i {
     font-size: 24px;
 }
 }
 
+
+#fw_iconos_home.iconos2 {
+    border: 1px solid var(--main);
+    padding: 15px;
+  }
+  #fw_iconos_home.iconos2 .fw_icon_bs_short big {
+    font-size: 14px !important;
+  }
+  #fw_iconos_home.iconos2 .fw_icon_bs_short small {
+    font-size: 12px !important;
+    color: var(--main);
+  }
+  #fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
+    border: 0px;
+  }
+  #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+    color: var(--main);
+  }
+  #fw_iconos_home.iconos2 .text {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  @media (min-width: 799px) {
+    #fw_iconos_home.iconos2 .fw_icon_bs_short {
+      border-right: 1px solid #ccc;
+    }
+  }
+  @media (max-width: 799px) {
+    #fw_iconos_home.iconos2 {
+      padding: 10px;
+    }
+    #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+      width: 40px !important;
+      text-align: center;
+    }
+    #fw_iconos_home.iconos2 .fw_icon_bs_short {
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    #fw_iconos_home.iconos2 .vc_column-inner {
+      padding: 0px;
+    }
+  }
+  
 
 
 /*LOOP4*/
