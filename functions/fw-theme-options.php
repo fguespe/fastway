@@ -1341,6 +1341,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_mail_bcc',
+	'label'    	=> __( 'bcc default', 'fastway' ),
+	'description' 	=>	' *Todos los mails con copia oculta a un mail.',
+	'section'   => 'section_email',
+	'default' => '',
+) );
 
 
 Kirki::add_field( 'theme_config_id', array(

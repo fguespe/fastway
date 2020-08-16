@@ -528,8 +528,6 @@ jQuery('#modal_carrito').on('show.bs.modal', function () {
 function addCant(index,cart_item_key,sum=1,max=11111111,min=0){
     let actual=parseInt(jQuery('#qty_'+index).val())
     let total=parseInt(actual+sum)
-    max=parseInt(max)
-    min=parseInt(min)
     
     console.log(total,max)
     if(total>=max){
