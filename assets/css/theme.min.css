@@ -2073,10 +2073,6 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-.fw_product_loop {
-  margin-bottom: 60px;
-  text-align: left !important;
-}
 .fw_product_loop .loopimg_container {
   height: 200px;
 }
