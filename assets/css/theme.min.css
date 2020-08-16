@@ -2043,13 +2043,13 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-.fw_product_loop, .fw_post_loop {
+.fw_post_loop {
   margin-bottom: 10px !important;
 }
-.fw_product_loop a, .fw_post_loop a {
+.fw_post_loop a {
   display: block;
 }
-.fw_product_loop .product_title, .fw_post_loop .product_title {
+.fw_post_loop .product_title {
   padding: 5px;
   color: #444444;
   font-size: 14px;
@@ -2058,15 +2058,14 @@ footer .widget_nav_menu li a {
   max-height: 48px;
   /* (Number of lines you want visible) * (line-height) */
 }
-.fw_product_loop .loading i, .fw_post_loop .loading i {
+.fw_post_loop .loading i {
   display: inline-block !important;
 }
-.fw_product_loop img, .fw_post_loop img {
+.fw_post_loop img {
   width: 100%;
   height: auto;
 }
-.fw_product_loop .precio-anterior del,
-.fw_product_loop .precio-anterior, .fw_post_loop .precio-anterior del,
+.fw_post_loop .precio-anterior del,
 .fw_post_loop .precio-anterior {
   color: lightgray;
   font-weight: 200;
