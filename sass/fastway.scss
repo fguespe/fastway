@@ -2043,7 +2043,22 @@ footer .widget_nav_menu li a {
   }
 }
 /*BLOG*/
-.fw_post_loop,.fw_product_loop{
+.fw_product_loop{
+  margin-bottom: 60px;
+  text-align:left !important;
+
+  .loopimg_container{
+    height:200px;
+    @media (max-width: 799px) {
+      height:120px;
+    }
+    img{
+      object-fit: contain;
+      height:100%;
+    }
+  }
+}
+.fw_post_loop{
   margin-bottom: 60px;
   text-align:left !important;
 
