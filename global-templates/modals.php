@@ -533,7 +533,7 @@ function addCant(index,cart_item_key,sum=1,max=11111111,min=0){
     
     console.log(total,max)
     if(total>=max){
-        alert('Maximo alcanzado')
+        alert('Máximo permitido alcanzado')
         return
     }/*else if(total<=min){
         lo comento porque si va a 0 es lo mismo que removerlo
