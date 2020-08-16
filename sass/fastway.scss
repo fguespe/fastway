@@ -2013,23 +2013,19 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-
-.fw_post_loop{
+.fw_product_loop,.fw_post_loop{
   margin-bottom:10px !important;
   a {
     display:block;
   }
   .product_title{
-
-    padding:5px;
-    color:#444444 ;
-
-    font-size:14px ;
-    line-height: 14px;
-    overflow:hidden;
-    max-height: 48px; /* (Number of lines you want visible) * (line-height) */
-    
-  } 
+      overflow:hidden;
+      padding:0px;
+      margin: 0px;
+      font-size:12px ;
+      line-height: 16px ;
+      height: 34px !important; 
+  }
   .loading i{
   display:inline-block !important;
   }

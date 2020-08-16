@@ -2043,29 +2043,29 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-.fw_post_loop {
+.fw_product_loop, .fw_post_loop {
   margin-bottom: 10px !important;
 }
-.fw_post_loop a {
+.fw_product_loop a, .fw_post_loop a {
   display: block;
 }
-.fw_post_loop .product_title {
-  padding: 5px;
-  color: #444444;
-  font-size: 14px;
-  line-height: 14px;
+.fw_product_loop .product_title, .fw_post_loop .product_title {
   overflow: hidden;
-  max-height: 48px;
-  /* (Number of lines you want visible) * (line-height) */
+  padding: 0px;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 16px;
+  height: 34px !important;
 }
-.fw_post_loop .loading i {
+.fw_product_loop .loading i, .fw_post_loop .loading i {
   display: inline-block !important;
 }
-.fw_post_loop img {
+.fw_product_loop img, .fw_post_loop img {
   width: 100%;
   height: auto;
 }
-.fw_post_loop .precio-anterior del,
+.fw_product_loop .precio-anterior del,
+.fw_product_loop .precio-anterior, .fw_post_loop .precio-anterior del,
 .fw_post_loop .precio-anterior {
   color: lightgray;
   font-weight: 200;
