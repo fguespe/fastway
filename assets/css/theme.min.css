@@ -2072,6 +2072,10 @@ footer .widget_nav_menu li a {
   color: lightgray;
   font-weight: 200;
 }
+.fw_product_loop .precio {
+  font-weight: 600;
+  display: block;
+}
 .fw_product_loop .loopimg_container {
   height: 200px;
 }

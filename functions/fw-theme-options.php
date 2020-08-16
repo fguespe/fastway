@@ -3375,6 +3375,15 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_pl_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_woo_loop',
+	'default'     => '',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-loop',
