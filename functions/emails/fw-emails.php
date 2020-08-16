@@ -47,8 +47,8 @@ add_filter('woocommerce_email_recipient_failed_order', 'change_stock_email_recip
 add_filter('woocommerce_email_recipient_cancelled_order', 'change_stock_email_recipient', 1, 2);
 
  
-if(fw_theme_mod('fw_mail_bcc'))add_filter( 'woocommerce_email_headers', 'bbloomer_order_completed_email_add_cc_bcc', 9999, 3 );
-function bbloomer_order_completed_email_add_cc_bcc( $headers, $email_id, $order ) {
+if(fw_theme_mod('fw_mail_bcc'))add_filter( 'woocommerce_email_headers', 'fw_add_bcc_to_all', 9999, 3 );
+function fw_add_bcc_to_all( $headers, $email_id, $order ) {
     $headers .= "Bcc: ".get_bloginfo('name')." <".fw_theme_mod('fw_mail_bcc').">" . "\r\n"; // del if not needed
   
     return $headers;
