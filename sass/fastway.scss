@@ -2020,7 +2020,9 @@ footer .widget_nav_menu li a {
   }
   .product_title{
       overflow:hidden;
-      padding:0px;
+      padding:0px;    
+      padding-left:5px;
+      padding-right:5px;
       margin: 0px;
       font-size:12px ;
       line-height: 16px ;
@@ -2028,19 +2030,13 @@ footer .widget_nav_menu li a {
       height: 34px !important; 
   }
   .loading i{
-  display:inline-block !important;
-  }
-  img{
-    width:100%;
-    height:auto;   
+    display:inline-block !important;
   }
   .precio-anterior del,
   .precio-anterior{
     color:lightgray;
     font-weight:200 ;
   }
-}
-.fw_product_loop{
   .loopimg_container{
     height:200px;
     @media (max-width: 799px) {
@@ -2054,6 +2050,9 @@ footer .widget_nav_menu li a {
 }
 /*BLOG*/
 .fw_post_loop{
+  a {
+    display:block;
+  }
   margin-bottom: 60px;
   text-align:left !important;
 
