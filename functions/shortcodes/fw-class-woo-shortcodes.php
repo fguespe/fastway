@@ -386,6 +386,8 @@ class fw_Woo_Shortcodes {
 			'hideoutofstock' => 	isset($atts["outofstock"])&& !empty($atts["outofstock"])?'false':'true',
 			"per_page"		=> isset($atts["maxcant"])&& !empty($atts["maxcant"])?$atts["maxcant"]:12,
 			"columns"		=> isset($atts["prodsperrow"])&& !empty($atts["prodsperrow"])?$atts["prodsperrow"]:4,
+			'slider_delay' => 	isset($atts["slider_delay"])&& !empty($atts["slider_delay"])?$atts["slider_delay"]:4000,
+			'slider_speed' => 	isset($atts["slider_delay"])&& !empty($atts["slider_speed"])?$atts["slider_speed"]:4,
 			"border_color"	=> '',
 			"is_slider"		=> '1',
 			"is_biggest"	=> 0,

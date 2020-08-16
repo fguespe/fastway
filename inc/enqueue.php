@@ -27,6 +27,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 
 		//Fastway main css file, using SASS
 		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.min.css', false,$version);
+		wp_enqueue_style( 'playground-styles', get_template_directory_uri() . '/assets/css/playground.css', false,$version);
 
 		wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/cf0e255dde.js');
 	}

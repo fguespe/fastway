@@ -102,7 +102,7 @@ $nombreurl=is_front_page()?'home':basename(get_permalink());?>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?=fw_theme_mod("gtagmanager_id")?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php }  ?>
-<header id="header" class="<?=fw_theme_mod('fw_floating_trans_header')?'fw_floating':''?>">
+<header id="header" class="<?=fw_theme_mod('fw_floating_trans_header')?'fw_floating':''?> <?=fw_theme_mod('fw_builder_header_class')?>">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
     echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';

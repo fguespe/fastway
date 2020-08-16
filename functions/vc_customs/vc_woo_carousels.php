@@ -186,12 +186,28 @@ function vc_products_by_brand_carousel() {
                         'param_name' => 'el_id',
                         'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
                     ),
+
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Delay', 'js_composer' ),
+                        'param_name' => 'slider_delay',
+                        'description' => __( 'Delay in miliseconds', 'js_composer' ),
+                        'std' => '4000',
+                    ),  
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Speed', 'js_composer' ),
+                        'param_name' => 'slider_speed',
+                        'description' => __( 'Speed in seconds, for transtitions', 'js_composer' ),
+                        'std' => '4',
+                    ),  
                     array(
                         'type' => 'textfield',
                         'heading' => __( 'Extra class name', 'js_composer' ),
                         'param_name' => 'el_class',
                         'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
-                    ),   array(
+                    ),   
+                    array(
                         'type' => 'css_editor',
                         'heading' => __( 'CSS box', 'js_composer' ),
                         'param_name' => 'css',

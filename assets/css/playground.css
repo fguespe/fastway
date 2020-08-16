@@ -1,0 +1,280 @@
+#header.header1 .fw_header.top i {
+    color: #fff;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#header.header1 .fw_header.top .frase-top {
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#header.header1 .fw_header.bottom{
+		background:var(--main);
+}
+#header.header1 .fw_header.middle .search-field {
+    border-bottom: solid 1px #ccc;
+    font-size: 15px;
+}
+
+#header.header1 .fw_header.middle .input-group-append button {
+    background: #fff;
+}
+
+#header.header1 .fw_header.middle .input-group-append button i:before {
+    color: var(--main);
+}
+
+#header.header1 .fw_header.middle .ingresar_text {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-weight: 500
+}
+
+#header.header1 .fw_header.bottom .navbar {
+    display: table;
+    margin: auto;
+}
+
+#header.header1 .fw_header.bottom .nav-link {
+    text-transform: uppercase;
+    padding: 7px 15px;
+    color: #fff !important;
+    letter-spacing: .8px;
+}
+
+#header.header1 .fw_header.bottom .nav-link:hover {
+    background-color: rgba(0,0,0,.1)
+}
+
+#header.header1 .fw_header.top .nav-link {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* #footer.footer4 2 */
+#footer.footer4{
+    background:var(--footer);
+}
+#footer.footer4 #newsletter .fw_icon big,
+#footer.footer4 #newsletter .fw_icon small,
+#footer.footer4 #newsletter .fw_icon i {
+    color: #fff;
+}
+
+#footer.footer4 #newsletter .fwhorform_wrapper{
+    margin: 0;
+}
+
+#footer.footer4 #newsletter  .gform_body .gfield {
+    padding: 0;
+}
+
+#footer.footer4 #newsletter .ginput_container_email input {
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+#footer.footer4 #newsletter .gform_button {
+    background: #ccc;
+    border-radius: 0 5px 5px 0;
+    color: var(--main);
+    font-weight: 600;
+}
+
+@media(max-width: 799px) {
+    #footer.footer4 #newsletter .fw_icon {
+            margin-bottom: 15px;
+    }
+    
+    #footer.footer4 #newsletter .ginput_container_email input {
+    border-radius: 5px;
+}
+    
+    
+#footer.footer4 #newsletter .gform_button {
+
+    border-radius: 5px;
+}
+}
+
+/* #footer.footer4 datos contacto */
+
+#footer.footer4 #datoscontacto .contacto_col .wpb_wrapper{
+    border: solid 2px #555;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#footer.footer4 #datoscontacto .fw_icon {
+    display: block !important;
+    text-align: center;
+}
+
+#footer.footer4 #datoscontacto .fw_icon i {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#footer.footer4 #datoscontacto .fw_icon small {
+    display: block !important;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 5px;
+}
+
+#footer.footer4 #datoscontacto .fw_icon big {
+    display: block !important;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+/* #footer.footer4 menu */
+
+#footer.footer4 .menu {
+    text-align: center;
+}
+
+#footer.footer4 .menu li {
+display: inline-block;
+}
+
+#footer.footer4 .menu a {
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .5px;
+    padding: 0 15px;
+    font-size: 13px;
+}
+
+#footer.footer4 .menu a:hover {
+    color: #fff !Important;
+}
+
+/* #footer.footer4 redes */
+
+#footer.footer4 .redes_title .wpb_wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+#footer.footer4 .redes_title p {
+    position: relative;
+    display: table;
+    color: #fff;
+    font-size: 13px;
+    margin: 30px auto 20px;
+}
+
+#footer.footer4 .redes_title p:before {
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 2px;
+    background: #555;
+    top: 50%;
+    right: 100%;
+    margin-right: 20px;
+}
+
+
+#footer.footer4 .redes_title p:after {
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 2px;
+    background: #555;
+    top: 50%;
+    left: 100%;
+    margin-left: 20px;
+}
+
+#footer.footer4 .redes_icons i {
+    color: var(--main) !important;
+    display: inline-block;
+    background: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    font-size: 18px !Important;
+}
+
+#footer.footer4 .redes_icons .fw_icon_link:hover i {
+    background: var(--second);
+    color: #fff !important;
+}
+    
+    
+
+
+
+/* ICONOS PAGOS */
+#iconospagos.iconos1 {
+	padding: 0 100px;
+	border-bottom: solid 1px #ddd;
+}
+
+#iconospagos.iconos1 .vc_column-inner {
+	padding: 20px 0px;
+	border-right: solid 1px #ddd;
+}
+#iconospagos.iconos1 .noborder .vc_column-inner {
+	border: none;
+}
+
+#iconospagos.iconos1 .fw_icon {
+	margin: 10px 0;
+}
+
+#iconospagos.iconos1 i {
+	color: var(--second);
+	margin-bottom: 10px;
+}
+
+#iconospagos.iconos1  big {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+
+#iconospagos.iconos1 small {
+	color: var(--second);
+	font-weight: 400;
+	font-size: 12px;
+	font-style: italic;
+}
+
+@media(max-width: 799px) {
+	#iconospagos.iconos1 {
+    border-bottom: none;
+}
+	#iconospagos.iconos1 .vc_column-inner {
+    padding: 10px 0px;
+		border-bottom: solid 1px #ddd !Important;
+}
+	
+	#iconospagos.iconos1 .no_border_on_mobile .vc_column-inner{
+		border-right: none !important;
+	}
+	#iconospagos.iconos1 big {
+    font-size: 13px;
+}
+	#iconospagos.iconos1 small {
+    font-size: 11px;
+}
+	#iconospagos.iconos1 i {
+    font-size: 24px;
+}
+}

@@ -2,7 +2,7 @@
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
 ?>
-<footer id="footer" class="">
+<footer id="footer" class="<?=fw_theme_mod('fw_builder_footer_class')?>">
 	<div class="<?php echo esc_attr( $container ); ?>">
     <?php 
     if(is_plugin_active("woocommerce/woocommerce.php")){

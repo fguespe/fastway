@@ -32,6 +32,11 @@ Kirki::add_panel( 'panel_fastwaystyle', array(
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
+Kirki::add_panel( 'panel_fastwaylayout', array(
+
+    'title'       => __( 'Fastway Layouts', 'fastway' ),
+    //'description' => __( 'My panel description', 'fastway' ),
+) );
 Kirki::add_panel( 'panel_fastway', array(
 
     'title'       => __( 'Fastway Settings', 'fastway' ),
@@ -43,11 +48,6 @@ Kirki::add_panel( 'panel_fastway_labels', array(
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
-Kirki::add_panel( 'panel_fastwaylayout', array(
-
-    'title'       => __( 'Fastway Layouts', 'fastway' ),
-    //'description' => __( 'My panel description', 'fastway' ),
-) );
 
 Kirki::add_section( 'section_general', array(
     'title'          => __( 'General', 'fastway' ),
@@ -137,6 +137,31 @@ Kirki::add_section( 'section_mobile', array(
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaylayout',
 
+) );
+
+Kirki::add_section( 'section_woo_loop', array(
+    'title'          => __( 'Product Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
+) );
+Kirki::add_section( 'section_woo_loop_cat', array(
+    'title'          => __( 'Category Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
+) );
+Kirki::add_section( 'section_woo_single_layout', array(
+    'title'          => __( 'Single Product', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
+) );
+Kirki::add_section( 'section_woo_loop_brand', array(
+    'title'          => __( 'Brand Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
 ) );
 
 Kirki::add_section( 'section_footer', array(
@@ -259,22 +284,9 @@ Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
-  
 ) );
-Kirki::add_section( 'section_woo_loop', array(
-    'title'          => __( 'Product Loop', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-  
-) );
-Kirki::add_section( 'section_woo_loop_cat', array(
-    'title'          => __( 'Category Loop', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-  
-) );
-Kirki::add_section( 'section_woo_loop_brand', array(
-    'title'          => __( 'Brand Loop', 'fastway' ),
+Kirki::add_section( 'section_woo_payments', array(
+    'title'          => __( 'Payment Methods', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
@@ -282,12 +294,6 @@ Kirki::add_section( 'section_woo_loop_brand', array(
 
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-  
-) );
-Kirki::add_section( 'section_woo_payments', array(
-    'title'          => __( 'Payment Methods', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
@@ -997,6 +1003,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 /*HEAADER*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_header_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_header',
+	'default'     => '',
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
@@ -1808,7 +1822,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-footer',
 	'label'       => __( 'Footer ', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#fff',
+	'default'     => 'var(--main);',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -2928,7 +2942,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_single_product_layout',
 	'label'       => __( 'Layout', 'fastway' ),
-	'section'     => 'section_woo_single',
+	'section'     => 'section_woo_single_layout',
 	'default'     => 'layout1',
 	'choices'     => array(
 		'layout1'   	=> 	'Default',
@@ -2965,7 +2979,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_single_code',
 	'label'    => __( 'Single Product Code', 'fastway' ),     
-	'section'     => 'section_woo_single',
+	'section'     => 'section_woo_single_layout',
 	'description'     => '[fw_single_container]
 	[fw_single_gallery]
 	[fw_single_summary]
@@ -3001,7 +3015,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-single',
 	'label'       => __( 'CSS Single Product', 'fastway' ), 
 	'description' => 'Everything goes inside .fw_single_product',
-	'section'     => 'section_woo_single',
+	'section'     => 'section_woo_single_layout',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -3011,6 +3025,14 @@ Kirki::add_field( 'theme_config_id', array(
 //}
 /*FOOTER*/
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_footer_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_footer',
+	'default'     => '',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'footer-stblock',
