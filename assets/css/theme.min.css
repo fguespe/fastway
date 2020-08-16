@@ -2067,14 +2067,13 @@ footer .widget_nav_menu li a {
   height: 100%;
 }
 .fw_product_loop .product_title {
-  overflow: hidden;
+  overflow: hidden !important;
   display: block;
   padding: 0px;
   margin: 0px;
-  font-size: 14px;
-  line-height: 18px;
-  height: 34px;
-  /* (Number of lines you want visible) * (line-height) */
+  font-size: 12px;
+  line-height: 16px;
+  height: 34px !important;
 }
 @media (max-width: 799px) {
   .fw_product_loop .product_title {
