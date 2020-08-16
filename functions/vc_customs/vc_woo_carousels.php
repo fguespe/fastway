@@ -94,6 +94,21 @@ function vc_category_carousel() {
                         "param_name"  => "hideoutofstock",
                         'std' => 'true',
                     ),
+
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Delay', 'js_composer' ),
+                        'param_name' => 'slider_delay',
+                        'description' => __( 'Delay in miliseconds', 'js_composer' ),
+                        'std' => '4000',
+                    ),  
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Speed', 'js_composer' ),
+                        'param_name' => 'slider_speed',
+                        'description' => __( 'Speed in seconds, for transtitions', 'js_composer' ),
+                        'std' => '4',
+                    ),  
                     array(
                         'type' => 'el_id',
                         'heading' => __( 'Element ID', 'js_composer' ),
