@@ -525,10 +525,22 @@ jQuery('#modal_carrito').on('show.bs.modal', function () {
     populatecart();
 });
 
-function addCant(index,cart_item_key,sum){
+function addCant(index,cart_item_key,sum=1,max=11111111,min=0){
     let actual=parseInt(jQuery('#qty_'+index).val())
-    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     let total=parseInt(actual+sum)
+    max=parseInt(max)
+    min=parseInt(min)
+    
+    console.log(total,max)
+    if(total>=max){
+        alert('Maximo alcanzado')
+        return
+    }/*else if(total<=min){
+        lo comento porque si va a 0 es lo mismo que removerlo
+        alert('Minimo alcanzado')
+        return
+    }*/
+    jQuery('#modal_carrito .container').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     jQuery.get(ajaxurl, { 'action': 'sum_cart_qty',cart_item_key:cart_item_key,total:total}, 
     function (msg) { 
         populatecart();
@@ -556,6 +568,8 @@ function populatecart(){
             let quantity=value['quantity']
             let extra=value['extra']
             let stock_status=value['stock_status']
+            let maximum_quantity=value['maximum_quantity']
+            let minimum_quantity=value['minimum_quantity']
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
@@ -563,9 +577,9 @@ function populatecart(){
             jqe+='<a target="_self" href="'+value['link']+'"><div class="titulo-producto-cart">'+value['nombre']+'</div></a>'
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'
             jqe+='<div class="row d-flex justify-content-left item-cantidad " id="loadinghide_'+index+'">'
-            jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',-1)" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
+            jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',-1,\''+maximum_quantity+'\',\''+minimum_quantity+'\')" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
             jqe+='<input disabled type="text" style="width:40px;text-align:center;margin-left:10px;margin-right:10px;" id="qty_'+index+'" name="quantity" class="input-number" value="'+value['quantity']+'" min="1" max="100">'
-            jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',1)"  class="txt-22"> <i class="fal fa-plus-circle"></i></a></div> '
+            jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',1,\''+maximum_quantity+'\',\''+minimum_quantity+'\')"  class="txt-22"> <i class="fal fa-plus-circle"></i></a></div> '
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'

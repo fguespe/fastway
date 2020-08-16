@@ -90,7 +90,32 @@ function fw_get_minicart(){
         $extra=function_exists('fw_extra_line_info')?fw_extra_line_info($cart_item['product_id']):'';
         $stock_status=$product->get_stock_status()=='onbackorder'?fw_theme_mod('fw_backorder_text'):'';
         $precio= $cart_item['line_subtotal'];
-        $arr = array('nombre' => $nombre,'extra' => $extra,'stock_status'=>$stock_status,'link'=> get_permalink($cart_item['product_id']),'precio'=> $precio, 'quantity' => $cant, 'url' => $image_url, 'cart_item_key' => $cart_item_key);
+
+
+        /*$jaja['min_max_rules'] = get_post_meta( $cart_item['product_id'], 'min_max_rules', true );*/
+        /*$jaja['group_of_quantity'] = get_post_meta( $cart_item['product_id'], 'group_of_quantity', true );
+        $jaja['variation_minimum_quantity']  = get_post_meta( $cart_item['product_id'], 'variation_minimum_allowed_quantity', true );
+        $jaja['variation_maximum_quantity']  = get_post_meta( $cart_item['product_id'], 'variation_maximum_allowed_quantity', true );
+        $jaja['variation_group_of_quantity'] = get_post_meta( $cart_item['product_id'], 'variation_group_of_quantity', true );*/
+        $minimum_quantity=0;
+        $maximum_quantity=10000000;
+        if(is_plugin_active('woocommerce-min-max-quantities/woocommerce-min-max-quantities.php')){
+          $minimum_quantity  = get_post_meta( $cart_item['product_id'], 'minimum_allowed_quantity', true )>0?get_post_meta( $cart_item['product_id'], 'minimum_allowed_quantity', true ):0;
+          $maximum_quantity  =  get_post_meta( $cart_item['product_id'], 'maximum_allowed_quantity', true )>0?get_post_meta( $cart_item['product_id'], 'maximum_allowed_quantity', true ):10000000; 
+        }
+        
+        $arr = array(
+        'nombre' => $nombre,
+        'extra' => $extra,
+        'minimum_quantity' => intval($minimum_quantity),
+        'maximum_quantity' => intval($maximum_quantity),
+        'stock_status'=>$stock_status,
+        'link'=> get_permalink($cart_item['product_id']),
+        'precio'=> $precio, 
+        'quantity' => $cant, 
+        'url' => $image_url, 
+        'cart_item_key' => $cart_item_key
+        );
         array_push($carta,$arr);
     }
 

@@ -4,7 +4,6 @@
 add_shortcode('hans_table','hans_table');
 function hans_table(){
   global $product;
-
   if( $product->is_type('variable') ){
     // Searching for the default variation
     $default_attributes = $product->get_default_attributes();
@@ -25,12 +24,12 @@ function hans_table(){
       background:white !important;
       border-radius:1px !important;
       }
-    .fw_tabla_variaciones td{
-      text-transform: capitalize !important; !important;
-    }
-	.fw_add_to_cart_button_table i{
-color:black
-}
+      .fw_tabla_variaciones td{
+        text-transform: capitalize !important; !important;
+      }
+      .fw_add_to_cart_button_table i{
+        color:black
+      }
     .fw_tabla_variaciones{
       float:left;
       width:100%;
