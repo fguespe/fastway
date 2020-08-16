@@ -11,7 +11,7 @@
 }
 
 #header.header1 .fw_header.bottom{
-		background:var(--main);
+		background:var(--second);
 }
 #header.header1 .fw_header.middle .search-field {
     border-bottom: solid 1px #ccc;
