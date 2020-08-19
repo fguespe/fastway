@@ -42,7 +42,7 @@
 #header.header1 .fw_header.bottom .nav-link {
     text-transform: uppercase;
     padding: 7px 15px;
-    color: #fff !important;
+    color: #fff;
     letter-spacing: .8px;
 }
 
