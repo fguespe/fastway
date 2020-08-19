@@ -39,18 +39,18 @@
     margin: auto;
 }
 
-#header.header1 .fw_header.bottom > .nav-link {
+#header.header1 .fw_header.bottom .nav-link {
     text-transform: uppercase;
     padding: 7px 15px;
     color: #fff;
     letter-spacing: .8px;
 }
 
-#header.header1 .fw_header.bottom > .nav-link:hover {
+#header.header1 .fw_header.bottom .nav-link:hover {
     background-color: rgba(0,0,0,.1)
 }
 
-#header.header1 .fw_header.top > .nav-link {
+#header.header1 .fw_header.top .nav-link {
     color: #fff;
     font-size: 12px;
     font-weight: 400;
