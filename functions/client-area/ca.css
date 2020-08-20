@@ -274,7 +274,9 @@ margin-left:0px !important;
 	margin: 10px 20px 0 20px;
 }
 
-
+.user-new-php .usuarios.ocultar{
+	display:block !important;
+}
 
 /*WPALLIMPORT*/
 .wpallimport-logo,.wpallimport-title,.wpallimport-links,.wpallimport-section,.wpallimport-created-by,.confirm a,.wpallimport-complete-success,#import_finished a{
