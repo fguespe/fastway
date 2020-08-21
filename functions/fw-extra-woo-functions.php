@@ -1529,15 +1529,15 @@ if(fw_theme_mod('fw_define_shipping_default')){
 function fw_hide_shipping_when_free_is_available( $rates ) {
   $free = array();
   $entro=false;
-  error_log('recalculando shipping rates');//solo en calculos de carrito
+
   $opts=get_option('woocommerce_mercadoenvios-shipping_settings');
 
 	foreach ( $rates as $rate_id => $rate ) {
-		if ( 'free_shipping' == $rate->method_id ) {
-      if(!$entro){
+		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id ) {
+      //if(!$entro){
         $free[ $rate_id ] = $rate;
         $entro=true;
-     }
+     //
     }else if ( 'mercadoenvios-shipping' === $rate->method_id) {
 			$free[ $rate_id ] = $rate;
 		}
