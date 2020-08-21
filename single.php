@@ -18,11 +18,11 @@ $container   = fw_theme_mod('container-main');
 					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 						<?php understrap_post_nav(); ?>
 					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
+					
 					if(fw_theme_mod('fw_blog_comment_switch')){
-						if ( comments_open() || get_comments_number() ) :
+						//if ( comments_open() || get_comments_number() ) :
 							comments_template();
-						endif;
+						//endif;
 					}
 					?>
 				<?php endwhile; // end of the loop. ?>
