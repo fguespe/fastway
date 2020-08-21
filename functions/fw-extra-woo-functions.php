@@ -1536,7 +1536,7 @@ function fw_hide_shipping_when_free_is_available( $rates ) {
 		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id ) {
       //if(!$entro){
         $free[ $rate_id ] = $rate;
-        $entro=true;
+        //$entro=true;
      //
     }else if ( 'mercadoenvios-shipping' === $rate->method_id) {
 			$free[ $rate_id ] = $rate;
