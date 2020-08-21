@@ -541,6 +541,7 @@ function fw_widget_estado_dash() {
     <div class='fw_widget_dash'>
     <div>$output</div>
     <a class='iralasopciones' href=\"index.php?edit=fw_widget_estado#fw_widget_estado\">Cambiar</a>
+    <a class='mt20' style='background:var(--second);margin-top:20px;' href=\"/wp-admin/?kinsta-cache-cleared=true\">Limpiar cache</a>
     </div>";
     }
 
