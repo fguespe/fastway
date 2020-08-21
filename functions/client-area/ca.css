@@ -293,7 +293,14 @@ form.confirm{
 	display:block !important;
 
 }
-
+.elfsight-admin-header,
+.elfsight-admin-page-heading,
+.elfsight-admin-divider,
+.elfsight-admin-page-edit-widget-form-field label,
+.elfsight-admin-page-edit-widget-form-field-hint,
+.elfsight-admin-page-edit-widget-form-field-label{
+display:none !important;
+}
 .wpallimport-plugin .wpallimport-wrapper {
     width: 100% !important;
 }
