@@ -61,10 +61,12 @@ function fw_ml_talles($atts = [], $content = null){
     global $product;
     $url='https://www.mercadolibre.com.ar/moda/noindex/guia-de-talles/'.$product->get_sku();
     $output = file_get_contents($url);
-    if(strpos($output, 'Parece que esta página no existe') === false){
+    if(strpos($output, 'Parece que esta página no existe') !== false){
+       // echo do_shortcode(stripslashes(htmlspecialchars_decode('[fw_data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="'.$url.'"]')));
+    }else{
         echo do_shortcode(stripslashes(htmlspecialchars_decode('[fw_data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="'.$url.'"]')));
+
     }
-    
 }
 
 add_shortcode('fw_single_tabs','fw_single_tabs');
