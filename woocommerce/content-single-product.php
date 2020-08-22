@@ -154,6 +154,13 @@ function fw_single_share(){
     echo fw_share_redes();
 }
 
+add_shortcode('fw_guia_talles', 'fw_guia_talles');
+function fw_guia_talles($atts = [], $content = null){
+    global $product;
+    $ifame=get_post_meta($product->id, '_fw_guia_talles', true );
+    if($ifame)echo do_shortcode(stripslashes(htmlspecialchars_decode('[fw_data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="'.$ifame.'"]')));
+}
+
 add_shortcode('fw_single_summary', 'fw_single_summary');
 function fw_single_summary($atts = [], $content = null){
      
