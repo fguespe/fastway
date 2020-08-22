@@ -59,7 +59,7 @@ function fw_summary_container($atts = [], $content = null){
 add_shortcode('fw_ml_talles', 'fw_ml_talles');
 function fw_ml_talles($atts = [], $content = null){
     global $product;
-    echo do_shortcode(stripslashes(htmlspecialchars_decode('data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="https://www.mercadolibre.com.ar/moda/noindex/guia-de-talles/'.$product->get_sku().'"]')));
+    echo do_shortcode(stripslashes(htmlspecialchars_decode('[fw_data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="https://www.mercadolibre.com.ar/moda/noindex/guia-de-talles/'.$product->get_sku().'"]')));
 }
 
 add_shortcode('fw_single_tabs','fw_single_tabs');
