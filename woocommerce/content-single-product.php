@@ -162,8 +162,7 @@ function fw_guia_talles($atts = [], $content = null){
 }
 
 add_shortcode('fw_single_summary', 'fw_single_summary');
-function fw_single_summary($atts = [], $content = null){
-     
+function fw_single_summary($atts = [], $content = null){     
     echo '<div class="summary">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</div>';
