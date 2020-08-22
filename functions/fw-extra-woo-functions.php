@@ -904,13 +904,13 @@ function fw_video_tab( $tabs ) {
   global $product;
   $json = get_post_meta($product->id, '_fw_products_videos', true );
   if (strpos($json, 'youtube') || strpos($json, '.mp4') ){
-
         $tabs['_tab_video'] = array(
           'title'   => __( 'Videos', 'woocommerce' ),
           'priority'  => 100,
           'callback'  => 'fwvideo_tab'
         );
   }
+  
   return $tabs; 
 }
 
@@ -926,6 +926,14 @@ function woocommerce_product_custom_fields(){
             'label' => __('Videos', 'woocommerce')
         )
     );
+    //Custom Product  Textarea
+    woocommerce_wp_text_input(
+      array(
+          'id' => '_fw_guia_talles',
+          'placeholder' => 'Url para iframe',
+          'label' => __('Guia de talle', 'woocommerce')
+      )
+  );
     echo '</div>';
 
 }
@@ -937,6 +945,10 @@ function woocommerce_product_custom_fields_save($post_id){
     $woocommerce_custom_procut_textarea = $_POST['_fw_products_videos'];
     if (!empty($woocommerce_custom_procut_textarea))
         update_post_meta($post_id, '_fw_products_videos', esc_html($woocommerce_custom_procut_textarea));
+
+    $woocommerce_custom_procut_textarea = $_POST['_fw_guia_talles'];
+    if (!empty($woocommerce_custom_procut_textarea))
+        update_post_meta($post_id, '_fw_guia_talles', esc_html($woocommerce_custom_procut_textarea));
 
 }
 function fw_get_yt_videos() {
@@ -969,6 +981,7 @@ function fw_get_yt_videos() {
         ~ix', $json, $coincidencias, PREG_SET_ORDER);
   return $coincidencias;
 }
+
 function fwvideo_tab() {
   foreach(fw_get_yt_videos() as $video){
     $url = $video[1];

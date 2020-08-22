@@ -180,13 +180,15 @@ function fw_single_gallery(){
 
     $fotos=array();
     array_push($fotos,"0|".wp_get_attachment_url(get_post_thumbnail_id( $product->id )));
-    $available_variations=$product->get_available_variations();
-    foreach ( $available_variations as $variation ) {
-        $urlll=$variation['variation_id'].'|'.$variation['image']['url'];
-        if(!in_array($urlll,$fotos))array_push($fotos,$urlll);
-    }
     foreach($product->get_gallery_attachment_ids() as $galeriaimg){
         array_push($fotos,"G|".wp_get_attachment_url(( $galeriaimg )));
+    }
+    if($product->is_type( 'variable' )){
+        $available_variations=$product->get_available_variations();
+        foreach ( $available_variations as $variation ) {
+            $urlll=$variation['variation_id'].'|'.$variation['image']['url'];
+            if(!in_array($urlll,$fotos))array_push($fotos,$urlll);
+        }
     }
     error_log(print_r($fotos,true));
     $index=0;
