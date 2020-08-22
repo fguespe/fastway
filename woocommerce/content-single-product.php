@@ -56,15 +56,6 @@ function fw_summary_container($atts = [], $content = null){
     echo '</div>';
 }
 
-add_shortcode('fw_ml_talles', 'fw_ml_talles');
-function fw_ml_talles($atts = [], $content = null){
-    global $product;
-    $url='https://www.mercadolibre.com.ar/moda/noindex/guia-de-talles/'.$product->get_sku();
-    $output = file_get_contents($url);
-    if(strpos($output, 'Parece que esta página no existe') === false && strpos($output, '¡Ups! hubo un error') === false){
-        echo do_shortcode(stripslashes(htmlspecialchars_decode('[fw_data type="fad fa-ruler" isli="true" stext="Guía de talles" iframe="'.$url.'"]')));
-    }
-}
 
 add_shortcode('fw_single_tabs','fw_single_tabs');
 function fw_single_tabs(){
@@ -188,13 +179,22 @@ function fw_single_gallery(){
                <div class="swiper-wrapper clear-ul">';
 
     $fotos=array();
-    array_push($fotos,intval(get_post_thumbnail_id( $product->id )));
-    $fotos=array_merge($fotos,$product->get_gallery_attachment_ids());
-    
+    array_push($fotos,"0|".wp_get_attachment_url(get_post_thumbnail_id( $product->id )));
+    $available_variations=$product->get_available_variations();
+    foreach ( $available_variations as $variation ) {
+        $urlll=$variation['variation_id'].'|'.$variation['image']['url'];
+        if(!in_array($urlll,$fotos))array_push($fotos,$urlll);
+    }
+    foreach($product->get_gallery_attachment_ids() as $galeriaimg){
+        array_push($fotos,"G|".wp_get_attachment_url(( $galeriaimg )));
+    }
+    error_log(print_r($fotos,true));
     $index=0;
-    foreach ($fotos as $ids) {
-        echo '<div class="swiper-slide">';
-        $url=wp_get_attachment_url( $ids);
+    foreach ($fotos as $laurl) {
+        $url=explode("|",$laurl)[1];
+        $clase="clase-".explode("|",$laurl)[0];
+        
+        echo '<div class="swiper-slide '.$clase.'">';
         echo  '<a href='.$url.' data-fancybox="gallery" class="d-flex align-items-center" style="background-color: transparent; position: absolute; top: 0px; left: 0px; opacity: 1;">
             <img itemprop="image" src="'.$url.'" width=400 height="auto">
             <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
@@ -258,14 +258,13 @@ on: {
        jQuery(".lithumb.c"+val).addClass("active");
    },
 },
-autoplay: { delay: 4500, },
+//autoplay: { delay: 4500, },
 autoplayDisableOnInteraction: true,
 slidesPerView: 1
 });
 function slideTo(val){
 swiper.slideTo(val+1, 500);
 }
-
 
 </script>';
 }
