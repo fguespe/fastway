@@ -171,7 +171,8 @@ function fw_single_gallery(){
     if(!empty($clasecant)){
         $loop="false";
         
-    }    echo '
+    }    
+    echo '
     <div class="gallery '.$clasecant.'">
     <div class="detalle-imagenListado  active">
        <div id="imagenListado" style="position: relative; overflow: hidden;">
@@ -190,7 +191,7 @@ function fw_single_gallery(){
             if(!in_array($urlll,$fotos))array_push($fotos,$urlll);
         }
     }
-    error_log(print_r($fotos,true));
+
     $index=0;
     foreach ($fotos as $laurl) {
         $url=explode("|",$laurl)[1];
