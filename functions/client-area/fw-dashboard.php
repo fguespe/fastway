@@ -595,7 +595,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
     if(get_locale()!='es_ES')return;
      global $wp_meta_boxes;
      if(fw_theme_mod("fw_id_ml"))wp_add_dashboard_widget('custom_help_widget1', 'Mercadolibre', 'custom_ml_help');
-     else if(!empty(fw_theme_mod('fw_id_wpallimport')) || !empty(fw_theme_mod('fw_id_wpallexport')))wp_add_dashboard_widget('fw_actualizar_precios', 'Actualizar precios', 'fw_actualizar_precios');
+     if((fw_theme_mod('fw_id_filesync') && !empty(fw_theme_mod('fw_id_wpallimport'))) || !empty(fw_theme_mod('fw_id_wpallexport')))wp_add_dashboard_widget('fw_actualizar_precios', 'Actualizar precios', 'fw_actualizar_precios');
      wp_add_dashboard_widget('custom_dashboard_help', '¿Necesitas ayuda?', 'custom_dashboard_help');
      wp_add_dashboard_widget('fw_ajustes_generales', 'Ajustes Generales', 'fw_ajustes_generales');
  }
