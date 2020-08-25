@@ -81,10 +81,11 @@ function check_ga() {
   }
 }
 jQuery( ".btn-wapp" ).click(function() {
-  if(window.ga){
-    console.log('eventAction:whatsapp' );
-    ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
-  }
+  
+  console.log('eventAction:whatsapp' );
+  if(ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
+  if(gtag)gtag('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
+  
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
