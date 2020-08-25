@@ -201,7 +201,7 @@ function fw_single_gallery(){
         foreach ( $available_variations as $variation ) {
             $url=$variation['image']['url'];
             if(!in_array($url,$verificaduplis)){
-                if(!in_array($urlll,$fotos))array_push($fotos,$url=$variation['variation_id'].'|'.$url);
+                if(!in_array($url,$fotos))array_push($fotos,$variation['variation_id'].'|'.$url);
                 array_push($verificaduplis,$url);
             }
         }
