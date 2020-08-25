@@ -187,6 +187,19 @@ function fw_single_gallery(){
 
     $fotos=array();
     $verificaduplis=array();
+
+    if($product->is_type( 'variable' )){
+        $available_variations=$product->get_available_variations();
+        foreach ( $available_variations as $variation ) {
+            $url=$variation['image']['url'];
+            if(!in_array($url,$verificaduplis)){
+                array_push($fotos,$variation['variation_id'].'|'.$url);
+                array_push($verificaduplis,$url);
+            }
+        }
+    }
+
+
     $url=wp_get_attachment_url(get_post_thumbnail_id( $product->id ));
     array_push($fotos,"0|".$url);
     array_push($verificaduplis,$url);
@@ -196,17 +209,6 @@ function fw_single_gallery(){
         if(!in_array($url,$verificaduplis))array_push($verificaduplis,$url);
     }
     
-    if($product->is_type( 'variable' )){
-        $available_variations=$product->get_available_variations();
-        foreach ( $available_variations as $variation ) {
-            $url=$variation['image']['url'];
-            if(!in_array($url,$verificaduplis)){
-                if(!in_array($url,$fotos))array_push($fotos,$variation['variation_id'].'|'.$url);
-                array_push($verificaduplis,$url);
-            }
-        }
-    }
-
     $index=0;
     foreach ($fotos as $laurl) {
         $url=explode("|",$laurl)[1];
