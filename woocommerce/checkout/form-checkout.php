@@ -20,6 +20,14 @@ jQuery(document).ready(function() {
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
+
+if(window.ga){
+    console.log('eventAction:purchase' );
+    if(fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
+    if(gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
+}
+
+
 var logged=false;
 var paso = 1;
 </script>

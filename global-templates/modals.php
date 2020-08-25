@@ -520,7 +520,8 @@ function add_to_minicart(prod_id){
     
     if(window.ga){
         console.log('eventAction:addtocart' );
-        //gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
+        if(fbq)fbq('track', 'AddToCard');
+        if(gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
     }
   
     let qty=1

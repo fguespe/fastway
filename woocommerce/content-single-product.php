@@ -195,6 +195,7 @@ function fw_single_gallery(){
         array_push($fotos,"G|".$url);
         if(!in_array($url,$verificaduplis))array_push($verificaduplis,$url);
     }
+    
     if($product->is_type( 'variable' )){
         $available_variations=$product->get_available_variations();
         foreach ( $available_variations as $variation ) {
