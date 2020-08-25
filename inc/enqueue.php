@@ -7,7 +7,6 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'jquery-migrate', get_template_directory_uri() . '/assets/js/jquery.migrate.js', array(),'',true );
-
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/fastway.min.js', array ( 'jquery' ),$version , true);
 		wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(),'',true );
 		wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/assets/js/swiper.min.js'  );
@@ -27,7 +26,6 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 
 
 
-		
 		//Fastway main css file, using SASS
 		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.min.css', false,$version);
 		wp_enqueue_style( 'playground-styles', get_template_directory_uri() . '/assets/css/playground.css', false,$version);

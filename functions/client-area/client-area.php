@@ -613,7 +613,16 @@ function custom_admin_js() {
     //if(check_user_role('administrator'))return;
     $nombre=fw_theme_mod('fw_mail_desde_nombre');
     $mail=getMailQueEnvia();
-    echo '<script>
+	echo '<script>
+	jQuery.browser = {};
+(function () {
+    jQuery.browser.msie = false;
+    jQuery.browser.version = 0;
+    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+    }
+})();
 	window.fwSettings={
 	"widget_id":36000000453
 	};

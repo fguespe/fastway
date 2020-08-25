@@ -1165,10 +1165,6 @@ $BRAND_THUMB = new BRAND_THUMB();
 $BRAND_THUMB -> init();
 
 }
-function load_wp_media_files() {
-wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 
 
 
@@ -1317,14 +1313,6 @@ $CT_TAX_METABANNER = new CT_TAX_METABANNER();
 $CT_TAX_METABANNER -> init();
 
 }
-function load_wp_media_files2() {
-wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'load_wp_media_files2' );
-
-
-
-
 
 
 
@@ -1465,11 +1453,6 @@ $PRODUCT_CAT_BANNER = new PRODUCT_CAT_BANNER();
 $PRODUCT_CAT_BANNER -> init();
 
 }
-function load_wp_media_files3() {
-wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'load_wp_media_files3' );
-
 
 
 if(fw_theme_mod('fw_define_shipping_default')){

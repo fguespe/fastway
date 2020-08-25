@@ -394,4 +394,12 @@ function fw_dropdown_variation_attribute_options( $args = array() ) {
   //return $html;
   return apply_filters( 'woocommerce_dropdown_variation_attribute_options_html', $html, $args ); 
 } 
+
+
+function load_wp_media_files3() {
+  wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'load_wp_media_files3' );
+  
+  
 ?>
