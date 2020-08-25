@@ -188,6 +188,11 @@ function fw_single_gallery(){
     $fotos=array();
     $verificaduplis=array();
 
+    $url=wp_get_attachment_url(get_post_thumbnail_id( $product->id ));
+    array_push($fotos,"0|".$url);
+    array_push($verificaduplis,$url);
+
+    
     if($product->is_type( 'variable' )){
         $available_variations=$product->get_available_variations();
         foreach ( $available_variations as $variation ) {
@@ -200,9 +205,6 @@ function fw_single_gallery(){
     }
 
 
-    $url=wp_get_attachment_url(get_post_thumbnail_id( $product->id ));
-    array_push($fotos,"0|".$url);
-    array_push($verificaduplis,$url);
     foreach($product->get_gallery_attachment_ids() as $galeriaimg){
         $url=wp_get_attachment_url(( $galeriaimg ));
         array_push($fotos,"G|".$url);
