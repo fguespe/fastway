@@ -1877,6 +1877,9 @@ Kirki::add_field( 'theme_config_id', array(
     'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
                 
 	'section'     => 'section_whatsapp',
+	'input_attrs' => array(
+		'placeholder' => fw_theme_mod("short-fw_companyphone")
+	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
