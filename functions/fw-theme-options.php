@@ -2895,12 +2895,25 @@ Kirki::add_field( 'theme_config_id', array(
 		'layout2'   	=> 	'50/50'
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
 	'label'       => __( 'Pestaña espeficiaciones (medidas)', 'fastway' ),
 	'section'     => 'section_woo_single',
 	'description' => 'Refrescar despues de activar',
+	'default'     => 'off',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_tab_hide_specs',
+	'label'       => __( 'Mostrar medidas tabla specs', 'fastway' ),
+	'section'     => 'section_woo_single',
 	'default'     => 'off',
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),

@@ -715,12 +715,22 @@ function fw_custom_admincss() {
 
 
 //Mobile?
-
+add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 function fw_admin_css_ui() {
     add_action('admin_head', 'fw_custom_admincss');
 }
-add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 
+
+function hide_specs(){
+	echo '
+	<style>
+	.woocommerce-product-attributes-item--weight,
+	.woocommerce-product-attributes-item--dimensions{
+			display:none;
+	}
+	</style>';
+}
+if(!fw_theme_mod('fw_tab_hide_specs'))add_action('wp_head', 'hide_specs');
 
 
 
