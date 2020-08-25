@@ -186,15 +186,23 @@ function fw_single_gallery(){
                <div class="swiper-wrapper clear-ul">';
 
     $fotos=array();
-    array_push($fotos,"0|".wp_get_attachment_url(get_post_thumbnail_id( $product->id )));
+    $verificaduplis=array();
+    $url=wp_get_attachment_url(get_post_thumbnail_id( $product->id ));
+    array_push($fotos,"0|".$url);
+    array_push($verificaduplis,$url);
     foreach($product->get_gallery_attachment_ids() as $galeriaimg){
-        array_push($fotos,"G|".wp_get_attachment_url(( $galeriaimg )));
+        $url=wp_get_attachment_url(( $galeriaimg ));
+        array_push($fotos,"G|".$url);
+        if(!in_array($url,$verificaduplis))array_push($verificaduplis,$url);
     }
     if($product->is_type( 'variable' )){
         $available_variations=$product->get_available_variations();
         foreach ( $available_variations as $variation ) {
-            $urlll=$variation['variation_id'].'|'.$variation['image']['url'];
-            if(!in_array($urlll,$fotos))array_push($fotos,$urlll);
+            $url=$variation['image']['url'];
+            if(!in_array($url,$verificaduplis)){
+                if(!in_array($urlll,$fotos))array_push($fotos,$url=$variation['variation_id'].'|'.$url);
+                array_push($verificaduplis,$url);
+            }
         }
     }
 
