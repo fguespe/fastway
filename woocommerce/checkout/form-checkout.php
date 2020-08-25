@@ -22,9 +22,9 @@ if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_para
 
 
 console.log('eventAction:purchase' );
-if(fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
-if(gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-if(ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
+if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
+if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
+if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
 
 
 

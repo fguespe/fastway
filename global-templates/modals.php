@@ -519,9 +519,9 @@ function add_to_minicart(prod_id){
     jQuery('.minicart').addClass('bouncing')
     
     console.log('eventAction:addtocart' );
-    if(fbq)fbq('track', 'AddToCard');
-    if(gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-    if(ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
+    if(window.fbq)fbq('track', 'AddToCard');
+    if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
+    if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
     
     let qty=1
     if(jQuery('.quantity input').val())qty=jQuery('.quantity input').val()
