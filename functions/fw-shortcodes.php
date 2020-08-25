@@ -95,11 +95,13 @@ function fw_company_data($type, $link=false,$cant=1) {
 }
 
 function fw_whatsappfooter(){
-    $whats=fw_company_data('whatsapp',true);
-    if(empty($whats))return;
-
+    $usas='whatsapp';
+    $whats=fw_company_data($usas,true);
+    if(empty($whats)){
+        $usas='phone';
+        $whats=fw_company_data($usas,true);
+    }
     if(fw_theme_mod('whats-button')=='simple'){
-        
         $label=fw_theme_mod('fw_whats_btn');
         $label=str_replace("[br]","<br>",$label);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp">
@@ -107,9 +109,9 @@ function fw_whatsappfooter(){
             <span class="t5">'.$label.'</span>
         </a>';
     }else if(fw_theme_mod('whats-button')=='random'){
-        if(!empty(fw_company_data('whatsapp',true,2))){
+        if(!empty(fw_company_data($usas,true,2))){
             //Si tiene 2 whatsapp
-            $whats=rand(1,2)==1?fw_company_data('whatsapp',true,2):fw_company_data('whatsapp',true);
+            $whats=rand(1,2)==1?fw_company_data($usas,true,2):fw_company_data($usas,true);
         } 
         $label=fw_theme_mod('fw_whats_btn');
         $label=str_replace("[br]","<br>",$label);
@@ -118,13 +120,13 @@ function fw_whatsappfooter(){
             <span class="t5">'.$label.'</span>
         </a>';
     }else if(fw_theme_mod('whats-button')=='multi'){
-        $label=fw_company_data('whatsapp',false);
+        $label=fw_company_data($usas,false);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi first">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>
         </a>';
-        $whats=fw_company_data('whatsapp',true,2);
-        $label=fw_company_data('whatsapp',false,2);
+        $whats=fw_company_data($usas,true,2);
+        $label=fw_company_data($usas,false,2);
         echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi second" style="right:20%;">
         <i class="fab fa-whatsapp" style="color:white !important;"></i>
         <span class="t5">'.$label.'</span>

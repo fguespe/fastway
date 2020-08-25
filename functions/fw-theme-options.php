@@ -69,13 +69,6 @@ Kirki::add_section( 'section_images', array(
     'panel'          => 'panel_fastway',
 
 ) );
-Kirki::add_section( 'section_whatsapp', array(
-    'title'          => __( 'Whatsapp', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
-
-) );
-
 Kirki::add_section( 'section_meli', array(
     'title'          => __( 'Mercadolibre', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1868,56 +1861,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
-/*WHATSAPP*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'short-fw_companywhatsapp',
-	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
-                
-	'section'     => 'section_whatsapp',
-	'input_attrs' => array(
-		'placeholder' => fw_theme_mod("short-fw_companyphone")
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_whats_btn',
-	'label'    => __( 'Whats Label', 'fastway' ),  
-	'description' => '[br] para new line',     
-	'section'     => 'section_whatsapp',
-	'default' 		=>	'Estamos[br]On-Line!',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_share_message',
-	'label'    => __( 'Share Message', 'fastway' ),       
-	'section'     => 'section_whatsapp',
-	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_chat_whats',
-	'label'    => __( 'Button Menu Whatsapp', 'fastway' ),       
-	'section'     => 'section_whatsapp',
-	'default' 		=>	'Consultar',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'whats-button',
-	'label'       => __( 'Whatsapp Widget', 'fastway' ),
-	'section'     => 'section_whatsapp',
-	'default'     => 'simple',
-	'choices'     => array(
-		'none'   	=> 	'None',
-		'simple'   	=> 	'Simple',
-		'random'   	=> 	'Random',
-		'multi' 	=> 	'Multiple',
-	),
-) );
-
 /*MOBILE*/
 
 Kirki::add_field( 'theme_config_id', array(
