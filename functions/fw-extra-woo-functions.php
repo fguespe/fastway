@@ -1734,7 +1734,7 @@ function sample_admin_notice__error() {
   $message1 = "ATENCÍON: MULTITIENDA";
   $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
   $message3="Esta tienda tiene activado el plugin Prices by User Role y tiene algunas incompatiblidades como:
-  Dynamic Discounts product pricing no funciona, osea solo se pueden hacer descuentos generales al total del carrito, no por items separados.";
+  Dynamic Discounts product pricing no funciona,o nuestro descuento general, osea solo se pueden hacer descuentos generales al total del carrito, no por items separados, o poniendo la oferta en la lista con excel o manualmente";
   if(fw_theme_mod('fw_is_multitienda'))printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
 
   
