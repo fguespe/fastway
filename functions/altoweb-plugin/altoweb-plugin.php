@@ -113,6 +113,9 @@ if(fw_theme_mod('fw_action_woosettings')){
 }
 
 
+set_theme_mod('mobile-icon', "/wp-content/themes/fastway/assets/img/favi.png");
+set_theme_mod('ca-dev-logo',"/wp-content/themes/fastway/assets/img/logo.png");
+set_theme_mod('ca-dev-favi',"/wp-content/themes/fastway/assets/img/favi.png");
 set_theme_mod('fw_action_woosettings',false);
 if(fw_theme_mod('fw_action_clientimages')){
     set_theme_mod('ca-main-color', '#0C2E5C');
