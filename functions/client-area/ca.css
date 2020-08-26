@@ -4,12 +4,27 @@ body{
 }
 /*ALERTAS*/
 
-.is-dismissible,
-.error,
+/*MENSAJITOS*/
+#vc_license-activation-notice,
+.update-nag,
+..js-wc-plugin-framework-admin-notice,
+.update,
 .updated,
-.js-wc-plugin-framework-admin-notice{
-	display:none !important;
+.notice,
+.error.admin,
+.notice.admin
+.is-dismissible,
+.woocommerce-BlankState-cta{
+	display:none;
 }
+
+
+.user-new-php.usuarios.ocultar,
+.usuarios #message,
+.user-new-php .error{
+	display:block !important;
+}
+
 
 
 #welcome-panel{
@@ -274,11 +289,6 @@ margin-left:0px !important;
 	margin: 10px 20px 0 20px;
 }
 
-.user-new-php .usuarios.ocultar,
-.user-new-php .error{
-	display:block !important;
-}
-
 /*WPALLIMPORT*/
 .wpallimport-logo,.wpallimport-title,.wpallimport-links,.wpallimport-section,.wpallimport-created-by,.confirm a,.wpallimport-complete-success,#import_finished a{
 	display:none !important;
@@ -420,14 +430,6 @@ display:none !important;
 
 .post-type-quantity-rule #wpbo-additional-info,.post-type-quantity-rule #wpqu-company-notice,.post-type-quantity-rule #wpbo-quantity-rule-role{
 	display: none;
-}
-/*MENSAJITOS*/
-#vc_license-activation-notice,.update-nag,.update,.updated,.notice,.woocommerce-BlankState-cta,.is-dismissible{
-	display:none;
-}
-.error.admin,
-.notice.admin{
-	display: none;;
 }
 /*ORDER CUSTOM FIELDS*/
 #postcustom,#woocommerce-order-downloads{
