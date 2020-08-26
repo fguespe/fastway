@@ -7,12 +7,12 @@ body{
 /*MENSAJITOS*/
 #vc_license-activation-notice,
 .update-nag,
-..js-wc-plugin-framework-admin-notice,
+.js-wc-plugin-framework-admin-notice,
 .update,
 .updated,
 .notice,
 .error.admin,
-.notice.admin
+.notice.admin,
 .is-dismissible,
 .woocommerce-BlankState-cta{
 	display:none;
