@@ -535,8 +535,7 @@ display:none !important;
 }
 .usuarios h2#add-existing-user,
 .usuarios h2#create-new-user,
-.usuarios .wrap > p ,
-.usuarios .wrap > p{
+.usuarios .wrap > p:not(.submit){
 display:none !important;
 }
 .usuarios .users_page_gf-pending-activations .row-actions{
