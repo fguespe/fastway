@@ -26,7 +26,7 @@ body{
 
 .user-new-php.usuarios.ocultar,
 .usuarios #message,
-.user-new-php .error{
+.user-new-php .error:not(.admin){
 	display:block !important;
 }
 
