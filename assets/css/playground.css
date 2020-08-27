@@ -63,12 +63,12 @@
 /*HEADER 11*/
 
 #header.header11 .fw_header.top .codes {
-    display: block !Important;
+    display: block ;
     width: 100%;
 }
 
 #header.header11 .fw_header.top  .fw_icon {
-    display: inline-flex !important;
+    display: inline-flex ;
     margin: 5px 15px 5px 0; 
 }
 
@@ -117,7 +117,7 @@
     
 }
 #header.header11 .fw_header.middle .fw_search_form  button i:before {
-color: #fff !important;
+color: #fff ;
 }
 
 #header.header11 .fw_header.middle .ingresar_text {
@@ -151,8 +151,8 @@ color: #fff !important;
 }
 
 #header.header11 .fw_header.top .nav-redes i {
-    font-size: 20px !important;
-    color: var(--main) !important;
+    font-size: 20px ;
+    color: var(--main) ;
     margin-left: 10px
 }
 
@@ -220,7 +220,7 @@ color:var(--main)
 }
 
 #footer.footer4 #datoscontacto .fw_icon {
-    display: block !important;
+    display: block ;
     text-align: center;
 }
 
@@ -230,7 +230,7 @@ color:var(--main)
 }
 
 #footer.footer4 #datoscontacto .fw_icon small {
-    display: block !important;
+    display: block ;
     color: #fff;
     font-size: 15px;
     font-weight: 600;
@@ -239,7 +239,7 @@ color:var(--main)
 }
 
 #footer.footer4 #datoscontacto .fw_icon big {
-    display: block !important;
+    display: block ;
     color: #fff;
     font-size: 13px;
     font-weight: 400;
@@ -266,7 +266,7 @@ display: inline-block;
 }
 
 #footer.footer4 .menu a:hover {
-    color: #fff !Important;
+    color: #fff ;
 }
 
 /* #footer.footer4 redes */
@@ -308,19 +308,19 @@ display: inline-block;
 }
 
 #footer.footer4 .redes_icons i {
-    color: var(--main) !important;
+    color: var(--main) ;
     display: inline-block;
     background: #fff;
     width: 28px;
     height: 28px;
     line-height: 28px;
     border-radius: 50%;
-    font-size: 18px !Important;
+    font-size: 18px ;
 }
 
 #footer.footer4 .redes_icons .fw_icon_link:hover i {
     background: var(--second);
-    color: #fff !important;
+    color: #fff ;
 }
     
     
@@ -367,11 +367,11 @@ display: inline-block;
 }
 	#fw_iconos_home.iconos1 .vc_column-inner {
     padding: 10px 0px;
-		border-bottom: solid 1px #ddd !Important;
+		border-bottom: solid 1px #ddd ;
 }
 	
 	#fw_iconos_home.iconos1 .no_border_on_mobile .vc_column-inner{
-		border-right: none !important;
+		border-right: none ;
 	}
 	#fw_iconos_home.iconos1 big {
     font-size: 13px;
@@ -390,10 +390,10 @@ display: inline-block;
     padding: 15px;
   }
   #fw_iconos_home.iconos2 .fw_icon_bs_short big {
-    font-size: 14px !important;
+    font-size: 14px ;
   }
   #fw_iconos_home.iconos2 .fw_icon_bs_short small {
-    font-size: 12px !important;
+    font-size: 12px ;
     color: var(--main);
   }
   #fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
@@ -416,7 +416,7 @@ display: inline-block;
       padding: 10px;
     }
     #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
-      width: 40px !important;
+      width: 40px ;
       text-align: center;
     }
     #fw_iconos_home.iconos2 .fw_icon_bs_short {
@@ -433,7 +433,7 @@ display: inline-block;
 /*LOOP4*/
 .fw_product_loop.loop4 {
     border: solid 1px #ddd;
-    margin: 10px !important;
+    margin: 10px ;
 }
 .fw_product_loop.loop4 .product_title{
     text-align:center;
@@ -445,18 +445,18 @@ display: inline-block;
 .fw_product_loop.loop4 .fw_price {
     display: block;
     text-align:center;
-    margin-bottom: 10px !important;
+    margin-bottom: 10px ;
 }
 
 .fw_product_loop.loop4 .fw_add_to_cart_button {
-    background: var(--second) !important;
+    background: var(--second) ;
     border-radius: 50px;
     max-width:80%;
 }
 
 @media(max-width: 480px) {
     .fw_product_loop.loop4 {
-        padding: 10px 10px 5px !important;
-        margin: 0px !important;
+        padding: 10px 10px 5px ;
+        margin: 0px ;
     }
 }
