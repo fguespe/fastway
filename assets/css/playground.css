@@ -323,7 +323,108 @@ display: inline-block;
     color: #fff ;
 }
     
-    
+
+
+/*Footer 10*/
+#footer.footer10 #newsletter h4 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+#footer.footer10 #newsletter .gfield {
+margin: 0;
+    padding: 0;
+}
+
+
+#footer.footer10 #newsletter .ginput_container input {
+    border-radius: 5px 0 0 5px;
+    background: #E8E8E8;
+}
+
+#footer.footer10 #newsletter  .gform_body {
+    width: 70%;
+}
+
+#footer.footer10 #newsletter  .gform_footer {
+    width: 30%;
+}
+
+#footer.footer10 #newsletter  .gform_button {
+    border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 799px) {
+    #footer.footer10 #newsletter .ginput_container input,
+    #footer.footer10 #newsletter  .gform_button{
+        border-radius: 5px;;
+    }
+}
+
+/* redes sociales */
+
+#footer.footer10 .social {
+    text-align: right;
+}
+
+#footer.footer10 .social i {
+    color: #fff !Important;
+    font-size: 20px !Important;
+    margin-right: 10px;
+}
+
+
+@media (max-width: 799px) {
+    #footer.footer10 .social {
+        text-align: left;
+    }
+}
+
+/* menu y logo */
+#footer.footer10 .menu {
+    margin-bottom: 20px;
+}
+#footer.footer10 .menu a,
+#footer.footer10 .fw_icon big,
+#footer.footer10 .fw_icon small{
+    color: #8E8A8A;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 400;
+    transition: all ease .4s
+}
+
+#footer.footer10 .menu a:hover,
+#footer.footer10 a:hover big{
+    color: #fff !important;
+}
+
+#footer.footer10 .logo_footer .imagen {
+    text-align: right;
+}
+
+#footer.footer10 .logo_footer img {
+    width: 180px !Important;
+    margin-top: 20px
+}
+
+@media(max-width: 799px) {
+    #footer.footer10 .logo_footer .imagen {
+        text-align: left;
+    }	
+}
+
+@media (max-width: 600px) {
+
+    #footer.footer10 .columna_menu,
+    #footer.footer10 .columna_contacto,
+    #footer.footer10 .columna_logo{
+            width: 100% !Important;
+    }
+}
+
+
 
 /* ICONOS PAGOS */
 #fw_iconos_home.iconos1 {
@@ -413,7 +514,7 @@ padding: 15px;
 @media (max-width: 799px) {
     #fw_iconos_home.iconos2 {
         padding: 10px;
-			padding-bottom:0px;
+        padding-bottom:0px;
     }
 	#fw_iconos_home.iconos2 i {
 		font-size:20px !important;
