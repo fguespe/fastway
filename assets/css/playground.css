@@ -363,13 +363,12 @@ display: inline-block;
 
 @media(max-width: 799px) {
 	#fw_iconos_home.iconos1 {
-    border-bottom: none;
-}
+        border-bottom: none;
+    }
 	#fw_iconos_home.iconos1 .vc_column-inner {
-    padding: 10px 0px;
+        padding: 10px 0px;
 		border-bottom: solid 1px #ddd ;
-}
-	
+    }
 	#fw_iconos_home.iconos1 .no_border_on_mobile .vc_column-inner{
 		border-right: none ;
 	}
@@ -386,47 +385,53 @@ display: inline-block;
 
 
 #fw_iconos_home.iconos2 {
-    border: 1px solid var(--main);
-    padding: 15px;
-  }
-  #fw_iconos_home.iconos2 .fw_icon_bs_short big {
+border: 1px solid var(--main);
+padding: 15px;
+}
+#fw_iconos_home.iconos2 .fw_icon_bs_short big {
     font-size: 14px ;
-  }
-  #fw_iconos_home.iconos2 .fw_icon_bs_short small {
+}
+#fw_iconos_home.iconos2 .fw_icon_bs_short small {
     font-size: 12px ;
     color: var(--main);
-  }
-  #fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
+}
+#fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
     border: 0px;
-  }
-  #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+}
+#fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
     color: var(--main);
-  }
-  #fw_iconos_home.iconos2 .text {
+}
+#fw_iconos_home.iconos2 .text {
     overflow: hidden;
     white-space: nowrap;
-  }
-  @media (min-width: 799px) {
+}
+@media (min-width: 799px) {
     #fw_iconos_home.iconos2 .fw_icon_bs_short {
-      border-right: 1px solid #ccc;
+        border-right: 1px solid #ccc;
     }
-  }
-  @media (max-width: 799px) {
+}
+@media (max-width: 799px) {
     #fw_iconos_home.iconos2 {
-      padding: 10px;
+        padding: 10px;
+			padding-bottom:0px;
     }
+	#fw_iconos_home.iconos2 i {
+		font-size:20px !important;
+		
+	}
     #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
-      width: 40px ;
-      text-align: center;
+        width: 100% ;
+        text-align: center;
     }
     #fw_iconos_home.iconos2 .fw_icon_bs_short {
-      white-space: nowrap;
-      margin-bottom: 10px;
+        white-space: nowrap;
+        margin-bottom: 10px;
     }
     #fw_iconos_home.iconos2 .vc_column-inner {
-      padding: 0px;
+        padding: 0px;
     }
-  }
+}
+
   
 
 
