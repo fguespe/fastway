@@ -60,7 +60,109 @@
     font-size: 12px;
     font-weight: 400;
 }
+/*HEADER 11*/
 
+#header.header11 .fw_header.top .codes {
+    display: block !Important;
+    width: 100%;
+}
+
+#header.header11 .fw_header.top  .fw_icon {
+    display: inline-flex !important;
+    margin: 5px 15px 5px 0; 
+}
+
+#header.header11 .fw_header.top .nav-link,
+#header.header11 .fw_header.top .fw_icon .text small,
+#header.header11 .fw_header.top .fw_icon .text big {
+    color: #ddd;
+    font-family: Lato;
+    font-size: 13px;
+}
+
+#header.header11 .fw_header.top .fw_icon i{
+    color: #ddd;
+    font-size: 15px;
+}
+
+#header.header11 .fw_header.middle .fw_search_form {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 20px
+}
+
+#header.header11 .fw_header.middle  .logo {
+    display: table;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#header.header11 .fw_header.middle .fw_search_form  .search-field  {
+    border-radius: 5px 0 0 5px;
+}
+
+#header.header11 .fw_header.middle .minicart  {
+    margin-left: 10px
+}
+
+#header.header11 .fw_header.middle .minicart .cant {
+    color: #fff;
+}
+
+
+#header.header11 .fw_header.middle .fw_search_form  button {
+    background: var(--second);
+    border-radius: 0px 5px 5px 0px;
+    padding: 0 20px;
+    
+}
+#header.header11 .fw_header.middle .fw_search_form  button i:before {
+color: #fff !important;
+}
+
+#header.header11 .fw_header.middle .ingresar_text {
+    color: var(--main);
+    font-size: 13px;
+    padding: 5px;
+}
+
+#header.header11 .fw_header.bottom {
+    border-bottom: solid 1px #d1d1d1;
+}
+
+
+#header.header11 .fw_header.bottom .navbar {
+    text-align: center;
+    display: table;
+    margin: auto;
+}
+
+#header.header11 .fw_header.bottom .navbar .nav-link {
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+#header.header11 .fw_header.bottom .nav-redes {
+    display: flex;
+}
+
+#header.header11 .fw_header.bottom .nav-redes big {
+    display: none;
+}
+
+#header.header11 .fw_header.top .nav-redes i {
+    font-size: 20px !important;
+    color: var(--main) !important;
+    margin-left: 10px
+}
+
+#header.header11 .menu-item i{
+color:var(--main)
+}
+#header.header11 i,
+#header.header11 .fw_header.middle .minicart .cant{
+    color:var(--main);
+}
 
 /* #footer.footer4 2 */
 #footer.footer4{

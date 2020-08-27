@@ -540,9 +540,9 @@ background:white;
 
 
 function fw_header_builder($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '','id' => 'middle' ), $atts );
+    $atts = shortcode_atts(array('class' => '','type' => '','id' => 'middle' ), $atts );
     if(!empty($atts['type']))$atts['id']=$atts['type'];
-    $header_class=" fw_header ".$atts['id']." desktop d-none d-md-block ";
+    $header_class=" fw_header ".$atts['class']." ".$atts['id']." desktop d-none d-md-block ";
     $header_container   = fw_theme_mod('header-width');
     //if(fw_theme_mod("transparent-header") && is_home())$header_class.=" fw_transparent_header ";
     $volver='<div class="'.esc_attr( $header_class ).'">';

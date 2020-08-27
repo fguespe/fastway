@@ -119,6 +119,12 @@ Kirki::add_section( 'section_typos', array(
 
 ) );
 
+Kirki::add_section( 'preset_section', array(
+    'title'          => __( 'Preset', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
 Kirki::add_section( 'section_header', array(
     'title'          => __( 'Header', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -994,7 +1000,53 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_seo',
 	'default'     => '',
 ) );
+
+
 /*HEAADER*/
+
+Kirki::add_field( 'theme_config_id', [
+	'type'        => 'radio',
+	'settings'    => 'color_scheme_radio',
+	'label'       => esc_attr__( 'Radio Control', 'kirki' ),
+	'description' => esc_attr__( 'This radio will control the following two color controls.', 'kirki' ),
+	'section'     => 'preset_section',
+	'default'     => 'header1',
+	'choices'     => [
+		'header1'    => esc_html__( 'Header1', 'kirki' ),
+		'header2'   => esc_html__( 'Header2', 'kirki' ),
+		'header3' => esc_html__( 'Header3', 'kirki' ),
+	],
+	'preset'      => array(
+		'header1'    => array(
+			'settings' => array(
+				'code_example' => '<div>example</div>'
+			),
+		),
+		'header2'   => [
+			'settings' => [
+				'code_example' => '<div>example</div>'
+			],
+		],
+		'header3' => [
+			'settings' => [
+				'code_example' => '<div>example</div>'
+			],
+		],
+	),
+] );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'code_example',
+	'label'       => __( 'Header Code', 'fastway' ),
+	'description' => '',
+	'section'     => 'preset_section',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
