@@ -1526,7 +1526,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
   $free = array();
   $entro=false;
   $cart_total = WC()->cart->cart_contents_total;
-  $lili_disc=get_lili_discount($woocommerce->cart);
+  $lili_disc=get_lili_discount(WC()->cart);
   error_log("EEfg: ".$cart_total.' '.$lili_disc);
 	foreach ( $rates as $rate_id => $rate ) {
     if ( 'free_shipping' == $rate->method_id){
