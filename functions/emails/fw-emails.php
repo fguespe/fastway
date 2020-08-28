@@ -78,8 +78,6 @@ if(fw_theme_mod("fw_action_resetmails")){
     set_theme_mod('fw_action_resetmails',false);
 
 }
-
-
 function change_stock_email_recipient( $recipient, $product ) {
     return getMailQueRecibe();
 }
