@@ -64,6 +64,7 @@ function fw_company_data($type, $link=false,$cant=1) {
     else if($type==="email" && $link)$pre="mailto:";
     $value=fw_theme_mod('short-fw_company'.$type);
     //fix whatsapp +
+    if($type=="whatsapp" && empty($value))$value=fw_theme_mod('short-fw_company'.'phone');
     if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
         
     if(empty($value))return "";
