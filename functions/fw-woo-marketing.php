@@ -19,18 +19,11 @@ function fw_cart_calculate_fees( WC_Cart $cart ){
 }
 function get_lili_discount($cart){
     if(fw_is_admin())return;
-    error_log('EEfg sale en 1');
     if(esMultitienda()) return;
-    error_log('EEfg sale en 2');
     if(!fw_theme_mod('fw_lili_discount'))return;
-    error_log('EEfg sale en 3');
     if (!empty($cart->applied_coupons) && !fw_theme_mod('fw_lili_discount_cupones'))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
-    error_log('EEfg sale en 4');
     if( $cart->cart_contents_count < $cuantos ) return;
-    error_log('EEfg sale en 5');
-    
-
     $catespromo=array();
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
 
@@ -62,7 +55,10 @@ function get_lili_discount($cart){
         $precio=$product->get_price();
         if($menorprecio>$precio)$menorprecio=$precio;
     }
+
+    error_log('menor precio es'.$menorprecio);
     if($menorprecio==100000000)return;
     $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
+    error_log('discount'.$discount);
     return $discount;
 }
