@@ -91,7 +91,7 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
         $block=fw_StaticBlock::getSticBlockContent($id,true);
         //$block=nl2br($block);
     }
-    else $block='<iframe height="auto" width="100%" frameBorder="0" scrolling="auto" src="'.$id.'" ></iframe>';
+    else $block='<iframe height="500" width="100%" frameBorder="0" scrolling="auto" src="'.$id.'" ></iframe>';
   return <<<HTML
 <!-- Modal -->
 <div class="modal fade" id="$rand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
