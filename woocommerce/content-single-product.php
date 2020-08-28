@@ -14,20 +14,6 @@ function fw_remove_product_tabs( $tabs ) {
 }
 add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
 
-add_shortcode('fw_echo', 'fw_echo');
-function fw_echo($atts = [], $content = null){
-    echo stripslashes(htmlspecialchars_decode($content));
-}
-
-add_shortcode('fw_div_open', 'fw_div_open');
-function fw_div_open($atts = [], $content = null){
-    echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';
-}
-add_shortcode('fw_div_close', 'fw_div_close');
-function fw_div_close($atts = [], $content = null){
-    echo '</div>';
-}
-
 add_shortcode('fw_single_container', 'fw_single_container');
 function fw_single_container($atts = [], $content = null){
     $class='';

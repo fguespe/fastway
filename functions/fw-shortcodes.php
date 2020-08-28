@@ -56,6 +56,22 @@ function quicklinks(){
 }
 
 
+add_shortcode('fw_echo', 'fw_echo');
+function fw_echo($atts = [], $content = null){
+    echo stripslashes(htmlspecialchars_decode($content));
+}
+
+add_shortcode('fw_div_open', 'fw_div_open');
+function fw_div_open($atts = [], $content = null){
+    $atts = shortcode_atts(array('class' => '' ), $atts );
+    echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';
+}
+add_shortcode('fw_div_close', 'fw_div_close');
+function fw_div_close($atts = [], $content = null){
+    $atts = shortcode_atts(array('class' => '' ), $atts );
+    echo '</div>';
+}
+
 function fw_company_data($type, $link=false,$cant=1) {
     $type=trim($type);$link=trim($link);$pre="";
   
