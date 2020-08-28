@@ -2106,7 +2106,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'La url del seguir comprando en el carrito como en el thankyou page',
 	'default' 	=>	 '/',
 	'section'     => 'section_woo',
-) );/*
+) );
+
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_user_template',

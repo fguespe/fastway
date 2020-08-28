@@ -102,7 +102,7 @@ var paso = 1;
           <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_2')?></h1>
           <div class="woocommerce-billing-fields">
 
-            <?php /*SOLO EL LABEL*/ if('billing_only' !== get_option( 'woocommerce_ship_to_destination' )){?> <h3><?=fw_theme_mod('fw_label_checkout_datos_1');?></h3> <?php } ?>
+            <?php /*SOLO EL LABEL*/ if('billing_only' !== get_option( 'woocommerce_ship_to_destination' )){?> <h3 class="billing_details_title"><?=fw_theme_mod('fw_label_checkout_datos_1');?></h3> <?php } ?>
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
