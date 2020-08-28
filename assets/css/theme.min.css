@@ -2056,7 +2056,7 @@ footer .widget_nav_menu li a {
   font-size: 12px;
   line-height: 16px;
   color: #444444;
-  height: 34px;
+  height: 34px !important;
 }
 .fw_product_loop .loading i {
   display: inline-block !important;
@@ -3866,6 +3866,10 @@ a, button {
 .woocommerce-account {
   /* var compliance radio buttons */
   /*   payment with creditcard box    */
+  /*
+  #ship-to-different-address{
+    display:none;
+  }*/
   /*postnet*/
   /*
   .payment_method_spyr_firstdata_gateway .extras p{
@@ -3949,7 +3953,9 @@ a, button {
   word-wrap: break-word;
 }
 .woocommerce-checkout .fw_checkout .woocommerce-billing-fields__field-wrapper,
-.woocommerce-account .fw_checkout .woocommerce-billing-fields__field-wrapper {
+.woocommerce-checkout .fw_checkout .woocommerce-shipping-fields__field-wrapper,
+.woocommerce-account .fw_checkout .woocommerce-billing-fields__field-wrapper,
+.woocommerce-account .fw_checkout .woocommerce-shipping-fields__field-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4735,8 +4741,8 @@ a, button {
   padding-left: 15px;
   padding-right: 15px;
 }
-.woocommerce-checkout #ship-to-different-address,
-.woocommerce-account #ship-to-different-address {
+.woocommerce-checkout #shipping_country_field,
+.woocommerce-account #shipping_country_field {
   display: none;
 }
 .woocommerce-checkout label, .woocommerce-checkout span,

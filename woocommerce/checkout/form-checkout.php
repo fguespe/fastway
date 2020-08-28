@@ -102,32 +102,38 @@ var paso = 1;
           <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_2')?></h1>
           <div class="woocommerce-billing-fields">
 
-          <?php if(fw_theme_mod('fw_shipping_fields')){?> <h3>Billing Details</h3> <?php } ?>
+            <?php /*SOLO EL LABEL*/ if('billing_only' !== get_option( 'woocommerce_ship_to_destination' )){?> <h3><?=fw_theme_mod('fw_label_checkout_datos_1');?></h3> <?php } ?>
             <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
               <?php
               $fields = $checkout->get_checkout_fields( 'billing' );
               foreach ( $fields as $key => $field ) {
                 $valor=$checkout->get_value( $key );
-                error_log($field['type']);
                 if($field['type']=='checkbox')$valor=false;
                 woocommerce_form_field( $key, $field, $valor );
               }
               ?>
             </div>
-            <?php
-            if(fw_theme_mod('fw_shipping_fields')){
-            ?>
-            <h3>Shipping Details</h3>
-            <div id="billing_form" class="woocommerce-billing-fields__field-wrapper">
-              <?php
-                $fields = $checkout->get_checkout_fields( 'shipping' );
-                
-                foreach ( $fields as $key => $field ) {
-                  woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-                }
-                ?>
+            <div class="woocommerce-shipping-fields">
+                <?php if ( true === WC()->cart->needs_shipping_address() ) : ?>
+                  <h3 id="ship-to-different-address">
+                    <p class="form-row w100 validate-required" id="fw_terms_checkbox_field" data-priority=""><span class="woocommerce-input-wrapper"><label class="checkbox ">
+                      <input id="ship-to-different-address-checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" /> <span><?=fw_theme_mod('fw_label_checkout_ship_to_other'); ?></span>
+                    </p>
+                  </h3>
+                  <div class="shipping_address">
+                    <?php do_action( 'woocommerce_before_checkout_shipping_form', $checkout ); ?>
+                      <h3><?=fw_theme_mod('fw_label_checkout_datos_2');?></h3>
+                    <div class="woocommerce-shipping-fields__field-wrapper">
+                      <?php
+                      $fields = $checkout->get_checkout_fields( 'shipping' );
+                      foreach ( $fields as $key => $field ) woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+                      ?>
+                    </div>
+                    <?php do_action( 'woocommerce_after_checkout_shipping_form', $checkout ); ?>
+                  </div>
+                <?php endif; ?>
             </div>
-            <?php }
+            <?php 
 
             $fields = $checkout->get_checkout_fields( 'order' );
             foreach ( $fields as $key => $field ) {
@@ -144,6 +150,7 @@ var paso = 1;
             } 
             ?>
           </div>
+
           <div class="capsula box-step" style="display:none;">
 						<a class="editar" onclick="editpaso(2)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
 						<span class="icon"><i class="fa fa-check"></i></span>
@@ -598,24 +605,18 @@ function updateflete(){
 
   }
 }
-
-if(jQuery('input#billing_regalo_checkbox').length>0){
-    jQuery('input#billing_regalo_checkbox').change(function(){
+/*
+if(jQuery('input#billing_ship_to_different_address').length>0){
+    jQuery('input#billing_ship_to_different_address').change(function(){
       if (this.checked) {
-          jQuery('#billing_regalo_nombre_field').removeClass('d-none');
-          jQuery('#billing_regalo_tel_field').removeClass('d-none'); 
-          jQuery('#billing_regalo_dire_field').removeClass('d-none');
-          jQuery('#billing_regalo_mensaje_field').removeClass('d-none');
+          jQuery('#shipping_form').removeClass('d-none');
       } else {
-          jQuery('#billing_regalo_nombre_field').addClass('d-none'); 
-          jQuery('#billing_regalo_tel_field').addClass('d-none');  
-          jQuery('#billing_regalo_dire_field').addClass('d-none');  
-          jQuery('#billing_regalo_mensaje_field').addClass('d-none');  
+          jQuery('#shipping_form').addClass('d-none');
       }
         
     });
 }
-     
+*/
 
 
 /*

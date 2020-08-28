@@ -1522,16 +1522,25 @@ if(fw_theme_mod('fw_define_shipping_default')){
   
 }
 
-function fw_hide_shipping_when_free_is_available( $rates ) {
+function fw_hide_shipping_when_free_is_available( $rates) {
   $free = array();
   $entro=false;
+  $cart_total = WC()->cart->cart_contents_total;
+  $lili_disc=get_lili_discount($woocommerce->cart);
 	foreach ( $rates as $rate_id => $rate ) {
-    if ( 'free_shipping' == $rate->method_id)$entro=true;
+    if ( 'free_shipping' == $rate->method_id){
+      $entro=true;
+      $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
+      //error_log(($cart_total+$lili_disc) .'>'. $min);
+      if(($cart_total+$lili_disc) < $min){
+        unset($rates[$rate->id]);
+        $entro=false;
+      }
+    }
 		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id) {
       $free[ $rate_id ] = $rate;
     }
   }
-  
 	return $entro  ? $free : $rates;
 }
 
@@ -1705,6 +1714,15 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
       unset($fields['billing']['billing_cuit']);
+    }
+
+    if(fw_theme_mod('fw_gift_fields')){
+        $fields['shipping']['shipping_mensaje'] = array(
+          'placeholder'   => _x('Dejale un mensaje en el regalo!', 'placeholder', 'woocommerce'),
+          'class'     => array('form-row-wide w100'),
+          'clear'     => true,
+          'priority' => 100
+      );
     }
     return $fields;
 }

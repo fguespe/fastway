@@ -603,7 +603,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
     echo '
     <p>
     <span>Personalizar mails/textos:  <a href="options-general.php?page=myplugin" class="btn"  >Configurar</a></span><br><br>
-    <span>Metodos de envío:  <a href="admin.php?page=wc-settings&tab=shipping" class="btn"  >Configurar</a></span><br><br>
+    <span>Metodos de Envío:  <a href="admin.php?page=wc-settings&tab=shipping" class="btn"  >Configurar</a></span><br><br>
     <span>Metodos de Pago:  <a href="admin.php?page=wc-settings&tab=checkout" class="btn"  >Configurar</a></span><br><br>
     <span>Exportar formularios:  <a href="admin.php?page=gf_export" class="btn"  >Ir a exportar</a></span><br><br>
     <span>Exportar usuarios/pedidos:  <a href="admin.php?page=wc_customer_order_csv_export" class="btn"  >Ir a exportar</a></span><br><br>

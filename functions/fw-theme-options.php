@@ -454,6 +454,30 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_checkout',
 	'default'	=>'Tus datos',
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_datos_1',
+	'label'    => __( 'titulo -  Datos de facturación', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=>'Datos de facturación',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_datos_2',
+	'label'    => __( 'titulo -  Datos de envío', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=>'Datos de envío',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_checkout_ship_to_other',
+	'label'    => __( 'Enviar a otra dirección (checkbox)', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default'	=>'Enviar a otra dirección',
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -2146,35 +2170,18 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-if(is_webaltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_shipping_fields',
-	'label'       => __( 'Shipping Fields (CR)', 'fastway' ),
-	'description'	=> 'Campos adicionales de envío.',
+	'settings'    => 'fw_gift_fields',
+	'label'       => __( 'Campos Regalo (CR)', 'fastway' ),
+	'description'	=> 'Agrega campo mensaje.',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
+		0  => __( 'Disable', 'fastway' ),
+		1 => __( 'Enable', 'fastway' )
 	)
 ) );
-}
-
-if(is_webaltoweb()){
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_gift_fields',
-		'label'       => __( 'Campos Regalo (CR)', 'fastway' ),
-		'description'	=> 'Campos adicionales de envío.',
-		'section'     => 'section_woo_checkout',
-		'default'     => 0,
-		'choices' => array(
-			0  => __( 'Disable', 'fastway' ),
-			1 => __( 'Enable', 'fastway' )
-		)
-	) );
-	}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',

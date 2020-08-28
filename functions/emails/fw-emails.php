@@ -323,7 +323,6 @@ function conditionals($template,$data) {
                         // Get the two values
                         $cond = preg_split("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str);
                         // Do we have a valid if statment?
-                        error_log(count($cond) );
                         if(count($cond) == 8) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
                             $cond_m=$cond_m[0];
@@ -352,7 +351,7 @@ function conditionals($template,$data) {
                             $cond[13]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[13])));
                             $cond[14]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[14])));
  
-                            error_log(print_r($cond,true));   
+                            //error_log(print_r($cond,true));   
 
                             eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
                             eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");
@@ -368,7 +367,7 @@ function conditionals($template,$data) {
                             if($cond[13]=='AND')$cond[13]="&&";
 
                             eval("\$result = \$result1 ".$cond[9]." \$result2 ".$cond[11]." \$result3 ".$cond[13]." \$result4;");
-                            error_log("\$result = \$result1 ".$cond[9]." \$result2 ".$cond[11]." \$result3 ".$cond[13]." \$result4;");
+                            //error_log("\$result = \$result1 ".$cond[9]." \$result2 ".$cond[11]." \$result3 ".$cond[13]." \$result4;");
 
                         }else if(count($cond) == 6) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|XOR|OR|&&)/", $cond_str, $cond_m);
@@ -392,14 +391,14 @@ function conditionals($template,$data) {
                             $cond[9]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[9])));
                             $cond[10]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[10])));
                             
-                            error_log(print_r($cond,true));   
+                            //error_log(print_r($cond,true));   
 
                             eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[6]." \"".$cond[1]."\") ? TRUE : FALSE;");
                             eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
                             eval("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
-                            error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[6]." \"".$cond[1]."\") ? TRUE : FALSE;");
-                            error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
-                            error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
+                            //error_log("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[6]." \"".$cond[1]."\") ? TRUE : FALSE;");
+                            //error_log("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[8]." \"".$cond[3]."\") ? TRUE : FALSE;");
+                            //error_log("\$result3 = (\"".$data[$cond[4]]."\" ".$cond[10]." \"".$cond[5]."\") ? TRUE : FALSE;");
 
 
                             if($cond[7]=='OR')$cond[7]="||";
@@ -408,8 +407,8 @@ function conditionals($template,$data) {
                             if($cond[9]=='AND')$cond[9]="&&";
 
                             eval("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
-                            error_log("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
-                            error_log($result);
+                            //error_log("\$result = \$result1 ".$cond[7]." \$result2 ".$cond[9]." \$result3;");
+                            //error_log($result);
 
                         }else if(count($cond) == 4) {
                             preg_match_all("/(\!=|==|<=|>=|<>|<|>|AND|OR|&&)/", $cond_str, $cond_m);

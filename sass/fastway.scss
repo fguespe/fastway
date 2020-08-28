@@ -3936,7 +3936,8 @@ a, button {
     width: auto;
     word-wrap: break-word;
   }
-  .fw_checkout .woocommerce-billing-fields__field-wrapper {
+  .fw_checkout .woocommerce-billing-fields__field-wrapper ,
+  .fw_checkout .woocommerce-shipping-fields__field-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display:flex;
@@ -4668,9 +4669,12 @@ a, button {
       padding:10px;
       padding-left:15px;
       padding-right:15px;
-    }
+    }/*
     #ship-to-different-address{
       display:none;
+    }*/
+    #shipping_country_field{
+      display: none;
     }
     label,span{
       font-size:14px !important;

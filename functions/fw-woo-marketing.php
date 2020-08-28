@@ -10,10 +10,17 @@ add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid',
 
 
 
-if(fw_theme_mod('fw_lili_discount'))add_action('woocommerce_cart_calculate_fees' , 'fw_apply_lili_discount');
-function fw_apply_lili_discount( WC_Cart $cart ){
+add_action('woocommerce_cart_calculate_fees' , 'fw_cart_calculate_fees');
+function fw_cart_calculate_fees( WC_Cart $cart ){
+    if(fw_theme_mod('fw_lili_discount')){
+        $discount=get_lili_discount($cart);
+        if($discount<0)$cart->add_fee( 'Promo:',$discount);
+    }
+}
+function get_lili_discount($cart){
     if(fw_is_admin())return;
     if(esMultitienda()) return;
+    if(!fw_theme_mod('fw_lili_discount'))return;
     if (!empty($cart->applied_coupons) && !fw_theme_mod('fw_lili_discount_cupones'))return;
     $cuantos=fw_theme_mod('fw_lili_discount_cant');
     if( $cart->cart_contents_count < $cuantos ) return;
@@ -50,9 +57,7 @@ function fw_apply_lili_discount( WC_Cart $cart ){
         $precio=$product->get_price();
         if($menorprecio>$precio)$menorprecio=$precio;
     }
-    error_log("menor precio".$menorprecio);
     if($menorprecio==100000000)return;
-    //$discount = $cart->subtotal * 0.1;
     $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
-    $cart->add_fee( 'Promo:', $discount);
+    return $discount;
 }
