@@ -1531,7 +1531,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
     if ( 'free_shipping' == $rate->method_id){
       $entro=true;
       $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
-      error_log("EEfg: ".$lili_disc.' '.$entro.' '.$min.' '.$cart_total);
+      error_log("EEfg: ".$lili_disc.' - '.$entro.' - '.$min.' - '.$cart_total.' - '.$rate->id);
       if(($cart_total+$lili_disc) < $min){
         unset($rates[$rate->id]);
         $entro=false;
