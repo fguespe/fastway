@@ -407,6 +407,7 @@ function vc_brands_carousel() {
         );          
 
 }
+
 add_action( 'vc_before_init', 'vc_featured_products' );
 function vc_featured_products() {
 

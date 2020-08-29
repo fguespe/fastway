@@ -161,6 +161,96 @@ vc_add_param("vc_column_inner",
     )
 ));
 
+add_action( 'vc_before_init', 'fw_carousel' );
+function fw_carousel() {
+  vc_map( 
+        array(
+            'name' => __('FW Carousel', 'fastway'),
+            'base' => 'fw_carousel_function',
+            'description' => __('Image Carousel', 'fastway'), 
+            'category' => __('Fastway', 'fastway'),   
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'params' => array(
+                array(
+                    "type"        => "attach_images",
+                    "heading"     => "Imagenes",
+                    "param_name"  => "slides_desktop",
+                    "value"       => "",
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Links (separados con ,)"),
+                    "param_name"  => "links_desktop",
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Title', 'fastway' ),
+                    'param_name' => 'title',
+                    'value' => 'Title',
+                    'std' => 'Title',
+                    'admin_label' => true,
+                    'weight' => 0,
+                ), 
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Cols', 'fastway' ),
+                    'param_name' => 'prodsperrow',
+                    'value' => '4',
+                    'std' => '4',
+                    'admin_label' => false,
+                    'weight' => 0,
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Space', 'fastway' ),
+                    'param_name' => 'space',
+                    'value' => '10',
+                    'std' => '10',
+                    'admin_label' => false,
+                    'weight' => 0,
+                ),
+                array(
+                    "type" => 'checkbox',
+                    "heading"     => "Autoplay ",
+                    "param_name"  => "autoplay",
+                    'std' => 'true',
+                ),
+                array(
+                    "type" => 'checkbox',
+                    "heading"     => "Loop",
+                    "param_name"  => "loop",
+                    'std' => 'true',
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Delay', 'js_composer' ),
+                    'param_name' => 'slider_delay',
+                    'description' => __( 'Delay in miliseconds', 'js_composer' ),
+                    'std' => '4000',
+                ),  
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),   
+                array(
+                    'type' => 'css_editor',
+                    'heading' => __( 'CSS box', 'js_composer' ),
+                    'param_name' => 'css',
+                    'group' => __( 'Design Options', 'js_composer' ),
+                ),
+            )
+        )
+    );
+}
+
 add_action( 'vc_before_init', 'fw_slider' );
 function fw_slider() {
     // Title
@@ -328,6 +418,74 @@ function fw_image() {
         )
     );
 }
+
+add_shortcode( 'fw_carousel_function', 'fw_carousel_function' ); 
+function fw_carousel_function( $atts, $content ) {
+    $rand=generateRandomString(5);
+    $atts = shortcode_atts(
+        array(
+            'slides_desktop'      =>  '',
+            'links_desktop'      =>  '',
+            'slider_speed'  => '250',
+            'slider_delay'  => '4000',
+            'prodsperrow'  => '4',
+            'space'  => '10',
+            'autoplay'  => 'true',
+            'loop'  => 'true',
+            'el_class'  => ''
+        ), $atts );
+    //Desktop
+    $image_ids = explode(',',$atts['slides_desktop']);
+    $return='';
+    $links = explode(',',$atts['links_desktop']);
+    $return = '
+    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.' '.$atts['el_class'].'  over-hidden relative" >
+    <div class="swiper-wrapper clear-ul">';
+    $cant=0;
+    foreach( $image_ids as $image_id ){
+        $images = wp_get_attachment_image_src( $image_id, '' );
+        $link=$links[$cant];
+        $image=$images[0];
+        if(!$link)$link="#";
+        $return .= '<div class="swiper-slide fwslider" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
+        $return .= '<a href="'.$link.'" ><div class="item product-category">';
+        $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+        $return .= '</div></a></div>';    
+        $cant++;
+    }
+    $return .='</div>';
+    $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+    <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
+    
+    $return .='</div>
+    <script>
+    var ProductSwiper2 = new Swiper(\'.swiper-fwslider-'.$rand.'\', {
+        navigation: {
+            nextEl: \'.swiper-fwslider-'.$rand.'-next\',
+            prevEl: \'.swiper-fwslider-'.$rand.'-prev\',
+        }, 
+        slidesPerView: '.$atts['prodsperrow'].',
+        slidesPerGroup: '.$atts['prodsperrow'].',
+        paginationClickable: true,
+        preventClicks: false,
+        preventClicksPropagation: false,
+        spaceBetween: 80,
+        loop: '.$atts['loop'].',
+        touchRatio: 0 ,
+        autoplay: '.$atts['autoplay'].',
+        autoplayDisableOnInteraction: false,
+        breakpoints: {
+        // when window width is <= 320px
+            900:    {slidesPerView: 2,slidesPerGroup:2},
+            1000:   {slidesPerView: 3,slidesPerGroup:3},            
+            1200:    {slidesPerView: 4,slidesPerGroup:4}
+        }
+    });
+    </script>';
+    return $return;
+}   
+
+add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
 function fw_slider_function( $atts, $content ) {
     $rand=generateRandomString(5);
     $atts = shortcode_atts(
@@ -434,7 +592,6 @@ function fw_slider_function( $atts, $content ) {
     </script>';
     return $return;
 }   
-add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
 
 
 
