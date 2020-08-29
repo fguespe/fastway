@@ -223,6 +223,10 @@ function fw_if($atts = [], $content = null){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }
 }
+function fw_loop_review(){
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_review_code'))));
+}
+
 function woo_loop_brand(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
@@ -244,6 +248,35 @@ function fw_cat_desc(){
     global $fw_woo_cat;
     return '<span class="desc">'.$fw_woo_cat->description.'</span>';
 }
+
+
+add_shortcode('fw_review_container', 'fw_review_container');
+function fw_review_container($atts = [], $content = null){
+    echo '<li class="fw_review_loop">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</li>';
+}
+
+add_shortcode('fw_review_image', 'fw_review_image');
+function fw_review_image(){
+  global $fw_loop_rev;
+  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $fw_loop_rev->ID ), 'medium' ); 
+  $image_url = $image[0]; 
+  return '<div class="thumbnail"><div class="shadow-overlay"></div><img src="'.$image_url.'" width="100%" height="auto" /></div>';
+}
+add_shortcode('fw_review_title', 'fw_review_title');
+function fw_review_title(){
+  global $fw_loop_rev;
+  return '<div class="review_title" >'.$fw_loop_rev->post_title.'</div>' ;
+}
+
+add_shortcode('fw_review_desc', 'fw_review_desc');
+function fw_review_desc(){
+  global $fw_loop_rev;
+  return '<div class="review_title" >'.$fw_loop_rev->post_content.'</div>' ;
+}
+
+
 
 add_shortcode('fw_brand_image', 'fw_cat_image');
 add_shortcode('fw_cat_image', 'fw_cat_image');
@@ -274,6 +307,7 @@ function fw_cat_container($atts = [], $content = null){
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</a></li>';
 }
+
 
 add_shortcode('fw_brand_container', 'fw_brand_container');
 function fw_brand_container($atts = [], $content = null){

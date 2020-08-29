@@ -99,7 +99,7 @@ function get_blog_template( $template_name, $args = array(), $posts = null ){
 }
 
 
-
+add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
 function fw_blog_carousel( $atts, $content ) {
     $rand=generateRandomString(5);
     $atts = shortcode_atts(

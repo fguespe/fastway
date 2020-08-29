@@ -232,6 +232,7 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/fw-faq.php';
+require get_template_directory() . '/functions/fw-review.php';
 require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
 
 if(is_plugin_active('js_composer/js_composer.php')){

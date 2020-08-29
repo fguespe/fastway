@@ -161,6 +161,87 @@ vc_add_param("vc_column_inner",
     )
 ));
 
+
+add_action( 'vc_before_init', 'fw_review_carousel' );
+function fw_review_carousel() {
+  vc_map( 
+        array(
+            'name' => __('FW Reviews', 'fastway'),
+            'base' => 'fw_review_carousel_function',
+            'description' => __('FW Reviews', 'fastway'), 
+            'category' => __('Fastway', 'fastway'),   
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'params' => array(
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Title', 'fastway' ),
+                    'param_name' => 'title',
+                    'value' => 'Title',
+                    'std' => 'Title',
+                    'admin_label' => true,
+                    'weight' => 0,
+                ), 
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Cols', 'fastway' ),
+                    'param_name' => 'prodsperrow',
+                    'value' => '4',
+                    'std' => '4',
+                    'admin_label' => false,
+                    'weight' => 0,
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Space', 'fastway' ),
+                    'param_name' => 'space',
+                    'value' => '10',
+                    'std' => '10',
+                    'admin_label' => false,
+                    'weight' => 0,
+                ),
+                array(
+                    "type" => 'checkbox',
+                    "heading"     => "Autoplay ",
+                    "param_name"  => "autoplay",
+                    'std' => 'true',
+                ),
+                array(
+                    "type" => 'checkbox',
+                    "heading"     => "Loop",
+                    "param_name"  => "loop",
+                    'std' => 'true',
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Delay', 'js_composer' ),
+                    'param_name' => 'slider_delay',
+                    'description' => __( 'Delay in miliseconds', 'js_composer' ),
+                    'std' => '4000',
+                ),  
+                array(
+                    'type' => 'el_id',
+                    'heading' => __( 'Element ID', 'js_composer' ),
+                    'param_name' => 'el_id',
+                    'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                ),
+                array(
+                    'type' => 'textfield',
+                    'heading' => __( 'Extra class name', 'js_composer' ),
+                    'param_name' => 'el_class',
+                    'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                ),   
+                array(
+                    'type' => 'css_editor',
+                    'heading' => __( 'CSS box', 'js_composer' ),
+                    'param_name' => 'css',
+                    'group' => __( 'Design Options', 'js_composer' ),
+                ),
+            )
+        )
+    );
+}
+
+
 add_action( 'vc_before_init', 'fw_carousel' );
 function fw_carousel() {
   vc_map( 
@@ -195,8 +276,8 @@ function fw_carousel() {
                     'type' => 'textfield',
                     'heading' => __( 'Cols', 'fastway' ),
                     'param_name' => 'prodsperrow',
-                    'value' => '4',
-                    'std' => '4',
+                    'value' => '1',
+                    'std' => '1',
                     'admin_label' => false,
                     'weight' => 0,
                 ),
@@ -419,6 +500,7 @@ function fw_image() {
     );
 }
 
+
 add_shortcode( 'fw_carousel_function', 'fw_carousel_function' ); 
 function fw_carousel_function( $atts, $content ) {
     $rand=generateRandomString(5);
@@ -432,6 +514,7 @@ function fw_carousel_function( $atts, $content ) {
             'space'  => '10',
             'autoplay'  => 'true',
             'loop'  => 'true',
+            'el_id'  => '',
             'el_class'  => ''
         ), $atts );
     //Desktop
@@ -497,6 +580,7 @@ function fw_slider_function( $atts, $content ) {
             'slider_delay'  => '4000',
             'autoplay'  => 'true',
             'loop'  => 'false',
+            'el_id'  => '',
             'el_class'  => ''
         ), $atts );
     if(!$atts['loop'])$atts['loop']='false';

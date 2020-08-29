@@ -173,6 +173,13 @@ Kirki::add_section( 'section_woo_loop_brand', array(
   
 ) );
 
+Kirki::add_section( 'section_woo_loop_review', array(
+    'title'          => __( 'Review Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
+) );
+
 Kirki::add_section( 'section_footer', array(
     'title'          => __( 'Footer', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -3493,6 +3500,29 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
+	'settings'    => 'woo_loop_review_code',
+	'label'       => __( ' Review Loop Code', 'fastway' ),
+	'section'     => 'section_woo_loop_review',
+	'description'     => '[fw_review_container][fw_review_image][fw_review_title][fw_review_desc][/fw_review_container]',
+	'default'     => '[fw_review_container][fw_review_image][fw_review_title][fw_review_desc][/fw_review_container]',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_loop_review',
+	'label'       => __( 'CSS Review Loop', 'fastway' ),
+	'section'     => 'section_woo_loop_review',
+	'description' => 'Classes: .fw_review_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
 	'settings'    => 'woo_loop_brand_code',
 	'label'       => __( ' Brand Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_brand',
@@ -3508,15 +3538,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'CSS Brand Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_brand',
 	'description' => 'Classes: .fw_brand_loop',
-	'default'     => '
-	.fw_brand_loop .title {
-		text-align: center;
-		font-size: 22px!important;
-		text-transform: uppercase;
-		background-color: #F5F5F5;
-		border-top: 3px solid var(--main);
-		padding: 10px;
-	}',
+	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
 		'language' => 'css',
