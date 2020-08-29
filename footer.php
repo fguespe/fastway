@@ -23,7 +23,7 @@ if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlsp
 <script><?php echo $js;?></script>
     <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
-if(fw_theme_mod('whats-button')!='none')fw_whatsappfooter();
+if(usesWhatsapp())fw_whatsappfooter();
 if(!is_plugin_active('Plugin-WooCommerce-master/index.php')){?>
 <style>
 #todopago-tab{

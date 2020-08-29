@@ -1,42 +1,36 @@
 <?php
 
-Kirki::add_panel( 'panel_clientarea', array(
-
-    'title'       => __( 'Altoweb Clients', 'fastway' ),
-    //'description' => __( 'My panel description', 'fastway' ),
-) );
-
 Kirki::add_section( 'section_data', array(
     'title'          => __( 'Company Data', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 
 ) );
 
 Kirki::add_section( 'section_whatsapp', array(
     'title'          => __( 'Whatsapp', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 
 ) );
 
 Kirki::add_section( 'section_clientarea', array(
     'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 
 ) );
 Kirki::add_section( 'section_clientwidgets', array(
-    'title'          => __( 'Widgets', 'fastway' ),
+    'title'          => __( 'Dashboard Widgets', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 ) );
 
 if(is_webaltoweb()){
 Kirki::add_section( 'section_client_admin', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 ) );
 }
 /*MELI*/
@@ -45,9 +39,9 @@ Kirki::add_section( 'section_client_admin', array(
 /*WOO AREA*/
 
 Kirki::add_section( 'section_wooarea', array(
-    'title'          => __( 'Woocommerce', 'fastway' ),
+    'title'          => __( 'Imports', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_clientarea',
+    'panel'          => 'panel_fastway',
 
 ) );
 

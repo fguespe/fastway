@@ -565,6 +565,10 @@ function fw_header_builder_mobile($atts = [], $content = null){
 
     return $volver;
 }
+function usesWhatsapp(){
+    return fw_theme_mod('whats-button')!='none';
+}
+
 add_shortcode('fw_m_header', 'fw_header_builder_mobile');
 function fw_header_html(){
     if(is_plugin_active('woocommerce/woocommerce.php') && is_checkout()/* && !is_order_received_page()*/){

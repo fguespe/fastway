@@ -120,18 +120,11 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
 <div class="fw_menu_mobile ">
         <div class="<?=$clasesmenu?>"> 
         <div class="telefono-header t1 txt-16 text-left">      
-          <?php 
-          if(!empty(fw_company_data("phone"))){?>   
-          <a href="<?php echo fw_company_data("phone",true)?>"  title="Llamar" class="btn fb" style=""><i class="fal fa-phone" style="color:white;" aria-hidden="true"></i> <?=fw_theme_mod('fw_call_now')?></a><br>
-          <?php
-          } 
-          if(!empty(fw_company_data("whatsapp"))){?>
-          <a href="<?php echo fw_company_data("whatsapp",true)?>"  title="WhatsApp" class="btn wp" style=""><i class="fab fa-whatsapp" style="color:white !important;"></i> <?=fw_theme_mod('fw_chat_whats')?></a>
-          <?php } ?>
-          
+          <?php if(fw_theme_mod('fw-ctas-switch')){
+            ctas();?>
+            <div class="separa-menu-mobile">&nbsp;</div>
+
         </div>
-        <?php if(!empty(fw_company_data("whatsapp")) || !empty(fw_company_data("phone"))){?>
-        <div class="separa-menu-mobile">&nbsp;</div>
         <?php 
         }
         echo fw_menu_mobilenew(array('id' => 'mobile' )); 

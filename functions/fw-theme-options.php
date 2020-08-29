@@ -87,6 +87,15 @@ Kirki::add_section( 'section_scripts', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
+Kirki::add_section( 'section_mobile', array(
+    'title'          => __( 'Mobile', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
+
+
 Kirki::add_section( 'section_seo', array(
     'title'          => __( 'SEO', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -131,8 +140,9 @@ Kirki::add_section( 'section_header', array(
     'panel'          => 'panel_fastwaylayout',
 
 ) );
-Kirki::add_section( 'section_mobile', array(
-    'title'          => __( 'Mobile', 'fastway' ),
+
+Kirki::add_section( 'section_mobile_header', array(
+    'title'          => __( 'Mobile Header', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaylayout',
 
@@ -235,13 +245,14 @@ Kirki::add_section( 'section_labels_thankyou', array(
   
 ) );
 
-
-Kirki::add_section( 'section_actions', array(
-    'title'          => __( 'Actions', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
-
-) );
+if(is_webaltoweb()){
+	Kirki::add_section( 'section_actions', array(
+		'title'          => __( 'Actions', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastway',
+	
+	) );
+}
 
 
 Kirki::add_panel( 'panel_fastwayblog', array(
@@ -1181,54 +1192,6 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
-	'settings'    => 'logo-width-mobile',
-	'label'       => __( 'Mobile Logo Width', 'fastway' ),
-	'section'     => 'section_mobile',
-	'default'     => 110,
-	'choices'     => array(
-		'min'  => 0,
-		'max'  => 500,
-		'step' => 5,
-	),
-	'transport'   => 'auto',
-	'output'      => array(
-		array(
-			'element' => '.fw_header.middle.mobile  .logo img',
-			'property'	=> 'width',
-			'units'=>'px'
-		),
-	),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
-	'settings'    => 'header__mobile_icons_size',
-	'label'       => __( 'Mobile Header Icons Size', 'fastway' ),
-	'section'     => 'section_mobile',
-	'default'     => 24,
-	'choices'     => array(
-		'min'  => 10,
-		'max'  => 40,
-		'step' => 1,
-	),
-	'transport'   => 'auto',
-	'output'      => array(
-		array(
-			'element' => '.fw_header.mobile i',
-			'property'	=> 'font-size',
-			'units'=>'px'
-		),
-	
-		array(
-			'element' => '.fw_header.mobile .header-cart-count-badge',
-			'property'	=> 'font-size',
-			'value_pattern'   => 'calc($px - 6px)',
-			
-		),
-		
-	),
-) );
 /*MELI*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1433,12 +1396,62 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => '',
 ) );
 
+/*MOBILE*/
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'logo-width-mobile',
+	'label'       => __( 'Mobile Logo Width', 'fastway' ),
+	'section'     => 'section_mobile_header',
+	'default'     => 110,
+	'choices'     => array(
+		'min'  => 0,
+		'max'  => 500,
+		'step' => 5,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header.middle.mobile  .logo img',
+			'property'	=> 'width',
+			'units'=>'px'
+		),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'header__mobile_icons_size',
+	'label'       => __( 'Mobile Header Icons Size', 'fastway' ),
+	'section'     => 'section_mobile_header',
+	'default'     => 24,
+	'choices'     => array(
+		'min'  => 10,
+		'max'  => 40,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header.mobile i',
+			'property'	=> 'font-size',
+			'units'=>'px'
+		),
+	
+		array(
+			'element' => '.fw_header.mobile .header-cart-count-badge',
+			'property'	=> 'font-size',
+			'value_pattern'   => 'calc($px - 6px)',
+			
+		),
+		
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'header_padding_mobile',
 	'label'       => __( 'Header Padding Mobile', 'fastway' ),
-	'section'     => 'section_mobile',
+	'section'     => 'section_mobile_header',
 	'default'     => 1,
 	'choices'     => array(
 		'0'  => 0,
@@ -1460,6 +1473,47 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'header_mobile_code',
+	'label'       => __( 'Header Mobile Code', 'fastway' ),
+	'description' => '[fw_m_header id="bottom,top,middle"]
+					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
+					[/fw_m_header]',
+	'section'     => 'section_mobile_header',
+	'default'     => '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0">
+	[fw_m_menu][fw_m_search_form id="3"]
+</div>
+<div class="col-6 row align-items-center justify-content-center">
+	[fw_logo]
+</div>
+<div class="col-3 row align-items-center justify-content-center">
+	[fw_shopping_cart]
+</div>[/fw_m_header]',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-mobile',
+	'label'       => __( 'CSS Mobile', 'fastway' ),
+	'description'	=> 'Put everything inside @media',
+	'section'     => 'section_mobile_header',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+
+
+
+
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -1974,13 +2028,34 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_quickmenu_links',
 	'label'       => __( 'Quicklinks', 'fastway' ),
 	'section'     => 'section_mobile',
 	'default' => 'fb,youtube,whatsapp,ig,email,phone,address'
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw-ctas-switch',
+	'label'       => __( 'CTAs', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw-ctas',
+	'label'       => __( 'CTAs', 'fastway' ),
+	'section'     => 'section_mobile',
+	'description' => 'Poner none para anular. Default toma num y whatsapp si existe.',
+	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
 ) );
 
 
@@ -1993,27 +2068,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'	=>	'Redirect to other homepage in mobile. Ej. /permalink',
 	'section'     => 'section_mobile',
 	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'header_mobile_code',
-	'label'       => __( 'Header Mobile Code', 'fastway' ),
-	'description' => '[fw_m_header id="bottom,top,middle"]
-					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
-					[/fw_m_header]',
-	'section'     => 'section_mobile',
-	'default'     => '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0">
-	[fw_m_menu][fw_m_search_form id="3"]
-</div>
-<div class="col-6 row align-items-center justify-content-center">
-	[fw_logo]
-</div>
-<div class="col-3 row align-items-center justify-content-center">
-	[fw_shopping_cart]
-</div>[/fw_m_header]',
-	'choices'     => array(
-		'language' => 'html',
-	),
 ) );
 
 
@@ -3368,18 +3422,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 */
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'css_editor-mobile',
-	'label'       => __( 'CSS Mobile', 'fastway' ),
-	'description'	=> 'Put everything inside @media',
-	'section'     => 'section_mobile',
-	'default'     => '',
-	'transport'	=> 'postMessage',
-	'choices'     => array(
-		'language' => 'css',
-	),
-) );
 
 /*LOOP*/
 

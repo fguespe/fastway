@@ -21,8 +21,18 @@ function fw_info_modal( $atts ) {
 
 
 
-
-
+function ctas(){
+    $ctas= explode("|",trim(fw_theme_mod("fw-ctas")));
+    foreach($ctas as $c){
+        $quick = explode(",",$c);
+        $icon=$quick[0];
+        $link=$quick[1];
+        if($link=='whatsapp' && !usesWhatsapp())continue;
+        $class=$quick[2];
+        $label=$quick[3];
+        echo '<a href="'.fw_company_data($link,true).'"  title="Llamar" class="btn '.$class.'" style=""><i class="'.$icon.'" style="color:white;" aria-hidden="true"></i> '.$label.'</a><br>';
+    }
+}
 function quicklinks(){
     $quick =trim(fw_theme_mod("fw_quickmenu_links"));
     if(empty($quick))$quick="fb,youtube,whatsapp,ig,email,phone,address";
@@ -48,10 +58,8 @@ function quicklinks(){
             $q=str_replace($char,"",$q);
         }
         $label=fw_company_data($q,false,$num);
-        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';
-        
+        if(!empty($label))echo '<a class="quick'.$i.'" href="'.fw_company_data($q,true,$num).'"><i class="'.$arra[$q][0].'" ></i><span>'.$label.'</span></a>';   
     }
-    
     echo "</div>";
 }
 
@@ -110,7 +118,6 @@ function fw_company_data($type, $link=false,$cant=1) {
     
     return $value;
 }
-if(empty(fw_theme_mod('short-fw_companywhatsapp')))set_theme_mod('whats-button','none');
 
 function fw_whatsappfooter(){
     $usas='whatsapp';

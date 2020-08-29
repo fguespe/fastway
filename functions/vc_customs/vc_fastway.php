@@ -456,7 +456,6 @@ function fw_carousel_function( $atts, $content ) {
     $return .='</div>';
     $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
     <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
-    
     $return .='</div>
     <script>
     var ProductSwiper2 = new Swiper(\'.swiper-fwslider-'.$rand.'\', {
@@ -465,7 +464,7 @@ function fw_carousel_function( $atts, $content ) {
             prevEl: \'.swiper-fwslider-'.$rand.'-prev\',
         }, 
         slidesPerView: '.$atts['prodsperrow'].',
-        slidesPerGroup: '.$atts['prodsperrow'].',
+        slidesPerGroup: 1,
         paginationClickable: true,
         preventClicks: false,
         preventClicksPropagation: false,
