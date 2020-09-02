@@ -1100,7 +1100,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_builder_header_class',
@@ -1108,7 +1107,7 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => '*playground (beta)',
 	'section'     => 'section_header',
 	'default'     => '',
-) );*/
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'multicheck',
