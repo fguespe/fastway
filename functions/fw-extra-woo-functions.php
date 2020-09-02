@@ -1556,12 +1556,13 @@ if(fw_theme_mod('fw_define_shipping_default')){
   
 }
 
+
+
 function fw_hide_shipping_when_free_is_available( $rates) {
   $free = array();
   $entro=false;
   $cart_total = WC()->cart->cart_contents_total;
   $lili_disc=get_lili_discount(WC()->cart);
-  error_log("EEfg: ".$cart_total.' '.$lili_disc);
 	foreach ( $rates as $rate_id => $rate ) {
     if ( 'free_shipping' == $rate->method_id){
       $entro=true;
@@ -1578,7 +1579,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
 	return $entro  ? $free : $rates;
 }
 
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' );
+if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' ,1);
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
@@ -1789,4 +1790,8 @@ function sample_admin_notice__error() {
   $message3="Si por el otro lado, tildamos el checkbox, entonces se le manda al mail un correo de activación con un link para que genere su password.";
   printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
 }
+
+
+
+if(fw_theme_mod('fw_id_filesync')==1)set_theme_mod('fw_id_filesync','');
 

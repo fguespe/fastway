@@ -18,7 +18,6 @@ function urlforimages(){
 	return $stri;
 
 }
-
 $static_block_args = fastway_get_stblock();
 
 Kirki::add_config( 'theme_config_id', array(
@@ -187,8 +186,20 @@ Kirki::add_section( 'section_footer', array(
 
 ) );
 
-Kirki::add_section( 'section_forms', array(
-    'title'          => __( 'Forms', 'fastway' ),
+Kirki::add_section( 'section_layout_others', array(
+    'title'          => __( 'Other styles', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
+Kirki::add_section( 'section_layout_others', array(
+    'title'          => __( 'CSS Loggedd In', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
+Kirki::add_section( 'section_layout_others', array(
+    'title'          => __( 'CSS Admins', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaylayout',
 

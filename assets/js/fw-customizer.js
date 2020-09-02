@@ -19,6 +19,11 @@ wp.customize( 'css_editor-footer', function( value ) {
     jQuery( '#css_editor-footer' ).text(newval );
   } );
 } );
+wp.customize( 'css_loop_review', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_loop_review' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor-forms', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-forms' ).text(newval );
