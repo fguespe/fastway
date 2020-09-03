@@ -306,7 +306,6 @@ function fw_login(){
       });
 }
 function verificarEmail(num){
-  console.log('num',num)
   let email=jQuery('#billing_email').val()
   let e_valid= isEmail(email)
   if(!e_valid){

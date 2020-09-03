@@ -56,8 +56,11 @@ iconosmenu();
 }
 
 jQuery(document).ready( function(jQuery) {
-	jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
-	jQuery('#wpb_visual_composer h2 span').html('Pestaña descripción');
+	console.log(document.documentElement.lang)
+	if(document.documentElement.lang && document.documentElement.lang.includes('es')){
+		jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
+		jQuery('#wpb_visual_composer h2 span').html('Pestaña descripción');
+	}
 	var x = jQuery("img[src$='https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg']");
 	x.parent().parent().hide();
 });

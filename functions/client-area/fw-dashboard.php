@@ -7,7 +7,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_estado')){
         wp_add_dashboard_widget(
             'fw_widget_estado', 
-            'Estado del sitio', 
+            __('Estado del sitio','fastway'), 
             'fw_widget_estado_dash', 
             'fw_widget_estado_dash_handler'
         );
@@ -15,7 +15,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_currency_conversion')){
         wp_add_dashboard_widget(
             'fw_currency_widget', 
-            'Conversion de Moneda', 
+            __('Conversion de Moneda','fastway'), 
             'fw_dash_conversion', 
             'fw_dash_conversion_handler'
         );
@@ -23,7 +23,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_lili_discount')){
         wp_add_dashboard_widget(
             'fw_widget_lili_discount', 
-            'Lili Discount', 
+            __('Lili Discount','fastway'), 
             'fw_widget_lili_discount_dash', 
             'fw_widget_lili_discount_dash_handler'
         );
@@ -31,7 +31,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_desc_prods')){
         wp_add_dashboard_widget(
             'fw_widget_desc_prods', 
-            'Descuento productos', 
+            __('Descuento productos','fastway'), 
             'fw_widget_desc_prods_dash', 
             'fw_widget_desc_prods_dash_handler'
         );
@@ -39,7 +39,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_popup')){
         wp_add_dashboard_widget(
             'fw_widget_popup', 
-            'Popup', 
+            __('Popup','fastway'), 
             'fw_widget_popup_dash', 
             'fw_widget_popup_dash_handler'
         );
@@ -47,7 +47,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_cupones')){
         wp_add_dashboard_widget(
             'fw_widget_cupones', 
-            'Cupones', 
+            __('Cupones','fastway'), 
             'fw_widget_cupones_dash', 
             'fw_widget_cupones_dash_handler'
         );
@@ -55,7 +55,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_cuotas_tp')){
         wp_add_dashboard_widget(
             'fw_widget_cuotas_tp', 
-            'Cuotas Todopago', 
+            __('Cuotas Todopago','fastway'), 
             'fw_widget_cuotas_tp_dash', 
             'fw_widget_cuotas_tp_dash_handler'
         );
@@ -63,7 +63,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_cuotas_general')){
         wp_add_dashboard_widget(
             'fw_widget_cuotas_general', 
-            'Cuotas General', 
+            __('Cuotas General','fastway'), 
             'fw_widget_cuotas_general_dash', 
             'fw_widget_cuotas_general_dash_handler'
         );
@@ -71,7 +71,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_mensaje_barra')){
         wp_add_dashboard_widget(
             'fw_widget_mensaje_barra', 
-            'Mensaje importante', 
+            __('Mensaje importante','fastway'), 
             'fw_widget_mensaje_barra_dash', 
             'fw_widget_mensaje_barra_dash_handler'
         );
@@ -79,7 +79,7 @@ function prefix_add_dashboard_widget() {
     if(fw_theme_mod('fw_widget_mensaje_sec')){
         wp_add_dashboard_widget(
             'fw_widget_mensaje_sec', 
-            'Mensaje secundario', 
+            __('Mensaje secundario','fastway'), 
             'fw_widget_mensaje_sec_dash', 
             'fw_widget_mensaje_sec_dash_handler'
         );
@@ -91,11 +91,12 @@ function fw_widget_popup_dash(){
     $color=$estado=='off'?'red':'green';
     if($estado!='off') $estado=($estado=='html')?'Newsletter':'Imagen';
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-
+    $l_label=__('Cambiar','fastway');
+    $l_estado=__('Estado','fastway');
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Estado: $estado</label><br>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_popup#fw_widget_popup">Cambiar</a>
+        <label>$l_estado: $estado</label><br>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_popup#fw_widget_popup">$l_label</a>
     </div>
 HTML;
 }
@@ -125,15 +126,15 @@ function fw_widget_popup_dash_handler(){
       <div class='feature_post_class_wrap'>
         <label>Tipo</label>
          <select name=\"fw_widget_popup_options[estados]\" id=\"estados\">
-            <option value=\"off\">Desactivado</option> 
-            <option value=\"image\">Imagen</option>
-            <option value=\"html\">Newsletter</option>
+            <option value=\"off\">".__('Desactivar','fastway')."</option> 
+            <option value=\"image\">".__('Imagen','fastway')."</option>
+            <option value=\"html\">".__('Newsletter','fastway')."</option>
          </select><br>
 
         <label>URL img: <input type=\"text\" name=\"fw_widget_popup_options[urlimg]\" id=\"urlimg\" value=\"".fw_theme_mod('fw_popup_img')."\"><br>
-        <small>*Copiar la url de la imagen subida previamente a la <a target=\"_blank\" href=\"/wp-admin/upload.php\">galería</a>. Tambien se puede copiar la url de un GIF greado y subido a giphy.</small><br>
-        <label>Link destino: <input type=\"text\" name=\"fw_widget_popup_options[link]\" id=\"link\" value=\"".fw_theme_mod('fw_popup_link')."\"><br>
-        <small>*Dejar vacío si no redirige a ningun lado</small><br><br>
+        <small>".__('*Copiar la url de la imagen subida previamente a la <a target=\"_blank\" href=\"/wp-admin/upload.php\">galería</a>. Tambien se puede copiar la url de un GIF greado y subido a giphy.')."</small><br>
+        <label>".__('Link destino:')."<input type=\"text\" name=\"fw_widget_popup_options[link]\" id=\"link\" value=\"".fw_theme_mod('fw_popup_link')."\"><br>
+        <small>".__('*Dejar vacío si no redirige a ningun lado')."</small><br><br>
       </div>";
 }
 
