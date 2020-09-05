@@ -217,12 +217,9 @@ add_shortcode('fw_single_cart', 'fw_single_cart');
 function fw_single_cart() {
     global $product;
     if(fw_check_hide_purchases())return;
-
-    echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+    echo wc_get_stock_html( $product );
     do_action( 'woocommerce_before_add_to_cart_button' );
     if(!fw_product_is_purchasable($product))return;
-
-    
 	  if ( $product->is_type( 'variable' ) ) {
       // Enqueue variation scripts.
       wp_enqueue_script( 'wc-add-to-cart-variation' );

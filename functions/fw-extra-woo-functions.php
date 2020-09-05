@@ -856,11 +856,14 @@ add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2);
 function fw_custom_get_availability( $availability, $_product ) {
     if(get_option('woocommerce_manage_stock')==='no')return "";
     if ( $_product->is_type( 'variable' ) ) return "";
-    $instock=$_product->get_stock_quantity()>0;
+    $instock=true;
+    $status=$_product->get_stock_status();
+    if(is_numeric($_product->get_stock_quantity()))$instock=$_product->get_stock_quantity()>0;
+    
     //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
-    if ( $instock )$availability['availability'] = fw_theme_mod("in-stock-text");
+    if ( $instock && $status=='instock')$availability['availability'] = fw_theme_mod("in-stock-text");
     else if( !$instock && $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
-    else if ( !$instock )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
+    else if ( !$instock || $status=='outofstock' )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
     return $availability; 
 }
 

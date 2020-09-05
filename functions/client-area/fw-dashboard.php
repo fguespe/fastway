@@ -146,26 +146,23 @@ function fw_widget_popup_dash_handler(){
 function fw_widget_cupones_dash(){
     $estado=get_option('woocommerce_enable_coupons')==='yes'?"Activo":"Inactivo";
     $color=$estado=='Activo'?'green':'red';
-    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+    $estado=__('Estado','fastway').'<label style="color:'.$color.'" >'.$estado.'</label>';
+    $cambiar_l=__('Cambiar','fastway');
 
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Estado: $estado</label><br>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_cupones#fw_widget_cupones">Cambiar</a>
+        <label>$estado</label><br>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cupones#fw_widget_cupones">$cambiar_l</a>
     </div>
 HTML;
 }
 
 
 function fw_widget_cupones_dash_handler(){
-
-    # get saved data
     if( !$widget_options = get_option( 'fw_widget_cupones_options' ) )$widget_options = array( );
-    # process update
     if( 'POST' == $_SERVER['REQUEST_METHOD']/* && isset( $_POST['fw_widget_cupones_options'] )*/) {
         $ess='no';
         if($_POST['fw_widget_cupones_options']) $ess='yes';
-
         update_option( 'woocommerce_enable_coupons',  $ess);
     }
     
@@ -174,7 +171,7 @@ function fw_widget_cupones_dash_handler(){
 
     echo "
     <div>
-        <label>Estado <input type=\"checkbox\" name=\"fw_widget_cupones_options[estado]\" id=\"estado\" ".$estado." ></label><br>
+        <label>".__('Estado','fastway')." <input type=\"checkbox\" name=\"fw_widget_cupones_options[estado]\" id=\"estado\" ".$estado." ></label><br>
     </div><br>";
 }
 
@@ -182,31 +179,27 @@ function fw_widget_cupones_dash_handler(){
 
 function fw_widget_desc_prods_dash(){
 
-    $cates =fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):'Toda la tienda';
-    $estado=fw_theme_mod('fw_product_discount')?"Activo":"Inactivo";
-    $color=$estado=='Activo'?'green':'red';
-    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-
-    $porcentage=floatval(fw_theme_mod('fw_product_discount_percentage'));
+    $cates =__('Aplica a:','fastway').fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):'Toda la tienda';
+    $estado=fw_theme_mod('fw_product_discount')?__('Activo','fastway'):__('Inactivo','fastway');
+    $color=$estado==__('Activo','fastway')?'green':'red';
+    $estado=__('Estado','fastway').'<label style="color:'.$color.'" >'.$estado.'</label>';
+    $porcentage=__('Descuento(%):','fastway').floatval(fw_theme_mod('fw_product_discount_percentage'));
+    $cambiar_l=__('Cambiar','fastway');
 
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Estado: $estado</label><br>
-        <label>Aplica a: $cates</label><br>
-        <label>Descuento(%): $porcentage </label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_desc_prods#fw_widget_desc_prods">Cambiar</a>
+        <label>$estado</label><br>
+        <label>$cates</label><br>
+        <label>$porcentage </label>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_desc_prods#fw_widget_desc_prods">$cambiar_l</a>
     </div>
 HTML;
 }
 
 
 function fw_widget_desc_prods_dash_handler(){
-
-    # get saved data
-    if( !$widget_options = get_option( 'fw_widget_desc_prods' ) )$widget_options = array( );
-    # process update
+    if( !$widget_options = get_option( 'fw_widget_desc_prods' ) )$widget_options = array();
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_desc_prods'] ) ) {
-        //Logica save
         set_theme_mod('fw_product_discount',$_POST['fw_widget_desc_prods']['estado']);
         set_theme_mod('fw_product_discount_percentage',$_POST['fw_widget_desc_prods']['percentage']);
         set_theme_mod('fw_product_discount_categories',$_POST['fw_widget_desc_prods']['categories']);
@@ -214,14 +207,15 @@ function fw_widget_desc_prods_dash_handler(){
 
     $estado=fw_theme_mod('fw_product_discount')?true:false;
     $estado=$estado?"checked=\"".$estado."\"":"";
+
     echo "
     <div>
-        <label>Estado <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
-        <label>Categorias: <input type=\"text\" name=\"fw_widget_desc_prods[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_product_discount_categories')."\"><br>
-        <small>*Dejar vacío para que aplique a toda la tienda</small><br>
-        <label>Descuento (%)<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" placewholder=\"Ej: 20\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
-        <small>Para mas información: <a href=\"https://altoweb.freshdesk.com/a/solutions/articles/36000234206\">click aquí</a><br>
-        </div><br>";
+    <label>".__('Estado','fastway').": <input type=\"checkbox\" name=\"fw_widget_desc_prods[estado]\" id=\"estado\" ".$estado." ></label><br>
+    <label>".__('Categorias','fastway').": <input type=\"text\" name=\"fw_widget_desc_prods[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_product_discount_categories')."\"><br>
+    <small>".__('*Dejar vacío para que aplique a toda la tienda','fastway')."</small><br>
+    <label>".__('Descuento (%)','fastway').":<input type=\"number\" name=\"fw_widget_desc_prods[percentage]\" id=\"percentage\" placewholder=\"Ej: 20\" value=\"".fw_theme_mod('fw_product_discount_percentage')."\"><br>
+    <small>".__('Para mas información: <a href=\"https://altoweb.freshdesk.com/a/solutions/articles/36000234206\">click aquí</a>','fastway')."<br>
+    </div><br>";
 }
 
 
@@ -233,8 +227,9 @@ function fw_widget_lili_discount_dash(){
     $color=$estado=='Activo'?'green':'red';
     $cupones=fw_theme_mod('fw_lili_discount_cupones')?"Si":"No";
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-
     $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
+    $cambiar_l=__('Cambiar','fastway');
+    
     echo <<<HTML
     <div class='fw_widget_dash'>
         <label>Estado: $estado</label><br>
@@ -242,7 +237,7 @@ function fw_widget_lili_discount_dash(){
         <label>Admite cupones: $cupones</label><br>
         <label>Descuento: $porcentage % al mas barato</label><br>
         <label>Cantidad: $cant</label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">Cambiar</a>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
     </div>
 HTML;
 }
@@ -281,11 +276,13 @@ function fw_widget_lili_discount_dash_handler(){
 
 
 function fw_widget_cuotas_tp_dash(){
-    $cuotas =fw_theme_mod('fw_cuotas_todopago');
+    $cuotas =__('Maximo cuotas sin interes: ','fastway').fw_theme_mod('fw_cuotas_todopago');
+    $cambiar_l=__('Cambiar','fastway');
+
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Maximo cuotas sin interes: $cuotas</label>
-        <a class="iralasopciones" href="index.php?edit=fw_todopago_widget#fw_todopago_widget">Cambiar</a>
+        <label>$cuotas$cuotas</label>
+        <a class="iralasopciones" href="index.php?edit=fw_todopago_widget#fw_todopago_widget">$cambiar_l</a>
     </div>
 HTML;
 }
@@ -324,10 +321,12 @@ function fw_cuotas_general(){
 }
 function fw_widget_cuotas_general_dash(){
     $cuotas =fw_theme_mod('fw_cuotas_general');
+    $cambiar_l=__('Cambiar','fastway');
+    
     echo <<<HTML
     <div class='fw_widget_dash'>
         <label>Cuotas sin interes: $cuotas</label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_general#fw_widget_cuotas_general">Cambiar</a>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_general#fw_widget_cuotas_general">$cambiar_l</a>
     </div>
 HTML;
 }
@@ -377,32 +376,30 @@ function fw_mensaje_barra(){
     return fw_theme_mod('fw_general_message');
 }
 function fw_widget_mensaje_barra_dash(){
-    $mensaje =fw_theme_mod('fw_general_message');
+    $mensaje =__('Mensaje: ','fastway').' '.fw_theme_mod('fw_general_message');
+    $cambiar_l=__('Cambiar','fastway');
+    $submsg=__('*Esto pondra una barra llamativa arriba de la tienda comunicando el mensaje','fastway');
+
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Mensaje: $mensaje</label><br>
-        <small>*Esto pondra una barra llamativa arriba de la tienda comunicando el mensaje</small>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_barra#fw_widget_mensaje_barra">Cambiar</a>
+        <label>$mensaje</label><br>
+        <small>$submsg</small>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_barra#fw_widget_mensaje_barra">$cambiar_l</a>
     </div>
 HTML;
 }
 
 function fw_widget_mensaje_barra_dash_handler(){
-
-    # get saved data
     if( !$widget_options = get_option( 'fw_widget_mensaje_barra_options' ) )$widget_options = array( );
-    # process update
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_mensaje_barra_options'] ) ) {
-        # minor validation
         $mensaje=( $_POST['fw_widget_mensaje_barra_options']['mensaje'] );
         set_theme_mod('fw_general_message',$mensaje);
     }
 
     if( !isset( $widget_options['fw_general_message'] ) )$widget_options['fw_general_message'] = fw_theme_mod('fw_general_message');
-
     echo "
     <div>
-        <label>Mensaje</label>
+        <label>".__('Mensaje','fastway')."</label>
         <input type=\"text\" name=\"fw_widget_mensaje_barra_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_general_message')."\">
     </div>";
 }
@@ -416,11 +413,13 @@ function fw_mensaje_sec(){
     return fw_theme_mod('fw_mensaje_sec');
 }
 function fw_widget_mensaje_sec_dash(){
-    $mensaje =fw_theme_mod('fw_mensaje_sec');
+    $mensaje =__('Mensaje:','fastway').fw_theme_mod('fw_mensaje_sec');
+    $cambiar_l=__('Cambiar','fastway');
+
     echo <<<HTML
     <div class='fw_widget_dash'>
-        <label>Mensaje: $mensaje</label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_sec#fw_widget_mensaje_sec">Cambiar</a>
+        <label>$mensaje</label>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_mensaje_sec#fw_widget_mensaje_sec">$cambiar_l</a>
     </div>
 HTML;
 }
@@ -442,7 +441,7 @@ function fw_widget_mensaje_sec_dash_handler(){
 
     echo "
     <div>
-        <label>Mensaje</label>
+        <label>".__('Mensaje:','fastway')."</label>
         <input type=\"text\" name=\"fw_widget_mensaje_sec_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_mensaje_sec')."\">
     </div>";
 }
@@ -450,65 +449,38 @@ function fw_widget_mensaje_sec_dash_handler(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function fw_dash_conversion(){
     echo"<div class='fw_widget_dash'>
-    <label>1 es igual a: ".fw_theme_mod('fw_currency_conversion')."</label>
+    <label>".__('1 es igual a:','fastway').fw_theme_mod('fw_currency_conversion')."</label>
     <a class=\"iralasopciones\" href=\"index.php?edit=fw_currency_widget#fw_currency_widget\">Cambiar</a>
     </div>";
 }
 function fw_dash_conversion_handler(){
-
-    # get saved data
-    if( !$widget_options = get_option( 'fw_currency_widget_options' ) )
-        $widget_options = array( );
-    # process update
+    if( !$widget_options = get_option( 'fw_currency_widget_options' ) ) $widget_options = array( );
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_currency_widget_options'] ) ) {
-        # minor validation
          $convers=( $_POST['fw_currency_widget_options']['conversion'] );
-        
-        //update_option( 'fw_currency_widget_options', $widget_options );
         set_theme_mod('fw_currency_conversion',$convers);
     }
 
-    # set defaults  
-    if( !isset( $widget_options['fw_currency_conversion'] ) )
-        $widget_options['fw_currency_conversion'] = fw_theme_mod('fw_currency_conversion');
+    if( !isset( $widget_options['fw_currency_conversion'] ) )$widget_options['fw_currency_conversion'] = fw_theme_mod('fw_currency_conversion');
 
     echo "
-      <div >
-        <label>Equivalencia</label>
-         <input type=\"text\" name=\"fw_currency_widget_options[conversion]\" id=\"conversion\" value=\"".fw_theme_mod('fw_currency_conversion')."\">
+      <div>
+        <label>".__('Equivalencia:','fastway')."</label>
+        <input type=\"text\" name=\"fw_currency_widget_options[conversion]\" id=\"conversion\" value=\"".fw_theme_mod('fw_currency_conversion')."\">
       </div>";
 }
 
 
 function fw_widget_estado_dash() {
-    # get saved data
-    if( !$widget_options = get_option( 'fw_widget_estado_options' ) ) $widget_options = array( );
+    if( !$widget_options = get_option( 'fw_widget_estado_options' ) ) $widget_options = array();
 
 
     $estado=$widget_options['estados'];
-    if(!fw_theme_mod("maintainance-mode") && fw_theme_mod("fw_shop_state")=='normal')$output="<label class='labelstatus normal'>Todas las funciones hablitadas</label>";
-    else if(fw_theme_mod("maintainance-mode"))$output="<label class='labelstatus mante'>Sitio En mantenimiento</label>";
-    else if(fw_theme_mod("fw_shop_state")=='hidepurchases')$output="<label class='labelstatus hidepurchases'>Solo se muestran los precios, la venta esta desactivada.</label>";
-    else if(fw_theme_mod("fw_shop_state")=='hideprices')$output="<label class='labelstatus hideprices' >No se muestran ni los precios ni las compras.</label>";
+    if(!fw_theme_mod("maintainance-mode") && fw_theme_mod("fw_shop_state")=='normal')$output="<label class='labelstatus normal'>".__('Todas las funciones hablitadas','fastway')."</label>";
+    else if(fw_theme_mod("maintainance-mode"))$output="<label class='labelstatus mante'>".__('Sitio En mantenimiento','fastway')."</label>";
+    else if(fw_theme_mod("fw_shop_state")=='hidepurchases')$output="<label class='labelstatus hidepurchases'>".__('Solo se muestran los precios, la venta esta desactivada','fastway')."</label>";
+    else if(fw_theme_mod("fw_shop_state")=='hideprices')$output="<label class='labelstatus hideprices' >".__('No se muestran ni los precios ni las compras','fastway')."</label>";
  
     echo "<style>
     .fw_widget_dash .labelstatus{
@@ -545,16 +517,10 @@ function fw_widget_estado_dash() {
     </div>";
     }
 
-function fw_widget_estado_dash_handler()
-{
-    # get saved data
-    if( !$widget_options = get_option( 'fw_widget_estado_options' ) )
-        $widget_options = array( );
-    # process update
+function fw_widget_estado_dash_handler(){
+    if( !$widget_options = get_option( 'fw_widget_estado_options' ) )$widget_options = array( );
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_estado_options'] ) ) {
-         # minor validation
          $widget_options['estados'] = ( $_POST['fw_widget_estado_options']['estados'] );
-         # save update
          $estado=$widget_options['estados'];
         if($estado=='normal'){
             set_theme_mod('maintainance-mode',false);
@@ -573,18 +539,17 @@ function fw_widget_estado_dash_handler()
     }
 
     # set defaults  
-    if( !isset( $widget_options['estados'] ) )
-        $widget_options['estados'] = '';
+    if( !isset( $widget_options['estados'] ) )$widget_options['estados'] = '';
 
     echo "
       <div class='feature_post_class_wrap'>
-        <label>Estados</label>
+        <label>".__('Estados:','fastway')."</label>
          <select name=\"fw_widget_estado_options[estados]\" id=\"estados\">
-         <option value>-Estado-</option> 
-            <option value=\"normal\">Normal</option> 
-            <option value=\"maintainance\" >Mantenimiento</option>
-            <option value=\"hidepurchases\">Ocultar compra</option>
-            <option value=\"hideprices\">Ocultar precios+compra</option>
+         <option value>-".__('Estado','fastway')."-</option> 
+            <option value=\"normal\">".__('Normal','fastway')."</option> 
+            <option value=\"maintainance\" >".__('Mantenimiento','fastway')."</option>
+            <option value=\"hidepurchases\">".__('Ocultar compra','fastway')."</option>
+            <option value=\"hideprices\">".__('Ocultar compra + precios:','fastway')."</option>
          </select>
       </div>";
 }
@@ -603,14 +568,14 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  function fw_ajustes_generales() {
     echo '
     <p>
-    <span>Personalizar mails/textos:  <a href="options-general.php?page=myplugin" class="btn"  >Configurar</a></span><br><br>
-    <span>Metodos de Envío:  <a href="admin.php?page=wc-settings&tab=shipping" class="btn"  >Configurar</a></span><br><br>
-    <span>Metodos de Pago:  <a href="admin.php?page=wc-settings&tab=checkout" class="btn"  >Configurar</a></span><br><br>
-    <span>Exportar formularios:  <a href="admin.php?page=gf_export" class="btn"  >Ir a exportar</a></span><br><br>
-    <span>Exportar usuarios/pedidos:  <a href="admin.php?page=wc_customer_order_csv_export" class="btn"  >Ir a exportar</a></span><br><br>
-    <span>Menús del sitio:  <a href="nav-menus.php" class="btn"  >Configurar</a></span><br><br>
-    <span>Mails Enviados:  <a href="/wp-admin/admin.php?page=email-log" class="btn"  >Ver registros</a></span><br><br>
-    <span>Refrescar cache:  <a href="/wp-admin/?kinsta-cache-cleared=true" class="btn"  >Limpiar cache</a></span><br><br>
+    <span>'.__('Personalizar mails/textos','fastway').': <a href="options-general.php?page=myplugin" class="btn">'.__('Configurar','fastway').': </a></span><br><br>
+    <span>'.__('Metodos de Envío','fastway').': <a href="admin.php?page=wc-settings&tab=shipping" class="btn"  >'.__('Configurar','fastway').': </a></span><br><br>
+    <span>'.__('Metodos de Pago','fastway').': <a href="admin.php?page=wc-settings&tab=checkout" class="btn"  >'.__('Configurar','fastway').': </a></span><br><br>
+    <span>'.__('Exportar formularios','fastway').': <a href="admin.php?page=gf_export" class="btn"  >'.__('Ir a exportar','fastway').': </a></span><br><br>
+    <span>'.__('Exportar usuarios/pedidos','fastway').': <a href="admin.php?page=wc_customer_order_csv_export" class="btn"  >'.__('Ir a exportar','fastway').'</a></span><br><br>
+    <span>'.__('Menús del sitio','fastway').': <a href="nav-menus.php" class="btn"  >'.__('Configurar','fastway').'</a></span><br><br>
+    <span>'.__('Mails Enviados','fastway').': <a href="/wp-admin/admin.php?page=email-log" class="btn"  >'.__('Ver registros','fastway').'</a></span><br><br>
+    <span>'.__('Refrescar cache','fastway').': <a href="/wp-admin/?kinsta-cache-cleared=true" class="btn"  >'.__('Limpiar cache','fastway').'e</a></span><br><br>
     </p>' ;
 }
 function fw_actualizar_precios() {
@@ -619,14 +584,14 @@ function fw_actualizar_precios() {
     echo '<span style="color:red">IMPORTANTE: No modificar las columnas ni los titulos de columnas o puede perderse información. Ante cualquier duda por favor consultar a soporte.</span><br>';
 }
 function custom_dashboard_help() {
-    echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >Crear ticket</a>
-    <br><small>*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R</small>
-    <br><br>Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a></p>
-    Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>
-    ' ;
+    echo '<p>Enviános tu solicitud desde nuestro widget. <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >'.__('Crear ticket','fastway').'</a>
+    <br><small>'.__('*En el caso que no aparezca nada al apretar crear ticket, refrescar la pagina con CNTRL+SHIFT+R','fastway').'</small>
+    <br><br>'.__('Para mas información sobre como usar el servicio <a target="_blank" href="https://www.altoweb.co/tickets/">click aquí</a>','fastway').'</p>
+    '.__('Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. <a target="_blank" href="https://altoweb.freshdesk.com/">Ir al portal</a>','fastway');
 }
 function custom_ml_help() {
-    echo '<p>Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: <br> 1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">LINK</a>' ;
+    echo '<p>'.__('Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso: ','fastway').'<br> 
+    1) Actualizar publicaciones en el servidor con el siguiente link: <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">LINK</a><br><br>2) Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso: <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">LINK</a>' ;
 }
  
  
