@@ -447,7 +447,7 @@ function resetStep(type){
   jQuery('.paso-'+type+' div:not(.box-step)').show()
   jQuery('.paso-'+type+' .dos').hide()//Nunca se da porq e otro cierra sesion
   jQuery('.paso-'+type+' .box-step').hide()
-  jQuery('.paso-'+type+' .shipping_address').hide()
+  if(!jQuery('#' + 'ship-to-different-address-checkbox').is(":checked"))jQuery('.paso-'+type+' .shipping_address').hide()
   jQuery('.paso-'+type+' .box-step').removeClass('efecto')
   jQuery('.paso-'+type+' h1').show()
   jQuery('.paso-'+type+' button').show()

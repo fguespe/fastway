@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-07 19:40-0300\n"
-"PO-Revision-Date: 2020-09-07 19:41-0300\n"
+"POT-Creation-Date: 2020-09-07 19:43-0300\n"
+"PO-Revision-Date: 2020-09-07 19:43-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -546,8 +546,8 @@ msgstr "Desactivar"
 #: functions/client-area/fw-dashboard.php:130
 #: functions/fw-extra-woo-functions.php:1084
 #: functions/fw-extra-woo-functions.php:1113
-#: functions/fw-extra-woo-functions.php:1235
-#: functions/fw-extra-woo-functions.php:1375
+#: functions/fw-extra-woo-functions.php:1224
+#: functions/fw-extra-woo-functions.php:1364
 #: functions/fw-theme-options.php:3709
 msgid "Image"
 msgstr "Imagen"
@@ -1024,32 +1024,32 @@ msgstr ""
 
 #: functions/fw-extra-woo-functions.php:1088
 #: functions/fw-extra-woo-functions.php:1124
-#: functions/fw-extra-woo-functions.php:1239
-#: functions/fw-extra-woo-functions.php:1275
-#: functions/fw-extra-woo-functions.php:1379
-#: functions/fw-extra-woo-functions.php:1415
+#: functions/fw-extra-woo-functions.php:1228
+#: functions/fw-extra-woo-functions.php:1264
+#: functions/fw-extra-woo-functions.php:1368
+#: functions/fw-extra-woo-functions.php:1404
 msgid "Add Image"
 msgstr ""
 
 #: functions/fw-extra-woo-functions.php:1089
 #: functions/fw-extra-woo-functions.php:1125
-#: functions/fw-extra-woo-functions.php:1240
-#: functions/fw-extra-woo-functions.php:1276
-#: functions/fw-extra-woo-functions.php:1380
-#: functions/fw-extra-woo-functions.php:1416
+#: functions/fw-extra-woo-functions.php:1229
+#: functions/fw-extra-woo-functions.php:1265
+#: functions/fw-extra-woo-functions.php:1369
+#: functions/fw-extra-woo-functions.php:1405
 msgid "Remove Image"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1264
-#: functions/fw-extra-woo-functions.php:1404
+#: functions/fw-extra-woo-functions.php:1253
+#: functions/fw-extra-woo-functions.php:1393
 msgid "Banner"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1681
+#: functions/fw-extra-woo-functions.php:1670
 msgid "Description"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1757
+#: functions/fw-extra-woo-functions.php:1746
 msgid "Leave a gift message"
 msgstr "Déjale un mensaje en el regalo"
 
