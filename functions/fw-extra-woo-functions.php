@@ -12,7 +12,7 @@ function esMultitienda(){
 add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
 function terms_and_conditions_validation( $username, $email, $validation_errors ) {
     if ( ! isset( $_POST['terms'] ) && fw_theme_mod('fw_terms_required') )
-        $validation_errors->add( 'terms_error', __( 'Falta aceptar los terminos y condiciones', 'woocommerce' ) );
+        $validation_errors->add( 'terms_error', __( 'Terms are remaining', 'fastway' ) );
 
     return $validation_errors;
 }
@@ -567,15 +567,15 @@ function wpa104537_filter_products_by_featured_status() {
 
      // Featured/ Not Featured
      $output .= "<select name='featured_status' id='dropdown_featured_status'>";
-     $output .= '<option value="">'.__( 'Filtrar Destacados', 'woocommerce' ).'</option>';
+     $output .= '<option value="">'.__( 'Filter Featured', 'fastway' ).'</option>';
 
      $output .="<option value='featured' ";
      if ( isset( $_GET['featured_status'] ) ) $output .= selected('featured', $_GET['featured_status'], false);
-     $output .=">".__( 'Destacados', 'woocommerce' )."</option>";
+     $output .=">".__( 'Featured', 'fastway' )."</option>";
 
      $output .="<option value='normal' ";
      if ( isset( $_GET['featured_status'] ) ) $output .= selected('normal', $_GET['featured_status'], false);
-     $output .=">".__( 'No Destacados', 'woocommerce' )."</option>";
+     $output .=">".__( 'Not Featured', 'fastway' )."</option>";
 
      $output .="</select>";
 
@@ -885,24 +885,22 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_woocommerce_p
 add_filter( 'woocommerce_booking_single_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text' );
 function custom_woocommerce_product_add_to_cart_text() {
     global $product;
-    
     $product_type = $product->product_type;
-    
     switch ( $product_type ) {
         case 'external':
-            return __( fw_theme_mod('add-to-cart-text'), 'woocommerce' );
+            return fw_theme_mod('add-to-cart-text');
         break;
         case 'grouped':
-            return __( fw_theme_mod('add-to-cart-text'), 'woocommerce' );
+            return fw_theme_mod('add-to-cart-text');
         break;
         case 'simple':
-            return __( fw_theme_mod('add-to-cart-text'), 'woocommerce' );
+            return fw_theme_mod('add-to-cart-text');
         break;
         case 'variable':
-            return __( fw_theme_mod('add-to-cart-text'), 'woocommerce' );
+            return  fw_theme_mod('add-to-cart-text');
         break;
         default:
-            return __( fw_theme_mod('add-to-cart-text'), 'woocommerce' );
+            return fw_theme_mod('add-to-cart-text');
     }
     
 }
@@ -916,7 +914,7 @@ function fw_new_product_taba( $tabs ) {
     $documents_collection = new WC_Product_Documents_Collection( $product->id );
 	if ( $documents_collection->has_sections() ) {
 		$tabs['descargas'] = array(
-        'title'     => __( 'Descargas', 'woocommerce' ),
+        'title'     => __( 'Downloads', 'fastway' ),
         'priority'  => 50,
         'callback'  => 'fw_pestana_descargas'
         );
@@ -942,7 +940,7 @@ function fw_video_tab( $tabs ) {
   $json = get_post_meta($product->id, '_fw_products_videos', true );
   if (strpos($json, 'youtube') || strpos($json, '.mp4') ){
         $tabs['_tab_video'] = array(
-          'title'   => __( 'Videos', 'woocommerce' ),
+          'title'   => __( 'Videos', 'fastway' ),
           'priority'  => 100,
           'callback'  => 'fwvideo_tab'
         );
@@ -960,7 +958,7 @@ function woocommerce_product_custom_fields(){
         array(
             'id' => '_fw_products_videos',
             'placeholder' => 'Uno por linea',
-            'label' => __('Videos', 'woocommerce')
+            'label' => __('Videos', 'fastway')
         )
     );
     //Custom Product  Textarea
@@ -968,7 +966,7 @@ function woocommerce_product_custom_fields(){
       array(
           'id' => '_fw_guia_talles',
           'placeholder' => 'Url para iframe',
-          'label' => __('Guia de talle', 'woocommerce')
+          'label' => __('Size guide', 'fastway')
       )
   );
     echo '</div>';
@@ -1051,7 +1049,7 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
     global $product;
     if (  $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) 
-        $tabs['additional_information']['title'] = __( 'Especificaciones' );  
+        $tabs['additional_information']['title'] = __( 'Specs','fastway' );  
 
     return $tabs;
 
@@ -1680,7 +1678,7 @@ function add_extra_fields_in_flat_rate($settings){
         if($key=='cost' && $counter==0){
             $arr[$key] = $value; 
             $arr['fw_shipping_desc'] = array(
-                'title'         => __( 'Descripción', 'woocommerce' ), 
+                'title'         => __( 'Description', 'fastway' ), 
                 'type'             => 'text', 
                 'placeholder'    => '',
                 'description'    => ''
@@ -1756,7 +1754,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
     if(fw_theme_mod('fw_gift_fields')){
         $fields['shipping']['shipping_mensaje'] = array(
-          'placeholder'   => _x('Dejale un mensaje en el regalo!', 'placeholder', 'woocommerce'),
+          'placeholder'   => __('Leave a gift message', 'placeholder', 'woocommerce'),
           'class'     => array('form-row-wide w100'),
           'clear'     => true,
           'priority' => 100

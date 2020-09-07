@@ -37,7 +37,6 @@ Kirki::add_section( 'section_client_admin', array(
 
 
 /*WOO AREA*/
-
 Kirki::add_section( 'section_wooarea', array(
     'title'          => __( 'Imports', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),

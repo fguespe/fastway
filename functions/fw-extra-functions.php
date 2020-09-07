@@ -657,7 +657,7 @@ add_action( 'init', 'fw_add_to_pages' );
 if(!function_exists('fastway_getImage')) {
     function fastway_getImage($atts){
         $atts = wp_parse_args($atts, array(
-            'alt'   => esc_attr__('image alt', 'fastway'),
+            'alt'   => 'image alt',
             'width' => '',
             'height' => '',
             'src'  => '',

@@ -32,14 +32,6 @@ if ( ! class_exists( __CLASS__ ) ) {
 			endif;
 		}
 
-		public function Woo_Shipping_dependecy_notice() {
-
-			$class = 'notice notice-error is-dismissible';		
-
-			$message = __( 'Atenção! O plugin WC Correios é necessário para que WooCommerce Correios Shipping Calculator in Product funcione', '' );
-
-			printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
-		}
 	}
 
 	new Woo_Shipping_Calculator;

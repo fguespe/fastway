@@ -78,7 +78,7 @@ class fw_widget_prodcount extends WP_Widget {
             $title = $instance[ 'title' ];
         }
         else {
-            $title = __( '', 'fastway' );
+            $title = __( 'Widget', 'fastway' );
         }
         // Widget admin form
         ?>
@@ -124,7 +124,7 @@ class fw_widget_breadcrumb extends WP_Widget {
             $title = $instance[ 'title' ];
         }
         else {
-            $title = __( '', 'fastway' );
+            $title = __( 'Widget', 'fastway' );
         }
         // Widget admin form
         ?>

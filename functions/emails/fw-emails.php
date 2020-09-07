@@ -96,12 +96,12 @@ function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email
     // For one coupon
     if( count($coupon_codes) == 1 ){
         $coupon_code = reset($coupon_codes);
-        echo '<p>'.__( 'Código ').$coupon_code.'<p>';
+        echo '<p>'.__('Code:','fastway').$coupon_code.'<p>';
     } 
     // For multiple coupons
     else if(count($coupon_codes) >1) {
         $coupon_codes = implode( ', ', $coupon_codes);
-        echo '<p>'.__( 'Códigos: ').$coupon_codes.'<p>';
+        echo '<p>'.__('Code:','fastway').$coupon_codes.'<p>';
     }
 }
 

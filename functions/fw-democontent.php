@@ -37,7 +37,6 @@ function ocdi_import_files() {
                 ),
             ),
             'import_preview_image_url'   => 'http://ian.briziolabz.com/wp-content/uploads/sites/17/2018/06/banner-header-b-1.jpg',
-            'import_notice'              => __( 'Fijate de tener activado woocommerce, visual composer, metalslider y gravity forms. Acordarse de ir a ajustes y cambiar la pagina de inicio.', 'fastway' ),
             'preview_url'                => 'http://www.your_domain.com/my-demo-1',
         ),
         array(
@@ -53,7 +52,6 @@ function ocdi_import_files() {
                 ),
             ),
             'import_preview_image_url'   => 'http://ian.briziolabz.com/wp-content/uploads/sites/17/2018/06/banner-header-b-1.jpg',
-            'import_notice'              => __( 'Fijate de tener activado woocommerce, visual composer, metalslider y gravity forms. Acordarse de ir a ajustes y cambiar la pagina de inicio.', 'fastway' ),
             'preview_url'                => 'http://www.your_domain.com/my-demo-1',
         ),
     );
