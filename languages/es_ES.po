@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-07 10:46-0300\n"
-"PO-Revision-Date: 2020-09-07 10:48-0300\n"
+"POT-Creation-Date: 2020-09-07 19:40-0300\n"
+"PO-Revision-Date: 2020-09-07 19:41-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -700,7 +700,9 @@ msgid "Update prices"
 msgstr ""
 
 #: functions/client-area/fw-dashboard.php:554
-msgid "Need help?"
+#, fuzzy
+#| msgid "Need help?"
+msgid "Need help"
 msgstr "Soporte"
 
 #: functions/client-area/fw-dashboard.php:555
@@ -1049,7 +1051,7 @@ msgstr ""
 
 #: functions/fw-extra-woo-functions.php:1757
 msgid "Leave a gift message"
-msgstr "Dejale un mensaje en el regalo"
+msgstr "Déjale un mensaje en el regalo"
 
 #: functions/fw-faq.php:7
 msgid "FAQ Articles"
@@ -3211,18 +3213,22 @@ msgstr ""
 msgid "Enter your address to view shipping options."
 msgstr ""
 
-#: woocommerce/cart/cart-shipping.php:90
+#: woocommerce/cart/cart-shipping.php:92
+msgid "No shipping options available"
+msgstr "No hay métodos de envío disponibles"
+
+#: woocommerce/cart/cart-shipping.php:93
 msgid ""
 "There are no shipping options available. Please ensure that your address has "
 "been entered correctly, or contact us if you need any help."
 msgstr ""
 
-#: woocommerce/cart/cart-shipping.php:93
+#: woocommerce/cart/cart-shipping.php:98
 #, php-format
 msgid "No shipping options were found for %s."
 msgstr ""
 
-#: woocommerce/cart/cart-shipping.php:94
+#: woocommerce/cart/cart-shipping.php:99
 msgid "Enter a different address"
 msgstr ""
 

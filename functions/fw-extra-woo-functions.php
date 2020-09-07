@@ -1754,7 +1754,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
     if(fw_theme_mod('fw_gift_fields')){
         $fields['shipping']['shipping_mensaje'] = array(
-          'placeholder'   => __('Leave a gift message', 'placeholder', 'woocommerce'),
+          'placeholder'   => __('Leave a gift message', 'fastway'),
           'class'     => array('form-row-wide w100'),
           'clear'     => true,
           'priority' => 100
