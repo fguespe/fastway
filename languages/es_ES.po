@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-07 19:43-0300\n"
-"PO-Revision-Date: 2020-09-07 19:43-0300\n"
+"POT-Creation-Date: 2020-09-07 20:36-0300\n"
+"PO-Revision-Date: 2020-09-07 20:36-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -1049,7 +1049,11 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1746
+#: functions/fw-extra-woo-functions.php:1747
+msgid "Shipping Date"
+msgstr "Fecha de envío"
+
+#: functions/fw-extra-woo-functions.php:1752
 msgid "Leave a gift message"
 msgstr "Déjale un mensaje en el regalo"
 
