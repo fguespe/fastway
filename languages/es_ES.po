@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-07 10:28-0300\n"
-"PO-Revision-Date: 2020-09-07 10:30-0300\n"
+"POT-Creation-Date: 2020-09-07 10:46-0300\n"
+"PO-Revision-Date: 2020-09-07 10:48-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -20,6 +20,26 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: 404.php:9
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Esta pagina no existe."
+
+#: 404.php:13
+msgid "Let's try again"
+msgstr "Probemos devuelta"
+
+#: 404.php:15
+msgid "Check your spelling"
+msgstr "Comprueba tu ortografía"
+
+#: 404.php:16
+msgid "Use fewer words and more common"
+msgstr "Usar menos palabras o mas comunes"
+
+#: 404.php:17
+msgid "Use the menu to navigate the page, also check the url"
+msgstr "Usa el menú para navegación"
 
 #: author.php:33
 msgid "About:"
@@ -247,8 +267,9 @@ msgstr ""
 #: functions/client-area/client-area.php:194
 #: functions/client-area/client-area.php:207
 #: functions/client-area/client-area.php:220
-#: functions/client-area/client-area.php:239
-#: functions/client-area/client-area.php:243 functions/fw-theme-options.php:803
+#: functions/client-area/client-area.php:233
+#: functions/client-area/client-area.php:252
+#: functions/client-area/client-area.php:256 functions/fw-theme-options.php:803
 #: functions/fw-theme-options.php:891 functions/fw-theme-options.php:902
 #: functions/fw-theme-options.php:914 functions/fw-theme-options.php:926
 #: functions/fw-theme-options.php:1023 functions/fw-theme-options.php:1035
@@ -292,7 +313,8 @@ msgstr ""
 #: functions/client-area/client-area.php:195
 #: functions/client-area/client-area.php:208
 #: functions/client-area/client-area.php:221
-#: functions/client-area/client-area.php:244 functions/fw-theme-options.php:804
+#: functions/client-area/client-area.php:234
+#: functions/client-area/client-area.php:257 functions/fw-theme-options.php:804
 #: functions/fw-theme-options.php:892 functions/fw-theme-options.php:903
 #: functions/fw-theme-options.php:915 functions/fw-theme-options.php:927
 #: functions/fw-theme-options.php:1024 functions/fw-theme-options.php:1036
@@ -377,76 +399,80 @@ msgstr ""
 msgid "Mensaje Secundario "
 msgstr ""
 
-#: functions/client-area/client-area.php:231
+#: functions/client-area/client-area.php:228
+msgid "Support Widget"
+msgstr ""
+
+#: functions/client-area/client-area.php:244
 msgid "Login Logo"
 msgstr ""
 
-#: functions/client-area/client-area.php:232
+#: functions/client-area/client-area.php:245
 msgid ""
 "No hay necesidad de ponerlo ya que toma el logo general, si se pone algo lo "
 "sobreescribe."
 msgstr ""
 
-#: functions/client-area/client-area.php:251
+#: functions/client-area/client-area.php:264
 msgid "Allowed Roles"
 msgstr ""
 
-#: functions/client-area/client-area.php:260
+#: functions/client-area/client-area.php:273
 msgid "Allowed Users"
 msgstr ""
 
-#: functions/client-area/client-area.php:268
+#: functions/client-area/client-area.php:281
 #: functions/fw-theme-options.php:1777 functions/fw-theme-options.php:2314
 msgid "Main Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:279
+#: functions/client-area/client-area.php:292
 msgid "Text Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:290
+#: functions/client-area/client-area.php:303
 msgid "Icon Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:302
+#: functions/client-area/client-area.php:315
 msgid "Developer Logo"
 msgstr ""
 
-#: functions/client-area/client-area.php:310
+#: functions/client-area/client-area.php:323
 msgid "Top Left Icon"
 msgstr ""
 
-#: functions/client-area/client-area.php:328
+#: functions/client-area/client-area.php:341
 msgid "Client Area Custom CSS"
 msgstr ""
 
-#: functions/client-area/client-area.php:345
+#: functions/client-area/client-area.php:358
 msgid "Company Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:346
+#: functions/client-area/client-area.php:359
 msgid ""
 "[fw_data type=\"whatsapp\"] empezar con 549, sin el + [fw_data type="
 "\"whatsapp\"] Ej: 11 54 999 795 (5491154999795)"
 msgstr ""
 
-#: functions/client-area/client-area.php:355
+#: functions/client-area/client-area.php:368
 msgid "Whats Label"
 msgstr ""
 
-#: functions/client-area/client-area.php:364
+#: functions/client-area/client-area.php:377
 msgid "Share Message"
 msgstr ""
 
-#: functions/client-area/client-area.php:371
+#: functions/client-area/client-area.php:384
 msgid "Button Menu Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:378
+#: functions/client-area/client-area.php:391
 msgid "Whatsapp Widget"
 msgstr ""
 
-#: functions/client-area/client-area.php:420
+#: functions/client-area/client-area.php:433
 msgid "Client Area Menu ("
 msgstr ""
 
@@ -541,16 +567,12 @@ msgstr ""
 "url de un GIF greado y subido a giphy"
 
 #: functions/client-area/fw-dashboard.php:136
-#, fuzzy
-#| msgid "URL to link:"
 msgid "URL to link"
-msgstr "Link a url:"
+msgstr "Link a url"
 
 #: functions/client-area/fw-dashboard.php:137
-#, fuzzy
-#| msgid "*If empty, it will not redirect on click"
 msgid "If empty, it will not redirect on click"
-msgstr "Dejar vacío si no redirige a ningun lado"
+msgstr "Dejar vacío si no redirije a ningún lado"
 
 #: functions/client-area/fw-dashboard.php:147
 #: functions/client-area/fw-dashboard.php:182
@@ -673,73 +695,69 @@ msgstr "Ocultas precios y compras"
 msgid "Estado"
 msgstr "Status"
 
-#: functions/client-area/fw-dashboard.php:554
+#: functions/client-area/fw-dashboard.php:553
 msgid "Update prices"
 msgstr ""
 
-#: functions/client-area/fw-dashboard.php:555
+#: functions/client-area/fw-dashboard.php:554
 msgid "Need help?"
 msgstr "Soporte"
 
-#: functions/client-area/fw-dashboard.php:556
+#: functions/client-area/fw-dashboard.php:555
 msgid "General Settings"
 msgstr "Ajustes Generales"
 
-#: functions/client-area/fw-dashboard.php:562
+#: functions/client-area/fw-dashboard.php:561
 msgid "Customize emails & texts"
 msgstr "Personalizar emails y textos"
 
+#: functions/client-area/fw-dashboard.php:561
 #: functions/client-area/fw-dashboard.php:562
 #: functions/client-area/fw-dashboard.php:563
 #: functions/client-area/fw-dashboard.php:564
 #: functions/client-area/fw-dashboard.php:565
 #: functions/client-area/fw-dashboard.php:566
 #: functions/client-area/fw-dashboard.php:567
-#: functions/client-area/fw-dashboard.php:568
+#: functions/client-area/fw-dashboard.php:583
 #: functions/client-area/fw-dashboard.php:584
-#: functions/client-area/fw-dashboard.php:585
 msgid "open"
 msgstr "abrir"
 
-#: functions/client-area/fw-dashboard.php:563
+#: functions/client-area/fw-dashboard.php:562
 #: functions/fw-theme-options.php:330
 msgid "Shipping Methods"
 msgstr "Medios de Envío"
 
-#: functions/client-area/fw-dashboard.php:564
+#: functions/client-area/fw-dashboard.php:563
 #: functions/fw-theme-options.php:317
 msgid "Payment Methods"
 msgstr "Medios de Pago"
 
-#: functions/client-area/fw-dashboard.php:565
-#, fuzzy
-#| msgid "Exportar forms"
+#: functions/client-area/fw-dashboard.php:564
 msgid "Export forms"
-msgstr "Export forms"
+msgstr "Exportar formularios"
+
+#: functions/client-area/fw-dashboard.php:565
+msgid "Export users/orders"
+msgstr "Exportar usuarios/pedidos"
 
 #: functions/client-area/fw-dashboard.php:566
-#, fuzzy
-#| msgid "Exportar forms"
-msgid "Export users/orders"
-msgstr "Export forms"
-
-#: functions/client-area/fw-dashboard.php:567
 msgid "Customize menus"
 msgstr "Personalizar menus"
 
-#: functions/client-area/fw-dashboard.php:568
+#: functions/client-area/fw-dashboard.php:567
 msgid "Email log"
 msgstr ""
 
-#: functions/client-area/fw-dashboard.php:569
+#: functions/client-area/fw-dashboard.php:568
 msgid "Refresh cache"
 msgstr "Refrescar cache"
 
-#: functions/client-area/fw-dashboard.php:569
+#: functions/client-area/fw-dashboard.php:568
 msgid "clean"
 msgstr "limpiar"
 
-#: functions/client-area/fw-dashboard.php:578
+#: functions/client-area/fw-dashboard.php:577
 msgid ""
 "Send your requirement from our support widget <a href=\"#\" class=\"btn\" "
 "onclick=\"FreshworksWidget('open');\" >create ticket</a>"
@@ -747,7 +765,7 @@ msgstr ""
 "Enviános tu solicitud desde nuestro widget. <a href=\"#\" class=\"btn\" "
 "onclick=\"FreshworksWidget(\\'open\\');\" >crear ticket</a>"
 
-#: functions/client-area/fw-dashboard.php:579
+#: functions/client-area/fw-dashboard.php:578
 msgid ""
 "For more information about the altoweb service <a target=\"_blank\" href="
 "\"https://www.altoweb.co/tickets/\">click here</a>"
@@ -755,7 +773,7 @@ msgstr ""
 "Para mas información sobre como usar el servicio <a target=\"_blank\" href="
 "\"https://www.altoweb.co/tickets/\">click aquí</a>"
 
-#: functions/client-area/fw-dashboard.php:580
+#: functions/client-area/fw-dashboard.php:579
 msgid ""
 "You can also register in the help portal to see tutorials and send us "
 "inquiries. <a target=\"_blank\" href=\"https://altoweb.freshdesk.com/\">Go "
@@ -765,19 +783,19 @@ msgstr ""
 "enviarnos consultas. <a target=\"_blank\" href=\"https://altoweb.freshdesk."
 "com/\">Ir al portal</a>"
 
-#: functions/client-area/fw-dashboard.php:583
+#: functions/client-area/fw-dashboard.php:582
 msgid ""
 "Products will be updated once per day. You can do the process manually the "
 "following way: "
 msgstr ""
 "Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas "
-"esperar a qeu se actualize automaticamente podes acelerar el proceso:"
+"esperar a qeu se actualize automaticamente podes acelerar el proceso"
 
-#: functions/client-area/fw-dashboard.php:584
+#: functions/client-area/fw-dashboard.php:583
 msgid "Update info from mercadolibre with the following link"
 msgstr "Actualizar publicaciones en el servidor con el siguiente link"
 
-#: functions/client-area/fw-dashboard.php:585
+#: functions/client-area/fw-dashboard.php:584
 msgid "Once finished, start the import process with the following link"
 msgstr ""
 "Una vez que termino de procesarse la obtención de datos, ahora podes "
@@ -823,27 +841,23 @@ msgstr "Paginas"
 msgid "Comments"
 msgstr "Comentarios"
 
-#: functions/client-area/metabox.php:48
-msgid "Block-"
-msgstr "Bro"
-
-#: functions/client-area/metabox.php:50
+#: functions/client-area/metabox.php:49
 msgid "Blocks"
 msgstr ""
 
-#: functions/client-area/metabox.php:51
+#: functions/client-area/metabox.php:50
 msgid "Facebook"
 msgstr ""
 
-#: functions/client-area/metabox.php:70
+#: functions/client-area/metabox.php:69
 msgid "View All"
 msgstr "Ver todos"
 
-#: functions/client-area/metabox.php:90
+#: functions/client-area/metabox.php:89
 msgid "Select All"
 msgstr ""
 
-#: functions/client-area/metabox.php:93
+#: functions/client-area/metabox.php:92
 msgid "Add to Menu"
 msgstr ""
 
@@ -3444,6 +3458,9 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Fabrizio Guespe"
 msgstr ""
+
+#~ msgid "Block-"
+#~ msgstr "Bro"
 
 #~ msgid "create ticket"
 #~ msgstr "crear ticket"

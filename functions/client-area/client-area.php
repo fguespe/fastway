@@ -221,6 +221,19 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_support_fresh_es',
+	'label'       => __( 'Support Widget', 'fastway' ),
+    'description' => 'Freshdesk support widget',
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 /*CLIENT AREA*/
 
 
@@ -602,10 +615,16 @@ function fw_custom_remove_optionspages() {
 }
 
 add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
+
+
+
+
+if(fw_theme_mod('fw_widget_support_fresh_es'))add_action('admin_footer', 'custom_admin_js');
 function custom_admin_js() {
     //if(check_user_role('administrator'))return;
     $nombre=fw_theme_mod('fw_mail_desde_nombre');
-    $mail=getMailQueEnvia();
+	$mail=getMailQueEnvia();
+	
 	echo '<script>
 	jQuery.browser = {};
 (function () {
@@ -631,7 +650,6 @@ function custom_admin_js() {
     </script>';
 
 }
-add_action('admin_footer', 'custom_admin_js');
 
 
 
