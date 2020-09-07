@@ -228,7 +228,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Support Widget', 'fastway' ),
     'description' => 'Freshdesk support widget',
 	'section'     => 'section_clientwidgets',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
