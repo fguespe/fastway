@@ -5345,7 +5345,7 @@ dt.variation-fw_extra.stock {
   display: inline-block !important;
 }
 .fw_checkout .fw-woocommerce-shipping-totals {
-  font-size: 0px;
+  font-size: 10px;
 }
 .fw_checkout .lpp-shipping-package-wrapper {
   width: 100% !important;
