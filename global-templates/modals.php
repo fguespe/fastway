@@ -446,20 +446,20 @@ jQuery( ".fw_variations select" ).change(function() {
         function (msg) { 
             jQuery('.summary .fw_price').html(msg)
 
-            //Slide!!
-            var ee="clase-"+vara['variation_id']
-            var index = 0;
-            jQuery.each(jQuery(".swiper-wrapper").children(), function(i, item) {
-                if (jQuery(item).hasClass(ee)) {
-                    index = i;
-                    return false;
-                }
-            });
-            console.log(ee,index)
-            swiper.slideTo(index, 500);
+            
 
 
             if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
+                //Slide!!
+                var ee="clase-"+vara['variation_id']
+                var index = 0;
+                jQuery.each(jQuery(".swiper-wrapper").children(), function(i, item) {
+                    if (jQuery(item).hasClass(ee)) {
+                        index = i;
+                        return false;
+                    }
+                });
+                swiper.slideTo(index, 500);
                 jQuery('.fw_add_to_cart_button').prop("disabled",false)
             }else {
                 console.log('vara2',vara['is_in_stock'],vara['is_purchasable'],vara['backorders_allowed'])
