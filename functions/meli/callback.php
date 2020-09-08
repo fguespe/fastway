@@ -49,7 +49,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $items=$order['body']->order_items;
 
       foreach ($items as $item_id => $item) {
-        error_log(print_r($item,true));
+
+        $prod=$meli->get('/items/'.$item_id, array('access_token' => $access_token));
+        error_log(print_r($prod,true));
+
         $variation_id=$item->variation_id;
         $quantity=$item->quantity;
         $price=$item->price;
