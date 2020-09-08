@@ -1,6 +1,7 @@
 <?php
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
+
 function custom_logs($message) { 
   if(is_array($message)) { 
       $message = json_encode($message); 

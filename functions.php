@@ -253,7 +253,7 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
         require get_template_directory() . '/functions/vc_customs/vc_woo_carousels.php';
     }
     require get_template_directory() . '/functions/fw-custom-related.php';
-    if(fw_theme_mod('fw_ml_on')){
+    if(fw_theme_mod('fw_ml_on') || isLocalhost()){
       require get_template_directory() . '/functions/meli/meli.php';
       require get_template_directory() . '/functions/meli/funciones.php';
       require get_template_directory() . '/functions/meli/fw-ml.php';

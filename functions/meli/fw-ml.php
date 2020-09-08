@@ -1,5 +1,42 @@
 <?php
 
+function ml_log_register_plugin_page() {
+	add_options_page('ML Log', 'ML Log', 'manage_options', 'mllog', 'mllog_options_page');
+}
+add_action('admin_menu', 'ml_log_register_plugin_page');
+	
+
+function mllog_options_page(){
+  $handle = fopen(get_template_directory() . "/functions/meli/logs/".fw_theme_mod('fw_id_ml').".log","r"); 
+  if ($handle) {
+      error_log(print_r(fgets($handle),true));
+      while (($line = fgets($handle)) !== false){
+        $line='<span class="fecha">'.$line;
+        $line1=str_replace('::','</span>',$line);
+        $log.= $line1;
+      }
+      fclose($handle);
+  } ?>
+  <h2>Log mercadolibre</h2>
+  <pre class="log_fw" >
+  <?=$log?>
+  </pre>
+  <style>
+  .log_fw{
+    width:95% ;
+    height:100%;
+    margin-top:10px;
+    background:#1F1E1E;
+    color:white;
+    white-space: pre-line;
+  }
+  .log_fw .fecha{
+    color:green;
+  }
+</style>
+<?php 
+}
+
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
  add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
