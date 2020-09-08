@@ -49,10 +49,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $items=$order['body']->order_items;
 
       foreach ($items as $item_id => $item) {
-        
-        $variation_id=$item['variation_id'];
-        $quantity=$item['quantity'];
-        $price=$item['price'];
+        error_log(print_r($item,true));
+        $variation_id=$item->variation_id;
+        $quantity=$item->quantity;
+        $price=$item->price;
         
         $prod_id= wc_get_product_id_by_sku($variation_id);
         if(!$prod_id)continue;
