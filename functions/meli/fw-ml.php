@@ -8,9 +8,8 @@ add_action('admin_menu', 'ml_log_register_plugin_page');
 
 
 function mllog_options_page(){
-  $handle = fopen(get_template_directory() . "/functions/meli/logs/".fw_theme_mod('fw_id_ml').".log","r"); 
+  $handle = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","r"); 
   if ($handle) {
-      error_log(print_r(fgets($handle),true));
       while (($line = fgets($handle)) !== false){
         $line='<span class="fecha">'.$line;
         $line1=str_replace('::','</span>',$line);

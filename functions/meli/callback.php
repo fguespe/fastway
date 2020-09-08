@@ -5,11 +5,10 @@ function custom_logs($message) {
   if(is_array($message)) { 
       $message = json_encode($message); 
   } 
-  $file = fopen("./logs/".fw_theme_mod('fw_id_ml').".log","a"); 
+  $file = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","a"); 
   echo fwrite($file, "\n" . date('Y-m-d h:i:s') . " :: " . $message); 
   fclose($file); 
 }
-
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
@@ -18,7 +17,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $order_id=explode("/",$obj['resource'])[2]; 
     custom_logs('Se recibio de ml la order v1: '.$order_id);
     $nombre_array='ml_array_orders_'.date("m");
-
     if(!get_option($nombre_array))update_option($nombre_array,array());
 
     /*
