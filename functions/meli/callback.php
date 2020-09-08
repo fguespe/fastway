@@ -74,10 +74,13 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         update_option($nombre_array,$orders_used);
       }
       http_response_code(200);
-      custom_logs("Se devolvio OK");
-    return;
+      custom_logs("Se devolvio 200");
+      return;
 
     }catch (Exception $e) {
       custom_logs('Excepción capturada: ',  $e->getMessage(), "\n"); 
+      http_response_code(400);
+      custom_logs("Se devolvio 400");
+      return;
     }
 }
