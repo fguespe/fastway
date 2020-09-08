@@ -25,6 +25,7 @@ function mllog_options_page(){
   .log_fw{
     width:95% ;
     height:100%;
+    min-height:500px;
     margin-top:10px;
     background:#1F1E1E;
     color:white;
