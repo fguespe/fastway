@@ -4,6 +4,7 @@ header("HTTP/1.1 200 OK");
 custom_logs("Inical2");
 
 
+
 function custom_logs($message) { 
   if(is_array($message)) { 
       $message = json_encode($message); 
