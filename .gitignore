@@ -1,6 +1,4 @@
-
 # exclude everything
 functions/meli/logs/*
-
 # exception to the rule
 !functions/meli/logs/.gitkeep 
