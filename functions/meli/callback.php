@@ -71,7 +71,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     
       custom_logs($log);
       update_option($nombre_array,$orders_used);
-      http_response_code(200);
-      return;
     }
+    http_response_code(200);
+    return;
 }
