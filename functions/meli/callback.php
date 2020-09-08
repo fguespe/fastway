@@ -73,5 +73,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       update_option($nombre_array,$orders_used);
     }
     http_response_code(200);
+    custom_logs("Se devolvio OK");
     return;
 }
