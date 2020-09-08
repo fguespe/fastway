@@ -69,10 +69,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
       $variation->save();   
       
-      $log=$item_id.": ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price;
+      custom_logs($item_id.": ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price);
     
-      
-      custom_logs($log);
       update_option($nombre_array,$orders_used);
     }
     http_response_code(200);
