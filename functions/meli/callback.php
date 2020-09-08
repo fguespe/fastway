@@ -1,7 +1,7 @@
 <?php
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
-custom_logs("Inical2");
+custom_logs("Inical=3");
 
 
 
