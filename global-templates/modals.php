@@ -461,10 +461,11 @@ jQuery( ".fw_variations select" ).change(function() {
                 });
                 swiper.slideTo(index, 500);
                 jQuery('.fw_add_to_cart_button').prop("disabled",false)
+                jQuery('#mini_label_stock').remove()
             }else {
                 console.log('vara2',vara['is_in_stock'],vara['is_purchasable'],vara['backorders_allowed'])
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
-                jQuery('.fw_add_to_cart_button').after('<small style="text-align:center !important;margin:0 auto;display:block;"><?=fw_theme_mod('out-of-stock-text')?></small>')
+                if(jQuery('#mini_label_stock').length==0)jQuery('.fw_add_to_cart_button').after('<small id="mini_label_stock" style="text-align:center !important;margin:0 auto;display:block;"><?=fw_theme_mod('out-of-stock-text')?></small>')
             }
         }
     );
