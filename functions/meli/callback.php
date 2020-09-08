@@ -50,11 +50,11 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     foreach ($items as $key) {
       $item=$key->item;
       
-      $variation_id=$item->variation_id;
-      $item_id=$item->id;
-      custom_logs("Producto: ".$item_id);
-      $quantity=$key->quantity;
-      $price=$key->price;
+      $variation_id=$item['variation_id'];
+      $item_id=$item['id'];
+      error_log(json_encode($key,true));
+      $quantity=$key['quantity'];
+      $price=$key['price'];
       
       $prod_id= wc_get_product_id_by_sku($variation_id);
       if(!$prod_id)continue;
@@ -69,7 +69,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
       $variation->save();   
       
-      $log=get_bloginfo( 'name' )."-LOOPSYNC: ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price;
+      $log=$item_id.": ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price;
     
       custom_logs($log);
       update_option($nombre_array,$orders_used);
