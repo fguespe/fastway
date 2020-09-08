@@ -437,7 +437,9 @@ jQuery( ".fw_variations select" ).change(function() {
 
     let vara=getVariation()
     if(!vara){
+        console.log('vara1')
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
+        jQuery('.fw_add_to_cart_button').parent().append('Sin Stock')
         return;
     }
     jQuery('.summary .fw_price').html('<i class="fas fa-circle-notch fa-spin" ></i>');
@@ -461,7 +463,9 @@ jQuery( ".fw_variations select" ).change(function() {
             if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
                 jQuery('.fw_add_to_cart_button').prop("disabled",false)
             }else {
+                console.log('vara2')
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
+                jQuery('.fw_add_to_cart_button').parent().append('Sin Stock')
             }
         }
     );
