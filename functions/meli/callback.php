@@ -18,7 +18,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     
       $obj = json_decode($notifications, true);
       $order_id=explode("/",$obj['resource'])[2]; 
-      custom_logs('Se recibio de ml la order v1: '.$order_id);
+      custom_logs('Se recibio de ml la order: '.$order_id);
       $nombre_array='ml_array_orders_'.date("m");
       if(!get_option($nombre_array))update_option($nombre_array,array());
 
@@ -51,8 +51,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       foreach ($items as $item_id => $item) {
         
         $variation_id=$item['variation_id'];
-        $item_id=$item['id'];
-        error_log(json_encode($item));
         $quantity=$item['quantity'];
         $price=$item['price'];
         
