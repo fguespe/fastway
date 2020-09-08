@@ -5,8 +5,6 @@ function ml_log_register_plugin_page() {
 }
 add_action('admin_menu', 'ml_log_register_plugin_page');
 	
-
-
 function mllog_options_page(){
   $handle = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","r"); 
   if ($handle) {
