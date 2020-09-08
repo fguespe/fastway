@@ -464,7 +464,7 @@ jQuery( ".fw_variations select" ).change(function() {
             }else {
                 console.log('vara2',vara['is_in_stock'],vara['is_purchasable'],vara['backorders_allowed'])
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
-                jQuery('.fw_add_to_cart_button').after('<small style="text-align:center;">Sin Stock</small>')
+                jQuery('.fw_add_to_cart_button').after('<small style="text-align:center !important;margin:0 auto;display:block;">Sin Stock</small>')
             }
         }
     );
