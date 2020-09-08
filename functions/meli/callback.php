@@ -47,14 +47,13 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
     $order=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
     $items=$order['body']->order_items;
 
-    foreach ($items as $key) {
-      $item=$key->item;
+    foreach ($items as $item_id => $item) {
       
       $variation_id=$item['variation_id'];
       $item_id=$item['id'];
-      error_log(json_encode($key,true));
-      $quantity=$key['quantity'];
-      $price=$key['price'];
+      error_log(json_encode($item));
+      $quantity=$item['quantity'];
+      $price=$item['price'];
       
       $prod_id= wc_get_product_id_by_sku($variation_id);
       if(!$prod_id)continue;
