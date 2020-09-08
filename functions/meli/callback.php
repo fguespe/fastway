@@ -1,9 +1,7 @@
 <?php
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
-http_response_code(521);
-
-custom_logs("hjaja");
+http_response_code(200);
 function custom_logs($message) { 
   if(is_array($message)) { 
       $message = json_encode($message); 
@@ -32,7 +30,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       custom_logs("Repetido: ".$order_id);
       return;
     }*/
-    
+
     custom_logs(get_bloginfo( 'name' ).' - Se procesara la orden: '.$order_id);
 
     //Init
