@@ -3,7 +3,6 @@ $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.
 header("HTTP/1.1 200 OK");
 custom_logs("Inical=3");
 
-
 function custom_logs($message) { 
   if(is_array($message)) { 
       $message = json_encode($message); 
