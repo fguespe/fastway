@@ -49,10 +49,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
     foreach ($items as $key) {
       $item=$key->item;
-      custom_logs("Producto: ".$item);
       
       $variation_id=$item->variation_id;
       $item_id=$item->id;
+      custom_logs("Producto: ".$item_id);
       $quantity=$key->quantity;
       $price=$key->price;
       
