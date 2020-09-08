@@ -463,7 +463,7 @@ jQuery( ".fw_variations select" ).change(function() {
             if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
                 jQuery('.fw_add_to_cart_button').prop("disabled",false)
             }else {
-                console.log('vara2')
+                console.log('vara2',vara['is_in_stock'],vara['is_purchasable'],vara['backorders_allowed'])
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
                 jQuery('.fw_add_to_cart_button').parent().append('Sin Stock')
             }
