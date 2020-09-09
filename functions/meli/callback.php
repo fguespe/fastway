@@ -48,32 +48,51 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       $order=$meli->get('/orders/'.$order_id, array('access_token' => $access_token));
       $items=$order['body']->order_items;
 
-      foreach ($items as $item_id => $item) {
 
-        $prod=$meli->get('/items/'.$item_id, array('access_token' => $access_token));
-        error_log(print_r($prod,true));
 
-        $variation_id=$item->variation_id;
-        $quantity=$item->quantity;
-        $price=$item->price;
-        
-        $prod_id= wc_get_product_id_by_sku($variation_id);
-        if(!$prod_id)continue;
-        $variation = wc_get_product($prod_id);
+      foreach ($items as $itemm) {
+        $item_id=$itemm->item->id;
+        $item=$meli->get('/items/'.$itemm->item->id);
+        $var_id=$itemm->item->variation_id;
+        $item=$item['body'];
+
+        if($var_id){
+          foreach($item->variations as $var){
+            if($var_id==$var->id){
+              $stock=$var->available_quantity;
+              $precio=$var->price;
+            }
+          }
+        }else{
+          $stock=$item->available_quantity;
+          $precio=$item->original_price?$itemsdetalle->original_price:$itemsdetalle->price;
+          $oferta=$item->original_price?$itemsdetalle->price:'';
+
+        }
+
+        error_log($item_id.':'.$var_id.'-'.$stock.'-'.$precio.'-'.$oferta);
+
+        $variation= wc_get_product_id_by_sku($var_id);
+        if(!$prod_id){
+          error_log('Se va a actualizar el prod simple'.$item_id);
+          $variation = wc_get_product($item_id);
+        }else{
+          error_log('Se va a actualizar el la variacion'.$prod_id);
+        }
         if(!$variation)continue;
         
-        $quantity=$variation->get_stock_quantity()-$quantity;
-        $variation->set_stock($quantity);
+
+        $variation->set_stock($stock);
         $variation->set_price($price);
-
         if($quantity==0)$variation->set_stock_status('outofstock');
-
         $variation->save();   
         
         custom_logs($item_id.": ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price);
       
         update_option($nombre_array,$orders_used);
       }
+
+
       http_response_code(200);
       custom_logs("Se devolvio 200");
       return;

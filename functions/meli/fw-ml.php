@@ -24,9 +24,7 @@ function mllog_options_page(){
       }
   } ?>
   <h2>Log mercadolibre</h2>
-  <pre class="log_fw" >
-  <?=$log_total?>
-  </pre>
+  <pre class="log_fw" ><?=$log_total?></pre>
   <style>
   .log_fw{
     overflow-y: scroll; 
