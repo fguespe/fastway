@@ -25,7 +25,7 @@ function fw_review_create() {
       'show_ui'               => true,
       'publicly_queryable'    => true,
       'exclude_from_search'   => false,
-      'menu_icon'				=> 'dashicons-star',
+      'menu_icon'				=> 'dashicons-star-empty',
     ));
     register_taxonomy( 'fw_review_category',array( 'fw_review' ),array(
 			'hierarchical'  => false,
