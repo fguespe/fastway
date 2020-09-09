@@ -94,7 +94,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if($quantity==0)$product->set_stock_status('outofstock');
         $product->save();   
         
-        custom_logs("El producto fue actualizado:<br>SKU:".$item_id."<br>Stock:".$product->get_stock_quantity()."<br>Precio:".$precio);
+        custom_logs("El producto fue actualizado:<br>SKU:".$item_id."<br>Nombre:".$product->get_name()."<br>Stock:".$product->get_stock_quantity()."<br>Precio:".$precio);
       
         update_option($nombre_array,$orders_used);
       }
