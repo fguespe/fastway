@@ -84,13 +84,15 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if(!$product){
           //custom_logs("No se encotntro el var: ".$var_id);
           $product = wc_get_product_id_by_sku($item_id);
-          if(!$product){
-            custom_logs("No se encontro el prod: ".$item_id);
-            continue;
-          }
         }
 
-        if(is_object($product) && $product->get_sku())error_log("Se encontro el wooprod: ".$product->get_sku());
+        if(is_object($product) && $product->get_sku()){
+          error_log("Se encontro el prod: ".$product->get_sku());
+        }else{
+          error_log("No se encontro el prod: ".$product->get_sku());
+          continue;
+
+        }
         
         $product->set_stock($stock);
         $product->set_price($precio);
