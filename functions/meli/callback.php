@@ -52,6 +52,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
       foreach ($items as $itemm) {
         $item_id=$itemm->item->id;
+
+        custom_logs("Se procesara el item:".$item_id);
         $item=$meli->get('/items/'.$itemm->item->id);
         $var_id=$itemm->item->variation_id;
         $item=$item['body'];
