@@ -3,19 +3,19 @@ add_action( 'init', 'fw_review_create' );
 function fw_review_create() {
 
     register_post_type( 'fw_review',array(
-      'description'           => __('Reviews','pressapps-accordion-review'),
+      'description'           => __('Reviews','fastway'),
       'labels'                => array(
-        'name'                  => __('Review'                     ,'pressapps-accordion-review'),
-        'all_items'             => __('All Reviews'                ,'pressapps-accordion-review'),
-        'singular_name'         => __('Review'                     ,'pressapps-accordion-review'),
-        'add_new'               => __('Add New'                    ,'pressapps-accordion-review'),
-        'add_new_item'          => __('Add New Review'             ,'pressapps-accordion-review'),
-        'edit_item'             => __('Edit Review'                ,'pressapps-accordion-review'),
-        'new_item'              => __('New Review'                 ,'pressapps-accordion-review'),
-        'view_item'             => __('View Review'                ,'pressapps-accordion-review'),
-        'search_items'          => __('Search Review'              ,'pressapps-accordion-review'),
-        'not_found'             => __('No Review found'            ,'pressapps-accordion-review'),
-        'not_found_in_trash'    => __('No Review found in Trash'   ,'pressapps-accordion-review'),
+        'name'                  => __('Review'                     ,'fastway'),
+        'all_items'             => __('All Reviews'                ,'fastway'),
+        'singular_name'         => __('Review'                     ,'fastway'),
+        'add_new'               => __('Add New'                    ,'fastway'),
+        'add_new_item'          => __('Add New Review'             ,'fastway'),
+        'edit_item'             => __('Edit Review'                ,'fastway'),
+        'new_item'              => __('New Review'                 ,'fastway'),
+        'view_item'             => __('View Review'                ,'fastway'),
+        'search_items'          => __('Search Review'              ,'fastway'),
+        'not_found'             => __('No Review found'            ,'fastway'),
+        'not_found_in_trash'    => __('No Review found in Trash'   ,'fastway'),
       ),
       'public'                => true,
       'menu_position'         => 5,
@@ -30,18 +30,18 @@ function fw_review_create() {
     register_taxonomy( 'fw_review_category',array( 'fw_review' ),array(
 			'hierarchical'  => false,
 			'labels'        => array(
-				'name'              => __( 'Categories'             ,'pressapps-accordion-review'),
-				'singular_name'     => __( 'Category'               ,'pressapps-accordion-review'),
-				'search_items'      => __( 'Search Categories'      ,'pressapps-accordion-review'),
-				'all_items'         => __( 'All Categories'         ,'pressapps-accordion-review'),
-				'parent_item'       => __( 'Parent Category'        ,'pressapps-accordion-review'),
-				'parent_item_colon' => __( 'Parent Category:'       ,'pressapps-accordion-review'),
-				'edit_item'         => __( 'Edit Category'          ,'pressapps-accordion-review'),
-				'update_item'       => __( 'Update Category'        ,'pressapps-accordion-review'),
-				'add_new_item'      => __( 'Add New Category'       ,'pressapps-accordion-review'),
-				'new_item_name'     => __( 'New Category Name'      ,'pressapps-accordion-review'),
+				'name'              => __( 'Categories'             ,'fastway'),
+				'singular_name'     => __( 'Category'               ,'fastway'),
+				'search_items'      => __( 'Search Categories'      ,'fastway'),
+				'all_items'         => __( 'All Categories'         ,'fastway'),
+				'parent_item'       => __( 'Parent Category'        ,'fastway'),
+				'parent_item_colon' => __( 'Parent Category:'       ,'fastway'),
+				'edit_item'         => __( 'Edit Category'          ,'fastway'),
+				'update_item'       => __( 'Update Category'        ,'fastway'),
+				'add_new_item'      => __( 'Add New Category'       ,'fastway'),
+				'new_item_name'     => __( 'New Category Name'      ,'fastway'),
 				'popular_items'     => NULL,
-				'menu_name'         => __( 'Categories'             ,'pressapps-accordion-review'),
+				'menu_name'         => __( 'Categories'             ,'fastway'),
 			),
 			'show_ui'       => true,
 			'public'        => true,
@@ -200,5 +200,51 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+
+add_shortcode('fw_review_container', 'fw_review_container');
+function fw_review_container($atts = [], $content = null){
+    echo '<li class="fw_review_loop">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</li>';
+}
+
+add_shortcode('fw_review_image', 'fw_review_image');
+function fw_review_image(){
+  global $fw_loop_rev;
+  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $fw_loop_rev->ID ), 'medium' ); 
+  $image_url = $image[0]; 
+  return '<div class="thumbnail"><div class="shadow-overlay"></div><img src="'.$image_url.'" width="100%" height="auto" /></div>';
+}
+add_shortcode('fw_review_title', 'fw_review_title');
+function fw_review_title(){
+  global $fw_loop_rev;
+  return '<div class="review_title" >'.$fw_loop_rev->post_title.'</div>' ;
+}
+
+add_shortcode('fw_review_desc', 'fw_review_desc');
+function fw_review_desc(){
+  global $fw_loop_rev;
+  return '<div class="review_title" >'.$fw_loop_rev->post_content.'</div>' ;
+}
+
+add_shortcode('fw_review_logo', 'fw_review_logo');
+function fw_review_logo(){
+  global $fw_loop_rev;
+  if(funtion_exists('get_field'))return get_field('logo',$fw_loop_rev->ID);
+}
+
+add_shortcode('fw_review_url', 'fw_review_url');
+function fw_review_url(){
+  global $fw_loop_rev;
+  if(funtion_exists('get_field'))return get_field('url',$fw_loop_rev->ID);
+}
+
+add_shortcode('fw_review_position', 'fw_review_position');
+function fw_review_position(){
+  global $fw_loop_rev;
+  if(funtion_exists('get_field'))return get_field('position',$fw_loop_rev->ID);
+}
+
 
 ?>
