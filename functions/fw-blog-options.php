@@ -103,29 +103,29 @@ function fw_blog_image(){
   global $fw_loop_blog;
   $image = wp_get_attachment_image_src( get_post_thumbnail_id( $fw_loop_blog->ID ), 'medium' ); 
   $image_url = $image[0]; 
-  return '<div class="loopimg_container"><img src="'.$image_url.'" width="100%" height="auto" /></div>';
+  echo '<div class="loopimg_container"><img src="'.$image_url.'" width="100%" height="auto" /></div>';
 }
 add_shortcode('fw_blog_title', 'fw_blog_title');
 function fw_blog_title(){
   global $fw_loop_blog;
-  return '<h5 class="blog_title" >'.$fw_loop_blog->post_title.'</h5>' ;
+  echo '<h5 class="blog_title" >'.$fw_loop_blog->post_title.'</h5>' ;
 }
 
 add_shortcode('fw_blog_desc', 'fw_blog_desc');
 function fw_blog_desc(){
   global $fw_loop_blog;
-  $content=substr(wp_trim_excerpt($fw_loop_blog->post_content),0,400);
-  return '<p class="desc">'.$content.'</p>' ;
+  $content=strip_tags(substr(wp_trim_excerpt($fw_loop_blog->post_content),0,400));
+  echo '<p class="desc">'.$content.'</p>' ;
 }
 
 add_shortcode('fw_blog_url', 'fw_blog_url');
 function fw_blog_url(){
   global $fw_loop_blog;
-  return $fw_loop_blog->permalink;
+  echo get_permalink($fw_loop_blog->ID);
 }
 
 
 add_shortcode('fw_blog_button', 'fw_blog_button');
 function fw_blog_button(){
-  return '<span class="vermas">'.fw_theme_mod('fw_label_read_more').'</span>';
+  echo '<span class="vermas">'.fw_theme_mod('fw_label_read_more').'</span>';
 }
