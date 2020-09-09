@@ -11,6 +11,9 @@ function custom_logs($message) {
 }
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
+
+  
+
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
     try{
@@ -80,13 +83,11 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if($variation_id){
           $product_id = wp_get_post_parent_id($variation_id);
           $product = wc_get_product($product_id);
-        }else{
-
-          custom_logs("No se encotntro el var: ".$var_id);
         }
         if(!$product){
           custom_logs("Se buscara por SKU:".$item_id);
-          $product = wc_get_product_id_by_sku($item_id);
+          $product_id = wc_get_product_id_by_sku($item_id);
+          $product = wc_get_product($product_id);
         }
 
         if(is_object($product) && $product->get_sku()){
@@ -117,4 +118,13 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
       custom_logs("Se devolvio 400");
       return;
     }
+}
+
+
+
+$product = wc_get_product_id_by_sku('MLA789705000');
+if(is_object($product) && $product->get_sku()){
+	error_log("Se encontro el prod: ".$product->get_sku());
+}else{
+	error_log("No se encontro el prod");
 }
