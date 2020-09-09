@@ -1,5 +1,7 @@
 <?php
-
+if(!function_exists('wp_get_current_user')) {
+  include(ABSPATH . "wp-includes/pluggable.php"); 
+}
 if ( ! function_exists( 'get_editable_roles' ) ) {
   require_once ABSPATH . 'wp-admin/includes/user.php';
 }
