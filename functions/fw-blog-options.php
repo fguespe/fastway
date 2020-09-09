@@ -127,5 +127,5 @@ function fw_blog_url(){
 
 add_shortcode('fw_blog_button', 'fw_blog_button');
 function fw_blog_button(){
-  return '<span class="vermas" target="_blank">'.fw_theme_mod('fw_label_read_more').'</span>';
+  return '<span class="vermas">'.fw_theme_mod('fw_label_read_more').'</span>';
 }
