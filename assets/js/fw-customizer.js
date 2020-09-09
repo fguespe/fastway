@@ -24,6 +24,12 @@ wp.customize( 'css_loop_review', function( value ) {
     jQuery( '#css_loop_review' ).text(newval );
   } );
 } );
+
+wp.customize( 'css_loop_blog', function( value ) {
+  value.bind( function( newval ) {
+    jQuery( '#css_loop_blog' ).text(newval );
+  } );
+} );
 wp.customize( 'css_editor-forms', function( value ) {
   value.bind( function( newval ) {
     jQuery( '#css_editor-forms' ).text(newval );
