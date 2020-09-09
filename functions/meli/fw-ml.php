@@ -8,19 +8,29 @@ add_action('admin_menu', 'ml_log_register_plugin_page');
 function mllog_options_page(){
   $handle = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","r"); 
   if ($handle) {
+      $logs=[];
       while (($line = fgets($handle)) !== false){
+        if(empty($line))continue;
         $line='<span class="fecha">'.$line;
-        $line1=str_replace('::','</span>',$line);
-        $log.= $line1;
+        $line=str_replace('::','</span>',$line);
+        $line=$line.'<br>';
+        $logs[]= $line;
       }
       fclose($handle);
+      $logs=array_reverse($logs);
+      error_log(print_r($logs,true));
+      foreach($logs as $log){
+        $log_total.= nl2br($log);
+      }
   } ?>
   <h2>Log mercadolibre</h2>
   <pre class="log_fw" >
-  <?=$log?>
+  <?=$log_total?>
   </pre>
   <style>
   .log_fw{
+    overflow-y: scroll; 
+    height:400px;
     width:95% ;
     height:100%;
     min-height:500px;
