@@ -89,9 +89,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if(is_object($product) && $product->get_sku()){
           error_log("Se encontro el prod: ".$product->get_sku());
         }else{
-          error_log("No se encontro el prod: ".$product->get_sku());
+          error_log("No se encontro el prod");
           continue;
-
         }
         
         $product->set_stock($stock);
