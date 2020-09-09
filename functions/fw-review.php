@@ -101,6 +101,25 @@ acf_add_local_field_group(array(
 	'key' => 'group_5f591afcb07e5',
 	'title' => 'Fields',
 	'fields' => array(
+    array(
+			'key' => 'field_5f591b0579c2c',
+			'label' => 'Company',
+			'name' => 'company',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
 		array(
 			'key' => 'field_5f591b0579c2c',
 			'label' => 'Position',
