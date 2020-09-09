@@ -63,34 +63,34 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
               $precio=$var->price;
             }
           }
+          $variation_id = wc_get_product_id_by_sku($var_id);
+          $product_id = wp_get_post_parent_id($variation_id);
+          $product = wc_get_product($product_id);
+          if(!$product){
+            custom_logs("No se encotntro el var:".$var_id)
+          }
         }else{
           $stock=$item->available_quantity;
           $precio=$item->original_price?$item->original_price:$item->price;
           $oferta=$item->original_price?$item->price:'';
 
+          $product = wc_get_product_id_by_sku($item_id);
+          if(!$product){
+            custom_logs("No se encotntro el prod:".$item_id)
+          }
+
         }
 
         custom_logs($item_id.':'.$var_id.'-'.$stock.'-'.$precio.'-'.$oferta);
 
-        $variation= wc_get_product_id_by_sku($var_id);
-        if(!$prod_id){
-          custom_logs('Se va a actualizar el prod simple'.$item_id);
-          $variation = wc_get_product($item_id);
-        }else{
-          custom_logs('Se va a actualizar el la variacion'.$prod_id);
-        }
-        if(!$variation){
-          custom_logs("Hubo un error");
-          continue;
-        }
         
 
-        $variation->set_stock($stock);
-        $variation->set_price($price);
-        if($quantity==0)$variation->set_stock_status('outofstock');
-        $variation->save();   
+        $product->set_stock($stock);
+        $product->set_price($price);
+        if($quantity==0)$product->set_stock_status('outofstock');
+        $product->save();   
         
-        custom_logs($item_id.": ".$variation_id.' restado '.$quantity.' quedo en '.$variation->get_stock_quantity().' y price: '.$price);
+        custom_logs($item_id.": ".$var_id.' restado '.$quantity.' quedo en '.$product->get_stock_quantity().' y price: '.$price);
       
         update_option($nombre_array,$orders_used);
       }
