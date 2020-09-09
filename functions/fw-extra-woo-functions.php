@@ -3,10 +3,6 @@
 
 
 
-function esMultitienda(){
-    if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
-    return false;
-}
 
 // Validate required term and conditions check box
 add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
