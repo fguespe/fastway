@@ -41,13 +41,7 @@ while ($posts->have_posts()){
             loop: <?=$loop;?>,
             touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,
-	        autoplayDisableOnInteraction: false,
-            breakpoints: {
-            // when window width is <= 320px
-                900:    {slidesPerView: 2,slidesPerGroup:2},
-                1000:   {slidesPerView: 3,slidesPerGroup:3},            
-                1200:    {slidesPerView: 4,slidesPerGroup:4}
-            }
+	        autoplayDisableOnInteraction: false
         });
   </script>
 
