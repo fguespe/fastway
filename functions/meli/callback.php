@@ -81,11 +81,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
         }
 
-
-        
-
         $product->set_stock($stock);
-        $product->set_price($price);
+        $product->set_price($precio);
         if($quantity==0)$product->set_stock_status('outofstock');
         $product->save();   
         
