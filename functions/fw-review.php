@@ -5,7 +5,7 @@ function fw_review_create() {
     register_post_type( 'fw_review',array(
       'description'           => __('Reviews','fastway'),
       'labels'                => array(
-        'name'                  => __('Review'                     ,'fastway'),
+        'name'                  => __('Reviews'                     ,'fastway'),
         'all_items'             => __('All Reviews'                ,'fastway'),
         'singular_name'         => __('Review'                     ,'fastway'),
         'add_new'               => __('Add New'                    ,'fastway'),
