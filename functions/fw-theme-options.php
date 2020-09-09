@@ -3513,7 +3513,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_review_code',
 	'label'       => __( ' Review Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_review',
-	'description'     => '[fw_review_container][fw_review_image][fw_review_title][fw_review_desc][/fw_review_container]',
+	'description'     => '[fw_review_container][fw_review_image][fw_review_title]
+	[fw_review_desc]
+	[fw_review_logo]
+	[fw_review_url]
+	[fw_review_position]
+	[fw_review_company][/fw_review_container]',
 	'default'     => '[fw_review_container][fw_review_image][fw_review_title][fw_review_desc][/fw_review_container]',
 	'choices'     => array(
 		'language' => 'html',
