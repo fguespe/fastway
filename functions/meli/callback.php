@@ -77,7 +77,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
           $product = wc_get_product($product_id);
         }
         if(!$product){
-          custom_logs("Se buscara por SKU:".$item_id);
+          //custom_logs("Se buscara por SKU:".$item_id);
           $product_id = wc_get_product_id_by_sku($item_id);
           $product = wc_get_product($product_id);
         }
@@ -94,7 +94,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if($quantity==0)$product->set_stock_status('outofstock');
         $product->save();   
         
-        custom_logs("El producto fue actualizado: ".$item_id.": ".$var_id.' restado '.$stock.' quedo en '.$product->get_stock_quantity().' y price: '.$precio);
+        custom_logs("El producto fue actualizado:<br>SKU:".$item_id."<br>Stock:".$product->get_stock_quantity()."<br>Precio:".$precio);
       
         update_option($nombre_array,$orders_used);
       }
