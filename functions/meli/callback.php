@@ -65,24 +65,29 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
               $precio=$var->price;
             }
           }
-          $variation_id = wc_get_product_id_by_sku($var_id);
-          $product_id = wp_get_post_parent_id($variation_id);
-          $product = wc_get_product($product_id);
-          if(!$product){
-            custom_logs("No se encotntro el var:".$var_id);
-          }
+          
         }else{
           $stock=$item->available_quantity;
           $precio=$item->original_price?$item->original_price:$item->price;
           $oferta=$item->original_price?$item->price:'';
 
-          $product = wc_get_product_id_by_sku($item_id);
-          if(!$product){
-            custom_logs("No se encotntro el prod:".$item_id);
-          }
+          
 
         }
 
+        
+        $variation_id = wc_get_product_id_by_sku($var_id);
+        $product_id = wp_get_post_parent_id($variation_id);
+        $product = wc_get_product($product_id);
+        if(!$product){
+          custom_logs("No se encotntro el var: ".$var_id);
+          $product = wc_get_product_id_by_sku($item_id);
+          if(!$product){
+            custom_logs("No se encotntro el prod: ".$item_id);
+          }
+        }
+        
+        
         $product->set_stock($stock);
         $product->set_price($precio);
         if($quantity==0)$product->set_stock_status('outofstock');
