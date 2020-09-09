@@ -81,7 +81,6 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
         }
 
-        custom_logs($item_id.':'.$var_id.'-'.$stock.'-'.$precio.'-'.$oferta);
 
         
 
@@ -90,7 +89,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         if($quantity==0)$product->set_stock_status('outofstock');
         $product->save();   
         
-        custom_logs($item_id.": ".$var_id.' restado '.$quantity.' quedo en '.$product->get_stock_quantity().' y price: '.$price);
+        custom_logs($item_id.": ".$var_id.' restado '.$stock.' quedo en '.$product->get_stock_quantity().' y price: '.$precio);
       
         update_option($nombre_array,$orders_used);
       }
