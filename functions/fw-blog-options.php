@@ -108,7 +108,7 @@ function fw_blog_image(){
 add_shortcode('fw_blog_title', 'fw_blog_title');
 function fw_blog_title(){
   global $fw_loop_blog;
-  return '<div class="blog_title" >'.$fw_loop_blog->post_title.'</div>' ;
+  return '<h5 class="blog_title" >'.$fw_loop_blog->post_title.'</h5>' ;
 }
 
 add_shortcode('fw_blog_desc', 'fw_blog_desc');
