@@ -65,8 +65,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
           }
         }else{
           $stock=$item->available_quantity;
-          $precio=$item->original_price?$itemsdetalle->original_price:$itemsdetalle->price;
-          $oferta=$item->original_price?$itemsdetalle->price:'';
+          $precio=$item->original_price?$item->original_price:$item->price;
+          $oferta=$item->original_price?$item->price:'';
 
         }
 
