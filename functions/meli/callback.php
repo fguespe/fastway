@@ -67,7 +67,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
           $product_id = wp_get_post_parent_id($variation_id);
           $product = wc_get_product($product_id);
           if(!$product){
-            custom_logs("No se encotntro el var:".$var_id)
+            custom_logs("No se encotntro el var:".$var_id);
           }
         }else{
           $stock=$item->available_quantity;
