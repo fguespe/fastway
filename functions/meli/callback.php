@@ -82,7 +82,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
           $product = wc_get_product($product_id);
         }
         if(!$product){
-          //custom_logs("No se encotntro el var: ".$var_id);
+          custom_logs("No se encotntro el var: ".$var_id.' se buscara por SKU:'.$item_id);
           $product = wc_get_product_id_by_sku($item_id);
         }
 
