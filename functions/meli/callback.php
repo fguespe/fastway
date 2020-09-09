@@ -97,7 +97,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
 
       http_response_code(200);
-      custom_logs("Se devolvio 200");
+      //custom_logs("Se devolvio 200");
       return;
 
     }catch (Exception $e) {
