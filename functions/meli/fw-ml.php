@@ -13,7 +13,7 @@ function mllog_options_page(){
         if(empty($line))continue;
         $line='<span class="fecha">'.$line;
         $line=str_replace('::','</span>',$line);
-        $line=$line.'<br>';
+        //$line=$line.'<br>';
         $logs[]= $line;
       }
       fclose($handle);
