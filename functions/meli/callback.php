@@ -89,7 +89,8 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
             continue;
           }
         }
-        
+
+        if(is_object($product) && $product->get_sku())error_log("Se encontro el wooprod: ".$product->get_sku());
         
         $product->set_stock($stock);
         $product->set_price($precio);
