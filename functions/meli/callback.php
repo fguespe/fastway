@@ -70,14 +70,14 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
         }
 
-        error_log($item_id.':'.$var_id.'-'.$stock.'-'.$precio.'-'.$oferta);
+        custom_logs($item_id.':'.$var_id.'-'.$stock.'-'.$precio.'-'.$oferta);
 
         $variation= wc_get_product_id_by_sku($var_id);
         if(!$prod_id){
-          error_log('Se va a actualizar el prod simple'.$item_id);
+          custom_logs('Se va a actualizar el prod simple'.$item_id);
           $variation = wc_get_product($item_id);
         }else{
-          error_log('Se va a actualizar el la variacion'.$prod_id);
+          custom_logs('Se va a actualizar el la variacion'.$prod_id);
         }
         if(!$variation)continue;
         
