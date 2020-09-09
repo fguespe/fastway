@@ -83,9 +83,9 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         }
 
         if(is_object($product) && $product->get_sku()){
-          custom_logs("Se encontro el prod: ".$product->get_sku());
+          //custom_logs("Se encontro el prod: ".$product->get_sku());
         }else{
-          custom_logs("No se encontro el prod");
+          custom_logs("No se encontro el prod".$item_id);
           continue;
         }
         
