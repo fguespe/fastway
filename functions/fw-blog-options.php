@@ -114,8 +114,7 @@ function fw_blog_title(){
 add_shortcode('fw_blog_desc', 'fw_blog_desc');
 function fw_blog_desc(){
   global $fw_loop_blog;
-  error_log(print_r($fw_loop_blog,true));
-  return '<p class="desc">'.$fw_loop_blog->post_content.'</p>' ;
+  return '<p class="desc">'.$fw_loop_blog->post_excerpt.'</p>' ;
 }
 
 add_shortcode('fw_blog_url', 'fw_blog_url');
