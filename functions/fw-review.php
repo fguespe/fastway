@@ -244,7 +244,7 @@ function fw_review_title(){
 add_shortcode('fw_review_desc', 'fw_review_desc');
 function fw_review_desc(){
   global $fw_loop_rev;
-  return '<div class="review_title" >'.$fw_loop_rev->post_content.'</div>' ;
+  if(funtion_exists('get_field'))return get_field('review',$fw_loop_rev->ID);
 }
 
 add_shortcode('fw_review_logo', 'fw_review_logo');
@@ -263,6 +263,11 @@ add_shortcode('fw_review_position', 'fw_review_position');
 function fw_review_position(){
   global $fw_loop_rev;
   if(funtion_exists('get_field'))return get_field('position',$fw_loop_rev->ID);
+}
+add_shortcode('fw_review_company', 'fw_review_company');
+function fw_review_company(){
+  global $fw_loop_rev;
+  if(funtion_exists('get_field'))return get_field('company',$fw_loop_rev->ID);
 }
 
 
