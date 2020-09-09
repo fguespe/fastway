@@ -20,7 +20,7 @@ function fw_review_create() {
       'public'                => true,
       'menu_position'         => 5,
       'rewrite'               => array( 'slug' => 'fw_review' ),
-      'supports'              => array( 'title', 'editor' ,'thumbnail'),
+      'supports'              => array( 'title' ,'thumbnail'),
       'public'                => true,
       'show_ui'               => true,
       'publicly_queryable'    => true,
@@ -64,7 +64,6 @@ function get_review_template( $template_name, $args = array(), $posts = null ){
 
 add_shortcode( 'fw_review_carousel_function', 'fw_review_carousel_function' ); 
 function fw_review_carousel_function( $atts, $content ) {
-    error_log(print_r($atts,true));
   $rand=generateRandomString(5);
   $atts = shortcode_atts(
       array(
@@ -95,5 +94,111 @@ function fw_review_carousel_function( $atts, $content ) {
   return ob_get_clean();
   
 }   
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_5f591afcb07e5',
+	'title' => 'Campos',
+	'fields' => array(
+		array(
+			'key' => 'field_5f591b0579c2c',
+			'label' => 'Position',
+			'name' => 'position',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5f591b2079c2d',
+			'label' => 'Review',
+			'name' => 'review',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5f591b2a79c2e',
+			'label' => 'Logo',
+			'name' => 'logo',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5f591b3e79c30',
+			'label' => 'URL',
+			'name' => 'url',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'fw_review',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+endif;
 
 ?>

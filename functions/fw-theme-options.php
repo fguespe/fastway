@@ -868,7 +868,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor_blog',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
 	'section'     => 'section_blog_general',
-	'description' => 'Classes: .blog',
+	'description' => 'Classes: .fw_post_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
