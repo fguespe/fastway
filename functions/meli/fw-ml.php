@@ -18,7 +18,6 @@ function mllog_options_page(){
       }
       fclose($handle);
       $logs=array_reverse($logs);
-      error_log(print_r($logs,true));
       foreach($logs as $log){
         $log_total.= nl2br($log);
       }
