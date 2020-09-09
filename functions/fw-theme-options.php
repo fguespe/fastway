@@ -3525,12 +3525,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'woo_loop_blog_code',
 	'label'       => __( ' Blog Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_blog',
-	'description'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][fw_blog_logo][fw_blog_url][/fw_blog_container]',
-	'default'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][/fw_blog_container]',
+	'description'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][fw_blog_logo][fw_blog_url][fw_blog_button][/fw_blog_container]',
+	'default'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][fw_blog_button][/fw_blog_container]',
 	'choices'     => array(
 		'language' => 'html',
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_loop_blog',

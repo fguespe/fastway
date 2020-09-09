@@ -92,9 +92,10 @@ endif;
 
 add_shortcode('fw_blog_container', 'fw_blog_container');
 function fw_blog_container($atts = [], $content = null){
-    echo '<li class="fw_post_loop">';
+    global $fw_loop_blog;
+    echo '<li class="fw_post_loop"><a href="'.esc_url( get_permalink($fw_loop_blog->ID)).'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-    echo '</li>';
+    echo '</a></li>';
 }
 
 add_shortcode('fw_blog_image', 'fw_blog_image');
@@ -113,7 +114,8 @@ function fw_blog_title(){
 add_shortcode('fw_blog_desc', 'fw_blog_desc');
 function fw_blog_desc(){
   global $fw_loop_blog;
-  return '<p class="desc">'.$fw_loop_blog->post_excerpt.'</p>' ;
+  error_log(print_r($fw_loop_blog,true));
+  return '<p class="desc">'.$fw_loop_blog->post_content.'</p>' ;
 }
 
 add_shortcode('fw_blog_url', 'fw_blog_url');
