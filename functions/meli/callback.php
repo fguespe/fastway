@@ -76,7 +76,7 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
           $product = wc_get_product_id_by_sku($item_id);
           if(!$product){
-            custom_logs("No se encotntro el prod:".$item_id)
+            custom_logs("No se encotntro el prod:".$item_id);
           }
 
         }
