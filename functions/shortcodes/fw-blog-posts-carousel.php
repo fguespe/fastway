@@ -9,23 +9,16 @@ $rand=generateRandomString(5);
 <?php 
 if(!$autoplay)$autoplay='false';
 if(!$loop)$loop='false';
-$cant=1;		
+$cant=1;	
+global $fw_loop_blog;	
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
-    $image_url = $image[0]; ?>
-
-    <div class="swiper-slide" data-swiper-autoplay="<?php echo $slider_delay?>">
-    <li class="fw_post_loop">
-    <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
-        <div class="loopimg_container"><img src="<?php echo $image_url; ?>" /></div>
-        <h2 class="product_title"><?php  the_title();?></h4>
-        <p class="excerpt 4"><?php the_excerpt(); ?></p>
-        <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
-    </a>
-    </li>
-    </div>
+    $fw_loop_blog= get_post();
+    echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
+    echo fw_loop_blog();
+    echo '</div>';
+    ?>
 <?php } ?>
 </div>
 <?php if($cant>=$prodsperrow){?>
@@ -48,13 +41,7 @@ while ($posts->have_posts()){
             loop: <?=$loop;?>,
             touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,
-	        autoplayDisableOnInteraction: false,
-            breakpoints: {
-            // when window width is <= 320px
-                900:    {slidesPerView: 2,slidesPerGroup:2},
-                1000:   {slidesPerView: 3,slidesPerGroup:3},            
-                1200:    {slidesPerView: 4,slidesPerGroup:4}
-            }
+	        autoplayDisableOnInteraction: false
         });
   </script>
 

@@ -172,6 +172,12 @@ Kirki::add_section( 'section_woo_loop_brand', array(
   
 ) );
 
+Kirki::add_section( 'section_woo_loop_blog', array(
+    'title'          => __( 'Blog Loop', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+  
+) );
 Kirki::add_section( 'section_woo_loop_review', array(
     'title'          => __( 'Review Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -855,15 +861,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_read_more',
-	'label'       => esc_attr__( 'Read more label', 'fastway' ),
-	'section'     => 'section_blog_general',
-	'description' => 'Si se deja vacio, no aparece',
-	'default'     => 'Leer más',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_blog',
 	'label'       => __( 'CSS Blog Page ', 'fastway' ),
@@ -931,7 +928,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor_blog_page',
-	'label'       => __( 'CSS Blog Page ', 'fastway' ),
+	'label'       => __( 'CSS Post Page ', 'fastway' ),
 	'section'     => 'section_blog_page',
 	'description' => 'Classes: .post_page',
 	'default'     => '',
@@ -3508,6 +3505,29 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'woo_loop_blog_code',
+	'label'       => __( ' Blog Loop Code', 'fastway' ),
+	'section'     => 'section_woo_loop_blog',
+	'description'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][fw_blog_logo][fw_blog_url][/fw_blog_container]',
+	'default'     => '[fw_blog_container][fw_blog_image][fw_blog_title][fw_blog_desc][/fw_blog_container]',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_loop_blog',
+	'label'       => __( 'CSS Blog Loop', 'fastway' ),
+	'section'     => 'section_woo_loop_blog',
+	'description' => 'Classes: .fw_blog_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_review_code',

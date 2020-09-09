@@ -222,6 +222,9 @@ function fw_if($atts = [], $content = null){
 function fw_loop_review(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_review_code'))));
 }
+function fw_loop_blog(){
+    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_blog_code'))));
+}
 
 function woo_loop_brand(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
