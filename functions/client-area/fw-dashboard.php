@@ -582,6 +582,7 @@ function custom_ml_help() {
     echo '<p>'.__('Products will be updated once per day. You can do the process manually the following way: ','fastway').'<br> 
     1) '.__('Update info from mercadolibre with the following link','fastway').': <a href="https://mlsync.altoweb.co/user.php?user='.fw_theme_mod("fw_id_ml").'" target="_blank">'.__('open','fastway').'</a><br>
     2) '.__('Once finished, start the import process with the following link','fastway').': <a href="/wp-admin/admin.php?page=pmxi-admin-manage&id='.fw_theme_mod("fw_id_wpallimport").'&action=update" target="_blank">'.__('open','fastway').'</a>' ;
+    if(fw_theme_mod('fw_ml_stock_ml_a_web'))echo '<br><br><a href="/wp-admin/options-general.php?page=mllog">Ver logs</a>';
 }
  
  
