@@ -79,7 +79,10 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
         }else{
           custom_logs('Se va a actualizar el la variacion'.$prod_id);
         }
-        if(!$variation)continue;
+        if(!$variation){
+          custom_logs("Hubo un error");
+          continue;
+        }
         
 
         $variation->set_stock($stock);
