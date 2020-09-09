@@ -30,7 +30,9 @@ function custom_menu_meta_box(){
             array(__('Users','fastway'),'users','users.php'),
             array(__('Media','fastway'),'image','upload.php'),
             array(__('Pages','fastway'),'file-text','edit.php?post_type=page'),
-            array(__('Comments','fastway'),'comments','edit-comments.php')
+            array(__('Comments','fastway'),'comments','edit-comments.php'),
+            array(__('Reviews','fastway'),'star','edit.php?post_type=fw_review'),
+            array(__('FAQ','fastway'),'question','edit.php?post_type=fw_faq')
 		);
 	if(fw_theme_mod('fw_id_filesync'))array_push($items, array(__('Imports','fastway'),'upload','upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync')));
 

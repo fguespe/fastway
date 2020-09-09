@@ -99,7 +99,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5f591afcb07e5',
-	'title' => 'Campos',
+	'title' => 'Fields',
 	'fields' => array(
 		array(
 			'key' => 'field_5f591b0579c2c',
