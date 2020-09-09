@@ -3536,7 +3536,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_loop_blog',
 	'label'       => __( 'CSS Blog Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_blog',
-	'description' => 'Classes: .fw_blog_loop',
+	'description' => 'Classes: .fw_post_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
