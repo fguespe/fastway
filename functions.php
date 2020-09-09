@@ -2,6 +2,17 @@
 
 
 
+error_log("No se encontro el prod");
+$product_id = wc_get_product_id_by_sku('MLA763132830');
+$product = wc_get_product($product_id);
+error_log(print_r($product,true));
+if(is_object($product) && $product->get_sku()){
+	error_log("Se encontro el prod: ".$product->get_sku());
+}else{
+	error_log("No se encontro el prod");
+}
+
+
 if ( ! function_exists( 'fw_theme_mod' ) ) {
   function fw_theme_mod( $field_id, $default_value = '' ) {
     if ( $field_id ) {

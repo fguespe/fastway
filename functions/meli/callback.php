@@ -121,10 +121,3 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 }
 
 
-
-$product = wc_get_product_id_by_sku('MLA789705000');
-if(is_object($product) && $product->get_sku()){
-	error_log("Se encontro el prod: ".$product->get_sku());
-}else{
-	error_log("No se encontro el prod");
-}
