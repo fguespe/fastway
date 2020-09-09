@@ -1,19 +1,11 @@
 <?php
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
-function custom_logs($message) { 
-  if(is_array($message)) { 
-      $message = json_encode($message); 
-  } 
-  $file = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","a"); 
-  echo fwrite($file, "\n" . date('Y-m-d h:i:s') . " :: " . $message); 
-  fclose($file); 
-}
+echo "OK";
+
+
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
-
-  
-
 if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 
     try{
@@ -121,3 +113,14 @@ if(fw_theme_mod('fw_ml_stock_ml_a_web') && $notifications){
 }
 
 
+
+
+
+function custom_logs($message) { 
+  if(is_array($message)) { 
+      $message = json_encode($message); 
+  } 
+  $file = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","a"); 
+  echo fwrite($file, "\n" . date('Y-m-d h:i:s') . " :: " . $message); 
+  fclose($file); 
+}

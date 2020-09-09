@@ -2,17 +2,6 @@
 
 
 
-error_log("No se encontro el prod");
-$product_id = wc_get_product_id_by_sku('MLA763132830');
-$product = wc_get_product($product_id);
-error_log(print_r($product,true));
-if(is_object($product) && $product->get_sku()){
-	error_log("Se encontro el prod: ".$product->get_sku());
-}else{
-	error_log("No se encontro el prod");
-}
-
-
 if ( ! function_exists( 'fw_theme_mod' ) ) {
   function fw_theme_mod( $field_id, $default_value = '' ) {
     if ( $field_id ) {
@@ -258,6 +247,9 @@ if(is_plugin_active('js_composer/js_composer.php')){
 }
 
 if(is_plugin_active('woocommerce/woocommerce.php')){
+
+
+
     require get_template_directory() . '/functions/fw-mayoristas.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     if(isLocalhost())require get_template_directory() . '/functions/fw-extra-woo-clients.php';
@@ -483,6 +475,8 @@ function mc_edit_permission_check() {
 
 }
 add_filter( 'admin_head', 'mc_edit_permission_check', 1, 4 );
+
+
 
 
 
