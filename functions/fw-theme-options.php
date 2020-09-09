@@ -268,6 +268,12 @@ Kirki::add_section( 'section_labels_thankyou', array(
     'panel'          => 'panel_fastway_labels',
   
 ) );
+Kirki::add_section( 'section_labels_blog', array(
+    'title'          => __( 'Blog labels', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway_labels',
+  
+) );
 
 if(is_webaltoweb()){
 	Kirki::add_section( 'section_actions', array(
@@ -627,6 +633,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=> '100% Protegido',
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_read_more',
+	'label'       => esc_attr__( 'Read more label', 'fastway' ),
+	'section'     => 'section_labels_blog',
+	'description' => 'Si se deja vacio, no aparece',
+	'default'     => 'Leer más',
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
