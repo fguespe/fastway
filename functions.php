@@ -126,6 +126,9 @@ function fw_vc_get_posts($type) {
     }
     return $result;
 }
+
+if(get_locale()=='es_ES')update_option('timezone_string','America/Argentina/Buenos_Aires');
+
 function isLocalhost(){
   return $_SERVER['HTTP_HOST']==='fastway';
 }
