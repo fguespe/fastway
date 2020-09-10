@@ -138,6 +138,7 @@ function fwa($string){
 }
 
 function esMultitienda(){
+  //Devuelve true si es una multitienda y e rol es otro que minorista
   if(fw_theme_mod('fw_is_multitienda') && !(check_user_role('administrator') || check_user_role('customer') || check_user_role('shop_manager') || check_user_role('subscriber') || check_user_role('guest') )) return true;
   return false;
 }

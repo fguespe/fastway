@@ -731,26 +731,7 @@ function fw_otherwoo_options(){
     if(!empty(fw_theme_mod("checkout-msg"))){
         add_action( 'woocommerce_before_checkout_form', 'fw_before_paying_notice' );
     }
-    /*
-    if(!empty(fw_theme_mod("fw_neworder_email_header"))){
-      add_action( 'woocommerce_email_before_order_table', 'fw_add_header_to_order', 20, 4 );
-    }
-    if(!empty(fw_theme_mod("fw_neworder_email_footer"))){
-      add_action( 'woocommerce_email_footer', 'fw_add_footer_to_email', 20, 4 );
-    }*/
-    
 }
-/*
-function fw_add_footer_to_email( $email ) {
-  echo fw_theme_mod("fw_neworder_email_footer");
-}
-
-function fw_add_header_to_order( $order, $sent_to_admin, $plain_text, $email ) {
-    if(esMultitienda()) return;
-    if ( $email->id == 'customer_processing_order' ) echo fw_theme_mod("fw_neworder_email_header");
-}*/
-
-
 function wc_remove_all_quantity_fields( $return, $product ){
     return true;
 }
@@ -1538,7 +1519,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
 	return $entro  ? $free : $rates;
 }
 
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' ,1);
+if(fw_theme_mod("fw_show_only_free_shipping") && !esMultitienda())add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available' ,1);
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
