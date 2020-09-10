@@ -1716,8 +1716,8 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           'clear'     => true,
           'priority' => 100
       );
-        unset($fields['shipping']['shipping_last_name']);
-        $fields['shipping']['shipping_date'] = array(
+      unset($fields['shipping']['shipping_last_name']);
+      $fields['shipping']['shipping_date'] = array(
           'placeholder'   => __('Shipping Date', 'fastway'),
           'clear'     => true,
           'priority' => 100
