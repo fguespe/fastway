@@ -1712,7 +1712,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
 
     if(fw_theme_mod('fw_gift_fields')){
       $fields['shipping']['shipping_phone'] = array(
-          'placeholder'   => fw_theme_mod('fw_order_shipping_phone_placeholder'),
+          'placeholder'   => __('Phone number', 'fastway'),
           'clear'     => true,
           'priority' => 100
       );
