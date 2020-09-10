@@ -1711,6 +1711,11 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     }
 
     if(fw_theme_mod('fw_gift_fields')){
+      $fields['shipping']['shipping_phone'] = array(
+          'placeholder'   => fw_theme_mod('fw_order_shipping_phone_placeholder'),
+          'clear'     => true,
+          'priority' => 100
+      );
         unset($fields['shipping']['shipping_last_name']);
         $fields['shipping']['shipping_date'] = array(
           'placeholder'   => __('Shipping Date', 'fastway'),
@@ -1719,12 +1724,6 @@ function fw_custom_override_checkout_fieldss( $fields ) {
       );
       $fields['shipping']['shipping_mensaje'] = array(
           'placeholder'   => fw_theme_mod('fw_order_gift_note_placeholder'),
-          'class'     => array('form-row-wide w100'),
-          'clear'     => true,
-          'priority' => 100
-      );
-      $fields['shipping']['shipping_phone'] = array(
-          'placeholder'   => fw_theme_mod('fw_order_shipping_phone_placeholder'),
           'class'     => array('form-row-wide w100'),
           'clear'     => true,
           'priority' => 100
