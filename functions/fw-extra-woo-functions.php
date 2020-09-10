@@ -1718,7 +1718,13 @@ function fw_custom_override_checkout_fieldss( $fields ) {
           'priority' => 100
       );
       $fields['shipping']['shipping_mensaje'] = array(
-          'placeholder'   => __('Leave a gift message', 'fastway'),
+          'placeholder'   => fw_theme_mod('fw_order_gift_note_placeholder'),
+          'class'     => array('form-row-wide w100'),
+          'clear'     => true,
+          'priority' => 100
+      );
+      $fields['shipping']['shipping_phone'] = array(
+          'placeholder'   => fw_theme_mod('fw_order_shipping_phone_placeholder'),
           'class'     => array('form-row-wide w100'),
           'clear'     => true,
           'priority' => 100

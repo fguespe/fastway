@@ -423,6 +423,20 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
+	'settings'    => 'fw_order_shipping_phone_placeholder',
+	'label'       => __( 'Dejale un mensaje de regalo', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default' 		=>__('Phone number', 'fastway')
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'fw_order_gift_note_placeholder',
+	'label'       => __( 'Dejale un mensaje de regalo', 'fastway' ),
+	'section'     => 'section_labels_checkout',
+	'default' 		=>__('Leave a gift message', 'fastway')
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
 	'settings'    => 'fw_order_notes_placeholder',
 	'label'       => __( 'Comentarios adicionales (placeholder)', 'fastway' ),
 	'section'     => 'section_labels_checkout',
@@ -2790,7 +2804,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Calculate Only Mercadoenvios', 'fastway' ),
 	'section'     => 'section_woo_shippings',
 	'description' => 'Refrescar despues de activar',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 		'on'  => __( 'Enable', 'fastway' ),
 		'off' => __( 'Disable', 'fastway' )
