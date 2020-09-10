@@ -15,6 +15,13 @@ while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
     $fw_loop_blog= get_post();
+
+    ob_start();
+    the_excerpt();
+    $fw_loop_blog->post_content  = ob_get_contents();
+    ob_end_clean();
+
+    
     echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
     echo fw_loop_blog();
     echo '</div>';

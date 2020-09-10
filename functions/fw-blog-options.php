@@ -22,7 +22,7 @@ function fw_recentposts_grid() {
       <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
           <div class="loopimg_container"><img src="<?php echo $image_url; ?>" width="100%"/></div>
         <h2 class="product_title"><?php  the_title();?></h4>
-        <p class="excerpt 4"><?php the_excerpt(); ?></p>
+        <p class="excerpt 4"><?php c(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
       </a>
       </li>

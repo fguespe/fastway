@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 // Validate required term and conditions check box
 add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
 function terms_and_conditions_validation( $username, $email, $validation_errors ) {
