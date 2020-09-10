@@ -2104,7 +2104,7 @@ footer .widget_nav_menu li a {
   object-fit: contain;
   height: 100%;
 }
-.fw_post_loop .product_title {
+.fw_post_loop .blog_title {
   padding: 5px;
   color: #444444;
   font-size: 20px;
@@ -2116,7 +2116,7 @@ footer .widget_nav_menu li a {
 .fw_post_loop .vermas {
   color: var(--main) !important;
 }
-.fw_post_loop p {
+.fw_post_loop p.desc {
   opacity: 0.7;
   line-height: 1.4;
   font-size: 16px !important;
@@ -5345,7 +5345,7 @@ dt.variation-fw_extra.stock {
   display: inline-block !important;
 }
 .fw_checkout .fw-woocommerce-shipping-totals {
-  font-size: 10px;
+  font-size: 0px;
 }
 .fw_checkout .lpp-shipping-package-wrapper {
   width: 100% !important;
