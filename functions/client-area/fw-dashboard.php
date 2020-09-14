@@ -569,9 +569,9 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
     </p>' ;
 }
 function fw_actualizar_precios() {
-    if(!empty(fw_theme_mod('fw_id_wpallexport')))echo '<span>Export updated prices <a href="/wp-admin/admin.php?page=pmxe-admin-manage&id='.fw_theme_mod("fw_id_wpallexport").'&action=update" target="_blank">Export</a></span><br><br>';
-    if(!empty(fw_theme_mod('fw_id_wpallimport')))echo '<span>Import updated prices <a href="/wp-admin/upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync').'" target="_blank">Import</a></span><br><br>' ;
-    echo '<span style="color:red">IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost data. If in doubt , contact support.</span><br>';
+    if(!empty(fw_theme_mod('fw_id_wpallexport')))echo '<span>'.__('Export updated prices','fastway').'<a href="/wp-admin/admin.php?page=pmxe-admin-manage&id='.fw_theme_mod("fw_id_wpallexport").'&action=update" target="_blank">'.__('Export','fastway').'</a></span><br><br>';
+    if(!empty(fw_theme_mod('fw_id_wpallimport')))echo '<span>'.__('Import updated prices','fastway').'<a href="/wp-admin/upload.php?page=enable-media-replace%2Fenable-media-replace.php&action=media_replace&attachment_id='.fw_theme_mod('fw_id_filesync').'" target="_blank">'.__('Import','fastway').'</a></span><br><br>' ;
+    echo '<span style="color:red">'.__('IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost data. If in doubt , contact support.','fastway').'</span><br>';
 }
 function custom_dashboard_help() {
     echo '<p>'.__('Send your requirement from our support widget <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >create ticket</a>','fastway').'
