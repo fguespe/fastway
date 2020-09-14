@@ -12,7 +12,6 @@ function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();
     $roles = ( array ) $user->roles;
-    //error_log(print_r($roles,true));
     return $roles[0];
   } else {
     return false;
@@ -119,26 +118,6 @@ function fw_editable_roles( $roles ) {
 }
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
   
-  /*
-  
-add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_shop_manager_role_edit_capabilities' );
-function fw_shop_manager_role_edit_capabilities( $roles ) {
-    error_log(print_r($roles,true));
-    if(function_exists('fw_theme_mod')){
-      $roles=fw_theme_mod('ca_extra_roles');
-      if(is_string($roles))$roles=explode(",",$roles);
-      
-      foreach ($roles as $nombre) {
-        $roles[]=strtolower($nombre);
-      }
-    }
-    $roles[]='shop_manager';
-    $roles[]='subscriber';
-    $roles[]='customer';
-    
-    return $roles;
-}*/
-
 
 add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 function fw_allow_users_to_shopmanager() {
@@ -167,7 +146,6 @@ function hide_adminstrator_editable_roles( $roles ){
 
   $role=fw_get_current_user_role();
 
-  //error_log(wp_get_current_user()->user_login." - ".$role.'('.is_super_admin().')');
   $username=wp_get_current_user()->user_login;
   if($role=='administrator' ||  is_super_admin() || $username=='webaltoweb')return $roles;
   

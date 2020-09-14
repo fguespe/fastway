@@ -56,9 +56,7 @@ function get_lili_discount($cart){
         if($menorprecio>$precio)$menorprecio=$precio;
     }
 
-    error_log('EEfg menor precio es'.$menorprecio);
     if($menorprecio==100000000)return;
     $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
-    error_log('EEfg discount'.$discount);
     return $discount;
 }

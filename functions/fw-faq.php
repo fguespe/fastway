@@ -63,7 +63,6 @@ if( !function_exists( 'fw_faqs' ) ) {
       'order'         => 'ASC',
     );
     $faq_preguntas = new WP_Query( $args ); 
-    error_log(print_r($faq_preguntas,true));
     $pressapps_terms        = get_terms('fw_faq_category',
       array(
         'orderby'   => 'term_group',

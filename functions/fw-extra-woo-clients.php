@@ -208,7 +208,6 @@ function hans_table(){
 
       foreach($product->get_available_variations() as $variation){
         if($variation['attributes']['attribute_pa_package']!=$key_type)continue;
-        error_log('entra2');
         $tabla .= '<tr>';
         $tabla .= '<td>'.$variation['attributes']['attribute_pa_form'].'</td>';
         $tabla .= '<td>'.$variation['attributes']['attribute_pa_size'].'</td>';

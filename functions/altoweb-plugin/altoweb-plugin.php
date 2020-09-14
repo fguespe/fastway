@@ -285,29 +285,29 @@ function altoweb_bancos(){
 add_shortcode('altoweb_financiacion','altoweb_financiacion');
 function altoweb_financiacion(){
     global $product;
-  $return= <<<HTML
-  <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
-   <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
-   <span class="icon">
-      <i class="fad fa-credit-card"></i>
-      </span> 
-      <span class="text"> 
-      <big>Pagá en hasta 12 cuotas</big> 
-      <img style="display:block;" src="/wp-content/themes/fastway/assets/img/iconitopagos.png" width="97"/>
-      <small style="color:#3483fa !important;">Más información</small> 
-      </span>
-   </li>
-</a>
-<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
-   <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <div class="modal-body">
-            <iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
-         </div>
-      </div>
-   </div>
-</div>
+    $return= <<<HTML
+    <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
+    <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
+    <span class="icon">
+        <i class="fad fa-credit-card"></i>
+        </span> 
+        <span class="text"> 
+        <big>Pagá en hasta 12 cuotas</big> 
+        <img style="display:block;" src="/wp-content/themes/fastway/assets/img/iconitopagos.png" width="97"/>
+        <small style="color:#3483fa !important;">Más información</small> 
+        </span>
+    </li>
+    </a>
+    <div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
+            </div>
+        </div>
+    </div>
+    </div>
 HTML;
    $return.=do_shortcode('[fw_data type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios calculadora downlink"]');
    $return.= do_shortcode('[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios envio downlink"]');

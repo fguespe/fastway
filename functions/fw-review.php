@@ -250,7 +250,6 @@ function fw_review_desc(){
 add_shortcode('fw_review_logo', 'fw_review_logo');
 function fw_review_logo(){
   global $fw_loop_rev;
-  error_log(print_r(get_field('logo',$fw_loop_rev->ID),true));
   if(function_exists('get_field'))return get_field('logo',$fw_loop_rev->ID)['url'];
 }
 
