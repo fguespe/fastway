@@ -2127,12 +2127,23 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shop_state',
 	'label'       => __( 'Shop State', 'fastway' ),
 	'section'     => 'section_woo',
+	'description' => 'Compras off solo oculta el boton comprar<br>Precios off oculta precios y boton de comprar y pone un boton de consultar.',
 	'default'     => 'normal',
 	'choices'     => array(
 		'normal' => __( 'Normal', 'fastway' ),
 		'hidepurchases' => __( 'Compras Off', 'fastway' ),
-		'hideprices' => __( 'Precios Off', 'fastway' ),
+		'hideprices' => __( 'Solo consultas', 'fastway' ),
 	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_consultar_link',
+	'label'    => __( 'Link boton consultar', 'fastway' ),
+	'description' => 'Solo se muestra en el caso que esta en "Compras off" ',
+	'section'     => 'section_woo',
+	'default' => '/contacto'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(

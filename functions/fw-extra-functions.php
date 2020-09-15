@@ -847,3 +847,9 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
 }
 
 
+if (!function_exists('custom_account_hook')) {
+	function custom_account_hook() {
+		echo do_shortcode('[wordpress_file_upload]');
+	}
+	add_action( 'woocommerce_account_dashboard', 'custom_account_hook' );
+}

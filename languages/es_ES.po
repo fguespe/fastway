@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2020-09-14 17:58-0300\n"
-"PO-Revision-Date: 2020-09-14 17:58-0300\n"
+"PO-Revision-Date: 2020-09-15 09:30-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -499,8 +499,6 @@ msgid "Coupons"
 msgstr "Cupones"
 
 #: functions/client-area/fw-dashboard.php:58
-#, fuzzy
-#| msgid "Installments"
 msgid "Todopago Installments"
 msgstr "Cuotas"
 
@@ -612,8 +610,6 @@ msgid "Categories"
 msgstr "Categorías"
 
 #: functions/client-area/fw-dashboard.php:214
-#, fuzzy
-#| msgid "*If empty, aplies to all products"
 msgid "If empty, aplies to all products"
 msgstr "Si esta vacío, aplica a todos los productos"
 
@@ -649,8 +645,6 @@ msgid "Applies to the cheapiest"
 msgstr "Aplica al mas barato"
 
 #: functions/client-area/fw-dashboard.php:278
-#, fuzzy
-#| msgid "Installments"
 msgid "Max installments"
 msgstr "Cuotas"
 
@@ -700,8 +694,6 @@ msgid "Update prices"
 msgstr "Actualizar precios"
 
 #: functions/client-area/fw-dashboard.php:554
-#, fuzzy
-#| msgid "Need help?"
 msgid "Need help"
 msgstr "Soporte"
 
