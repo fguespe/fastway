@@ -178,8 +178,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     if($regular_price){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
-    if(fw_check_hide_prices()) return;
-    if(empty($product->get_price())){
+    if(empty($product->get_price()) || fw_check_hide_prices()){
         if(is_product()){
             return '<button type="button"  onclick="location.href=\'/contacto\'" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
             <i class="fad fa-life-ring"></i>

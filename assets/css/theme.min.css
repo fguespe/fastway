@@ -2088,6 +2088,58 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
+.post_page .entry-title {
+  font-weight: 600;
+  color: #333;
+}
+.post_page .comments-title,
+.post_page .comments-title span,
+.post_page .comment-reply-title,
+.post_page .comment-reply-title a,
+.post_page .widget-title {
+  font-size: 22px !important;
+  font-weight: 500;
+  color: var(--main);
+}
+.post_page .comment-list {
+  padding: 0;
+}
+.post_page .comment-body {
+  background: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px !important;
+}
+.post_page cite.fn {
+  font-style: normal;
+  font-weight: 600;
+}
+.post_page .commentmetadata a {
+  font-size: 15px !important;
+  display: inline-block;
+  margin: 10px 0;
+}
+.post_page .comment-reply-link,
+.post_page .form-submit .submit {
+  background: var(--main);
+  color: #fff;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+}
+.post_page #cancel-comment-reply-link {
+  background: #ddd;
+  color: #333;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px !important;
+  border: none;
+}
+
 .fw_post_loop {
   margin-bottom: 60px;
   text-align: left !important;

@@ -4041,7 +4041,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_search_by_sku',
-	'label'       => __( 'Search by sku', 'fastway' ),
+	'label'       => __( 'Search by sku', 'fastway' ).'(CR)',
 	'section'     => 'section_woo_search',
 	'default'     => 1,//enabled
 	'choices' => array(
