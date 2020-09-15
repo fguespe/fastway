@@ -1,9 +1,9 @@
 <?php
 
-
 add_shortcode('hans_table','hans_table');
 function hans_table(){
   global $product;
+
   if( $product->is_type('variable') ){
     // Searching for the default variation
     $default_attributes = $product->get_default_attributes();
@@ -24,12 +24,12 @@ function hans_table(){
       background:white !important;
       border-radius:1px !important;
       }
-      .fw_tabla_variaciones td{
-        text-transform: capitalize !important; !important;
-      }
-      .fw_add_to_cart_button_table i{
-        color:black
-      }
+    .fw_tabla_variaciones td{
+      text-transform: capitalize !important; !important;
+    }
+	.fw_add_to_cart_button_table i{
+color:black
+}
     .fw_tabla_variaciones{
       float:left;
       width:100%;
@@ -176,10 +176,10 @@ function hans_table(){
         
       </li>
       <li class="nav-item">
-      <a class="nav-link" id="b10-tab" data-toggle="tab" href="#b10" role="tab" aria-controls="b10" aria-selected="false">Bundle 10<small>Get 5 FREE</small></a>
+      <a class="nav-link" id="b10-tab" data-toggle="tab" href="#b10" role="tab" aria-controls="b10" aria-selected="false">Bundle 10<small>Get 3 FREE</small></a>
       </li>
       <li class="nav-item last">
-      <a class="nav-link" id="b20-tab" data-toggle="tab" href="#b20" role="tab" aria-controls="b20" aria-selected="false">Bundle 20<small>Get 13 FREE</small></a>
+      <a class="nav-link" id="b20-tab" data-toggle="tab" href="#b20" role="tab" aria-controls="b20" aria-selected="false">Bundle 15<small>Get 5 FREE</small></a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">';
@@ -208,6 +208,7 @@ function hans_table(){
 
       foreach($product->get_available_variations() as $variation){
         if($variation['attributes']['attribute_pa_package']!=$key_type)continue;
+        error_log('entra2');
         $tabla .= '<tr>';
         $tabla .= '<td>'.$variation['attributes']['attribute_pa_form'].'</td>';
         $tabla .= '<td>'.$variation['attributes']['attribute_pa_size'].'</td>';
@@ -222,13 +223,10 @@ function hans_table(){
 
         $bundle=1;
 		  
-        if($key_type=='b5'){
-          $bundle=6;
-        }else if($key_type=='b10'){
-          $bundle=15;
-        }else if($key_type=='b20'){
-          $bundle=33;
-        }
+        if($key_type=='b5')$bundle=6;
+        else if($key_type=='b10')$bundle=13;
+        else if($key_type=='b20')$bundle=20;
+        
 		  
 
         $tabla.='
@@ -252,4 +250,6 @@ function hans_table(){
   }
   return $tabla;
 }
+
+
 
