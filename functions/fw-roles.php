@@ -139,13 +139,13 @@ function fw_allow_users_to_shopmanager() {
 // Remove Administrator role from roles list
 add_action( 'editable_roles' , 'hide_adminstrator_editable_roles' );
 function hide_adminstrator_editable_roles( $roles ){
-  if($role!='administrator')unset( $roles['editor'] );
-  
+
   unset( $roles['author'] );
   unset( $roles['subscriber'] );
   unset( $roles['contributor'] );
 
   $role=fw_get_current_user_role();
+  if($role!='administrator')unset( $roles['editor'] );
 
   $username=wp_get_current_user()->user_login;
   if($role=='administrator' ||  is_super_admin() || $username=='webaltoweb')return $roles;
