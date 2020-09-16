@@ -199,9 +199,10 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
     'blogname' => get_bloginfo('name'),
     'user_name' => esc_html( $user_login),
     'user_pass' => esc_html( $user_pass),
-    'myaccount' => make_clickable( esc_url( wc_get_page_permalink('myaccount'))),
     'activation_url'=> $activation_url
   );
+  
+  if(is_plugin_active('woocommerce/woocommerce.php'))$emailValues['myaccount']=make_clickable( esc_url( wc_get_page_permalink('myaccount')));
   return $emailValues;
 }
 
