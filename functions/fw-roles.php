@@ -145,11 +145,10 @@ function hide_adminstrator_editable_roles( $roles ){
   unset( $roles['contributor'] );
 
   $role=fw_get_current_user_role();
-  if($role!='administrator')unset( $roles['editor'] );
-
   $username=wp_get_current_user()->user_login;
   if($role=='administrator' ||  is_super_admin() || $username=='webaltoweb')return $roles;
 
+  unset( $roles['editor'] );
   unset( $roles['administrator'] );
   return $roles;
 }
