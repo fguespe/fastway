@@ -591,48 +591,48 @@ function fw_slider_function( $atts, $content ) {
     $ismobile=!empty($atts['slides_mobile']);
     if(!$ismobile)$claserespo=' ';
     $return='';
-    if(!wp_is_mobile() || (!$ismobile && wp_is_mobile())){
-    $links = explode(',',$atts['links_desktop']);
-    $return = '
-    <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative" >
-    <div class="swiper-wrapper clear-ul">';
-    $cant=0;
-    foreach( $image_ids as $image_id ){
-        $images = wp_get_attachment_image_src( $image_id, '' );
-        $link=$links[$cant];
-        $image=$images[0];
-        if(!$link)$link="#";
-        $return .= '<div class="swiper-slide fwslider" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
-        $return .= '<a href="'.$link.'" ><div class="item product-category">';
-        $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
-        $return .= '</div></a></div>';    
-        $cant++;
-    }
-    $return .='</div>';
-    if($cant>1){
-        $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
-        <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
-    }
-    $return .='</div>
-    <script>
-    var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        touchRatio: 0 ,
-        preventClicks: false,
-        preventClicksPropagation: false,
-        centeredSlides: true ,
-        loop: '.$atts['loop'].',
-        autoplay: '.$atts['autoplay'].',
-        speed:'.$atts['slider_speed'].',
-        navigation: {
-          nextEl: ".swiper-fwslider-'.$rand.'-next",
-          prevEl: ".swiper-fwslider-'.$rand.'-prev",
+    if(!wp_is_mobile() || (!$ismobile && wp_is_mobile()) || is_user_logged_in()){
+        $links = explode(',',$atts['links_desktop']);
+        $return = '
+        <div id="swiper-fwslider-'.$rand.'" class="swiper-fwslider-'.$rand.'  '.$claserespo.' '.$atts['el_class'].'  over-hidden relative" >
+        <div class="swiper-wrapper clear-ul">';
+        $cant=0;
+        foreach( $image_ids as $image_id ){
+            $images = wp_get_attachment_image_src( $image_id, '' );
+            $link=$links[$cant];
+            $image=$images[0];
+            if(!$link)$link="#";
+            $return .= '<div class="swiper-slide fwslider" data-swiper-autoplay="'.$atts['slider_delay'].'" style="width:100% !important;"> ';
+            $return .= '<a href="'.$link.'" ><div class="item product-category">';
+            $return .= '<img src="'.$image.'" width="100%"  height="auto"/>';
+            $return .= '</div></a></div>';    
+            $cant++;
         }
-    });
-    </script>';
+        $return .='</div>';
+        if($cant>1){
+            $return .='<div class="swiper-prev swiper-fwslider-'.$rand.'-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="swiper-next swiper-fwslider-'.$rand.'-next"><i class="fa fa-angle-right"></i></div>';
+        }
+        $return .='</div>
+        <script>
+        var swiper_desktop = new Swiper("#swiper-fwslider-'.$rand.'", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            touchRatio: 0 ,
+            preventClicks: false,
+            preventClicksPropagation: false,
+            centeredSlides: true ,
+            loop: '.$atts['loop'].',
+            autoplay: '.$atts['autoplay'].',
+            speed:'.$atts['slider_speed'].',
+            navigation: {
+            nextEl: ".swiper-fwslider-'.$rand.'-next",
+            prevEl: ".swiper-fwslider-'.$rand.'-prev",
+            }
+        });
+        </script>';
     }
-    if(!$ismobile || !wp_is_mobile())return $return;
+    if((!$ismobile || !wp_is_mobile()) && !is_user_logged_in())return $return;
     //Mobile
     $rand=generateRandomString(5);
     $image_ids = explode(',',$atts['slides_mobile']);
