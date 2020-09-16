@@ -470,7 +470,7 @@ add_action( 'init', 'fw_dashboard_widgets' );
 add_action( 'admin_menu', 'fw_remove_menu_pages' );
 function fw_remove_menu_pages() { 
     if (activarCA() ){
-        add_menu_page( 'escritorios', "<i class=' sfa-dashboard'></i> ".'Escritorio', 'read', get_admin_url().'');   
+        add_menu_page( 'escritorios', "<i class=' sfa-dashboard'></i> ".__('Dashboard','fastway'), 'read', get_admin_url().'');   
         
         $locations = get_nav_menu_locations();
         $menu = get_term( $locations["clientarea-".get_is_role_or_name_before()], 'nav_menu' );
@@ -486,7 +486,7 @@ function fw_remove_menu_pages() {
         }
 
         
-        add_menu_page( 'salir', "<i class=' fas fa-sign-out'></i> ".'Salir', 'read', 'salir', 'fw_menu_salir_link');
+        add_menu_page( 'salir', "<i class=' fas fa-sign-out'></i> ".__('Salir','fastway'), 'read', 'salir', 'fw_menu_salir_link');
     }
 }
 /*
