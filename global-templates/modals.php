@@ -448,6 +448,7 @@ jQuery( ".fw_variations select" ).change(function() {
 
             
 
+            jQuery('#mini_label_stock').remove()
 
             if((vara['is_in_stock'] && vara['is_purchasable']) || vara['backorders_allowed']){
                 //Slide!!
@@ -461,7 +462,6 @@ jQuery( ".fw_variations select" ).change(function() {
                 });
                 swiper.slideTo(index, 500);
                 jQuery('.fw_add_to_cart_button').prop("disabled",false)
-                jQuery('#mini_label_stock').remove()
             }else {
                 console.log('vara2',vara['is_in_stock'],vara['is_purchasable'],vara['backorders_allowed'])
                 jQuery('.fw_add_to_cart_button').prop("disabled",true)
