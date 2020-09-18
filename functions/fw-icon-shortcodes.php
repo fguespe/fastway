@@ -119,6 +119,17 @@ function fw_btn( $atts ) {
     $link_type=$atts['link_type'];
     $text=$atts['text'];
 
+
+    $cant=1;
+    $num=0;
+    $char=substr($link, -1);
+    if(intval($char)){
+        $link=str_replace($char,"",$link);
+        $atts['cant']=$char;
+        if($atts['cant'])$cant=intval($atts['cant']);
+        $link=fw_company_data($link,true,$cant);
+    }
+    
     //FA
     $icons_style=fw_theme_mod("fw_icons_style");
     if( strpos( $type, 'fa-' ) === false)$type='fa-'.$type;
@@ -126,9 +137,9 @@ function fw_btn( $atts ) {
 
 
     $iconclass=" fw_btn ".$btn_type." ".$atts['el_class'].' ';
-    $first.='<a href="'.$link.'" target="'.$link_type.'" id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
+    $first.='<div class="width:100%" style="text-align:'.$atts['icon_align'].'"><a href="'.$link.'" target="'.$link_type.'" id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
     $first.='<i class="'.$type.'" ></i> '.$text;
-    $first.="</a>";
+    $first.="</a></div>";
     
     
     return $first;
