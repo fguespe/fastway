@@ -123,17 +123,20 @@ add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 function fw_allow_users_to_shopmanager() {
     /*supuestamente funciona*/
     $role = get_role( 'shop_manager' );
-    $role->add_cap( 'edit_theme_options' ); 
-    $role->add_cap( 'manage_options' ); 
-    $role->add_cap( 'manage_email_logs' ); 
-    $role->add_cap( 'add_users' ); 
-    $role->add_cap( 'edit_dashboard' ); 
-    $role->add_cap( 'create_users' ); 
-    $role->add_cap( 'edit_users' ); 
-    $role->add_cap( 'gravityforms_create_form' ); 
-    $role->add_cap( 'gravityforms_edit_forms' ); 
-    $role->add_cap( 'gravityforms_view_entries' ); 
-    $role->add_cap( 'gravityforms_user_registration');
+    if($role){
+      $role->add_cap( 'edit_theme_options' ); 
+      $role->add_cap( 'manage_options' ); 
+      $role->add_cap( 'manage_email_logs' ); 
+      $role->add_cap( 'add_users' ); 
+      $role->add_cap( 'edit_dashboard' ); 
+      $role->add_cap( 'create_users' ); 
+      $role->add_cap( 'edit_users' ); 
+      $role->add_cap( 'gravityforms_create_form' ); 
+      $role->add_cap( 'gravityforms_edit_forms' ); 
+      $role->add_cap( 'gravityforms_view_entries' ); 
+      $role->add_cap( 'gravityforms_user_registration');
+
+    }
 }
 
 // Remove Administrator role from roles list
@@ -142,6 +145,7 @@ function hide_adminstrator_editable_roles( $roles ){
   $role=fw_get_current_user_role();
   $username=wp_get_current_user()->user_login;
   if(is_super_admin() || $username=='webaltoweb')return $roles;
+
   if(!is_plugin_active('woocommerce/woocommerce.php'))unset($roles['shop_manager'] );
   unset( $roles['author'] );
   unset( $roles['subscriber'] );
