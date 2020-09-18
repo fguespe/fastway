@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-16 20:57-0300\n"
-"PO-Revision-Date: 2020-09-16 20:57-0300\n"
+"POT-Creation-Date: 2020-09-18 08:15-0300\n"
+"PO-Revision-Date: 2020-09-18 08:15-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -88,27 +88,27 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:306
+#: functions.php:305
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:306
 msgid "Vertical Menu"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:307
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:308
 msgid "Bottom Mobile Menu"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:387
 msgid "File Size"
 msgstr ""
 
-#: functions.php:475 functions.php:477
+#: functions.php:474 functions.php:476
 msgid "You do not have permission to edit this user."
 msgstr ""
 
@@ -442,45 +442,49 @@ msgstr ""
 msgid "Top Left Icon"
 msgstr ""
 
-#: functions/client-area/client-area.php:341
+#: functions/client-area/client-area.php:337
+msgid "Default Home"
+msgstr ""
+
+#: functions/client-area/client-area.php:346
 msgid "Client Area Custom CSS"
 msgstr ""
 
-#: functions/client-area/client-area.php:358
+#: functions/client-area/client-area.php:363
 msgid "Company Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:359
+#: functions/client-area/client-area.php:364
 msgid ""
 "[fw_data type=\"whatsapp\"] empezar con 549, sin el + [fw_data type="
 "\"whatsapp\"] Ej: 11 54 999 795 (5491154999795)"
 msgstr ""
 
-#: functions/client-area/client-area.php:368
+#: functions/client-area/client-area.php:373
 msgid "Whats Label"
 msgstr ""
 
-#: functions/client-area/client-area.php:377
+#: functions/client-area/client-area.php:382
 msgid "Share Message"
 msgstr ""
 
-#: functions/client-area/client-area.php:384
+#: functions/client-area/client-area.php:389
 msgid "Button Menu Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:391
+#: functions/client-area/client-area.php:396
 msgid "Whatsapp Widget"
 msgstr ""
 
-#: functions/client-area/client-area.php:433
+#: functions/client-area/client-area.php:438
 msgid "Client Area Menu ("
 msgstr ""
 
-#: functions/client-area/client-area.php:473 inc/widgets.php:110
+#: functions/client-area/client-area.php:478 inc/widgets.php:110
 msgid "Dashboard"
 msgstr ""
 
-#: functions/client-area/client-area.php:489
+#: functions/client-area/client-area.php:494
 msgid "Salir"
 msgstr ""
 
@@ -782,12 +786,12 @@ msgid ""
 msgstr ""
 
 #: functions/client-area/fw-dashboard.php:577
-msgid ""
-"Send your requirement from our support widget <a href=\"#\" class=\"btn\" "
-"onclick=\"FreshworksWidget('open');\" >create ticket</a>"
+msgid "Send your requirement from our support widget"
 msgstr ""
-"Enviános tu solicitud desde nuestro widget. <a href=\"#\" class=\"btn\" "
-"onclick=\"FreshworksWidget(\\'open\\');\" >crear ticket</a>"
+
+#: functions/client-area/fw-dashboard.php:577
+msgid "create ticket"
+msgstr "crear ticket"
 
 #: functions/client-area/fw-dashboard.php:578
 msgid ""
@@ -3525,11 +3529,15 @@ msgstr ""
 msgid "Fabrizio Guespe"
 msgstr ""
 
+#~ msgid ""
+#~ "Send your requirement from our support widget <a href=\"#\" class=\"btn\" "
+#~ "onclick=\"FreshworksWidget('open');\" >create ticket</a>"
+#~ msgstr ""
+#~ "Enviános tu solicitud desde nuestro widget. <a href=\"#\" class=\"btn\" "
+#~ "onclick=\"FreshworksWidget(\\'open\\');\" >crear ticket</a>"
+
 #~ msgid "Block-"
 #~ msgstr "Bro"
-
-#~ msgid "create ticket"
-#~ msgstr "crear ticket"
 
 #~ msgid ""
 #~ "Las publicaciones se actualizan automaticamente 1 vez por dia. Si no "
