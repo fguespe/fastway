@@ -86,7 +86,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
 }
 
 .woocommerce-shipping-totals .button {
-text-align:left !important;
+  text-align:left !important;
   background: var(--main) !important;
   color: white !important;
   border: 0px;
