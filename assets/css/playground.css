@@ -690,11 +690,11 @@ margin: 0;
 }
 }
 
-#fw_iconos_home.iconos1.v2 .vc_column-inner{
+#fw_iconos_home.iconos1.v3 .vc_column-inner{
     border:0px ;
 }
-#fw_iconos_home.iconos1.v2 .wpb_column:nth-child(2),
-#fw_iconos_home.iconos1.v2 .wpb_column:nth-child(3){
+#fw_iconos_home.iconos1.v3 .wpb_column:nth-child(2),
+#fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
     border-right:solid 1px #ddd !important;
 }
 /*ICONOS2*/
