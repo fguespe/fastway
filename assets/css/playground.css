@@ -11,7 +11,7 @@
 }
 
 #header.header1 .fw_header.bottom{
-		background:var(--second);
+    background:var(--second);
 }
 #header.header1 .fw_header.middle .search-field {
     border-bottom: solid 1px #ccc;
@@ -157,7 +157,7 @@ color: #fff ;
 }
 
 #header.header11 .menu-item i{
-color:var(--main)
+    color:var(--main)
 }
 #header.header11 i,
 #header.header11 .fw_header.middle .minicart .cant{
@@ -165,7 +165,92 @@ color:var(--main)
 }
 
 
+/*HEADER12*/
+#header.header12 .fw_header.top i {
+    color: #fff;
+    margin-right: 5px;
+    margin-left: 5px;
+}
 
+#header.header12 .fw_header.top .frase-top {
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#header.header12 .fw_header.bottom{
+    background:var(--second);
+}
+#header.header12 .fw_header.middle .search-field {
+    border-bottom: solid 1px #ccc;
+    font-size: 15px;
+}
+
+#header.header12 .fw_header.middle .input-group-append button {
+    background: #fff;
+}
+
+#header.header12 .fw_header.middle .input-group-append button i:before {
+    color: var(--main);
+}
+
+#header.header12 .fw_header.middle .ingresar_text {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-weight: 500
+}
+
+#header.header12 .fw_header.bottom .navbar {
+    display: table;
+    margin: auto;
+}
+
+
+#header.header12 .fw_header.bottom i {
+    color: #fff;
+}
+
+#header.header12 .fw_header.bottom .nav-link {
+    text-transform: uppercase;
+    padding: 7px 15px;
+    color: #fff;
+    letter-spacing: .8px;
+}
+
+#header.header12 .fw_header.bottom .nav-link:hover {
+    background-color: rgba(0,0,0,.1)
+}
+
+#header.header12 .fw_header.top .nav-link {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#header.header12 .datos span{
+		color:red;
+		font-size:21px !important;
+		
+}
+#header.header12 .datos .fw_icon:nth-child(1){
+		border-bottom:2px rgba(255, 255, 255, .2) solid;
+		margin-bottom:5px;
+		-webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+#header.header12 .datos i{
+		line-height:21px;
+		font-size:20px;
+		margin-right:5px;
+}
+
+#header.header12 #fw_menu ,
+#header.header12 #fw_menu .navbar-nav{
+    width: 100% ;
+    justify-content:space-between;
+}
 
 
 
@@ -217,7 +302,6 @@ color:var(--main)
 }
 
 /* #footer.footer4 datos contacto */
-
 #footer.footer4 #datoscontacto .contacto_col .wpb_wrapper{
     border: solid 2px #555;
     padding: 20px;
@@ -252,7 +336,6 @@ color:var(--main)
 }
 
 /* #footer.footer4 menu */
-
 #footer.footer4 .menu {
     text-align: center;
 }
