@@ -190,8 +190,8 @@ function fw_data( $atts ) {
         $type=str_replace($char,"",$type);
         $atts['cant']=$char;
     }
+
     if($atts['cant'])$cant=intval($atts['cant']);
-    
     if($type==="phone"){
         $icon=$icons_style." fa-phone";
         $link=fw_company_data($type,true,$cant);
@@ -241,13 +241,10 @@ function fw_data( $atts ) {
         if( strpos( $type, 'fa-' ) === false) {
             $type='fa-'.$type;
         }
-        
         if( strpos( $type, 'fas ' ) === false && strpos( $type, 'fad ' ) === false  && strpos( $type, 'far ' ) === false){
             $icon=$icons_style.' '.$type;
         }else $icon=$type;
         $type='custom';
-       
-       
     }
     if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
 
@@ -280,7 +277,6 @@ function fw_data( $atts ) {
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$atts['text_color'].';text-align:'.$text_align.';">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
     }else if($format=='iconsnext'){//deprecetead
-        
         $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
         foreach (explode(",", $atts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";

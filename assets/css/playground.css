@@ -233,11 +233,11 @@ color: #fff ;
 		font-size:21px !important;
 		
 }
-#header.header12 .datos .fw_icon:nth-child(1){
+#header.header12 .datos > .fw_icon:nth-child(0){
 		border-bottom:2px rgba(255, 255, 255, .2) solid;
 		margin-bottom:5px;
 		-webkit-background-clip: padding-box; /* for Safari */
-    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+        background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 #header.header12 .datos i{
 		line-height:21px;
@@ -690,6 +690,14 @@ margin: 0;
 }
 }
 
+#fw_iconos_home.iconos1.v2 .vc_column-inner{
+    border:0px ;
+}
+#fw_iconos_home.iconos1.v2 .wpb_column:nth-child(2),
+#fw_iconos_home.iconos1.v2 .wpb_column:nth-child(3){
+    border-right:solid 1px #ddd !important;
+}
+/*ICONOS2*/
 
 #fw_iconos_home.iconos2 {
 border: 1px solid var(--main);
@@ -774,6 +782,12 @@ padding: 15px;
 	line-height:50px;
 	width:100% !important;
 }
+
+#fw_iconos_home.iconos3 .wpb_column:nth-child(1),
+#fw_iconos_home.iconos3 .wpb_column:nth-child(2){
+		border-right:solid 1px #ddd !important;
+}
+/*ICONOS4*/
 
 
 
@@ -870,6 +884,8 @@ padding: 15px;
 .fw_product_loop.loop2 .product_title{
 font-size:12px !important;
 }
+
+
 /*LOOP4*/
 .fw_product_loop.loop4 {
     border: solid 1px #ddd;
