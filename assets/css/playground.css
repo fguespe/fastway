@@ -697,6 +697,13 @@ margin: 0;
 #fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
     border-right:solid 1px #ddd !important;
 }
+@media (max-width: 799px) {
+    #fw_iconos_home.iconos1.v3 .wpb_column:nth-child(1),
+    #fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
+		display:none;
+		padding:0px;
+	}
+}
 /*ICONOS2*/
 
 #fw_iconos_home.iconos2 {
