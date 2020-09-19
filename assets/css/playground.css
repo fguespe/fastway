@@ -785,7 +785,7 @@ padding: 15px;
 
 #fw_iconos_home.iconos3 .wpb_column:nth-child(1),
 #fw_iconos_home.iconos3 .wpb_column:nth-child(2){
-		border-right:solid 1px #ddd !important;
+		border-right:solid 1px #ddd;
 }
 /*ICONOS4*/
 
