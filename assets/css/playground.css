@@ -230,7 +230,6 @@ color: #fff ;
 }
 
 #header.header12 .datos span{
-		color:red;
 		font-size:21px !important;
 		
 }
@@ -745,19 +744,31 @@ padding: 15px;
 /*ICONOS3*/
 
 #fw_iconos_home.iconos3 .fw_icon i{
-	color:#999999;
-	display:block !important;
+	color:var(--main);
+	display: block ;
 	text-align:center ;
 	font-size:55px !important;
 	margin-bottom:40px;
 	width:100% !important;
 }
-
+#fw_iconos_home.iconos3 .fw_icon big{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
+#fw_iconos_home.iconos3 .fw_icon small{
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #666;
+    margin: 6px 0 12px 0;
+}
 #fw_iconos_home.iconos3 .fw_icon{
 	padding:20px;
 }
 #fw_iconos_home.iconos3 .fw_icon span{
-	color:#999999;
+	color:black;
 	display:block !important;
 	text-align:center ;
 	line-height:50px;
