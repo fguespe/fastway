@@ -991,11 +991,18 @@ font-size:12px !important;
 
 .fw_cat_loop.loop4 .title {
     text-align: center;
-    font-weight: 300;
     color: #fff;
     text-transform: uppercase;
     padding: 10px;
     position: absolute;
     top: 10px;
     width: 100%;
+}
+
+.fw_cat_loop img {
+    transition: all .4s ease;
+}
+
+.fw_cat_loop:hover img {
+      transform: scale(1.05);
 }
