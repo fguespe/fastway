@@ -473,6 +473,24 @@ display: inline-block;
 }
     
 
+/*FOOTER6*/
+#footer.footer6 i,#footer.footer6 big,#footer.footer6 small{
+    color:white;
+}
+
+#footer.footer6 .bottom_icons{
+    background:var(--main);
+            color:white;
+}
+#footer.footer6  h4{
+    color:var(--main);
+    font-weight:700;
+}
+#footer.footer6  .fw_icon_bs_short i{
+    color:white;
+}
+
+
 
 /*FOOTER 7*/
 #footer.footer7,
