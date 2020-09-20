@@ -989,6 +989,7 @@ font-size:12px !important;
 
 /*CATEGORY LOOP*/
 
+
 .fw_cat_loop.loop4 .title {
     text-align: center;
     color: #fff;
@@ -997,6 +998,8 @@ font-size:12px !important;
     position: absolute;
     top: 10px;
     width: 100%;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .fw_cat_loop .thumbnail {
