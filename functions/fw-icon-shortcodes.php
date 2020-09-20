@@ -247,7 +247,21 @@ function fw_data( $atts ) {
         $type='custom';
     }
     if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
-    
+     //format
+     if($atts["format"])$format=$atts["format"];
+     else if($atts["isli"])$format="isli";
+     else if($atts["isli_i"])$format="isli_i";
+     else if($atts["iconsnext"])$format="iconsnext";
+ 
+     //Stext
+     if($format=='iconbox'  || $format=='iconbox_i'){
+         if($atts['stext'])$stext=$atts['stext'];
+         else $stext=$value;
+     }
+     if($atts['stext'])$stext=$atts['stext'];
+ 
+
+     
     if($atts['text'] || empty($value))$value=$atts['text'];
     if($atts['link'])$link=$atts['link'];
     if($atts['text_align'])$text_align=$atts['text_align'];
@@ -255,20 +269,7 @@ function fw_data( $atts ) {
     if($atts['weight'])$font_weight=$atts['weight'];
     $only_text=false;
     if(($atts["only_text"]))$only_text=true;
-    //format
-    if($atts["format"])$format=$atts["format"];
-    else if($atts["isli"])$format="isli";
-    else if($atts["isli_i"])$format="isli_i";
-    else if($atts["iconsnext"])$format="iconsnext";
-
-    //Stext
-    if($format=='iconbox'  || $format=='iconbox_i'){
-        if($atts['stext'])$stext=$atts['stext'];
-        else $stext=$value;
-    }
-    if($atts['stext'])$stext=$atts['stext'];
-
-
+   
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
     if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
         $laclase=$format=="isli" || $format=="isli_i"?"d-flex":"";
