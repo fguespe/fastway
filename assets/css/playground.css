@@ -251,7 +251,69 @@ color: #fff ;
     justify-content:space-between;
 }
 
+/*Footer3*/
+#footer.footer3 .widget_nav_menu li a {
+	color: white;
+	line-height: 34px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+		
+}
 
+
+#footer.footer3 h2{
+		text-transform:uppercase ;
+		font-weight:300;
+		font-size:24px !important;
+		color: white ;
+		
+}
+@media (max-width: 799px) {
+		#footer.footer3 h1{
+				font-size:20px ;
+		}
+}
+#footer.footer3 h4{
+		text-transform:uppercase ;
+		font-weight:300;
+		padding-left:5%;
+		font-size:12px ;
+		padding-right:5%;
+		color: white ;
+		
+}
+
+#footer.footer3 .menuhor li a,
+#footer.footer3 .fw_icon a i{
+		color: white ;
+		margin-right: 15px;
+}
+
+@media (min-width: 799px) {
+#footer.footer3 form{
+		border-bottom:1px solid white !important;
+		width:50%;
+}
+
+}
+
+@media (max-width: 799px) {
+#footer.footer3 .gform_body{
+		border-bottom:1px solid white !important;
+}
+
+}
+
+#footer.footer3 .gform_body input,
+#footer.footer3 .gform_footer input {
+		background:transparent;
+		color:white;
+}
+
+#footer.footer3 .footer_top{
+		background:var(--second)
+}
 
 /* #footer.footer4 2 */
 #footer.footer4{
