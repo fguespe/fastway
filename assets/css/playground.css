@@ -62,6 +62,13 @@
 }
 /*HEADER 11*/
 
+#header.header11 .top{
+    background:#323232;
+}
+#header.header11 .middle{
+    background:#E9EAEB;
+}
+
 #header.header11 .fw_header.top .codes {
     display: block ;
     width: 100%;
@@ -76,7 +83,6 @@
 #header.header11 .fw_header.top .fw_icon .text small,
 #header.header11 .fw_header.top .fw_icon .text big {
     color: #ddd;
-    font-family: Lato;
     font-size: 13px;
 }
 
@@ -163,6 +169,92 @@ color: #fff ;
 #header.header11 .fw_header.middle .minicart .cant{
     color:var(--main);
 }
+
+#header.header11 .middle .fw_icon {
+    margin-right: 10px;
+}
+
+#header.header11 .middle .fw_icon big {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#header.header11 .middle .fw_icon small {
+    font-weight: 400;
+    color: var(--main);
+}
+
+#header.header11 .middle .fw_icon i {
+    font-size: 24px;
+    color: #858585 ;
+}
+
+#header.header11 .middle .datoscontacto {
+    display: flex;
+    margin-right: 20px;
+}
+
+#header.header11 .middle .search_container {
+    display: flex;
+    margin-right: 0px;
+    margin-left: auto;
+    min-width: 520px;
+    height: 38px;
+}
+
+
+#header.header11 .top .container {
+    padding: 0 15px ;
+}
+#header.header11 .top .codes {
+    width: auto;
+    justify-content: initial;
+    margin: 0;
+    padding: 0;
+}
+
+#header.header11 .top .redestop {
+    display: flex;
+    margin-left: auto;
+    text-align: right;
+}
+
+#header.header11 .top .redestop .fw_icon {
+margin: 5px 0px 5px 10px ;
+}
+
+
+
+#header.header11 .top .redestop i {
+    color: #ddd !important;
+    font-size: 18px !important
+}
+
+#header.header11 .top .redestop big {
+    display: none;
+}
+
+@media(max-width: 1199px){
+    #header.header11 .middle .logo {
+            width: 100%;
+    }
+    
+    #header.header11 .middle .search_container {
+    width: 100%;
+    min-width: initial;
+}
+}
+#header.header11  .icon .fa-whatsapp:before{
+    color:#5BB956 ;
+}
+#header.header11  .datoscontacto i{
+    font-size:30px ;
+}
+
+
+
+
+
 
 
 /*HEADER12*/

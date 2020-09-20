@@ -1849,6 +1849,7 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-topheader',
@@ -1934,6 +1935,8 @@ Kirki::add_field( 'theme_config_id', array(
 		'alpha' => true,
 	),
 ) );
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bodycolor',
