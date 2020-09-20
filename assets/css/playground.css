@@ -695,35 +695,35 @@ margin: 0;
 
 
 /* ICONOS PAGOS */
-#fw_iconos_home.iconos1 {
+.fw_iconos_home.iconos1 {
 	padding: 0 100px;
 	border-bottom: solid 1px #ddd;
 }
 
-#fw_iconos_home.iconos1 .vc_column-inner {
+.fw_iconos_home.iconos1 .vc_column-inner {
 	padding: 20px 0px;
 	border-right: solid 1px #ddd;
 }
-#fw_iconos_home.iconos1 .noborder .vc_column-inner {
+.fw_iconos_home.iconos1 .noborder .vc_column-inner {
 	border: none;
 }
 
-#fw_iconos_home.iconos1 .fw_icon {
+.fw_iconos_home.iconos1 .fw_icon {
 	margin: 10px 0;
 }
 
-#fw_iconos_home.iconos1 i {
+.fw_iconos_home.iconos1 i {
 	color: var(--second);
 	margin-bottom: 10px;
 }
 
-#fw_iconos_home.iconos1  big {
+.fw_iconos_home.iconos1  big {
 	font-size: 15px;
 	font-weight: 600;
 }
 
 
-#fw_iconos_home.iconos1 small {
+.fw_iconos_home.iconos1 small {
 	color: var(--second);
 	font-weight: 400;
 	font-size: 12px;
@@ -731,87 +731,87 @@ margin: 0;
 }
 
 @media(max-width: 799px) {
-	#fw_iconos_home.iconos1 {
+	.fw_iconos_home.iconos1 {
         border-bottom: none;
     }
-	#fw_iconos_home.iconos1 .vc_column-inner {
+	.fw_iconos_home.iconos1 .vc_column-inner {
         padding: 10px 0px;
 		border-bottom: solid 1px #ddd ;
     }
-	#fw_iconos_home.iconos1 .no_border_on_mobile .vc_column-inner{
+	.fw_iconos_home.iconos1 .no_border_on_mobile .vc_column-inner{
 		border-right: none ;
 	}
-	#fw_iconos_home.iconos1 big {
+	.fw_iconos_home.iconos1 big {
     font-size: 13px;
 }
-	#fw_iconos_home.iconos1 small {
+	.fw_iconos_home.iconos1 small {
     font-size: 11px;
 }
-	#fw_iconos_home.iconos1 i {
+	.fw_iconos_home.iconos1 i {
     font-size: 24px;
 }
 }
 
-#fw_iconos_home.iconos1.v3 .vc_column-inner{
+.fw_iconos_home.iconos1.v3 .vc_column-inner{
     border:0px ;
 }
-#fw_iconos_home.iconos1.v3 .wpb_column:nth-child(2),
-#fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
+.fw_iconos_home.iconos1.v3 .wpb_column:nth-child(2),
+.fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
     border-right:solid 1px #ddd !important;
 }
 @media (max-width: 799px) {
-    #fw_iconos_home.iconos1.v3 .wpb_column:nth-child(1),
-    #fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
+    .fw_iconos_home.iconos1.v3 .wpb_column:nth-child(1),
+    .fw_iconos_home.iconos1.v3 .wpb_column:nth-child(3){
 		display:none;
 		padding:0px;
 	}
 }
 /*ICONOS2*/
 
-#fw_iconos_home.iconos2 {
+.fw_iconos_home.iconos2 {
 border: 1px solid var(--main);
 padding: 15px;
 }
-#fw_iconos_home.iconos2 .fw_icon_bs_short big {
+.fw_iconos_home.iconos2 .fw_icon_bs_short big {
     font-size: 14px ;
 }
-#fw_iconos_home.iconos2 .fw_icon_bs_short small {
+.fw_iconos_home.iconos2 .fw_icon_bs_short small {
     font-size: 12px ;
     color: var(--main);
 }
-#fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
+.fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
     border: 0px;
 }
-#fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+.fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
     color: var(--main);
 }
-#fw_iconos_home.iconos2 .text {
+.fw_iconos_home.iconos2 .text {
     overflow: hidden;
     white-space: nowrap;
 }
 @media (min-width: 799px) {
-    #fw_iconos_home.iconos2 .fw_icon_bs_short {
+    .fw_iconos_home.iconos2 .fw_icon_bs_short {
         border-right: 1px solid #ccc;
     }
 }
 @media (max-width: 799px) {
-    #fw_iconos_home.iconos2 {
+    .fw_iconos_home.iconos2 {
         padding: 10px;
         padding-bottom:0px;
     }
-	#fw_iconos_home.iconos2 i {
+	.fw_iconos_home.iconos2 i {
 		font-size:20px !important;
 		
 	}
-    #fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+    .fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
         width: 100% ;
         text-align: center;
     }
-    #fw_iconos_home.iconos2 .fw_icon_bs_short {
+    .fw_iconos_home.iconos2 .fw_icon_bs_short {
         white-space: nowrap;
         margin-bottom: 10px;
     }
-    #fw_iconos_home.iconos2 .vc_column-inner {
+    .fw_iconos_home.iconos2 .vc_column-inner {
         padding: 0px;
     }
 }
@@ -820,7 +820,7 @@ padding: 15px;
 
 /*ICONOS3*/
 
-#fw_iconos_home.iconos3 .fw_icon i{
+.fw_iconos_home.iconos3 .fw_icon i{
 	color:var(--main);
 	display: block ;
 	text-align:center ;
@@ -828,12 +828,12 @@ padding: 15px;
 	margin-bottom:40px;
 	width:100% !important;
 }
-#fw_iconos_home.iconos3 .fw_icon big{
+.fw_iconos_home.iconos3 .fw_icon big{
     font-weight: 400;
     font-size: 18px;
     line-height: 30px;
 }
-#fw_iconos_home.iconos3 .fw_icon small{
+.fw_iconos_home.iconos3 .fw_icon small{
     display: block;
     font-size: 14px;
     font-weight: 300;
@@ -841,10 +841,10 @@ padding: 15px;
     color: #666;
     margin: 6px 0 12px 0;
 }
-#fw_iconos_home.iconos3 .fw_icon{
+.fw_iconos_home.iconos3 .fw_icon{
 	padding:20px;
 }
-#fw_iconos_home.iconos3 .fw_icon span{
+.fw_iconos_home.iconos3 .fw_icon span{
 	color:black;
 	display:block !important;
 	text-align:center ;
@@ -852,8 +852,8 @@ padding: 15px;
 	width:100% !important;
 }
 
-#fw_iconos_home.iconos3 .wpb_column:nth-child(1),
-#fw_iconos_home.iconos3 .wpb_column:nth-child(2){
+.fw_iconos_home.iconos3 .wpb_column:nth-child(1),
+.fw_iconos_home.iconos3 .wpb_column:nth-child(2){
 		border-right:solid 1px #C7C7C7;
 }
 /*ICONOS4*/
