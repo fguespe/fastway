@@ -264,6 +264,7 @@ function fw_data( $atts ) {
     
 
     if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
+        //STEXT
         if($format=='iconbox'  || $format=='iconbox_i'){
             error_log("entra");
             $stext=$value;

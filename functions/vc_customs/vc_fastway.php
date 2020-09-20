@@ -835,6 +835,7 @@ function vc_fw_shorts() {
                 array(
                     "type" => 'textfield',
                     "heading"     => 'Subtext',
+                    'description' => '(Por default pone company data solo (en los de icono arriba)',
                     "param_name"  => "stext",
                 ),
                 array(
