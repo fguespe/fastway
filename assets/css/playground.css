@@ -985,6 +985,53 @@ font-size:12px !important;
         margin: 0px ;
     }
 }
+/*product loop 5*/
+.fw_product_loop.loop6{
+    border-radius: 5px;
+    border: 1px solid #d8d8d8;
+    box-sizing: border-box;
+    overflow: hidden;
+    background:white;
+}
+.fw_product_loop.loop6 .product_title{
+    text-align:center;
+}
+
+.fw_product_loop.loop6 img{
+    border-bottom:1px solid lightgray;
+}
+.fw_product_loop.loop6 .precio{
+    line-height: 20px;
+    font-weight: 400;
+    font-size:28px;
+    line-height:20px;
+    display: block;
+    margin-bottom: 4px;
+    text-align:center;
+}
+
+.fw_product_loop.loop6 .fw_price.price1 .tachado{
+    text-align:center;
+    font-size:15px;
+    margin-bottom:5px;
+    display:block;
+}
+.fw_product_loop.loop6 .fw_price.price1 .precio-anterior {
+  color: #999;
+  font-size: 15px;
+  line-height: 13px;
+  text-align:center ;
+}
+
+.fw_product_loop.loop6  a:hover{
+  text-decoration:none;
+}
+.fw_product_loop.loop6:hover{
+transition: all 100ms linear 0s;
+-webkit-box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
+-moz-box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
+box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
+}
 
 
 /*CATEGORY LOOP*/
