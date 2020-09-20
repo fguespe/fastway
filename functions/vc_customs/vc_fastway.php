@@ -801,7 +801,8 @@ function vc_fw_shorts() {
                         "Icono Izq,Texto Arriba Grande y Texto Chiquito Abajo (stext)" =>"isli"  ,
                         "Icono Izq,Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"isli_i",
                         "Solo Icono/s (Separar con ,)"=>"iconsnext",
-                        "Icono arriba, texto abajo"=>"iconbox",
+                        "Icono arriba, Texto Arriba Grande y Texto Chiquito Abajo (stext)"=>"iconbox",
+                        "Icono arriba, Texto Abajo Grande y Texto Chiquito Arriba (stext)"=>"iconbox_i",
                     ),
                     "std" => '', //Default Red color
                 ),

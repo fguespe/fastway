@@ -247,8 +247,9 @@ function fw_data( $atts ) {
         $type='custom';
     }
     if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
-
+    $stext=$value;
     if($atts['text'] || empty($value))$value=$atts['text'];
+    if($atts['stext'] || empty($value))$stext=$atts['stext'];
     if($atts['link'])$link=$atts['link'];
     if($atts['text_align'])$text_align=$atts['text_align'];
     if($atts['size'])$font_size=$atts['size'];
@@ -263,20 +264,26 @@ function fw_data( $atts ) {
 
     $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
 
-    if($format=="isli" || $format=="isli_i"){
-        $first= '<li class="'.$iconclass.'  d-flex '.$format.'" style="text-align:'.$text_align.';"> ';
+    if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
+        $laclase=$format=="isli" || $format=="isli_i"?"d-flex":"";
+        $first= '<li class="'.$iconclass.' '.$laclase.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $big="big";
         $small="small";
         $valueb=$value;
-        $values=$atts['stext'];
-        if($format=="isli_i"){$big="small";$small="big";$valueb=$values;$values=$value;}
+        $values=$stext;
+        if($format=="isli_i" || $format=="iconbox_i"){
+            $big="small";
+            $small="big";
+            $valueb=$values;
+            $values=$value;
+        }
         $first.=' <span class="text"> <'.$big.' style="color:'.$atts['text_color'].' ;">'.$valueb.'</'.$big.'> <'.$small.' style="color:'.$atts['text_color'].' ;">'.$values.'</'.$small.'> </span></li>';
-    }else if($format=="iconbox"){
+    }/*else if($format=="iconbox"){//Icono arriba textos abajo
         $first= '<li class=" '.$iconclass.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $first.=' <span class="text"> <big style="color:'.$atts['text_color'].';text-align:'.$text_align.';">'.$value.'</big> <small style="color:'.$atts['text_color'].' ;">'.$atts['stext'].'</small> </span></li>';
-    }else if($format=='iconsnext'){//deprecetead
+    }*/else if($format=='iconsnext'){//deprecetead
         $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'">';
         foreach (explode(",", $atts['type']) as $icon) {
             if($icon==="fb")$icon="fab fa-facebook";
@@ -309,7 +316,7 @@ function fw_data( $atts ) {
         $first.= "</a>";
     }
     
-    if(!empty($link) && ($format=="isli_i" || $format=="isli" || $format == "iconbox")){
+    if(!empty($link) && ($format=="isli_i" || $format=="isli" || $format == "iconbox" || $format == "iconbox_i")){
 
         $first='<a target="_blank" class="fw_icon_link" href="'.$link.'">'.$first."</a>";
     }
