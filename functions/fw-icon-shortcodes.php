@@ -247,7 +247,6 @@ function fw_data( $atts ) {
         $type='custom';
     }
     if(!empty($atts['icon_color']))$icon_color=$atts['icon_color'];
-    $stext=$value;
     if($atts['text'] || empty($value))$value=$atts['text'];
     if($atts['stext'] || empty($value))$stext=$atts['stext'];
     if($atts['link'])$link=$atts['link'];
@@ -266,6 +265,7 @@ function fw_data( $atts ) {
 
     if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
         $laclase=$format=="isli" || $format=="isli_i"?"d-flex":"";
+        if($format=='iconbox'  || $format=='iconbox_i')$stext=$value;;
         $first= '<li class="'.$iconclass.' '.$laclase.' '.$format.'" style="text-align:'.$text_align.';"> ';
         if(!$atts["only_text"])$first.='<span class="icon"><i class="'.$icon.'"></i></span>';
         $big="big";
