@@ -985,3 +985,18 @@ font-size:12px !important;
         margin: 0px ;
     }
 }
+
+
+/*CATEGORY LOOP*/
+
+.fw_cat_loop.loop4 .title {
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+    font-size: 16px!important;
+    text-transform: uppercase;
+    padding: 10px;
+        position: absolute;
+        top: 10px;
+        width: 100%;
+}

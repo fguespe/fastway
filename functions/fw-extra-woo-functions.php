@@ -271,7 +271,10 @@ function fw_cat_container($atts = [], $content = null){
     global $fw_woo_cat;
     $link = get_term_link($fw_woo_cat);
     if(!is_string($link))return;
-    echo '<li class="fw_cat_loop product-category product">';
+
+    $classname_desktop="fw_cat_loop product-category product ";
+    $classname_desktop.=fw_theme_mod('fw_builder_cl_class');
+    echo '<li class="'.$classname_desktop.'">';
     echo '<a href="'.$link.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</a></li>';

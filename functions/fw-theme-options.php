@@ -3507,6 +3507,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_cl_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_woo_loop_cat',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_cat_code',
 	'label'       => __( ' Category Loop Code', 'fastway' ),
