@@ -3479,7 +3479,7 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => '*playground (beta)',
 	'section'     => 'section_woo_loop',
 	'default'     => '',
-) );
+));
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
@@ -3506,6 +3506,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_builder_cl_class',
@@ -3513,14 +3514,15 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => '*playground (beta)',
 	'section'     => 'section_woo_loop_cat',
 	'default'     => '',
-) );
+));
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_cat_code',
 	'label'       => __( ' Category Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_cat',
 	'description'     => '[fw_cat_container][fw_cat_image][fw_cat_title][fw_cat_desc][/fw_cat_container]',
-	'default'     => '[fw_cat_container][fw_cat_image][fw_cat_title][/fw_cat_container]',
+	'default'     => '[fw_cat_container][fw_cat_image]<div class="contenedor">[fw_cat_title][fw_cat_desc]</div>[/fw_cat_container]',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3547,6 +3549,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_bl_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_woo_loop_blog',
+	'default'     => '',
+));
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_blog_code',
 	'label'       => __( ' Blog Loop Code', 'fastway' ),
@@ -3570,6 +3580,17 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_rl_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_woo_loop_review',
+	'default'     => '',
+));
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_review_code',
@@ -3598,6 +3619,16 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_brl_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_woo_loop_brand',
+	'default'     => '',
+));
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_brand_code',

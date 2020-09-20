@@ -13,10 +13,10 @@ $rand=generateRandomString(5);
 <?php 
 if(!$autoplay)$autoplay='false';
 		
-global $fw_woo_cat;          
+global $fw_woo_brand;          
 foreach ($terms as $term) {
     echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
-    $fw_woo_cat=$term;
+    $fw_woo_brand=$term;
     echo woo_loop_brand();
     echo '</div>';
     

@@ -1013,3 +1013,85 @@ font-size:12px !important;
 .fw_cat_loop:hover img {
       transform: scale(1.05);
 }
+
+/*LOOP5*/
+.fw_cat_loop.loop5 img:hover {
+	-webkit-transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+	transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+	box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+}
+
+.fw_cat_loop.loop5 .title {
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0px;
+	background: white;;
+	font-weight: 700;
+	margin: 0px;
+	color: #555;
+}
+
+.fw_cat_loop.loop5 .desc {
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	color: #888;
+	text-align: center;
+	line-height: 16px;
+	padding: 20px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+
+.fw_cat_loop.loop5 .contenedor {
+	width: 90%;
+	margin-top: -20px !important;
+	line-height: 17px;
+	margin: 0 auto;
+	position: relative;
+	padding: 10px 0 0px 0;
+	text-align: center;
+	background-color: #fff ;
+	z-index: 1200 ;
+}
+
+.fw_cat_loop.loop5 .contenedor:hover {
+	transition: all 300ms linear 0s;
+	text-decoration: none;
+}
+
+.contenedor:after {
+	content: '';
+	display: block;
+	border-bottom: 4px solid var(--main);
+	width: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	-webkit-transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+	transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+}
+
+.swiper-slide:hover .contenedor {
+	-webkit-transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+	transition: 0.3s all cubic-bezier(0, .04, 0, .99);
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+	box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.8);
+	color: var(--main);
+}
+
+.swiper-slide a:hover .contenedor:after {
+	width: 0;
+}
+
+.fw_cat_loop.loop5:hover .title,
+.no-swiper-category .col-6 a h2,
+.no-swiper-category .col-6:hover a h4 
+.no-swiper-category .col-6:hover a h2{
+    transition: all 100ms linear 0s;
+    color:var(--main);
+}
