@@ -999,6 +999,10 @@ font-size:12px !important;
     width: 100%;
 }
 
+.fw_cat_loop .thumbnail {
+    overflow: hidden;
+}
+  
 .fw_cat_loop img {
     transition: all .4s ease;
 }
