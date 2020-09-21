@@ -1849,12 +1849,12 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
-/*
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-topheader',
 	'label'       => __( 'Top Header ', 'fastway' ),
-	'section'     => 'section_colors',
+	/*'section'     => 'section_colors',*/
 	'default'     => '#fff',
 	'choices'     => array(
 		'alpha' => true,
@@ -1877,7 +1877,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-middheader',
 	'label'       => __( 'Middle Header ', 'fastway' ),
-	'section'     => 'section_colors',
+	/*'section'     => 'section_colors',*/
 	'default'     => '#fff',
 	'choices'     => array(
 		'alpha' => true,
@@ -1899,7 +1899,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'color-sticky-header',
 	'label'       => __( 'Header Sticky Color ', 'fastway' ),
-	'section'     => 'section_colors',
+/*	'section'     => 'section_colors',*/
 	'default'     => '#fff',
 	'description'=>' var(--sticky-header);',
 	'transport'   => 'auto',
@@ -1918,7 +1918,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bottheader',
 	'label'       => __( 'Bottom Header ', 'fastway' ),
-	'section'     => 'section_colors',
+	/*'section'     => 'section_colors',*/
 	'default'     => '#fff',
 	'choices'     => array(
 		'alpha' => true,
@@ -1936,7 +1936,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'opt-color-bodycolor',
