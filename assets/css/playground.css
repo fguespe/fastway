@@ -100,6 +100,9 @@
     padding: 5px;
 }
 
+#header.header2 .middle .fw_search_form {
+    max-height:40px;
+}
 #header.header2  .middle .iconos{
     width:15%;
     display:inline-flex;
