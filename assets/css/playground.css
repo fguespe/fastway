@@ -100,7 +100,12 @@
     padding: 5px;
 }
 
-
+#header.header2  .middle .iconos{
+    width:15%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-around;
+}
 #header.header2 .bottom .navbar {
     text-align: center;
     display: table;
