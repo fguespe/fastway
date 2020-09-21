@@ -467,7 +467,68 @@ font-size: 14px !important;
     color:white;
 }
 
+/*Footer2*/
+#footer.footer2 h5 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px
+}
 
+#footer.footer2 big,
+#footer.footer2 span,
+#footer.footer2 .menu-item a {
+    color: #fff !important;
+    display: block;
+    line-height: 1.4;
+}
+#footer.footer2 .menu-item a {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#footer.footer2 i {
+    color: #fff !important;
+    font-size: 20px !important;
+    margin-right: 5px;
+    margin-top: 20px;
+    opacity: .3;
+}
+
+#footer.footer2 i:hover {
+    opacity: 1;
+}
+
+#footer.footer2 form {
+    margin-bottom: 30px;
+}
+
+#footer.footer2 form .gfield {
+    padding: 0 !important;
+}
+
+#footer.footer2 form .gfield input {
+    border-radius: 50px 0 0 50px
+}
+
+#footer.footer2 form .gform_body {
+    width: 70%;
+}
+#footer.footer2 form .gform_footer {
+    width: 30%;
+}
+#footer.footer2 form input[type=submit] {
+    background: #fff;
+    border-radius: 0px 50px 50px 0px;
+    color: #000;
+    font-weight: 600;
+}
+
+@media (max-width: 799px) {
+    #footer.footer2 .footernews h5,
+    #footer.footer2 .footernews form {
+            display: none;
+    }
+}
 
 /*Footer3*/
 #footer.footer3 .widget_nav_menu li a {
