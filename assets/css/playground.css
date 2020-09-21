@@ -60,6 +60,85 @@
     font-size: 12px;
     font-weight: 400;
 }
+
+/*HEASER5*/
+
+#header.header5 .middle .fw_search_form {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: 20px
+}
+
+#header.header5 .middle  .logo {
+    display: table;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#header.header5 .middle .fw_search_form  .search-field  {
+    border-radius: 50px 0 0 50px;
+}
+
+#header.header5 .middle .minicart  {
+    margin-right: 10px
+}
+
+#header.header5 .middle .minicart .cant {
+    color: #fff;
+}
+
+
+#header.header5 .middle .fw_search_form  button {
+    background: #fff;
+    border-radius: 0px 50px 50px 0px;
+    padding: 0 10px;
+}
+
+#header.header5 .middle .ingresar_text {
+    color: #fff;
+    font-size: 13px;
+    padding: 5px;
+}
+
+#header.header5 .bottom {
+    border-bottom: solid 1px #d1d1d1;
+}
+
+
+#header.header5 .bottom .navbar {
+    text-align: center;
+    display: table;
+    margin-right: auto;
+}
+
+#header.header5 .bottom .navbar .nav-link {
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+#header.header5 .bottom .nav-redes {
+    display: flex;
+}
+
+#header.header5 .bottom .nav-redes big {
+    display: none;
+}
+
+#header.header5 .top .nav-redes i {
+    font-size: 20px !important;
+    color: var(--main) !important;
+    margin-left: 10px
+}
+
+#header.header5 .menu-item i{
+color:var(--main)
+}
+#header.header5 i{
+    color:white;
+}
+
+
+
 /*HEADER 11*/
 
 
