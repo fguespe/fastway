@@ -1170,7 +1170,7 @@ padding: 15px;
 .fw_product_loop.loop2 {
     background: #fff;
     border: solid 1px #ddd;
-    padding: 15px !important;
+    padding: 15px ;
 }
 
 .fw_product_loop.loop2 .product_title{
@@ -1190,14 +1190,14 @@ padding: 15px;
 }
 
 .fw_product_loop.loop2 .fw_add_to_cart_button {
-    background: transparent !important;
-    border: solid 2px var(--second) !important;
+    background: transparent ;
+    border: solid 2px var(--second) ;
     border-radius: 50px;
 }
 
 .fw_product_loop.loop2 .fw_add_to_cart_button span,
 .fw_product_loop.loop2 .fw_add_to_cart_button i {
-    color: var(--second) !important;
+    color: var(--second) ;
 }
 
 .fw_product_loop.loop2 p {
