@@ -1803,6 +1803,23 @@ footer {
   background: var(--copyright);
 }
 
+.contacto_vertical .gfield_label {
+  display: none !important;
+}
+
+.contacto_vertical input,
+.contacto_vertical textarea {
+  line-height: 30px !important;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.contacto_vertical .gform_footer input {
+  padding: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
 @media (max-width: 900px) {
   #fw_footercopy .izquierda {
     margin: 0 auto !important;
@@ -2160,17 +2177,17 @@ footer .widget_nav_menu li a {
   border: 1px solid var(--main);
   padding: 15px;
 }
-.fw_home_icons .fw_icon_bs_short big {
+.fw_home_icons .fw_icon big {
   font-size: 14px !important;
 }
-.fw_home_icons .fw_icon_bs_short small {
+.fw_home_icons .fw_icon small {
   font-size: 12px !important;
   color: var(--main);
 }
-.fw_home_icons .wpb_column:last-child .fw_icon_bs_short {
+.fw_home_icons .wpb_column:last-child .fw_icon {
   border: 0px;
 }
-.fw_home_icons .fw_icon_bs_short .icon i {
+.fw_home_icons .fw_icon .icon i {
   color: var(--main);
 }
 .fw_home_icons .text {
@@ -2178,7 +2195,7 @@ footer .widget_nav_menu li a {
   white-space: nowrap;
 }
 @media (min-width: 799px) {
-  .fw_home_icons .fw_icon_bs_short {
+  .fw_home_icons .fw_icon {
     border-right: 1px solid #ccc;
   }
 }
@@ -2186,11 +2203,11 @@ footer .widget_nav_menu li a {
   .fw_home_icons {
     padding: 10px;
   }
-  .fw_home_icons .fw_icon_bs_short .icon i {
+  .fw_home_icons .fw_icon .icon i {
     width: 40px !important;
     text-align: center;
   }
-  .fw_home_icons .fw_icon_bs_short {
+  .fw_home_icons .fw_icon {
     white-space: nowrap;
     margin-bottom: 10px;
   }

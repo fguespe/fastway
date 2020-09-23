@@ -769,7 +769,7 @@ display: inline-block;
     color:var(--main);
     font-weight:700;
 }
-#footer.footer6  .fw_icon_bs_short i{
+#footer.footer6  .fw_icon i{
     color:white;
 }
 
@@ -1070,20 +1070,20 @@ margin: 0;
 /*ICONOS2*/
 
 .fw_iconos_home.iconos2 {
-border: 1px solid var(--main);
-padding: 15px;
+    border: 1px solid var(--main);
+    padding: 15px;
 }
-.fw_iconos_home.iconos2 .fw_icon_bs_short big {
+.fw_iconos_home.iconos2 .fw_icon big {
     font-size: 14px ;
 }
-.fw_iconos_home.iconos2 .fw_icon_bs_short small {
+.fw_iconos_home.iconos2 .fw_icon small {
     font-size: 12px ;
     color: var(--main);
 }
-.fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon_bs_short {
+.fw_iconos_home.iconos2 .wpb_column:last-child .fw_icon {
     border: 0px;
 }
-.fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+.fw_iconos_home.iconos2 .fw_icon .icon i {
     color: var(--main);
 }
 .fw_iconos_home.iconos2 .text {
@@ -1091,7 +1091,7 @@ padding: 15px;
     white-space: nowrap;
 }
 @media (min-width: 799px) {
-    .fw_iconos_home.iconos2 .fw_icon_bs_short {
+    .fw_iconos_home.iconos2 .fw_icon {
         border-right: 1px solid #ccc;
     }
 }
@@ -1104,11 +1104,11 @@ padding: 15px;
 		font-size:20px !important;
 		
 	}
-    .fw_iconos_home.iconos2 .fw_icon_bs_short .icon i {
+    .fw_iconos_home.iconos2 .fw_icon .icon i {
         width: 100% ;
         text-align: center;
     }
-    .fw_iconos_home.iconos2 .fw_icon_bs_short {
+    .fw_iconos_home.iconos2 .fw_icon {
         white-space: nowrap;
         margin-bottom: 10px;
     }

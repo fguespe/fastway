@@ -20,7 +20,7 @@ function fw_social_icons( $atts ) {
     $cant=1;
     $num=0;
 
-    $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
+    $iconclass=" fw_icon fw_icon ".$atts['el_class'].' ';
     $first.='<div id="'.$atts['el_id'].'" class=" '.$iconclass.'" style="text-align:'.$atts['icon_align'].'";>';
     foreach (explode(",", $atts['type']) as $icon) {
         $type=$icon;
@@ -270,7 +270,7 @@ function fw_data( $atts ) {
     $only_text=false;
     if(($atts["only_text"]))$only_text=true;
    
-    $iconclass=" fw_icon fw_icon_bs_short ".$atts['el_class'].' ';
+    $iconclass=" fw_icon fw_icon ".$atts['el_class'].' ';
     if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
         $laclase=$format=="isli" || $format=="isli_i"?"d-flex":"";
         $first= '<li class="'.$iconclass.' '.$laclase.' '.$format.'" style="text-align:'.$text_align.';"> ';

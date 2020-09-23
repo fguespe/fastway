@@ -1424,24 +1424,24 @@ footer {
   padding: 15px;
 }
 
-#fw_iconospagos .fw_icon_bs_short i {
+#fw_iconospagos .fw_icon i {
   color: var(--main);
 }
 
-#fw_iconospagos .fw_icon_bs_short big {
+#fw_iconospagos .fw_icon big {
   font-size: 14px !important;
 }
 
-#fw_iconospagos .fw_icon_bs_short small {
+#fw_iconospagos .fw_icon small {
   font-size: 12px !important;
   color: var(--main);
 }
 
-#fw_iconospagos .fw_icon_bs_short {
+#fw_iconospagos .fw_icon {
   border-right: 1px solid #ccc;
 }
 
-#fw_iconospagos .wpb_column:last-child .fw_icon_bs_short {
+#fw_iconospagos .wpb_column:last-child .fw_icon {
   border: 0px;
 }
 
