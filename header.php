@@ -151,6 +151,9 @@ $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-
 .telefono-header .btn.wp{
 background:#25d366;
 }
+.telefono-header .btn.wp i{
+color:white !important;
+}
 .telefono-header .btn.fb{
 background:#307BFF;
 }
