@@ -82,8 +82,10 @@ function check_ga() {
 jQuery( ".btn-wapp" ).click(function() {
   
   console.log('eventAction:whatsapp' );
-  if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
-  if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: 'Whatsappp'});
+  let event='Whatsappp'
+  if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: event});
+  if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Contacto',eventAction: 'whatsapp', eventLabel: event});
+  if(window.gtm)gtm.push({'event': event})
   
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
