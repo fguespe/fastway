@@ -25,7 +25,7 @@ console.log('eventAction:purchase' );
 if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
 if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
 if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-if(window.gtm)gtm.push({'event': 'Purchase'})
+if(window.dataLayer)window.dataLayer.push({'event': 'Purchase'})
 
 
 var logged=false;

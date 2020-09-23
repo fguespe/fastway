@@ -526,7 +526,7 @@ function add_to_minicart(prod_id){
     if(window.fbq)fbq('track', 'AddToCart');
     if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
     if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-    if(window.gtm)gtm.push({'event': 'AddToCart'})
+    if(window.dataLayer)window.dataLayer.push({'event': 'AddToCart'})
     
     let qty=1
     if(jQuery('.quantity input').val())qty=jQuery('.quantity input').val()
