@@ -1109,6 +1109,11 @@ header .navbar-toggler {
   padding-right: 0px !important;
 }
 
+.navbar-toggler .fa-search {
+  padding-left: 1px;
+  padding-top: 1px;
+}
+
 .categoria-menu-mobile .menu-mobile-back i {
   font-size: 20px;
   display: inline-block;
