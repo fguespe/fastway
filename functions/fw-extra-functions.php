@@ -778,9 +778,7 @@ function init_analytics() {
     echo "\n" . $analytics;
 }
 
-
 function init_fb() {
-    
     $analytics = "<!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -803,7 +801,6 @@ function init_fb() {
     echo "\n" . $analytics;
 }
 function init_gtagmanager() {
-    
     $analytics = "<!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
