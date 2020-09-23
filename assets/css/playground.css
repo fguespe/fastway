@@ -527,12 +527,6 @@ font-size: 14px !important;
     font-weight: 600;
 }
 
-@media (max-width: 799px) {
-    #footer.footer2 .footernews h5,
-    #footer.footer2 .footernews form {
-            display: none;
-    }
-}
 
 /*Footer3*/
 #footer.footer3 .widget_nav_menu li a {
