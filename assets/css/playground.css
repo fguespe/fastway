@@ -1170,7 +1170,7 @@ margin: 0;
 .fw_product_loop.loop2 {
     background: #fff;
     border: solid 1px #ddd;
-    padding: 15px ;
+    padding: 15px !important;
 }
 
 .fw_product_loop.loop2 .product_title{
