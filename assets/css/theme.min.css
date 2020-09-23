@@ -1109,9 +1109,9 @@ header .navbar-toggler {
   padding-right: 0px !important;
 }
 
-.navbar-toggler .fa-search {
-  padding-left: 1px;
-  padding-top: 1px;
+header .navbar-toggler .fa-search {
+  padding-left: 1px !important;
+  padding-top: 1px !important;
 }
 
 .categoria-menu-mobile .menu-mobile-back i {
