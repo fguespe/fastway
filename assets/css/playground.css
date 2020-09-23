@@ -989,6 +989,11 @@ margin: 0;
 
 
 
+@media (max-width: 799px) {
+    .fw_iconos_home{
+        padding-left:5px !important;
+    }
+}
 /* ICONOS PAGOS */
 .fw_iconos_home.iconos1 {
 	padding: 0 100px;
