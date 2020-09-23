@@ -3890,6 +3890,7 @@ a, button {
 
 
 
+
 .footernewsletter{
   label{
     display: none !important;
@@ -3918,6 +3919,16 @@ a, button {
     background-color: var(--main);
     border: 0px;
     color: white;
+  }
+  @media (max-width: 799px) {
+    input{
+      border-radius:10px !important;
+      text-align:center;
+    }
+    .gform_footer{
+      display:block;
+      width:100% !important;
+    }
   }
 
 } 

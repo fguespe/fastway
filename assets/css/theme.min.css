@@ -3910,6 +3910,16 @@ a, button {
   border: 0px;
   color: white;
 }
+@media (max-width: 799px) {
+  .footernewsletter input {
+    border-radius: 10px !important;
+    text-align: center;
+  }
+  .footernewsletter .gform_footer {
+    display: block;
+    width: 100% !important;
+  }
+}
 
 .woocommerce-checkout,
 .woocommerce-account {
