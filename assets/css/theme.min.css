@@ -3882,6 +3882,17 @@ a, button {
   color: var(--secondary-color-hover);
 }
 
+@media (max-width: 799px) {
+  .footernews input {
+    border-radius: 10px !important;
+    text-align: center;
+  }
+
+  .footernews .gform_footer {
+    display: block;
+    width: 100% !important;
+  }
+}
 .footernewsletter label {
   display: none !important;
 }
