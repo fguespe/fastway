@@ -1231,10 +1231,6 @@ margin: 0;
     display: none;
 }
 
-.fw_product_loop.loop2 .fw_add_to_cart_button span {
-    line-height: initial!important;
-    display:inherit;
-}
 
 
 .fw_product_loop.loop2 .fw_price {
