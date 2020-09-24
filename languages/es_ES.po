@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-23 14:27-0300\n"
-"PO-Revision-Date: 2020-09-23 22:24-0300\n"
+"POT-Creation-Date: 2020-09-24 15:09-0300\n"
+"PO-Revision-Date: 2020-09-24 15:10-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -88,27 +88,27 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:305
+#: functions.php:306
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:307
 msgid "Vertical Menu"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:308
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:309
 msgid "Bottom Mobile Menu"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:388
 msgid "File Size"
 msgstr ""
 
-#: functions.php:474 functions.php:476
+#: functions.php:475 functions.php:477
 msgid "You do not have permission to edit this user."
 msgstr ""
 
@@ -515,8 +515,8 @@ msgid "Todopago Installments"
 msgstr "Cuotas Todopago"
 
 #: functions/client-area/fw-dashboard.php:66
-#: functions/client-area/fw-dashboard.php:320
-#: functions/client-area/fw-dashboard.php:346
+#: functions/client-area/fw-dashboard.php:322
+#: functions/client-area/fw-dashboard.php:348
 msgid "Installments"
 msgstr "Cuotas"
 
@@ -533,19 +533,20 @@ msgstr "Mensaje Secundario"
 #: functions/client-area/fw-dashboard.php:186
 #: functions/client-area/fw-dashboard.php:230
 #: functions/client-area/fw-dashboard.php:279
-#: functions/client-area/fw-dashboard.php:321
-#: functions/client-area/fw-dashboard.php:375
-#: functions/client-area/fw-dashboard.php:412
-#: functions/client-area/fw-dashboard.php:507
+#: functions/client-area/fw-dashboard.php:323
+#: functions/client-area/fw-dashboard.php:377
+#: functions/client-area/fw-dashboard.php:414
+#: functions/client-area/fw-dashboard.php:509
 msgid "Change"
 msgstr "Cambiar"
 
 #: functions/client-area/fw-dashboard.php:95
 #: functions/client-area/fw-dashboard.php:173
+#: functions/client-area/fw-dashboard.php:182
 #: functions/client-area/fw-dashboard.php:212
 #: functions/client-area/fw-dashboard.php:225
 #: functions/client-area/fw-dashboard.php:263
-#: functions/client-area/fw-dashboard.php:537
+#: functions/client-area/fw-dashboard.php:539
 msgid "Status"
 msgstr "Estado"
 
@@ -585,6 +586,7 @@ msgid "If empty, it will not redirect on click"
 msgstr "Dejar vacío si no redirije a ningún lado"
 
 #: functions/client-area/fw-dashboard.php:147
+#: functions/client-area/fw-dashboard.php:148
 #: functions/client-area/fw-dashboard.php:182
 #: functions/client-area/fw-dashboard.php:183
 #: functions/client-area/fw-dashboard.php:225
@@ -660,140 +662,142 @@ msgstr "Aplica al mas barato"
 msgid "Max installments"
 msgstr "Max Cuotas"
 
-#: functions/client-area/fw-dashboard.php:374
-#: functions/client-area/fw-dashboard.php:397
-#: functions/client-area/fw-dashboard.php:411
-#: functions/client-area/fw-dashboard.php:435
+#: functions/client-area/fw-dashboard.php:376
+#: functions/client-area/fw-dashboard.php:399
+#: functions/client-area/fw-dashboard.php:413
+#: functions/client-area/fw-dashboard.php:437
 msgid "Message"
 msgstr "Mensaje"
 
-#: functions/client-area/fw-dashboard.php:376
+#: functions/client-area/fw-dashboard.php:378
 msgid "This will create a red top bar on the website displaying the message."
 msgstr ""
 "Esto pondrá una barra llamativa arriba de la tienda comunicando el mensaje."
 
-#: functions/client-area/fw-dashboard.php:445
-#: functions/client-area/fw-dashboard.php:460
+#: functions/client-area/fw-dashboard.php:447
+#: functions/client-area/fw-dashboard.php:462
 msgid "1 equals"
 msgstr "1 igual a"
 
-#: functions/client-area/fw-dashboard.php:471
-#: functions/client-area/fw-dashboard.php:540
+#: functions/client-area/fw-dashboard.php:473
+#: functions/client-area/fw-dashboard.php:542
 msgid "All functions enabled"
 msgstr "Todas las funciones habilitadas"
 
-#: functions/client-area/fw-dashboard.php:472
-#: functions/client-area/fw-dashboard.php:541
+#: functions/client-area/fw-dashboard.php:474
+#: functions/client-area/fw-dashboard.php:543
 msgid "Under maintainance"
 msgstr "Bajo mantenimiento"
 
-#: functions/client-area/fw-dashboard.php:473
-#: functions/client-area/fw-dashboard.php:542
+#: functions/client-area/fw-dashboard.php:475
+#: functions/client-area/fw-dashboard.php:544
 msgid "Show only prices, purchases disabled"
 msgstr "Mostrar solo precios, compras deshabitadas"
 
-#: functions/client-area/fw-dashboard.php:474
-#: functions/client-area/fw-dashboard.php:543
+#: functions/client-area/fw-dashboard.php:476
+#: functions/client-area/fw-dashboard.php:545
 msgid "Hide purchases and prices"
 msgstr "Ocultas precios y compras"
 
-#: functions/client-area/fw-dashboard.php:539
+#: functions/client-area/fw-dashboard.php:541
 msgid "Estado"
 msgstr "Status"
 
-#: functions/client-area/fw-dashboard.php:553
+#: functions/client-area/fw-dashboard.php:555
 msgid "Update prices"
 msgstr "Actualizar precios"
 
-#: functions/client-area/fw-dashboard.php:554
+#: functions/client-area/fw-dashboard.php:556
 msgid "Need help"
 msgstr "Soporte"
 
-#: functions/client-area/fw-dashboard.php:555
+#: functions/client-area/fw-dashboard.php:557
 msgid "General Settings"
 msgstr "Ajustes Generales"
 
-#: functions/client-area/fw-dashboard.php:561
+#: functions/client-area/fw-dashboard.php:563
 msgid "Customize emails & texts"
 msgstr "Personalizar emails y textos"
 
-#: functions/client-area/fw-dashboard.php:561
-#: functions/client-area/fw-dashboard.php:562
 #: functions/client-area/fw-dashboard.php:563
 #: functions/client-area/fw-dashboard.php:564
 #: functions/client-area/fw-dashboard.php:565
 #: functions/client-area/fw-dashboard.php:566
 #: functions/client-area/fw-dashboard.php:567
-#: functions/client-area/fw-dashboard.php:583
-#: functions/client-area/fw-dashboard.php:584
+#: functions/client-area/fw-dashboard.php:568
+#: functions/client-area/fw-dashboard.php:569
+#: functions/client-area/fw-dashboard.php:585
+#: functions/client-area/fw-dashboard.php:586
 msgid "open"
 msgstr "abrir"
 
-#: functions/client-area/fw-dashboard.php:562
+#: functions/client-area/fw-dashboard.php:564
 #: functions/fw-theme-options.php:342
 msgid "Shipping Methods"
 msgstr "Medios de Envío"
 
-#: functions/client-area/fw-dashboard.php:563
+#: functions/client-area/fw-dashboard.php:565
 #: functions/fw-theme-options.php:329
 msgid "Payment Methods"
 msgstr "Medios de Pago"
 
-#: functions/client-area/fw-dashboard.php:564
+#: functions/client-area/fw-dashboard.php:566
 msgid "Export forms"
 msgstr "Exportar formularios"
 
-#: functions/client-area/fw-dashboard.php:565
+#: functions/client-area/fw-dashboard.php:567
 msgid "Export users/orders"
 msgstr "Exportar usuarios/pedidos"
 
-#: functions/client-area/fw-dashboard.php:566
+#: functions/client-area/fw-dashboard.php:568
 msgid "Customize menus"
 msgstr "Personalizar menus"
 
-#: functions/client-area/fw-dashboard.php:567
+#: functions/client-area/fw-dashboard.php:569
 msgid "Email log"
 msgstr ""
 
-#: functions/client-area/fw-dashboard.php:568
+#: functions/client-area/fw-dashboard.php:570
 msgid "Refresh cache"
 msgstr "Refrescar cache"
 
-#: functions/client-area/fw-dashboard.php:568
+#: functions/client-area/fw-dashboard.php:570
 msgid "clean"
 msgstr "limpiar"
 
-#: functions/client-area/fw-dashboard.php:572
+#: functions/client-area/fw-dashboard.php:574
 msgid "Export updated prices"
 msgstr "Exportar precios/stock actualizados"
 
-#: functions/client-area/fw-dashboard.php:572
+#: functions/client-area/fw-dashboard.php:574
 msgid "Export"
 msgstr "Exportar"
 
-#: functions/client-area/fw-dashboard.php:573
+#: functions/client-area/fw-dashboard.php:575
 msgid "Import updated prices"
 msgstr "Importar precios/stock actualizados"
 
-#: functions/client-area/fw-dashboard.php:573
+#: functions/client-area/fw-dashboard.php:575
 msgid "Import"
 msgstr ""
 
-#: functions/client-area/fw-dashboard.php:574
+#: functions/client-area/fw-dashboard.php:576
 msgid ""
 "IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost "
 "data. If in doubt , contact support."
 msgstr ""
+"IMPORTANTE: No modificar columnas ni sus titulos. Podría arruinar el formato "
+"del excel y tener riesgo a perder información. Ante la duda consultenos."
 
-#: functions/client-area/fw-dashboard.php:577
+#: functions/client-area/fw-dashboard.php:579
 msgid "Send your requirement from our support widget"
 msgstr "Envíanos tu requerimiento a través de nuestro widget"
 
-#: functions/client-area/fw-dashboard.php:577
+#: functions/client-area/fw-dashboard.php:579
 msgid "create ticket"
 msgstr "crear ticket"
 
-#: functions/client-area/fw-dashboard.php:578
+#: functions/client-area/fw-dashboard.php:580
 msgid ""
 "For more information about the altoweb service <a target=\"_blank\" href="
 "\"https://www.altoweb.co/tickets/\">click here</a>"
@@ -801,7 +805,7 @@ msgstr ""
 "Para mas información sobre como usar el servicio <a target=\"_blank\" href="
 "\"https://www.altoweb.co/tickets/\">click aquí</a>"
 
-#: functions/client-area/fw-dashboard.php:579
+#: functions/client-area/fw-dashboard.php:581
 msgid ""
 "You can also register in the help portal to see tutorials and send us "
 "inquiries. <a target=\"_blank\" href=\"https://altoweb.freshdesk.com/\">Go "
@@ -811,7 +815,7 @@ msgstr ""
 "enviarnos consultas. <a target=\"_blank\" href=\"https://altoweb.freshdesk."
 "com/\">Ir al portal</a>"
 
-#: functions/client-area/fw-dashboard.php:582
+#: functions/client-area/fw-dashboard.php:584
 msgid ""
 "Products will be updated once per day. You can do the process manually the "
 "following way: "
@@ -819,11 +823,11 @@ msgstr ""
 "Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas "
 "esperar a qeu se actualize automaticamente podes acelerar el proceso"
 
-#: functions/client-area/fw-dashboard.php:583
+#: functions/client-area/fw-dashboard.php:585
 msgid "Update info from mercadolibre with the following link"
 msgstr "Actualizar publicaciones en el servidor con el siguiente link"
 
-#: functions/client-area/fw-dashboard.php:584
+#: functions/client-area/fw-dashboard.php:586
 msgid "Once finished, start the import process with the following link"
 msgstr ""
 "Una vez que termino de procesarse la obtención de datos, ahora podes "
@@ -1081,15 +1085,15 @@ msgstr ""
 msgid "Banner"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1624
+#: functions/fw-extra-woo-functions.php:1622
 msgid "Description"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1700
+#: functions/fw-extra-woo-functions.php:1698
 msgid "Phone number"
 msgstr "Teléfono"
 
-#: functions/fw-extra-woo-functions.php:1706
+#: functions/fw-extra-woo-functions.php:1704
 msgid "Shipping Date"
 msgstr "Fecha de envío"
 
@@ -2180,7 +2184,7 @@ msgstr ""
 msgid "CSS Single Product"
 msgstr ""
 
-#: functions/fw-theme-options.php:3161 functions/vc_customs/vc_fastway.php:749
+#: functions/fw-theme-options.php:3161 functions/vc_customs/vc_fastway.php:750
 msgid "Static Block"
 msgstr ""
 
@@ -2365,8 +2369,8 @@ msgid "Popup Img"
 msgstr ""
 
 #: functions/fw-theme-options.php:3840 functions/vc_customs/vc_fastway.php:436
-#: functions/vc_customs/vc_fastway.php:843
-#: functions/vc_customs/vc_fastway.php:1010
+#: functions/vc_customs/vc_fastway.php:844
+#: functions/vc_customs/vc_fastway.php:1011
 msgid "Link"
 msgstr ""
 
@@ -2684,10 +2688,10 @@ msgstr ""
 
 #: functions/vc_customs/vc_blog.php:74 functions/vc_customs/vc_fastway.php:223
 #: functions/vc_customs/vc_fastway.php:314
-#: functions/vc_customs/vc_fastway.php:868
-#: functions/vc_customs/vc_fastway.php:931
-#: functions/vc_customs/vc_fastway.php:1015
-#: functions/vc_customs/vc_fastway.php:1078
+#: functions/vc_customs/vc_fastway.php:869
+#: functions/vc_customs/vc_fastway.php:932
+#: functions/vc_customs/vc_fastway.php:1016
+#: functions/vc_customs/vc_fastway.php:1079
 #: functions/vc_customs/vc_woo_carousels.php:114
 #: functions/vc_customs/vc_woo_carousels.php:200
 #: functions/vc_customs/vc_woo_carousels.php:284
@@ -2698,10 +2702,10 @@ msgstr ""
 
 #: functions/vc_customs/vc_blog.php:76 functions/vc_customs/vc_fastway.php:225
 #: functions/vc_customs/vc_fastway.php:316
-#: functions/vc_customs/vc_fastway.php:870
-#: functions/vc_customs/vc_fastway.php:933
-#: functions/vc_customs/vc_fastway.php:1017
-#: functions/vc_customs/vc_fastway.php:1080
+#: functions/vc_customs/vc_fastway.php:871
+#: functions/vc_customs/vc_fastway.php:934
+#: functions/vc_customs/vc_fastway.php:1018
+#: functions/vc_customs/vc_fastway.php:1081
 #: functions/vc_customs/vc_woo_carousels.php:116
 #: functions/vc_customs/vc_woo_carousels.php:202
 #: functions/vc_customs/vc_woo_carousels.php:286
@@ -2717,10 +2721,10 @@ msgstr ""
 #: functions/vc_customs/vc_fastway.php:320
 #: functions/vc_customs/vc_fastway.php:398
 #: functions/vc_customs/vc_fastway.php:493
-#: functions/vc_customs/vc_fastway.php:874
-#: functions/vc_customs/vc_fastway.php:937
-#: functions/vc_customs/vc_fastway.php:1021
-#: functions/vc_customs/vc_fastway.php:1084
+#: functions/vc_customs/vc_fastway.php:875
+#: functions/vc_customs/vc_fastway.php:938
+#: functions/vc_customs/vc_fastway.php:1022
+#: functions/vc_customs/vc_fastway.php:1085
 #: functions/vc_customs/vc_woo_carousels.php:120
 #: functions/vc_customs/vc_woo_carousels.php:221
 #: functions/vc_customs/vc_woo_carousels.php:323
@@ -2733,9 +2737,9 @@ msgstr ""
 #: functions/vc_customs/vc_fastway.php:322
 #: functions/vc_customs/vc_fastway.php:400
 #: functions/vc_customs/vc_fastway.php:495
-#: functions/vc_customs/vc_fastway.php:939
-#: functions/vc_customs/vc_fastway.php:1023
-#: functions/vc_customs/vc_fastway.php:1086
+#: functions/vc_customs/vc_fastway.php:940
+#: functions/vc_customs/vc_fastway.php:1024
+#: functions/vc_customs/vc_fastway.php:1087
 #: functions/vc_customs/vc_woo_carousels.php:122
 #: functions/vc_customs/vc_woo_carousels.php:223
 #: functions/vc_customs/vc_woo_carousels.php:325
@@ -2776,7 +2780,7 @@ msgstr ""
 #: functions/vc_customs/vc_fastway.php:252
 #: functions/vc_customs/vc_fastway.php:343
 #: functions/vc_customs/vc_fastway.php:420
-#: functions/vc_customs/vc_fastway.php:752
+#: functions/vc_customs/vc_fastway.php:753
 msgid "Fastway"
 msgstr ""
 
@@ -2866,7 +2870,7 @@ msgid "If empty, shows desktop, if not , priorizes mobile image"
 msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:455
-#: functions/vc_customs/vc_fastway.php:1000
+#: functions/vc_customs/vc_fastway.php:1001
 msgid "Link Type"
 msgstr ""
 
@@ -2879,87 +2883,87 @@ msgid "Sub Title"
 msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:485
-#: functions/vc_customs/vc_fastway.php:758
-#: functions/vc_customs/vc_fastway.php:859
+#: functions/vc_customs/vc_fastway.php:759
+#: functions/vc_customs/vc_fastway.php:860
 msgid "Select Block"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:751
+#: functions/vc_customs/vc_fastway.php:752
 msgid "FW Static Block"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:778
+#: functions/vc_customs/vc_fastway.php:779
 msgid "FW Data Icon"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:780
+#: functions/vc_customs/vc_fastway.php:781
 msgid "FW Icon"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:781
-#: functions/vc_customs/vc_fastway.php:892
-#: functions/vc_customs/vc_fastway.php:1039
+#: functions/vc_customs/vc_fastway.php:782
+#: functions/vc_customs/vc_fastway.php:893
+#: functions/vc_customs/vc_fastway.php:1040
 msgid "Fastway Icons"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:787
-#: functions/vc_customs/vc_fastway.php:796
-#: functions/vc_customs/vc_fastway.php:898
-#: functions/vc_customs/vc_fastway.php:976
-#: functions/vc_customs/vc_fastway.php:1045
+#: functions/vc_customs/vc_fastway.php:788
+#: functions/vc_customs/vc_fastway.php:797
+#: functions/vc_customs/vc_fastway.php:899
+#: functions/vc_customs/vc_fastway.php:977
+#: functions/vc_customs/vc_fastway.php:1046
 msgid "Type"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:811
-#: functions/vc_customs/vc_fastway.php:906
-#: functions/vc_customs/vc_fastway.php:988
-#: functions/vc_customs/vc_fastway.php:1052
+#: functions/vc_customs/vc_fastway.php:812
+#: functions/vc_customs/vc_fastway.php:907
+#: functions/vc_customs/vc_fastway.php:989
+#: functions/vc_customs/vc_fastway.php:1053
 msgid "Alignment"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:848
+#: functions/vc_customs/vc_fastway.php:849
 msgid "Cant"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:853
+#: functions/vc_customs/vc_fastway.php:854
 msgid "iframe"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:889
+#: functions/vc_customs/vc_fastway.php:890
 msgid "FW Social Icons"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:891
+#: functions/vc_customs/vc_fastway.php:892
 msgid "FW Social Icon"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:953
-#: functions/vc_customs/vc_fastway.php:955
+#: functions/vc_customs/vc_fastway.php:954
+#: functions/vc_customs/vc_fastway.php:956
 msgid "FW Button"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:956
+#: functions/vc_customs/vc_fastway.php:957
 msgid "Fastway Buttons"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:963
+#: functions/vc_customs/vc_fastway.php:964
 msgid "Icon"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:970
+#: functions/vc_customs/vc_fastway.php:971
 msgid "Text"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1036
-#: functions/vc_customs/vc_fastway.php:1038
+#: functions/vc_customs/vc_fastway.php:1037
+#: functions/vc_customs/vc_fastway.php:1039
 msgid "FW Icon Only"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1108
+#: functions/vc_customs/vc_fastway.php:1109
 msgid "Image size"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1111
+#: functions/vc_customs/vc_fastway.php:1112
 msgid ""
 "Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
 "other sizes defined by theme). Alternatively enter size in pixels (Example: "
@@ -2967,51 +2971,51 @@ msgid ""
 "default."
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1115
+#: functions/vc_customs/vc_fastway.php:1116
 msgid "Image alignment"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1118
+#: functions/vc_customs/vc_fastway.php:1119
 msgid "Left"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1119
+#: functions/vc_customs/vc_fastway.php:1120
 msgid "Right"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1120
+#: functions/vc_customs/vc_fastway.php:1121
 msgid "Center"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1123
+#: functions/vc_customs/vc_fastway.php:1124
 msgid "Select image alignment."
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1132
+#: functions/vc_customs/vc_fastway.php:1133
 msgid "Height"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1144
+#: functions/vc_customs/vc_fastway.php:1145
 msgid "Row stretch"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1147
+#: functions/vc_customs/vc_fastway.php:1148
 msgid "Default"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1148
+#: functions/vc_customs/vc_fastway.php:1149
 msgid "Stretch row"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1149
+#: functions/vc_customs/vc_fastway.php:1150
 msgid "Stretch row and content"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1150
+#: functions/vc_customs/vc_fastway.php:1151
 msgid "Stretch row and content (no paddings)"
 msgstr ""
 
-#: functions/vc_customs/vc_fastway.php:1153
+#: functions/vc_customs/vc_fastway.php:1154
 msgid ""
 "Select stretching options for row and content (Note: stretched may not work "
 "properly if parent container has \"overflow: hidden\" CSS property"
@@ -3091,6 +3095,37 @@ msgstr ""
 
 #: functions/vc_customs/vc_woo_carousels.php:469
 msgid "Recent Products Carousel"
+msgstr ""
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:22
+msgid "Free Shipping Per Product"
+msgstr "Envío gratis por producto"
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:23
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:50
+msgid "Free Shipping"
+msgstr "Envío Gratis"
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:47
+msgid "Method Title"
+msgstr ""
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:49
+msgid "The method name at Checkout."
+msgstr ""
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:54
+msgid "Hide other methods"
+msgstr ""
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:56
+#, fuzzy
+#| msgid "No shipping options available"
+msgid "Hide other shipping methods if free shipping is available"
+msgstr "No hay métodos de envío disponibles"
+
+#: functions/woo-free-shipping-per-product/class-free-shipping-per-product.php:137
+msgid "Free Shipping per Product Settings"
 msgstr ""
 
 #: inc/class-staticblocks.php:20

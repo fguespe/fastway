@@ -1499,8 +1499,6 @@ if(fw_theme_mod('fw_define_shipping_default')){
   
 }
 
-
-
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;
   $free = array();

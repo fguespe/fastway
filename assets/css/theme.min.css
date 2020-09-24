@@ -2604,7 +2604,7 @@ h3.heading-title {
   font-weight: 600;
   margin-bottom: 20px;
   background: var(--main);
-  color: white;
+  color: white !important;
   width: 100%;
   border: 0px;
 }

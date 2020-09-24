@@ -589,7 +589,6 @@ function fw_slider_function( $atts, $content ) {
     $image_ids = explode(',',$atts['slides_desktop']);
     $claserespo=' d-none d-md-block ';
     $tiene_mobile_images=!empty($atts['slides_mobile']);
-    error_log("tiene_mobile_images:".$atts['slides_mobile']);
     if(!$tiene_mobile_images)$claserespo=' ';
     $return='';
 

@@ -145,7 +145,7 @@ function fw_widget_popup_dash_handler(){
 
 function fw_widget_cupones_dash(){
     $estado=get_option('woocommerce_enable_coupons')==='yes'?__('Active','fastway'):__('Inactive','fastway');
-    $color=$estado=='Activo'?'green':'red';
+    $color=$estado==__('Active','fastway')?'green':'red';
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
     $cambiar_l=__('Change','fastway');
 
@@ -179,7 +179,7 @@ function fw_widget_cupones_dash_handler(){
 function fw_widget_desc_prods_dash(){
 
     $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):'All products');
-    $estado=fw_theme_mod('fw_product_discount')?__('Active','fastway'):__('Inactive','fastway');
+    $estado=__('Status','fastway').': '.(fw_theme_mod('fw_product_discount')?__('Active','fastway'):__('Inactive','fastway'));
     $color=$estado==__('Active','fastway')?'green':'red';
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
     $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_product_discount_percentage'));
@@ -222,7 +222,7 @@ function fw_widget_lili_discount_dash(){
     $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):'All products');
     $cant=fw_theme_mod('fw_lili_discount_cant');
     $cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
-    $estado=__('Status','fastway').': '.fw_theme_mod('fw_lili_discount')?__('Active','fastway'):__('Inactive','fastway');
+    $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount')?__('Active','fastway'):__('Inactive','fastway'));
     $color=$estado==__('Active','fastway').':'?'green':'red';
     $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones')?__('Yes','fastway'):__('No','fastway'));
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
