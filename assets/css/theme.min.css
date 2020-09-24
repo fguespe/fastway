@@ -1416,12 +1416,6 @@ ul {
     overflow: visible !important;
   }
 }
-.vc_row.fw_swiper .vc_column-inner,
-.vc_row.fw_swiper .vc_column-inner .swiper-slide {
-  width: 100% !important;
-  padding: 0px !important;
-}
-
 .vc_row-no-padding.fw_swiper,
 .vc_row-no-padding.fw_swiper .vc_column-inner {
   width: 100vw !important;
