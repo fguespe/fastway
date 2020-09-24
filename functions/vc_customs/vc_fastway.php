@@ -589,6 +589,7 @@ function fw_slider_function( $atts, $content ) {
     $image_ids = explode(',',$atts['slides_desktop']);
     $claserespo=' d-none d-md-block ';
     $ismobile=!empty($atts['slides_mobile']);
+    error_log("ISMOBILE:".$ismobile);
     if(!$ismobile)$claserespo=' ';
     $return='';
     if(!wp_is_mobile() || (!$ismobile && wp_is_mobile()) || is_user_logged_in()){
@@ -635,7 +636,7 @@ function fw_slider_function( $atts, $content ) {
     if((!$ismobile || !wp_is_mobile()) && !is_user_logged_in())return $return;
     //Mobile
     $rand=generateRandomString(5);
-    $image_ids = explode(',',$atts['slides_mobile']);
+    $image_ids = explode(',',$atts['slides_mobile'])?explode(',',$atts['slides_mobile']):$image_ids;
     $links = explode(',',$atts['links_mobile']);
     $cant=0;
     $return .= '
