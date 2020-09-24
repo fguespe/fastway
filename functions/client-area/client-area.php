@@ -629,30 +629,53 @@ function custom_admin_js() {
     //if(check_user_role('administrator'))return;
     $nombre=fw_theme_mod('fw_mail_desde_nombre');
 	$mail=getMailQueEnvia();
-	
-	echo '<script>
-	jQuery.browser = {};
-(function () {
-    jQuery.browser.msie = false;
-    jQuery.browser.version = 0;
-    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-        jQuery.browser.msie = true;
-        jQuery.browser.version = RegExp.$1;
-    }
-})();
-	window.fwSettings={
-	"widget_id":36000000453
-	};
-	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
-    </script>
-    <script type="text/javascript" src="https://widget.freshworks.com/widgets/36000000453.js" async defer></script>
-    <script>
-        FreshworksWidget("identify", "ticketForm", {
-            name: "'.$nombre.'",
-            email: "'.$mail.'",
-        });
+	//freshdesk
+	if(fw_theme_mod('fw_is_multitienda')){
+		echo '
+		<script>
+	  function initFreshChat() {
+		window.fcWidget.init({
+		  token: "3d87a863-f4ce-4bda-a5fe-f8df811e663d",
+		  host: "https://wchat.freshchat.com"
+		});
+		window.fcWidget.user.setProperties({
+			firstName: "'.$nombre.'",
+			email: "'.$mail.'",
+			phone: "None", 
+			phoneCountryCode: "+54",  
+			plan: "Ecommerce", 
+			status: "Active", 
+		});
+	  }
+	  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+	</script>';
 
-    </script>';
+	}else{
+
+		echo '<script>
+		jQuery.browser = {};
+	(function () {
+		jQuery.browser.msie = false;
+		jQuery.browser.version = 0;
+		if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+			jQuery.browser.msie = true;
+			jQuery.browser.version = RegExp.$1;
+		}
+	})();
+		window.fwSettings={
+		"widget_id":36000000453
+		};
+		!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+		</script>
+		<script type="text/javascript" src="https://widget.freshworks.com/widgets/36000000453.js" async defer></script>
+		<script>
+			FreshworksWidget("identify", "ticketForm", {
+				name: "'.$nombre.'",
+				email: "'.$mail.'",
+			});
+	
+		</script>';
+	}
 
 }
 

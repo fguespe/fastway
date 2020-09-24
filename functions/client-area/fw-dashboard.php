@@ -281,7 +281,7 @@ function fw_widget_cuotas_tp_dash(){
     echo <<<HTML
     <div class='fw_widget_dash'>
         <label>$cuotas</label>
-        <a class="iralasopciones" href="index.php?edit=fw_todopago_widget#fw_todopago_widget">$cambiar_l</a>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_cuotas_tp#fw_widget_cuotas_tp">$cambiar_l</a>
     </div>
 HTML;
 }
@@ -292,6 +292,7 @@ function fw_widget_cuotas_tp_dash_handler(){
     # get saved data
     if( !$widget_options = get_option( 'fw_todopago_widget_options' ) )$widget_options = array( );
     # process update
+    error_log('entra');
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_todopago_widget_options'] ) ) {
         # minor validation
          $variable=( $_POST['fw_todopago_widget_options']['max_cuotas'] );
@@ -301,6 +302,7 @@ function fw_widget_cuotas_tp_dash_handler(){
         set_theme_mod('fw_cuotas_todopago',$variable);
     }
 
+    error_log('entra');
     if( !isset( $widget_options['fw_cuotas_todopago'] ) )$widget_options['fw_cuotas_todopago'] = fw_theme_mod('fw_cuotas_todopago');
 
     echo "

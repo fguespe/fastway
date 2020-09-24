@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2020-09-23 14:27-0300\n"
-"PO-Revision-Date: 2020-09-23 14:28-0300\n"
+"PO-Revision-Date: 2020-09-23 22:24-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -384,7 +384,7 @@ msgstr ""
 #: functions/client-area/client-area.php:178
 #: functions/fw-theme-options.php:2385
 msgid "Cuotas Todopago"
-msgstr ""
+msgstr "Cuotas Todopago"
 
 #: functions/client-area/client-area.php:190
 #: functions/fw-theme-options.php:2394
@@ -512,7 +512,7 @@ msgstr "Cupones"
 
 #: functions/client-area/fw-dashboard.php:58
 msgid "Todopago Installments"
-msgstr "Cuotas"
+msgstr "Cuotas Todopago"
 
 #: functions/client-area/fw-dashboard.php:66
 #: functions/client-area/fw-dashboard.php:320
@@ -658,7 +658,7 @@ msgstr "Aplica al mas barato"
 
 #: functions/client-area/fw-dashboard.php:278
 msgid "Max installments"
-msgstr "Cuotas"
+msgstr "Max Cuotas"
 
 #: functions/client-area/fw-dashboard.php:374
 #: functions/client-area/fw-dashboard.php:397
