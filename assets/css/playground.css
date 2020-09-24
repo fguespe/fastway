@@ -530,12 +530,14 @@ font-size: 14px !important;
 
 /*Footer3*/
 #footer.footer3 .widget_nav_menu li a {
-	color: white;
-	line-height: 34px;
-  font-weight: 500;
-  color: #fff;
-  text-transform: uppercase;
-		
+    color: white;
+    line-height: 34px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;	
+}
+#footer.footer3 .gform_body input::placeholder{
+    color:rgb(255,255,255,0.5) ;
 }
 
 
