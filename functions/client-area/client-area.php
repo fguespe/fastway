@@ -628,7 +628,7 @@ if(fw_theme_mod('fw_widget_support_fresh_es'))add_action('admin_footer', 'custom
 function custom_admin_js() {
     //if(check_user_role('administrator'))return;
     $nombre=fw_theme_mod('fw_mail_desde_nombre');
-	$mail=getMailQueEnvia();
+	$mail=getMailQueRecibe();
 	//freshdesk
 	if(fw_theme_mod('fw_is_multitienda')){
 		echo '
