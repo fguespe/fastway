@@ -1011,6 +1011,8 @@ margin: 0;
 .fw_iconos_home_1 {
 	padding: 0 100px;
 	border-bottom: solid 1px #ddd;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 
 .fw_iconos_home_1 .vc_column-inner {
@@ -1084,6 +1086,8 @@ margin: 0;
 .fw_iconos_home_2 {
     border: 1px solid var(--main);
     padding: 15px;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 .fw_iconos_home_2 .fw_icon big {
     font-size: 14px ;
@@ -1140,6 +1144,8 @@ margin: 0;
 	font-size:55px !important;
 	margin-bottom:40px;
 	width:100% !important;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 .fw_iconos_home_3 .fw_icon big{
     font-weight: 400;
