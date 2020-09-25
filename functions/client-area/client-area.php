@@ -627,7 +627,7 @@ add_action('admin_head-nav-menus.php', 'fw_custom_remove_optionspages');
 if(fw_theme_mod('fw_widget_support_fresh_es'))add_action('admin_footer', 'custom_admin_js');
 function custom_admin_js() {
     //if(check_user_role('administrator'))return;
-    $nombre=fw_theme_mod('fw_mail_desde_nombre');
+    $nombre=get_bloginfo( 'name' );
 	$mail=getMailQueEnvia();
 	//freshdesk
 	if(fw_theme_mod('fw_is_multitienda')){
