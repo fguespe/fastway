@@ -639,7 +639,7 @@ function custom_admin_js() {
 		  host: "https://wchat.freshchat.com",
 		  externalId: "'.$nombre.'",     // user’s id unique to your system
 		  firstName: "'.$nombre.'",              // user’s first name
-		  lastName: "'.$nombre.'",                // user’s last name,
+		  lastName: "",                // user’s last name,
 		  email: "'.$mail.'",     
 		});
 	  }
