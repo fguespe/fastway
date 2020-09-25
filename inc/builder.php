@@ -5,10 +5,10 @@ function preset_db($type){
 	$types['header_11']= '[fw_header id="top"][fw_data type="truck" isli="true" stext="Envío gratis a todo el país"][fw_data type="repeat" isli="true" stext="Cambio y devolución gratis"][fw_data type="email" isli="true" stext="" id="email"][fw_data type="phone1" isli="true"][fw_data type="phone2" isli="true"][/fw_header][fw_header id="middle"]<div class="d-flex w-100"> [fw_logo] [fw_search_form id="1"] <div class="d-inline-flex mt-auto mb-auto"> [fw_user_account] [fw_shopping_cart] </div></div>[/fw_header][fw_header id="bottom"][fw_menu][/fw_header]';
 	$types['header_12']= '[fw_header][fw_logo]<div class="datos d-flex flex-column justify-content-around" style="">[fw_data type="email"  ][fw_data type="phone" ]</div>[/fw_header]  [fw_header id="bottom"][fw_menu][/fw_header]';
 
-	$types['mheader_1']= '[fw_m_header][fw_m_menu][fw_logo][/fw_m_header]';
-	$types['mheader_2']= '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0"> [fw_m_menu][fw_m_search_form id="3"] </div> <div class="col-6 row align-items-center justify-content-center"> [fw_logo] </div> <div class="col-3 row align-items-center justify-content-center"> [fw_shopping_cart] </div>[/fw_m_header]';
-	$types['mheader_3']= '[fw_m_header][fw_logo][/fw_m_header][fw_m_header id="bottom"][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart][/fw_m_header]';
-	$types['mheader_4']= '[fw_m_header][fw_logo] [/fw_m_header] [fw_m_header id="bottom"] <div> [fw_m_menu] </div> <div class="alignder"> [fw_user_account][fw_m_search_form][fw_shopping_cart] </div> [/fw_m_header]';
+	$types['mobileh_1']= '[fw_m_header][fw_m_menu][fw_logo][/fw_m_header]';
+	$types['mobileh_2']= '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0"> [fw_m_menu][fw_m_search_form id="3"] </div> <div class="col-6 row align-items-center justify-content-center"> [fw_logo] </div> <div class="col-3 row align-items-center justify-content-center"> [fw_shopping_cart] </div>[/fw_m_header]';
+	$types['mobileh_3']= '[fw_m_header][fw_logo][/fw_m_header][fw_m_header id="bottom"][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart][/fw_m_header]';
+	$types['mobileh_4']= '[fw_m_header][fw_logo] [/fw_m_header] [fw_m_header id="bottom"] <div> [fw_m_menu] </div> <div class="alignder"> [fw_user_account][fw_m_search_form][fw_shopping_cart] </div> [/fw_m_header]';
 
 	$types['prod_loop_2']= '[fw_loop_container][fw_loop_image][fw_loop_title][fw_short_desc][fw_div_open class="contiene"][fw_loop_btn][fw_loop_price][fw_div_close][/fw_loop_container]';
 	$types['prod_loop_4']= '[fw_loop_container ][fw_loop_image][fw_loop_title][fw_short_desc][fw_loop_price][/fw_loop_container][fw_loop_btn]';
@@ -40,9 +40,10 @@ function fw_builder_headers(){
 	foreach(preset_db(null) as $name=>$code){
 		if(strpos( $name, 'header' ) === false) continue;
 		echo "<h2>".$name."</h2>";
-		echo "<div style='border:1px solid black;'>";
+		$clase="header1";
+		echo '<header id="header" style="border:2px solid black;margin-bottom:50px;" class="'.$clase.'">';
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
-		echo "</div>";
+		echo '</header>';
 	}
 }
 
