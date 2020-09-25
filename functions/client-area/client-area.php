@@ -636,11 +636,16 @@ function custom_admin_js() {
 	  function initFreshChat() {
 		window.fcWidget.init({
 		  token: "3d87a863-f4ce-4bda-a5fe-f8df811e663d",
-		  host: "https://wchat.freshchat.com"
+		  host: "https://wchat.freshchat.com",
+		  externalId: "'.$nombre.'",     // user’s id unique to your system
+		  firstName: "'.$nombre.'",              // user’s first name
+		  lastName: "'.$nombre.'",                // user’s last name,
+		  email: "'.$mail.'",     
 		});
 		window.fcWidget.user.setProperties({
-			firstName: "'.$nombre.'",
-			email: "'.$mail.'",
+			firstName: "Pepe",
+			lastName: "Pepe",
+			email: "f@altoweb.co",
 			phone: "None", 
 			phoneCountryCode: "+54",  
 			plan: "Ecommerce", 
