@@ -2,6 +2,7 @@
 
 
 
+require get_template_directory() . '/inc/builder.php';
 if ( ! function_exists( 'fw_theme_mod' ) ) {
   function fw_theme_mod( $field_id, $default_value = '' ) {
     if ( $field_id ) {

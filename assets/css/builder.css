@@ -303,7 +303,7 @@ color: #fff ;
 }
 
 #header.header11 .desktop.top .redestop .fw_icon {
-margin: 5px 0px 5px 10px ;
+    margin: 5px 0px 5px 10px ;
 }
 
 
@@ -469,6 +469,15 @@ font-size: 14px !important;
 #header.header13  span,
 #header.header13  .fw_search_form.input-group-append .btn{
     color:white;
+}
+
+@media (max-width: 799px) {
+    .fw_header.header4.mobile .alignder .fw-header-icon {
+            margin-left: 5px;
+    }
+    .fw_header.header3.mobile .logo {
+        margin:0 auto;
+    }
 }
 
 /*Footer2*/

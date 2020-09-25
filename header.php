@@ -1,5 +1,8 @@
 <?php
-if(!is_plugin_active('kirki/kirki.php'))return;
+if(!is_plugin_active('kirki/kirki.php')){
+  echo "FALTA KIRKI";
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html dir="ltr" <?php language_attributes(); ?>>
@@ -15,7 +18,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <meta name="keywords" content="<?=fw_theme_mod('seo-keywords');?>">
     <meta property="og:title" conten="<?=bloginfo( 'name' ); ?>">
     <meta property="og:description" content="<?=fw_theme_mod('seo-desc');?>">
-    <meta property="og:image" content="<?=fw_theme_mod('social_media_image');?>">
+    <meta property="og:image" content="<?=get_the_post_thumbnail_url()?get_the_post_thumbnail_url():fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
     <meta name="twitter:card" content="summary_large_image">
@@ -57,7 +60,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
     <style type="text/css" id="css_editor-logged_in"><?php if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>
     <style type="text/css" id="css_editor-admin"><?php if(current_user_can("administrator"))echo fw_theme_mod('css_editor-admin')?></style>
     <style>
-        /*FIX SHIPPING*/
+        /*FIXf SHIPPING*/
 .cart_totals .shipping,
 .cart_totals .shipping p,
 .cart_totals .shipping a,

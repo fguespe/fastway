@@ -555,11 +555,12 @@ function fw_header_builder($atts = [], $content = null){
 }
 add_shortcode('fw_header', 'fw_header_builder');
 
+add_shortcode('fw_m_header', 'fw_header_builder_mobile');
 function fw_header_builder_mobile($atts = [], $content = null){
     $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
     if(!empty($atts['type']))$atts['id']=$atts['type'];
 
-    $volver.='<div class="navbar fw_header '.$atts['id'].' mobile d-md-none codes">';
+    $volver.='<div class="navbar fw_header '.fw_theme_mod('fw_builder_mheader_class').' '.$atts['id'].' mobile d-md-none codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div>';
 
@@ -569,7 +570,6 @@ function usesWhatsapp(){
     return fw_theme_mod('whats-button')!='none';
 }
 
-add_shortcode('fw_m_header', 'fw_header_builder_mobile');
 function fw_header_html(){
     if(is_plugin_active('woocommerce/woocommerce.php') && is_checkout()/* && !is_order_received_page()*/){
         return do_shortcode(stripslashes(htmlspecialchars_decode('[fw_header][fw_logo][fw_compra_protegida][/fw_header]')));

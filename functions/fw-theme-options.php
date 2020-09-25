@@ -1074,50 +1074,180 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-/*HEAADER*/
 
+/*HEAADER*/
 Kirki::add_field( 'theme_config_id', [
-	'type'        => 'radio',
+	'type'        => 'select',
 	'settings'    => 'color_scheme_radio',
-	'label'       => esc_attr__( 'Radio Control', 'kirki' ),
-	'description' => esc_attr__( 'This radio will control the following two color controls.', 'kirki' ),
+	'label'       => 'Preset Loader',
+	'description' => 'It will bring all necesary codes',
 	'section'     => 'preset_section',
-	'default'     => 'header1',
 	'choices'     => [
-		'header1'    => esc_html__( 'Header1', 'kirki' ),
-		'header2'   => esc_html__( 'Header2', 'kirki' ),
-		'header3' => esc_html__( 'Header3', 'kirki' ),
+		'header_1' => 'Header 1',
+		'header_2' => 'Header 2',
+		'header_11' => 'Header 11',
+		'header_12' => 'Header 12',
+
+		//MHeader
+		'mheader_1' => 'Mobile Header 1',
+		'mheader_2' => 'Mobile Header 2',
+		'mheader_3' => 'Mobile Header 3',
+
+		//Loop
+		'prod_loop_2' => 'Product Loop 2',
+		'prod_loop_4' => 'Product Loop 4',
+		'prod_loop_6' => 'Product Loop 6',
+
+		//Cate loop
+		'cat_loop_4' => 'Category Loop 4',
+		'cat_loop_5' => 'Category Loop 5',
+
+		//Footer,
+		'footer_2' => 'Footer 2',
+		'footer_3' => 'Footer 3',
+		'footer_4' => 'Footer 4',
+		'footer_6' => 'Footer 6',
+		'footer_7' => 'Footer 7',
+		'footer_10' => 'Footer 10',
+		
+		//Iconos
+		'iconos_1' => 'Iconos 1',
+		'iconos_2' => 'Iconos 2',
+		'iconos_3' => 'Iconos 3',
 	],
-	'preset'      => array(
-		'header1'    => array(
-			'settings' => array(
-				'code_example' => '<div>example</div>'
-			),
-		),
-		'header2'   => [
+	'preset'  => array(
+		'header_1'    => [
 			'settings' => [
-				'code_example' => '<div>example</div>'
+				'preset_field' => preset_db('header_1'),
 			],
 		],
-		'header3' => [
+		'header_2'   => [
 			'settings' => [
-				'code_example' => '<div>example</div>'
+				'preset_field' => preset_db('header_1'),
+			],
+		],
+		'header_11' => [
+			'settings' => [
+				'preset_field' => preset_db('header_11'),
+			],
+		],
+		'header_12' => [
+			'settings' => [
+				'preset_field' => preset_db('header_12'),
+			],
+		],
+
+		//MHeader 1
+		'mheader_1'    => [
+			'settings' => [
+				'preset_field' => preset_db('mheader_1'),
+			],
+		],
+		'mheader_2'    => [//todos
+			'settings' => [
+				'preset_field' => preset_db('mheader_2'),
+			],
+		],
+		'mheader_3'    => [//ee
+			'settings' => [
+				'preset_field' => preset_db('mheader_3'),
+			],
+		],
+		'mheader_4'    => [//berry
+			'settings' => [
+				'preset_field' => preset_db('mheader_4'),
+			],
+		],
+
+		//Product Loop 
+		'prod_loop_2' => [
+			'settings' => [
+				'preset_field' => preset_db('prod_loop_2'),
+			],
+		],
+		'prod_loop_4' => [
+			'settings' => [
+				'preset_field' => preset_db('prod_loop_4'),
+			],
+		],
+		'prod_loop_6' => [
+			'settings' => [
+				'preset_field' => preset_db('prod_loop_6'),
+			],
+		],
+
+		//Cat Loop
+		'cat_loop_2' => [
+			'settings' => [
+				'preset_field' => preset_db('cat_loop_2'),
+			],
+		],
+		'cat_loop_4' => [
+			'settings' => [
+				'preset_field' => preset_db('cat_loop_4'),
+			],
+		],
+
+		//Footer
+		'footer_2' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_2'),
+			],
+		],
+		'footer_3' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_3'),
+			],
+		],
+		'footer_4' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_4'),
+			],
+		],
+		'footer_6' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_6'),
+			],
+		],
+		'footer_7' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_7'),
+			],
+		],
+		'footer_10' => [
+			'settings' => [
+				'preset_field' => preset_db('footer_10'),
+			],
+		],
+
+		//Iconos
+		'iconos_1' => [
+			'settings' => [
+				'preset_field' => preset_db('iconos_1'),
+			],
+		],
+		'iconos_2' => [
+			'settings' => [
+				'preset_field' => preset_db('iconos_2'),
+			],
+		],
+		'iconos_3' => [
+			'settings' => [
+				'preset_field' => preset_db('iconos_3'),
 			],
 		],
 	),
 ] );
 
+Kirki::add_field( 'theme_config_id', [
+	'type'     => 'textarea',
+	'settings' => 'preset_field',
+	'label'    => esc_html__( 'Textarea Control', 'kirki' ),
+	'section'  => 'preset_section',
+	'default'  => esc_html__( 'This is a default value', 'kirki' ),
+	'priority' => 10,
+] );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'code_example',
-	'label'       => __( 'Header Code', 'fastway' ),
-	'description' => '',
-	'section'     => 'preset_section',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1434,6 +1564,15 @@ Kirki::add_field( 'theme_config_id', array(
 
 /*MOBILE*/
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_builder_mheader_class',
+	'label'       => __( 'Default class', 'fastway' ),
+    'description' => '*playground (beta)',
+	'section'     => 'section_mobile_header',
+	'default'     => '',
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
