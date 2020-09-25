@@ -265,14 +265,13 @@ function fw_widget_lili_discount_dash_handler(){
         <label>".__('Allows coupons','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options[cupones]\" id=\"cupones\" ".fw_theme_mod('fw_lili_discount_cupones')." ></label><br>
         <label>".__('Quantity','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
         <label>".__('Discount (%)','fastway').': '.":<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
-        <small>Instructions:<br>
-        1) For categories, it must be entered in the field, the category slug, which can be obtained in <a href='edit-tags.php?taxonomy=product_cat&post_type=product'>categories</a> section (separated with ','). <br> 
-        2) Leave empty and it will apply to all categories<br> 
-        3) Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2
-        4) Discount always applies only to the cheapiests</small>
+        <small>".__('Instructions','fastway').":<br>
+        1) ".__('For categories, it must be entered in the field, the category slug, which can be obtained in <a href=\'edit-tags.php?taxonomy=product_cat&post_type=product\'>categories</a> section (separated with \',\')','fastway')."<br> 
+        2) ".__('Leave empty and it will apply to all categories','fastway')."<br> 
+        3) ".__('Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2','fastway')."
+        4) ".__('Discount always applies only to the cheapiests','fastway')."</small>
         </div><br>";
 }
-
 
 function fw_widget_cuotas_tp_dash(){
     $cuotas =__('Max installments','fastway').':'.fw_theme_mod('fw_cuotas_todopago');
