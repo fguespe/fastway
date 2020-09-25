@@ -637,10 +637,18 @@ function custom_admin_js() {
 		window.fcWidget.init({
 		  token: "3d87a863-f4ce-4bda-a5fe-f8df811e663d",
 		  host: "https://wchat.freshchat.com",
-		  externalId: "'.$nombre.'",     // user’s id unique to your system
-		  firstName: "'.$nombre.'",              // user’s first name
-		  lastName: "",                // user’s last name,
-		  email: "'.$mail.'",     
+		  externalId: "'.$nombre.'",     // user’s id unique to your system   
+		});
+		// To set user name
+		window.fcWidget.user.setFirstName("'.$nombre.'");
+
+		// To set user email
+		window.fcWidget.user.setEmail("'.$mail.'");
+
+		// To set user properties
+		window.fcWidget.user.setProperties({
+		plan: "Estate",                 // meta property 1
+		status: "Active"                // meta property 2
 		});
 	  }
 	  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
