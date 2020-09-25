@@ -337,9 +337,9 @@ function fw_slider() {
     // Title
     vc_map(
         array(
-            'name' => __( 'FW Slider' ),
+            'name' => __( 'FW Image Slider' ),
             'base' => 'fw_slider_function',
-            'description' => __('FW Slider', 'fastway'), 
+            'description' => __('FW Image Slider', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
             'icon' => get_template_directory_uri().'/assets/img/favi.png',  
             'params' => array(

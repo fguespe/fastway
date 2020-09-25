@@ -226,7 +226,7 @@ function fw_widget_lili_discount_dash(){
     $color=$estado==__('Active','fastway').':'?'green':'red';
     $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones')?__('Yes','fastway'):__('No','fastway'));
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-    $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage')).'<small>('.__('Applies to the cheapiest','fastway').'</small>';
+    $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
     $cambiar_l=__('Change','fastway').':';
     
     echo <<<HTML

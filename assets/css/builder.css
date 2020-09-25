@@ -1137,6 +1137,11 @@ margin: 0;
 
 /*ICONOS3*/
 
+.fw_iconos_home_3{
+
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
 .fw_iconos_home_3 .fw_icon i{
 	color:var(--main);
 	display: block ;
@@ -1144,8 +1149,6 @@ margin: 0;
 	font-size:55px !important;
 	margin-bottom:40px;
 	width:100% !important;
-	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 .fw_iconos_home_3 .fw_icon big{
     font-weight: 400;
