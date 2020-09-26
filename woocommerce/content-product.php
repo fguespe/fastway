@@ -8,7 +8,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 $classname_desktop="fw_product_loop desktop ";
-$classname_desktop.=fw_theme_mod('fw_builder_pl_class');
+global $preset_class;
+$classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_pl_class');
 
 ?>
 

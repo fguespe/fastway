@@ -3494,6 +3494,12 @@ body .wpb_content_element {
   }
   
 }
+.woocommerce table .woocommerce-orders-table__cell-order-actions a{ 
+  color:white;
+  padding:5px;
+  border:1px solid var(--main) !important;
+}
+
 @media (max-width: 799px) {
 
 .woocommerce table.shop_table_responsive thead,

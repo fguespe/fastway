@@ -132,8 +132,15 @@ function fw_loop_container($atts = [], $content = null){
 
 }
 
+function woo_loop_cat(){
+  global $preset_code;
+  $code=$preset_code?$preset_code:fw_theme_mod('woo_loop_cat_code');
+  echo do_shortcode(stripslashes(htmlspecialchars_decode( $code)));
+}
 function woo_loop_code(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_code'))));
+  global $preset_code;
+  $code=$preset_code?$preset_code:fw_theme_mod('woo_loop_code');
+  echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 }
 
 
@@ -226,9 +233,6 @@ function woo_loop_brand(){
     echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
 
-function woo_loop_cat(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_cat_code'))));
-}
 
 add_shortcode('fw_brand_title', 'fw_cat_title');
 add_shortcode('fw_cat_title', 'fw_cat_title');
@@ -273,7 +277,10 @@ function fw_cat_container($atts = [], $content = null){
     if(!is_string($link))return;
 
     $classname_desktop="fw_cat_loop product-category product ";
-    $classname_desktop.=fw_theme_mod('fw_builder_cl_class');
+
+    global $preset_class;
+    $classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_cl_class');
+    
     echo '<li class="'.$classname_desktop.'">';
     echo '<a href="'.$link.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));

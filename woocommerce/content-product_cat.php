@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 global $fw_woo_cat;
-
 $fw_woo_cat=$category;
- woo_loop_cat();
+
+woo_loop_cat();
 ?>
 

@@ -560,7 +560,13 @@ function fw_header_builder_mobile($atts = [], $content = null){
     $atts = shortcode_atts(array('type' => '','id' => 'middle'  ), $atts );
     if(!empty($atts['type']))$atts['id']=$atts['type'];
 
-    $volver.='<div class="navbar fw_header '.fw_theme_mod('fw_builder_mheader_class').' '.$atts['id'].' mobile d-md-none codes">';
+
+    $clasem="d-md-none";
+    global $post;
+    $post_slug = $post->post_name;
+    if($post_slug=='mobilehs')$clasem="";
+
+    $volver.='<div class="navbar fw_header '.fw_theme_mod('fw_builder_mheader_class').' '.$atts['id'].' '.$_img.' '.$clasem.' mobile codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div>';
 
@@ -841,12 +847,4 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
     // Change the breadcrumb delimeter from '/' to '>'
     $defaults['delimiter'] = ' &gt; ';
     return $defaults;
-}
-
-
-if (!function_exists('custom_account_hook')) {
-	function custom_account_hook() {
-		echo do_shortcode('[wordpress_file_upload]');
-	}
-	add_action( 'woocommerce_account_dashboard', 'custom_account_hook' );
 }

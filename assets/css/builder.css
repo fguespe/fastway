@@ -473,13 +473,22 @@ font-size: 14px !important;
 
 
 /*MOBILE*/
-@media (max-width: 799px) {
-    .mobileh_4.mobile .alignder .fw-header-icon {
-            margin-left: 5px;
-    }
-    .mobileh_3.mobile .logo {
-        margin:0 auto;
-    }
+.mobileh_4 .fw-header-icon {
+        margin-left: 5px;
+}
+/*MOBILE3*/
+.mobileh_3 .logo {
+    margin:0 auto;
+}
+.mobileh_3 .bottom{
+    background:var(--main);
+    padding:5px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.mobileh_3 .bottom i,
+.mobileh_3 .bottom span{
+    color:white;
 }
 
 /*Footer2*/
@@ -1254,6 +1263,7 @@ margin: 0;
 .fw_prod_loop_2 .fw_add_to_cart_button span {
     line-height: initial!important;
     display:inherit;
+    color:white;
 }
 
 
