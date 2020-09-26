@@ -101,6 +101,7 @@ if(fw_theme_mod('fw_trans_comprobantes')){
   add_filter( 'wc_order_statuses', 'wc_renaming_order_status' );
   add_action( 'init', 'register_awaiting_shipment_order_status' );
   add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
+  add_action( 'woocommerce_admin_order_data_after_shipping_address', 'admin_order_display_delivery_order_id', 60, 1 );
   
 
 }
@@ -144,7 +145,6 @@ function register_awaiting_shipment_order_status() {
   ) );
 }
 
-add_action( 'woocommerce_admin_order_data_after_shipping_address', 'admin_order_display_delivery_order_id', 60, 1 );
 function admin_order_display_delivery_order_id( $order ){
   $url_comprobante = get_post_meta( $order->get_id(), 'comprobante', true );
   if($url_comprobante){
