@@ -95,7 +95,7 @@ function fw_gift_fields_admin($order){
 }
 
 
-if(fw_theme_mod('fw_trans_comprobantes')){
+if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
   add_action('woocommerce_order_details_before_order_table','file_order_upload');
   add_action('gform_after_submission', 'trabajar_file',10,2);
   add_filter( 'wc_order_statuses', 'wc_renaming_order_status' );
@@ -104,7 +104,7 @@ if(fw_theme_mod('fw_trans_comprobantes')){
   add_action( 'woocommerce_admin_order_data_after_shipping_address', 'admin_order_display_delivery_order_id', 60, 1 );
     
   function file_order_upload($order){
-    echo do_shortcode('[gravityform id="7" title="false" description="false" ajax="false" field_values="order_id='.$order->id.'"]');
+    echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="false" field_values="order_id='.$order->id.'"]');
   } 
   function trabajar_file($entry, $form) {
     $arra=explode('/',$entry['source_url']);
