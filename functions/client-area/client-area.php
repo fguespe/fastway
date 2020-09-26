@@ -96,6 +96,14 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_trans_comprobantes_id',
+	'label'       => __( 'ID del form', 'fastway' ),
+	'section'     => 'section_client_admin',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_client_admin_columnarol',
 	'label'       => __( 'Columna Rol En Pedidos', 'fastway' ),
