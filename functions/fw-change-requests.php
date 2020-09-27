@@ -96,12 +96,12 @@ function fw_gift_fields_admin($order){
 
 
 if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
+  add_action( 'init', 'fefe1' );
   add_action('woocommerce_order_details_before_order_table','file_order_upload');
-  add_action('gform_after_submission', 'trabajar_file',10,2);
-  add_filter( 'wc_order_statuses', 'wc_renaming_order_status' );
-  add_action( 'init', 'register_awaiting_shipment_order_status' );
-  add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
+  add_filter( 'wc_order_statuses', 'fefe2' );
+  add_filter( 'wc_order_statuses', 'wc_renaming_order_status',10,1 );
   add_action( 'woocommerce_admin_order_data_after_shipping_address', 'admin_order_display_delivery_order_id', 60, 1 );
+  add_action('gform_after_submission', 'trabajar_file',10,2);
     
   function file_order_upload($order){
     echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="false" field_values="order_id='.$order->id.'"]');
@@ -110,8 +110,13 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
     $arra=explode('/',$entry['source_url']);
     $order_id=explode('/',$entry['source_url'])[count($arra)-2];
     $file=$entry[1];
+
     $order = new WC_Order($order_id);
-    $order->update_status('wc-awaiting-confirmation'); 
+    if($order){
+      error_log("entra");
+      $order->update_status( 'wc-await-verif', 'El pedido se ha actualiado', true );
+    }
+
     update_post_meta( $order_id, 'comprobante', $file );
   }
   function wc_renaming_order_status( $order_statuses ) {
@@ -152,6 +157,28 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
     }
   }
 
+}
+
+
+function fefe1() {
+  register_post_status( 'wc-await-verif', array(
+      'label'                     => 'Falta verificar',
+      'public'                    => true,
+      'show_in_admin_status_list' => true,
+      'show_in_admin_all_list'    => true,
+      'exclude_from_search'       => false,
+      'label_count'               => _n_noop( 'Falta verificar <span class="count">(%s)</span>', 'Falta verificar <span class="count">(%s)</span>' )
+  ) );
+}
+function fefe2( $order_statuses ) {
+  $new_order_statuses = array();
+  foreach ( $order_statuses as $key => $status ) {
+      $new_order_statuses[ $key ] = $status;
+      if ( 'wc-processing' === $key ) {
+          $new_order_statuses['wc-await-verif'] = 'Falta verificar';
+      }
+  }
+  return $new_order_statuses;
 }
 ?>
 
