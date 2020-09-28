@@ -3494,6 +3494,25 @@ body .wpb_content_element {
   }
   
 }
+.fw_subir_comprobante{
+  display:block;
+  width:300px !important;
+  border:1px solid black;
+  padding:20px;
+  margin-bottom: 20px;;
+}
+.fw_subir_comprobante a{
+  font-size:12px;
+  color:blue;
+}
+
+.woocommerce-customer-details .col2-set{
+  display:flex;
+}
+.woocommerce-customer-details .col2-set div{
+  flex: 0 0 50%;
+}
+  
 .woocommerce table .woocommerce-orders-table__cell-order-actions a{ 
   color:white;
   padding:5px;

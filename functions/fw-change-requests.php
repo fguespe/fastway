@@ -104,7 +104,13 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
   add_action('gform_after_submission', 'trabajar_file',10,2);
     
   function file_order_upload($order){
-    echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="false" field_values="order_id='.$order->id.'"]');
+    $order_id=$order->id;
+    $url_comprobante = get_post_meta( $order_id, 'comprobante', true );
+    if($url_comprobante){
+      echo '<span class="fw_subir_comprobante">Comprobante: <a target="_blank" href="' . $url_comprobante . '">Abrir</a></span>';
+    }else{
+      echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="true" field_values="order_id='.$order_id.'"]');
+    }
   } 
   function trabajar_file($entry, $form) {
     $arra=explode('/',$entry['source_url']);
@@ -113,7 +119,6 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 
     $order = new WC_Order($order_id);
     if($order){
-      error_log("entra");
       $order->update_status( 'wc-await-verif', 'El pedido se ha actualiado', true );
     }
 
