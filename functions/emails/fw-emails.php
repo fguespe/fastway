@@ -120,10 +120,16 @@ function fw_parse_mail_accounts($tipo,$emailValues){
   return wp_kses_post( wpautop( wptexturize($html)));
 
 }
+function fw_parse_mail_return($tipo,$order){
+  $emailValues = fw_get_email_variables($order);
+  $html=get_option('fw_email_content_'.$tipo);
+  $html=conditionals($html,$emailValues);
+  foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
+  return wp_kses_post( wpautop( wptexturize($html)));
+}
 function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
   do_action( 'woocommerce_email_header', $email_heading, $email ); 
   $emailValues = fw_get_email_variables($order, $sent_to_admin, $plain_text, $email);
-
   $html=get_option('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
@@ -219,7 +225,7 @@ function woocommerce_email_subject_customer_new_account( $subject, $order ) {
 add_filter('woocommerce_email_subject_customer_completed_order', 'woocommerce_email_subject_customer_completed_order', 1, 2);
 function woocommerce_email_subject_customer_completed_order( $subject, $order ) {
     $vars = fw_get_email_variables($order);
-    return fw_parse_subject('customer_completed_order',$order);
+    return fw_parse_subject('customer_completed_order',$vars);
 }
 
 add_filter('woocommerce_email_subject_customer_on_hold_order', 'woocommerce_email_subject_customer_on_hold_order', 1, 2);

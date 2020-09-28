@@ -27,6 +27,18 @@ Solo para que estés informado — hemos recibido tu pedido {{order_number}}, y 
 Gracias por tu compra.');
 
 
+if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
+
+add_option( 'fw_email_subject_customer_await_verif_order', 'Recibimos tu comprobante');
+add_option( 'fw_email_content_customer_await_verif_order', 'Hola {{customer_name}},
+
+Solo para que estés informado — hemos recibido tu comprobante para la orden {{order_number}}
+
+Estaremos verificandolo y te notificaremos cuando este aprobado.
+
+Gracias por tu compra.');
+
+}
 add_option( 'fw_email_subject_customer_completed_order', 'Pedido completado');
 add_option( 'fw_email_content_customer_completed_order', 'Hola {{customer_name}},
 
@@ -155,26 +167,25 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 
 function myplugin_options_page(){
-  
-$customer_emails_vars.='
-<a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Docs</a><br>
-<b>Variables:</b>
-<br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
-<br><b>Payment methods</b>
-<br><small>';
-foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
-    if( $gateway->enabled == 'yes' ) {
-        $customer_emails_vars.=$gateway->title.'(id:'.$gateway->id.') - ';
-    }
-}
-$customer_emails_vars.='</small><br><b>Roles:</b>
-<br><small>';
-$roles=array();
-foreach ( get_editable_roles() as $role => $value ) {
-  if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
-  if(!in_array($role,$roles))array_push($roles,$role);
-}
-$customer_emails_vars.=implode(' ',$roles).'</small>';
+  $customer_emails_vars.='
+  <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Docs</a><br>
+  <b>Variables:</b>
+  <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
+  <br><b>Payment methods</b>
+  <br><small>';
+  foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
+      if( $gateway->enabled == 'yes' ) {
+          $customer_emails_vars.=$gateway->title.'(id:'.$gateway->id.') - ';
+      }
+  }
+  $customer_emails_vars.='</small><br><b>Roles:</b>
+  <br><small>';
+  $roles=array();
+  foreach ( get_editable_roles() as $role => $value ) {
+    if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
+    if(!in_array($role,$roles))array_push($roles,$role);
+  }
+  $customer_emails_vars.=implode(' ',$roles).'</small>';
 ?>
 <div>
 
@@ -325,6 +336,21 @@ $content = get_option('fw_email_content_customer_on_hold_order');
 wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
+<?php
+
+if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
+?>
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'Order Await Verif', 'woocommerce' )?></h3>
+<small><?=__( '', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo get_option('fw_email_subject_customer_await_verif_order'); ?>" /><br>
+
+<?php
+$content = get_option('fw_email_content_customer_await_verif_order');
+wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+<?php } ?>
 
 </div>
 
