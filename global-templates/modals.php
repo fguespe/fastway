@@ -529,35 +529,34 @@ function add_to_minicart(prod_id){
 
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id,qty:qty}, 
-    function (msg) { 
-        console.log(msg)
+    function (product) { 
+        product=JSON.parse(product)
+
         jQuery('#modal_carrito').modal('show');
         jQuery('#fw_add_to_cart_button_'+prod_id).removeClass('loading')
 
         if(window.fbq)fbq('track', 'AddToCart');
         if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
         if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-        //if(window.dataLayer){
+        if(window.dataLayer){
             let datala={
                 'event': 'AddToCart',
                 'ecommerce': {
                     'currencyCode': 'ARS',
                     'add': {                              
                         'products': [{                       
-                            'name': 'Triblend Android T-Shirt',
-                            'id': '12345',
-                            'price': '15.25',
-                            'brand': 'Google',
-                            'category': 'Apparel',
-                            'variant': 'Gray',
-                            'quantity': 1
+                            'name': product.name,
+                            'id': product.sku,
+                            'price': product.price,
+                            'category': product.category,
+                            'quantity': product.qty
                         }]
                     }
                 }
             }
-            console.log(product,datala)
+            console.log(datala)
             dataLayer.push(datala);
-        //}
+        }
         
     });
 }

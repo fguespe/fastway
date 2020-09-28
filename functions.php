@@ -131,7 +131,6 @@ if(get_locale()=='es_ES'){
   update_option('timezone_string','America/Argentina/Buenos_Aires');
   update_option('date_format','d/m/Y');
   update_option('time_format','H:i');
-
 }
 
 function isLocalhost(){

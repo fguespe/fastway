@@ -293,8 +293,8 @@ function fw_add_to_cart(){
   if($var_id)$product=wc_get_product($var_id);
 
   $producto['price']=$product->price;
-  $producto['stock']=$product->stock_quantity;
-  $producto['SKU']=$product->sku;
+  $producto['qty']=$qty;
+  $producto['sku']=$product->sku;
   $producto['name']=$product->name;
 
   $cant=0;
@@ -305,7 +305,6 @@ function fw_add_to_cart(){
     $cant++;
   }
 
-  error_log(print_r($producto,true));
   echo json_encode($producto);
   exit();
 }
