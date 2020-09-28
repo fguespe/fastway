@@ -1,28 +1,40 @@
 <?php
-/**
- * Thankyou page
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/checkout/thankyou.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.7.0
- */
 
 defined( 'ABSPATH' ) || exit;
 
-foreach ( $order->get_items() as $item_id => $item ) {
-	//error
+$items=[];
+if(is_object($order) && $order->get_items()){
+
+	foreach ( $order->get_items() as $item_id => $item ) {
+		$product=wc_get_product($item['product_id']);
+		if($item->variation_id)$product=wc_get_product($item['variation_id']);
+		$producto['price']=$product->price;
+		$producto['qty']=$item['quantity'];
+		$producto['sku']=$product->sku;
+		$producto['name']=$product->name;
+	  
+		$cant=0;
+		foreach( $product->category_ids as $cat_id ) {
+		  $term = get_term_by( 'id', $cat_id, 'product_cat' );
+		  $producto['category'].= $term->name;
+		  if($cant<(count($product->category_ids)-1))$producto['category'].= ' > ';
+		  $cant++;
+		}
+		array_push($items,$producto);
+	}
 }
+$items=json_encode($items);
+
+$laorder['id']=$order->id;
+$laorder['total']=$order->total;
+$laorder['shipping']=$order->shipping_total;
+$laorder=json_encode($laorder);
+
 ?>
 
 <script>
+let order=JSON.parse('<?=$laorder?>');
+let items=JSON.parse('<?=$items?>');
 
 console.log('eventAction:purchase' );
 if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
@@ -32,16 +44,14 @@ if(window.dataLayer){
 	let datala={
 		'event': 'Purchase',
 		'ecommerce': {
-			'currencyCode': 'ARS',
-			'add': {                              
-				'products': [{                       
-					'name': product.name,
-					'id': product.sku,
-					'price': product.price,
-					'category': product.category,
-					'quantity': product.qty
-				}]
-			}
+			'actionField': {
+				'id': order.id,               
+				'revenue': order.total,                     // Total transaction value (incl. tax and shipping)
+				'tax':'',
+				'shipping': order.shipping,
+				'coupon': ''
+			},                      
+			'products': items
 		}
 	}
 	console.log(datala)
