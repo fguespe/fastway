@@ -341,7 +341,7 @@ wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = arra
 if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
 ?>
 <div class="tipomail">
-<h3 class="titulo"><?=__( 'Order Await Verif', 'woocommerce' )?></h3>
+<h3 class="titulo"><?=__( 'Falta verificación', 'woocommerce' )?></h3>
 <small><?=__( '', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo get_option('fw_email_subject_customer_await_verif_order'); ?>" /><br>
 
