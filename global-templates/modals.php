@@ -523,10 +523,6 @@ function add_to_minicart(prod_id){
     jQuery('.minicart').addClass('bouncing')
     
     console.log('eventAction:addtocart' );
-    if(window.fbq)fbq('track', 'AddToCart');
-    if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-    if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
-    if(window.dataLayer)window.dataLayer.push({'event': 'AddToCart'})
     
     let qty=1
     if(jQuery('.quantity input').val())qty=jQuery('.quantity input').val()
@@ -534,8 +530,35 @@ function add_to_minicart(prod_id){
     jQuery.get(ajaxurl,
     {'action': 'add_to_cart',id:prod_id,var_id:var_id,qty:qty}, 
     function (msg) { 
+        console.log(msg)
         jQuery('#modal_carrito').modal('show');
         jQuery('#fw_add_to_cart_button_'+prod_id).removeClass('loading')
+
+        if(window.fbq)fbq('track', 'AddToCart');
+        if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
+        if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'addtocart', eventLabel: 'Agregar al carrito'});
+        //if(window.dataLayer){
+            let datala={
+                'event': 'AddToCart',
+                'ecommerce': {
+                    'currencyCode': 'ARS',
+                    'add': {                              
+                        'products': [{                       
+                            'name': 'Triblend Android T-Shirt',
+                            'id': '12345',
+                            'price': '15.25',
+                            'brand': 'Google',
+                            'category': 'Apparel',
+                            'variant': 'Gray',
+                            'quantity': 1
+                        }]
+                    }
+                }
+            }
+            console.log(product,datala)
+            dataLayer.push(datala);
+        //}
+        
     });
 }
 jQuery('#modal_carrito').on('show.bs.modal', function () {

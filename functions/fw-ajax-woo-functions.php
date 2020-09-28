@@ -288,6 +288,25 @@ function fw_add_to_cart(){
   $var_id= $_GET['var_id'];
   $qty= $_GET['qty'];
   WC()->cart->add_to_cart( $id,$qty, $var_id);
+
+  $product=wc_get_product($id);
+  if($var_id)$product=wc_get_product($var_id);
+
+  $producto['price']=$product->price;
+  $producto['stock']=$product->stock_quantity;
+  $producto['SKU']=$product->sku;
+  $producto['name']=$product->name;
+
+  $cant=0;
+  foreach( $product->category_ids as $cat_id ) {
+    $term = get_term_by( 'id', $cat_id, 'product_cat' );
+    $producto['category'].= $term->name;
+    if($cant<(count($product->category_ids)-1))$producto['category'].= ' > ';
+    $cant++;
+  }
+
+  error_log(print_r($producto,true));
+  echo json_encode($producto);
   exit();
 }
 
