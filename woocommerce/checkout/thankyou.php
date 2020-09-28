@@ -9,7 +9,7 @@ if(is_object($order) && $order->get_items()){
 		$product=wc_get_product($item['product_id']);
 		if($item->variation_id)$product=wc_get_product($item['variation_id']);
 		$producto['price']=$product->price;
-		$producto['qty']=$item['quantity'];
+		$producto['quantity']=$item['quantity'];
 		$producto['sku']=$product->sku;
 		$producto['name']=$product->name;
 	  
