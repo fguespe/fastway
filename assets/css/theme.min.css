@@ -3481,8 +3481,10 @@ body .wpb_content_element {
 }
 
 .woocommerce table .woocommerce-orders-table__cell-order-actions a {
-  color: white;
+  color: var(--main);
   padding: 5px;
+  font-size: 12px;
+  margin-right: 5px;
   border: 1px solid var(--main) !important;
 }
 
