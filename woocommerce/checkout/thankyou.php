@@ -16,7 +16,40 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+foreach ( $order->get_items() as $item_id => $item ) {
+	//error
+}
 ?>
+
+<script>
+
+console.log('eventAction:purchase' );
+if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
+if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
+if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
+if(window.dataLayer){
+	let datala={
+		'event': 'Purchase',
+		'ecommerce': {
+			'currencyCode': 'ARS',
+			'add': {                              
+				'products': [{                       
+					'name': product.name,
+					'id': product.sku,
+					'price': product.price,
+					'category': product.category,
+					'quantity': product.qty
+				}]
+			}
+		}
+	}
+	console.log(datala)
+	dataLayer.push(datala);
+}
+
+</script>
+
 
 <div class="woocommerce-order">
 
@@ -42,7 +75,8 @@ defined( 'ABSPATH' ) || exit;
 				
 				<?php 
 				do_action( 'woocommerce_thankyou',$order->get_id());
-				do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?><!--por si hay algo intersante para haer en el futuro....-->
+				do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() );
+				 ?><!--por si hay algo intersante para haer en el futuro....-->
 
 				<a class="seguir" href="<?=fw_theme_mod('fw_seguircomprando_url')?>"><?=fw_theme_mod('fw_label_checkout_thank_4')?></a>
 			</section>

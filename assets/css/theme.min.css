@@ -3464,7 +3464,16 @@ body .wpb_content_element {
   width: 300px !important;
   border: 1px solid black;
   padding: 20px;
+  margin: 0 auto;
   margin-bottom: 20px;
+}
+
+.fw_subir_comprobante input {
+  width: 100% !important;
+}
+
+.gform_confirmation_wrapper.fw_subir_comprobante {
+  width: 100% !important;
 }
 
 .fw_subir_comprobante a {

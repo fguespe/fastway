@@ -21,12 +21,6 @@ jQuery(document).ready(function() {
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
 
-console.log('eventAction:purchase' );
-if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
-if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-if(window.dataLayer)window.dataLayer.push({'event': 'Purchase'})
-
 
 var logged=false;
 var paso = 1;
