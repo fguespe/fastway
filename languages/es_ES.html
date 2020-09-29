@@ -1,0 +1,4956 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fastway</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <style>
+
+
+/*
+Based on Minimal CSS (minimalcss.com) under the MIT license.
+*/
+
+/* Reset */
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* Layout */
+body { background-color: #fff; color: #333;	font: 14px/20px -apple-system, "HelveticaNeue", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+header { width: 100%; margin: 0 auto; position: relative; padding: 20px 0; margin-bottom: 20px; }
+
+nav ul { margin: 0; }
+nav ul li { display: inline; margin-right: 20px; font-size: 16px; line-height: 28px; color: #333; }
+nav ul li a { color: #333; }
+
+.container { position: relative; max-width: 90%; margin: 0 auto; }
+
+footer { border-top:1px solid #ccc; font-size:11px; line-height:26px; color:#999; }
+footer a { color:#999999; }
+footer a:hover { color:#105CB6; }
+footer ul li { display:inline; list-style:none; padding-left:20px; }
+
+/* Typography */
+a { color: #105CB6; text-decoration: none; }
+a:hover, a:focus { color: #105CB6; text-decoration: underline; }
+a:active { color: #105CB6; }
+
+h1 { font-size: 24px; line-height: 20px; margin: 10px 0; }
+h2 { font-size: 20px; line-height: 20px; margin: 10px 0; }
+h3 { font-size: 16px; line-height: 20px; margin: 10px 0; }
+h4 { font-size: 14px; line-height: 20px; margin: 10px 0; }
+h5 { font-size: 12px; line-height: 20px; margin: 10px 0; }
+h5 { font-size: 10px; line-height: 20px; margin: 10px 0; }
+h1,h2,h3,h4,h5,h6 { color: #333; }
+
+p { margin-bottom: 10px; }
+
+.float-left     { float: left; }
+.float-right    { float: right; }
+img.float-left  { float: left; margin: 0 20px 20px 0; }
+img.float-right { float: right; margin: 0 0 20px 20px; }
+img.center      { margin: 0 auto; display: block; }
+
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* Misc */
+hr { background-color: #ccc; border: 0px; color: #ccc; height: 1px; margin: 8px 0 20px 0; }
+pre, code { background:#E0ECF6; display:block; margin-bottom: 20px; padding:10px; }
+
+blockquote { margin: 10px 10px 20px; padding: 9px; background-color: #f8f8f8; color: #666; border-left: 5px solid #ddd; font: 14px/20px Georgia, Times, serif; quotes: "\201C" "\201D"; }
+blockquote p { margin: 0; }
+blockquote:before { content: open-quote; font-weight: bold; }
+blockquote:after  { content: close-quote; font-weight: bold; }
+
+/* List */
+ul { list-style-position:inside; }
+ol { list-style-position:inside; }
+
+/* Table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th { font-weight: bold; }
+tfoot { font-style: italic; }
+
+/* Metadata part */
+
+.metadata {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 90%;
+}
+table.metadata td {
+  padding-right: 20px;
+}
+
+.stats {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.graph {
+  width: 100%;
+}
+.graph div { float: left; }
+.graph div:first-child { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.graph div:last-child { border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.percent-done    { background-color: rgb(90, 228, 140); height: 10px; }
+.percent-fuzzy   { background-color: rgb(255, 167, 52); height: 10px; }
+.percent-untrans { background-color: #F1F1F1; height: 10px; }
+.legend {
+  font-size: smaller;
+  color: #aaa;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* Translations */
+table.translations {
+  width: 100%;
+  table-layout: fixed;
+}
+table.translations th, table.translations td {
+  padding: 5px 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #E1E1E1;
+}
+table.translations th {
+  text-align: left;
+}
+table.translations th:first-child, table.translations td:first-child { padding-left: 0; }
+table.translations th:last-child, table.translations td:last-child { padding-right: 0; }
+
+.with-comments td {
+  border-bottom: none !important;
+}
+tr.comments div {
+  float: left;
+  max-width: 90%;
+  font-size: smaller;
+  color: #aaa;
+}
+tr.comments div p:last-child { margin-bottom: 0; }
+tr.comments td { padding-top: 0; }
+
+.fuzzy .tra {
+  color: rgb(218, 123, 0);
+}
+
+.msgctxt {
+  color: rgb(70, 109, 137);
+  font-size: smaller;
+  background-color: rgb(217, 232, 242);
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+
+  </style>
+</head>
+<body>
+<div class='container'>
+<table class='metadata'>
+<tr><td>Project:</td><td>Fastway</td></tr>
+<tr><td>Language:</td><td>Spanish (Spain)</td></tr>
+</table>
+<div class='stats'>
+  <div class='graph'>
+    <div class='percent-done' style='width: 11.0546%'>&nbsp;</div>
+    <div class='percent-fuzzy' style='width: 0.127065%'>&nbsp;</div>
+    <div class='percent-untrans' style='width: 88.8183%'>&nbsp;</div>
+  </div>
+  <div class='legend'>Translated: 87 of 787 (11 %)  •  Remaining: 700  </div>
+</div>
+<table class='translations'>
+  <thead>
+    <tr>
+      <th>Source text — English</th>
+      <th>Translation — Spanish (Spain)</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class='i'>
+<td class='src'  lang='en'>
+Oops! That page can&amp;rsquo;t be found.</td>
+<td class='tra'  lang='es-ES'>
+Oops! Esta pagina no existe.</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Let's try again</td>
+<td class='tra'  lang='es-ES'>
+Probemos devuelta</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Check your spelling</td>
+<td class='tra'  lang='es-ES'>
+Comprueba tu ortografía</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Use fewer words and more common</td>
+<td class='tra'  lang='es-ES'>
+Usar menos palabras o mas comunes</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Use the menu to navigate the page, also check the url</td>
+<td class='tra'  lang='es-ES'>
+Usa el menú para navegación</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+About:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Website</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Profile</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Posts by</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>comments title</span>One thought on &amp;ldquo;%s&amp;rdquo;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+translators: %s: post title<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>comments title</span><ol class='plurals'>
+  <li>%1$s thought on &amp;ldquo;%2$s&amp;rdquo;</li>
+  <li>%1$s thoughts on &amp;ldquo;%2$s&amp;rdquo;</li>
+</ol>
+</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Comment navigation</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+&amp;larr; Older Comments</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Newer Comments &amp;rarr;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Comments are closed.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Primary Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Vertical Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Bottom Mobile Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+File Size</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+You do not have permission to edit this user.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CDI/VAT</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+VAT</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Replace media</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Upload a new file</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+To replace the current file, click the link and upload a replacement.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+You do not have permission to upload files.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+NOTE: You are about to replace the media file</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+There is no undo. Think about it!</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+The file %1$s can not be deleted by the web server, most likely because the permissions on the file are wrong.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+File type does not meet security guidelines. Try another.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Woocommerce Taxomizer</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Taxomizer</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cheatin&amp;#8217; uh?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+To go back to the previous page, &lt;a href="%s"&gt;click here&lt;/a&gt;.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+All done! %1$s image(s) were successfully resized in %2$s seconds and there were 0 failures. %3$s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+You must enable Javascript in order to proceed!</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Abort Resizing Images</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Debugging Information</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Total Products: %s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Stopping...</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Taxomize All Products</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+&amp;quot;%1$s&amp;quot; (ID %2$s) failed to resize. The error message was: %3$s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Data</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Whatsapp</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Client Area</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dashboard Widgets</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Change Requests</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Imports</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ID Excel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ID de la importación</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ID de la exportacion</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Columna Precio Mayorista</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enable</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Disable</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Comprobantes de transferencia (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ID del form</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Columna Rol En Pedidos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mandar cuenta a sendy</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mandar forms a sendy</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Descuento productos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cupones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Popup</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Estado del sitio</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Lili Discount (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Cuotas Todopago</td>
+<td class='tra'  lang='es-ES'>
+Cuotas Todopago</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cuotas General</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mensaje General</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mensaje Secundario </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Support Widget</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Login Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No hay necesidad de ponerlo ya que toma el logo general, si se pone algo lo sobreescribe.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Allowed Roles</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Allowed Users</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Main Color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Text Color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Icon Color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Developer Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Top Left Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Default Home</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Client Area Custom CSS</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Whatsapp</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Whats Label</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Share Message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Button Menu Whatsapp</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Whatsapp Widget</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Client Area Menu (</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dashboard</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Salir</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Site Status</td>
+<td class='tra'  lang='es-ES'>
+Estado del sitio</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Currency Conversion</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Lili Discount</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Product Discount</td>
+<td class='tra'  lang='es-ES'>
+Descuentos en Productos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Coupons</td>
+<td class='tra'  lang='es-ES'>
+Cupones</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Todopago Installments</td>
+<td class='tra'  lang='es-ES'>
+Cuotas Todopago</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Installments</td>
+<td class='tra'  lang='es-ES'>
+Cuotas</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Important Message</td>
+<td class='tra'  lang='es-ES'>
+Mensaje Importante</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Secondary Message</td>
+<td class='tra'  lang='es-ES'>
+Mensaje Secundario</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Change</td>
+<td class='tra'  lang='es-ES'>
+Cambiar</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Status</td>
+<td class='tra'  lang='es-ES'>
+Estado</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Disabled</td>
+<td class='tra'  lang='es-ES'>
+Desactivar</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Image</td>
+<td class='tra'  lang='es-ES'>
+Imagen</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Newsletter</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Copy the image url,you can get it from the &lt;a target=\"_blank\" href=\"/wp-admin/upload.php\"&gt;gallery&lt;/a&gt;. You can also copy for example a GIF from its url on &lt;a href="https://giphy.com/create/gifmaker"&gt;giphy&lt;/a&gt;</td>
+<td class='tra'  lang='es-ES'>
+Copiar la url de la imagen subida previamente a la &lt;a target=\"_blank\" href=\"/wp-admin/upload.php\"&gt;galería&lt;/a&gt;. Tambien se puede copiar la url de un GIF greado y subido a giphy</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+URL to link</td>
+<td class='tra'  lang='es-ES'>
+Link a url</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+If empty, it will not redirect on click</td>
+<td class='tra'  lang='es-ES'>
+Dejar vacío si no redirije a ningún lado</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Active</td>
+<td class='tra'  lang='es-ES'>
+Activo</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Inactive</td>
+<td class='tra'  lang='es-ES'>
+Inactivo</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Applies to</td>
+<td class='tra'  lang='es-ES'>
+Aplica a</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Discount (%)</td>
+<td class='tra'  lang='es-ES'>
+Descuento (%)</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Categories</td>
+<td class='tra'  lang='es-ES'>
+Categorías</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+If empty, aplies to all products</td>
+<td class='tra'  lang='es-ES'>
+Si esta vacío, aplica a todos los productos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+For more info: &lt;a href=\"https://altoweb.freshdesk.com/a/solutions/articles/36000234206\"&gt;click here&lt;/a&gt;</td>
+<td class='tra'  lang='es-ES'>
+Para mas información &lt;a href=\"https://altoweb.freshdesk.com/a/solutions/articles/36000234206\"&gt;click aquí&lt;/a&gt;</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Quantity</td>
+<td class='tra'  lang='es-ES'>
+Cantidad</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Allows coupons</td>
+<td class='tra'  lang='es-ES'>
+Permitir cupones</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Yes</td>
+<td class='tra'  lang='es-ES'>
+Si</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Applies to the cheapiest</td>
+<td class='tra'  lang='es-ES'>
+Aplica al mas barato</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Instructions</td>
+<td class='tra'  lang='es-ES'>
+Instrucciones</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+For categories, it must be entered in the field, the category slug, which can be obtained in &lt;a href='edit-tags.php?taxonomy=product_cat&amp;post_type=product'&gt;categories&lt;/a&gt; section (separated with ',')</td>
+<td class='tra'  lang='es-ES'>
+Para categorías, se debe ingresar lo que se dice "slug" de categoría, que se puede encontrar en la url o en la sección &lt;a href='edit-tags.php?taxonomy=product_cat&amp;post_type=product'&gt;categorías&lt;/a&gt; (separadas con ',')</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Leave empty and it will apply to all categories</td>
+<td class='tra'  lang='es-ES'>
+Si se deja vacío, aplica a todas las categorías</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2</td>
+<td class='tra'  lang='es-ES'>
+Cantidad marca si es 2x1, o 3x2, etc. El numero es el mayor. Ej un 2 seria 2x1</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Discount always applies only to the cheapiests</td>
+<td class='tra'  lang='es-ES'>
+El descuento siempre aplica al mas barato</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Max installments</td>
+<td class='tra'  lang='es-ES'>
+Max Cuotas</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Message</td>
+<td class='tra'  lang='es-ES'>
+Mensaje</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+This will create a red top bar on the website displaying the message.</td>
+<td class='tra'  lang='es-ES'>
+Esto pondrá una barra llamativa arriba de la tienda comunicando el mensaje.</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+1 equals</td>
+<td class='tra'  lang='es-ES'>
+1 igual a</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+All functions enabled</td>
+<td class='tra'  lang='es-ES'>
+Todas las funciones habilitadas</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Under maintainance</td>
+<td class='tra'  lang='es-ES'>
+Bajo mantenimiento</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Show only prices, purchases disabled</td>
+<td class='tra'  lang='es-ES'>
+Mostrar solo precios, compras deshabitadas</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Hide purchases and prices</td>
+<td class='tra'  lang='es-ES'>
+Ocultas precios y compras</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Estado</td>
+<td class='tra'  lang='es-ES'>
+Status</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Update prices</td>
+<td class='tra'  lang='es-ES'>
+Actualizar precios</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Need help</td>
+<td class='tra'  lang='es-ES'>
+Soporte</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+General Settings</td>
+<td class='tra'  lang='es-ES'>
+Ajustes Generales</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Customize emails &amp; texts</td>
+<td class='tra'  lang='es-ES'>
+Personalizar emails y textos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+open</td>
+<td class='tra'  lang='es-ES'>
+abrir</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Shipping Methods</td>
+<td class='tra'  lang='es-ES'>
+Medios de Envío</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Payment Methods</td>
+<td class='tra'  lang='es-ES'>
+Medios de Pago</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Export forms</td>
+<td class='tra'  lang='es-ES'>
+Exportar formularios</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Export users/orders</td>
+<td class='tra'  lang='es-ES'>
+Exportar usuarios/pedidos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Customize menus</td>
+<td class='tra'  lang='es-ES'>
+Personalizar menus</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Email log</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Refresh cache</td>
+<td class='tra'  lang='es-ES'>
+Refrescar cache</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+clean</td>
+<td class='tra'  lang='es-ES'>
+limpiar</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Export updated prices</td>
+<td class='tra'  lang='es-ES'>
+Exportar precios/stock actualizados</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Export</td>
+<td class='tra'  lang='es-ES'>
+Exportar</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Import updated prices</td>
+<td class='tra'  lang='es-ES'>
+Importar precios/stock actualizados</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Import</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost data. If in doubt , contact support.</td>
+<td class='tra'  lang='es-ES'>
+IMPORTANTE: No modificar columnas ni sus titulos. Podría arruinar el formato del excel y tener riesgo a perder información. Ante la duda consultenos.</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Send your requirement from our support widget</td>
+<td class='tra'  lang='es-ES'>
+Envíanos tu requerimiento a través de nuestro widget</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+create ticket</td>
+<td class='tra'  lang='es-ES'>
+crear ticket</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+For more information about the altoweb service &lt;a target="_blank" href="https://www.altoweb.co/tickets/"&gt;click here&lt;/a&gt;</td>
+<td class='tra'  lang='es-ES'>
+Para mas información sobre como usar el servicio &lt;a target="_blank" href="https://www.altoweb.co/tickets/"&gt;click aquí&lt;/a&gt;</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+You can also register in the help portal to see tutorials and send us inquiries. &lt;a target="_blank" href="https://altoweb.freshdesk.com/"&gt;Go to portal&lt;/a&gt;</td>
+<td class='tra'  lang='es-ES'>
+Pueden tambien registrarse en portal de ayuda para ver tutoriales y enviarnos consultas. &lt;a target="_blank" href="https://altoweb.freshdesk.com/"&gt;Ir al portal&lt;/a&gt;</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Products will be updated once per day. You can do the process manually the following way: </td>
+<td class='tra'  lang='es-ES'>
+Las publicaciones se actualizan automaticamente 1 vez por dia. Si no deseas esperar a qeu se actualize automaticamente podes acelerar el proceso</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Update info from mercadolibre with the following link</td>
+<td class='tra'  lang='es-ES'>
+Actualizar publicaciones en el servidor con el siguiente link</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Once finished, start the import process with the following link</td>
+<td class='tra'  lang='es-ES'>
+Una vez que termino de procesarse la obtención de datos, ahora podes indicarle a la web que se actualize en el siguiente proceso</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Client Area</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Orders</td>
+<td class='tra'  lang='es-ES'>
+Pedidos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Stats</td>
+<td class='tra'  lang='es-ES'>
+Reportes</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Products</td>
+<td class='tra'  lang='es-ES'>
+Productos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Atributes</td>
+<td class='tra'  lang='es-ES'>
+Atributos</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Users</td>
+<td class='tra'  lang='es-ES'>
+Usuarios</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Media</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Pages</td>
+<td class='tra'  lang='es-ES'>
+Paginas</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Comments</td>
+<td class='tra'  lang='es-ES'>
+Comentarios</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Reviews</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Facebook</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+View All</td>
+<td class='tra'  lang='es-ES'>
+Ver todos</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select All</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add to Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Docs</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Variables</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+values</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Roles</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New Account</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Reset password</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Customer "reset password" emails are sent when customers reset their passwords.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Processing order</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+This is an order notification sent to customers containing order details after payment.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Completed order</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Order complete emails are sent to customers when their orders are marked completed and usually indicate that their orders have been shipped.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Order on-hold</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+This is an order notification sent to customers containing order details after an order is placed on_hold.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Verification pending</td>
+<td class='tra'  lang='es-ES'>
+Falta verificar</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+This is an order notification sent to customers containing information about uploading the file.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New order</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New order emails are sent to chosen recipient(s) when a new order is received.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Code:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sin resultados...</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Wrong username or password.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Login successful, redirecting...</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Choose an option</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>post date</span>Subido el %s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>fastway</span>%s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+<ol class='plurals'>
+  <li>Esperando confirmación (%s)</li>
+  <li>Esperando confirmación (%s)</li>
+</ol>
+</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+<ol class='plurals'>
+  <li>Falta verificar &lt;span class="count"&gt;(%s)&lt;/span&gt;</li>
+  <li>Falta verificar &lt;span class="count"&gt;(%s)&lt;/span&gt;</li>
+</ol>
+</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search for a product&amp;hellip;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Related products are displayed on the product detail page.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Please add some widgets here!</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Post navigation</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>Previous post link</span>&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;&amp;nbsp;%title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>Next post link</span>%title&amp;nbsp;&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Terms are remaining</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Filter Featured</td>
+<td class='tra'  lang='es-ES'>
+Filtrar destacados</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Featured</td>
+<td class='tra'  lang='es-ES'>
+Destacado</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Not Featured</td>
+<td class='tra'  lang='es-ES'>
+No destacado</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select a user role</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Downloads</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Videos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Size guide</td>
+<td class='tra'  lang='es-ES'>
+Gaia de talles</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Specs</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add Image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Remove Image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Banner</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Description</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Phone number</td>
+<td class='tra'  lang='es-ES'>
+Teléfono</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Shipping Date</td>
+<td class='tra'  lang='es-ES'>
+Fecha de envío</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FAQ Articles</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+All FAQs</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add New</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add New FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Edit FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+View FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search FAQ</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No FAQ found</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No FAQ found in Trash</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Category</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search Categories</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+All Categories</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Parent Category</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Parent Category:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Edit Category</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Update Category</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add New Category</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New Category Name</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+All Reviews</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add New Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Edit Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+View Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search Review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No Review found</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No Review found in Trash</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Styling</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Layouts</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Settings</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Labels</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+General</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Email</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Images</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mercadolibre</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Scripts</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+SEO</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Layouts</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Buttons</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Color Scheme</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Typography</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Preset</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile Header</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Product Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Category Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Single Product</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Brand Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Review Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Footer</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Other styles</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Loggedd In</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Admins</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Accounts</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Payments</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cart</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shipping</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Checkout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Thank you page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog labels</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Actions</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Blog</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Woocommerce</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Post Page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search Page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Discounts</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cart </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Checkout </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+TodoPago Label</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+TodoPago Descripción</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ePosnet Label</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ePosnet Descripción</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Checkout message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dejale un mensaje de regalo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Leave a gift message</td>
+<td class='tra'  lang='es-ES'>
+Dedicatoria</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Comentarios adicionales (placeholder)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Continuar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Aplicar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Agregar más productos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No hay productos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Acepto los</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Términos y Condiciones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo - Tu cuenta</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo -  Tus datos</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo -  Datos de facturación</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo -  Datos de envío</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enviar a otra dirección (checkbox)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo - ¿Cómo te entregamos la compra?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+titulo - ¿Cómo vas a pagar?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Seleccioná el botón que corresponda.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Iniciar sesión</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cerrar sesión</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Loading...</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ingresá a tu cuenta</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+¿Ya tenés una cuenta?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+¿Olvidaste tu constraseña?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+modificar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Volver</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+¿Aún no tenés cuenta?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Compra Segura</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+100% Protegido</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Read more label</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Gracias por tu compra</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+El pedido fue registrado con número</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Te enviamos un mail a </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+con el detalle y las instrucciones de como seguir.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Seguir comprando</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Default border radius</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Boxed</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Wide </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Left Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Right Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Both Sidebars</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Full Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Main layout: wide or boxed</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sidebars Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Pages Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Product Page Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Footer Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog Page Header Section</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select an option</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sidebar Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+News Per Page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Columns</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Blog Page </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Date data</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Author data</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Featured Image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Post Page </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Forms</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Favicon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Social Media Image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dark Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Replaces general logo on mobile.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Email Logo</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile App Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Meta Tags</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Social Tags</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Meta Description</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Keywords</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Textarea Control</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+This is a default value</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Default class</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Deactivate Sticky</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Top</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Middle</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Bottom</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Floating Transparent</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Padding</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Icons Size</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Logo Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Activar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ID Mercadolibre </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+App Id </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+App Secret </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Descontar stock web-&gt;ml (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Descontar stock ml-&gt;web (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Init Woocommerce</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Init Mayorista</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Reset Mails</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Client Area Images</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+INFO</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Nombre que aparece para mails</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Email para recibir notificaciones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Desde donde</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Desde que mail</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+bcc default</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile Logo Width</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mobile Header Icons Size</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Padding Mobile</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Mobile Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Mobile</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mega Menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mega Menu Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+2 cols</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+3 cols</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+4 cols</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Overlay</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Header</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Primary background color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Primary color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Primary background color (hover)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Primary color (hover) </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary background color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary background color (hover)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary color (hover) </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary Color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Icons</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Top Header </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Middle Header </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Header Sticky Color </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Bottom Header </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Body Background</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Background </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Footer </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Copyright </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dark Mode Body</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Menu Dark Mode</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Responsive Typo </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Quicklinks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CTAs</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Redirect Mobile</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Multitienda</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop State</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Normal</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Compras Off</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Solo consultas</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Link boton consultar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Min Purchase</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Min Re-Purchase</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cross Sells</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Price Suffix</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Currency Symbol</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Seguir comprando url</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Prices</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Show</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Logged In</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Hide</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Purchases</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+DNI Obligatorio</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Campos Regalo (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Terminos y condiciones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Vender a empresas</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Extra campo dirección</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shipping Groups (CR)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Background Color</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+General message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Secondary message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Welcome message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sold Individually</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Extra Taxonomias</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Extra roles</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS For Roles </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Products Per Page</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Columns</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Page Header Section</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Hide cates</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Shop Page </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 1</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 2</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 3</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 4</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 5</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Box 6</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Calculate Only Mercadoenvios</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Default shipping paramaters</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Show only Free Shipping</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Layout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Pestaña espeficiaciones (medidas)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mostrar medidas tabla specs</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Related Columns</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Single Product Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Single Product</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Static Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Footer</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Show Footer Copyright</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Footer Copyright HTML</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Not all headers have Header Widget</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Main Navigation</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+H1</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+H2</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+H3</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+H4</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Body</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Product Loop Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Product Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Category Loop Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Category Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Blog Loop Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Blog Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Review Loop Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Review Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Brand Loop Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Brand Loop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Name</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="name"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Phone</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="phone"]&lt;br&gt;*El tel: se pone solo </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Address</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="address"] </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Email</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="email"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Facebook</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="fb"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Instagram</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="ig"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Linkedin</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="linkedin"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Youtube</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="youtube"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Company Twitter Url</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+[fw_data type="twitter"]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Maintainance Mode</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Max Media Size Upload (500KB)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Under Maintainance/Construction Html</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Dark Logo on Sticky</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Html</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+HTML</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Popup Img</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Link</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Form</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Form ID</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Size</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+404 Html</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Google Site Verif. ID</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Analyitics ID</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Facebook Pixel ID</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Google Tag Manager (Global)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ Tag Manager Conversion ID (Checkout)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+JS Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Paste your JS code here.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Insert Scripts Header</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Insert Scripts Footer</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Thank You Page Code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Descuento Tienda</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+%</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Categories Exclude</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Exclude Products</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+2-Lili Discount (Buy X Get X)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Categories Include</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cantidad minima</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Admite cupones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Porcentage en numeros</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ajax Search</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search by sku</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Exclude uncategorized</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Logged In</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS Admin</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Out of Stock Label</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Agotado</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Selector stock</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Seleccionar cantidad</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ver detalle (Loop)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ver detalle</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add to cart (Loop)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Agregar al carrito</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Vaciar carrito</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Boton al checkout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Envío gratis/0</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Extra Campo dirección</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Envío</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Retirar en una de nuestras sucursales</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ver opciones</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Costos del envío</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Finalizar Compra</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ir al carrito</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mi pedido</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Login Text</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mi Cuenta </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+BIENVENIDO A</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+VER PRODUCTOS</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Productos Relacionados</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Quienes vieron este producto también compraron</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search Placeholder</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sale Message</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Llamar ahora</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Consultar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Calcular cuotas</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Calcular envio</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mensage debajo del boton comprar (checkout)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Order By</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Order by woo products dropdown</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Title:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Product Count</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Count woo products </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Widget</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Woo Breadcrumb</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Category breadcrumb </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Price </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Blog Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Prods per row </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Max Quantiy</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Element ID</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enter element ID (Note: make sure it is unique and valid according to &lt;a href="%s" target="_blank"&gt;w3c specification&lt;/a&gt;).</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Extra class name</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Style particular content element differently - add a class name and refer to it in custom CSS.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+CSS box</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Design Options</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Reviews</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+Fastway</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+Theme Name of the plugin/theme<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cols</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Space</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Delay</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Delay in miliseconds</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Image Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Links (separados con ,)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Image Slider</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Desktop</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+1600 recommended width in PX</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Links (separated with ,)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+600x275 recomended</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Speed</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Speed in seconds, for transtitions</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+If empty, shows desktop, if not , priorizes mobile image</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Link Type</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Text Type</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sub Title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Static Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Data Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Icons</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Type</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Alignment</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Cant</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+iframe</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Social Icons</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Social Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Button</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Buttons</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Icon</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Text</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+FW Icon Only</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Image size</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)). Leave parameter empty to use "thumbnail" by default.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Image alignment</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Left</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Right</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Center</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select image alignment.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Height</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Row stretch</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Default</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Stretch row</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Stretch row and content</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Stretch row and content (no paddings)</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Select stretching options for row and content (Note: stretched may not work properly if parent container has "overflow: hidden" CSS property</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Products by Category Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Carousel of products</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Fastway Products</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Products by Brand Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Brands</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Hide Uncategorized </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Slider</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Categories Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Hide Empty </td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Brands Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Carousel of brands</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Featured Products Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sale Products Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Best Selling Products Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Recent Products Carousel</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Free Shipping Per Product</td>
+<td class='tra'  lang='es-ES'>
+Envío gratis por producto</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Free Shipping</td>
+<td class='tra'  lang='es-ES'>
+Envío Gratis</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Method Title</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+The method name at Checkout.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Hide other methods</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i fuzzy'>
+<td class='src'  lang='en'>
+Hide other shipping methods if free shipping is available</td>
+<td class='tra'  lang='es-ES'>
+No hay métodos de envío disponibles</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Free Shipping per Product Settings</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>post type general name</span>Static blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>post type singular name</span>Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>admin menu</span>Static Blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>add new on admin bar</span>Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>static block</span>Add New</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add New Static Blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Edit Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+View Block</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Static Blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search Static Blocks</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Parent Static Blocks:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No Static blocks found.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No Static blocks found in Trash.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+--Select--</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Position</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Date</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Mega menu</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Standard</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+&amp;laquo;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+&amp;raquo;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Posts navigation</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog Right Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Blog Left Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Right Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shop Left Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Single Product Right Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Single Product Left Sidebar</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Single Product Summary</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Nothing Found</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Ready to publish your first post? &lt;a href="%1$s"&gt;Get started here&lt;/a&gt;.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sorry, but nothing matched your search terms. Please try again with some different keywords.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+It seems we can&amp;rsquo;t find what you&amp;rsquo;re looking for. Perhaps searching can help.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Pages:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Edit</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+Search Results for: %s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+translators:<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Search &amp;hellip;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shipping to %s.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Change address</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shipping options will be updated during checkout.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Shipping costs are calculated during checkout.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enter your address to view shipping options.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+No shipping options available</td>
+<td class='tra'  lang='es-ES'>
+No hay métodos de envío disponibles</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+No shipping options were found for %s.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enter a different address</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Proceed to checkout</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+You must be logged in to checkout.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Coupon code</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Update totals</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Please fill in your details above to see available payment methods.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Product</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Subtotal</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Total</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Pay</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+My account</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Thank you. Your order has been received.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+[Order #%s]</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+translators: %s: Order ID.<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Price</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Note:</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+ <span class='msgctxt'>submit button</span>Search</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Login</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Username or email address</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Password</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Remember me</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Log in</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Lost your password?</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Register</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Username</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Email address</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+A password will be sent to your email address.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Username or email</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Enter a new password below.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+New password</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Re-enter new password</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Save</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Add a review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Be the first to review &amp;ldquo;%s&amp;rdquo;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Leave a Reply to %s</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Name</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Submit</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+You must be &lt;a href="%s"&gt;logged in&lt;/a&gt; to post a review.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Your rating</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Rate&amp;hellip;</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Perfect</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Good</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Average</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Not that bad</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Very poor</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Your review</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans'>
+<td class='src'  lang='en'>
+Only logged in customers who have purchased this product may leave a review.</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+https://www.fastwaythemes.com/</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+Theme URI of the plugin/theme<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+FW</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+Description of the plugin/theme<br>
+</p>
+</div></td>
+</tr>
+<tr class='i untrans with-comments'>
+<td class='src'  lang='en'>
+Fabrizio Guespe</td>
+<td class='tra'  lang='es-ES'>
+</td>
+</tr>
+<tr class='comments'>
+  <td colspan='2'><div><p>
+Author of the plugin/theme<br>
+</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

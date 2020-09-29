@@ -278,6 +278,7 @@ function get_bacs_account_details_html( $echo = true, $type = 'list' ) {
 
 //VERFW
 
+add_shortcode('bank_info','altoweb_bancos');
 add_shortcode('altoweb_bancos','altoweb_bancos');
 function altoweb_bancos(){
     return get_bacs_account_details_html();

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2020-09-25 16:04-0300\n"
-"PO-Revision-Date: 2020-09-25 16:05-0300\n"
+"POT-Creation-Date: 2020-09-29 08:39-0300\n"
+"PO-Revision-Date: 2020-09-29 08:39-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -88,27 +88,27 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:307
+#: functions.php:311
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:312
 msgid "Vertical Menu"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:313
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:314
 msgid "Bottom Mobile Menu"
 msgstr ""
 
-#: functions.php:389
+#: functions.php:393
 msgid "File Size"
 msgstr ""
 
-#: functions.php:476 functions.php:478
+#: functions.php:480 functions.php:482
 msgid "You do not have permission to edit this user."
 msgstr ""
 
@@ -257,234 +257,244 @@ msgid "Columna Precio Mayorista"
 msgstr ""
 
 #: functions/client-area/client-area.php:81
-#: functions/client-area/client-area.php:92
-#: functions/client-area/client-area.php:122
-#: functions/client-area/client-area.php:133
-#: functions/client-area/client-area.php:145
-#: functions/client-area/client-area.php:157
-#: functions/client-area/client-area.php:169
-#: functions/client-area/client-area.php:182
-#: functions/client-area/client-area.php:194
-#: functions/client-area/client-area.php:207
-#: functions/client-area/client-area.php:220
-#: functions/client-area/client-area.php:233
-#: functions/client-area/client-area.php:252
-#: functions/client-area/client-area.php:256 functions/fw-theme-options.php:831
+#: functions/client-area/client-area.php:95
+#: functions/client-area/client-area.php:113
+#: functions/client-area/client-area.php:143
+#: functions/client-area/client-area.php:154
+#: functions/client-area/client-area.php:166
+#: functions/client-area/client-area.php:178
+#: functions/client-area/client-area.php:190
+#: functions/client-area/client-area.php:203
+#: functions/client-area/client-area.php:215
+#: functions/client-area/client-area.php:228
+#: functions/client-area/client-area.php:241
+#: functions/client-area/client-area.php:254
+#: functions/client-area/client-area.php:273
+#: functions/client-area/client-area.php:277 functions/fw-theme-options.php:831
 #: functions/fw-theme-options.php:910 functions/fw-theme-options.php:921
 #: functions/fw-theme-options.php:933 functions/fw-theme-options.php:945
 #: functions/fw-theme-options.php:1042 functions/fw-theme-options.php:1054
-#: functions/fw-theme-options.php:1282 functions/fw-theme-options.php:1370
-#: functions/fw-theme-options.php:1412 functions/fw-theme-options.php:1423
-#: functions/fw-theme-options.php:1440 functions/fw-theme-options.php:1452
-#: functions/fw-theme-options.php:1465 functions/fw-theme-options.php:1480
-#: functions/fw-theme-options.php:1700 functions/fw-theme-options.php:1724
-#: functions/fw-theme-options.php:2166 functions/fw-theme-options.php:2180
-#: functions/fw-theme-options.php:2192 functions/fw-theme-options.php:2203
-#: functions/fw-theme-options.php:2224 functions/fw-theme-options.php:2261
-#: functions/fw-theme-options.php:2314 functions/fw-theme-options.php:2412
-#: functions/fw-theme-options.php:2425 functions/fw-theme-options.php:2437
-#: functions/fw-theme-options.php:2450 functions/fw-theme-options.php:2463
-#: functions/fw-theme-options.php:2477 functions/fw-theme-options.php:2577
-#: functions/fw-theme-options.php:2725 functions/fw-theme-options.php:2770
-#: functions/fw-theme-options.php:2803 functions/fw-theme-options.php:2848
-#: functions/fw-theme-options.php:2884 functions/fw-theme-options.php:2918
-#: functions/fw-theme-options.php:2953 functions/fw-theme-options.php:2966
-#: functions/fw-theme-options.php:2979 functions/fw-theme-options.php:2990
-#: functions/fw-theme-options.php:3025 functions/fw-theme-options.php:3058
-#: functions/fw-theme-options.php:3092 functions/fw-theme-options.php:3127
-#: functions/fw-theme-options.php:3163 functions/fw-theme-options.php:3209
-#: functions/fw-theme-options.php:3221 functions/fw-theme-options.php:3325
-#: functions/fw-theme-options.php:3901 functions/fw-theme-options.php:3933
-#: functions/fw-theme-options.php:3991 functions/fw-theme-options.php:4141
-#: functions/fw-theme-options.php:4183 functions/fw-theme-options.php:4208
-#: functions/fw-theme-options.php:4227 functions/fw-theme-options.php:4238
-#: functions/fw-theme-options.php:4249
+#: functions/fw-theme-options.php:1129 functions/fw-theme-options.php:1217
+#: functions/fw-theme-options.php:1259 functions/fw-theme-options.php:1270
+#: functions/fw-theme-options.php:1287 functions/fw-theme-options.php:1299
+#: functions/fw-theme-options.php:1312 functions/fw-theme-options.php:1327
+#: functions/fw-theme-options.php:1547 functions/fw-theme-options.php:1571
+#: functions/fw-theme-options.php:2013 functions/fw-theme-options.php:2027
+#: functions/fw-theme-options.php:2039 functions/fw-theme-options.php:2050
+#: functions/fw-theme-options.php:2071 functions/fw-theme-options.php:2108
+#: functions/fw-theme-options.php:2161 functions/fw-theme-options.php:2259
+#: functions/fw-theme-options.php:2272 functions/fw-theme-options.php:2285
+#: functions/fw-theme-options.php:2298 functions/fw-theme-options.php:2311
+#: functions/fw-theme-options.php:2325 functions/fw-theme-options.php:2425
+#: functions/fw-theme-options.php:2573 functions/fw-theme-options.php:2618
+#: functions/fw-theme-options.php:2651 functions/fw-theme-options.php:2696
+#: functions/fw-theme-options.php:2732 functions/fw-theme-options.php:2766
+#: functions/fw-theme-options.php:2801 functions/fw-theme-options.php:2814
+#: functions/fw-theme-options.php:2827 functions/fw-theme-options.php:2838
+#: functions/fw-theme-options.php:2873 functions/fw-theme-options.php:2906
+#: functions/fw-theme-options.php:2940 functions/fw-theme-options.php:2975
+#: functions/fw-theme-options.php:3011 functions/fw-theme-options.php:3057
+#: functions/fw-theme-options.php:3069 functions/fw-theme-options.php:3173
+#: functions/fw-theme-options.php:3749 functions/fw-theme-options.php:3781
+#: functions/fw-theme-options.php:3839 functions/fw-theme-options.php:3989
+#: functions/fw-theme-options.php:4031 functions/fw-theme-options.php:4056
+#: functions/fw-theme-options.php:4075 functions/fw-theme-options.php:4086
+#: functions/fw-theme-options.php:4097
 msgid "Enable"
 msgstr ""
 
 #: functions/client-area/client-area.php:82
-#: functions/client-area/client-area.php:93
-#: functions/client-area/client-area.php:123
-#: functions/client-area/client-area.php:134
-#: functions/client-area/client-area.php:146
-#: functions/client-area/client-area.php:158
-#: functions/client-area/client-area.php:170
-#: functions/client-area/client-area.php:183
-#: functions/client-area/client-area.php:195
-#: functions/client-area/client-area.php:208
-#: functions/client-area/client-area.php:221
-#: functions/client-area/client-area.php:234
-#: functions/client-area/client-area.php:257 functions/fw-theme-options.php:832
+#: functions/client-area/client-area.php:94
+#: functions/client-area/client-area.php:114
+#: functions/client-area/client-area.php:144
+#: functions/client-area/client-area.php:155
+#: functions/client-area/client-area.php:167
+#: functions/client-area/client-area.php:179
+#: functions/client-area/client-area.php:191
+#: functions/client-area/client-area.php:204
+#: functions/client-area/client-area.php:216
+#: functions/client-area/client-area.php:229
+#: functions/client-area/client-area.php:242
+#: functions/client-area/client-area.php:255
+#: functions/client-area/client-area.php:278 functions/fw-theme-options.php:832
 #: functions/fw-theme-options.php:911 functions/fw-theme-options.php:922
 #: functions/fw-theme-options.php:934 functions/fw-theme-options.php:946
 #: functions/fw-theme-options.php:1043 functions/fw-theme-options.php:1055
-#: functions/fw-theme-options.php:1283 functions/fw-theme-options.php:1371
-#: functions/fw-theme-options.php:1413 functions/fw-theme-options.php:1424
-#: functions/fw-theme-options.php:1441 functions/fw-theme-options.php:1453
-#: functions/fw-theme-options.php:1466 functions/fw-theme-options.php:1481
-#: functions/fw-theme-options.php:1701 functions/fw-theme-options.php:1725
-#: functions/fw-theme-options.php:2167 functions/fw-theme-options.php:2181
-#: functions/fw-theme-options.php:2193 functions/fw-theme-options.php:2204
-#: functions/fw-theme-options.php:2225 functions/fw-theme-options.php:2260
-#: functions/fw-theme-options.php:2313 functions/fw-theme-options.php:2411
-#: functions/fw-theme-options.php:2424 functions/fw-theme-options.php:2436
-#: functions/fw-theme-options.php:2449 functions/fw-theme-options.php:2462
-#: functions/fw-theme-options.php:2476 functions/fw-theme-options.php:2578
-#: functions/fw-theme-options.php:2726 functions/fw-theme-options.php:2771
-#: functions/fw-theme-options.php:2804 functions/fw-theme-options.php:2849
-#: functions/fw-theme-options.php:2885 functions/fw-theme-options.php:2919
-#: functions/fw-theme-options.php:2954 functions/fw-theme-options.php:2967
-#: functions/fw-theme-options.php:2980 functions/fw-theme-options.php:2991
-#: functions/fw-theme-options.php:3026 functions/fw-theme-options.php:3059
-#: functions/fw-theme-options.php:3093 functions/fw-theme-options.php:3128
-#: functions/fw-theme-options.php:3164 functions/fw-theme-options.php:3210
-#: functions/fw-theme-options.php:3222 functions/fw-theme-options.php:3326
-#: functions/fw-theme-options.php:3902 functions/fw-theme-options.php:3934
-#: functions/fw-theme-options.php:3946 functions/fw-theme-options.php:3992
-#: functions/fw-theme-options.php:4142 functions/fw-theme-options.php:4184
-#: functions/fw-theme-options.php:4209 functions/fw-theme-options.php:4228
-#: functions/fw-theme-options.php:4239 functions/fw-theme-options.php:4250
+#: functions/fw-theme-options.php:1130 functions/fw-theme-options.php:1218
+#: functions/fw-theme-options.php:1260 functions/fw-theme-options.php:1271
+#: functions/fw-theme-options.php:1288 functions/fw-theme-options.php:1300
+#: functions/fw-theme-options.php:1313 functions/fw-theme-options.php:1328
+#: functions/fw-theme-options.php:1548 functions/fw-theme-options.php:1572
+#: functions/fw-theme-options.php:2014 functions/fw-theme-options.php:2028
+#: functions/fw-theme-options.php:2040 functions/fw-theme-options.php:2051
+#: functions/fw-theme-options.php:2072 functions/fw-theme-options.php:2107
+#: functions/fw-theme-options.php:2160 functions/fw-theme-options.php:2258
+#: functions/fw-theme-options.php:2271 functions/fw-theme-options.php:2284
+#: functions/fw-theme-options.php:2297 functions/fw-theme-options.php:2310
+#: functions/fw-theme-options.php:2324 functions/fw-theme-options.php:2426
+#: functions/fw-theme-options.php:2574 functions/fw-theme-options.php:2619
+#: functions/fw-theme-options.php:2652 functions/fw-theme-options.php:2697
+#: functions/fw-theme-options.php:2733 functions/fw-theme-options.php:2767
+#: functions/fw-theme-options.php:2802 functions/fw-theme-options.php:2815
+#: functions/fw-theme-options.php:2828 functions/fw-theme-options.php:2839
+#: functions/fw-theme-options.php:2874 functions/fw-theme-options.php:2907
+#: functions/fw-theme-options.php:2941 functions/fw-theme-options.php:2976
+#: functions/fw-theme-options.php:3012 functions/fw-theme-options.php:3058
+#: functions/fw-theme-options.php:3070 functions/fw-theme-options.php:3174
+#: functions/fw-theme-options.php:3750 functions/fw-theme-options.php:3782
+#: functions/fw-theme-options.php:3794 functions/fw-theme-options.php:3840
+#: functions/fw-theme-options.php:3990 functions/fw-theme-options.php:4032
+#: functions/fw-theme-options.php:4057 functions/fw-theme-options.php:4076
+#: functions/fw-theme-options.php:4087 functions/fw-theme-options.php:4098
 msgid "Disable"
 msgstr ""
 
-#: functions/client-area/client-area.php:88
+#: functions/client-area/client-area.php:89
+msgid "Comprobantes de transferencia (CR)"
+msgstr ""
+
+#: functions/client-area/client-area.php:101
+msgid "ID del form"
+msgstr ""
+
+#: functions/client-area/client-area.php:109
 msgid "Columna Rol En Pedidos"
 msgstr ""
 
-#: functions/client-area/client-area.php:100
+#: functions/client-area/client-area.php:121
 msgid "Mandar cuenta a sendy"
 msgstr ""
 
-#: functions/client-area/client-area.php:108
+#: functions/client-area/client-area.php:129
 msgid "Mandar forms a sendy"
 msgstr ""
 
-#: functions/client-area/client-area.php:118
+#: functions/client-area/client-area.php:139
 msgid "Descuento productos"
 msgstr ""
 
-#: functions/client-area/client-area.php:129
+#: functions/client-area/client-area.php:150
 msgid "Cupones"
 msgstr ""
 
-#: functions/client-area/client-area.php:141
+#: functions/client-area/client-area.php:162
 #: functions/client-area/fw-dashboard.php:42 functions/fw-theme-options.php:78
-#: functions/fw-theme-options.php:3941
+#: functions/fw-theme-options.php:3789
 msgid "Popup"
 msgstr ""
 
-#: functions/client-area/client-area.php:153
+#: functions/client-area/client-area.php:174
 msgid "Estado del sitio"
 msgstr ""
 
-#: functions/client-area/client-area.php:165
+#: functions/client-area/client-area.php:186
 msgid "Lili Discount (CR)"
 msgstr ""
 
-#: functions/client-area/client-area.php:178
-#: functions/fw-theme-options.php:2524
+#: functions/client-area/client-area.php:199
+#: functions/fw-theme-options.php:2372
 msgid "Cuotas Todopago"
 msgstr "Cuotas Todopago"
 
-#: functions/client-area/client-area.php:190
-#: functions/fw-theme-options.php:2533
+#: functions/client-area/client-area.php:211
+#: functions/fw-theme-options.php:2381
 msgid "Cuotas General"
 msgstr ""
 
-#: functions/client-area/client-area.php:202
+#: functions/client-area/client-area.php:223
 msgid "Mensaje General"
 msgstr ""
 
-#: functions/client-area/client-area.php:215
+#: functions/client-area/client-area.php:236
 msgid "Mensaje Secundario "
 msgstr ""
 
-#: functions/client-area/client-area.php:228
+#: functions/client-area/client-area.php:249
 msgid "Support Widget"
 msgstr ""
 
-#: functions/client-area/client-area.php:244
+#: functions/client-area/client-area.php:265
 msgid "Login Logo"
 msgstr ""
 
-#: functions/client-area/client-area.php:245
+#: functions/client-area/client-area.php:266
 msgid ""
 "No hay necesidad de ponerlo ya que toma el logo general, si se pone algo lo "
 "sobreescribe."
 msgstr ""
 
-#: functions/client-area/client-area.php:264
+#: functions/client-area/client-area.php:285
 msgid "Allowed Roles"
 msgstr ""
 
-#: functions/client-area/client-area.php:273
+#: functions/client-area/client-area.php:294
 msgid "Allowed Users"
 msgstr ""
 
-#: functions/client-area/client-area.php:281
-#: functions/fw-theme-options.php:1935 functions/fw-theme-options.php:2484
+#: functions/client-area/client-area.php:302
+#: functions/fw-theme-options.php:1782 functions/fw-theme-options.php:2332
 msgid "Main Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:292
+#: functions/client-area/client-area.php:313
 msgid "Text Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:303
+#: functions/client-area/client-area.php:324
 msgid "Icon Color"
 msgstr ""
 
-#: functions/client-area/client-area.php:315
+#: functions/client-area/client-area.php:336
 msgid "Developer Logo"
 msgstr ""
 
-#: functions/client-area/client-area.php:323
+#: functions/client-area/client-area.php:344
 msgid "Top Left Icon"
 msgstr ""
 
-#: functions/client-area/client-area.php:337
+#: functions/client-area/client-area.php:358
 msgid "Default Home"
 msgstr ""
 
-#: functions/client-area/client-area.php:346
+#: functions/client-area/client-area.php:367
 msgid "Client Area Custom CSS"
 msgstr ""
 
-#: functions/client-area/client-area.php:363
+#: functions/client-area/client-area.php:384
 msgid "Company Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:364
+#: functions/client-area/client-area.php:385
 msgid ""
 "[fw_data type=\"whatsapp\"] empezar con 549, sin el + [fw_data type="
 "\"whatsapp\"] Ej: 11 54 999 795 (5491154999795)"
 msgstr ""
 
-#: functions/client-area/client-area.php:373
+#: functions/client-area/client-area.php:394
 msgid "Whats Label"
 msgstr ""
 
-#: functions/client-area/client-area.php:382
+#: functions/client-area/client-area.php:403
 msgid "Share Message"
 msgstr ""
 
-#: functions/client-area/client-area.php:389
+#: functions/client-area/client-area.php:410
 msgid "Button Menu Whatsapp"
 msgstr ""
 
-#: functions/client-area/client-area.php:396
+#: functions/client-area/client-area.php:417
 msgid "Whatsapp Widget"
 msgstr ""
 
-#: functions/client-area/client-area.php:438
+#: functions/client-area/client-area.php:459
 msgid "Client Area Menu ("
 msgstr ""
 
-#: functions/client-area/client-area.php:478 inc/widgets.php:110
+#: functions/client-area/client-area.php:499 inc/widgets.php:110
 msgid "Dashboard"
 msgstr ""
 
-#: functions/client-area/client-area.php:494
+#: functions/client-area/client-area.php:515
 msgid "Salir"
 msgstr ""
 
@@ -493,7 +503,7 @@ msgid "Site Status"
 msgstr "Estado del sitio"
 
 #: functions/client-area/fw-dashboard.php:18
-#: functions/fw-theme-options.php:2338
+#: functions/fw-theme-options.php:2185
 msgid "Currency Conversion"
 msgstr ""
 
@@ -555,11 +565,11 @@ msgid "Disabled"
 msgstr "Desactivar"
 
 #: functions/client-area/fw-dashboard.php:130
-#: functions/fw-extra-woo-functions.php:1037
-#: functions/fw-extra-woo-functions.php:1066
-#: functions/fw-extra-woo-functions.php:1177
-#: functions/fw-extra-woo-functions.php:1317
-#: functions/fw-theme-options.php:3947
+#: functions/fw-extra-woo-functions.php:1044
+#: functions/fw-extra-woo-functions.php:1073
+#: functions/fw-extra-woo-functions.php:1184
+#: functions/fw-extra-woo-functions.php:1324
+#: functions/fw-theme-options.php:3795
 msgid "Image"
 msgstr "Imagen"
 
@@ -616,7 +626,7 @@ msgstr "Descuento (%)"
 #: functions/client-area/fw-dashboard.php:213
 #: functions/client-area/metabox.php:28 functions/fw-faq.php:34
 #: functions/fw-faq.php:45 functions/fw-review.php:33
-#: functions/fw-review.php:44 functions/fw-theme-options.php:4156
+#: functions/fw-review.php:44 functions/fw-theme-options.php:4004
 #: functions/vc_customs/vc_woo_carousels.php:55
 #: functions/vc_customs/vc_woo_carousels.php:169
 #: functions/vc_customs/vc_woo_carousels.php:267
@@ -768,6 +778,7 @@ msgid "Shipping Methods"
 msgstr "Medios de Envío"
 
 #: functions/client-area/fw-dashboard.php:564
+#: functions/emails/fw-email-settings-page.php:174
 #: functions/fw-theme-options.php:329
 msgid "Payment Methods"
 msgstr "Medios de Pago"
@@ -934,62 +945,90 @@ msgstr ""
 msgid "Add to Menu"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:265
+#: functions/emails/fw-email-settings-page.php:171
+msgid "Docs"
+msgstr ""
+
+#: functions/emails/fw-email-settings-page.php:172
+msgid "Variables"
+msgstr ""
+
+#: functions/emails/fw-email-settings-page.php:174
+#: functions/emails/fw-email-settings-page.php:181
+msgid "values"
+msgstr ""
+
+#: functions/emails/fw-email-settings-page.php:181
+#: functions/fw-theme-options.php:364
+msgid "Roles"
+msgstr ""
+
+#: functions/emails/fw-email-settings-page.php:276
 msgid "New Account"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:266
+#: functions/emails/fw-email-settings-page.php:277
 msgid ""
 "Customer \"new account\" emails are sent to the customer when a customer "
 "signs up via checkout or account pages."
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:276
+#: functions/emails/fw-email-settings-page.php:287
 #: woocommerce/myaccount/form-lost-password.php:40
 msgid "Reset password"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:277
+#: functions/emails/fw-email-settings-page.php:288
 msgid ""
 "Customer \"reset password\" emails are sent when customers reset their "
 "passwords."
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:299
+#: functions/emails/fw-email-settings-page.php:310
 msgid "Processing order"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:300
+#: functions/emails/fw-email-settings-page.php:311
 msgid ""
 "This is an order notification sent to customers containing order details "
 "after payment."
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:309
+#: functions/emails/fw-email-settings-page.php:320
 msgid "Completed order"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:310
+#: functions/emails/fw-email-settings-page.php:321
 msgid ""
 "Order complete emails are sent to customers when their orders are marked "
 "completed and usually indicate that their orders have been shipped."
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:319
+#: functions/emails/fw-email-settings-page.php:330
 msgid "Order on-hold"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:320
+#: functions/emails/fw-email-settings-page.php:331
 msgid ""
 "This is an order notification sent to customers containing order details "
 "after an order is placed on_hold."
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:354
+#: functions/emails/fw-email-settings-page.php:344
+msgid "Verification pending"
+msgstr "Falta verificar"
+
+#: functions/emails/fw-email-settings-page.php:345
+msgid ""
+"This is an order notification sent to customers containing information about "
+"uploading the file."
+msgstr ""
+
+#: functions/emails/fw-email-settings-page.php:380
 msgid "New order"
 msgstr ""
 
-#: functions/emails/fw-email-settings-page.php:355
+#: functions/emails/fw-email-settings-page.php:381
 msgid ""
 "New order emails are sent to chosen recipient(s) when a new order is "
 "received."
@@ -1011,8 +1050,8 @@ msgstr ""
 msgid "Login successful, redirecting..."
 msgstr ""
 
-#: functions/fw-ajax-woo-functions.php:351
-#: functions/fw-ajax-woo-functions.php:361
+#: functions/fw-ajax-woo-functions.php:369
+#: functions/fw-ajax-woo-functions.php:379
 msgid "Choose an option"
 msgstr ""
 
@@ -1028,6 +1067,20 @@ msgctxt "fastway"
 msgid "%s"
 msgstr ""
 
+#: functions/fw-change-requests.php:169
+#, php-format
+msgid "Esperando confirmación (%s)"
+msgid_plural "Esperando confirmación (%s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/fw-change-requests.php:192
+#, php-format
+msgid "Falta verificar <span class=\"count\">(%s)</span>"
+msgid_plural "Falta verificar <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
 #: functions/fw-custom-related.php:37 functions/fw-custom-related.php:50
 #: functions/fw-custom-related.php:64
 msgid "Search for a product&hellip;"
@@ -1038,20 +1091,20 @@ msgstr ""
 msgid "Related products are displayed on the product detail page."
 msgstr ""
 
-#: functions/fw-extra-functions.php:643
+#: functions/fw-extra-functions.php:649
 msgid "Please add some widgets here!"
 msgstr ""
 
-#: functions/fw-extra-functions.php:741
+#: functions/fw-extra-functions.php:747
 msgid "Post navigation"
 msgstr ""
 
-#: functions/fw-extra-functions.php:746
+#: functions/fw-extra-functions.php:752
 msgctxt "Previous post link"
 msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
 msgstr ""
 
-#: functions/fw-extra-functions.php:749
+#: functions/fw-extra-functions.php:755
 msgctxt "Next post link"
 msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
 msgstr ""
@@ -1060,71 +1113,71 @@ msgstr ""
 msgid "Terms are remaining"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:542
+#: functions/fw-extra-woo-functions.php:549
 msgid "Filter Featured"
 msgstr "Filtrar destacados"
 
-#: functions/fw-extra-woo-functions.php:546
+#: functions/fw-extra-woo-functions.php:553
 msgid "Featured"
 msgstr "Destacado"
 
-#: functions/fw-extra-woo-functions.php:550
+#: functions/fw-extra-woo-functions.php:557
 msgid "Not Featured"
 msgstr "No destacado"
 
-#: functions/fw-extra-woo-functions.php:773
+#: functions/fw-extra-woo-functions.php:780
 msgid "Select a user role"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:870
+#: functions/fw-extra-woo-functions.php:877
 msgid "Downloads"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:896
-#: functions/fw-extra-woo-functions.php:914
+#: functions/fw-extra-woo-functions.php:903
+#: functions/fw-extra-woo-functions.php:921
 msgid "Videos"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:922
+#: functions/fw-extra-woo-functions.php:929
 msgid "Size guide"
 msgstr "Gaia de talles"
 
-#: functions/fw-extra-woo-functions.php:1005
+#: functions/fw-extra-woo-functions.php:1012
 msgid "Specs"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1041
-#: functions/fw-extra-woo-functions.php:1077
-#: functions/fw-extra-woo-functions.php:1181
-#: functions/fw-extra-woo-functions.php:1217
-#: functions/fw-extra-woo-functions.php:1321
-#: functions/fw-extra-woo-functions.php:1357
+#: functions/fw-extra-woo-functions.php:1048
+#: functions/fw-extra-woo-functions.php:1084
+#: functions/fw-extra-woo-functions.php:1188
+#: functions/fw-extra-woo-functions.php:1224
+#: functions/fw-extra-woo-functions.php:1328
+#: functions/fw-extra-woo-functions.php:1364
 msgid "Add Image"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1042
-#: functions/fw-extra-woo-functions.php:1078
-#: functions/fw-extra-woo-functions.php:1182
-#: functions/fw-extra-woo-functions.php:1218
-#: functions/fw-extra-woo-functions.php:1322
-#: functions/fw-extra-woo-functions.php:1358
+#: functions/fw-extra-woo-functions.php:1049
+#: functions/fw-extra-woo-functions.php:1085
+#: functions/fw-extra-woo-functions.php:1189
+#: functions/fw-extra-woo-functions.php:1225
+#: functions/fw-extra-woo-functions.php:1329
+#: functions/fw-extra-woo-functions.php:1365
 msgid "Remove Image"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1206
-#: functions/fw-extra-woo-functions.php:1346
+#: functions/fw-extra-woo-functions.php:1213
+#: functions/fw-extra-woo-functions.php:1353
 msgid "Banner"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1622
+#: functions/fw-extra-woo-functions.php:1629
 msgid "Description"
 msgstr ""
 
-#: functions/fw-extra-woo-functions.php:1698
+#: functions/fw-extra-woo-functions.php:1705
 msgid "Phone number"
 msgstr "Teléfono"
 
-#: functions/fw-extra-woo-functions.php:1704
+#: functions/fw-extra-woo-functions.php:1711
 msgid "Shipping Date"
 msgstr "Fecha de envío"
 
@@ -1413,10 +1466,6 @@ msgstr ""
 msgid "Cart "
 msgstr ""
 
-#: functions/fw-theme-options.php:364
-msgid "Roles"
-msgstr ""
-
 #: functions/fw-theme-options.php:369
 msgid "Checkout "
 msgstr ""
@@ -1651,12 +1700,12 @@ msgstr ""
 msgid "Blog Page Header Section"
 msgstr ""
 
-#: functions/fw-theme-options.php:841 functions/fw-theme-options.php:2678
-#: functions/fw-theme-options.php:3303
+#: functions/fw-theme-options.php:841 functions/fw-theme-options.php:2526
+#: functions/fw-theme-options.php:3151
 msgid "Select an option"
 msgstr ""
 
-#: functions/fw-theme-options.php:847 functions/fw-theme-options.php:2637
+#: functions/fw-theme-options.php:847 functions/fw-theme-options.php:2485
 msgid "Sidebar Width"
 msgstr ""
 
@@ -1740,896 +1789,896 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
-#: functions/fw-theme-options.php:1245
+#: functions/fw-theme-options.php:1092
 msgid "Textarea Control"
 msgstr ""
 
-#: functions/fw-theme-options.php:1247
+#: functions/fw-theme-options.php:1094
 msgid "This is a default value"
 msgstr ""
 
-#: functions/fw-theme-options.php:1255 functions/fw-theme-options.php:1571
-#: functions/fw-theme-options.php:3292 functions/fw-theme-options.php:3618
-#: functions/fw-theme-options.php:3653 functions/fw-theme-options.php:3694
-#: functions/fw-theme-options.php:3728 functions/fw-theme-options.php:3767
+#: functions/fw-theme-options.php:1102 functions/fw-theme-options.php:1418
+#: functions/fw-theme-options.php:3140 functions/fw-theme-options.php:3466
+#: functions/fw-theme-options.php:3501 functions/fw-theme-options.php:3542
+#: functions/fw-theme-options.php:3576 functions/fw-theme-options.php:3615
 msgid "Default class"
 msgstr ""
 
-#: functions/fw-theme-options.php:1264
+#: functions/fw-theme-options.php:1111
 msgid "Deactivate Sticky"
 msgstr ""
 
-#: functions/fw-theme-options.php:1268
+#: functions/fw-theme-options.php:1115
 msgid "Top"
 msgstr ""
 
-#: functions/fw-theme-options.php:1269
+#: functions/fw-theme-options.php:1116
 msgid "Middle"
 msgstr ""
 
-#: functions/fw-theme-options.php:1270
+#: functions/fw-theme-options.php:1117
 msgid "Bottom"
 msgstr ""
 
-#: functions/fw-theme-options.php:1277
+#: functions/fw-theme-options.php:1124
 msgid "Floating Transparent"
 msgstr ""
 
-#: functions/fw-theme-options.php:1289
+#: functions/fw-theme-options.php:1136
 msgid "Header Padding"
 msgstr ""
 
-#: functions/fw-theme-options.php:1316
+#: functions/fw-theme-options.php:1163
 msgid "Header Icons Size"
 msgstr ""
 
-#: functions/fw-theme-options.php:1344
+#: functions/fw-theme-options.php:1191
 msgid "Logo Width"
 msgstr ""
 
-#: functions/fw-theme-options.php:1365
+#: functions/fw-theme-options.php:1212
 msgid "Activar"
 msgstr ""
 
-#: functions/fw-theme-options.php:1378
+#: functions/fw-theme-options.php:1225
 msgid "ID Mercadolibre "
 msgstr ""
 
-#: functions/fw-theme-options.php:1387
+#: functions/fw-theme-options.php:1234
 msgid "App Id "
 msgstr ""
 
-#: functions/fw-theme-options.php:1396
+#: functions/fw-theme-options.php:1243
 msgid "App Secret "
 msgstr ""
 
-#: functions/fw-theme-options.php:1408
+#: functions/fw-theme-options.php:1255
 msgid "Descontar stock web->ml (CR)"
 msgstr ""
 
-#: functions/fw-theme-options.php:1419
+#: functions/fw-theme-options.php:1266
 msgid "Descontar stock ml->web (CR)"
 msgstr ""
 
-#: functions/fw-theme-options.php:1435
+#: functions/fw-theme-options.php:1282
 msgid "Init Woocommerce"
 msgstr ""
 
-#: functions/fw-theme-options.php:1448
+#: functions/fw-theme-options.php:1295
 msgid "Init Mayorista"
 msgstr ""
 
-#: functions/fw-theme-options.php:1460
+#: functions/fw-theme-options.php:1307
 msgid "Reset Mails"
 msgstr ""
 
-#: functions/fw-theme-options.php:1475
+#: functions/fw-theme-options.php:1322
 msgid "Client Area Images"
 msgstr ""
 
-#: functions/fw-theme-options.php:1494 functions/fw-theme-options.php:3799
+#: functions/fw-theme-options.php:1341 functions/fw-theme-options.php:3647
 msgid "INFO"
 msgstr ""
 
-#: functions/fw-theme-options.php:1507
+#: functions/fw-theme-options.php:1354
 msgid "Nombre que aparece para mails"
 msgstr ""
 
-#: functions/fw-theme-options.php:1518
+#: functions/fw-theme-options.php:1365
 msgid "Email para recibir notificaciones"
 msgstr ""
 
-#: functions/fw-theme-options.php:1532
+#: functions/fw-theme-options.php:1379
 msgid "Desde donde"
 msgstr ""
 
-#: functions/fw-theme-options.php:1546
+#: functions/fw-theme-options.php:1393
 msgid "Desde que mail"
 msgstr ""
 
-#: functions/fw-theme-options.php:1559
+#: functions/fw-theme-options.php:1406
 msgid "bcc default"
 msgstr ""
 
-#: functions/fw-theme-options.php:1580
+#: functions/fw-theme-options.php:1427
 msgid "Mobile Logo Width"
 msgstr ""
 
-#: functions/fw-theme-options.php:1600
+#: functions/fw-theme-options.php:1447
 msgid "Mobile Header Icons Size"
 msgstr ""
 
-#: functions/fw-theme-options.php:1628
+#: functions/fw-theme-options.php:1475
 msgid "Header Padding Mobile"
 msgstr ""
 
-#: functions/fw-theme-options.php:1656
+#: functions/fw-theme-options.php:1503
 msgid "Header Mobile Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:1678
+#: functions/fw-theme-options.php:1525
 msgid "CSS Mobile"
 msgstr ""
 
-#: functions/fw-theme-options.php:1696
+#: functions/fw-theme-options.php:1543
 msgid "Mega Menu"
 msgstr ""
 
-#: functions/fw-theme-options.php:1708
+#: functions/fw-theme-options.php:1555
 msgid "Mega Menu Layout"
 msgstr ""
 
-#: functions/fw-theme-options.php:1712
+#: functions/fw-theme-options.php:1559
 msgid "2 cols"
 msgstr ""
 
-#: functions/fw-theme-options.php:1713
+#: functions/fw-theme-options.php:1560
 msgid "3 cols"
 msgstr ""
 
-#: functions/fw-theme-options.php:1714
+#: functions/fw-theme-options.php:1561
 msgid "4 cols"
 msgstr ""
 
-#: functions/fw-theme-options.php:1720
+#: functions/fw-theme-options.php:1567
 msgid "Overlay"
 msgstr ""
 
-#: functions/fw-theme-options.php:1733
+#: functions/fw-theme-options.php:1580
 msgid "Header Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:1748
+#: functions/fw-theme-options.php:1595
 msgid "CSS Header"
 msgstr ""
 
-#: functions/fw-theme-options.php:1763
+#: functions/fw-theme-options.php:1610
 msgid "Primary background color"
 msgstr ""
 
-#: functions/fw-theme-options.php:1782
+#: functions/fw-theme-options.php:1629
 msgid "Primary color"
 msgstr ""
 
-#: functions/fw-theme-options.php:1802
+#: functions/fw-theme-options.php:1649
 msgid "Primary background color (hover)"
 msgstr ""
 
-#: functions/fw-theme-options.php:1822
+#: functions/fw-theme-options.php:1669
 msgid "Primary color (hover) "
 msgstr ""
 
-#: functions/fw-theme-options.php:1845
+#: functions/fw-theme-options.php:1692
 msgid "Secondary background color"
 msgstr ""
 
-#: functions/fw-theme-options.php:1864
+#: functions/fw-theme-options.php:1711
 msgid "Secondary color"
 msgstr ""
 
-#: functions/fw-theme-options.php:1884
+#: functions/fw-theme-options.php:1731
 msgid "Secondary background color (hover)"
 msgstr ""
 
-#: functions/fw-theme-options.php:1904
+#: functions/fw-theme-options.php:1751
 msgid "Secondary color (hover) "
 msgstr ""
 
-#: functions/fw-theme-options.php:1953
+#: functions/fw-theme-options.php:1800
 msgid "Secondary Color"
 msgstr ""
 
-#: functions/fw-theme-options.php:1976
+#: functions/fw-theme-options.php:1823
 msgid "Icons"
 msgstr ""
 
-#: functions/fw-theme-options.php:1994
+#: functions/fw-theme-options.php:1841
 msgid "Top Header "
 msgstr ""
 
-#: functions/fw-theme-options.php:2017
+#: functions/fw-theme-options.php:1864
 msgid "Middle Header "
 msgstr ""
 
-#: functions/fw-theme-options.php:2039
+#: functions/fw-theme-options.php:1886
 msgid "Header Sticky Color "
 msgstr ""
 
-#: functions/fw-theme-options.php:2058
+#: functions/fw-theme-options.php:1905
 msgid "Bottom Header "
 msgstr ""
 
-#: functions/fw-theme-options.php:2080
+#: functions/fw-theme-options.php:1927
 msgid "Body Background"
 msgstr ""
 
-#: functions/fw-theme-options.php:2101
+#: functions/fw-theme-options.php:1948
 msgid "Shop Background "
 msgstr ""
 
-#: functions/fw-theme-options.php:2122
+#: functions/fw-theme-options.php:1969
 msgid "Footer "
 msgstr ""
 
-#: functions/fw-theme-options.php:2141
+#: functions/fw-theme-options.php:1988
 msgid "Copyright "
 msgstr ""
 
-#: functions/fw-theme-options.php:2161
+#: functions/fw-theme-options.php:2008
 msgid "Dark Mode Body"
 msgstr ""
 
-#: functions/fw-theme-options.php:2175
+#: functions/fw-theme-options.php:2022
 msgid "Menu Dark Mode"
 msgstr ""
 
-#: functions/fw-theme-options.php:2187
+#: functions/fw-theme-options.php:2034
 msgid "Responsive Typo "
 msgstr ""
 
-#: functions/fw-theme-options.php:2199 functions/fw-theme-options.php:2210
+#: functions/fw-theme-options.php:2046 functions/fw-theme-options.php:2057
 msgid "Quicklinks"
 msgstr ""
 
-#: functions/fw-theme-options.php:2220 functions/fw-theme-options.php:2231
+#: functions/fw-theme-options.php:2067 functions/fw-theme-options.php:2078
 msgid "CTAs"
 msgstr ""
 
-#: functions/fw-theme-options.php:2243
+#: functions/fw-theme-options.php:2090
 msgid "Redirect Mobile"
 msgstr ""
 
-#: functions/fw-theme-options.php:2255
+#: functions/fw-theme-options.php:2102
 msgid "Multitienda"
 msgstr ""
 
-#: functions/fw-theme-options.php:2268
+#: functions/fw-theme-options.php:2115
 msgid "Shop State"
 msgstr ""
 
-#: functions/fw-theme-options.php:2273
+#: functions/fw-theme-options.php:2120
 msgid "Normal"
 msgstr ""
 
-#: functions/fw-theme-options.php:2274
+#: functions/fw-theme-options.php:2121
 msgid "Compras Off"
 msgstr ""
 
-#: functions/fw-theme-options.php:2275
+#: functions/fw-theme-options.php:2122
 msgid "Solo consultas"
 msgstr ""
 
-#: functions/fw-theme-options.php:2283
+#: functions/fw-theme-options.php:2130
 msgid "Link boton consultar"
 msgstr ""
 
-#: functions/fw-theme-options.php:2292
+#: functions/fw-theme-options.php:2139
 msgid "Min Purchase"
 msgstr ""
 
-#: functions/fw-theme-options.php:2300
+#: functions/fw-theme-options.php:2147
 msgid "Min Re-Purchase"
 msgstr ""
 
-#: functions/fw-theme-options.php:2308
+#: functions/fw-theme-options.php:2155
 msgid "Cross Sells"
 msgstr ""
 
-#: functions/fw-theme-options.php:2323
+#: functions/fw-theme-options.php:2170
 msgid "Price Suffix"
 msgstr ""
 
-#: functions/fw-theme-options.php:2330
+#: functions/fw-theme-options.php:2177
 msgid "Currency Symbol"
 msgstr ""
 
-#: functions/fw-theme-options.php:2346
+#: functions/fw-theme-options.php:2193
 msgid "Seguir comprando url"
 msgstr ""
 
-#: functions/fw-theme-options.php:2381
+#: functions/fw-theme-options.php:2228
 msgid "Prices"
 msgstr ""
 
-#: functions/fw-theme-options.php:2385 functions/fw-theme-options.php:2397
+#: functions/fw-theme-options.php:2232 functions/fw-theme-options.php:2244
 msgid "Show"
 msgstr ""
 
-#: functions/fw-theme-options.php:2386 functions/fw-theme-options.php:2398
+#: functions/fw-theme-options.php:2233 functions/fw-theme-options.php:2245
 msgid "Logged In"
 msgstr ""
 
-#: functions/fw-theme-options.php:2387 functions/fw-theme-options.php:2399
+#: functions/fw-theme-options.php:2234 functions/fw-theme-options.php:2246
 msgid "Hide"
 msgstr ""
 
-#: functions/fw-theme-options.php:2393
+#: functions/fw-theme-options.php:2240
 msgid "Purchases"
 msgstr ""
 
-#: functions/fw-theme-options.php:2406
+#: functions/fw-theme-options.php:2253
 msgid "DNI Obligatorio"
 msgstr ""
 
-#: functions/fw-theme-options.php:2419
+#: functions/fw-theme-options.php:2266
 msgid "Campos Regalo (CR)"
 msgstr ""
 
-#: functions/fw-theme-options.php:2431
+#: functions/fw-theme-options.php:2279
 msgid "Terminos y condiciones"
 msgstr ""
 
-#: functions/fw-theme-options.php:2444
+#: functions/fw-theme-options.php:2292
 msgid "Vender a empresas"
 msgstr ""
 
-#: functions/fw-theme-options.php:2457
+#: functions/fw-theme-options.php:2305
 msgid "Extra campo dirección"
 msgstr ""
 
-#: functions/fw-theme-options.php:2471
+#: functions/fw-theme-options.php:2319
 msgid "Shipping Groups (CR)"
 msgstr ""
 
-#: functions/fw-theme-options.php:2503
+#: functions/fw-theme-options.php:2351
 msgid "Background Color"
 msgstr ""
 
-#: functions/fw-theme-options.php:2544
+#: functions/fw-theme-options.php:2392
 msgid "General message"
 msgstr ""
 
-#: functions/fw-theme-options.php:2552
+#: functions/fw-theme-options.php:2400
 msgid "Secondary message"
 msgstr ""
 
-#: functions/fw-theme-options.php:2563
+#: functions/fw-theme-options.php:2411
 msgid "Welcome message"
 msgstr ""
 
-#: functions/fw-theme-options.php:2572
+#: functions/fw-theme-options.php:2420
 msgid "Sold Individually"
 msgstr ""
 
-#: functions/fw-theme-options.php:2590
+#: functions/fw-theme-options.php:2438
 msgid "Extra Taxonomias"
 msgstr ""
 
-#: functions/fw-theme-options.php:2603
+#: functions/fw-theme-options.php:2451
 msgid "Extra roles"
 msgstr ""
 
-#: functions/fw-theme-options.php:2623
+#: functions/fw-theme-options.php:2471
 msgid "CSS For Roles "
 msgstr ""
 
-#: functions/fw-theme-options.php:2650
+#: functions/fw-theme-options.php:2498
 msgid "Products Per Page"
 msgstr ""
 
-#: functions/fw-theme-options.php:2663
+#: functions/fw-theme-options.php:2511
 msgid "Shop Columns"
 msgstr ""
 
-#: functions/fw-theme-options.php:2675
+#: functions/fw-theme-options.php:2523
 msgid "Shop Page Header Section"
 msgstr ""
 
-#: functions/fw-theme-options.php:2684
+#: functions/fw-theme-options.php:2532
 msgid "Hide cates"
 msgstr ""
 
-#: functions/fw-theme-options.php:2693
+#: functions/fw-theme-options.php:2541
 msgid "CSS Shop Page "
 msgstr ""
 
-#: functions/fw-theme-options.php:2721 functions/fw-theme-options.php:2986
+#: functions/fw-theme-options.php:2569 functions/fw-theme-options.php:2834
 msgid "Box 1"
 msgstr ""
 
-#: functions/fw-theme-options.php:2766 functions/fw-theme-options.php:3021
+#: functions/fw-theme-options.php:2614 functions/fw-theme-options.php:2869
 msgid "Box 2"
 msgstr ""
 
-#: functions/fw-theme-options.php:2799 functions/fw-theme-options.php:3054
+#: functions/fw-theme-options.php:2647 functions/fw-theme-options.php:2902
 msgid "Box 3"
 msgstr ""
 
-#: functions/fw-theme-options.php:2844 functions/fw-theme-options.php:3088
+#: functions/fw-theme-options.php:2692 functions/fw-theme-options.php:2936
 msgid "Box 4"
 msgstr ""
 
-#: functions/fw-theme-options.php:2880 functions/fw-theme-options.php:3123
+#: functions/fw-theme-options.php:2728 functions/fw-theme-options.php:2971
 msgid "Box 5"
 msgstr ""
 
-#: functions/fw-theme-options.php:2914 functions/fw-theme-options.php:3159
+#: functions/fw-theme-options.php:2762 functions/fw-theme-options.php:3007
 msgid "Box 6"
 msgstr ""
 
-#: functions/fw-theme-options.php:2948
+#: functions/fw-theme-options.php:2796
 msgid "Calculate Only Mercadoenvios"
 msgstr ""
 
-#: functions/fw-theme-options.php:2961
+#: functions/fw-theme-options.php:2809
 msgid "Default shipping paramaters"
 msgstr ""
 
-#: functions/fw-theme-options.php:2974
+#: functions/fw-theme-options.php:2822
 msgid "Show only Free Shipping"
 msgstr ""
 
-#: functions/fw-theme-options.php:3192
+#: functions/fw-theme-options.php:3040
 msgid "Layout"
 msgstr ""
 
-#: functions/fw-theme-options.php:3204
+#: functions/fw-theme-options.php:3052
 msgid "Pestaña espeficiaciones (medidas)"
 msgstr ""
 
-#: functions/fw-theme-options.php:3217
+#: functions/fw-theme-options.php:3065
 msgid "Mostrar medidas tabla specs"
 msgstr ""
 
-#: functions/fw-theme-options.php:3229
+#: functions/fw-theme-options.php:3077
 msgid "Related Columns"
 msgstr ""
 
-#: functions/fw-theme-options.php:3242
+#: functions/fw-theme-options.php:3090
 msgid "Single Product Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3277
+#: functions/fw-theme-options.php:3125
 msgid "CSS Single Product"
 msgstr ""
 
-#: functions/fw-theme-options.php:3300 functions/vc_customs/vc_fastway.php:750
+#: functions/fw-theme-options.php:3148 functions/vc_customs/vc_fastway.php:750
 msgid "Static Block"
 msgstr ""
 
-#: functions/fw-theme-options.php:3308
+#: functions/fw-theme-options.php:3156
 msgid "CSS Footer"
 msgstr ""
 
-#: functions/fw-theme-options.php:3321
+#: functions/fw-theme-options.php:3169
 msgid "Show Footer Copyright"
 msgstr ""
 
-#: functions/fw-theme-options.php:3332
+#: functions/fw-theme-options.php:3180
 msgid "Footer Copyright HTML"
 msgstr ""
 
-#: functions/fw-theme-options.php:3333
+#: functions/fw-theme-options.php:3181
 msgid "Not all headers have Header Widget"
 msgstr ""
 
-#: functions/fw-theme-options.php:3372
+#: functions/fw-theme-options.php:3220
 msgid "Main Navigation"
 msgstr ""
 
-#: functions/fw-theme-options.php:3406
+#: functions/fw-theme-options.php:3254
 msgid "H1"
 msgstr ""
 
-#: functions/fw-theme-options.php:3439
+#: functions/fw-theme-options.php:3287
 msgid "H2"
 msgstr ""
 
-#: functions/fw-theme-options.php:3472
+#: functions/fw-theme-options.php:3320
 msgid "H3"
 msgstr ""
 
-#: functions/fw-theme-options.php:3505
+#: functions/fw-theme-options.php:3353
 msgid "H4"
 msgstr ""
 
-#: functions/fw-theme-options.php:3538
+#: functions/fw-theme-options.php:3386
 msgid "Body"
 msgstr ""
 
-#: functions/fw-theme-options.php:3627
+#: functions/fw-theme-options.php:3475
 msgid " Product Loop Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3639
+#: functions/fw-theme-options.php:3487
 msgid "CSS Product Loop"
 msgstr ""
 
-#: functions/fw-theme-options.php:3662
+#: functions/fw-theme-options.php:3510
 msgid " Category Loop Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3673
+#: functions/fw-theme-options.php:3521
 msgid "CSS Category Loop"
 msgstr ""
 
-#: functions/fw-theme-options.php:3702
+#: functions/fw-theme-options.php:3550
 msgid " Blog Loop Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3714
+#: functions/fw-theme-options.php:3562
 msgid "CSS Blog Loop"
 msgstr ""
 
-#: functions/fw-theme-options.php:3737
+#: functions/fw-theme-options.php:3585
 msgid " Review Loop Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3753
+#: functions/fw-theme-options.php:3601
 msgid "CSS Review Loop"
 msgstr ""
 
-#: functions/fw-theme-options.php:3775
+#: functions/fw-theme-options.php:3623
 msgid " Brand Loop Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:3786
+#: functions/fw-theme-options.php:3634
 msgid "CSS Brand Loop"
 msgstr ""
 
-#: functions/fw-theme-options.php:3815
+#: functions/fw-theme-options.php:3663
 msgid "Company Name"
 msgstr ""
 
-#: functions/fw-theme-options.php:3816
+#: functions/fw-theme-options.php:3664
 msgid "[fw_data type=\"name\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3822
+#: functions/fw-theme-options.php:3670
 msgid "Company Phone"
 msgstr ""
 
-#: functions/fw-theme-options.php:3823
+#: functions/fw-theme-options.php:3671
 msgid "[fw_data type=\"phone\"]<br>*El tel: se pone solo "
 msgstr ""
 
-#: functions/fw-theme-options.php:3829
+#: functions/fw-theme-options.php:3677
 msgid "Company Address"
 msgstr ""
 
-#: functions/fw-theme-options.php:3830
+#: functions/fw-theme-options.php:3678
 msgid "[fw_data type=\"address\"] "
 msgstr ""
 
-#: functions/fw-theme-options.php:3846
+#: functions/fw-theme-options.php:3694
 msgid "Company Email"
 msgstr ""
 
-#: functions/fw-theme-options.php:3847
+#: functions/fw-theme-options.php:3695
 msgid "[fw_data type=\"email\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3853
+#: functions/fw-theme-options.php:3701
 msgid "Company Facebook"
 msgstr ""
 
-#: functions/fw-theme-options.php:3854
+#: functions/fw-theme-options.php:3702
 msgid "[fw_data type=\"fb\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3862
+#: functions/fw-theme-options.php:3710
 msgid "Company Instagram"
 msgstr ""
 
-#: functions/fw-theme-options.php:3863
+#: functions/fw-theme-options.php:3711
 msgid "[fw_data type=\"ig\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3871
+#: functions/fw-theme-options.php:3719
 msgid "Company Linkedin"
 msgstr ""
 
-#: functions/fw-theme-options.php:3872
+#: functions/fw-theme-options.php:3720
 msgid "[fw_data type=\"linkedin\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3880
+#: functions/fw-theme-options.php:3728
 msgid "Company Youtube"
 msgstr ""
 
-#: functions/fw-theme-options.php:3881
+#: functions/fw-theme-options.php:3729
 msgid "[fw_data type=\"youtube\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3888
+#: functions/fw-theme-options.php:3736
 msgid "Company Twitter Url"
 msgstr ""
 
-#: functions/fw-theme-options.php:3889
+#: functions/fw-theme-options.php:3737
 msgid "[fw_data type=\"twitter\"]"
 msgstr ""
 
-#: functions/fw-theme-options.php:3897
+#: functions/fw-theme-options.php:3745
 msgid "Maintainance Mode"
 msgstr ""
 
-#: functions/fw-theme-options.php:3909
+#: functions/fw-theme-options.php:3757
 msgid "Max Media Size Upload (500KB)"
 msgstr ""
 
-#: functions/fw-theme-options.php:3918
+#: functions/fw-theme-options.php:3766
 msgid "Under Maintainance/Construction Html"
 msgstr ""
 
-#: functions/fw-theme-options.php:3929
+#: functions/fw-theme-options.php:3777
 msgid "Dark Logo on Sticky"
 msgstr ""
 
-#: functions/fw-theme-options.php:3948
+#: functions/fw-theme-options.php:3796
 msgid "Html"
 msgstr ""
 
-#: functions/fw-theme-options.php:3954
+#: functions/fw-theme-options.php:3802
 msgid "HTML"
 msgstr ""
 
-#: functions/fw-theme-options.php:3971
+#: functions/fw-theme-options.php:3819
 msgid "Popup Img"
 msgstr ""
 
-#: functions/fw-theme-options.php:3979 functions/vc_customs/vc_fastway.php:436
+#: functions/fw-theme-options.php:3827 functions/vc_customs/vc_fastway.php:436
 #: functions/vc_customs/vc_fastway.php:844
 #: functions/vc_customs/vc_fastway.php:1011
 msgid "Link"
 msgstr ""
 
-#: functions/fw-theme-options.php:3987
+#: functions/fw-theme-options.php:3835
 msgid "Form"
 msgstr ""
 
-#: functions/fw-theme-options.php:3999
+#: functions/fw-theme-options.php:3847
 msgid "Form ID"
 msgstr ""
 
-#: functions/fw-theme-options.php:4007 functions/vc_customs/vc_fastway.php:448
+#: functions/fw-theme-options.php:3855 functions/vc_customs/vc_fastway.php:448
 msgid "Size"
 msgstr ""
 
-#: functions/fw-theme-options.php:4021
+#: functions/fw-theme-options.php:3869
 msgid "404 Html"
 msgstr ""
 
-#: functions/fw-theme-options.php:4054
+#: functions/fw-theme-options.php:3902
 msgid "Google Site Verif. ID"
 msgstr ""
 
-#: functions/fw-theme-options.php:4061
+#: functions/fw-theme-options.php:3909
 msgid "Analyitics ID"
 msgstr ""
 
-#: functions/fw-theme-options.php:4068
+#: functions/fw-theme-options.php:3916
 msgid "Facebook Pixel ID"
 msgstr ""
 
-#: functions/fw-theme-options.php:4075
+#: functions/fw-theme-options.php:3923
 msgid "Google Tag Manager (Global)"
 msgstr ""
 
-#: functions/fw-theme-options.php:4082
+#: functions/fw-theme-options.php:3930
 msgid " Tag Manager Conversion ID (Checkout)"
 msgstr ""
 
-#: functions/fw-theme-options.php:4090
+#: functions/fw-theme-options.php:3938
 msgid "JS Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:4091
+#: functions/fw-theme-options.php:3939
 msgid "Paste your JS code here."
 msgstr ""
 
-#: functions/fw-theme-options.php:4104
+#: functions/fw-theme-options.php:3952
 msgid "Insert Scripts Header"
 msgstr ""
 
-#: functions/fw-theme-options.php:4115
+#: functions/fw-theme-options.php:3963
 msgid "Insert Scripts Footer"
 msgstr ""
 
-#: functions/fw-theme-options.php:4126
+#: functions/fw-theme-options.php:3974
 msgid "Thank You Page Code"
 msgstr ""
 
-#: functions/fw-theme-options.php:4136
+#: functions/fw-theme-options.php:3984
 msgid "Descuento Tienda"
 msgstr ""
 
-#: functions/fw-theme-options.php:4148
+#: functions/fw-theme-options.php:3996
 msgid "%"
 msgstr ""
 
-#: functions/fw-theme-options.php:4164
+#: functions/fw-theme-options.php:4012
 msgid "Categories Exclude"
 msgstr ""
 
-#: functions/fw-theme-options.php:4171
+#: functions/fw-theme-options.php:4019
 msgid "Exclude Products"
 msgstr ""
 
-#: functions/fw-theme-options.php:4178
+#: functions/fw-theme-options.php:4026
 msgid "2-Lili Discount (Buy X Get X)"
 msgstr ""
 
-#: functions/fw-theme-options.php:4190
+#: functions/fw-theme-options.php:4038
 msgid "Categories Include"
 msgstr ""
 
-#: functions/fw-theme-options.php:4197
+#: functions/fw-theme-options.php:4045
 msgid "Cantidad minima"
 msgstr ""
 
-#: functions/fw-theme-options.php:4204
+#: functions/fw-theme-options.php:4052
 msgid "Admite cupones"
 msgstr ""
 
-#: functions/fw-theme-options.php:4215
+#: functions/fw-theme-options.php:4063
 msgid "Porcentage en numeros"
 msgstr ""
 
-#: functions/fw-theme-options.php:4223
+#: functions/fw-theme-options.php:4071
 msgid "Ajax Search"
 msgstr ""
 
-#: functions/fw-theme-options.php:4234
+#: functions/fw-theme-options.php:4082
 msgid "Search by sku"
 msgstr ""
 
-#: functions/fw-theme-options.php:4245
+#: functions/fw-theme-options.php:4093
 msgid "Exclude uncategorized"
 msgstr ""
 
-#: functions/fw-theme-options.php:4265
+#: functions/fw-theme-options.php:4113
 msgid "CSS Logged In"
 msgstr ""
 
-#: functions/fw-theme-options.php:4276
+#: functions/fw-theme-options.php:4124
 msgid "CSS Admin"
 msgstr ""
 
-#: functions/fw-theme-options.php:4316
+#: functions/fw-theme-options.php:4164
 msgid "Out of Stock Label"
 msgstr ""
 
-#: functions/fw-theme-options.php:4318
+#: functions/fw-theme-options.php:4166
 msgid "Agotado"
 msgstr ""
 
-#: functions/fw-theme-options.php:4323
+#: functions/fw-theme-options.php:4171
 msgid "Selector stock"
 msgstr ""
 
-#: functions/fw-theme-options.php:4325
+#: functions/fw-theme-options.php:4173
 msgid "Seleccionar cantidad"
 msgstr ""
 
-#: functions/fw-theme-options.php:4330
+#: functions/fw-theme-options.php:4178
 msgid "Ver detalle (Loop)"
 msgstr ""
 
-#: functions/fw-theme-options.php:4332
+#: functions/fw-theme-options.php:4180
 msgid "Ver detalle"
 msgstr ""
 
-#: functions/fw-theme-options.php:4337
+#: functions/fw-theme-options.php:4185
 msgid "Add to cart (Loop)"
 msgstr ""
 
-#: functions/fw-theme-options.php:4339
+#: functions/fw-theme-options.php:4187
 msgid "Agregar al carrito"
 msgstr ""
 
-#: functions/fw-theme-options.php:4344
+#: functions/fw-theme-options.php:4192
 msgid "Vaciar carrito"
 msgstr ""
 
-#: functions/fw-theme-options.php:4351
+#: functions/fw-theme-options.php:4199
 msgid "Boton al checkout"
 msgstr ""
 
-#: functions/fw-theme-options.php:4360
+#: functions/fw-theme-options.php:4208
 msgid "Envío gratis/0"
 msgstr ""
 
-#: functions/fw-theme-options.php:4368
+#: functions/fw-theme-options.php:4216
 msgid "Extra Campo dirección"
 msgstr ""
 
-#: functions/fw-theme-options.php:4377
+#: functions/fw-theme-options.php:4225
 msgid "Envío"
 msgstr ""
 
-#: functions/fw-theme-options.php:4384
+#: functions/fw-theme-options.php:4232
 msgid "Retirar en una de nuestras sucursales"
 msgstr ""
 
-#: functions/fw-theme-options.php:4391
+#: functions/fw-theme-options.php:4239
 msgid "Ver opciones"
 msgstr ""
 
-#: functions/fw-theme-options.php:4398
+#: functions/fw-theme-options.php:4246
 msgid "Costos del envío"
 msgstr ""
 
-#: functions/fw-theme-options.php:4406
+#: functions/fw-theme-options.php:4254
 msgid "Finalizar Compra"
 msgstr ""
 
-#: functions/fw-theme-options.php:4415
+#: functions/fw-theme-options.php:4263
 msgid "Ir al carrito"
 msgstr ""
 
-#: functions/fw-theme-options.php:4425
+#: functions/fw-theme-options.php:4273
 msgid "Mi pedido"
 msgstr ""
 
-#: functions/fw-theme-options.php:4443
+#: functions/fw-theme-options.php:4291
 msgid "Login Text"
 msgstr ""
 
-#: functions/fw-theme-options.php:4452
+#: functions/fw-theme-options.php:4300
 msgid "Mi Cuenta "
 msgstr ""
 
-#: functions/fw-theme-options.php:4461
+#: functions/fw-theme-options.php:4309
 msgid "BIENVENIDO A"
 msgstr ""
 
-#: functions/fw-theme-options.php:4469
+#: functions/fw-theme-options.php:4317
 msgid "VER PRODUCTOS"
 msgstr ""
 
-#: functions/fw-theme-options.php:4477
+#: functions/fw-theme-options.php:4325
 msgid "Productos Relacionados"
 msgstr ""
 
-#: functions/fw-theme-options.php:4480
+#: functions/fw-theme-options.php:4328
 msgid "Quienes vieron este producto también compraron"
 msgstr ""
 
-#: functions/fw-theme-options.php:4486
+#: functions/fw-theme-options.php:4334
 msgid "Search Placeholder"
 msgstr ""
 
-#: functions/fw-theme-options.php:4494
+#: functions/fw-theme-options.php:4342
 msgid "Sale Message"
 msgstr ""
 
-#: functions/fw-theme-options.php:4502
+#: functions/fw-theme-options.php:4350
 msgid "Llamar ahora"
 msgstr ""
 
-#: functions/fw-theme-options.php:4510
+#: functions/fw-theme-options.php:4358
 msgid "Consultar"
 msgstr ""
 
-#: functions/fw-theme-options.php:4517
+#: functions/fw-theme-options.php:4365
 msgid "Calcular cuotas"
 msgstr ""
 
-#: functions/fw-theme-options.php:4524
+#: functions/fw-theme-options.php:4372
 msgid "Calcular envio"
 msgstr ""
 
-#: functions/fw-theme-options.php:4531
+#: functions/fw-theme-options.php:4379
 msgid "Mensage debajo del boton comprar (checkout)"
 msgstr ""
 
@@ -2845,7 +2894,7 @@ msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:340
 #: functions/vc_customs/vc_fastway.php:342
-msgid "FW Slider"
+msgid "FW Image Slider"
 msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:348
@@ -3360,11 +3409,11 @@ msgstr ""
 msgid "You must be logged in to checkout."
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:207
+#: woocommerce/checkout/form-checkout.php:201
 msgid "Coupon code"
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:247
+#: woocommerce/checkout/form-checkout.php:241
 #, php-format
 msgid ""
 "Since your browser does not support JavaScript, or it is disabled, please "
@@ -3372,7 +3421,7 @@ msgid ""
 "You may be charged more than the amount stated above if you fail to do so."
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:249
+#: woocommerce/checkout/form-checkout.php:243
 msgid "Update totals"
 msgstr ""
 
@@ -3401,21 +3450,21 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: woocommerce/checkout/thankyou.php:29
+#: woocommerce/checkout/thankyou.php:72
 msgid ""
 "Unfortunately your order cannot be processed as the originating bank/"
 "merchant has declined your transaction. Please attempt your purchase again."
 msgstr ""
 
-#: woocommerce/checkout/thankyou.php:32
+#: woocommerce/checkout/thankyou.php:75
 msgid "Pay"
 msgstr ""
 
-#: woocommerce/checkout/thankyou.php:34
+#: woocommerce/checkout/thankyou.php:77
 msgid "My account"
 msgstr ""
 
-#: woocommerce/checkout/thankyou.php:54
+#: woocommerce/checkout/thankyou.php:98
 msgid "Thank you. Your order has been received."
 msgstr ""
 
