@@ -4226,6 +4226,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_shipping',
 	'default'	=> 'Envío',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_label_loop_e_gratis',
+	'label'    => __( 'Envío gratis', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Envío gratis',
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_shipping_grouptitle',

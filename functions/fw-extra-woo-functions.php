@@ -197,9 +197,9 @@ function fw_loop_labels($atts = [], $content = null){
     global $product;
     
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
-        echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> Envío gratis</div>';
+        echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_label_label_loop_e_gratis').'</div>';
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
-      echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> Envío gratis</div>';
+      echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_label_label_loop_e_gratis').'</div>';
     }
 }
 
