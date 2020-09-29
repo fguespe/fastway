@@ -46,7 +46,7 @@ if(window.dataLayer){
 		'ecommerce': {
 			'actionField': {
 				'id': ''+order.id+'',               
-				'revenue': order.total,                     // Total transaction value (incl. tax and shipping)
+				'revenue': order.revenue,                     // Total transaction value (incl. tax and shipping)
 				'tax':'',
 				'shipping': order.shipping,
 				'coupon': ''
