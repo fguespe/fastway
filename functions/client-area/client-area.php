@@ -377,7 +377,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'ca-videos',
 	'label'       => __( 'Client Video Tutorials', 'fastway' ),
-	'description' => 'Agrega al dashboard videos, separados por ,',
+	'description' => 'Agrega al dashboard videos, uno por linea',
 	'section'     => 'section_clientarea',
 	'default'     => '',
 	'priority'	=> 20,

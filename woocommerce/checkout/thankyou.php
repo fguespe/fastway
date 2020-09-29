@@ -25,7 +25,7 @@ if(is_object($order) && $order->get_items()){
 }
 
 $items=json_encode($items);
-$laorder['id']="'".$order->id."'";
+$laorder['id']=$order->id;
 $laorder['revenue']=$order->total;
 $laorder['shipping']=$order->shipping_total;
 $laorder=json_encode($laorder);
@@ -40,12 +40,12 @@ console.log('eventAction:purchase' );
 if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
 if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
 if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-if(window.dataLayer){
+//if(window.dataLayer){
 	let datala={
 		'event': 'Purchase',
 		'ecommerce': {
 			'actionField': {
-				'id': order.id,               
+				'id': ''+order.id+'',               
 				'revenue': order.total,                     // Total transaction value (incl. tax and shipping)
 				'tax':'',
 				'shipping': order.shipping,
@@ -56,7 +56,7 @@ if(window.dataLayer){
 	}
 	console.log(datala)
 	dataLayer.push(datala);
-}
+//}
 
 </script>
 
