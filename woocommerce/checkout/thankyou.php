@@ -25,8 +25,8 @@ if(is_object($order) && $order->get_items()){
 }
 $items=json_encode($items);
 
-$laorder['id']=$order->id;
-$laorder['total']=$order->total;
+$laorder['id']="'".$order->id."'";
+$laorder['revenue']=$order->total;
 $laorder['shipping']=$order->shipping_total;
 $laorder=json_encode($laorder);
 
