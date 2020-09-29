@@ -124,8 +124,6 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
     $url_comprobante = get_post_meta( $order_id, 'comprobante', true );
     if($url_comprobante){
       echo '<span class="fw_subir_comprobante">Comprobante: <a target="_blank" href="' . $url_comprobante . '">Abrir</a></span>
-      <br>
-      <a href="'.$order->get_view_order_url().'">Ver detalle</a>
       ';
     }else{
       echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="true" field_values="order_id='.$order_id.'"]');

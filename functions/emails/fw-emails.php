@@ -264,6 +264,9 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador' || $notification['name'] == 'Contacto Mayorista') && $notification['toType']=='email' ) {
         $notification['to'] = getMailQueRecibe();
     }
+    //Admin Notification
+    //Notificación del administrador
+    //Contacto Mayorista
     return $notification;
 }
 function was_form_signup($key){
