@@ -147,6 +147,13 @@ Kirki::add_section( 'section_mobile_header', array(
 
 ) );
 
+Kirki::add_section( 'section_email_styles', array(
+    'title'          => __( 'Emails', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
+
 Kirki::add_section( 'section_woo_loop', array(
     'title'          => __( 'Product Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -1409,6 +1416,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => '',
 ) );
 
+
+/*EMAIL*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_email_logo_width',
+	'label'       => __( 'Email Logo Width', 'fastway' ),
+	'section'     => 'section_email_styles',
+	'default'     => '100%'
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_editor-email',
+	'label'       => __( 'CSS Mobile', 'fastway' ),
+	'section'     => 'section_email_styles',
+	'default'     => ''
+) );
 /*MOBILE*/
 
 
@@ -4230,7 +4255,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_label_loop_e_gratis',
-	'label'    => __( 'Envío gratis', 'fastway' ),
+	'label'    => __( 'Envío gratis (loop label)', 'fastway' ),
 	'section'     => 'section_labels_shipping',
 	'default'	=> 'Envío gratis',
 ) );

@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div id="template_header_image">
 							<?php
 							if ( $img = get_option( 'woocommerce_email_header_image' ) ) {
-								echo '<p style="margin-top:0;max-width:300px;"><img width="100%" src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
+								echo '<p style="margin-top:0;max-width:300px;"><img class="'.fw_theme_mod('fw_email_logo_width').'" src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
 							}
 							?>
 						</div>

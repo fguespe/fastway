@@ -248,7 +248,12 @@ function woocommerce_email_subject_admin_new_order( $subject, $order ) {
     return fw_parse_subject('admin_new_order',$vars);
 }
 
-
+/*CSS*/
+add_filter( 'woocommerce_email_styles', 'bbloomer_add_css_to_emails', 9999, 2 );
+function bbloomer_add_css_to_emails( $css, $email ) { 
+   $css .= fw_theme_mod('css_editor-email');
+   return $css;
+}
 
 //Emails
 
