@@ -373,6 +373,16 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'ca-videos',
+	'label'       => __( 'Client Video Tutorials', 'fastway' ),
+	'description' => 'Agrega al dashboard videos, separados por ,',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+	'priority'	=> 20,
+) );
+
 
 //Aca empieza el plugin
 if(!fw_theme_mod('ca-switch'))return;

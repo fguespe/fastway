@@ -554,8 +554,16 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
      if((fw_theme_mod('fw_id_filesync') && !empty(fw_theme_mod('fw_id_wpallimport'))) || !empty(fw_theme_mod('fw_id_wpallexport')))wp_add_dashboard_widget('fw_actualizar_precios', __('Update prices','fastway'), 'fw_actualizar_precios');
      if(fw_theme_mod('fw_widget_support_fresh_es'))wp_add_dashboard_widget('custom_dashboard_help', __('Need help','fastway'), 'custom_dashboard_help');
      wp_add_dashboard_widget('fw_ajustes_generales', __('General Settings','fastway'), 'fw_ajustes_generales');
+     if(fw_theme_mod('ca-videos'))wp_add_dashboard_widget('fw_client_videos', __('Video','fastway'), 'fw_client_videos');
  }
  
+ function fw_client_videos() {
+
+    foreach(fw_get_yt_videos(fw_theme_mod('ca-videos')) as $video){
+        $url = $video[1];
+        echo '<iframe src="https://www.youtube.com/embed/'.$url.'" frameborder="0" allowfullscreen width="100%" height="200" class="fw_video_frame"></iframe>';
+    }
+ }
  function fw_ajustes_generales() {
     echo '
     <p>

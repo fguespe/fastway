@@ -946,11 +946,7 @@ function woocommerce_product_custom_fields_save($post_id){
         update_post_meta($post_id, '_fw_guia_talles', esc_html($woocommerce_custom_procut_textarea));
 
 }
-function fw_get_yt_videos() {
-
-  // The new tab content
-  global $product;
-  $json = get_post_meta($product->id, '_fw_products_videos', true );
+function fw_get_yt_videos($json) {
   preg_match_all('~(?#!js YouTubeId Rev:20160125_1800)
         # Match non-linked youtube URL in the wild. (Rev:20130823)
         https?://          # Required scheme. Either http or https.
@@ -978,7 +974,10 @@ function fw_get_yt_videos() {
 }
 
 function fwvideo_tab() {
-  foreach(fw_get_yt_videos() as $video){
+  global $product;
+  $json = get_post_meta($product->id, '_fw_products_videos', true );
+
+  foreach(fw_get_yt_videos($json) as $video){
     $url = $video[1];
     echo '<div class="fw_container_video"><iframe src="https://www.youtube.com/embed/'.$url.'" frameborder="0" allowfullscreen class="fw_video_frame"></iframe></div>';
   }
