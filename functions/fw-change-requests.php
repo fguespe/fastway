@@ -101,12 +101,13 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
   add_filter('wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
   add_action('woocommerce_admin_order_data_after_shipping_address', 'admin_display_comprobante', 10, 1 );
   add_action('gform_after_submission', 'trabajar_file',10,2);
-  add_action("woocommerce_order_status_changed", "email_order_verif", 10, 3);
+  add_action("woocommerce_order_status_changed", "email_order_verif");
   
   
   function email_order_verif($order_id, $checkout=null) {
     global $woocommerce;
     $order = new WC_Order( $order_id );
+    error_log($order->status);
     if($order->status === 'await-verif' ) {
         $subject= fw_parse_subject('customer_await_verif_order',fw_get_email_variables($order));
         $body= fw_parse_mail_return('customer_await_verif_order',$order);
@@ -133,10 +134,7 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 
     $order = new WC_Order($order_id);
     if($order){
-      error_log($order->status);
       $order->update_status( 'await-verif', 'El pedido se ha actualiado', true );
-      $order->update_status( 'wc-await-verif', 'El pedido se ha actualiado', true );
-      error_log($order->status);
     }
 
     update_post_meta( $order_id, 'comprobante', $file );
