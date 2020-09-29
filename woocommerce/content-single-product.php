@@ -222,7 +222,7 @@ function fw_single_gallery(){
         $index++;
     }
     $json = get_post_meta($product->id, '_fw_products_videos', true );
-    foreach(fw_get_yt_videos() as $video){
+    foreach(fw_get_yt_videos($json) as $video){
         $url = $video[1];
         echo '<div class="swiper-slide">';
         echo '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/'.$url.'?rel=0" frameborder="0" allowfullscreen=""></iframe>';
