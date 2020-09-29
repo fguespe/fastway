@@ -168,17 +168,17 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 function myplugin_options_page(){
   $customer_emails_vars.='
-  <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Docs</a><br>
-  <b>Variables:</b>
+  <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">'.__('Docs','fastway').'</a><br>
+  <b>'.__('Variables','fastway').':</b>
   <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
-  <br><b>Payment methods (valores)</b>
+  <br><b>'.__('Payment Methods','fastway').'('.__('values','fastway').')</b>
   <br><small>';
   foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
       if( $gateway->enabled == 'yes' ) {
           $customer_emails_vars.=$gateway->title.' ('.$gateway->id.') , ';
       }
   }
-  $customer_emails_vars.='</small><br><b>Roles (valores):</b>
+  $customer_emails_vars.='</small><br><b>'.__('Roles','fastway').' ('.__('values','fastway').'):</b>
   <br><small>';
   $roles=array();
   foreach ( get_editable_roles() as $role => $value ) {
@@ -342,7 +342,7 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 ?>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Falta verificación', 'woocommerce' )?></h3>
-<small><?=__( '', 'woocommerce' );?></small>
+<small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo get_option('fw_email_subject_customer_await_verif_order'); ?>" /><br>
 
 <?php
