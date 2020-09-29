@@ -221,6 +221,7 @@ function fw_single_gallery(){
         
         $index++;
     }
+    $json = get_post_meta($product->id, '_fw_products_videos', true );
     foreach(fw_get_yt_videos() as $video){
         $url = $video[1];
         echo '<div class="swiper-slide">';
