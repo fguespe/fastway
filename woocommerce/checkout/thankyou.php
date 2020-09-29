@@ -40,7 +40,7 @@ console.log('eventAction:purchase' );
 if(window.fbq)fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
 if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
 if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
-//if(window.dataLayer){
+if(window.dataLayer){
 	let datala={
 		'event': 'Purchase',
 		'ecommerce': {
@@ -56,7 +56,7 @@ if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction
 	}
 	console.log(datala)
 	dataLayer.push(datala);
-//}
+}
 
 </script>
 
