@@ -171,19 +171,19 @@ function myplugin_options_page(){
   <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">Docs</a><br>
   <b>Variables:</b>
   <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{payment_method_title}} </small>
-  <br><b>Payment methods</b>
+  <br><b>Payment methods (valores)</b>
   <br><small>';
   foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
       if( $gateway->enabled == 'yes' ) {
-          $customer_emails_vars.=$gateway->title.'(id:'.$gateway->id.') - ';
+          $customer_emails_vars.=$gateway->title.' ('.$gateway->id.') , ';
       }
   }
-  $customer_emails_vars.='</small><br><b>Roles:</b>
+  $customer_emails_vars.='</small><br><b>Roles (valores):</b>
   <br><small>';
   $roles=array();
   foreach ( get_editable_roles() as $role => $value ) {
     if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest' || $role == '' )$role='minorista';
-    if(!in_array($role,$roles))array_push($roles,$role);
+    if(!in_array($role,$roles))array_push($roles,$role.',');
   }
   $customer_emails_vars.=implode(' ',$roles).'</small>';
 ?>
