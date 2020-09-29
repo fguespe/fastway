@@ -96,10 +96,10 @@ function fw_gift_fields_admin($order){
 
 
 if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
-  add_action( 'init', 'init_falta_verif' );
+  add_action('init', 'init_falta_verif' );
   add_action('woocommerce_order_details_before_order_table','file_order_upload');
-  add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses',10,1 );
-  add_action( 'woocommerce_admin_order_data_after_shipping_address', 'admin_display_comprobante', 60, 1 );
+  add_filter('wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
+  add_action('woocommerce_admin_order_data_after_shipping_address', 'admin_display_comprobante', 10, 1 );
   add_action('gform_after_submission', 'trabajar_file',10,2);
   add_action("woocommerce_order_status_changed", "email_order_verif", 10, 3);
   
@@ -107,7 +107,6 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
   function email_order_verif($order_id, $checkout=null) {
     global $woocommerce;
     $order = new WC_Order( $order_id );
-    error_log($order->status);
     if($order->status === 'await-verif' ) {
         $subject= fw_parse_subject('customer_await_verif_order',fw_get_email_variables($order));
         $body= fw_parse_mail_return('customer_await_verif_order',$order);
@@ -122,8 +121,7 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
     $order_id=$order->id;
     $url_comprobante = get_post_meta( $order_id, 'comprobante', true );
     if($url_comprobante){
-      echo '<span class="fw_subir_comprobante">Comprobante: <a target="_blank" href="' . $url_comprobante . '">Abrir</a></span>
-      ';
+      echo '<span class="fw_subir_comprobante">Comprobante: <a target="_blank" href="' . $url_comprobante . '">Abrir</a></span> ';
     }else{
       echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_trans_comprobantes_id').'" title="false" description="false" ajax="true" field_values="order_id='.$order_id.'"]');
     }
@@ -135,7 +133,10 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 
     $order = new WC_Order($order_id);
     if($order){
+      error_log($order->status);
+      $order->update_status( 'await-verif', 'El pedido se ha actualiado', true );
       $order->update_status( 'wc-await-verif', 'El pedido se ha actualiado', true );
+      error_log($order->status);
     }
 
     update_post_meta( $order_id, 'comprobante', $file );
@@ -146,14 +147,14 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
         $new_order_statuses[ $key ] = $status;
         if ( 'wc-on-hold' === $key ) {
             $new_order_statuses['wc-on-hold'] ='Esperando comprobante';
-            $new_order_statuses['wc-awaiting-confirmation'] = 'Falta verificar';
+            $new_order_statuses['wc-await-verif'] = 'Falta verificar';
         }
     }
     return $new_order_statuses;
   }
 
   function register_awaiting_shipment_order_status() {
-    register_post_status( 'wc-awaiting-confirmation', array(
+    register_post_status( 'wc-await-verif', array(
         'label'                     => 'Esperando confirmación',
         'public'                    => true,
         'exclude_from_search'       => false,
