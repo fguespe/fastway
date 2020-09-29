@@ -259,26 +259,27 @@ function bancos_arg($translation, $text, $domain) {
 function get_bacs_account_details_html( $echo = true, $type = 'list' ) {
     $devolver='';
     $bacs_info  = get_option( 'woocommerce_bacs_accounts');
-    foreach ( $bacs_info as $account ) {
-        $account_name   = esc_attr( wp_unslash( $account['account_name'] ) );
-        $bank_name      = esc_attr( wp_unslash( $account['bank_name'] ) );
-        $account_number = esc_attr( $account['account_number'] );
-        $sort_code      = esc_attr( $account['sort_code'] );
-        $iban_code      = esc_attr( $account['iban'] );
-        $bic_code       = esc_attr( $account['bic'] );
-        $devolver.=$bank_name.'<br>';
-        $devolver.=$account_name.'<br>';
-        $devolver.=$account_number.'<br>';
-        $devolver.=$sort_code.'<br>';
-        $devolver.=$iban_code.'<br>';
-        $devolver.=$bic_code.'<br>';
+    if(!empty($bacs_info)){
+        foreach ( $bacs_info as $account ) {
+            $account_name   = esc_attr( wp_unslash( $account['account_name'] ) );
+            $bank_name      = esc_attr( wp_unslash( $account['bank_name'] ) );
+            $account_number = esc_attr( $account['account_number'] );
+            $sort_code      = esc_attr( $account['sort_code'] );
+            $iban_code      = esc_attr( $account['iban'] );
+            $bic_code       = esc_attr( $account['bic'] );
+            $devolver.=$bank_name.'<br>';
+            $devolver.=$account_name.'<br>';
+            $devolver.=$account_number.'<br>';
+            $devolver.=$sort_code.'<br>';
+            $devolver.=$iban_code.'<br>';
+            $devolver.=$bic_code.'<br>';
+        }
     }
     return $devolver;
 }
 
 //VERFW
 
-add_shortcode('bank_info','altoweb_bancos');
 add_shortcode('altoweb_bancos','altoweb_bancos');
 function altoweb_bancos(){
     return get_bacs_account_details_html();

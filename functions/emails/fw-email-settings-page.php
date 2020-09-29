@@ -170,7 +170,7 @@ function myplugin_options_page(){
   $customer_emails_vars.='
   <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">'.__('Docs','fastway').'</a><br>
   <b>'.__('Variables','fastway').':</b>
-  <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{bank_info}} {{payment_method_title}} </small>
+  <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_url}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{bank_info}} {{payment_method_title}} </small>
   <br><b>'.__('Payment Methods','fastway').'('.__('values','fastway').')</b>
   <br><small>';
   foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
@@ -341,7 +341,7 @@ wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = arra
 if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
 ?>
 <div class="tipomail">
-<h3 class="titulo"><?=__( 'Verification pending', 'woocommerce' )?></h3>
+<h3 class="titulo"><?=__( 'Verification pending', 'fastway' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo get_option('fw_email_subject_customer_await_verif_order'); ?>" /><br>
 
