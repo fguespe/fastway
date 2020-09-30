@@ -38,7 +38,7 @@ function preset_db($type){
 	$types['fw_prod_loop_6']= '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]';
 
 
-	$types['fw_cat_loop_2']= '[vc_row el_id="categorias" el_class="carusel_block categories"][vc_column][vc_empty_space][vc_column_text]<h2 style="text-align: center">NUESTROS PRODUCTOS</h2>[/vc_column_text][vc_empty_space height="64px"][product_categories orderby="" order="ASC" columns="2" ids="47, 83, 58, 548"][vc_empty_space][/vc_column][/vc_row]';
+	$types['fw_cat_loop_2']= '[vc_row el_id="categorias" el_class="carusel_block categories"][vc_column][vc_empty_space][vc_column_text][/vc_column_text][vc_empty_space height="64px"][product_categories orderby="" order="ASC" columns="2" ids="47, 83, 58, 548"][vc_empty_space][/vc_column][/vc_row]';
 	$types['fw_cat_loop_4']= '[fw_cat_container][fw_cat_image][fw_cat_title][/fw_cat_container]';
 	$types['fw_cat_loop_5']= '[fw_cat_container][fw_cat_image]<div class="contenedor">[fw_cat_title][fw_cat_desc]</div>[/fw_cat_container]';
 
@@ -131,7 +131,7 @@ function fw_builder_cat_loops(){
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
 		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		$cates="";
-		if($clase=='fw_cat_loop_2')$cates='[vc_row el_id="categorias" el_class="carusel_block categories"][vc_column][product_categories orderby="" order="ASC" columns="2" ids="50,47,49,48"][/vc_column][/vc_row]';
+		if($clase=='fw_cat_loop_2')$cates='Ir a la refe';//'[vc_row el_id="categorias" el_class="carusel_block categories"][vc_column][product_categories orderby="" order="ASC" columns="2" ids="50,47,49,48"][/vc_column][/vc_row]';
 		if($clase=='fw_cat_loop_4')$cates='[vc_row][vc_column][fw_categories_carousel cats="4-auriculares,4-camaras,4-drones,4-proyectores"][/vc_column][/vc_row]';
 		if($clase=='fw_cat_loop_5')$cates='[vc_row][vc_column][fw_categories_carousel cats="5-clothing,decor,5-music,5-shorts"][/vc_column][/vc_row]';
 		

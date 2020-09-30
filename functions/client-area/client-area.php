@@ -668,7 +668,7 @@ function custom_admin_js() {
 		window.fcWidget.init({
 		  token: "3d87a863-f4ce-4bda-a5fe-f8df811e663d",
 		  host: "https://wchat.freshchat.com",
-		  externalId: "'.$nombre.'",     // user’s id unique to your system   
+		  externalId: "'.$nombre.'",   
 		});
 		// To set user name
 		window.fcWidget.user.setFirstName("'.$nombre.'");
