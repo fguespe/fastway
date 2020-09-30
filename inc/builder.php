@@ -82,6 +82,7 @@ function fw_builder_headers(){
 
 add_shortcode('fw_builder_mobilehs','fw_builder_mobilehs');
 function fw_builder_mobilehs(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'mobileh' ) === false) continue;
 		echo "<div class=\"container\" >";
@@ -91,10 +92,12 @@ function fw_builder_mobilehs(){
 		echo '</header>';
 		echo "</div>";
 	}
+	echo '</div>';
 }
 
 add_shortcode('fw_builder_prod_loops','fw_builder_prod_loops');
 function fw_builder_prod_loops(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'fw_prod_' ) === false) continue;
 		global $preset_class,$preset_code;
@@ -106,16 +109,19 @@ function fw_builder_prod_loops(){
 		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_featured_products][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
+	echo '</div>';
 }
 
 
 add_shortcode('fw_builder_cat_loops','fw_builder_cat_loops');
 function fw_builder_cat_loops(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'fw_cat_' ) === false) continue;
 		global $preset_class,$preset_code;
 		$preset_class=$clase;
 		$preset_code=$code;
+
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
 		echo "<h2>.".$clase."</h2>";
 		$cates="";
@@ -127,9 +133,11 @@ function fw_builder_cat_loops(){
 		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_categories_carousel cats="'.$cates.'"][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
+	echo '</div>';
 }
 add_shortcode('fw_builder_icons','fw_builder_icons');
 function fw_builder_icons(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'fw_iconos_home_' ) === false) continue;
 		global $preset_class,$preset_code;
@@ -140,10 +148,12 @@ function fw_builder_icons(){
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo "</div>";
 	}
+	echo '</div>';
 }
 
 add_shortcode('fw_builder_footers','fw_builder_footers');
 function fw_builder_footers(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'footer_' ) === false) continue;
 		echo "<h2>.".$clase."</h2>";
@@ -152,5 +162,6 @@ function fw_builder_footers(){
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo '</div></footer>';
 	}
+	echo '</div>';
 }
 ?>
