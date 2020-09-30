@@ -1282,14 +1282,14 @@ margin: 0;
 }
 
 .fw_prod_loop_2 .fw_add_to_cart_button {
-    background: transparent ;
-    border: solid 2px var(--second) ;
+    background:var(--main) ;
+    border: 0px;
     border-radius: 50px;
 }
 
 .fw_prod_loop_2 .fw_add_to_cart_button span,
 .fw_prod_loop_2 .fw_add_to_cart_button i {
-    color: var(--second) ;
+    color: white;
 }
 
 .fw_prod_loop_2 p {
