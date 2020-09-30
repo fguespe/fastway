@@ -501,7 +501,57 @@ font-size: 14px !important;
 .mobileh_3 .bottom span{
     color:white;
 }
+/*FOoter 1*/
 
+.footer_1 .ginput_container input,
+.footer_1 .gform_footer input{
+    background: #FBE9D9 !important;
+    color:#AC9681 !important;
+    text-transform:uppercase;
+    font-weight:200;
+}
+.footer_1 .gfield{
+    padding-right:1px !important;
+}
+.footer_1 .redes .grupo,
+.footer_1 .redes .grupo i{
+    background:black;
+    margin-right:10px;
+    color:var(--main) !important;
+}
+.footer_1 .fw_icon a i{
+    color:var(--main)!important;
+}
+
+
+.footer_1 .fwhorform .gform_footer {
+	width: 20% !important;
+}
+
+.footer_1 .fwhorform .gform_footer .gform_button {
+	background: transparent !important;
+	color: #353535 !important;
+	font-weight: 400 !Important;
+	cursor: pointer;
+}
+
+.footer_1 .ginput_container input {
+	background-color: transparent !important;
+	border-bottom: solid 1px var(--main);
+	font-weight: 400 ;
+}
+
+.footer_1 .fw_icon big {
+	font-weight: 400;
+	font-size: 13px !Important;
+	text-transform: uppercase;
+}
+
+@media (max-width: 799px) {
+    .footer_1  .fwhorform .gform_footer .gform_button {
+		text-align: left;
+	}
+}
 /*Footer2*/
 .footer_2 h5 {
     color: #fff;
