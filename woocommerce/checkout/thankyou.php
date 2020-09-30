@@ -42,6 +42,7 @@ if(window.gtag)gtag('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAc
 if(window.ga)ga('send', {hitType: 'event',eventCategory: 'Ecommerce',eventAction: 'purchase', eventLabel: 'Compra'});
 if(window.dataLayer){
 	let datala={
+		'event': 'Purchase',
 		'ecommerce': {
 			'purchase': {
 				'actionField': {
