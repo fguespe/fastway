@@ -7,6 +7,10 @@ function refes_db($type){
 	$types['header_12']= ['sale.insti2.kinsta.cloud'];
 	$types['header_13']= ['mendar.com.ar'];
 
+	$types['fw_cat_loop_2']= ['loopboardshop.com.ar'];
+	$types['fw_cat_loop_4']= ['proshop.com.ar'];
+	$types['fw_cat_loop_5']= ['digital-storeweb.com.ar'];
+
 
 	$devolver="";
 	if($types[$type]){

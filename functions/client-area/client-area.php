@@ -661,7 +661,7 @@ function custom_admin_js() {
     $nombre=get_bloginfo( 'name' );
 	$mail=getMailQueEnvia();
 	//freshdesk
-	if(fw_theme_mod('fw_is_multitienda')){
+	if(fw_theme_mod('fw_is_multitienda') || 1==1){
 		echo '
 		<script>
 	  function initFreshChat() {
