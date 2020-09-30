@@ -9,8 +9,11 @@ function refes_db($type){
 
 
 	$devolver="";
-	foreach($types[$type] as $web){
-		$devolver.='<a class="refe" target="_blank" href="'.$web.'">'.$web.'</a> ';
+	if($types[$type]){
+		foreach($types[$type] as $web){
+			$devolver.='<a class="refe" target="_blank" href="'.$web.'">'.$web.'</a> ';
+		}
+
 	}
 	return $devolver;
 
