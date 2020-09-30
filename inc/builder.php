@@ -86,7 +86,7 @@ function fw_builder_mobilehs(){
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'mobileh' ) === false) continue;
 		echo "<div class=\"container\" >";
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo '<header id="header" style="border:2px solid black;margin-bottom:50px;" class="'.$clase.'">';
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo '</header>';
@@ -105,7 +105,7 @@ function fw_builder_prod_loops(){
 		$preset_code=$code;
 
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_featured_products][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
@@ -123,14 +123,13 @@ function fw_builder_cat_loops(){
 		$preset_code=$code;
 
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		$cates="";
 
 		if($clase=='fw_cat_loop_2')$cates='2-camaras,juguetes,mochilas,picadas';
 		if($clase=='fw_cat_loop_4')$cates='4-auriculares,4-camaras,4-drones,4-proyectores';
 		if($clase=='fw_cat_loop_5')$cates='5-clothing,decor,5-music,5-shorts';
 
-		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_categories_carousel cats="'.$cates.'"][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
 	echo '</div>';
@@ -144,7 +143,7 @@ function fw_builder_icons(){
 		$preset_class=$clase;
 		$preset_code=$code;
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo "</div>";
 	}
@@ -158,7 +157,7 @@ function fw_builder_footers(){
 		if(strpos( $clase, 'footer_' ) === false) continue;
 		echo "<h2>.".$clase."</h2>";
 		echo '<footer id="footer" style="border:2px solid black;margin-bottom:50px;" class="'.$clase.'">';
-		echo "<div class='container'>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo '</div></footer>';
 	}
