@@ -10,7 +10,9 @@
     text-transform:underline;
     display:inline;
 }
-
+.fw_builder_template .d-md-none{
+    display: flex !important;
+}
 
 
 .header_1 .desktop.top i {
