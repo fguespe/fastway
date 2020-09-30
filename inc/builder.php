@@ -1,4 +1,20 @@
 <?php
+
+function refes_db($type){
+	$types['header_1']= ['loopboardshop.com.ar'];
+	$types['header_2']= ['bontey.com.ar','tomate.ecom2.kinsta.cloud'];
+	$types['header_11']= ['proshop.com.ar'];
+	$types['header_12']= ['sale.insti2.kinsta.cloud'];
+	$types['header_13']= ['mendar.com.ar'];
+
+
+	$devolver="";
+	foreach($types[$type] as $web){
+		$devolver.='<a class="refe" target="_blank" href="'.$web.'">'.$web.'</a> ';
+	}
+	return $devolver;
+
+}
 function preset_db($type){
 	$types['header_1']= '[fw_header id="top"]<div class="col-6 text-left"> [fw_menu id="top-nav-menu"]</div><div class="col-6 text-right"> <span class="frase-top">Productos para deportes extremos</span></div>[/fw_header][fw_header id="middle"]<div class="col-4 text-left"> [fw_search_form id="1"]</div><div class="col-4 text-center">[fw_logo]</div><div class="col-4 text-right">[fw_user_account][fw_shopping_cart]</div>[/fw_header][fw_header id="bottom"][fw_menu][/fw_header]';
 	$types['header_2']= '[fw_header id="middle"] <div class="d-flex w-100 align-items-center"> [fw_logo] [fw_search_form id="1"] <div class="d-inline-flex mt-auto mb-auto"> [fw_shopping_cart] [fw_user_account] </div> </div>[/fw_header] [fw_header id="bottom"] [fw_menu]<div class="nav-redes"> [fw_social_icons type="fb,ig,twitter" el_class="redes"] </div>[/fw_header]';
@@ -53,13 +69,15 @@ function builder_labels(){
 
 add_shortcode('fw_builder_headers','fw_builder_headers');
 function fw_builder_headers(){
+	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'header' ) === false) continue;
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo '<header id="header" style="border:2px solid black;margin-bottom:50px;" class="'.$clase.'">';
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo '</header>';
 	}
+	echo '</div>';
 }
 
 add_shortcode('fw_builder_mobilehs','fw_builder_mobilehs');
@@ -100,7 +118,13 @@ function fw_builder_cat_loops(){
 		$preset_code=$code;
 		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
 		echo "<h2>.".$clase."</h2>";
-		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_categories_carousel cats="drones,estufas,juguetes,mochila"][/vc_column][/vc_row]')));
+		$cates="";
+
+		if($clase=='fw_cat_loop_2')$cates='2-camaras,juguetes,mochilas,picadas';
+		if($clase=='fw_cat_loop_4')$cates='4-auriculares,4-camaras,4-drones,4-proyectores';
+		if($clase=='fw_cat_loop_5')$cates='5-clothing,decor,5-music,5-shorts';
+
+		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_categories_carousel cats="'.$cates.'"][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
 }

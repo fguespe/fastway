@@ -1,3 +1,18 @@
+
+ .fw_builder_template h2{
+    display:inline-block !important;
+    margin-right:20px;
+
+}
+ .fw_builder_template a.refe{
+    color:blue;
+    margin-right:20px;
+    text-transform:underline;
+    display:inline;
+}
+
+
+
 .header_1 .desktop.top i {
     color: #fff;
     margin-right: 5px;
@@ -1608,4 +1623,17 @@ box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
 .no-swiper-category .col-6:hover a h2{
     transition: all 100ms linear 0s;
     color:var(--main);
+}
+
+
+ .fw_builder_template h2{
+    display:inline-block !important;
+    margin-right:20px;
+
+}
+ .fw_builder_template a.refe{
+    color:blue;
+    margin-right:20px;
+    text-transform:underline;
+    display:inline;
 }
