@@ -590,7 +590,6 @@ font-size: 14px !important;
 
 .footer_2 form .gfield {
     padding: 0 !important;
-.footer_2 i:hover {
 }
 
 .footer_2 form .gfield input {
@@ -604,7 +603,7 @@ font-size: 14px !important;
     width: 30%;
 }
 .footer_2 form input[type=submit] {
-    background:transparent;
+    background: #fff;
     border-radius: 0px 50px 50px 0px;
     color: #000;
     font-weight: 600;
