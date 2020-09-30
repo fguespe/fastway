@@ -129,7 +129,8 @@ function fw_builder_cat_loops(){
 		if($clase=='fw_cat_loop_2')$cates='2-camaras,juguetes,mochilas,picadas';
 		if($clase=='fw_cat_loop_4')$cates='4-auriculares,4-camaras,4-drones,4-proyectores';
 		if($clase=='fw_cat_loop_5')$cates='5-clothing,decor,5-music,5-shorts';
-
+		echo '[vc_row][vc_column][fw_categories_carousel cats="'.$cates.'"][/vc_column][/vc_row]';
+		//echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_categories_carousel cats="'.$cates.'"][/vc_column][/vc_row]')));
 		echo "</div>";
 	}
 	echo '</div>';
