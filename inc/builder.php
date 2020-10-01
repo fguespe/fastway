@@ -162,10 +162,9 @@ function fw_builder_footers(){
 	echo "<div class='fw_builder_template'>";
 	foreach(preset_db(null) as $clase=>$code){
 		if(strpos( $clase, 'footer_' ) === false) continue;
-		echo "<h2>.".$clase."</h2>";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo '<footer id="footer" style="border:2px solid black;margin-bottom:50px;" class="'.$clase.'">';
 		echo "<div class='container'>";
-		echo "<h2>.".$clase."</h2>".refes_db($clase);
 		echo do_shortcode(stripslashes(htmlspecialchars_decode($code)));
 		echo '</div></footer>';
 	}
