@@ -555,6 +555,10 @@ font-size: 14px !important;
 	font-weight: 400 ;
 }
 
+.footer_2 .menu{
+    margin-top:16px;
+}
+
 .footer_1 .fw_icon big {
 	font-weight: 400;
 	font-size: 13px !Important;
