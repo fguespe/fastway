@@ -7,6 +7,16 @@ function refes_db($type){
 	$types['header_12']= ['sale.insti2.kinsta.cloud'];
 	$types['header_13']= ['mendar.com.ar'];
 
+	$types['fw_prod_loop_2']= ['proshop.com.ar'];
+	$types['fw_prod_loop_2']= ['loopboardshop.com.ar'];
+	$types['fw_prod_loop_6']= ['digital-storeweb.com.ar'];
+
+	$types['fw_iconos_home_1']= ['digital-storeweb.com.ar'];
+	$types['fw_iconos_home_2']= ['bontey.com.ar'];
+	$types['fw_iconos_home_3']= ['sale.insti2.kinsta.cloud'];
+	
+
+	$types['mobileh_3']= 'elementosesenciales.com.ar';
 
 	$types['fw_cat_loop_2']= ['loopboardshop.com.ar','carosilvabertolo.com'];
 	$types['fw_cat_loop_4']= ['proshop.com.ar'];
@@ -16,7 +26,7 @@ function refes_db($type){
 	$devolver="";
 	if($types[$type]){
 		foreach($types[$type] as $web){
-			$devolver.='<a class="refe" target="_blank" href="'.$web.'">'.$web.'</a> ';
+			$devolver.='<a class="refe" target="_blank" href="http://'.$web.'">'.$web.'</a> ';
 		}
 	}
 	return $devolver;
