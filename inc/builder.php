@@ -7,9 +7,9 @@ function refes_db($type){
 	$types['header_12']= ['sale.insti2.kinsta.cloud'];
 	$types['header_13']= ['mendar.com.ar'];
 
-	$types['fw_iconos_home_1']= ['sale.insti2.kinsta.cloud,bontey.com.ar'];
+	$types['fw_iconos_home_1']= ['sale.insti2.kinsta.cloud','bontey.com.ar'];
 	$types['fw_iconos_home_2']= ['digital-storeweb.com.ar'];
-	$types['fw_iconos_home_3']= ['porceland.insti2.kinsta.cloud,proshop.com.ar'];
+	$types['fw_iconos_home_3']= ['porceland.insti2.kinsta.cloud','proshop.com.ar'];
 	
 
 	$types['mobileh_3']= ['elementosesenciales.com.ar'];
@@ -30,7 +30,7 @@ function refes_db($type){
 	$types['footer_3']= ['mendar.com.ar','porceland.insti2.kinsta.cloud'];
 	$types['footer_4']= ['loopboardshop.com.ar'];
 	$types['footer_6']= ['digital-storeweb.com.ar'];
-	$types['footer_10']= ['sale.insti2.kinsta.cloud,proshop.com.ar'];
+	$types['footer_10']= ['sale.insti2.kinsta.cloud','proshop.com.ar'];
 
 	$devolver="";
 	if($types[$type]){
