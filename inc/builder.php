@@ -8,7 +8,7 @@ function refes_db($type){
 	$types['header_13']= ['mendar.com.ar'];
 
 	$types['fw_prod_loop_2']= ['proshop.com.ar'];
-	$types['fw_prod_loop_2']= ['loopboardshop.com.ar'];
+	$types['fw_prod_loop_4']= ['loopboardshop.com.ar'];
 	$types['fw_prod_loop_6']= ['digital-storeweb.com.ar'];
 
 	$types['fw_iconos_home_1']= ['digital-storeweb.com.ar'];
