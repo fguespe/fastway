@@ -12,7 +12,7 @@ function refes_db($type){
 	$types['fw_iconos_home_3']= ['porceland.insti2.kinsta.cloud','proshop.com.ar'];
 	
 
-	$types['mobileh_3']= ['digital-storeweb.com.ar'];
+	$types['mobileh_2']= ['digital-storeweb.com.ar'];
 	$types['mobileh_3']= ['elementosesenciales.com.ar'];
 	$types['mobileh_4']= ['berrydesign.com.ar'];
 
