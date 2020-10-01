@@ -36,7 +36,10 @@ function refes_db($type){
 	$devolver="";
 	if($types[$type]){
 		foreach($types[$type] as $web){
-			$devolver.='<a class="refe" target="_blank" href="http://'.$web.'">'.$web.'</a> ';
+			$link='https://www.';
+			if(strpos( $clase, 'kinsta.cloud' ) !== false) $link='http://';
+
+			$devolver.='<a class="refe" target="_blank" href="'.$link.$web.'">'.$web.'</a> ';
 		}
 	}
 	return $devolver;
