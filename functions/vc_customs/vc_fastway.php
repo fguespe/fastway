@@ -353,6 +353,7 @@ function vc_fw_empty_space() {
                         "Small (Para dentro de filas)" =>"32px"  ,
                         "X Small (Para otros casos mas pequeños)" =>"16px"  ,
                     ),
+                    'admin_label' => true,
                     "std" => '64px', //Default Red color
                 ),
             )
