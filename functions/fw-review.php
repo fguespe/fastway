@@ -255,7 +255,7 @@ function fw_review_desc(){
 add_shortcode('fw_review_logo', 'fw_review_logo');
 function fw_review_logo(){
   global $fw_loop_rev;
-  if(function_exists('get_field'))return '<div class="review_logo"><img src="'.get_field('logo',$fw_loop_rev->ID)['url'].'"></div>';
+  if(function_exists('get_field'))return '<img src="'.get_field('logo',$fw_loop_rev->ID)['url'].'" class="review_logo" />';
 }
 
 add_shortcode('fw_review_url', 'fw_review_url');
