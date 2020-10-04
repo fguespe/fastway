@@ -228,7 +228,7 @@ function fw_review_container($atts = [], $content = null){
     $classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_rl_class');
 	
 	
-    echo '<li class="'.$classname_desktop.'">';
+    echo '<li class="'.$classname_desktop.' ">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</li>';
 }
