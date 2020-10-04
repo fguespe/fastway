@@ -223,7 +223,12 @@ endif;
 
 add_shortcode('fw_review_container', 'fw_review_container');
 function fw_review_container($atts = [], $content = null){
-    echo '<li class="fw_review_loop">';
+    $classname_desktop="fw_review_loop";
+    global $preset_class;
+    $classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_rl_class');
+	
+	
+    echo '<li class="'.$classname_desktop.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</li>';
 }

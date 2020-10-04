@@ -26,6 +26,8 @@ function refes_db($type){
 	$types['fw_cat_loop_4']= ['proshop.com.ar'];
 	$types['fw_cat_loop_5']= ['digital-storeweb.com.ar'];
 
+	$types['fw_rev_loop_ 2']= ['inlat.global'];
+
 	$types['footer_1']= ['berrydesign.com.ar'];
 	$types['footer_2']= ['bontey.com.ar'];
 	$types['footer_3']= ['mendar.com.ar','porceland.insti2.kinsta.cloud'];
@@ -59,6 +61,10 @@ function preset_db($type){
 	$types['fw_prod_loop_2']= '[fw_loop_container][fw_loop_image][fw_loop_title][fw_short_desc][fw_div_open class="contiene"][fw_loop_btn][fw_loop_price][fw_div_close][/fw_loop_container]';
 	$types['fw_prod_loop_4']= '[fw_loop_container ][fw_loop_image][fw_loop_title][fw_short_desc][fw_loop_price][/fw_loop_container][fw_loop_btn]';
 	$types['fw_prod_loop_6']= '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]';
+
+
+	$types['fw_rev_loop_2']= '[fw_review_container]<div class="comment_ribbon"><div class="ribbon_bg"><span class="quote">"</span></div>	</div><div class="comment_client">[fw_review_image]<span class="client_name">[fw_review_title]</span><span class="client_job">[fw_review_position]</span></div><div class="comment_wrapper"><div class="desc">[fw_review_desc]</div><div class="comment_footer"><img src="[fw_review_logo]" class="comment_logo"><a href="[fw_review_url]" target="_blank" class="comment_button">EXPLORE</a></div></div>[/fw_review_container]';
+	
 
 
 	$types['fw_cat_loop_2']= '[vc_row el_id="categorias" el_class="carusel_block categories"][vc_column][vc_empty_space][vc_column_text][/vc_column_text][vc_empty_space height="64px"][product_categories orderby="" order="ASC" columns="2" ids="47, 83, 58, 548"][vc_empty_space][/vc_column][/vc_row]';

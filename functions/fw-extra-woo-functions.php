@@ -132,6 +132,18 @@ function fw_loop_container($atts = [], $content = null){
 
 }
 
+function fw_loop_review(){
+  global $preset_code;
+  $code=$preset_code?$preset_code:fw_theme_mod('woo_loop_review_code');
+  echo do_shortcode(stripslashes(htmlspecialchars_decode( $code)));
+}
+function fw_loop_blog(){
+  echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_blog_code'))));
+}
+
+function woo_loop_brand(){
+  echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
+}
 function woo_loop_cat(){
   global $preset_code;
   $code=$preset_code?$preset_code:fw_theme_mod('woo_loop_cat_code');
@@ -221,16 +233,6 @@ function fw_if($atts = [], $content = null){
     }else if($atts['type']=='sku' && $product->get_sku()==$atts['id']){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }
-}
-function fw_loop_review(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_review_code'))));
-}
-function fw_loop_blog(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_blog_code'))));
-}
-
-function woo_loop_brand(){
-    echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_brand_code'))));
 }
 
 
