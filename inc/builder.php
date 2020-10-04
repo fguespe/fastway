@@ -64,7 +64,7 @@ function preset_db($type){
 	$types['fw_prod_loop_6']= '[fw_loop_container][fw_loop_image][fw_loop_title][fw_loop_price][/fw_loop_container]';
 
 
-	$types['fw_rev_loop_1']= '[fw_review_container]<div class="review-inner">[fw_review_image]<div  class="review-head"><h4  class="review-client-name">[fw_review_title]</h4> <span class="review-job">[fw_review_position]</span></div> <div class="review-comment">[fw_review_desc]</div> <div  class="review-logo">[fw_review_logo]</div></div>[/fw_review_container]';
+	$types['fw_rev_loop_1']= '[fw_review_container]<div class="review-inner">[fw_review_image]<div  class="review-head"><h4  class="review-client-name">[fw_review_title]</h4> <span class="review-job">[fw_review_position]</span></div> <div class="review-comment">[fw_review_desc]</div> [fw_review_logo]</div>[/fw_review_container]';
 	$types['fw_rev_loop_2']= '[fw_review_container]<div class="comment_ribbon"><div class="ribbon_bg"><span class="quote">"</span></div>	</div><div class="comment_client">[fw_review_image]<span class="client_name">[fw_review_title]</span><span class="client_job">[fw_review_position]</span></div><div class="comment_wrapper"><div class="desc">[fw_review_desc]</div><div class="comment_footer">[fw_review_logo]<a href="[fw_review_url]" target="_blank" class="comment_button">EXPLORE</a></div></div>[/fw_review_container]';
 	
 

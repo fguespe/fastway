@@ -1524,6 +1524,143 @@ box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
 }
 
 
+/*REVIEWS 1*/
+
+
+.fw_rev_loop_1 {
+	position: relative;
+	width: 100%;
+	padding: 100px 20px;
+		width: 540px ;
+		margin-right: 30px;
+}
+
+.fw_rev_loop_1 .review-inner {
+	position: relative;
+	width: 100%;
+	background: #fff;
+	border-radius: 20px;
+	z-index: 2;
+	padding: 0 30px;
+	min-height: 365px;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+}
+
+.fw_rev_loop_1:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 105% !important;
+}
+
+.fw_rev_loop_1 .thumbnail{
+	width: 100%;
+	max-width: 90px;
+	margin: auto;
+	position: absolute;
+	top: -45px;
+	left: 50%;
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.fw_rev_loop_1 .thumbnail img {
+	width: 100%;
+		border-radius:50px;
+}
+
+.fw_rev_loop_1 .review-head {
+	padding: 55px 0 20px;
+}
+
+.fw_rev_loop_1 .review-client-name {
+	margin-bottom: 5px;
+	color: #363636
+}
+
+.fw_rev_loop_1 .review-job {
+	color: #939393;
+}
+
+.fw_rev_loop_1 .review-comment {
+	margin: auto;
+	display: table;
+}
+
+.fw_rev_loop_1 .review-comment p {
+	margin-bottom: 0;
+	color: #363636;
+}
+
+.fw_rev_loop_1 .review_logo {
+	margin: auto;
+	padding: 20px 0 30px;
+	display: table;
+	max-width: 210px;
+}
+
+
+.fw_rev_loop_1 .review_logo img {
+	width: 100%;
+}
+
+
+
+.slick-dots {
+    text-align: center;
+    display: table;
+    margin: auto;
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+
+
+@media (max-width: 1199px) {
+	.fw_rev_loop_1 .review-inner {
+		min-height: 410px
+	}
+
+	.fw_rev_loop_1:before {
+		background-size: 130% !important;
+	}
+}
+
+@media (max-width: 991px) {
+	.fw_rev_loop_1 .review-inner {
+		min-height: initial;
+	}
+
+	.fw_rev_loop_1:before {
+		background-size: contain !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.fw_rev_loop_1:before {
+		background-position: top center;
+		background-size: 100% !important;
+	}
+	.fw_rev_loop_1.simple-section img {
+		margin-bottom: 0 !important;
+	}
+	.fw_rev_loop_1 .slick-dots {
+	    bottom: 60px;
+	}
+}
 
 /*REVIEWS 2*/
 .fw_rev_loop_2 {
@@ -1629,9 +1766,9 @@ font-weight: 600;
 
 
 .fw_rev_loop_2 .comment_footer .comment_logo {
-height: 30px;
+    height: 30px;
     width:auto;
-margin-top: 10px;
+    margin-top: 10px;
 }
 
 .fw_rev_loop_2 .comment_footer .comment_button {
