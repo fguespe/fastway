@@ -332,6 +332,35 @@ function fw_carousel() {
     );
 }
 
+add_action( 'vc_before_init', 'vc_fw_empty_space' );
+function vc_fw_empty_space() {
+    // Title
+    vc_map(
+        array(
+            'name' => __( 'FW Space' ),
+            'base' => 'fw_empty_space',
+            'description' => __('FW Space', 'fastway'), 
+            'category' => __('Fastway', 'fastway'), 
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'params' => array(
+                
+                array(
+                    "type" => 'dropdown',
+                    "heading"     => __("Size"),
+                    "param_name"  => "height",
+                    "value" => array(
+                        "Medium (Para separar filas)" =>"64px"  ,
+                        "Small (Para dentro de filas)" =>"32px"  ,
+                        "X Small (Para otros casos mas pequeños)" =>"16px"  ,
+                    ),
+                    "std" => '64px', //Default Red color
+                ),
+            )
+    
+        )
+    );
+}
+    
 add_action( 'vc_before_init', 'fw_slider' );
 function fw_slider() {
     // Title
@@ -566,6 +595,14 @@ function fw_carousel_function( $atts, $content ) {
     </script>';
     return $return;
 }   
+
+add_shortcode( 'fw_empty_space', 'fw_empty_space' ); 
+function fw_empty_space( $atts, $content ) {
+    $atts = shortcode_atts(array('height'      =>  '64px'), $atts );
+    
+    return '<div class="vc_empty_space" style="height: '.$atts['height'].'"><span class="vc_empty_space_inner"></span></div>';
+
+}
 
 add_shortcode( 'fw_slider_function', 'fw_slider_function' ); 
 function fw_slider_function( $atts, $content ) {
@@ -1145,10 +1182,10 @@ function vc_after_init_actions() {
             'heading' => __( 'Row stretch', 'js_composer' ),
             'param_name' => 'full_width',
             'value' => array(
-                __( 'Default', 'js_composer' ) => '',
-                __( 'Stretch row', 'js_composer' ) => 'stretch_row',
-                __( 'Stretch row and content', 'js_composer' ) => 'stretch_row_content',
-                __( 'Stretch row and content (no paddings)', 'js_composer' ) => 'stretch_row_content_no_spaces',
+                __( 'Contenido y fondo boxed', 'js_composer' ) => '',
+                __( 'Contenido boxed y fondo ancho', 'js_composer' ) => 'stretch_row',
+                __( 'Contenido y fondo anchos (con padding)', 'js_composer' ) => 'stretch_row_content',
+                __( 'Contenido y fondo full width (con padding)', 'js_composer' ) => 'stretch_row_content_no_spaces',
             ),
             'std'=>'stretch_row',
             'description' => __( 'Select stretching options for row and content (Note: stretched may not work properly if parent container has "overflow: hidden" CSS property'), 
