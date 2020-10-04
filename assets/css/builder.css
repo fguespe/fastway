@@ -237,14 +237,6 @@ color: #fff ;
 }
 
 
-.header_11 .menu-item i{
-    color:var(--main)
-}
-.header_11 i,
-.header_11 .desktop.middle .minicart .cant{
-    color:var(--main);
-}
-
 .header_11 .desktop.middle .fw_icon {
     margin-right: 10px;
 }
@@ -1215,10 +1207,8 @@ margin: 0;
     display: flex;
 }
 @media (max-width: 799px) {
-
-    
     .fw_prod_loop_2 .contiene {
-        padding: 10px;;
+        padding: 10px;
     }
 
 }
