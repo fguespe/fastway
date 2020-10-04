@@ -62,7 +62,7 @@ function get_review_template( $template_name, $args = array(), $posts = null ){
 }
 
 
-add_shortcode( 'fw_review_carousel_function', 'fw_review_carousel_function' ); 
+add_shortcode( 'fw_review_carousel', 'fw_review_carousel_function' ); 
 function fw_review_carousel_function( $atts, $content ) {
   $rand=generateRandomString(5);
   $atts = shortcode_atts(

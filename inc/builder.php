@@ -96,6 +96,23 @@ function builder_labels(){
 	return $devo;
 }
 
+add_shortcode('fw_builder_reviews','fw_builder_reviews');
+function fw_builder_reviews(){
+	echo "<div class='fw_builder_template'>";
+	foreach(preset_db(null) as $clase=>$code){
+		if(strpos( $clase, 'fw_rev_loop_' ) === false) continue;
+		global $preset_class,$preset_code;
+		$preset_class=$clase;
+		$preset_code=$code;
+
+		echo "<div class=\"container\" style=\"border:2px solid black;margin-bottom:50px;padding:10px;\" >";
+		echo "<h2>.".$clase."</h2>".refes_db($clase);
+		echo do_shortcode(stripslashes(htmlspecialchars_decode('[vc_row][vc_column][fw_review_carousel][/vc_column][/vc_row]')));
+		echo "</div>";
+	}
+	echo '</div>';
+}
+
 add_shortcode('fw_builder_headers','fw_builder_headers');
 function fw_builder_headers(){
 	echo "<div class='fw_builder_template'>";
