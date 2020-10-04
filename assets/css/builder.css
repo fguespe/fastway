@@ -1214,6 +1214,14 @@ margin: 0;
     width: 100%;
     display: flex;
 }
+@media (max-width: 799px) {
+
+    
+    .fw_prod_loop_2 .contiene {
+        padding: 10px;;
+    }
+
+}
 
 .fw_prod_loop_2 .fw_add_to_cart_button {
     width: 60%;
