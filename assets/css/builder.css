@@ -1165,8 +1165,9 @@ margin: 0;
 .fw_prod_loop_2 {
     background: #fff;
     border: solid 1px #ddd;
-    padding: 15px !important;
+    padding: 15px;
 }
+
 
 .fw_prod_loop_2 .product_title{
     font-weight: 600;
