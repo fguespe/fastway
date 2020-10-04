@@ -162,12 +162,12 @@ vc_add_param("vc_column_inner",
 ));
 
 
-add_action( 'vc_before_init', 'fw_review_carousel' );
-function fw_review_carousel() {
+add_action( 'vc_before_init', 'vc_fw_review_carousel' );
+function vc_fw_review_carousel() {
   vc_map( 
         array(
             'name' => __('FW Reviews', 'fastway'),
-            'base' => 'fw_review_carousel_function',
+            'base' => 'fw_review_carousel',
             'description' => __('FW Reviews', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            

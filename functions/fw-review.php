@@ -62,8 +62,8 @@ function get_review_template( $template_name, $args = array(), $posts = null ){
 }
 
 
-add_shortcode( 'fw_review_carousel', 'fw_review_carousel_function' ); 
-function fw_review_carousel_function( $atts, $content ) {
+add_shortcode( 'fw_review_carousel', 'fw_review_carousel' ); 
+function fw_review_carousel( $atts, $content ) {
   $rand=generateRandomString(5);
   $atts = shortcode_atts(
       array(
@@ -255,7 +255,7 @@ function fw_review_desc(){
 add_shortcode('fw_review_logo', 'fw_review_logo');
 function fw_review_logo(){
   global $fw_loop_rev;
-  if(function_exists('get_field'))return get_field('logo',$fw_loop_rev->ID)['url'];
+  if(function_exists('get_field'))return '<div class="review_logo"><img src="'.get_field('logo',$fw_loop_rev->ID)['url'].'"></div>';
 }
 
 add_shortcode('fw_review_url', 'fw_review_url');
