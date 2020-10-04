@@ -1161,12 +1161,14 @@ margin: 0;
     background: #f4f4f4;
     border: none;
 }
-
-.fw_prod_loop_2 {
-    background: #fff;
-    border: solid 1px #ddd;
-    padding: 15px;
+@media (min-width: 799px) {
+    .fw_prod_loop_2 {
+        background: #fff;
+        border: solid 1px #ddd;
+        padding: 10px;
+    }
 }
+
 
 
 .fw_prod_loop_2 .product_title{
