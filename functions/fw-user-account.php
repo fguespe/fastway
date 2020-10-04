@@ -22,7 +22,7 @@ if( !function_exists( 'fw_user_account' ) ) {
           $text=$atts['text'];
           $name=is_user_logged_in()?fw_theme_mod("fw_user_myaccount"):fw_theme_mod("fw_user_text");
           $name="<span class='ingresar_text d-none d-sm-inline'>".$name."</span>";
-          $iconstyle='fas';
+          $iconstyle=fw_theme_mod('fw_icons_style');
           //0 only icon
           //1 only text
           //2 icon with text , also username
