@@ -1522,7 +1522,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
         $entro=false;
       }
     }
-		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id) {
+		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id   || strpos( $rate->method_id, 'zippin' ) !== false) {
       $free[ $rate_id ] = $rate;
     }
   }
