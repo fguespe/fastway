@@ -32,7 +32,7 @@ if( !function_exists( 'fw_user_account' ) ) {
           }else if($type==1){
             $istyle=$name;
           }else if($type==0){
-            $istyle='<i class="'.$iconstyle.' fa-user ">'.$name.'</i>';
+            $istyle='<i class="'.$iconstyle.' fa-user "></i>'.$name.'';
           }
 
           $url='';
