@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Altoweb
-Plugin URI: https://www.altoweb.co
-Description: Plugin de funcionalidades de altoweb.co
+Plugin URI: https://www.altoweb.ar
+Description: Plugin de funcionalidades de altoweb.ar
 Version: 1.9
 Author: Fabrizio Guespe
-Author URI: https://www.altoweb.co
+Author URI: https://www.altoweb.ar
 */
 include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
 include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');

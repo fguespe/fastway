@@ -719,8 +719,8 @@ function custom_admin_js() {
 
 
 function fw_remove_footer_admin(){
-    //return '<div class="footerfw" ><a href="https://www.altoweb.co/es/"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
-    return '<a class="footeralto" href="https://www.altoweb.co/es/"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
+    //return '<div class="footerfw" ><a href="https://www.altoweb.ar/es/"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
+    return '<a class="footeralto" href="https://www.altoweb.ar/es/"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
         
 }
 

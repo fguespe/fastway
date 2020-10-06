@@ -842,10 +842,10 @@ msgstr "crear ticket"
 #: functions/client-area/fw-dashboard.php:579
 msgid ""
 "For more information about the altoweb service <a target=\"_blank\" href="
-"\"https://www.altoweb.co/tickets/\">click here</a>"
+"\"https://www.altoweb.ar/tickets/\">click here</a>"
 msgstr ""
 "Para mas información sobre como usar el servicio <a target=\"_blank\" href="
-"\"https://www.altoweb.co/tickets/\">click aquí</a>"
+"\"https://www.altoweb.ar/tickets/\">click aquí</a>"
 
 #: functions/client-area/fw-dashboard.php:580
 msgid ""

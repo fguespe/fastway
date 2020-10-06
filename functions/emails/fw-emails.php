@@ -15,7 +15,7 @@ function getMailQueEnvia(){
     }else if(!empty(fw_theme_mod("short-fw_companyemail"))){
         return fw_theme_mod("short-fw_companyemail");
     }else {
-        return "pruebas+faltaponerunmail@altoweb.co";
+        return "pruebas+faltaponerunmail@altoweb.ar";
     }
 }
 
