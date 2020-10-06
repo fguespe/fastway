@@ -4230,7 +4230,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_free_label',
-	'label'    => __( 'Envío gratis/0', 'fastway' ),
+	'label'    => __( 'Envío gratis', 'fastway' ),
 	'section'     => 'section_labels_shipping',
 	'default'	=>'Sin costo',
 ) );
