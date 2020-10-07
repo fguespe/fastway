@@ -106,6 +106,7 @@ var ProductSwiper = new Swiper(".swiper-related", {
     preventClicks: false,
     preventClicksPropagation: false,
     autoplay: true,
+    zoom: true,
     navigation: {
         nextEl: ".swiper-prodrel-next",
         prevEl: ".swiper-prodrel-prev",
