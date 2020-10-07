@@ -38,7 +38,7 @@ if(fw_theme_mod('fw_crear_cuenta_a_sendy')){
 }
 
 function sendtoSendy($sendy_list,$email){
-	$your_installation_url = 'http://mailer.altoweb.ar';
+	$your_installation_url = 'https://mailer.altoweb.ar';
 	$api_key = 'JUu2WMpouY4wjSFvc2SF'; //Can be retrieved from your Sendy's main settings
 	//Subscribe
 	$postdata = http_build_query(
