@@ -302,12 +302,7 @@ if ( post_password_required() ) {
 
 ?>
 
-<!-- EL de bidcom -->
-<?php
-
-woo_single();
-
-?>
+<?php woo_single(); ?>
 
 <script>
 //Fix fancybox
