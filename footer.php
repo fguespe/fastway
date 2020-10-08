@@ -79,7 +79,6 @@ jQuery(document).ready( function(jQuery) {
    console.log('ja')
    jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
 });
-<script type="text/javascript">
 function check_ga() {
   if (typeof ga === 'function') {
     console.log('Loaded :'+ ga);
