@@ -17,7 +17,10 @@ $container   = fw_theme_mod('footer-width');
 </footer>
 
 <?php 
-if(fw_theme_mod('footer-copyright-switch'))echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('footer-copyright-text'))));?>
+if(fw_theme_mod('footer-copyright-switch')){
+  echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('footer-copyright-text'))));
+}?>
+
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
@@ -65,6 +68,10 @@ jQuery(document).ready( function(jQuery) {
         jQuery('#modalpopup').modal('show');
       }
    }, 2000);
+
+   //BOton
+   let mail='<?=getMailQueRecibe()?>'
+   jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
 });
 </script>
 <?php } ?>
@@ -105,6 +112,7 @@ font-size:10px;
 color:var(--main);
 border:1px solid var(--main);
 border-radius:5px;
+margin-left:5px;
 padding:5px;
 }
 </style>
