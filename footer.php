@@ -99,6 +99,15 @@ jQuery(document).ready( function(jQuery) {
 });
 </script>
 </body>
+<style>
+ .botonarrepe{
+font-size:10px;
+color:var(--main);
+border:1px solid var(--main);
+border-radius:5px;
+padding:5px;
+}
+</style>
 </html>
 
 
