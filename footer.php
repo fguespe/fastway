@@ -78,6 +78,13 @@ jQuery(document).ready( function(jQuery) {
 <?php } ?>
 
 <script type="text/javascript">
+jQuery(document).ready( function(jQuery) {
+//BOton
+   let mail='<?=getMailQueRecibe()?>'
+   console.log('ja')
+   jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
+});
+<script type="text/javascript">
 function check_ga() {
   if (typeof ga === 'function') {
     console.log('Loaded :'+ ga);
