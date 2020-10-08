@@ -68,11 +68,6 @@ jQuery(document).ready( function(jQuery) {
         jQuery('#modalpopup').modal('show');
       }
    }, 2000);
-
-   //BOton
-   let mail='<?=getMailQueRecibe()?>'
-   console.log('ja')
-   jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
 });
 </script>
 <?php } ?>
