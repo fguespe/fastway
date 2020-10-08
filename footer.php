@@ -71,6 +71,7 @@ jQuery(document).ready( function(jQuery) {
 
    //BOton
    let mail='<?=getMailQueRecibe()?>'
+   console.log('ja')
    jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
 });
 </script>
@@ -107,14 +108,14 @@ jQuery(document).ready( function(jQuery) {
 </script>
 </body>
 <style>
- .botonarrepe{
-font-size:10px;
-color:var(--main);
-border:1px solid var(--main);
-border-radius:5px;
-margin-left:5px;
-padding:5px;
-}
+.botonarrepe{
+  font-size:10px;
+  color:var(--main);
+  border:1px solid var(--main);
+  border-radius:5px;
+  margin-left:5px;
+  padding:5px;
+  }
 </style>
 </html>
 
