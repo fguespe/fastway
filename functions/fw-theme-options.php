@@ -3205,7 +3205,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="https://www.altoweb.ar/es/" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/logo.svg"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados. <a class="botonarrepe" href="mailto:'.getMailQueRecibe().'">ARREPENTIMIENTO</a></div>  </div>',
+	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="https://www.altoweb.ar/es/" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/logo.svg"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div>  </div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
