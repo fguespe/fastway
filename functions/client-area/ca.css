@@ -5,12 +5,14 @@ body{
 /*ALERTAS*/
 
 /*MENSAJITOS*/
-
 #vc_license-activation-notice,
 .js-wc-plugin-framework-admin-notice{
 	display: none !important;;
 }
 
+.vc_message.type-error{
+	display:none !important;
+}
 
 .update-nag,
 .update,
