@@ -178,6 +178,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     if($regular_price){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
     }
+    echo $product->get_price()." ".fw_check_hide_prices();
     if(empty($product->get_price()) || fw_check_hide_prices()){
         if(is_product()){
             return '<button type="button"  onclick="location.href=\''.fw_theme_mod('fw_consultar_link').'\'" class=" btn fw_add_to_cart_button" data-product_id="'.$product->id.'">
