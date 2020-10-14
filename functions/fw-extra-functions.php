@@ -359,12 +359,13 @@ function fw_menu_mobilenew( $atts ) {
         $menu = get_term( $locations[$id], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
         $yacreados=array();
-
-        foreach( $menu_items as $menu_item ) {
-            $padre=$menu_item->menu_item_parent;
-	        if ( !in_array($padre,$yacreados) ) {
-                $menu_list .= fw_menu_mobilenew_submenu($menu_items,$padre);
-                array_push($yacreados,$padre);
+        if(!empty($menu_items)){
+            foreach( $menu_items as $menu_item ) {
+                $padre=$menu_item->menu_item_parent;
+                if ( !in_array($padre,$yacreados) ) {
+                    $menu_list .= fw_menu_mobilenew_submenu($menu_items,$padre);
+                    array_push($yacreados,$padre);
+                }
             }
         }
         
