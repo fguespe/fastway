@@ -73,12 +73,14 @@ jQuery(document).ready( function(jQuery) {
 <?php } ?>
 
 <script type="text/javascript">
-jQuery(document).ready( function(jQuery) {
-//BOton
-   let mail='<?=getMailQueRecibe()?>'
-   console.log('ja')
-   jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
-});
+let es_ES='<?=get_locale()=='es_ES'?>'
+if(es_ES){
+  jQuery(document).ready( function(jQuery) {
+    let mail='<?=getMailQueRecibe()?>'
+    jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
+  });
+}
+
 function check_ga() {
   if (typeof ga === 'function') {
     console.log('Loaded :'+ ga);
