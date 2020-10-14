@@ -1406,12 +1406,6 @@ ul {
     padding: 0px !important;
   }
 
-  .vc_row.fw_swiper {
-    /*position: static !important;*/
-    width: 100% !important;
-    /*left: 0px !important;*/
-  }
-
   .vc_row[data-vc-full-width].fw_swiper {
     overflow: visible !important;
   }
