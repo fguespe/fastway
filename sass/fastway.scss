@@ -1344,7 +1344,7 @@ ul {
 @media (max-width: 799px) {
   .vc_row.fw_swiper,
   .vc_row.fw_swiper .vc_column-inner{
-    width: 100vw ;
+    width: 100vw !important;
     max-width: 100vw ;
     padding:0px !important;
   }
