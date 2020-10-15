@@ -49,7 +49,7 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
               ?>
               <a class="img" href="<?=$linkpop?>"><img width="100%" src="<?php echo fw_theme_mod('fw_popup_img');?>"/></a>
             <?php }else if(fw_theme_mod('fw_popup_type')=='html' && fw_theme_mod('fw_popup_html')){ ?>
-              <?php echo fw_theme_mod('fw_popup_html');?>
+              <?php echo do_shortcode(fw_theme_mod('fw_popup_html'));?>
             <?php } ?>
             <?php if(fw_theme_mod('fw_popup_form_mode')){?>
               <div class="modal_form"> <?php echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_pupup_form_id').'" description="false" title="false" ajax="true"]')?></div>
@@ -60,10 +60,12 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 </div>
 <script type="text/javascript">
 jQuery(document).ready( function(jQuery) {
+    var in_customizer = false;
+    if ( typeof wp !== 'undefined' ) in_customizer =  typeof wp.customize !== 'undefined' ? true : false;
     let searchParams = new URLSearchParams(window.location.search)
     setTimeout(function(){
       if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
-      if (jQuery.cookie('modal_shown') == null) {
+      if (jQuery.cookie('modal_shown') == null ||  in_customizer) {
         jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
         jQuery('#modalpopup').modal('show');
       }

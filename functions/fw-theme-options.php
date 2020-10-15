@@ -77,7 +77,7 @@ Kirki::add_section( 'section_meli', array(
 Kirki::add_section( 'section_popup', array(
     'title'          => __( 'Popup', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwaylayout',
 
 ) );
 Kirki::add_section( 'section_scripts', array(
