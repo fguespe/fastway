@@ -553,6 +553,22 @@ jQuery(document).on('updated_checkout', function(){
 	}
 });
 
+jQuery(document).on('updated_checkout', function(){
+		zippinCambiar();
+});
+
+function zippinCambiar(){
+    var element=jQuery('.shipping.zippin .title');
+		if(jQuery('.shipping.zippin').data('costo')==0){
+				element.text('Entrega GRATIS por correo a domicilio');
+        element.addClass('mercadoenvios-shipping free');
+		}else{
+				element.text('Entrega por correo a domicilio');
+				
+		}
+}
+
+
 function setTodopago(){
   let litp=jQuery(document).find(`[data-radio="todopago"]`)
   let img='<img class="imgtp" width="100" src="/wp-content/themes/fastway/assets/img/ahora3y6tp.png"/>'
