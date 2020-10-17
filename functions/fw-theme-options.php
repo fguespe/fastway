@@ -3880,9 +3880,9 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Size', 'fastway' ),
 	'section'     => 'section_popup',
 	'choices'     => array(
+		'modal-sm'   => 'Small',
 		'modal-md'   => 'Medium',
 		'modal-lg'	 => 'Large',
-		'modal-sm'   => 'Small',
 	),
 	'default'     => 'modal-md',
 ) );

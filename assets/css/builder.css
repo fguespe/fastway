@@ -15,6 +15,11 @@
 }
 
 
+.navbar-nav{
+flex-wrap: wrap;
+  overflow: hidden;
+}
+
 .header_1 .desktop.top i {
     color: #fff;
     margin-right: 5px;
