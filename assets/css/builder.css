@@ -15,9 +15,9 @@
 }
 
 
-.navbar-nav{
-flex-wrap: wrap;
-  overflow: hidden;
+#fw_menu .navbar-nav{
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .header_1 .desktop.top i {
