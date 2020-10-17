@@ -5,7 +5,7 @@ if( !function_exists( 'fw_user_account' ) ) {
     function fw_account(){
       if(fw_theme_mod("fw_user_text")=='username'){
         global $current_user;
-        get_currentuserinfo();
+        wp_get_current_user();
         if(is_user_logged_in())return $current_user->display_name;
       }
       else return  fw_theme_mod("fw_user_text");

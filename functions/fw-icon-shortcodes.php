@@ -258,6 +258,7 @@ function fw_data( $atts ) {
          if($atts['stext'])$stext=$atts['stext'];
          else $stext=$value;
      }
+     $stext="";
      if($atts['stext'])$stext=$atts['stext'];
  
 
