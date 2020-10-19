@@ -35,9 +35,10 @@ $laorder=json_encode($laorder);
 <script>
 let order=JSON.parse('<?=$laorder?>');
 let items=JSON.parse('<?=$items?>');
-
-console.log('eventAction:purchase' );
-if(window.fbq){
+let isFbqActive='<?=is_plugin_active('facebook-for-woocommerce/facebook-for-woocommerce.php')?>';
+let isPixelLoaded='<?=fw_theme_mod('fbpixel_id')?>';
+console.log('eventAction:purchase, isPluginActive:',isFbqActive );
+if(!isFbqActive && isPixelLoaded && window.fbq){
 	console.log('fbq emitido')
 	fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
 }
