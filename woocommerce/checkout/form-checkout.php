@@ -537,14 +537,16 @@ function resetShippingFake(){
   console.log(paso,'reset')
   let subt=jQuery('.cart-subtotal bdi').text()
   let tot=jQuery('.order-subtotal bdi').text()
-  if(subt!=tot)jQuery('.order-total').hide()
+  if(paso<3){
+    if(subt!=tot)jQuery('.order-total').hide()
+  }else jQuery('.order-total').hide()
   //jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text())
 }
 
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
-  if(paso<3)resetShippingFake();
+  resetShippingFake();
   //setEpostnet();
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
