@@ -539,7 +539,9 @@ function resetShippingFake(){
   let tot=jQuery('.order-subtotal bdi').text()
   if(paso<3){
     if(subt!=tot)jQuery('.order-total').hide()
-  }else jQuery('.order-total').hide()
+  }else {
+    jQuery('.order-total').show()
+  }
   //jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text())
 }
 
