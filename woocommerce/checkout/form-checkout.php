@@ -322,7 +322,7 @@ function verificarEmail(num){
     }
     sacar1(!e_valid || !p_valid,8)
   }else{
-    console.log('campo pass NO existe',e_valid)
+    //console.log('campo pass NO existe',e_valid)
     sacar1(!e_valid ,9)
   }
   
