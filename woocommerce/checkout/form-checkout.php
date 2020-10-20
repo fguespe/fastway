@@ -688,7 +688,7 @@ jQuery(document).on('click', function(e) {
 
 function seleccionarPago(capsula){
 	
-
+  console.log('trigger 1')
   jQuery(document.body).trigger("update_checkout");
   shippingGroups()
 	jQuery('li.capsula.payment').removeClass("active");
@@ -705,6 +705,7 @@ function seleccionarPago(capsula){
 
 function seleccionarEnvio(capsula){
 
+  console.log('trigger 2')
   jQuery(document.body).trigger("update_checkout");
   shippingGroups()
   
