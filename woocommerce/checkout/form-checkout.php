@@ -17,7 +17,6 @@ jQuery(document).ready(function() {
       return false;
     }
   });
-  resetShippingFake()
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
