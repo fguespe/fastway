@@ -57,22 +57,26 @@ function sendtoSendy($sendy_list,$email){
 
 
 if(fw_theme_mod('fw_forms_a_sendy')){
+  error_log('entra');
   add_action('gform_after_submission', 'post_to_third_party', 10, 2);
   function post_to_third_party($entry, $form) {
     $integraciones=explode("|",trim(fw_theme_mod('fw_forms_a_sendy')));
     foreach ($integraciones as $forma){
       $formm=explode(",",$forma);
       $form_id=$formm[0];
+      error_log($form_id);
       $field_number=$formm[1];
       $sendy_list=$formm[2];
       $email=$entry[$field_number];
 
       if(fw_theme_mod('fw_crear_cuenta_a_sendy') && email_exists($email))continue;
-      else if($form_id==$entry['form_id'])sendtoSendy($sendy_list,$email);
+      else if($form_id==$entry['form_id']){
+        error_log("manda a sendy");
+        sendtoSendy($sendy_list,$email);
+      }
     }
   }
 }
-
 
 
 if(fw_theme_mod('fw_gift_fields')){

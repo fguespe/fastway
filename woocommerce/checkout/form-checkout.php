@@ -17,6 +17,7 @@ jQuery(document).ready(function() {
       return false;
     }
   });
+  resetShippingFake();
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
@@ -312,7 +313,7 @@ function verificarEmail(num){
   let pass=jQuery('#account_password').length
   let p_valid=false
   if(pass){
-    console.log('campo pass SI existe',e_valid)
+   // console.log('campo pass SI existe',e_valid)
     p_valid=jQuery('#account_password').val() && jQuery('#account_password').val().length>=6
     if(!p_valid){
       jQuery('#account_password').addClass('enrojo')
@@ -386,7 +387,7 @@ jQuery(document).ready( function(jQuery) {
   })
 
   jQuery('#billing_form input').on('input', function(e){
-    console.log('entra aca')
+    
     verificarFields()
   })
   
@@ -465,7 +466,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    console.log(estado,msg)
+    //console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
@@ -532,6 +533,11 @@ function checkpostalCode(){
     var msg = window.prompt("Complete su código postal para poder calcular su envío", "");
     jQuery('#billing_postcode').val(msg)
   }
+}
+function resetShippingFake(){
+    console.log(jQuery('.cart-subtotal bdi').text())
+    console.log(jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text()))
+
 }
 
 jQuery(document).on('updated_checkout', function(){
@@ -670,11 +676,11 @@ jQuery(document).on('click', function(e) {
     jQuery('.paso-shipping').addClass('inside')
 		e.preventDefault()
 	}else if(target.is( "li" ) && target.hasClass( "shipping" )){
-		console.log('entra-shipping')
+		//console.log('entra-shipping')
 		target.find('input:radio').prop("checked", true);
 		seleccionarEnvio(target)
 	}else if(target.is( "li" ) && target.hasClass( "payment" )){
-		console.log('entra-payment')
+		//console.log('entra-payment')
 		target.find('input:radio').prop("checked", true);
 		seleccionarPago(target)
 	}

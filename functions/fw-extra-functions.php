@@ -567,7 +567,7 @@ function fw_header_builder_mobile($atts = [], $content = null){
     $post_slug = $post->post_name;
     if($post_slug=='mobilehs')$clasem="";
 
-    $volver.='<div class="navbar fw_header '.fw_theme_mod('fw_builder_mheader_class').' '.$atts['id'].' '.$_img.' '.$clasem.' mobile codes">';
+    $volver.='<div class="navbar fw_header '.fw_theme_mod('fw_builder_mheader_class').' '.$atts['id'].' '.$clasem.' mobile codes">';
     $volver .= do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     $volver .='</div>';
 

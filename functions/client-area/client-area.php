@@ -118,7 +118,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_crear_cuenta_a_sendy',
-	'label'       => __( 'Mandar cuenta a sendy', 'fastway' ),
+	'label'       => __( 'Signups sendy list', 'fastway' ),
 	'section'     => 'section_client_admin',
 	'default'     => '',
 ) );
@@ -126,7 +126,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_forms_a_sendy',
-	'label'       => __( 'Mandar forms a sendy', 'fastway' ),
+	'label'       => __( 'Forms to sendy', 'fastway' ),
 	'section'     => 'section_client_admin',
     'default'     => '',
     'description' => 'form_id,field_number,sendy_list|form_id,field_number,sendy_list|'

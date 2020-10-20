@@ -5090,6 +5090,9 @@ dt.variation-fw_extra.stock {
   display: inline !important;
 }
 
+.woocommerce-checkout .logo {
+  width: 50% !important;
+}
 .woocommerce-checkout form.processing .box-detail {
   display: none !important;
 }
