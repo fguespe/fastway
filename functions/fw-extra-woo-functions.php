@@ -224,6 +224,8 @@ function fw_if($atts = [], $content = null){
        return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    }else if($atts['type']=='max_price' && $product->get_price()<=$atts['price']){
+      return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='role' && check_user_role($atts['id'])){
       return do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     }else if($atts['type']=='logged' && is_user_logged_in()){
