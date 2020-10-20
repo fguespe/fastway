@@ -540,6 +540,7 @@ function resetShippingFake(){
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
+  if(paso<2)resetShippingFake();
   //setEpostnet();
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
