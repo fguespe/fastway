@@ -535,9 +535,7 @@ function checkpostalCode(){
   }
 }
 function resetShippingFake(){
-    console.log(jQuery('.cart-subtotal bdi').text())
-    console.log(jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text()))
-
+    jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text())
 }
 
 jQuery(document).on('updated_checkout', function(){
