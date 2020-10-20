@@ -17,6 +17,7 @@ jQuery(document).ready(function() {
       return false;
     }
   });
+  resetShippingFake()
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
@@ -535,13 +536,14 @@ function checkpostalCode(){
 }
 function resetShippingFake(){
   console.log(paso,'reset')
-    jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text())
+  jQuery('.order-total').hide()
+  //jQuery('.order-total bdi').text(jQuery('.cart-subtotal bdi').text())
 }
 
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
-  if(paso<3)resetShippingFake();
+  //if(paso<3)resetShippingFake();
   //setEpostnet();
   shippingGroups();
 	if(envioSeleccionado>0)jQuery('.shipping-total').attr("style", "display: table-row")
