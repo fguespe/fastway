@@ -547,6 +547,7 @@ function resetShippingFake(){
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
+  zippinCambiar();
   resetShippingFake();
   //setEpostnet();
   shippingGroups();
@@ -562,10 +563,6 @@ jQuery(document).on('updated_checkout', function(){
 		jQuery('.btn-checkout.continuar.shipping').prop('disabled', false);
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}
-});
-
-jQuery(document).on('updated_checkout', function(){
-		zippinCambiar();
 });
 
 function zippinCambiar(){
