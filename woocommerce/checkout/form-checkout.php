@@ -547,7 +547,7 @@ function resetShippingFake(){
 jQuery(document).on('updated_checkout', function(){
   //updateEnvioGratisME();
   setTodopago();
-  zippinCambiar();
+  //zippinCambiar();
   resetShippingFake();
   //setEpostnet();
   shippingGroups();
