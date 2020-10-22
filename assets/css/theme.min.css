@@ -2074,10 +2074,12 @@ footer .widget_nav_menu li a {
   display: block;
 }
 .fw_product_loop .loopimg_container {
-  /*height:200px;
-  @media (max-width: 799px) {
-    height:120px;
-  }*/
+  height: 200px;
+}
+@media (max-width: 799px) {
+  .fw_product_loop .loopimg_container {
+    height: 120px;
+  }
 }
 .fw_product_loop .loopimg_container img {
   object-fit: contain;
