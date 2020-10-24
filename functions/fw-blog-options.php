@@ -47,7 +47,7 @@ function fw_recentposts_ver() {
           </div>
           <div class="col-9">
             <h4 class="title"><?php  the_title();?></h4>
-            <p class="desc"><?php the_excerpt(); ?></p>
+            <p class="desc"><?php get_the_excerpt(); ?></p>
               <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
