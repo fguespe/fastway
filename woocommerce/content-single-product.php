@@ -43,7 +43,6 @@ function fw_summary_container($atts = [], $content = null){
 }
 
 
-
 add_shortcode('fw_single_tabs','fw_single_tabs');
 function fw_single_tabs(){
     remove_action('woocommerce_after_single_product_summary','woocommerce_upsell_display',15);
