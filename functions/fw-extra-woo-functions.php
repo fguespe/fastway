@@ -13,7 +13,7 @@ function terms_and_conditions_validation( $username, $email, $validation_errors 
 add_shortcode('fw_loop_title', 'fw_loop_title');
 function fw_loop_title(){
     global $product;
-    echo '<h2 class="blog_title">'.$product->post->post_title.'</h2>';
+    echo '<h2 class="product_title">'.$product->post->post_title.'</h2>';
 }
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){
