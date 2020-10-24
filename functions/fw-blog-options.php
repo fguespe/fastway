@@ -46,9 +46,9 @@ function fw_recentposts_ver() {
                 <img src="<?php echo $image_url; ?>" />
           </div>
           <div class="col-9">
-            <h4 class="title"><?php  the_title();?></h4>
-            <p class="desc"><?=get_the_excerpt(); ?></p>
-              <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
+            <h2 class="blog_title"><?php  the_title();?></h2>
+            <p class="desc"><?php the_excerpt(); ?></p>
+            <a href="<?php echo esc_url( get_permalink($post->ID) )?>" class="vermas" target="_blank">Leer más</a>
           </div>
         </div>
   <?php }?>

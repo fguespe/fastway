@@ -195,6 +195,41 @@ function multisite_custom_css_map_meta_cap( $caps, $cap ) {
 }
 
 
+/** add this to your function.php child theme to remove ugly short code on excerpt */
+/** add by Paolo Rudelli aka Paul Corneille 09-06-2014 */
+if(!function_exists('remove_vc_from_excerpt'))  {
+  function remove_vc_from_excerpt( $excerpt ) {
+      $patterns = "/\[[\/]?vc_[^\]]*\]/";
+      $replacements = "";
+      return preg_replace($patterns, $replacements, $excerpt);
+  }
+}
+/** * Original elision function mod by Paolo Rudelli */
+if(!function_exists('qode_excerpt')) {
+/** Function that cuts post excerpt to the number of word based on previosly set global * variable $word_count, which is defined in qode_set_blog_word_count function */
+function qode_excerpt() {
+global $qode_options_elision, $word_count, $post;
+$word_count = isset($word_count) && $word_count != "" ? $word_count : $qode_options_elision['number_of_chars'];
+$post_excerpt = $post->post_excerpt != "" ? $post->post_excerpt : strip_tags($post->post_content);
+$clean_excerpt = strpos($post_excerpt, '...') ? strstr($post_excerpt, '...', true) : $post_excerpt;
+/** add by PR */
+$clean_excerpt = strip_shortcodes(remove_vc_from_excerpt($clean_excerpt));
+/** end PR mod */
+$excerpt_word_array = explode (' ',$clean_excerpt);
+$excerpt_word_array = array_slice ($excerpt_word_array, 0, $word_count);
+$excerpt = implode (' ', $excerpt_word_array).'...'; echo ''.$excerpt.'';
+
+}
+}
+
+
+add_filter ('get_the_excerpt','wpse240352_filter_excerpt');
+function wpse240352_filter_excerpt ($post_excerpt) { 
+  if(empty($post_excerpt))$post_excerpt=qode_excerpt();
+  $post_excerpt = '<p class="desc">' . $post_excerpt . '</p>';
+  return $post_excerpt;
+}  
+
 function generateRandomString($length = 10) {
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
