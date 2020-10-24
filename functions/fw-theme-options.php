@@ -1526,9 +1526,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'header_mobile_code',
 	'label'       => __( 'Header Mobile Code', 'fastway' ),
-	'description' => '[fw_m_header id="bottom,top,middle"]
-					[fw_logo][fw_m_menu][fw_user_account][fw_m_search_form][fw_shopping_cart]
-					[/fw_m_header]',
+	'description' => '[fw_m_header id="bottom,top,middle"][fw_logo][fw_m_menu][fw_user_account type="1(only icon)/2(only text)/3(username)][fw_m_search_form][fw_shopping_cart][/fw_m_header]',
 	'section'     => 'section_mobile_header',
 	'default'     => '[fw_m_header]<div class="col-3 row align-items-center justify-content-around px-0">
 	[fw_m_menu][fw_m_search_form id="3"]
