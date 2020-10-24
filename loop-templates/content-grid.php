@@ -12,7 +12,7 @@ $image_url = $image[0];
     <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
         <div class="loopimg_container"><img src="<?php echo $image_url; ?>" /></div>
         <h2 class="blog_title"><?php  the_title();?></h4>
-        <p class="desc"><?php get_the_excerpt(); ?></p>
+        <p class="desc"><?=get_the_excerpt(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
     </a>
 </li>
