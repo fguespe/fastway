@@ -58,9 +58,6 @@ function fw_recentposts_ver() {
 add_shortcode('fw_recentposts_ver', 'fw_recentposts_ver');
 
 if ( ! function_exists( 'understrap_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
 function understrap_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
