@@ -21,7 +21,7 @@ function fw_recentposts_grid() {
       <li class="fw_post_loop <?php echo $clase;?> col-sm-6" >
       <a href="<?php echo esc_url( get_permalink($post->ID) )?>">
           <div class="loopimg_container"><img src="<?php echo $image_url; ?>" width="100%"/></div>
-        <h2 class="blog_title"><?php  the_title();?></h4>
+        <h2 class="blog_title"><?php  the_title();?></h2>
         <p class="desc"><?php the_excerpt(); ?></p>
         <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
       </a>
@@ -108,7 +108,7 @@ function fw_blog_image(){
 add_shortcode('fw_blog_title', 'fw_blog_title');
 function fw_blog_title(){
   global $fw_loop_blog;
-  echo '<h5 class="blog_title" >'.$fw_loop_blog->post_title.'</h5>' ;
+  echo '<h2 class="blog_title" >'.$fw_loop_blog->post_title.'</h2>' ;
 }
 
 add_shortcode('fw_blog_desc', 'fw_blog_desc');
