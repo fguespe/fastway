@@ -37,7 +37,7 @@ $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
 if(is_webaltoweb()){
-print_r($available_methods);
+echo print_r($available_methods);
 }
 ?>
 <tr class="woocommerce-shipping-totals shipping">
