@@ -483,7 +483,7 @@ function nextpaso(){
     jQuery('.paso-shipping').show()
     sacar1(true,1)
 
-    if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){//sin envios
+    if(paso==3 && '<?=!hasShipping()?>'){//sin envios
       jQuery(document.body).trigger("update_checkout"); 
       nextpaso()
     }

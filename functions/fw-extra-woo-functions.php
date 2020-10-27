@@ -1755,8 +1755,6 @@ function sample_admin_notice__error() {
 
 
 
-if(fw_theme_mod('fw_id_filesync')==1)set_theme_mod('fw_id_filesync','');
-
 function hasShipping(){
   return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1;
 }
