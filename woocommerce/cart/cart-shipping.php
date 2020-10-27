@@ -38,8 +38,8 @@ $calculator_text          = '';
 
 if(is_webaltoweb()){
  echo "ja";
- echo WC()->shipping->load_shipping_methods();
- echo WC()->shipping()->get_packages();
+ echo print_r(WC()->shipping->load_shipping_methods());
+ echo print_r(WC()->shipping()->get_packages());
 }
 ?>
 <tr class="woocommerce-shipping-totals shipping">
