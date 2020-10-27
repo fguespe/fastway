@@ -26,10 +26,6 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
   }
 }
 
-function hasShipping(){
-  return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1;
-}
-update_option( 'rwl_page', 'login' );
 require get_template_directory() . '/functions/emails/fw-emails.php';
 require get_template_directory() . '/functions/emails/fw-email-settings-page.php';
 require get_template_directory() . '/functions/fw-roles.php';

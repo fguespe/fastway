@@ -1508,13 +1508,6 @@ if(fw_theme_mod('fw_define_shipping_default')){
   }
   
 }
-function ship1( $rates) {
-  error_log('ass');
-  return [];
-}
-add_filter( 'woocommerce_package_rates', 'ship1',1);
-
-
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;
   $free = array();
@@ -1764,3 +1757,6 @@ function sample_admin_notice__error() {
 
 if(fw_theme_mod('fw_id_filesync')==1)set_theme_mod('fw_id_filesync','');
 
+function hasShipping(){
+  return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1;
+}
