@@ -27,6 +27,7 @@ if ( ! function_exists( 'fw_theme_mod' ) ) {
 }
 
 function hasShipping(){
+  console.log(get_option('woocommerce_ship_to_countries')!='disabled' ,count(WC()->shipping()->get_packages())>=1);
   return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1;
 }
 update_option( 'rwl_page', 'login' );
