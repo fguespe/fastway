@@ -1508,6 +1508,12 @@ if(fw_theme_mod('fw_define_shipping_default')){
   }
   
 }
+function ship1( $rates) {
+  error_log('ass');
+  return [];
+}
+add_filter( 'woocommerce_package_rates', 'ship1',1);
+
 
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;

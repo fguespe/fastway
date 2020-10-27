@@ -36,7 +36,11 @@ $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
-
+if(is_webaltoweb()){
+ echo "ja";
+ echo WC()->shipping->load_shipping_methods();
+ echo WC()->shipping()->get_packages();
+}
 ?>
 <tr class="woocommerce-shipping-totals shipping">
 	<a class="shipping_volver" onclick="jQuery('.paso-shipping').removeClass('inside')" style="display:none;" ><i class="fad fa-chevron-left"></i> Volver </a>

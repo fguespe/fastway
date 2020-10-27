@@ -291,7 +291,6 @@ function fw_widget_cuotas_tp_dash_handler(){
     # get saved data
     if( !$widget_options = get_option( 'fw_todopago_widget_options' ) )$widget_options = array( );
     # process update
-    error_log('entra');
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_todopago_widget_options'] ) ) {
         # minor validation
          $variable=( $_POST['fw_todopago_widget_options']['max_cuotas'] );
@@ -301,7 +300,6 @@ function fw_widget_cuotas_tp_dash_handler(){
         set_theme_mod('fw_cuotas_todopago',$variable);
     }
 
-    error_log('entra');
     if( !isset( $widget_options['fw_cuotas_todopago'] ) )$widget_options['fw_cuotas_todopago'] = fw_theme_mod('fw_cuotas_todopago');
 
     echo "

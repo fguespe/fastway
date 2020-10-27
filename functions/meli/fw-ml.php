@@ -76,13 +76,13 @@ function fw_ml_update_stock( $order_id ) {
         if(strpos( $sku, 'MLA' ) !== false){
           $stock=$product->get_stock_quantity();
           if($stock<0)$stock=0;
-          error_log('stock:'.$stock);
+          //error_log('stock:'.$stock);
           $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
           $vars=$prod['body']->variations;
           $permalink=$prod['body']->permalink;
           if(count($vars)>0){
             $note=$sku.' - es un prod variable' ;
-            error_log($note);
+            //error_log($note);
             $order->add_order_note($note);
             foreach($vars as $var){
               $item = array(
@@ -96,7 +96,7 @@ function fw_ml_update_stock( $order_id ) {
             }
           }else{
             $note=$sku.' - es un prod simple' ;
-            error_log($note);
+            //error_log($note);
             $order->add_order_note( $note);
 
             $item = array("available_quantity"=>$stock);
