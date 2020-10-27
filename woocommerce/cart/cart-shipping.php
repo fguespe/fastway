@@ -37,9 +37,11 @@ $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
 if(is_webaltoweb()){
- echo "ja";
+ echo "fguespe";
  echo print_r(WC()->shipping->load_shipping_methods());
  echo print_r(WC()->shipping()->get_packages());
+}else{
+	echo "fguespe";
 }
 ?>
 <tr class="woocommerce-shipping-totals shipping">
