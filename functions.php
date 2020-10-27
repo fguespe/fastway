@@ -225,8 +225,7 @@ $excerpt = implode (' ', $excerpt_word_array).'...'; echo ''.$excerpt.'';
 }
 }
 
-
-add_filter ('get_the_excerpt','wpse240352_filter_excerpt');
+if(!is_plugin_active( 'wordpress-seo/wp-seo.php' ) )add_filter ('get_the_excerpt','wpse240352_filter_excerpt');
 function wpse240352_filter_excerpt ($post_excerpt) { 
   if(empty($post_excerpt))$post_excerpt=qode_excerpt();
   $post_excerpt = '<p class="desc">' . $post_excerpt . '</p>';
