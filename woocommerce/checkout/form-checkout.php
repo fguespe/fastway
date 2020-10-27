@@ -20,9 +20,6 @@ jQuery(document).ready(function() {
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
-function hasShipping(){
-  return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1
-}
 var logged=false;
 var paso = 1;
 </script>
