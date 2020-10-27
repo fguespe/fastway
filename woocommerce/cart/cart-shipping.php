@@ -19,16 +19,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-//REset shipping
-//REset shipping NO TOCAR!
-/*
-$method='local_pickup_plus';//EE
-foreach ( WC()->shipping->get_packages() as $key => $package ) {
-  foreach($package['rates'] as $rate_id => $rate ){
-      if($rate->cost==0)$method=$rate->id;
-  }
-}
-WC()->session->set('chosen_shipping_methods',[$method]);*/
 
 
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
@@ -36,13 +26,7 @@ $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 
-if(is_webaltoweb()){
- echo "fguespe";
- echo print_r(WC()->shipping->load_shipping_methods());
- echo print_r(WC()->shipping()->get_packages());
-}else{
-	echo "fguespe";
-}
+
 ?>
 <tr class="woocommerce-shipping-totals shipping">
 	<a class="shipping_volver" onclick="jQuery('.paso-shipping').removeClass('inside')" style="display:none;" ><i class="fad fa-chevron-left"></i> Volver </a>

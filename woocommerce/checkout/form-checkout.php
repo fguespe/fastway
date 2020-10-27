@@ -20,8 +20,9 @@ jQuery(document).ready(function() {
 });
 if (typeof wc_tokenization_form_params === 'undefined')wc_tokenization_form_params=null
 
-
-
+function hasShipping(){
+  return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1
+}
 var logged=false;
 var paso = 1;
 </script>
@@ -154,12 +155,28 @@ var paso = 1;
           <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
           <div class="clear"></div>	
       </div>
-      <?php if(get_option('woocommerce_ship_to_countries')!='disabled'){  ?>
+      
+      <?php if(hasShipping()){  ?>
       <div class="box-detail paso-shipping" style="display:none;">
             <h1><span class="icon-paso">2</span><?=fw_theme_mod('fw_label_checkout_3')?>
             <small><?=fw_theme_mod('fw_label_checkout_desc')?></small></h1>
             
-            <?php wc_get_template(	'checkout/shipping-order-review.php'); ?>
+
+            <?php 
+            $packages=WC()->shipping()->get_packages();
+            if(count($packages)<1){
+              ?>
+              <li class="capsula  " style="padding-left:5px;cursor:not-allowed !important;"  >
+                <label class="title"><?=__('No shipping options available','fastway');?></label>
+                <small  class="costo"><?=wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) )?></small> 
+              </li>
+            <?php
+            }else{
+              
+              wc_get_template(	'checkout/shipping-order-review.php'); 
+              
+            }
+            ?>
 
             <div class="capsula box-step" style="display:none;">
               <a class="editar" onclick="editpaso(3)"><?=fw_theme_mod('fw_label_checkout_change')?></a>
@@ -483,7 +500,7 @@ function nextpaso(){
     jQuery('.paso-shipping').show()
     sacar1(true,1)
 
-    if(paso==3 && '<?=get_option('woocommerce_ship_to_countries')?>'=='disabled'){//sin envios
+    if(paso==3 && '<?=!hasShipping()?>'){//sin envios
       jQuery(document.body).trigger("update_checkout"); 
       nextpaso()
     }
