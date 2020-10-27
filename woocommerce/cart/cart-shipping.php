@@ -35,11 +35,8 @@ $formatted_destination    = isset( $formatted_destination ) ? $formatted_destina
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
-echo "ha";
-if(is_webaltoweb()){
-echo print_r($available_methods);
-echo "ha";
-}
+
+
 ?>
 <tr class="woocommerce-shipping-totals shipping">
 	<a class="shipping_volver" onclick="jQuery('.paso-shipping').removeClass('inside')" style="display:none;" ><i class="fad fa-chevron-left"></i> Volver </a>
