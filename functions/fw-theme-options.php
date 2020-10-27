@@ -499,7 +499,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_label_checkout_1',
 	'label'    => __( 'titulo - Tu cuenta', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Crea tu cuenta',
+	'default'	=>'Tu cuenta',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
