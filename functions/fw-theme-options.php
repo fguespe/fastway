@@ -36,6 +36,13 @@ Kirki::add_panel( 'panel_fastwaylayout', array(
     'title'       => __( 'Fastway Layouts', 'fastway' ),
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
+
+if(is_plugin_active('woocommerce/woocommerce.php')){
+	Kirki::add_panel( 'panel_fastwaywoo', array(
+		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
+	) );
+}
+
 Kirki::add_panel( 'panel_fastway', array(
 
     'title'       => __( 'Fastway Settings', 'fastway' ),
@@ -295,12 +302,6 @@ if(is_webaltoweb()){
 Kirki::add_panel( 'panel_fastwayblog', array(
     'title'       => __( 'Fastway Blog', 'fastway' ),
 ) );
-
-if(is_plugin_active('woocommerce/woocommerce.php')){
-	Kirki::add_panel( 'panel_fastwaywoo', array(
-		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
-	) );
-}
 
 Kirki::add_section( 'section_blog_general', array(
     'title'          => __( 'General', 'fastway' ),
@@ -2160,13 +2161,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase',
 	'label'    => __( 'Min Purchase', 'fastway' ),
-	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
+	'description' => 'OJO!! SOLO EL NUMERO, SIN SIMBOLOS y el rol entre parentesis separados tipo company data.CONSULTAR '.strtolower(implode(fw_get_all_roles(),", ")),
 	'section'     => 'section_woo_cart',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase2',
-	'description' => 'OJO!!, ahora toma el tema de los roles, consultar antes. '.strtolower(implode(fw_get_all_roles(),", ")),
+	'description' => 'OJO!! SOLO EL NUMERO, SIN SIMBOLOS y el rol entre parentesis separados tipo company data, CONSULTAR '.strtolower(implode(fw_get_all_roles(),", ")),
 	'label'    => __( 'Min Re-Purchase', 'fastway' ),
 	'section'     => 'section_woo_cart',
 ) );
