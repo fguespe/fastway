@@ -426,11 +426,12 @@ function ir_al_checkout(url){
     if(!min)min='<?=fw_theme_mod('fw_min_purchase')?>';
     if(!total)total=Number((jQuery('.cart-subtotal td span').text()).replace(/[^0-9.-]+/g,""));
     
+    if(min){
 
-    min = min.match(/\d/g);
-    min = min.join("");
-   
-    console.log('v2',parseInt(min),parseInt(total),min<=total)
+        min = min.match(/\d/g);
+        min = min.join("");
+        console.log('v2',parseInt(min),parseInt(total),min<=total)
+    }
 
     if(!min)location.href=url
     else if(min && parseInt(min)<=parseInt(total))location.href=url
