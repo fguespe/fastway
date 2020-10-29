@@ -830,6 +830,26 @@ function fw_custom_get_availability( $availability, $_product ) {
     else if ( !$instock || $status=='outofstock' )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
     return $availability; 
 }
+function get_attrClasses($product){
+  $classname_desktop="";
+
+  $attributes = $product->get_attributes();
+  // Start the loop
+  foreach ( $attributes as $attribute ) : 
+    error_log(print_r($attribute,true));
+    if ( $attribute['is_taxonomy'] ) {
+      $values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
+      error_log(print_r($values,true));
+      foreach($values as $value){ 
+        $classname_desktop .= ' '.$attribute['name'].'-'.strtolower($value);
+      }   
+    }
+  endforeach; 
+
+  return $classname_desktop;
+
+}
+
 
 add_action('woocommerce_cart_coupon', 'themeprefix_back_to_store');
 function themeprefix_back_to_store() { 

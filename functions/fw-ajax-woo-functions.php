@@ -12,6 +12,24 @@ function fw_ajax_logout(){
   wp_die();
   die();
 }
+
+add_action('wp_ajax_nopriv_fw_ajax_email_exists', 'fw_ajax_email_exists');
+add_action('wp_ajax_fw_ajax_email_exists', 'fw_ajax_email_exists');
+function fw_ajax_email_exists(){
+  $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
+  $email = $_GET['email'];
+  
+  // do check
+  if ( email_exists($email) ) {
+      $response->result = true;
+  }else {
+      $response->result = false;
+  }
+
+  echo json_encode($response);
+}
+
+
 add_action('wp_ajax_nopriv_fw_ajax_login', 'fw_ajax_login');
 add_action('wp_ajax_fw_ajax_login', 'fw_ajax_login');
 function fw_ajax_login(){

@@ -298,6 +298,23 @@ function fw_login(){
             }
           }
       });
+
+}
+
+
+function emailExists(){
+  jQuery.ajax({
+      type: 'POST',
+      dataType: 'json',
+      url:ajaxurl,
+      data: { 
+          action: 'fw_ajax_email_exists', //calls wp_ajax_nopriv_ajaxlogin
+          email: jQuery('#login #username').val()
+      },
+      success: function(data){
+        console.log(data)
+      }
+  });
 }
 function verificarEmail(num){
   let email=jQuery('#billing_email').val()
