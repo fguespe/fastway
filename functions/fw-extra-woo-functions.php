@@ -20,6 +20,11 @@ function fw_loop_price(){
     global $product;
     echo $product->get_price_html();
 }
+add_shortcode('fw_loop_attr', 'fw_loop_attr');
+function fw_loop_attr($atts = []){
+    $atts = shortcode_atts(array('type' => '' ,'data' => 'title' ), $atts );
+    
+}
 
 add_shortcode('fw_single_price', 'fw_single_price');
 function fw_single_price(){
