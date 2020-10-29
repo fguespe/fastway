@@ -2406,7 +2406,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
 	
 	'section'     => 'section_editable',
-	'default' => 6
+	'default' => 12
 ) );
 
 

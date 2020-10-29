@@ -287,6 +287,8 @@ function altoweb_bancos(){
 add_shortcode('altoweb_financiacion','altoweb_financiacion');
 function altoweb_financiacion(){
     global $product;
+    $cuotas=fw_theme_mod('fw_cuotas_general');
+    
     $return= <<<HTML
     <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
     <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
@@ -294,7 +296,7 @@ function altoweb_financiacion(){
         <i class="fad fa-credit-card"></i>
         </span> 
         <span class="text"> 
-        <big>Pagá en hasta 12 cuotas</big> 
+        <big>Pagá en hasta $cuotas cuotas</big> 
         <img style="display:block;" src="/wp-content/themes/fastway/assets/img/iconitopagos.png" width="97"/>
         <small style="color:#3483fa !important;">Más información</small> 
         </span>
