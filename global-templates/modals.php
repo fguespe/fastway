@@ -429,9 +429,9 @@ function ir_al_checkout(url){
     if(typeof min === 'string'){
         min = min.match(/\d/g);
         min = min.join("");
-        console.log('v2',parseInt(min),parseInt(total),min<=total)
     }
 
+    console.log('v2',parseInt(min),parseInt(total),min<=total)
     if(!min)location.href=url
     else if(min && parseInt(min)<=parseInt(total))location.href=url
     else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
