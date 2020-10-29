@@ -429,7 +429,7 @@ function ir_al_checkout(url){
 
     min = min.match(/\d/g);
     min = min.join("");
-    alert(min)
+   
     console.log('v2',parseInt(min),parseInt(total),min<=total)
 
     if(!min)location.href=url

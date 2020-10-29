@@ -2386,7 +2386,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*tp*/
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_symbol',
@@ -2394,6 +2393,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'Only affecs main currecy. Leave empty for default.',
 	'section'     => 'section_woo_vars',
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago',
