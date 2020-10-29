@@ -327,7 +327,11 @@ Kirki::add_section( 'section_woo_shop', array(
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
 ) );
-
+Kirki::add_section( 'section_woo_vars', array(
+    'title'          => __( 'Variables', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaywoo',
+) );
 Kirki::add_section( 'section_woo_search', array(
     'title'          => __( 'Search Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -2195,13 +2199,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' =>'Goes next to the right of the price.',
 	'section'     => 'section_woo',
 ) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_currency_symbol',
-	'label'    => __( 'Currency Symbol', 'fastway' ),
-	'description' => 'Only affecs main currecy. Leave empty for default.',
-	'section'     => 'section_woo',
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -2392,9 +2389,16 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_currency_symbol',
+	'label'    => __( 'Currency Symbol', 'fastway' ),
+	'description' => 'Only affecs main currecy. Leave empty for default.',
+	'section'     => 'section_woo_vars',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago',
 	'label'    => __( 'Cuotas Todopago', 'fastway' ),
-	'section'     => 'section_editable',
+	'section'     => 'section_woo_vars',
 	'description' => '',
 	'default' => 6
 ) );
@@ -2405,7 +2409,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Cuotas General', 'fastway' ),
 	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
 	
-	'section'     => 'section_editable',
+	'section'     => 'section_woo_vars',
 	'default' => 12
 ) );
 
@@ -2415,7 +2419,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_general_message',
 	'label'       => __( 'General message', 'fastway' ),
 	'description'=>'Display a messsage on the top bar for important notificacions',
-	'section'     => 'section_editable',
+	'section'     => 'section_woo_vars',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -2423,7 +2427,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_mensaje_sec',
 	'label'       => __( 'Secondary message', 'fastway' ),
 	'description'=>'Display a messsage on the top bar for important notificacions',
-	'section'     => 'section_editable',
+	'section'     => 'section_woo_vars',
 ) );
 
 
