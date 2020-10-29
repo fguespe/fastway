@@ -31,7 +31,7 @@ function fw_loop_attr($atts = []){
       if ( $attribute['is_taxonomy'] ) {
         $values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
         foreach($values as $value){ 
-          if($atts['type']==$attribute['name'])return "<div class=\"textito\"><span>".$value."</span></div>";
+          if($atts['type']==$attribute['name'])echo "<div class=\"textito\"><span>".$value."</span></div>";
         }   
       }
     endforeach;
