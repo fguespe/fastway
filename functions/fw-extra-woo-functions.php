@@ -20,10 +20,21 @@ function fw_loop_price(){
     global $product;
     echo $product->get_price_html();
 }
+
 add_shortcode('fw_loop_attr', 'fw_loop_attr');
 function fw_loop_attr($atts = []){
     $atts = shortcode_atts(array('type' => '' ,'data' => 'title' ), $atts );
-    
+    global $product;
+    $attributes = $product->get_attributes();
+    // Start the loop
+    foreach ( $attributes as $attribute ) : 
+      if ( $attribute['is_taxonomy'] ) {
+        $values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
+        foreach($values as $value){ 
+          if($atts['type']==$attribute['name'])return "<div class=\"textito\"><span>".$value."</span></div>";
+        }   
+      }
+    endforeach;
 }
 
 add_shortcode('fw_single_price', 'fw_single_price');
@@ -820,6 +831,7 @@ function shop_order_user_role_posts_where( $query ) {
 	}
 
 }
+
 //Stock labels
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
@@ -835,22 +847,19 @@ function fw_custom_get_availability( $availability, $_product ) {
     else if ( !$instock || $status=='outofstock' )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
     return $availability; 
 }
+
 function get_attrClasses($product){
   $classname_desktop="";
-
   $attributes = $product->get_attributes();
   // Start the loop
   foreach ( $attributes as $attribute ) : 
-    error_log(print_r($attribute,true));
     if ( $attribute['is_taxonomy'] ) {
       $values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
-      error_log(print_r($values,true));
       foreach($values as $value){ 
         $classname_desktop .= ' '.$attribute['name'].'-'.strtolower($value);
       }   
     }
   endforeach; 
-
   return $classname_desktop;
 
 }
