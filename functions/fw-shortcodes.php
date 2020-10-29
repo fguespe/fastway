@@ -71,7 +71,7 @@ function fw_echo($atts = [], $content = null){
 
 add_shortcode('fw_div_open', 'fw_div_open');
 function fw_div_open($atts = [], $content = null){
-    $atts = shortcode_atts(array('class' => '' ), $atts );
+    $atts = shortcode_atts(array('class' => '','style' => '' ), $atts );
     echo '<div class="'.$atts['class'].'" style="'.$atts['style'].'" >';
 }
 add_shortcode('fw_div_close', 'fw_div_close');
