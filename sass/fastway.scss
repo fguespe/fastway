@@ -5022,7 +5022,10 @@ dt.variation-fw_extra.stock{
 .variation-fw_extra.stock p{
   color:black;
 }
-  
+.tp-title{
+  line-height:10px;
+  display:block !important;
+}
 .woocommerce-SavedPaymentMethods li label{
   color:black !important;
   display: inline !important;

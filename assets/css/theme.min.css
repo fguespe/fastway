@@ -5088,6 +5088,11 @@ dt.variation-fw_extra.stock {
   color: black;
 }
 
+.tp-title {
+  line-height: 10px;
+  display: block !important;
+}
+
 .woocommerce-SavedPaymentMethods li label {
   color: black !important;
   display: inline !important;
@@ -5095,9 +5100,8 @@ dt.variation-fw_extra.stock {
 
 .woocommerce-checkout .logo {
   width: 50% !important;
-  margin-left:0px;
+  margin-left: 0px;
 }
-
 .woocommerce-checkout form.processing .box-detail {
   display: none !important;
 }
