@@ -84,14 +84,12 @@ function fw_cuotas($atts = []){
   if( $product->is_type('variable') ){
     $precio = floatval($product->get_variation_regular_price( 'min', true ));
     $sale_price = floatval($product->get_variation_sale_price( 'min', true ));
-    echo $sale_price." ".$precio;
+   
     if(!$sale_price || $sale_price==$precio)$sale_price=$precio*fw_product_discount_multiplier($product);
     $sale_price=round($sale_price*get_currency_conversion());
     if($sale_price>0)$precio= $sale_price;
   }
 
-  echo $precio;
-  
   $precio=round($precio/$cuotas);
   if($precio>0)echo '<span class="cuota_text '.$atts['class'].'"><i class="fad fa-credit-card"></i> '.$cuotas.' cuotas de $'.$precio.'</span>';
 }
