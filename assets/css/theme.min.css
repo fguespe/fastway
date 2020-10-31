@@ -5095,7 +5095,9 @@ dt.variation-fw_extra.stock {
 
 .woocommerce-checkout .logo {
   width: 50% !important;
+  margin-left:0px;
 }
+
 .woocommerce-checkout form.processing .box-detail {
   display: none !important;
 }
