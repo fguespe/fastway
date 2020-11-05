@@ -624,13 +624,13 @@ function fw_custom_css(){
                 display:none !important;
            }";
         }
-    }
+    }/*
     if(fw_theme_mod('fw_general_ratio')>0){
         $css.="
         body button,body a.btn,body a.button,body input,body div{
           border-radius:".fw_theme_mod('fw_general_ratio')."px !important;
         }";
-    }
+    }*/
     return $css;
 }
 add_action( 'add_topbar', 'get_topbar' );

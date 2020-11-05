@@ -704,7 +704,7 @@ Kirki::add_field( 'theme_config_id', array(
 
  
 //Layouts
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'fw_general_ratio',
@@ -716,7 +716,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'max'  => '10',
 		'step' => '1',
 	),
-) );
+) );*/
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
