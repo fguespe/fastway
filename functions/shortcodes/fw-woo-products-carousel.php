@@ -37,7 +37,7 @@ if($cant>=$columns){?>
             paginationClickable: true,
             preventClicks: false,
             preventClicksPropagation: false,
-            spaceBetween: 10,
+            spaceBetween: <?=$space?>,
             loop: <?=$loop;?>,
             touchRatio: 0 ,
             autoplay: <?=$autoplay;?>,

@@ -5089,7 +5089,7 @@ dt.variation-fw_extra.stock {
 }
 
 .tp-title {
-  line-height: 10px;
+  line-height: 10px !important;
   display: block !important;
 }
 

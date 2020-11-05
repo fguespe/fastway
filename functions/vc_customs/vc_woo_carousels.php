@@ -500,6 +500,15 @@ function get_slider_fields(){
         ),
         array(
             'type' => 'textfield',
+            'heading' => __( 'Space Between ', 'fastway' ),
+            'param_name' => 'space',
+            'value' => '10',
+            'std' => '10',
+            'admin_label' => false,
+            'weight' => 0,
+        ),
+        array(
+            'type' => 'textfield',
             'heading' => __( 'Max Quantiy', 'fastway' ),
             'param_name' => 'maxcant',
             'value' => '12',
