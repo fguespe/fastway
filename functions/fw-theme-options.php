@@ -2547,7 +2547,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_shop',
 	'default'     => 4,
 	'choices'     => array(
-		'min'  => '2',
+		'min'  => '1',
 		'max'  => '12',
 		'step' => '1',
 	),
