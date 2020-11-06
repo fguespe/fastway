@@ -4361,8 +4361,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_related_text',
 	'label'    => __( 'Productos Relacionados', 'fastway' ),
 	'description' => 'Esto va en la pagina de single products',
-	'section'     => 'section_labels_products',
+	'section'     => 'section_labels_single_products',
 	'default'	=>__( 'Quienes vieron este producto también compraron', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_description_tab_text',
+	'label'    => __( 'Descripción', 'fastway' ),
+	'description' => 'Pestaña',
+	'section'     => 'section_labels_single_products',
+	'default'	=> __( 'More Information' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
