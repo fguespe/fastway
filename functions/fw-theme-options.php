@@ -4373,11 +4373,11 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_description_tab_text',
+	'settings'    => 'fw_descriptiontab_text',
 	'label'    => __( 'Descripción', 'fastway' ),
 	'description' => 'Pestaña',
 	'section'     => 'section_labels_single_products',
-	'default'	=> __( 'More Information' )
+	'default'	=> __( 'Descripción','fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(

@@ -8,7 +8,7 @@ function fw_single_breadcrumb(){
 
 add_filter( 'woocommerce_product_tabs', 'fw_remove_product_tabs', 98 );
 function fw_remove_product_tabs( $tabs ) {
-    $tabs['description']['title'] = fw_theme_mod('fw_description_tab_text');
+    $tabs['description']['title'] = fw_theme_mod('fw_descriptiontab_text');
     unset( $tabs['reviews'] );  // Removes the reviews tab
     if(!fw_theme_mod('fw_tab_additional'))unset( $tabs['additional_information'] ); 
     return $tabs;
