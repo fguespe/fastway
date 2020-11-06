@@ -251,6 +251,13 @@ Kirki::add_section( 'section_labels_payments', array(
     'panel'          => 'panel_fastway_labels',
 ) );
 
+Kirki::add_section( 'section_labels_single_products', array(
+    'title'          => __( 'Single Product', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway_labels',
+  
+) );
+
 Kirki::add_section( 'section_labels_products', array(
     'title'          => __( 'Products', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
