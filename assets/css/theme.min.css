@@ -2087,38 +2087,38 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-#review_form .entry-title {
+.post_page .entry-title {
   font-weight: 600;
   color: #333;
 }
-#review_form .comments-title,
-#review_form .comments-title span,
-#review_form .comment-reply-title,
-#review_form .comment-reply-title a,
-#review_form .widget-title {
+.post_page .comments-title,
+.post_page .comments-title span,
+.post_page .comment-reply-title,
+.post_page .comment-reply-title a,
+.post_page .widget-title {
   font-size: 22px !important;
   font-weight: 500;
   color: var(--main);
 }
-#review_form .comment-list {
+.post_page .comment-list {
   padding: 0;
 }
-#review_form .comment-body {
+.post_page .comment-body {
   background: #f4f4f4;
   padding: 20px;
   margin-bottom: 20px !important;
 }
-#review_form cite.fn {
+.post_page cite.fn {
   font-style: normal;
   font-weight: 600;
 }
-#review_form .commentmetadata a {
+.post_page .commentmetadata a {
   font-size: 15px !important;
   display: inline-block;
   margin: 10px 0;
 }
-#review_form .comment-reply-link,
-#review_form .form-submit .submit {
+.post_page .comment-reply-link,
+.post_page .form-submit .submit {
   background: var(--main);
   color: #fff;
   font-weight: 400;
@@ -2128,7 +2128,7 @@ footer .widget_nav_menu li a {
   font-size: 16px;
   border: none;
 }
-#review_form #cancel-comment-reply-link {
+.post_page #cancel-comment-reply-link {
   background: #ddd;
   color: #333;
   font-weight: 400;
