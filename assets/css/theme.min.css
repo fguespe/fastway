@@ -643,7 +643,8 @@ i.fad {
   }
   .fw_single_product .detalle-imagenListado #imagenListado img {
     width: 100%;
-    /* max-width: 400px;*/
+    max-width: 400px;
+    /*Esto es para la gran mayoria*/
   }
 }
 .fw_single_product .summary .precio {
