@@ -30,7 +30,7 @@ function ctas(){
         if($link=='whatsapp' && !usesWhatsapp())continue;
         $class=$quick[2];
         $label=$quick[3];
-        echo '<a href="'.fw_company_data($link,true).'"  title="Llamar" class="btn '.$class.'" style=""><i class="'.$icon.'" style="color:white;" aria-hidden="true"></i> '.$label.'</a><br>';
+        echo '<a href="'.fw_company_data($link,true).'" class="btn '.$class.'" style=""><i class="'.$icon.'" style="color:white;" aria-hidden="true"></i> '.$label.'</a><br>';
     }
 }
 function quicklinks(){

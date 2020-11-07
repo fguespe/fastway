@@ -497,7 +497,7 @@ function get_slider_fields(){
             'std' => '4',
             'admin_label' => false,
             'weight' => 0,
-        ),
+        ),/*
         array(
             'type' => 'textfield',
             'heading' => __( 'Space Between ', 'fastway' ),
@@ -506,7 +506,7 @@ function get_slider_fields(){
             'std' => '10',
             'admin_label' => false,
             'weight' => 0,
-        ),
+        ),*/
         array(
             'type' => 'textfield',
             'heading' => __( 'Max Quantiy', 'fastway' ),
