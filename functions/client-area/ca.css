@@ -13,7 +13,10 @@ body{
 .vc_message.type-error{
 	display:none !important;
 }
-
+#wpb_visual_composer h2{
+	/*Oculto titu*/
+	color:white;
+}
 .update-nag,
 .update,
 .updated,
