@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2020-11-06 19:35-0300\n"
-"PO-Revision-Date: 2020-11-06 19:35-0300\n"
+"PO-Revision-Date: 2020-11-07 10:09-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -62,7 +62,7 @@ msgstr ""
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "Comentarios sobre &ldquo;%s&rdquo;"
 
 #: comments.php:41
 #, php-format
