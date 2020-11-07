@@ -764,7 +764,9 @@ add_filter( 'show_admin_bar', 'fw_hide_admin_bar' );
 
 
 function fw_custom_admincss() {
-    echo '<style type="text/css">
+	echo '<style type="text/css">';
+	echo fw_theme_mod('ca-customcss');
+	echo '
     .media-modal{
         width:80% !important;
     }

@@ -3131,11 +3131,13 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_price]
 	[fw_single_cart]
 	[fw_short_desc]
+	[fw_single_share]
 	[altoweb_financiacion]
 	[/fw_single_summary]
 	[fw_single_tabs]
 	[/fw_single_container]
 	[fw_single_related]
+	
 	Customer Edits:
 	[fw_customer_product_summary]',
 	
