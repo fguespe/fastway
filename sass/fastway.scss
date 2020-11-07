@@ -2011,51 +2011,7 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-.fw_product_loop{
-  margin-bottom:10px !important;
-  a {
-    display:block;
-  }
-  .product_title{
-      overflow:hidden;
-      padding:0px;    
-      padding-left:5px;
-      padding-right:5px;
-      margin: 0px;
-      font-size:12px ;
-      line-height: 16px ;
-      color:#444444 ;
-      height: 34px !important; 
-  }
-  .loading i{
-  display:inline-block !important;
-  }
-  img{
-    width:100%;
-    height:auto;   
-  }
-  .precio-anterior del,
-  .precio-anterior{
-    color:lightgray;
-    font-weight:200 ;
-  }
-  .precio {
-      font-weight: 600;
-      display: block;
-  }
-  .loopimg_container{
-    height:200px;
-    @media (max-width: 799px) {
-      height:120px;
-    }
-    
-    img{
-      object-fit: contain;
-      height:100%;
-    }
-  }
-}
-/*BLOG*/
+
 
 #review_form{
   .entry-title {
