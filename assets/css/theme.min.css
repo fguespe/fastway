@@ -2040,38 +2040,39 @@ footer .widget_nav_menu li a {
 }
 
 /*BLOG*/
-#review_form .entry-title {
+.post_page .entry-title {
   font-weight: 600;
   color: #333;
 }
-#review_form .comments-title,
-#review_form .comments-title span,
-#review_form .comment-reply-title,
-#review_form .comment-reply-title a,
-#review_form .widget-title {
+
+.comment-list {
+  padding: 0;
+}
+.comment-list .comments-title,
+.comment-list .comments-title span,
+.comment-list .comment-reply-title,
+.comment-list .comment-reply-title a,
+.comment-list .widget-title {
   font-size: 22px !important;
   font-weight: 500;
   color: var(--main);
 }
-#review_form .comment-list {
-  padding: 0;
-}
-#review_form .comment-body {
+.comment-list .comment-body {
   background: #f4f4f4;
   padding: 20px;
   margin-bottom: 20px !important;
 }
-#review_form cite.fn {
+.comment-list cite.fn {
   font-style: normal;
   font-weight: 600;
 }
-#review_form .commentmetadata a {
+.comment-list .commentmetadata a {
   font-size: 15px !important;
   display: inline-block;
   margin: 10px 0;
 }
-#review_form .comment-reply-link,
-#review_form .form-submit .submit {
+.comment-list .comment-reply-link,
+.comment-list .form-submit .submit {
   background: var(--main);
   color: #fff;
   font-weight: 400;
@@ -2081,7 +2082,7 @@ footer .widget_nav_menu li a {
   font-size: 16px;
   border: none;
 }
-#review_form #cancel-comment-reply-link {
+.comment-list #cancel-comment-reply-link {
   background: #ddd;
   color: #333;
   font-weight: 400;

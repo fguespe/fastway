@@ -2012,13 +2012,15 @@ footer .widget_nav_menu li a {
 
 /*BLOG*/
 
-
-#review_form{
+.post_page{
   .entry-title {
 		font-weight: 600;
 		color: #333;
   }
 
+}
+.comment-list {
+  padding: 0;
   .comments-title,
   .comments-title span,
   .comment-reply-title,
@@ -2029,9 +2031,6 @@ footer .widget_nav_menu li a {
       color: var(--main);
   }
 
-  .comment-list {
-      padding: 0;
-  }
 
   .comment-body {
       background: #f4f4f4;
