@@ -17,6 +17,18 @@ body{
 	/*Oculto titu*/
 	color:white;
 }
+
+#vc_no-content-add-element{
+	color:white !important;
+}
+#vc_no-content-helper .vc_welcome-brand,
+#vc_no-content-helper .vc_welcome-header,
+#vc_no-content-helper #vc_no-content-add-text-block,
+#vc_no-content-helper #vc_templates-more-layouts,
+#vc_no-content-helper .vc_ui-help-block{
+	display:none !important;
+}
+
 .update-nag,
 .update,
 .updated,

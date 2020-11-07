@@ -227,6 +227,7 @@ function checklist_args( $args, $taxonomies ){
 /*GENERICOS*/
 add_filter('gettext', 'bancos_arg', 10, 3);
 function bancos_arg($translation, $text, $domain) {
+    
     if ($domain == 'woocommerce' && get_locale()=='es_ES') {
         switch ($text) {
             case 'Sort code':
@@ -244,9 +245,6 @@ function bancos_arg($translation, $text, $domain) {
             case 'BIC':
                 $translation = 'CBU';
                 break;
-
-    
-
                 
         }
     }
@@ -255,6 +253,7 @@ function bancos_arg($translation, $text, $domain) {
 }
 
     
+
 // Utility function, to display BACS accounts details
 function get_bacs_account_details_html( $echo = true, $type = 'list' ) {
     $devolver='';
