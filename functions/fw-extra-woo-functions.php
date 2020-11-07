@@ -129,7 +129,9 @@ function fw_single_qty(){
 add_shortcode('fw_single_share', 'fw_single_share');
 function fw_single_share(){
 
-    echo fw_share_redes();
+    echo '<div class="compartir">
+		<h2>Compartir</h2>	
+</div>'.fw_share_redes();
 }
 
 add_shortcode('fw_guia_talles', 'fw_guia_talles');
