@@ -2062,6 +2062,10 @@ footer .widget_nav_menu li a {
   padding: 20px;
   margin-bottom: 20px !important;
 }
+#comments .comment-body p {
+  word-wrap: break-word;
+  width: 100%;
+}
 #comments cite.fn {
   font-style: normal;
   font-weight: 600;

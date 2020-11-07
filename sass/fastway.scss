@@ -2032,14 +2032,16 @@ footer .widget_nav_menu li a {
       font-weight: 500;
       color: var(--main);
   }
-
-
+  
   .comment-body {
       background: #f4f4f4;
       padding: 20px;
-      margin-bottom: 20px !Important;
+      margin-bottom: 20px !important;
+      p{
+        word-wrap: break-word;
+        width: 100%;
+      }
   }
-
   cite.fn {
       font-style: normal;
       font-weight: 600;
