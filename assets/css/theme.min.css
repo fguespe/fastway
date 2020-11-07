@@ -643,7 +643,7 @@ i.fad {
   }
   .fw_single_product .detalle-imagenListado #imagenListado img {
     width: 100%;
-    max-width: 100%;
+    max-width: 400px;
   }
 }
 .fw_single_product .summary .precio {
