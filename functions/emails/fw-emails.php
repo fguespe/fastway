@@ -318,6 +318,13 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
     return $wp_new_user_notification_email;
 }
 
+function se_comment_moderation_recipients( $emails, $comment_id ) {
+    $emails[0]=getMailQueRecibe();
+    error_log(print_r($emails,true));
+    return $emails;
+}
+add_filter( 'comment_moderation_recipients', 'se_comment_moderation_recipients', 11, 2 );
+add_filter( 'comment_notification_recipients', 'se_comment_moderation_recipients', 11, 2 );
 
 
 function conditionals($template,$data) {
