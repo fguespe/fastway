@@ -129,9 +129,7 @@ function fw_single_qty(){
 add_shortcode('fw_single_share', 'fw_single_share');
 function fw_single_share(){
 
-    echo '<div class="compartir">
-		<h2>Compartir</h2>	
-</div>'.fw_share_redes();
+    fw_share_redes();
 }
 
 add_shortcode('fw_guia_talles', 'fw_guia_talles');
@@ -618,8 +616,8 @@ function woocommerce_get_category_banner(){
 
 function fw_share_redes(){
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
-    echo '<div id="fw_share_redes" class="d-flex justify-content-between">
+    echo '<div class="compartir"><h2>Compartir</h2></div>
+    <div id="fw_share_redes" class="d-flex justify-content-between">
     <!-- Email -->
     <a href="mailto:?Subject=Mirá este producto&amp;Body=Mirá este producto que encontré '.$actual_link.'">
     <i class="fas fa-envelope"></i>
