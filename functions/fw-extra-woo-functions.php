@@ -48,7 +48,7 @@ function fw_single_related($atts){
     $atts = shortcode_atts(array('cols' => 6 ), $atts );
     $cols=fw_theme_mod("related_columns");
     echo '
-<div class="related" >
+<div class="related" style="padding-bottom:20px;">
 <h4 class="titulo">'.fw_theme_mod('fw_related_text').'</h3>
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
