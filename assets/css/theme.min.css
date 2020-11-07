@@ -547,22 +547,14 @@ i.fad {
 .fw_single_product .vacio #paginationIL {
   display: none !important;
 }
-.fw_single_product #imagenListado, .fw_single_product .detalle-imagenListado {
-  height: 400px;
-}
-@media (max-width: 799px) {
-  .fw_single_product .detalle-imagenListado #imagenListado img {
-    width: 100%;
-    max-width: 400px;
-    /*Esto es para la gran mayoria*/
-  }
-}
 .fw_single_product #imagenListado {
+  height: 400px;
   text-align: center;
 }
 .fw_single_product .detalle-imagenListado {
   position: relative;
   float: right;
+  height: 400px;
   width: 80%;
 }
 @media (max-width: 320px) {
@@ -648,6 +640,10 @@ i.fad {
   .fw_single_product #imagenListado img {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+  }
+  .fw_single_product .detalle-imagenListado #imagenListado img {
+    width: 100%;
+    max-width: 400px;
   }
 }
 .fw_single_product .summary .precio {

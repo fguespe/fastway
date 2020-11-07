@@ -480,23 +480,15 @@ i.fad{
 	.vacio #paginationIL {
 		display: none !important;
 	}
-  /***** Pasador imagen detalle *****/
-  
-	#imagenListado,.detalle-imagenListado {
-    height: 400px;
-  }
-  @media (max-width: 799px) {
-    .detalle-imagenListado #imagenListado img {
-        width: 100%;
-        max-width: 400px;/*Esto es para la gran mayoria*/
-    }
-  }
+	/***** Pasador imagen detalle *****/
 	#imagenListado {
+		height: 400px;
 		text-align: center;
 	}
 	.detalle-imagenListado {
 		position: relative;
 		float: right;
+		height: 400px;
 		width: 80%;
   }
   @media (max-width: 320px) {
@@ -585,6 +577,11 @@ i.fad{
       margin-top:0px !important;
       margin-bottom:0px !important;
     }
+    .detalle-imagenListado #imagenListado img {
+        width: 100%;
+        max-width: 400px;
+    }
+    
     
 	}
   /*PRECIO*/
