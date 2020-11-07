@@ -3084,7 +3084,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
-	'label'       => __( 'Pestaña espeficiaciones (medidas)', 'fastway' ),
+	'label'       => __( 'Pestaña especificaciones (medidas)', 'fastway' ),
 	'section'     => 'section_woo_single',
 	'description' => 'Refrescar despues de activar',
 	'default'     => 'off',

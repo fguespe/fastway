@@ -4,14 +4,6 @@ add_shortcode('fw_single_breadcrumb', 'fw_single_breadcrumb');
 function fw_single_breadcrumb(){
     return woocommerce_breadcrumb();
 }
-
-add_filter( 'woocommerce_product_tabs', 'fw_remove_product_tabs', 98 );
-function fw_remove_product_tabs( $tabs ) {
-    $tabs['description']['title'] = fw_theme_mod('fw_descriptiontab_text');
-    if('no' === get_option( 'woocommerce_enable_reviews'))unset( $tabs['reviews'] );  // Removes the reviews tab
-    if(!fw_theme_mod('fw_tab_additional'))unset( $tabs['additional_information'] ); 
-    return $tabs;
-}
 //add_action( 'woocommerce_after_single_product_summary', 'comments_template', 50 );
 
 add_shortcode('fw_single_container', 'fw_single_container');
@@ -1328,14 +1320,17 @@ function bbloomer_cart_refresh_update_qty() {
 
 
 
-add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
-function woo_rename_tabs( $tabs ) {
+add_filter( 'woocommerce_product_tabs', 'fw_remove_product_tabs', 98 );
+function fw_remove_product_tabs( $tabs ) {
     global $product;
     if (  $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) 
-        $tabs['additional_information']['title'] = __( 'Specs','fastway' );  
-
+        $tabs['additional_information']['title'] = __( 'Specs','fastway' ); 
+        
+    $tabs['description']['title'] = fw_theme_mod('fw_descriptiontab_text');
+    if('no' === get_option( 'woocommerce_enable_reviews'))unset( $tabs['reviews'] );  // Removes the reviews tab
+    if(!fw_theme_mod('fw_tab_additional'))unset( $tabs['additional_information'] ); 
+ 
     return $tabs;
-
 }
 
 if ( ! class_exists( 'BRAND_THUMB' ) ) {
