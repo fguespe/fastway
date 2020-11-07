@@ -2070,6 +2070,9 @@ footer .widget_nav_menu li a {
   font-style: normal;
   font-weight: 600;
 }
+#comments input {
+  border: 1px solid grey;
+}
 #comments .commentmetadata a {
   font-size: 15px !important;
   display: inline-block;

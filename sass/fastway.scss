@@ -2032,7 +2032,7 @@ footer .widget_nav_menu li a {
       font-weight: 500;
       color: var(--main);
   }
-  
+
   .comment-body {
       background: #f4f4f4;
       padding: 20px;
@@ -2046,7 +2046,9 @@ footer .widget_nav_menu li a {
       font-style: normal;
       font-weight: 600;
   }
-
+  input{
+    border:1px solid grey;
+  }
   .commentmetadata a {
       font-size: 15px !Important;
       display: inline-block;
