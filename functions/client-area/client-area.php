@@ -793,7 +793,7 @@ function fw_custom_admincss() {
 //Mobile?
 add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 function fw_admin_css_ui() {
-    add_action('admin_head', 'fw_custom_admincss');
+    if(!is_webaltoweb())add_action('admin_head', 'fw_custom_admincss');
 }
 
 
