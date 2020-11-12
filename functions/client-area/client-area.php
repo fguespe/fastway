@@ -190,6 +190,17 @@ if(is_webaltoweb()){
             'on'  => __( 'Enable', 'fastway' ),
             'off' => __( 'Disable', 'fastway' )
         )
+	) );
+	Kirki::add_field( 'theme_config_id', array(
+        'type'        => 'switch',
+        'settings'    => 'fw_widget_lili_discount_multi',
+        'label'       => __( 'Multi Lili Discount (CR)', 'fastway' ),
+        'section'     => 'section_clientwidgets',
+        'default'     => 0,
+        'choices' => array(
+            'on'  => __( 'Enable', 'fastway' ),
+            'off' => __( 'Disable', 'fastway' )
+        )
     ) );
 }
 

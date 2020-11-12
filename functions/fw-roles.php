@@ -116,6 +116,7 @@ function fw_editable_roles( $roles ) {
   }
   return $roles;
 }
+
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
   
 

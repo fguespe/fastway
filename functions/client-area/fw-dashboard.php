@@ -178,7 +178,7 @@ function fw_widget_cupones_dash_handler(){
 
 function fw_widget_desc_prods_dash(){
 
-    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):'All products');
+    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_product_discount_categories')?fw_theme_mod('fw_product_discount_categories'):__('All products','fastway'));
     $estado=__('Status','fastway').': '.(fw_theme_mod('fw_product_discount')?__('Active','fastway'):__('Inactive','fastway'));
     $color=$estado==__('Active','fastway')?'green':'red';
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
@@ -219,25 +219,76 @@ function fw_widget_desc_prods_dash_handler(){
 
 
 function fw_widget_lili_discount_dash(){
-    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):'All products');
+    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):__('All products','fastway'));
     $cant=fw_theme_mod('fw_lili_discount_cant');
     $cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
     $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount')?__('Active','fastway'):__('Inactive','fastway'));
-    $color=$estado==__('Active','fastway').':'?'green':'red';
+    $color= fw_theme_mod('fw_lili_discount')?'green':'red';
     $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones')?__('Yes','fastway'):__('No','fastway'));
     $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
     $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
-    $cambiar_l=__('Change','fastway').':';
+    $cambiar_l=__('Change','fastway');
     
     echo <<<HTML
     <div class='fw_widget_dash'>
+    <div class='group' style="margin-top:20px;">
         <label>$estado</label><br>
         <label>$cates</label><br>
         <label>$cupones</label><br>
         <label>$porcentage</label><br>
         <label>$cant</label>
-        <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
     </div>
+HTML;
+
+    if(fw_theme_mod('fw_widget_lili_discount_multi')){
+
+        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_2')?fw_theme_mod('fw_lili_discount_categories_2'):__('All products','fastway'));
+        $cant=fw_theme_mod('fw_lili_discount_cant_2');
+        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
+        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_2')?__('Active','fastway'):__('Inactive','fastway'));
+        $color= fw_theme_mod('fw_lili_discount_2')?'green':'red';
+        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_2')?__('Yes','fastway'):__('No','fastway'));
+        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_2')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
+        $cambiar_l=__('Change','fastway');
+    
+        echo <<<HTML
+    <div class='group' style="margin-top:20px;">
+        <label>$estado</label><br>
+        <label>$cates</label><br>
+        <label>$cupones</label><br>
+        <label>$porcentage</label><br>
+        <label>$cant</label>
+    </div>
+    HTML;
+
+        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_3')?fw_theme_mod('fw_lili_discount_categories_3'):__('All products','fastway'));
+        $cant=fw_theme_mod('fw_lili_discount_cant_3');
+        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
+        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_3')?__('Active','fastway'):__('Inactive','fastway'));
+        $color= fw_theme_mod('fw_lili_discount_3')?'green':'red';
+        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_3')?__('Yes','fastway'):__('No','fastway'));
+        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_3')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
+        $cambiar_l=__('Change','fastway');
+
+        echo <<<HTML
+    <div class='group' style="margin-top:20px;">
+        <label>$estado</label><br>
+        <label>$cates</label><br>
+        <label>$cupones</label><br>
+        <label>$porcentage</label><br>
+        <label>$cant</label>
+    </div>
+    HTML;
+    
+    }
+
+
+
+    echo <<<HTML
+    <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
+</div>
 HTML;
 }
 
@@ -254,23 +305,74 @@ function fw_widget_lili_discount_dash_handler(){
         set_theme_mod('fw_lili_discount_cant',$_POST['fw_widget_lili_discount_options']['cant']);
         set_theme_mod('fw_lili_discount_percentage',$_POST['fw_widget_lili_discount_options']['percentage']);
         set_theme_mod('fw_lili_discount_cupones',$_POST['fw_widget_lili_discount_options']['cupones']);
+
+    }
+    
+    if(fw_theme_mod('fw_widget_lili_discount_multi')){
+
+        if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_lili_discount_options_2'] ) ) {
+            //Logica save
+            set_theme_mod('fw_lili_discount_2',$_POST['fw_widget_lili_discount_options_2']['estado']);
+            set_theme_mod('fw_lili_discount_categories_2',$_POST['fw_widget_lili_discount_options_2']['categories']);
+            set_theme_mod('fw_lili_discount_cant_2',$_POST['fw_widget_lili_discount_options_2']['cant']);
+            set_theme_mod('fw_lili_discount_percentage_2',$_POST['fw_widget_lili_discount_options_2']['percentage']);
+            set_theme_mod('fw_lili_discount_cupones_2',$_POST['fw_widget_lili_discount_options_2']['cupones']);
+    
+        }
+
+        if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_lili_discount_options_3'] ) ) {
+            //Logica save
+            set_theme_mod('fw_lili_discount_3',$_POST['fw_widget_lili_discount_options_3']['estado']);
+            set_theme_mod('fw_lili_discount_categories_3',$_POST['fw_widget_lili_discount_options_3']['categories']);
+            set_theme_mod('fw_lili_discount_cant_3',$_POST['fw_widget_lili_discount_options_3']['cant']);
+            set_theme_mod('fw_lili_discount_percentage_3',$_POST['fw_widget_lili_discount_options_3']['percentage']);
+            set_theme_mod('fw_lili_discount_cupones_3',$_POST['fw_widget_lili_discount_options_3']['cupones']);
+    
+        }
+
+
     }
 
-    $estado=fw_theme_mod('fw_lili_discount')?true:false;
-    $estado=$estado?"checked=\"".$estado."\"":"";
-    echo "
-    <div>
-        <label>".__('Status','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".$estado." ></label><br>
+    echo "<div style='margin-top:20px;'>
+        <label>".__('Status','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options[estado]\" id=\"estado\" ".(fw_theme_mod('fw_lili_discount')?"checked=\"true\"":"")." ></label><br>
         <label>".__('Applies to','fastway').': '."<input type=\"text\" name=\"fw_widget_lili_discount_options[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories')."\"><br>
         <label>".__('Allows coupons','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options[cupones]\" id=\"cupones\" ".(fw_theme_mod('fw_lili_discount_cupones')?'checked':'')." ></label><br>
         <label>".__('Quantity','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant')."\"><br>
-        <label>".__('Discount (%)','fastway').': '.":<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
+        <label>".__('Discount (%)','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage')."\"><br>
         <small>".__('Instructions','fastway').":<br>
+    </div>";
+
+
+    if(fw_theme_mod('fw_widget_lili_discount_multi')){
+
+        echo "<div style='margin-top:20px;'>
+            <label>".__('Status','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options_2[estado]\" id=\"estado\" ".(fw_theme_mod('fw_lili_discount_2')?"checked=\"true\"":"")." ></label><br>
+            <label>".__('Applies to','fastway').': '."<input type=\"text\" name=\"fw_widget_lili_discount_options_2[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories_2')."\"><br>
+            <label>".__('Allows coupons','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options_2[cupones]\" id=\"cupones\" ".(fw_theme_mod('fw_lili_discount_cupones_2')?'checked':'')." ></label><br>
+            <label>".__('Quantity','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options_2[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant_2')."\"><br>
+            <label>".__('Discount (%)','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options_2[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage_2')."\"><br>
+            <small>".__('Instructions','fastway').":<br>
+        </div>";
+
+        echo "<div style='margin-top:20px;'>
+            <label>".__('Status','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options_3[estado]\" id=\"estado\" ".(fw_theme_mod('fw_lili_discount_3')?"checked=\"true\"":"")." ></label><br>
+            <label>".__('Applies to','fastway').': '."<input type=\"text\" name=\"fw_widget_lili_discount_options_3[categories]\" id=\"categories\" value=\"".fw_theme_mod('fw_lili_discount_categories_3')."\"><br>
+            <label>".__('Allows coupons','fastway').': '."<input type=\"checkbox\" name=\"fw_widget_lili_discount_options_3[cupones]\" id=\"cupones\" ".(fw_theme_mod('fw_lili_discount_cupones_3')?'checked':'')." ></label><br>
+            <label>".__('Quantity','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options_3[cant]\" id=\"cant\" value=\"".fw_theme_mod('fw_lili_discount_cant_3')."\"><br>
+            <label>".__('Discount (%)','fastway').': '."<input type=\"number\" name=\"fw_widget_lili_discount_options_3[percentage]\" id=\"percentage\" value=\"".fw_theme_mod('fw_lili_discount_percentage_3')."\"><br>
+            <small>".__('Instructions','fastway').":<br>
+        </div>";
+
+    }
+
+    echo "
+    <div style='margin-top:20px;'>
         1) ".__('For categories, it must be entered in the field, the category slug, which can be obtained in <a href=\'edit-tags.php?taxonomy=product_cat&post_type=product\'>categories</a> section (separated with \',\')','fastway')."<br> 
         2) ".__('Leave empty and it will apply to all categories','fastway')."<br> 
         3) ".__('Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2','fastway')."
         4) ".__('Discount always applies only to the cheapiests','fastway')."</small>
-        </div><br>";
+        </div>
+    <br>";
 }
 
 function fw_widget_cuotas_tp_dash(){
@@ -552,7 +654,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
      if((fw_theme_mod('fw_id_filesync') && !empty(fw_theme_mod('fw_id_wpallimport'))) || !empty(fw_theme_mod('fw_id_wpallexport')))wp_add_dashboard_widget('fw_actualizar_precios', __('Update prices','fastway'), 'fw_actualizar_precios');
      if(fw_theme_mod('fw_widget_support_fresh_es'))wp_add_dashboard_widget('custom_dashboard_help', __('Need help','fastway'), 'custom_dashboard_help');
      wp_add_dashboard_widget('fw_ajustes_generales', __('General Settings','fastway'), 'fw_ajustes_generales');
-     if(fw_theme_mod('ca-videos'))wp_add_dashboard_widget('fw_client_videos', __('Video','fastway'), 'fw_client_videos');
+     if(fw_theme_mod('ca-videos'))wp_add_dashboard_widget('fw_client_videos', __('Info Videos','fastway'), 'fw_client_videos');
  }
  
  function fw_client_videos() {

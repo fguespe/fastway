@@ -4058,10 +4058,12 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_discount',
 	'description' => 'El id se obtiene editando el producto, desde la URL, donde dice post=XXXX. IDs separados con ","'
 ) );
+
+/*LILI1*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_lili_discount',
-	'label'       => __( '2-Lili Discount (Buy X Get X)', 'fastway' ),
+	'label'       => __( '1-Lili Discount (Buy X Get X)', 'fastway' ),
 	'section'     => 'section_woo_discount',
 	'default'     => 0,
 	'description' => '(Se aplica al carrito), *refresh devuelta para ver los cambios',
@@ -4095,6 +4097,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_percentage',
@@ -4102,6 +4105,108 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_discount',
 	'description' => '100 si es gratis, 50 si es la mitad. Solo aplica al de menor valor.'
 ) );
+
+
+
+
+/*LILI_2*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_lili_discount_2',
+	'label'       => __( '2-Lili Discount (Buy X Get X)', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,
+	'description' => '(Se aplica al carrito), *refresh devuelta para ver los cambios',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_categories_2',
+	'label'       => __( 'Categories Include', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Slugs separados con ",", es uno o el otro. Si esta vacio aplica a toda la tienda.'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_cant_2',
+	'label'       => __( 'Cantidad minima', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Si hay que comprar 3 para recibir uno gratis, entonces poner 3.'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_lili_discount_cupones_2',
+	'label'       => __( 'Admite cupones', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_percentage_2',
+	'label'       => __( 'Porcentage en numeros', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => '100 si es gratis, 50 si es la mitad. Solo aplica al de menor valor.'
+) );
+
+
+/*LILI_3*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_lili_discount_3',
+	'label'       => __( '3-Lili Discount (Buy X Get X)', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,
+	'description' => '(Se aplica al carrito), *refresh devuelta para ver los cambios',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_categories_3',
+	'label'       => __( 'Categories Include', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Slugs separados con ",", es uno o el otro. Si esta vacio aplica a toda la tienda.'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_cant_3',
+	'label'       => __( 'Cantidad minima', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Si hay que comprar 3 para recibir uno gratis, entonces poner 3.'
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_lili_discount_cupones_3',
+	'label'       => __( 'Admite cupones', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'default'     => 0,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_percentage_3',
+	'label'       => __( 'Porcentage en numeros', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => '100 si es gratis, 50 si es la mitad. Solo aplica al de menor valor.'
+) );
+
+
+
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

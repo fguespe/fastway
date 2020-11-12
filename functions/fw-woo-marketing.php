@@ -16,18 +16,26 @@ function fw_cart_calculate_fees( WC_Cart $cart ){
         $discount=get_lili_discount($cart);
         if($discount<0)$cart->add_fee( 'Promo:',$discount);
     }
+    if(fw_theme_mod('fw_lili_discount_2')){
+        $discount=get_lili_discount($cart,"_2");
+        if($discount<0)$cart->add_fee( 'Promo(2):',$discount);
+    }
+    if(fw_theme_mod('fw_lili_discount_3')){
+        $discount=get_lili_discount($cart,"_3");
+        if($discount<0)$cart->add_fee( 'Promo(3):',$discount);
+    }
 }
-function get_lili_discount($cart){
+function get_lili_discount($cart,$cant=""){
     if(fw_is_admin())return;
     if(esMultitienda()) return;
-    if(!fw_theme_mod('fw_lili_discount'))return;
-    if (!empty($cart->applied_coupons) && !fw_theme_mod('fw_lili_discount_cupones'))return;
-    $cuantos=fw_theme_mod('fw_lili_discount_cant');
+    if(!fw_theme_mod('fw_lili_discount'.$cant))return;
+    if (!empty($cart->applied_coupons) && !fw_theme_mod('fw_lili_discount_cupones'.$cant))return;
+    $cuantos=fw_theme_mod('fw_lili_discount_cant'.$cant);
     if( $cart->cart_contents_count < $cuantos ) return;
     $catespromo=array();
-    $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'));
+    $porcentage=floatval(fw_theme_mod('fw_lili_discount_percentage'.$cant));
 
-    if(fw_theme_mod('fw_lili_discount_categories'))$catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'));
+    if(fw_theme_mod('fw_lili_discount_categories'.$cant))$catespromo=explode(",",fw_theme_mod('fw_lili_discount_categories'.$cant));
     
     $cantqueespromo=0;
     $items = $cart->get_cart();
