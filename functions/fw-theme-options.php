@@ -332,7 +332,7 @@ Kirki::add_section( 'section_woo', array(
 Kirki::add_section( 'section_woo_shop', array(
     'title'          => __( 'Shop Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaystyle',
+    'panel'          => 'panel_fastwaylayout',
 ) );
 Kirki::add_section( 'section_woo_vars', array(
     'title'          => __( 'Variables', 'fastway' ),
