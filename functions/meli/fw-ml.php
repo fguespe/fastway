@@ -95,8 +95,8 @@ function fw_ml_update_stock( $order_id ) {
           $permalink=$prod['body']->permalink;
           if(count($vars)>0){
               $var_id=$vars[0]->id;//es unica por como funciona woo
-              $note=$var_id." - es un prod variable \n";
-              $order->add_order_note($note);
+              //$note=$var_id." - es un prod variable \n";
+              //$order->add_order_note($note);
 
               $item = array(
                 "variations" => array(
@@ -108,7 +108,7 @@ function fw_ml_update_stock( $order_id ) {
               );
           }else{
             $note=$sku." - es un prod simple \n";
-            $order->add_order_note( $note);
+            //$order->add_order_note( $note);
             //error_log($note);
 
             $item = array("available_quantity"=>$stock);
