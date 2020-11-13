@@ -96,7 +96,7 @@ function fw_ml_update_stock( $order_id ) {
           $permalink=$prod['body']->permalink;
           if(count($vars)>0){
             foreach($vars as $var){
-              if($var->id==$item['variation_id']){
+              if($var->id==$product_id){
                 $note=$sku.' - es un prod variable' ;
                 $order->add_order_note($note);
                 $item = array(
