@@ -332,7 +332,7 @@ Kirki::add_section( 'section_woo', array(
 Kirki::add_section( 'section_woo_shop', array(
     'title'          => __( 'Shop Page', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
+    'panel'          => 'panel_fastwaystyle',
 ) );
 Kirki::add_section( 'section_woo_vars', array(
     'title'          => __( 'Variables', 'fastway' ),
@@ -2145,6 +2145,16 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_hide_cates',
+	'label'       => __( 'Hide cates', 'fastway' ),
+	'description'	=>	'Categorias a ocultar de la tienda',
+	'section'     => 'section_woo',
+	'default'     => 'sin-categorizar,sin-categoria',
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_shop_state',
 	'label'       => __( 'Shop State', 'fastway' ),
@@ -2559,15 +2569,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_shop',
 	'choices'     => $static_block_args,
 	'placeholder' => esc_attr__( 'Select an option', 'fastway' ),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_hide_cates',
-	'label'       => __( 'Hide cates', 'fastway' ),
-	'description'	=>	'Categorias a ocultar de la tienda',
-	'section'     => 'section_woo_shop',
-	'default'     => 'sin-categorizar,sin-categoria',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
