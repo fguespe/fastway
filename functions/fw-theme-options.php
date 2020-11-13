@@ -81,6 +81,21 @@ Kirki::add_section( 'section_meli', array(
     'panel'          => 'panel_fastway',
 
 ) );
+
+Kirki::add_section( 'preset_section', array(
+    'title'          => __( 'Preset', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
+
+
+Kirki::add_section( 'section_woo_shop', array(
+    'title'          => __( 'Shop Page', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+) );
+
 Kirki::add_section( 'section_popup', array(
     'title'          => __( 'Popup', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -134,12 +149,6 @@ Kirki::add_section( 'section_typos', array(
 
 ) );
 
-Kirki::add_section( 'preset_section', array(
-    'title'          => __( 'Preset', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-
-) );
 Kirki::add_section( 'section_header', array(
     'title'          => __( 'Header', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -328,12 +337,6 @@ Kirki::add_section( 'section_woo', array(
 
 
 
-
-Kirki::add_section( 'section_woo_shop', array(
-    'title'          => __( 'Shop Page', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-) );
 Kirki::add_section( 'section_woo_vars', array(
     'title'          => __( 'Variables', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
