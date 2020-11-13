@@ -97,7 +97,7 @@ function fw_ml_update_stock( $order_id ) {
           if(count($vars)>0){
             foreach($vars as $var){
               if($var->id==$product_id){
-                $note=$sku.' - es un prod variable' ;
+                $note=$sku." - es un prod variable \n";
                 $order->add_order_note($note);
                 $item = array(
                   "variations" => array(
@@ -110,7 +110,7 @@ function fw_ml_update_stock( $order_id ) {
               }
             }
           }else{
-            $note=$sku.' - es un prod simple' ;
+            $note=$sku." - es un prod simple \n";
             $order->add_order_note( $note);
             //error_log($note);
 
@@ -118,9 +118,9 @@ function fw_ml_update_stock( $order_id ) {
           }
           $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
           
-          if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock;
-          else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock;
-          $note.='\n'.$permalink;
+          if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock."\n";
+          else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
+          $note.= $permalink;
           $order->add_order_note( $note );
 
           ## HERE you Create/update your custom post meta data to avoid repetition
