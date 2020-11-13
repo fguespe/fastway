@@ -94,12 +94,14 @@ function fw_ml_update_stock( $order_id ) {
           $vars=$prod['body']->variations;
           $permalink=$prod['body']->permalink;
           if(count($vars)>0){
-              $note=$var[0]->id." - es un prod variable \n";
+              $var_id=$vars[0]->id;//es unica por como funciona woo
+              $note=$var_id." - es un prod variable \n";
               $order->add_order_note($note);
+
               $item = array(
                 "variations" => array(
                   array(
-                    "id"=>$var[0]->id,
+                    "id"=>$var_id,
                     "available_quantity"=>$stock
                   )
                 )
