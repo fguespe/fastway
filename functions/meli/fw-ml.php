@@ -94,21 +94,16 @@ function fw_ml_update_stock( $order_id ) {
           $vars=$prod['body']->variations;
           $permalink=$prod['body']->permalink;
           if(count($vars)>0){
-            foreach($vars as $var){
-              $order->add_order_note($var->id);
-              if($var->id==$product_id){
-                $note=$sku." - es un prod variable \n";
-                $order->add_order_note($note);
-                $item = array(
-                  "variations" => array(
-                    array(
-                      "id"=>$var->id,
-                      "available_quantity"=>$stock
-                    )
+              $note=$var[0]->id." - es un prod variable \n";
+              $order->add_order_note($note);
+              $item = array(
+                "variations" => array(
+                  array(
+                    "id"=>$var[0]->id,
+                    "available_quantity"=>$stock
                   )
-                );
-              }
-            }
+                )
+              );
           }else{
             $note=$sku." - es un prod simple \n";
             $order->add_order_note( $note);
