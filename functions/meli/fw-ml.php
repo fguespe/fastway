@@ -67,16 +67,20 @@ function fw_ml_update_stock( $order_id ) {
     
     $order = wc_get_order( $order_id );
     foreach ( $order->get_items() as $item_id => $item ) {
-        
+        $parent_sku=null;
         if( $item['variation_id'] > 0 ){
           $product_id = wp_get_post_parent_id($item['variation_id']);
+          $product = wc_get_product($product_id);
+          $parent_sku=$product->get_sku(); 
+          $product_id = $item['variation_id']; // simple product
         }else {
           $product_id = $item['product_id']; // simple product
         } 
 
-        $product = wc_get_product($product_id);
-        $sku=$product->get_sku(); 
 
+        $product = wc_get_product($product_id);
+        $sku=$parent_sku?$parent_sku:$product->get_sku(); 
+        
         $note="Nuevo Proceso: ".$product_id."-".$sku."\n";
         if($product_id == $item['product_id'])$note.="Es un prod simple\n";
         else if($product_id == $item['variation_id'])$note.="Es una variacion\n";
