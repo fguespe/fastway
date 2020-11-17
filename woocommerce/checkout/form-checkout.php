@@ -59,7 +59,7 @@ var paso = 1;
               }
               ?>
             <div class="login-btn">
-            <?=fw_theme_mod('fw_label_checkout_already')?><a class="login" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_init')?></a>	
+            <span class="no_existe"><?=fw_theme_mod('fw_label_checkout_already')?></span><span class="existe">Este mail ya existe</span><a class="login" onclick="switchlogin()"><?=fw_theme_mod('fw_label_checkout_init')?></a>	
             </div>
               
             <button type="button" onclick="nextpaso()" class="btn-checkout continuar" disabled><?=fw_theme_mod('fw_label_checkout_continuar')?></button>
@@ -302,16 +302,27 @@ function fw_login(){
 }
 
 
-function emailExists(){
+function emailExists(email){
+  jQuery('.btn-checkout.continuar').prop('disabled', true);
   jQuery.ajax({
       type: 'POST',
       dataType: 'json',
       url:ajaxurl,
       data: { 
           action: 'fw_ajax_email_exists', //calls wp_ajax_nopriv_ajaxlogin
-          email: jQuery('#login #username').val()
+          email: email,
       },
       success: function(data){
+        if(data.result){
+          console.log('exisre!')
+          jQuery('.no_existe').hide();
+          jQuery('.existe').show();
+          jQuery('.btn-checkout.continuar').prop('disabled', true);
+
+        }else{
+
+          jQuery('.btn-checkout.continuar').prop('disabled', false);
+        }
         console.log(data)
       }
   });
@@ -342,6 +353,7 @@ function verificarEmail(num){
     sacar1(!e_valid ,9)
   }
   
+  emailExists(email);
 }
 function verificarFields(first=false){
   var disable=false
@@ -488,13 +500,11 @@ function sacar1(estado,msg){
 function nextpaso(){
   paso++
   if(paso==2){
-    //jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
     verificarFields();
 
   }else if(paso==3){
-    //jQuery(document.body).trigger("update_checkout"); 
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()

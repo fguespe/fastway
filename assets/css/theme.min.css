@@ -5150,6 +5150,10 @@ dt.variation-fw_extra.stock {
   }*/
   /* MOBILE BREAKPOINTS */
 }
+.fw_checkout .existe {
+  color: red !important;
+  display: none;
+}
 .fw_checkout .order-detail h1 {
   line-height: 22px;
   padding: 0 0 10px 0;

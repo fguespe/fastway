@@ -17,16 +17,14 @@ add_action('wp_ajax_nopriv_fw_ajax_email_exists', 'fw_ajax_email_exists');
 add_action('wp_ajax_fw_ajax_email_exists', 'fw_ajax_email_exists');
 function fw_ajax_email_exists(){
   $result = wp_verify_nonce( $_POST['security'], 'ajax-login-nonce' );
-  $email = $_GET['email'];
-  
-  // do check
+  $email = $_POST['email'];
   if ( email_exists($email) ) {
-      $response->result = true;
+    $result = 'exists';
+    echo json_encode(array('result'=>true, 'message'=>__('User exists.')));
   }else {
-      $response->result = false;
+    echo json_encode(array('result'=>false, 'message'=>__('User doesnt exists.')));
   }
-
-  echo json_encode($response);
+  die();
 }
 
 

@@ -5077,7 +5077,10 @@ dt.variation-fw_extra.stock{
   display:none !important ;
 }
 .fw_checkout{
-      
+    .existe{
+      color:red !important;
+      display:none;
+    }
     .order-detail h1 {
       line-height: 22px;
       padding: 0 0 10px 0;
