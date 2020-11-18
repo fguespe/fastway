@@ -410,7 +410,7 @@ jQuery(document).ready( function(jQuery) {
   unselect('shipping_method[0]')
   unselect('payment_method')
 
-  verificarEmail(2);
+  //verificarEmail(2);
   verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
