@@ -99,10 +99,11 @@ if(!is_plugin_active('kirki/kirki.php')){
     <?php echo fw_theme_mod('fw_header_scripts');?>
 </head>
 <?php
-$classdarkmode='';
-if(fw_theme_mod('fw_body_dark_mode'))$classdarkmode='fw_body_dark_mode';
+$clasesbody='';
+if(fw_theme_mod('fw_body_dark_mode'))$clasesbody.=' fw_body_dark_mode ';
+if(fw_theme_mod("fw_general_message"))$clasesbody.=' fw_general_message ';
 $nombreurl=is_front_page()?'home':basename(get_permalink());?>
-<body <?php body_class("page-".$nombreurl.' '.$classdarkmode.' '); ?>>
+<body <?php body_class("page-".$nombreurl.' '.$clasesbody.' '); ?>>
 <?php  if(fw_theme_mod("gtagmanager_id")){ ?>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?=fw_theme_mod("gtagmanager_id")?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
