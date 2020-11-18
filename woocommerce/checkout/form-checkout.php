@@ -319,12 +319,14 @@ async function emailExists(email){
     if(data.result){
           console.log('Existe!')
           jQuery('.no_existe').hide();
+          jQuery('#account_password').hide();
           jQuery('.existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', true);
       }else{
           jQuery('.existe').hide();
+          jQuery('#account_password').show();
           jQuery('.no_existe').show();
-        jQuery('.btn-checkout.continuar').prop('disabled', false);
+          jQuery('.btn-checkout.continuar').prop('disabled', false);
       }
   } catch(err) {
     console.log(err);
