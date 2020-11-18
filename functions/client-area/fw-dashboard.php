@@ -467,9 +467,13 @@ function fw_widget_cuotas_general_dash_handler(){
 
 
 
+
 add_shortcode('fw_mensaje_barra','fw_mensaje_barra');
 function fw_mensaje_barra(){
-    return fw_theme_mod('fw_general_message');
+    if(fw_theme_mod("fw_general_message")){
+        $htlm=stripslashes(htmlspecialchars_decode( fw_theme_mod('fw_general_message')));
+        return '<div class="maintainance-notice" style="background:red;color:white;text-align:center;">'.$htlm.'</div>';
+    }
 }
 function fw_widget_mensaje_barra_dash(){
     $mensaje =__('Message','fastway').': '.fw_theme_mod('fw_general_message');

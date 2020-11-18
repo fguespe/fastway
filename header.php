@@ -112,9 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 if(fw_theme_mod("maintainance-mode")){
     echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
 }
-if(fw_theme_mod("fw_general_message")){
-  echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;">'.fw_theme_mod("fw_general_message").'</div>';
-}
+echo fw_mensaje_barra();
 
 echo fw_header_html();
 echo fw_header_html_mobile();
