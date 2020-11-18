@@ -27,7 +27,7 @@ Kirki::add_section( 'section_clientwidgets', array(
 ) );
 
 if(is_webaltoweb()){
-Kirki::add_section( 'section_client_admin', array(
+Kirki::add_section( 'section_client_chrq', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
@@ -75,7 +75,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_client_admin_columnaprecio',
 	'label'       => __( 'Columna Precio Mayorista', 'fastway' ),
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_client_admin_verificaremail',
+	'label'       => __( 'Verificar Email', 'fastway' ),
+	'section'     => 'section_client_chrq',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -88,7 +100,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_trans_comprobantes',
 	'label'       => __( 'Comprobantes de transferencia (CR)', 'fastway' ),
 	'description'	=> 'Permite subir archivos a las ordenes.',
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
 	'default'     => 0,
 	'choices' => array(
 		0  => __( 'Disable', 'fastway' ),
@@ -99,7 +111,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_trans_comprobantes_id',
 	'label'       => __( 'ID del form', 'fastway' ),
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
 	'default'     => '',
 ) );
 
@@ -107,7 +119,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_client_admin_columnarol',
 	'label'       => __( 'Columna Rol En Pedidos', 'fastway' ),
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -119,7 +131,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_crear_cuenta_a_sendy',
 	'label'       => __( 'Signups sendy list', 'fastway' ),
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
 	'default'     => '',
 ) );
 
@@ -127,7 +139,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_forms_a_sendy',
 	'label'       => __( 'Forms to sendy', 'fastway' ),
-	'section'     => 'section_client_admin',
+	'section'     => 'section_client_chrq',
     'default'     => '',
     'description' => 'form_id,field_number,sendy_list|form_id,field_number,sendy_list|'
 ) );

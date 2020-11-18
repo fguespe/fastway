@@ -312,7 +312,6 @@ function getDataEmail(email){
 }
 
 async function emailExists(email){
-  if(!email)return
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
     const data = await getDataEmail(email)
@@ -356,7 +355,8 @@ function verificarEmail(num){
     sacar1(!e_valid ,9)
   }
   
-  emailExists(email);
+  let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
+  if(verifEmail && email)emailExists(email);
 }
 function verificarFields(first=false){
   var disable=false
