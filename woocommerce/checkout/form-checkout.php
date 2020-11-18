@@ -315,10 +315,12 @@ async function emailExists(email){
 
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
   if(!verifEmail || !email || logged)return;
+  
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
     const data = await getDataEmail(email)
     console.log(email)
+
     if(data.result){
           console.log('Existe!')
           jQuery('.no_existe').hide();
