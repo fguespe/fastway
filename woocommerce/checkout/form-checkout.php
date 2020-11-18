@@ -322,7 +322,8 @@ async function emailExists(email){
           jQuery('.existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', true);
       }else{
-        console.log('No Existe!')
+          jQuery('.existe').hide();
+          jQuery('.no_existe').show();
         jQuery('.btn-checkout.continuar').prop('disabled', false);
       }
   } catch(err) {
