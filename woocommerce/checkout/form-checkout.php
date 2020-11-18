@@ -298,34 +298,37 @@ function fw_login(){
             }
           }
       });
-
 }
 
-
-function emailExists(email){
-  jQuery('.btn-checkout.continuar').prop('disabled', true);
-  jQuery.ajax({
+function getDataEmail(email){
+  return jQuery.ajax({
       type: 'POST',
       dataType: 'json',
       url:ajaxurl,
       data: { 
           action: 'fw_ajax_email_exists', //calls wp_ajax_nopriv_ajaxlogin
           email: email,
-      },
-      success: function(data){
-        if(data.result){
-          console.log('exisre!')
+      }});
+}
+
+async function emailExists(email){
+  if(!email)return
+  try {
+    jQuery('.btn-checkout.continuar').prop('disabled', true);
+    const data = await getDataEmail(email)
+    console.log(email)
+    if(data.result){
+          console.log('Existe!')
           jQuery('.no_existe').hide();
           jQuery('.existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', true);
-
-        }else{
-
-          jQuery('.btn-checkout.continuar').prop('disabled', false);
-        }
-        console.log(data)
+      }else{
+        console.log('No Existe!')
+        jQuery('.btn-checkout.continuar').prop('disabled', false);
       }
-  });
+  } catch(err) {
+    console.log(err);
+  }
 }
 function verificarEmail(num){
   let email=jQuery('#billing_email').val()
