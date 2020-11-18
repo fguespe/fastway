@@ -312,6 +312,9 @@ function getDataEmail(email){
 }
 
 async function emailExists(email){
+
+  let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
+  if(!verifEmail || !email || logged)return;
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
     const data = await getDataEmail(email)
@@ -358,8 +361,7 @@ function verificarEmail(num){
     sacar1(!e_valid ,9)
   }
   
-  let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
-  if(verifEmail && email)emailExists(email);
+  emailExists(email);
 }
 function verificarFields(first=false){
   var disable=false
@@ -410,7 +412,7 @@ jQuery(document).ready( function(jQuery) {
   unselect('shipping_method[0]')
   unselect('payment_method')
 
-  //verificarEmail(2);
+  verificarEmail(2);
   verificarFields(true);
 
   jQuery('#billing_email').on('input', function(e){
