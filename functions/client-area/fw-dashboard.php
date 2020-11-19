@@ -687,7 +687,7 @@ function fw_actualizar_precios() {
     echo '<span style="color:red">'.__('IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost data. If in doubt , contact support.','fastway').'</span><br>';
 }
 function custom_dashboard_help() {
-    echo '<p>'.__('Send your requirement via email to our account','fastway').' <a href="mailto:soporte@altoweb.ar" class="btn">'.__('create ticket','fastway').'</a>';
+    echo '<p>'.__('Send your requirement via email to our account','fastway').' <small>'.__('soporte@altoweb.ar','fastway').'</small></a>';
     //echo '<p>'.__('Send your requirement from our support widget','fastway').' <a href="#" class="btn" onclick="FreshworksWidget(\'open\');" >'.__('create ticket','fastway').'</a>';
     echo '<br><br>'.__('For more information about the altoweb service <a target="_blank" href="https://www.altoweb.ar/tickets/">click here</a>','fastway').'</p>
     '.__('You can also register in the help portal to see tutorials and send us inquiries. <a target="_blank" href="https://altoweb.freshdesk.com/">Go to portal</a>','fastway');

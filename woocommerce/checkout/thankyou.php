@@ -91,6 +91,7 @@ if(window.dataLayer){
 				
 				<?php 
 				do_action( 'woocommerce_thankyou',$order->get_id());
+				do_action( 'woocommerce_admin_order_data_after_shipping_address',$order);
 				do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() );
 				 ?><!--por si hay algo intersante para haer en el futuro....-->
 
