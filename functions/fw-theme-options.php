@@ -3993,7 +3993,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_header_scripts',
 	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
 	'section'     => 'section_scripts',
-	'description' => 'With the <script> tags',
+	'description' => 'With the script tags',
 	'default'     => '',
 	'choices'     => array(
 		'language' => 'html',
