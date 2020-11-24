@@ -418,14 +418,31 @@ function fw_menu_mobilenew_submenu($menu_items,$parent_id){
                 $nuevoitem="";
                 $first=false;
 
-                $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
-                if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
-                    $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
-                    $menu_list.='<i class="far fa-chevron-right"></i>';
+
+                if($menu_item->attr_title!=="init_col"){
+                    $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                    if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
+                        $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                        $menu_list.='<i class="far fa-chevron-right"></i>';
+                    }else{
+                        $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                    }
+                    $menu_list .= '</a></li>';
                 }else{
-                    $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                    foreach( $menu_items as $menu_item ) {   
+                        if( $menu_item->menu_item_parent == $parent ) {    
+                            $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                            if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
+                                $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                                $menu_list.='<i class="far fa-chevron-right"></i>';
+                            }else{
+                                $menu_list .= '<a href="'.$menu_item->url.'" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
+                            }
+                            $menu_list .= '</a></li>';
+                        }
+                    }
+
                 }
-                $menu_list .= '</a></li>';
                  
             }
             // end <li>
