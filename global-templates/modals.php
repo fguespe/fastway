@@ -601,7 +601,7 @@ function populatecart(){
         let shipping_total=totals['shipping_total']
         let min=datos['min']
         let subtotal=parseFloat(totals['subtotal'])
-        let total=parseFloat(totals['cart_contents_total'])
+        let total=parseFloat(totals['total'])//cart_contents_total
         let discount_total=parseFloat(totals['fee_total'])+parseFloat(totals['discount_total']);
 
         jQuery('.minicart .cant').text('('+datos['items']+')')
@@ -633,8 +633,8 @@ function populatecart(){
         });
         jqe+='<div id="loadinghide_totals"   class="row total" style="padding-top:0.5em;">'
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
-        if(discount_total>0){
-            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">- $'+parseFloat(discount_total).toFixed(2)+'</span></span></div>'
+        if(typeof discount_total == 'number'){
+            jqe+='<div class="col-6 col-md-8">Descuento</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(discount_total).toFixed(2)+'</span></span></div>'
             jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(total).toFixed(2)+'</span></span></div>'
         }
         jqe+='</div>'

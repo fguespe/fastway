@@ -4076,6 +4076,17 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_label',
+	'label'       => __( 'Promo Label', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Aparecera este nombre en el carrito',
+	'default'     => 'Promo',
+	
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_categories',
@@ -4126,6 +4137,17 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_label_2',
+	'label'       => __( 'Promo Label', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Aparecera este nombre en el carrito',
+	'default'     => 'Promo 2',
+) );
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_categories_2',
@@ -4174,6 +4196,16 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_lili_discount_label_3',
+	'label'       => __( 'Promo Label', 'fastway' ),
+	'section'     => 'section_woo_discount',
+	'description' => 'Aparecera este nombre en el carrito',
+	'default'     => 'Promo 3'
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_lili_discount_categories_3',

@@ -13,16 +13,19 @@ add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid',
 add_action('woocommerce_cart_calculate_fees' , 'fw_cart_calculate_fees');
 function fw_cart_calculate_fees( WC_Cart $cart ){
     if(fw_theme_mod('fw_lili_discount')){
+        $index='';
         $discount=get_lili_discount($cart);
-        if($discount<0)$cart->add_fee( 'Promo:',$discount);
+        if($discount<0)$cart->add_fee(fw_theme_mod('fw_lili_discount_label'.$index),$discount);
     }
     if(fw_theme_mod('fw_lili_discount_2')){
-        $discount=get_lili_discount($cart,"_2");
-        if($discount<0)$cart->add_fee( 'Promo(2):',$discount);
+        $index='_2';
+        $discount=get_lili_discount($cart,$index);
+        if($discount<0)$cart->add_fee(fw_theme_mod('fw_lili_discount_label'.$index),$discount);
     }
     if(fw_theme_mod('fw_lili_discount_3')){
-        $discount=get_lili_discount($cart,"_3");
-        if($discount<0)$cart->add_fee( 'Promo(3):',$discount);
+        $index='_3';
+        $discount=get_lili_discount($cart,$index);
+        if($discount<0)$cart->add_fee(fw_theme_mod('fw_lili_discount_label'.$index),$discount);
     }
 }
 function get_lili_discount($cart,$cant=""){
