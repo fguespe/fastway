@@ -44,6 +44,17 @@
     </div>
 </div>
 <?php if(is_product()){?>
+
+<div id="modal_product" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered <?=fw_theme_mod('popup-size')?>">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-body" style="padding:0px;">
+            <div class="modal_form"> <?php echo do_shortcode('[gravityform id="'.fw_theme_mod('fw_pupup_form_id').'" description="false" title="false" ajax="true"]')?></div>
+        </div>
+    </div>
+  </div>
+</div>
 <div id="modal_envio" class="modal fade addNewInputs show" role="dialog" aria-labelledby="modalAdd" aria-modal="true" style="" >
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
