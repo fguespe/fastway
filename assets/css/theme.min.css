@@ -3128,7 +3128,7 @@ body .wpb_content_element {
 .layout2 .fw_single_product button {
     text-align: left !important;
   }
-  .layout2 .fw_single_product button {
+  .layout2 .fw_single_product button.fw_add_to_cart_button {
     float: left;
     display: block !important;
   }
