@@ -23,7 +23,7 @@ function fw_recentposts_grid() {
           <div class="loopimg_container"><img src="<?php echo $image_url; ?>" width="100%"/></div>
         <h2 class="blog_title"><?php  the_title();?></h2>
         <p class="desc"><?php the_excerpt(); ?></p>
-        <span class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </span>
+        <a class="vermas" target="_blank"><?php echo fw_theme_mod('fw_label_read_more')?> </a>
       </a>
       </li>
     <?php }?>
@@ -123,5 +123,5 @@ function fw_blog_url(){
 
 add_shortcode('fw_blog_button', 'fw_blog_button');
 function fw_blog_button(){
-  echo '<span class="vermas">'.fw_theme_mod('fw_label_read_more').'</span>';
+  echo '<a class="vermas">'.fw_theme_mod('fw_label_read_more').'</a>';
 }
