@@ -1254,10 +1254,10 @@ function fw_notas_tab() {
         'slider_speed'  => '250',
         'slider_delay'  => '4000',
         'autoplay'  => 'false',
-        'maxcant' => '12',
+        'maxcant' => '6',
         'el_class'  => '',
         'title'  => '',
-        'prodsperrow' => 4,
+        'prodsperrow' => 3,
     ), $atts );
 
   return get_blog_template('fw-blog-posts-carousel.php',$atts,$posts);
