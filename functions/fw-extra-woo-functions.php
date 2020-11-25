@@ -128,7 +128,6 @@ function fw_single_qty(){
 
 add_shortcode('fw_single_share', 'fw_single_share');
 function fw_single_share(){
-
     fw_share_redes();
 }
 
@@ -1221,9 +1220,98 @@ function fw_video_tab( $tabs ) {
           'callback'  => 'fwvideo_tab'
         );
   }
+  $posts = get_posts(array(
+    'numberposts'	=> -1,
+    'post_type'		=> 'post',
+    'meta_key'		=> 'proyecto',
+    'meta_value'	=> $product->ID
+  ));
+  if(count($posts)>0){
+    $tabs['_tab_notas'] = array(
+      'title'   => __( 'Notas', 'fastway' ),
+      'priority'  => 100,
+      'callback'  => 'fw_notas_tab'
+    );
+  }
   
   return $tabs; 
 }
+
+
+function fw_notas_tab() {
+  global $product;
+
+  $posts = new WP_Query(array(
+    'numberposts'	=> -1,
+    'post_type'		=> 'post',
+    'meta_key'		=> 'proyecto',
+    'meta_value'	=> $product->ID
+  ));
+
+  $atts = shortcode_atts(
+    array(
+        'loop'      =>  'false',
+        'slider_speed'  => '250',
+        'slider_delay'  => '4000',
+        'autoplay'  => 'false',
+        'maxcant' => '12',
+        'el_class'  => '',
+        'title'  => '',
+        'prodsperrow' => 4,
+    ), $atts );
+
+  return get_blog_template('fw-blog-posts-carousel.php',$atts,$posts);
+}
+
+if( function_exists('acf_add_local_field_group') ):
+
+  acf_add_local_field_group(array(
+    'key' => 'group_5fbe65c3e64cf',
+    'title' => 'Proyecto asociado a nota',
+    'fields' => array(
+      array(
+        'key' => 'field_5fbe65d1ce80e',
+        'label' => 'Proyecto',
+        'name' => 'proyecto',
+        'type' => 'post_object',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'post_type' => array(
+          0 => 'product',
+        ),
+        'taxonomy' => '',
+        'allow_null' => 1,
+        'multiple' => 0,
+        'return_format' => 'object',
+        'ui' => 1,
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'side',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+  ));
+  
+  endif;
 
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
 function woocommerce_product_custom_fields(){
