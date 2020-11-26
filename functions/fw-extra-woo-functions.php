@@ -1222,8 +1222,8 @@ function fw_product_form_cta($atts = [], $content = null){
       <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="modal-body" style="padding:0px;">
-                <div class="modal_form">'.do_shortcode('[gravityform id="'.$atts['form_id'].'" description="false" title="false" ajax="true"]').'</div>
+            <div class="modal-body" >
+                '.do_shortcode('[gravityform id="'.$atts['form_id'].'" description="false" title="false" ajax="true"]').'
             </div>
         </div>
       </div>
@@ -1244,7 +1244,7 @@ function fw_video_tab( $tabs ) {
           'callback'  => 'fwvideo_tab'
         );
   }
-  
+
   /*
   $posts = get_posts(array(
     'numberposts'	=> -1,
