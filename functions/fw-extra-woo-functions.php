@@ -1208,7 +1208,31 @@ function fw_pestana_descargas() {
 
     
 }
+
+
+add_shortcode('fw_product_form_cta','fw_product_form_cta');
+function fw_product_form_cta($atts = [], $content = null){
+    $atts = shortcode_atts(array('icon' => 'plus-square' ,'text' => 'Consultar' ,'form_id' => 9), $atts );
+    echo '
+    <button data-toggle="modal" data-target="#modal_product" class=" btn fw_add_to_cart_button" data-product_id="1887">
+      <i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i>
+      <span>'.$atts['text'].'</span>
+    </button>
+    <div id="modal_product" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-body" style="padding:0px;">
+                <div class="modal_form">'.do_shortcode('[gravityform id="'.$atts['form_id'].'" description="false" title="false" ajax="true"]').'</div>
+            </div>
+        </div>
+      </div>
+    </div>';
+    
+} 
+
 /*VIDE*/
+
 add_filter( 'woocommerce_product_tabs', 'fw_video_tab' );
 function fw_video_tab( $tabs ) {
   global $product;
