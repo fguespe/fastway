@@ -1244,6 +1244,8 @@ function fw_video_tab( $tabs ) {
           'callback'  => 'fwvideo_tab'
         );
   }
+  
+  /*
   $posts = get_posts(array(
     'numberposts'	=> -1,
     'post_type'		=> 'post',
@@ -1256,7 +1258,7 @@ function fw_video_tab( $tabs ) {
       'priority'  => 100,
       'callback'  => 'fw_notas_tab'
     );
-  }
+  }*/
   
   return $tabs; 
 }
