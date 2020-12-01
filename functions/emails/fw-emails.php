@@ -260,7 +260,7 @@ function bbloomer_add_css_to_emails( $css, $email ) {
 add_filter( 'gform_notification', 'change_autoresponder_email',10,3);
 function change_autoresponder_email( $notification, $form, $entry ) {
     $user_email=$entry[$notification['to']];
-    //error_log(print_r($notification,true));
+    error_log(print_r($notification,true));
     $user=get_user_by( 'email', $user_email);
     if ( $notification['event']=='gfur_user_activation' ||  $notification['name'] == 'User Pending' || $notification['name'] == 'Alta Mayorista' ) {
         $notification['subject'] = fw_parse_subject('gf_pending',get_account_variables_for_templates($user));
