@@ -264,10 +264,10 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     if ( $notification['event']=='gfur_user_activation' ||  $notification['name'] == 'User Pending' || $notification['name'] == 'Alta Mayorista' ) {
         $notification['subject'] = fw_parse_subject('gf_pending',get_account_variables_for_templates($user));
         $notification['message'] =  fw_parse_mail_accounts('gf_pending',get_account_variables_for_templates($user));
-    }else if ( $notification['event']=='gfur_user_activated' ||  $notification['name'] == 'User Activation' ) {
+    }/*else if ( $notification['event']=='gfur_user_activated' ||  $notification['name'] == 'User Activation' ) {
         $notification['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates($user));
         $notification['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
-    }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador' || $notification['name'] == 'Contacto Mayorista') && $notification['toType']=='email' ) {
+    }*/else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador' || $notification['name'] == 'Contacto Mayorista') && $notification['toType']=='email' ) {
         $notification['to'] = getMailQueRecibe();
     }
     //Admin Notification
@@ -275,7 +275,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     //Contacto Mayorista
 
     error_log(print_r($notification,true));
-    
+
     return $notification;
 }
 function was_form_signup($key){
