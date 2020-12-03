@@ -1938,38 +1938,46 @@ if(fw_theme_mod('fw_define_shipping_default')){
 }
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;
-  $free = array();
-  $entro=false;
-  $cart_total = WC()->cart->cart_contents_total;
-  $lili_disc=get_lili_discount(WC()->cart);
-	foreach ( $rates as $rate_id => $rate ) {
-    if ( 'free_shipping' == $rate->method_id){
-      $entro=true;
-      $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
-      if(($cart_total+$lili_disc) < $min){
+
+
+  if(fw_theme_mod("fw_show_only_free_shipping")){
+    $numorders = wc_get_customer_order_count( get_current_user_id() );
+    foreach ( $rates as $rate_id => $rate ) {
+      if ( 'free_shipping' == $rate->method_id && $numorders>0){
         unset($rates[$rate_id]);
-        $entro=false;
       }
     }
-		if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id   ||   'zippin' === $rate->method_id   ) {
-      $free[ $rate_id ] = $rate;
+  }
+
+  $entro=false;
+  if(fw_theme_mod("fw_free_shipping_only_first_order")){
+    $free = array();
+    $cart_total = WC()->cart->cart_contents_total;
+    $lili_disc=get_lili_discount(WC()->cart);
+    foreach ( $rates as $rate_id => $rate ) {
+      if ( 'free_shipping' == $rate->method_id){
+        $entro=true;
+        $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
+        if(($cart_total+$lili_disc) < $min){
+          unset($rates[$rate_id]);
+          $entro=false;
+        }
+      }
+      if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id   ||   'zippin' === $rate->method_id   ) {
+        $free[ $rate_id ] = $rate;
+      }
     }
   }
+
+
 	return $entro  ? $free : $rates;
 }
 function fw_free_shipping_only_first_order( $rates) {
-  $numorders = wc_get_customer_order_count( get_current_user_id() );
-  error_log('numorders'.$numorders);
-	foreach ( $rates as $rate_id => $rate ) {
-    if ( 'free_shipping' == $rate->method_id && $numorders>0){
-      unset($rates[$rate_id]);
-    }
-  }
+  
 	return $rates;
 }
 
-if(fw_theme_mod("fw_free_shipping_only_first_order"))add_filter( 'woocommerce_package_rates', 'fw_free_shipping_only_first_order',5,1);
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available',10,1);
+add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
