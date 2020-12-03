@@ -289,9 +289,6 @@ if(is_plugin_active('js_composer/js_composer.php')){
 }
 
 if(is_plugin_active('woocommerce/woocommerce.php')){
-
-
-
     require get_template_directory() . '/functions/fw-mayoristas.php';
     require get_template_directory() . '/functions/fw-extra-woo-functions.php';
     require get_template_directory() . '/functions/woo-free-shipping-per-product/free-shippging-pre-product.php';

@@ -1947,7 +1947,7 @@ function fw_hide_shipping_when_free_is_available( $rates) {
       $entro=true;
       $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
       if(($cart_total+$lili_disc) < $min){
-        unset($rates[$rate->id]);
+        unset($rates[$rate_id]);
         $entro=false;
       }
     }
@@ -1957,8 +1957,19 @@ function fw_hide_shipping_when_free_is_available( $rates) {
   }
 	return $entro  ? $free : $rates;
 }
+function fw_free_shipping_only_first_order( $rates) {
+  $numorders = wc_get_customer_order_count( get_current_user_id() );
+  error_log('numorders'.$numorders);
+	foreach ( $rates as $rate_id => $rate ) {
+    if ( 'free_shipping' == $rate->method_id && $numorders>0){
+      unset($rates[$rate_id]);
+    }
+  }
+	return $rates;
+}
 
-if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available',1);
+if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available',10,1);
+if(fw_theme_mod("fw_free_shipping_only_first_order"))add_filter( 'woocommerce_package_rates', 'fw_free_shipping_only_first_order',20,1);
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {

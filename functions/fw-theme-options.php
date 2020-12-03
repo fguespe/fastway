@@ -2857,6 +2857,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_free_shipping_only_first_order',
+	'label'       => __( 'Free Shipping Only First Order', 'fastway' ),
+	'section'     => 'section_woo_shippings',
+	'description' => 'Hides other options if free shipping is available, it doesnt hide local pickups',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_show_only_free_shipping',
 	'label'       => __( 'Show only Free Shipping', 'fastway' ),
 	'section'     => 'section_woo_shippings',
