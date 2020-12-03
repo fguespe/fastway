@@ -1968,8 +1968,8 @@ function fw_free_shipping_only_first_order( $rates) {
 	return $rates;
 }
 
+if(fw_theme_mod("fw_free_shipping_only_first_order"))add_filter( 'woocommerce_package_rates', 'fw_free_shipping_only_first_order',5,1);
 if(fw_theme_mod("fw_show_only_free_shipping"))add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available',10,1);
-if(fw_theme_mod("fw_free_shipping_only_first_order"))add_filter( 'woocommerce_package_rates', 'fw_free_shipping_only_first_order',20,1);
 
 if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
