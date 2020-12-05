@@ -1540,9 +1540,13 @@ box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
 		margin-right: 30px;
 }
 
+.fw_rev_loop_1 h3{
+    font-weight:600 !important;
+}
 .fw_rev_loop_1 .review-inner {
 	position: relative;
 	width: 100%;
+    min-height:298px !important;
 	background: #fff;
 	border-radius: 20px;
 	z-index: 2;
@@ -1570,11 +1574,11 @@ box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
 }
 
 .fw_rev_loop_1 .thumbnail{
-	width: 100%;
+    width:50px;
+    top:-20px;
 	max-width: 90px;
 	margin: auto;
 	position: absolute;
-	top: -45px;
 	left: 50%;
 	-moz-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
@@ -1589,11 +1593,15 @@ box-shadow: 0px 3px 6px 0px rgba(102,102,102,0.8);
 
 .fw_rev_loop_1 .review-head {
 	padding: 55px 0 20px;
+    padding-bottom:0px !important;
 }
 
 .fw_rev_loop_1 .review-client-name {
 	margin-bottom: 5px;
 	color: #363636
+}
+.review_title{
+		font-weight:700;
 }
 
 .fw_rev_loop_1 .review-job {
