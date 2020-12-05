@@ -87,7 +87,6 @@ if(!is_plugin_active('kirki/kirki.php')){
   text-align:left !important;
   font-size: 11px !important;
 }
-
 .woocommerce-shipping-totals .button {
   text-align:left !important;
   background: var(--main) !important;

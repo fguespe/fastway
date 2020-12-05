@@ -140,8 +140,7 @@ if( !function_exists( 'fw_menu' ) ) {
 
                 $linkmod_classes = array();
                 $icon_classes    = array();
-                $classes = seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes );
-                $classes=implode(' ',$classes);
+                $classes =implode(' ', seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes ));
                 $icon_classes=implode(' ',$icon_classes);
                 if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
                 
@@ -160,6 +159,7 @@ if( !function_exists( 'fw_menu' ) ) {
                         $title=$submenu->title;
 
                         $linkmod_classes = array();
+                        $classes =implode(' ',$submenu->classes);
                         $icon_classes    = array();
                         $icon_classes=implode(' ',$icon_classes);
                         if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
@@ -169,14 +169,12 @@ if( !function_exists( 'fw_menu' ) ) {
                         $childs=getChilds($submenu->ID,$menu_items);
                         //3er nivel
                         if($megamenu && $isprimary){
-                            $menu_array[] = '<li class="dropdown-submenu nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
+                            $menu_array[] = '<li class="dropdown-submenu '.$classes.' '.$submenu->attr_title.' nav-item menu-item padre"><a class="dropdown-item" href="' . $url . '">'.$icon_classes.' '. $title . '</a></li>' ."\n";
                             foreach( $childs as $s_submenu ) {
                                 $s_url=$s_submenu->url;
                                 $s_title=$s_submenu->title;
                                 $menu_array[] = '<li class="nav-item hijo"><a class="nav-link " href="' . $s_url . '">' . $s_title . '</a></li>' ."\n";
-                                
                             }
-                        
                         }else if(!$megamenu && $isprimary){
                             $laclase="";
                             $toggle="";
@@ -418,7 +416,7 @@ function fw_menu_mobilenew_submenu($menu_items,$parent_id){
 
 
                 if($menu_item->attr_title!=="init_col"){
-                    $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                    $menu_list .= '<li class="nav-item menu-item  '.$classes.'">' ."\n";
                     if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
                         $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
                         $menu_list.='<i class="far fa-chevron-right"></i>';
@@ -429,7 +427,7 @@ function fw_menu_mobilenew_submenu($menu_items,$parent_id){
                 }else{
                     foreach( $menu_items as $menu_item ) {   
                         if( $menu_item->menu_item_parent == $parent ) {    
-                            $menu_list .= '<li class="nav-item menu-item '.$classes.'">' ."\n";
+                            $menu_list .= '<li class="nav-item menu-item '.$menu_item->attr_title.' '.$classes.'">' ."\n";
                             if( fw_menu_children_count($menu_items,$menu_item->ID) > 0 ){
                                 $menu_list .= '<a onclick="mostrar_submenu('.$menu_item->ID.')" class="nav-link" >'.$icon_classes.' '.$menu_item->title;
                                 $menu_list.='<i class="far fa-chevron-right"></i>';
