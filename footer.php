@@ -75,13 +75,11 @@ jQuery(document).ready( function(jQuery) {
 <?php } ?>
 
 <script type="text/javascript">
-let es_ES='<?=get_locale()=='es_ES'?>'
-if(es_ES){
-  jQuery(document).ready( function(jQuery) {
-    let mail='<?=getMailQueRecibe()?>'
-    jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
-  });
-}
+jQuery(document).ready( function(jQuery) {
+  let es_ES='<?=get_locale()=='es_ES'?>'
+  let mail='<?=fw_theme_mod('fw_arrepentimiento_link')?>'
+  if(mail && es_ES)jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
+});
 
 function check_ga() {
   if (typeof ga === 'function') {
