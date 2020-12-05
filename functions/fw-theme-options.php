@@ -3224,7 +3224,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Link Arrepentimiento', 'fastway' ),
     'description' => 'Link al que redirige el arrepentimiento. ',
 	'section'     => 'section_footer',
-	'default'     => 'mailto:[getMailQueRecibe]',
+	'default'     => 'mailto:'.getMailQueRecibe(),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
