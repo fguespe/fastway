@@ -78,7 +78,7 @@ jQuery(document).ready( function(jQuery) {
 jQuery(document).ready( function(jQuery) {
   let es_ES='<?=get_locale()=='es_ES'?>'
   let link='<?=fw_theme_mod('fw_arrepentimiento_link')?>'
-  if(mail && es_ES)jQuery('.copyright').append('<a class="botonarrepe" href="'+mail+'">ARREPENTIMIENTO</a>');
+  if(mail && es_ES)jQuery('.copyright').append('<a class="botonarrepe" href="'+link+'">ARREPENTIMIENTO</a>');
 });
 
 function check_ga() {
