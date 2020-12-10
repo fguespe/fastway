@@ -77,8 +77,8 @@ jQuery(document).ready( function(jQuery) {
 <script type="text/javascript">
 jQuery(document).ready( function(jQuery) {
   let es_ES='<?=get_locale()=='es_ES'?>'
-  let mail='<?=fw_theme_mod('fw_arrepentimiento_link')?>'
-  if(mail && es_ES)jQuery('.copyright').append('<a class="botonarrepe" href="mailto:'+mail+'">ARREPENTIMIENTO</a>');
+  let link='<?=fw_theme_mod('fw_arrepentimiento_link')?>'
+  if(mail && es_ES)jQuery('.copyright').append('<a class="botonarrepe" href="'+mail+'">ARREPENTIMIENTO</a>');
 });
 
 function check_ga() {
