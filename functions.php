@@ -516,7 +516,10 @@ function mc_edit_permission_check() {
 }
 add_filter( 'admin_head', 'mc_edit_permission_check', 1, 4 );
 
-
+function fw_precio_vacio($x) {
+  if(empty($x))return 0;
+  return $x;
+}
 
 
 ?>
