@@ -1980,6 +1980,7 @@ function fw_free_shipping_only_first_order( $rates) {
 */
 
 if(fw_theme_mod("fw_show_cross_sells"))set_theme_mod('fw_show_cross_sells','auto');
+else set_theme_mod('fw_show_cross_sells','none');
 
 add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
 if(fw_theme_mod("fw_show_cross_sells")=='none')remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
