@@ -4411,7 +4411,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_cart',
 	'default'	=>__( 'Suggestions for you', 'fastway' ),
 ) );
-
+error_log(__( 'Suggestions for you', 'fastway' ));
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_free_label',
@@ -4579,6 +4579,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels',
 	'default' 		=>	__( 'Contact us', 'fastway' ),		
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_cuotas',
@@ -4586,6 +4587,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_products',
 	'default' 		=>	__( 'Installment calculator', 'fastway' ),	
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_costo_envio',

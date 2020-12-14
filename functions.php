@@ -2,6 +2,7 @@
 
 
 
+load_theme_textdomain( 'fastway', get_template_directory() . '/languages' );
 require get_template_directory() . '/inc/builder.php';
 if ( ! function_exists( 'fw_theme_mod' ) ) {
   function fw_theme_mod( $field_id, $default_value = '' ) {
@@ -60,13 +61,16 @@ function remove_extra_image_sizes() {
 }
 
 //add_action('init', 'remove_extra_image_sizes');
-
+error_log(get_locale());
 
 if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-if(!is_plugin_active('kirki/kirki.php'))return;
+if(!is_plugin_active('kirki/kirki.php')){
+  echo "KIRKI MISSING";
+  return;
+}
 if(is_plugin_active('kirki/kirki.php'))require get_template_directory() . '/functions/fw-theme-options.php';
 
 
@@ -335,8 +339,6 @@ function init_hooks(){
     }
 }
 
-
-load_theme_textdomain( 'fastway', get_template_directory() . '/languages' );
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'fastway' ),
     'vertical' => __( 'Vertical Menu', 'fastway' ),
