@@ -1980,6 +1980,7 @@ function fw_free_shipping_only_first_order( $rates) {
 }
 
 */
+set_theme_mod('fw_show_cross_sells','none');
 //Lo saco si esta en none
 if(fw_theme_mod("fw_show_cross_sells")=='none')remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 //Sino, corre esta
