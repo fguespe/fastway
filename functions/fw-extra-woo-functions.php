@@ -1936,6 +1936,8 @@ if(fw_theme_mod('fw_define_shipping_default')){
   }
   
 }
+
+add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;
   if(fw_theme_mod("fw_free_shipping_only_first_order")){
@@ -1978,34 +1980,53 @@ function fw_free_shipping_only_first_order( $rates) {
 }
 
 */
-
-if(fw_theme_mod("fw_show_cross_sells"))set_theme_mod('fw_show_cross_sells','auto');
-else set_theme_mod('fw_show_cross_sells','none');
-
-add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
+//Lo saco si esta en none
 if(fw_theme_mod("fw_show_cross_sells")=='none')remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+//Sino, corre esta
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
   
 	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
 		if ( is_checkout() ) {
 			return;
-		}
+    }
     $cols=3;
     echo '
 <div class="cross" >
-<h4 class="titulo">'.__('Suggestions for you','fastway').'</h3>
+<h4 class="titulo">'.fw_theme_mod('fw_crosssell_text').'</h3>
         
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
-
-        $myarray = WC()->cart->get_cross_sells();
         
-        $args = array(
-          'post_type' => 'product',
-          'post__in'      => $myarray,
-        );
-        // The Query
-        $products = new WP_Query( $args );
+        if(fw_theme_mod("fw_show_cross_sells")=='auto'){
+          $myarray = WC()->cart->get_cross_sells();
+
+          $args = array(
+            'post_type' => 'product',
+            'post__in'      => $myarray,
+          );
+          // The Query
+          $products = new WP_Query( $args );
+
+        }else{
+          $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug',
+            'terms'    => array('cross-sells'),
+            'operator' => 'IN',
+          );
+          $args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
+
+          $args = array(
+            'post_type'           => 'product',
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => 1,
+            'meta_query'          => $meta_query,
+            'tax_query'           => $tax_query,
+          );
+
+          $products = new WP_Query( $args );
+
+        }
         $contada=0;
         while ( $products->have_posts() ) : 
             $contada++;

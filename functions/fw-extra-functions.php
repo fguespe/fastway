@@ -198,7 +198,6 @@ if( !function_exists( 'fw_menu' ) ) {
                 $classes =implode(' ', seporate_linkmods_and_icons_from_classes( $menu_item->classes, $linkmod_classes, $icon_classes ));
                 $icon_classes=implode(' ',$icon_classes);
                 if(!empty($icon_classes))$icon_classes='<i class="'.esc_attr($icon_classes).'" aria-hidden="true"></i>';
-                error_log(print_r($classes,true));
            
 
                 if( $bool == true && count( $menu_array ) > 0 ) {

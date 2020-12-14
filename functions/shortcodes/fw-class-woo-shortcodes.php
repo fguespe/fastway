@@ -159,7 +159,6 @@ class fw_Woo_Shortcodes {
 		$args = array(
 			'post_type'           => 'product',
 			'post_status'         => 'publish',
-			
 			'ignore_sticky_posts' => 1,
 			'posts_per_page'      => $atts['per_page'],
 			'orderby'             => $atts['orderby'],

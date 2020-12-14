@@ -4403,6 +4403,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'	=>'Comprar',
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_crosssell_text',
+	'label'    => __( 'Sugerencia Carrito', 'fastway' ),
+	'description' => 'Esto va en la pagina de single products',
+	'section'     => 'section_labels_cart',
+	'default'	=>__( 'Suggestions for you', 'fastway' ),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -4538,13 +4546,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_single_products',
 	'default'	=>__( 'Quienes vieron este producto también compraron', 'fastway' ),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_descriptiontab_text',
 	'label'    => __( 'Descripción', 'fastway' ),
 	'description' => 'Pestaña',
 	'section'     => 'section_labels_single_products',
-	'default'	=> __( 'Descripción','fastway' )
+	'default'	=> __( 'Description','fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -4552,7 +4561,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_label_search',
 	'label'    => __( 'Search Placeholder', 'fastway' ),       
 	'section'     => 'section_labels',
-	'default' 		=>	'¿Que estas buscando?',
+	'default' 		=>__( 'What are you looking for', 'fastway' ),	
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -4560,15 +4569,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_label_sale',
 	'label'    => __( 'Sale Message', 'fastway' ),       
 	'section'     => 'section_labels_products',
-	'default' 		=>	'¡Oferta!',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_call_now',
-	'label'    => __( 'Llamar ahora', 'fastway' ),       
-	'section'     => 'section_labels',
-	'default' 		=>	'Llamar ahora',
+	'default' 		=>__( 'Sale!', 'fastway' ),		
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -4576,14 +4577,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_consultar_price',
 	'label'    => __( 'Consultar', 'fastway' ),       
 	'section'     => 'section_labels',
-	'default' 		=>	'Consultar',
+	'default' 		=>	__( 'Contact us', 'fastway' ),		
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_cuotas',
 	'label'    => __( 'Calcular cuotas', 'fastway' ),       
 	'section'     => 'section_labels_products',
-	'default' 		=>	'Calculador de cuotas',
+	'default' 		=>	__( 'Installment calculator', 'fastway' ),	
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
