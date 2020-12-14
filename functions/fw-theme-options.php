@@ -2198,17 +2198,19 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
+	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
-	'description'	=> 'Aaprecen sugierencias de compras en el carrito',
+	'description'	=> 'Aaprecen sugierencias de compras en el carrito. Categoria cross-sell para manual',
 	'section'     => 'section_woo_cart',
-	'default'     => 0,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
+	'default'     => 'simple',
+	'choices'     => array(
+		'none'   	=> 	'None',
+		'auto'   	=> 	'Products',
+		'manual'   	=> 	'Category/Manual',
+	),
 ) );
+
 
 
 

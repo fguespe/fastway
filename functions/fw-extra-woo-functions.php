@@ -1976,10 +1976,13 @@ function fw_free_shipping_only_first_order( $rates) {
   
 	return $rates;
 }
-*/
-add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
 
-if(!fw_theme_mod("fw_show_cross_sells"))remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+*/
+
+if(fw_theme_mod("fw_show_cross_sells"))set_theme_mod('fw_show_cross_sells','auto');
+
+add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
+if(fw_theme_mod("fw_show_cross_sells")=='none')remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
   
 	function woocommerce_cross_sell_display( $limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
@@ -1989,7 +1992,7 @@ if ( ! function_exists( 'woocommerce_cross_sell_display' ) ) {
     $cols=3;
     echo '
 <div class="cross" >
-<h4 class="titulo">Sugerencias para vos</h3>
+<h4 class="titulo">'.__('Suggestions for you','fastway').'</h3>
         
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
