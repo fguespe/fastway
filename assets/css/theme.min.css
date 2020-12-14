@@ -2349,6 +2349,8 @@ footer .widget_nav_menu li a {
   display: flex !important;
   width: 48%;
   display: inline !important;
+  border: 1px solid;
+  margin-bottom: 6px;
 }
 .woocommerce-shop .price_slider_amount button {
   background: var(--main);
@@ -2675,6 +2677,10 @@ ul.products.columns-1 li.product, .woocommerce-page ul.products.columns-1 li.pro
 
 ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
   width: 30.75%;
+}
+
+ul.products.columns-4 li.product, .woocommerce-page ul.products.columns-4 li.product {
+  width: 24.75%;
 }
 
 ul.products.columns-5 li.product, .woocommerce-page ul.products.columns-5 li.product {
