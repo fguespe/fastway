@@ -2171,7 +2171,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_consultar_link',
@@ -2188,6 +2187,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => 'OJO!! SOLO EL NUMERO, SIN SIMBOLOS y el rol entre parentesis separados tipo company data.CONSULTAR '.strtolower(implode(fw_get_all_roles(),", ")),
 	'section'     => 'section_woo_cart',
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase2',
@@ -2196,12 +2196,11 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_cart',
 ) );
 
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
-	'description'	=> 'Aaprecen sugierencias de compras en el carrito. Categoria cross-sell para manual',
+	'description'	=> 'Aaprecen sugierencias de compras en el carrito. Categoria \'cross-sells\' para manual',
 	'section'     => 'section_woo_cart',
 	'default'     => 'simple',
 	'choices'     => array(
@@ -2210,9 +2209,6 @@ Kirki::add_field( 'theme_config_id', array(
 		'manual'   	=> 	'Category/Manual',
 	),
 ) );
-
-
-
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -2239,19 +2235,18 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo',
 ) );
 
-/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_user_template',
-	'label'       => __( 'User Template', 'fastway' ),
+	'settings'    => 'fw_modal_cart_calltoa',
+	'label'       => __( 'Modal Cart Call to Action', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'     => 'icon',
+	'default'     => 'checkout',
 	'choices'     => array(
-		'icon'   => __( 'Only Icon', 'fastway' ),
-		'iconwt' => __( 'Icon With Text ', 'fastway' ),
-		'iconwu' => __( 'Icon With Username ', 'fastway' ),
+		'checkout'   => __( 'Checkout', 'fastway' ),
+		'cart' => __( 'Cart ', 'fastway' ),
 	),
-) );*/
+) );
+
 /*
 
 Kirki::add_field( 'theme_config_id', array(
@@ -4395,6 +4390,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_cart',
 	'default'	=>'Vaciar carrito',
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'proceed-to-checkout-text',
@@ -4411,7 +4407,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_cart',
 	'default'	=>__( 'Suggestions for you', 'fastway' ),
 ) );
-error_log(__( 'Suggestions for you', 'fastway' ));
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_free_label',

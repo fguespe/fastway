@@ -18,7 +18,12 @@
                         <a  class="btn seguir iralcarrito" style="padding-right:0px;color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;" href="<?=esc_url( wc_get_cart_url() )?>"><?=fw_theme_mod('fw_label_ir_carrito')?></a>
                         </div>
                         <div class="col-lg-6 col-md-12 d-flex ">
-                            <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
+                            <?php 
+                            if(fw_theme_mod('fw_seguircomprando_url')=='/' && fw_theme_mod('fw_modal_cart_calltoa')=='checkout'){ ?>
+                                <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
+                            <?php }else if(fw_theme_mod('fw_modal_cart_calltoa')=='cart'){?>
+                                <button type="button" onclick="location.href='<?=esc_url( wc_get_cart_url() )?>'" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
+                            <?php } ?>
                         </div>
                     </div>
                     
@@ -417,6 +422,7 @@ function toggle(quien){
 
 function ir_al_checkout(url){
     let pasa_filtro_rol='<?=has_min_purchase()?>';
+    
     console.log('pasa_filtro_roll',pasa_filtro_rol)
     if(!pasa_filtro_rol)return location.href=url
     
