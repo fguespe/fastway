@@ -2571,7 +2571,9 @@ a:hover {
   text-decoration: none ;
 }
 
-
+.menufalso{
+  display:none;
+}
 
 .minicart .cant{
   color:var(--main);
@@ -2588,6 +2590,7 @@ a:hover {
   z-index:10 !important;
 }
 /*WOO*/
+
 
 h3.heading-title {
   margin-bottom: 20px;
@@ -2683,7 +2686,7 @@ h3.heading-title {
     ul.products.columns-6 li.product,.woocommerce-page ul.products.columns-6 li.product{
          width:13.5% 
     }
-    
+
     @media (max-width: 799px) {
         ul.products.columns-1 li.product,.woocommerce-page ul.products.columns-1 li.product{
              width:98%;

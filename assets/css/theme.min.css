@@ -2570,6 +2570,10 @@ a:hover {
   text-decoration: none;
 }
 
+.menufalso {
+  display: none;
+}
+
 .minicart .cant {
   color: var(--main);
   font-size: 11px !important;
