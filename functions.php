@@ -61,7 +61,6 @@ function remove_extra_image_sizes() {
 }
 
 //add_action('init', 'remove_extra_image_sizes');
-error_log(get_locale());
 
 if( !function_exists('is_plugin_active') ) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );

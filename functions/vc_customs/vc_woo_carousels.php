@@ -240,6 +240,107 @@ function vc_products_by_brand_carousel() {
 
 
 
+add_action( 'vc_before_init', 'vc_products_by_tags_carousel' );//Prds de categoria
+function vc_products_by_tags_carousel() {
+
+    vc_map( 
+            array(
+                'name' => __('Products by Tags Carousel', 'fastway'),
+                'base' => 'vc_products_by_tags_carousel',
+                'description' => __('Carousel of products', 'fastway'), 
+                'category' => __('Fastway Products', 'fastway'),   
+                'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                'params' => array(
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Title', 'fastway' ),
+                        'param_name' => 'title',
+                        'value' => 'Title',
+                        'std' => 'Title',
+                        'admin_label' => true,
+                        'weight' => 0,
+                    ), 
+                    array(
+                        'type' => 'dropdown_multi',
+                        'heading' => __( 'Tags', 'fastway' ),
+                        'param_name' => 'tag',
+                        'weight' => 0,
+                        "admin_label" => true,
+                        'value'=>fw_vc_get_posts("product_tag"),
+                    ), 
+                    array(
+                        'type' => 'dropdown_multi',
+                        'heading' => __( 'Categories', 'fastway' ),
+                        'param_name' => 'category',
+                        'weight' => 0,
+                         "admin_label" => true,
+                        'value'=>fw_vc_get_posts("product_cat"),
+                    ), 
+                    array(
+                        'type' => 'checkbox',
+                        'heading' => __( 'Hide Uncategorized ', 'fastway' ),
+                        'param_name' => 'uncategorized',
+                        'std' => 'true',
+                        'admin_label' => false,
+                    ), 
+                    array(
+                        'type' => 'checkbox',
+                        'heading' => __( 'Slider', 'fastway' ),
+                        'param_name' => 'slider',
+                        'std' => 'true',
+                        'admin_label' => false,
+                    ), 
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Prods per row ', 'fastway' ),
+                        'param_name' => 'prodsperrow',
+                        'value' => '4',
+                        'std' => '4',
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
+                        'type' => 'el_id',
+                        'heading' => __( 'Element ID', 'js_composer' ),
+                        'param_name' => 'el_id',
+                        'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
+                    ),
+
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Delay', 'js_composer' ),
+                        'param_name' => 'slider_delay',
+                        'description' => __( 'Delay in miliseconds', 'js_composer' ),
+                        'std' => '4000',
+                    ),  
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Speed', 'js_composer' ),
+                        'param_name' => 'slider_speed',
+                        'description' => __( 'Speed in seconds, for transtitions', 'js_composer' ),
+                        'std' => '4',
+                    ),  
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Extra class name', 'js_composer' ),
+                        'param_name' => 'el_class',
+                        'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+                    ),   
+                    array(
+                        'type' => 'css_editor',
+                        'heading' => __( 'CSS box', 'js_composer' ),
+                        'param_name' => 'css',
+                        'group' => __( 'Design Options', 'js_composer' ),
+                    ),
+                ),
+            )
+
+            
+        );          
+
+}
+
+
 
 
 add_action( 'vc_before_init', 'vc_categories_carousel' );//Cates en general
