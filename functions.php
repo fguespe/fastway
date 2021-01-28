@@ -542,7 +542,7 @@ function get_metsadata( $order_id, $key ) {
 }
 
 
-function get_product_order_image( $response, $object, $request ) {
+function get_mp_api_data( $response, $object, $request ) {
  
   if( empty( $response->data ) )
       return $response;
@@ -553,6 +553,6 @@ function get_product_order_image( $response, $object, $request ) {
   return $response;
 } 
 
-add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_product_order_image", 10, 3 );
+add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_mp_api_data", 10, 3 );
 
 ?>
