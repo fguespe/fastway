@@ -523,4 +523,36 @@ function fw_precio_vacio($x) {
 }
 
 
+
+function get_metsadata( $order_id, $key ) {
+  global $wpdb;
+  $table_name = $wpdb->prefix . 'woo_mercadoenvios';
+  $data = $wpdb->get_var($wpdb->prepare(
+    "SELECT `data` FROM
+    $table_name
+  WHERE
+      `order_id` = %d
+    AND
+      `key` = '%s'
+  LIMIT 1",
+    (int) $order_id,
+    $key
+  ));
+  return $data;
+}
+
+
+function get_product_order_image( $response, $object, $request ) {
+ 
+  if( empty( $response->data ) )
+      return $response;
+  $oid= $response->data['id'];
+  error_log(print_r($response->data,true));
+  $response->data['mp_op_id']= get_post_meta($oid,'mp_op_id',true);
+
+  return $response;
+} 
+
+add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_product_order_image", 10, 3 );
+
 ?>
