@@ -547,7 +547,6 @@ function get_mp_api_data( $response, $object, $request ) {
   if( empty( $response->data ) )
       return $response;
   $oid= $response->data['id'];
-  error_log(print_r($response->data,true));
   $response->data['mp_op_id']= get_post_meta($oid,'mp_op_id',true);
 
   return $response;
