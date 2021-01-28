@@ -523,4 +523,35 @@ function fw_precio_vacio($x) {
 }
 
 
+
+function get_metsadata( $order_id, $key ) {
+  global $wpdb;
+  $table_name = $wpdb->prefix . 'woo_mercadoenvios';
+  $data = $wpdb->get_var($wpdb->prepare(
+    "SELECT `data` FROM
+    $table_name
+  WHERE
+      `order_id` = %d
+    AND
+      `key` = '%s'
+  LIMIT 1",
+    (int) $order_id,
+    $key
+  ));
+  return $data;
+}
+
+
+add_action( 'rest_api_init', 'handle_location' );
+function handle_location() {
+    register_rest_field( 'post', 'mp_op_id', array(
+        'get_callback' => array( $this, 'get_mp_op_id' ),
+        'schema' => null
+    ));        
+}   
+
+function get_mp_op_id( $post, $field_name, $request ) { 
+	return get_metsadata($post[ 'id' ], $field_name );
+}
+
 ?>
