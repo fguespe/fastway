@@ -544,7 +544,7 @@ function get_metsadata( $order_id, $key ) {
 
 add_action( 'rest_api_init', 'handle_location' );
 function handle_location() {
-    register_rest_field( 'post', 'mp_op_id', array(
+    register_api_field( 'post', 'mp_op_id', array(
         'get_callback' => array( $this, 'get_mp_op_id' ),
         'schema' => null
     ));        
