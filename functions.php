@@ -548,7 +548,7 @@ function get_mp_api_data( $response, $object, $request ) {
       return $response;
   $oid= $response->data['id'];
   error_log(print_r($response->data,true));
-  $response->data['mp_op_id']= get_metsadata($oid,'mp_op_id',true);
+  $response->data['mp_op_id']= get_metsadata($oid,'mp_op_id');
 
   return $response;
 } 
