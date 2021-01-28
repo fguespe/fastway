@@ -524,6 +524,9 @@ function fw_precio_vacio($x) {
 
 
 
+
+if(is_plugin_active('woocommerce-mercadoenvios/woocommerce-mercadoenvios.php' )){
+				
 function get_metsadata( $order_id, $key ) {
   global $wpdb;
   $table_name = $wpdb->prefix . 'woo_mercadoenvios';
@@ -548,11 +551,15 @@ function get_mp_api_data( $response, $object, $request ) {
       return $response;
   $oid= $response->data['id'];
   error_log(print_r($response->data,true));
-  $response->data['mp_op_id']= get_metsadata($oid,'mp_op_id');
+  $response->data['mercadopago']['mp_op_id']= get_metsadata($oid,'mp_op_id');
+  $response->data['mercadopago']['last_mp_status']= get_metsadata($oid,'last_mp_status');
+  $response->data['mercadopago']['mp_order_id']= get_metsadata($oid,'mp_order_id');
 
   return $response;
 } 
 
 add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_mp_api_data", 10, 3 );
+
+}
 
 ?>
