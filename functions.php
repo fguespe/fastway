@@ -541,8 +541,8 @@ function get_metsadata( $order_id, $key ) {
     (int) $order_id,
     $key
   ));
-  $data=str_replace($data,'"','');
-  $data=str_replace($data,';','');
+  $data =str_replace('"','',$data);
+  $data =str_replace(';','',$data);
   $data = end(explode(':',$data));
   return $data;
 }
