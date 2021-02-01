@@ -27,6 +27,7 @@
 			<?php $this->shipping_address(); ?>
 			<?php do_action( 'wpo_wcpdf_after_shipping_address', $this->type, $this->order ); ?>
 			<?php } ?>
+			
 		</td>
 		<td class="order-data">
 			<h3>Pedido</h3>
@@ -55,6 +56,10 @@
 				<tr class="payment-method">
 					<th><?php _e( 'Payment Method:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 					<td><?php $this->payment_method(); ?></td>
+				</tr>
+				<tr class="shipping-method">
+					<th><?php _e( 'Shipping Method:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
+					<td><?php $this->shipping_method(); ?></td>
 				</tr>
 				<?php do_action( 'wpo_wcpdf_after_order_data', $this->type, $this->order ); ?>
 			</table>			
@@ -108,7 +113,7 @@
 				<table class="totals">
 					<tfoot>
 						<?php foreach( $this->get_woocommerce_totals() as $key => $total ) : 
-							if($key!='order_total' && $key!='cart_subtotal')continue; ?>
+							if($key!='order_total' && $key!='cart_subtotal' && $key!='shipping')continue; ?>
 							
 						<tr class="<?php echo $key; ?>">
 							<td class="no-borders"></td>
