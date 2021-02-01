@@ -588,3 +588,10 @@ display:none !important;
 #adduser{
 	display:none;
 }
+
+/*PACKING SLIPS*/
+
+#wpo_wcpdf_send_emails,
+.wpo_wcpdf-actions li:last-child{
+display:none
+}
