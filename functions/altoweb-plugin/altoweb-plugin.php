@@ -290,7 +290,7 @@ function altoweb_financiacion(){
     $precio=$product->get_price();
     $calc=floor($precio/$cuotas);
     //if($cuotas==18)
-    $html="<big>Pagá en hasta ".$cuotas." cuotas</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
+    $html="<big>Pagá en hasta ".$cuotas." cuotas sin interés</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
     //else $html="<big>Pagá en hasta 12 cuotas</big>";
 
     $return= <<<HTML
