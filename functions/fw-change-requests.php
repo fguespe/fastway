@@ -109,7 +109,6 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
   function email_order_verif($order_id, $checkout=null) {
     global $woocommerce;
     $order = new WC_Order( $order_id );
-    error_log($order->status);
     if($order->status === 'await-verif' ) {
         $subject= fw_parse_subject('customer_await_verif_order',fw_get_email_variables($order));
         $body= fw_parse_mail_return('customer_await_verif_order',$order);

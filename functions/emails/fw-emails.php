@@ -274,7 +274,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     //Notificación del administrador
     //Contacto Mayorista
 
-    error_log(print_r($notification,true));
+
     
     return $notification;
 }
@@ -322,7 +322,6 @@ function edit_user_notification_email( $wp_new_user_notification_email, $user, $
 
 function se_comment_moderation_recipients( $emails, $comment_id ) {
     $emails[0]=getMailQueRecibe();
-    error_log(print_r($emails,true));
     return $emails;
 }
 add_filter( 'comment_moderation_recipients', 'se_comment_moderation_recipients', 11, 2 );
@@ -375,8 +374,7 @@ function conditionals($template,$data) {
                             $cond[12]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[12])));
                             $cond[13]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[13])));
                             $cond[14]=str_replace('"', "", str_replace("'", "", str_replace(" ", "", $cond[14])));
- 
-                            //error_log(print_r($cond,true));   
+  
 
                             eval("\$result1 = (\"".$data[$cond[0]]."\" ".$cond[8]." \"".$cond[1]."\") ? TRUE : FALSE;");
                             eval("\$result2 = (\"".$data[$cond[2]]."\" ".$cond[10]." \"".$cond[3]."\") ? TRUE : FALSE;");

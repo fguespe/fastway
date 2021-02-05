@@ -1940,38 +1940,49 @@ if(fw_theme_mod('fw_define_shipping_default')){
 add_filter( 'woocommerce_package_rates', 'fw_hide_shipping_when_free_is_available');
 function fw_hide_shipping_when_free_is_available( $rates) {
   if(esMultitienda())return $rates;
+
+  //Saco los free que no aplican primero
+  $cart_total = WC()->cart->cart_contents_total;
+  $lili_disc=get_lili_discount(WC()->cart);
+  //error_log('lili_disc:'.$lili_disc);
+  if($lili_disc<0){
+    foreach ( $rates as $rate_id => $rate ) {
+      if ( 'free_shipping' == $rate->method_id){
+        $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
+        //error_log("Analiza:" .($cart_total+$lili_disc).'<'.$min);
+        if(($cart_total+$lili_disc) < $min)unset($rates[$rate_id]);
+      }
+    }
+  }
+
   if(fw_theme_mod("fw_free_shipping_only_first_order")){
     $numorders = wc_get_customer_order_count( get_current_user_id() );
-    error_log('numorders'.$numorders);
+    //error_log('numorders'.$numorders);
     foreach ( $rates as $rate_id => $rate ) {
       if ( 'free_shipping' == $rate->method_id && $numorders>0){
         unset($rates[$rate_id]);
       }
     }
   }
-
-  $entro=false;
+  
   if(fw_theme_mod("fw_show_only_free_shipping")){
     $free = array();
-    $cart_total = WC()->cart->cart_contents_total;
-    $lili_disc=get_lili_discount(WC()->cart);
     foreach ( $rates as $rate_id => $rate ) {
       if ( 'free_shipping' == $rate->method_id){
         $entro=true;
-        $min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
+        /*$min = get_option('woocommerce_free_shipping_'.$rate->instance_id.'_settings')['min_amount'];
         error_log("Analiza:" .($cart_total+$lili_disc) < $min);
         if(($cart_total+$lili_disc) < $min){
           unset($rates[$rate_id]);
           $entro=false;
-        }
+        }*/
       }
       if ( 'free_shipping' == $rate->method_id || 'local_pickup' == $rate->method_id || 'mercadoenvios-shipping' === $rate->method_id   ||   'zippin' === $rate->method_id   ) {
         $free[ $rate_id ] = $rate;
       }
     }
   }
-
-
+  //error_log(print_r($entro  ? $free : $rates,true));
 	return $entro  ? $free : $rates;
 }
 /*

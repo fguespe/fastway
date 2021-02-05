@@ -553,7 +553,6 @@ function get_mp_api_data( $response, $object, $request ) {
   if( empty( $response->data ) )
       return $response;
   $oid= $response->data['id'];
-  error_log(print_r($response->data,true));
   $response->data['mercadopago']['mp_op_id']= get_metsadata($oid,'mp_op_id');
   $response->data['mercadopago']['last_mp_status']= get_metsadata($oid,'last_mp_status');
   $response->data['mercadopago']['mp_order_id']= get_metsadata($oid,'mp_order_id');

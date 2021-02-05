@@ -12,12 +12,9 @@
 			<?php do_action( 'wpo_wcpdf_before_billing_address', $this->type, $this->order ); ?>
 			<?php $this->billing_address(); ?>
 			<?php do_action( 'wpo_wcpdf_after_billing_address', $this->type, $this->order ); ?>
-			<?php if ( isset($this->settings['display_email']) ) { ?>
 			<div class="billing-email"><?php $this->billing_email(); ?></div>
-			<?php } ?>
-			<?php if ( isset($this->settings['display_phone']) ) { ?>
-			<div class="billing-phone"><?php $this->billing_phone(); ?></div>
-			<?php } ?>
+			<div class="billing-dni"><?=get_post_meta( $order->get_id(), '_billing_dni', true ) ?></div>
+			<div class="billing-phone">Tel: <?php $this->billing_phone(); ?></div>
 		</td>
 		<td class="address shipping-address">
 			<h3>Envío</h3>
@@ -125,5 +122,11 @@
 				</table>
 			</td>
 		</tr>
+		<tr>
+		
+			<td class="no-borders" colspan="2">
+				<div style="border-top:1px solid grey;text-align:left;width:60px;float:left;position:absolute;text-transform:underline;">Firma Cliente </div>
+			</td>
+			</tr>
 	</tfoot>
 </table>

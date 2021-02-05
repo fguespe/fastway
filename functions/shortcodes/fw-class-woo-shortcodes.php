@@ -677,7 +677,7 @@ class fw_Woo_Shortcodes {
 
 		$ordering_args = WC()->query->get_catalog_ordering_args( $atts['orderby'], $atts['order'] );
 		$meta_query    = WC()->query->get_meta_query();
-		error_log(print_r($atts,true));
+		
 		$args = array(
 			'post_type'				=> 'product',
 			'post_status' 			=> 'publish',
