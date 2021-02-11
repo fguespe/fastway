@@ -551,13 +551,13 @@ function fw_modal_talles(){
       }
     }
     if(empty($jpg))return "";
-
+    $jpg=strtolower($jpg);
     return '<button type="button" class="btn talles" data-toggle="modal" data-target="#exampleModal">VER TALLES</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog  modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-body">
-            <img width="100%" src="'.$jpg.'">
+            <img width="100%" src="'.get_option($jpg).'">
             </div>
         </div>
         </div>
