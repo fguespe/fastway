@@ -565,12 +565,12 @@ function fw_modal_talles(){
 }
 function fw_widget_talles_vonder_dash(){
     $mensaje1="calzados-adidas:".get_option('calzados-adidas');
-    $mensaje2="calzados-topper:".get_option('calzados-adidas');
-    $mensaje3="calzados-puma:".get_option('calzados-adidas');
-    $mensaje4="calzados-newbalance:".get_option('calzados-adidas');
-    $mensaje5="calzados-reebok:".get_option('calzados-adidas');
-    $mensaje6="calzados-converse:".get_option('calzados-adidas');
-    $mensaje7="calzados-dc:".get_option('calzados-adidas');
+    $mensaje2="calzados-topper:".get_option('calzados-topper');
+    $mensaje3="calzados-puma:".get_option('calzados-puma');
+    $mensaje4="calzados-newbalance:".get_option('calzados-newbalance');
+    $mensaje5="calzados-reebok:".get_option('calzados-reebok');
+    $mensaje6="calzados-converse:".get_option('calzados-converse');
+    $mensaje7="calzados-dc:".get_option('calzados-dc');
     $mensaje8="indumentaria:".get_option('calzados-adidas');
 
     $cambiar_l=__('Change','fastway');
