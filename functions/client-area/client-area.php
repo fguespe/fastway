@@ -194,6 +194,17 @@ Kirki::add_field( 'theme_config_id', array(
 if(is_webaltoweb()){
     Kirki::add_field( 'theme_config_id', array(
         'type'        => 'switch',
+        'settings'    => 'fw_widget_talles_vonder',
+        'label'       => __( 'Talles Vonder (CR)', 'fastway' ),
+        'section'     => 'section_clientwidgets',
+        'default'     => 0,
+        'choices' => array(
+            'on'  => __( 'Enable', 'fastway' ),
+            'off' => __( 'Disable', 'fastway' )
+        )
+	) );
+    Kirki::add_field( 'theme_config_id', array(
+        'type'        => 'switch',
         'settings'    => 'fw_widget_lili_discount',
         'label'       => __( 'Lili Discount (CR)', 'fastway' ),
         'section'     => 'section_clientwidgets',

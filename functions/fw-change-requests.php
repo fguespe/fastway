@@ -158,17 +158,6 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
     }
     return $new_order_statuses;
   }
-  /*
-  function register_awaiting_shipment_order_status() {
-    register_post_status( 'wc-await-verif', array(
-        'label'                     => 'Esperando confirmación',
-        'public'                    => true,
-        'exclude_from_search'       => false,
-        'show_in_admin_all_list'    => true,
-        'show_in_admin_status_list' => true,
-        'label_count'               => _n_noop( 'Esperando confirmación (%s)', 'Esperando confirmación (%s)' )
-    ) );
-  }*/
 
   function admin_display_comprobante( $order ){
     $url_comprobante = get_post_meta( $order->get_id(), 'comprobante', true );

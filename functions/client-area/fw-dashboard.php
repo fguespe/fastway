@@ -28,6 +28,16 @@ function prefix_add_dashboard_widget() {
             'fw_widget_lili_discount_dash_handler'
         );
     }
+
+    if(fw_theme_mod('fw_widget_talles_vonder')){
+        wp_add_dashboard_widget(
+            'fw_widget_talles_vonder', 
+            __('Talles','fastway'), 
+            'fw_widget_talles_vonder_dash', 
+            'fw_widget_talles_vonder_dash_handler'
+        );
+    }
+
     if(fw_theme_mod('fw_widget_desc_prods')){
         wp_add_dashboard_widget(
             'fw_widget_desc_prods', 
@@ -513,6 +523,99 @@ function fw_widget_mensaje_barra_dash_handler(){
     <div>
         <label>".__('Message','fastway')."</label>
         <input type=\"text\" name=\"fw_widget_mensaje_barra_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_general_message')."\">
+    </div>";
+}
+
+
+add_shortcode('fw_modal_talles','fw_modal_talles');
+function fw_modal_talles(){
+    //$htlm=stripslashes(htmlspecialchars_decode( fw_theme_mod('fw_general_message')));
+    global $product;
+    $terms = get_the_terms( $product->ID, 'product_cat' );
+    $jpg='';
+    foreach ($terms as $term) {
+        if($term->name==="CALZADOS")$jpg='CALZADOS';
+        if($term->name==="INDUMENTARIA")$jpg='INDUMENTARIA';
+    }
+    if($jpg==="CALZADOS"){
+      $terms = get_the_terms( $product->ID, 'marca' );
+      foreach ($terms as $term) {
+          if(
+          $term->name=="ADIDAS" ||
+          $term->name=="TOPPER" ||
+          $term->name=="PUMA"   ||
+          $term->name=="NEW BALANCE" ||
+          $term->name=="REEBOK" ||
+          $term->name=="CONVERSE" ||
+          $term->name=="DC" )$jpg="CALZADOS-".$term->name;
+      }
+    }
+    if(empty($jpg))return "";
+
+    return '<button type="button" class="btn talles" data-toggle="modal" data-target="#exampleModal">VER TALLES</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+            <img width="100%" src="'.$jpg.'">
+            </div>
+        </div>
+        </div>
+    </div>';
+}
+function fw_widget_talles_vonder_dash(){
+    $mensaje1="calzados-adidas:".get_option('calzados-adidas');
+    $mensaje2="calzados-topper:".get_option('calzados-adidas');
+    $mensaje3="calzados-puma:".get_option('calzados-adidas');
+    $mensaje4="calzados-newbalance:".get_option('calzados-adidas');
+    $mensaje5="calzados-reebok:".get_option('calzados-adidas');
+    $mensaje6="calzados-converse:".get_option('calzados-adidas');
+    $mensaje7="calzados-dc:".get_option('calzados-adidas');
+    $mensaje8="indumentaria:".get_option('calzados-adidas');
+
+    $cambiar_l=__('Change','fastway');
+    $submsg='*'.__('This will create a red top bar on the website displaying the message.','fastway');
+
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>$mensaje1</label><br>
+        <label>$mensaje2</label><br>
+        <label>$mensaje3</label><br>
+        <label>$mensaje4</label><br>
+        <label>$mensaje5</label><br>
+        <label>$mensaje6</label><br>
+        <label>$mensaje7</label><br>
+        <label>$mensaje8</label><br>
+        <small>$submsg</small>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_talles_vonder#fw_widget_talles_vonder">$cambiar_l</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_talles_vonder_dash_handler(){
+    if( !$widget_options = get_option( 'fw_widget_talles_vonder_options' ) )$widget_options = array( );
+    
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_talles_vonder_options'] ) ) {
+        update_option('calzados-adidas',$_POST['fw_widget_talles_vonder_options']['calzados-adidas']);
+        update_option('calzados-topper',$_POST['fw_widget_talles_vonder_options']['calzados-topper']);
+        update_option('calzados-puma',$_POST['fw_widget_talles_vonder_options']['calzados-puma']);
+        update_option('calzados-newbalance',$_POST['fw_widget_talles_vonder_options']['calzados-newbalance']);
+        update_option('calzados-reebok',$_POST['fw_widget_talles_vonder_options']['calzados-reebok']);
+        update_option('calzados-converse',$_POST['fw_widget_talles_vonder_options']['calzados-converse']);
+        update_option('calzados-dc',$_POST['fw_widget_talles_vonder_options']['calzados-dc']);
+    }
+
+
+    echo "
+    <div>
+        <label>calzados-adidas</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-adidas]\" id=\"calzados-adidas\" value=\"".get_option('calzados-adidas')."\"><br>
+        <label>calzados-topper</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-topper]\" id=\"calzados-topper\" value=\"".get_option('calzados-topper')."\"><br>
+        <label>calzados-puma</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-puma]\" id=\"calzados-puma\" value=\"".get_option('calzados-puma')."\"><br>
+        <label>calzados-newbalance</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-newbalance]\" id=\"calzados-newbalance\" value=\"".get_option('calzados-newbalance')."\"><br>
+        <label>calzados-reebok</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-reebok]\" id=\"calzados-reebok\" value=\"".get_option('calzados-reebok')."\"><br>
+        <label>calzados-converse</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-converse]\" id=\"calzados-converse\" value=\"".get_option('calzados-converse')."\"><br>
+        <label>calzados-dc</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-dc]\" id=\"calzados-dc\" value=\"".get_option('calzados-dc')."\"><br>
     </div>";
 }
 
