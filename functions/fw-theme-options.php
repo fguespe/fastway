@@ -4464,6 +4464,22 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_label_medios_envio',
+	'label'    => __( 'Medios de Envío', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> 'Metodos de Envío',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_label_medios_pago',
+	'label'    => __( 'Medios de Pago', 'fastway' ),
+	'section'     => 'section_labels_payments',
+	'default'	=> 'Metodos de Pago',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_place_order_text',
 	'label'    => __( 'Finalizar Compra', 'fastway' ),
 	'section'     => 'section_labels_products',
