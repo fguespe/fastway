@@ -90,14 +90,6 @@ function get_slider_fields_blog(){
     );
 }
 
-function get_blog_template( $template_name, $args = array(), $posts = null ){
-    if ( $args && is_array( $args ) )extract( $args );
-    $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
-    ob_start();
-    if ( $posts->have_posts() )include( $located );
-    wp_reset_postdata();
-}
-
 
 add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
 function fw_blog_carousel( $atts, $content ) {
@@ -119,7 +111,7 @@ function fw_blog_carousel( $atts, $content ) {
     
     ob_start();
     $posts = new WP_Query('showposts='.$atts['maxcant']);
-    get_blog_template('fw-blog-posts-carousel.php',$atts,$posts);
+    fw_get_template('fw-blog-posts-carousel.php',$atts,$posts);
 		
     return ob_get_clean();
 		

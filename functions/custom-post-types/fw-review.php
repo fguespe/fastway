@@ -53,13 +53,6 @@ function fw_review_create() {
 
 
 
-function get_review_template( $template_name, $args = array(), $posts = null ){
-  if ( $args && is_array( $args ) )extract( $args );
-  $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
-  ob_start();
-  if ( $posts->have_posts() )include( $located );
-  wp_reset_postdata();
-}
 
 
 add_shortcode( 'fw_review_carousel', 'fw_review_carousel' ); 
@@ -89,11 +82,18 @@ function fw_review_carousel( $atts, $content ) {
       'order'         => 'ASC',
   );
   $posts = new WP_Query($qry_args);
-  get_review_template('fw-review-carousel.php',$atts,$posts);
+  fw_get_template('fw-review-carousel.php',$atts,$posts);
   
   return ob_get_clean();
   
 }   
+
+function fw_loop_review(){
+	global $preset_code;
+	$code=$preset_code?$preset_code:fw_theme_mod('woo_loop_review_code');
+	echo do_shortcode(stripslashes(htmlspecialchars_decode( $code)));
+  }
+
 
 if( function_exists('acf_add_local_field_group') ):
 

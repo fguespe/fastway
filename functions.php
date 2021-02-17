@@ -136,6 +136,7 @@ if(get_locale()=='es_ES'){
 }
 
 function isLocalhost(){
+  return false;
   return $_SERVER['HTTP_HOST']==='fastway';
 }
 
@@ -283,7 +284,8 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/fw-faq.php';
-require get_template_directory() . '/functions/fw-review.php';
+if(fw_theme_mod('fw_cpt_reviews'))require get_template_directory() . '/functions/custom-post-types/fw-review.php';
+if(fw_theme_mod('fw_cpt_events'))require get_template_directory() . '/functions/custom-post-types/fw-events.php';
 require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
 
 if(is_plugin_active('js_composer/js_composer.php')){
@@ -564,4 +566,13 @@ add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_mp_api_data", 10
 
 }
 
+
+
+function fw_get_template( $template_name, $args = array(), $posts = null ){
+  if ( $args && is_array( $args ) )extract( $args );
+  $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
+  ob_start();
+  if ( $posts->have_posts() )include( $located );
+  wp_reset_postdata();
+}
 ?>

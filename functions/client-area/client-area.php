@@ -26,6 +26,12 @@ Kirki::add_section( 'section_clientwidgets', array(
     'panel'          => 'panel_fastway',
 ) );
 
+Kirki::add_section( 'section_cpt', array(
+    'title'          => __( 'Custom Post Types', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+) );
+
 if(is_webaltoweb()){
 Kirki::add_section( 'section_client_chrq', array(
     'title'          => __( 'Change Requests', 'fastway' ),
@@ -144,6 +150,29 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => 'form_id,field_number,sendy_list|form_id,field_number,sendy_list|'
 ) );
 
+/*CPT*/
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_cpt_events',
+	'label'       => __( 'Events', 'fastway' ),
+	'section'     => 'section_cpt',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_cpt_reviews',
+	'label'       => __( 'Reviews', 'fastway' ),
+	'section'     => 'section_cpt',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 /*CLIENT AREA WIDGETS*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',

@@ -426,11 +426,6 @@ function fw_loop_container($atts = [], $content = null){
 
 }
 
-function fw_loop_review(){
-  global $preset_code;
-  $code=$preset_code?$preset_code:fw_theme_mod('woo_loop_review_code');
-  echo do_shortcode(stripslashes(htmlspecialchars_decode( $code)));
-}
 function fw_loop_blog(){
   echo do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('woo_loop_blog_code'))));
 }
@@ -1285,7 +1280,7 @@ function fw_notas_tab() {
         'prodsperrow' => 3,
     ), $atts );
 
-  return get_blog_template('fw-blog-posts-carousel.php',$atts,$posts);
+  return fw_get_template('fw-blog-posts-carousel.php',$atts,$posts);
 }
 
 if( function_exists('acf_add_local_field_group') ):
