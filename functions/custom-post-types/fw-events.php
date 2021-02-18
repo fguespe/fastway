@@ -245,7 +245,7 @@ function fw_event_date(){
 add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return get_field('url',$fw_loop_event->ID);
+  if(function_exists('get_field'))return '<a href="'.get_field('url',$fw_loop_event->ID).'" target="_blank" >LINK URL</a>';
 }
 
 
