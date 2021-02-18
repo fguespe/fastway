@@ -12,7 +12,7 @@ global $fw_loop_event;
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
-    $fw_loop_rev= get_post();
+    $fw_loop_event= get_post();
     echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
     echo fw_loop_event();
     echo '</div>';
