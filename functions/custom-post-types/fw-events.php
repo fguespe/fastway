@@ -226,7 +226,7 @@ function fw_event_image(){
 add_shortcode('fw_event_title', 'fw_event_title');
 function fw_event_title(){
   global $fw_loop_event;
-  return '<div class="event_title" >'.$fw_loop_event->post_title.'</div>' ;
+  return '<div class="event_title" >'.$fw_loop_event->title.'</div>' ;
 }
 
 add_shortcode('fw_event_desc', 'fw_event_desc');
@@ -245,7 +245,7 @@ function fw_event_date(){
 add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return '<a href="'.get_field('url',$fw_loop_event->ID).'" target="_blank" >LINK URL</a>';
+  if(function_exists('get_field'))return '<a href="'.get_field('link',$fw_loop_event->ID).'" target="_blank" >LINK URL</a>';
 }
 
 
