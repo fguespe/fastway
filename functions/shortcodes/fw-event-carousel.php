@@ -10,7 +10,7 @@ $rand=generateRandomString(5);
 if(!$autoplay)$autoplay='false';
 if(!$loop)$loop='false';
 $cant=1;	
-global $fw_loop_rev;	
+global $fw_loop_event;	
 while ($posts->have_posts()){
     $cant++;
     $posts->the_post(); 
