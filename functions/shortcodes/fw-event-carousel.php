@@ -49,4 +49,8 @@ while ($posts->have_posts()){
 
 
 
-  
+<style>
+li.fw_event_loop{
+    list-style-type: none !important;
+}
+</style>
