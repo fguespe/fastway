@@ -76,7 +76,7 @@ function fw_event_carousel( $atts, $content ) {
           'maxcant' => '12',
           'el_class'  => '',
           'title'  => '',
-          'prodsperrow' => 4,
+          'prodsperrow' => 3,
       ), $atts );
 
   if(!$atts['loop'])$atts['loop']='false';
