@@ -1,7 +1,5 @@
 <?php 
-if( strlen( $title ) > 0 ):
-    echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
-endif;
+if( strlen( $title ) > 0 )echo '<h3 class="heading-title" style="margin-bottom:20px;">'.$title.'</h3>';
 $rand=generateRandomString(5);
 ?>
 <div id="<?=$rand?>" class="swiper-posts swiper-posts-<?=$rand?> over-hidden relative">
