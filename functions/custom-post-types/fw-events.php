@@ -232,7 +232,7 @@ function fw_event_title(){
 add_shortcode('fw_event_desc', 'fw_event_desc');
 function fw_event_desc(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return get_field('desc',$fw_loop_event->ID);
+  if(function_exists('get_field'))return get_field('description',$fw_loop_event->ID);
 }
 
 add_shortcode('fw_event_date', 'fw_event_date');
