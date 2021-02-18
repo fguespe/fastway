@@ -232,13 +232,13 @@ function fw_event_title(){
 add_shortcode('fw_event_desc', 'fw_event_desc');
 function fw_event_desc(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return get_field('description',$fw_loop_event->ID);
+  if(function_exists('get_field'))return '<p class="desc" >'.get_field('description',$fw_loop_event->ID).'</p>';
 }
 
 add_shortcode('fw_event_date', 'fw_event_date');
 function fw_event_date(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return get_field('date',$fw_loop_event->ID);
+  if(function_exists('get_field'))return '<label class="date" >'.get_field('date',$fw_loop_event->ID).'</label>';
 }
 
 
