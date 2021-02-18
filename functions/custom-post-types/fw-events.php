@@ -76,6 +76,7 @@ function fw_event_carousel( $atts, $content ) {
           'maxcant' => '12',
           'el_class'  => '',
           'title'  => '',
+          'type'    => 'webinars',
           'prodsperrow' => 3,
       ), $atts );
 
@@ -89,11 +90,22 @@ function fw_event_carousel( $atts, $content ) {
       'numberposts'   => -1,
       'orderby'       => 'menu_order',
       'order'         => 'ASC',
-  );
-  $posts = new WP_Query($qry_args);
-  fw_get_template('fw-event-carousel.php',$atts,$posts);
-  
-  return ob_get_clean();
+      'tax_query' => array(
+        'taxonomy' => 'product_cat',
+        'field'    => 'slug', // Or 'name' or 'term_id'
+        'terms'    => $atts['type'],
+        'operator' => 'IN', // Excluded
+        )
+    );
+    $args = array(
+        'post_type' => 'product',
+        'post__in'  => $myarray,
+   
+    );
+    $posts = new WP_Query($qry_args);
+    fw_get_template('fw-event-carousel.php',$atts,$posts);
+    
+    return ob_get_clean();
   
 }   
 
