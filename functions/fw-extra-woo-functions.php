@@ -57,7 +57,7 @@ function fw_single_related($atts){
         if(!empty($crelated))$myarray =$crelated;
         else $myarray = wc_get_related_products($product->id,12);
         
-		$tax_query   = WC()->query->get_tax_query();
+		    $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug', // Or 'name' or 'term_id'

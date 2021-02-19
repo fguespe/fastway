@@ -2,7 +2,7 @@
 $path = preg_replace('/wp-content.*$/','',__DIR__);require_once($path."/wp-load.php");
 header("HTTP/1.1 200 OK");
 echo "OK";
-
+custom_logs('OK');
 
 if(!fw_theme_mod('fw_ml_on'))return;
 $notifications=file_get_contents("php://input");
