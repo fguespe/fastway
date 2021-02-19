@@ -521,8 +521,8 @@ function fw_widget_mensaje_barra_dash_handler(){
     if( !isset( $widget_options['fw_general_message'] ) )$widget_options['fw_general_message'] = fw_theme_mod('fw_general_message');
     echo "
     <div>
-        <label>".__('Message','fastway')."</label>
-        <input type=\"text\" name=\"fw_widget_mensaje_barra_options[mensaje]\" id=\"mensaje\" value=\"".fw_theme_mod('fw_general_message')."\">
+        <label>".__('Message','fastway')."</label><br>
+        <textarea style='width:100%' name=\"fw_widget_mensaje_barra_options[mensaje]\" id=\"mensaje\">".fw_theme_mod('fw_general_message')."</textarea>
     </div>";
 }
 
