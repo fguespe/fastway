@@ -50,40 +50,5 @@ while ($posts->have_posts()){
 
 
 <style>
-li.fw_event_loop{
-    list-style-type: none !important;
-}
-.fw_event_loop {
-  text-align:left;
-    padding-bottom:2%;
-}
-.fw_event_loop .date{
-  font-size:12px;
-  color:grey;
-  margin:0px ;
-}
-.fw_event_loop .event_title{
-    margin-bottom:0px ;
-    margin-top:10px ;
-    font-size: 20px;
-    color: #444;
-    text-decoration: none;
-    text-align: left;
-}
-.fw_event_loop p.desc{
-    font-size: 16px !important;
-    color: #444;
-    margin-top:0px !important;
-}
-
-.boton_url {
-    color: var(--main) !important;
-    border:1px solid var(--main);
-    overflow: hidden;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 2%;
-    padding:3px 10px 3px 10px;
-    border-radius:6px;
-}
+    
 </style>

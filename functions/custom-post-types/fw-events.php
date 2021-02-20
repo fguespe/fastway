@@ -236,7 +236,7 @@ function fw_event_image(){
   global $fw_loop_event;
   $image = wp_get_attachment_image_src( get_post_thumbnail_id( $fw_loop_event->ID ), 'medium' ); 
   $image_url = $image[0]; 
-  return '<div class="thumbnail"><div class="shadow-overlay"></div><img src="'.$image_url.'" width="100%" height="auto" /></div>';
+  return '<div class="loopimg_container"><img src="'.$image_url.'" width="100%" height="auto" /></div>';
 }
 add_shortcode('fw_event_title', 'fw_event_title');
 function fw_event_title(){
