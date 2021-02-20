@@ -2152,6 +2152,7 @@ footer .widget_nav_menu li a {
   list-style-type: none !important;
   margin-bottom: 60px;
   text-align: left !important;
+  padding-bottom: 20px !important;
 }
 .fw_event_loop .loopimg_container {
   height: 200px;
@@ -2186,7 +2187,6 @@ footer .widget_nav_menu li a {
   overflow: hidden;
   text-decoration: none;
   font-size: 18px;
-  margin: 2%;
   padding: 3px 10px 3px 10px;
   border-radius: 6px;
 }
