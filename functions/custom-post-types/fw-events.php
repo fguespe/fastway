@@ -125,7 +125,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_602d0e7919f88',
                 'label' => 'Date',
-                'name' => 'date',
+                'name' => 'start_date',
                 'type' => 'date_time_picker',
                 'instructions' => '',
                 'required' => 0,
@@ -261,14 +261,26 @@ function fw_event_url(){
 }
 
 
-add_filter( 'manage_edit-fw_event', 'my_edit_fw_event' ) ;
-function my_edit_fw_event( $columns ) {
-
-	$columns['title'] = __( 'Trip name' );
-	$columns['category'] = __( 'Region' );
-	$columns['date'] = __( 'Start date' );
-
-	return $columns;
-}
-
+function my_page_columns($columns) {
+    $columns = array(
+     'cb' => '< input type="checkbox" />',
+     'title' => 'Title',
+     'city' => 'City',
+     'start_date' => 'Start date',
+     'category' => 'Category'
+    );
+    return $columns;
+   }
+   function my_custom_columns($column) {
+    global $post;
+    $cates=wp_get_post_terms( $post->ID, 'fw_event_cat' );
+    
+    if($column == 'city' || $column == 'start_date')echo get_field($column, $post->ID);
+    else if($column=='category')  foreach( $cates as $cate ) echo $cate->name . ' ';
+    else echo '';
+    
+   }
+   add_action("manage_fw_event_posts_custom_column", "my_custom_columns");
+   add_filter("manage_edit-fw_event_columns", "my_page_columns");
+   
 ?>
