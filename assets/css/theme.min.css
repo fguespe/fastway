@@ -2153,9 +2153,6 @@ footer .widget_nav_menu li a {
   text-align: left;
   margin-bottom: 10px !important;
 }
-.fw_event_loop a {
-  display: block;
-}
 .fw_event_loop .event_title {
   margin-bottom: 0px;
   margin-top: 10px;
