@@ -2144,6 +2144,22 @@ footer .widget_nav_menu li a {
     text-decoration: none;
     text-align: left;
   }
+  p.desc{
+    font-size: 16px !important;
+    color: #444;
+    margin-top:0px !important;
+  }
+
+  .boton_url {
+    color: var(--main) !important;
+    border:1px solid var(--main);
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 2%;
+    padding:3px 10px 3px 10px;
+    border-radius:6px;
+  }
   .loading i{
     display:inline-block !important;
   }
