@@ -94,7 +94,7 @@ function fw_event_carousel( $atts, $content ) {
       'tax_query' => array(
         'taxonomy' => 'product_cat',
         'field'    => 'slug', // Or 'name' or 'term_id'
-        'terms'    => $atts['type'],
+        'terms'    => array($atts['type']),
         'operator' => 'IN', // Excluded
         )
     );
