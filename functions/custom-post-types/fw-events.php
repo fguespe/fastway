@@ -77,10 +77,11 @@ function fw_event_carousel( $atts, $content ) {
           'el_class'  => '',
           'title'  => '',
           'type'    => '',
+          'date'    => '',
           'prodsperrow' => 4,
     ), $atts );
 
-    if(!$atts['type'])$atts['type']='webinars';
+    if(!$atts['date'])$atts['type']='future';
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
@@ -89,18 +90,20 @@ function fw_event_carousel( $atts, $content ) {
     ob_start();
 
     $tax_query   = WC()->query->get_tax_query();
-    $tax_query[] = array(
-        'taxonomy' => 'fw_event_cat',
-        'field'    => 'slug', // Or 'name' or 'term_id'
-        'terms'    => array($atts['type']),
-        'operator' => 'IN', // Excluded
-    );
-    
+    if($atts['type']){
+        $tax_query[] = array(
+            'taxonomy' => 'fw_event_cat',
+            'field'    => 'slug', // Or 'name' or 'term_id'
+            'terms'    => array($atts['type']),
+            'operator' => 'IN', // Excluded
+        );
+    }
+
     $args = array(
         'post_type' => 'fw_event',
         'numberposts'   => -1,
-        'orderby'       => 'menu_order',
-        'order'         => 'ASC',
+        'orderby'       => 'start_date',
+        'order'         => 'DESC',
         'tax_query' =>  $tax_query
     );
     error_log(print_r($args,true));
