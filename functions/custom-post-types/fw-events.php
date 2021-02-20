@@ -84,20 +84,26 @@ function fw_event_carousel( $atts, $content ) {
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
+    error_log(print_r($atts,true));
   
     ob_start();
+
+    $tax_query   = WC()->query->get_tax_query();
+    $tax_query[] = array(
+        'taxonomy' => 'fw_event_cat',
+        'field'    => 'slug', // Or 'name' or 'term_id'
+        'terms'    => array($atts['type']),
+        'operator' => 'IN', // Excluded
+    );
+    
     $args = array(
         'post_type' => 'fw_event',
         'numberposts'   => -1,
         'orderby'       => 'menu_order',
         'order'         => 'ASC',
-        'tax_query' => array(
-            'taxonomy' => 'fw_event_cat',
-            'field'    => 'slug', // Or 'name' or 'term_id'
-            'terms'    => array($atts['type']),
-            'operator' => 'IN', // Excluded
-        )
+        'tax_query' =>  $tax_query
     );
+    error_log(print_r($args,true));
 
     $posts = new WP_Query($args);
     fw_get_template('fw-event-carousel.php',$atts,$posts);
