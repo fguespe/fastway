@@ -66,9 +66,9 @@ register_taxonomy( 'fw_event_cat',array( 'fw_event' ),array(
 
 add_shortcode( 'fw_event_carousel', 'fw_event_carousel' ); 
 function fw_event_carousel( $atts, $content ) {
-  $rand=generateRandomString(5);
-  $atts = shortcode_atts(
-      array(
+    $rand=generateRandomString(5);
+    $atts = shortcode_atts(
+    array(
           'loop'      =>  'false',
           'slider_speed'  => '250',
           'slider_delay'  => '4000',
@@ -78,15 +78,15 @@ function fw_event_carousel( $atts, $content ) {
           'title'  => '',
           'type'    => '',
           'prodsperrow' => 3,
-      ), $atts );
+    ), $atts );
 
-  if(!$atts['type'])$atts['type']='webinars';
-  if(!$atts['loop'])$atts['loop']='false';
-  if(!$atts['autoplay'])$atts['autoplay']='false';
-  //Desktop
+    if(!$atts['type'])$atts['type']='webinars';
+    if(!$atts['loop'])$atts['loop']='false';
+    if(!$atts['autoplay'])$atts['autoplay']='false';
+    //Desktop
   
-  ob_start();
-  $qry_args= array(  
+    ob_start();
+    $qry_args= array(  
       'post_type'     =>'fw_event',
       'numberposts'   => -1,
       'orderby'       => 'menu_order',
@@ -102,7 +102,8 @@ function fw_event_carousel( $atts, $content ) {
             'operator' => 'IN', // Excluded
         )
     );
-    $posts = new WP_Query($qry_args);
+    
+    $posts = new WP_Query($args);
     fw_get_template('fw-event-carousel.php',$atts,$posts);
     
     return ob_get_clean();
@@ -274,7 +275,6 @@ function my_page_columns($columns) {
    function my_custom_columns($column) {
     global $post;
     $cates=wp_get_post_terms( $post->ID, 'fw_event_cat' );
-    
     if($column == 'city' || $column == 'start_date')echo get_field($column, $post->ID);
     else if($column=='category')  foreach( $cates as $cate ) echo $cate->name . ' ';
     else echo '';
