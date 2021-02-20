@@ -38,7 +38,7 @@ $args = [
 
 register_post_type( "fw_event", $args );
 
-register_taxonomy( 'fw_event_category',array( 'fw_event' ),array(
+register_taxonomy( 'fw_event_cat',array( 'fw_event' ),array(
     'hierarchical'  => false,
     'labels'        => array(
         'name'              => __( 'Categories'             ,'fastway'),
@@ -58,7 +58,7 @@ register_taxonomy( 'fw_event_category',array( 'fw_event' ),array(
     'public'        => true,
     'query_var'     => true,
     'hierarchical'  => true,
-    'rewrite'       => array( 'slug' => 'fw_event_category' ),
+    'rewrite'       => array( 'slug' => 'fw_event_cat' ),
 ));
 
 }
