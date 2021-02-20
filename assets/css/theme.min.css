@@ -2148,55 +2148,6 @@ footer .widget_nav_menu li a {
   }
 }
 */
-.fw_event_loop {
-  list-style-type: none !important;
-  text-align: left;
-  margin-bottom: 10px !important;
-}
-.fw_event_loop .event_title {
-  margin-bottom: 0px;
-  margin-top: 10px;
-  font-size: 20px;
-  color: #444;
-  text-decoration: none;
-  text-align: left;
-}
-.fw_event_loop p.desc {
-  font-size: 16px !important;
-  color: #444;
-  margin-top: 0px !important;
-  width: 90%;
-}
-.fw_event_loop .boton_url {
-  color: var(--main) !important;
-  border: 1px solid var(--main);
-  overflow: hidden;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 2%;
-  padding: 3px 10px 3px 10px;
-  border-radius: 6px;
-}
-.fw_event_loop .loading i {
-  display: inline-block !important;
-}
-.fw_event_loop img {
-  width: 100%;
-  height: auto;
-}
-.fw_event_loop .loopimg_container {
-  height: 260px;
-}
-@media (max-width: 799px) {
-  .fw_event_loop .loopimg_container {
-    height: 120px;
-  }
-}
-.fw_event_loop .loopimg_container img {
-  object-fit: contain;
-  height: 100%;
-}
-
 .fw_product_loop {
   margin-bottom: 10px !important;
 }
