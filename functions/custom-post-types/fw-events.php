@@ -76,10 +76,11 @@ function fw_event_carousel( $atts, $content ) {
           'maxcant' => '12',
           'el_class'  => '',
           'title'  => '',
-          'type'    => 'webinars',
+          'type'    => '',
           'prodsperrow' => 3,
       ), $atts );
 
+  if(!$atts['type'])$atts['type']='webinars';
   if(!$atts['loop'])$atts['loop']='false';
   if(!$atts['autoplay'])$atts['autoplay']='false';
   //Desktop
