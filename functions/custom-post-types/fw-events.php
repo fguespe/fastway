@@ -255,7 +255,7 @@ function fw_event_desc(){
 add_shortcode('fw_event_date', 'fw_event_date');
 function fw_event_date(){
   global $fw_loop_event;
-  if(function_exists('get_field'))echo '<label class="date" >'.get_field('date',$fw_loop_event->ID).'</label>';
+  if(function_exists('get_field'))echo '<label class="date" >'.get_field('start_date',$fw_loop_event->ID).'</label>';
 }
 
 
