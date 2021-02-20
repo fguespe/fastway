@@ -81,7 +81,7 @@ function fw_event_carousel( $atts, $content ) {
           'prodsperrow' => 4,
     ), $atts );
 
-    if(!$atts['date'])$atts['date']='future';
+    if(!$atts['date'])$atts['date']='now';
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
@@ -99,13 +99,22 @@ function fw_event_carousel( $atts, $content ) {
         );
     }
 
+    $date_now = date('Y-m-d H:i:s');
     $args = array(
         'post_type' => 'fw_event',
         'order'          => 'ASC',
         'orderby'        => 'meta_value',
         'meta_key'       => 'start_date',
         'meta_type'      => 'DATETIME',
-        'tax_query' =>  $tax_query
+        'tax_query' =>  $tax_query,
+        'meta_query' => array(
+            array(
+                'key'           => 'start_date',
+                'compare'       => '>=',
+                'value'         => $date_now,
+                'type'          => 'DATETIME',
+            )
+        )
     );
     error_log(print_r($args,true));
 
