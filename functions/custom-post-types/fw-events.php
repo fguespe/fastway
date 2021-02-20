@@ -86,15 +86,11 @@ function fw_event_carousel( $atts, $content ) {
     //Desktop
   
     ob_start();
-    $qry_args= array(  
-      'post_type'     =>'fw_event',
-      'numberposts'   => -1,
-      'orderby'       => 'menu_order',
-      'order'         => 'ASC'
-    );
     $args = array(
-        'post_type' => 'product',
-        'post__in'  => $myarray,
+        'post_type' => 'fw_event',
+        'numberposts'   => -1,
+        'orderby'       => 'menu_order',
+        'order'         => 'ASC',
         'tax_query' => array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug', // Or 'name' or 'term_id'
@@ -102,7 +98,7 @@ function fw_event_carousel( $atts, $content ) {
             'operator' => 'IN', // Excluded
         )
     );
-    
+
     $posts = new WP_Query($args);
     fw_get_template('fw-event-carousel.php',$atts,$posts);
     
