@@ -90,18 +90,17 @@ function fw_event_carousel( $atts, $content ) {
       'post_type'     =>'fw_event',
       'numberposts'   => -1,
       'orderby'       => 'menu_order',
-      'order'         => 'ASC',
-      'tax_query' => array(
-        'taxonomy' => 'product_cat',
-        'field'    => 'slug', // Or 'name' or 'term_id'
-        'terms'    => array($atts['type']),
-        'operator' => 'IN', // Excluded
-        )
+      'order'         => 'ASC'
     );
     $args = array(
         'post_type' => 'product',
         'post__in'  => $myarray,
-   
+        'tax_query' => array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug', // Or 'name' or 'term_id'
+            'terms'    => array($atts['type']),
+            'operator' => 'IN', // Excluded
+        )
     );
     $posts = new WP_Query($qry_args);
     fw_get_template('fw-event-carousel.php',$atts,$posts);
