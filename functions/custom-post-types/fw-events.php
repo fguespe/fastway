@@ -103,7 +103,7 @@ function fw_event_carousel( $atts, $content ) {
         'post_type' => 'fw_event',
         'numberposts'   => -1,
         'orderby'       => 'start_date',
-        'order'         => 'DESC',
+        'order'         => 'ASC',
         'tax_query' =>  $tax_query
     );
     error_log(print_r($args,true));
