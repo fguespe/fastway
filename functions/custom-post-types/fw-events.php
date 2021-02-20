@@ -104,6 +104,7 @@ function fw_event_carousel( $atts, $content ) {
         'numberposts'   => -1,
         'orderby'       => 'start_date',
         'order'         => 'DESC',
+        'suppress_filters' => true,
         'tax_query' =>  $tax_query
     );
     error_log(print_r($args,true));
