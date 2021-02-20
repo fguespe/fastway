@@ -2130,6 +2130,8 @@ footer .widget_nav_menu li a {
 */
 
 .fw_event_loop{
+  list-style-type: none !important;
+  text-align:left;
   margin-bottom:10px !important;
   a {
     display:block;
