@@ -77,7 +77,7 @@ function fw_event_carousel( $atts, $content ) {
           'el_class'  => '',
           'title'  => '',
           'type'    => '',
-          'prodsperrow' => 4,
+          'prodsperrow' => 3,
     ), $atts );
 
     if(!$atts['type'])$atts['type']='webinars';
