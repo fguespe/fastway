@@ -224,7 +224,7 @@ endif;
 add_shortcode('fw_event_container', 'fw_event_container');
 function fw_event_container($atts = [], $content = null){
     global $fw_loop_event;
-    echo '<li class="fw_post_loop"><a href="'.esc_url( get_permalink($fw_loop_blog->ID)).'">';
+    echo '<li class="fw_event_loop"><a href="'.esc_url( get_field('link',$fw_loop_event->ID)).'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</a></li>';
 }
