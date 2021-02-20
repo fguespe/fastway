@@ -2100,41 +2100,80 @@ footer .widget_nav_menu li a {
   border: none;
 }
 
-.fw_event_loop {
+/*
+.fw_event_loop{
   list-style-type: none !important;
-  text-align: left;
-  padding-bottom: 2%;
+  text-align:left;
+  padding-bottom:2%;
+  .fw_event_loop .date{
+    font-size:12px;
+    color:grey;
+    margin:0px ;
+  }
+  .fw_event_loop .event_title{
+    margin-bottom:0px ;
+    margin-top:10px ;
+    font-size: 20px;
+    color: #444;
+    text-decoration: none;
+    text-align: left;
+  }
+  .fw_event_loop p.desc{
+    font-size: 16px !important;
+    color: #444;
+    margin-top:0px !important;
+  }
+
+  .boton_url {
+    color: var(--main) !important;
+    border:1px solid var(--main);
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 2%;
+    padding:3px 10px 3px 10px;
+    border-radius:6px;
+  }
+
+  .loopimg_container{
+    height:250px;
+    @media (max-width: 799px) {
+      height:120px;
+    }
+
+    img{
+      object-fit: contain;
+      height:100%;
+    }
+  }
 }
-.fw_event_loop .fw_event_loop .date {
-  font-size: 12px;
-  color: grey;
-  margin: 0px;
+*/
+.fw_event_loop {
+  margin-bottom: 10px !important;
 }
-.fw_event_loop .fw_event_loop .event_title {
-  margin-bottom: 0px;
-  margin-top: 10px;
-  font-size: 20px;
-  color: #444;
-  text-decoration: none;
-  text-align: left;
+.fw_event_loop a {
+  display: block;
 }
-.fw_event_loop .fw_event_loop p.desc {
-  font-size: 16px !important;
-  color: #444;
-  margin-top: 0px !important;
-}
-.fw_event_loop .boton_url {
-  color: var(--main) !important;
-  border: 1px solid var(--main);
+.fw_event_loop .event_title {
   overflow: hidden;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 2%;
-  padding: 3px 10px 3px 10px;
-  border-radius: 6px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #444444;
+  height: 34px !important;
+}
+.fw_event_loop .loading i {
+  display: inline-block !important;
+}
+.fw_event_loop img {
+  width: 100%;
+  height: auto;
 }
 .fw_event_loop .loopimg_container {
-  height: 250px;
+  height: 200px;
 }
 @media (max-width: 799px) {
   .fw_event_loop .loopimg_container {
