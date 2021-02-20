@@ -223,12 +223,10 @@ endif;
 
 add_shortcode('fw_event_container', 'fw_event_container');
 function fw_event_container($atts = [], $content = null){
-    $classname_desktop=" fw_event_loop ";
-    global $preset_class;
-    $classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_rl_class');
-    echo '<li class="'.$classname_desktop.' ">';
+    global $fw_loop_event;
+    echo '<li class="fw_post_loop"><a href="'.esc_url( get_permalink($fw_loop_blog->ID)).'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
-    echo '</li>';
+    echo '</a></li>';
 }
 
 add_shortcode('fw_event_image', 'fw_event_image');
@@ -236,31 +234,31 @@ function fw_event_image(){
   global $fw_loop_event;
   $image = wp_get_attachment_image_src( get_post_thumbnail_id( $fw_loop_event->ID ), 'medium' ); 
   $image_url = $image[0]; 
-  return '<div class="loopimg_container"><img src="'.$image_url.'"/></div>';
+  echo '<div class="loopimg_container"><img src="'.$image_url.'" width="100%" height="auto"/></div>';
 }
 add_shortcode('fw_event_title', 'fw_event_title');
 function fw_event_title(){
   global $fw_loop_event;
-  return '<div class="event_title" >'.$fw_loop_event->post_title.'</div>' ;
+  echo '<h2 class="blog_title" >'.$fw_loop_event->post_title.'</h2>' ;
 }
 
 add_shortcode('fw_event_desc', 'fw_event_desc');
 function fw_event_desc(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return '<p class="desc" >'.get_field('description',$fw_loop_event->ID).'</p>';
+  if(function_exists('get_field'))echo '<p class="desc" >'.get_field('description',$fw_loop_event->ID).'</p>';
 }
 
 add_shortcode('fw_event_date', 'fw_event_date');
 function fw_event_date(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return '<label class="date" >'.get_field('date',$fw_loop_event->ID).'</label>';
+  if(function_exists('get_field'))echo '<label class="date" >'.get_field('date',$fw_loop_event->ID).'</label>';
 }
 
 
 add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
-  if(function_exists('get_field'))return '<a href="'.get_field('link',$fw_loop_event->ID).'" class="boton_url" target="_blank" >Register</a>';
+  if(function_exists('get_field'))echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >Register</a>';
 }
 
 
