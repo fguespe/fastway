@@ -81,7 +81,7 @@ function fw_event_carousel( $atts, $content ) {
           'prodsperrow' => 4,
     ), $atts );
 
-    if(!$atts['date'])$atts['type']='future';
+    if(!$atts['date'])$atts['date']='future';
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
