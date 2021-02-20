@@ -261,4 +261,14 @@ function fw_event_url(){
 }
 
 
+add_filter( 'manage_edit-fw_event', 'my_edit_fw_event' ) ;
+function my_edit_fw_event( $columns ) {
+
+	$columns['title'] = __( 'Trip name' );
+	$columns['category'] = __( 'Region' );
+	$columns['date'] = __( 'Start date' );
+
+	return $columns;
+}
+
 ?>
