@@ -92,7 +92,7 @@ function fw_event_carousel( $atts, $content ) {
         'orderby'       => 'menu_order',
         'order'         => 'ASC',
         'tax_query' => array(
-            'taxonomy' => 'product_cat',
+            'taxonomy' => 'fw_event_cat',
             'field'    => 'slug', // Or 'name' or 'term_id'
             'terms'    => array($atts['type']),
             'operator' => 'IN', // Excluded
