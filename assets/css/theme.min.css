@@ -2167,7 +2167,7 @@ footer .widget_nav_menu li a {
   object-fit: contain;
   height: 100%;
 }
-.fw_event_loop .blog_title {
+.fw_event_loop .event_title {
   margin: 0px;
   color: #444444;
   font-size: 20px;

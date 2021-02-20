@@ -239,7 +239,7 @@ function fw_event_image(){
 add_shortcode('fw_event_title', 'fw_event_title');
 function fw_event_title(){
   global $fw_loop_event;
-  echo '<h2 class="blog_title" >'.$fw_loop_event->post_title.'</h2>' ;
+  echo '<h2 class="event_title" >'.$fw_loop_event->post_title.'</h2>' ;
 }
 
 add_shortcode('fw_event_desc', 'fw_event_desc');
