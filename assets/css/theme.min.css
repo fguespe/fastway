@@ -2157,15 +2157,12 @@ footer .widget_nav_menu li a {
   display: block;
 }
 .fw_event_loop .event_title {
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 0px;
-  font-size: 12px;
-  line-height: 16px;
-  color: #444444;
-  height: 34px !important;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #444;
+  text-decoration: none;
+  text-align: left;
 }
 .fw_event_loop .loading i {
   display: inline-block !important;
