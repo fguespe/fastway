@@ -101,10 +101,10 @@ function fw_event_carousel( $atts, $content ) {
 
     $args = array(
         'post_type' => 'fw_event',
-        'numberposts'   => -1,
-        'meta_key'			=> 'start_date',
-        'orderby' => 'meta_value_num',
-        'order' => 'ASC',
+        'order'          => 'ASC',
+        'orderby'        => 'meta_value',
+        'meta_key'       => 'start_date',
+        'meta_type'      => 'DATETIME',
         'tax_query' =>  $tax_query
     );
     error_log(print_r($args,true));
