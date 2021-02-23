@@ -361,6 +361,64 @@ function vc_fw_empty_space() {
         )
     );
 }
+
+
+add_shortcode('fw_info_block','fw_info_block');
+function fw_info_block($atts,$content){
+    $atts = shortcode_atts(
+    array(
+        'icon'      =>  '',
+        'title'      =>  '',
+        'subtitle'      =>  '',
+        'desc'      =>  '',
+    ), $atts );
+    
+    return '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$atts['desc'].'</div></div>';
+}
+add_action( 'vc_before_init', 'vc_fw_info_block' );
+function vc_fw_info_block() {
+    // Title
+    vc_map(
+        array(
+            'name' => __( 'FW Info Block' ),
+            'base' => 'fw_info_block',
+            'description' => __('FW Info Block', 'fastway'), 
+            'category' => __('Fastway', 'fastway'), 
+            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'params' => array(
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Icon"),
+                    "param_name"  => "icon",
+                    'admin_label' => true,
+                    "std" => 'store',
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Title"),
+                    "param_name"  => "title",
+                    'admin_label' => true,
+                    "std" => 'Medio de Envio',
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Subtitle"),
+                    "param_name"  => "subtitle",
+                    'admin_label' => true,
+                    "std" => 'Retirar por el local de 20 a 24hs',
+                ),
+                array(
+                    "type" => 'textarea',
+                    "heading"     => __("Description"),
+                    "param_name"  => "desc",
+                    'admin_label' => true,
+                    "std" => 'Recibilo de 2 a 5 dias.'
+                ),
+
+                )
+            )
+        );
+}
     
 add_action( 'vc_before_init', 'fw_slider' );
 function fw_slider() {

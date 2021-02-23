@@ -107,6 +107,7 @@ function fw_modal_block($rand,$id,$iframe=false,$size="modal-lg"){
 HTML;
 }
 
+
 if( !function_exists( 'fw_menu' ) ) {
     add_shortcode('fw_menu', 'fw_menu');
     function fw_menu( $atts ) {
