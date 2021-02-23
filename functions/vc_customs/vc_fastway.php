@@ -391,28 +391,24 @@ function vc_fw_info_block() {
                     "heading"     => __("Icon"),
                     "param_name"  => "icon",
                     'admin_label' => true,
-                    "std" => 'store',
                 ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Title"),
                     "param_name"  => "title",
                     'admin_label' => true,
-                    "std" => 'Medio de Envio',
                 ),
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Subtitle"),
                     "param_name"  => "subtitle",
                     'admin_label' => true,
-                    "std" => 'Retirar por el local de 20 a 24hs',
                 ),
                 array(
                     "type" => 'textarea',
                     "heading"     => __("Description"),
                     "param_name"  => "desc",
                     'admin_label' => true,
-                    "std" => 'Recibilo de 2 a 5 dias.'
                 ),
 
                 )
