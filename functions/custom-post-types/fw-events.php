@@ -325,7 +325,7 @@ add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
   if(function_exists('get_field'))echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >Register</a>';
-  if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a style="margin-left:6px;" href="'.get_field('file',$fw_loop_event->ID).'" class="" target="_blank" ><i class="fal fa-download"></i></a>';
+  if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a style="margin-left:6px;color:var(--main);" href="'.get_field('file',$fw_loop_event->ID).'" class="" target="_blank" ><i class="fal fa-download"></i></a>';
 }
 
 
