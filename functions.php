@@ -380,7 +380,6 @@ add_action( 'template_redirect', 'template_sredirect' );
 
 
 
-
 add_action( 'after_setup_theme', 'understrap_woocommerce_support' );
 if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
 

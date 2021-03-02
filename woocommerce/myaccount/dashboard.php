@@ -31,6 +31,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!--<?php// if(is_user_logged_in()){?>
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
 	<?php// } ?>-->
+	<?php //if(fw_theme_mod('fw_activar_download_lista')){?>
+		Descargar lista de precios <a href=""></a>
+	<?php//  } ?>
 </div>
 
 <?php
