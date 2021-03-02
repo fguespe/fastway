@@ -174,7 +174,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0ea849f89',
-                'label' => 'Date Description',
+                'label' => 'When',
                 'name' => 'date_desc',
                 'type' => 'text',
                 'instructions' => '',
