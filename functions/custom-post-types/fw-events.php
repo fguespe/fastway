@@ -300,7 +300,7 @@ function fw_event_desc(){
 add_shortcode('fw_event_date', 'fw_event_date');
 function fw_event_date(){
   global $fw_loop_event;
-  if(function_exists('get_field'))echo '<label class="date" >'.get_field('start_date',$fw_loop_event->ID).'</label>';
+  if(function_exists('get_field'))echo '<label class="date" >'.get_field('date_desc',$fw_loop_event->ID).'</label>';
 }
 
 
@@ -316,7 +316,9 @@ function my_page_columns($columns) {
      'cb' => '< input type="checkbox" />',
      'title' => 'Title',
      'city' => 'City',
+     'date_desc' => 'When',
      'start_date' => 'Start date',
+     'start_date' => 'End date',
      'category' => 'Category'
     );
     return $columns;
@@ -324,7 +326,7 @@ function my_page_columns($columns) {
    function my_custom_columns($column) {
     global $post;
     $cates=wp_get_post_terms( $post->ID, 'fw_event_cat' );
-    if($column == 'city' || $column == 'start_date')echo get_field($column, $post->ID);
+    if($column == 'city' || $column == 'start_date' || $column == 'end_date' || $column == 'date_desc')echo get_field($column, $post->ID);
     else if($column=='category')  foreach( $cates as $cate ) echo $cate->name . ' ';
     else echo '';
     
