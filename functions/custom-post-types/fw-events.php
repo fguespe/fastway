@@ -318,7 +318,7 @@ function my_page_columns($columns) {
      'city' => 'City',
      'date_desc' => 'When',
      'start_date' => 'Start date',
-     'start_date' => 'End date',
+     'end_date' => 'End date',
      'category' => 'Category'
     );
     return $columns;
