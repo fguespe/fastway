@@ -55,6 +55,7 @@ if(!is_plugin_active('kirki/kirki.php')){
     <style type="text/css" id="css_loop_brand"><?php echo fw_theme_mod('css_loop_brand')?></style>
     <style type="text/css" id="css_editor-footer"><?php echo fw_theme_mod('css_editor-footer')?></style>
     <style type="text/css" id="css_loop_review"><?php echo fw_theme_mod('css_loop_review')?></style>
+    <style type="text/css" id="css_event_review"><?php echo fw_theme_mod('css_event_review')?></style>
     <style type="text/css" id="css_loop_blog"><?php echo fw_theme_mod('css_loop_blog')?></style>
     <style ><?php echo fw_custom_css(); ?></style>
     <style type="text/css" id="css_editor-logged_in"><?php if(is_user_logged_in())echo fw_theme_mod('css_editor-logged_in')?></style>

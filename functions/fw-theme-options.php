@@ -3665,8 +3665,20 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'css_loop_review',
+	'label'       => __( 'CSS Review Loop', 'fastway' ),
+	'section'     => 'section_woo_loop_review',
+	'description' => 'Classes: .fw_review_loop',
+	'default'     => '',
+	'transport'	=> 'postMessage',
+	'choices'     => array(
+		'language' => 'css',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_builder_el_class',
+	'settings'    => 'fw_builder_ev_class',
 	'label'       => __( 'Default class', 'fastway' ),
     'description' => '*playground (beta)',
 	'section'     => 'section_woo_loop_event',
@@ -3677,7 +3689,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'woo_loop_event_code',
-	'label'       => __( ' Review Loop Code', 'fastway' ),
+	'label'       => __( ' Event Loop Code', 'fastway' ),
 	'section'     => 'section_woo_loop_event',
 	'description'     => '[fw_event_container][fw_event_image][fw_event_title][fw_event_date][fw_event_desc][fw_event_url][/fw_event_container]',
 	'default'     => '[fw_event_container][fw_event_image][fw_event_title][fw_event_date][fw_event_desc][fw_event_url][/fw_event_container]',
@@ -3685,11 +3697,12 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
-	'settings'    => 'css_loop_review',
-	'label'       => __( 'CSS Review Loop', 'fastway' ),
-	'section'     => 'section_woo_loop_review',
+	'settings'    => 'css_event_review',
+	'label'       => __( 'CSS Event Loop', 'fastway' ),
+	'section'     => 'section_woo_loop_event',
 	'description' => 'Classes: .fw_review_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
