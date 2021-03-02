@@ -243,6 +243,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+            array(
+                'key' => 'field_603e6c10144b3',
+                'label' => 'File',
+                'name' => 'file',
+                'type' => 'file',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'library' => 'all',
+                'min_size' => 0,
+                'max_size' => 0,
+                'mime_types' => '',
+            ),
         ),
         'location' => array(
             array(
