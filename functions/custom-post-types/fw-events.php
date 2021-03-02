@@ -77,15 +77,14 @@ function fw_event_carousel( $atts, $content ) {
           'el_class'  => '',
           'title'  => '',
           'type'    => '',
-          'date'    => '',
+          'date_from_now'    => '',
           'prodsperrow' => 4,
     ), $atts );
 
-    if(!$atts['date'])$atts['date']='now';
+    if(!$atts['date_from_now'])$atts['date_from_now']='>=';
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
-    error_log(print_r($atts,true));
   
     ob_start();
 
@@ -110,13 +109,12 @@ function fw_event_carousel( $atts, $content ) {
         'meta_query' => array(
             array(
                 'key'           => 'start_date',
-                'compare'       => '>=',
+                'compare'       => $atts['date_from_now'],
                 'value'         => $date_now,
                 'type'          => 'DATETIME',
             )
         )
     );
-    error_log(print_r($args,true));
 
     $posts = new WP_Query($args);
     fw_get_template('fw-event-carousel.php',$atts,$posts);
