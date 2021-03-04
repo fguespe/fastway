@@ -82,12 +82,16 @@ function fw_event_carousel( $atts, $content ) {
     ), $atts );
 
     if(!$atts['date_from_now'])$atts['date_from_now']='>=';
+    else if($atts['date_from_now']=='after')$atts['date_from_now']='>=';
+    else if($atts['date_from_now']=='previous')$atts['date_from_now']='<=';
+    
     if(!$atts['loop'])$atts['loop']='false';
     if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
   
     ob_start();
-
+    error_log($atts['date_from_now']);
+    
     $tax_query   = WC()->query->get_tax_query();
     if($atts['type']){
         $tax_query[] = array(
@@ -262,6 +266,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_size' => 0,
                 'mime_types' => '',
             ),
+            array(
+                'key' => 'field_602d0ea119f89',
+                'label' => 'Label',
+                'name' => 'btn_label',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'Read more',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
         ),
         'location' => array(
             array(
@@ -324,7 +347,7 @@ function fw_event_date(){
 add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
-  if(function_exists('get_field'))echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >Register</a>';
+  if(function_exists('get_field'))echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >'.get_field('btn_label',$fw_loop_event->ID).'</a>';
   if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a style="margin-left:6px;color:var(--main);" href="'.get_field('file',$fw_loop_event->ID).'" class="" target="_blank" ><i class="fal fa-download"></i> Download</a>';
 }
 
