@@ -236,85 +236,6 @@ function fw_widget_desc_prods_dash_handler(){
 }
 
 
-function fw_widget_lili_discount_dash(){
-    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):__('All products','fastway'));
-    $cant=fw_theme_mod('fw_lili_discount_cant');
-    $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label');
-    $cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
-    $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount')?__('Active','fastway'):__('Inactive','fastway'));
-    $color= fw_theme_mod('fw_lili_discount')?'green':'red';
-    $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones')?__('Yes','fastway'):__('No','fastway'));
-    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-    $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
-    $cambiar_l=__('Change','fastway');
-    
-    echo <<<HTML
-    <div class='fw_widget_dash'>
-    <div class='group' style="margin-top:20px;">
-        <label>$estado</label><br>
-        <label>$label</label><br>
-        <label>$cates</label><br>
-        <label>$cupones</label><br>
-        <label>$porcentage</label><br>
-        <label>$cant</label>
-    </div>
-HTML;
-
-    if(fw_theme_mod('fw_widget_lili_discount_multi')){
-
-        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_2')?fw_theme_mod('fw_lili_discount_categories_2'):__('All products','fastway'));
-        $cant=fw_theme_mod('fw_lili_discount_cant_2');
-        $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label_2');
-        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
-        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_2')?__('Active','fastway'):__('Inactive','fastway'));
-        $color= fw_theme_mod('fw_lili_discount_2')?'green':'red';
-        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_2')?__('Yes','fastway'):__('No','fastway'));
-        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_2')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
-        $cambiar_l=__('Change','fastway');
-    
-        echo <<<HTML
-    <div class='group' style="margin-top:20px;">
-        <label>$estado</label><br>
-        <label>$label</label><br>
-        <label>$cates</label><br>
-        <label>$cupones</label><br>
-        <label>$porcentage</label><br>
-        <label>$cant</label>
-    </div>
-    HTML;
-
-        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_3')?fw_theme_mod('fw_lili_discount_categories_3'):__('All products','fastway'));
-        $cant=fw_theme_mod('fw_lili_discount_cant_3');
-        $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label_3');
-        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
-        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_3')?__('Active','fastway'):__('Inactive','fastway'));
-        $color= fw_theme_mod('fw_lili_discount_3')?'green':'red';
-        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_3')?__('Yes','fastway'):__('No','fastway'));
-        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
-        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_3')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
-        $cambiar_l=__('Change','fastway');
-
-        echo <<<HTML
-    <div class='group' style="margin-top:20px;">
-        <label>$estado</label><br>
-        <label>$label</label><br>
-        <label>$cates</label><br>
-        <label>$cupones</label><br>
-        <label>$porcentage</label><br>
-        <label>$cant</label>
-    </div>
-    HTML;
-    
-    }
-
-
-
-    echo <<<HTML
-    <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
-</div>
-HTML;
-}
 
 
 function fw_widget_lili_discount_dash_handler(){
@@ -867,3 +788,84 @@ function set_dashboard_meta_order() {
   update_user_meta( $id, 'meta-box-order_dashboard', $meta_value ); //update the user meta with the user's ID, the meta_key meta-box-order_dashboard, and the new meta_value
 }
  
+
+function fw_widget_lili_discount_dash(){
+    $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories')?fw_theme_mod('fw_lili_discount_categories'):__('All products','fastway'));
+    $cant=fw_theme_mod('fw_lili_discount_cant');
+    $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label');
+    $cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
+    $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount')?__('Active','fastway'):__('Inactive','fastway'));
+    $color= fw_theme_mod('fw_lili_discount')?'green':'red';
+    $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones')?__('Yes','fastway'):__('No','fastway'));
+    $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+    $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
+    $cambiar_l=__('Change','fastway');
+    
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+    <div class='group' style="margin-top:20px;">
+        <label>$estado</label><br>
+        <label>$label</label><br>
+        <label>$cates</label><br>
+        <label>$cupones</label><br>
+        <label>$porcentage</label><br>
+        <label>$cant</label>
+    </div>
+HTML;
+
+    if(fw_theme_mod('fw_widget_lili_discount_multi')){
+
+        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_2')?fw_theme_mod('fw_lili_discount_categories_2'):__('All products','fastway'));
+        $cant=fw_theme_mod('fw_lili_discount_cant_2');
+        $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label_2');
+        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
+        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_2')?__('Active','fastway'):__('Inactive','fastway'));
+        $color= fw_theme_mod('fw_lili_discount_2')?'green':'red';
+        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_2')?__('Yes','fastway'):__('No','fastway'));
+        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_2')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
+        $cambiar_l=__('Change','fastway');
+    
+        echo <<<HTML
+    <div class='group' style="margin-top:20px;">
+        <label>$estado</label><br>
+        <label>$label</label><br>
+        <label>$cates</label><br>
+        <label>$cupones</label><br>
+        <label>$porcentage</label><br>
+        <label>$cant</label>
+    </div>
+    HTML;
+    }else{
+        $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_3')?fw_theme_mod('fw_lili_discount_categories_3'):__('All products','fastway'));
+        $cant=fw_theme_mod('fw_lili_discount_cant_3');
+        $label=__('Name','fastway').': '.fw_theme_mod('fw_lili_discount_label_3');
+        if(is_numeric($cant))$cant=__('Quantity','fastway').': '.$cant."x".($cant-1);
+        $estado=__('Status','fastway').': '.(fw_theme_mod('fw_lili_discount_3')?__('Active','fastway'):__('Inactive','fastway'));
+        $color= fw_theme_mod('fw_lili_discount_3')?'green':'red';
+        $cupones=__('Allows coupons','fastway').': '.(fw_theme_mod('fw_lili_discount_cupones_3')?__('Yes','fastway'):__('No','fastway'));
+        $estado='<label style="color:'.$color.'" >'.$estado.'</label>';
+        $porcentage=__('Discount (%)','fastway').': '.floatval(fw_theme_mod('fw_lili_discount_percentage_3')).'<small>('.__('Applies to the cheapiest','fastway').')</small>';
+        $cambiar_l=__('Change','fastway');
+
+        echo <<<HTML
+    <div class='group' style="margin-top:20px;">
+        <label>$estado</label><br>
+        <label>$label</label><br>
+        <label>$cates</label><br>
+        <label>$cupones</label><br>
+        <label>$porcentage</label><br>
+        <label>$cant</label>
+    </div>
+    HTML;
+    
+
+    echo <<<HTML
+    <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
+</div>
+HTML;
+}
+
+}
+
+?>

@@ -76,10 +76,10 @@ jQuery(document).ready( function(jQuery) {
    }, 2000);
 });
 </script>
-<?php } ?>
-<?php if(get_option('fw_popup_unload_img')) { ?>
+<?php } ?> 
+<?php if(get_option('fw_popup_unload_img') && (is_cart() || is_checkout())) { ?>
 <div class="modal fade" id="modal_exit" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog  modal-md" role="document">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body"><img width="100%" src="<?=get_option('fw_popup_unload_img')?>"></div>
         </div>
