@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2020-12-14 13:28-0300\n"
-"PO-Revision-Date: 2020-12-14 18:10-0300\n"
+"PO-Revision-Date: 2021-03-22 12:47-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -2809,7 +2809,7 @@ msgstr ""
 
 #: functions/fw-theme-options.php:4580
 msgid "Contact us"
-msgstr ""
+msgstr "Contactanos"
 
 #: functions/fw-theme-options.php:4585
 msgid "Calcular cuotas"

@@ -3,40 +3,40 @@
 Kirki::add_section( 'section_data', array(
     'title'          => __( 'Company Data', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 
 ) );
 
 Kirki::add_section( 'section_whatsapp', array(
     'title'          => __( 'Whatsapp', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 
 ) );
 
 Kirki::add_section( 'section_clientarea', array(
     'title'          => __( 'Client Area', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 
 ) );
 Kirki::add_section( 'section_clientwidgets', array(
     'title'          => __( 'Dashboard Widgets', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 ) );
 
 Kirki::add_section( 'section_cpt', array(
     'title'          => __( 'Custom Post Types', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 ) );
 
 if(is_webaltoweb()){
 Kirki::add_section( 'section_client_chrq', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 ) );
 }
 /*MELI*/
@@ -46,7 +46,7 @@ Kirki::add_section( 'section_client_chrq', array(
 Kirki::add_section( 'section_wooarea', array(
     'title'          => __( 'Imports', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+    'panel'          => 'panel_fastwayclient',
 
 ) );
 
@@ -287,6 +287,19 @@ Kirki::add_field( 'theme_config_id', array(
     'description' => 'Barra roja que va a arriba [fw_mensaje_barra]',
 	'section'     => 'section_clientwidgets',
 	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_popup_unload',
+	'label'       => __( 'Antes de salir del carrito ', 'fastway' ),
+    'description' => 'Sale el popup antes de salir en la pagina de carrito o checkout',
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )

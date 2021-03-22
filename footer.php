@@ -2,6 +2,7 @@
 $js=fw_theme_mod('opt-ace-editor-js');
 $container   = fw_theme_mod('footer-width');
 ?>
+
 <footer id="footer" class="<?=fw_theme_mod('fw_builder_footer_class')?>">
 	<div class="<?php echo esc_attr( $container ); ?>">
     <?php 
@@ -24,6 +25,7 @@ if(fw_theme_mod('footer-copyright-switch')){
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
 <script><?php echo $js;?></script>
+
     <?php echo fw_theme_mod('fw_footer_scripts');?>
 <?php  
 if(usesWhatsapp())fw_whatsappfooter();
@@ -59,7 +61,9 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
   </div>
 </div>
 <script type="text/javascript">
+
 jQuery(document).ready( function(jQuery) {
+
     var in_customizer = false;
     if ( typeof wp !== 'undefined' ) in_customizer =  typeof wp.customize !== 'undefined' ? true : false;
     let searchParams = new URLSearchParams(window.location.search)
@@ -73,8 +77,24 @@ jQuery(document).ready( function(jQuery) {
 });
 </script>
 <?php } ?>
-
+<?php if(get_option('fw_popup_unload_img')) { ?>
+<div class="modal fade" id="modal_exit" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog  modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body"><img width="100%" src="<?=get_option('fw_popup_unload_img')?>"></div>
+        </div>
+      </div>
+</div>
+<script>
+jQuery(document).bind("mouseleave", function(e) {
+    if (e.pageY - jQuery(window).scrollTop() <= 1) {    
+      jQuery('#modal_exit').modal('show');
+    }
+});
+</script>
+<?php } ?>
 <script type="text/javascript">
+
 jQuery(document).ready( function(jQuery) {
   let es_ES='<?=get_locale()=='es_ES'?>'
   let link='<?=fw_theme_mod('fw_arrepentimiento_link')?>'
@@ -108,6 +128,7 @@ jQuery(document).ready( function(jQuery) {
       jQuery.get(ajaxurl,{'action': 'register_visit'});
     }
 });
+
 </script>
 </body>
 <style>

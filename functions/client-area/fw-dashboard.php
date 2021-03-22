@@ -86,6 +86,14 @@ function prefix_add_dashboard_widget() {
             'fw_widget_mensaje_barra_dash_handler'
         );
     }
+    if(fw_theme_mod('fw_widget_popup_unload')){
+        wp_add_dashboard_widget(
+            'fw_widget_popup_unload', 
+            __('Antes de Salir','fastway'), 
+            'fw_widget_popup_unload_dash', 
+            'fw_widget_popup_unload_dash_handler'
+        );
+    }
     if(fw_theme_mod('fw_widget_mensaje_sec')){
         wp_add_dashboard_widget(
             'fw_widget_mensaje_sec', 
@@ -486,6 +494,35 @@ function fw_widget_cuotas_general_dash_handler(){
 
 
 
+
+function fw_widget_popup_unload_dash(){
+    $mensaje =__('Image','fastway').':<a href="'.get_option('fw_popup_unload_img').'" target="_blank" >'.__('Image','fastway').'</a>';
+    $cambiar_l=__('Change','fastway');
+    $submsg='*'.__('This will show an image before leaving the cart or checkout page.','fastway');
+
+    echo <<<HTML
+    <div class='fw_widget_dash'>
+        <label>$mensaje</label><br>
+        <small>$submsg</small>
+        <a class="iralasopciones" href="index.php?edit=fw_widget_popup_unload#fw_widget_popup_unload">$cambiar_l</a>
+    </div>
+HTML;
+}
+
+
+function fw_widget_popup_unload_dash_handler(){
+    if( !$widget_options = get_option( 'fw_widget_popup_unload_options' ) )$widget_options = array( );
+    if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_popup_unload_options'] ) ) {
+        $img=($_POST['fw_widget_popup_unload_options']['img']);
+        update_option('fw_popup_unload_img',$img);
+    }
+
+    if( !isset( $widget_options['fw_general_message'] ) )$widget_options['fw_general_message'] = get_option('fw_popup_unload_img');
+    echo "<div>
+        <label>".__('Message','fastway')."</label><br>
+        <textarea style='width:100%' name=\"fw_widget_popup_unload_options[img]\" id=\"img\">".get_option('fw_popup_unload_img')."</textarea>
+    </div>";
+}
 
 
 

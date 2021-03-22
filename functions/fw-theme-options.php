@@ -37,6 +37,12 @@ Kirki::add_panel( 'panel_fastwaylayout', array(
     //'description' => __( 'My panel description', 'fastway' ),
 ) );
 
+Kirki::add_panel( 'panel_fastwayclient', array(
+
+    'title'       => __( 'Fastway Client Area', 'fastway' ),
+    //'description' => __( 'My panel description', 'fastway' ),
+) );
+
 if(is_plugin_active('woocommerce/woocommerce.php')){
 	Kirki::add_panel( 'panel_fastwaywoo', array(
 		'title'       => __( 'Fastway Woocommerce', 'fastway' ),
@@ -4629,7 +4635,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_consultar_price',
-	'label'    => __( 'Consultar', 'fastway' ),       
+	'label'    => __( 'Contact us', 'fastway' ),	 
 	'section'     => 'section_labels',
 	'default' 		=>	__( 'Contact us', 'fastway' ),		
 ) );
