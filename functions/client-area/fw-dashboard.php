@@ -836,6 +836,12 @@ HTML;
         <label>$cant</label>
     </div>
     HTML;
+
+
+    echo <<<HTML
+    <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
+</div>
+HTML;
     }else{
         $cates =__('Applies to','fastway').': '.(fw_theme_mod('fw_lili_discount_categories_3')?fw_theme_mod('fw_lili_discount_categories_3'):__('All products','fastway'));
         $cant=fw_theme_mod('fw_lili_discount_cant_3');
@@ -860,12 +866,12 @@ HTML;
     HTML;
     
 
+
     echo <<<HTML
     <a class="iralasopciones" href="index.php?edit=fw_widget_lili_discount#fw_widget_lili_discount">$cambiar_l</a>
 </div>
 HTML;
 }
-
 }
 
 ?>
