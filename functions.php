@@ -574,4 +574,21 @@ function fw_get_template( $template_name, $args = array(), $posts = null ){
   if ( $posts->have_posts() )include( $located );
   wp_reset_postdata();
 }
+
+function remove_all_variations_images( $parent_id = 0 ){
+  global $wpdb;
+
+  $one_parent = $parent_id === 0 ? "" : "AND p.post_parent = $parent_id";
+
+  return $wpdb->query("
+      UPDATE {$wpdb->prefix}postmeta as pm
+      JOIN {$wpdb->prefix}posts AS p ON pm.post_id = p.ID
+      SET pm.meta_value = ''
+      WHERE p.post_status = 'publish'
+      AND p.post_type = 'product_variation'
+      AND pm.meta_key = '_thumbnail_id' 
+      $one_parent
+  ");
+}
+
 ?>
