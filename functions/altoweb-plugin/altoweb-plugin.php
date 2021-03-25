@@ -52,7 +52,6 @@ if(fw_theme_mod('fw_action_init_mayorista')){
    set_theme_mod('fw_action_init_mayorista',false);
 }
 
-update_option('woocommerce_enable_guest_checkout','no');
 
 if(fw_theme_mod('fw_action_woosettings')){
    update_option('woocommerce_price_num_decimals','0');
