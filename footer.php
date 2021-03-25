@@ -77,7 +77,7 @@ jQuery(document).ready( function(jQuery) {
 });
 </script>
 <?php } ?> 
-<?php if(get_option('fw_popup_unload_img') && (is_cart() || is_checkout())) { ?>
+<?php if(get_option('fw_popup_unload_img') && (is_cart() || is_checkout() && !is_order_received_page())) { ?>
 <div class="modal fade" id="modal_exit" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
