@@ -39,7 +39,7 @@ class Correios_Shipping_Ajax_Postcode {
 				if($precio==0  && $shipping->method_id=='flat_rate')$precio=fw_theme_mod('fw_shipping_client_cost');
 				else if($precio==0)$precio=fw_theme_mod('fw_shipping_no_cost');
 				else $precio= wc_price( $shipping->cost );
-				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' <span class="precio_en_cart">('.$precio.')</span></p>';
+				$impri='<p class="'.$shipping->method_id.'">'.$shipping->label.' <span class="precio_en_cart '.$shipping->method_id.'">('.$precio.')</span></p>';
 				//if($shipping->method_id=='mercadoenvios-shipping' && $opts['free_shipping_amount'] && $product->get_price()>=$freeship )$impri='<p class="'.$shipping->method_id.' free">Envio Gratis Por Correo A Domicilio.</p>';
 
 				echo $impri;
