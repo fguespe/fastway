@@ -4461,9 +4461,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shipping_free_label',
 	'label'    => __( 'Envío gratis', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=>'Sin costo',
+	'default'	=> __('Envío gratis', 'fastway' ),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_no_cost',
+	'label'    => __( 'Sin cargo', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> __('Sin cargo', 'fastway' ),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_shipping_client_cost',
+	'label'    => __( 'A cargo del cliente', 'fastway' ),
+	'section'     => 'section_labels_shipping',
+	'default'	=> __('A cargo del cliente', 'fastway' ),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_address_2_label',

@@ -5,5 +5,4 @@
 	<input type="button" id="wscp-button" class="btn_mp_calc_shipping" value="Calcular" >
 	<input type="hidden" name="wscp-nonce" id="wscp-nonce" value="<?= wp_create_nonce( "wscp-nonce" ); ?>">
 	<div id="wscp-response"></div>
-
 </div>
