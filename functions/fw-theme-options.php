@@ -4012,6 +4012,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_scripts',
 	'description' =>'refresh cache!'
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_fb_verification',
+	'label'    => __( 'FB Site Verif. ID', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>'refresh cache!'
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
