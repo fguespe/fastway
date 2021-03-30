@@ -150,14 +150,16 @@ function fw_whatsappfooter(){
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>
         </a>';
-        $whats=fw_company_data($usas,true,2);
         if(fw_company_data($usas,false,2)){
+            $label=fw_company_data($usas,false,2);
+            $whats=fw_company_data($usas,true,2);
             echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi second" style="right:15%;">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
             <span class="t5">'.$label.'</span>
             </a>';
         }
         if(fw_company_data($usas,false,3)){
+            $whats=fw_company_data($usas,true,3);
             $label=fw_company_data($usas,false,3);
             echo '<a href="'.$whats.'" target="_blank" class="btn-wapp multi third" style="right:30%;">
             <i class="fab fa-whatsapp" style="color:white !important;"></i>
