@@ -89,7 +89,7 @@ jQuery(document).ready( function(jQuery) {
 <script>
 jQuery(document).bind("mouseleave", function(e) {
     console.log(e.pageY,jQuery(window).scrollTop())
-    if (e.pageY - jQuery(window).scrollTop() <= 1) {    
+    if (e.pageY - jQuery(window).scrollTop() < -2) {    
       jQuery('#modal_exit').modal('show');
     }
 });
