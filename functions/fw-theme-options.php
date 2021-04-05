@@ -4554,8 +4554,8 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_place_order_text',
 	'label'    => __( 'Finalizar Compra', 'fastway' ),
-	'section'     => 'section_labels_products',
-	'default'	=>'Finalizar',
+	'section'     => 'section_labels_cart',
+	'default'	=> __( 'Finalizar Compra', 'fastway' ),
 ) );
 
 

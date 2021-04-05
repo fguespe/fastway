@@ -81,12 +81,14 @@ jQuery(document).ready( function(jQuery) {
 <div class="modal fade" id="modal_exit" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="modal-body"><img width="100%" src="<?=get_option('fw_popup_unload_img')?>"></div>
         </div>
       </div>
 </div>
 <script>
 jQuery(document).bind("mouseleave", function(e) {
+    console.log(e.pageY,jQuery(window).scrollTop())
     if (e.pageY - jQuery(window).scrollTop() <= 1) {    
       jQuery('#modal_exit').modal('show');
     }

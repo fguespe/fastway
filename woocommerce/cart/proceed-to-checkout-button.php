@@ -22,6 +22,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<a onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" class="checkout-button button alt wc-forward">
-	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
-</a>
+<a onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" class="checkout-button button alt wc-forward"><?=fw_theme_mod('fw_place_order_text');?></a>
