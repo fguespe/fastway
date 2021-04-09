@@ -23,7 +23,7 @@ while ($posts->have_posts()){
 
     
     echo '<div class="swiper-slide" data-swiper-autoplay="'.$slider_delay.'">';
-    echo fw_loop_blog();
+    echo $fw_loop_blog;
     echo '</div>';
     ?>
 <?php } ?>
