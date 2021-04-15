@@ -249,7 +249,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
 
             array(
-                'key' => 'field_602d10d0134d3',
+                'key' => 'field_602d10d0134d1',
                 'label' => ' Replay Webinar',
                 'name' => 'replay_webinar',
                 'type' => 'url',
