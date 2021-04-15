@@ -247,6 +247,23 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+
+            array(
+                'key' => 'field_602d10d0134d3',
+                'label' => ' Replay Webinar',
+                'name' => 'replay_webinar',
+                'type' => 'url',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+            ),
             array(
                 'key' => 'field_603e6c10144b3',
                 'label' => 'File',

@@ -10,17 +10,6 @@ Author URI: https://www.altoweb.ar
 include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
 include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
-//include( plugin_dir_path( __FILE__ ) . '/admin_options.php');
-// These would go inside your admin_init hook
-
- 
-
-
-
-
-
-  /*COLUMNA MEDIA*/
-
 //Taxomizer
 if(get_option('taxomizerwpai'))add_action('pmxi_after_xml_import', 'after_xml_import_init_cate', 10, 1);
 function after_xml_import_init_cate($import_id){
