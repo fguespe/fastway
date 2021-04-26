@@ -320,7 +320,7 @@ function fw_widget_lili_discount_dash_handler(){
     <div style='margin-top:20px;'>
         1) ".__('For categories, it must be entered in the field, the category slug, which can be obtained in <a href=\'edit-tags.php?taxonomy=product_cat&post_type=product\'>categories</a> section (separated with \',\')','fastway')."<br> 
         2) ".__('Leave empty and it will apply to all categories','fastway')."<br> 
-        3) ".__('Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2','fastway')."
+        3) ".__('Quantity is the minimum of the ratio. in the case of 3x2 it should be 3, and 2x1 should be 2','fastway')."<br>
         4) ".__('Discount always applies only to the cheapiests','fastway')."</small>
         </div>
     <br>";

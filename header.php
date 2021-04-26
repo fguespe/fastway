@@ -21,7 +21,7 @@ if(!is_plugin_active('kirki/kirki.php')){
     <meta property="og:image" content="<?=get_the_post_thumbnail_url()?get_the_post_thumbnail_url():fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
-    <meta name="facebook-domain-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
+    <meta name="facebook-domain-verification" content="<?=fw_theme_mod('fw_fb_verification');?>">
     <meta name="twitter:card" content="summary_large_image">
     <?php } ?>
 	
