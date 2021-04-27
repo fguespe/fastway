@@ -179,7 +179,15 @@ function init_falta_verif() {
       'show_in_admin_all_list'    => true,
       'exclude_from_search'       => false,
       'label_count'               => _n_noop( 'Falta verificar <span class="count">(%s)</span>', 'Falta verificar <span class="count">(%s)</span>' )
-  ) );
+  ));
+  register_post_status( 'wc-despachado', array(
+    'label'                     => 'Despachado',
+    'public'                    => true,
+    'show_in_admin_status_list' => true,
+    'show_in_admin_all_list'    => true,
+    'exclude_from_search'       => false,
+    'label_count'               => _n_noop( 'Despachado <span class="count">(%s)</span>', 'Despachado <span class="count">(%s)</span>' )
+  ));
 }
 ?>
 
