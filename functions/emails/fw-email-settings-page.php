@@ -356,8 +356,8 @@ wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = 
 ?>
 </div>
 <div class="tipomail">
-<h3 class="titulo"><?=__( 'Verification pending', 'fastway' )?></h3>
-<small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
+<h3 class="titulo"><?=__( 'Order shipped', 'fastway' )?></h3>
+<small><?=__( 'This is an order notification sent to customers after order is marked as shipped.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_despachado_order" name="fw_email_subject_customer_despachado_order" value="<?php echo get_option('fw_email_subject_customer_despachado_order'); ?>" /><br>
 
 <?php
