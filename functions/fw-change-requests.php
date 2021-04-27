@@ -116,7 +116,14 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
         $mailer = $woocommerce->mailer();
         $message = $mailer->wrap_message(sprintf( $subject, $order->get_order_number() ), $body );
         $mailer->send( $order->billing_email, sprintf( $subject, $order->get_order_number() ), $message );
-    }if($order->status === 'processing' ) {//esto es un fix no se porque no se envia la transicion de await verif a processing
+    }else if($order->status === 'despachado' ) {
+      $subject= fw_parse_subject('customer_despachado_order',fw_get_email_variables($order));
+      $body= fw_parse_mail_return('customer_despachado_order',$order);
+
+      $mailer = $woocommerce->mailer();
+      $message = $mailer->wrap_message(sprintf( $subject, $order->get_order_number() ), $body );
+      $mailer->send( $order->billing_email, sprintf( $subject, $order->get_order_number() ), $message );
+    }else if($order->status === 'processing' ) {//esto es un fix no se porque no se envia la transicion de await verif a processing
       $subject= fw_parse_subject('customer_processing_order',fw_get_email_variables($order));
       $body= fw_parse_mail_return('customer_processing_order',$order);
 

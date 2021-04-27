@@ -28,6 +28,11 @@ Gracias por tu compra.');
 
 
 if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
+add_option( 'fw_email_subject_customer_despachado_order', 'Pedido Despachado');
+add_option( 'fw_email_content_customer_despachado_order', 'Hola {{customer_name}},
+
+solo para que estés informado, tu pedido {{order_number}} fue despachado
+al transporte tal cual como lo solicitaste.');
 
 add_option( 'fw_email_subject_customer_await_verif_order', 'Recibimos tu comprobante');
 add_option( 'fw_email_content_customer_await_verif_order', 'Hola {{customer_name}},
@@ -348,6 +353,16 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 <?php
 $content = get_option('fw_email_content_customer_await_verif_order');
 wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'Verification pending', 'fastway' )?></h3>
+<small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_customer_despachado_order" name="fw_email_subject_customer_despachado_order" value="<?php echo get_option('fw_email_subject_customer_despachado_order'); ?>" /><br>
+
+<?php
+$content = get_option('fw_email_content_customer_despachado_order');
+wp_editor( $content, 'fw_email_content_customer_despachado_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <?php } ?>
