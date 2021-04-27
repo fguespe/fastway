@@ -154,6 +154,7 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
         if ( 'wc-on-hold' === $key ) {
             $new_order_statuses['wc-on-hold'] ='Esperando comprobante';
             $new_order_statuses['wc-await-verif'] = 'Falta verificar';
+            $new_order_statuses['wc-despachado'] = 'Despachado';
         }
     }
     return $new_order_statuses;
