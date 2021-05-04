@@ -152,6 +152,8 @@ register_setting( 'fw_email_options_group', 'fw_email_content_customer_new_accou
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_processing_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_completed_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_on_hold_order', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_customer_despachado_order', 'myplugin_callback' );
+register_setting( 'fw_email_options_group', 'fw_email_content_customer_await_verif_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_customer_reset_password', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_admin_new_order', 'myplugin_callback' );
 register_setting( 'fw_email_options_group', 'fw_email_content_gf_pending', 'myplugin_callback' );
