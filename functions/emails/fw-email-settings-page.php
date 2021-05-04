@@ -265,8 +265,8 @@ function openCity(evt, cityName) {
 <form method="post" class="wrap" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
 <div class="tab">
-  <button type="button" class="tablinks active" onclick="openCity(event, 'account_emails')">Account Emails</button>
   <button type="button" class="tablinks" onclick="openCity(event, 'customer_emails')">Order Emails</button>
+  <button type="button" class="tablinks active" onclick="openCity(event, 'account_emails')">Account Emails</button>
   <?php
 if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 ?>
