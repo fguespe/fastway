@@ -21,7 +21,7 @@ vc_add_param("vc_row", array(
     "param_name" => "fw_columns_responsive",
     "value" => array(
         "Select an option" => "",
-        "100%" => "full_mobile",
+        "100%" => "one_mobile_columns",
         "50%" => "two_mobile_columns",
         "33%" => "three_mobile_columns",
         "25%" => "four_mobile_columns",
@@ -58,7 +58,7 @@ vc_add_param("vc_row_inner", array(
     "param_name" => "fw_columns_responsive",
     "value" => array(
         "Select an option" => "",
-        "100%" => "full_mobile",
+        "100%" => "one_mobile_columns",
         "50%" => "two_mobile_columns",
         "33%" => "three_mobile_columns",
         "25%" => "four_mobile_columns",

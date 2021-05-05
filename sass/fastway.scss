@@ -1900,6 +1900,10 @@ display:none !important;
 
 @media (max-width: 799px) {
   /*OCULTAR ADMIN BAR*/
+  .one_mobile_columns .wpb_column {
+    width: 100%;
+    display: inline-block;
+  }
   .two_mobile_columns .wpb_column {
     width: 50%;
     display: inline-block;
@@ -2987,7 +2991,7 @@ body .wpb_content_element {
 
 /*form*/
 .fwhorform {
-
+  width: 100%;
   .gfield_label{
   display:none  !important;
   } 
