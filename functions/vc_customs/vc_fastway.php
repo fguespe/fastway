@@ -352,8 +352,8 @@ function vc_fw_empty_space() {
                     "heading"     => __("Size"),
                     "param_name"  => "height",
                     "value" => array(
-                        "X Large (Para separar filas)" =>"220px"  ,
-                        "Large (Para separar filas)" =>"120px"  ,
+                        "X Large (Casos raros)" =>"220px"  ,
+                        "Large (Casos raros)" =>"120px"  ,
                         "Medium (Para separar filas)" =>"64px"  ,
                         "Small (Para dentro de filas)" =>"32px"  ,
                         "X Small (Para otros casos mas pequeños)" =>"16px"  ,
