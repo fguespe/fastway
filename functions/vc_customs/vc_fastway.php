@@ -522,8 +522,10 @@ function fw_image() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Link"),
-                    "param_name"  => "link",
+                    "heading"     => __("Size"),
+                    "param_name"  => "size_desktop",
+                    "value"       => "100% auto",
+                    'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
                     "type"        => "attach_image",
@@ -535,7 +537,7 @@ function fw_image() {
                 array(
                     "type" => 'textfield',
                     "heading"     => __("Size"),
-                    "param_name"  => "size",
+                    "param_name"  => "size_mobile",
                     "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
@@ -548,6 +550,11 @@ function fw_image() {
                         "Nueva pestaña" =>"_blank" ,
                     ),
                     "std" => '_self', //Default Red color
+                ),
+                array(
+                    "type" => 'textfield',
+                    "heading"     => __("Link"),
+                    "param_name"  => "link",
                 ),
                 array(
                     "type" => 'dropdown',
@@ -790,12 +797,15 @@ function fw_image_function( $atts, $content ) {
             'subtitle'      =>  '',
             'image_mobile'      =>  '',
             'el_class'  => '',
-            'size'      =>  '100% auto',
+            'size_desktop'      =>  '100% auto',
+            'size_mobile'      =>  '100% auto',
         ), $atts );
         
     //Desktop
-    $h=explode(' ',$atts['size'])[1];
-    $w=explode(' ',$atts['size'])[0];
+    $h_desktop=explode(' ',$atts['size_desktop'])[1];
+    $w_desktop=explode(' ',$atts['size_desktop'])[0];
+    $h_mobile=explode(' ',$atts['size_mobile'])[1];
+    $w_mobile=explode(' ',$atts['size_mobile'])[0];
 
     $image = wp_get_attachment_image_src( $atts['image'], '' )[0];
     $image_mobile = wp_get_attachment_image_src( $atts['image_mobile'], '' )[0];
@@ -806,14 +816,14 @@ function fw_image_function( $atts, $content ) {
     $link = $atts['link'];
     if($link)$return .= '<a class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" target="'.$atts['link_type'].'" style="text-align:center" href="'.$link.'" >';
     else $return .= '<div class="fw_image_container '.$claserespo.' '.$atts['el_class'].'" style="text-align:center" >';
-    $return .= '<div class="imagen"><img src="'.$image.'" style="max-width:100%;width:'.$w.';height:'.$h.';"/></div>';   
+    $return .= '<div class="imagen"><img src="'.$image.'" style="max-width:100%;width:'.$w_desktop.';height:'.$h_desktop.';"/></div>';   
     if($atts['title'])$return .= '<div class="texts '.$atts['text_type'].'"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
     if($link)$return .= '</a>';
     else $return .= '</div>'; 
     if($ismobile){
         if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" target="'.$atts['link_type'].'" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
-        $return .= '<div class="imagen"><img src="'.$image_mobile.'" style="max-width:100%;width:'.$w.' ;height:'.$h.';"/></div>';   
+        $return .= '<div class="imagen"><img src="'.$image_mobile.'" style="max-width:100%;width:'.$w_mobile.' ;height:'.$h_mobile.';"/></div>';   
         if($atts['title'])$return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
