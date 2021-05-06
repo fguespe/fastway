@@ -1221,7 +1221,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
+	'type'        => 'text',
 	'settings'    => 'logo-width',
 	'label'       => __( 'Logo Width', 'fastway' ),
 	'section'     => 'section_header',
@@ -1236,6 +1236,22 @@ Kirki::add_field( 'theme_config_id', array(
 		array(
 			'element' => '.fw_header.middle.desktop .logo img',
 			'property'	=> 'width',
+			'units'=>'px'
+		),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'logo-height',
+	'label'       => __( 'Logo Height', 'fastway' ),
+	'section'     => 'section_header',
+	'default'     => '50',
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.fw_header.middle.desktop .logo img',
+			'property'	=> 'height',
 			'units'=>'px'
 		),
 	),
