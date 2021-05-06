@@ -189,12 +189,12 @@ if( !function_exists('fw_m_logo') ) {
                 if( !empty( fw_theme_mod('fw_mobile_logo') ) && strlen(trim(fw_theme_mod('fw_mobile_logo'))) > 0 ){
                     $logo_arg['src'] =  fw_theme_mod('fw_mobile_logo') ;
                     $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
+                    $logo_arg['height'] = fw_theme_mod('logo-height');
                 } else {
                     //Cargo logo default
                     $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.svg" );
                     $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
+                    $logo_arg['height'] = fw_theme_mod('logo-height');
                 }
 
                 //echo '<a class="logo">';
@@ -236,12 +236,12 @@ if( !function_exists('fw_logo') ) {
                 if( !empty( fw_theme_mod('general-logo') ) && strlen(trim(fw_theme_mod('general-logo'))) > 0 ){
                     $logo_arg['src'] =  fw_theme_mod('general-logo') ;
                     $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
+                    $logo_arg['height'] = fw_theme_mod('logo-height');
                 } else {
                     //Cargo logo default
                     $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/logo.svg" );
                     $logo_arg['width'] = fw_theme_mod('logo-width');
-                    $logo_arg['height'] = "auto";
+                    $logo_arg['height'] = fw_theme_mod('logo-height');
                 }
 
                 //echo '<a class="logo">';

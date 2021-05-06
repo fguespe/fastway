@@ -1225,12 +1225,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'logo-width',
 	'label'       => __( 'Logo Width', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => 180,
-	'choices'     => array(
-		'min'  => 0,
-		'max'  => 500,
-		'step' => 5,
-	),
+	'default'     => '180',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
@@ -1246,7 +1241,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'logo-height',
 	'label'       => __( 'Logo Height', 'fastway' ),
 	'section'     => 'section_header',
-	'default'     => '50',
+	'default'     => 'auto',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
