@@ -2242,3 +2242,30 @@ function sample_admin_notice__error() {
 function hasShipping(){
   return get_option('woocommerce_ship_to_countries')!='disabled' && count(WC()->shipping()->get_packages())>=1;
 }
+
+
+// Add custom sorting options
+function filter_woocommerce_get_catalog_ordering_args( $args ) {
+  $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
+  if ( $orderby_value == 'availability' ) {
+      $args['orderby'] = 'meta_value_num';
+      $args['order'] = 'DESC';
+      $args['meta_key'] = '_stock';
+  }
+  return $args;
+}
+add_filter( 'woocommerce_get_catalog_ordering_args', 'filter_woocommerce_get_catalog_ordering_args', 10, 1 );   
+
+function custom_woocommerce_catalog_orderby( $sortby ) {
+  $sortby['availability'] = __('Availability','fastway');
+  return $sortby;
+}
+add_filter( 'woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby', 10, 1 );
+add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby', 10, 1 );
+
+// Optional: use for debug purposes (display stock quantity) 
+function action_woocommerce_after_shop_loop_item() {
+  global $product;
+  echo wc_get_stock_html( $product );
+}
+add_action( 'woocommerce_after_shop_loop_item', 'action_woocommerce_after_shop_loop_item', 10, 0 );
