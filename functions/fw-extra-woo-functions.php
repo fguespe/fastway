@@ -297,7 +297,7 @@ function fw_loop_title(){
 add_shortcode('fw_loop_stock', 'fw_loop_stock');
 function fw_loop_stock(){
     global $product;
-    echo '<span class="product_stock">'.parseStock($product).'</span>';
+    return '<span class="product_stock">'.parseStock($product).'</span>';
 }
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){
