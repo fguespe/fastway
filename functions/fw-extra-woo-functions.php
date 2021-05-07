@@ -294,6 +294,11 @@ function fw_loop_title(){
     global $product;
     echo '<h2 class="product_title">'.$product->post->post_title.'</h2>';
 }
+add_shortcode('fw_loop_stock', 'fw_loop_stock');
+function fw_loop_stock(){
+    global $product;
+    echo '<span class="product_stock">'.parseStock($product).'</span>';
+}
 add_shortcode('fw_loop_price', 'fw_loop_price');
 function fw_loop_price(){
     global $product;
@@ -1104,17 +1109,20 @@ function shop_order_user_role_posts_where( $query ) {
 //Stock labels
 add_filter( 'woocommerce_get_availability', 'fw_custom_get_availability', 1, 2); 
 function fw_custom_get_availability( $availability, $_product ) {
+    $availability['availability']=parseStock($_product);
+    return $availability;
+}
+function parseStock($_product){
     if(get_option('woocommerce_manage_stock')==='no')return "";
     if ( $_product->is_type( 'variable' ) ) return "";
     $instock=true;
     $status=$_product->get_stock_status();
     if(is_numeric($_product->get_stock_quantity()))$instock=$_product->get_stock_quantity()>0;
     
-    //$_product->is_in_stock());//This returns true for 'instock' and 'onbackorder' stock statuses.
-    if ( $instock && $status=='instock')$availability['availability'] = fw_theme_mod("in-stock-text");
-    else if( !$instock && $_product->backorders_allowed())$availability['availability'] =  fw_theme_mod("fw_backorder_text");
-    else if ( !$instock || $status=='outofstock' )$availability['availability'] =  fw_theme_mod("out-of-stock-text");
-    return $availability; 
+    if ( $instock && $status=='instock')return fw_theme_mod("in-stock-text");
+    else if( !$instock && $_product->backorders_allowed())return  fw_theme_mod("fw_backorder_text");
+    else if ( !$instock || $status=='outofstock' )return fw_theme_mod("out-of-stock-text");
+    return "";
 }
 
 function get_attrClasses($product){

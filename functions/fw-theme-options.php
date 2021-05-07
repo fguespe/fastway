@@ -1220,6 +1220,7 @@ Kirki::add_field( 'theme_config_id', array(
 		
 	),
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'logo-width',
