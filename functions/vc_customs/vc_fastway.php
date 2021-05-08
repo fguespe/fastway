@@ -524,7 +524,7 @@ function fw_image() {
                     "type" => 'textfield',
                     "heading"     => __("Size Desktop"),
                     "param_name"  => "size_desktop",
-                    "value"       => "auto auto",
+                    "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
@@ -538,7 +538,7 @@ function fw_image() {
                     "type" => 'textfield',
                     "heading"     => __("Size Mobile"),
                     "param_name"  => "size_mobile",
-                    "value"       => "auto auto",
+                    "value"       => "100% auto",
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
@@ -797,6 +797,7 @@ function fw_image_function( $atts, $content ) {
             'subtitle'      =>  '',
             'image_mobile'      =>  '',
             'el_class'  => '',
+            'size'  => '',
             'size_desktop'      =>  'auto auto',
             'size_mobile'      =>  'auto auto',
         ), $atts );
@@ -806,6 +807,12 @@ function fw_image_function( $atts, $content ) {
     $w_desktop=explode(' ',$atts['size_desktop'])[0];
     $h_mobile=explode(' ',$atts['size_mobile'])[1];
     $w_mobile=explode(' ',$atts['size_mobile'])[0];
+    if($atts['size'] && $atts['size']!='100% auto'){
+        $h_desktop=explode(' ',$atts['size'])[1];
+        $w_desktop=explode(' ',$atts['size'])[0];
+        $h_mobile=explode(' ',$atts['size'])[1];
+        $w_mobile=explode(' ',$atts['size'])[0];
+    }
 
     $image = wp_get_attachment_image_src( $atts['image'], '' )[0];
     $image_mobile = wp_get_attachment_image_src( $atts['image_mobile'], '' )[0];
