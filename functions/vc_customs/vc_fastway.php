@@ -522,9 +522,9 @@ function fw_image() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Size"),
+                    "heading"     => __("Size Desktop"),
                     "param_name"  => "size_desktop",
-                    "value"       => "100% auto",
+                    "value"       => "auto auto",
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
@@ -536,9 +536,9 @@ function fw_image() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Size"),
+                    "heading"     => __("Size Mobile"),
                     "param_name"  => "size_mobile",
-                    "value"       => "100% auto",
+                    "value"       => "auto auto",
                     'description' => 'width height (100% 100% or auto auto)'
                 ),
                 array(
@@ -797,8 +797,8 @@ function fw_image_function( $atts, $content ) {
             'subtitle'      =>  '',
             'image_mobile'      =>  '',
             'el_class'  => '',
-            'size_desktop'      =>  '100% auto',
-            'size_mobile'      =>  '100% auto',
+            'size_desktop'      =>  'auto auto',
+            'size_mobile'      =>  'auto auto',
         ), $atts );
         
     //Desktop
