@@ -798,8 +798,8 @@ function fw_image_function( $atts, $content ) {
             'image_mobile'      =>  '',
             'el_class'  => '',
             'size'  => '',
-            'size_desktop'      =>  'auto auto',
-            'size_mobile'      =>  'auto auto',
+            'size_desktop'      =>  '100% auto',
+            'size_mobile'      =>  '100% auto',
         ), $atts );
         
     //Desktop
