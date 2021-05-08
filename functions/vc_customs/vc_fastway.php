@@ -807,7 +807,7 @@ function fw_image_function( $atts, $content ) {
     $w_desktop=explode(' ',$atts['size_desktop'])[0];
     $h_mobile=explode(' ',$atts['size_mobile'])[1];
     $w_mobile=explode(' ',$atts['size_mobile'])[0];
-    if($atts['size'] && $atts['size']!='100% auto'){
+    if($atts['size'] && $atts['size']!='100% auto'){//old fix
         $h_desktop=explode(' ',$atts['size'])[1];
         $w_desktop=explode(' ',$atts['size'])[0];
         $h_mobile=explode(' ',$atts['size'])[1];
