@@ -2447,6 +2447,16 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_cuotas_todopago_calculador',
+	'label'    => __( 'Cuotas Todopago', 'fastway' ),
+	'section'     => 'section_woo_vars',
+	'description' => '',
+	'default' => '1,2,3,4,5,6'
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_cuotas_general',
 	'label'    => __( 'Cuotas General', 'fastway' ),
 	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
