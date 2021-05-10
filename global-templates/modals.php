@@ -124,7 +124,7 @@
                                 <label class="control-label">Cuotas</label>
                                 <select id="cuotastp" class="dropdown-toggle bs-placeholder btn btn-main" onchange="calcular();">
                                 <?php 
-                                foreach(explode( ',',fw_theme_mod('fw_cuotas_todopago_calculador' ) as $cuota) echo '<option value="'.$cuota.'">'.$cuota.'</option>';
+                                foreach(explode( ',',fw_theme_mod('fw_cuotas_todopago_calculador' )) as $cuota) echo '<option value="'.$cuota.'">'.$cuota.'</option>';
                                 ?>
                                 </select>
                             </div>
