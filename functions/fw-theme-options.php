@@ -81,15 +81,18 @@ Kirki::add_section( 'section_images', array(
     'panel'          => 'panel_fastway',
 
 ) );
-Kirki::add_section( 'section_meli', array(
-    'title'          => __( 'Mercadolibre', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastway',
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
 
-) );
-
+	Kirki::add_section( 'section_meli', array(
+		'title'          => __( 'Mercadolibre', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastway',
+	
+	) );
+	
+}
 Kirki::add_section( 'preset_section', array(
-    'title'          => __( 'Preset', 'fastway' ),
+    'title'          => __( 'Preset (beta)', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaylayout',
 
@@ -360,13 +363,15 @@ Kirki::add_section( 'section_woo_search', array(
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
 ) );
+/*
+
 Kirki::add_section( 'section_woo_payments', array(
     'title'          => __( 'Payment Methods', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
 ) );
-
+*/
 Kirki::add_section( 'section_woo_single', array(
     'title'          => __( 'Single Product', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -374,17 +379,19 @@ Kirki::add_section( 'section_woo_single', array(
   
 ) );
 Kirki::add_section( 'section_woo_shippings', array(
-    'title'          => __( 'Shipping Methods', 'fastway' ),
+    'title'          => __( 'Shipping ', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwaywoo',
   
 ) );
 
-Kirki::add_section( 'section_woo_discount', array(
-    'title'          => __( 'Discounts', 'fastway' ),
-    'panel'          => 'panel_fastwaywoo',
-  
-) );
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
+	Kirki::add_section( 'section_woo_discount', array(
+		'title'          => __( 'Discounts', 'fastway' ),
+		'panel'          => 'panel_fastwaywoo',
+	
+	) );
+}
 
 
 Kirki::add_section( 'section_woo_cart', array(
@@ -410,6 +417,7 @@ Kirki::add_section( 'section_woo_checkout', array(
 
 /*LABELs*/
 
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_checkout_todopago_label',
@@ -427,26 +435,38 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_labels_payments',
 	'default' => 'Procesado por todopago'
 ) );
+}
 
 /*tp*/
+
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_checkout_eposnet_label',
+		'label'       => __( 'ePosnet Label', 'fastway' ),
+		'description'	=>	'Nombre del rol, separados con ",".',
+		'section'     => 'section_labels_payments',
+		'default'     => 'Tarjeta de crédito y débito',
+	) );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'textarea',
+		'settings'    => 'fw_checkout_eposnet_desc',
+		'label'       => __( 'ePosnet Descripción', 'fastway' ),
+		'description'=>'Display a messsage on the my account page',
+		'section'     => 'section_labels_payments',
+		'default' => 'Paga en 3 CUOTAS SIN INTERÉS. Procesado por e-Posnet'
+	) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_checkout_eposnet_label',
-	'label'       => __( 'ePosnet Label', 'fastway' ),
-	'description'	=>	'Nombre del rol, separados con ",".',
+	'settings'    => 'fw_label_medios_pago',
+	'label'    => __( 'Medios de Pago', 'fastway' ),
 	'section'     => 'section_labels_payments',
-	'default'     => 'Tarjeta de crédito y débito',
+	'default'	=> 'Metodos de Pago',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'textarea',
-	'settings'    => 'fw_checkout_eposnet_desc',
-	'label'       => __( 'ePosnet Descripción', 'fastway' ),
-	'description'=>'Display a messsage on the my account page',
-	'section'     => 'section_labels_payments',
-	'default' => 'Paga en 3 CUOTAS SIN INTERÉS. Procesado por e-Posnet'
-) );
-
+}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
@@ -459,47 +479,47 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'fw_order_gift_note_placeholder',
-	'label'       => __( 'Dejale un mensaje de regalo', 'fastway' ),
+	'label'       => __( 'Leave a gift message', 'fastway' ),
 	'section'     => 'section_labels_checkout',
 	'default' 		=>__('Leave a gift message', 'fastway')
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'fw_order_notes_placeholder',
-	'label'       => __( 'Comentarios adicionales (placeholder)', 'fastway' ),
+	'label'       => __( 'Additional comments', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default' 		=>	'Comentarios adicionales',
+	'default' 		=>	__('Additional comments', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_continuar',
-	'label'    => __( 'Continuar', 'fastway' ),       
+	'label'    => __( 'Continue', 'fastway' ),       
 	'section'     => 'section_labels_checkout',
-	'default' 		=>	'Continuar',
+	'default'    => __( 'Continue', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_aplicar',
-	'label'    => __( 'Aplicar', 'fastway' ),       
+	'label'    => __( 'Apply', 'fastway' ),       
 	'section'     => 'section_labels_checkout',
-	'default' 		=>	'Aplicar',
+	'default'    => __( 'Apply', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_agregar_mas',
-	'label'    => __( 'Agregar más productos', 'fastway' ),
+	'label'    => __( 'Add more products', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Agregar más productos',
+	'default'    => __( 'Add more products', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_no_hay',
-	'label'    => __( 'No hay productos', 'fastway' ),
+	'label'    => __( 'No products', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'No hay productos',
+	'default'    => __( 'No products', 'fastway' ),
 ) );
 
 
@@ -507,100 +527,100 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_terms_acepto',
-	'label'    => __( 'Acepto los', 'fastway' ),
+	'label'    => __( 'I Accept the', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Acepto los',
+	'default'    => __( 'I Accept the', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_terms_name',
-	'label'    => __( 'Términos y Condiciones', 'fastway' ),
+	'label'    => __( 'Terms & Conditions', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Terminos y Condiciones',
+	'default'    => __( 'Terms & Conditions', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_1',
-	'label'    => __( 'titulo - Tu cuenta', 'fastway' ),
+	'label'    => __( 'Your account', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Tu cuenta',
+	'default'    => __( 'Your account', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_2',
-	'label'    => __( 'titulo -  Tus datos', 'fastway' ),
+	'label'    => __( 'Your information', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Tus datos',
+	'default'    => __( 'Your information', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_datos_1',
-	'label'    => __( 'titulo -  Datos de facturación', 'fastway' ),
+	'label'    => __( 'Invoice information', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Datos de facturación',
+	'default'    => __( 'Invoice information', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_datos_2',
-	'label'    => __( 'titulo -  Datos de envío', 'fastway' ),
+	'label'    => __( 'Shipping information', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Datos de envío',
+	'default'    => __( 'Shipping information', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_ship_to_other',
-	'label'    => __( 'Enviar a otra dirección (checkbox)', 'fastway' ),
+	'label'    => __( 'Ship to different address (checkbox)', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Enviar a otra dirección',
+	'default'    => __( 'Ship to different address', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_3',
-	'label'    => __( 'titulo - ¿Cómo te entregamos la compra?', 'fastway' ),
+	'label'    => __( 'Shipping question', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'¿Cómo te entregamos la compra?',
+	'default'    => __( 'How do you want to receive your product', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_4',
-	'label'    => __( 'titulo - ¿Cómo vas a pagar?', 'fastway' ),
+	'label'    => __( 'Payment question', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> '¿Cómo vas a pagar?',
+	'default'    => __( 'How will you pay?', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_desc',
-	'label'    => __( 'Seleccioná el botón que corresponda.', 'fastway' ),
+	'label'    => __( 'Select the correct option', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Seleccioná el botón que corresponda.',
+	'default'    => __( 'Select the correct option', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_init',
-	'label'    => __( 'Iniciar sesión', 'fastway' ),
+	'label'    => __( 'Logg In', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Iniciar sesión',
+	'default'    => __( 'Logg In', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_close',
-	'label'    => __( 'Cerrar sesión', 'fastway' ),
+	'label'    => __( 'Logout', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Cerrar sesión',
+	'default'    => __( 'Logout', 'fastway' ),
 ) );
 
 
@@ -609,119 +629,119 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_label_checkout_loading',
 	'label'    => __( 'Loading...', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Estamos procesando su pedido...aguarde unos segundos.',
+	'default'    => __( 'We are processing your order...please wait', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_enter',
-	'label'    => __( 'Ingresá a tu cuenta', 'fastway' ),
+	'label'    => __( 'Go to your account', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Ingresá a tu cuenta',
+	'default'    => __( 'Go to your account', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_already',
-	'label'    => __( '¿Ya tenés una cuenta?', 'fastway' ),
+	'label'    => __( 'Already have an account?', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> '¿Ya tenés una cuenta?',
+	'default'    => __( 'Already have an account?', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_forgot',
-	'label'    => __( '¿Olvidaste tu constraseña?', 'fastway' ),
+	'label'    => __( 'Forgot your password?', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> '¿Olvidaste tu constraseña?',
+	'default'    => __( 'Forgot your password?', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_change',
-	'label'    => __( 'modificar', 'fastway' ),
+	'label'    => __( 'modify', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'modificar',
+	'default'    => __( 'modify', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_back',
-	'label'    => __( 'Volver', 'fastway' ),
+	'label'    => __( 'Go back', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Volver',
+	'default'    => __( 'Go back', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_already_not',
-	'label'    => __( '¿Aún no tenés cuenta?', 'fastway' ),
+	'label'    => __( 'Still no account?', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> '¿Aún no tenés cuenta?',
+	'default'    => __( 'Still no account?', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_checkout_verde_1',
-	'label'    => __( 'Compra Segura', 'fastway' ),
+	'label'    => __( 'Safe Purchase', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> 'Compra Segura',
+	'default'    => __( 'Safe Purchase', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_checkout_verde_2',
-	'label'    => __( '100% Protegido', 'fastway' ),
+	'label'    => __( '100% Protected', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=> '100% Protegido',
+	'default'    => __( '100% Protected', 'fastway' )
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_read_more',
-	'label'       => esc_attr__( 'Read more label', 'fastway' ),
+	'label'       => __( 'Read more label', 'fastway' ),
 	'section'     => 'section_labels_blog',
-	'description' => 'Si se deja vacio, no aparece',
-	'default'     => 'Leer más',
+	'description' => 'If empty, is hidden',
+	'default'       => __( 'Read more', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_0',
-	'label'    => __( 'Gracias por tu compra', 'fastway' ),
+	'label'    => __( 'Thank you for your purchase', 'fastway' ),
 	'section'     => 'section_labels_thankyou',
-	'default'	=> 'Gracias por tu compra',
+	'default'    => __( 'Thank you for your purchase', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_1',
-	'label'    => __( 'El pedido fue registrado con número', 'fastway' ),
+	'label'    => __( 'The order was completed with number #', 'fastway' ),
 	'section'     => 'section_labels_thankyou',
-	'default'	=> 'El pedido fue registrado con número',
+	'default'    => __( 'The order was completed with number #', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_2',
-	'label'    => __( 'Te enviamos un mail a ', 'fastway' ),
+	'label'    => __( 'We sent you an email to', 'fastway' ),
 	'section'     => 'section_labels_thankyou',
-	'default'	=> 'Te enviamos un mail a',
+	'default'    => __( 'we sent you an email to', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_3',
-	'label'    => __( 'con el detalle y las instrucciones de como seguir.', 'fastway' ),
+	'label'    => __( 'with details and follow-up instructions.', 'fastway' ),
 	'section'     => 'section_labels_thankyou',
-	'default'	=> 'con el detalle y las instrucciones de como seguir.',
+	'default'    => __( 'with details and follow-up instructions.', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_checkout_thank_4',
-	'label'    => __( 'Seguir comprando', 'fastway' ),
+	'label'    => __( 'Continue buying', 'fastway' ),
 	'section'     => 'section_labels_thankyou',
-	'default'	=> 'Seguir comprando',
+	'default'    => __( 'Continue buying', 'fastway' ),
 ) );
 
 
@@ -1022,7 +1042,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_favicon',
 	'label'       => __( 'Favicon', 'fastway' ),
-	'description' => 'dejar vacio, sino, reemplaza site identity',
+	'description' => 'Users site identify as default',
 	'section'     => 'section_images',
 ) );
 
@@ -1045,14 +1065,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_mobile_logo',
 	'label'       => __( 'Mobile Logo', 'fastway' ),
-	'description' => __( 'Replaces general logo on mobile.', 'fastway' ),
+	'description' => __( 'Replaces general logo on mobile. Defaults take it from general logo', 'fastway' ),
 	'section'     => 'section_images'
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw-email-logo',
 	'label'       => __( 'Email Logo', 'fastway' ),
-	'description' => 'Por default es el de la web',
+	'description' => 'Logo for emails. Defaults take it from general logo',
 	'section'     => 'section_images',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -1158,7 +1178,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_floating_trans_header',
 	'label'       => __( 'Floating Transparent', 'fastway' ),
 	'section'     => 'section_header',
-	'description' => 'Solo funciona en la pagina principal.',
+	'description' => __('Only works for homepage','fastway'),
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1328,7 +1348,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_action_woosettings',
 	'label'       => __( 'Init Woocommerce', 'fastway' ),
 	'section'     => 'section_actions',
-	'description' => 'Activar, refrescar y recien ahi toma los cambios. Inicializa woocomerce con nuestros default settings.',
+	'description' => 'Restarts woocommmerce with fastway default settings. *You must refresh for chances to apply',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1340,6 +1360,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_action_init_mayorista',
 	'label'       => __( 'Init Mayorista', 'fastway' ),
+	'description' => 'Restarts wholesale mode with fastway default settings. *You must refresh for chances to apply',
 	'section'     => 'section_actions',
 	'default'     => 0,
 	'choices' => array(
@@ -1353,7 +1374,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_action_resetmails',
 	'label'       => __( 'Reset Mails', 'fastway' ),
 	'section'     => 'section_actions',
-	'description' => 'Activar, refrescar y recien ahi toma los cambios. Lo que hace es refrescar todo lo que concierne a emails.',
+	'description' => 'Restarts woocommmerce emails with fastway default settings. *You must refresh for chances to apply',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -1367,7 +1388,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_action_clientimages',
 	'label'       => __( 'Client Area Images', 'fastway' ),
-	'description' => 'Reinicia imagenes del client area con nuestro branding.',
+	'description' => 'Restarts admin images (branding) with fastway default settings. *You must refresh for chances to apply.',
 	'section'     => 'section_actions',
 	'default'     => 0,
 	'choices' => array(
@@ -1377,19 +1398,14 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-
-
-
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'custom',
 	'settings'    => 'my_setting_2',
 	'label'       => __( 'INFO', 'textdomain' ),
 	'section'     => 'section_email',
 	'default'     => '<div style="padding: 10px;background-color: #fff; color:black; border: 1px solid #1E73BE;">
-	<h4>VALORES DEFAULT</h4>
-	Fijarse que ya hay valores puestos basados en el titulo del sitio y el company data.Si no son diferentes, dejarlos asi vacios. Sino al poner un valor lo va a priorizar.
+	<h4>Default values</h4>
+	The default values are taken from company data. Works with gravity forms.
 	</div>',
 	'priority'    => 10,
 ) );
@@ -1398,8 +1414,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_mail_desde_nombre',
-	'label'    	=> __( 'Nombre que aparece para mails', 'fastway' ),
-	'description' 	=>	'Nombre con el cual les va a llegar a los clientes',
+	'label'    	=> __( 'From Name', 'fastway' ),
+	'description' 	=>	'The name of the company in emails',
 	'section'   => 'section_email',
 	'default' => 'Altoweb',
 	'input_attrs' => array(
@@ -1409,8 +1425,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_mail_desde_mails',
-	'label'    	=> __( 'Email para recibir notificaciones', 'fastway' ),
-	'description' 	=>	' *A que mails se van a enviar todas las notificaciones, separar mails con "," comas.',
+	'label'    	=> __( 'Admin Notification Emails', 'fastway' ),
+	'description' 	=>	' Email addresses that will receive all website notifations. Separated with comma (,).',
 	'section'   => 'section_email',
 	'default' => '',
 	'input_attrs' => array(
@@ -1423,9 +1439,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_general_from_name',
-	'label'    	=> __( 'Desde donde', 'fastway' ),
+	'label'    	=> __( 'Admin Notifications From Name', 'fastway' ),
 	'default' => '',
-	'description' 	=>	'Nombre de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre.)',
+	'description' 	=>	'Name that shows in the notification emails. Can be different to customer notifications.)',
 	'section'   => 'section_email',
 	'input_attrs' => array(
 		'placeholder' => get_bloginfo( 'name' )
@@ -1437,9 +1453,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_general_from_email',
-	'label'    	=> __( 'Desde que mail', 'fastway' ),
+	'label'    	=> __( 'Email From', 'fastway' ),
 	'default' => '',
-	'description' 	=>	'Email de donde salen las notificaciones. No modificar! (Dejar vacio para que tome el campo de arriba de nombre, el primero si hay varios con ,)',
+	'description' 	=>	'',
 	'section'   => 'section_email',
 	'input_attrs' => array(
 		'placeholder' => getMailQueEnvia()
@@ -1451,7 +1467,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_mail_bcc',
 	'label'    	=> __( 'bcc default', 'fastway' ),
-	'description' 	=>	' *Todos los mails con copia oculta a un mail.',
+	'description' 	=>	' *You can put and admin email so they can monitor all emails sent to customers.',
 	'section'   => 'section_email',
 	'default' => '',
 ) );
@@ -1657,7 +1673,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-header',
 	'label'       => __( 'CSS Header', 'fastway' ),
 	'section'     => 'section_header',
-	'description' => 'Clases: .fw_header.top,  .fw_header.bottom,  .fw_header.middle,<br> Ids: #header (todo el hader), #fw_menu (agarra el main menu) ,<br>Elementos: .fw_search_form, .fw_logo',
+	'description' => 'Clases: .fw_header.top,  .fw_header.bottom,  .fw_header.middle,<br> Ids: #header, #fw_menu ,<br>Elements: .fw_search_form, .fw_logo',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -2107,6 +2123,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw-quicklinks',
 	'label'       => __( 'Quicklinks', 'fastway' ),
+	'description'     => __( 'Custom call to action items in mobile menu', 'fastway' ),
 	'section'     => 'section_mobile',
 	'default'     => 1,
 	'choices' => array(
@@ -2140,7 +2157,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw-ctas',
 	'label'       => __( 'CTAs', 'fastway' ),
 	'section'     => 'section_mobile',
-	'description' => 'Poner none para anular. Default toma num y whatsapp si existe.',
+	'description' => 'Call to actions in mobile menu.',
 	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
 ) );
 
@@ -2162,8 +2179,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_is_multitienda',
-	'label'       => __( 'Multitienda', 'fastway' ),
-	'description'	=> 'Tiene mas de una lista de precios',
+	'label'       => __( 'Multilist', 'fastway' ),
+	'description'	=> 'More than one list price by role',
 	'section'     => 'section_woo',
 	'default'     => 0,
 	'choices' => array(
@@ -2175,8 +2192,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_hide_cates',
-	'label'       => __( 'Hide cates', 'fastway' ),
-	'description'	=>	'Categorias a ocultar de la tienda',
+	'label'       => __( 'Hide categorys', 'fastway' ),
+	'description'	=>	'Categories to hide on the store. Separated with comma.',
 	'section'     => 'section_woo',
 	'default'     => 'sin-categorizar,sin-categoria,uncategorized',
 ) );
@@ -2187,36 +2204,35 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_shop_state',
 	'label'       => __( 'Shop State', 'fastway' ),
 	'section'     => 'section_woo',
-	'description' => 'Compras off solo oculta el boton comprar<br>Precios off oculta precios y boton de comprar y pone un boton de consultar.',
+	'description' => 'Purchases Off: Hides purchase button so no one can buy<br>Only enquiry: Hides prices and purchase button and replaces it with a contact button.',
 	'default'     => 'normal',
 	'choices'     => array(
 		'normal' => __( 'Normal', 'fastway' ),
-		'hidepurchases' => __( 'Compras Off', 'fastway' ),
-		'hideprices' => __( 'Solo consultas', 'fastway' ),
+		'hidepurchases' => __( 'Purchases Off', 'fastway' ),
+		'hideprices' => __( 'Only enquiry', 'fastway' ),
 	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_consultar_link',
-	'label'    => __( 'Link boton consultar', 'fastway' ),
-	'description' => 'Solo se muestra en el caso que esta en "Compras off" ',
+	'label'    => __( 'Enquiry Button Link', 'fastway' ),
 	'section'     => 'section_woo',
-	'default' => '/contacto'
+	'default' => '/contact'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase',
 	'label'    => __( 'Min Purchase', 'fastway' ),
-	'description' => 'OJO!! SOLO EL NUMERO, SIN SIMBOLOS y el rol entre parentesis separados tipo company data.CONSULTAR '.strtolower(implode(fw_get_all_roles(),", ")),
+	'description' => 'Min purchase ammount. Also you can specify roles. Eg: 1400 (role1,role2) '.strtolower(implode(fw_get_all_roles(),", ")),
 	'section'     => 'section_woo_cart',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_min_purchase2',
-	'description' => 'OJO!! SOLO EL NUMERO, SIN SIMBOLOS y el rol entre parentesis separados tipo company data, CONSULTAR '.strtolower(implode(fw_get_all_roles(),", ")),
+	'description' => 'Min re-purchase ammount. Also you can specify roles. Eg: 1400 (role1,role2) '.strtolower(implode(fw_get_all_roles(),", ")),
 	'label'    => __( 'Min Re-Purchase', 'fastway' ),
 	'section'     => 'section_woo_cart',
 ) );
@@ -2225,7 +2241,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_show_cross_sells',
 	'label'       => __( 'Cross Sells', 'fastway' ),
-	'description'	=> 'Aaprecen sugierencias de compras en el carrito. Categoria \'cross-sells\' para manual',
+	'description'	=> 'Shows cross-sells in the cart page. Category \'cross-sells\' is the default if you want to set them manually.',
 	'section'     => 'section_woo_cart',
 	'default'     => 'simple',
 	'choices'     => array(
@@ -2247,15 +2263,15 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_currency_conversion',
 	'label'    => __( 'Currency Conversion', 'fastway' ),
-	'description' => 'Al habilitar este campo, al cliente le va a aparecer un widget con un campo para poner la conversion en a la moneda local. Usar punto para decimales, no la coma',
+	'description' => __('This conversion will convert all prices the especified multiplier. Eg: if conversion is 10 and price is $2. It will show $20.','fastway'),
 	'section'     => 'section_woo',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_seguircomprando_url',
-	'label'    => __( 'Seguir comprando url', 'fastway' ),
-	'description' => 'La url del seguir comprando en el carrito como en el thankyou page',
+	'label'    => __( 'Keep Purchasing', 'fastway' ),
+	'description' => 'Url in the modal cart that redirects you to keep butin',
 	'default' 	=>	 '/',
 	'section'     => 'section_woo',
 ) );
@@ -2313,8 +2329,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_dni',
-	'label'       => __( 'DNI Obligatorio', 'fastway' ),
-	'description'	=> 'Pide dni',
+	'label'       => __( 'Identity Number', 'fastway' ),
+	'description'	=> 'Requires indentity number',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -2339,8 +2355,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_terms_required',
-	'label'       => __( 'Terminos y condiciones', 'fastway' ),
-	'description'	=> 'Aparece el checkbox en el signup. recordar configurar la pagina en los ajustes de woo.',
+	'label'       => __( 'Terms', 'fastway' ),
+	'description'	=> 'Shows terms and condition acceptance. The links is set in woo settings..',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -2352,8 +2368,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_to_business',
-	'label'       => __( 'Vender a empresas', 'fastway' ),
-	'description'	=> 'Pide cuit y nombre de empresa en los campos del checkout',
+	'label'       => __( 'Sell to business', 'fastway' ),
+	'description'	=> 'Asks for company name and VAT',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -2365,8 +2381,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_checkout_field_address_2',
-	'label'       => __( 'Extra campo dirección', 'fastway' ),
-	'description'	=> 'Agrega un campo extra que puede ser para altura, piso, etapa, lote, etc. (modificar en labels)',
+	'label'       => __( 'Extra address field', 'fastway' ),
+	'description'	=> 'Extra address field for multiple purposes. Go to Fastway->labels to set it up.',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -2436,6 +2452,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_vars',
 ) );
 
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago',
@@ -2444,7 +2461,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => '',
 	'default' => 6
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago_calculador',
@@ -2454,12 +2470,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => '1,2,3,4,5,6'
 ) );
 
+}
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_general',
-	'label'    => __( 'Cuotas General', 'fastway' ),
-	'description' => 'Esto sirve para cosas visuales que aparecen en la tienda, como por ejemplo SLM. Genera un shortcode que podemos usar en cualquier lugar [fw_cuotas_general]',
+	'label'    => __( 'Installments', 'fastway' ),
+	'description' => 'Installment variable. Can be useful in many places. [fw_cuotas_general]',
 	
 	'section'     => 'section_woo_vars',
 	'default' => 12
@@ -2499,7 +2517,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'sold-alone',
 	'label'       => __( 'Sold Individually', 'fastway' ),
 	'section'     => 'section_woo',
-	'description' => 'redirects to checkout directly *redirect to cart has to be activated in woocommerce product options',
+	'description' => 'Redirects to checkout directly *redirect to cart has to be activated in woocommerce product options',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -2516,7 +2534,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_extra_tax',
 	'label'       => __( 'Extra Taxonomias', 'fastway' ),
-	'description'	=>	'Nombres de taxonomias. En singular y minuscula Ej: (marca,genero)',
+	'description'	=>	'Taxonomy names. Eg: (brand,genre)',
 	'section'     => 'section_woo',
 	'default'     => '',
 ) );
@@ -2529,7 +2547,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'ca_extra_roles',
 	'label'       => __( 'Extra roles', 'fastway' ),
-	'description'	=>	'Nombre del rol, sin espacios, y separados con ",". Ej: Mayorista',
+	'description'	=>	'Extra roles names, separated with ",". Ej: Wholesale',
 	'section'     => 'section_woo_roles',
 	'default'     => '',
 ) );
@@ -2550,7 +2568,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-roles',
 	'label'       => __( 'CSS For Roles ', 'fastway' ),
 	'section'     => 'section_woo_roles',
-	'description' => 'Todos los roles tienen su clase puesta en el body: '.get_role_body_classes(),
+	'description' => 'Roles can have custom css for logged in users. Adds a class to the body: '.get_role_body_classes(),
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -2633,7 +2651,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 */
 /*PAYMENTS*/
-
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_payment_method_1_on',
@@ -2858,9 +2876,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'choices'     => array(
 		'language' => 'html',
 	),
-) );
+) );*/
 
 
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_only_mercadoenvios',
@@ -2873,6 +2892,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -2890,9 +2910,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_free_shipping_only_first_order',
-	'label'       => __( 'Free Shipping Only First Order', 'fastway' ),
+	'label'       => __( 'Free Shipping First Order', 'fastway' ),
 	'section'     => 'section_woo_shippings',
-	'description' => 'Hides other options if free shipping is available, it doesnt hide local pickups',
+	'description' => 'This gives the freeshipping options only for the first purchase of a customer',
 	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -2911,6 +2931,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+/*
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_method_1_on',
@@ -3116,7 +3137,7 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
-
+*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_single_product_layout',
@@ -3132,9 +3153,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
-	'label'       => __( 'Pestaña especificaciones (medidas)', 'fastway' ),
+	'label'       => __( 'Specs tab', 'fastway' ),
 	'section'     => 'section_woo_single',
-	'description' => 'Refrescar despues de activar',
+	'description' => '*Refresh customizer to see it',
 	'default'     => 'off',
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
@@ -3146,7 +3167,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_hide_specs',
-	'label'       => __( 'Mostrar medidas tabla specs', 'fastway' ),
+	'label'       => __( 'Show product measurements', 'fastway' ),
 	'section'     => 'section_woo_single',
 	'default'     => 'off',
 	'choices' => array(
@@ -3158,7 +3179,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'related_columns',
-	'label'       => esc_attr__( 'Related Columns', 'fastway' ),
+	'label'       => __( 'Related Products Columns', 'fastway' ),
 	'section'     => 'section_woo_single',
 	'default'     => 6,
 	'choices'     => array(
@@ -3250,14 +3271,17 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_arrepentimiento_link',
-	'label'       => __( 'Link Arrepentimiento', 'fastway' ),
-    'description' => 'Link al que redirige el arrepentimiento. ',
-	'section'     => 'section_footer',
-	'default'     => 'mailto:'.getMailQueRecibe(),
-) );
+if(get_locale()=='es_ES'){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_arrepentimiento_link',
+		'label'       => __( 'Link Arrepentimiento', 'fastway' ),
+		'description' => 'Link al que redirige el arrepentimiento. ',
+		'section'     => 'section_footer',
+		'default'     => 'mailto:'.getMailQueRecibe(),
+	) );
+}
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'footer-copyright-switch',
@@ -3778,14 +3802,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'INFO', 'textdomain' ),
 	'section'     => 'section_data',
 	'default'     => '<div style="padding: 10px;background-color: #fff; color:black; border: 1px solid #1E73BE;">
-	<h4>1- SOLO VALOR</h4>
-	Se pone directo el valor y el shortcode va a mostrar algo asi <br>campo:1154999795<br>resultado:<a href="1154999795">1154999795</a> 
-	<h4>2- LABEL Y LINK DIFERENCIADOS</h4>
-	Se puede especificar los valores poniendo el valor del link entre parentesis para el whatsapp<br>campo:1154999795 (541154999795) <br>resultado: <a href="+5491154999795">1154999795</a> 
-	<h4>3- MULTIPLES VALORES</h4>
-	Por ejemplo para poner 2 direcciones se puede separar con el simbolo "|" <br>
-	ej. Dire 1 (link gmaps) | Dire 2 (link gmaps)<br>
-	*En el shortcode despues poner address1 o adress2 o adressX en el type' . '</div>',
+	<h4>Company Data</h4>
+	Company Data is a useful framework for storing all contact data about the business or client inside this fields. So it centralizes the data and makes it more restistant to errors in the future and also allows to modify easily accross all site.
+	<h4>LABEL & VALUE</h4>
+	You can specify a different value for the data when clicked.   <br>LABEL (VALUE) <br>Eg:1154999795(+5491154999795) ->  Result: <a href="+5491154999795">1154999795</a> 
+	<h4>MULTIPLE VALUES</h4>
+	We can specify multiple values for a variable using  "|" and then is access it throught its index. <br>
+	Eg. Address 1 (gmaps url) | Address 2 (gpams url)<br>
+	Then the shortcode type (address) is appended to the index. Eg: address1 </div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -3799,7 +3823,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companyphone',
 	'label'    => __( 'Company Phone', 'fastway' ),
-    'description'     => __( '[fw_data type="phone"]<br>*El tel: se pone solo ', 'fastway' ),            
+    'description'     => __( '[fw_data type="phone"]<br>*tel: auto-populates ', 'fastway' ),            
 	'section'     => 'section_data',
 ) );
 Kirki::add_field( 'theme_config_id', array(
@@ -3873,6 +3897,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'maintainance-mode',
+	'description'     => __( 'Puts the website into maintaince mode and show the code below', 'fastway' ),
 	'label'       => __( 'Maintainance Mode', 'fastway' ),
 	'section'     => 'section_general',
 	'default'     => 0,
@@ -3880,15 +3905,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'number',
-	'settings'    => 'fw_max_media_upload',
-	'label'    => __( 'Max Media Size Upload (500KB)', 'fastway' ),       
-	'section'     => 'section_general',
-	'default'	=>	500,
-	'description'=>'Tamaño maximo de KB permitido para que los clientes suban a media,asi los obligamos a subidas livianas.'
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -3901,6 +3917,16 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'fw_max_media_upload',
+	'label'    => __( 'Max Media Size Upload (500KB)', 'fastway' ),       
+	'section'     => 'section_general',
+	'default'	=>	500,
+	'description'=>'Maximum upload file size for customers.'
+) );
+
 //General
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -3920,7 +3946,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Popup', 'fastway' ),
 	'section'     => 'section_popup',
 	'default'     => 'off',
-	'description' => '<a href="/?testmodal=yes" target="_blank">Test Modal</a>  para probarlo manualmente, sino se muestra una sola vez por dia.',
+	'description' => '<a href="/?testmodal=yes" target="_blank">Test Modal</a>'.__('  link to test it how it shows. Default behaviour is to show once per day.','fastway'),
 	'choices'     => array(
 		'off' => __( 'Disable', 'fastway' ),
 		'image' => __( 'Image', 'fastway' ),
@@ -3932,13 +3958,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_popup_html',
 	'label'       => __( 'HTML', 'fastway' ),
 	'section'     => 'section_popup',
-	'default'	=>'<h1>
-	Suscribite a nuestro newsletter!
+	'default'	=> __('<h1>
+	Subscribe to our newsletter!
 </h1>
 <p class="subtitle">
-	Enterate de ofertas exclusivas, nuevos lanzamientos y mucho más
+	We will notify you of launches and discounts
 </p>
-',
+','fastway'),
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3957,7 +3983,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_popup_link',
 	'label'    => __( 'Link', 'fastway' ),       
 	'section'     => 'section_popup',
-	'description' => 'Dejar vacio si no hay link'
+	'description' => __('Leave empty if there is no link','fastway')
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -3977,13 +4003,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_pupup_form_id',
 	'label'    => __( 'Form ID', 'fastway' ),       
 	'section'     => 'section_popup',
-	'description' => 'Formulario para el modal',
+	'description' => __('Gravity Forms ID','fastway'),
 	'default' => 5
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'popup-size',
-	'label'       => __( 'Size', 'fastway' ),
+	'label'       => __( 'Modal Size', 'fastway' ),
 	'section'     => 'section_popup',
 	'choices'     => array(
 		'modal-sm'   => 'Small',
@@ -3997,7 +4023,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => '404_code',
-	'label'       => __( '404 Html', 'fastway' ),
+	'label'       => __( '404 Page Code', 'fastway' ),
 	'section'     => 'section_general',
 	'default'	=>'<div class="container">
 	<div class="content-detalle row" style="margin:0 auto;margin-top:40px;">
@@ -4113,6 +4139,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Thank You Page Code', 'fastway' ),       
 	'section'     => 'section_woo',
 	'default'     => '',
+	'description' => __( 'Allows you to insert code or any text in the thank you page.','fastway'),
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -4387,6 +4414,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-logged_in',
 	'label'       => __( 'CSS Logged In', 'fastway' ),
+	'description'     => __( 'CSS Showed only for logged in users', 'fastway' ),
 	'section'     => 'section_general',
 	'default'     => '',
 	'transport'	=> 'postMessage',
@@ -4398,6 +4426,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'css_editor-admin',
 	'label'       => __( 'CSS Admin', 'fastway' ),
+	'description'     => __( 'CSS Showed only for Wordpress Backend', 'fastway' ),
 	'section'     => 'section_general',
 	'default'     => '',
 	'transport'	=> 'postMessage',
@@ -4407,186 +4436,179 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_fork_name',
+	'label'    	=> __( 'Fork name', 'fastway' ),
+	'description' 	=>	'A name so you can programably show/hide things in the source code.',
+	'section'   => 'section_general',
+	'default' => 'altoweb'
+) );
+
 
 
 /*LABELS*/
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_seleccionar_opcion',
-	'label'    => 'Seleccionar opción',
-	'description'    => 'El alert que aparece cuando no hay prod variable seleccionado',
+	'label'    	=> __( 'Select variation', 'fastway' ),
+	'description'    => 'Alert that shows in product page if no variation is selected',
 	'section'     => 'section_labels_products',
-	'default'	=>'Seleccionar opción',
+	'default'    => __( 'Select variation', 'fastway' )
 ));
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'in-stock-text',
-	'label'    => 'Producto existente',
+	'label'    => __( 'In Stock', 'fastway' ),
 	'section'     => 'section_labels_products',
-	'default'	=>'En Stock',
+	'default'    => __( 'In Stock', 'fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_backorder_text',
-	'label'    => 'Reservar producto',
+	'label'    => __( 'Reserve product', 'fastway' ),
 	'section'     => 'section_labels_products',
-	'default'	=>'Reservar',
+	'default'    => __( 'Reserve', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'out-of-stock-text',
-	'label'    => __( 'Out of Stock Label', 'fastway' ),
+	'label'    => __( 'Out of Stock', 'fastway' ),
 	'section'     => 'section_labels_products',
-	'default'	=>__( 'Agotado', 'fastway' ),
+	'default'	=>__( 'Out of stock', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_qty_selector_label',
-	'label'    => __( 'Selector stock', 'fastway' ),
+	'label'    => __( 'Select Quantity', 'fastway' ),
 	'section'     => 'section_labels_products',
-	'default'	=>__( 'Seleccionar cantidad', 'fastway' ),
+	'default'	=>__( 'Select Quantity', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-link-text',
-	'label'    => __( 'Ver detalle (Loop)', 'fastway' ),
+	'label'    => __( 'See details', 'fastway' ).'(Loop)',
 	'section'     => 'section_labels_products',
-	'default'	=>__( 'Ver detalle', 'fastway' ),
+	'default'	=>__( 'See details', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'add-to-cart-text',
-	'label'    => __( 'Add to cart (Loop)', 'fastway' ),
+	'label'    => __( 'Add to cart', 'fastway' ).'(Loop)',
 	'section'     => 'section_labels_products',
-	'default'	=>__( 'Agregar al carrito', 'fastway' ),
+	'default'	=>__( 'Add to cart', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_vaciar_carrito',
-	'label'    => __( 'Vaciar carrito', 'fastway' ),
+	'label'    => __( 'Empty cart', 'fastway' ),
 	'section'     => 'section_labels_cart',
-	'default'	=>'Vaciar carrito',
+	'default'	=>__( 'Empty cart', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'proceed-to-checkout-text',
-	'label'    => __( 'Boton al checkout', 'fastway' ),
+	'label'    => __( 'Buy Button', 'fastway' ),
 	'section'     => 'section_labels_cart',
-	'default'	=>'Comprar',
+	'default'    => __( 'Buy', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_crosssell_text',
-	'label'    => __( 'Sugerencia Carrito', 'fastway' ),
+	'label'    => __( 'Suggestions for you', 'fastway' ),
 	'description' => 'Esto va en la pagina de single products',
 	'section'     => 'section_labels_cart',
 	'default'	=>__( 'Suggestions for you', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_shipping_free_label',
-	'label'    => __( 'Envío gratis', 'fastway' ),
+	'settings'    => 'fw_label_label_loop_e_gratis',
+	'label'    => __( 'Free Shipping', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> __('Envío gratis', 'fastway' ),
+	'default'	=> __('Free Shipping', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_no_cost',
-	'label'    => __( 'Sin cargo', 'fastway' ),
+	'label'    => __( 'Free of charge', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> __('Sin cargo', 'fastway' ),
+	'default'	=> __('Free', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_client_cost',
-	'label'    => __( 'A cargo del cliente', 'fastway' ),
+	'label'    => __( 'On behalf of customer', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> __('A cargo del cliente', 'fastway' ),
+	'default'	=> __('On behalf of customer', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_shipping_address_2_label',
-	'label'    => __( 'Extra Campo dirección', 'fastway' ),
+	'label'    => __( 'Extra address', 'fastway' ),
 	'section'     => 'section_labels_checkout',
-	'default'	=>'Piso y Departamento',
+	'default'    => __( 'Extra address field', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_envio',
-	'label'    => __( 'Envío', 'fastway' ),
+	'label'    => __( 'Shipping', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> 'Envío',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_label_loop_e_gratis',
-	'label'    => __( 'Envío gratis (loop label)', 'fastway' ),
-	'section'     => 'section_labels_shipping',
-	'default'	=> 'Envío gratis',
+	'default'    => __( 'Shipping', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_shipping_grouptitle',
-	'label'    => __( 'Retirar en una de nuestras sucursales', 'fastway' ),
+	'label'    => __( 'Pickup in our stores', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> 'Retirar en una de nuestras sucursales',
+	'default'    => __( 'Pickup in our stores', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_shipping_groupdesc',
-	'label'    => __( 'Ver opciones', 'fastway' ),
+	'label'    => __( 'See variations', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> 'Ver opciones',
+	'default'    => __( 'See variations', 'fastway' ),
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_costos_envio',
-	'label'    => __( 'Costos del envío', 'fastway' ),
+	'label'    => __( 'Shipping costs', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> 'Costos del envío',
+	'default'    => __( 'Shipping costs', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_medios_envio',
-	'label'    => __( 'Medios de Envío', 'fastway' ),
+	'label'    => __( 'Shipping Methods', 'fastway' ),
 	'section'     => 'section_labels_shipping',
-	'default'	=> 'Metodos de Envío',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_medios_pago',
-	'label'    => __( 'Medios de Pago', 'fastway' ),
-	'section'     => 'section_labels_payments',
-	'default'	=> 'Metodos de Pago',
+	'default'    => __( 'Shipping Methods', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_place_order_text',
-	'label'    => __( 'Finalizar Compra', 'fastway' ),
+	'label'    => __( 'Complete purchase', 'fastway' ),
 	'section'     => 'section_labels_cart',
-	'default'	=> __( 'Finalizar Compra', 'fastway' ),
+	'default'	=> __( 'Complete purchase', 'fastway' ),
 ) );
 
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_ir_carrito',
-	'label'    => __( 'Ir al carrito', 'fastway' ),
+	'label'    => __( 'Go to cart', 'fastway' ),
 	'section'     => 'section_labels_products',
-	'default'	=>'Ir al carrito',
+	'default'    => __( 'Go to cart', 'fastway' ),
 ) );
 
 
@@ -4594,9 +4616,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_mi_pedido',
-	'label'    => __( 'Mi pedido', 'fastway' ),
+	'label'    => __( 'My order', 'fastway' ),
 	'section'     => 'section_labels',
-	'default'	=>'Mi pedido',
+	'default'    => __( 'My order', 'fastway' )
 ) );
 
 
@@ -4615,48 +4637,45 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Login Text', 'fastway' ),
 	/*'description' => '"username" para que tome el username si inicio',*/
 	'section'     => 'section_labels_account',
-	'default'	=> 'Ingresar'
+	'default'    => __( 'Logg in', 'fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_user_myaccount',
-	'label'    => __( 'Mi Cuenta ', 'fastway' ),
-	'description' => 'Lo que aparece cuando inicia sesión',
+	'label'    => __( 'My Account', 'fastway' ),
 	'section'     => 'section_labels_account',
-	'default'	=> 'Mi Cuenta'
+	'default'    => __( 'My Account', 'fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_bienvenido',
-	'label'    => __( 'BIENVENIDO A', 'fastway' ),
+	'label'    => __( 'Welcome to', 'fastway' ),
 	'section'     => 'section_labels_account',
-	'default'	=>'BIENVENIDO A',
+	'default'    => __( 'Welcome to', 'fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_ver_productos',
-	'label'    => __( 'VER PRODUCTOS', 'fastway' ),
+	'label'    => __( 'See products', 'fastway' ),
 	'section'     => 'section_labels_account',
-	'default'	=>'VER PRODUCTOS',
+	'default'    => __( 'See products', 'fastway' )
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_related_text',
-	'label'    => __( 'Productos Relacionados', 'fastway' ),
-	'description' => 'Esto va en la pagina de single products',
+	'label'    => __( 'Related Products', 'fastway' ),
 	'section'     => 'section_labels_single_products',
-	'default'	=>__( 'Quienes vieron este producto también compraron', 'fastway' ),
+	'default'	=>__( 'People who searched fo this producto also search', 'fastway' ),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_descriptiontab_text',
-	'label'    => __( 'Descripción', 'fastway' ),
-	'description' => 'Pestaña',
+	'label'    => __( 'Description Tab', 'fastway' ),
 	'section'     => 'section_labels_single_products',
 	'default'	=> __( 'Description','fastway' )
 ) );
@@ -4688,7 +4707,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_cuotas',
-	'label'    => __( 'Calcular cuotas', 'fastway' ),       
+	'label'    => __( 'Installment calculator', 'fastway' ),       
 	'section'     => 'section_labels_products',
 	'default' 		=>	__( 'Installment calculator', 'fastway' ),	
 ) );
@@ -4696,14 +4715,15 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_costo_envio',
-	'label'    => __( 'Calcular envio', 'fastway' ),       
+	'label'    => __( 'Calculate shipping', 'fastway' ),       
 	'section'     => 'section_labels_products',
-	'default' 		=>	'Calcular costo de envio a domicilio',
+	'default' 		=>	__('Calculate shipping', 'fastway' ),	
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_debajo_checkout_message',
-	'label'    => __( 'Mensage debajo del boton comprar (checkout)', 'fastway' ),       
+	'label'    => __( 'Message', 'fastway' ),       
+	'description'    => __( 'Below Complete Purchase Button ', 'fastway' ),       
 	'section'     => 'section_labels_checkout',
 	'default' 		=>	'',
 ) );

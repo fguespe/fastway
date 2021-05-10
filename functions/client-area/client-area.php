@@ -8,7 +8,7 @@ Kirki::add_section( 'section_data', array(
 ) );
 
 Kirki::add_section( 'section_whatsapp', array(
-    'title'          => __( 'Whatsapp', 'fastway' ),
+    'title'          => __( 'Whatsapp Widget', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastwayclient',
 
@@ -32,7 +32,7 @@ Kirki::add_section( 'section_cpt', array(
     'panel'          => 'panel_fastwayclient',
 ) );
 
-if(is_webaltoweb()){
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
 Kirki::add_section( 'section_client_chrq', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -40,15 +40,14 @@ Kirki::add_section( 'section_client_chrq', array(
 ) );
 }
 /*MELI*/
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
+	Kirki::add_section( 'section_wooarea', array(
+		'title'          => __( 'Imports', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastwayclient',
 
-
-/*WOO AREA*/
-Kirki::add_section( 'section_wooarea', array(
-    'title'          => __( 'Imports', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwayclient',
-
-) );
+	) );
+}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -174,21 +173,12 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 /*CLIENT AREA WIDGETS*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_widget_desc_prods',
-	'label'       => __( 'Descuento productos', 'fastway' ),
-	'section'     => 'section_clientwidgets',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_cupones',
-	'label'       => __( 'Cupones', 'fastway' ),
+	'label'       => __( 'Coupons', 'fastway' ),
+    'description' => 'Allows customers to enable or disable coupons',
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,
 	'choices' => array(
@@ -201,6 +191,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_popup',
 	'label'       => __( 'Popup', 'fastway' ),
+    'description' => 'Allows customers to enable or disable modals',
 	'section'     => 'section_clientwidgets',
 	'default'     => 1,
 	'choices' => array(
@@ -212,7 +203,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_estado',
-	'label'       => __( 'Estado del sitio', 'fastway' ),
+	'label'       => __( 'Site Status', 'fastway' ),
+    'description' => 'Allows customers to switch between store modes (purchass off, enquiry or normal)',
 	'section'     => 'section_clientwidgets',
 	'default'     => 1,
 	'choices' => array(
@@ -220,7 +212,18 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-if(is_webaltoweb()){
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_widget_desc_prods',
+		'label'       => __( 'Lili Discount', 'fastway' ),
+		'section'     => 'section_clientwidgets',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
     Kirki::add_field( 'theme_config_id', array(
         'type'        => 'switch',
         'settings'    => 'fw_widget_talles_vonder',
@@ -258,20 +261,9 @@ if(is_webaltoweb()){
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_widget_cuotas_tp',
-	'label'       => __( 'Cuotas Todopago', 'fastway' ),
-	'section'     => 'section_clientwidgets',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
 	'settings'    => 'fw_widget_cuotas_general',
-	'label'       => __( 'Cuotas General', 'fastway' ),
+	'label'       => __( 'General Installments', 'fastway' ),
+    'description' => 'Allows customers to set up their preferred installment amount',
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,
 	'choices' => array(
@@ -283,8 +275,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_mensaje_barra',
-    'label'       => __( 'Mensaje General', 'fastway' ),
-    'description' => 'Barra roja que va a arriba [fw_mensaje_barra]',
+    'label'       => __( 'Important Message', 'fastway' ),
+    'description' => 'Show an important message in the top of the website [fw_mensaje_barra]',
 	'section'     => 'section_clientwidgets',
 	'default'     => 1,
 	'choices' => array(
@@ -293,6 +285,34 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_widget_mensaje_sec',
+	'label'       => __( 'Secondary Message ', 'fastway' ),
+    'description' => 'Allows customers to set up a message used in multiple places via its shortcode [fw_mensaje_sec]',
+	'section'     => 'section_clientwidgets',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+if(fw_theme_mod('fw_fork_name')=='altoweb'){
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_widget_cuotas_tp',
+		'label'       => __( 'Cuotas Todopago', 'fastway' ),
+		'section'     => 'section_clientwidgets',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+	
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_popup_unload',
@@ -305,20 +325,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_widget_mensaje_sec',
-	'label'       => __( 'Mensaje Secundario ', 'fastway' ),
-    'description' => 'Puede ser usado en distintos lugares.(como elementos) [fw_mensaje_sec]',
-	'section'     => 'section_clientwidgets',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_support_fresh_es',
@@ -331,6 +337,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+}
 /*CLIENT AREA*/
 
 
@@ -339,7 +346,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'ca-clientarea-logo',
 	'label'       => __( 'Login Logo', 'fastway' ),
-	'description' => __( 'No hay necesidad de ponerlo ya que toma el logo general, si se pone algo lo sobreescribe.', 'fastway' ),
+	'description' => __( 'Logo for the backend login page. Default is default logo in header.', 'fastway' ),
 	'section'     => 'section_clientarea',
 	'default'     => '',
 ) );
@@ -453,7 +460,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'ca-videos',
 	'label'       => __( 'Client Video Tutorials', 'fastway' ),
-	'description' => 'Agrega al dashboard videos, uno por linea',
+	'description' => 'Adds videos to the dahboard. Usefull for uploading instructions to clients',
 	'section'     => 'section_clientarea',
 	'default'     => '',
 	'priority'	=> 20,
@@ -468,7 +475,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'short-fw_companywhatsapp',
 	'label'    => __( 'Company Whatsapp', 'fastway' ),
-    'description'     => __( '[fw_data type="whatsapp"] empezar con 549, sin el + [fw_data type="whatsapp"] Ej: 11 54 999 795 (5491154999795)', 'fastway' ),
+    'description'     => __( '[fw_data type="whatsapp"] Begin with the country prefix. Eg. ARG=549, without the + <br> Eg:[fw_data type="whatsapp"] --> 11 54 999 795 (5491154999795)', 'fastway' ),
 	'section'     => 'section_whatsapp',
 	'input_attrs' => array(
 		'placeholder' => fw_theme_mod("short-fw_companyphone")
@@ -480,7 +487,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    => __( 'Whats Label', 'fastway' ),  
 	'description' => '[br] para new line',     
 	'section'     => 'section_whatsapp',
-	'default' 		=>	'Estamos[br]On-Line!',
+	'default' 		=> __('We are[br]On-Line!','fastway')
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -488,14 +495,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_share_message',
 	'label'    => __( 'Share Message', 'fastway' ),       
 	'section'     => 'section_whatsapp',
-	'default' 		=>	'¡Hola! Quisiera hacer una consulta por un producto que me intereso en su web',
+	'default' 		=>__('Hi! I would like to enquiery about one of your products','fastway')	
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_chat_whats',
 	'label'    => __( 'Button Menu Whatsapp', 'fastway' ),       
 	'section'     => 'section_whatsapp',
-	'default' 		=>	'Consultar',
+	'default' 		=>__('Contact us','fastway')
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
