@@ -2448,9 +2448,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago_calculador',
-	'label'    => __( 'Cuotas Todopago', 'fastway' ),
+	'label'    => __( 'TodoPago Installments', 'fastway' ),
 	'section'     => 'section_woo_vars',
-	'description' => '',
+	'description' => 'This shows in the Select Dropdown of Installment Calculator.Separate with comma (,)',
 	'default' => '1,2,3,4,5,6'
 ) );
 
