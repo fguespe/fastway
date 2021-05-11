@@ -1096,7 +1096,13 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'social_media_image',
+	'label'       => __( 'Social Media Image', 'fastway' ),
+	'description' => 'Size: 1200x630 <= 1MB',
+	'section'     => 'section_seo',
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'textarea',
 	'settings'    => 'seo-desc',
