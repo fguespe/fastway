@@ -2089,6 +2089,28 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw-ctas-switch',
+	'label'       => __( 'CTAs Active', 'fastway' ),
+	'section'     => 'section_mobile',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw-ctas',
+	'label'       => __( 'CTAs', 'fastway' ),
+	'description'	=>	'(icon class, url or company-data,button class, text)',
+	'section'     => 'section_mobile',
+	'description' => 'Call to actions in mobile menu.',
+	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_mobile_dark_mode',
 	'label'       => __( 'Menu Dark Mode', 'fastway' ),
 	'description'       =>'Automatically adjusts font size to screen',
@@ -2131,28 +2153,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default' => 'fb,youtube,whatsapp,ig,email,phone,address'
 ) );
 
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw-ctas-switch',
-	'label'       => __( 'CTAs Active', 'fastway' ),
-	'section'     => 'section_mobile',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw-ctas',
-	'label'       => __( 'CTAs', 'fastway' ),
-	'description'	=>	'(icon class, url or company-data,button class, text)',
-	'section'     => 'section_mobile',
-	'description' => 'Call to actions in mobile menu.',
-	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
-) );
 
 
 
