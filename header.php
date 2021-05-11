@@ -1,6 +1,6 @@
 <?php
 if(!is_plugin_active('kirki/kirki.php')){
-  echo "FALTA KIRKI";
+  echo "KIRKI Missing ";
   return;
 }
 ?>
