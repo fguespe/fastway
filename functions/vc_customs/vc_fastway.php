@@ -249,7 +249,7 @@ add_action( 'vc_before_init', 'fw_carousel' );
 function fw_carousel() {
   vc_map( 
         array(
-            'name' => __('FW Carousel', 'fastway'),
+            'name' => __('FW Image Carousel', 'fastway'),
             'base' => 'fw_carousel_function',
             'description' => __('Image Carousel', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
@@ -1068,7 +1068,7 @@ function vc_fw_button() {
             "name" => __("FW Button", 'fastway'),
             'base' => 'fw_btn',
             'description' => __('FW Button', 'fastway'), 
-            'category' => __('Fastway Buttons', 'fastway'),   
+            'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 "params" => array(
@@ -1151,7 +1151,7 @@ function vc_only_icon() {
             "name" => __("FW Icon Only", 'fastway'),
             'base' => 'fw_only_icon',
             'description' => __('FW Icon Only', 'fastway'), 
-            'category' => __('Fastway Icons', 'fastway'),   
+            'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
             'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 "params" => array(

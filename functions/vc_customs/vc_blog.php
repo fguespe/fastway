@@ -8,7 +8,7 @@ function vc_blog_carousel() {
                 'name' => __('FW Blog Carousel', 'fastway'),
                 'base' => 'fw_blog_carousel',
                 'description' => __('FW Blog Carousel', 'fastway'), 
-                'category' => __('Fastway Blog', 'fastway'),   
+                'category' => __('Fastway', 'fastway'),   
                 'icon' => get_template_directory_uri().'/assets/img/favi.png',            
                 'params' => get_slider_fields_blog(),
             )
