@@ -1055,6 +1055,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_images',
 	'default'     => urlforimages()."/assets/img/logo.svg"
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_mobile_logo',
@@ -1062,6 +1063,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'description' => __( 'Replaces general logo on mobile. Defaults take it from general logo', 'fastway' ),
 	'section'     => 'section_images'
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw-email-logo',

@@ -7,10 +7,10 @@ if(!is_plugin_active('kirki/kirki.php')){
 <!DOCTYPE html>
 <html dir="ltr" <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="mobile-web-app-capable" content="yes">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <?php if(fw_theme_mod('fw_seo') && !is_plugin_active('wordpress-seo/wp-seo.php')){ ?>
     <!-- FW SEO -->
@@ -20,14 +20,13 @@ if(!is_plugin_active('kirki/kirki.php')){
     <meta property="og:description" content="<?=fw_theme_mod('seo-desc');?>">
     <meta property="og:image" content="<?=get_the_post_thumbnail_url()?get_the_post_thumbnail_url():fw_theme_mod('social_media_image');?>">
     <meta property="og:url" content="<?='https://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <?php } ?>
     <meta name="google-site-verification" content="<?=fw_theme_mod('fw_site_verification');?>">
     <meta name="facebook-domain-verification" content="<?=fw_theme_mod('fw_fb_verification');?>">
     <meta name="twitter:card" content="summary_large_image">
-    <?php } ?>
-	
     <link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!-- APPLE -->
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <!-- APPLE -->
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,11 +37,7 @@ if(!is_plugin_active('kirki/kirki.php')){
     <link rel="apple-touch-startup-image" href="<?php echo fw_theme_mod('mobile-icon');?>">
     <!--barra -->
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
     <?php wp_head(); ?>
-
-    <!--SOCIAL MEDIA-->
-    
     <style type="text/css" id="css_editor-header"><?php echo fw_theme_mod('css_editor-header')?></style>
     <style type="text/css" id="css_editor_shop"><?php echo fw_theme_mod('css_editor_shop')?></style>
     <style type="text/css" id="css_editor_blog"><?php echo fw_theme_mod('css_editor_blog')?></style>
