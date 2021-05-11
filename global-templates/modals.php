@@ -8,7 +8,7 @@
             <div class="modal-body mx-3">
                 <?php 
                     if(fw_theme_mod('fw_code_modalcart')){
-                        echo '<div class="row mb20">'.do_shortcode(fw_theme_mod('fw_code_modalcart')).'</div>';
+                        echo '<div class="row fw_code_modalcart mb20">'.do_shortcode(fw_theme_mod('fw_code_modalcart')).'</div>';
                     }
                 ?>
                 <div class="container"><!--ajax content, do not touch--></div>

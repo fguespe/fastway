@@ -12,7 +12,7 @@ if(!is_plugin_active('kirki/kirki.php')){
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="mobile-web-app-capable" content="yes">
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
-    <?php if(fw_theme_mod('fw_seo_social') && !is_plugin_active('wordpress-seo/wp-seo.php')){ ?>
+    <?php if(fw_theme_mod('fw_seo') && !is_plugin_active('wordpress-seo/wp-seo.php')){ ?>
     <!-- FW SEO -->
     <meta name="description" content="<?=fw_theme_mod('seo-desc');?>">
     <meta name="keywords" content="<?=fw_theme_mod('seo-keywords');?>">

@@ -1087,22 +1087,12 @@ Kirki::add_field( 'theme_config_id', array(
 
 //General
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_seo',
 	'label'       => __( 'FW Meta Tags', 'fastway' ),
-	'section'     => 'section_seo',
-	'default'     => 1,//enabled
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_seo_social',
-	'label'       => __( 'FW Social Tags', 'fastway' ),
+	'description' => 'Disable fastway metatags if you are using external seo plugins',
 	'section'     => 'section_seo',
 	'default'     => 1,//enabled
 	'choices' => array(
