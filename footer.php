@@ -69,7 +69,7 @@ jQuery(document).ready( function(jQuery) {
     let searchParams = new URLSearchParams(window.location.search)
     setTimeout(function(){
       if(searchParams.has('testmodal'))jQuery('#modalpopup').modal('show');
-      if (jQuery.cookie('modal_shown') == null ||  in_customizer) {
+      if (jQuery.cookie('modal_shown') == null || !in_customizer) {
         jQuery.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
         jQuery('#modalpopup').modal('show');
       }

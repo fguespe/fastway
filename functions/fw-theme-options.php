@@ -2136,7 +2136,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw-ctas-switch',
-	'label'       => __( 'CTAs', 'fastway' ),
+	'label'       => __( 'CTAs Active', 'fastway' ),
 	'section'     => 'section_mobile',
 	'default'     => 1,
 	'choices' => array(
@@ -2148,6 +2148,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw-ctas',
 	'label'       => __( 'CTAs', 'fastway' ),
+	'description'	=>	'(icon class, url or company-data,button class, text)',
 	'section'     => 'section_mobile',
 	'description' => 'Call to actions in mobile menu.',
 	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
