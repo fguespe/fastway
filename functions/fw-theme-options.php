@@ -1046,13 +1046,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_images',
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'social_media_image',
-	'label'       => __( 'Social Media Image', 'fastway' ),
-	'description' => 'Size: 1200x630 <= 1MB',
-	'section'     => 'section_images',
-) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'dark-logo',
