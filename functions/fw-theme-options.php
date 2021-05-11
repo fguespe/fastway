@@ -2252,6 +2252,19 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_code_modalcart',
+	'label'       => __( 'Custom code modal', 'fastway' ),
+	'description' => 'Add custom code or shortcodes to the modal cart',
+	'section'     => 'section_woo_cart',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_price_suffix',
 	'label'    => __( 'Price Suffix', 'fastway' ),

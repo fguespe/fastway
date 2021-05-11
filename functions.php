@@ -358,11 +358,9 @@ if(is_plugin_active('kirki/kirki.php')){
 }
 add_action( 'init', 'fw_login_dev_logo', 999 );
 function fw_login_dev_logo(){
-
     add_action( 'login_footer', 'fw_login_footer' );
 }
 function fw_login_footer() {
-
     ?>
     <script type="text/javascript">
         var backToBlog = document.getElementById( 'backtoblog' ).getElementsByTagName( 'a' )[0];

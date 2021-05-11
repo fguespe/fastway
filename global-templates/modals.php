@@ -6,7 +6,12 @@
                 <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body mx-3">
-                <div class="container"><!--aca carga el cpotent--></div>
+                <?php 
+                    if(fw_theme_mod('fw_code_modalcart')){
+                        echo '<div class="row mb20">'.do_shortcode(fw_theme_mod('fw_code_modalcart')).'</div>';
+                    }
+                ?>
+                <div class="container"><!--ajax content, do not touch--></div>
                 <div class="row mt20">
                         <div class="col-lg-6 col-md-12 d-flex align-items-center botonescarrito">
                         <?php 
