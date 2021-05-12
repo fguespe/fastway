@@ -2,25 +2,19 @@
 
 add_action( 'vc_before_init', 'vc_blog_carousel' );
 function vc_blog_carousel() {
-
   vc_map( 
             array(
                 'name' => __('FW Blog Carousel', 'fastway'),
                 'base' => 'fw_blog_carousel',
                 'description' => __('FW Blog Carousel', 'fastway'), 
                 'category' => __('Fastway', 'fastway'),   
-                'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+                'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',
                 'params' => get_slider_fields_blog(),
             )
-
-            
         );          
-
 }
 
-
 function get_slider_fields_blog(){
-
     return array(
           array(
               'type' => 'textfield',

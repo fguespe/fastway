@@ -173,7 +173,7 @@ function vc_fw_review_carousel() {
             'base' => 'fw_review_carousel',
             'description' => __('FW Reviews', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
             'params' => array(
                 array(
                     'type' => 'textfield',
@@ -253,7 +253,7 @@ function fw_carousel() {
             'base' => 'fw_carousel_function',
             'description' => __('Image Carousel', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
             'params' => array(
                 array(
                     "type"        => "attach_images",
@@ -344,7 +344,7 @@ function vc_fw_empty_space() {
             'base' => 'fw_empty_space',
             'description' => __('FW Space', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',  
             'params' => array(
                 
                 array(
@@ -389,7 +389,7 @@ function vc_fw_info_block() {
             'base' => 'fw_info_block',
             'description' => __('FW Info Block', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',  
             'params' => array(
                 array(
                     "type" => 'textfield',
@@ -430,7 +430,7 @@ function fw_slider() {
             'base' => 'fw_slider_function',
             'description' => __('FW Image Slider', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_images",
@@ -507,7 +507,7 @@ function fw_image() {
             'base' => 'fw_image_function',
             'description' => __('FW Image', 'fastway'), 
             'category' => __('Fastway', 'fastway'), 
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',  
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',  
             'params' => array(
                 array(
                     "type"        => "attach_image",
@@ -866,7 +866,7 @@ function vc_static_block() {
             'description' => __('FW Static Block', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
                 "params" => array(
                 array(
                   "type"        => "dropdown",
@@ -895,7 +895,7 @@ function vc_fw_shorts() {
             'description' => __('FW Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',
@@ -1006,7 +1006,7 @@ function vc_social_icons() {
             'description' => __('FW Social Icon', 'fastway'), 
             'category' => __('Fastway Icons', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',
@@ -1070,7 +1070,7 @@ function vc_fw_button() {
             'description' => __('FW Button', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
                 "params" => array(
 
                 array(
@@ -1153,7 +1153,7 @@ function vc_only_icon() {
             'description' => __('FW Icon Only', 'fastway'), 
             'category' => __('Fastway', 'fastway'),   
             "controls" => "full",
-            'icon' => get_template_directory_uri().'/assets/img/favi.png',            
+            'icon' => get_template_directory_uri().'/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'favi.png',            
                 "params" => array(
                 array(
                   "type" => 'textfield',

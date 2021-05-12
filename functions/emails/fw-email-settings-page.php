@@ -175,7 +175,7 @@ add_action('admin_menu', 'myplugin_register_options_page');
 
 function myplugin_options_page(){
   $customer_emails_vars.='
-  <a href="https://altoweb.freshdesk.com/a/solutions/articles/36000237973">'.__('Docs','fastway').'</a><br>
+  <a href="'.fw_theme_mod('fw_dev_docsurl').'">'.__('Docs','fastway').'</a><br>
   <b>'.__('Variables','fastway').':</b>
   <br><small>{{blogname}} {{customer_email}} {{customer_name}} {{order_number}} {{order_url}} {{order_details}} {{order_meta}} {{customer_details}} {{shipping_method_title}} {{shipping_method_type}} {{shipping_method_id}} {{payment_method_id}} {{role}} {{bank_info}} {{payment_method_title}} </small>
   <br><b>'.__('Payment Methods','fastway').'('.__('values','fastway').')</b>

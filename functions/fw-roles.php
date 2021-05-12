@@ -4,8 +4,9 @@ if ( ! function_exists( 'get_editable_roles' ) ) {
   require_once ABSPATH . 'wp-admin/includes/user.php';
 }
 
-function is_webaltoweb(){
-  if(wp_get_current_user()->user_login=='webaltoweb' && is_super_admin())return true;
+function is_devadmin(){
+  if(!fw_theme_mod('fw_dev_adminuser'))return true;
+  if(wp_get_current_user()->user_login==fw_theme_mod('fw_dev_adminuser') && is_super_admin())return true;
   return false;
 }
 function fw_get_current_user_role() {
@@ -145,14 +146,14 @@ add_action( 'editable_roles' , 'hide_adminstrator_editable_roles' );
 function hide_adminstrator_editable_roles( $roles ){
   $role=fw_get_current_user_role();
   $username=wp_get_current_user()->user_login;
-  if(is_super_admin() || $username=='webaltoweb')return $roles;
+  if(is_super_admin() || is_devadmin())return $roles;
 
   if(!is_plugin_active('woocommerce/woocommerce.php'))unset($roles['shop_manager'] );
   unset( $roles['author'] );
   unset( $roles['subscriber'] );
   unset( $roles['contributor'] );
 
-  if($role=='administrator' ||  is_super_admin() || $username=='webaltoweb')return $roles;
+  if($role=='administrator' ||  is_super_admin() || is_devadmin())return $roles;
 
   unset( $roles['editor'] );
   unset( $roles['administrator'] );

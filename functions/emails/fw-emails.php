@@ -15,7 +15,7 @@ function getMailQueEnvia(){
     }else if(!empty(fw_theme_mod("short-fw_companyemail"))){
         return fw_theme_mod("short-fw_companyemail");
     }else {
-        return "pruebas+faltaponerunmail@altoweb.ar";
+        return "";
     }
 }
 
@@ -71,7 +71,7 @@ if(fw_theme_mod("fw_action_resetmails")){
     
      //Mail woocommerce
     update_option("woocommerce_email_header_image",fw_theme_mod('fw-email-logo')?fw_theme_mod('fw-email-logo'):fw_theme_mod('general-logo') );
-    update_option("woocommerce_email_footer_text","Powered by Altoweb");
+    update_option("woocommerce_email_footer_text","Powered by Fastway");
     update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
 
@@ -173,7 +173,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
     if($role == 'administrator' || $role == 'customer' || $role == 'shop_manager' || $role == 'subscriber' || $role == 'guest'  || $role == '' )$role='minorista';
     $customer_name=$order->billing_first_name.' '.$order->billing_last_name;
 
-    return array(
+    $arra= array(
         'blogname' => get_bloginfo( 'name' ),
         'email' => '<a href="mailto:'.getMailQueEnvia().'">'.getMailQueEnvia().'</a>',
         'order_number' => '#'.$order->get_order_number(),
@@ -185,7 +185,6 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'payment_method_title' => $order->payment_method_title,
         'order_details' => $order_details,
         'order_url' => $order->get_view_order_url(),
-        'bank_info' => altoweb_bancos(),
         'role' => $role,
         'real_role' => $role,
         'order_meta' => $order_meta,
@@ -193,6 +192,8 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
         'customer_name' => $customer_name,
         'customer_details' => $customer_details
     );
+    if(isAltoweb())$arra['bank_info']=altoweb_bancos();
+    return $arra;
 }
 add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_confirmation_wholesale_form');
 function fw_email_content_confirmation_wholesale_form(){

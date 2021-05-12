@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 $text_align = is_rtl() ? 'right' : 'left';
 
-//ALTOWEBdo_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+//FABRIGUESPEdo_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
 
 <h2>
 	<?php
@@ -88,5 +88,5 @@ $text_align = is_rtl() ? 'right' : 'left';
 </div>
 
 <?php 
-//ALTOWEB
+//FABRIGUESPE
 //do_action( 'woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>

@@ -1,12 +1,4 @@
 <?php 
-/*
-Plugin Name: Woocommerce Taxomizer
-Plugin URI: https://www.altoweb.ar
-Description: Plugin de funcionalidades de nubicommerce
-Version: 1.7
-Author: Fabrizio Guespe
-Author URI: https://www.altoweb.ar
-*/
 
 if(!empty(fw_theme_mod('fw_extra_tax')))include( plugin_dir_path( __FILE__ ) . 'categorizacion.php');
 

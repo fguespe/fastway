@@ -32,7 +32,7 @@ Kirki::add_section( 'section_cpt', array(
     'panel'          => 'panel_fastwayclient',
 ) );
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 Kirki::add_section( 'section_client_chrq', array(
     'title'          => __( 'Change Requests', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
@@ -40,7 +40,7 @@ Kirki::add_section( 'section_client_chrq', array(
 ) );
 }
 /*MELI*/
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 	Kirki::add_section( 'section_wooarea', array(
 		'title'          => __( 'Imports', 'fastway' ),
 		//'description'    => __( 'My section description.', 'fastway' ),
@@ -212,7 +212,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_widget_desc_prods',
@@ -299,7 +299,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
@@ -419,7 +419,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Developer Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/logo.svg",
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg",
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
@@ -427,7 +427,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Top Left Icon', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/favi.png",
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
 ) );
 
 function admin_default_page() {
@@ -802,8 +802,7 @@ function custom_admin_js() {
 
 
 function fw_remove_footer_admin(){
-    //return '<div class="footerfw" ><a href="https://www.altoweb.ar/es/"><img width="200" align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a></div>';
-    return '<a class="footeralto" href="https://www.altoweb.ar/es/"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
+    return '<a class="footeralto" href="'.fw_theme_mod('fw_dev_url').'"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
         
 }
 
@@ -876,7 +875,7 @@ function fw_custom_admincss() {
 //Mobile?
 add_action('admin_enqueue_scripts', 'fw_admin_css_ui');
 function fw_admin_css_ui() {
-    if(!is_webaltoweb())add_action('admin_head', 'fw_custom_admincss');
+    if(!is_devadmin())add_action('admin_head', 'fw_custom_admincss');
 }
 
 

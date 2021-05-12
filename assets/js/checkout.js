@@ -291,7 +291,7 @@ jQuery( function( $ ) {
 				data.shipping_method = shipping_methods;
 			}
 
-			/*ALTOWEB*/
+			/*FABRIGUESPE*/
   			jQuery('.btn-checkout.continuar').prop('disabled', true);
 			$( '.woocommerce-checkout-payment, .woocommerce-checkout-review-order-table' ).block({
 				message: null,
@@ -591,7 +591,7 @@ jQuery( function( $ ) {
 
 					if ( code ) {
 						$form.before( code );
-						//ALTOWEB $form.slideUp();
+						//FABRIGUESPE $form.slideUp();
 
 						$( document.body ).trigger( 'applied_coupon_in_checkout', [ data.coupon_code ] );
 						$( document.body ).trigger( 'update_checkout', { update_shipping_method: false } );

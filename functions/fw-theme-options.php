@@ -67,6 +67,12 @@ Kirki::add_section( 'section_general', array(
     'panel'          => 'panel_fastway',
 
 ) );
+Kirki::add_section( 'section_csscond', array(
+    'title'          => __( 'CSS Condicional', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastway',
+
+) );
 
 Kirki::add_section( 'section_email', array(
     'title'          => __( 'Email', 'fastway' ),
@@ -81,7 +87,7 @@ Kirki::add_section( 'section_images', array(
     'panel'          => 'panel_fastway',
 
 ) );
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 
 	Kirki::add_section( 'section_meli', array(
 		'title'          => __( 'Mercadolibre', 'fastway' ),
@@ -231,24 +237,6 @@ Kirki::add_section( 'section_footer', array(
 
 ) );
 
-Kirki::add_section( 'section_layout_others', array(
-    'title'          => __( 'Other styles', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-
-) );
-Kirki::add_section( 'section_layout_others', array(
-    'title'          => __( 'CSS Loggedd In', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-
-) );
-Kirki::add_section( 'section_layout_others', array(
-    'title'          => __( 'CSS Admins', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-
-) );
 
 
 Kirki::add_section( 'section_blog', array(
@@ -321,15 +309,20 @@ Kirki::add_section( 'section_labels_blog', array(
   
 ) );
 
-if(is_webaltoweb()){
+if(is_devadmin()){
 	Kirki::add_section( 'section_actions', array(
 		'title'          => __( 'Actions', 'fastway' ),
 		//'description'    => __( 'My section description.', 'fastway' ),
 		'panel'          => 'panel_fastway',
 	
 	) );
-}
+	Kirki::add_section( 'section_developer', array(
+		'title'          => __( 'Developer', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastway',
 
+	) );
+}
 
 Kirki::add_panel( 'panel_fastwayblog', array(
     'title'       => __( 'Fastway Blog', 'fastway' ),
@@ -385,7 +378,7 @@ Kirki::add_section( 'section_woo_shippings', array(
   
 ) );
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 	Kirki::add_section( 'section_woo_discount', array(
 		'title'          => __( 'Discounts', 'fastway' ),
 		'panel'          => 'panel_fastwaywoo',
@@ -417,7 +410,7 @@ Kirki::add_section( 'section_woo_checkout', array(
 
 /*LABELs*/
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_checkout_todopago_label',
@@ -439,7 +432,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 /*tp*/
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'text',
 		'settings'    => 'fw_checkout_eposnet_label',
@@ -1035,9 +1028,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/logo.svg",
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg",
 	'transport'=>'postMessage',
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_favicon',
@@ -1053,7 +1047,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/logo.svg"
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg"
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1307,7 +1301,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-if(is_webaltoweb()){
+if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_ml_stock_web_a_ml',
@@ -1389,6 +1383,83 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+/*DEVELOPER*/
+
+set_theme_mod('fw_fork_name','altoweb');
+Kirki::add_field( 'theme_config_id', array(
+	'type'      => 'text',
+	'settings'  => 'fw_fork_name',
+	'label'    	=> __( 'Fork code', 'fastway' ),
+	'description' 	=>	'A name so you can programably show/hide things in the source code calling fw_theme_mod("fw_fork_name"). <br><b>IMPORTANT: First save this field and then refresh to edit the fields below</b>',
+	'section'   => 'section_developer',
+	'default' => 'fastway'
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_name',
+	'label'       => __( 'Display Name', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"Altoweb":"Fastway"),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_email',
+	'label'       => __( 'Support Email', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"soporte@altoweb.ar":"fguespe@gmail.com"),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_url',
+	'label'       => __( 'Websit Urle', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"https://www.altoweb.ar":"https://www.buymeacoffee.com/fabriguespe"),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_docsurl',
+	'label'       => __( 'Docs Url', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"https://altoweb.freshdesk.com/a/solutions/articles/36000237973":""),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_phpfile',
+	'label'       => __( 'Extra php file path', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"functions/altoweb/altoweb.php":""),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_assetfolder',
+	'label'       => __( 'Custom assets folder', 'fastway' ),
+	'description'	=>	'IMPORTANT: End it with /',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"altoweb/":""),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_dev_adminuser',
+	'label'       => __( 'Admin username', 'fastway' ),
+	'description'	=>	'',
+	'section'     => 'section_developer',
+	'default'     => (isAltoweb()?"webaltoweb":""),
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'custom',
@@ -1409,7 +1480,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    	=> __( 'From Name', 'fastway' ),
 	'description' 	=>	'The name of the company in emails',
 	'section'   => 'section_email',
-	'default' => 'Altoweb',
+	'default' => get_bloginfo( 'name' ),
 	'input_attrs' => array(
 		'placeholder' => get_bloginfo( 'name' )
 	)
@@ -2104,7 +2175,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'CTAs', 'fastway' ),
 	'description'	=>	'(icon class, url or company-data,button class, text)',
 	'section'     => 'section_mobile',
-	'description' => 'Call to actions in mobile menu.',
 	'default'     => 'fab fa-whatsapp,whatsapp,wp,Consultanos | fal fa-phone,phone,fb,Llamar ahora'
 ) );
 
@@ -2397,7 +2467,7 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-if(is_webaltoweb()){
+if(is_devadmin()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_groups',
@@ -2458,7 +2528,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_woo_vars',
 ) );
 
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_cuotas_todopago',
@@ -2642,250 +2712,10 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'css',
 	),
 ) );
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_show_calculator_shipping',
-	'label'       => __( 'Show Shipping Calculator', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'description' => 'Refrescar despues de activar',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-*/
-/*PAYMENTS*/
-/*
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_1_on',
-	'label'    => __( 'Box 1', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_1_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-credit-card',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_1_title',
-	'section'     => 'section_woo_payments',
-	'default'     => 'Tarjeta de Crédito',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_1_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '<h3>Pagá Online con MercadoPago</h3>
-	<a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="btn fw_icon_link fancybox">Ver promociones</a>
-	<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
-	   <div class="modal-dialog modal-lg" role="document">
-		  <div class="modal-content">
-			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			 <div class="modal-body">
-				<iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
-			 </div>
-		  </div>
-	   </div>
-	</div>',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_2_on',
-	'label'    => __( 'Box 2', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_2_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-hand-holding-usd',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_2_title',
-	'section'     => 'section_woo_payments',
-	'default'     => 'Efectivo',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_2_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '<div class="specs">Podés pagar al contado en nuestras sucursales.</div>',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_3_on',
-	'label'    => __( 'Box 3', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_3_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-money-check-alt',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_3_title',
-	'section'     => 'section_woo_payments',
-	'default'     => 'Depósito / Transferencia',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_3_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '<div class="specs">Puede demorar hasta 72hs hábiles en acreditarse.</div>
-	<a target="_blank" data-toggle="modal" data-target="#modal_bancos" class="btn fw_icon_link fancybox">Ver datos</a>
-	<div class="modal modal_bancos fade" id="modal_bancos" aria-hidden="true">
-	   <div class="modal-dialog modal-lg" role="document">
-		  <div class="modal-content">
-			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			 <div class="modal-body">
-				[altoweb_bancos]
-			 </div>
-		  </div>
-	   </div>
-	</div>',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_4_on',
-	'label'    => __( 'Box 4', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_4_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-barcode-read',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_4_title',
-	'section'     => 'section_woo_payments',
-	'default'     => 'Cupón de Pago',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_4_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '<img stclass="aligncenter" width="60%" src="/wp-content/themes/fastway/assets/img/cupones.png">
-	<div class="specs">Imprmí el cupón o copiá el código, vas a RapiPago, Pago Fácil, Provincia Net o Bapro Pago y listo!</div>',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
 
 
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_5_on',
-	'label'    => __( 'Box 5', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_5_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_5_title',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_5_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_payment_method_6_on',
-	'label'    => __( 'Box 6', 'fastway' ),     
-	'section'     => 'section_woo_payments',
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_6_icon',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_payment_method_6_title',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'fw_payment_method_6_desc',
-	'section'     => 'section_woo_payments',
-	'default'     => '',
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );*/
-
-
-if(fw_theme_mod('fw_fork_name')=='altoweb'){
+if(isAltoweb()){
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_only_mercadoenvios',
@@ -3208,7 +3038,6 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_cart]
 	[fw_short_desc]
 	[fw_single_share]
-	[altoweb_financiacion]
 	[fw_product_form_cta]
 	[/fw_single_summary]
 	[fw_single_tabs]
@@ -3224,7 +3053,6 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_title]
 	[fw_single_price]
 	[fw_single_cart]
-	[altoweb_financiacion]
 	[/fw_single_summary]
 	[fw_single_tabs]
 	[/fw_single_container]
@@ -3305,7 +3133,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="https://www.altoweb.ar/es/" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/logo.svg"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div>  </div>',
+	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'logo.svg"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div>  </div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3918,7 +3746,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'maintainance_code',
 	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="https://www.altoweb.ar/es/" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/logo.svg"/></a></div>',
+	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'logo.svg"/></a></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -4421,7 +4249,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-logged_in',
 	'label'       => __( 'CSS Logged In', 'fastway' ),
 	'description'     => __( 'CSS Showed only for logged in users', 'fastway' ),
-	'section'     => 'section_general',
+	'section'     => 'section_csscond',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -4433,7 +4261,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_editor-admin',
 	'label'       => __( 'CSS Admin', 'fastway' ),
 	'description'     => __( 'CSS Showed only for Wordpress Backend', 'fastway' ),
-	'section'     => 'section_general',
+	'section'     => 'section_csscond',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
@@ -4441,15 +4269,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'      => 'text',
-	'settings'  => 'fw_fork_name',
-	'label'    	=> __( 'Fork name', 'fastway' ),
-	'description' 	=>	'A name so you can programably show/hide things in the source code.',
-	'section'   => 'section_general',
-	'default' => 'altoweb'
-) );
 
 
 

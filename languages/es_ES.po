@@ -112,105 +112,105 @@ msgstr ""
 msgid "You do not have permission to edit this user."
 msgstr ""
 
-#: functions/altoweb-plugin/altoweb-plugin.php:118
+#: functions/altoweb/altoweb.php:118
 #: functions/fw-theme-options.php:4630
 msgid "CDI/VAT"
 msgstr "DNI/CUIT"
 
-#: functions/altoweb-plugin/altoweb-plugin.php:120
+#: functions/altoweb/altoweb.php:120
 msgid "VAT"
 msgstr "CUIT"
 
-#: functions/altoweb-plugin/importer/enable-media-replace.php:23
-#: functions/altoweb-plugin/importer/enable-media-replace.php:49
-#: functions/altoweb-plugin/importer/enable-media-replace.php:90
+#: functions/altoweb/importer/enable-media-replace.php:23
+#: functions/altoweb/importer/enable-media-replace.php:49
+#: functions/altoweb/importer/enable-media-replace.php:90
 msgid "Replace media"
 msgstr ""
 
-#: functions/altoweb-plugin/importer/enable-media-replace.php:49
+#: functions/altoweb/importer/enable-media-replace.php:49
 msgid "Upload a new file"
 msgstr ""
 
-#: functions/altoweb-plugin/importer/enable-media-replace.php:49
+#: functions/altoweb/importer/enable-media-replace.php:49
 msgid "To replace the current file, click the link and upload a replacement."
 msgstr ""
 
-#: functions/altoweb-plugin/importer/popup.php:14
-#: functions/altoweb-plugin/importer/upload.php:3
+#: functions/altoweb/importer/popup.php:14
+#: functions/altoweb/importer/upload.php:3
 msgid "You do not have permission to upload files."
 msgstr ""
 
-#: functions/altoweb-plugin/importer/popup.php:44
+#: functions/altoweb/importer/popup.php:44
 msgid "NOTE: You are about to replace the media file"
 msgstr ""
 
-#: functions/altoweb-plugin/importer/popup.php:44
+#: functions/altoweb/importer/popup.php:44
 msgid "There is no undo. Think about it!"
 msgstr ""
 
-#: functions/altoweb-plugin/importer/upload.php:26
+#: functions/altoweb/importer/upload.php:26
 #, php-format
 msgid ""
 "The file %1$s can not be deleted by the web server, most likely because the "
 "permissions on the file are wrong."
 msgstr ""
 
-#: functions/altoweb-plugin/importer/upload.php:84
+#: functions/altoweb/importer/upload.php:84
 msgid "File type does not meet security guidelines. Try another."
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:31
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:74
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:31
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:74
 msgid "Woocommerce Taxomizer"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:31
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:31
 msgid "Taxomizer"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:80
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:80
 msgid "Cheatin&#8217; uh?"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:89
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:89
 #, php-format
 msgid "To go back to the previous page, <a href=\"%s\">click here</a>."
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:91
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:91
 #, php-format
 msgid ""
 "All done! %1$s image(s) were successfully resized in %2$s seconds and there "
 "were 0 failures. %3$s"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:93
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:207
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:93
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:207
 msgid "You must enable Javascript in order to proceed!"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:99
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:99
 msgid "Abort Resizing Images"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:101
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:101
 msgid "Debugging Information"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:104
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:104
 #, php-format
 msgid "Total Products: %s"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:136
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:136
 msgid "Stopping..."
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:205
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:205
 msgid "Taxomize All Products"
 msgstr ""
 
-#: functions/altoweb-plugin/woocommerce-taxomizer/woocommerce-taxomizer.php:293
+#: functions/altoweb/woocommerce-taxomizer/woocommerce-taxomizer.php:293
 #, php-format
 msgid ""
 "&quot;%1$s&quot; (ID %2$s) failed to resize. The error message was: %3$s"

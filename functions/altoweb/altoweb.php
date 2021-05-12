@@ -7,6 +7,7 @@ Version: 1.9
 Author: Fabrizio Guespe
 Author URI: https://www.altoweb.ar
 */
+
 include( plugin_dir_path( __FILE__ ) . '/woocommerce-taxomizer/woocommerce-taxomizer.php');
 include( plugin_dir_path( __FILE__ ) . '/importer/enable-media-replace.php');
 
@@ -102,10 +103,10 @@ if(fw_theme_mod('fw_action_woosettings')){
 
 set_theme_mod('fw_action_woosettings',false);
 if(fw_theme_mod('fw_action_clientimages')){
-    set_theme_mod('ca-main-color', '#0C2E5C');
-    set_theme_mod('mobile-icon', "/wp-content/themes/fastway/assets/img/favi.png");
-    set_theme_mod('ca-dev-logo',"/wp-content/themes/fastway/assets/img/logo.png");
-    set_theme_mod('ca-dev-favi',"/wp-content/themes/fastway/assets/img/favi.png");
+    set_theme_mod('ca-main-color', (isAltoweb()?'#0C2E5C':'#0b6e99'));
+    set_theme_mod('mobile-icon', "/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png");
+    set_theme_mod('ca-dev-logo',"/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png");
+    set_theme_mod('ca-dev-favi',"/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png");
     set_theme_mod('fw_action_clientimages',false);
 }
 
@@ -128,26 +129,6 @@ function remove_dashboard_meta2() {
 add_action( 'admin_init', 'remove_dashboard_meta2' );
 
 
-add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
-function whero_limit_image_size($file) {
-    if(is_super_admin())return $file;
-   //if(is_admin())return $file;
-   // Calculate the image size in KB
-   $image_size = $file['size']/1024;
-
-   // File size limit in KB
-   $limit = fw_theme_mod('fw_max_media_upload');
-
-   // Check if it's an image
-   $is_image = strpos($file['type'], 'image');
-
-   if ( ( $image_size > $limit ) && ($is_image !== false) )
-      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido. te recomendamos usar un compresor de imagenes como <a href="https://tinypng.com/">tinypng</a>';
-
-   return $file;
-
-}
-
 
 add_action('admin_menu', 'my_menu_pagess');
 function my_menu_pagess(){
@@ -167,47 +148,6 @@ function exitofile_page(){
    <?php
    } 
    
-
-
-function formatear($string){
-    return strtolower(preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string));
-}
-
-
-
-
-
-
-
-function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
-    $new_terms = array();
-    $ocultar=explode(",",fw_theme_mod('fw_hide_cates'));
-
-    if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_product_category() ) ) {
-        foreach ( $terms as $key => $term ) {
-
-              if (  ( ! in_array( $term->slug, $ocultar ) )) {
-                $new_terms[] = $term;
-              }
-        }
-        $terms = $new_terms;
-    }
-    return $terms;
-}
-add_filter( 'get_terms', 'fw_hide_selected_terms', 10, 3 );
-
-add_filter( 'get_terms_args', 'checklist_args', 10, 2 );
-function checklist_args( $args, $taxonomies ){
-    $menu_taxonomies = array('product_cat', 'page', 'category','post');
-    if(in_array($taxonomies[0], $menu_taxonomies)){
-        $args['number'] = 1000;
-    }
-    return $args;
-}
-
-
-
-
 
 
 
@@ -266,6 +206,41 @@ function get_bacs_account_details_html( $echo = true, $type = 'list' ) {
 }
 
 //VERFW
+
+add_action('wp_ajax_nopriv_register_wp', 'fw_register_wp');
+add_action('wp_ajax_register_wp', 'fw_register_wp');
+function fw_register_wp(){
+  $domain=$_SERVER['HTTP_HOST'];
+  $fecha=date('m/d/Y h:i:s a', time());
+  try{
+    global $wpdb;
+    $table = 'wp_altoweb_visits';
+    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'wp');
+    $format = array('%s','%s');
+    $wpdb->insert($table,$data,$format);
+    $my_id = $wpdb->insert_id;
+    
+  }catch (Exception $e) {
+    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
+  }
+}
+add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');
+add_action('wp_ajax_register_visit', 'fw_register_visit');
+function fw_register_visit(){
+  $domain=$_SERVER['HTTP_HOST'];
+  $fecha=date('m/d/Y h:i:s a', time());
+  try{
+    global $wpdb;
+    $table = 'wp_altoweb_visits';
+    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'visit');
+    $format = array('%s','%s');
+    $wpdb->insert($table,$data,$format);
+    $my_id = $wpdb->insert_id;
+    
+  }catch (Exception $e) {
+    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
+  }
+}
 
 add_shortcode('altoweb_bancos','altoweb_bancos');
 function altoweb_bancos(){

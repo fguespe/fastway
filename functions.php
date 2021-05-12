@@ -70,45 +70,67 @@ if(!is_plugin_active('kirki/kirki.php')){
   echo "KIRKI MISSING";
   return;
 }
+
+function isAltoweb(){return fw_theme_mod('fw_fork_name')=='altoweb';}
 if(is_plugin_active('kirki/kirki.php'))require get_template_directory() . '/functions/fw-theme-options.php';
 
-
-
-add_action('wp_ajax_nopriv_register_visit', 'fw_register_visit');
-add_action('wp_ajax_register_visit', 'fw_register_visit');
-function fw_register_visit(){
-  $domain=$_SERVER['HTTP_HOST'];
-  $fecha=date('m/d/Y h:i:s a', time());
-  try{
-    global $wpdb;
-    $table = 'wp_altoweb_visits';
-    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'visit');
-    $format = array('%s','%s');
-    $wpdb->insert($table,$data,$format);
-    $my_id = $wpdb->insert_id;
-    
-  }catch (Exception $e) {
-    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
-  }
+function formatear($string){
+  return strtolower(preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string));
 }
 
-add_action('wp_ajax_nopriv_register_wp', 'fw_register_wp');
-add_action('wp_ajax_register_wp', 'fw_register_wp');
-function fw_register_wp(){
-  $domain=$_SERVER['HTTP_HOST'];
-  $fecha=date('m/d/Y h:i:s a', time());
-  try{
-    global $wpdb;
-    $table = 'wp_altoweb_visits';
-    $data = array('site'=>get_current_blog_id(),'fecha' => $fecha, 'dominio' => $domain,'type'=>'wp');
-    $format = array('%s','%s');
-    $wpdb->insert($table,$data,$format);
-    $my_id = $wpdb->insert_id;
-    
-  }catch (Exception $e) {
-    error_log('Excepción capturada: ',  $e->getMessage(), "\n"); 
+
+
+
+
+
+function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
+  $new_terms = array();
+  $ocultar=explode(",",fw_theme_mod('fw_hide_cates'));
+
+  if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_product_category() ) ) {
+      foreach ( $terms as $key => $term ) {
+
+            if (  ( ! in_array( $term->slug, $ocultar ) )) {
+              $new_terms[] = $term;
+            }
+      }
+      $terms = $new_terms;
   }
+  return $terms;
 }
+add_filter( 'get_terms', 'fw_hide_selected_terms', 10, 3 );
+add_filter( 'get_terms_args', 'checklist_args', 10, 2 );
+function checklist_args( $args, $taxonomies ){
+  $menu_taxonomies = array('product_cat', 'page', 'category','post');
+  if(in_array($taxonomies[0], $menu_taxonomies)){
+      $args['number'] = 1000;
+  }
+  return $args;
+}
+
+
+add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
+function whero_limit_image_size($file) {
+    if(is_super_admin())return $file;
+   //if(is_admin())return $file;
+   // Calculate the image size in KB
+   $image_size = $file['size']/1024;
+
+   // File size limit in KB
+   $limit = fw_theme_mod('fw_max_media_upload');
+
+   // Check if it's an image
+   $is_image = strpos($file['type'], 'image');
+
+   if ( ( $image_size > $limit ) && ($is_image !== false) )
+      $file['error'] = 'La imagen es muy pesada, supera los '. $limit .'KB. Subí una imagen mas liviana o de un tamaño entre 500x500 y 1000x1000. Esto es para asegurar que la web cargue rapido. te recomendamos usar un compresor de imagenes como <a href="https://tinypng.com/">tinypng</a>';
+
+   return $file;
+
+}
+
+
+
 function fw_vc_get_posts($type) {
     $args = array(
     'taxonomy'   => $type/*,
@@ -290,8 +312,7 @@ require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/fw-faq.php';
 if(fw_theme_mod('fw_cpt_reviews'))require get_template_directory() . '/functions/custom-post-types/fw-review.php';
 if(fw_theme_mod('fw_cpt_events'))require get_template_directory() . '/functions/custom-post-types/fw-events.php';
-require get_template_directory() . '/functions/altoweb-plugin/altoweb-plugin.php';
-
+if(fw_theme_mod('fw_dev_phpfile'))require get_template_directory() . '/'.fw_theme_mod('fw_dev_phpfile');
 if(is_plugin_active('js_composer/js_composer.php')){
     require get_template_directory() . '/functions/vc_customs/vc_blog.php';
     require get_template_directory() . '/functions/vc_customs/vc_fastway.php';
@@ -364,7 +385,7 @@ function fw_login_footer() {
     ?>
     <script type="text/javascript">
         var backToBlog = document.getElementById( 'backtoblog' ).getElementsByTagName( 'a' )[0];
-        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="https://www.altoweb.ar/es/"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo fw_theme_mod('ca-dev-logo');?>"></a></div>';
+        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="'.fw_theme_mod('fw_dev_url').'"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo fw_theme_mod('ca-dev-logo');?>"></a></div>';
     </script>
     <?php
 }
