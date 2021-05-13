@@ -147,7 +147,7 @@
                     </div>
                     <div class="row mt20">
                             <div class="col-md-12 text-center">
-                                <img width="300" src="/wp-content/themes/fastway/assets/img/mp.png"><br>
+                                <img width="300" src="/wp-content/themes/fastway/assets/img/altoweb/mp.png"><br>
                                 <a href="https://www.mercadopago.com.ar/cuotas" target="_blank" class="text-center text-info" style="font-size:12px;boder-bottom">Ver todas las promociones</a>
                             </div>
                         </div>

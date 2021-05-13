@@ -671,7 +671,7 @@ function fw_widget_estado_dash() {
         color:orange !important;
     }
     .fw_widget_dash .iralasopciones{
-        background:#132E59;
+        background:".fw_theme_mod('ca-main-color').";
         color:white !important;
         padding:5px;
         display:block;

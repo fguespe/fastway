@@ -192,7 +192,7 @@ if( !function_exists('fw_m_logo') ) {
                     $logo_arg['height'] = fw_theme_mod('logo-height');
                 } else {
                     //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg");
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png");
                     $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = fw_theme_mod('logo-height');
                 }
@@ -239,7 +239,7 @@ if( !function_exists('fw_logo') ) {
                     $logo_arg['height'] = fw_theme_mod('logo-height');
                 } else {
                     //Cargo logo default
-                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg");
+                    $logo_arg['src'] = esc_url( get_template_directory_uri() . "/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png");
                     $logo_arg['width'] = fw_theme_mod('logo-width');
                     $logo_arg['height'] = fw_theme_mod('logo-height');
                 }
@@ -273,7 +273,7 @@ function fw_whats( $atts ) {
     $num=str_replace(" ", "", $num);
     if(substr( $num, 0, 2 ) === "15")$num=str_replace_first("15","11",$num);
 
-    $num='<a href="https://api.whatsapp.com/send?text=Hola!, vimos tu consulta en nuestra web&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
+    $num='<a href="https://api.whatsapp.com/send?text='.fw_theme_mod('fw_share_message').'&phone=549'.$num.'">Hablar al whatsapp: '.$num.'</a>';
     return $num;
 }
 

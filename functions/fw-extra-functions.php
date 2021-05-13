@@ -511,7 +511,7 @@ button,a,input,textarea,.vc_row,ul,li,div{
     color: white;
     border:0px !important;
     border-radius:0px;
-    background: '.fw_theme_mod('ca-main-color').' !important;
+    background: '.fw_theme_mod('ca-second-color').' !important;
     text-shadow:none;
     -webkit-box-shadow:none;
 }</style>';
@@ -534,7 +534,7 @@ function custom_redux_panel() {
 display:none;
 }
 .redux-group-menu i{
-color: #132E59;
+color: '.fw_theme_mod('ca-main-color').';
 }
 .redux-group-menu{
 background:white;
@@ -545,7 +545,7 @@ background:white;
 .redux-main .button-primary,
 .admin-color-fresh .redux-field-container .ui-buttonset .ui-state-active,
 .redux-main .redux-container-switch .cb-enable.selected{
-    background:#132E59 !important;
+    background:'.fw_theme_mod('ca-main-color').' !important;
     border:0px !important;
     text-shadow:none !important;
     box-shadow:none !important;

@@ -68,7 +68,7 @@ Kirki::add_section( 'section_general', array(
 
 ) );
 Kirki::add_section( 'section_csscond', array(
-    'title'          => __( 'CSS Condicional', 'fastway' ),
+    'title'          => __( 'Conditional CSS', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
     'panel'          => 'panel_fastway',
 
@@ -1028,7 +1028,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg",
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png",
 	'transport'=>'postMessage',
 ) );
 
@@ -1047,7 +1047,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Dark Logo', 'fastway' ),
 	//'description' => __( 'Description Here.', 'fastway' ),
 	'section'     => 'section_images',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg"
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png"
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1384,7 +1384,6 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*DEVELOPER*/
-set_theme_mod('fw_fork_name','altoweb');
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_fork_name',
@@ -1401,6 +1400,26 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'	=>	'',
 	'section'     => 'section_developer',
 	'default'     => (isAltoweb()?"Altoweb":"Fastway"),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_dev_logo',
+	'label'       => __( 'Dev Logo', 'fastway' ),
+	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
+	'section'     => 'section_images',
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png",
+	'transport'=>'postMessage',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_dev_favi',
+	'label'       => __( 'Dev Favicon', 'fastway' ),
+	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
+	'section'     => 'section_images',
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
+	'transport'=>'postMessage',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1427,7 +1446,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Docs Url', 'fastway' ),
 	'description'	=>	'',
 	'section'     => 'section_developer',
-	'default'     => (isAltoweb()?"https://altoweb.freshdesk.com/a/solutions/articles/36000237973":""),
+	'default'     => (isAltoweb()?"https://altoweb.freshdesk.com/a/solutions/articles/36000237973":"https://www.notion.so/fabrizio/Fastway-6285d2b579a0483b81aac82b86c38b37"),
 ) );
 
 
@@ -1479,7 +1498,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'    	=> __( 'From Name', 'fastway' ),
 	'description' 	=>	'The name of the company in emails',
 	'section'   => 'section_email',
-	'default' => get_bloginfo( 'name' ),
+	'default' => '',
 	'input_attrs' => array(
 		'placeholder' => get_bloginfo( 'name' )
 	)
@@ -1922,7 +1941,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-main',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#132E59',
+	'default'     => '#0b6e99',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -1940,7 +1959,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-second',
 	'label'       => __( 'Secondary Color', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#54AF67',
+	'default'     => '#FFD421',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -1963,7 +1982,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'opt-color-iconheader',
 	'label'       => __( 'Icons', 'fastway' ),
 	'section'     => 'section_colors',
-	'default'     => '#132E59',
+	'default'     => '#0b6e99',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -3132,7 +3151,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Footer Copyright HTML', 'fastway' ),
 	'description'       => __( 'Not all headers have Header Widget', 'fastway' ),
 	'section'     => 'section_footer',
-	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'logo.svg"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div>  </div>',
+	'default'     => '<div id="fw_footercopy" style="border-top:1px solid #d3d3d3;" class="container-fluid d-flex justify-content-between align-items-center"><div class="izquierda" style="font-size:15px !important;">Powered by <a style="margin-left:5px;" href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="28" src="/wp-content/themes/fastway/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'logo.png"/></a></div><div class="copyright d-none d-md-block" style="font-size:15px !important;">Copyright ©  [fw_data  type="name" only_text="true" size="15"] | Todos los derechos reservados.</div>  </div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3157,7 +3176,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_icons_style',
 	'label'       => 'Font Awesome Pro Styles',
 	'section'     => 'section_typos',
-	'default'     => 'fad',
+	'default'     => 'fa',
 	'choices'     => array(
 		'fa'   =>  'Regular',
 		'fas'  => 'Solid',
@@ -3745,7 +3764,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'maintainance_code',
 	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<div>[fw_logo]<h1>Sitio en mantenimiento.</h1><div><p>Perdone las molestias, volveremos pronto!</p></div></div><br><br><div class="" style="font-size:10px !important;">Este sitio es mantenido por:<br><br>  <a href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="/wp-content/themes/fastway/assets/img/'.fw_theme_mod('fw_dev_assetfolder').'logo.svg"/></a></div>',
+	'default'	=>'<div>[fw_logo]<h1>'.__('Site under maintenance','fastway').'</h1><div><p>'.__('Sory for the trouble, will be back soon!','fastway').'</p></div></div><br><br><div class="" style="font-size:10px !important;">'.__('This site is maintained by','fastway').':<br><br>  <a href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="'.fw_theme_mod('fw_dev_logo').'"/></a></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3858,24 +3877,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => '404_code',
 	'label'       => __( '404 Page Code', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<div class="container">
+	'default'	=>'<div class="container" id="content">
 	<div class="content-detalle row" style="margin:0 auto;margin-top:40px;">
 		<div class="col-3">
             <i class="fal fa-debug" style="color:var(--main);font-size:200px;"></i>
 		</div>
 		<div class="col-9">
-			<h1 class="txt-24 t2 tit-pagina" style="font-weight: 400;">No encontramos productos que coincidan con tu búsqueda</h1>
+			<h1 class="txt-24 t2 tit-pagina" style="font-weight: 400;">'.__('Sory, we didn\'t find what you are looking for ','fastway').'</h1>
 			<br>
-			<b>Vamos a afinar tu puntería</b>
+			<b>'.__('Lets improve your aim','fastway').'</b>
 			<ul class="t1 txt-16">
-				<li>Revisa la ortografía de la palabra</li>
-				<li>Usa pocas palabras y más genéricas</li>
-				<li>Ayudate con el menú y buscá por categorías</li>
+				<li>'.__('Check the spelling for gramatical errors','fastway').'</li>
+				<li>'.__('Use shorter and simpler words','fastway').'</li>
+				<li>'.__('Use the menu and the navigation to help you','fastway').'</li>
 			</ul>
 		</div>
 	</div>
 		<div class="woo" style="margin-top:40px;">
-[fw_recent_products title="Lo más buscado esta semana" prodsperrow="6"]</div>
+[fw_recent_products title="'.__('This weeks trending products','fastway').'" prodsperrow="6"]</div>
 </div>',
 	'choices'     => array(
 		'language' => 'html',

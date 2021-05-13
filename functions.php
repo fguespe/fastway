@@ -385,7 +385,7 @@ function fw_login_footer() {
     ?>
     <script type="text/javascript">
         var backToBlog = document.getElementById( 'backtoblog' ).getElementsByTagName( 'a' )[0];
-        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="'.fw_theme_mod('fw_dev_url').'"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo fw_theme_mod('ca-dev-logo');?>"></a></div>';
+        backToBlog.innerHTML='<div width="100%" style="margin:0 auto;text-align:center;"><a href="<?=fw_theme_mod('fw_dev_url')?>"><img width="200" align="center" style="margin:0 auto;text-align:center;" src="<?php echo fw_theme_mod('fw_dev_logo');?>"></a></div>';
     </script>
     <?php
 }

@@ -384,7 +384,28 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'ca-main-color',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => '#0C2E5C',
+	'default'     => '#0b6e99',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-second-color',
+	'label'       => __( 'Secondary Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#FFD421',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'color',
+	'settings'    => 'ca-background-color',
+	'label'       => __( 'Background Color', 'fastway' ),
+	'section'     => 'section_clientarea',
+	'default'     => '#FFF',
 	'choices'     => array(
 		'alpha' => true,
 	),
@@ -412,23 +433,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'ca-dev-logo',
-	'label'       => __( 'Developer Logo', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.svg",
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'ca-dev-favi',
-	'label'       => __( 'Top Left Icon', 'fastway' ),
-	//'description' => __( 'Description Here.', 'fastway' ),
-	'section'     => 'section_clientarea',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
-) );
 
 function admin_default_page() {
 	return fw_theme_mod('ca-home-redirect');
@@ -620,7 +624,7 @@ function fw_menu_salir_link_ca(){
 function fw_menu_items($wp_admin_bar){
     $args = array(
             'id' => 'custom-node-dashboard',
-            'title' => '<img src="'.fw_theme_mod('ca-dev-favi').'"/>',
+            'title' => '<img src="'.fw_theme_mod('fw_dev_favi').'"/>',
             'href' => 'index.php',
             'meta' => array(
                 'class' => 'faviconizq'
@@ -802,7 +806,7 @@ function custom_admin_js() {
 
 
 function fw_remove_footer_admin(){
-    return '<a class="footeralto" href="'.fw_theme_mod('fw_dev_url').'"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('ca-dev-logo').'"></a>';
+    return '<a class="footeralto" href="'.fw_theme_mod('fw_dev_url').'"><img width="120"  align="center"  style="margin:0 auto;text-align:center;" src="'.fw_theme_mod('fw_dev_logo').'"></a>';
         
 }
 
@@ -863,8 +867,8 @@ function fw_custom_admincss() {
     }
     :root{
         --ca-main-color: '.fw_theme_mod('ca-main-color').';
-        --ca-second-color: #F9FAFA;
-        --ca-background-color: #F9FAFA;
+        --ca-second-color: '.fw_theme_mod("ca-second-color").';
+        --ca-background-color:'.fw_theme_mod("ca-background-color").';
         --ca-text-color: '.fw_theme_mod("ca-text-color").' ;
         --ca-icon-color: '.fw_theme_mod("ca-icon-color").' ;
     }</style>';
