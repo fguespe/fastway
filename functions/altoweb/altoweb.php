@@ -103,7 +103,8 @@ if(fw_theme_mod('fw_action_woosettings')){
 
 set_theme_mod('fw_action_woosettings',false);
 if(fw_theme_mod('fw_action_clientimages')){
-    set_theme_mod('ca-main-color', (isAltoweb()?'#0c2e5c':'#0b6e99'));
+    set_theme_mod('ca-main-color', fw_theme_mod('ca-main-color'));
+    set_theme_mod('ca-second-color', fw_theme_mod('ca-second-color'));
     set_theme_mod('mobile-icon', "/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png");
     set_theme_mod('fw_dev_logo',"/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png");
     set_theme_mod('fw_dev_favi',"/wp-content/themes/fastway/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png");
