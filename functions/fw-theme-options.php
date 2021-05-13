@@ -1404,25 +1404,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'fw_dev_logo',
-	'label'       => __( 'Dev Logo', 'fastway' ),
-	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
-	'section'     => 'section_developer',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png",
-	'transport'=>'postMessage',
-) );
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'image',
-	'settings'    => 'fw_dev_favi',
-	'label'       => __( 'Dev Favicon', 'fastway' ),
-	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
-	'section'     => 'section_developer',
-	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
-	'transport'=>'postMessage',
-) );
-Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_dev_email',
 	'label'       => __( 'Support Email', 'fastway' ),
@@ -1467,6 +1448,26 @@ Kirki::add_field( 'theme_config_id', array(
 	'description'	=>	'IMPORTANT: End it with /',
 	'section'     => 'section_developer',
 	'default'     => (isAltoweb()?"altoweb/":""),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_dev_logo',
+	'label'       => __( 'Dev Logo', 'fastway' ),
+	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
+	'section'     => 'section_developer',
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png",
+	'transport'=>'postMessage',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'image',
+	'settings'    => 'fw_dev_favi',
+	'label'       => __( 'Dev Favicon', 'fastway' ),
+	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
+	'section'     => 'section_developer',
+	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
+	'transport'=>'postMessage',
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
