@@ -527,7 +527,6 @@ function fw_maintenance_mode(){
 }
 
 add_action('admin_head', 'custom_redux_panel');
-
 function custom_redux_panel() {
   echo '<style>
     #redux-header,#redux-intro-text{
