@@ -384,7 +384,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'ca-main-color',
 	'label'       => __( 'Main Color', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => isAltoweb()?:'#0c2e5c':'#0b6e99',
+	'default'     => isAltoweb()?'#0c2e5c':'#0b6e99',
 	'choices'     => array('alpha' => true,),
 ) );
 
@@ -393,7 +393,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'ca-second-color',
 	'label'       => __( 'Secondary Color', 'fastway' ),
 	'section'     => 'section_clientarea',
-	'default'     => isAltoweb()?:'#02b25f':'#FFD421',
+	'default'     => isAltoweb()?'#02b25f':'#FFD421',
 	'choices'     => array('alpha' => true,
 	),
 ) );
