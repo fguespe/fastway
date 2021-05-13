@@ -1384,6 +1384,8 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 /*DEVELOPER*/
+set_theme_mod('fw_fork_name','Altoweb')
+set_theme_mod('fw_dev_name','Altoweb')
 Kirki::add_field( 'theme_config_id', array(
 	'type'      => 'text',
 	'settings'  => 'fw_fork_name',
