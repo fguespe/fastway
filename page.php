@@ -13,6 +13,7 @@ if(!is_plugin_active('kirki/kirki.php'))return;
 get_header();
 
 
+
 $container   = fw_theme_mod('container-main');
 if(is_plugin_active("woocommerce/woocommerce.php")){
 if(is_cart() || is_checkout() || is_account_page())$container   = fw_theme_mod('container-shop')." mt-4";
