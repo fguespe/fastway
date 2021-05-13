@@ -511,7 +511,7 @@ button,a,input,textarea,.vc_row,ul,li,div{
     color: white;
     border:0px !important;
     border-radius:0px;
-    background: '.fw_theme_mod('ca-second-color').' !important;
+    background: '.fw_theme_mod('ca-main-color').' !important;
     text-shadow:none;
     -webkit-box-shadow:none;
 }</style>';
