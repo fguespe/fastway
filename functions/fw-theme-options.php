@@ -309,7 +309,7 @@ Kirki::add_section( 'section_labels_blog', array(
   
 ) );
 
-if(is_devadmin()){
+//if(is_devadmin()){
 	Kirki::add_section( 'section_actions', array(
 		'title'          => __( 'Actions', 'fastway' ),
 		//'description'    => __( 'My section description.', 'fastway' ),
@@ -322,7 +322,7 @@ if(is_devadmin()){
 		'panel'          => 'panel_fastway',
 
 	) );
-}
+//}
 
 Kirki::add_panel( 'panel_fastwayblog', array(
     'title'       => __( 'Fastway Blog', 'fastway' ),
