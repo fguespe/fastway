@@ -394,7 +394,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Secondary Color', 'fastway' ),
 	'section'     => 'section_clientarea',
 	'default'     => isAltoweb()?:'':'#FFD421',
-	'default'     => '#FFD421',
 	'choices'     => array('alpha' => true,),
 ) );
 Kirki::add_field( 'theme_config_id', array(
