@@ -309,21 +309,6 @@ Kirki::add_section( 'section_labels_blog', array(
   
 ) );
 
-//if(is_devadmin()){
-	Kirki::add_section( 'section_actions', array(
-		'title'          => __( 'Actions', 'fastway' ),
-		//'description'    => __( 'My section description.', 'fastway' ),
-		'panel'          => 'panel_fastway',
-	
-	) );
-	Kirki::add_section( 'section_developer', array(
-		'title'          => __( 'Developer', 'fastway' ),
-		//'description'    => __( 'My section description.', 'fastway' ),
-		'panel'          => 'panel_fastway',
-
-	) );
-//}
-
 Kirki::add_panel( 'panel_fastwayblog', array(
     'title'       => __( 'Fastway Blog', 'fastway' ),
 ) );
@@ -1301,32 +1286,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
-if(is_devadmin()){
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_ml_stock_web_a_ml',
-		'label'       => __( 'Descontar stock web->ml (CR)', 'fastway' ),
-		'section'     => 'section_meli',
-		'default'     => 0,
-		'choices' => array(
-			'on'  => __( 'Enable', 'fastway' ),
-			'off' => __( 'Disable', 'fastway' )
-		)
-	) );
-	Kirki::add_field( 'theme_config_id', array(
-		'type'        => 'switch',
-		'settings'    => 'fw_ml_stock_ml_a_web',
-		'label'       => __( 'Descontar stock ml->web (CR)', 'fastway' ),
-		'section'     => 'section_meli',
-		'default'     => 0,
-		'choices' => array(
-			'on'  => __( 'Enable', 'fastway' ),
-			'off' => __( 'Disable', 'fastway' )
-		)
-	) );
-}
-
-
 /*EMAIL*/
 
 Kirki::add_field( 'theme_config_id', array(
@@ -1478,6 +1437,62 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_developer',
 	'default'     => (isAltoweb()?"webaltoweb":""),
 ) );
+
+
+
+if(is_devadmin()){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_ml_stock_web_a_ml',
+		'label'       => __( 'Descontar stock web->ml (CR)', 'fastway' ),
+		'section'     => 'section_meli',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_ml_stock_ml_a_web',
+		'label'       => __( 'Descontar stock ml->web (CR)', 'fastway' ),
+		'section'     => 'section_meli',
+		'default'     => 0,
+		'choices' => array(
+			'on'  => __( 'Enable', 'fastway' ),
+			'off' => __( 'Disable', 'fastway' )
+		)
+	) );
+}
+
+if(is_devadmin()){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_shipping_groups',
+		'label'       => __( 'Shipping Groups (CR)', 'fastway' ),
+		'description'	=> 'Agrupa las sucursales de retiro unicamente',
+		'section'     => 'section_woo_checkout',
+		'default'     => 0,
+		'choices' => array(
+			0  => __( 'Disable', 'fastway' ),
+			1 => __( 'Enable', 'fastway' )
+		)
+	) );
+}
+if(is_devadmin()){
+	Kirki::add_section( 'section_actions', array(
+		'title'          => __( 'Actions', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastway',
+	
+	) );
+	Kirki::add_section( 'section_developer', array(
+		'title'          => __( 'Developer', 'fastway' ),
+		//'description'    => __( 'My section description.', 'fastway' ),
+		'panel'          => 'panel_fastway',
+
+	) );
+}
 
 
 Kirki::add_field( 'theme_config_id', array(
@@ -2486,20 +2501,6 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-if(is_devadmin()){
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_shipping_groups',
-	'label'       => __( 'Shipping Groups (CR)', 'fastway' ),
-	'description'	=> 'Agrupa las sucursales de retiro unicamente',
-	'section'     => 'section_woo_checkout',
-	'default'     => 0,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
-) );
-	}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'color',
 	'settings'    => 'fw_opt_color_checkout',
