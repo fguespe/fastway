@@ -5,7 +5,7 @@ if ( ! function_exists( 'get_editable_roles' ) ) {
 }
 
 function is_devadmin(){
-  if(!fw_theme_mod('fw_dev_adminuser'))return false;
+  if(!fw_theme_mod('fw_dev_adminuser'))return true;
   if(wp_get_current_user()->user_login==fw_theme_mod('fw_dev_adminuser') && is_super_admin())return true;
   return false;
 }
