@@ -1402,12 +1402,13 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => (isAltoweb()?"Altoweb":"Fastway"),
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'image',
 	'settings'    => 'fw_dev_logo',
 	'label'       => __( 'Dev Logo', 'fastway' ),
 	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
-	'section'     => 'section_images',
+	'section'     => 'section_developer',
 	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."logo.png",
 	'transport'=>'postMessage',
 ) );
@@ -1417,11 +1418,10 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_dev_favi',
 	'label'       => __( 'Dev Favicon', 'fastway' ),
 	'description' => __( 'This logo will appear in the login , the client area and maintenance mode.', 'fastway' ),
-	'section'     => 'section_images',
+	'section'     => 'section_developer',
 	'default'     => urlforimages()."/assets/img/".fw_theme_mod('fw_dev_assetfolder')."favi.png",
 	'transport'=>'postMessage',
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_dev_email',
@@ -1434,7 +1434,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_dev_url',
-	'label'       => __( 'Websit Urle', 'fastway' ),
+	'label'       => __( 'Website Url', 'fastway' ),
 	'description'	=>	'',
 	'section'     => 'section_developer',
 	'default'     => (isAltoweb()?"https://www.altoweb.ar":"https://www.buymeacoffee.com/fabriguespe"),
