@@ -71,7 +71,9 @@ if(!is_plugin_active('kirki/kirki.php')){
   return;
 }
 
-function isAltoweb(){return fw_theme_mod('fw_fork_name')=='altoweb';}
+function isAltoweb(){
+  //Altoweb is my web design company. I develop fastway while building altoweb and testing it with all my clients.
+  return fw_theme_mod('fw_fork_name')=='altoweb';}
 if(is_plugin_active('kirki/kirki.php'))require get_template_directory() . '/functions/fw-theme-options.php';
 
 function formatear($string){

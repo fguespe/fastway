@@ -1244,18 +1244,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 /*MELI*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_ml_on',
-	'label'       => __( 'Activar', 'fastway' ),
-	'section'     => 'section_meli',
-	'description' => 'Pasarle el link al cliente: <a href="'.'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/'.'">LINK</a><br>'.json_encode(get_option('fw_ml_app_'.get_theme_mod('fw_id_ml'))),
-	'default'     => 0,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -1265,6 +1253,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_meli',
 	'default'     => '',
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_ml_on',
+	'label'       => __( 'ML Sync ML->WEB', 'fastway' ),
+	'section'     => 'section_meli',
+	'description' => 'Pasarle el link al cliente: <a href="'.'https://'.$_SERVER['HTTP_HOST'].'/wp-content/themes/fastway/functions/meli/'.'">LINK</a><br>'.json_encode(get_option('fw_ml_app_'.get_theme_mod('fw_id_ml'))),
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -3990,10 +3992,9 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'thankyou_insert',
-	'label'    => __( 'Thank You Page Code', 'fastway' ),       
+	'label'    => __( 'Thank You Page Scripts', 'fastway' ),       
 	'section'     => 'section_woo',
-	'default'     => '',
-	'description' => __( 'Allows you to insert code or any text in the thank you page.','fastway'),
+	'description' => __( 'Allows you to insert scripts for marketing in the thank you page.','fastway'),
 	'choices'     => array(
 		'language' => 'html',
 	),

@@ -178,11 +178,23 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_widget_estado',
+	'label'       => __( 'Site Status', 'fastway' ),
+    'description' => 'Allows customers to switch between store modes (purchass off, enquiry or normal)',
+	'section'     => 'section_clientwidgets',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_widget_cupones',
 	'label'       => __( 'Coupons', 'fastway' ),
     'description' => 'Allows customers to enable or disable coupons',
 	'section'     => 'section_clientwidgets',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -202,18 +214,6 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_widget_estado',
-	'label'       => __( 'Site Status', 'fastway' ),
-    'description' => 'Allows customers to switch between store modes (purchass off, enquiry or normal)',
-	'section'     => 'section_clientwidgets',
-	'default'     => 1,
-	'choices' => array(
-	    'on'  => __( 'Enable', 'fastway' ),
-	    'off' => __( 'Disable', 'fastway' )
-	)
-) );
 if(isAltoweb()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
@@ -259,7 +259,6 @@ if(isAltoweb()){
             'off' => __( 'Disable', 'fastway' )
         )
     ) );
-}
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -273,6 +272,8 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+}
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
