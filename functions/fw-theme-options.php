@@ -1444,7 +1444,7 @@ if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_ml_stock_web_a_ml',
-		'label'       => __( 'Descontar stock web->ml (CR)', 'fastway' ),
+		'label'       => __( 'Descontar stock web->ml', 'fastway' ).(isAltoweb()?'(CR)':''),
 		'section'     => 'section_meli',
 		'default'     => 0,
 		'choices' => array(
@@ -1455,7 +1455,7 @@ if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_ml_stock_ml_a_web',
-		'label'       => __( 'Descontar stock ml->web (CR)', 'fastway' ),
+		'label'       => __( 'Descontar stock ml->web', 'fastway' ).(isAltoweb()?'(CR)':''),
 		'section'     => 'section_meli',
 		'default'     => 0,
 		'choices' => array(
@@ -1469,8 +1469,8 @@ if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_shipping_groups',
-		'label'       => __( 'Shipping Groups (CR)', 'fastway' ),
-		'description'	=> 'Agrupa las sucursales de retiro unicamente',
+		'label'       => __( 'Shipping Groups', 'fastway' ).(isAltoweb()?'(CR)':''),
+		'description'	=> 'Groups pickup locations under pick-up option',
 		'section'     => 'section_woo_checkout',
 		'default'     => 0,
 		'choices' => array(
@@ -2452,8 +2452,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_gift_fields',
-	'label'       => __( 'Campos Regalo (CR)', 'fastway' ),
-	'description'	=> 'Agrega campo mensaje.',
+	'label'       => __( 'Gift Fields', 'fastway' ).(isAltoweb()?'(CR)':''),
+	'description'	=> 'Adds field for a gift message to be put on the packaging.',
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(
@@ -4236,7 +4236,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_search_by_sku',
-	'label'       => __( 'Search by sku', 'fastway' ).'(CR)',
+	'label'       => __( 'Search by sku', 'fastway' ).(isAltoweb()?'(CR)':''),
 	'section'     => 'section_woo_search',
 	'default'     => 1,//enabled
 	'choices' => array(

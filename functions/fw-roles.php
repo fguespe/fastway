@@ -18,12 +18,10 @@ function fw_get_current_user_role() {
     return false;
   }
 }
+
 function get_is_role_or_name_before(){
   $users=explode(",", fw_theme_mod('ca_users'));
-  if(in_array(wp_get_current_user()->user_login,$users)){
-      return wp_get_current_user()->user_login;
-
-  }
+  if(in_array(wp_get_current_user()->user_login,$users))return wp_get_current_user()->user_login;
   return fw_get_current_user_role();
 }
 function get_role_body_classes(){

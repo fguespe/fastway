@@ -99,19 +99,21 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
+if(isAltoweb()){
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_trans_comprobantes',
-	'label'       => __( 'Comprobantes de transferencia (CR)', 'fastway' ),
-	'description'	=> 'Permite subir archivos a las ordenes.',
-	'section'     => 'section_client_chrq',
-	'default'     => 0,
-	'choices' => array(
-		0  => __( 'Disable', 'fastway' ),
-		1 => __( 'Enable', 'fastway' )
-	)
-) );
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_trans_comprobantes',
+		'label'       => __( 'Comprobantes de transferencia', 'fastway' ).(isAltoweb()?'(CR)':''),
+		'description'	=> 'Permite subir archivos a las ordenes.',
+		'section'     => 'section_client_chrq',
+		'default'     => 0,
+		'choices' => array(
+			0  => __( 'Disable', 'fastway' ),
+			1 => __( 'Enable', 'fastway' )
+		)
+	) );
+}
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_trans_comprobantes_id',
@@ -227,7 +229,7 @@ if(isAltoweb()){
     Kirki::add_field( 'theme_config_id', array(
         'type'        => 'switch',
         'settings'    => 'fw_widget_talles_vonder',
-        'label'       => __( 'Talles Vonder (CR)', 'fastway' ),
+        'label'       => __( 'Talles Vonder', 'fastway' ).(isAltoweb()?'(CR)':''),
         'section'     => 'section_clientwidgets',
         'default'     => 0,
         'choices' => array(
@@ -238,7 +240,7 @@ if(isAltoweb()){
     Kirki::add_field( 'theme_config_id', array(
         'type'        => 'switch',
         'settings'    => 'fw_widget_lili_discount',
-        'label'       => __( 'Lili Discount (CR)', 'fastway' ),
+        'label'       => __( 'Lili Discount', 'fastway' ).(isAltoweb()?'(CR)':''),
         'section'     => 'section_clientwidgets',
         'default'     => 0,
         'choices' => array(
@@ -249,7 +251,7 @@ if(isAltoweb()){
 	Kirki::add_field( 'theme_config_id', array(
         'type'        => 'switch',
         'settings'    => 'fw_widget_lili_discount_multi',
-        'label'       => __( 'Multi Lili Discount (CR)', 'fastway' ),
+        'label'       => __( 'Multi Lili Discount', 'fastway' ).(isAltoweb()?'(CR)':''),
         'section'     => 'section_clientwidgets',
         'default'     => 0,
         'choices' => array(

@@ -88,10 +88,10 @@ function fw_gift_fields_admin($order){
     $r2=get_post_meta( $order->get_id(), '_shipping_date', true );
     $r5=get_post_meta( $order->get_id(), '_shipping_mensaje', true );
     echo '<div class="regalo" style="border:1px solid pink;padding:10px;margin-bottom:10px;">
-    <p><strong style="color:pink !important;">PARA REGALO</strong></p>
-    <p><strong>Mensaje</strong> ' . $r5 . '</p>
-    <p><strong>Telefono</strong> ' . $r1 . '</p>
-    <p><strong>Fecha</strong> ' . $r2 . '</p>
+    <p><strong style="color:pink !important;">'.fw_theme_mod('fw_order_gift_note_placeholder').'</strong></p>
+    <p><strong>'.__('Message','fastway').'</strong> ' . $r5 . '</p>
+    <p><strong>'.__('Phone number','fastway').'</strong> ' . $r1 . '</p>
+    <p><strong>'.__('Shipping date','fastway').'</strong> ' . $r2 . '</p>
     </div>';
   } 
 }
