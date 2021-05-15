@@ -27,35 +27,36 @@ if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']
   set_theme_mod('fw_email_content_customer_await_verif_order',$_POST['fw_email_content_customer_await_verif_order']);
 
 }
-set_theme_mod('fw_email_subject_customer_processing_order',get_option('fw_email_subject_customer_processing_order'));
-set_theme_mod('fw_email_content_customer_processing_order',get_option('fw_email_content_customer_processing_order'));
-set_theme_mod('fw_email_subject_customer_completed_order',get_option('fw_email_subject_customer_completed_order'));
-set_theme_mod('fw_email_content_customer_completed_order',get_option('fw_email_content_customer_completed_order'));
-set_theme_mod('fw_email_subject_customer_on_hold_order',get_option('fw_email_subject_customer_on_hold_order'));
-set_theme_mod('fw_email_content_customer_on_hold_order',get_option('fw_email_content_customer_on_hold_order'));
+if(isAltoweb()){
+  set_theme_mod('fw_email_subject_customer_processing_order',get_option('fw_email_subject_customer_processing_order'));
+  set_theme_mod('fw_email_content_customer_processing_order',get_option('fw_email_content_customer_processing_order'));
+  set_theme_mod('fw_email_subject_customer_completed_order',get_option('fw_email_subject_customer_completed_order'));
+  set_theme_mod('fw_email_content_customer_completed_order',get_option('fw_email_content_customer_completed_order'));
+  set_theme_mod('fw_email_subject_customer_on_hold_order',get_option('fw_email_subject_customer_on_hold_order'));
+  set_theme_mod('fw_email_content_customer_on_hold_order',get_option('fw_email_content_customer_on_hold_order'));
 
-set_theme_mod('fw_email_subject_customer_new_account',get_option('fw_email_subject_customer_new_account'));
-set_theme_mod('fw_email_content_customer_new_account',get_option('fw_email_content_customer_new_account'));
-set_theme_mod('fw_email_subject_customer_reset_password',get_option('fw_email_subject_customer_reset_password'));
-set_theme_mod('fw_email_content_customer_reset_password',get_option('fw_email_content_customer_reset_password'));
-set_theme_mod('fw_email_subject_gf_activated',get_option('fw_email_subject_gf_activated'));
-set_theme_mod('fw_email_content_gf_activated',get_option('fw_email_content_gf_activated'));
+  set_theme_mod('fw_email_subject_customer_new_account',get_option('fw_email_subject_customer_new_account'));
+  set_theme_mod('fw_email_content_customer_new_account',get_option('fw_email_content_customer_new_account'));
+  set_theme_mod('fw_email_subject_customer_reset_password',get_option('fw_email_subject_customer_reset_password'));
+  set_theme_mod('fw_email_content_customer_reset_password',get_option('fw_email_content_customer_reset_password'));
+  set_theme_mod('fw_email_subject_gf_activated',get_option('fw_email_subject_gf_activated'));
+  set_theme_mod('fw_email_content_gf_activated',get_option('fw_email_content_gf_activated'));
 
-set_theme_mod('fw_email_content_confirmation_wholesale_form',get_option('fw_email_content_confirmation_wholesale_form'));
-set_theme_mod('fw_email_content_product_summary',get_option('fw_email_content_product_summary'));
-set_theme_mod('fw_email_subject_gf_pending',get_option('fw_email_subject_gf_pending'));
-set_theme_mod('fw_email_content_gf_pending',get_option('fw_email_content_gf_pending'));
-set_theme_mod('fw_email_subject_admin_new_order',get_option('fw_email_subject_admin_new_order'));
-set_theme_mod('fw_email_content_admin_new_order',get_option('fw_email_content_admin_new_order'));
-set_theme_mod('fw_email_content_thankyou',get_option('fw_email_content_thankyou'));
-
-
-set_theme_mod('fw_email_subject_customer_despachado_order',get_option('fw_email_subject_customer_despachado_order'));
-set_theme_mod('fw_email_content_customer_despachado_order',get_option('fw_email_content_customer_despachado_order'));
-set_theme_mod('fw_email_subject_customer_await_verif_order',get_option('fw_email_subject_customer_await_verif_order'));
-set_theme_mod('fw_email_content_customer_await_verif_order',get_option('fw_email_content_customer_await_verif_order'));
+  set_theme_mod('fw_email_content_confirmation_wholesale_form',get_option('fw_email_content_confirmation_wholesale_form'));
+  set_theme_mod('fw_email_content_product_summary',get_option('fw_email_content_product_summary'));
+  set_theme_mod('fw_email_subject_gf_pending',get_option('fw_email_subject_gf_pending'));
+  set_theme_mod('fw_email_content_gf_pending',get_option('fw_email_content_gf_pending'));
+  set_theme_mod('fw_email_subject_admin_new_order',get_option('fw_email_subject_admin_new_order'));
+  set_theme_mod('fw_email_content_admin_new_order',get_option('fw_email_content_admin_new_order'));
+  set_theme_mod('fw_email_content_thankyou',get_option('fw_email_content_thankyou'));
 
 
+  set_theme_mod('fw_email_subject_customer_despachado_order',get_option('fw_email_subject_customer_despachado_order'));
+  set_theme_mod('fw_email_content_customer_despachado_order',get_option('fw_email_content_customer_despachado_order'));
+  set_theme_mod('fw_email_subject_customer_await_verif_order',get_option('fw_email_subject_customer_await_verif_order'));
+  set_theme_mod('fw_email_content_customer_await_verif_order',get_option('fw_email_content_customer_await_verif_order'));
+
+}
 
 function myplugin_register_settings() {register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );}
 add_action( 'admin_init', 'myplugin_register_settings' );
@@ -74,6 +75,15 @@ function myplugin_options_page(){
           $customer_emails_vars.=$gateway->title.' ('.$gateway->id.') , ';
       }
   }
+  if(empty(WC()->payment_gateways->get_available_payment_gateways()))$customer_emails_vars.='No payment methods yet';
+  $customer_emails_vars.='<br><b>'.__('Payment Methods','fastway').'('.__('values','fastway').')</b>
+  <br><small>';
+  foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
+      if( $gateway->enabled == 'yes' ) {
+          $customer_emails_vars.=$gateway->title.' ('.$gateway->id.') , ';
+      }
+  }
+  if(empty(WC()->payment_gateways->get_available_payment_gateways()))$customer_emails_vars.='No payment methods yet';
   $customer_emails_vars.='</small><br><b>'.__('Roles','fastway').' ('.__('values','fastway').'):</b>
   <br><small>';
   $roles=array();

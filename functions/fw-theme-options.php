@@ -2332,18 +2332,57 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+if(isAltoweb()){
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'switch',
+		'settings'    => 'fw_is_multitienda',
+		'label'       => __( 'Multilist', 'fastway' ),
+		'description'	=> 'More than one list price by role',
+		'section'     => 'section_woo',
+		'default'     => 0,
+		'choices' => array(
+			0  => __( 'Disable', 'fastway' ),
+			1 => __( 'Enable', 'fastway' )
+		)
+	) );
+}
 
 Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'switch',
-	'settings'    => 'fw_is_multitienda',
-	'label'       => __( 'Multilist', 'fastway' ),
-	'description'	=> 'More than one list price by role',
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_shop_state',
+	'label'       => __( 'Shop State', 'fastway' ),
 	'section'     => 'section_woo',
-	'default'     => 0,
-	'choices' => array(
-	    0  => __( 'Disable', 'fastway' ),
-	    1 => __( 'Enable', 'fastway' )
-	)
+	'description' => 'Purchases Off: Hides purchase button so no one can buy<br>Only enquiry: Hides prices and purchase button and replaces it with a contact button.',
+	'default'     => 'normal',
+	'choices'     => array(
+		'normal' => __( 'Normal', 'fastway' ),
+		'hidepurchases' => __( 'Purchases Off', 'fastway' ),
+		'hideprices' => __( 'Only enquiry', 'fastway' ),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_prices_visibility',
+	'label'       => __( 'Prices', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'show',
+	'choices'     => array(
+		'show' => __( 'Show', 'fastway' ),
+		'logged' => __( 'Logged In', 'fastway' ),
+		'hide' => __( 'Hide', 'fastway' ),
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'fw_purchases_visibility',
+	'label'       => __( 'Purchases', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'show',
+	'choices'     => array(
+		'show'   => __( 'Show', 'fastway' ),
+		'logged' => __( 'Logged In', 'fastway' ),
+		'hide' => __( 'Hide', 'fastway' ),
+	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
@@ -2368,20 +2407,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'default'     => 'sin-categorizar,sin-categoria,uncategorized',
 ) );
 
-
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_shop_state',
-	'label'       => __( 'Shop State', 'fastway' ),
-	'section'     => 'section_woo',
-	'description' => 'Purchases Off: Hides purchase button so no one can buy<br>Only enquiry: Hides prices and purchase button and replaces it with a contact button.',
-	'default'     => 'normal',
-	'choices'     => array(
-		'normal' => __( 'Normal', 'fastway' ),
-		'hidepurchases' => __( 'Purchases Off', 'fastway' ),
-		'hideprices' => __( 'Only enquiry', 'fastway' ),
-	),
-) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
@@ -2484,30 +2509,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );*/
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_prices_visibility',
-	'label'       => __( 'Prices', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 'show',
-	'choices'     => array(
-		'show' => __( 'Show', 'fastway' ),
-		'logged' => __( 'Logged In', 'fastway' ),
-		'hide' => __( 'Hide', 'fastway' ),
-	),
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'radio-buttonset',
-	'settings'    => 'fw_purchases_visibility',
-	'label'       => __( 'Purchases', 'fastway' ),
-	'section'     => 'section_woo',
-	'default'     => 'show',
-	'choices'     => array(
-		'show'   => __( 'Show', 'fastway' ),
-		'logged' => __( 'Logged In', 'fastway' ),
-		'hide' => __( 'Hide', 'fastway' ),
-	),
-) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -2702,8 +2704,8 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_extra_tax',
-	'label'       => __( 'Extra Taxonomias', 'fastway' ),
-	'description'	=>	'Taxonomy names. Eg: (brand,genre)',
+	'label'       => __( 'Custom Taxonomies', 'fastway' ),
+	'description'	=>	'Taxonomy names. Eg: Brand, Genre',
 	'section'     => 'section_woo',
 	'default'     => '',
 ) );
@@ -4056,6 +4058,16 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
+	'settings'    => 'thankyou_insert',
+	'label'    => __( 'Thank You Page Scripts', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' => __( 'Allows you to insert scripts for marketing in the thank you page.','fastway'),
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
 	'settings'    => 'fw_header_scripts',
 	'label'    => __( 'Insert Scripts Header', 'fastway' ),       
 	'section'     => 'section_scripts',
@@ -4076,16 +4088,6 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'code',
-	'settings'    => 'thankyou_insert',
-	'label'    => __( 'Thank You Page Scripts', 'fastway' ),       
-	'section'     => 'section_woo',
-	'description' => __( 'Allows you to insert scripts for marketing in the thank you page.','fastway'),
-	'choices'     => array(
-		'language' => 'html',
-	),
-) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_product_discount',
