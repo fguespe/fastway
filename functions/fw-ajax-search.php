@@ -27,17 +27,14 @@ function fw_product_search_where( $where, $query ) {
 }
 
 
-if(fw_theme_mod('fw_search_by_sku')){
-  add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
-  add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
-}
+add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
+add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
 
 
 
 
-if(fw_theme_mod('fw_ajax_search')){
 
-    function ajax_search() {
+function ajax_search() {
       // Get search term from search field
       $search = sanitize_text_field( $_POST[ 'query' ] );
       // Set up query using search string, limit to 8 results
@@ -105,14 +102,13 @@ if(fw_theme_mod('fw_ajax_search')){
       wp_reset_query();
       
       die();
-    }
-    
-    /* We need to hook into both wp_ajax and wp_ajax_nopriv_ in order for
-      the search to work for both logged in and logged out users. */
-    add_action( 'wp_ajax_ajax_search', 'ajax_search' );
-    add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
-  
 }
+
+/* We need to hook into both wp_ajax and wp_ajax_nopriv_ in order for
+  the search to work for both logged in and logged out users. */
+add_action( 'wp_ajax_ajax_search', 'ajax_search' );
+add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
+
 if( !function_exists( 'fw_search_form' ) ) {
     add_shortcode('fw_search_form', 'fw_search_form');
     function fw_search_form($atts){

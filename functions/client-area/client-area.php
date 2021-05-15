@@ -292,7 +292,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_widget_mensaje_sec',
-	'label'       => __( 'Secondary Message ', 'fastway' ),
+	'label'       => __( 'Secondary Message', 'fastway' ),
     'description' => 'Allows customers to set up a message used in multiple places via its shortcode [fw_mensaje_sec]',
 	'section'     => 'section_clientwidgets',
 	'default'     => 0,

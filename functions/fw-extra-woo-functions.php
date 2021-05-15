@@ -2219,22 +2219,23 @@ function change_default_checkout_country() {
   $ja=explode(':',get_option('woocommerce_default_country'))[0];
   return $ja;
 }
-
-add_action( 'admin_notices', 'sample_admin_notice__error' );
-function sample_admin_notice__error() {
-  $class = 'error admin';
-  $message1 = "ATENCÍON: MULTITIENDA";
-  $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
-  $message3="Esta tienda tiene activado el plugin Prices by User Role y tiene algunas incompatiblidades como:
-  Dynamic Discounts product pricing no funciona,o nuestro descuento general, osea solo se pueden hacer descuentos generales al total del carrito, no por items separados, o poniendo la oferta en la lista con excel o manualmente";
-  if(fw_theme_mod('fw_is_multitienda'))printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
-
+if(isAltoweb()){
+  add_action( 'admin_notices', 'sample_admin_notice__error' );
+  function sample_admin_notice__error() {
+    $class = 'error admin';
+    $message1 = "ATENCÍON: MULTITIENDA";
+    $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
+    $message3="Esta tienda tiene activado el plugin Prices by User Role y tiene algunas incompatiblidades como:
+    Dynamic Discounts product pricing no funciona,o nuestro descuento general, osea solo se pueden hacer descuentos generales al total del carrito, no por items separados, o poniendo la oferta en la lista con excel o manualmente";
+    if(fw_theme_mod('fw_is_multitienda'))printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
   
-  $class = 'usuarios notice ocultar';
-  $message1 = "INFO: CREACIÓN DE USUARIOS";
-  $message2="Si esta activo el checkbox de no enviar el correo electronico, entonces creamos la cuenta , y luego vamos a usuarios si queremos editar la contraseña.";
-  $message3="Si por el otro lado, tildamos el checkbox, entonces se le manda al mail un correo de activación con un link para que genere su password.";
-  printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
+    
+    $class = 'usuarios notice ocultar';
+    $message1 = "INFO: CREACIÓN DE USUARIOS";
+    $message2="Si esta activo el checkbox de no enviar el correo electronico, entonces creamos la cuenta , y luego vamos a usuarios si queremos editar la contraseña.";
+    $message3="Si por el otro lado, tildamos el checkbox, entonces se le manda al mail un correo de activación con un link para que genere su password.";
+    printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p><p>%4$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ),esc_html( $message3 ) ); 
+  }
 }
 
 

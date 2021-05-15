@@ -1,177 +1,66 @@
 <?php
-function myplugin_register_settings() {
-add_option( 'fw_email_subject_customer_new_account', 'Tu cuenta esta lista');
-add_option( 'fw_email_content_customer_new_account', 'Bienvenido a {{blogname}}
+if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']=='update'){
+  set_theme_mod('fw_email_subject_customer_processing_order',$_POST['fw_email_subject_customer_processing_order']);
+  set_theme_mod('fw_email_content_customer_processing_order',$_POST['fw_email_content_customer_processing_order']);
+  set_theme_mod('fw_email_subject_customer_completed_order',$_POST['fw_email_subject_customer_completed_order']);
+  set_theme_mod('fw_email_content_customer_completed_order',$_POST['fw_email_content_customer_completed_order']);
+  set_theme_mod('fw_email_subject_customer_on_hold_order',$_POST['fw_email_subject_customer_on_hold_order']);
+  set_theme_mod('fw_email_content_customer_on_hold_order',$_POST['fw_email_content_customer_on_hold_order']);
 
-Gracias por crear una cuenta en nuestra web. 
-Tu nombre de usuario es {{user_name}}
-Podés acceder a tu cuenta para ver pedidos, cambiar tu contraseña y más en: {{myaccount}}
+  set_theme_mod('fw_email_subject_customer_new_account',$_POST['fw_email_subject_customer_new_account']);
+  set_theme_mod('fw_email_content_customer_new_account',$_POST['fw_email_content_customer_new_account']);
+  set_theme_mod('fw_email_subject_customer_reset_password',$_POST['fw_email_subject_customer_reset_password']);
+  set_theme_mod('fw_email_content_customer_reset_password',$_POST['fw_email_content_customer_reset_password']);
+  set_theme_mod('fw_email_subject_gf_activated',$_POST['fw_email_subject_gf_activated']);
+  set_theme_mod('fw_email_content_gf_activated',$_POST['fw_email_content_gf_activated']);
 
-Tu contraseña se generó automáticamente: <strong>{{user_pass}}</strong>
-Pero podés cambiarla cuando quieras.
-
-¡Te esperamos! ;-)');
-
-add_option( 'fw_email_subject_customer_processing_order', 'Gracias por tu pedido');
-add_option( 'fw_email_content_customer_processing_order', 'Hola {{customer_name}},
-
-Solo para que estés informado — hemos recibido tu pedido {{order_number}}, y ahora se está procesando
-
-
-{{order_details}}
-
-{{order_meta}}
-
-{{customer_details}}
-
-Gracias por tu compra.');
-
-
-if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_id')){
-add_option( 'fw_email_subject_customer_despachado_order', 'Pedido Despachado');
-add_option( 'fw_email_content_customer_despachado_order', 'Hola {{customer_name}},
-
-solo para que estés informado, tu pedido {{order_number}} fue despachado
-al transporte tal cual como lo solicitaste.');
-
-add_option( 'fw_email_subject_customer_await_verif_order', 'Recibimos tu comprobante');
-add_option( 'fw_email_content_customer_await_verif_order', 'Hola {{customer_name}},
-
-Solo para que estés informado — hemos recibido tu comprobante para la orden {{order_number}}
-
-Estaremos verificandolo y te notificaremos cuando este aprobado.
-
-Gracias por tu compra.');
+  set_theme_mod('fw_email_content_confirmation_wholesale_form',$_POST['fw_email_content_confirmation_wholesale_form']);
+  set_theme_mod('fw_email_content_product_summary',$_POST['fw_email_content_product_summary']);
+  set_theme_mod('fw_email_subject_gf_pending',$_POST['fw_email_subject_gf_pending']);
+  set_theme_mod('fw_email_content_gf_pending',$_POST['fw_email_content_gf_pending']);
+  set_theme_mod('fw_email_subject_admin_new_order',$_POST['fw_email_subject_admin_new_order']);
+  set_theme_mod('fw_email_content_admin_new_order',$_POST['fw_email_content_admin_new_order']);
+  set_theme_mod('fw_email_content_thankyou',$_POST['fw_email_content_thankyou']);
+  set_theme_mod('fw_email_subject_customer_despachado_order',$_POST['fw_email_subject_customer_despachado_order']);
+  set_theme_mod('fw_email_content_customer_despachado_order',$_POST['fw_email_content_customer_despachado_order']);
+  set_theme_mod('fw_email_subject_customer_await_verif_order',$_POST['fw_email_subject_customer_await_verif_order']);
+  set_theme_mod('fw_email_content_customer_await_verif_order',$_POST['fw_email_content_customer_await_verif_order']);
 
 }
-add_option( 'fw_email_subject_customer_completed_order', 'Pedido completado');
-add_option( 'fw_email_content_customer_completed_order', 'Hola {{customer_name}},
+set_theme_mod('fw_email_subject_customer_processing_order',get_option('fw_email_subject_customer_processing_order'));
+set_theme_mod('fw_email_content_customer_processing_order',get_option('fw_email_content_customer_processing_order'));
+set_theme_mod('fw_email_subject_customer_completed_order',get_option('fw_email_subject_customer_completed_order'));
+set_theme_mod('fw_email_content_customer_completed_order',get_option('fw_email_content_customer_completed_order'));
+set_theme_mod('fw_email_subject_customer_on_hold_order',get_option('fw_email_subject_customer_on_hold_order'));
+set_theme_mod('fw_email_content_customer_on_hold_order',get_option('fw_email_content_customer_on_hold_order'));
 
-Hemos terminado de procesar tu pedido.
+set_theme_mod('fw_email_subject_customer_new_account',get_option('fw_email_subject_customer_new_account'));
+set_theme_mod('fw_email_content_customer_new_account',get_option('fw_email_content_customer_new_account'));
+set_theme_mod('fw_email_subject_customer_reset_password',get_option('fw_email_subject_customer_reset_password'));
+set_theme_mod('fw_email_content_customer_reset_password',get_option('fw_email_content_customer_reset_password'));
+set_theme_mod('fw_email_subject_gf_activated',get_option('fw_email_subject_gf_activated'));
+set_theme_mod('fw_email_content_gf_activated',get_option('fw_email_content_gf_activated'));
 
-{{order_details}}
-
-{{order_meta}}
-
-{{customer_details}}
-
-Gracias por tu compra.');
-
-
-
-add_option( 'fw_email_subject_customer_on_hold_order', 'Pedido a la espera');
-add_option( 'fw_email_content_customer_on_hold_order', 'Hola {{customer_name}},
-
-Gracias por tu pedido. Está en espera hasta que confirmemos que se ha recibido el pago. Mientras tanto, aquí tienes un recordatorio de lo que has pedido:
-
-{{order_details}}
-
-{{order_meta}}
-
-{{customer_details}}
-
-Esperamos poder cumplir pronto tu pedido.');
+set_theme_mod('fw_email_content_confirmation_wholesale_form',get_option('fw_email_content_confirmation_wholesale_form'));
+set_theme_mod('fw_email_content_product_summary',get_option('fw_email_content_product_summary'));
+set_theme_mod('fw_email_subject_gf_pending',get_option('fw_email_subject_gf_pending'));
+set_theme_mod('fw_email_content_gf_pending',get_option('fw_email_content_gf_pending'));
+set_theme_mod('fw_email_subject_admin_new_order',get_option('fw_email_subject_admin_new_order'));
+set_theme_mod('fw_email_content_admin_new_order',get_option('fw_email_content_admin_new_order'));
+set_theme_mod('fw_email_content_thankyou',get_option('fw_email_content_thankyou'));
 
 
-
-add_option( 'fw_email_subject_customer_reset_password', 'Cambio de contraseña');
-add_option( 'fw_email_content_customer_reset_password', 'Hola {{user_name}},
-
-Alguien solicitó cambiar la contraseña de tu cuenta: {{user_name}}
-
-Para cambiar tu contraseña: {{reset_link}}
-
-
-<small>*Si no fuiste tu, ignorar este correo.</small>');
+set_theme_mod('fw_email_subject_customer_despachado_order',get_option('fw_email_subject_customer_despachado_order'));
+set_theme_mod('fw_email_content_customer_despachado_order',get_option('fw_email_content_customer_despachado_order'));
+set_theme_mod('fw_email_subject_customer_await_verif_order',get_option('fw_email_subject_customer_await_verif_order'));
+set_theme_mod('fw_email_content_customer_await_verif_order',get_option('fw_email_content_customer_await_verif_order'));
 
 
 
-add_option( 'fw_email_subject_admin_new_order', 'Nuevo Pedido {{order_number}}');
-add_option( 'fw_email_content_admin_new_order', '
-Recibiste un nuevo pedido de: {{customer_name}}
-
-{{order_details}}
-
-{{order_meta}}
-
-{{customer_details}}
-');
-
-
-
-add_option( 'fw_email_subject_admin_new_order', 'Nuevo Pedido {{order_number}}');
-add_option( 'fw_email_content_admin_new_order', '
-Recibimos tu solicitud
-
-Estaremos evaluandola a fin de determinar
-');
-
-
-
-//WHOLESALE
-add_option( 'fw_email_content_confirmation_wholesale_form', '¡Gracias por contactar con nosotros! 
-
-Nos pondremos en contacto contigo muy pronto.
-');
-
-
-add_option( 'fw_email_subject_gf_pending', 'Nueva Solicitud');
-add_option( 'fw_email_content_gf_pending', 'Recibimos tu solicitud. 
-
-Estaremos evaluando tu solicitud y te avisaremos cuando te demos de alta.
-');
-
-add_option( 'fw_email_subject_gf_activated', 'Solicitud Aceptada');
-add_option( 'fw_email_content_gf_activated', 'Tu cuenta ya esta lista
-
-Para activarla entra al siguiente link: {{activation_url}}');
-
-
-add_option( 'fw_email_content_thankyou', '
-<h2>Gracias por tu compra</h2>
-
-<p>El pedido fue registrado con número {{order_number}}</p>
-
-<span>Te enviamos un mail a <b>{{customer_email}}</b> con el detalle y las instrucciones de como seguir.</span>
-');
-
-
-add_option( 'fw_email_content_product_summary', '');
-
-
-register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_customer_processing_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_customer_completed_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_customer_on_hold_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_customer_reset_password', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_admin_new_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_gf_pending', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_subject_gf_activated', 'myplugin_callback' );
-
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_new_account', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_processing_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_completed_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_on_hold_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_despachado_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_await_verif_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_customer_reset_password', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_admin_new_order', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_gf_pending', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_gf_activated', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_thankyou', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_confirmation_wholesale_form', 'myplugin_callback' );
-register_setting( 'fw_email_options_group', 'fw_email_content_product_summary', 'myplugin_callback' );
-
-}
-
+function myplugin_register_settings() {register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );}
 add_action( 'admin_init', 'myplugin_register_settings' );
-
-function myplugin_register_options_page() {
-add_options_page('Email Templates', 'Email Templates', 'manage_options', 'myplugin', 'myplugin_options_page');
-}
+function myplugin_register_options_page() {add_options_page('Email Templates', 'Email Templates', 'manage_options', 'myplugin', 'myplugin_options_page');}
 add_action('admin_menu', 'myplugin_register_options_page');
-
-
 
 function myplugin_options_page(){
   $customer_emails_vars.='
@@ -265,27 +154,26 @@ function openCity(evt, cityName) {
 <form method="post" class="wrap" action="options.php">
 <?php settings_fields( 'fw_email_options_group' ); ?>
 <div class="tab">
-  <button type="button" class="tablinks active" onclick="openCity(event, 'customer_emails')">Order Emails</button>
-  <button type="button" class="tablinks " onclick="openCity(event, 'account_emails')">Account Emails</button>
+  <button type="button" class="tablinks active" onclick="openCity(event, 'customer_emails')"><?=__('Orders','fastway')?></button>
+  <button type="button" class="tablinks " onclick="openCity(event, 'account_emails')"><?=__('Authentication','fastway')?></button>
   <?php
 if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 ?>
-  <button type="button" class="tablinks" onclick="openCity(event, 'wholesale')">Wholesale</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'wholesale')"><?=__('Wholesale','fastway')?></button>
 <?php } ?>
-  <button type="button" class="tablinks" onclick="openCity(event, 'admin_emails')">Admin Emails</button>
-  <button type="button" class="tablinks" onclick="openCity(event, 'other')">Other</button>
+  <button type="button" class="tablinks" onclick="openCity(event, 'other')"><?=__('Other','fastway')?></button>
 </div>
 
 <div class="valinfo"><?=$customer_emails_vars;?></div>
 <!-- Tab content -->
-<div id="account_emails" class="tabcontent" style="display:block;">
+<div id="account_emails" class="tabcontent" style=";">
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New Account', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_new_account" name="fw_email_subject_customer_new_account" value="<?php echo get_option('fw_email_subject_customer_new_account'); ?>" />
+<input type="text" class="w100" id="fw_email_subject_customer_new_account" name="fw_email_subject_customer_new_account" value="<?php echo fw_theme_mod('fw_email_subject_customer_new_account'); ?>" />
 <small>Variables: {{blogname}} {{user_name}} {{user_pass}} {{myaccount}}</small><br>
 <?php
-$content = get_option('fw_email_content_customer_new_account');
+$content = fw_theme_mod('fw_email_content_customer_new_account');
 wp_editor( $content, 'fw_email_content_customer_new_account', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
@@ -293,53 +181,53 @@ wp_editor( $content, 'fw_email_content_customer_new_account', $settings = array(
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "reset password" emails are sent when customers reset their passwords.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_reset_password" name="fw_email_subject_customer_reset_password" value="<?php echo get_option('fw_email_subject_customer_reset_password'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_reset_password" name="fw_email_subject_customer_reset_password" value="<?php echo fw_theme_mod('fw_email_subject_customer_reset_password'); ?>" /><br>
 <small>Variables: {{blogname}} {{user_name}} {{user_pass}} {{myaccount}} {{reset_link}}</small><br>
 <?php
-$content = get_option('fw_email_content_customer_reset_password');
+$content = fw_theme_mod('fw_email_content_customer_reset_password');
 wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 
 <div class="tipomail">
-<h3 class="titulo">Activation</h3>
-<small>Sent after the user is approved internally and a link for generating a password is sent to him</small>
-<input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo get_option('fw_email_subject_gf_activated'); ?>" /><br>
+<h3 class="titulo"><?=__('Activation','fastway')?></h3>
+<small><?=__('Sent after the user is approved internally and a link for generating a password is sent to him','fastway')?></small>
+<input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo fw_theme_mod('fw_email_subject_gf_activated'); ?>" /><br>
 <small>Variables:{user:user_login} {activation_url}</small>
 <?php
-$content = get_option('fw_email_content_gf_activated');
+$content = fw_theme_mod('fw_email_content_gf_activated');
 wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 </div>
-<div id="customer_emails" class="tabcontent">
+<div id="customer_emails" class="tabcontent" style="display:block;">
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Processing order', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after payment.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_processing_order" name="fw_email_subject_customer_processing_order" value="<?php echo get_option('fw_email_subject_customer_processing_order'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_processing_order" name="fw_email_subject_customer_processing_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_processing_order'); ?>" /><br>
 
 <?php
-$content = get_option('fw_email_content_customer_processing_order');
+$content = fw_theme_mod('fw_email_content_customer_processing_order');
 wp_editor( $content, 'fw_email_content_customer_processing_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Completed order', 'woocommerce' )?></h3>
 <small><?=__( 'Order complete emails are sent to customers when their orders are marked completed and usually indicate that their orders have been shipped.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_completed_order" name="fw_email_subject_customer_completed_order" value="<?php echo get_option('fw_email_subject_customer_completed_order'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_completed_order" name="fw_email_subject_customer_completed_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_completed_order'); ?>" /><br>
 
 <?php
-$content = get_option('fw_email_content_customer_completed_order');
+$content = fw_theme_mod('fw_email_content_customer_completed_order');
 wp_editor( $content, 'fw_email_content_customer_completed_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Order on-hold', 'woocommerce' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing order details after an order is placed on_hold.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_on_hold_order" name="fw_email_subject_customer_on_hold_order" value="<?php echo get_option('fw_email_subject_customer_on_hold_order'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_on_hold_order" name="fw_email_subject_customer_on_hold_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_on_hold_order'); ?>" /><br>
 
 <?php
-$content = get_option('fw_email_content_customer_on_hold_order');
+$content = fw_theme_mod('fw_email_content_customer_on_hold_order');
 wp_editor( $content, 'fw_email_content_customer_on_hold_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
@@ -350,20 +238,20 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Verification pending', 'fastway' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo get_option('fw_email_subject_customer_await_verif_order'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_await_verif_order" name="fw_email_subject_customer_await_verif_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_await_verif_order'); ?>" /><br>
 
 <?php
-$content = get_option('fw_email_content_customer_await_verif_order');
+$content = fw_theme_mod('fw_email_content_customer_await_verif_order');
 wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Order shipped', 'fastway' )?></h3>
 <small><?=__( 'This is an order notification sent to customers after order is marked as shipped.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_customer_despachado_order" name="fw_email_subject_customer_despachado_order" value="<?php echo get_option('fw_email_subject_customer_despachado_order'); ?>" /><br>
+<input type="text" class="w100" id="fw_email_subject_customer_despachado_order" name="fw_email_subject_customer_despachado_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_despachado_order'); ?>" /><br>
 
 <?php
-$content = get_option('fw_email_content_customer_despachado_order');
+$content = fw_theme_mod('fw_email_content_customer_despachado_order');
 wp_editor( $content, 'fw_email_content_customer_despachado_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
@@ -373,54 +261,50 @@ wp_editor( $content, 'fw_email_content_customer_despachado_order', $settings = a
 
 <div id="wholesale" class="tabcontent">
 <div class="tipomail">
-<h3 class="titulo">Form Confirmation Page</h3>
-<small>The message that is presented after completing the form</small>
+<h3 class="titulo"><?=__('Form Confirmation Page','fastway')?></h3>
+<small><?=__('The message that is presented after completing the form','fastway')?></small>
 <?php
-$content = get_option('fw_email_content_confirmation_wholesale_form');
+$content = fw_theme_mod('fw_email_content_confirmation_wholesale_form');
 wp_editor( $content, 'fw_email_content_confirmation_wholesale_form', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
-<h3 class="titulo">User Pending</h3>
-<small>Sent after the user completes the wholesale form</small>
-<input type="text" class="w100" id="fw_email_subject_gf_pending" name="fw_email_subject_gf_pending" value="<?php echo get_option('fw_email_subject_gf_pending'); ?>" /><br>
+<h3 class="titulo"><?=__('User Pending','fastway')?></h3>
+<small><?=__('Sent after the user completes the wholesale form','fastway')?></small>
+<input type="text" class="w100" id="fw_email_subject_gf_pending" name="fw_email_subject_gf_pending" value="<?php echo fw_theme_mod('fw_email_subject_gf_pending'); ?>" /><br>
 <?php
-$content = get_option('fw_email_content_gf_pending');
+$content = fw_theme_mod('fw_email_content_gf_pending');
 wp_editor( $content, 'fw_email_content_gf_pending', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 </div>
-<div id="admin_emails" class="tabcontent">
-<?=$customer_emails_vars;?>
+<div id="other" class="tabcontent">
 <!--NEW ORDER ADMIN -->
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'New order', 'woocommerce' )?></h3>
 <small><?=__( 'New order emails are sent to chosen recipient(s) when a new order is received.', 'woocommerce' );?></small>
-<input type="text" class="w100" id="fw_email_subject_admin_new_order" name="fw_email_subject_admin_new_order" value="<?php echo get_option('fw_email_subject_admin_new_order'); ?>" /><br>
-
+<input type="text" class="w100" id="fw_email_subject_admin_new_order" name="fw_email_subject_admin_new_order" value="<?php echo fw_theme_mod('fw_email_subject_admin_new_order'); ?>" /><br>
 <?php
-$content = get_option('fw_email_content_admin_new_order');
+$content = fw_theme_mod('fw_email_content_admin_new_order');
 wp_editor( $content, 'fw_email_content_admin_new_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-</div>
-<div id="other" class="tabcontent">
 <!--THANK YOU PAGE-->
 <div class="tipomail">
-<h3 class="titulo">Thank you page</h3>
-<small>Texto que aparece luego de la pagina de compra</small>
+<h3 class="titulo"><?=__('Thank you page','fastway')?></h3>
+<small><?=__('Text that appears in the checkout page, after finishing','fastway')?></small>
 
 <?php
-$content = get_option('fw_email_content_thankyou');
+$content = fw_theme_mod('fw_email_content_thankyou');
 wp_editor( $content, 'fw_email_content_thankyou', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
-<h3 class="titulo">Product info</h3>
-<small>Texto informativo aparece en cada producto, debajo del boton de compra</small>
+<h3 class="titulo"><?=__('Product Info','fastway')?></h3>
+<small><?=__('Info shared by all products. Can appear in the product page as a shortcode.[fw_customer_product_summary]','fastway')?></small>
 <small></small>
 <?php
-$content = get_option('fw_email_content_product_summary');
+$content = fw_theme_mod('fw_email_content_product_summary');
 wp_editor( $content, 'fw_email_content_product_summary', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>

@@ -71,6 +71,44 @@ if(!is_plugin_active('kirki/kirki.php')){
   return;
 }
 
+function fw_company_data($type, $link=false,$cant=1) {
+  $type=trim($type);$link=trim($link);$pre="";
+
+  if($type=="whatsapp" && $link)$pre="https://api.whatsapp.com/send?text=".fw_theme_mod('fw_share_message')."&phone=";
+  else if($type=="phone" && $link)$pre="tel:";
+  else if($type==="email" && $link)$pre="mailto:";
+  $value=fw_theme_mod('short-fw_company'.$type);
+  //fix whatsapp +
+  if($type=="whatsapp" && empty($value))$value=fw_theme_mod('short-fw_company'.'phone');
+  if($type=="whatsapp" && $link)$value=str_replace("+",'',$value);
+      
+  if(empty($value))return "";
+  
+  
+  if($cant==0)$cant=1;
+  $value=explode("|", $value)[$cant-1];
+  if(empty($value))return false;
+  preg_match('#\((.*?)\)#', $value, $match);
+  $link_en_parentesis= $match[1];
+  if($link_en_parentesis=='#'){//Si hay link en parentesis
+      return "";
+  }else if(!empty($link_en_parentesis)  && !$link){//Si hay link en parentesis
+      $value=$pre.str_replace("(".$link_en_parentesis.")","",$value);
+  }else if(!empty($link_en_parentesis) && $link){
+      $value=$pre.$link_en_parentesis;
+  }else if(empty($link_en_parentesis) && $link){
+      $value=$pre.$value;
+  }
+
+  /*prevent dobles*/
+  if( strpos( $value, 'tel:tel:' ) !== false) {
+      $value=str_replace('tel:tel:','tel:',$value);
+  }else if( strpos( $value, 'mailto:mailto:' ) !== false) {
+      $value=str_replace('mailto:mailto:','mailto:',$value);
+  }
+  
+  return $value;
+}
 function isAltoweb(){
   //Altoweb is my web design company. I develop fastway while building altoweb and testing it with all my clients.
   return fw_theme_mod('fw_fork_name')=='altoweb';}
