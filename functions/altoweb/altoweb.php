@@ -265,7 +265,7 @@ function altoweb_financiacion(){
         </span> 
         <span class="text"> 
         $html
-        <img style="display:block;" src="/wp-content/themes/fastway/assets/img/iconitopagos.png" width="97"/>
+        <img style="display:block;" src="/wp-content/themes/fastway/assets/img/altoweb/iconitopagos.png" width="97"/>
         <small style="color:#3483fa !important;">Más información</small> 
         </span>
     </li>
