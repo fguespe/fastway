@@ -59,6 +59,16 @@ function fw_social_icons( $atts ) {
             $link=fw_company_data($type,true,$cant);
             $value="Ir al Instagram";
             $icon_color="#9A3CC3";
+        }else if($type==="google"){
+            $icon="fab fa-google";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir al Google Page";
+            $icon_color="#9A3CC3";
+        }else if($type==="tripadvisor"){
+            $icon="fab fa-tripadvisor";
+            $link=fw_company_data($type,true,$cant);
+            $value="Ir al Tripadvisor";
+            $icon_color="#9A3CC3";
         }else if($type==="twitter"){
             $icon="fab fa-twitter";
             $link=fw_company_data($type,true,$cant);
@@ -299,6 +309,8 @@ function fw_data( $atts ) {
             else if($icon==="youtube")$icon="fab fa-youtube-square";
             else if($icon==="twitter")$icon="fab fa-twitter";
             else if($icon==="whatsapp")$icon="fab fa-whatsapp";
+            else if($icon==="google")$icon="fab fa-google";
+            else if($icon==="tripadvisor")$icon="fab fa-tripadvisor";
             $link=fw_company_data($icon);
             
             $first.='<a target="_blank" class="fw_quicklink" style="margin-right:5px ;font-size:'.$font_size.'px ;font-weight:'.$font_weight.' ;line-height:'.($font_size+20).'px ;" href="'.$link.'"><i class="'.$icon.'" style="color:'.$icon_color.' !important;"></i>';

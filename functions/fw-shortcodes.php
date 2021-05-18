@@ -41,6 +41,8 @@ function quicklinks(){
         "youtube"=>array("fab fa-youtube"), 
         "whatsapp"=>array("fab fa-whatsapp"), 
         "ig"=>array("fab fa-instagram"), 
+        "tripadvisor"=>array("fab fa-tripadvisor"), 
+        "google"=>array("fab fa-google"), 
         "linkedin"=>array("fab fa-linkedin"), 
         "email"=>array("fa fa-envelope"),  
         "phone"=>array("fa fa-phone"),  

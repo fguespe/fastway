@@ -3812,6 +3812,24 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_data',
 	'default'     => 'Instagram (#)'
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companygoogle',
+	'label'    => __( 'Company Google Page', 'fastway' ),
+    'description'     => __( '[fw_data type="google"]', 'fastway' ),            
+	'section'     => 'section_data',
+	'default'     => 'Google (#)'
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'short-fw_companytrip',
+	'label'    => __( 'Company Tripadvisor', 'fastway' ),
+    'description'     => __( '[fw_data type="tripadvisor"]', 'fastway' ),            
+	'section'     => 'section_data',
+	'default'     => 'Tripadvisor (#)'
+) );
 //Ohojo el. nombre
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
