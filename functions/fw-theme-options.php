@@ -3129,6 +3129,7 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_gallery]
 	[fw_single_summary]
 	[fw_single_title]
+	[fw_single_qty](stock)
 	[fw_single_price]
 	[fw_single_cart]
 	[fw_short_desc]
