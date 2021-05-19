@@ -141,15 +141,17 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_client_chrq',
 	'default'     => '',
 ) );
-
+if(isAltoweb()){
+	
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_forms_a_sendy',
-	'label'       => __( 'Forms to sendy', 'fastway' ),
+	'label'       => __( 'Form to Altoweb Mailer', 'fastway' ),
 	'section'     => 'section_client_chrq',
     'default'     => '',
     'description' => 'form_id,field_number,sendy_list|form_id,field_number,sendy_list|'
 ) );
+}
 
 /*CPT*/
 Kirki::add_field( 'theme_config_id', array(
