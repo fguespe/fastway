@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-05-15 17:12-0300\n"
-"PO-Revision-Date: 2021-05-19 13:53-0300\n"
+"PO-Revision-Date: 2021-05-19 14:30-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -401,14 +401,10 @@ msgid "Talles Vonder"
 msgstr ""
 
 #: functions/client-area/client-area.php:254
-#, fuzzy
-#| msgid "Discount (%)"
 msgid "Multi Lili Discount"
 msgstr "Descuento (%)"
 
 #: functions/client-area/client-area.php:266
-#, fuzzy
-#| msgid "Installments"
 msgid "General Installments"
 msgstr "Cuotas"
 
@@ -1247,8 +1243,6 @@ msgstr ""
 
 #: functions/emails/fw-email-settings-page.php:237
 #: functions/fw-theme-options.php:4794
-#, fuzzy
-#| msgid "Your information"
 msgid "Form Confirmation Page"
 msgstr "Tus datos"
 
@@ -1287,10 +1281,8 @@ msgid "Text that appears in the checkout page, after finishing"
 msgstr ""
 
 #: functions/emails/fw-email-settings-page.php:276
-#, fuzzy
-#| msgid "Products"
 msgid "Product Info"
-msgstr "Productos"
+msgstr "Info producto"
 
 #: functions/emails/fw-email-settings-page.php:277
 msgid ""
@@ -1345,8 +1337,6 @@ msgid "Phone number"
 msgstr "Teléfono"
 
 #: functions/fw-change-requests.php:94
-#, fuzzy
-#| msgid "Shipping Date"
 msgid "Shipping date"
 msgstr "Fecha de envío"
 
@@ -1664,8 +1654,6 @@ msgid "Post Page"
 msgstr ""
 
 #: functions/fw-theme-options.php:355
-#, fuzzy
-#| msgid "Shipping Date"
 msgid "Shipping "
 msgstr "Fecha de envío"
 
@@ -1758,8 +1746,6 @@ msgid "Ship to different address (checkbox)"
 msgstr "Enviar a otra dirección"
 
 #: functions/fw-theme-options.php:560
-#, fuzzy
-#| msgid "Shipping Address:"
 msgid "Ship to different address"
 msgstr "Medios de Envío:"
 
@@ -1784,8 +1770,6 @@ msgid "Select the correct option"
 msgstr "Seleccioná el botón que corresponda"
 
 #: functions/fw-theme-options.php:592 functions/fw-theme-options.php:594
-#, fuzzy
-#| msgid "Logg in"
 msgid "Logg In"
 msgstr "Ingresar"
 
@@ -1854,8 +1838,6 @@ msgid "We sent you an email to"
 msgstr "te enviamos un mail a"
 
 #: functions/fw-theme-options.php:706
-#, fuzzy
-#| msgid "We sent you an email to"
 msgid "we sent you an email to"
 msgstr "te enviamos un mail a"
 
@@ -2168,10 +2150,8 @@ msgid "Descontar stock ml->web"
 msgstr ""
 
 #: functions/fw-theme-options.php:1473
-#, fuzzy
-#| msgid "Shipping costs"
 msgid "Shipping Groups"
-msgstr "Costos de envío"
+msgstr "Agrupar retiros"
 
 #: functions/fw-theme-options.php:1490
 msgid "Email Templates"
@@ -2194,8 +2174,6 @@ msgid "INFO"
 msgstr ""
 
 #: functions/fw-theme-options.php:1555
-#, fuzzy
-#| msgid "Name"
 msgid "From Name"
 msgstr "Nombre"
 
@@ -2370,8 +2348,6 @@ msgstr ""
 "instrucciones de como seguir.</span>"
 
 #: functions/fw-theme-options.php:2258
-#, fuzzy
-#| msgid "Active"
 msgid "CTAs Active"
 msgstr "Activo"
 
@@ -2513,8 +2489,6 @@ msgid "Currency Symbol"
 msgstr ""
 
 #: functions/fw-theme-options.php:2636
-#, fuzzy
-#| msgid "Todopago Installments"
 msgid "TodoPago Installments"
 msgstr "Cuotas Todopago"
 
@@ -2571,8 +2545,6 @@ msgid "Default shipping paramaters"
 msgstr ""
 
 #: functions/fw-theme-options.php:2842
-#, fuzzy
-#| msgid "Free Shipping Per Product"
 msgid "Free Shipping First Order"
 msgstr "Envío gratis por producto"
 
@@ -2788,8 +2760,6 @@ msgid "Under Maintainance/Construction Html"
 msgstr ""
 
 #: functions/fw-theme-options.php:3842
-#, fuzzy
-#| msgid "Under maintainance"
 msgid "Site under maintenance"
 msgstr "Bajo mantenimiento"
 
@@ -2889,8 +2859,6 @@ msgid "Use shorter and simpler words"
 msgstr ""
 
 #: functions/fw-theme-options.php:3967
-#, fuzzy
-#| msgid "Use the menu to navigate the page, also check the url"
 msgid "Use the menu and the navigation to help you"
 msgstr "Usa el menú para navegación"
 
@@ -2905,8 +2873,6 @@ msgstr ""
 #: functions/fw-theme-options.php:3988 functions/fw-theme-options.php:3996
 #: functions/fw-theme-options.php:4003 functions/fw-theme-options.php:4010
 #: functions/fw-theme-options.php:4017 functions/fw-theme-options.php:4024
-#, fuzzy
-#| msgid "Refresh cache"
 msgid "Refresh cache after saving!"
 msgstr "Refrescar cache"
 
@@ -3040,8 +3006,6 @@ msgid "Reserve"
 msgstr ""
 
 #: functions/fw-theme-options.php:4359
-#, fuzzy
-#| msgid "Out of stock"
 msgid "Out of Stock"
 msgstr "Agotado"
 
@@ -3050,8 +3014,6 @@ msgid "Out of stock"
 msgstr "Agotado"
 
 #: functions/fw-theme-options.php:4366 functions/fw-theme-options.php:4368
-#, fuzzy
-#| msgid "Quantity"
 msgid "Select Quantity"
 msgstr "Cantidad"
 
@@ -3098,8 +3060,6 @@ msgid "On behalf of customer"
 msgstr "A cargo del cliente"
 
 #: functions/fw-theme-options.php:4434
-#, fuzzy
-#| msgid "Extra address field"
 msgid "Extra address"
 msgstr "Piso y Departamento"
 
@@ -3148,8 +3108,6 @@ msgid "See products"
 msgstr "Ver productos"
 
 #: functions/fw-theme-options.php:4551
-#, fuzzy
-#| msgid "Products"
 msgid "Related Products"
 msgstr "Productos"
 
@@ -3158,8 +3116,6 @@ msgid "People who searched fo this producto also search"
 msgstr "Quienes vieron este producto también compraron"
 
 #: functions/fw-theme-options.php:4559
-#, fuzzy
-#| msgid "Description"
 msgid "Description Tab"
 msgstr "Descripción"
 
@@ -3168,8 +3124,6 @@ msgid "Search Placeholder"
 msgstr ""
 
 #: functions/fw-theme-options.php:4569
-#, fuzzy
-#| msgid "What are you looking for?"
 msgid "What are you looking for"
 msgstr "Quienes vieron este producto también compraron"
 
@@ -3190,8 +3144,6 @@ msgid "Calculate shipping"
 msgstr "Calcular envío"
 
 #: functions/fw-theme-options.php:4607
-#, fuzzy
-#| msgid "Complete purchase"
 msgid "Below Complete Purchase Button "
 msgstr "Finalizar compra"
 
@@ -3783,10 +3735,8 @@ msgid "If empty, shows desktop, if not , priorizes mobile image"
 msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:539
-#, fuzzy
-#| msgid "Size guide"
 msgid "Size Mobile"
-msgstr "Gaia de talles"
+msgstr ""
 
 #: functions/vc_customs/vc_fastway.php:546
 #: functions/vc_customs/vc_fastway.php:1115
@@ -4468,10 +4418,8 @@ msgid "Shipping Address:"
 msgstr "Medios de Envío:"
 
 #: woocommerce/pdf/vonder/packing-slip.php:112
-#, fuzzy
-#| msgid "Customize menus"
 msgid "Customer Notes"
-msgstr "Personalizar menus"
+msgstr "Comentario adicional"
 
 #: woocommerce/single-product-reviews.php:59
 msgid "There are no reviews yet."
