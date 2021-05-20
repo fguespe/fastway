@@ -178,7 +178,7 @@ if(is_plugin_active('gravityformsuserregistration/userregistration.php')){
 <!-- Tab content -->
 <div id="account_emails" class="tabcontent" style=";">
 <div class="tipomail">
-<h3 class="titulo"><?=__( 'New Account', 'woocommerce' )?></h3>
+<h3 class="titulo"><?=__( 'New Account', 'fastway' )?></h3>
 <small><?=__( 'Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_new_account" name="fw_email_subject_customer_new_account" value="<?php echo fw_theme_mod('fw_email_subject_customer_new_account'); ?>" />
 <small>Variables: {{blogname}} {{user_name}} {{user_pass}} {{myaccount}}</small><br>
