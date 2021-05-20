@@ -76,14 +76,14 @@ function myplugin_options_page(){
       }
   }
   if(empty(WC()->payment_gateways->get_available_payment_gateways()))$customer_emails_vars.='No payment methods yet';
-  $customer_emails_vars.='<br><b>'.__('Payment Methods','fastway').'('.__('values','fastway').')</b>
+  /*$customer_emails_vars.='<br><b>'.__('Shipping Methods','fastway').'('.__('values','fastway').')</b>
   <br><small>';
   foreach( WC()->payment_gateways->get_available_payment_gateways() as $gateway ) {
       if( $gateway->enabled == 'yes' ) {
           $customer_emails_vars.=$gateway->title.' ('.$gateway->id.') , ';
       }
   }
-  if(empty(WC()->payment_gateways->get_available_payment_gateways()))$customer_emails_vars.='No payment methods yet';
+  if(empty(WC()->payment_gateways->get_available_payment_gateways()))$customer_emails_vars.='No payment methods yet';*/
   $customer_emails_vars.='</small><br><b>'.__('Roles','fastway').' ('.__('values','fastway').'):</b>
   <br><small>';
   $roles=array();
