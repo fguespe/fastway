@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-05-15 17:12-0300\n"
-"PO-Revision-Date: 2021-05-20 11:03-0300\n"
+"PO-Revision-Date: 2021-05-20 11:06-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -1252,7 +1252,7 @@ msgstr ""
 
 #: functions/emails/fw-email-settings-page.php:245
 msgid "User Pending"
-msgstr ""
+msgstr "Pendiente"
 
 #: functions/emails/fw-email-settings-page.php:246
 msgid "Sent after the user completes the wholesale form"
@@ -1274,7 +1274,7 @@ msgstr ""
 #: functions/fw-theme-options.php:240 functions/fw-theme-options.php:305
 #: functions/fw-theme-options.php:2238
 msgid "Thank you page"
-msgstr ""
+msgstr "Pagina al finalizar"
 
 #: functions/emails/fw-email-settings-page.php:268
 msgid "Text that appears in the checkout page, after finishing"
