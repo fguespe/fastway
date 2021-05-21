@@ -3825,7 +3825,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'short-fw_companytrip',
+	'settings'    => 'short-fw_companytripadvisor',
 	'label'    => __( 'Company Tripadvisor', 'fastway' ),
     'description'     => __( '[fw_data type="tripadvisor"]', 'fastway' ),            
 	'section'     => 'section_data',
