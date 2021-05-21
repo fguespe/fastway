@@ -196,7 +196,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
             <span class="tachado">
                 <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-                <span class="badge badge-success ofertita"><div class="number">'.$percentage.'%</div> '.fw_theme_mod('fw_off_text').'</span>
+                <span class="badge badge-success ofertita">'.$percentage.'% <div style="inline">'.fw_theme_mod('fw_off_text').'</div></span>
             </span>
             </span>';
     }else{
