@@ -194,10 +194,10 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     if ( $sale_price<$regular_price) {
         return '<span class="fw_price price1 sale" data-precio="'.$product->get_price().'">
             <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
-            <span class="tachado">
-                <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
-                <span class="badge badge-success ofertita" style="display:inline;">'.$percentage.'% </span><span class="badge badge-success ofertita">'.fw_theme_mod('fw_off_text').'</span>
-            </span>
+                <span class="tachado">
+                    <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
+                    <span class="badge badge-success ofertita" "><span style="display:inline;>'.$percentage.'% </span><span>'.fw_theme_mod('fw_off_text').'</span>
+                </span>
             </span>';
     }else{
         return '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
