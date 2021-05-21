@@ -4385,6 +4385,13 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_off_text',
+	'label'    => __( 'OFF Discount', 'fastway' ),
+	'section'     => 'section_labels_products',
+	'default'    => __( 'OFF', 'fastway' ),
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_backorder_text',
 	'label'    => __( 'Reserve product', 'fastway' ),
 	'section'     => 'section_labels_products',
