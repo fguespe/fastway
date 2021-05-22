@@ -1675,7 +1675,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.mobile  .vc_empty_space',
+			'element' => '.mobile_body  .vc_empty_space',
 			'property'	=> 'max-height',
 			'units'=>'px'
 		),
