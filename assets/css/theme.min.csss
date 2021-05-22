@@ -1788,11 +1788,6 @@ html {
   margin: 0px;
 }
 
-@media (max-width: 799px) {
-  .vc_empty_space {
-    max-height: 20px;
-  }
-}
 /*FIX >BOOTSTRAP COLOR*/
 .form-control {
   height: auto !important;
