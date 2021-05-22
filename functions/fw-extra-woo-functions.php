@@ -474,6 +474,7 @@ function fw_single_product_clasess( $classes ) {
   }
   $classes[]=fw_theme_mod('fw_single_product_layout');
   if(wp_is_mobile())$classes[]='mobile_body';
+  else $classes[]='desktop_body';
   
 
   return $classes;
