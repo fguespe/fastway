@@ -1660,6 +1660,27 @@ Kirki::add_field( 'theme_config_id', array(
 		),
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'number',
+	'settings'    => 'fw_mobile_max_height',
+	'label'       => __( 'Mobile Space max Height', 'fastway' ),
+	'section'     => 'section_mobile_header',
+	'default'     => 40,
+	'choices'     => array(
+		'min'  => 0,
+		'max'  => 500,
+		'step' => 5,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '.mobile  .vc_empty_space',
+			'property'	=> 'max-height',
+			'units'=>'px'
+		),
+	),
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'number',
 	'settings'    => 'header__mobile_icons_size',
