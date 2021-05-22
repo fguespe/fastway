@@ -350,6 +350,7 @@ require get_template_directory() . '/functions/shortcodes/fw-class-woo-shortcode
 require get_template_directory() . '/functions/shortcodes/fw-class-shortcodes.php' ;
 require get_template_directory() . '/functions/fw-ajax-search.php';
 require get_template_directory() . '/functions/fw-faq.php';
+
 if(fw_theme_mod('fw_cpt_reviews'))require get_template_directory() . '/functions/custom-post-types/fw-review.php';
 if(fw_theme_mod('fw_cpt_events'))require get_template_directory() . '/functions/custom-post-types/fw-events.php';
 if(fw_theme_mod('fw_dev_phpfile'))require get_template_directory() . '/'.fw_theme_mod('fw_dev_phpfile');

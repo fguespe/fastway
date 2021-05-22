@@ -91,7 +91,6 @@ function fw_social_icons( $atts ) {
             $link=fw_company_data("address",true,$cant);
             if(empty($link))fw_company_data("googlemaps",true,$cant);
         }
-        error_log($link.'-'.$type);
         //$link=fw_company_data($icon);
         if($atts['icon_color'])$icon_color=$atts['icon_color'];
         $first.='<a target="_blank" class="fw_icon_link" style="line-height:'.( (int)$atts['icon_size']+20).'px ;margin-right:5px;" href="'.$link.'">
