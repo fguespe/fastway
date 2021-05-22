@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-05-15 17:12-0300\n"
-"PO-Revision-Date: 2021-05-20 11:06-0300\n"
+"PO-Revision-Date: 2021-05-22 12:35-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -2349,7 +2349,7 @@ msgstr ""
 
 #: functions/fw-theme-options.php:2258
 msgid "CTAs Active"
-msgstr "Activo"
+msgstr "CTAs Activados"
 
 #: functions/fw-theme-options.php:2269
 msgid "CTAs"
