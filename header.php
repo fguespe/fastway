@@ -117,6 +117,7 @@ echo fw_header_html();
 echo fw_header_html_mobile();
 $clasesmenu=fw_theme_mod('fw_mobile_dark_mode')?'sub-menu-mobile darkmode':'sub-menu-mobile';
 
+
 ?>
 <div class="mobile-menu-overlay d-md-none">&nbsp;</div>
 <div class="fw_menu_mobile ">
