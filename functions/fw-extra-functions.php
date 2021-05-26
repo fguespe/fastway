@@ -473,11 +473,6 @@ function fw_getmsliders(){
 }
 
 
-if(fw_theme_mod("maintainance-mode")){
-
-    add_action('get_body', 'fw_maintenance_mode');
-}
-
 
 function fw_custom_loginui() {
     $image=fw_theme_mod('general-logo');
@@ -519,10 +514,10 @@ button,a,input,textarea,.vc_row,ul,li,div{
 add_action('login_head', 'fw_custom_loginui');
 
 
+//if(fw_theme_mod("maintainance-mode"))add_action('get_header', 'fw_maintenance_mode');
 function fw_maintenance_mode(){
-    
     if(!current_user_can('administrator') ){
-        (do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
+        wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
     }
 }
 

@@ -107,8 +107,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header id="header" class="<?=fw_theme_mod('fw_floating_trans_header')?'fw_floating':''?> <?=fw_theme_mod('fw_builder_header_class')?>">
 <?php 
 if(fw_theme_mod("maintainance-mode")){
-    echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
+    if(!current_user_can('administrator'))wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
+    else echo '<div class="maintainance-notice" style="background:red;color:white;text-align:center;"> TU WEB ESTA EN MANTENIMIENTO, LOS USUARIOS NO PODRAN VERLA </div>';
 }
+
 echo fw_mensaje_barra();
 
 echo fw_header_html();
