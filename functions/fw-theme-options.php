@@ -130,13 +130,6 @@ Kirki::add_section( 'section_scripts', array(
 
 ) );
 
-Kirki::add_section( 'section_mobile', array(
-    'title'          => __( 'Mobile Menu', 'fastway' ),
-    //'description'    => __( 'My section description.', 'fastway' ),
-    'panel'          => 'panel_fastwaylayout',
-
-) );
-
 
 Kirki::add_section( 'section_seo', array(
     'title'          => __( 'SEO', 'fastway' ),
@@ -183,6 +176,13 @@ Kirki::add_section( 'section_mobile_header', array(
     'panel'          => 'panel_fastwaylayout',
 ) );
 
+
+Kirki::add_section( 'section_mobile', array(
+    'title'          => __( 'Mobile Menu', 'fastway' ),
+    //'description'    => __( 'My section description.', 'fastway' ),
+    'panel'          => 'panel_fastwaylayout',
+
+) );
 Kirki::add_section( 'section_woo_loop', array(
     'title'          => __( 'Product Loop', 'fastway' ),
     //'description'    => __( 'My section description.', 'fastway' ),
