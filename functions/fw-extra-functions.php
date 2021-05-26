@@ -516,9 +516,7 @@ add_action('login_head', 'fw_custom_loginui');
 
 //if(fw_theme_mod("maintainance-mode"))add_action('get_header', 'fw_maintenance_mode');
 function fw_maintenance_mode(){
-    if(!current_user_can('administrator') ){
-        wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
-    }
+    if(!current_user_can('administrator') )wp_die(do_shortcode(stripslashes(htmlspecialchars_decode( fw_theme_mod('maintainance_code')))));
 }
 
 add_action('admin_head', 'custom_redux_panel');
