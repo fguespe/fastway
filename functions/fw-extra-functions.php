@@ -475,7 +475,7 @@ function fw_getmsliders(){
 
 if(fw_theme_mod("maintainance-mode")){
 
-    add_action('get_header', 'fw_maintenance_mode');
+    add_action('get_body', 'fw_maintenance_mode');
 }
 
 
