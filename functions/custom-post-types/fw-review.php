@@ -1,7 +1,6 @@
 <?php 
 add_action( 'init', 'fw_review_create' );
 function fw_review_create() {
-	error_log("haha");
     register_post_type( 'fw_review',array(
       'description'           => __('Reviews','fastway'),
       'labels'                => array(
