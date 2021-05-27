@@ -24,6 +24,22 @@ if(fw_theme_mod('footer-copyright-switch')){
 
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
+<script>
+var index = window.location.href.indexOf('?')
+if(index != -1){
+    var querystring = window.location.href.slice(index + 1)
+    var tagA = document.getElementsByTagName('a');
+
+    for(var i = 0; i < tagA.length; i++){
+        var href = tagA[i].getAttribute('href');
+
+        href += (href.indexOf('?') != -1)? '&' : '?';
+        href += querystring;
+
+        tagA[i].setAttribute('href', href);
+    }
+}
+</script>
 <script><?php echo $js;?></script>
 
     <?php echo fw_theme_mod('fw_footer_scripts');?>
