@@ -2669,7 +2669,6 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_cuotas_general',
 	'label'    => __( 'Installments', 'fastway' ),
 	'description' => 'Installment variable. Can be useful in many places. [fw_cuotas_general]',
-	
 	'section'     => 'section_woo_vars',
 	'default' => 12
 ) );
@@ -4035,8 +4034,6 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 /*SCRIPTS*/
-
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_site_verification',
@@ -4052,6 +4049,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_scripts',
 	'description' =>__('Refresh cache after saving!','fastway')
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
@@ -4059,6 +4057,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_scripts',
 	'description' =>__('Refresh cache after saving!','fastway')
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fbpixel_id',
@@ -4066,6 +4065,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_scripts',
 	'description' =>__('Refresh cache after saving!','fastway')
 ) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'gtagmanager_id',
@@ -4612,11 +4612,17 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_related_text',
+	'label'    => __( 'Cuotas sin interés', 'fastway' ),
+	'section'     => 'section_labels_single_products',
+	'default'	=> 'Pagá en hasta [fw_cuotas] cuotas sin interés'
+	) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_related_text',
 	'label'    => __( 'Related Products', 'fastway' ),
 	'section'     => 'section_labels_single_products',
 	'default'	=>__( 'People who searched fo this producto also search', 'fastway' ),
 ) );
-
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_descriptiontab_text',
