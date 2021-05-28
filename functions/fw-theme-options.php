@@ -4611,7 +4611,7 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_related_text',
+	'settings'    => 'fw_label_cuotas_mp',
 	'label'    => __( 'Cuotas sin interés', 'fastway' ),
 	'section'     => 'section_labels_single_products',
 	'default'	=> 'Pagá en hasta [fw_cuotas] cuotas sin interés'

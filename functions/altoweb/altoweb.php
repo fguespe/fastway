@@ -254,7 +254,7 @@ function altoweb_financiacion(){
     $precio=$product->get_price();
     $calc=floor($precio/$cuotas);
     //if($cuotas==18)
-    $html="<big>".fw_theme_mod('fw_label_cuotas_mp')."</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
+    $html="<big>".do_shortcode(fw_theme_mod('fw_label_cuotas_mp'))."</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
     //else $html="<big>Pagá en hasta 12 cuotas</big>";
 
     $return= <<<HTML
