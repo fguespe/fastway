@@ -4057,6 +4057,14 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_scripts',
 	'description' =>__('Refresh cache after saving!','fastway')
 ) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'mixpanel-id',
+	'label'    => __( 'Mixpanel ID', 'fastway' ),       
+	'section'     => 'section_scripts',
+	'description' =>__('Refresh cache after saving!','fastway')
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
