@@ -797,7 +797,8 @@ function init_mixpanel() {
      MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
      mixpanel.init("'.fw_theme_mod('mixpanel-id').'");
      mixpanel.track("visit");
-     console.log("mix[anel");
+     console.log("get_distinct_id",mixpanel.get_distinct_id())
+     console.log("visit");
      </script>';
      echo "\n" . $analytics;
  }
