@@ -799,8 +799,8 @@ function init_mixpanel() {
         distinct_id = mixpanel.get_distinct_id();
         console.log("distinct_id",distinct_id)
         mixpanel.track("visit")
+        console.log("visit");
     } });
-    console.log("visit");
     </script>';
     echo "\n" . $analytics;
  }
