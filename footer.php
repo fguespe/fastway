@@ -139,7 +139,7 @@ jQuery( ".btn-wapp" ).click(function() {
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
-    if(jQuery('.qty').attr('max')){
+      if(jQuery('.qty').attr('max')){
         jQuery('.qty').on('click', function() {      
           if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
             alert('Está solicitando una cantidad que no tenemos en stock ')
@@ -153,12 +153,12 @@ jQuery(document).ready( function(jQuery) {
           }
         });
       }
-    let searchParams = new URLSearchParams(window.location.search)
-    if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
-      jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
-      
-      jQuery.get(ajaxurl,{'action': 'register_visit'});
-    }
+      let searchParams = new URLSearchParams(window.location.search)
+      if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
+        jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
+        
+        jQuery.get(ajaxurl,{'action': 'register_visit'});
+      }
 });
 
 </script>
