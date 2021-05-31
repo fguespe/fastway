@@ -80,18 +80,18 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 
 jQuery(document).ready( function(jQuery) {
     if(jQuery('.qty').attr('max')){
-        jQuery('.qty').on('click', function() {      
-          if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
-            alert('Está solicitando una cantidad que no tenemos en stock ')
-          }
-        });
+      jQuery('.qty').on('click', function() {      
+        if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
+          alert('Está solicitando una cantidad que no tenemos en stock ')
+        }
+      });
 
-        jQuery('.qty').on('change', function(e) {     
-          if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
-            alert('Está solicitando una cantidad que no tenemos en stock ')
-            jQuery('.qty').val(jQuery('.qty').attr('max'))
-          }
-        });
+      jQuery('.qty').on('change', function(e) {     
+        if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
+          alert('Está solicitando una cantidad que no tenemos en stock ')
+          jQuery('.qty').val(jQuery('.qty').attr('max'))
+        }
+      });
 		}
     var in_customizer = false;
     if ( typeof wp !== 'undefined' ) in_customizer =  typeof wp.customize !== 'undefined' ? true : false;
