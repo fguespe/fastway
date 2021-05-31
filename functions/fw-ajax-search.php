@@ -1,23 +1,16 @@
 <?php
 
 function fw_product_search_join( $join, $query ) {
-	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) {
-		return $join;
-	}
+	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) 	return $join;
+	
 	global $wpdb;
-
 	$join .= " LEFT JOIN {$wpdb->postmeta} fw_post_meta ON {$wpdb->posts}.ID = fw_post_meta.post_id ";
-
 	return $join;
 }
 function fw_product_search_where( $where, $query ) {
-
-	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) {
-		return $where;
-	}
-  if( is_search() ) {
-    $query->set( 'category__not_in' , array( 'sin-categorizar' ) ); // Category ID
-  }
+  
+	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) return $where;
+  if( is_search() )  $query->set( 'category__not_in' , array( 'sin-categorizar' ) ); // Category ID
 	global $wpdb;
 	$where = preg_replace(
 		"/\(\s*{$wpdb->posts}.post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
