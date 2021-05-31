@@ -8,7 +8,7 @@ function fw_product_search_join( $join, $query ) {
 	return $join;
 }
 function fw_product_search_where( $where, $query ) {
-  
+
 	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) return $where;
   if( is_search() )  $query->set( 'category__not_in' , array( 'sin-categorizar' ) ); // Category ID
 	global $wpdb;
@@ -22,9 +22,6 @@ function fw_product_search_where( $where, $query ) {
 
 add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
 add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
-
-
-
 
 
 function ajax_search() {
