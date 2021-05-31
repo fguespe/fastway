@@ -120,9 +120,10 @@ if( !function_exists( 'fw_search_form' ) ) {
         $rand_id = wp_rand();
         $check_woo = is_plugin_active('woocommerce/woocommerce.php');
         $_placeholder=fw_theme_mod('fw_label_search');
-        $class="input-group fw_search_form fw-searchform desktop";
-        if($id==3)$class="search-form-mobile";
-
+        $class="input-group fw_search_form fw-searchform ";
+        if($id==3)$class.="mobile";
+        else $class.="desktop";
+        
         $devolver= 
         '<form id="form_'.esc_attr($rand_id).'" class="'.$class.'" method="get" action="'.esc_url( home_url( '/' ) ).'">
         <input type="search" class="search-field form-control u-from__input u-search-push-top__input" placeholder="'.esc_attr($_placeholder).'" value="'.get_search_query().'" name="s" id="s_'.esc_attr($rand_id).'">';
