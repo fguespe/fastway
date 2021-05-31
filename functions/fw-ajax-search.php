@@ -27,8 +27,8 @@ function fw_product_search_where( $where, $query ) {
 }
 
 
-add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
-add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
+//add_filter( 'posts_where', 'fw_product_search_where', 10, 2 );
+//add_filter( 'posts_join', 'fw_product_search_join', 10, 2 );
 
 
 
