@@ -11,6 +11,7 @@ function fw_product_search_join( $join, $query ) {
 	return $join;
 }
 function fw_product_search_where( $where, $query ) {
+
 	if ( ! $query->is_main_query() || is_admin() || ! is_search() || ! is_woocommerce() ) {
 		return $where;
 	}
@@ -18,7 +19,6 @@ function fw_product_search_where( $where, $query ) {
     $query->set( 'category__not_in' , array( 'sin-categorizar' ) ); // Category ID
   }
 	global $wpdb;
-
 	$where = preg_replace(
 		"/\(\s*{$wpdb->posts}.post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
 		"({$wpdb->posts}.post_title LIKE $1) OR (fw_post_meta.meta_key = '_sku' AND fw_post_meta.meta_value LIKE $1) OR (fw_post_meta.meta_key = '_codigo' AND fw_post_meta.meta_value LIKE $1)", $where );
