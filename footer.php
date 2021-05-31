@@ -79,20 +79,7 @@ if(fw_theme_mod("fw_popup_type")!='off' && is_front_page()){
 <script type="text/javascript">
 
 jQuery(document).ready( function(jQuery) {
-    if(jQuery('.qty').attr('max')){
-      jQuery('.qty').on('click', function() {      
-        if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
-          alert('Está solicitando una cantidad que no tenemos en stock ')
-        }
-      });
-
-      jQuery('.qty').on('change', function(e) {     
-        if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
-          alert('Está solicitando una cantidad que no tenemos en stock ')
-          jQuery('.qty').val(jQuery('.qty').attr('max'))
-        }
-      });
-		}
+    
     var in_customizer = false;
     if ( typeof wp !== 'undefined' ) in_customizer =  typeof wp.customize !== 'undefined' ? true : false;
     let searchParams = new URLSearchParams(window.location.search)
@@ -152,6 +139,20 @@ jQuery( ".btn-wapp" ).click(function() {
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
+    if(jQuery('.qty').attr('max')){
+        jQuery('.qty').on('click', function() {      
+          if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
+            alert('Está solicitando una cantidad que no tenemos en stock ')
+          }
+        });
+
+        jQuery('.qty').on('change', function(e) {     
+          if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
+            alert('Está solicitando una cantidad que no tenemos en stock ')
+            jQuery('.qty').val(jQuery('.qty').attr('max'))
+          }
+        });
+      }
     let searchParams = new URLSearchParams(window.location.search)
     if ( jQuery.cookie('visited') == null || searchParams.has('visited') ){
       jQuery.cookie('visited', 'yes', { expires: 1, path: '/' });
