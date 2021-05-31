@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-05-15 17:12-0300\n"
-"PO-Revision-Date: 2021-05-22 12:35-0300\n"
+"PO-Revision-Date: 2021-05-31 15:58-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -1459,7 +1459,7 @@ msgstr "Fecha de envío"
 
 #: functions/fw-extra-woo-functions.php:2261
 msgid "Availability"
-msgstr ""
+msgstr "Disponibilidad (Stock)"
 
 #: functions/fw-faq.php:7
 msgid "FAQ Articles"
