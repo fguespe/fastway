@@ -2572,6 +2572,9 @@ header span,
   width:inherit;
 }
 .fw_search_form{  
+  .mobile{
+    width:100% !important;
+  }
   .input-group-append .btn {
     background-color: white;
     border-color: lightgrey;
