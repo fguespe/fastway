@@ -2,6 +2,14 @@
 body{
 	background: var(--ca-background-color) !important;
 }
+/*abandoned cart*/
+.woocommerce_page_sfa-abandoned-carts h1,
+.woocommerce_page_sfa-abandoned-carts .tablenav,
+.sfa_nav_tab_wrapper a:nth-child(4),
+#sfa_announcement{
+
+display:none;
+}
 /*ALERTAS*/
 
 /*MENSAJITOS*/

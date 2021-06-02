@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
-"POT-Creation-Date: 2021-05-31 16:02-0300\n"
-"PO-Revision-Date: 2021-05-31 16:02-0300\n"
+"POT-Creation-Date: 2021-06-02 13:26-0300\n"
+"PO-Revision-Date: 2021-06-02 13:26-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -569,9 +569,9 @@ msgstr ""
 #: functions/client-area/fw-dashboard.php:534
 #: functions/client-area/fw-dashboard.php:592
 #: functions/client-area/fw-dashboard.php:687
-#: functions/client-area/fw-dashboard.php:802
-#: functions/client-area/fw-dashboard.php:827
-#: functions/client-area/fw-dashboard.php:855
+#: functions/client-area/fw-dashboard.php:804
+#: functions/client-area/fw-dashboard.php:829
+#: functions/client-area/fw-dashboard.php:857
 msgid "Change"
 msgstr "Cambiar"
 
@@ -583,9 +583,9 @@ msgstr "Cambiar"
 #: functions/client-area/fw-dashboard.php:298
 #: functions/client-area/fw-dashboard.php:308
 #: functions/client-area/fw-dashboard.php:717
-#: functions/client-area/fw-dashboard.php:797
-#: functions/client-area/fw-dashboard.php:822
-#: functions/client-area/fw-dashboard.php:850
+#: functions/client-area/fw-dashboard.php:799
+#: functions/client-area/fw-dashboard.php:824
+#: functions/client-area/fw-dashboard.php:852
 msgid "Status"
 msgstr "Estado"
 
@@ -629,17 +629,17 @@ msgstr "Dejar vacío si no redirije a ningún lado"
 #: functions/client-area/fw-dashboard.php:166
 #: functions/client-area/fw-dashboard.php:200
 #: functions/client-area/fw-dashboard.php:201
-#: functions/client-area/fw-dashboard.php:797
-#: functions/client-area/fw-dashboard.php:822
-#: functions/client-area/fw-dashboard.php:850
+#: functions/client-area/fw-dashboard.php:799
+#: functions/client-area/fw-dashboard.php:824
+#: functions/client-area/fw-dashboard.php:852
 msgid "Active"
 msgstr "Activo"
 
 #: functions/client-area/fw-dashboard.php:165
 #: functions/client-area/fw-dashboard.php:200
-#: functions/client-area/fw-dashboard.php:797
-#: functions/client-area/fw-dashboard.php:822
-#: functions/client-area/fw-dashboard.php:850
+#: functions/client-area/fw-dashboard.php:799
+#: functions/client-area/fw-dashboard.php:824
+#: functions/client-area/fw-dashboard.php:852
 msgid "Inactive"
 msgstr "Inactivo"
 
@@ -647,16 +647,16 @@ msgstr "Inactivo"
 #: functions/client-area/fw-dashboard.php:287
 #: functions/client-area/fw-dashboard.php:300
 #: functions/client-area/fw-dashboard.php:310
-#: functions/client-area/fw-dashboard.php:793
-#: functions/client-area/fw-dashboard.php:818
-#: functions/client-area/fw-dashboard.php:846
+#: functions/client-area/fw-dashboard.php:795
+#: functions/client-area/fw-dashboard.php:820
+#: functions/client-area/fw-dashboard.php:848
 msgid "Applies to"
 msgstr "Aplica a"
 
 #: functions/client-area/fw-dashboard.php:199
-#: functions/client-area/fw-dashboard.php:793
-#: functions/client-area/fw-dashboard.php:818
-#: functions/client-area/fw-dashboard.php:846
+#: functions/client-area/fw-dashboard.php:795
+#: functions/client-area/fw-dashboard.php:820
+#: functions/client-area/fw-dashboard.php:848
 msgid "All products"
 msgstr "Todos los Productos"
 
@@ -665,9 +665,9 @@ msgstr "Todos los Productos"
 #: functions/client-area/fw-dashboard.php:290
 #: functions/client-area/fw-dashboard.php:303
 #: functions/client-area/fw-dashboard.php:313
-#: functions/client-area/fw-dashboard.php:801
-#: functions/client-area/fw-dashboard.php:826
-#: functions/client-area/fw-dashboard.php:854
+#: functions/client-area/fw-dashboard.php:803
+#: functions/client-area/fw-dashboard.php:828
+#: functions/client-area/fw-dashboard.php:856
 msgid "Discount (%)"
 msgstr "Descuento (%)"
 
@@ -700,9 +700,9 @@ msgstr ""
 #: functions/client-area/fw-dashboard.php:286
 #: functions/client-area/fw-dashboard.php:299
 #: functions/client-area/fw-dashboard.php:309
-#: functions/client-area/fw-dashboard.php:795
-#: functions/client-area/fw-dashboard.php:820
-#: functions/client-area/fw-dashboard.php:848
+#: functions/client-area/fw-dashboard.php:797
+#: functions/client-area/fw-dashboard.php:822
+#: functions/client-area/fw-dashboard.php:850
 #: woocommerce/single-product-reviews.php:83
 msgid "Name"
 msgstr "Nombre"
@@ -710,18 +710,18 @@ msgstr "Nombre"
 #: functions/client-area/fw-dashboard.php:288
 #: functions/client-area/fw-dashboard.php:301
 #: functions/client-area/fw-dashboard.php:311
-#: functions/client-area/fw-dashboard.php:799
-#: functions/client-area/fw-dashboard.php:824
-#: functions/client-area/fw-dashboard.php:852
+#: functions/client-area/fw-dashboard.php:801
+#: functions/client-area/fw-dashboard.php:826
+#: functions/client-area/fw-dashboard.php:854
 msgid "Allows coupons"
 msgstr "Permitir cupones"
 
 #: functions/client-area/fw-dashboard.php:289
 #: functions/client-area/fw-dashboard.php:302
 #: functions/client-area/fw-dashboard.php:312
-#: functions/client-area/fw-dashboard.php:796
-#: functions/client-area/fw-dashboard.php:821
-#: functions/client-area/fw-dashboard.php:849
+#: functions/client-area/fw-dashboard.php:798
+#: functions/client-area/fw-dashboard.php:823
+#: functions/client-area/fw-dashboard.php:851
 #: woocommerce/emails/email-order-details.php:43
 #: woocommerce/pdf/vonder/invoice.php:73
 #: woocommerce/pdf/vonder/packing-slip.php:81
@@ -839,8 +839,8 @@ msgstr "Personalizar emails y textos"
 #: functions/client-area/fw-dashboard.php:753
 #: functions/client-area/fw-dashboard.php:754
 #: functions/client-area/fw-dashboard.php:755
-#: functions/client-area/fw-dashboard.php:772
-#: functions/client-area/fw-dashboard.php:773
+#: functions/client-area/fw-dashboard.php:774
+#: functions/client-area/fw-dashboard.php:775
 msgid "open"
 msgstr "abrir"
 
@@ -875,26 +875,31 @@ msgid "Refresh cache"
 msgstr "Refrescar cache"
 
 #: functions/client-area/fw-dashboard.php:756
+#: functions/client-area/fw-dashboard.php:758
 msgid "clean"
 msgstr "limpiar"
 
-#: functions/client-area/fw-dashboard.php:760
+#: functions/client-area/fw-dashboard.php:758
+msgid "Abandoned Cart"
+msgstr "Carrito abandonado"
+
+#: functions/client-area/fw-dashboard.php:762
 msgid "Export updated prices"
 msgstr "Exportar precios/stock actualizados"
 
-#: functions/client-area/fw-dashboard.php:760
+#: functions/client-area/fw-dashboard.php:762
 msgid "Export"
 msgstr "Exportar"
 
-#: functions/client-area/fw-dashboard.php:761
+#: functions/client-area/fw-dashboard.php:763
 msgid "Import updated prices"
 msgstr "Importar precios/stock actualizados"
 
-#: functions/client-area/fw-dashboard.php:761
+#: functions/client-area/fw-dashboard.php:763
 msgid "Import"
 msgstr ""
 
-#: functions/client-area/fw-dashboard.php:762
+#: functions/client-area/fw-dashboard.php:764
 msgid ""
 "IMPORTANT: Do not modifty coulmns nor its titles, you could damage or lost "
 "data. If in doubt , contact support."
@@ -902,15 +907,15 @@ msgstr ""
 "IMPORTANTE: No modificar columnas ni sus titulos. Podría arruinar el formato "
 "del excel y tener riesgo a perder información. Ante la duda consultenos."
 
-#: functions/client-area/fw-dashboard.php:765
+#: functions/client-area/fw-dashboard.php:767
 msgid "Send your requirement via email to our account"
 msgstr "Envíanos tu requerimiento vía nuestro email"
 
-#: functions/client-area/fw-dashboard.php:765
+#: functions/client-area/fw-dashboard.php:767
 msgid "soporte@altoweb.ar"
 msgstr "support@altoweb.ar"
 
-#: functions/client-area/fw-dashboard.php:767
+#: functions/client-area/fw-dashboard.php:769
 msgid ""
 "For more information about the altoweb service <a target=\"_blank\" href="
 "\"https://www.altoweb.ar/tickets/\">click here</a>"
@@ -918,7 +923,7 @@ msgstr ""
 "Para mas información sobre como usar el servicio <a target=\"_blank\" href="
 "\"https://www.altoweb.ar/tickets/\">click aquí</a>"
 
-#: functions/client-area/fw-dashboard.php:768
+#: functions/client-area/fw-dashboard.php:770
 msgid ""
 "You can also register in the help portal to see tutorials and send us "
 "inquiries. <a target=\"_blank\" href=\"https://altoweb.freshdesk.com/\">Go "
@@ -928,7 +933,7 @@ msgstr ""
 "enviarnos consultas. <a target=\"_blank\" href=\"https://altoweb.freshdesk."
 "com/\">Ir al portal</a>"
 
-#: functions/client-area/fw-dashboard.php:771
+#: functions/client-area/fw-dashboard.php:773
 msgid ""
 "Products will be updated once per day. You can do the process manually the "
 "following way: "
@@ -936,31 +941,31 @@ msgstr ""
 "Las publicaciones se actualizan automáticamente 1 vez por día. Si no deseas "
 "esperar a que se actualice automáticamente podes acelerar el proceso"
 
-#: functions/client-area/fw-dashboard.php:772
+#: functions/client-area/fw-dashboard.php:774
 msgid "Update info from mercadolibre with the following link"
 msgstr "Actualizar publicaciones en el servidor con el siguiente link"
 
-#: functions/client-area/fw-dashboard.php:773
+#: functions/client-area/fw-dashboard.php:775
 msgid "Once finished, start the import process with the following link"
 msgstr ""
 "Una vez que termino de procesarse la obtención de datos, ahora podes "
 "indicarle a la web que se actualize en el siguiente proceso"
 
-#: functions/client-area/fw-dashboard.php:799
-#: functions/client-area/fw-dashboard.php:824
-#: functions/client-area/fw-dashboard.php:852
+#: functions/client-area/fw-dashboard.php:801
+#: functions/client-area/fw-dashboard.php:826
+#: functions/client-area/fw-dashboard.php:854
 msgid "Yes"
 msgstr "Si"
-
-#: functions/client-area/fw-dashboard.php:799
-#: functions/client-area/fw-dashboard.php:824
-#: functions/client-area/fw-dashboard.php:852
-msgid "No"
-msgstr ""
 
 #: functions/client-area/fw-dashboard.php:801
 #: functions/client-area/fw-dashboard.php:826
 #: functions/client-area/fw-dashboard.php:854
+msgid "No"
+msgstr ""
+
+#: functions/client-area/fw-dashboard.php:803
+#: functions/client-area/fw-dashboard.php:828
+#: functions/client-area/fw-dashboard.php:856
 msgid "Applies to the cheapiest"
 msgstr "Aplica al mas barato"
 
@@ -1294,7 +1299,7 @@ msgstr ""
 msgid "Code:"
 msgstr ""
 
-#: functions/fw-ajax-search.php:97
+#: functions/fw-ajax-search.php:87
 msgid "Sin resultados..."
 msgstr ""
 
