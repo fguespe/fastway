@@ -755,7 +755,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
     <span>'.__('Email log','fastway').': <a href="/wp-admin/admin.php?page=email-log" class="btn"  >'.__('open','fastway').'</a></span><br><br>
     <span>'.__('Refresh cache','fastway').': <a href="/wp-admin/?kinsta-cache-cleared=true" class="btn"  >'.__('clean','fastway').'</a></span><br><br>';
     if(is_plugin_active("wc-abandoned-carts-by-small-fish-analytics/class-sfa-woocommerce-abandoned-carts.php"))echo '
-    <span>'.__('Abandoned Cart','fastway').': <a href="/wp-admin/admin.php?page=sfa-abandoned-carts&tab=sfa_data" class="btn"  >'.__('clean','fastway').'</a></span><br><br>
+    <span>'.__('Abandoned Cart','fastway').': <a href="/wp-admin/admin.php?page=sfa-abandoned-carts&tab=sfa_data" class="btn"  >'.__('open','fastway').'</a></span><br><br>
     </p>' ;
 }
 function fw_actualizar_precios() {
