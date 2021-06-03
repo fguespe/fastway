@@ -631,6 +631,10 @@ add_filter( "woocommerce_rest_prepare_shop_order_object",  "get_mp_api_data", 10
 
 
 
+function fw_get_term_by_name( $product_id,$name ){
+  $terms = wp_get_post_terms( $product_id, $name);
+  if( $terms && ! is_wp_error( $terms ))foreach ($terms as $categoria)  return $categoria->name;
+}
 function fw_get_template( $template_name, $args = array(), $posts = null ){
   if ( $args && is_array( $args ) )extract( $args );
   $located = get_template_directory() . '/functions/shortcodes/'.$template_name;
