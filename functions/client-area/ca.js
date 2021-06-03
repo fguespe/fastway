@@ -60,6 +60,8 @@ jQuery(document).ready( function(jQuery) {
 	if(document.documentElement.lang && document.documentElement.lang.includes('es')){
 		jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
 		jQuery('#wpb_visual_composer h2 span').html('Pestaña descripción');
+		jQuery('#rg_forms_dashboard h2 span').html('Formularios');
+		
 	}
 	var x = jQuery("img[src$='https://gravityforms.s3.amazonaws.com/banners/gravity-forms-unregistered.svg']");
 	x.parent().parent().hide();

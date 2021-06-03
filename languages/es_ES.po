@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-06-02 13:26-0300\n"
-"PO-Revision-Date: 2021-06-02 13:26-0300\n"
+"PO-Revision-Date: 2021-06-03 14:21-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -2808,11 +2808,11 @@ msgstr "Bajo mantenimiento"
 
 #: functions/fw-theme-options.php:3898
 msgid "Sory for the trouble, will be back soon!"
-msgstr ""
+msgstr "Disculpe las molestias, volveremos pronto!"
 
 #: functions/fw-theme-options.php:3898
 msgid "This site is maintained by"
-msgstr ""
+msgstr "Este sitio es mantenido por"
 
 #: functions/fw-theme-options.php:3907
 msgid "Max Media Size Upload (500KB)"
