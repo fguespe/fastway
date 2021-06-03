@@ -1,4 +1,5 @@
 <?php
+
 if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']=='update'){
   set_theme_mod('fw_email_subject_customer_processing_order',$_POST['fw_email_subject_customer_processing_order']);
   set_theme_mod('fw_email_content_customer_processing_order',$_POST['fw_email_content_customer_processing_order']);
@@ -50,8 +51,6 @@ if(isAltoweb()){
   set_theme_mod('fw_email_subject_admin_new_order',get_option('fw_email_subject_admin_new_order'));
   set_theme_mod('fw_email_content_admin_new_order',get_option('fw_email_content_admin_new_order'));
   set_theme_mod('fw_email_content_thankyou',get_option('fw_email_content_thankyou'));
-
-
   set_theme_mod('fw_email_subject_customer_despachado_order',get_option('fw_email_subject_customer_despachado_order'));
   set_theme_mod('fw_email_content_customer_despachado_order',get_option('fw_email_content_customer_despachado_order'));
   set_theme_mod('fw_email_subject_customer_await_verif_order',get_option('fw_email_subject_customer_await_verif_order'));

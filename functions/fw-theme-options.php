@@ -1316,8 +1316,22 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
-	'settings'    => 'fw_action_resetmails',
-	'label'       => __( 'Reset Mails', 'fastway' ),
+	'settings'    => 'fw_action_resetmails_notis',
+	'label'       => __( 'Reset Email Notifications', 'fastway' ),
+	'section'     => 'section_actions',
+	'description' => 'Restarts woocommmerce emails with fastway default settings. *You must refresh for chances to apply',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_action_resetmails_styling',
+	'label'       => __( 'Reset Email Styling', 'fastway' ),
 	'section'     => 'section_actions',
 	'description' => 'Restarts woocommmerce emails with fastway default settings. *You must refresh for chances to apply',
 	'default'     => 0,
@@ -1329,6 +1343,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_action_resetmails_templates',
+	'label'       => __( 'Reset Email Templates', 'fastway' ),
+	'section'     => 'section_actions',
+	'description' => 'Restarts woocommmerce emails with fastway default settings. *You must refresh for chances to apply',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_action_clientimages',

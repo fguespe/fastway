@@ -54,30 +54,35 @@ function fw_add_bcc_to_all( $headers, $email_id, $order ) {
 }
 
 
-if(fw_theme_mod("fw_action_resetmails")){
-    
+if(fw_theme_mod("fw_action_resetmails_notis")){
     update_option("woocommerce_new_order_recipient",getMailQueRecibe());
     update_option("woocommerce_cancelled_order_recipient",getMailQueRecibe());
     update_option("woocommerce_failed_order_recipient",getMailQueRecibe());
-    
     update_option("woocommerce_product_enquiry_send_to",getMailQueRecibe());
     update_option("woocommerce_stock_email_recipient",getMailQueRecibe());
-     
     update_option("sendgrid_from_email",getMailQueEnvia());
     update_option("woocommerce_email_from_address",getMailQueEnvia());
     update_option("woocommerce_email_from_name",getNombreQueEnvia());
     update_option("sendgrid_from_name",getNombreQueEnvia());
 
-    
-     //Mail woocommerce
+    set_theme_mod('fw_action_resetmails_notis',false);
+}
+
+
+if(fw_theme_mod("fw_action_resetmails_styling")){
+    //Mail woocommerce
     update_option("woocommerce_email_header_image",fw_theme_mod('fw-email-logo')?fw_theme_mod('fw-email-logo'):fw_theme_mod('general-logo') );
     update_option("woocommerce_email_footer_text","Powered by ".fw_theme_mod('fw_dev_name'));
     update_option("woocommerce_email_base_color",fw_theme_mod('opt-color-main'));
 
-
-    set_theme_mod('fw_action_resetmails',false);
-
+    set_theme_mod('fw_action_resetmails_styling',false);
 }
+
+
+
+
+
+
 function change_stock_email_recipient( $recipient, $product ) {
     return getMailQueRecibe();
 }
