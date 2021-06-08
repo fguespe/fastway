@@ -128,16 +128,17 @@ function fw_ml_update_stock( $order_id ) {
             custom_logs(print_r($item,true));
           }else{
             $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
+              
+            if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock."\n";
+            else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
+            $note.= $permalink;
+            $order->add_order_note( $note );
+
+            ## HERE you Create/update your custom post meta data to avoid repetition
+            update_post_meta( $order_id, '_ml_done', 'yes' );
+            
           }
           
-          
-          if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock."\n";
-          else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
-          $note.= $permalink;
-          $order->add_order_note( $note );
-
-          ## HERE you Create/update your custom post meta data to avoid repetition
-          update_post_meta( $order_id, '_ml_done', 'yes' );
           
           
         }
