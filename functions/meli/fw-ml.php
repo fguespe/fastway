@@ -138,10 +138,7 @@ function fw_ml_update_stock( $order_id ) {
             update_post_meta( $order_id, '_ml_done', 'yes' );
             
           }
-          
-          
-          
         }
-
     }
 }
+?>
