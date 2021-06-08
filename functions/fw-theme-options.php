@@ -1489,7 +1489,21 @@ if(is_devadmin()){
 			'off' => __( 'Disable', 'fastway' )
 		)
 	) );
+	
 }
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_ml_debug',
+	'label'       => __( 'Debug', 'fastway' ).(isAltoweb()?'(CR)':''),
+	'section'     => 'section_meli',
+	'description'	=> 'Activar esto para que se logee todo',
+	'default'     => 0,
+	'choices' => array(
+		'on'  => __( 'Enable', 'fastway' ),
+		'off' => __( 'Disable', 'fastway' )
+	)
+) );
 
 if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(

@@ -5,6 +5,14 @@ function ml_log_register_plugin_page() {
 }
 add_action('admin_menu', 'ml_log_register_plugin_page');
 	
+function custom_logs($message) { 
+  if(is_array($message)) { $message = json_encode($message); 
+  $file = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","a"); 
+  echo fwrite($file, "\n" . date('Y-m-d h:i:s') . " :: " . $message); 
+  fclose($file); 
+}
+
+
 function mllog_options_page(){
   $handle = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","r"); 
   if ($handle) {
@@ -45,13 +53,14 @@ function mllog_options_page(){
 
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
- add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+  add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 }
+
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
-    
     if(get_post_meta( $order_id, '_ml_done' )=='yes' )return;
     if(!fw_theme_mod('fw_ml_on'))return;
+    $debug=fw_theme_mod('fw_ml_debug');
     $usuario=getconfig(fw_theme_mod('fw_id_ml'));
     $iduser=trim($usuario['iduser']);
     $access_token= trim($usuario['access_token']);
@@ -113,7 +122,16 @@ function fw_ml_update_stock( $order_id ) {
 
             $item = array("available_quantity"=>$stock);
           }
+          
           $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
+
+          if($debug){
+            custom_logs(print_r($prod,true));
+            custom_logs('vars cant:'.count($vars));
+            custom_logs('/items/'.$sku);
+            custom_logs(print_r($item,true));
+          }
+          
           
           if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock."\n";
           else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";

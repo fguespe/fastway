@@ -179,6 +179,7 @@ function fw_data( $atts ) {
             'only_text' =>  '',
             
             'el_class' =>  '',
+            'class' =>  '',
             'el_id' =>  '',
             //Depreceated
             'isli' =>  '',
@@ -280,7 +281,7 @@ function fw_data( $atts ) {
     $only_text=false;
     if(($atts["only_text"]))$only_text=true;
    
-    $iconclass=" fw_icon fw_icon ".$atts['el_class'].' ';
+    $iconclass=" fw_icon fw_icon ".$atts['el_class'].' '.$atts['class'];
     if($format=="isli" || $format=="isli_i" || $format=='iconbox'  || $format=='iconbox_i'){
         $laclase=$format=="isli" || $format=="isli_i"?"d-flex":"";
         $first= '<li class="'.$iconclass.' '.$laclase.' '.$format.'" style="text-align:'.$text_align.';"> ';
