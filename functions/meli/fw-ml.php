@@ -123,13 +123,13 @@ function fw_ml_update_stock( $order_id ) {
             $item = array("available_quantity"=>$stock);
           }
           
-          $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
-
           if($debug){
             custom_logs(print_r($prod,true));
             custom_logs('vars cant:'.count($vars));
             custom_logs('/items/'.$sku);
             custom_logs(print_r($item,true));
+          }else{
+            $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
           }
           
           
