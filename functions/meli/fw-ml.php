@@ -5,7 +5,7 @@ function ml_log_register_plugin_page() {
 }
 add_action('admin_menu', 'ml_log_register_plugin_page');
 	
-function custom_logs($message) { 
+function custom_log($message) { 
   if(is_array($message)) $message = json_encode($message); 
   $file = fopen(ABSPATH."ml_logs/".fw_theme_mod('fw_id_ml').".log","a"); 
   echo fwrite($file, "\n" . date('Y-m-d h:i:s') . " :: " . $message); 
@@ -123,10 +123,10 @@ function fw_ml_update_stock( $order_id ) {
 
           $result=[];
           if($debug){
-            custom_logs(print_r($prod,true));
-            custom_logs('vars cant:'.count($vars));
-            custom_logs('/items/'.$sku);
-            custom_logs(print_r($item,true));
+            custom_log(print_r($prod,true));
+            custom_log('vars cant:'.count($vars));
+            custom_log('/items/'.$sku);
+            custom_log(print_r($item,true));
           }else{
             $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
           }

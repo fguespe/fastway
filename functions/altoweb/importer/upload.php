@@ -183,6 +183,8 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 		update_attached_file( (int) $_POST["ID"], $new_file);
 
 	}
+	
+	$importid=$_GET['import_id']?$_GET['import_id']:fw_theme_mod('fw_id_wpallimport');
 
 	if (in_array($filedata["ext"], array("jpg","png","pdf")))
 		$returnurl = get_bloginfo("wpurl")."/wp-admin/admin.php?page=exitofile";
