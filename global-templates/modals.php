@@ -447,6 +447,29 @@ function ir_al_checkout(url){
     else alert('Compra minima <?=fw_theme_mod('fw_min_purchase')?>. Puede ir al carrito y agregar mas unidades, o seguir comprando.');
 }
 
+function getVariation(){
+    let selects=jQuery( ".fw_variations select" )
+    let vars=jQuery( ".fw_variations" ).data( "product_variations" );
+    let indexes=[]
+    let elid=-1
+    
+    selects.each(function( index ) {
+        indexes[jQuery(this).data('attribute_name')]=jQuery(this).val()
+    });
+    let vara=null
+    vars.forEach(function(element) {
+        let atr=element['attributes']
+        let names=Object.keys(indexes)
+        let esigual=true
+        names.forEach(function(name) {
+            if(atr[name]!=indexes[name])esigual=false
+        })
+
+        if(esigual) vara=element
+    });
+    return vara
+}
+
 jQuery( ".fw_variations select" ).change(function() {
 
     let vara=getVariation()
@@ -486,28 +509,6 @@ jQuery( ".fw_variations select" ).change(function() {
     );
 });
 
-function getVariation(){
-    let selects=jQuery( ".fw_variations select" )
-    let vars=jQuery( ".fw_variations" ).data( "product_variations" );
-    let indexes=[]
-    let elid=-1
-    
-    selects.each(function( index ) {
-        indexes[jQuery(this).data('attribute_name')]=jQuery(this).val()
-    });
-    let vara=null
-    vars.forEach(function(element) {
-        let atr=element['attributes']
-        let names=Object.keys(indexes)
-        let esigual=true
-        names.forEach(function(name) {
-            if(atr[name]!=indexes[name])esigual=false
-        })
-
-        if(esigual) vara=element
-    });
-    return vara
-}
 function clickproduct(url,redirect){
     location.href=url
 }
@@ -522,6 +523,8 @@ function add_to_minicart_table(prod_id,var_id){
         jQuery('.var_'+var_id).removeClass('loading')
     });
 }
+
+
 function add_to_minicart(prod_id){
     let var_id=0;
 
