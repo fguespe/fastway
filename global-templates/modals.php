@@ -455,6 +455,7 @@ jQuery( ".fw_variations select" ).change(function() {
         jQuery('.fw_add_to_cart_button').prop("disabled",true)
         return;
     }
+    console.log('no pasa')
     jQuery('.summary .fw_price').html('<i class="fas fa-circle-notch fa-spin" ></i>');
     jQuery.get(ajaxurl, { 'action': 'get_variation_price',variation_id:vara['variation_id']}, 
         function (msg) { 
