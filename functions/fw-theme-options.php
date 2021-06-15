@@ -4094,6 +4094,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'analytics-id',
 	'label'    => __( 'Analyitics ID', 'fastway' ),       
+	'description' => 'Include letters. Ej AW-1020651316',
 	'section'     => 'section_scripts',
 	'description' =>__('Refresh cache after saving!','fastway')
 ) );
@@ -4519,7 +4520,7 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
-	'settings'    => 'fw_label_label_loop_e_gratis',
+	'settings'    => 'fw_shipping_free_label',
 	'label'    => __( 'Free Shipping', 'fastway' ),
 	'section'     => 'section_labels_shipping',
 	'default'	=> __('Free Shipping', 'fastway' ),
