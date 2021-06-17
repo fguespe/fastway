@@ -435,13 +435,13 @@ if(isAltoweb()){
 		'default' => 'Paga en 3 CUOTAS SIN INTERÉS. Procesado por e-Posnet'
 	) );
 
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'text',
-	'settings'    => 'fw_label_medios_pago',
-	'label'    => __( 'Medios de Pago', 'fastway' ),
-	'section'     => 'section_labels_payments',
-	'default'	=> 'Metodos de Pago',
-) );
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_label_medios_pago',
+		'label'    => __( 'Medios de Pago', 'fastway' ),
+		'section'     => 'section_labels_payments',
+		'default'	=> 'Metodos de Pago',
+	) );
 
 }
 
@@ -2921,7 +2921,7 @@ Kirki::add_field( 'theme_config_id', array(
 	    'off' => __( 'Disable', 'fastway' )
 	)
 ) );
-/*
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_shipping_method_1_on',
@@ -3127,7 +3127,213 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
-*/
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_1_on',
+	'label'    => __( 'Box 1', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_1_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'fad fa-motorcycle',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_1_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'En el día, en moto',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_1_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '<h3>CABA / GBA consultar costos</h3>
+	<div class="specs">Para recibirlo en el día solicitarlo antes de las 13hs, 50% de recargo día de lluvia.</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_2_on',
+	'label'    => __( 'Box 2', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_2_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'fad fa-bus',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_2_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'Envío a terminal',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_2_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '<h3>Despachamos sin cargo</h3><div class="specs">Recibilo de 2 a 5 dias.</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_3_on',
+	'label'    => __( 'Box 3', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_3_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'fad fa-shipping-fast',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_3_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'Envíos a todo el país',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_3_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '<h3>Consulta el costo con tu código postal en el producto a comprar.</h3><div class="specs">Despachamos dentro de las 24hs de realizada la compra. Recibilo de 2 a 5 dias.</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_4_on',
+	'label'    => __( 'Box 4', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_4_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'fad fa-truck-container',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_4_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'Flete',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_4_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '<div class="specs">Fletes a todo el país.</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_5_on',
+	'label'    => __( 'Box 5', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_5_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'fad fa-store',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_5_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => 'Retiro en el local',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_5_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '<div class="specs">Retiralo en nuestro local [fw_data type="address" only_text="true"]</div>',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_payment_method_6_on',
+	'label'    => __( 'Box 6', 'fastway' ),     
+	'section'     => 'section_woo_shippings',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_6_icon',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_payment_method_6_title',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_payment_method_6_desc',
+	'section'     => 'section_woo_shippings',
+	'default'     => '',
+	'choices'     => array(
+		'language' => 'html',
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_single_product_layout',
