@@ -5239,6 +5239,27 @@ Estaremos verificandolo y te notificaremos cuando este aprobado.
 Gracias por tu compra.','fastway'),
 	'choices'     => array('language' => 'html',),
 	) );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_email_subject_preparacion_verif_order',
+		'label'    => __('Subject','fastway'),      
+		'section'     => 'section_email_templates_other',
+		'default' 	  => __('Pedido en preparación','fastway')
+	) );
+	
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'code',
+		'settings'    => 'fw_email_content_preparacion_verif_order',
+		'label'    => __( 'New order', 'woocommerce' ),
+		'section'     => 'section_email_templates_other',
+		'default'	=> __('Hola {{customer_name}},
+  
+Solo para que estés informado — tu pedido ya se empezó a preparar
+
+Gracias por tu compra.','fastway'),
+	'choices'     => array('language' => 'html',),
+	) );
 }
 
 

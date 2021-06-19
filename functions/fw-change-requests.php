@@ -116,7 +116,14 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
         $mailer = $woocommerce->mailer();
         $message = $mailer->wrap_message(sprintf( $subject, $order->get_order_number() ), $body );
         $mailer->send( $order->billing_email, sprintf( $subject, $order->get_order_number() ), $message );
-    }else if($order->status === 'despachado' ) {
+    }if($order->status === 'preparacion' ) {
+      $subject= fw_parse_subject('customer_preparacion_order',fw_get_email_variables($order));
+      $body= fw_parse_mail_return('customer_preparacion_order',$order);
+
+      $mailer = $woocommerce->mailer();
+      $message = $mailer->wrap_message(sprintf( $subject, $order->get_order_number() ), $body );
+      $mailer->send( $order->billing_email, sprintf( $subject, $order->get_order_number() ), $message );
+  }else if($order->status === 'despachado' ) {
       $subject= fw_parse_subject('customer_despachado_order',fw_get_email_variables($order));
       $body= fw_parse_mail_return('customer_despachado_order',$order);
 
@@ -161,6 +168,7 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
         if ( 'wc-on-hold' === $key ) {
             $new_order_statuses['wc-on-hold'] ='Esperando comprobante';
             $new_order_statuses['wc-await-verif'] = 'Falta verificar';
+            $new_order_statuses['wc-preparacion'] ='En preparación';
             $new_order_statuses['wc-despachado'] = 'Despachado';
         }
     }
@@ -180,6 +188,14 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 
 
 function init_falta_verif() {
+  register_post_status( 'wc-preparacion', array(
+      'label'                     => 'En preparación',
+      'public'                    => true,
+      'show_in_admin_status_list' => true,
+      'show_in_admin_all_list'    => true,
+      'exclude_from_search'       => false,
+      'label_count'               => _n_noop( 'En preparación <span class="count">(%s)</span>', 'En preparación <span class="count">(%s)</span>' )
+  ));
   register_post_status( 'wc-await-verif', array(
       'label'                     => 'Falta verificar',
       'public'                    => true,

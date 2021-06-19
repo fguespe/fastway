@@ -26,6 +26,8 @@ if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']
   set_theme_mod('fw_email_content_customer_despachado_order',$_POST['fw_email_content_customer_despachado_order']);
   set_theme_mod('fw_email_subject_customer_await_verif_order',$_POST['fw_email_subject_customer_await_verif_order']);
   set_theme_mod('fw_email_content_customer_await_verif_order',$_POST['fw_email_content_customer_await_verif_order']);
+  set_theme_mod('fw_email_subject_customer_preparacion_order',$_POST['fw_email_subject_customer_preparacion_order']);
+  set_theme_mod('fw_email_content_customer_preparacion_order',$_POST['fw_email_content_customer_preparacion_order']);
 
 }
 /*
@@ -253,6 +255,16 @@ if(fw_theme_mod('fw_trans_comprobantes') && fw_theme_mod('fw_trans_comprobantes_
 <?php
 $content = fw_theme_mod('fw_email_content_customer_await_verif_order');
 wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'In preparation', 'fastway' )?></h3>
+<small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_customer_preparacion_order" name="fw_email_subject_customer_preparacion_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_preparacion_order'); ?>" /><br>
+
+<?php
+$content = fw_theme_mod('fw_email_content_customer_preparacion_order');
+wp_editor( $content, 'fw_email_content_customer_preparacion_order', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
 <div class="tipomail">
