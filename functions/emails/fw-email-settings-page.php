@@ -258,7 +258,7 @@ wp_editor( $content, 'fw_email_content_customer_await_verif_order', $settings = 
 ?>
 </div>
 <div class="tipomail">
-<h3 class="titulo"><?=__( 'In preparation', 'fastway' )?></h3>
+<h3 class="titulo"><?=__( 'Pedido en preparación', 'fastway' )?></h3>
 <small><?=__( 'This is an order notification sent to customers containing information about uploading the file.', 'woocommerce' );?></small>
 <input type="text" class="w100" id="fw_email_subject_customer_preparacion_order" name="fw_email_subject_customer_preparacion_order" value="<?php echo fw_theme_mod('fw_email_subject_customer_preparacion_order'); ?>" /><br>
 
