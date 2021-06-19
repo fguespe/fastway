@@ -5242,7 +5242,7 @@ Gracias por tu compra.','fastway'),
 
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'text',
-		'settings'    => 'fw_email_subject_preparacion_verif_order',
+		'settings'    => 'fw_email_subject_customer_preparacion_order',
 		'label'    => __('Subject','fastway'),      
 		'section'     => 'section_email_templates_other',
 		'default' 	  => __('Pedido en preparación','fastway')
@@ -5250,7 +5250,7 @@ Gracias por tu compra.','fastway'),
 	
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'code',
-		'settings'    => 'fw_email_content_preparacion_verif_order',
+		'settings'    => 'fw_email_content_customer_preparacion_order',
 		'label'    => __( 'New order', 'woocommerce' ),
 		'section'     => 'section_email_templates_other',
 		'default'	=> __('Hola {{customer_name}},
