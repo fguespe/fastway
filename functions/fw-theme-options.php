@@ -3128,6 +3128,7 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_payment_method_1_on',
@@ -3143,20 +3144,30 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_1_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-motorcycle',
+	'default'     => 'fad fa-credit-card',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_1_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'En el día, en moto',
+	'default'     => 'Tarjeta de Crédito',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_1_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '<h3>CABA / GBA consultar costos</h3>
-	<div class="specs">Para recibirlo en el día solicitarlo antes de las 13hs, 50% de recargo día de lluvia.</div>',
+	'default'     => '<h3>Pagá Online con MercadoPago</h3>
+	<a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="btn fw_icon_link fancybox">Ver promociones</a>
+	<div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
+	   <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 <div class="modal-body">
+				<iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
+			 </div>
+		  </div>
+	   </div>
+	</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3178,19 +3189,19 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_2_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-bus',
+	'default'     => 'fad fa-hand-holding-usd',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_2_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Envío a terminal',
+	'default'     => 'Efectivo',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_2_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '<h3>Despachamos sin cargo</h3><div class="specs">Recibilo de 2 a 5 dias.</div>',
+	'default'     => '<div class="specs">Podés pagar al contado en nuestras sucursales.</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3211,19 +3222,30 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_3_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-shipping-fast',
+	'default'     => 'fad fa-money-check-alt',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_3_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Envíos a todo el país',
+	'default'     => 'Depósito / Transferencia',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_3_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '<h3>Consulta el costo con tu código postal en el producto a comprar.</h3><div class="specs">Despachamos dentro de las 24hs de realizada la compra. Recibilo de 2 a 5 dias.</div>',
+	'default'     => '<div class="specs">Puede demorar hasta 72hs hábiles en acreditarse.</div>
+	<a target="_blank" data-toggle="modal" data-target="#modal_bancos" class="btn fw_icon_link fancybox">Ver datos</a>
+	<div class="modal modal_bancos fade" id="modal_bancos" aria-hidden="true">
+	   <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 <div class="modal-body">
+				[altoweb_bancos]
+			 </div>
+		  </div>
+	   </div>
+	</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3235,7 +3257,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_4_on',
 	'label'    => __( 'Box 4', 'fastway' ),     
 	'section'     => 'section_woo_payments',
-	'default'     => 0,
+	'default'     => 1,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -3245,19 +3267,20 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_4_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-truck-container',
+	'default'     => 'fad fa-barcode-read',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_4_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Flete',
+	'default'     => 'Cupón de Pago',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_4_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '<div class="specs">Fletes a todo el país.</div>',
+	'default'     => '<img stclass="aligncenter" width="60%" src="/wp-content/themes/fastway/assets/img/cupones.png">
+	<div class="specs">Imprmí el cupón o copiá el código, vas a RapiPago, Pago Fácil, Provincia Net o Bapro Pago y listo!</div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -3270,7 +3293,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_payment_method_5_on',
 	'label'    => __( 'Box 5', 'fastway' ),     
 	'section'     => 'section_woo_payments',
-	'default'     => 1,
+	'default'     => 0,
 	'choices' => array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
@@ -3281,25 +3304,23 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_5_icon',
 	'section'     => 'section_woo_payments',
-	'default'     => 'fad fa-store',
+	'default'     => '',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_payment_method_5_title',
 	'section'     => 'section_woo_payments',
-	'default'     => 'Retiro en el local',
+	'default'     => '',
 ) );
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'code',
 	'settings'    => 'fw_payment_method_5_desc',
 	'section'     => 'section_woo_payments',
-	'default'     => '<div class="specs">Retiralo en nuestro local [fw_data type="address" only_text="true"]</div>',
+	'default'     => '',
 	'choices'     => array(
 		'language' => 'html',
 	),
 ) );
-
-
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
@@ -3333,6 +3354,9 @@ Kirki::add_field( 'theme_config_id', array(
 		'language' => 'html',
 	),
 ) );
+
+
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'fw_single_product_layout',
