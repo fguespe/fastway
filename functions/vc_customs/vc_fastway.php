@@ -410,14 +410,8 @@ function vc_fw_info_block() {
                     'admin_label' => true,
                 ),
                 array(
-                    "type" => 'textarea',
-                    "heading"     => __("Small text desc"),
-                    "param_name"  => "desc",
-                    'admin_label' => true,
-                ),
-                array(
                     "type" => 'textarea_raw_html',
-                    "heading"     => __("HTML"),
+                    "heading"     => __("Small text desc"),
                     "param_name"  => "desc",
                     'admin_label' => true,
                 ),
