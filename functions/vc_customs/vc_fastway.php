@@ -405,18 +405,18 @@ function vc_fw_info_block() {
                 ),
                 array(
                     "type" => 'textfield',
-                    "heading"     => __("Subtitle"),
+                    "heading"     => __("Big text"),
                     "param_name"  => "subtitle",
                     'admin_label' => true,
                 ),
                 array(
                     "type" => 'textarea',
-                    "heading"     => __("Description"),
+                    "heading"     => __("Small text desc"),
                     "param_name"  => "desc",
                     'admin_label' => true,
                 ),
                 array(
-                    "type" => 'html',
+                    "type" => 'textarea_raw_html',
                     "heading"     => __("HTML"),
                     "param_name"  => "desc",
                     'admin_label' => true,
