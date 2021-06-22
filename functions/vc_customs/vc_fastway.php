@@ -378,7 +378,7 @@ function fw_info_block($atts,$content){
         'desc'      =>  '',
     ), $atts );
     $desc=$atts['desc'];
-    if(!$desc)$desc=rawurldecode( base64_decode( $atts['desc'] ) );
+    if(!empty($desc))$desc=rawurldecode( base64_decode( $atts['desc'] ) );
     return '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$desc.'</div></div>';
 }
 add_action( 'vc_before_init', 'vc_fw_info_block' );
