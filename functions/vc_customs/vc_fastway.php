@@ -415,6 +415,12 @@ function vc_fw_info_block() {
                     "param_name"  => "desc",
                     'admin_label' => true,
                 ),
+                array(
+                    "type" => 'html',
+                    "heading"     => __("HTML"),
+                    "param_name"  => "desc",
+                    'admin_label' => true,
+                ),
 
                 )
             )
