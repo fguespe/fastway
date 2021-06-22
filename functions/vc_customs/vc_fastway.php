@@ -411,7 +411,7 @@ function vc_fw_info_block() {
                     'admin_label' => true,
                 ),
                 array(
-                    "type" => 'textarea',
+                    "type" => 'textarea_html',
                     "heading"     => __("Small text desc + html"),
                     "param_name"  => "desc",
                     'admin_label' => true,
