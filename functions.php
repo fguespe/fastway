@@ -185,7 +185,7 @@ function fw_vc_get_posts($type) {
     
     $result = array();
     foreach ( $product_categories as $post ) {
-        $cat=array($post->name.''.$post->ID => $post->slug);
+        $cat=array($post->slug => $post->slug);
         $result=array_merge($result,$cat);
         
     }
