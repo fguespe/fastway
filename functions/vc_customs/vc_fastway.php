@@ -377,8 +377,8 @@ function fw_info_block($atts,$content){
         'subtitle'      =>  '',
         'desc'      =>  '',
     ), $atts );
-    
-    return '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$atts['desc'].'</div></div>';
+    $desc=rawurldecode( base64_decode( $atts['desc'] ) );
+    return '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$desc.'</div></div>';
 }
 add_action( 'vc_before_init', 'vc_fw_info_block' );
 function vc_fw_info_block() {
@@ -411,7 +411,7 @@ function vc_fw_info_block() {
                 ),
                 array(
                     "type" => 'textarea_raw_html',
-                    "heading"     => __("Small text desc"),
+                    "heading"     => __("Small text desc + html"),
                     "param_name"  => "desc",
                     'admin_label' => true,
                 ),
