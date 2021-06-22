@@ -173,9 +173,10 @@ function whero_limit_image_size($file) {
 
 function fw_vc_get_posts($type) {
     $args = array(
-    'taxonomy'   => $type/*,
+    'taxonomy'   => $type,
+    'orderby'    => 'name',
+    'order'    => 'ASC',/*,
     'number'     => $number,
-    'orderby'    => $orderby,
     'order'      => $order,
     'hide_empty' => $hide_empty,
     'include'    => $ids*/
