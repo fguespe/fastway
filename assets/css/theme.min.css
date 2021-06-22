@@ -2568,6 +2568,9 @@ footer .widget_nav_menu li a {
 .capsula-blanca div {
   font-size: 14px;
   color: #666666;
+}
+
+.capsula-blanca > div {
   padding: 20px;
 }
 
