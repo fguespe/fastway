@@ -376,10 +376,14 @@ function fw_info_block($atts,$content){
         'title'      =>  '',
         'subtitle'      =>  '',
         'desc'      =>  '',
+        'code'      =>  '',
     ), $atts );
     $code=rawurldecode( base64_decode( $atts['code'] ) );
 
-    return '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$atts['desc'].'</div><div class="specs">'.$code.'</div></div>';
+    $jaja= '<div class="capsula-blanca"><i class="fad fa-'.$atts['icon'].'" aria-hidden="true"></i><h2>'.$atts['title'].'</h2><h3>'.$atts['subtitle'].'</h3><div class="specs">'.$atts['desc'].'</div>';
+    $jaja.='<div class="specs">'.$code.'</div>';
+    $jaja.='</div>';
+    
 }
 add_action( 'vc_before_init', 'vc_fw_info_block' );
 function vc_fw_info_block() {
