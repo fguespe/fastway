@@ -615,7 +615,7 @@ display:none
 @media print
 { 
 	
-	#wpadminbar,#adminmenumain{
+	#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box{
 		display: none;
 	}
 	.nojq {
