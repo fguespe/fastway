@@ -621,5 +621,8 @@ display:none
 		width: 100% !important;;
 		max-width: 100% !important;;
 	}
+	.name{
+		font-size: 11px;;
+	}
 }
 
