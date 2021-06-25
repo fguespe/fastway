@@ -619,6 +619,7 @@ display:none
 	}
 	#poststuff #post-body.columns-2 #side-sortables{
 		width: 100% !important;;
+		max-width: 100% !important;;
 	}
 }
 
