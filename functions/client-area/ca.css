@@ -2,6 +2,8 @@
 body{
 	background: var(--ca-background-color) !important;
 }
+
+
 /*abandoned cart*/
 .woocommerce_page_sfa-abandoned-carts h1,
 .woocommerce_page_sfa-abandoned-carts .tablenav,
@@ -387,7 +389,7 @@ body:not(.woocommerce_page_wc-facebook) .woo-nav-tab-wrapper{
 
 
 
-#wc_customer_order_exported_by_orders,#wc_customer_order_exported_by_customers{
+#wc_customer_order_exported_by_orders,#wc_customer_order_exported_by_customers,#wc_admin_dashboard_setup{
 	display: none;
 }
 /*
@@ -609,3 +611,15 @@ display:none !important;
 .wpo_wcpdf-actions li:last-child{
 display:none
 }
+
+@media print
+{ 
+	
+	#wpadminbar,#adminmenumain{
+		display: none;
+	}
+	.nojq {
+        display: none !important;
+    }
+}
+
