@@ -613,11 +613,9 @@ display:none
 }
 
 
-@media print
-{ 
-	
-	.wp-heading-inline,.page-title-action,#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box,#woocommerce-order-actions{
-		display: none;
+@media print{ 
+	h1,.wp-heading-inline,.page-title-action,#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box,#woocommerce-order-actions{
+		display: none !important;
 	}
 }
 
