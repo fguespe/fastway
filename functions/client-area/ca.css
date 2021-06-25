@@ -616,7 +616,7 @@ display:none
 @media print
 { 
 	
-	#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box{
+	#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box,#woocommerce-order-actions{
 		display: none;
 	}
 }
