@@ -617,5 +617,8 @@ display:none
 	h1,.wp-heading-inline,.page-title-action,#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box,#woocommerce-order-actions{
 		display: none !important;
 	}
+	#poststuff #post-body.columns-2 #side-sortables{
+		width: 100% !important;;
+	}
 }
 
