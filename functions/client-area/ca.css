@@ -612,14 +612,12 @@ display:none !important;
 display:none
 }
 
+
 @media print
 { 
 	
 	#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box{
 		display: none;
 	}
-	.nojq {
-        display: none !important;
-    }
 }
 
