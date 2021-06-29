@@ -623,7 +623,7 @@ display:none
 	#woocommerce-order-actions,
 	#order_status,
 	.add_note,
-        .wc-order-data-row,  
+	.wc-order-data-row,  
   	a
 	{
 		display: none !important;
