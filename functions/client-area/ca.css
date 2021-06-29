@@ -627,6 +627,7 @@ display:none
 	.woocommerce-order-data__meta,
 	#fc_frame,
 	.wc-order-status,
+	thead,
   	a
 	{
 		display: none !important;
