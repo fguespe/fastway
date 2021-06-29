@@ -624,6 +624,7 @@ display:none
 	#order_status,
 	.add_note,
 	.wc-order-data-row,  
+	.woocommerce-order-data__meta,
   	a
 	{
 		display: none !important;
