@@ -207,3 +207,4 @@ if (! class_exists('WC_Free_Shipping_Per_Product_Method')) :
         }
     }
 endif;
+?>

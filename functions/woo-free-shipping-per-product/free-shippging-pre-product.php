@@ -110,3 +110,4 @@ class WPRuby_Free_Shipping_Product
 
 
 new WPRuby_Free_Shipping_Product();
+?>
