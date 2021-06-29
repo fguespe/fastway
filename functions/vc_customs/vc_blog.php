@@ -112,3 +112,4 @@ function fw_blog_carousel( $atts, $content ) {
 }   
 add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
 
+?>

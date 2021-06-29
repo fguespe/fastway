@@ -36,3 +36,4 @@ if ( ! class_exists( __CLASS__ ) ) {
 
 	new Woo_Shipping_Calculator;
 }
+?>

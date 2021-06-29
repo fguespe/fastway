@@ -1,6 +1,4 @@
- <?php
-
-
+<?php
 function filter_woocommerce_coupon_is_valid( $true, $instance ) { 
     if(esMultitienda()) return false;
     return $true;

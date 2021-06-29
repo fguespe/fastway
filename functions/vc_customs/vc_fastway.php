@@ -1289,3 +1289,4 @@ function vc_after_init_actions() {
     vc_add_params( 'vc_row', $vc_row_params ); 
          
 }
+?>

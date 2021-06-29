@@ -682,3 +682,4 @@ function get_slider_fields(){
 );
 }
 
+?>

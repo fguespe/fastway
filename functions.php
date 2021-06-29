@@ -672,4 +672,5 @@ new iWC_Orderby_Stock_Status;
 /**
 * END - Order product collections by stock status, instock products first.
 */
+
 ?>
