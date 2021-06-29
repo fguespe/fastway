@@ -614,16 +614,27 @@ display:none
 
 
 @media print{ 
-	h1,.wp-heading-inline,.page-title-action,#wpadminbar,#adminmenumain,#mercadoenvios-metabox,#woocommerce-oca-box,#woocommerce-order-actions{
+	h1,.wp-heading-inline,
+	.page-title-action,
+	#wpadminbar,
+	#adminmenumain,
+	#mercadoenvios-metabox,
+	#woocommerce-oca-box,
+	#woocommerce-order-actions,
+	#order_status,
+	.add_note,
+        .wc-order-data-row,  
+  	a
+	{
 		display: none !important;
-	}
-	#poststuff #post-body.columns-2 #side-sortables{
-		width: 100% !important;;
-		max-width: 100% !important;;
 	}
 	.name{
 		width:100% !important;
-		font-size: 11px;;
+		font-size: 11px;
+	}
+	#poststuff #post-body.columns-2 #side-sortables {
+		width: 100% !important;
+		max-width: 100% !important;
 	}
 }
 
