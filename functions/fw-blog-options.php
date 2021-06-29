@@ -125,3 +125,4 @@ add_shortcode('fw_blog_button', 'fw_blog_button');
 function fw_blog_button(){
   echo '<a class="vermas">'.fw_theme_mod('fw_label_read_more').'</a>';
 }
+?>

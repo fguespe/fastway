@@ -198,3 +198,4 @@ function fw_settings_page() {
 
 	<?php
 } // end settings page
+?>

@@ -253,3 +253,4 @@ add_shortcode('fw_m_search_box','fw_m_search_box');
 function fw_m_search_box(){
     return '<button class="navbar-toggler fw-header-icon search" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"><i class="'.fw_theme_mod('fw_icons_style').' fa-search"></i></button>';
 }
+?>

@@ -870,3 +870,4 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
     $defaults['delimiter'] = ' &gt; ';
     return $defaults;
 }
+?>

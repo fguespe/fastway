@@ -2285,3 +2285,4 @@ add_filter( 'woocommerce_default_catalog_orderby_options', 'custom_woocommerce_c
 add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby', 10, 1 );
 
 
+?>

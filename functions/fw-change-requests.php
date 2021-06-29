@@ -214,4 +214,3 @@ function init_falta_verif() {
   ));
 }
 ?>
-

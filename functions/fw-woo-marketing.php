@@ -71,3 +71,4 @@ function get_lili_discount($cart,$cant=""){
     $discount=$menorprecio*-1/(100/$porcentage)*floor($cantqueespromo/$cuantos);
     return $discount;
 }
+?>
