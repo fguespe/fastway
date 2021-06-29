@@ -622,6 +622,7 @@ display:none
 		max-width: 100% !important;;
 	}
 	.name{
+		width:100% !important;
 		font-size: 11px;;
 	}
 }

@@ -58,6 +58,4 @@ if(fw_theme_mod('fw_client_admin_columnaprecio')){
       }
   }
 }
-
-
-  
+?>
