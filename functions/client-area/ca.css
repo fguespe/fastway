@@ -625,6 +625,7 @@ display:none
 	.add_note,
 	.wc-order-data-row,  
 	.woocommerce-order-data__meta,
+	.webchat,
   	a
 	{
 		display: none !important;
