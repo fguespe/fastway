@@ -622,6 +622,7 @@ display:none
 	#woocommerce-oca-box,
 	#woocommerce-order-actions,
 	#order_status,
+	.wc-order-bulk-actions,
 	.add_note,
 	.woocommerce-order-data__meta,
 	#fc_frame,
