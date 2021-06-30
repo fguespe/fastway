@@ -633,7 +633,7 @@ display:none
 	{
 		display: none !important;
 	}
-	.name{
+	.name,#woocommerce-order-items .wc-order-totals{
 		width:100% !important;
 		font-size: 11px;
 	}
