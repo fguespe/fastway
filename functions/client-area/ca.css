@@ -641,5 +641,8 @@ display:none
 		width: 100% !important;
 		max-width: 100% !important;
 	}
+	.system-note p{
+		font-size:8px !important;
+	}
 }
 
