@@ -651,8 +651,11 @@ display:none
 		padding:0px !important;
 		font-size:8px !important;
 	}
-	.order_data_column_container .order_data_column:nth-child(1){
+	.order_data_column_container .order_data_column:nth-child(1),.order_data_column_container .order_data_column:nth-child(2){
 		display:none !important;
+	}
+	#order_data .order_data_column{
+		width:100% !important;
 	}
 }
 
