@@ -667,8 +667,8 @@ display:none
 		width:100% !important;
 	}
 	a{
-		text-transform: none;
-		color:black
+		text-transform: none !important;
+		color:black !important;
 	}
 	.wc-order-item-name{
 		display: block !important;;
