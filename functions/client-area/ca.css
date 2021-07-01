@@ -657,5 +657,8 @@ display:none
 	#order_data .order_data_column{
 		width:100% !important;
 	}
+	.wc-order-item-name{
+		display: block !important;;
+	}
 }
 
