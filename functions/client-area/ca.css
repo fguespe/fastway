@@ -629,6 +629,7 @@ display:none
 	.wc-order-status,
 	.postbox-header,
 	#order_shipping_line_items,
+	.wc-order-edit-line-item,
 	thead,
   	a
 	{
