@@ -655,6 +655,7 @@ display:none
 	}
 	.system-note p,
 	.system-note .meta,
+	.note_content p,
 	.note_content{
 		padding:0px !important;
 		font-size:8px !important;
@@ -668,7 +669,6 @@ display:none
 	a{
 		text-transform: none;
 		color:black
-		
 	}
 	.wc-order-item-name{
 		display: block !important;;
