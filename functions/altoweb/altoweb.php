@@ -121,7 +121,8 @@ function my_custom_checkout_field_display_admin_order_meta($order){
     $dato=get_post_meta( $order->get_id(), '_billing_cuit', true );
     if(!empty($dato))echo '<p><strong>'.__('VAT','fastway').':</strong> ' . $dato . '</p>';
     $dato = get_post_meta($order->get_id(), '_customer_user', true);
-    if(!empty($dato))echo '<p><strong>'.__('Username','fastway').':</strong> ' . $dato . '</p>';
+    $user = get_user_by( 'id', $dato ); 
+    if(!empty($dato))echo '<p><strong>'.__('Usuario','fastway').':</strong> ' . $user->user_login . '</p>';
 }
 
 
