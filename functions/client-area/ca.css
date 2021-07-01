@@ -634,6 +634,9 @@ display:none
 	{
 		display: none !important;
 	}
+	div{
+		font-size: 10px !important;;
+	}
 	.name,#woocommerce-order-items .wc-order-totals{
 		width:100% !important;
 		font-size: 11px;
@@ -656,6 +659,11 @@ display:none
 	}
 	#order_data .order_data_column{
 		width:100% !important;
+	}
+	a{
+		text-transform: none;
+		color:black
+		
 	}
 	.wc-order-item-name{
 		display: block !important;;
