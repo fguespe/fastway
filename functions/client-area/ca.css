@@ -677,7 +677,7 @@ display:none
 	.order_notes .note{
 		display:none;
 	}
-	.order_notes .note:nth-last-child(-n + 2){
+	.order_notes .note:nth-last-child(-n + 3){
 		display:block !important;
 	}
 }
