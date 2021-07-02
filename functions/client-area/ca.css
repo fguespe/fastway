@@ -674,5 +674,11 @@ display:none
 	.wc-order-item-name{
 		display: block !important;;
 	}
+	.order_notes .note{
+		display:none;
+	}
+	.order_notes .note:nth-last-child(-n + 2){
+		display:block !important;
+	}
 }
 
