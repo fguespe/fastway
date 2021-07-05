@@ -665,7 +665,7 @@ display:none
 		display:none !important;
 	}
 	#order_data .order_data_column{
-		width:100% !important;
+		width:50% !important;
 	}
 	a{
 		text-transform: none !important;
