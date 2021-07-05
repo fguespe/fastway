@@ -664,9 +664,6 @@ display:none
 	.order_data_column_container .order_data_column:nth-child(1){
 		display:none !important;
 	}
-	#order_data .order_data_column{
-		width:50% !important;
-	}
 	a{
 		text-transform: none !important;
 		color:black !important;
