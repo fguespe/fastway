@@ -665,7 +665,8 @@ display:none
 		display:none !important;
 	}
 	#order_data .order_data_column{
-		font-size: 10px !important;
+		font-size: 10px !important;;
+		width:48% !important;
 	}
 	a{
 		text-transform: none !important;
