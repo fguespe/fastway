@@ -664,6 +664,9 @@ display:none
 	.order_data_column_container .order_data_column:nth-child(1){
 		display:none !important;
 	}
+	#order_data .order_data_column{
+		font-size: 10px !important;
+	}
 	a{
 		text-transform: none !important;
 		color:black !important;
