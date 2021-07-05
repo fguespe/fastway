@@ -680,5 +680,8 @@ display:none
 	.order_notes .note:nth-last-child(-n + 3){
 		display:block !important;
 	}
+	.address a{
+		display: block !important;;
+	}
 }
 
