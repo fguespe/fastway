@@ -509,7 +509,10 @@ button,a,input,textarea,.vc_row,ul,li,div{
     background: '.fw_theme_mod('ca-main-color').' !important;
     text-shadow:none;
     -webkit-box-shadow:none;
-}</style>';
+}';
+echo fw_theme_mod('ca-customcss');
+echo '</style>';
+
 }
 add_action('login_head', 'fw_custom_loginui');
 
