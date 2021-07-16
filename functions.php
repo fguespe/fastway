@@ -526,7 +526,34 @@ function sortable_file_size_sorting_logic($query) {
 add_action('pre_get_posts', 'sortable_file_size_sorting_logic');
 
 
+/**
+ *  Add a blank option to a Gravity Forms dropdown
+ *
+ *  @param   object  $form  The Gravity Form
+ *  @return  object  $form  The modified Gravity Form
+ */
+function wp_gravity_forms_add_empty_dropdown_option( $form ) {
+  // Loop through the form fields
+  foreach( $form['fields'] as &$field ) {
 
+      if( $field->type == 'select' ) {
+          // Add blank first element
+          $items = array(
+              'text' => '',
+              'value' => '',
+              'isSelected' => true,
+              'price' => ''
+          );
+          // Add to the top of the array
+          array_unshift( $field->choices, $items );
+      } else {
+          continue;
+      }
+  }
+  return $form;
+}
+add_filter( 'gform_pre_render', 'wp_gravity_forms_add_empty_dropdown_option' );
+add_filter( 'gform_pre_submission_filter', 'wp_gravity_forms_add_empty_dropdown_option' );
 
 
 
