@@ -251,7 +251,7 @@ function fw_data( $atts ) {
         if( strpos( $type, 'fa-' ) === false) {
             $type='fa-'.$type;
         }
-        if( strpos( $type, 'fas ' ) === false && strpos( $type, 'fad ' ) === false  && strpos( $type, 'far ' ) === false){
+        if( strpos( $type, 'fas ' ) === false && strpos( $type, 'fad ' ) === false  && strpos( $type, 'far ' ) === false && strpos( $type, 'fab ' ) === false){
             $icon=$icons_style.' '.$type;
         }else $icon=$type;
         $type='custom';
