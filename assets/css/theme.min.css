@@ -3273,9 +3273,6 @@ body .wpb_content_element {
 .layout2 .fw_single_product .stock {
   display: none;
 }
-.layout2 .fw_single_product .fw-medios.envio {
-  display: none !important;
-}
 .layout2 .fw_single_product .fw_price.kilo span {
   font-size: 25px !important;
 }
