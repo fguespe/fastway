@@ -331,7 +331,7 @@ add_shortcode('fw_single_cf','fw_get_custom_field');
 function fw_get_custom_field($atts){
     global $product;
     $sku=get_post_meta($product->id,$atts['id'],true);
-    if(!empty($sku))return "<span class='".$atts['id']."'>".$sku."</span>";
+    if(!empty($sku))echo "<span class='".$atts['id']."'>".$sku."</span>";
 }
 
 add_shortcode('fw_customer_product_summary', 'fw_customer_product_summary');
