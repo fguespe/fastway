@@ -449,6 +449,7 @@ function editpaso(ppaso){
   if(ppaso==1){//
     resetStep('cuenta')
     jQuery('.paso-cuenta').show()
+    jQuery('.cupones').show()
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
@@ -458,6 +459,7 @@ function editpaso(ppaso){
   }else if(ppaso==2){//shipping
     resetStep('datos')
     jQuery('.paso-datos').show()
+    jQuery('.cupones').hide()
     resetStep('shipping')
     resetStep('pagos')
     verificarFields()
@@ -465,16 +467,16 @@ function editpaso(ppaso){
   }else if(ppaso==3){
     resetStep('shipping')
     jQuery('.paso-shipping').show()
+    jQuery('.cupones').hide()
     resetStep('pagos')
     paso=3
   }else if(ppaso==4){
     resetStep('pagos')
     jQuery('.paso-pagos').show()
+    jQuery('.cupones').hide()
     paso=4
   }
   
-  
-  jQuery(document.body).addClass('paso-'+ppaso)
 
 }
 function resetStep(type){
