@@ -2852,6 +2852,10 @@ ul.products.columns-6 li.product, .woocommerce-page ul.products.columns-6 li.pro
 }
 
 @media (max-width: 799px) {
+  .page-checkout #page-wrapper {
+    height: 100vh;
+  }
+
   .page-checkout .vc_column_container > .vc_column-inner {
     padding: 0px !important;
   }

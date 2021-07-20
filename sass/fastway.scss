@@ -2836,8 +2836,11 @@ h3.heading-title {
 .vc_col-has-fill>.vc_column-inner {
   padding-top: 0px !important;
 }
-@media (max-width: 799px) {
 
+@media (max-width: 799px) {
+  .page-checkout #page-wrapper{
+    height: 100vh;
+  }
   .page-checkout .vc_column_container>.vc_column-inner{
     padding: 0px !important;
   }
