@@ -6,6 +6,9 @@
 body .wpb_text_column li{
 	list-style-type: square;
 }
+body:not(.paso-1){
+
+}
 button:focus{
   outline:0 !important;
   box-shadow:none !important;
@@ -3676,10 +3679,11 @@ body .wpb_content_element {
 	border-top: 0
 }
 
+/*
 .woocommerce table.shop_table_responsive tbody th,
 .woocommerce-page table.shop_table_responsive tbody th {
 	display: none
-}
+}*/
 
 .woocommerce table.shop_table_responsive tr,
 .woocommerce-page table.shop_table_responsive tr {
@@ -4792,7 +4796,7 @@ a, button {
       padding-bottom: 30px;
       border-bottom: 1px solid #ccc;
     }
-
+    
     ul.fw_order-details-container,
     ul.fw_billing-details-container {
       margin: 0;

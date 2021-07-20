@@ -3639,11 +3639,11 @@ body .wpb_content_element {
     border-top: 0;
   }
 
+  /*
   .woocommerce table.shop_table_responsive tbody th,
-.woocommerce-page table.shop_table_responsive tbody th {
-    display: none;
-  }
-
+  .woocommerce-page table.shop_table_responsive tbody th {
+  	display: none
+  }*/
   .woocommerce table.shop_table_responsive tr,
 .woocommerce-page table.shop_table_responsive tr {
     display: table;
