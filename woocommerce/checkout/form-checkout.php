@@ -473,7 +473,8 @@ function editpaso(ppaso){
     paso=4
   }
   
-  jQuery('body').addClass('paso-'+ppaso)
+  
+  jQuery(document.body).addClass('paso-'+ppaso)
 
 }
 function resetStep(type){
