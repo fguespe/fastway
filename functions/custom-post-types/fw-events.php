@@ -142,7 +142,7 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_602d0e7919f88',
-                'label' => 'Start Date',
+                'label' => __( 'Start Date'      ,'fastway'),
                 'name' => 'start_date',
                 'type' => 'date_picker',
                 'instructions' => '',
@@ -159,7 +159,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0e7919f81',
-                'label' => 'End Date',
+                'label' =>  __('End Date','fastway'),
                 'name' => 'end_date',
                 'type' => 'date_picker',
                 'instructions' => '',
@@ -176,7 +176,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0ea849f89',
-                'label' => 'When',
+                'label' =>  __('When','fastway'),
                 'name' => 'date_desc',
                 'type' => 'text',
                 'instructions' => '',
@@ -195,7 +195,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0ea819f89',
-                'label' => 'City',
+                'label' =>  __('City','fastway'),
                 'name' => 'city',
                 'type' => 'text',
                 'instructions' => '',
@@ -214,7 +214,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0f2c6b8ff',
-                'label' => 'Description',
+                'label' =>  __('Description','fastway'),
                 'name' => 'description',
                 'type' => 'textarea',
                 'instructions' => '',
@@ -250,7 +250,7 @@ if( function_exists('acf_add_local_field_group') ):
 
             array(
                 'key' => 'field_602d10d0134d1',
-                'label' => ' Replay Webinar',
+                'label' =>  __('Replay Webinar','fastway'),
                 'name' => 'replay_webinar',
                 'type' => 'url',
                 'instructions' => '',
@@ -266,7 +266,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_603e6c10144b3',
-                'label' => 'File',
+                'label' =>  __('File','fastway'),
                 'name' => 'file',
                 'type' => 'file',
                 'instructions' => '',
@@ -285,7 +285,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_602d0ea119f89',
-                'label' => 'Label',
+                'label' =>  __('Label','fastway'),
                 'name' => 'btn_label',
                 'type' => 'text',
                 'instructions' => '',
@@ -296,7 +296,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 'Read more',
+                'label' =>  __('Read more','fastway'),
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
@@ -373,12 +373,12 @@ function fw_event_url(){
 function my_page_columns($columns) {
     $columns = array(
      'cb' => '< input type="checkbox" />',
-     'title' => 'Title',
-     'city' => 'City',
-     'date_desc' => 'When',
-     'start_date' => 'Start date',
-     'end_date' => 'End date',
-     'category' => 'Category'
+     'title' =>  __( 'Title'      ,'fastway'),
+     'city' => __( 'City'      ,'fastway'),
+     'date_desc' =>  __( 'When'      ,'fastway'),
+     'start_date' => __( 'Start Date'      ,'fastway'),
+     'end_date' =>  __( 'End Date'      ,'fastway'),
+     'category' =>  __( 'Category'      ,'fastway'),
     );
     return $columns;
    }
