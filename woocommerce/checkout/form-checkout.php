@@ -449,7 +449,7 @@ function editpaso(ppaso){
   if(ppaso==1){//
     resetStep('cuenta')
     jQuery('.paso-cuenta').show()
-    jQuery('.cupones').hide()
+    jQuery('.cupones').show()
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
@@ -459,7 +459,7 @@ function editpaso(ppaso){
   }else if(ppaso==2){//shipping
     resetStep('datos')
     jQuery('.paso-datos').show()
-    jQuery('.cupones').hide()
+    jQuery('.cupones').show()
     resetStep('shipping')
     resetStep('pagos')
     verificarFields()
@@ -473,9 +473,9 @@ function editpaso(ppaso){
   }else if(ppaso==4){
     resetStep('pagos')
     jQuery('.paso-pagos').show()
-    jQuery('.cupones').hide()
     paso=4
   }
+  console.log('entra')
   
 
 }
@@ -523,6 +523,7 @@ function nextpaso(){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
+    jQuery('.cupones').hide()
     sacar1(true,1)
 
     if(paso==3 && '<?=!hasShipping()?>'){//sin envios
@@ -533,6 +534,7 @@ function nextpaso(){
   }else if(paso==4){
     if(jQuery('select[name="_shipping_method_pickup_location_id[0]"').length>0 && jQuery('#shipping_method_0_local_pickup_plus').prop("checked")){//si esta activo local pickups
       let sucnumber=jQuery('select[name="_shipping_method_pickup_location_id[0]"').val()
+  
       if(!sucnumber){
         alert('Falta seleccionar sucursal')
         paso--
