@@ -457,7 +457,7 @@ function editpaso(ppaso){
     paso=1
   }else if(ppaso==2){//shipping
     resetStep('datos')
-    jQuery('.paso-datos').show())
+    jQuery('.paso-datos').show()
     resetStep('shipping')
     resetStep('pagos')
     verificarFields()

@@ -6,8 +6,8 @@
 body .wpb_text_column li{
 	list-style-type: square;
 }
-body:not(.paso-1){
-
+body:not(.paso-1) .order-container .cupones{
+  display: none;
 }
 button:focus{
   outline:0 !important;
