@@ -449,7 +449,7 @@ function editpaso(ppaso){
   if(ppaso==1){//
     resetStep('cuenta')
     jQuery('.paso-cuenta').show()
-    jQuery('.cupones').show()
+    jQuery('.cupones').hide()
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
