@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-07-20 10:59-0300\n"
-"PO-Revision-Date: 2021-07-20 11:00-0300\n"
+"PO-Revision-Date: 2021-07-20 11:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -1064,7 +1064,7 @@ msgstr ""
 #: functions/custom-post-types/fw-events.php:381
 #: functions/custom-post-types/fw-review.php:33 functions/fw-faq.php:35
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #: functions/custom-post-types/fw-events.php:46
 #: functions/custom-post-types/fw-review.php:34 functions/fw-faq.php:36
@@ -1079,32 +1079,32 @@ msgstr ""
 #: functions/custom-post-types/fw-events.php:48
 #: functions/custom-post-types/fw-review.php:36 functions/fw-faq.php:38
 msgid "Parent Category"
-msgstr ""
+msgstr "Categoría Padre"
 
 #: functions/custom-post-types/fw-events.php:49
 #: functions/custom-post-types/fw-review.php:37 functions/fw-faq.php:39
 msgid "Parent Category:"
-msgstr ""
+msgstr "Categoría Padre:"
 
 #: functions/custom-post-types/fw-events.php:50
 #: functions/custom-post-types/fw-review.php:38 functions/fw-faq.php:40
 msgid "Edit Category"
-msgstr ""
+msgstr "Editar Categoría"
 
 #: functions/custom-post-types/fw-events.php:51
 #: functions/custom-post-types/fw-review.php:39 functions/fw-faq.php:41
 msgid "Update Category"
-msgstr ""
+msgstr "Actualizar Categoría"
 
 #: functions/custom-post-types/fw-events.php:52
 #: functions/custom-post-types/fw-review.php:40 functions/fw-faq.php:42
 msgid "Add New Category"
-msgstr ""
+msgstr "Nueva Categoría"
 
 #: functions/custom-post-types/fw-events.php:53
 #: functions/custom-post-types/fw-review.php:41 functions/fw-faq.php:43
 msgid "New Category Name"
-msgstr ""
+msgstr "Nueva Categoría"
 
 #: functions/custom-post-types/fw-events.php:145
 #: functions/custom-post-types/fw-events.php:379
@@ -1683,7 +1683,7 @@ msgstr ""
 
 #: functions/fw-theme-options.php:193
 msgid "Category Loop"
-msgstr ""
+msgstr "Loop Categoría"
 
 #: functions/fw-theme-options.php:199 functions/fw-theme-options.php:272
 #: functions/fw-theme-options.php:341
