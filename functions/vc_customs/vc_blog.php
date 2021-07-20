@@ -110,6 +110,5 @@ function fw_blog_carousel( $atts, $content ) {
     return ob_get_clean();
 		
 }   
-add_shortcode( 'fw_blog_carousel', 'fw_blog_carousel' ); 
 
 ?>

@@ -3989,7 +3989,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'css_event_review',
 	'label'       => __( 'CSS Event Loop', 'fastway' ),
 	'section'     => 'section_woo_loop_event',
-	'description' => 'Classes: .fw_review_loop',
+	'description' => 'Classes: .fw_event_loop',
 	'default'     => '',
 	'transport'	=> 'postMessage',
 	'choices'     => array(
