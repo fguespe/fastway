@@ -9,12 +9,12 @@ function cptui_register_my_cpts() {
  */
 
 $labels = [
-    "name" => __( "Events", "custom-post-type-ui" ),
+    "name" => __( "Events", "fastway" ),
     "singular_name" => __( "Event", "custom-post-type-ui" ),
 ];
 
 $args = [
-    "label" => __( "Events", "custom-post-type-ui" ),
+    "label" => __( "Events", "fastway" ),
     "labels" => $labels,
     "description" => "",
     "public" => true,

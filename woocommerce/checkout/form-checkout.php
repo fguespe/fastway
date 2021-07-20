@@ -452,13 +452,12 @@ function editpaso(ppaso){
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
-
     verificarEmail(1)
     //verificarFields()
     paso=1
   }else if(ppaso==2){//shipping
     resetStep('datos')
-    jQuery('.paso-datos').show()
+    jQuery('.paso-datos').show())
     resetStep('shipping')
     resetStep('pagos')
     verificarFields()
@@ -473,6 +472,9 @@ function editpaso(ppaso){
     jQuery('.paso-pagos').show()
     paso=4
   }
+  
+  jQuery('body').addClass('paso-'+ppaso)
+
 }
 function resetStep(type){
 
