@@ -216,7 +216,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'key' => 'field_602d0f2c6b8ff',
                 'label' =>  __('Description','fastway'),
                 'name' => 'description',
-                'type' => 'textarea',
+                'type' => 'html',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -247,7 +247,6 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
-
             array(
                 'key' => 'field_602d10d0134d1',
                 'label' =>  __('Replay Webinar','fastway'),

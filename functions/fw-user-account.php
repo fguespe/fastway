@@ -38,7 +38,7 @@ if( !function_exists( 'fw_user_account' ) ) {
           $url='';
           if(is_plugin_active('woocommerce/woocommerce.php'))$url=wc_get_page_permalink('myaccount' );
 return <<<HTML
-<a class="fw-header-icon user" href="$url" role="button" data-target="" data-toggle="">
+<a class="fw-header-icon user fw_user_account" href="$url" role="button" data-target="" data-toggle="">
   $istyle 
 </a>   
 HTML;
