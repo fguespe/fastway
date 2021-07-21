@@ -193,16 +193,18 @@ var paso = 1;
             
     <div class="col-lg-4  col-sm-12 order-container" >
       </form>
-        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) && fw_theme_mod('fw_hide_coupon') ) { ?>
-        <div class="cupones ">
-        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-          <p class="form-row form-row-first">
-            <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
-            <button type="submit" class="button" name="apply_coupon"   style="width:30%;"><?=fw_theme_mod('fw_label_checkout_aplicar')?></button>
-          </p>
-          <div class="clear"></div>
-        </form>
-        </div>
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
+          <?php if ( fw_theme_mod('fw_hide_coupon')  ) { ?>
+            <div class="cupones ">
+              <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+                <p class="form-row form-row-first">
+                  <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" style="width:70%;display:inline;"/>
+                  <button type="submit" class="button" name="apply_coupon"   style="width:30%;"><?=fw_theme_mod('fw_label_checkout_aplicar')?></button>
+                </p>
+                <div class="clear"></div>
+              </form>
+            </div>
+          <?php } ?>
         <div class="totales">
         <div id="overlay"></div>
         <?php } ?>
@@ -448,7 +450,6 @@ function editpaso(ppaso){
   if(ppaso==1){//
     resetStep('cuenta')
     jQuery('.paso-cuenta').show()
-    jQuery('.cupones').show()
     resetStep('datos')
     resetStep('shipping')
     resetStep('pagos')
@@ -458,7 +459,6 @@ function editpaso(ppaso){
   }else if(ppaso==2){//shipping
     resetStep('datos')
     jQuery('.paso-datos').show()
-    jQuery('.cupones').show()
     resetStep('shipping')
     resetStep('pagos')
     verificarFields()
@@ -466,7 +466,6 @@ function editpaso(ppaso){
   }else if(ppaso==3){
     resetStep('shipping')
     jQuery('.paso-shipping').show()
-    jQuery('.cupones').hide()
     resetStep('pagos')
     paso=3
   }else if(ppaso==4){
@@ -522,7 +521,6 @@ function nextpaso(){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
-    jQuery('.cupones').hide()
     sacar1(true,1)
 
     if(paso==3 && '<?=!hasShipping()?>'){//sin envios
