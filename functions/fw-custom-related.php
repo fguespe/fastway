@@ -6,15 +6,6 @@ function fw_fw_force_display( $result, $product_id ) {
 }
 add_filter( 'woocommerce_product_related_posts_force_display', 'fw_fw_force_display', 10, 2 );
 
-/**
- * Determine whether we want to consider taxonomy terms when selecting related products.
- * This is required for WooCommerce 3.0.
- *
- * @param bool $result Whether or not we should consider tax terms during selection.
- * @param int $product_id The ID of the current product.
- *
- * @return bool Modified value - should we consider tax terms during selection?
- */
 function fw_taxonomy_relation( $result, $product_id ) {
 	$related_ids = get_post_meta( $product_id, '_related_ids', true );
 	if ( ! empty( $related_ids ) ) {
@@ -78,13 +69,6 @@ function fw_select_related_products() {
 	<?php
 }
 add_action('woocommerce_product_options_related', 'fw_select_related_products');
-
-/**
- * Save related products selector on product edit screen.
- *
- * @param int $post_id ID of the post to save.
- * @param obj WP_Post object.
- */
 function fw_save_related_products( $post_id, $post ) {
 	global $woocommerce;
 	if ( isset( $_POST['related_ids'] ) ) {

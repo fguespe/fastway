@@ -45,6 +45,9 @@ function fw_single_tabs(){
 add_shortcode('fw_single_related','fw_single_related');
 function fw_single_related($atts){
     global $post;
+    $crelated = get_post_meta( $post->ID, '_related_ids', true );
+    if(empty($crelated) && !fw_theme_mod('fw_related_auto'))return;
+
     $atts = shortcode_atts(array('cols' => 6 ), $atts );
     $cols=fw_theme_mod("related_columns");
     echo '
@@ -53,7 +56,6 @@ function fw_single_related($atts){
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        $crelated = get_post_meta( $post->ID, '_related_ids', true );
         if(!empty($crelated))$myarray =$crelated;
         else $myarray = wc_get_related_products($product->id,12);
         

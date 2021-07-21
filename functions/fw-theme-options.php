@@ -3396,6 +3396,17 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_related_auto',
+	'label'       => __( 'Show automatic related products', 'fastway' ),
+	'section'     => 'section_woo_single',
+	'default'     => 'on',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'slider',
 	'settings'    => 'related_columns',
 	'label'       => __( 'Related Products Columns', 'fastway' ),
