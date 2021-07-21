@@ -2625,6 +2625,19 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_hide_coupon',
+	'label'       => __( 'Show coupon input', 'fastway' ),
+	'description'	=> 'Shows the coupon in checkout',
+	'section'     => 'section_woo_checkout',
+	'default'     => 1,
+	'choices' => array(
+	    0  => __( 'Disable', 'fastway' ),
+	    1 => __( 'Enable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_checkout_field_address_2',
 	'label'       => __( 'Extra address field', 'fastway' ),
 	'description'	=> 'Extra address field for multiple purposes. Go to Fastway->labels to set it up.',

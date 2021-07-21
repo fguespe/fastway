@@ -193,8 +193,7 @@ var paso = 1;
             
     <div class="col-lg-4  col-sm-12 order-container" >
       </form>
-    
-        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) ) { ?>
+        <?php if ( 'yes' === get_option( 'woocommerce_enable_coupons' ) && fw_theme_mod('fw_hide_coupon') ) { ?>
         <div class="cupones ">
         <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
           <p class="form-row form-row-first">
