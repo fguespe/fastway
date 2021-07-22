@@ -757,7 +757,7 @@ function fw_fake_stars(){
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
-  return $html;
+  echo $html;
 
 }
 function fw_getfastars($average){
