@@ -3383,6 +3383,18 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'related_columns',
+	'label'       => __( 'Related Products Columns', 'fastway' ),
+	'section'     => 'section_woo_single_layout',
+	'default'     => 6,
+	'choices'     => array(
+		'min'  => '3',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_tab_additional',
 	'label'       => __( 'Specs tab', 'fastway' ),
@@ -3418,18 +3430,6 @@ Kirki::add_field( 'theme_config_id', array(
 	    'on'  => __( 'Enable', 'fastway' ),
 	    'off' => __( 'Disable', 'fastway' )
 	)
-) );
-Kirki::add_field( 'theme_config_id', array(
-	'type'        => 'slider',
-	'settings'    => 'related_columns',
-	'label'       => __( 'Related Products Columns', 'fastway' ),
-	'section'     => 'section_woo_single',
-	'default'     => 6,
-	'choices'     => array(
-		'min'  => '3',
-		'max'  => '12',
-		'step' => '1',
-	),
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
