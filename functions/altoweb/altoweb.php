@@ -261,7 +261,7 @@ function altoweb_financiacion(){
     //else $html="<big>Pagá en hasta 12 cuotas</big>";
 
     $return= <<<HTML
-    <div class="altoweb_financiacion" >
+    <div class="altoweb_financiacion ja" >
     <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
         <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
         <span class="icon">
@@ -285,7 +285,6 @@ function altoweb_financiacion(){
     </div>
     </div>
 HTML;
-
    $return.=do_shortcode('[fw_data type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios calculadora downlink"]');
    $return.= do_shortcode('[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios envio downlink"]');
    $return.= ' </div>';
