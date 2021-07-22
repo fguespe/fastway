@@ -261,7 +261,7 @@ function altoweb_financiacion(){
     //else $html="<big>Pagá en hasta 12 cuotas</big>";
 
     $return= <<<HTML
-    <div class="altoweb_financiacion">
+    <div class="altoweb_financiacion" >
     <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
         <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
         <span class="icon">
