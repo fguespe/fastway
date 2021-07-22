@@ -752,7 +752,7 @@ function fw_minimum_order_amount() {
 }
 add_shortcode('fw_fake_stars','fw_fake_stars');
 function fw_fake_stars(){
-  $html.= '<div><i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  $html.= '<div class="fw_fake_stars"><i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
   $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
