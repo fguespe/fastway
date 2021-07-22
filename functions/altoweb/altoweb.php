@@ -257,22 +257,23 @@ function altoweb_financiacion(){
     $precio=$product->get_price();
     $calc=floor($precio/$cuotas);
     //if($cuotas==18)
-    $html="<big>".do_shortcode(fw_theme_mod('fw_label_cuotas_mp'))."</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
+    $htmlcuotas="<big>".do_shortcode(fw_theme_mod('fw_label_cuotas_mp'))."</big>";//<small>".$cuotas." cuotas sin interes de $".$calc."</small>";
     //else $html="<big>Pagá en hasta 12 cuotas</big>";
 
     $return= <<<HTML
+    <div class="altoweb_financiacion">
     <a target="_blank" data-toggle="modal" data-target="#modal_modalmp" class="fw_icon_link fancybox">
-    <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
-    <span class="icon">
-        <i class="fad fa-credit-card"></i>
+        <li class=" fw_icon  fw-medios modalmp d-flex isli" > 
+        <span class="icon">
+            <i class="fad fa-credit-card"></i>
         </span> 
         <span class="text"> 
-        $html
-        <img style="display:block;" src="/wp-content/themes/fastway/assets/img/altoweb/iconitopagos.png" width="97"/>
-        <small style="color:#3483fa !important;">Más información</small> 
+            $htmlcuotas
+            <img style="display:block;" src="/wp-content/themes/fastway/assets/img/altoweb/iconitopagos.png" width="97"/>
+            <small style="color:#3483fa !important;">Más información</small> 
         </span>
-    </li>
-    </a>
+        </li>
+        </a>
     <div class="modal modal_modalmp fade" id="modal_modalmp" tabindex="-1" role="dialog" aria-labelledby="modal_modalmpTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -281,6 +282,7 @@ function altoweb_financiacion(){
                 <iframe height="1000" width="100%" frameborder="0" title="Promociones bancarias" scrolling="no" src="https://www.mercadolibre.com.ar/gz/home/payments/methods?modal=true"></iframe>
             </div>
         </div>
+    </div>
     </div>
     </div>
 HTML;

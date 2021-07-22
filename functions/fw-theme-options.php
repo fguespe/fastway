@@ -3446,6 +3446,7 @@ Kirki::add_field( 'theme_config_id', array(
 	[fw_single_cart]
 	[fw_short_desc]
 	[fw_single_share]
+	[altoweb_financiacion]
 	[fw_product_form_cta]
 	[/fw_single_summary]
 	[fw_single_tabs]
