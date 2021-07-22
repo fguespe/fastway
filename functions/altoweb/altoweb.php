@@ -284,11 +284,11 @@ function altoweb_financiacion(){
         </div>
     </div>
     </div>
-    </div>
 HTML;
 
    $return.=do_shortcode('[fw_data type="fad fa-credit-card" isli="true" text="Cuotas sin interes" stext="¡Calcular cuotas!" modal="modal_cuotas" el_class="fw-medios calculadora downlink"]');
    $return.= do_shortcode('[fw_data type="fad fa-shipping-fast" isli="true" text="Envío a domicilio" stext="¡Calcular envío!" modal="modal_envio" el_class="fw-medios envio downlink"]');
+   $return.= ' </div>';
    return $return;
 }
 
