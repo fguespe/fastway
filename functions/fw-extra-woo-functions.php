@@ -750,7 +750,16 @@ function fw_minimum_order_amount() {
     }
 
 }
+add_shortcode('fw_fake_stars','fw_fake_stars');
+function fw_fake_stars(){
+  $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  $html.= '<i class="fa fa-star'.$clase.' star1'.'" aria-hidden="true"></i>';
+  return $html;
 
+}
 function fw_getfastars($average){
     if(!is_numeric($average))return "";
     $html='<a >';
