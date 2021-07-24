@@ -20,7 +20,10 @@ function fw_info_modal( $atts ) {
 }
 
 
-
+function isCompanyData($value){
+    $check="fb,youtube,whatsapp,ig,email,phone,address";
+    return strpos( $check, $value ) !== false;
+}
 function ctas(){
     $ctas= explode("|",trim(fw_theme_mod("fw-ctas")));
     foreach($ctas as $c){
@@ -30,7 +33,8 @@ function ctas(){
         if($link=='whatsapp' && !usesWhatsapp())continue;
         $class=$quick[2];
         $label=$quick[3];
-        echo '<a href="'.fw_company_data($link,true).'" class="btn '.$class.'" style=""><i class="'.$icon.'" style="color:white;" aria-hidden="true"></i> '.$label.'</a><br>';
+        $url=isCompanyData($link)?fw_company_data($link,true):$link;
+        echo '<a href="'.$url.'" class="btn '.$class.'" style=""><i class="'.$icon.'" style="color:white;" aria-hidden="true"></i> '.$label.'</a><br>';
     }
 }
 function quicklinks(){
