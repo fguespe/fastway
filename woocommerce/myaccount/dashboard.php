@@ -30,10 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?=fw_theme_mod('fw_label_ver_productos');?></a> 
 	<!--<?php// if(is_user_logged_in()){?>
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
-	<?php// } ?>-->
+	<?php// } ?>
 	<?php //if(fw_theme_mod('fw_activar_download_lista')){?>
 		<a href="http://fastwp/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=get_file&_wpnonce=9383089113">Descargar lista de precios </a>
-	<?php//  } ?>
+	<?php//  } ?>-->
 </div>
 
 <?php

@@ -117,8 +117,7 @@ function fw_editable_roles( $roles ) {
 }
 
 add_filter( 'woocommerce_shop_manager_editable_roles', 'fw_editable_roles' ); 
-  
-
+ 
 add_action( 'admin_init', 'fw_allow_users_to_shopmanager');
 function fw_allow_users_to_shopmanager() {
     /*supuestamente funciona*/
