@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
 	<?php// } ?>-->
 	<?php //if(fw_theme_mod('fw_activar_download_lista')){?>
-		Descargar lista de precios <a href="http://prove.ecom3.kinsta.cloud/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=update"></a>
+		Descargar lista de precios <a href="/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=update"></a>
 	<?php//  } ?>
 </div>
 
