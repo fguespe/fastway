@@ -137,6 +137,19 @@ function fw_allow_users_to_shopmanager() {
       $role->add_cap( 'gravityforms_user_registration');
 
     }
+    $role = get_role( 'subscriber' );
+    if($role){
+      $role->add_cap( 'edit_posts' ); 
+    }
+
+    $role = get_role( 'customer' );
+    if($role){
+      $role->add_cap( 'edit_posts' ); 
+    }
+    $role = get_role( 'mayorista' );
+    if($role){
+      $role->add_cap( 'edit_posts' ); 
+    }
 }
 
 // Remove Administrator role from roles list

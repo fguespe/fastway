@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
 	<?php// } ?>-->
 	<?php //if(fw_theme_mod('fw_activar_download_lista')){?>
-		Descargar lista de precios <a href="/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=update"></a>
+		<a href="http://fastwp/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=get_file&_wpnonce=9383089113">Descargar lista de precios </a>
 	<?php//  } ?>
 </div>
 
