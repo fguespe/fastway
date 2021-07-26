@@ -30,10 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?=fw_theme_mod('fw_label_ver_productos');?></a> 
 	<!--<?php// if(is_user_logged_in()){?>
 		<a href="/wp-login.php?action=logout">CERRAR SESIÓN</a> 
-	<?php// } ?>
+	<?php// } ?>-->
 	<?php //if(fw_theme_mod('fw_activar_download_lista')){?>
-		Descargar lista de precios <a href=""></a>
-	<?php//  } ?>-->
+		Descargar lista de precios <a href="http://prove.ecom3.kinsta.cloud/wp-admin/admin.php?page=pmxe-admin-manage&id=1&action=update"></a>
+	<?php//  } ?>
 </div>
 
 <?php
