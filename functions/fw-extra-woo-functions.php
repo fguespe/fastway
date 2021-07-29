@@ -338,7 +338,7 @@ function fw_get_custom_field($atts){
 
 add_shortcode('fw_customer_product_summary', 'fw_customer_product_summary');
 function fw_customer_product_summary(){
-    echo wp_kses_post( wpautop( wptexturize(get_option('fw_email_content_product_summary'))));
+    echo wp_kses_post( wpautop( wptexturize(fw_theme_mod('fw_email_content_product_summary'))));
 }
 
 add_shortcode('fw_loop_cat', 'fw_loop_cat');

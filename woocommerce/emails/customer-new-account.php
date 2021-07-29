@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_email_header', $email_heading, $email ); 
 
-$html =get_option('fw_email_content_customer_new_account');
+$html =fw_theme_mod('fw_email_content_customer_new_account');
 
 $emailValues = array(
     'blogname' => get_bloginfo( 'name' ),

@@ -113,13 +113,13 @@ function fw_display_applied_coupons( $order, $sent_to_admin, $plain_text, $email
 
 
 function fw_parse_subject($tipo,$emailValues){
-    $subject=get_option('fw_email_subject_'.$tipo);
+    $subject=fw_theme_mod('fw_email_subject_'.$tipo);
     foreach ($emailValues as $key => $value) $subject = str_replace("{{". $key . "}}", $value, $subject);
     return $subject;
 }
 
 function fw_parse_mail_accounts($tipo,$emailValues){
-  $html=get_option('fw_email_content_'.$tipo);
+  $html=fw_theme_mod('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
   return wp_kses_post( wpautop( wptexturize($html)));
@@ -127,7 +127,7 @@ function fw_parse_mail_accounts($tipo,$emailValues){
 }
 function fw_parse_mail_return($tipo,$order){
   $emailValues = fw_get_email_variables($order);
-  $html=get_option('fw_email_content_'.$tipo);
+  $html=fw_theme_mod('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
   return wp_kses_post( wpautop( wptexturize($html)));
@@ -135,7 +135,7 @@ function fw_parse_mail_return($tipo,$order){
 function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$email_heading=false,$email=false){
   do_action( 'woocommerce_email_header', $email_heading, $email ); 
   $emailValues = fw_get_email_variables($order, $sent_to_admin, $plain_text, $email);
-  $html=get_option('fw_email_content_'.$tipo);
+  $html=fw_theme_mod('fw_email_content_'.$tipo);
   $html=conditionals($html,$emailValues);
   foreach ($emailValues as $key => $value) $html = str_replace("{{". $key . "}}", $value, $html);
   echo wp_kses_post( wpautop( wptexturize($html)));
@@ -202,7 +202,7 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
 }
 add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_confirmation_wholesale_form');
 function fw_email_content_confirmation_wholesale_form(){
-  return get_option('fw_email_content_confirmation_wholesale_form');
+  return fw_theme_mod('fw_email_content_confirmation_wholesale_form');
 }   
 function get_account_variables_for_templates($user=null,$u_login=null,$key=null){
   global $woocommerce;

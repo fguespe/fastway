@@ -1,6 +1,8 @@
 <?php
 
 if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']=='update'){
+  error_log($_POST['fw_email_subject_customer_on_hold_order']);
+  error_log($_POST['fw_email_content_customer_on_hold_order']);
   set_theme_mod('fw_email_subject_customer_processing_order',$_POST['fw_email_subject_customer_processing_order']);
   set_theme_mod('fw_email_content_customer_processing_order',$_POST['fw_email_content_customer_processing_order']);
   set_theme_mod('fw_email_subject_customer_completed_order',$_POST['fw_email_subject_customer_completed_order']);
