@@ -203,7 +203,7 @@ wp_editor( $content, 'fw_email_content_customer_reset_password', $settings = arr
 <h3 class="titulo"><?=__('Activation','fastway')?></h3>
 <small><?=__('Sent after the user is approved internally and a link for generating a password is sent to him','fastway')?></small>
 <input type="text" class="w100" id="fw_email_subject_gf_activated" name="fw_email_subject_gf_activated" value="<?php echo fw_theme_mod('fw_email_subject_gf_activated'); ?>" /><br>
-<small>Variables:{user:user_login} {activation_url}</small>
+<small>Variables:{{user_login}} {{activation_url}}</small>
 <?php
 $content = fw_theme_mod('fw_email_content_gf_activated');
 wp_editor( $content, 'fw_email_content_gf_activated', $settings = array('textarea_rows'=> '10') );
