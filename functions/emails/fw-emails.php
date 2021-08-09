@@ -1,4 +1,5 @@
 <?php
+
 add_shortcode('getMailQueRecibe','getMailQueRecibe');
 function getMailQueRecibe(){
     if(!empty(fw_theme_mod("fw_mail_desde_mails")))return fw_theme_mod("fw_mail_desde_mails");
@@ -527,5 +528,4 @@ function conditionals($template,$data) {
     }
     return $template;
 }
-
 ?>

@@ -1,33 +1,38 @@
 <?php
+function fix_templates($mail){
+  $mail=preg_replace('/\\\\{2,}/', '',$mail);
+  
+  $mail=stripslashes(htmlspecialchars_decode($mail));
+  return $mail;
+}
 
 if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']=='update'){
-  error_log($_POST['fw_email_subject_customer_on_hold_order']);
-  error_log($_POST['fw_email_content_customer_on_hold_order']);
-  set_theme_mod('fw_email_subject_customer_processing_order',$_POST['fw_email_subject_customer_processing_order']);
-  set_theme_mod('fw_email_content_customer_processing_order',$_POST['fw_email_content_customer_processing_order']);
-  set_theme_mod('fw_email_subject_customer_completed_order',$_POST['fw_email_subject_customer_completed_order']);
-  set_theme_mod('fw_email_content_customer_completed_order',$_POST['fw_email_content_customer_completed_order']);
-  set_theme_mod('fw_email_subject_customer_on_hold_order',$_POST['fw_email_subject_customer_on_hold_order']);
-  set_theme_mod('fw_email_content_customer_on_hold_order',$_POST['fw_email_content_customer_on_hold_order']);
+  
+  set_theme_mod('fw_email_subject_customer_processing_order', fix_templates( ($_POST['fw_email_subject_customer_processing_order'])));
+  set_theme_mod('fw_email_content_customer_processing_order', fix_templates( ($_POST['fw_email_content_customer_processing_order'])));
+  set_theme_mod('fw_email_subject_customer_completed_order', fix_templates( ($_POST['fw_email_subject_customer_completed_order'])));
+  set_theme_mod('fw_email_content_customer_completed_order', fix_templates( ($_POST['fw_email_content_customer_completed_order'])));
+  set_theme_mod('fw_email_subject_customer_on_hold_order', fix_templates( ($_POST['fw_email_subject_customer_on_hold_order'])));
+  set_theme_mod('fw_email_content_customer_on_hold_order', fix_templates( ($_POST['fw_email_content_customer_on_hold_order'])));
 
-  set_theme_mod('fw_email_subject_customer_new_account',$_POST['fw_email_subject_customer_new_account']);
-  set_theme_mod('fw_email_content_customer_new_account',$_POST['fw_email_content_customer_new_account']);
-  set_theme_mod('fw_email_subject_customer_reset_password',$_POST['fw_email_subject_customer_reset_password']);
-  set_theme_mod('fw_email_content_customer_reset_password',$_POST['fw_email_content_customer_reset_password']);
-  set_theme_mod('fw_email_subject_gf_activated',$_POST['fw_email_subject_gf_activated']);
-  set_theme_mod('fw_email_content_gf_activated',$_POST['fw_email_content_gf_activated']);
+  set_theme_mod('fw_email_subject_customer_new_account',fix_templates( ($_POST['fw_email_subject_customer_new_account'])));
+  set_theme_mod('fw_email_content_customer_new_account',fix_templates( ($_POST['fw_email_content_customer_new_account'])));
+  set_theme_mod('fw_email_subject_customer_reset_password',fix_templates( ($_POST['fw_email_subject_customer_reset_password'])));
+  set_theme_mod('fw_email_content_customer_reset_password',fix_templates( ($_POST['fw_email_content_customer_reset_password'])));
+  set_theme_mod('fw_email_subject_gf_activated',fix_templates( ($_POST['fw_email_subject_gf_activated'])));
+  set_theme_mod('fw_email_content_gf_activated',fix_templates( ($_POST['fw_email_content_gf_activated'])));
 
-  set_theme_mod('fw_email_content_confirmation_wholesale_form',$_POST['fw_email_content_confirmation_wholesale_form']);
-  set_theme_mod('fw_email_content_product_summary',$_POST['fw_email_content_product_summary']);
-  set_theme_mod('fw_email_subject_gf_pending',$_POST['fw_email_subject_gf_pending']);
-  set_theme_mod('fw_email_content_gf_pending',$_POST['fw_email_content_gf_pending']);
-  set_theme_mod('fw_email_subject_admin_new_order',$_POST['fw_email_subject_admin_new_order']);
-  set_theme_mod('fw_email_content_admin_new_order',$_POST['fw_email_content_admin_new_order']);
-  set_theme_mod('fw_email_content_thankyou',$_POST['fw_email_content_thankyou']);
-  set_theme_mod('fw_email_subject_customer_await_verif_order',$_POST['fw_email_subject_customer_await_verif_order']);
-  set_theme_mod('fw_email_content_customer_await_verif_order',$_POST['fw_email_content_customer_await_verif_order']);
-  set_theme_mod('fw_email_subject_customer_preparacion_order',$_POST['fw_email_subject_customer_preparacion_order']);
-  set_theme_mod('fw_email_content_customer_preparacion_order',$_POST['fw_email_content_customer_preparacion_order']);
+  set_theme_mod('fw_email_content_confirmation_wholesale_form',fix_templates( ($_POST['fw_email_content_confirmation_wholesale_form'])));
+  set_theme_mod('fw_email_content_product_summary',fix_templates( ($_POST['fw_email_content_product_summary'])));
+  set_theme_mod('fw_email_subject_gf_pending',fix_templates( ($_POST['fw_email_subject_gf_pending'])));
+  set_theme_mod('fw_email_content_gf_pending',fix_templates( ($_POST['fw_email_content_gf_pending'])));
+  set_theme_mod('fw_email_subject_admin_new_order',fix_templates( ($_POST['fw_email_subject_admin_new_order'])));
+  set_theme_mod('fw_email_content_admin_new_order',fix_templates( ($_POST['fw_email_content_admin_new_order'])));
+  set_theme_mod('fw_email_content_thankyou',fix_templates( ($_POST['fw_email_content_thankyou'])));
+  set_theme_mod('fw_email_subject_customer_await_verif_order',fix_templates( ($_POST['fw_email_subject_customer_await_verif_order'])));
+  set_theme_mod('fw_email_content_customer_await_verif_order',fix_templates( ($_POST['fw_email_content_customer_await_verif_order'])));
+  set_theme_mod('fw_email_subject_customer_preparacion_order',fix_templates( ($_POST['fw_email_subject_customer_preparacion_order'])));
+  set_theme_mod('fw_email_content_customer_preparacion_order',fix_templates( ($_POST['fw_email_content_customer_preparacion_order'])));
 
 }
 /*
