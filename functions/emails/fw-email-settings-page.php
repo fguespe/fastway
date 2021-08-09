@@ -35,7 +35,7 @@ if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']
   set_theme_mod('fw_email_content_customer_preparacion_order',fix_templates( ($_POST['fw_email_content_customer_preparacion_order'])));
 
 }
-
+/*
 if(isAltoweb()){
   
   set_theme_mod('fw_email_subject_customer_processing_order', fix_templates( (fw_theme_mod('fw_email_subject_customer_processing_order'))));
@@ -65,7 +65,7 @@ if(isAltoweb()){
   set_theme_mod('fw_email_content_customer_preparacion_order',fix_templates( (fw_theme_mod('fw_email_content_customer_preparacion_order'))));
 
 }
-
+*/
 function myplugin_register_settings() {register_setting( 'fw_email_options_group', 'fw_email_subject_customer_new_account', 'myplugin_callback' );}
 add_action( 'admin_init', 'myplugin_register_settings' );
 function myplugin_register_options_page() {add_options_page('Email Templates', 'Email Templates', 'manage_options', 'myplugin', 'myplugin_options_page');}
