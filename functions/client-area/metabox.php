@@ -31,6 +31,7 @@ function custom_menu_meta_box(){
             array(__('Media','fastway'),'image','upload.php'),
             array(__('Pages','fastway'),'file-text','edit.php?post_type=page'),
             array(__('Comments','fastway'),'comments','edit-comments.php'),
+            array(__('Pending','fastway'),'pending','users.php?page=gf-pending-activations'),
             array(__('Reviews','fastway'),'star','edit.php?post_type=fw_review'),
             array(__('FAQ','fastway'),'question','edit.php?post_type=fw_faq')
 		);
