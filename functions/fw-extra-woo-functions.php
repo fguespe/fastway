@@ -1029,6 +1029,20 @@ function fw_check_hide_prices(){
     if((fw_theme_mod("fw_prices_visibility")==="logged" && !is_user_logged_in()) || fw_theme_mod("fw_prices_visibility")==="hide")return true;
   
 }
+//Esto sirve para los que no permiten el registro en la pagina, sino solo a travez de el de alta mayotista.
+function registration_message(){
+  $not_approved_message = '<p class="registration">Primero tenes que completar el formulario de <a href="/mayoristas/" target="_self">ALTA</a>, y luego esperar a recibir tu correo de activación.</p>';
+
+  if( isset($_REQUEST['approved']) ){
+          $approved = $_REQUEST['approved'];
+          if ($approved == 'false')  echo '<p class="registration successful">Se te enviaron tus credenciales pero todavia no vas a poder iniciar sesón hasta que llegue el mail de activación.</p>';
+          else echo $not_approved_message;
+  }
+  else echo $not_approved_message;
+}
+if(fw_theme_mod("fw_prices_visibility")==="logged")add_action('woocommerce_before_customer_login_form', 'registration_message', 2);
+
+
 
 add_action( 'init', 'fw_otherwoo_options');
 function fw_otherwoo_options(){
