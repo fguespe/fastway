@@ -1040,7 +1040,7 @@ function registration_message(){
   }
   else echo $not_approved_message;
 }
-if(fw_theme_mod("fw_prices_visibility")==="logged")add_action('woocommerce_before_customer_login_form', 'registration_message', 2);
+add_action('woocommerce_before_customer_login_form', 'registration_message', 2);
 
 
 
