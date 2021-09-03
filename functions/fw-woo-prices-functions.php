@@ -137,7 +137,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     $symbol=get_woocommerce_currency_symbol();
     $taxes = WC_Tax::get_rates( $product->get_tax_class() );
     $rates = array_shift(array_shift($taxes));
-    $valuetac="IVA ".$rates."%";
+    $valuetac="+ IVA ".$rates."%";
     $item_rate = fw_theme_mod('fw_show_taxrate')?$valuetac:'';
 
     if(esMultitienda()) {
