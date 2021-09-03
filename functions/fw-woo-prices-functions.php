@@ -135,9 +135,14 @@ add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 
 function custom_dynamic_sale_price_html( $price_html, $product ) {
     if(fw_is_admin()) return $price_html;
     $symbol=get_woocommerce_currency_symbol();
+    $taxes = WC_Tax::get_rates( $product->get_tax_class() );
+    $rates = array_shift($taxes);
+    
+    $item_rate = fw_theme_mod('fw_show_taxrate')?round(array_shift($rates)):'';
+
     if(esMultitienda()) {
         $regular_price=$product->get_price();
-        return  '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+        return  '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'('.$item_rate.')'.'</span></span></span>';
     }
 
     
@@ -193,14 +198,14 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
 
     if ( $sale_price<$regular_price) {
         return '<span class="fw_price price1 sale" data-precio="'.$product->get_price().'">
-                    <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span>
+                    <span class="precio">'.$symbol.$sale_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'('.$item_rate.')'.'</span></span>
                     <span class="tachado">
                         <span class="precio-anterior"><del>'.$symbol.$regular_price.'</del></span>
                         <span class="badge badge-success ofertita"><span class="ofertita_numero" style="display:inline;color:inherit;font-size:inherit;line-height:inherit;font-weight:inherit;">'.$percentage.'% </span><span class="ofertita_texto" style="display:inline;color:inherit;font-size:inherit;line-height:inherit;font-weight:inherit;">'.fw_theme_mod('fw_off_text').'</span></span>
                     </span>
                 </span>';
     }else{
-        return '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'</span></span></span>';
+        return '<span class="fw_price price1 notsale" data-precio="'.$product->get_price().'"><span class="precio">'.$symbol.$regular_price.' <span class="suffix">'.fw_theme_mod('fw_price_suffix').'('.$item_rate.')'.'</span></span></span>';
     }      
 
 }

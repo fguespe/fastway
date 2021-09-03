@@ -2405,6 +2405,7 @@ if(isAltoweb()){
 			1 => __( 'Enable', 'fastway' )
 		)
 	) );
+
 }
 
 Kirki::add_field( 'theme_config_id', array(
@@ -2443,6 +2444,19 @@ Kirki::add_field( 'theme_config_id', array(
 		'logged' => __( 'Logged In', 'fastway' ),
 		'hide' => __( 'Hide', 'fastway' ),
 	),
+) );
+
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_show_taxrate',
+	'label'       => __( 'Show Taxrate', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 'show',
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
