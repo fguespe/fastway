@@ -138,7 +138,7 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
     $taxes = WC_Tax::get_rates( $product->get_tax_class() );
     $rates = array_shift($taxes);
     
-    $item_rate = fw_theme_mod('fw_show_taxrate')?round(array_shift($rates)):'';
+    $item_rate = fw_theme_mod('fw_show_taxrate')?$product->get_tax_class():'';
 
     if(esMultitienda()) {
         $regular_price=$product->get_price();
