@@ -32,11 +32,12 @@ if(index != -1){
 
     for(var i = 0; i < tagA.length; i++){
         var href = tagA[i].getAttribute('href');
+        if(href){
+          href += (href.indexOf('?') != -1)? '&' : '?';
+          href += querystring;
 
-        href += (href.indexOf('?') != -1)? '&' : '?';
-        href += querystring;
-
-        tagA[i].setAttribute('href', href);
+          tagA[i].setAttribute('href', href);
+        }
     }
 }
 </script>
