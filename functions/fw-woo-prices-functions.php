@@ -135,9 +135,8 @@ add_filter( 'woocommerce_get_price_html', 'custom_dynamic_sale_price_html', 20, 
 function custom_dynamic_sale_price_html( $price_html, $product ) {
     if(fw_is_admin()) return $price_html;
     $symbol=get_woocommerce_currency_symbol();
-    $taxes = WC_Tax::get_rates( $product->get_tax_class() );
-    $rates = array_shift(array_shift($taxes));
-    $valuetac="+ IVA ".$rates."%";
+    $rate=get_post_meta($product->id,"_iva",true);
+    $valuetac="+ IVA ".$rate."%";
     $item_rate = fw_theme_mod('fw_show_taxrate')?$valuetac:'';
 
     if(esMultitienda()) {
