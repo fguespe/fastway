@@ -639,8 +639,8 @@ function populatecart(){
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
-            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+parseFloat(precio/quantity).toFixed(2)+'</span><br>'+'<?=fw_theme_mod('fw_show_taxrate')?$valuetac:''?>'
-            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+(precio).toFixed(2)+' </span><br>'+'<?=fw_theme_mod('fw_show_taxrate')?$valuetac:''?>'
+            jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+parseFloat(precio/quantity).toFixed(2)+'</span><br>'+'<?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?>'
+            jqe+='<span id="lineprice_'+index+'" data-price="'+precio+'"> $'+(precio).toFixed(2)+' </span><br>'+'<?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?>'
             if(extra)jqe+='<span class="variation-fw_extra"><p>'+extra+'</p></span>'
             if(stock_status)jqe+='<span class="variation-fw_extra stock"><p>'+stock_status+'</p></span>'
             jqe+='</div></div>'
@@ -649,7 +649,7 @@ function populatecart(){
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'</span></span></div>'
         if(typeof discount_total == 'number' && (discount_total>0 || discount_total<0) ){
             jqe+='<div class="col-6 col-md-8">'+'<?=__( 'Discount', 'fastway' )?>'+'</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(discount_total).toFixed(2)+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(subtotal+discount_total).toFixed(2)+'</span></span></div>'+'<?=fw_theme_mod('fw_show_taxrate')?$valuetac:''?>'
+            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(subtotal+discount_total).toFixed(2)+'</span></span></div>'+'<?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?>'
         }
         jqe+='</div>'
         if(subtotal>0){
