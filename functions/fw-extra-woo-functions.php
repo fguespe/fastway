@@ -1374,6 +1374,7 @@ if( function_exists('acf_add_local_field_group') ):
   
   endif;
 
+  
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
 function woocommerce_product_custom_fields(){
     global $woocommerce, $post;
@@ -1385,6 +1386,13 @@ function woocommerce_product_custom_fields(){
             'placeholder' => 'Uno por linea',
             'label' => __('Videos', 'fastway')
         )
+    );
+    woocommerce_wp_textarea_input(
+      array(
+          'id' => '_iva',
+          'placeholder' => 'IVA',
+          'label' => __('IVA', 'fastway')
+      )
     );
     //Custom Product  Textarea
     woocommerce_wp_text_input(
