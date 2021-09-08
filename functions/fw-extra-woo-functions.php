@@ -1387,7 +1387,7 @@ function woocommerce_product_custom_fields(){
             'label' => __('Videos', 'fastway')
         )
     );
-    woocommerce_wp_textarea_input(
+    woocommerce_wp_text_input(
       array(
           'id' => '_iva',
           'placeholder' => 'IVA',
