@@ -330,7 +330,7 @@ add_shortcode('fw_stock_label', 'fw_stock_label');
 function fw_stock_label(){
     //if($product->get_stock_quantity()<=1000)echo "Disponibles: ".$product->get_stock_quantity();
     //else echo "Disponibles: "."+ 1000";
-    echo "Disponibles: ".$product->get_stock_quantity();
+    echo "Disponibles: ";
 }
 
 add_shortcode('fw_single_price', 'fw_single_price');
