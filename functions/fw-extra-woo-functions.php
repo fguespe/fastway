@@ -1418,6 +1418,10 @@ function woocommerce_product_custom_fields_save($post_id){
     if (!empty($woocommerce_custom_procut_textarea))
         update_post_meta($post_id, '_fw_guia_talles', esc_html($woocommerce_custom_procut_textarea));
 
+    $woocommerce_custom_procut_textarea = $_POST['_iva'];
+    if (!empty($woocommerce_custom_procut_textarea))
+        update_post_meta($post_id, '_iva', esc_html($woocommerce_custom_procut_textarea));
+
 }
 function fw_get_yt_videos($json) {
   preg_match_all('~(?#!js YouTubeId Rev:20160125_1800)
