@@ -16,6 +16,9 @@ function fw_single_container($atts = [], $content = null){
 }
 
 
+
+
+
 add_shortcode('fw_single_meta', 'fw_single_meta');
 function fw_single_meta(){
     woocommerce_template_single_meta();
@@ -322,6 +325,12 @@ function fw_loop_attr($atts = []){
         }   
       }
     endforeach;
+}
+add_shortcode('fw_stock_label', 'fw_stock_label');
+function fw_stock_label(){
+    //if($product->get_stock_quantity()<=1000)echo "Disponibles: ".$product->get_stock_quantity();
+    //else echo "Disponibles: "."+ 1000";
+    echo "Disponibles: ".$product->get_stock_quantity();
 }
 
 add_shortcode('fw_single_price', 'fw_single_price');
