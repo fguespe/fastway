@@ -18,8 +18,8 @@ function fw_single_container($atts = [], $content = null){
 
 add_shortcode('fw_stock_label', 'fw_stock_label');
 function fw_stock_label(){
-    if($product->get_stock_quantity()<=1000)return "Disponibles: ".$product->get_stock_quantity();
-    else return "Disponibles: "."+ 1000";
+    if($product->get_stock_quantity()<=1000)echo "Disponibles: ".$product->get_stock_quantity();
+    else echo "Disponibles: "."+ 1000";
 }
 
 
