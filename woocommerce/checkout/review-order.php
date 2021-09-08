@@ -55,7 +55,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<tr class="cart-subtotal">
 			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_subtotal_html(); ?><?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?></td>
+			<td><?php wc_cart_totals_subtotal_html(); ?> <?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<tr class="order-total" style="display:table-row;;">
 			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_order_total_html(); ?><?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?></td>
+			<td><?php wc_cart_totals_order_total_html(); ?> <?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?></td>
 		</tr>
 
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
