@@ -56,7 +56,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 <?php endif; ?>
 
 <script>
-jQuery(document).ready(function($){
+jQuery(document).ready(function($){//FIX DE ERROR RARO PARAMETROS
 	jQuery('.switchtab-description').attr("href", "#tab-description");
 	jQuery('.switchtab-reviews').attr("href", "#tab-reviews");
 });
