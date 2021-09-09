@@ -364,8 +364,8 @@ add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
   if(function_exists('get_field'))  echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >'.get_field('btn_label',$fw_loop_event->ID).'</a>';
-  if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a  href="'.get_field('file',$fw_loop_event->ID)['url'].'" class="descarga" target="_blank" ><i class="fal fa-download"></i> Download</a>';
-  if(function_exists('get_field') && get_field('replay_webinar',$fw_loop_event->ID))echo '<a  href="'.get_field('replay_webinar',$fw_loop_event->ID).'" class="vervideo" target="_blank" ><i class="fal fa-undo"></i> Replay</a>';
+  if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a  href="'.get_field('file',$fw_loop_event->ID)['url'].'" class="descarga" target="_blank" ><i class="fal fa-download"></i> '.__('Download','fastway').'</a>';
+  if(function_exists('get_field') && get_field('replay_webinar',$fw_loop_event->ID))echo '<a  href="'.get_field('replay_webinar',$fw_loop_event->ID).'" class="vervideo" target="_blank" ><i class="fal fa-undo"></i> '.__('Replay','fastway').'</a>';
 }
 
 
