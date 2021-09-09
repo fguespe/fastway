@@ -4203,7 +4203,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'maintainance_code',
 	'label'       => __( 'Under Maintainance/Construction Html', 'fastway' ),
 	'section'     => 'section_general',
-	'default'	=>'<div class="maintainance_code">[fw_logo]<h1 style="font-size:30px;">'.__('Site under maintenance','fastway').'</h1><div><p>'.__('Sory for the trouble, will be back soon!','fastway').'</p></div></div><br><br><div class="" style="font-size:10px !important;">'.__('This site is maintained by','fastway').':<br><br>  <a href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="'.fw_theme_mod('fw_dev_logo').'"/></a></div>',
+	'default'	=>'<div class="maintainance_code">[fw_logo]<h1 style="font-size:30px;">'.__('Site under maintenance','fastway').'</h1><div><p>'.__('Sorry for the trouble, will be back soon!','fastway').'</p></div></div><br><br><div class="" style="font-size:10px !important;">'.__('This site is maintained by','fastway').':<br><br>  <a href="'.fw_theme_mod('fw_dev_url').'" target="_blank" rel="noopener"><img class="logofirma"  height="30" src="'.fw_theme_mod('fw_dev_logo').'"/></a></div>',
 	'choices'     => array(
 		'language' => 'html',
 	),
@@ -4322,7 +4322,7 @@ Kirki::add_field( 'theme_config_id', array(
             <i class="fal fa-debug" style="color:var(--main);font-size:200px;"></i>
 		</div>
 		<div class="col-9">
-			<h1 class="txt-24 t2 tit-pagina" style="font-weight: 400;">'.__('Sory, we didn\'t find what you are looking for ','fastway').'</h1>
+			<h1 class="txt-24 t2 tit-pagina" style="font-weight: 400;">'.__('Sorry, we didn\'t find what you are looking for. ','fastway').'</h1>
 			<br>
 			<b>'.__('Lets improve your aim','fastway').'</b>
 			<ul class="t1 txt-16">
