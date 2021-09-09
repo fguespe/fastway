@@ -468,12 +468,18 @@ function fw_widget_mensaje_barra_dash(){
     </div>
 HTML;
 }
+function fix_templatess($mail){
+    $mail=preg_replace('/\\\\{2,}/', '',$mail);
+    
+    $mail=stripslashes(htmlspecialchars_decode($mail));
+    return $mail;
+}
 
 function fw_widget_mensaje_barra_dash_handler(){
     if( !$widget_options = get_option( 'fw_widget_mensaje_barra_options' ) )$widget_options = array( );
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST['fw_widget_mensaje_barra_options'] ) ) {
         $mensaje=( $_POST['fw_widget_mensaje_barra_options']['mensaje'] );
-        set_theme_mod('fw_general_message',$mensaje);
+        set_theme_mod('fw_general_message',fix_templatess($mensaje));
     }
 
     if( !isset( $widget_options['fw_general_message'] ) )$widget_options['fw_general_message'] = fw_theme_mod('fw_general_message');
