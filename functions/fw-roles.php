@@ -4,10 +4,6 @@ if ( ! function_exists( 'get_editable_roles' ) ) {
   require_once ABSPATH . 'wp-admin/includes/user.php';
 }
 
-
-
-
-
 function is_devadmin(){
   if(!fw_theme_mod('fw_dev_adminuser'))return true;
   if(wp_get_current_user()->user_login==fw_theme_mod('fw_dev_adminuser') && is_super_admin())return true;
@@ -82,19 +78,6 @@ function check_user_role($role){
 	return false;
 }
 
-
-/*
-function admin_default_page() {
-  $user = wp_get_current_user();
-  error_log(print_r($user,true));
-  error_log(fw_get_current_user_role());
-  if(!(is_super_admin() || is_admin() || check_user_role('administrator') || check_user_role('shop_manager') || check_user_role('editor'))) return wc_get_page_permalink('myaccount');
-}*/
-
-//add_filter('login_redirect', 'admin_default_page');
-
-
-
 function fw_get_all_roles() {
 
     global $wp_roles;
@@ -152,8 +135,7 @@ function fw_allow_users_to_shopmanager() {
       $role->add_cap( 'gravityforms_view_entries' ); 
       $role->add_cap( 'gravityforms_user_registration');
 
-    }
-    /*PARA QUE HICE ESTO?
+    }/*
     $role = get_role( 'subscriber' );
     if($role){
       $role->add_cap( 'edit_posts' ); 

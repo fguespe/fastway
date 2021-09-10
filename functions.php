@@ -705,6 +705,16 @@ function wpai_is_xml_preprocess_enabled( $is_enabled ) {
 }
 
 
-//add_filter( 'woocommerce_prevent_admin_access', '__return_false' );
+
+
+function redirect_user_on_role_cs()
+{
+
+    
+    if(!(fw_get_current_user_role()=='administrator' || fw_get_current_user_role()=='shop_manager')) wp_redirect(wc_get_page_permalink('myaccount'));
+    //else  wp_redirect(admin_url());
+}
+add_action('admin_init','redirect_user_on_role_cs');
+
 
 ?>

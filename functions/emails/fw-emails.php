@@ -201,6 +201,8 @@ function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false,
     if(isAltoweb())$arra['bank_info']=altoweb_bancos();
     return $arra;
 }
+
+
 add_shortcode('fw_email_content_confirmation_wholesale_form','fw_email_content_confirmation_wholesale_form');
 function fw_email_content_confirmation_wholesale_form(){
   return fw_theme_mod('fw_email_content_confirmation_wholesale_form');
