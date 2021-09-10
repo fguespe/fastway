@@ -709,6 +709,7 @@ function wpai_is_xml_preprocess_enabled( $is_enabled ) {
 
 
 add_filter( 'woocommerce_prevent_admin_access', '__return_false' );
+
 function my_account_permalink($permalink) {
   return admin_url();
 }
