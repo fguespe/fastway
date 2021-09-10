@@ -25,6 +25,7 @@ if(fw_theme_mod('footer-copyright-switch')){
 <style type="text/css" id="css_editor-footer-copywright"><?php echo fw_theme_mod('css_editor-footer-copywright')?></style>
 <?php wp_footer(); ?>
 <script>
+/*QUE ES ESTO?>!!!
 var index = window.location.href.indexOf('?')
 if(index != -1){
     var querystring = window.location.href.slice(index + 1)
@@ -39,7 +40,7 @@ if(index != -1){
           tagA[i].setAttribute('href', href);
         }
     }
-}
+}*/
 </script>
 <script><?php echo $js;?></script>
 
@@ -142,17 +143,15 @@ jQuery( ".btn-wapp" ).click(function() {
 jQuery(document).ready( function(jQuery) {
       if(jQuery('.qty').attr('max')){
         jQuery('.qty').on('click', function() {      //click en las flechas
-          if(parseInt(jQuery('.qty').val()) > parseInt(jQuery('.qty').attr('max'))){
-            alert('Está solicitando una cantidad que no tenemos en stock.')
+          if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
+            alert('Está solicitando una cantidad que no tenemos en stock ')
           }
         });
 
         jQuery('.qty').on('change', function(e) {     //input manual escribe
-
-          console.log(jQuery('.qty').val(),jQuery('.qty').attr('max'));
-          if(parseInt(jQuery('.qty').val()) > parseInt(jQuery('.qty').attr('max'))){
+          if(jQuery('.qty').val() > jQuery('.qty').attr('max')){
             alert('Está solicitando una cantidad que no tenemos en stock ')
-            //jQuery('.qty').val(jQuery('.qty').attr('max'))
+            jQuery('.qty').val(jQuery('.qty').attr('max'))
           }
         });
       }
