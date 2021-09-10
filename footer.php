@@ -140,6 +140,7 @@ jQuery( ".btn-wapp" ).click(function() {
   jQuery.get(ajaxurl,{'action': 'register_wp'});
 });
 jQuery(document).ready( function(jQuery) {
+      console.log(jQuery('.qty').val(),jQuery('.qty').attr('max'));
       if(jQuery('.qty').attr('max')){
         jQuery('.qty').on('click', function() {      //click en las flechas
           if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
