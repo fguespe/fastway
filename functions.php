@@ -710,8 +710,4 @@ function wpai_is_xml_preprocess_enabled( $is_enabled ) {
 
 add_filter( 'woocommerce_prevent_admin_access', '__return_false' );
 
-function my_account_permalink($permalink) {
-  return admin_url();
-}
-add_filter( 'woocommerce_get_myaccount_page_permalink', 'my_account_permalink', 1); 
 ?>
