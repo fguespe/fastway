@@ -152,7 +152,7 @@ jQuery(document).ready( function(jQuery) {
         console.log(jQuery('.qty').val(),jQuery('.qty').attr('max'));
           if(jQuery('.qty').val() > jQuery('.qty').attr('max')){
             alert('Está solicitando una cantidad que no tenemos en stock ')
-            jQuery('.qty').val(jQuery('.qty').attr('max'))
+            //jQuery('.qty').val(jQuery('.qty').attr('max'))
           }
         });
       }
