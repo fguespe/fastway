@@ -9,6 +9,7 @@ function get_currency_conversion($iscartcalc=false) {
 }
 
 function fw_is_admin(){
+    //si estoy en el dashboard
     require_once(ABSPATH . 'wp-admin/includes/screen.php');
     $screen = get_current_screen();
     if ( $screen->parent_base == 'edit' ) return true;

@@ -437,10 +437,10 @@ Kirki::add_field( 'theme_config_id', array(
 ) );
 
 
-function admin_default_page() {
+function admin_default_page_ca() {
 	return fw_theme_mod('ca-home-redirect');
 }  
-if(fw_theme_mod('ca-home-redirect'))add_filter('login_redirect', 'admin_default_page');
+if(fw_theme_mod('ca-home-redirect'))add_filter('login_redirect', 'admin_default_page_ca');
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
