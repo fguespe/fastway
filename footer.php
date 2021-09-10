@@ -143,13 +143,13 @@ jQuery(document).ready( function(jQuery) {
       if(jQuery('.qty').attr('max')){
         jQuery('.qty').on('click', function() {      //click en las flechas
           if(jQuery('.qty').val() >= jQuery('.qty').attr('max')){
-            alert('Está solicitando una cantidad que no tenemos en stock ')
+            alert('Está solicitando una cantidad que no tenemos en stock.')
           }
         });
 
         jQuery('.qty').on('change', function(e) {     //input manual escribe
 
-        console.log(jQuery('.qty').val(),jQuery('.qty').attr('max'));
+          console.log(jQuery('.qty').val(),jQuery('.qty').attr('max'));
           if(jQuery('.qty').val() > jQuery('.qty').attr('max')){
             alert('Está solicitando una cantidad que no tenemos en stock ')
             //jQuery('.qty').val(jQuery('.qty').attr('max'))
