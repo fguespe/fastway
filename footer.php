@@ -172,7 +172,18 @@ jQuery(document).ready( function(jQuery) {
   border-radius:5px;
   margin-left:5px;
   padding:5px;
-  }
+}
+.widecolumn {
+    max-width: 1200px;
+  margin:0 auto;
+  margin-top:100px;
+}
+
+.page- footer,
+.page- #fw_footercopy{
+    display:none !important;
+}
+
 </style>
 </html>
 
