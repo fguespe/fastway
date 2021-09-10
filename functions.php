@@ -707,11 +707,10 @@ function wpai_is_xml_preprocess_enabled( $is_enabled ) {
 
 
 
-function redirect_user_on_role_cs()
-{
-
-    
-    if(!(fw_get_current_user_role()=='administrator' || fw_get_current_user_role()=='shop_manager')) wp_redirect(wc_get_page_permalink('myaccount'));
+function redirect_user_on_role_cs(){
+    //redirect
+    //esto fuerza a los no admins a nunca ver el dash
+    if(!(fw_get_current_user_role()=='administrator' || fw_get_current_user_role()=='seomanager' ||  is_super_admin()  || fw_get_current_user_role()=='seo_manager' || fw_get_current_user_role()=='editor' || fw_get_current_user_role()=='shop_manager')) wp_redirect(wc_get_page_permalink('myaccount'));
     //else  wp_redirect(admin_url());
 }
 add_action('admin_init','redirect_user_on_role_cs');
