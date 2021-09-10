@@ -5182,7 +5182,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'section'     => 'section_email_templates_other',
 	'default'	=> __('
 
-<p style="text-align: center;">Thank you for registering.
+<p style="text-align: center;">Thank you for registering.<br>
 Your Account is under review. Please check back into your email for updates</p>
 
 ','fastway'),
