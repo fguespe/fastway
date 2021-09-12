@@ -2406,6 +2406,9 @@ footer .widget_nav_menu li a {
   font-weight: 400;
   color: #444444;
 }
+.woocommerce-shop .siyatenes a {
+  color: var(--main) !important;
+}
 .woocommerce-shop .widget li a:first-letter {
   text-transform: uppercase !important;
 }
