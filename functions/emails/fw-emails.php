@@ -564,6 +564,6 @@ add_filter("retrieve_password_message", function ($message, $key) {
 }, 10, 2);
 // fixes email title
 add_filter("retrieve_password_title", function($title) {
-    return "[" . wp_specialchars_decode(get_option('blogname'), ENT_QUOTES) . "] Password Reset";
+    return "Password Reset";
 });
 ?>
