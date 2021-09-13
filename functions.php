@@ -706,11 +706,12 @@ function wpai_is_xml_preprocess_enabled( $is_enabled ) {
 
 
 
-add_action( 'wp_print_scripts', 'DisableStrongPW', 100 );
-
-function DisableStrongPW() {
-    if ( wp_script_is( 'user-profile', 'enqueued' ) ) {
-        wp_dequeue_script( 'user-profile' );
-    }
-}
+add_action('login_enqueue_scripts', function(){
+  wp_dequeue_script('user-profile');
+  wp_dequeue_script('password-strength-meter');
+  wp_deregister_script('user-profile');
+  
+  $suffix = SCRIPT_DEBUG ? '' : '.min';
+  wp_enqueue_script( 'user-profile', "/wp-admin/js/user-profile$suffix.js", array( 'jquery', 'wp-util' ), false, 1 );
+});
 ?>
