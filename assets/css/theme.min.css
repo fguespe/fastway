@@ -2409,6 +2409,9 @@ footer .widget_nav_menu li a {
 .woocommerce-shop .siyatenes a {
   color: var(--main) !important;
 }
+.woocommerce-shop .password-input {
+  width: 100% !important;
+}
 .woocommerce-shop .widget li a:first-letter {
   text-transform: uppercase !important;
 }
