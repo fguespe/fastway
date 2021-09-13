@@ -945,6 +945,14 @@ if(get_option('woocommerce_enable_shipping_calc'))update_option('woocommerce_ena
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
+/**
+ * Remove password strength check.
+ */
+function iconic_remove_password_strength() {
+  wp_dequeue_script( 'wc-password-strength-meter' );
+}
+add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
+
 add_action( 'wp_enqueue_scripts', 'fw_child_manage_woocommerce_styles', 100 );
 
 function fw_child_manage_woocommerce_styles() {
@@ -953,13 +961,6 @@ function fw_child_manage_woocommerce_styles() {
     wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/assets/js/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
 
 
-    wp_dequeue_script('user-profile');
-    wp_dequeue_script('password-strength-meter');
-    wp_deregister_script('user-profile');
-    
-    $suffix = SCRIPT_DEBUG ? '' : '.min';
-    wp_enqueue_script( 'user-profile', "/wp-admin/js/user-profile$suffix.js", array( 'jquery', 'wp-util' ), false, 1 );
-    
     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
     //first check that woo exists to prevent fatal errors
     if ( function_exists( 'is_woocommerce' ) ) {   
