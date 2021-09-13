@@ -685,4 +685,12 @@ display:none
 		display: block !important;;
 	}
 }
+.auto-fold .interface-interface-skeleton{
+	left:0px;
+}
 
+.edit-widgets-header__actions .interface-pinned-items,
+.edit-widgets-header__actions .components-dropdown,
+.edit-widgets-header__actions .components-popover__content{
+	display:none !important;
+}
