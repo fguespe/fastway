@@ -547,11 +547,5 @@ add_filter("retrieve_password_message", function ($message, $key) {
 add_filter("retrieve_password_title", function($title) {
     return "[" . wp_specialchars_decode(get_option('blogname'), ENT_QUOTES) . "] Password Reset";
 });
-add_action( 'wp_print_scripts', 'DisableStrongPW', 100 );
 
-function DisableStrongPW() {
-    if ( wp_script_is( 'user-profile', 'enqueued' ) ) {
-        wp_dequeue_script( 'user-profile' );
-    }
-}
 ?>
