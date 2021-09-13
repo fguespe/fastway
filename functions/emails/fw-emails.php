@@ -213,7 +213,7 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
     $key = get_password_reset_key( $user );
     $user_login=$user->user_login;
     $user_pass=$user->user_pass;
-    $activation_url=wc_get_page_permalink('myaccount').'?action=rp&key=".$key."&login=" . rawurlencode($user_login)';
+    $activation_url=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=" . rawurlencode($user_login);
     //$activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
   }else if($key){//activation por wpmu
     $activation_url=site_url( "wp-activate.php?key=$key" );
