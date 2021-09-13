@@ -948,6 +948,10 @@ if(get_option('woocommerce_enable_shipping_calc'))update_option('woocommerce_ena
 /**
  * Remove password strength check.
  */
+add_filter( 'woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10 );
+function wpglorify_woocommerce_password_filter() {
+return 1; } //2 represent medium strength password
+
 function iconic_remove_password_strength() {
   wp_dequeue_script( 'wc-password-strength-meter' );
 }
