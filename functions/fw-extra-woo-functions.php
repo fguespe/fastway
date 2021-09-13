@@ -952,6 +952,14 @@ function fw_child_manage_woocommerce_styles() {
     wp_deregister_script('wc-checkout');
     wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/assets/js/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
 
+
+    wp_dequeue_script('user-profile');
+    wp_dequeue_script('password-strength-meter');
+    wp_deregister_script('user-profile');
+    
+    $suffix = SCRIPT_DEBUG ? '' : '.min';
+    wp_enqueue_script( 'user-profile', "/wp-admin/js/user-profile$suffix.js", array( 'jquery', 'wp-util' ), false, 1 );
+    
     remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
     //first check that woo exists to prevent fatal errors
     if ( function_exists( 'is_woocommerce' ) ) {   
