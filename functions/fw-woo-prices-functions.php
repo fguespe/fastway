@@ -112,7 +112,7 @@ add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_dynamic_r
 function custom_dynamic_regular_price( $regular_price, $product ) {
     $devolver=$regular_price;
     if( empty($devolver) || $devolver == 0 )$devolver=$product->get_price();
-    $devolver=round(floatval($devolver)*floatval(get_currency_conversion()));
+    $devolver=round(floatval($devolver)*floatval(get_currency_conversion()),get_option('woocommerce_price_num_decimals'));
     return $devolver;
 }
 
@@ -125,7 +125,7 @@ function custom_dynamic_sale_price( $sale_price, $product ) {
     $noteniasale=empty($devolver) || $devolver == 0;
     if(fw_is_admin() && $noteniasale)return;
     else if( $noteniasale )$devolver=floatval($product->get_price())*floatval(fw_product_discount_multiplier($product));
-    $devolver=round($devolver*get_currency_conversion());
+    $devolver=round($devolver*get_currency_conversion(),get_option('woocommerce_price_num_decimals'));
     return $devolver;
 
 }
@@ -174,14 +174,14 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_sale_price( 'min', true );
         if(!$sale_price || $sale_price==$regular_price)$sale_price=$regular_price*fw_product_discount_multiplier($product);
-        $sale_price=round($sale_price*get_currency_conversion());
+        $sale_price=round($sale_price*get_currency_conversion(),get_option('woocommerce_price_num_decimals'));
         
     }else {
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
     }
     if($regular_price){
-        $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100));  
+        $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100),get_option('woocommerce_price_num_decimals'));
     }
 
     if(empty($product->get_price()) || fw_check_hide_prices()){
