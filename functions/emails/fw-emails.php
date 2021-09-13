@@ -536,7 +536,7 @@ add_filter( 'network_site_url', function($url, $path, $scheme) {
 
     if (stripos($url, "action=lostpassword") !== false)return wc_get_page_permalink('myaccount').'?action=lostpassword';
     return $url;
-    
+
 }, 10, 3 );
 
 // fixes URLs in email that goes out.
@@ -547,4 +547,11 @@ add_filter("retrieve_password_message", function ($message, $key) {
 add_filter("retrieve_password_title", function($title) {
     return "[" . wp_specialchars_decode(get_option('blogname'), ENT_QUOTES) . "] Password Reset";
 });
+add_action( 'wp_print_scripts', 'DisableStrongPW', 100 );
+
+function DisableStrongPW() {
+    if ( wp_script_is( 'user-profile', 'enqueued' ) ) {
+        wp_dequeue_script( 'user-profile' );
+    }
+}
 ?>
