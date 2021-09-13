@@ -302,6 +302,7 @@ function was_form_signup($key){
 add_filter( 'wpmu_signup_user_notification', 'edit_user_notification_email2', 10, 4 );
 function edit_user_notification_email2($user_login, $user_email, $key, $meta = '') {
         if(was_form_signup($key))return false;
+        error_log("ENTRA2");
         $wp_new_user_notification_email=[];
         $wp_new_user_notification_email['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates());
         $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates(null,$user_login,$key));
@@ -314,6 +315,7 @@ function edit_user_notification_email2($user_login, $user_email, $key, $meta = '
 add_filter( 'wpmu_welcome_user_notification', 'edit_user_notification_email3', 10, 3 );
 function edit_user_notification_email3($user_id, $password, $meta = '') {
         $user = new WP_User($user_id);
+        error_log("ENTRA3");
         $user->user_pass=$password;
         $wp_new_user_notification_email=[];
         $wp_new_user_notification_email['subject'] = fw_parse_subject('customer_new_account',get_account_variables_for_templates());
@@ -327,6 +329,7 @@ function edit_user_notification_email3($user_id, $password, $meta = '') {
 //Este se manda para los aprovaciones del formulario
 add_filter( 'wp_new_user_notification_email' , 'edit_user_notification_email', 10, 3 );
 function edit_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
+    error_log("ENTRA4");
     $wp_new_user_notification_email['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates());
     $wp_new_user_notification_email['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
     $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
