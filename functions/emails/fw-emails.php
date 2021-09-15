@@ -142,6 +142,11 @@ function fw_parse_mail($tipo,$order, $sent_to_admin=false, $plain_text=false,$em
   echo wp_kses_post( wpautop( wptexturize($html)));
 }
 
+function kia_display_email_order_user_meta( $order, $sent_to_admin, $plain_text ) {
+    $user_id = $order->customer_user;
+    if( ! empty( $user_id ) && ( $data = get_user_meta( $user_id, 'billing_dni', true ) ) != '' ) echo $data;
+}
+add_action('woocommerce_email_customer_details', 'kia_display_email_order_user_meta', 30, 3 );
 
 function fw_get_email_variables($order, $sent_to_admin=false, $plain_text=false, $email=false){
 

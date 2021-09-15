@@ -2523,7 +2523,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'label'       => __( 'Cross Sells', 'fastway' ),
 	'description'	=> 'Shows cross-sells in the cart page. Category \'cross-sells\' is the default if you want to set them manually.',
 	'section'     => 'section_woo_cart',
-	'default'     => 'simple',
+	'default'     => 'none',
 	'choices'     => array(
 		'none'   	=> 	'None',
 		'auto'   	=> 	'Products',
