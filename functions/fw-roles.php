@@ -42,6 +42,7 @@ function fw_getmeroles_and_names(){
       return $devolver;
 }
 
+
 add_filter( 'body_class','fw_role_body_classes' );
 function fw_role_body_classes( $classes ) {
     
@@ -63,6 +64,14 @@ function fw_role_body_classes( $classes ) {
         $classes[]= strtolower($key); //or your name
       }
     }*/
+    return $classes;
+}
+
+
+
+add_filter( 'body_class','fw_filter_body_class' );
+function fw_filter_body_class( $classes ) {
+    if($_GET['filter_marca'])$classes[]='filter_marca';
     return $classes;
 }
 
