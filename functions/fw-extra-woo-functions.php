@@ -425,7 +425,9 @@ function fw_short_desc(){
 add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
-    echo '<div class="loopimg_container">'.woocommerce_get_product_thumbnail().'</div>';
+    $image=woocommerce_get_product_thumbnail();
+    if(!$image)$image="<img url='"."https://www.provetel.com.ar/wp-content/uploads/sites/12/2021/07/logo.png"."'/>";
+    echo '<div class="loopimg_container">'.$image.'</div>';
 }
 
 add_shortcode('fw_loop_meta', 'fw_loop_meta');
@@ -1426,16 +1428,13 @@ add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_field
 function woocommerce_product_custom_fields_save($post_id){
 // Custom Product Textarea Field
     $woocommerce_custom_procut_textarea = $_POST['_fw_products_videos'];
-    if (!empty($woocommerce_custom_procut_textarea))
-        update_post_meta($post_id, '_fw_products_videos', esc_html($woocommerce_custom_procut_textarea));
+    if (!empty($woocommerce_custom_procut_textarea)) update_post_meta($post_id, '_fw_products_videos', esc_html($woocommerce_custom_procut_textarea));
 
     $woocommerce_custom_procut_textarea = $_POST['_fw_guia_talles'];
-    if (!empty($woocommerce_custom_procut_textarea))
-        update_post_meta($post_id, '_fw_guia_talles', esc_html($woocommerce_custom_procut_textarea));
+    if (!empty($woocommerce_custom_procut_textarea)) update_post_meta($post_id, '_fw_guia_talles', esc_html($woocommerce_custom_procut_textarea));
 
     $woocommerce_custom_procut_textarea = $_POST['_iva'];
-    if (!empty($woocommerce_custom_procut_textarea))
-        update_post_meta($post_id, '_iva', esc_html($woocommerce_custom_procut_textarea));
+    if (!empty($woocommerce_custom_procut_textarea))update_post_meta($post_id, '_iva', esc_html($woocommerce_custom_procut_textarea));
 
 }
 function fw_get_yt_videos($json) {
