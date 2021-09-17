@@ -426,7 +426,7 @@ add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
     $image=woocommerce_get_product_thumbnail();
-    if(!$image)$image="<img url='"."https://www.provetel.com.ar/wp-content/uploads/sites/12/2021/07/logo.png"."'/>";
+    if(empty($image))$image="<img url='"."https://www.provetel.com.ar/wp-content/uploads/sites/12/2021/07/logo.png"."'/>";
     echo '<div class="loopimg_container">'.$image.'</div>';
 }
 
