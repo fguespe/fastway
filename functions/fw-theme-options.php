@@ -2484,6 +2484,15 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
+	'settings'    => 'fw_placeh_image',
+	'label'       => __( 'Placeh image', 'fastway' ),
+	'description'	=>	'Categories to hide on the store. Separated with comma.',
+	'section'     => 'section_woo',
+	'default'     => '',
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
 	'settings'    => 'fw_consultar_link',
 	'label'    => __( 'Enquiry Button Link', 'fastway' ),
 	'section'     => 'section_woo',

@@ -426,7 +426,7 @@ add_shortcode('fw_loop_image', 'fw_loop_image');
 function fw_loop_image(){
     global $product;
     $image=woocommerce_get_product_thumbnail();
-    if( strpos( $image, 'placeholder' ) !== false)$image='<img width="300" height="300" src="/wp-content/uploads/sites/12/2021/07/logo.png" class="woocommerce-placeholder wp-post-image" alt="Marcador" loading="lazy">';
+    if( strpos( $image, 'placeholder' ) !== false)$image='<img width="300" height="300" src="/wp-content/uploads/sites/12/2021/09/provetel-place.png" class="woocommerce-placeholder wp-post-image" alt="Marcador" loading="lazy">';
     echo '<div class="loopimg_container">'.$image.'</div>';
 }
 
