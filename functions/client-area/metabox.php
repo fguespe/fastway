@@ -29,6 +29,7 @@ function custom_menu_meta_box(){
             array(__('Atributes','fastway'),'caret-square-o-down','edit.php?post_type=product&page=product_attributes'),
             array(__('Users','fastway'),'users','users.php'),
             array(__('Media','fastway'),'image','upload.php'),
+            array(__('Menus','fastway'),'image','nav-menus.php'),
             array(__('Pages','fastway'),'file-text','edit.php?post_type=page'),
             array(__('Comments','fastway'),'comments','edit-comments.php'),
             array(__('Pending','fastway'),'pending','users.php?page=gf-pending-activations'),
