@@ -221,8 +221,9 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
     $activation_url=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=" . rawurlencode($user_login);
     //$activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
   }else if($key){//activation por wpmu
+    global $current_user;
     $activation_url=site_url( "wp-activate.php?key=$key" );
-    $new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=".rawurlencode($user_login);
+    $new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=".rawurlencode($current_user->user_login);
     if(!$user_login && $u_login)$user_login=$u_login;
   }
   $emailValues = array(
