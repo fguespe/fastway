@@ -224,6 +224,7 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
     global $current_user;
     $activation_url=site_url( "wp-activate.php?key=$key" );
     if(!$user_login && $u_login)$user_login=$u_login;
+    error_log(print_r($user_login,true));
     $new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=".rawurlencode($user_login);
   }
 
@@ -555,9 +556,12 @@ function wp_set_html_mail_content_type() {
 add_filter( 'wp_mail_content_type', 'wp_set_html_mail_content_type' );
 
 // fixes URLs in email that goes out.
-add_filter("retrieve_password_message", function ($message, $key,$user_login) {
-return fw_parse_mail_accounts('customer_new_password',get_account_variables_for_templates(null,$user_login,$key));
-}, 10, 2);
+
+add_filter("retrieve_password_message", "mapp_custom_password_reset", 99, 4);
+function mapp_custom_password_reset($message, $key, $user_login, $user_data )    {
+    return fw_parse_mail_accounts('customer_new_password',get_account_variables_for_templates(null,$user_login,$key));
+}
+
 
 // fixes email title
 add_filter("retrieve_password_title", function($title) {return fw_parse_subject('customer_new_password',get_account_variables_for_templates());});
