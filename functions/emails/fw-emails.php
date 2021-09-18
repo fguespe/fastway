@@ -547,6 +547,11 @@ if (stripos($url, "action=lostpassword") !== false)return wc_get_page_permalink(
 return $url;
 }, 10, 3 );
   
+function wp_set_html_mail_content_type() {
+    return 'text/html';
+}
+add_filter( 'wp_mail_content_type', 'wp_set_html_mail_content_type' );
+
 // fixes URLs in email that goes out.
 add_filter("retrieve_password_message", function ($message, $key) {
 return fw_parse_mail_accounts('customer_new_password',get_account_variables_for_templates(null,null,$key));
