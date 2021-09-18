@@ -222,14 +222,15 @@ function get_account_variables_for_templates($user=null,$u_login=null,$key=null)
     //$activation_url=network_site_url("wp-login.php?action=rp&key=".$key."&login=" . rawurlencode($user_login), 'login') ;
   }else if($key){//activation por wpmu
     $activation_url=site_url( "wp-activate.php?key=$key" );
-    //$new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=".rawurlencode($user_login);
+    $new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key."&login=".rawurlencode($user_login);
     if(!$user_login && $u_login)$user_login=$u_login;
   }
   $emailValues = array(
     'blogname' => get_bloginfo('name'),
     'user_name' => esc_html( $user_login),
     'user_pass' => esc_html( $user_pass),
-    'activation_url'=> $activation_url
+    'activation_url'=> $activation_url,
+    'new_pass_link'=> $new_pass_link
   );
   
   if(is_plugin_active('woocommerce/woocommerce.php'))$emailValues['myaccount']=make_clickable( esc_url( wc_get_page_permalink('myaccount')));

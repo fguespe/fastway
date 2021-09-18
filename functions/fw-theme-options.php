@@ -5149,7 +5149,7 @@ Username: prueba
 
 If this is an error, please ignore this message.
 
-To set up your password please visit the following  <a href="{{activation_url}}">LINK</a>
+To set up your password please visit the following  <a href="{{new_pass_link}}">LINK</a>
 
 Glad to have you on board!
 Best Regards,','fastway'),
