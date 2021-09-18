@@ -5135,7 +5135,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'settings'    => 'fw_email_subject_customer_new_password',
 	'label'    => __('New Password','fastway'),      
 	'section'     => 'section_email_templates_auth',
-	'default' 	  => __("{{blogname}} Password Reset",'fastway')
+	'default' 	  => __("Password Reset",'fastway')
 ) );
 
 Kirki::add_field( 'theme_config_id', array(
