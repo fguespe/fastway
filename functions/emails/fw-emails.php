@@ -538,4 +538,22 @@ function conditionals($template,$data) {
 
 
 
+
+// fixes other password reset related urls
+add_filter( 'network_site_url', function($url, $path, $scheme) {
+if (stripos($url, "action=lostpassword") !== false)return wc_get_page_permalink('myaccount').'?action=lostpassword';
+return $url;
+}, 10, 3 );
+  
+// fixes URLs in email that goes out.
+add_filter("retrieve_password_message", function ($message, $key) {
+
+$new_pass_link=wc_get_page_permalink('myaccount')."?action=rp&key=".$key;
+return fw_theme_mod('fw_email_content_customer_new_password');
+}, 10, 2);
+
+// fixes email title
+add_filter("retrieve_password_title", function($title) {return fw_parse_subject('customer_new_password',get_account_variables_for_templates());});
+  
+  
 ?>

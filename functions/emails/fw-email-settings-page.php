@@ -19,6 +19,8 @@ if($_POST && $_POST['option_page']=='fw_email_options_group' && $_POST['action']
   set_theme_mod('fw_email_content_customer_new_account',fix_templates( ($_POST['fw_email_content_customer_new_account'])));
   set_theme_mod('fw_email_subject_customer_reset_password',fix_templates( ($_POST['fw_email_subject_customer_reset_password'])));
   set_theme_mod('fw_email_content_customer_reset_password',fix_templates( ($_POST['fw_email_content_customer_reset_password'])));
+  set_theme_mod('fw_email_subject_customer_new_password',fix_templates( ($_POST['fw_email_subject_customer_new_password'])));
+  set_theme_mod('fw_email_content_customer_new_password',fix_templates( ($_POST['fw_email_content_customer_new_password'])));
   set_theme_mod('fw_email_subject_gf_activated',fix_templates( ($_POST['fw_email_subject_gf_activated'])));
   set_theme_mod('fw_email_content_gf_activated',fix_templates( ($_POST['fw_email_content_gf_activated'])));
 
@@ -195,7 +197,17 @@ $content = fw_theme_mod('fw_email_content_customer_new_account');
 wp_editor( $content, 'fw_email_content_customer_new_account', $settings = array('textarea_rows'=> '10') );
 ?>
 </div>
-
+<!-- Tab content -->
+<div class="tipomail">
+<h3 class="titulo"><?=__( 'New Password', 'fastway' )?></h3>
+<small><?=__( 'Customer "new account" emails are sent to the customer when a customer signs up via checkout or account pages.', 'woocommerce' );?></small>
+<input type="text" class="w100" id="fw_email_subject_customer_new_password" name="fw_email_subject_customer_new_password" value="<?php echo fw_theme_mod('fw_email_subject_customer_new_password'); ?>" />
+<small>Variables: {{blogname}} {{user_name}} {{user_pass}} {{myaccount}}</small><br>
+<?php
+$content = fw_theme_mod('fw_email_content_customer_new_password');
+wp_editor( $content, 'fw_email_content_customer_new_password', $settings = array('textarea_rows'=> '10') );
+?>
+</div>
 <div class="tipomail">
 <h3 class="titulo"><?=__( 'Reset password', 'woocommerce' )?></h3>
 <small><?=__( 'Customer "reset password" emails are sent when customers reset their passwords.', 'woocommerce' );?></small>

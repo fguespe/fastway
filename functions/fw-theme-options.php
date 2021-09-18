@@ -4938,7 +4938,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_cuotas_mp',
-	'label'    => __( 'Cuotas sin interés', 'fastway' ),
+	'label'    => __( 'Max installments', 'fastway' ),
 	'section'     => 'section_labels_single_products',
 	'default'	=> 'Pagá en hasta [fw_cuotas] cuotas sin interés'
 	) );
@@ -5130,6 +5130,31 @@ Best Regards,','fastway'),
 'choices'     => array('language' => 'html',),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_email_subject_customer_new_password',
+	'label'    => __('New Password','fastway'),      
+	'section'     => 'section_email_templates_auth',
+	'default' 	  => __("{{blogname}} Password Reset",'fastway')
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'code',
+	'settings'    => 'fw_email_content_customer_new_password',
+	'label'    => __('Body','fastway'),      
+	'section'     => 'section_email_templates_auth',
+	'default'	=> __('Someone has requested a new password for you:
+
+Username: prueba
+
+If this is an error, please ignore this message.
+
+To set up your password please visit the following  <a href="{{new_pass_link}}">LINK</a>
+
+Glad to have you on board!
+Best Regards,','fastway'),
+'choices'     => array('language' => 'html',),
+) );
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
