@@ -550,12 +550,8 @@ if (stripos($url, "action=lostpassword") !== false)return wc_get_page_permalink(
 return $url;
 }, 10, 3 );
   
-function wp_set_html_mail_content_type() {
-    return 'text/html';
-}
+function wp_set_html_mail_content_type() {return 'text/html';}
 add_filter( 'wp_mail_content_type', 'wp_set_html_mail_content_type' );
-
-// fixes URLs in email that goes out.
 
 add_filter("retrieve_password_message", "mapp_custom_password_reset", 99, 4);
 function mapp_custom_password_reset($message, $key, $user_login, $user_data )    {
