@@ -2346,4 +2346,33 @@ add_filter( 'woocommerce_default_catalog_orderby_options', 'custom_woocommerce_c
 add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby', 10, 1 );
 
 
+add_filter( 'woocommerce_product_filters', 'admin_filter_products_by_din' );
+function admin_filter_products_by_din( $output ) {
+
+    global $wp_query;
+
+    $taxonomy  = 'marca';
+    $selected      = isset( $wp_query->query_vars[$taxonomy] ) ? $wp_query->query_vars[$taxonomy] : '';
+    $info_taxonomy = get_taxonomy($taxonomy);
+
+    ob_start(); // buffer the result of wc_product_dropdown_categories silently
+    wc_product_dropdown_categories( array(
+        'show_option_none' => __("Select a {$info_taxonomy->label}"), // changed
+        'taxonomy'         => $taxonomy,
+        'name'             => $taxonomy,
+        //'echo'             => false, // <== Needed for in filter hook
+        'tab_index'        => '2',
+        'selected'         => $selected,
+        'show_count'       => true,
+        'hide_empty'       => true,
+    ));
+    $custom_dropdown = ob_get_clean();
+
+
+    $before = '<select name="product_type"'; //
+
+    $output = str_replace( $before, $custom_dropdown . $before, $output );
+
+    return $output;
+} 
 ?>
