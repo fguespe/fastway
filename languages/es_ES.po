@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-09-18 11:01-0300\n"
-"PO-Revision-Date: 2021-09-18 11:01-0300\n"
+"PO-Revision-Date: 2021-09-21 17:10-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -3354,7 +3354,7 @@ msgstr ""
 
 #: functions/fw-theme-options.php:4965
 msgid "What are you looking for"
-msgstr "Quienes vieron este producto también compraron"
+msgstr "Buscar productos"
 
 #: functions/fw-theme-options.php:4971
 msgid "Sale Message"
