@@ -649,7 +649,8 @@ function populatecart(){
         jqe+='<div  id="totals" class="col-6 col-md-8" data-min="'+min+'" data-subtotal="'+subtotal+'" class="col-6 col-md-8">Subtotal</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+subtotal+'<?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?>'+'</span></span></div>'
         if(typeof discount_total == 'number' && (discount_total>0 || discount_total<0) ){
             jqe+='<div class="col-6 col-md-8">'+'<?=__( 'Discount', 'fastway' )?>'+'</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(discount_total).toFixed(2)+'</span></span></div>'
-            jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(subtotal+discount_total).toFixed(2)+'</span></span></div>'
+            if(discount_total>0)discount_total=discount_total*-1
+            if(subtotal+discount_total)jqe+='<div class="col-6 col-md-8">TOTAL</div><div class="col-6 col-md-4 text-right"><span id="order-cost"><span id="total">$'+parseFloat(subtotal+discount_total).toFixed(2)+'</span></span></div>'
         }
         jqe+='</div>'
         if(subtotal>0){

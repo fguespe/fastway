@@ -326,10 +326,11 @@ function fw_loop_attr($atts = []){
       }
     endforeach;
 }
+
 add_shortcode('fw_stock_label', 'fw_stock_label');
 function fw_stock_label(){
     global $product;
-    if(empty($product->get_stock_quantity()))echo "<span class='disponibles'></span>";
+    if(empty($product->get_stock_quantity()))echo "<span class='disponibles'>".fw_theme_mod("out-of-stock-text")."</span>";
     else if($product->get_stock_quantity()<=1000)echo "<span class='disponibles'>Disponibles: ".$product->get_stock_quantity()."</span>";
     else echo "<span class='disponibles'>Disponibles: "."+ 1000</span>";
 }
