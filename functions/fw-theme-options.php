@@ -2598,7 +2598,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_sell_dni',
 	'label'       => __( 'Identity Number', 'fastway' ),
-	'description'	=> 'Requires indentity number',
+	'description'	=> __( 'Requires indentity number' ),
 	'section'     => 'section_woo_checkout',
 	'default'     => 0,
 	'choices' => array(

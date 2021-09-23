@@ -2195,14 +2195,14 @@ function add_extra_fields_in_flat_rate($settings){
 
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss',10 );
 function fw_custom_override_checkout_fieldss( $fields ) {
-    $fields['billing']['billing_cuit'] = array(
+    /*$fields['billing']['billing_cuit'] = array(
       'label'     => fw_theme_mod( 'fw_cuit_label'),
       'placeholder'     => fw_theme_mod( 'fw_cuit_label'),
       'required'  => true,
       'class'     => array('form-row-wide'),
       'clear'     => true,
       'priority' => 31
-    );
+    );*/
     
     if(fw_theme_mod('fw_sell_dni')){
       $fields['billing']['billing_dni'] = array(
@@ -2247,7 +2247,7 @@ function fw_custom_override_checkout_fieldss( $fields ) {
     
     if(!fw_theme_mod('fw_sell_to_business')){
       unset($fields['billing']['billing_company']);
-      unset($fields['billing']['billing_cuit']);
+      //unset($fields['billing']['billing_cuit']);
     }
 
     if(fw_theme_mod('fw_gift_fields')){
