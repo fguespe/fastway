@@ -557,4 +557,11 @@ function mapp_custom_password_reset($message, $key, $user_login, $user_data )   
 add_filter("retrieve_password_title", function($title) {return fw_parse_subject('customer_new_password',get_account_variables_for_templates());});
   
   
+
+function kia_display_email_order_user_meta( $order, $sent_to_admin, $plain_text ) {
+   	
+    echo "CUIT:".get_post_meta( $order->get_id(), '_billing_dni', true );//."/".get_user_meta( $order->get_customer_id(), '_billing_dni', true );
+}
+add_action('woocommerce_email_customer_details', 'kia_display_email_order_user_meta', 30, 3 );
+
 ?>
