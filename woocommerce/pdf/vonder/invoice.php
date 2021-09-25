@@ -14,6 +14,7 @@
 			<?php do_action( 'wpo_wcpdf_after_billing_address', $this->type, $this->order ); ?>
 			<div class="billing-email"><?php $this->billing_email(); ?></div>
 			<div class="billing-dni"><?=get_post_meta( $order->get_id(), '_billing_dni', true ) ?></div>
+			<div class="billing-vendedor"><?=get_post_meta( $order->get_id(), '_vendedor', true ) ?></div>
 			<div class="billing-phone">Tel: <?php $this->billing_phone(); ?></div>
 		</td>
 		<td class="address shipping-address">

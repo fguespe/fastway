@@ -560,7 +560,8 @@ add_filter("retrieve_password_title", function($title) {return fw_parse_subject(
 
 function kia_display_email_order_user_meta( $order, $sent_to_admin, $plain_text ) {
    	
-    echo "CUIT: ".get_post_meta( $order->get_id(), '_billing_dni', true );//."/".get_user_meta( $order->get_customer_id(), '_billing_dni', true );
+    if(get_post_meta( $order->get_id(), '_billing_dni', true ))echo "CUIT: ".get_post_meta( $order->get_id(), '_billing_dni', true );
+    if(get_post_meta( $order->get_id(), '_vendedor', true ))echo "Vendedor: ".get_post_meta( $order->get_id(), '_vendedor', true );
 }
 add_action('woocommerce_email_customer_details', 'kia_display_email_order_user_meta', 30, 3 );
 
