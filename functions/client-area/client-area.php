@@ -168,6 +168,18 @@ Kirki::add_field( 'theme_config_id', array(
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
+	'settings'    => 'fw_cpt_events_default',
+	'label'       => __( 'Default Fields', 'fastway' ),
+	'section'     => 'section_cpt',
+	'default'     => 1,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
 	'settings'    => 'fw_cpt_reviews',
 	'label'       => __( 'Reviews', 'fastway' ),
 	'section'     => 'section_cpt',

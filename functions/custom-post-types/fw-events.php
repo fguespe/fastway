@@ -135,7 +135,7 @@ function fw_loop_event(){
 
 
 
-if( function_exists('acf_add_local_field_group') ):
+if( function_exists('acf_add_local_field_group') && fw_theme_mod('fw_cpt_events_default')):
     acf_add_local_field_group(array(
         'key' => 'group_602d0e7189796',
         'title' => 'Data',
