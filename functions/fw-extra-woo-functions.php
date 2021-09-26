@@ -2190,7 +2190,7 @@ function add_extra_fields_in_flat_rate($settings){
 } 
 
 
-
+// Hook in
 
 
 add_filter( 'woocommerce_checkout_fields' , 'fw_custom_override_checkout_fieldss',10 );
