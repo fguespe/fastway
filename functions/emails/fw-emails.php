@@ -559,7 +559,6 @@ add_filter("retrieve_password_title", function($title) {return fw_parse_subject(
   
 
 function kia_display_email_order_user_meta( $order, $sent_to_admin, $plain_text ) {
-   	
     if(get_post_meta( $order->get_id(), '_billing_dni', true ))echo "CUIT: ".get_post_meta( $order->get_id(), '_billing_dni', true ).'<br>';
     if(get_post_meta( $order->get_id(), '_billing_vendedor', true ))echo "Vendedor: ".get_post_meta( $order->get_id(), '_billing_vendedor', true ).'<br>';
 }
