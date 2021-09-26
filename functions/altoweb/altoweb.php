@@ -117,10 +117,11 @@ if(fw_theme_mod('fw_action_clientimages')){
 add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
 function my_custom_checkout_field_display_admin_order_meta($order){
     $dato=get_post_meta( $order->get_id(), '_billing_dni', true );
-    if(!empty($dato))echo '<p><strong>'.__('CDI/VAT','fastway').':__</strong> ' . $dato . '</p>';
+    if(!empty($dato))echo '<p><strong>'.__('CDI/VAT','fastway').':</strong> ' . $dato . '</p>';
     $dato=get_post_meta( $order->get_id(), '_vendedor', true );
-    if(!empty($dato))echo '<p><strong>'.__('Vendedor','fastway').':</strong> ' . $dato . '</p>';
-    
+    //if(!empty($dato))
+    echo '<p><strong>'.__('Vendedor','fastway').':</strong> ' . $dato . '</p>';
+
     $dato = get_post_meta($order->get_id(), '_customer_user', true);
     $user = get_user_by( 'id', $dato ); 
     if(!empty($dato))echo '<p><strong>'.__('Usuario','fastway').':</strong> ' . $user->user_login . '</p>';
