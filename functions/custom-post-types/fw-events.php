@@ -127,6 +127,52 @@ function fw_event_carousel( $atts, $content ) {
   
 }   
 
+
+add_shortcode( 'fw_event_carousel_nodate', 'fw_event_carousel_nodate' ); 
+function fw_event_carousel_nodate( $atts, $content ) {
+    $rand=generateRandomString(5);
+    $atts = shortcode_atts(
+    array(
+          'loop'      =>  'false',
+          'slider_speed'  => '250',
+          'slider_delay'  => '4000',
+          'autoplay'  => 'false',
+          'maxcant' => '12',
+          'el_class'  => '',
+          'title'  => '',
+          'type'    => '',
+          'prodsperrow' => 4,
+    ), $atts );
+
+    
+    if(!$atts['loop'])$atts['loop']='false';
+    if(!$atts['autoplay'])$atts['autoplay']='false';
+    //Desktop
+  
+    ob_start();
+    $tax_query   = WC()->query->get_tax_query();
+    if($atts['type']){
+        $tax_query[] = array(
+            'taxonomy' => 'fw_event_cat',
+            'field'    => 'slug', // Or 'name' or 'term_id'
+            'terms'    => array($atts['type']),
+            'operator' => 'IN', // Excluded
+        );
+    }
+
+    $args = array(
+        'post_type' => 'fw_event',
+        'order'          => 'ASC',
+        'orderby'        => 'meta_value',
+        'tax_query' =>  $tax_query,
+    );
+
+    $posts = new WP_Query($args);
+    fw_get_template('fw-event-carousel.php',$atts,$posts);
+    return ob_get_clean();
+  
+}   
+
 function fw_loop_event(){
 	global $preset_code;
 	$code=$preset_code?$preset_code:fw_theme_mod('woo_loop_event_code');
