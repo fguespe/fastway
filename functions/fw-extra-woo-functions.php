@@ -516,13 +516,19 @@ function fw_default_filters(){
 
 add_shortcode('fw_loop_labels', 'fw_loop_labels');
 function fw_loop_labels($atts = [], $content = null){
-    $atts = shortcode_atts(array('type' => '','id'=>'','price'=>0 ), $atts );
+    $atts = shortcode_atts(array('type' => '','id'=>'','price'=>0 ,'class'=>'' ,'subtype'=>'' ), $atts );
     global $product;
     
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
         echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_shipping_free_label').'</div>';
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
         echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_shipping_free_label').'</div>';
+    }else if($atts['type']=='sale' && $product->is_on_sale()){
+      $sale= $product->get_sale_price();
+      $price= $product->get_regular_price();
+      if($atts['subtype']==1)$off=fw_theme_mod('fw_label_sale');
+      else if($atts['subtype'==2])$off=$price-$sale;
+      echo '<span class="sale_text '.$atts['class'].'">'.$off.'</span>';
     }
 }
 
