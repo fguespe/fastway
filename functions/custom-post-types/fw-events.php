@@ -145,8 +145,8 @@ function fw_event_carousel_nodate( $atts, $content ) {
     ), $atts );
 
     
-    if(!$atts['loop'])$atts['loop']='false';
-    if(!$atts['autoplay'])$atts['autoplay']='false';
+   // if(!$atts['loop'])$atts['loop']='false';
+    //if(!$atts['autoplay'])$atts['autoplay']='false';
     //Desktop
   
     ob_start();
