@@ -107,23 +107,11 @@ function fw_get_minicart(){
         $precio= $cart_item['line_subtotal'];
 
 
-        /*$jaja['min_max_rules'] = get_post_meta( $cart_item['product_id'], 'min_max_rules', true );*/
-        /*$jaja['group_of_quantity'] = get_post_meta( $cart_item['product_id'], 'group_of_quantity', true );
-        $jaja['variation_minimum_quantity']  = get_post_meta( $cart_item['product_id'], 'variation_minimum_allowed_quantity', true );
-        $jaja['variation_maximum_quantity']  = get_post_meta( $cart_item['product_id'], 'variation_maximum_allowed_quantity', true );
-        $jaja['variation_group_of_quantity'] = get_post_meta( $cart_item['product_id'], 'variation_group_of_quantity', true );*/
-        $minimum_quantity=0;
-        $maximum_quantity=10000000;
-        if(is_plugin_active('woocommerce-min-max-quantities/woocommerce-min-max-quantities.php')){
-          $minimum_quantity  = get_post_meta( $cart_item['product_id'], 'minimum_allowed_quantity', true )>0?get_post_meta( $cart_item['product_id'], 'minimum_allowed_quantity', true ):0;
-          $maximum_quantity  =  get_post_meta( $cart_item['product_id'], 'maximum_allowed_quantity', true )>0?get_post_meta( $cart_item['product_id'], 'maximum_allowed_quantity', true ):10000000; 
-        }
-        
+
         $arr = array(
         'nombre' => $nombre,
         'extra' => $extra,
-        'minimum_quantity' => intval($minimum_quantity),
-        'maximum_quantity' => intval($maximum_quantity),
+        'maximum_quantity' => $product->get_stock_quantity(),
         'stock_status'=>$stock_status,
         'link'=> get_permalink($cart_item['product_id']),
         'precio'=> $precio, 
