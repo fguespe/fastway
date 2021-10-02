@@ -629,7 +629,7 @@ function populatecart(){
             let maximum_quantity=value['maximum_quantity']
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
-            jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;max-height:90px;"><img src="'+value['url']+'" class="img-cart"></div>'
+            jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;><img style="max-height:90px;" src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
             jqe+='<a target="_self" href="'+value['link']+'"><div class="titulo-producto-cart">'+value['nombre']+'</div></a>'
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'
