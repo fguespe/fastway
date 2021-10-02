@@ -162,7 +162,7 @@ function fw_event_carousel_nodate( $atts, $content ) {
 
     $args = array(
         'post_type' => 'fw_event',
-        'order'          => 'ASC',
+        'order'          => 'DESC',
         'orderby'        => 'meta_value',
         'tax_query' =>  $tax_query,
     );
@@ -409,7 +409,7 @@ function fw_event_date(){
 add_shortcode('fw_event_url', 'fw_event_url');
 function fw_event_url(){
   global $fw_loop_event;
-  if(function_exists('get_field'))  echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >'.get_field('btn_label',$fw_loop_event->ID).'</a>';
+  if(function_exists('get_field'))  echo '<a href="'.get_field('link',$fw_loop_event->ID).'" class="vermas" target="_blank" >'.get_field('btn_label',$fw_loop_event->ID)?get_field('btn_label',$fw_loop_event->ID):"Ver video".'</a>';
   if(function_exists('get_field') && get_field('file',$fw_loop_event->ID))echo '<a  href="'.get_field('file',$fw_loop_event->ID)['url'].'" class="descarga" target="_blank" ><i class="fal fa-download"></i> '.__('Download','fastway').'</a>';
   if(function_exists('get_field') && get_field('replay_webinar',$fw_loop_event->ID))echo '<a  href="'.get_field('replay_webinar',$fw_loop_event->ID).'" class="vervideo" target="_blank" ><i class="fal fa-undo"></i> '.__('Replay','fastway').'</a>';
 }
