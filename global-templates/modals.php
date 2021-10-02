@@ -629,14 +629,14 @@ function populatecart(){
             let maximum_quantity=value['maximum_quantity']
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
-            jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;"><img src="'+value['url']+'" class="img-cart"></div>'
+            jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;;max-height:90px;"><img src="'+value['url']+'" class="img-cart"></div>'
             jqe+='<div class="col-6">'
             jqe+='<a target="_self" href="'+value['link']+'"><div class="titulo-producto-cart">'+value['nombre']+'</div></a>'
             jqe+='<div id="loadingshow_'+index+'" style="display:none;"><i  class="fad fa-circle-notch fa-spin" style="color:var(--main);" ></i></div>'
             jqe+='<div class="row d-flex justify-content-left item-cantidad " id="loadinghide_'+index+'">'
-            jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\'-'+value['quantity']+'\',\''+maximum_quantity+'\')" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
+            //jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\'-'+value['quantity']+'\',\''+maximum_quantity+'\')" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
             jqe+='<input  type="text" style="width:40px;text-align:center;margin-left:10px;margin-right:10px;" id="qty_'+index+'" name="quantity" class="input-number" value="'+value['quantity']+'" min="1" max="100">'
-            jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\''+value['quantity']+'\',\''+maximum_quantity+'\')"  class="txt-22"> <i class="fal fa-plus-circle"></i></a></div> '
+            jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\''+value['quantity']+'\',\''+maximum_quantity+'\')"  class="txt-22"> <i class="fal fa-redo"></i></a></div> '
             jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a></div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
