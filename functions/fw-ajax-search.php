@@ -149,6 +149,7 @@ if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query'
 
 function fw_search_priced_only( $q ){
   if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
+    error_log('entra');
     $q->set( 'meta_query', array(array(
       'key' => '_price',
       'value' => 0,
@@ -167,7 +168,7 @@ function fw_search_categorized_only( $q ){
       'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
       'operator' => 'NOT IN'
     )));
-    
+
   }
 }
 
