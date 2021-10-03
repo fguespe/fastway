@@ -143,18 +143,12 @@ if( !function_exists( 'fw_search_form' ) ) {
 
 
 //Oculto los sin categoria
-if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
- 
-function so_20990199_product_query( $q ){
-  if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
-    
-    $q->set( 'tax_query', array(array(
-      'taxonomy' => 'product_cat',
-      'field' => 'slug',
-      'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
-      'operator' => 'NOT IN'
-    )));
 
+if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'fw_search_categorized_only' );
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_search_priced_only' );
+
+function fw_search_priced_only( $q ){
+  if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
     $q->set( 'meta_query', array(array(
       'key' => '_price',
       'value' => 0,
@@ -163,6 +157,18 @@ function so_20990199_product_query( $q ){
     )));
   }
 
+}
+function fw_search_categorized_only( $q ){
+  if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
+    
+    $q->set( 'tax_query', array(array(
+      'taxonomy' => 'product_cat',
+      'field' => 'slug',
+      'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
+      'operator' => 'NOT IN'
+    )));
+    
+  }
 }
 
 add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args');

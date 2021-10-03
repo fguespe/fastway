@@ -2459,9 +2459,22 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_search_categorized_only',
+	'label'       => __( 'Exclude uncategorized', 'fastway' ),
+	'description'	=> 'Excludes uncategorized products from the search',
+	'section'     => 'section_woo',
+	'default'     => 1,//enabled
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_search_priced_only',
 	'label'       => __( 'Exclude uncategorized', 'fastway' ),
 	'description'	=> 'Excludes uncategorized products from the search',
 	'section'     => 'section_woo',
