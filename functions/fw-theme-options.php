@@ -2475,7 +2475,7 @@ Kirki::add_field( 'theme_config_id', array(
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
 	'settings'    => 'fw_search_priced_only',
-	'label'       => __( 'Exclude uncategorized', 'fastway' ),
+	'label'       => __( 'Exclude unpriced', 'fastway' ),
 	'description'	=> 'Excludes uncategorized products from the search',
 	'section'     => 'section_woo',
 	'default'     => 1,//enabled
