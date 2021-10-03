@@ -59,7 +59,14 @@ function ajax_search() {
           //'order'               => $ordering_args['order'],
           'posts_per_page'      => 5,
           'suppress_filters'    => false,
-        //  'meta_query'          => $meta_query,
+          'meta_query' => array(
+                      array(
+                      'key' => '_price',
+                      'value' => 0,
+                      'compare' => '>',
+                      'type' => 'NUMERIC'
+                    )
+          ),
           'tax_query'           => $tax_query,
         )
       );
