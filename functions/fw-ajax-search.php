@@ -143,7 +143,6 @@ if( !function_exists( 'fw_search_form' ) ) {
 
 
 //Oculto los sin categoria
-
 if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'so_20990199_product_query' );
  
 function so_20990199_product_query( $q ){
@@ -154,6 +153,13 @@ function so_20990199_product_query( $q ){
       'field' => 'slug',
       'terms' => array( 'sin-categorizar','sin-categoria','uncategorized' ), 
       'operator' => 'NOT IN'
+    )));
+
+    $q->set( 'meta_query', array(array(
+      'key' => '_price',
+      'value' => 0,
+      'compare' => '>',
+      'type' => 'NUMERIC'
     )));
   }
 
