@@ -627,6 +627,8 @@ function populatecart(){
             let extra=value['extra']
             let stock_status=value['stock_status']
             let maximum_quantity=value['maximum_quantity']
+
+            let maxlabel='<small style="margin-left:20px;font-size:10px;">(Max:'+(maximum_quantity>1000?'+1000':maximum_quantity)+')</small>'
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;"><img style="max-height:90px;" src="'+value['url']+'" class="img-cart"></div>'
@@ -637,7 +639,7 @@ function populatecart(){
             //jqe+='<div class="item-sumar text-left align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\'-'+value['quantity']+'\',\''+maximum_quantity+'\')" class="txt-22"><i class="fal fa-minus-circle"></i></a></div>'	
             jqe+='<input  type="text" style="width:40px;text-align:center;margin-left:10px;margin-right:10px;" id="qty_'+index+'" name="quantity" class="input-number" value="'+value['quantity']+'" min="1" max="100">'
             jqe+='<div class="item-restar align-self-center"><a href="#" onclick="addCant('+index+',\''+value['cart_item_key']+'\',\''+value['quantity']+'\',\''+maximum_quantity+'\')"  class="txt-22"> <i class="fal fa-redo"></i></a></div>'
-            jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a><small style="margin-left:20px;font-size:10px;">(Max:'+maximum_quantity+')</small></div>'
+            jqe+='<div class="item-restar align-self-center" style="margin-left:10px;"><a href="#" onclick="remove('+index+',\''+value['cart_item_key']+'\')"  class="txt-22"> <i class="fad fa-trash-alt" style="color:red;"></i></a>'+maxlabel+'</div>'
             jqe+='</div>'
             jqe+='</div><div class="col-4 precio-cart text-right">'
             jqe+='<span id="qtyx_'+index+'">'+quantity+'</span> x <span> $'+parseFloat(precio/quantity).toFixed(2)+'</span>'+'<?=fw_theme_mod('fw_show_taxrate')?'+IVA':''?>'+'<br>'
