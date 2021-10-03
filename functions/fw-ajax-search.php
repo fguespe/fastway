@@ -156,7 +156,6 @@ function fw_search_priced_only( $q ){
       'type' => 'NUMERIC'
     )));
 
-    error_log(print_r($q,true));
   }
 
 }
