@@ -371,9 +371,15 @@ if( function_exists('acf_add_local_field_group') && fw_theme_mod('fw_cpt_events_
     
 endif;
 
-
 add_shortcode('fw_event_container', 'fw_event_container');
 function fw_event_container($atts = [], $content = null){
+    global $fw_loop_event;
+    echo '<li class="fw_event_loop">';
+    echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
+    echo '</li>';
+}
+add_shortcode('fw_event_container_wl', 'fw_event_container_wl');
+function fw_event_container_wl($atts = [], $content = null){
     global $fw_loop_event;
     echo '<li class="fw_event_loop"><a href="'.esc_url( get_field('link',$fw_loop_event->ID)).'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
