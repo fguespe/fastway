@@ -6,7 +6,7 @@ if ( (is_home() && ! is_front_page() ) || is_single() || is_archive()){
 }
 
 if(is_plugin_active("woocommerce/woocommerce.php")){
-  if(is_shop() || is_tax(  ))$sidebar_pos = fw_theme_mod('shop-layout');
+  if(is_shop() || is_tax())$sidebar_pos = fw_theme_mod('shop-layout');
   else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
 }
 

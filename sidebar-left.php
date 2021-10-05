@@ -3,12 +3,12 @@
 $sidebarname='left-sidebar';
 $ratio=2;
 
-if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_tax(  ))){
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_tax())){
 	$ratio=3;
 }
 
 if(is_plugin_active("woocommerce/woocommerce.php")){
-	if(is_shop() || is_tax(  )){
+	if(is_shop() || is_tax()){
 		$sidebarname='s-'.$sidebarname;
 		$ratio=fw_theme_mod("sidebar-ratio");
 	}else if(is_product()){

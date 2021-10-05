@@ -127,7 +127,7 @@ function fw_hide_selected_terms( $terms, $taxonomies, $args ) {
   $new_terms = array();
   $ocultar=explode(",",fw_theme_mod('fw_hide_cates'));
 
-  if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_tax(  ) ) ) {
+  if ( in_array( 'product_cat', $taxonomies ) && !is_admin() && (is_shop() || is_tax() ) ) {
       foreach ( $terms as $key => $term ) {
 
             if (  ( ! in_array( $term->slug, $ocultar ) )) {
@@ -687,7 +687,7 @@ public function order_by_stock_status($posts_clauses)
 {
 global $wpdb;
 // only change query on WooCommerce loops
-if (is_woocommerce() && (is_shop() || is_tax(  ) || is_product_tag())) {
+if (is_woocommerce() && (is_shop() || is_tax() || is_product_tag())) {
 $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
 $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
 $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
