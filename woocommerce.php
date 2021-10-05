@@ -19,7 +19,7 @@ $datas = array(
 	'is_shop'		=> 1
 ); 
 $clase="";
-if(is_shop() || is_product_category())$clase="woocommerce-shop";
+if(is_shop() || is_tax(  ))$clase="woocommerce-shop";
 ?>
 
 <div class="wrapper <?=$clase?>" id="woocommerce-wrapper">

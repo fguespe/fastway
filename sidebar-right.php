@@ -4,12 +4,12 @@ $sidebar_pos =fw_theme_mod('layout-main');
 $sidebarname='right-sidebar';
 $ratio=2;
 
-if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_product_category())){
+if ( (is_home() && ! is_front_page() ) || is_single() || (is_archive() && !is_tax(  ))){
 	$sidebar_pos = fw_theme_mod('layout-blog');
 	$ratio=3;
 }
 if(is_plugin_active("woocommerce/woocommerce.php")){
-	if(is_shop() || is_product_category()){
+	if(is_shop() || is_tax(  )){
 		$sidebar_pos = fw_theme_mod('shop-layout');
 		$sidebarname='s-'.$sidebarname;
 	}else if(is_product()){

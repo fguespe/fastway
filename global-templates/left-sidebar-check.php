@@ -10,15 +10,19 @@ if ( (is_home() && ! is_front_page() ) || is_single() || is_archive()){
 }
 
 if(is_plugin_active("woocommerce/woocommerce.php")){
-	if(is_shop() || is_product_category())$sidebar_pos = fw_theme_mod('shop-layout');
+	if(is_shop() || is_tax(  ))$sidebar_pos = fw_theme_mod('shop-layout');
 	else if(is_product())$sidebar_pos = fw_theme_mod('product-page-layout');
-	if(is_shop() || is_product_category() || is_product()){
+	if(is_shop() || is_tax(  ) || is_product()){
 		$ratio=12-fw_theme_mod("sidebar-ratio");
 		$ratioboth=$ratio-fw_theme_mod("sidebar-ratio");
 	}
 }
-?>
 
+$sidebar_pos='left';
+$ratio=10;
+$ratioboth=8;
+
+?>
 <?php if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 	<?php get_sidebar( 'left' ); ?>
 <?php endif; ?>

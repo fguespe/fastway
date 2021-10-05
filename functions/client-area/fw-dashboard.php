@@ -504,14 +504,13 @@ function fw_modal_talles(){
     if($jpg==="CALZADOS"){
       $terms = get_the_terms( $product->ID, 'marca' );
       foreach ($terms as $term) {
-          if(
-          $term->name=="ADIDAS" ||
-          $term->name=="TOPPER" ||
-          $term->name=="PUMA"   ||
-          $term->name=="NEW BALANCE" ||
-          $term->name=="REEBOK" ||
-          $term->name=="CONVERSE" ||
-          $term->name=="DC" )$jpg="CALZADOS-".$term->name;
+          if($term->name=="ADIDAS" ||
+            $term->name=="TOPPER" ||
+            $term->name=="PUMA"   ||
+            $term->name=="NEW BALANCE" ||
+            $term->name=="REEBOK" ||
+            $term->name=="CONVERSE" ||
+            $term->name=="DC" ) $jpg="CALZADOS-".$term->name;
       }
     }
     if(empty($jpg))return "";
