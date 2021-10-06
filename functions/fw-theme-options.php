@@ -4355,7 +4355,7 @@ Kirki::add_field( 'theme_config_id', array(
 		</div>
 	</div>
 		<div class="woo" style="margin-top:40px;">
-[fw_recent_products title="'.__('This weeks trending products','fastway').'" prodsperrow="6"]</div>
+[fw_recent_products title="'.__('This weeks trending products','fastway').'" prodsperrow="'.fw_theme_mod('related_columns').'"]</div>
 </div>',
 	'choices'     => array(
 		'language' => 'html',

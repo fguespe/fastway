@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fastway\n"
 "POT-Creation-Date: 2021-09-18 11:01-0300\n"
-"PO-Revision-Date: 2021-10-04 21:00-0300\n"
+"PO-Revision-Date: 2021-10-06 11:43-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -3066,11 +3066,11 @@ msgstr ""
 
 #: functions/fw-theme-options.php:4338
 msgid "Check the spelling for gramatical errors"
-msgstr ""
+msgstr "Busca errores de ortografía"
 
 #: functions/fw-theme-options.php:4339
 msgid "Use shorter and simpler words"
-msgstr ""
+msgstr "Usa palabras más cortas y simples"
 
 #: functions/fw-theme-options.php:4340
 msgid "Use the menu and the navigation to help you"
@@ -3078,7 +3078,7 @@ msgstr "Usa el menú para navegación"
 
 #: functions/fw-theme-options.php:4345
 msgid "This weeks trending products"
-msgstr ""
+msgstr "Productos recomendados"
 
 #: functions/fw-theme-options.php:4357
 msgid "Google Site Verif. ID"

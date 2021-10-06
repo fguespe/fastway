@@ -161,8 +161,12 @@ function wootax_taxomizer_custom_taxonomy_Item()  {
                 'add_or_remove_items'        => 'Agregar or eliminar '.$nombre.'s'
             );
             $args = array(
-                'labels'                     => $labels,
-                'hierarchical'               => true
+              'hierarchical'      => true,
+              'labels'            => $labels,
+              'show_ui'           => true,
+              'show_admin_column' => true,
+              'query_var'         => true,
+              'rewrite'           => array( 'slug' => 'issues', 'hierarchical' => true ),
             );
             register_taxonomy( strtolower($nombre), 'product', $args );
             register_taxonomy_for_object_type( strtolower($nombre), 'product' );
