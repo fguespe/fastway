@@ -236,13 +236,8 @@ function vc_products_by_brand_carousel() {
 
 }
 
-
-
-
-
 add_action( 'vc_before_init', 'vc_products_by_tags_carousel' );//Prds de categoria
 function vc_products_by_tags_carousel() {
-
     vc_map( 
             array(
                 'name' => __('Products by Tags Carousel', 'fastway'),

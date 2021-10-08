@@ -140,37 +140,41 @@ function wootax_taxomizer_custom_node_tax($wp_admin_bar){
                 )
         );
         $wp_admin_bar->add_node($args);
-  }  }
+  }  
+}
+
 add_action( 'init', 'wootax_taxomizer_custom_taxonomy_Item' );
 function wootax_taxomizer_custom_taxonomy_Item()  {
-        foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre ) {
-            $nombre = ucfirst($nombre);
-            $labels = array(
-                'name'                       => $nombre.'s',
-                'singular_name'              => $nombre,
-                'menu_name'                  => $nombre.'s',
-                'all_items'                  => 'Todas las '.$nombre.'s',
-                'parent_item'                => $nombre.' Padre',
-                'parent_item_colon'          => $nombre.' Padre',
-                'new_item_name'              => 'Nueva '.$nombre,
-                'add_new_item'               => 'Crear '.$nombre,
-                'edit_item'                  => 'Editar '.$nombre,
-                'update_item'                => 'Actualizar '.$nombre,
-                'separate_items_with_commas' => 'Separar con comas',
-                'search_items'               => 'Buscar '.$nombre.'s',
-                'add_or_remove_items'        => 'Agregar or eliminar '.$nombre.'s'
-            );
-            $args = array(
-              'hierarchical'      => true,
-              'labels'            => $labels,
-              'show_ui'           => true,
-              'show_admin_column' => true,
-              'query_var'         => true,
-              'rewrite'           => array( 'slug' => 'issues', 'hierarchical' => true ),
-            );
-            register_taxonomy( strtolower($nombre), 'product', $args );
-            register_taxonomy_for_object_type( strtolower($nombre), 'product' );
-        }}
+  foreach (explode(",",fw_theme_mod('fw_extra_tax')) as $nombre ) {
+      $nombre = ucfirst($nombre);
+      $labels = array(
+          'name'                       => $nombre.'s',
+          'singular_name'              => $nombre,
+          'menu_name'                  => $nombre.'s',
+          'all_items'                  => 'Todas las '.$nombre.'s',
+          'parent_item'                => $nombre.' Padre',
+          'parent_item_colon'          => $nombre.' Padre',
+          'new_item_name'              => 'Nueva '.$nombre,
+          'add_new_item'               => 'Crear '.$nombre,
+          'edit_item'                  => 'Editar '.$nombre,
+          'update_item'                => 'Actualizar '.$nombre,
+          'separate_items_with_commas' => 'Separar con comas',
+          'search_items'               => 'Buscar '.$nombre.'s',
+          'add_or_remove_items'        => 'Agregar or eliminar '.$nombre.'s'
+      );
+      $args = array(
+        
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' =>strtolower($nombre), 'hierarchical' => true ),
+      );
+      register_taxonomy( strtolower($nombre), 'product', $args );
+      register_taxonomy_for_object_type( strtolower($nombre), 'product' );
+  }
+}
 
 
 
