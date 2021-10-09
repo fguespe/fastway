@@ -5,7 +5,7 @@ endif;
 
 $rand=generateRandomString(5);
 ?>
-<div id="<?=$el_id?>" class="swiper-products-<?=$rand?> over-hidden relative <?=$el_class?>">
+<div id="<?=$el_id?>" class="swiper-products wiper-products-<?=$rand?> over-hidden relative <?=$el_class?>">
 <div class="swiper-wrapper clear-ul">
 <?php 
 if(!$autoplay)$autoplay='false';
