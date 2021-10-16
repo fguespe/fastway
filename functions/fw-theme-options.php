@@ -2894,6 +2894,20 @@ Kirki::add_field( 'theme_config_id', array(
 		'step' => '1',
 	),
 ) );
+
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'slider',
+	'settings'    => 'shop_columns_mobile',
+	'label'       => esc_attr__( 'Shop Columns Mobile', 'fastway' ),
+	'section'     => 'section_woo_shop',
+	'default'     => 2,
+	'choices'     => array(
+		'min'  => '1',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'select',
 	'settings'    => 'fw_shop_stblock_header',
