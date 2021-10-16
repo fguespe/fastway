@@ -1211,6 +1211,7 @@ echo '<a class="btn" style="border-radius:0px;" onclick="window.location.search 
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
     function loop_columns() {
+        if(wp_is_mobile())return fw_theme_mod('shop_columns_mobile');
         return fw_theme_mod('shop_columns');
     }
 }
