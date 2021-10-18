@@ -177,8 +177,8 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         $sale_price=round($sale_price*get_currency_conversion(),get_option('woocommerce_price_num_decimals'));
         
     }else {
-        $regular_price = $product->get_regular_price();
-        $sale_price    = $product->get_sale_price();
+        $regular_price = wc_price( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ) );
+        $sale_price    = wc_price( wc_get_price_to_display( $product, array( 'price' => $product->get_sale_price() ) ) );
     }
     if($regular_price){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100),get_option('woocommerce_price_num_decimals'));
