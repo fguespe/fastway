@@ -369,8 +369,8 @@ function fw_sale($atts = []){
   $sale= $product->get_sale_price();
   $price= $product->get_regular_price();
   if($atts['type']==1)$off=fw_theme_mod('fw_label_sale');
-  else if($atts['type'==2])$off=$price-$sale;
-  else if($atts['type'==3])$off='<i class="fa fa-sale"></i>';
+  else if($atts['type']==2)$off=$price-$sale;
+  else if($atts['type']==3)$off='<i class="fa fa-sale"></i>';
 	echo '<span class="sale_text '.$atts['class'].'">'.$off.'</span>';
 }
 add_shortcode('fw_cuotas', 'fw_cuotas');
