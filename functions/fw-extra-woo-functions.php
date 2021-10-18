@@ -371,6 +371,7 @@ function fw_sale($atts = []){
   if($atts['type']==1)$off=fw_theme_mod('fw_label_sale');
   else if($atts['type']==2)$off=$price-$sale;
   else if($atts['type']==3)$off='<i class="fal fa-badge-percent"></i>';
+  
 	echo '<span class="sale_text '.$atts['class'].'">'.$off.'</span>';
 }
 add_shortcode('fw_cuotas', 'fw_cuotas');
