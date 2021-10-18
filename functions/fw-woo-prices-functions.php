@@ -176,9 +176,12 @@ function custom_dynamic_sale_price_html( $price_html, $product ) {
         if(!$sale_price || $sale_price==$regular_price)$sale_price=$regular_price*fw_product_discount_multiplier($product);
         $sale_price=round($sale_price*get_currency_conversion(),get_option('woocommerce_price_num_decimals'));
         
+    }else if(fw_theme_mod('fw_format_numbers')) {
+        $regular_price = number_format($product->get_regular_price(), 0, ',', '.');
+        $sale_price    = number_format($product->get_sale_price(), 0, ',', '.');
     }else {
-        $regular_price = number_format($product->get_regular_price(), 2, ',', '.');
-        $sale_price    = number_format($product->get_sale_price(), 2, ',', '.');
+        $regular_price = $product->get_regular_price();
+        $sale_price    = $product->get_sale_price();
     }
     if($regular_price){
         $percentage= round((( ( $regular_price - $sale_price ) / $regular_price ) * 100),get_option('woocommerce_price_num_decimals'));

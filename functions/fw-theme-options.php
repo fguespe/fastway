@@ -2459,6 +2459,18 @@ Kirki::add_field( 'theme_config_id', array(
 	)
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'switch',
+	'settings'    => 'fw_format_numbers',
+	'label'       => __( 'Format Numbers Manually', 'fastway' ),
+	'section'     => 'section_woo',
+	'default'     => 0,
+	'choices' => array(
+	    'on'  => __( 'Enable', 'fastway' ),
+	    'off' => __( 'Disable', 'fastway' )
+	)
+) );
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'switch',
