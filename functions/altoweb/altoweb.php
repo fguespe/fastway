@@ -148,7 +148,7 @@ function exitofile_page(){
    text-align:center;
    }
    </style>
-   <img src="<?php echo get_template_directory_uri().'/assets/img/exitofile.png';?>" width="600">
+   <img src="<?php echo get_template_directory_uri().'/assets/img/altoweb/exitofile.png';?>" width="600">
    </div>
    <?php
    } 
