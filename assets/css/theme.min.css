@@ -712,7 +712,7 @@ i.fad {
 }
 .fw_single_product .rating {
   margin-bottom: 5px !important;
-  display: none !important;
+  /*display:none !important;*/
 }
 .fw_single_product .summary .col-md-12 b {
   font-size: 13px;
