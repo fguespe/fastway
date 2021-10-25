@@ -204,4 +204,9 @@ jQuery(window).on('load', function() {
         });
     }
 });
+jQuery('form').submit(function(e){
+    // check logic here
+    if(jQuery('.search-field').val().length < 1)
+       e.preventDefault()
+});
 </script>
