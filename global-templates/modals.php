@@ -491,11 +491,13 @@ jQuery( ".fw_variations select" ).change(function() {
             var ee="clase-"+vara['variation_id']
             var index = 0;
             jQuery.each(jQuery(".swiper-wrapper").children(), function(i, item) {
+                console.log("slide:",i,ee)
                 if (jQuery(item).hasClass(ee)) {
-                    index = i;
+                    index = i;                
+                    console.log("ebtra")
+
                     return false;
                 }
-                console.log("slide:",item,ee,index)
             });
             swiper.slideTo(index, 500);
             
