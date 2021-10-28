@@ -201,7 +201,7 @@ function fw_single_gallery(){
         $url=explode("|",$laurl)[1];
         $clase="clase-".explode("|",$laurl)[0];
         
-        echo '<div class="swiper-slide '.$clase.'">';
+        echo '<div class="swiper-slide '.$clase.' '.$laurl.'">';
         echo  '<a href='.$url.' data-fancybox="gallery" class="d-flex align-items-center" style="background-color: transparent; position: absolute; top: 0px; left: 0px; opacity: 1;">
             <img itemprop="image" src="'.$url.'" width=400 height="auto">
             <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
