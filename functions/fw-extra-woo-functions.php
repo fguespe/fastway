@@ -190,10 +190,10 @@ function fw_single_gallery(){
 
     foreach($product->get_gallery_attachment_ids() as $galeriaimg){
         $url=wp_get_attachment_url(( $galeriaimg ));
-        if(!in_array($url,$verificaduplis)){
+        //if(!in_array($url,$verificaduplis)){
             array_push($fotos,"G|".$url);
             array_push($verificaduplis,$url);
-        }
+        //}
     }
     
     $index=0;
@@ -201,7 +201,7 @@ function fw_single_gallery(){
         $url=explode("|",$laurl)[1];
         $clase="clase-".explode("|",$laurl)[0];
         
-        echo '<div class="swiper-slide '.$clase.' '.$laurl.'">';
+        echo '<div class="swiper-slide '.$clase.'">';
         echo  '<a href='.$url.' data-fancybox="gallery" class="d-flex align-items-center" style="background-color: transparent; position: absolute; top: 0px; left: 0px; opacity: 1;">
             <img itemprop="image" src="'.$url.'" width=400 height="auto">
             <div class="lupaImg"><i class="fa fa-search-plus"></i></div>
