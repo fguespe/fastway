@@ -495,7 +495,7 @@ jQuery( ".fw_variations select" ).change(function() {
                     index = i;
                     return false;
                 }
-                console.log("slide:",ee,index)
+                console.log("slide:",item,ee,index)
             });
             swiper.slideTo(index, 500);
             
