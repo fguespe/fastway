@@ -632,7 +632,7 @@ function populatecart(){
             let stock_status=value['stock_status']
             let maximum_quantity=value['maximum_quantity']
 
-            let maxlabel='<small style="margin-left:20px;font-size:10px;">(Max:'+(maximum_quantity>1000?'+1000':maximum_quantity)+')</small>'
+            let maxlabel='<small style="margin-left:20px;font-size:10px;display:none" class="labelmax" >(Max:'+(maximum_quantity>1000?'+1000':maximum_quantity)+')</small>'
             let line_subtotal=value['line_subtotal']
             jqe+='<div class="row row-item-cart">'
             jqe+='<div class="col-2" style="padding:0px !important;text-align:center !important;"><img style="max-height:90px;" src="'+value['url']+'" class="img-cart"></div>'

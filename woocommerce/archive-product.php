@@ -56,11 +56,6 @@ if ( woocommerce_product_loop() ) {
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
-			/**
-			 * Hook: woocommerce_shop_loop.
-			 *
-			 * @hooked WC_Structured_Data::generate_product_data() - 10
-			 */
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
 		}
