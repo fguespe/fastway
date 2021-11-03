@@ -76,7 +76,11 @@ function fw_filter_body_class( $classes ) {
     if($_GET['filter_ocasion'])$classes[]='filter_ocasion';
     if($_GET['filter_bodega'])$classes[]='filter_bodega';
     if($_GET['filter_tipo'])$classes[]='filter_tipo';
+    if($_GET['filter_nombre'])$classes[]='filter_nombre';
     if($_GET['filter_tipo-de-uva'])$classes[]='filter_tipo-de-uva';
+    $sclas=implode(" ",$classes);
+    if(strpos($sclas, 'filter_') !== false )$classes[]='filter';
+    error_log($sclas);
     return $classes;
 }
 
