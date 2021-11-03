@@ -72,6 +72,11 @@ function fw_role_body_classes( $classes ) {
 add_filter( 'body_class','fw_filter_body_class' );
 function fw_filter_body_class( $classes ) {
     if($_GET['filter_marca'])$classes[]='filter_marca';
+    if($_GET['filter_categoria'])$classes[]='filter_categoria';
+    if($_GET['filter_ocasion'])$classes[]='filter_ocasion';
+    if($_GET['filter_bodega'])$classes[]='filter_bodega';
+    if($_GET['filter_tipo'])$classes[]='filter_tipo';
+    if($_GET['filter_tipo-de-uva'])$classes[]='filter_tipo-de-uva';
     return $classes;
 }
 
