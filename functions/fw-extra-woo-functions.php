@@ -604,7 +604,7 @@ function fw_cat_container($atts = [], $content = null){
     global $preset_class;
     $classname_desktop.=$preset_class?$preset_class:fw_theme_mod('fw_builder_cl_class');
     
-    echo '<li class="'.$classname_desktop.'">';
+    echo '<li class="'.$classname_desktop.' '.$fw_woo_cat.'">';
     echo '<a href="'.$link.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</a></li>';
