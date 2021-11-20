@@ -1,4 +1,5 @@
 <?php
+if($_GET['collection_id'])echo "je";
 get_header();
 
 $container   = fw_theme_mod('container-main');
