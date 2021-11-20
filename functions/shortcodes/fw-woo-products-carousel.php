@@ -14,7 +14,6 @@ $cant=1;
 while ( $products->have_posts() ) : 
     $cant++;
     $products->the_post(); 
-    
     global $product;
     echo '<div class="swiper-slide '.get_attrClasses($product).'" data-swiper-autoplay="'.$slider_delay.'">';
     wc_get_template_part( 'content','product' ); 
