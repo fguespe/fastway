@@ -9,8 +9,8 @@ header("Pragma: no-cache");
 
 if(isset($_POST['submit'])) {
         
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+   // ini_set('display_startup_errors', 1);
+   // error_reporting(E_ALL);
     $host=$_SERVER['HTTP_HOST'];
     if($host==='fastway')$con=mysqli_connect('localhost', 'root', 'root', 'ecom3');
     else {
