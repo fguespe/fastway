@@ -3935,6 +3935,15 @@ Kirki::add_field( 'theme_config_id', array(
 	),
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'text',
+	'settings'    => 'fw_prod_custom_url',
+	'label'       => __( 'Custom Url Field', 'fastway' ),
+    'description' => '*hansgbr',
+	'section'     => 'section_woo_loop',
+	'default'     => '',
+));
+
 
 Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
