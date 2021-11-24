@@ -445,10 +445,9 @@ function fw_loop_meta($atts = [], $content = null){
 add_shortcode('fw_loop_container', 'fw_loop_container');
 function fw_loop_container($atts = [], $content = null){
     global $product;
-    if(fw_theme_mod('fw_prod_custom_url')){  
-      $url=get_post_meta($product->id,fw_theme_mod('fw_prod_custom_url'),true);
-      echo '<a href="'.$product->get_permalink($product->id).'">';
-    }else echo '<a href="'.$product->get_permalink($product->id).'">';
+    $url=$product->get_permalink($product->id);
+    if(fw_theme_mod('fw_prod_custom_url'))$url=get_post_meta($product->id,fw_theme_mod('fw_prod_custom_url'),true);echo '<a href="'.$product->get_permalink($product->id).'">';
+    echo '<a href="'.$url.'">';
     echo do_shortcode(stripslashes(htmlspecialchars_decode($content)));
     echo '</a>';
 
