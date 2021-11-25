@@ -60,38 +60,46 @@ function fw_single_related($atts){
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        //if(!empty($crelated))$myarray =$crelated;
-        //else $myarray = wc_get_related_products($product->id,12);
+        if(!empty($crelated))$myarray =$crelated;
+        else $myarray = wc_get_related_products($product->id,12);
         
+        // The Query
 		    $tax_query   = WC()->query->get_tax_query();
-        $tax_query[] = array(
-            'taxonomy' => 'product_cat',
-            'field'    => 'slug', 
-            'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
-            'operator' => 'NOT IN',
-        );
+        
         $marca = get_the_terms( $product->ID, 'marca' );
         if($marca ){
           $marca = [$marca[0]->name];
-          error_log(print_r($marca,true));
           $tax_query[] = array(
             'taxonomy' => 'marca',
             'field'    => 'slug', 
             'terms'    => $marca,
             'operator' => 'IN', 
           );
+          $meta_query[] = array('key'     => '_stock_status','order' => 'DESC','value'   => 'instock',);
+          $args = array(
+            'post_type'           => 'product',
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => 1,
+            'orderby'        => 'meta_value_num',
+            'order'          => 'DESC',
+            'meta_key'          => '_stock',
+            'meta_query'          => $meta_query,
+            'tax_query'           => $tax_query,
+          );
+        }else{
+          $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug', 
+            'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
+            'operator' => 'NOT IN',
+          );
+          $args = array(
+            'post_type' => 'product',
+            'post__in'  => $myarray,
+            'tax_query' => $tax_query,
+          );
         }
-        $meta_query[] = array('key'     => '_stock_status','order' => 'DESC','value'   => 'instock',);
-        $args = array(
-          'post_type'           => 'product',
-          'post_status'         => 'publish',
-          'ignore_sticky_posts' => 1,
-          'orderby'        => 'meta_value_num',
-          'order'          => 'DESC',
-          'meta_key'          => '_stock',
-          'meta_query'          => $meta_query,
-          'tax_query'           => $tax_query,
-        );
+        
         // The Query
         $products = new WP_Query( $args );
         $contada=0;
