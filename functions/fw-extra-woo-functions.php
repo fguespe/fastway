@@ -75,7 +75,8 @@ function fw_single_related($atts){
           'post_type'           => 'product',
           'post_status'         => 'publish',
           'ignore_sticky_posts' => 1,
-          'order' => 'DESC',
+          'orderby'        => '_stock_status',
+          'order'          => 'DESC',
           'meta_query'          => $meta_query,
           'tax_query'           => $tax_query,
         );
