@@ -60,8 +60,8 @@ function fw_single_related($atts){
   <div class="swiper-related over-hidden relative swiper-container-horizontal">
     <div class="swiper-wrapper">';
 
-        if(!empty($crelated))$myarray =$crelated;
-        else $myarray = wc_get_related_products($product->id,12);
+        //if(!empty($crelated))$myarray =$crelated;
+        //else $myarray = wc_get_related_products($product->id,12);
         
 		    $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
