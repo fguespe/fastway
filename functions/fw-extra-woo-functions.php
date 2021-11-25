@@ -70,6 +70,7 @@ function fw_single_related($atts){
             'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
             'operator' => 'NOT IN', // Excluded
         );
+        
         $args = array(
             'post_type' => 'product',
             'post__in'  => $myarray,
