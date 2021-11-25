@@ -70,11 +70,13 @@ function fw_single_related($atts){
             'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
             'operator' => 'NOT IN', // Excluded
         );
-        
+        $args['meta_query'][] = array('key'     => '_stock_status','value'   => 'instock',);
         $args = array(
-            'post_type' => 'product',
-            'post__in'  => $myarray,
-            'tax_query' => $tax_query,
+          'post_type'           => 'product',
+          'post_status'         => 'publish',
+          'ignore_sticky_posts' => 1,
+          'meta_query'          => $meta_query,
+          'tax_query'           => $tax_query,
         );
         // The Query
         $products = new WP_Query( $args );
