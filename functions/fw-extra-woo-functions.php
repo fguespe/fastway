@@ -66,20 +66,21 @@ function fw_single_related($atts){
 		    $tax_query   = WC()->query->get_tax_query();
         $tax_query[] = array(
             'taxonomy' => 'product_cat',
-            'field'    => 'slug', // Or 'name' or 'term_id'
+            'field'    => 'slug', 
             'terms'    => array('','sin-categorizar','sin-categoria','uncategorized'),
-            'operator' => 'NOT IN', // Excluded
+            'operator' => 'NOT IN',
         );
         $marca = get_the_terms( $product->ID, 'marca' );
-        $marca = [$marca[0]->name];
-        error_log(print_r($marca,true));
-        $tax_query[] = array(
-          'taxonomy' => 'marca',
-          'field'    => 'slug', // Or 'name' or 'term_id'
-          'terms'    => $marca,
-          'operator' => 'IN', // Excluded
-        );
-
+        if($marca ){
+          $marca = [$marca[0]->name];
+          error_log(print_r($marca,true));
+          $tax_query[] = array(
+            'taxonomy' => 'marca',
+            'field'    => 'slug', 
+            'terms'    => $marca,
+            'operator' => 'IN', 
+          );
+        }
         $meta_query[] = array('key'     => '_stock_status','order' => 'DESC','value'   => 'instock',);
         $args = array(
           'post_type'           => 'product',
