@@ -65,9 +65,8 @@ function fw_single_related($atts){
         
         // The Query
 		    $tax_query   = WC()->query->get_tax_query();
-        
         $marca = get_the_terms( $product->ID, 'marca' );
-        if($marca ){
+        if(is_array($marca) ){
           $marca = [$marca[0]->name];
           $tax_query[] = array(
             'taxonomy' => 'marca',
