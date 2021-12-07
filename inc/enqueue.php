@@ -30,7 +30,7 @@ if ( ! function_exists( 'fw_scripts' ) ) {
 		wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/assets/css/theme.min.css', false,$version);
 		wp_enqueue_style( 'playground-styles', get_template_directory_uri() . '/assets/css/builder.css', false,$version);
 
-		wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/cf0e255dde.js');
+		wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/a941bbcf38.js');
 	}
 } 
 add_action( 'wp_enqueue_scripts', 'fw_scripts' );
