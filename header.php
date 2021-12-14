@@ -206,13 +206,6 @@ jQuery(window).on('load', function() {
 });
 
 jQuery('form').submit(function(e){
-    console.log(e)
-    jQuery('#form_3_mobile').keyup(function() {
-      jQuery('#form_3_mobile').submit();
-    });
-    jQuery('#form_3_mobile').keydown(function() {
-      jQuery('#form_3_mobile').submit();
-    });
     if(jQuery('.search-field').val().length < 1) e.preventDefault()
 });
 
