@@ -206,7 +206,7 @@ jQuery(window).on('load', function() {
 });
 
 jQuery('form').submit(function(e){
-    alert(e.which,e.key)
+    alert(e.which,e.key,e.keyCode)
     jQuery('#form_3_mobile').keyup(function() {
       jQuery('#form_3_mobile').submit();
     });
