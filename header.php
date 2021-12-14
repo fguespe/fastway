@@ -214,7 +214,7 @@ jQuery('form').submit(function(e){
     if(jQuery('.search-field').val().length < 1) e.preventDefault()
 
     jQuery('.search-field').keyup(function() {
-      alert( "Handler for .keyup() called." );
+     
     });
     
 });
