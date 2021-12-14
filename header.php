@@ -171,7 +171,8 @@ a.linkazul{
 </style>
 
 <script >
-function mostrar_submenu (id) {
+  
+function mostrar_submenu(id) {
   jQuery('#submenu_'+id).addClass('opened');
 }
 jQuery('.submenu-layer-1 .menu-mobile-back').click(function(){
@@ -181,6 +182,8 @@ jQuery('.submenu-layer-2 .menu-mobile-back').click(function(){
   jQuery('.submenu-layer-2').removeClass('opened');
 });
 jQuery(window).on('load', function() {
+ 
+
     if(jQuery(document).height()>1400){
         jQuery(window).scroll(function() {
             var sticky = jQuery('header')
@@ -204,9 +207,15 @@ jQuery(window).on('load', function() {
         });
     }
 });
+
 jQuery('form').submit(function(e){
     // check logic here
-    if(jQuery('.search-field').val().length < 1)
-       e.preventDefault()
+    alert(e)
+    if(jQuery('.search-field').val().length < 1) e.preventDefault()
+
+    jQuery('.search-field').keyup(function() {
+      alert( "Handler for .keyup() called." );
+    });
+    
 });
 </script>
