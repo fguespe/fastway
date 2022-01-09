@@ -736,7 +736,7 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
         <script type="text/javascript">
         function buscador(){
           let value=jQuery("#nama").val()
-          location.href="/wp-admin/edit.php?s="+value
+          location.href="/wp-admin/edit.php?post_type=product&s="+value
         }
         jQuery("#nama").on("keypress", function (event) {
           var keyPressed = event.keyCode || event.which;
