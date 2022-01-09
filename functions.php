@@ -747,7 +747,7 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
           }
         });
         </script>
-        <styles>
+        <style>
         .search-box input#nama{
           width:60% !important;
           margin:0px !important;
@@ -760,7 +760,7 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
           padding:0px !important;
           display:inline !important;
           }
-          </styles>
+          </style>
         ';
     }
 }
