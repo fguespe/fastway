@@ -749,7 +749,7 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
         </script>
         <style>
         .search-box input#nama{
-          width:60% !important;
+          width:69% !important;
           margin:0px !important;
           padding:0px !important;
           display:inline !important;
