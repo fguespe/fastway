@@ -732,7 +732,7 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
         $args['textarea_rows'] = 6;
         echo '<p class="search-box" style="display:block;float:none">
         <input type="text" name="nama" id="nama" >
-        <input type="button" onclick="buscador()" class="button" value="Buscar productos"></p>
+        <input type="button" onclick="buscador()" class="button" value="Buscar"></p>
         <script type="text/javascript">
         function buscador(){
           let value=jQuery("#nama").val()
@@ -747,6 +747,20 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
           }
         });
         </script>
+        <styles>
+        .search-box input#nama{
+          width:60% !important;
+          margin:0px !important;
+          padding:0px !important;
+          display:inline !important;
+          }
+          .search-box input.button{
+          width:30% !important;
+          margin:0px !important;
+          padding:0px !important;
+          display:inline !important;
+          }
+          </styles>
         ';
     }
 }
