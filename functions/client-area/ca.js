@@ -60,7 +60,8 @@ jQuery(document).ready( function(jQuery) {
 	if(document.documentElement.lang && document.documentElement.lang.includes('es')){
 		jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
 		console.log('entra')
-		jQuery('#wpb_visual_composer .hndle ui-sortable-handle').html('Pestaña descripción');
+		jQuery('#wpb_visual_composer .postbox-header .hndle ui-sortable-handle').html('Pestaña descripción');
+		jQuery('#wpb_visual_composer .postbox-header .hndle ui-sortable-handle').text('Pestaña descripción');
 		jQuery('#rg_forms_dashboard h2 span').html('Formularios');
 		
 	}
