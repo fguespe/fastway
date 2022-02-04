@@ -59,6 +59,7 @@ jQuery(document).ready( function(jQuery) {
 	console.log(document.documentElement.lang)
 	if(document.documentElement.lang && document.documentElement.lang.includes('es')){
 		jQuery('#gf_user_pending_activate_link').text('Habilitar Usuario')
+		console.log('entra')
 		jQuery('#wpb_visual_composer .hndle ui-sortable-handle').html('Pestaña descripción');
 		jQuery('#rg_forms_dashboard h2 span').html('Formularios');
 		
