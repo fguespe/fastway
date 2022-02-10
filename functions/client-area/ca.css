@@ -613,7 +613,7 @@ display:none
 }
 
 
-@media prints{ 
+@media print{ 
 	h1,.wp-heading-inline,
 	.page-title-action,
 	#wpadminbar,
