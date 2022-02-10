@@ -613,7 +613,7 @@ display:none
 }
 
 
-@media print{ 
+@media prints{ 
 	h1,.wp-heading-inline,
 	.page-title-action,
 	#wpadminbar,
@@ -685,6 +685,10 @@ display:none
 		display: block !important;;
 	}
 }
+
+
+@media print {   .noprint,  .no-print, 	.no-print * {         display: none !important;     } }
+
 .auto-fold .interface-interface-skeleton{
 	left:0px;
 }
