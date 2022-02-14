@@ -549,7 +549,7 @@ function fw_loop_labels($atts = [], $content = null){
     
     if($product->get_shipping_class()==$atts['id'] && $atts['type']=='shipping-class'  ){//envio=gratis
         echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_shipping_free_label').'</div>';
-    }else if($atts['type']=='last' && $product->get_stock_quantity()==1){
+    }else if($atts['type']=='last' && $product->get_stock_quantity()==30){
         echo '<div class="envio-gratis-tag grupo-envio-6" >'.'Último Disponible!'.'</div>';
     }else if($atts['type']=='min_price' && $product->get_price()>=$atts['price']){
       echo '<div class="envio-gratis-tag grupo-envio-6" ><i class="fal fa-shipping-fast"></i> '.fw_theme_mod('fw_shipping_free_label').'</div>';
