@@ -612,7 +612,9 @@ display:none !important;
 display:none
 }
 
-
+.powered-by-bookly{
+	display: none !important;;
+}
 @media print{ 
 	h1,.wp-heading-inline,
 	.page-title-action,
