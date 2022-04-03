@@ -55,7 +55,13 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
  if(fw_theme_mod('fw_ml_stock_slm_test'))add_action('save_post_shop_order', 'fw_ml_update_stock', 10, 1);
  else add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 }
+function pl_save_post_shop_order( $post_id, $post, $update ){
 
+    // Get an instance of the WC_Order object (in a plugin)
+    $order = new WC_Order( $post_id ); 
+    fw_ml_update_stock($order->id);
+  
+}
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id )return;
     try{
