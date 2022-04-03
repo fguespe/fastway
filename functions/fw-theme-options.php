@@ -1493,7 +1493,7 @@ if(is_devadmin()){
 	Kirki::add_field( 'theme_config_id', array(
 		'type'        => 'switch',
 		'settings'    => 'fw_ml_stock_slm_test',
-		'label'       => __( 'Descontar stock ml->web', 'fastway' ).(isAltoweb()?'(CR)':''),
+		'label'       => __( 'Descontar stock ml->web (siempre)', 'fastway' ).(isAltoweb()?'(CR)':''),
 		'section'     => 'section_meli',
 		'default'     => 0,
 		'choices' => array(
