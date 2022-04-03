@@ -73,7 +73,7 @@ function fw_ml_update_stock( $order_id ) {
             $access_token=$nuevos['body']->access_token;
             $refresh_token=$nuevos['body']->refresh_token;
             if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
-            save_post_shop_order
+            
             $order = wc_get_order( $order_id );
             foreach ( $order->get_items() as $item_id => $item ) {
                 $parent_sku=null;
