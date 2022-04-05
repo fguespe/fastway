@@ -66,7 +66,7 @@ function pl_save_post_shop_order( $post_id, $post, $update ){
 }
 function fw_ml_update_stock( $order_id ) {
     if ( ! $order_id ){
-      error_log("no entro")
+      error_log("no entro");
       return;
     }
 
