@@ -30,6 +30,7 @@ function mllog_options_page(){
       }
   } ?>
   <h2>Log mercadolibre</h2>
+  <small>Recibe las ventas de ML</p>
   <pre class="log_fw" ><?=$log_total?></pre>
   <style>
   .log_fw{
@@ -56,14 +57,19 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
  else add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 }
 function pl_save_post_shop_order( $post_id, $post, $update ){
-
+    
     // Get an instance of the WC_Order object (in a plugin)
     $order = new WC_Order( $post_id ); 
+    $order->add_order_note("entra ".$order->id);
     fw_ml_update_stock($order->id);
   
 }
 function fw_ml_update_stock( $order_id ) {
-    if ( ! $order_id )return;
+    if ( ! $order_id ){
+      error_log("no entro")
+      return;
+    }
+
     try{
             if(get_post_meta( $order_id, '_ml_done' )=='yes' )return;
             if(!fw_theme_mod('fw_ml_on'))return;
