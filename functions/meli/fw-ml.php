@@ -60,7 +60,7 @@ function pl_save_post_shop_order( $post_id, $post, $update ){
     
     // Get an instance of the WC_Order object (in a plugin)
     $order = new WC_Order( $post_id ); 
-    $order->add_order_note("LOG ".$order->id);
+    //$order->add_order_note("LOG ".$order->id);
     fw_ml_update_stock($order->id);
   
 }
