@@ -88,7 +88,7 @@ function fw_ml_update_stock( $order_id ) {
             
             $order = wc_get_order( $order_id );
 
-            $noteg="MERCADOLIBRE"."\n";
+            $noteg="STOCK MERCADOLIBRE"."\n";
             foreach ( $order->get_items() as $item_id => $item ) {
                 $parent_sku=null;
                 if( $item['variation_id'] > 0 ){
