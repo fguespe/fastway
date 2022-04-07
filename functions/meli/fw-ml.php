@@ -104,10 +104,10 @@ function fw_ml_update_stock( $order_id ) {
                 $product = wc_get_product($product_id);
                 $sku=$parent_sku?$parent_sku:$product->get_sku(); 
                 
-                $note="Nuevo Proceso: ".$product_id."-".$sku."\n";
+                /*$note="Nuevo Proceso: ".$product_id."-".$sku."\n";
                 if($product_id == $item['product_id'])$note.="Es un prod simple\n";
                 else if($product_id == $item['variation_id'])$note.="Es una variacion\n";
-                $order->add_order_note($note);
+                $order->add_order_note($note);*/
 
 
                 if(strpos( $sku, 'MLA' ) !== false){
