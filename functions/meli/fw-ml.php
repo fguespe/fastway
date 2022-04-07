@@ -147,7 +147,7 @@ function fw_ml_update_stock( $order_id ) {
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
                   if($result['httpCode']==200)$noteg.=$result['httpCode'].":".$sku.' -> '.$stock."\n";
-                  else $noteg.=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
+                  else $noteg.=$result['httpCode'].": ERROR ".$sku.' a stock '.$stock."\n";
                   $note.= $permalink;
                   $order->add_order_note( $note );
 
