@@ -69,7 +69,7 @@ function fw_ml_update_stock( $order_id ) {
       error_log("no entro");
       return;
     }
-
+    
     try{
             if(get_post_meta( $order_id, '_ml_done' )=='yes' )return;
             if(!fw_theme_mod('fw_ml_on'))return;
@@ -87,6 +87,8 @@ function fw_ml_update_stock( $order_id ) {
             if(!empty($refresh_token) && !empty($access_token))saveconfig($iduser,$access_token,$refresh_token);
             
             $order = wc_get_order( $order_id );
+
+            $noteg='MERCADOLIBRE:\n';
             foreach ( $order->get_items() as $item_id => $item ) {
                 $parent_sku=null;
                 if( $item['variation_id'] > 0 ){
@@ -144,9 +146,8 @@ function fw_ml_update_stock( $order_id ) {
                   }else{
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
-                  
-                  if($result['httpCode']==200)$note=$result['httpCode'].": Se actualizo el prod/var con id:".$sku.' a stock '.$stock."\n";
-                  else $note=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
+                  if($result['httpCode']==200)$noteg.=$result['httpCode'].":".$sku.' -> '.$stock."\n";
+                  else $noteg=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
                   $note.= $permalink;
                   $order->add_order_note( $note );
 
@@ -157,6 +158,8 @@ function fw_ml_update_stock( $order_id ) {
                 }
 
             }
+
+            $order->add_order_note( $noteg );
     }catch(Exeption $e){
             custom_log($e);
             error_log($e);
