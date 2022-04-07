@@ -119,7 +119,7 @@ function fw_ml_update_stock( $order_id ) {
                   if(count($vars)>0){
                       $var_id=$vars[0]->id;//es unica por como funciona woo
                       $note=$var_id." - es un prod variable \n";
-                      $order->add_order_note($note);
+                      //$order->add_order_note($note);
 
                       $item = array(
                         "variations" => array(
@@ -147,7 +147,7 @@ function fw_ml_update_stock( $order_id ) {
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
                   if($result['httpCode']==200)$noteg.=$result['httpCode'].":".$sku.' -> '.$stock."\n";
-                  else $noteg=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
+                  else $noteg.=$result['httpCode'].": Hubo un error al actualizar id:".$sku.' a stock '.$stock."\n";
                   $note.= $permalink;
                   $order->add_order_note( $note );
 
