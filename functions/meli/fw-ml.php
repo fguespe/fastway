@@ -53,10 +53,8 @@ function mllog_options_page(){
 
 if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
- if(fw_theme_mod('fw_ml_stock_slm_test'))add_action('save_post_shop_order', 'pl_save_post_shop_order', 10, 3);
- else add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
  if(fw_theme_mod('fw_ml_stock_slm_test'))add_action('woocommerce_reduce_order_stock','woo_order_status_change_custom');
-
+ else add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
 
 }
 function woo_order_status_change_custom($order) {
