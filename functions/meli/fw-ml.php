@@ -111,7 +111,7 @@ function fw_ml_update_stock( $order_id ) {
 
 
                 if(strpos( $sku, 'MLA' ) !== false){
-                  $stock=$product->get_stock_quantity();
+                  $stock=$product->get_stock_quantity()-$item->get_quantity();
                   if($stock<0)$stock=0;
                   $prod=$meli->get('/items/'.$sku, array('access_token' => $access_token));
                   $vars=$prod['body']->variations;
