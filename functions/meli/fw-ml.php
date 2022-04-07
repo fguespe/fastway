@@ -60,7 +60,7 @@ function pl_save_post_shop_order( $post_id, $post, $update ){
     
     // Get an instance of the WC_Order object (in a plugin)
     $order = new WC_Order( $post_id ); 
-    $order->add_order_note("entra ".$order->id);
+    $order->add_order_note("LOG ".$order->id);
     fw_ml_update_stock($order->id);
   
 }
@@ -118,7 +118,7 @@ function fw_ml_update_stock( $order_id ) {
                   $permalink=$prod['body']->permalink;
                   if(count($vars)>0){
                       $var_id=$vars[0]->id;//es unica por como funciona woo
-                      $note=$var_id." - es un prod variable \n";
+                      //$note=$var_id." - es un prod variable \n";
                       //$order->add_order_note($note);
 
                       $item = array(
@@ -130,9 +130,9 @@ function fw_ml_update_stock( $order_id ) {
                         )
                       );
                   }else{
-                    $note=$sku." - es un prod simple \n";
+                    //$note=$sku." - es un prod simple \n";
                     //$order->add_order_note( $note);
-                    //error_log($note);
+           
 
                     $item = array("available_quantity"=>$stock);
                   }
@@ -146,9 +146,9 @@ function fw_ml_update_stock( $order_id ) {
                   }else{
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
-                  if($result['httpCode']==200)$noteg.="<a href='ja'>".$sku."</a>"." ->".$stock."\n";
+                  if($result['httpCode']==200)$noteg.="<a href='".$permalink."'>".$sku."</a>"." ->".$stock."\n";
                   else $noteg.="ERROR ".$sku." -> ".$stock."\n";
-                  $note.= $permalink;
+                  //$note.= $permalink;
                   $order->add_order_note( $note );
 
                   ## HERE you Create/update your custom post meta data to avoid repetition
