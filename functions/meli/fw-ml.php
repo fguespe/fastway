@@ -55,12 +55,23 @@ if(fw_theme_mod('fw_ml_stock_web_a_ml')){
   //esata corre antes!! add_action('woocommerce_checkout_order_processed', 'fw_ml_update_stock', 10, 1);
  if(fw_theme_mod('fw_ml_stock_slm_test'))add_action('save_post_shop_order', 'pl_save_post_shop_order', 10, 3);
  else add_action('woocommerce_thankyou', 'fw_ml_update_stock', 10, 1);
+ if(fw_theme_mod('fw_ml_stock_slm_test'))add_action('woocommerce_order_status_changed','woo_order_status_change_custom');
+
+
 }
+function woo_order_status_change_custom($order_id,$old_status,$new_status) {
+  
+    // Get an instance of the WC_Order object (in a plugin)
+    $order = new WC_Order( $post_id ); 
+    $order->add_order_note("woocommerce_order_status_changed ".$order->id);
+    fw_ml_update_stock($order->id);
+  }
+
 function pl_save_post_shop_order( $post_id, $post, $update ){
     
     // Get an instance of the WC_Order object (in a plugin)
     $order = new WC_Order( $post_id ); 
-    //$order->add_order_note("LOG ".$order->id);
+    $order->add_order_note("save_post_shop_order ".$order->id);
     fw_ml_update_stock($order->id);
   
 }
