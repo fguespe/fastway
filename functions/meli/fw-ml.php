@@ -146,10 +146,8 @@ function fw_ml_update_stock( $order_id ) {
                   }else{
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
-                  if($result['httpCode']==200)$noteg.="<a href='".$permalink."'>".$sku."</a>"." ->".$stock."\n";
+                  if($result['httpCode']==200)$noteg.="<a target='_blank' href='".$permalink."'>".$sku."</a>"." ->".$stock."\n";
                   else $noteg.="ERROR ".$sku." -> ".$stock."\n";
-                  //$note.= $permalink;
-                  //$order->add_order_note( $note );
 
                   ## HERE you Create/update your custom post meta data to avoid repetition
                   update_post_meta( $order_id, '_ml_done', 'yes' );
