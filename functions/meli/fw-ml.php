@@ -146,8 +146,8 @@ function fw_ml_update_stock( $order_id ) {
                   }else{
                     $result=$meli->put('/items/'.$sku, $item, array('access_token' => $access_token));
                   }
-                  if($result['httpCode']==200)$noteg.=$result['httpCode'].":"."<a href='ja'>".$sku."</a>"." ->"".$stock."\n";
-                  else $noteg.=$result['httpCode'].": ERROR ".$sku.' -> '.$stock."\n";
+                  if($result['httpCode']==200)$noteg.="<a href='ja'>".$sku."</a>"." ->".$stock."\n";
+                  else $noteg.="ERROR ".$sku." -> ".$stock."\n";
                   $note.= $permalink;
                   $order->add_order_note( $note );
 
