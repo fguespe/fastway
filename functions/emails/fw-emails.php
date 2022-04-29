@@ -279,6 +279,7 @@ function bbloomer_add_css_to_emails( $css, $email ) {
 
 add_filter( 'gform_notification', 'change_autoresponder_email',10,3);
 function change_autoresponder_email( $notification, $form, $entry ) {
+    
     $user_email=$entry[$notification['to']];
     $user=get_user_by( 'email', $user_email);
     if ( $notification['event']=='gfur_user_activation' ||  $notification['name'] == 'User Pending' || $notification['name'] == 'Alta Mayorista' ) {
@@ -287,6 +288,7 @@ function change_autoresponder_email( $notification, $form, $entry ) {
     }else if ( $notification['event']=='gfur_user_activated' ||  $notification['name'] == 'User Activation' ) {
         $notification['subject'] = fw_parse_subject('gf_activated',get_account_variables_for_templates($user));
         $notification['message'] =  fw_parse_mail_accounts('gf_activated',get_account_variables_for_templates($user));
+        //Aca esta la clave para desactivar default! cambiar el nombre!
     }else if ( ($notification['name'] == 'Admin Notification' || $notification['name'] == 'Notificación del administrador' || $notification['name'] == 'Contacto Mayorista') && $notification['toType']=='email' ) {
         $notification['to'] = getMailQueRecibe();
     }
