@@ -375,7 +375,7 @@ function verificarFields(first=false){
 
   jQuery('#billing_form input').each(function(index,data) {
 
-    console.log('disable',disable)
+    //console.log('disable',disable)
     
     var element = jQuery(this);
     let type=element.attr('type')
@@ -386,9 +386,11 @@ function verificarFields(first=false){
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
   
     if (req && type!='checkbox' && element.val() == "") {
+      console.log('entra1')
       disable = true;
       element.addClass('enrojo')
     }else if (req && type=='checkbox' && !element.is(":checked")) {
+      console.log('entra2')
       disable = true;
       element.addClass('enrojo')
     }else{
@@ -582,7 +584,7 @@ function checkpostalCode(){
   }
 }
 function resetShippingFake(){
-  console.log('paso:',paso)
+  //console.log('paso:',paso)
   let subt=jQuery('.cart-subtotal bdi').text()
   let tot=jQuery('.order-subtotal bdi').text()
   if(paso<3 && subt!=tot){jQuery('.order-total').hide()
