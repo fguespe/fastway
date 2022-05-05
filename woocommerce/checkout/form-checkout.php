@@ -362,10 +362,10 @@ function verificarEmail(num){
     }else{
       jQuery('#account_password').removeClass('enrojo')
     }
-    sacar1(!e_valid || !p_valid,8)
+    cambiarContinuar(!e_valid || !p_valid,8)
   }else{
     //console.log('campo pass NO existe',e_valid)
-    sacar1(!e_valid ,9)
+    cambiarContinuar(!e_valid ,9)
   }
   
   emailExists(email);
@@ -397,15 +397,14 @@ function verificarFields(first=false){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
-  }
-  sacar1(disable,4)
+  }else cambiarContinuar(disable,4)
 }
 function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
     jQuery(this).prop('checked', false);
     jQuery(this).parent().removeClass('active')
   });
-  sacar1(true,5)
+  cambiarContinuar(true,5)
 }
 jQuery(document).ready( function(jQuery) {
 
@@ -510,7 +509,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' h1').hide()
   jQuery('.paso-'+type+' button').hide()
 }
-function sacar1(estado,msg){
+function cambiarContinuar(estado,msg){
     console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
@@ -525,7 +524,7 @@ function nextpaso(){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
-    sacar1(true,1)
+    cambiarContinuar(true,1)
 
     if(paso==3 && '<?=!hasShipping()?>'){//sin envios
       jQuery(document.body).trigger("update_checkout"); 
@@ -544,7 +543,7 @@ function nextpaso(){
     }
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
-    sacar1(true,2)
+    cambiarContinuar(true,2)
     
   }else if(paso==5){
    /* if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
