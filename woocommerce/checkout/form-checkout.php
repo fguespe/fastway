@@ -315,8 +315,8 @@ function getDataEmail(email){
 async function emailExists(email){
 
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
-
-  if(verifEmail!=true || !email || logged)return;
+  console.log('entra',verifEmail,email,logged)
+  if(!verifEmail || !email || logged)return;
   
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
