@@ -379,14 +379,14 @@ function verificarFields(first=false){
     
     var element = jQuery(this);
     let type=element.attr('type')
-    let req=type!='checkbox'?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
+    let req=(type!='checkbox')?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
     
     //rellena
     if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
   
     if (req && type!='checkbox' && element.val() == "") {
-      console.log('entra1',req,type,element.val())
+      console.log('field:',req,type)
       disable = true;
       element.addClass('enrojo')
     }else if (req && type=='checkbox' && !element.is(":checked")) {
@@ -436,7 +436,7 @@ jQuery(document).ready( function(jQuery) {
 
   jQuery('#billing_form input').on('input', function(e){
     
-    verificarFields()
+    if(paso>1)verificarFields()
   })
   
 
