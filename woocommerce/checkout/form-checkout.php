@@ -314,10 +314,10 @@ function getDataEmail(email){
 
 async function emailExists(email){
 
+  if( !email || logged)return;
+
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
   console.log('!verifEmail:',!verifEmail,email,logged)
-  if(!verifEmail || !email || logged)return;
-  
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
     const data = await getDataEmail(email)
