@@ -375,7 +375,7 @@ function verificarFields(first=false){
 
   jQuery('#billing_form input').each(function(index,data) {
 
-    console.log(disable)
+    console.log('disable',disable)
     
     var element = jQuery(this);
     let type=element.attr('type')
@@ -395,14 +395,12 @@ function verificarFields(first=false){
       element.removeClass('enrojo')
     }
   });
-  console.log(disable)
   if(!disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
 
-  console.log(disable)
   cambiarContinuar(disable,4)
 }
 function unselect(type){
