@@ -417,7 +417,7 @@ jQuery(document).ready( function(jQuery) {
   unselect('payment_method')
 
   verificarEmail(2);
-  verificarFields(true);
+  verificarFields(true,1);
 
   jQuery('#billing_email').on('input', function(e){
     verificarEmail(3);
@@ -428,7 +428,7 @@ jQuery(document).ready( function(jQuery) {
 
   jQuery('#billing_form input').on('input', function(e){
     console.log(e)
-    verificarFields()
+    verificarFields(false,2);
   })
   
 
@@ -455,14 +455,13 @@ function editpaso(ppaso){
     resetStep('shipping')
     resetStep('pagos')
     verificarEmail(1)
-    //verificarFields()
     paso=1
   }else if(ppaso==2){//shipping
     resetStep('datos')
     jQuery('.paso-datos').show()
     resetStep('shipping')
     resetStep('pagos')
-    verificarFields()
+    verificarFields(false,3)
     paso=2
   }else if(ppaso==3){
     resetStep('shipping')
@@ -516,7 +515,7 @@ function nextpaso(){
   if(paso==2){
     fillNextStep('cuenta')
     jQuery('.paso-datos').show()
-    verificarFields();
+    verificarFields(false,4);
 
   }else if(paso==3){
     fillNextStep('datos')
@@ -597,7 +596,7 @@ jQuery(document).on('updated_checkout', function(){
 
   //Verificar all!
   verificarEmail();
-  verificarFields();
+  verificarFields(false,5);
   if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}else if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
