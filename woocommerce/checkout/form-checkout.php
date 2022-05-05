@@ -367,6 +367,7 @@ function verificarEmail(num){
   emailExists(email);
 }
 function verificarFields(first=false){
+  console.log('entra')
   var disable=false
 
   jQuery('#billing_form input').each(function(index,data) {
