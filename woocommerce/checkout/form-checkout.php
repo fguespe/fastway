@@ -315,7 +315,7 @@ function getDataEmail(email){
 async function emailExists(email){
 
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
-  console.log('entra',verifEmail,email,logged)
+  console.log('verifEmail:',verifEmail,email,logged)
   if(!verifEmail || !email || logged)return;
   
   try {
