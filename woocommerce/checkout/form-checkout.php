@@ -315,7 +315,10 @@ function getDataEmail(email){
 async function emailExists(email){
 
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
-  if(!verifEmail || !email || logged)return;
+  if(!verifEmail || !email || logged){
+    
+    return;
+  }
   
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
@@ -328,12 +331,13 @@ async function emailExists(email){
           jQuery('#account_password').hide();
           jQuery('.existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', true);
-      }else{
+    }else{
           jQuery('.existe').hide();
           jQuery('#account_password').show();
           jQuery('.no_existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', false);
-      }
+    }
+
   } catch(err) {
     console.log(err);
   }
@@ -358,10 +362,8 @@ function verificarEmail(num){
     }else{
       jQuery('#account_password').removeClass('enrojo')
     }
-    sacar1(!e_valid || !p_valid,8)
   }else{
     //console.log('campo pass NO existe',e_valid)
-    sacar1(!e_valid ,9)
   }
   
   emailExists(email);
