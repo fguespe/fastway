@@ -362,8 +362,10 @@ function verificarEmail(num){
     }else{
       jQuery('#account_password').removeClass('enrojo')
     }
+    sacar1(!e_valid || !p_valid,8)
   }else{
     //console.log('campo pass NO existe',e_valid)
+    sacar1(!e_valid ,9)
   }
   
   emailExists(email);
@@ -509,7 +511,7 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' button').hide()
 }
 function sacar1(estado,msg){
-    //console.log(estado,msg)
+    console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
