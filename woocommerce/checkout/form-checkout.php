@@ -314,6 +314,9 @@ function getDataEmail(email){
 
 async function emailExists(email){
 
+  let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
+  if(!verifEmail || !email || logged)return;
+  
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
     const data = await getDataEmail(email)
@@ -361,7 +364,7 @@ function verificarEmail(num){
     sacar1(!e_valid ,9)
   }
   
-  if( email && !logged && '<?=fw_theme_mod('fw_client_admin_verificaremail')?>')emailExists(email);
+  emailExists(email);
 }
 function verificarFields(first=false){
   var disable=false
@@ -470,6 +473,7 @@ function editpaso(ppaso){
     jQuery('.paso-pagos').show()
     paso=4
   }
+  console.log('entra')
   
 
 }
