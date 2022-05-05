@@ -315,10 +315,7 @@ function getDataEmail(email){
 async function emailExists(email){
 
   let verifEmail='<?=fw_theme_mod('fw_client_admin_verificaremail')?>';
-  if(!verifEmail || !email || logged){
-    
-    return;
-  }
+  if(!verifEmail || !email || logged)return;
   
   try {
     jQuery('.btn-checkout.continuar').prop('disabled', true);
@@ -331,13 +328,12 @@ async function emailExists(email){
           jQuery('#account_password').hide();
           jQuery('.existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', true);
-    }else{
+      }else{
           jQuery('.existe').hide();
           jQuery('#account_password').show();
           jQuery('.no_existe').show();
           jQuery('.btn-checkout.continuar').prop('disabled', false);
-    }
-
+      }
   } catch(err) {
     console.log(err);
   }
@@ -362,10 +358,10 @@ function verificarEmail(num){
     }else{
       jQuery('#account_password').removeClass('enrojo')
     }
-    cambiarContinuar(!e_valid || !p_valid,8)
+    sacar1(!e_valid || !p_valid,8)
   }else{
     //console.log('campo pass NO existe',e_valid)
-    cambiarContinuar(!e_valid ,9)
+    sacar1(!e_valid ,9)
   }
   
   emailExists(email);
@@ -374,43 +370,38 @@ function verificarFields(first=false){
   var disable=false
 
   jQuery('#billing_form input').each(function(index,data) {
-
-    //console.log('disable',disable)
-    
     var element = jQuery(this);
     let type=element.attr('type')
-    let req=(type!='checkbox')?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
-    
+    let req=type!='checkbox'?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
+
     //rellena
     if(!first)jQuery.cookie(element.attr('id'), jQuery('#'+element.attr('id')).val());
     else if(jQuery.cookie(element.attr('id')))element.val(jQuery.cookie(element.attr('id')))
   
     if (req && type!='checkbox' && element.val() == "") {
-      console.log('field:',req,type)
       disable = true;
       element.addClass('enrojo')
     }else if (req && type=='checkbox' && !element.is(":checked")) {
-      console.log('entra2')
       disable = true;
       element.addClass('enrojo')
     }else{
       element.removeClass('enrojo')
     }
   });
+
   if(!disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
   }
-
-  cambiarContinuar(disable,4)
+  sacar1(disable,4)
 }
 function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
     jQuery(this).prop('checked', false);
     jQuery(this).parent().removeClass('active')
   });
-  cambiarContinuar(true,5)
+  sacar1(true,5)
 }
 jQuery(document).ready( function(jQuery) {
 
@@ -435,8 +426,8 @@ jQuery(document).ready( function(jQuery) {
   })
 
   jQuery('#billing_form input').on('input', function(e){
-    
-    if(paso>1)verificarFields()
+    console.log(e)
+    verificarFields()
   })
   
 
@@ -515,8 +506,8 @@ function fillNextStep(type){
   jQuery('.paso-'+type+' h1').hide()
   jQuery('.paso-'+type+' button').hide()
 }
-function cambiarContinuar(estado,msg){
-    console.log(estado,msg)
+function sacar1(estado,msg){
+    //console.log(estado,msg)
     jQuery('.btn-checkout.continuar').prop('disabled', estado);
 }
 function nextpaso(){
@@ -530,7 +521,7 @@ function nextpaso(){
     fillNextStep('datos')
     unselect('shipping_method[0]')
     jQuery('.paso-shipping').show()
-    cambiarContinuar(true,1)
+    sacar1(true,1)
 
     if(paso==3 && '<?=!hasShipping()?>'){//sin envios
       jQuery(document.body).trigger("update_checkout"); 
@@ -549,7 +540,7 @@ function nextpaso(){
     }
     fillNextStep('shipping')
     jQuery('.paso-pagos').show()
-    cambiarContinuar(true,2)
+    sacar1(true,2)
     
   }else if(paso==5){
    /* if(jQuery('#payment_method_stripe').prop("checked")){//si esta activo local pickups
@@ -584,7 +575,7 @@ function checkpostalCode(){
   }
 }
 function resetShippingFake(){
-  //console.log('paso:',paso)
+  console.log(paso,'reset')
   let subt=jQuery('.cart-subtotal bdi').text()
   let tot=jQuery('.order-subtotal bdi').text()
   if(paso<3 && subt!=tot){jQuery('.order-total').hide()
