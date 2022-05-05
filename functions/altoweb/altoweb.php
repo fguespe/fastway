@@ -45,6 +45,7 @@ if(fw_theme_mod('fw_action_init_mayorista')){
 
 if(fw_theme_mod('fw_action_woosettings')){
    update_option('woocommerce_price_num_decimals','0');
+   update_option('fw_action_woosettings','0');//fix que no verifica el mail
    update_option('woocommerce_currency','ARS');
    update_option('woocommerce_default_country','AR:C');
    update_option('woocommerce_manage_stock','no');
