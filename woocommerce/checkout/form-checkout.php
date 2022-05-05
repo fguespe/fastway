@@ -366,6 +366,7 @@ function verificarEmail(num){
   
   emailExists(email);
 }
+
 function verificarFields(first=false,cuando){
   console.log('entra',cuando)
   var disable=false
@@ -596,7 +597,7 @@ jQuery(document).on('updated_checkout', function(){
 
   //Verificar all!
   verificarEmail();
-  verificarFields(false,5);
+  if(paso>1)verificarFields(false,5);
   if(paso==4 && jQuery("input[name='payment_method']").is(':checked')){
 		jQuery('.btn-checkout.continuar.pagos').prop('disabled', false);
 	}else if(paso==3 && jQuery("input[name='shipping_method[0]']").is(':checked')){
