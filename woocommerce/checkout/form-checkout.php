@@ -576,7 +576,6 @@ function checkpostalCode(){
   }
 }
 function resetShippingFake(){
-  console.log(paso,'reset')
   let subt=jQuery('.cart-subtotal bdi').text()
   let tot=jQuery('.order-subtotal bdi').text()
   if(paso<3 && subt!=tot){jQuery('.order-total').hide()
