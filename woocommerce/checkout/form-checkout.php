@@ -374,6 +374,9 @@ function verificarFields(first=false){
   var disable=false
 
   jQuery('#billing_form input').each(function(index,data) {
+
+    console.log(disable)
+    
     var element = jQuery(this);
     let type=element.attr('type')
     let req=type!='checkbox'?element.parent().parent().hasClass('validate-required'):element.parent().parent().parent().hasClass('validate-required')
@@ -392,12 +395,15 @@ function verificarFields(first=false){
       element.removeClass('enrojo')
     }
   });
-
+  console.log(disable)
   if(!disable){
     let mailing=jQuery('#billing_address_1').val()
     if(!mailing)mailing=jQuery('#billing_first_name').val()
     jQuery('.paso-datos .box-step .subtitle').text(mailing)
-  }else cambiarContinuar(disable,4)
+  }
+
+  console.log(disable)
+  cambiarContinuar(disable,4)
 }
 function unselect(type){
   jQuery('input:radio[name="'+type+'"]').each(function () { 
