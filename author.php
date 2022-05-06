@@ -12,6 +12,7 @@ $container   = fw_theme_mod('container-main');
 ?>
 
 
+
 <div class="wrapper" id="author-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
