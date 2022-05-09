@@ -48,13 +48,13 @@ I created a new framework to be able to code unlimited possibilites with quality
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ea663ce-2ef0-4bed-a50a-ad153b05e739/checkout.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ea663ce-2ef0-4bed-a50a-ad153b05e739/checkout.gif)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ea663ce-2ef0-4bed-a50a-ad153b05e739/checkout.gif](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6ea663ce-2ef0-4bed-a50a-ad153b05e739/checkout.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T093954Z&X-Amz-Expires=86400&X-Amz-Signature=622b52f621eea8a7fff79c0bf270f1a28cc3616af7c2de2cac8c11f1a3b8ec2f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22checkout.gif%22&x-id=GetObject)
 
 ### 🛒 Modal Ajax Cart
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68470261-adcf-42e8-b2a8-78852ed52bc0/modalcart2.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68470261-adcf-42e8-b2a8-78852ed52bc0/modalcart2.gif)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68470261-adcf-42e8-b2a8-78852ed52bc0/modalcart2.gif](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/68470261-adcf-42e8-b2a8-78852ed52bc0/modalcart2.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T093958Z&X-Amz-Expires=86400&X-Amz-Signature=483bf9f229eb456832838ec2ebddcf1eff136a77895e4b7b7c9fde463c3fe0b1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22modalcart2.gif%22&x-id=GetObject)
 
 ### 🔝 Popup Builder
 
@@ -62,7 +62,7 @@ I created a new framework to be able to code unlimited possibilites with quality
 
 No need to use  heavy plugins. Just code your own with html and shortcodes.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c23b5283-56c6-418e-be53-0b2e5679f38f/Screen_Shot_2021-05-11_at_14.16.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c23b5283-56c6-418e-be53-0b2e5679f38f/Screen_Shot_2021-05-11_at_14.16.10.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c23b5283-56c6-418e-be53-0b2e5679f38f/Screen_Shot_2021-05-11_at_14.16.10.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c23b5283-56c6-418e-be53-0b2e5679f38f/Screen_Shot_2021-05-11_at_14.16.10.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094002Z&X-Amz-Expires=86400&X-Amz-Signature=1d52d3a86246037e6343050928d9ec0be8bef4291345364ff6fe12231965394f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_14.16.10.png%22&x-id=GetObject)
 
 ### 🙎‍♂️ Client Area
 
@@ -70,7 +70,7 @@ No need to use  heavy plugins. Just code your own with html and shortcodes.
 
 Client Area gives you control and professionalism over what your clients can do and see. You can add custom menu items whenever you want.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e017c99-2e5c-4423-bf29-bc66c0060119/clientarea.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e017c99-2e5c-4423-bf29-bc66c0060119/clientarea.gif)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e017c99-2e5c-4423-bf29-bc66c0060119/clientarea.gif](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2e017c99-2e5c-4423-bf29-bc66c0060119/clientarea.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094005Z&X-Amz-Expires=86400&X-Amz-Signature=7af743d92ce7d884e6c18690bdfa5dfcd3356c5e1dc26e30586bd1f83be84a3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22clientarea.gif%22&x-id=GetObject)
 
 ### 📞 Company Data
 
@@ -78,9 +78,9 @@ Client Area gives you control and professionalism over what your clients can do 
 
 With Company Data variables you only type once the contact data of your clients. Then you can call them anywhere in the site with shortcodes. This allows consistency in the long term because changes are only made in one place, avoiding lots of errors. You can also specify multiple values and refer them via index.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23b693d2-d237-49e6-bf6b-aa10b2e7cc8f/Screen_Shot_2021-05-11_at_19.12.12.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23b693d2-d237-49e6-bf6b-aa10b2e7cc8f/Screen_Shot_2021-05-11_at_19.12.12.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23b693d2-d237-49e6-bf6b-aa10b2e7cc8f/Screen_Shot_2021-05-11_at_19.12.12.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23b693d2-d237-49e6-bf6b-aa10b2e7cc8f/Screen_Shot_2021-05-11_at_19.12.12.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094008Z&X-Amz-Expires=86400&X-Amz-Signature=26a86d54fb3f3f8487abf20f6b5ad7db533ea9daf489a02f881883e0226c0413&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.12.12.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1a23b36-51ad-4f49-a65f-ff48f7c3e485/Screen_Shot_2021-05-11_at_19.12.17.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1a23b36-51ad-4f49-a65f-ff48f7c3e485/Screen_Shot_2021-05-11_at_19.12.17.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1a23b36-51ad-4f49-a65f-ff48f7c3e485/Screen_Shot_2021-05-11_at_19.12.17.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b1a23b36-51ad-4f49-a65f-ff48f7c3e485/Screen_Shot_2021-05-11_at_19.12.17.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094012Z&X-Amz-Expires=86400&X-Amz-Signature=5bb14e7d72a20960e11c71cb73f5f9835374deada1fb6a16dbdfe91dac2e26b2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.12.17.png%22&x-id=GetObject)
 
 ### 💻 Dashboard Widgets
 
@@ -88,35 +88,35 @@ With Company Data variables you only type once the contact data of your clients.
 
 Basic functionality can be available to your clients to modify in easy way. This allows you to avoid tech support time and gives your customers also inmediate action, instead of waiting for you.  
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/207e8de0-67c7-40ac-843c-2617490a1f4e/Screen_Shot_2021-05-11_at_19.14.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/207e8de0-67c7-40ac-843c-2617490a1f4e/Screen_Shot_2021-05-11_at_19.14.39.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/207e8de0-67c7-40ac-843c-2617490a1f4e/Screen_Shot_2021-05-11_at_19.14.39.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/207e8de0-67c7-40ac-843c-2617490a1f4e/Screen_Shot_2021-05-11_at_19.14.39.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094546Z&X-Amz-Expires=86400&X-Amz-Signature=5afbcb01360555cd60d609df6f0ae33703f37960e506f2338db6b58ed6fb36e5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.14.39.png%22&x-id=GetObject)
 
 ### 📈 Marketing & External Javascript
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/858bbf5c-b8f4-464c-836b-4faafa85ab4f/Screen_Shot_2021-05-11_at_19.16.02.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/858bbf5c-b8f4-464c-836b-4faafa85ab4f/Screen_Shot_2021-05-11_at_19.16.02.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/858bbf5c-b8f4-464c-836b-4faafa85ab4f/Screen_Shot_2021-05-11_at_19.16.02.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/858bbf5c-b8f4-464c-836b-4faafa85ab4f/Screen_Shot_2021-05-11_at_19.16.02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094551Z&X-Amz-Expires=86400&X-Amz-Signature=8aba09edb2306558022a0b1b62e7926e042f060d82dbf5fd61a8c912543fd5ac&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.16.02.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d504d08-cc80-43b3-9b7b-c8338f14e0d3/Screen_Shot_2021-05-11_at_19.16.08.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d504d08-cc80-43b3-9b7b-c8338f14e0d3/Screen_Shot_2021-05-11_at_19.16.08.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d504d08-cc80-43b3-9b7b-c8338f14e0d3/Screen_Shot_2021-05-11_at_19.16.08.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0d504d08-cc80-43b3-9b7b-c8338f14e0d3/Screen_Shot_2021-05-11_at_19.16.08.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094557Z&X-Amz-Expires=86400&X-Amz-Signature=1bcaf9e709449aecd2a404261eb15a44e5760570273760b26fe3a60c4d1460a9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.16.08.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3f0a160-a194-411b-9c0a-55fce4022d26/Screen_Shot_2021-05-11_at_19.16.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3f0a160-a194-411b-9c0a-55fce4022d26/Screen_Shot_2021-05-11_at_19.16.19.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3f0a160-a194-411b-9c0a-55fce4022d26/Screen_Shot_2021-05-11_at_19.16.19.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d3f0a160-a194-411b-9c0a-55fce4022d26/Screen_Shot_2021-05-11_at_19.16.19.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094559Z&X-Amz-Expires=86400&X-Amz-Signature=5a27154fa08a45ad36c2a7b22f35c1acd2c131dc6a0d106e31f48b1780cd6f27&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.16.19.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd6213d-76b6-4f46-bdf0-000c305f5e96/Screen_Shot_2021-05-11_at_19.16.14.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd6213d-76b6-4f46-bdf0-000c305f5e96/Screen_Shot_2021-05-11_at_19.16.14.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd6213d-76b6-4f46-bdf0-000c305f5e96/Screen_Shot_2021-05-11_at_19.16.14.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0bd6213d-76b6-4f46-bdf0-000c305f5e96/Screen_Shot_2021-05-11_at_19.16.14.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094602Z&X-Amz-Expires=86400&X-Amz-Signature=16989412a8d7d95223efc3b9f624f081ef757db2de40856e1960ac822b7bb0eb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.16.14.png%22&x-id=GetObject)
 
 ### 🕵🏿‍♀️ SEO Tags
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28e9897d-6d17-4022-af20-c005dd5f57df/Screen_Shot_2021-05-11_at_19.24.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28e9897d-6d17-4022-af20-c005dd5f57df/Screen_Shot_2021-05-11_at_19.24.26.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28e9897d-6d17-4022-af20-c005dd5f57df/Screen_Shot_2021-05-11_at_19.24.26.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/28e9897d-6d17-4022-af20-c005dd5f57df/Screen_Shot_2021-05-11_at_19.24.26.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094638Z&X-Amz-Expires=86400&X-Amz-Signature=c2812d0731c1558d9a6b958b21886da71db584d88d78a7685fdda44159ccbabc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.24.26.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c26266f-5a2b-44ea-8b43-932473bb74b2/Screen_Shot_2021-05-11_at_19.24.28.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c26266f-5a2b-44ea-8b43-932473bb74b2/Screen_Shot_2021-05-11_at_19.24.28.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c26266f-5a2b-44ea-8b43-932473bb74b2/Screen_Shot_2021-05-11_at_19.24.28.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5c26266f-5a2b-44ea-8b43-932473bb74b2/Screen_Shot_2021-05-11_at_19.24.28.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094640Z&X-Amz-Expires=86400&X-Amz-Signature=da9a771edead8c6998adcc5e80b9bf05b17382fd7f390aefdfe60750a2ad2a3c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.24.28.png%22&x-id=GetObject)
 
 ### 🔨 Maintenance Mode
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c0a81c-8f51-4ee3-8fab-c0949194d83b/Screen_Shot_2021-05-11_at_19.29.52.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c0a81c-8f51-4ee3-8fab-c0949194d83b/Screen_Shot_2021-05-11_at_19.29.52.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c0a81c-8f51-4ee3-8fab-c0949194d83b/Screen_Shot_2021-05-11_at_19.29.52.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/16c0a81c-8f51-4ee3-8fab-c0949194d83b/Screen_Shot_2021-05-11_at_19.29.52.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094644Z&X-Amz-Expires=86400&X-Amz-Signature=ba8f9fea8a415555cf704d783143458cc0b83b9a4368fe49fb0211831bbad6f4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.29.52.png%22&x-id=GetObject)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f69d610c-011d-4840-a791-1a04d2b5c883/Screen_Shot_2021-05-11_at_19.30.13.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f69d610c-011d-4840-a791-1a04d2b5c883/Screen_Shot_2021-05-11_at_19.30.13.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f69d610c-011d-4840-a791-1a04d2b5c883/Screen_Shot_2021-05-11_at_19.30.13.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f69d610c-011d-4840-a791-1a04d2b5c883/Screen_Shot_2021-05-11_at_19.30.13.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T094646Z&X-Amz-Expires=86400&X-Amz-Signature=88682b3cc8008e4a1881db6b87ec05cd9d394c17134a0eb65d28fce65cde9fd7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen_Shot_2021-05-11_at_19.30.13.png%22&x-id=GetObject)
 
 ### 🗝 Conditional CSS
 
