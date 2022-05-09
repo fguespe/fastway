@@ -34,7 +34,7 @@ You have everything you need in the Wordpress native customizer, making possible
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cea9a45b-db08-4bc6-8bdf-d94be9f65d3b/May-11-2021_11-39-11.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cea9a45b-db08-4bc6-8bdf-d94be9f65d3b/May-11-2021_11-39-11.gif)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cea9a45b-db08-4bc6-8bdf-d94be9f65d3b/May-11-2021_11-39-11.gif](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cea9a45b-db08-4bc6-8bdf-d94be9f65d3b/May-11-2021_11-39-11.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T093737Z&X-Amz-Expires=86400&X-Amz-Signature=c7d1a72cfae4d93357233d008057565640e3b402f77c8bf5a4f6f01cb3e2e2cf&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22May-11-2021_11-39-11.gif%22&x-id=GetObject)
 
 ### 📐 Shortcode Layouts
 
@@ -42,7 +42,7 @@ You have everything you need in the Wordpress native customizer, making possible
 
 I created a new framework to be able to code unlimited possibilites with quality code and shortcodes. This allows to create any design in the most complex parts and be flexible to the clients. Adding small details now is easy.
 
-[https://youtu.be/7ThGmmRqYLw](https://youtu.be/7ThGmmRqYLw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=7ThGmmRqYLw)
 
 ### ⏭ Ajax One Page Multi-Step Checkout
 
