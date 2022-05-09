@@ -42,7 +42,7 @@ You have everything you need in the Wordpress native customizer, making possible
 
 I created a new framework to be able to code unlimited possibilites with quality code and shortcodes. This allows to create any design in the most complex parts and be flexible to the clients. Adding small details now is easy.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=7ThGmmRqYLw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7ThGmmRqYLw/0.jpg)](https://www.youtube.com/watch?v=7ThGmmRqYLw)
 
 ### ⏭ Ajax One Page Multi-Step Checkout
 
