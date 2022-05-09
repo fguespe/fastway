@@ -38,7 +38,7 @@ It's very easy to make a fork of it and continue to add functionality. I have a 
 You have everything you need in the Wordpress native customizer, making possible to preview all changes instantly.
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/008d5017-6e1f-446d-b284-c250f49e130b/customizer.gif]()
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/008d5017-6e1f-446d-b284-c250f49e130b/customizer.gif)
 https://s3.us-west-2.amazonaws.com/secure.notion-static.com/008d5017-6e1f-446d-b284-c250f49e130b/customizer.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220509T093325Z&X-Amz-Expires=86400&X-Amz-Signature=caca40980b9830fd87e5b30ff7e8d06bcd049e1b9ce2c18fb02ebadc8674b291&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22customizer.gif%22&x-id=GetObject
 
 ### ⚡︎ Custom Visual Composer Elements
