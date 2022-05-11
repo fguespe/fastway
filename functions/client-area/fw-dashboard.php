@@ -572,9 +572,9 @@ function fw_widget_talles_vonder_dash_handler(){
         update_option('calzados-newbalance',$_POST['fw_widget_talles_vonder_options']['calzados-newbalance']);
         update_option('calzados-reebok',$_POST['fw_widget_talles_vonder_options']['calzados-reebok']);
         update_option('calzados-converse',$_POST['fw_widget_talles_vonder_options']['calzados-converse']);
+        update_option('calzados-dc',$_POST['fw_widget_talles_vonder_options']['calzados-dc']);
         update_option('calzados-johnfoos',$_POST['fw_widget_talles_vonder_options']['calzados-johnfoos']);
         update_option('calzados-montagne',$_POST['fw_widget_talles_vonder_options']['calzados-montagne']);
-        update_option('calzados-dc',$_POST['fw_widget_talles_vonder_options']['calzados-dc']);
         update_option('indumentaria',$_POST['fw_widget_talles_vonder_options']['indumentaria']);
     }
 
