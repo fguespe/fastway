@@ -535,10 +535,10 @@ function fw_widget_talles_vonder_dash(){
     $mensaje4="calzados-newbalance: ".(get_option('calzados-newbalance')?("<a target=\"_blank\" href=".get_option('calzados-newbalance')."> Ver imagen</a>"):"");
     $mensaje5="calzados-reebok: ".(get_option('calzados-reebok')?("<a target=\"_blank\" href=".get_option('calzados-reebok')."> Ver imagen</a>"):"");
     $mensaje6="calzados-converse: ".(get_option('calzados-converse')?("<a target=\"_blank\" href=".get_option('calzados-converse')."> Ver imagen</a>"):"");
-    $mensaje6="calzados-johnfoos: ".(get_option('calzados-johnfoos')?("<a target=\"_blank\" href=".get_option('calzados-johnfoos')."> Ver imagen</a>"):"");
-    $mensaje6="calzados-montagne: ".(get_option('calzados-montagne')?("<a target=\"_blank\" href=".get_option('calzados-montagne')."> Ver imagen</a>"):"");
-    $mensaje7="calzados-dc: ".(get_option('calzados-dc')?("<a target=\"_blank\" href=".get_option('calzados-dc')."> Ver imagen</a>"):"");
-    $mensaje8="indumentaria: ".(get_option('indumentaria')?("<a target=\"_blank\" href=".get_option('indumentaria')."> Ver imagen</a>"):"");
+    $mensaje7="calzados-johnfoos: ".(get_option('calzados-johnfoos')?("<a target=\"_blank\" href=".get_option('calzados-johnfoos')."> Ver imagen</a>"):"");
+    $mensaje8="calzados-montagne: ".(get_option('calzados-montagne')?("<a target=\"_blank\" href=".get_option('calzados-montagne')."> Ver imagen</a>"):"");
+    $mensaje9="calzados-dc: ".(get_option('calzados-dc')?("<a target=\"_blank\" href=".get_option('calzados-dc')."> Ver imagen</a>"):"");
+    $mensaje10="indumentaria: ".(get_option('indumentaria')?("<a target=\"_blank\" href=".get_option('indumentaria')."> Ver imagen</a>"):"");
 
     $cambiar_l=__('Change','fastway');
     $submsg='*Estos son las imagenes que luego aparecen en el popup en los productos';
@@ -553,6 +553,8 @@ function fw_widget_talles_vonder_dash(){
         <label>$mensaje6</label><br>
         <label>$mensaje7</label><br>
         <label>$mensaje8</label><br>
+        <label>$mensaje9</label><br>
+        <label>$mensaje10</label><br>
         <small>$submsg</small>
         <a class="iralasopciones" href="index.php?edit=fw_widget_talles_vonder#fw_widget_talles_vonder">$cambiar_l</a>
     </div>
