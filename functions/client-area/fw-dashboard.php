@@ -510,12 +510,14 @@ function fw_modal_talles(){
             $term->name=="NEW BALANCE" ||
             $term->name=="REEBOK" ||
             $term->name=="CONVERSE" ||
+            $term->name=="JOHNFOOS"   ||
+            $term->name=="MONTAGNE"   ||
             $term->name=="DC" ) $jpg="CALZADOS-".$term->name;
       }
     }
     if(empty($jpg))return "";
     $jpg=strtolower($jpg);
-    return '<button type="button" class="btn talles" data-toggle="modal" data-target="#exampleModal">VER TALLES</button>
+    return '<button type="button" class="btn talles" data-toggle="modal" data-target="#exampleModal">Ver guía de talles</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog  modal-lg" role="document">
         <div class="modal-content">
@@ -533,6 +535,8 @@ function fw_widget_talles_vonder_dash(){
     $mensaje4="calzados-newbalance: ".(get_option('calzados-newbalance')?("<a target=\"_blank\" href=".get_option('calzados-newbalance')."> Ver imagen</a>"):"");
     $mensaje5="calzados-reebok: ".(get_option('calzados-reebok')?("<a target=\"_blank\" href=".get_option('calzados-reebok')."> Ver imagen</a>"):"");
     $mensaje6="calzados-converse: ".(get_option('calzados-converse')?("<a target=\"_blank\" href=".get_option('calzados-converse')."> Ver imagen</a>"):"");
+    $mensaje6="calzados-johnfoos: ".(get_option('calzados-johnfoos')?("<a target=\"_blank\" href=".get_option('calzados-johnfoos')."> Ver imagen</a>"):"");
+    $mensaje6="calzados-montagne: ".(get_option('calzados-montagne')?("<a target=\"_blank\" href=".get_option('calzados-montagne')."> Ver imagen</a>"):"");
     $mensaje7="calzados-dc: ".(get_option('calzados-dc')?("<a target=\"_blank\" href=".get_option('calzados-dc')."> Ver imagen</a>"):"");
     $mensaje8="indumentaria: ".(get_option('indumentaria')?("<a target=\"_blank\" href=".get_option('indumentaria')."> Ver imagen</a>"):"");
 
@@ -566,6 +570,8 @@ function fw_widget_talles_vonder_dash_handler(){
         update_option('calzados-newbalance',$_POST['fw_widget_talles_vonder_options']['calzados-newbalance']);
         update_option('calzados-reebok',$_POST['fw_widget_talles_vonder_options']['calzados-reebok']);
         update_option('calzados-converse',$_POST['fw_widget_talles_vonder_options']['calzados-converse']);
+        update_option('calzados-johnfoos',$_POST['fw_widget_talles_vonder_options']['calzados-johnfoos']);
+        update_option('calzados-montagne',$_POST['fw_widget_talles_vonder_options']['calzados-montagne']);
         update_option('calzados-dc',$_POST['fw_widget_talles_vonder_options']['calzados-dc']);
         update_option('indumentaria',$_POST['fw_widget_talles_vonder_options']['indumentaria']);
     }
@@ -579,6 +585,8 @@ function fw_widget_talles_vonder_dash_handler(){
         <label>calzados-newbalance</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-newbalance]\" id=\"calzados-newbalance\" value=\"".get_option('calzados-newbalance')."\"><br>
         <label>calzados-reebok</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-reebok]\" id=\"calzados-reebok\" value=\"".get_option('calzados-reebok')."\"><br>
         <label>calzados-converse</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-converse]\" id=\"calzados-converse\" value=\"".get_option('calzados-converse')."\"><br>
+        <label>calzados-montagne</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-montagne]\" id=\"calzados-montagne\" value=\"".get_option('calzados-montagne')."\"><br>
+        <label>calzados-johnfoos</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-johnfoos]\" id=\"calzados-johnfoos\" value=\"".get_option('calzados-johnfoos')."\"><br>
         <label>calzados-dc</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-dc]\" id=\"calzados-dc\" value=\"".get_option('calzados-dc')."\"><br>
         <label>indumentaria</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[indumentaria]\" id=\"indumentaria\" value=\"".get_option('indumentaria')."\"><br>
     </div>";
