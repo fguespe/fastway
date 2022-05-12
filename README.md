@@ -24,6 +24,17 @@ Provides customer ready dashboard so clients can perform the most important and 
 
 It's very easy to make a fork of it and continue to add functionality. I have a local install of fastway and when i push changes to bitbucket its automatically updated in all the 200 sites i maintain.
 
+It's very easy to make a fork of it and continue to add functionality. I have a local install of fastway and when i push changes to bitbucket its automatically updated in all the 200 sites i maintain.
 
-For the full Description visit my notion page
-(Wiki page)[https://fabrizio.notion.site/Fastway-fw-6285d2b579a0483b81aac82b86c38b37]
+
+For the full Description visit my notion page [Wiki page](https://fabrizio.notion.site/Fastway-fw-6285d2b579a0483b81aac82b86c38b37)
+
+
+[](https://www.notion.so/Fastway-fw-6285d2b579a0483b81aac82b86c38b37)
+### 👁 100% in Customizer
+
+---
+
+You have everything you need in the Wordpress native customizer, making possible to preview all changes instantly.
+
+![](https://fabrizio.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F008d5017-6e1f-446d-b284-c250f49e130b%2Fcustomizer.gif?table=block&id=423d0ad1-c5be-4749-86ea-62dd4e051137&spaceId=672069bc-fe41-4970-b177-7096c757389d&userId=&cache=v2)
