@@ -485,6 +485,16 @@ Kirki::add_field( 'theme_config_id', array(
 	'priority'	=> 20,
 ) );
 
+Kirki::add_field( 'theme_config_id', array(
+	'type'        => 'textarea',
+	'settings'    => 'ca-adminnotices',
+	'label'       => __( 'Client Admin', 'fastway' ),
+	'description' => 'Adds videos to the dahboard. Usefull for uploading instructions to clients',
+	'section'     => 'section_clientarea',
+	'default'     => '',
+	'priority'	=> 20,
+) );
+
 
 //Aca empieza el plugin
 if(!fw_theme_mod('ca-switch'))return;

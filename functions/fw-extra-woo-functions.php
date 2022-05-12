@@ -2456,6 +2456,17 @@ function change_default_checkout_country() {
   $ja=explode(':',get_option('woocommerce_default_country'))[0];
   return $ja;
 }
+
+if(fw_theme_mod('ca-adminnotices')){
+  add_action( 'admin_notices', 'notice_custom' );
+  function notice_custom() {
+    $class = 'error admin';
+    $message1 = "ATENCÍON";
+    $message2="Esta tienda tiene varios roles asi que cuidado al crear cambios, siempre considerar estos roles. En general lo que piden es para minoristas, pero asegurarse.";
+    printf( '<div class="%1$s"><p>%2$s</p><p>%3$s</p></div>', esc_attr( $class ), esc_html( $message1),esc_html( $message2 ) );   
+  }
+}
+
 if(isAltoweb()){
   add_action( 'admin_notices', 'sample_admin_notice__error' );
   function sample_admin_notice__error() {
