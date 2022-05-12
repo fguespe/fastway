@@ -26,4 +26,4 @@ It's very easy to make a fork of it and continue to add functionality. I have a 
 
 
 For the full Description visit my notion page
-https://fabrizio.notion.site/Fastway-fw-6285d2b579a0483b81aac82b86c38b37
+(Wiki page)[https://fabrizio.notion.site/Fastway-fw-6285d2b579a0483b81aac82b86c38b37]
