@@ -2,7 +2,7 @@
 
 # WooCommerce Framework
 
-Hi everyone, my name is Fabrizio Guespe and i am the CEO of Altoweb, a web design Agency, specialized in E-commerce. I've been developing this Wordpress theme for 5 years, only for internal use, until now. I have developed more than 1000 websites using this framework and i think it's essential for running a web design business in an efficient manner.
+I have developed more than 1000 websites using this framework and i think it's essential for running a web design business in an efficient manner.
 
 # ⚡️Why Fastway?
 
