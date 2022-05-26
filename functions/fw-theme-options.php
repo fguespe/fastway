@@ -447,7 +447,7 @@ if(isAltoweb()){
 		'type'        => 'text',
 		'settings'    => 'fw_label_calcular_cuotas',
 		'label'    => __( 'Medios de Pago', 'fastway' ),
-		'section'     => 'section_labels_payments',
+		'section'     => 'section_labels_products',
 		'default'	=> '¡Calcular envío!',
 	) );
 
@@ -455,7 +455,7 @@ if(isAltoweb()){
 		'type'        => 'text',
 		'settings'    => 'fw_label_calcular_envios',
 		'label'    => __( 'Medios de Pago', 'fastway' ),
-		'section'     => 'section_labels_payments',
+		'section'     => 'section_labels_products',
 		'default'	=> '¡Calcular cuotas!',
 	) );
 }
