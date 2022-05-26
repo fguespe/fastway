@@ -443,6 +443,21 @@ if(isAltoweb()){
 		'default'	=> 'Metodos de Pago',
 	) );
 
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_label_calcular_cuotas',
+		'label'    => __( 'Medios de Pago', 'fastway' ),
+		'section'     => 'section_labels_payments',
+		'default'	=> '¡Calcular envío!',
+	) );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'text',
+		'settings'    => 'fw_label_calcular_envios',
+		'label'    => __( 'Medios de Pago', 'fastway' ),
+		'section'     => 'section_labels_payments',
+		'default'	=> '¡Calcular cuotas!',
+	) );
 }
 
 Kirki::add_field( 'theme_config_id', array(
