@@ -5022,7 +5022,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_cuotas',
 	'label'    => __( '¡Calcular envío', 'fastway' ),
-	'section'     => 'section_labels_products',
+	'section'     => 'section_labels_single_products',
 	'default'	=> '¡Calcular envío!',
 ) );
 
@@ -5030,7 +5030,7 @@ Kirki::add_field( 'theme_config_id', array(
 	'type'        => 'text',
 	'settings'    => 'fw_label_calcular_envios',
 	'label'    => __( '¡Calcular cuotas', 'fastway' ),
-	'section'     => 'section_labels_products',
+	'section'     => 'section_labels_single_products',
 	'default'	=> '¡Calcular cuotas!',
 ) );
 
