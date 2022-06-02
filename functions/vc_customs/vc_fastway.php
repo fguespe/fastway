@@ -844,7 +844,7 @@ function fw_image_function( $atts, $content ) {
         if($link)$return .= '<a class="fw_image_container d-md-none '.$atts['el_class'].'" target="'.$atts['link_type'].'" style="text-align:center" href="'.$link.'" >';
         else $return .= '<div class="fw_image_container d-md-none '.$atts['el_class'].'" style="text-align:center" >';
         $return .= '<div class="imagen"><img src="'.$image_mobile.'" style="max-width:100%;width:'.$w_mobile.' ;height:'.$h_mobile.';"/></div>';   
-        if($atts['title'])$return .= '<div class="texts"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
+        if($atts['title'])$return .= '<div class="texts '.$atts['text_type'].'"><div class="title">'.$atts['title'].'</div><div class="subtitle">'.$atts['subtitle'].'</div></div>';
         if($link)$return .= '</a>';
         else $return .= '</div>'; 
     }
