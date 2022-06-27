@@ -856,7 +856,7 @@ function init_gtagcheckout() {
     $analytics = "<!-- Global site tag (gtag.js) - CHECKOUT -->
     <script>
   gtag('event', 'conversion', {
-      'send_to': 'AW-860462306/".fw_theme_mod("gtagcheckout_id")."',
+      'send_to': '".fw_theme_mod("gtagmanager_id")."/".fw_theme_mod("gtagcheckout_id")."',
       'transaction_id': ''
   });
 </script>";
