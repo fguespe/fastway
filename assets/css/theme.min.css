@@ -2795,6 +2795,10 @@ ul.products.columns-1 li.product, .woocommerce-page ul.products.columns-1 li.pro
   width: 98%;
 }
 
+ul.products.columns-2 li.product, .woocommerce-page ul.products.columns-2 li.product {
+  width: 48%;
+}
+
 ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
   width: 30.75%;
 }
@@ -6271,3 +6275,5 @@ dt.variation-fw_extra.stock {
 .fw_checkout .paso-shipping.groupping.inside .woocommerce-shipping-methods li:not(.local_pickup) {
   display: none !important;
 }
+
+/*# sourceMappingURL=theme.min.css.map */

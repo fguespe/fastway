@@ -2792,6 +2792,9 @@ h3.heading-title {
     ul.products.columns-1 li.product,.woocommerce-page ul.products.columns-1 li.product{
          width:98% 
     }
+    ul.products.columns-2 li.product,.woocommerce-page ul.products.columns-2 li.product{
+        width:48%;
+    }
     ul.products.columns-3 li.product,.woocommerce-page ul.products.columns-3 li.product{
          width:30.75% 
     }
@@ -2815,7 +2818,7 @@ h3.heading-title {
          ul.products.columns-3 li.product,.woocommerce-page ul.products.columns-3 li.product{
              width:48%;
         }
-         ul.products.columns-4 li.product,.woocommerce-page ul.products.columns-4 li.product{
+        ul.products.columns-4 li.product,.woocommerce-page ul.products.columns-4 li.product{
              width:48%;
         }
          ul.products.columns-5 li.product,.woocommerce-page ul.products.columns-5 li.product{
