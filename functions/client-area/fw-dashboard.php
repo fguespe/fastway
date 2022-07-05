@@ -511,6 +511,7 @@ function fw_modal_talles(){
             $term->name=="REEBOK" ||
             $term->name=="CONVERSE" ||
             $term->name=="JOHNFOOS"   ||
+            $term->name=="ATOMIK"   ||
             $term->name=="MONTAGNE"   ||
             $term->name=="DC" ) $jpg="CALZADOS-".$term->name;
       }
@@ -539,6 +540,7 @@ function fw_widget_talles_vonder_dash(){
     $mensaje8="calzados-montagne: ".(get_option('calzados-montagne')?("<a target=\"_blank\" href=".get_option('calzados-montagne')."> Ver imagen</a>"):"");
     $mensaje9="calzados-dc: ".(get_option('calzados-dc')?("<a target=\"_blank\" href=".get_option('calzados-dc')."> Ver imagen</a>"):"");
     $mensaje10="indumentaria: ".(get_option('indumentaria')?("<a target=\"_blank\" href=".get_option('indumentaria')."> Ver imagen</a>"):"");
+    $mensaje11="calzados-atomik: ".(get_option('calzados-atomik')?("<a target=\"_blank\" href=".get_option('calzados-atomik')."> Ver imagen</a>"):"");
 
     $cambiar_l=__('Change','fastway');
     $submsg='*Estos son las imagenes que luego aparecen en el popup en los productos';
@@ -555,6 +557,7 @@ function fw_widget_talles_vonder_dash(){
         <label>$mensaje8</label><br>
         <label>$mensaje9</label><br>
         <label>$mensaje10</label><br>
+        <label>$mensaje11</label><br>
         <small>$submsg</small>
         <a class="iralasopciones" href="index.php?edit=fw_widget_talles_vonder#fw_widget_talles_vonder">$cambiar_l</a>
     </div>
@@ -574,6 +577,7 @@ function fw_widget_talles_vonder_dash_handler(){
         update_option('calzados-converse',$_POST['fw_widget_talles_vonder_options']['calzados-converse']);
         update_option('calzados-dc',$_POST['fw_widget_talles_vonder_options']['calzados-dc']);
         update_option('calzados-johnfoos',$_POST['fw_widget_talles_vonder_options']['calzados-johnfoos']);
+        update_option('calzados-atomik',$_POST['fw_widget_talles_vonder_options']['calzados-atomik']);
         update_option('calzados-montagne',$_POST['fw_widget_talles_vonder_options']['calzados-montagne']);
         update_option('indumentaria',$_POST['fw_widget_talles_vonder_options']['indumentaria']);
     }
@@ -589,6 +593,7 @@ function fw_widget_talles_vonder_dash_handler(){
         <label>calzados-converse</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-converse]\" id=\"calzados-converse\" value=\"".get_option('calzados-converse')."\"><br>
         <label>calzados-montagne</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-montagne]\" id=\"calzados-montagne\" value=\"".get_option('calzados-montagne')."\"><br>
         <label>calzados-johnfoos</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-johnfoos]\" id=\"calzados-johnfoos\" value=\"".get_option('calzados-johnfoos')."\"><br>
+        <label>calzados-atomik</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-atomik]\" id=\"calzados-atomik\" value=\"".get_option('calzados-atomik')."\"><br>
         <label>calzados-dc</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[calzados-dc]\" id=\"calzados-dc\" value=\"".get_option('calzados-dc')."\"><br>
         <label>indumentaria</label><input type=\"text\" name=\"fw_widget_talles_vonder_options[indumentaria]\" id=\"indumentaria\" value=\"".get_option('indumentaria')."\"><br>
     </div>";
