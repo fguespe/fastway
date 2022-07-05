@@ -1176,9 +1176,8 @@ function shop_order_user_role_filter() {
 add_filter( 'pre_get_posts', 'shop_order_user_role_posts_where' );
 function shop_order_user_role_posts_where( $query ) {
 
-	if ( ! $query->is_main_query() || ! isset( $_GET['_user_role'] ) ) {
-		return;
-	}
+	if ( ! $query->is_main_query() || ! isset( $_GET['_user_role'] || isset( $_GET['_coupons_used'] ) ) return;
+	
 
 	$ids    = get_users( array( 'role' => sanitize_text_field( $_GET['_user_role'] ), 'fields' => 'ID' ) );
 	$ids    = array_map( 'absint', $ids );
@@ -1191,9 +1190,8 @@ function shop_order_user_role_posts_where( $query ) {
 		)
 	) );
 
-	if ( empty( $ids ) ) {
-		$query->set( 'posts_per_page', 0 );
-	}
+	if ( empty( $ids ) ) $query->set( 'posts_per_page', 0 );
+	
 
 }
 
