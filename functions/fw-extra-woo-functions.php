@@ -771,13 +771,21 @@ function has_min_purchase(){
     else return pasa_filtro_rol($rol);
   }
 }
+
+function fw_get_minimum_order_amount() {
+  if(!has_min_purchase())return;
+  
+
+  $minimum = fw_theme_mod('fw_min_purchase');  
+  if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2'); 
+  return $minimum;
+}
 function fw_minimum_order_amount() {
     if(!has_min_purchase())return;
     
 
-    $minimum = fw_theme_mod('fw_min_purchase');  
-    if(fw_get_customer_orders()>0)$minimum = fw_theme_mod('fw_min_purchase2');  
-
+    $minimum = fw_get_minimum_order_amount();
+    
     if ( WC()->cart->cart_contents_total < $minimum ) {
 
         if( is_cart() ) {

@@ -25,7 +25,7 @@
                         <div class="col-lg-6 col-md-12 d-flex ">
                             <?php 
                             if(fw_theme_mod('fw_seguircomprando_url')=='/' && fw_theme_mod('fw_modal_cart_calltoa')=='checkout'){ ?>
-                                <button type="button" onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
+                                <button type="button" onclick="ir_al_checkout()" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
                             <?php }else if(fw_theme_mod('fw_modal_cart_calltoa')=='cart'){?>
                                 <button type="button" onclick="location.href='<?=esc_url( wc_get_cart_url() )?>'" id="" class="btn comprar ml-auto"><?=fw_theme_mod('fw_place_order_text')?></button>
                             <?php } ?>
@@ -423,17 +423,19 @@ function toggle(quien){
 }
 
 
-function ir_al_checkout(url){
+function ir_al_checkout(modal=true){
+    let url='<?=wc_get_checkout_url()?>';
     let pasa_filtro_rol='<?=has_min_purchase()?>';
-    
-    console.log('pasa_filtro_roll',pasa_filtro_rol)
+    let misn='<?=fw_get_minimum_order_amount()?>';
+    console.log(pasa_filtro_rol,misn)
     if(!pasa_filtro_rol)return location.href=url
     
 
     let min=jQuery('#totals').data("min")
     let total=jQuery('#totals').data("subtotal")
     
-    if(!min)min='<?=fw_theme_mod('fw_min_purchase')?>';
+    if(!min)min='<?=fw_get_minimum_order_amount()?>';
+    console.log('min:',min)
     if(!total)total=Number((jQuery('.cart-subtotal td span').text()).replace(/[^0-9.-]+/g,""));
     
     if(typeof min === 'string'){

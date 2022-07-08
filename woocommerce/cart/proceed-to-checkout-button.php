@@ -22,4 +22,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<a onclick="ir_al_checkout('<?=esc_url( wc_get_checkout_url() )?>')" class="checkout-button button alt wc-forward"><?=fw_theme_mod('fw_place_order_text');?></a>
+<a onclick="ir_al_checkout(false)" class="checkout-button button alt wc-forward"><?=fw_theme_mod('fw_place_order_text');?></a>
