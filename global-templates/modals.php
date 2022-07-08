@@ -426,8 +426,6 @@ function toggle(quien){
 function ir_al_checkout(modal=true){
     let url='<?=wc_get_checkout_url()?>';
     let pasa_filtro_rol='<?=has_min_purchase()?>';
-    let misn='<?=fw_get_minimum_order_amount()?>';
-    console.log(pasa_filtro_rol,misn)
     if(!pasa_filtro_rol)return location.href=url
     
 
