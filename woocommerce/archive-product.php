@@ -27,7 +27,6 @@ if ( woocommerce_product_loop() ) {
 				error_log(print_r($product,true));
 				$role=fw_get_current_user_role()?fw_get_current_user_role():'customer';
 				$price=$product[$role];
-				error_log($price);
 				if(!$price)continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
