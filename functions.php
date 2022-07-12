@@ -393,17 +393,39 @@ function init_hooks(){
 }
 
 
- function is_request( $type ) {
-    switch ( $type ) {
-        case 'admin' :
-            return is_admin();
-        case 'ajax' :
-            return defined( 'DOING_AJAX' );
-        case 'cron' :
-            return defined( 'DOING_CRON' );
-        case 'frontend' :
-            return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
-    }
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'react2wp_hide_products_higher_than_zero' );
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'react2wp_hide_products_without_price' );
+function react2wp_hide_products_higher_than_zero( $q ){
+
+   $meta_query = $q->get( 'meta_query' );
+   $meta_query[] = array(
+      'key'       => '_price',
+      'value'     => 0,
+      'compare'   => '>'
+   );
+   $q->set( 'meta_query', $meta_query );
+}
+function react2wp_hide_products_without_price( $q ){
+   $meta_query = $q->get( 'meta_query' );
+   $meta_query[] = array(
+      'key'       => '_price',
+      'value'     => '',
+      'compare'   => '!='
+   );
+   $q->set( 'meta_query', $meta_query );
+}
+
+function is_request( $type ) {
+  switch ( $type ) {
+      case 'admin' :
+          return is_admin();
+      case 'ajax' :
+          return defined( 'DOING_AJAX' );
+      case 'cron' :
+          return defined( 'DOING_CRON' );
+      case 'frontend' :
+          return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
+  }
 }
 
 register_nav_menus( array(
