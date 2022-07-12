@@ -24,17 +24,21 @@ if ( woocommerce_product_loop() ) {
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
-			$role=fw_get_current_user_role();
-			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php') && $role!=='administrator' && $role!=='shop_manager'){
+			/*$role=fw_get_current_user_role();
+			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php')
+			//&& $role!=='administrator' && $role!=='shop_manager'
+			){
 				if(empty(fw_get_current_user_role()) || (fw_get_current_user_role()=='subscriber'))$role='customer';
-				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
+				$product=json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices')[0],true);
 				$price=$product[$role];
+				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 1'){
 
-				if(!$price && $role!=='administrator' && $role!=='shop_manager'){
-					echo (get_the_title().' '.$role.' '.$price);
-					continue;
+					echo (print_r($product,true));
+					echo "1:".$product[0].'-'.$product['customer'];
 				}
-			}
+				if(!$price)continue;
+				
+			}*/
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
 		}
