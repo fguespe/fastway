@@ -31,7 +31,6 @@ if ( woocommerce_product_loop() ) {
 				if($role=='customer'){
 					echo (get_the_title().' '.$role.' '.$price);
 				}
-				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
 				$price=$product[$role];
 				if(!$price && ($role!=='administrator' && $role!=='shop_manager'))continue;
 			}
