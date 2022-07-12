@@ -28,6 +28,10 @@ if ( woocommerce_product_loop() ) {
 			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php') && $role!=='administrator' && $role!=='shop_manager'){
 				if(empty(fw_get_current_user_role()) || (fw_get_current_user_role()=='subscriber'))$role='customer';
 				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
+				if($role=='customer'){
+					echo (get_the_title().' '.$role.' '.$price);
+				}
+				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
 				$price=$product[$role];
 				if(!$price && ($role!=='administrator' && $role!=='shop_manager'))continue;
 			}
