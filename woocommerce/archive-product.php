@@ -29,7 +29,6 @@ if ( woocommerce_product_loop() ) {
 				if(empty(fw_get_current_user_role()) || (fw_get_current_user_role()=='subscriber'))$role='customer';
 				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
 				$price=$product[$role];
-				error_log(get_the_title().' '.$role.' '.$price);
 				if(!$price && ($role!=='administrator' && $role!=='shop_manager'))continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
