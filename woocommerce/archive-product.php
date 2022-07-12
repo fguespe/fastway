@@ -24,8 +24,7 @@ if ( woocommerce_product_loop() ) {
 			the_post();
 			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php')){
 				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
-				error_log(print_r(get_post_meta(get_the_ID()),true));
-				error_log(get_the_price());
+			
 				$role=fw_get_current_user_role()?fw_get_current_user_role():'administrator';
 				$price=$product[$role];
 				if(!$price)continue;
