@@ -393,9 +393,9 @@ function init_hooks(){
 }
 
 
-if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'react2wp_hide_products_higher_than_zero' );
-if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'react2wp_hide_products_without_price' );
-function react2wp_hide_products_higher_than_zero( $q ){
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_higher_than_zero' );
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_without_price' );
+function fw_hide_products_higher_than_zero( $q ){
 
    $meta_query = $q->get( 'meta_query' );
    $meta_query[] = array(
@@ -405,7 +405,7 @@ function react2wp_hide_products_higher_than_zero( $q ){
    );
    $q->set( 'meta_query', $meta_query );
 }
-function react2wp_hide_products_without_price( $q ){
+function fw_hide_products_without_price( $q ){
    $meta_query = $q->get( 'meta_query' );
    $meta_query[] = array(
       'key'       => '_price',
