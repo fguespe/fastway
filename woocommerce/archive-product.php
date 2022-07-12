@@ -56,6 +56,9 @@ if ( woocommerce_product_loop() ) {
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
+			$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0]);
+			
+			error_log($product[fw_get_current_user_role()]);
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
 		}
