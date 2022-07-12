@@ -22,13 +22,6 @@ if ( woocommerce_product_loop() ) {
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
-			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php')){
-				$product=json_decode(get_post_meta(get_the_ID())['festiUserRolePrices'][0],true);
-				error_log(print_r($product,true));
-				$role=fw_get_current_user_role()?fw_get_current_user_role():'customer';
-				$price=$product[$role];
-				if(!$price)continue;
-			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
 		}
