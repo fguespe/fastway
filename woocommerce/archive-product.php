@@ -27,7 +27,7 @@ if ( woocommerce_product_loop() ) {
 			
 				$role=fw_get_current_user_role()?fw_get_current_user_role():'customer';
 				$price=$product[$role];
-				if(!$price && $role!=='administrator')continue;
+				if(!$price && ($role!=='administrator' || $role!=='shop_manager'))continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
