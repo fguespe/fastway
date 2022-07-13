@@ -393,8 +393,8 @@ function init_hooks(){
 }
 
 
-if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_higher_than_zero' );
-if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_without_price' );
+//if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_higher_than_zero' );
+//if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_without_price' );
 function fw_hide_products_higher_than_zero( $q ){
 
    $meta_query = $q->get( 'meta_query' );
