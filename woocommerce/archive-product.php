@@ -36,7 +36,6 @@ if ( woocommerce_product_loop() ) {
 				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
 					echo "2:".get_the_title().' '.$price;
 				}
-				if(!$price)continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
