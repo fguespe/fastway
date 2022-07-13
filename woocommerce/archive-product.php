@@ -23,22 +23,9 @@ if ( woocommerce_product_loop() ) {
 	woocommerce_product_loop_start();
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
-			$log=5;
 			the_post();
-			$role=fw_get_current_user_role();
-			if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php')
-			){
-				if(empty(fw_get_current_user_role()) || fw_get_current_user_role()=='subscriber' || $role=='administrator' || $role=='shop_manager')$role='customer';
-				$product=json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices',true)[0],true);
-				error_log(get_the_title().' '.print_r($product,true));
-				$price=$product[$role];
-				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
-					echo $log.get_the_title().' '.$price;
-				}
-				if(!$price && $role=='customer')$price = get_post_meta( get_the_ID(), '_regular_price', true);
-				if(!$price)continue;	
-
-			}
+			if(fw_filter_listas_precios_by_role(get_the_title(),get_the_ID()))continue;
+			
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
 		}

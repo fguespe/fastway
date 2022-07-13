@@ -381,9 +381,6 @@ if(is_plugin_active('woocommerce/woocommerce.php')){
 
 }
 
-
-
-
 init_hooks();
 function init_hooks(){
     if( is_request( 'frontend' ) ) {
@@ -391,7 +388,6 @@ function init_hooks(){
         add_action( 'init', array( $shortcode, 'init' ) );
     }    
 }
-
 
 if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_higher_than_zero' );
 if(fw_theme_mod('fw_search_priced_only'))add_action( 'woocommerce_product_query', 'fw_hide_products_without_price' );

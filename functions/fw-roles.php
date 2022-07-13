@@ -9,6 +9,7 @@ function is_devadmin(){
   if(wp_get_current_user()->user_login==fw_theme_mod('fw_dev_adminuser') && is_super_admin())return true;
   return false;
 }
+add_action( 'plugins_loaded', 'fw_get_current_user_role' );
 function fw_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();
@@ -18,7 +19,22 @@ function fw_get_current_user_role() {
     return false;
   }
 }
+function fw_filter_listas_precios_by_role($title,$id) {
+    $log=5;
+    $role=fw_get_current_user_role();
+    if(fw_theme_mod('fw_search_priced_only') && is_plugin_active('woocommerce-prices-by-user-role/plugin.php')){
+      if(empty(fw_get_current_user_role()) || fw_get_current_user_role()=='subscriber' || $role=='administrator' || $role=='shop_manager')$role='customer';
+      $product=json_decode(get_post_meta($id,'festiUserRolePrices',true)[0],true);
+      $price=$product[$role];
+      /*if($title=='Body splash 30' || $title=='Guest 2'){
+        echo $log.$title.' '.$price;
+      }*/
+      if(!$price && $role=='customer')$price = get_post_meta( $id, '_regular_price', true);
+      if(!$price)return true;	
 
+    }
+    return false;
+}
 function get_is_role_or_name_before(){
   $users=explode(",", fw_theme_mod('ca_users'));
   if(in_array(wp_get_current_user()->user_login,$users))return wp_get_current_user()->user_login;
