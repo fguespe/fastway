@@ -33,7 +33,7 @@ if ( woocommerce_product_loop() ) {
 				error_log(get_the_title().' '.print_r($product,true));
 				$price=$product[$role];
 				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
-					echo "3:".get_the_title().' '.$price;
+					echo "4:".get_the_title().' '.$price;
 				}
 				if(!$price)continue;	
 
