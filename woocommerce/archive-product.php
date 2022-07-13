@@ -36,7 +36,7 @@ if ( woocommerce_product_loop() ) {
 					echo json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices')[0]);
 					echo (get_post_meta(get_the_ID(),'festiUserRolePrices'));
 					echo (print_r($product,true));
-					echo "1:".get_the_title().' '.$price;
+					echo "2:".get_the_title().' '.$price;
 				}
 				if(!$price)continue;
 				else continue;
