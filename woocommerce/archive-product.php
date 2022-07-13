@@ -35,7 +35,7 @@ if ( woocommerce_product_loop() ) {
 				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
 
 					echo (print_r($product,true));
-					echo "1:".$product[0].'-'.$product['customer'];
+					echo "1:"get_the_title().' '.$price;
 				}
 				if(!$price)continue;
 				else continue;
