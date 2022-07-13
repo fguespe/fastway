@@ -147,7 +147,7 @@ if( !function_exists( 'fw_search_form' ) ) {
 //Oculto los sin categoria
 
 if(fw_theme_mod('fw_search_categorized_only'))add_action( 'woocommerce_product_query', 'fw_search_categorized_only' );
-//if(fw_theme_mod('fw_search_priced_only'))add_action( 'pre_get_posts', 'fw_search_priced_only' );
+if(fw_theme_mod('fw_search_priced_only'))add_action( 'pre_get_posts', 'fw_search_priced_only' );
 
 function fw_search_priced_only( $q ){
   if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
