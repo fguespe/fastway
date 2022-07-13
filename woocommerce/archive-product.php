@@ -37,7 +37,6 @@ if ( woocommerce_product_loop() ) {
 					echo "2:".get_the_title().' '.$price;
 				}
 				if(!$price)continue;
-				else continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
