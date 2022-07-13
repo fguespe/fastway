@@ -32,12 +32,8 @@ if ( woocommerce_product_loop() ) {
 				if(empty(fw_get_current_user_role()) || (fw_get_current_user_role()=='subscriber'))$role='customer';
 				$product=json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices')[0],true);
 				$price=$product[$role];
-				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
-
-					echo (print_r($product,true));
-					echo "1:".$product[0].'-'.$product['customer'];
-				}
 				if(!$price)continue;
+				else continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
