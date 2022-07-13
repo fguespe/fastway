@@ -38,6 +38,7 @@ if ( woocommerce_product_loop() ) {
 					echo "1:".$product[0].'-'.$product['customer'];
 				}
 				if(!$price)continue;
+				else continue;
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
