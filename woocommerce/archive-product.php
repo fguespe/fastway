@@ -35,7 +35,7 @@ if ( woocommerce_product_loop() ) {
 				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
 					echo $log.get_the_title().' '.$price;
 				}
-				if(!$price)$price = get_post_meta( get_the_ID(), '_regular_price', true);
+				if(!$price && $role=='customer')$price = get_post_meta( get_the_ID(), '_regular_price', true);
 				if(!$price)continue;	
 
 			}
