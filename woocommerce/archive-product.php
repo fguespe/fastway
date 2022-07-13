@@ -32,8 +32,7 @@ if ( woocommerce_product_loop() ) {
 				if(empty(fw_get_current_user_role()) || (fw_get_current_user_role()=='subscriber'))$role='customer';
 				$product=json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices')[0],true);
 				$price=$product[$role];
-				if(!$price)continue;
-				else continue;
+				
 			}
 			do_action( 'woocommerce_shop_loop' );
 			wc_get_template_part( 'content', 'product' );
