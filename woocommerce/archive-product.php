@@ -33,7 +33,9 @@ if ( woocommerce_product_loop() ) {
 				$product=json_decode(get_post_meta(get_the_ID(),'festiUserRolePrices')[0],true);
 				$price=$product[$role];
 				if(get_the_title()=='Body splash 30' || get_the_title()=='Guest 2'){
-					echo (print_r($product,true));
+					error_log(get_post_meta(get_the_ID(),'festiUserRolePrices')[0]);
+					echo get_post_meta(get_the_ID(),'festiUserRolePrices')[0];
+					//echo get_post_meta(get_the_ID(),'festiUserRolePrices')[0];
 					echo "2:".get_the_title().' '.$price;
 				}
 				if(!$price)continue;
