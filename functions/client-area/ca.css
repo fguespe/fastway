@@ -145,6 +145,16 @@ max-width:90% !important;
 box-shadow:none !important;
 border:0px !important;
 }
+.gform-settings-panel__content,
+.gform-settings-panel{
+  padding:0px !important;
+margin:0px !important;
+
+}
+
+.gform-settings-panel .tablenav{
+  display:none !important;
+}
 /*THEME- NOTICIAS - BLOG . PAGINAS*/
 #nth_page_config,#pageparentdiv{
 	display: none !important;
