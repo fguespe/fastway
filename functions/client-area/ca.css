@@ -121,6 +121,30 @@ display:none !important;
 
 display:none !important;
 }
+/*CAMBIOS PROVETEL FORMS*/
+
+.gform-add-new-form,
+.gform-settings__content .form-list-nav,
+.gform-settings__content .actions{
+	display: none !important;
+}
+#gform-form-toolbar,
+.gform-settings__navigation{
+display:none !important;
+}
+
+.gform-settings__wrapper,
+.gform-settings__content{
+width:100% !important;
+display:block !important;
+max-width:90% !important;
+}
+.gform-settings-panel .gform-settings-panel__content,
+.gform-settings__content,
+.gform-settings-panel{
+box-shadow:none !important;
+border:0px !important;
+}
 /*THEME- NOTICIAS - BLOG . PAGINAS*/
 #nth_page_config,#pageparentdiv{
 	display: none !important;
